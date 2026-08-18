@@ -1,0 +1,140 @@
+<meta charset="UTF-8">
+<title>유아이메이트</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#6 · Daily Papers 2026-08-18</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 26</span>
+    </div>
+    <h1 class="article-title">UI-Mate: Advancing Open-Weight Foundation GUI Agents with In-Context Demonstrations</h1>
+    <p class="article-title-ko">유아이메이트: 인컨텍스트 시연으로 오픈웨이트 파운데이션 GUI 에이전트 발전시키기</p>
+    <p class="article-sub">환경 기반(executable) 데이터·훈련 파이프라인과 "시연을 유연한 서브태스크 워크플로로 변환"하는 인컨텍스트 시연 학습(DemoCUA)을 결합한 오픈웨이트 GUI 에이전트 UI-Mate를 제안하고, 신규 벤치마크 OSWorkerBench로 시연 유무에 따른 성능 차이를 통제 비교했다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.15930" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.15930" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: UI-Mate: Advancing Open-Weight Foundation GUI Agents with In-Context Demonstrations</li>
+<li><strong>저자</strong>: Tencent Hy Frontier Team (Core Contributors 다수, Zilong Huang 등 Project Lead — 저자 목록은 성 알파벳순, p.37)</li>
+<li><strong>출처</strong>: arXiv:2608.15930v1 [cs.AI] (2026-08-16), Technical Report</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://ui-mate.github.io">ui-mate.github.io</a></li>
+<li><strong>원문 PDF</strong>: <code>downloads/2608.15930.pdf</code></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>환경 기반(executable) 데이터·훈련 파이프라인과 "시연을 유연한 서브태스크 워크플로로 변환"하는 인컨텍스트 시연 학습(DemoCUA)을 결합한 오픈웨이트 GUI 에이전트 UI-Mate를 제안하고, 신규 벤치마크 OSWorkerBench로 시연 유무에 따른 성능 차이를 통제 비교했다.</p>
+<h2>배경 및 문제의식</h2>
+<ul>
+<li>실전 배포를 가로막는 두 병목: (1) <strong>훈련 병목</strong> — 확장 가능한 GUI 학습에는 궤적뿐 아니라 실행 가능한 환경, 신뢰할 수 있는 검증기, 넓은 능력 커버리지가 필요하나, 데이터 생산은 저비용의 짧은 단일 앱 작업에 편중되고 장기 호라이즌·크로스앱·오류 복구 사례는 희소함.</li>
+<li>(2) <strong>상호작용 병목</strong> — 사용자 지시는 "무엇을" 할지는 말해도 "어떻게"(도구·파일 조직·명명 규칙·출력 형식 등 절차적 세부사항)는 암묵적으로 남겨두는 경우가 많아, 동일해 보이는 요청도 실행마다 다르게 해석되어 한 번 성공한 에이전트가 다음엔 실패할 수 있음. 평균 성공률만으로는 "우연히 맞춘 것"과 "일관되게 맞춘 것"을 구분할 수 없음.</li>
+<li>기존 데스크톱 벤치마크(OSWorld, WindowsAgentArena)는 지시문만 주는(instruction-only) 프로토콜이라, 시연(demonstration)이 실제로 실행 신뢰성을 얼마나 높이는지 측정할 수 없었음.</li>
+</ul>
+<h2>핵심 기여</h2>
+<ol>
+<li><strong>확장 가능한 환경 기반 훈련 스택</strong>: 태스크 생성 → 환경 구성 → 롤아웃 → 필터링 → 계층적 능력(capability) 트리 기반 재균형을 자동화하는 폐루프 데이터 엔진. 검증된 궤적(SFT용)과 태스크–검증기 번들(온라인 RL용)을 병렬 환경에서 대량 생산.</li>
+<li><strong>DemoCUA(인컨텍스트 시연 학습)</strong>: 멀티모달 시연(사람 녹화 또는 강한 에이전트의 성공 롤아웃)을 고정된 액션 시퀀스가 아니라 서브태스크 단위 워크플로로 변환. 실행 시 라이브 스크린샷이 항상 최종 권한(authoritative)을 가지며, 에이전트는 시연을 따르되 필요하면 재계획.</li>
+<li><strong>OSWorkerBench</strong>: 41개 정규화 애플리케이션·10개 직군에 걸친 100개 장기 호라이즌 오피스 업무 벤치마크. instruction-only와 demonstration-guided(33개 self-demo / 45개 variant-demo) 평가를 모두 지원하며, strict success와 checkpoint 기반 partial progress를 함께 보고.</li>
+<li><strong>SOTA 결과</strong>: UI-Mate-27B가 OSWorld-Verified 77.0%, WindowsAgentArena 66.2%로 오픈웨이트 최고 수준을 달성(p.23, p.27). OSWorkerBench에서는 base 모델(Qwen3.6-27B) 대비 strict success +17.7pp, progress +24.5pp 개선(p.24).</li>
+</ol>
+<h2>방법론</h2>
+<ul>
+<li><strong>태스크 정식화</strong>: T=(x, E) (지시문 x, 실행 환경 E). 에이전트는 매 스텝 스크린샷 관찰 o_t를 받아 (추론 r_t, 액션 a_t)를 생성하고, 최종적으로 실행 가능한 검증기가 R(τ)∈{0,1}를 판정 (p.5, §2.1).</li>
+<li><strong>시연 확장</strong>: 시연 d를 서브태스크 집합 (ℓ_n, v_n, u_n)(목표, 완료 기준, 액션 설명)으로 분해. 에이전트는 매 스텝 "진행 체크리스트 + 현재 서브태스크 목표/완료기준/액션목록"만 담긴 workflow view g_t를 조건으로 받고, 화면 상태가 완료 기준을 만족하면 <code>subtask_complete</code> 제어 액션으로 다음 서브태스크로 이동(p.5-6, 식 5-8).</li>
+<li><strong>데이터 파이프라인(§3, p.7-10)</strong>: (1) 지시문 소스 4종(AgentNet/ScaleCUA 등 오픈소스, 실패 롤아웃에서 분해한 원자적 서브태스크, 실제 문서/스프레드시트/웹사이트 기반, 능력 트리 기반 생성) (2) 환경 구성 시 LLM이 필요 파일을 판별해 합성하되, 가급적 실제 색인된 문서/이미지/영상을 검색해 사용(합성 리소스의 단조로움 방지) (3) 두 단계 필터링 — 멀티모달 심판이 태스크/환경 유효성 검사 후, 스텝 단위로 산출물별 증거 추적 (4) 능력 트리로 커버리지 진단 및 데이터 재균형.</li>
+<li><strong>훈련(§4)</strong>: SFT 이후 온라인 에이전틱 RL(trajectory-to-token credit assignment, 비동기 group-relative 최적화, 적응적 커리큘럼 샘플링)을 적용(세부 알고리즘은 본문 §4.3에 기술, 이번 분석에서는 개요 수준으로 확인).</li>
+<li><strong>DemoCUA 학습(§5, p.15-19)</strong>: 워크플로와 화면이 항상 일치하면 모델이 화면을 보지 않고 워크플로만 베끼는 지름길(shortcut)을 학습할 위험이 있어, 훈련 데이터에 full-alignment/partial-misalignment/irrelevance 세 관계를 섞음. 또한 훈련 시에는 서브태스크의 핵심 액션만 보여주고(중간 클릭·스크롤 등 생략) 세부는 화면에서 추론하도록 강제하며, 추론 시에는 더 상세한 액션 목록을 제공(train-inference mismatch가 의도된 설계). 장기 컨텍스트는 사전 폴딩(오래된 스텝을 요약)과 사후 절단으로 관리.</li>
+<li><strong>DemoCUA 명시적 한계(p.18)</strong>: 워크플로 블록이 컨텍스트 맨 앞에 위치해 서브태스크가 갱신될 때마다 프리픽스가 바뀌어 KV-캐시 재사용이 비효율적임. 후속 연구로 워크플로를 컨텍스트 끝으로 옮겨 append-only 구조를 만드는 방향을 제시.</li>
+</ul>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li><strong>비교 대상</strong>: 범용 멀티모달 모델(Kimi-K2.6 1T-A32B, Qwen3.6-27B, Qwen3.5-9B, GPT-5.5/5.6-Sol, Claude Sonnet 5, Claude Opus 4.8)과 특화 CUA 에이전트(EvoCUA-8B/32B, UI-TARS-1.5-7B/2, ScaleCUA-Qwen3.5-9B).</li>
+<li><strong>OSWorld-Verified (Table 1, p.23)</strong>: UI-Mate-27B 77.0%, UI-Mate-9B 66.2%. 대비: Kimi-K2.6 73.1%, Qwen3.7-Plus 73.3%, GPT-5.5 78.7%, Claude Sonnet 5 81.2%, Claude Opus 4.8 83.4%, EvoCUA-32B 56.7%, ScaleCUA-Qwen3.5 68.7%. 두 UI-Mate 모델 모두 OS 조작 점수는 91.7%로 동일해, 27B의 성능 향상분은 주로 Office(+11.9%p)·Daily(+12.7%p)·Workflow(+13.0%p) 등 애플리케이션 단 조율 능력에서 옴(p.24).</li>
+<li><strong>OSWorkerBench (Table 2, p.24)</strong>: UI-Mate-27B 전체 strict success 41.00%, progress 76.86% (base Qwen3.6-27B 대비 각각 +17.67pp, +24.51pp). Multi-App 서브셋 28.57%, Long-Memory 서브셋 32.84%. 참고로 폐쇄형 GPT-5.6-Sol은 71.00%/87.67%로 여전히 최상위.</li>
+<li><strong>WindowsAgentArena (Table 3, p.27)</strong>: UI-Mate-27B 66.2%로 1T 규모 Kimi-K2.6(63.3%)을 포함한 모든 오픈웨이트 모델 중 최고, GPT-5.5(70.4%)와의 격차는 4.2%p. UI-Mate-9B(61.7%)도 base인 Qwen3.5-9B(37.5%) 대비 +24.2%p.</li>
+<li><strong>시연 효과(Table 4/5, p.29)</strong>: GameDev 10개 태스크 평균 76.76%→81.15%(+4.39pp, 5회 반복 평균). OSWorkerBench 33-task self-demo 서브셋에서 progress 67.85%→81.14%(+13.29pp), strict success 17.17%→35.35%(+18.18pp), 만점 태스크 1개→5개. OSWorld 30-task 서브셋에서는 progress 40.27%→65.75%(+25.48pp)로 가장 큰 상대적 향상.</li>
+<li><strong>데이터 관련 발견(p.30-31)</strong>: 실제 오피스 리소스는 합성 리소스보다 약 6배 크고, 이를 다루는 궤적은 평균 58.4스텝으로 합성본(38.5스텝) 대비 51.7% 김 — "난이도는 지시문이 아니라 환경에 있다"는 결론. 능력 트리 기반 데이터 재균형은 Multi-App 성능을 +15.5pp 끌어올림(상관관계 증거, 통제된 인과 분리는 아님).</li>
+</ul>
+<h2>한계점 (저자 명시)</h2>
+<ul>
+<li>DemoCUA 컨텍스트 구조상 KV-캐시 비효율(워크플로가 컨텍스트 앞에 위치, p.18).</li>
+<li><strong>Variant-demo(관련되지만 동일하지 않은 과제의 시연) 전이 성능은 아직 체계적으로 검증되지 않음</strong>: 45개 variant-demo 태스크는 예비 파일럿(10개)에서만 순긍정 효과를 확인했고, 본 보고서의 벤치마크 주장에 넣을 만큼 안정적이지 않음(p.37, §10).</li>
+<li>전문 소프트웨어(Professional) 태스크에서는 Kimi-K2.6(81.6%)이 UI-Mate-27B(75.5%)보다 우수(p.24).</li>
+<li>시연 가이드가 항상 도움이 되는 것은 아님: OSWorld 30-task 서브셋 중 4개는 오히려 시연 후 점수가 하락(잘못 적용되거나 현재 화면 상태와 충돌하는 경우, p.29).</li>
+<li>향후 과제로 저자들은 outcome-based sparse reward를 verifier-grounded milestone(마일스톤 완료·회귀 패널티 등) 기반 progress reward로 확장하는 방향을 제시(p.37, §10).</li>
+</ul>
+<h2>시사점</h2>
+<ul>
+<li>"환경 기반 훈련(실행 가능한 검증기 + 태스크-검증기 번들)"이 오픈웨이트 모델이 폐쇄형 최상위 모델과의 격차를 좁히는 핵심 동력이라는 점은, 유사한 장기 호라이즌 에이전트 개발에서 벤치마크 스코어보다 데이터/검증 인프라 투자가 우선순위가 되어야 함을 시사.</li>
+<li>DemoCUA의 "시연을 고정 스크립트가 아니라 유연한 서브태스크 가이드로 사용"하는 설계는, 사용자별 절차 지식(암묵적 규칙, 조직 특화 워크플로)을 프롬프트 엔지니어링 없이 전달하는 실용적 패턴으로, RPA·엔터프라이즈 자동화 등 "지시만으로는 절차가 부족한" 실무 도메인에 바로 참고할 수 있음.</li>
+<li>능력 트리(capability tree) 기반 데이터 진단·재균형 방식은 GUI 에이전트 이외에도 장기 꼬리(long-tail) 커버리지 문제를 겪는 다른 에이전틱 학습 파이프라인에 이식 가능한 아이디어.</li>
+</ul>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.15930" target="_blank" rel="noopener">huggingface.co/papers/2608.15930</a> · 2026-08-18</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

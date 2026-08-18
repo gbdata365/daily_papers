@@ -1,0 +1,21 @@
+# 원문 PDF·추출 텍스트 등 저작권 있는 원문 자료는 배포 저장소에 포함하지 않음
+downloads/
+
+# 이 폴더의 다른 개인 작업 파일 (Daily Papers 사이트와 무관)
+design_system_new.html
+mythos_apple_new.html
+mythos_website_new.html
+미토스_모델_조사_new.md
+poem.txt
+prompt.txt
+hf_papers_infographic_new.html
+huggingface_papers_20260818_new.md
+hf_papers_website_new.html
+
+# Claude Code 로컬 설정
+.claude/
+CLAUDE.md
+
+# 비밀값/환경변수 (절대 커밋 금지)
+.env
+.env.*

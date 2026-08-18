@@ -1,0 +1,148 @@
+<meta charset="UTF-8">
+<title>모스브이엘 기술 보고서</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#2 · Daily Papers 2026-08-18</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 430</span>
+    </div>
+    <h1 class="article-title">MOSS-VL Technical Report</h1>
+    <p class="article-title-ko">모스브이엘 기술 보고서</p>
+    <p class="article-sub">"말하면서 동시에 보는(perceiving while speaking)" 실시간 상호작용을 1급 능력으로 취급하는 오픈 비전-언어 모델 MOSS-VL을 제안, 게이트형 교차어텐션 구조·실시간 상호작용 데이터·경량 최종 학습 단계(Realtime-SFT)를 공동 설계해 스트리밍 벤치마크에서 오픈소스 최고 성능과 빠른 서빙 지연을 동시에 달성했다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.15045" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.15045" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: MOSS-VL Technical Report</li>
+<li><strong>저자</strong>: OpenMOSS Team (Pengyu Wang 외, Fudan University, Shanghai Innovation Institute, MOSI Intelligence)</li>
+<li><strong>출처</strong>: arXiv:2608.15045v1 [cs.CV] (2026-08-15)</li>
+<li><strong>프로젝트/코드/모델</strong>: <a href="https://openmoss.ai/MOSS-VL/">프로젝트</a> · <a href="https://github.com/OpenMOSS/MOSS-VL">코드(GitHub)</a> · <a href="https://huggingface.co/OpenMOSS-Team">모델(HuggingFace)</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.15045">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>"말하면서 동시에 보는(perceiving while speaking)" 실시간 상호작용을 1급 능력으로 취급하는 오픈 비전-언어 모델 MOSS-VL을 제안, 게이트형 교차어텐션 구조·실시간 상호작용 데이터·경량 최종 학습 단계(Realtime-SFT)를 공동 설계해 스트리밍 벤치마크에서 오픈소스 최고 성능과 빠른 서빙 지연을 동시에 달성했다.</p>
+<h2>배경 및 문제의식</h2>
+<ul>
+<li>대부분의 오픈 비전-언어 모델(VLM)은 "오프라인" 방식으로 동작 — 영상이 끝난 후에야 전체를 보고 질의응답을 수행함.</li>
+<li>실제로 실시간 어시스턴트가 필요한 상황(라이브 감시, 실황 해설 등)에서는 영상이 끝나기를 기다릴 수 없고, 모델이 스스로 "언제 말할지"를 판단하고, 말하는 동안에도 계속 관찰(watching)할 수 있어야 함.</li>
+<li>논문은 비디오 이해 능력을 5단계(L1 오프라인 ~ L5 실시간)로 구분(Table 1, p.2~3): 기존 스트리밍 모델들은 L2~L4(연속 입력, 침묵/대기, 지속 질의 대응)까지만 가능하고, 응답을 "생성하는 동안에는 여전히 눈이 먼(blind)" 상태 — L5(생성 중에도 지각 지속, 증거가 바뀌면 응답을 수정/중단)를 실현하는 오픈 모델이 부재했음.</li>
+</ul>
+<h2>핵심 기여</h2>
+<ol>
+<li><strong>실시간 상호작용을 위한 공동 설계 스택</strong>: 언어 디코더가 시각 정보를 게이트형 교차어텐션(gated cross-attention)으로만 참조 — 시각 토큰이 디코딩 시퀀스에 직접 들어가지 않아 새 프레임이 도착해도 캐시에 추가만 하면 되므로 생성 중에도 자연스럽게 계속 지각 가능</li>
+<li><strong>Realtime-SFT</strong>: 전체 학습 토큰의 3% 미만인 가벼운 최종 학습 단계 하나로 "언제 말하고, 언제 침묵하고, 언제 답변을 수정할지"를 가르침 — 새 상태 토큰(<code>&lt;|silence|&gt;</code>, <code>&lt;|response|&gt;</code>) 2개와 공유 시스템 프롬프트, 재가중 다음-토큰 손실만으로 구현</li>
+<li><strong>오프라인에서도 강한 시간 이해</strong>: 실시간 코퍼스 없이 학습된 MOSS-VL-Instruct가 시간 추론(temporal-reasoning) 영상 벤치마크(Minerva, TOMATO, VideoMME-Logical)에서 선두</li>
+<li><strong>더 많은 파라미터, 더 빠른 서빙</strong>: 11.3B 파라미터이지만 시각 토큰이 디코딩 시퀀스 밖에 있어, 시각 컨텍스트가 커질수록 동일 백본(Qwen3-VL-8B) 대비 TTFT(첫 토큰까지 시간) 우위가 2.8배→5.1배로 확대</li>
+<li>5개 체크포인트, 학습 커리큘럼, 실시간 추론 코드, 확장된 FlashAttention-3 백엔드 모두 공개</li>
+</ol>
+<h2>방법론</h2>
+<ul>
+<li><strong>아키텍처</strong> (2절, Fig. 2, p.4): 27층 네이티브 해상도 비전 인코더(Qwen3-VL 비전 인코더에서 초기화) + 48층 언어 디코더(Qwen3-8B에서 초기화, 36개 셀프어텐션 + 12개 게이트형 교차어텐션이 4층마다 1개씩 배치). 총 11.3B 파라미터 중 언어 백본 8.2B, 교차어텐션 스택 2.3B, 비전 인코더+프로젝션 0.8B (2.1절)</li>
+<li><strong>게이트형 교차어텐션</strong> (2.2절): Flamingo 스타일 — 쿼리는 텍스트, 키/값은 시각 토큰(GQA: 32쿼리/8 KV 헤드). tanh 게이트가 0으로 초기화되어 학습 시작 시점엔 언어 백본이 손상되지 않음</li>
+<li><strong>XRoPE</strong> (2.3절, Fig. 3, p.5): 교차어텐션 채널 전용 위치 인코딩(저자들이 "최초"라 주장). 텍스트·시각 패치를 하나의 3축(t,h,w) 좌표 공간에 배치해 시각 스트림에 위치 정보를 부여 (64개 회전 주파수 쌍을 24/20/20으로 t/h/w에 분할)</li>
+<li><strong>절대 타임스탬프</strong> (2.4절): 프레임마다 <code>&lt;|time_start|&gt;X.X seconds&lt;|time_end|&gt;</code> 토큰을 삽입해 실제 시계 시간을 명시적으로 제공 (1~16fps 동작 적응형 샘플링)</li>
+<li><strong>실시간 동작 원리</strong> (2.5절): 새 프레임 도착 시 그 프레임만 인코딩해 교차어텐션 캐시에 추가(기존 프레임 재인코딩 불필요) — 디코딩 시퀀스는 타임스탬프 토큰+placeholder 토큰 1개만 늘어남</li>
+<li><strong>4단계 사전학습 커리큘럼</strong> (3절, Table 4, p.7): (1) 비전-언어 정렬(8K 토큰, 150.3B 토큰, 프로젝션+교차어텐션만 학습) → (2) 대규모 멀티모달 사전학습(64K, 203.0B, 전체 모델) → (3) 고품질 멀티모달 사전학습(128K, 459.0B, 최대 토큰 예산) → (4) 어닐링+장문맥 학습(256K, 450.1B). 캡션/OCR/그라운딩/시간적 그라운딩 데이터를 대규모로 자체 합성한 것이 특징</li>
+<li><strong>후학습 2단계</strong> (4절): SFT(7.6M 샘플, 102.8B 토큰, 128K)로 MOSS-VL-Instruct 생성 → Realtime-SFT(0.56M 샘플, 34.8B 토큰, 256K, 전체 학습 토큰의 3% 미만)로 MOSS-VL-Realtime 생성</li>
+<li><strong>Realtime-SFT 상세</strong> (4.2절): 프레임마다 결정 슬롯(<code>&lt;|silence|&gt;</code> / <code>&lt;|response|&gt;</code>+텍스트 / 침묵으로 끝나는 응답)을 배치, 도착 순서대로 텍스트-프레임 인터리빙. 데이터는 (i) 기존 스트리밍 데이터셋 재주석 + (ii) MOSS-Video-Preview 방식의 캡션 기반 자체 합성(계층적·시간 고정 캡션에서 상태 전환 채굴)으로 구성. 전체 220만 발화 결정 중 58.7%가 자기-타이밍(비질의 유발), 5.1%는 대상 이벤트가 발생하지 않아 끝까지 침묵해야 하는 경우</li>
+<li><strong>손실함수/클래스 불균형 처리</strong> (4.3절, 식 2): 침묵 슬롯이 압도적으로 많아 균등 가중치로는 모델이 항상 침묵하도록 학습되는 문제 → focal factor(γ=2) + 역빈도 클래스 계수(α_k)로 상태 토큰 손실 재가중. 또한 스트림에서 턴 종료 토큰(assistant turn-final end token)을 손실에서 제외해 새 유저 턴 등장만으로 응답을 끝내지 않도록 함 — 이 마스킹만으로 발화 빈도 +39%, 평균 응답 길이 +68% 증가 확인</li>
+<li><strong>인프라</strong> (5절): Megatron-LM 기반 데이터/텐서/시퀀스/컨텍스트 병렬. 교차어텐션의 "프레임별 증가하는 prefix visibility" 패턴을 위해 FlashAttention-3를 <code>cross_kv_boundary</code> 인터페이스로 확장(밀집 마스크 대신 프루닝)해 커널 비용을 방문 패턴에 맞춤</li>
+</ul>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li><strong>오프라인 평가</strong> (Table 5, p.11): 39개 벤치마크, 5개 능력군(지각/영상이해/그라운딩/문서·OCR/추론)에서 Qwen3-VL-8B, Qwen2.5-VL-7B, LLaVA-OneVision-2-8B, Gemma-4-12B-IT와 비교</li>
+<li>지각(perception)에서 최강: MMBench-EN 88.1, POPE 89.4, V* 89.0, MME-RealWorld 66.3·BLINK 78.0(모두 2위 대비 +8.9점)</li>
+<li>시간 추론 영상: Minerva 40.5, TOMATO 39.5, VideoMME-Logical 17.1 (모두 2위 대비 +4.9점 이상), EgoSchema 67.0도 선두</li>
+<li>그라운딩: 적대적(Ref-Adv) 세트 57.0(+7.7점), 문서 파싱 OmniDocBench 88.9(+4.0점), 추론에서 VisuLogic 27.5·ERQA 45.8(공동 1위)</li>
+<li>주요 약점: MMMU(51.1, 최저권), 표준 문서 이해(DocVQA 89.6, InfoVQA 68.9), 표준 그라운딩(RefCOCO-REC 84.4)에서 뒤처짐</li>
+<li><strong>스트리밍 벤치마크</strong> (Table 6, p.12): OVO-Bench, OmniMMI, StreamingBench, ProactiveVideoQA 4개 벤치마크에서 오픈소스 스트리밍 모델(AURA, M4, ROMA, JoyAI-VL-Interaction, VideoChat3-4B, ViSpeak-7B, MMDuet 계열)과 비교</li>
+<li>4개 중 3개에서 평균 1위: OVO-Bench 70.2(2위 65.3), OmniMMI 32.7(2위 25.4), ProactiveVideoQA 47.2(2위 42.7); StreamingBench는 2위(69.7 vs AURA 71.1)</li>
+<li><strong>능동적 발화(proactive) 성능이 특히 강함</strong>: OmniMMI Proactive Alerting 66.0 vs 최고 베이스라인 37.5, StreamingBench Proactive Output 60.0 vs 53.2, OVO-Bench Forward Active Responding 62.1 vs 55.8</li>
+<li>OVO-Bench Backward Tracing 72.6 vs 60.4로 누적 스트림 이력 활용 능력도 우수</li>
+<li><strong>추론 효율</strong> (Fig. 4, 6.3절, p.13): 동일 Qwen3-8B 백본을 공유하는 Qwen3-VL-8B와 단일 H200 GPU(SGLang) 비교. 시각 토큰 수를 맞췄을 때 TTFT 격차가 시각 컨텍스트 증가에 따라 2.8배→5.1배로 확대, end-to-end 지연은 1.9배→4.3배로 확대. 동일 영상/프레임 조건(시간축 압축을 하지 않아 시각 토큰이 약 2배 많음)에서도 항상 뒤처지지 않고 격차가 스트림 길이에 따라 커짐</li>
+<li><strong>정성 평가</strong> (Fig. 5, 6.4절, p.13~14): 라이브 데모 2건 — (a) "당근을 만지면만 말하라"는 조건부 지시 하에 4번의 접촉 순간에만 정확히 발화, (b) 단일 실황 해설 지시로 축구 프리킥 장면을 1초 내에 시작해 연속 해설</li>
+</ul>
+<h2>한계점 (저자 명시, 7절 Discussion, p.14)</h2>
+<ul>
+<li>MMMU 등 추론 중심 벤치마크와 문서 중심 벤치마크에서 동급 최고 오픈 모델에 뒤처짐 — "thinking mode" 없이 실시간 영상에 최적화된 학습이었기 때문</li>
+<li>L5(생성 중 지각) 행동 자체는 정성적으로만 입증됨 — 공개 스트리밍 벤치마크가 L2~L4까지만 존재해 정량 검증이 거기서 멈춤. "생성 중 답변을 수정/중단하는 능력"을 측정하는 전용 벤치마크가 아직 없음</li>
+<li>강화학습 후학습 미적용(로드맵에 있음), L5 전용 벤치마크 부재는 향후 과제로 명시</li>
+</ul>
+<h2>시사점</h2>
+<ul>
+<li>"아키텍처(게이트형 교차어텐션+XRoPE) + 데이터(합성 상호작용 코퍼스) + 학습전략(경량 최종 단계)"을 공동 설계하는 방식은, 실시간/스트리밍 능력을 기존 강력한 오프라인 파운데이션 위에 저비용(전체 토큰의 3% 미만)으로 이식하는 일반적 패턴으로 참고할 만함</li>
+<li>시각 토큰을 디코딩 시퀀스 밖에 두는 설계(캐시 append-only)는 실시간 비디오·문서 스트림처럼 컨텍스트가 계속 누적되는 응용에서 서빙 지연을 크게 낮추는 실용적 이점이 있어, 유사한 장기 스트리밍 멀티모달 시스템 설계 시 고려할 가치가 있음</li>
+<li>클래스 불균형(침묵 vs 발화)을 다루는 focal + 역빈도 재가중, 그리고 "턴 종료 토큰을 손실에서 제외"하는 마스킹 트릭은 다른 도메인의 이벤트-트리거형 시퀀스 학습(예: 이상 탐지, 알림 시스템)에도 응용 가능한 실무적 팁</li>
+</ul>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.15045" target="_blank" rel="noopener">huggingface.co/papers/2608.15045</a> · 2026-08-18</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

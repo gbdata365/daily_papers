@@ -1,0 +1,141 @@
+<meta charset="UTF-8">
+<title>남은 것을 배우고 이미 숙달한 것은 그만</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#7 · Daily Papers 2026-08-18</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 24</span>
+    </div>
+    <h1 class="article-title">Learn What's Left, Not What's Mastered: Saturation Aware Advantage Reweighting for Multi-Reward Policy Optimization</h1>
+    <p class="article-title-ko">남은 것을 배우고 이미 숙달한 것은 그만: 다중 보상 정책 최적화를 위한 포화 인지 어드밴티지 재가중</p>
+    <p class="article-sub">다중 보상 목표를 GRPO로 최적화할 때, 기존 방식(고정 가중합 스칼라화 또는 목표별 독립 정규화)이 이미 포화(saturation)된 목표에도 계속 동일한 그래디언트 비중을 할당하는 문제를 지적하고, 배치 단위 포화도 추정치로 목표별 기여도를 적응적으로 재조정하는 SA-MRPO를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.16072" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.16072" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Learn What's Left, Not What's Mastered: Saturation Aware Advantage Reweighting for Multi-Reward Policy Optimization</li>
+<li><strong>저자</strong>: Yixuan Wang, Yifei Chen(공동 1저자), Haichao Zhang, Haozheng Luo, Xander Wu, Jie Ni, Yun Fu, Nuno Vasconcelos, Yijiang Li(교신저자·프로젝트 리드) — University of Florida, UC San Diego, Northeastern University, Northwestern University, Stanford University/Zillion Network, Universität Innsbruck 소속</li>
+<li><strong>출처</strong>: arXiv:2608.16072v1 [cs.LG] (2026-08-17), Preprint</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.16072">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>다중 보상 목표를 GRPO로 최적화할 때, 기존 방식(고정 가중합 스칼라화 또는 목표별 독립 정규화)이 이미 포화(saturation)된 목표에도 계속 동일한 그래디언트 비중을 할당하는 문제를 지적하고, 배치 단위 포화도 추정치로 목표별 기여도를 적응적으로 재조정하는 SA-MRPO를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<ul>
+<li>GRPO는 하나의 스칼라 보상을 가정하지만, 실제 언어모델 후학습은 정확성·길이·형식·안전성 등 다중 목표를 동시에 최적화하는 경우가 많음. 표준 방식은 목표들을 고정 가중합으로 합친 뒤 그룹 단위로 표준화(standardize)함.</li>
+<li>이 설계의 두 가지 근본 한계(p.1-2):</li>
+<li><strong>보상 해상도 손실(reward-resolution loss)</strong>: 서로 다른 보상 프로파일이 같은 가중합 값으로 붕괴할 수 있음. 예: 가중치가 같을 때 (correctness=1, format=0)과 (correctness=0, format=1)이 동일한 스칼라 값이 되어 GRPO에서 동일한 advantage(0)를 받음.</li>
+<li><strong>목표 포화 무시(objective saturation)</strong>: 훈련 내내 상대 가중치가 고정되어, 이미 거의 만점에 도달한 목표에도 계속 동일한 비중이 실려 어려운(아직 덜 최적화된) 목표가 뒷전으로 밀림. 최근 제안된 GDPO(목표별 독립 정규화)도 첫 번째 문제는 해결하지만 두 번째 문제는 그대로 남음.</li>
+</ul>
+<h2>핵심 기여</h2>
+<ol>
+<li>스칼라화 다중보상 최적화의 두 한계(보상 해상도 손실, 포화 무시)를 규명하고, 후자가 reward decoupling(GDPO) 이후에도 지속됨을 보임.</li>
+<li><strong>SA-MRPO</strong> 제안: 목표별로 정규화된 advantage에, 배치 평균 보상이 달성 가능 범위 중 얼마나 찼는지를 나타내는 saturation ratio 기반 지수 감쇠 가중치를 곱해 재할당. γ=0이면 GDPO로, 단일 목표면 GRPO로 환원되는 <strong>strict generalization</strong> 관계를 증명.</li>
+<li>재가중이 advantage의 크기뿐 아니라 <strong>부호(방향)</strong>까지 뒤바꿀 수 있음을 이론적으로 제시(Fig.1 사례: 동일 스칼라 보상을 받는 두 롤아웃이 GDPO에서는 같은 방향으로 취급되지만, SA-MRPO는 포화된 목표를 할인해 반대 방향의 advantage를 부여).</li>
+<li>수학 추론(2/3목표), 적응적 추론(명시적 포화 구간), 코드 생성 세 영역에서 실증: GDPO 대비 어려운 목표의 성능을 대부분 개선하면서 이미 만족된 목표는 유지.</li>
+</ol>
+<h2>방법론</h2>
+<ul>
+<li><strong>사전 정의(§3)</strong>: 쿼리 q_i마다 G개 롤아웃을 behavior policy에서 샘플링, n개 보상 목표 R^(k). 표준 GRPO는 r_sum = Σ_k w_k r_k 로 스칼라화 후 그룹 내 (평균, 표준편차)로 표준화해 advantage 계산.</li>
+<li><strong>saturation-aware advantage(§4.1, p.4-5)</strong>:</li>
+<li>목표별 그룹 정규화 advantage: A_k^(i,j) = (r_k^(i,j) − μ_k^(i)) / σ_k^(i)</li>
+<li>목표 k의 <strong>포화도</strong> s^(k) = (배치 평균 보상 r̄^(k) − 하한 r_min^(k)) / (r_max^(k) − r_min^(k)) ∈ [0,1] — 배치 전체에서 관측된 평균 보상이 달성 가능 범위 중 얼마나 찼는지 측정.</li>
+<li>조정 가중치 w̃_k = w_k · (1 − s^(k))^γ (γ는 포화 강도를 조절하는 단일 하이퍼파라미터)</li>
+<li>집계 advantage Ã^(i,j) = Σ_k w̃_k A_k^(i,j), 이후 배치 전체에서 다시 정규화해 최종 Â_SA^(i,j)를 얻고 표준 GRPO의 clipped surrogate objective에 그대로 대입(정책 업데이트 식 자체는 불변, advantage 구성만 교체) — Algorithm 1(p.5)에 정리.</li>
+<li>γ=0이면 w̃_k=w_k가 되어 정확히 GDPO의 advantage로 환원되고, 단일 목표(n=1)에서는 다시 GRPO로 환원됨(strict generalization).</li>
+<li><strong>목표 간 충돌 분석(§4.2, p.6-7)</strong>: 두 목표의 그래디언트가 서로 상충할 경우(g_a·g_k &lt; 0), saturation-aware 재가중이 이미 최적화된 목표 a의 self-improvement 항(w̃_a‖g_a‖²)을 의도적으로 줄이기 때문에, 다른 목표의 강한 반대 방향 그래디언트가 우세하면 목표 a의 성능이 오히려 저하될 수 있음(식 2로 조건을 명시). 저자들은 이를 SA-MRPO가 "포화된 목표의 단조 보존을 보장하는 제약적 방법이 아니라 적응적 할당 규칙"이라는 점을 스스로 명시.</li>
+<li><strong>포화도 지표의 해석적 한계(p.7)</strong>: s^(k)는 "명목상(prescribed) 남은 보상 범위"를 정확히 측정하지만, 이것이 현재 정책 클래스가 실제로 달성 가능한 개선치(optimizable headroom)와 항상 일치하는 것은 아님 — 명목 범위는 넓어도 모델 용량 한계로 실질 개선 여지가 작을 수 있음.</li>
+</ul>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li>공통 설정: verl+vLLM, 쿼리당 G=8 롤아웃, 3 epoch, 배치 256, 최대 응답 길이 4096 토큰(p.7).</li>
+<li><strong>수학 추론(Table 1, p.8)</strong>: DeepScaleR-Preview(약 4만 문항)로 Qwen2.5-3B/7B-Instruct 훈련, AIME24·AMC23·MATH500·Minerva·OlympiadBench 평가(16-샘플 pass@1). 2목표(정확성+길이) 및 3목표(+형식) 설정 총 15개 벤치마크 비교 중 <strong>SA-MRPO가 12개에서 GDPO보다 높은 정확도</strong>. 7B 3목표 설정에서 AIME24 +5.0%p(11.5→16.5%), MATH500 +3.5%p(64.2→67.7%). 길이 초과 비율(EXCEED)은 대체로 소폭 변화에 그쳐 정확도 향상이 길이 준수를 크게 희생하지 않음.</li>
+<li><strong>적응적 추론(Table 2, p.9)</strong>: 길이 보상에 명시적 포화 구간(B_min=1024, B_max=2048 토큰, 그 이하면 보상 최대)을 설계하고 DeepSeek-R1-Distill-Qwen-7B로 정확성+길이 2목표 훈련. SA-MRPO가 <strong>5개 벤치마크 전부에서 GDPO보다 개선</strong>, 평균 +3.8%p, 최대 AMC23 +9.2%p(28.3→37.5%). 평균 응답 길이는 333→459 토큰으로 다소 늘었지만 여전히 포화 임계값(1024) 이하에 머묾 — "이미 포화된 길이 목표를 더 줄이려 애쓰지 않고 남는 여력을 정확성에 재배분한다"는 메커니즘과 일치.</li>
+<li><strong>코드 생성(Table 3, p.9)</strong>: Eurus-2-RL 데이터셋, Qwen2.5-7B-Instruct, test-case pass rate + executability 2목표. APPS·CodeContests·Codeforces·TACO 4개 벤치마크 중 <strong>3개에서 pass rate 개선</strong>(Codeforces 10.6→12.9%, +2.3%p 최대), TACO는 -0.4%p로 유일하게 소폭 하락. 버그(컴파일/런타임 오류) 비율은 두 방법이 비슷한 수준으로 유지.</li>
+<li><strong>포화 지수 γ 효과(Table 4, p.11)</strong>: Qwen2.5-3B/7B, DeepScaleR 1epoch, 정확성+길이 2목표. γ를 0→0.25→0.5→0.75→1.0로 늘리면 정확성은 대체로 상승하다가(γ=0.5에서 평균 최고) γ가 더 커지면 길이 초과 비율(EXCEED)이 증가하는 트레이드오프가 관찰됨 — γ가 커질수록 이미 포화된 길이 목표를 더 강하게 할인하기 때문.</li>
+</ul>
+<h2>한계점 (저자 명시)</h2>
+<ul>
+<li><strong>목표 간 그래디언트 충돌 시 이미 최적화된 목표의 성능 저하 가능성</strong>: saturation-aware 재가중은 포화된 목표의 self-improvement 항을 의도적으로 줄이므로, 다른 목표의 그래디언트가 충분히 상충하면 이미 잘 학습된 목표가 퇴화할 수 있음(§4.2, 식 2). 저자는 SA-MRPO를 "단조 보존을 보장하는 제약적 방법이 아니라 적응적 할당 규칙"으로 명시적으로 규정.</li>
+<li><strong>포화도의 명목/실질 불일치</strong>: s^(k)는 사전 정의된 보상 범위 대비 남은 여지를 측정할 뿐, 현재 정책 클래스가 실제로 그 여지를 채울 수 있는지는 보장하지 않음(nominal vs. optimizable headroom, p.7).</li>
+<li>코드 생성 실험에서 TACO 벤치마크는 GDPO보다 pass rate가 -0.4%p 낮게 나와, 모든 벤치마크에서 일관되게 우수하지는 않음(p.9).</li>
+<li>γ 값에 따라 정확도-길이준수 트레이드오프가 뚜렷해(Table 4), 최적 γ는 태스크·보상 구성에 따라 튜닝이 필요해 보이며 이에 대한 자동 선택 방법은 제시되지 않음.</li>
+</ul>
+<h2>시사점</h2>
+<ul>
+<li>다중 보상 RLVR/후학습 파이프라인에서 보상을 단순 가중합으로 스칼라화하기 전에, "목표별 정규화 + 포화도 기반 동적 재가중"을 도입할 가치가 있음 — 특히 format·길이처럼 쉽게 포화되는 보조 목표와 correctness처럼 어려운 목표를 함께 최적화하는 실무 세팅(안전성+능력 동시 최적화, tool-use 성공률+효율성 등)에 바로 적용 가능.</li>
+<li>GDPO/GRPO의 strict generalization이라는 설계 덕분에 advantage 계산 부분만 교체하면 기존 GRPO 기반 학습 파이프라인에 최소 변경으로 도입할 수 있어 실무 채택 장벽이 낮음.</li>
+<li>다만 적용 전 각 보상 목표의 상한/하한(r_min, r_max)을 명확히 정의할 수 있어야 하고(규칙 기반·bounded reward에 적합), γ를 검증셋으로 튜닝하는 절차가 필요함.</li>
+</ul>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.16072" target="_blank" rel="noopener">huggingface.co/papers/2608.16072</a> · 2026-08-18</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

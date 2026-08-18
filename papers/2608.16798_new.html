@@ -1,0 +1,146 @@
+<meta charset="UTF-8">
+<title>클로짐 II</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#5 · Daily Papers 2026-08-18</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 32</span>
+    </div>
+    <h1 class="article-title">ClawGym II: Exploring Black-Box RL on Agent Harness</h1>
+    <p class="article-title-ko">클로짐 II: 에이전트 하네스에서의 블랙박스 강화학습 탐구</p>
+    <p class="article-sub">Claude Code, OpenClaw 같은 복잡한 프로덕션급 에이전트 하네스를 내부 로직을 건드리지 않는 "블랙박스"로 취급하면서도, 서빙 프록시로 모델 호출을 가로채 prefix tree로 재구성하고 PPO/GRPO를 안정적으로 적용하는 통합 강화학습 프레임워크를 제안, 여러 하네스에 걸쳐 일관된 성능 향상을 달성했다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.16798" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.16798" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: ClawGym II: Exploring Black-Box RL on Agent Harness</li>
+<li><strong>저자</strong>: Huatong Song, Fei Bai (공동 1저자) 외, Wayne Xin Zhao, Mingjie Tang (교신저자) 등 — Renmin University of China Gaoling School of AI, IQuest Research</li>
+<li><strong>출처</strong>: arXiv:2608.16798v1 [cs.CL] (2026-08-17)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.16798">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>Claude Code, OpenClaw 같은 복잡한 프로덕션급 에이전트 하네스를 내부 로직을 건드리지 않는 "블랙박스"로 취급하면서도, 서빙 프록시로 모델 호출을 가로채 prefix tree로 재구성하고 PPO/GRPO를 안정적으로 적용하는 통합 강화학습 프레임워크를 제안, 여러 하네스에 걸쳐 일관된 성능 향상을 달성했다.</p>
+<h2>배경 및 문제의식</h2>
+<ul>
+<li>Claude Code, Codex, OpenClaw 같은 "에이전트 하네스"는 시스템 프롬프트, 도구 인터페이스, 컨텍스트 관리, 재시도/복구 로직을 통합한 실행 계층으로 자리잡았지만, 아무리 강력한 모델도 하네스를 제대로 활용하도록 학습되지 않으면 성능이 떨어짐.</li>
+<li>하네스는 내부 제어 흐름이 매우 복잡(불투명)하여, 단순 텍스트/경량 에이전틱 환경과 달리 RL 학습 알고리즘을 그대로 적용하기 어려움 → 주류 접근은 하네스 내부를 블랙박스로 취급하는 것이지만, 이를 안정적·확장 가능하게 만드는 방법은 충분히 연구되지 않음.</li>
+<li>3가지 근본 난제: (1) 대규모 동시 롤아웃을 위한 확장 가능하고 안정적인 인프라 부재, (2) 블랙박스 하네스가 노출하는 조각난(fragmented)·분기된(forked) 모델 호출로부터 효율적인 정책 최적화가 어려움, (3) 서로 다른 하네스 간 이질성으로 인해 특정 시스템에 특화되지 않는 확장성 있는 프레임워크가 필요.</li>
+</ul>
+<h2>핵심 기여</h2>
+<ol>
+<li><strong>통합 블랙박스 RL 프레임워크</strong>: 임의의 불투명한 하네스를 통해 범용 에이전트를 안정적으로 최적화. 개별 하네스 학습뿐 아니라 이종 하네스를 함께 학습하는 mix-harness training까지 지원.</li>
+<li><strong>확장 가능한 실행 인프라</strong>: 태스크별 환경과 하네스를 임시 샌드박스에 격리해 대규모 동시 롤아웃 지원, 서빙 프록시가 모델 경계(model-serving boundary)에서 모든 모델 호출을 가로채 기록.</li>
+<li><strong>Prefix Tree 기반 궤적 복원</strong>: 조각나고 분기된 모델 호출들을 롤아웃 단위 prefix tree로 재구성해 공유 히스토리를 한 번만 저장하면서 서로 다른 연속(continuation)을 별도 가지로 보존. Dead leaves(재시도로 버려진 시도), 과도 분기 롤아웃, 서브에이전트/컴팩션 등 보조 궤적을 필터링.</li>
+<li><strong>트리 구조 위 PPO/GRPO 적응</strong>: GRPO는 그룹 기반 어드밴티지를 자연스럽게 트리에 적용; PPO는 γ=1, λ=1로 단순화해 각 궤적이 독립적으로 GAE 백업을 수행하도록 조정.</li>
+<li><strong>훈련-추론 일관성 유지</strong>: black-box token-in-token-out 방식(생성된 토큰을 그대로 학습에 사용, 하네스가 재직렬화한 텍스트는 학습에 반영 안 함) + 토큰 수준 중요도 샘플링 보정.</li>
+<li><strong>Mix-harness training</strong>: 동일 태스크를 서로 다른 하네스(OpenClaw, Claude Code)로 각각 인스턴스화해 태스크-하네스 쌍 단위로 그룹 정규화를 수행, 하나의 정책 모델을 이종 하네스로 동시 학습.</li>
+</ol>
+<h2>방법론</h2>
+<ul>
+<li><strong>문제 정식화</strong>: 태스크 q=(u, W0)(지시문, 초기 워크스페이스), 하네스 H가 (Wt, ct, at) → (Wt+1, ot+1, ct+1)로 상호작용을 매개(p.4-5, 식 1). 규칙 기반 검증(유닛 테스트 등)과 루브릭 기반 검증(LLM-as-judge)을 혼합해 최종 보상 산출.</li>
+<li><strong>RL 알고리즘</strong>: PPO(critic 기반, 마스크된 클리핑 목적함수·GAE)와 GRPO(critic-free, 그룹 상대 어드밴티지)를 토큰 수준 마스크를 적용해 정식화(p.4-5, 식 2-6).</li>
+<li><strong>인프라</strong>: 태스크마다 임시 샌드박스에서 하네스를 실행, MCP 서버로 외부 능력(웹 검색 등) 제공. 학습 엔진과 추론 엔진을 분리하고, 서빙 프록시가 모델 요청/응답과 로그확률을 기록.</li>
+<li><strong>Prefix tree 구성</strong>: 캡처된 호출들을 가장 긴 공통 접두어를 가진 노드에 붙여 트리로 구성, 리프에서 루트까지의 경로가 후보 궤적. 컨텍스트 컴팩션이나 서브에이전트 스케줄링이 새 브랜치를 만듦(p.6-7, 3.2.1).</li>
+<li><strong>궤적 필터링</strong> (p.7, 3.2.2): (1) Dead leaves 제거 — 재시도/재생성으로 버려진 시도, (2) 과도 분기 롤아웃 폐기 — 리프 수가 임계치 초과 시 전체 롤아웃 버림, (3) 보조 궤적(서브에이전트·컴팩션) 제외 — 롤아웃 보상을 그대로 부여하면 신용 할당이 모호해지므로 학습 대상에서 제외.</li>
+<li><strong>트리 구조 위 최적화</strong> (p.7-8, 3.2.3): GRPO는 롤아웃 단위 어드밴티지를 계산해 트리 내 모든 궤적에 공유(식 7); PPO는 각 궤적을 독립적으로 취급해 γ=1, λ=1로 단순화, ˆAt = Ri − Vφ(st) (식 8) — 분기 간 어드밴티지 전파 없음.</li>
+<li><strong>훈련-추론 일관성</strong> (p.8-9, 3.2.4): 토큰-인-토큰-아웃 방식으로 하네스가 재직렬화한 텍스트가 학습 데이터를 오염시키지 않도록 보장; 토큰 수준 중요도 샘플링 비율 wt = min(exp(log πold − log πrollout), c̄)로 롤아웃-학습 정책 간 확률 불일치 보정(식 9-10).</li>
+<li><strong>신뢰성 안전장치</strong> (p.10, 3.4): 타임아웃 강제 종료, 샌드박스 실패 롤아웃 제외, 버퍼링된 pseudo-streaming 파싱(스트리밍 인터페이스는 유지하되 파싱은 턴 완료 후 한 번에 수행), settling(기록이 더 이상 늘지 않을 때까지 대기 후 궤적 조립).</li>
+</ul>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li><strong>평가 벤치마크</strong>: ClawGym-Bench, PinchBench(30개 태스크, 2026-04-10 릴리스, 멀티모달 제외), Pass@1 기준(p.10-11).</li>
+<li><strong>모델</strong>: Qwen3 시리즈, ClawGym-Agents(SFT 베이스라인)를 베이스라인으로, Qwen3-8B/30A3B를 OpenClaw/Claude Code로 학습 → ClawII-OC, ClawII-CC.</li>
+<li><strong>주요 결과</strong> (p.11, Table 1): 30A3B 기준 ClawII-OC는 ClawGym-Bench에서 초기 정책 대비 +9.98점, ClawII-CC는 +14.81점 향상. ClawII-OC-30A3B는 SFT 베이스라인(ClawGym-30A3B, 56.82)보다 5.80점 높은 62.62 달성. PinchBench에서도 각각 +11.71, +17.28점 개선(요약, p.1/p.16).</li>
+<li><strong>8B/30A3B 모두 향상</strong>: OpenClaw에서 +7.92/+9.98점, Claude Code에서 +23.51/+14.81점. 30A3B 모델은 Qwen3-235A23B(235B 규모)를 각각 8.14점, 6.28점 상회 — 모델 크기보다 하네스 적합 학습이 중요함을 시사.</li>
+<li><strong>콜드스타트 견고성</strong>: ClawII-OC는 콜드스타트(경량 SFT) 후 RL, ClawII-CC는 베이스 모델에서 직접 RL — 둘 다 일관되게 향상되지만, OpenClaw 하에서는 콜드스타트가 더 안정적인 학습 동역학과 높은 최종 성능을 제공(p.14-15, Figure 7).</li>
+<li><strong>PPO vs GRPO 학습 동역학</strong> (p.12-13, Figure 2-3): 두 알고리즘 모두 200-400 스텝에 걸쳐 안정적으로 학습 보상·평가 성능이 상승. PPO는 엔트로피가 더 매끄럽고, GRPO는 변동이 크며(특히 OpenClaw에서 후반부 엔트로피 급감).</li>
+<li><strong>Mix-harness training</strong> (p.13, Figure 4): 이종 하네스(OpenClaw+Claude Code)를 동시 학습해도 개별 하네스 학습과 대등하거나 소폭 상회하는 성능, 명백한 불안정성 없음 — 태스크-하네스 쌍 단위 그룹 정규화가 효과적임을 입증.</li>
+<li><strong>더 어려운 태스크 확장</strong> (p.13-14, Figure 5-6): JobBench-Easy에서 20.46→27.20, OfficeQA-Full에서 8.53→21.54로 개선 — 새 태스크를 (지시문, 워크스페이스, 검증기) 삼중항으로만 정의하면 파이프라인 수정 없이 바로 적용 가능함을 보여줌.</li>
+<li><strong>화이트박스 AgentLoop RL과 비교</strong> (p.14-15, Table 2): 자체 구축한 화이트박스 에이전트 루프(bash/search/fetch/code-interpreter/file-ops)로 RL 학습한 WhiteBox-30A3B는 같은 루프 내 평가에서 59.90(ClawII-OC-30A3B 대비 +8.53)으로 우수하나, 외부 OpenClaw 하네스로 전이 평가 시 50.33에 그쳐 OpenClaw 자체 학습 모델(62.62)에 못 미침 — 화이트박스 학습이 일부 범용 능력을 전이시키지만 하네스 특화 상호작용 패턴은 충분히 학습하지 못함을 시사.</li>
+</ul>
+<h2>한계점 (저자 명시, p.16 결론부)</h2>
+<ul>
+<li>서브에이전트/컴팩션 등 보조 궤적을 현재는 학습에서 완전히 배제하고 있으며, 저자들은 이를 향후 정책 최적화에 통합하는 것을 향후 과제로 명시.</li>
+<li>PPO의 트리 구조 어드밴티지 추정이 γ=1, λ=1의 단순화된 형태로, 분기(fork) 간 크레딧 할당을 온전히 모델링하지 못함(분산 증가 가능성) — "더 정교한 처리는 향후 연구"로 명시(p.8).</li>
+<li>화이트박스 대비 블랙박스 RL의 절대 성능은 동일 하네스 내에서 낮게 나타남(같은 조건에서 화이트박스가 하네스 자체 학습보다 우수) — 블랙박스 방식이 정보 손실을 감수하는 트레이드오프임을 저자들도 암묵적으로 인정.</li>
+<li>ClawII-OC는 데이터 가용성 제약으로 콜드스타트에서 시작해야 했고, 콜드스타트 없는 직접 비교가 제한적.</li>
+<li>실험이 Qwen3 계열(8B/30A3B) 백본과 2개 하네스(OpenClaw, Claude Code)에 집중되어, 더 다양한 모델 패밀리·하네스로의 일반화는 추가 검증이 필요.</li>
+</ul>
+<h2>시사점</h2>
+<ul>
+<li>프로덕션급 에이전트 하네스(Claude Code, OpenClaw 등)의 내부를 수정하지 않고도 RL 후학습을 적용할 수 있는 실용적 경로를 제시 — 자체 하네스를 구축/유지하기 어려운 조직이 기존 상용/오픈소스 하네스 위에서 에이전트를 훈련시키는 참고 아키텍처로 활용 가능.</li>
+<li>Prefix tree 기반 궤적 복원과 token-in-token-out 원칙은, 재시도·컨텍스트 컴팩션·서브에이전트 위임처럼 "표준 단일 궤적"을 벗어나는 복잡한 에이전트 실행 로그를 다루는 다른 RL 파이프라인 설계에도 재사용 가능한 패턴.</li>
+<li>Mix-harness training 결과는, 여러 배포 환경(하네스)에 동시에 잘 맞는 모델을 만들고자 할 때 "환경별 개별 학습" 대신 "공유 정책 + 환경별 그룹 정규화"가 유효한 전략일 수 있음을 시사.</li>
+</ul>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.16798" target="_blank" rel="noopener">huggingface.co/papers/2608.16798</a> · 2026-08-18</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

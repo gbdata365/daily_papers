@@ -1,0 +1,140 @@
+<meta charset="UTF-8">
+<title>에이전틱 트랜잭션</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#9 · Daily Papers 2026-08-18</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 21</span>
+    </div>
+    <h1 class="article-title">Agentic Transaction: Towards ACID-Compliant Agent Systems</h1>
+    <p class="article-title-ko">에이전틱 트랜잭션: ACID를 준수하는 에이전트 시스템을 향하여</p>
+    <p class="article-sub">데이터베이스 트랜잭션의 ACID 속성(원자성/일관성/고립성/지속성)을 LLM 에이전트 실행에 맞게 "의미론적(semantic)" 버전으로 재해석한 프레임워크를 제안하고, 이를 구현한 ACID-Agent(데이터 에이전트)가 Claude Code 대비 KramaBench에서 10.6% 성능 향상과 더 낮은 실행 변동성을 보임을 실증했다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.13900" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.13900" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Agentic Transaction: Towards ACID-Compliant Agent Systems</li>
+<li><strong>저자</strong>: Zhaoyan Sun, Xiaoxiao Wang, Guoliang Li (Tsinghua University)</li>
+<li><strong>출처</strong>: arXiv:2608.13900v1 [cs.DB] (2026-08-14), 6페이지 분량의 짧은 포지션/초기실험 논문</li>
+<li><strong>공개 자료</strong>: <a href="https://github.com/TsinghuaDatabaseGroup/ACID-Agent">코드(GitHub)</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.13900">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>데이터베이스 트랜잭션의 ACID 속성(원자성/일관성/고립성/지속성)을 LLM 에이전트 실행에 맞게 "의미론적(semantic)" 버전으로 재해석한 프레임워크를 제안하고, 이를 구현한 ACID-Agent(데이터 에이전트)가 Claude Code 대비 KramaBench에서 10.6% 성능 향상과 더 낮은 실행 변동성을 보임을 실증했다.</p>
+<h2>배경 및 문제의식</h2>
+<ul>
+<li>LLM 에이전트가 단발성 대화형 도우미에서 벗어나, 저장소 규모의 작업공간에서 장시간(long-horizon) 추론·도구 사용·코드 생성·워크스페이스 조작을 자율 수행하는 시스템으로 진화 중.</li>
+<li>이 과정에서 데이터베이스 트랜잭션 시스템이 오래전부터 다뤄온 문제들 — 신뢰 가능한 실행, 일관된 결과, 안전한 동시성, 지속적 상태 관리 — 과 유사한 난제에 직면.</li>
+<li>예시(그림 1, p.1~2): Claude Code 같은 기존 코딩 에이전트는 중간 판단(예: 4개 지점 데이터를 날짜별로 집계할지 개별 관측치로 볼지)을 검증 없이 그대로 다음 단계로 전파해버려, 최종 답이 틀리거나(상관계수 0.261 vs 올바른 0.206) 근거 없는 결론에 도달할 위험이 있음.</li>
+<li>기존 데이터베이스는 구조화된 상태(structured state)를 다루지만, 에이전트는 비정형·비결정적 "의미론적 태스크 상태(semantic task state)"를 다룬다는 근본적 차이가 있어, ACID 개념을 그대로 적용할 수 없고 재해석이 필요함.</li>
+</ul>
+<h2>핵심 기여</h2>
+<ol>
+<li><strong>agentic transaction(에이전틱 트랜잭션) 개념과 ACID 호환 에이전트 시스템 프레임워크 제안</strong>: 고전적 ACID를 4가지 의미론적 보증(Semantic Atomicity/Consistency/Isolation/Durability)으로 재정의 (p.1~3, Table 1)</li>
+<li><strong>ACID 호환 데이터 에이전트(ACID-Agent) 구현체 제시</strong>: 탐색-실행-검증(exploration-execution-validation) 트랜잭션 사이클, 트랜잭셔널 스킬 허브, 신뢰도 발산(confidence divergence) 기반 검증, 의미론적 의존성 기반 고립, 트랜잭션 인지형 상태 관리로 4가지 속성을 각각 구현 (Section 2)</li>
+<li><strong>실험적 검증</strong>: KramaBench 벤치마크에서 Claude Code 대비 10.6% 성능 향상, 결과 일관성(분산) 개선을 확인 (Section 3)</li>
+<li><strong>개방형 연구 의제 제시</strong>: 범용 에이전트 시스템으로 ACID 원칙을 확장하기 위한 미해결 문제들을 각 속성별로 정리 (Section 4)</li>
+</ol>
+<h2>방법론</h2>
+<p><strong>개념 정의 (Definition 2.1, p.3)</strong>: 에이전틱 트랜잭션 τ = ⟨r₁,...,rₙ⟩는 각 스텝 rᵢ=(cᵢ, aᵢ, fᵢ) (LLM 컨텍스트, 에이전트 행동, 환경 피드백)로 구성된 유한 시퀀스. 태스크 조건과 의미론적 불변량을 만족해야 커밋되고, 아니면 롤백/보상(compensate)됨.</p>
+<p>4가지 속성을 데이터 에이전트에 구현한 방식(그림 2, p.3):</p>
+<ul>
+<li><strong>Semantic Atomicity(원자성)</strong>: (1) 오프라인 스킬 허브 — 기존 저장소를 표준 CLI를 갖춘 에이전트 스킬로 패키징하고 LLM 생성 테스트 스위트로 검증, 워크로드/데이터 인지형 스킬 라우터로 동적 선택. (2) 온라인 단계적 실행 — 탐색(읽기 전용 코드 실행) → 실행(추가 전용 코드 실행) → 검증의 사이클을 신뢰도 발산 기준으로 반복/종료</li>
+<li><strong>Semantic Consistency(일관성)</strong>: 오프라인으로는 성공한 워크플로우를 재사용 가능한 스킬로 "materialize"(구체화), 온라인으로는 신뢰도 기반 검증 메커니즘 사용. LLM 신뢰도를 목표 출력에 대한 토큰별 로그확률 평균의 지수값으로 정량화하고, (i) 결정 신뢰도 발산(탐색된 결정 vs 실행된 코드의 결정 비교), (ii) 코드 신뢰도 발산(증거 유무에 따른 코드 스팬 신뢰도 비교) 두 신호로 낮은 발산 시 재시도 트리거</li>
+<li><strong>Semantic Isolation(고립성)</strong>: 에이전트-레벨(독립형/협업형/경쟁형 3가지 하위 에이전트 조정 전략)과 오퍼레이션-레벨(효과 주석, 버전 관리 워크스페이스, 스냅샷 기반 실행, 낙관적 검증) 두 층위에서 고립 정책 적용</li>
+<li><strong>Semantic Durability(지속성)</strong>: 트랜잭션 인지형 진화형 메모리(지식그래프 형태로 삽입/병합/분할/삭제)와 append-only 워크스페이스로 실행 이력·근거·복구 메타데이터를 영속화</li>
+</ul>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li><strong>데이터셋</strong>: KramaBench — 24개 데이터소스·6개 도메인(고고학/천문학/생의학/환경/법률/산불)에 걸친 1,700개 실데이터 파일 기반 104개 자연어 태스크 (p.5)</li>
+<li><strong>비교 대상</strong>: Claude Code(범용 ReAct형 하네스), ACID-Agent(제안 방법, 로컬 Qwen3-0.6B로 신뢰도 추정), DA-Agent(ACID 설계를 제거한 ablation 버전). 백본 LLM은 Qwen3.5-397B-A17B, GLM-5.2</li>
+<li><strong>주요 결과(Table 2, p.6)</strong>: Qwen3.5-397B-A17B 백본 기준 ACID-Agent 74.6% vs Claude Code 64.0% (+10.6%p, 전체 점수). GLM-5.2 백본에서도 ACID-Agent 77.4% vs Claude Code 74.2%. 특히 Qwen 백본 ACID-Agent(74.6%)가 더 큰 모델인 GLM-5.2 백본 Claude Code(74.2%)를 능가 — 하네스 설계 자체의 효과를 시사. 단, 코드 스텝 수(22.8 vs 9.4)와 토큰 소비(348K vs 405K는 오히려 적음, 표에서 348 vs 405)가 증가하는 비용 존재</li>
+<li><strong>일관성 평가(Table 3, p.6, Environment 도메인, 3회 반복)</strong>: ACID-Agent 88.9±18.6 vs Claude Code 63.9±30.9 — 평균 점수와 변동성(분산의 제곱근) 모두 개선</li>
+<li><strong>Ablation(Table 4, p.6)</strong>: (i) DA-Agent(ACID 설계 제거) 65.2점으로 ACID-Agent(90.0점)보다 크게 낮아 탐색-실행-검증 사이클의 효과 확인, (ii) 실패 스텝 고립(isolation) 제거 시 점수가 78.3으로 11.7%p 하락 — 실패 상태 전파가 후속 실행을 오염시킴을 입증, (iii) Claude Code의 3-Majority(다수결 앙상블, 75.2점, 1121K 토큰)보다 ACID-Agent(90.0점, 444K 토큰)가 더 적은 토큰으로 더 높은 성능 — 단순 추론 예산 증가가 아니라 ACID 기반 하네스 설계 자체의 효과임을 강조</li>
+</ul>
+<h2>한계점 (저자 명시 및 분석상 드러나는 점)</h2>
+<ul>
+<li>저자 스스로 "preliminary experimental results(예비적 실험 결과)"라 명시(p.3) — 데이터 에이전트라는 단일 도메인에 한정된 초기 검증이며, 범용 에이전트 시스템으로의 일반화는 아직 미검증</li>
+<li>실험 규모가 KramaBench 104개 태스크, 소수 LLM 백본(2종)에 한정되어 통계적 견고성이 제한적</li>
+<li>ACID-Agent는 신뢰도 추정을 위해 로컬 소형 모델(Qwen3-0.6B)의 토큰 로그확률에 의존하는데, 이는 API 전용 폐쇄형 LLM(예: 순수 GPT/Claude API만 사용하는 환경)에서는 적용이 어려울 수 있음(토큰 확률 미제공)</li>
+<li>코드 스텝 수와 토큰 소비가 Claude Code 대비 증가(탐색·재시도 오버헤드)하여, 정확도-비용 트레이드오프가 존재</li>
+<li>4장(개방형 연구 문제)에서 저자들 스스로 고립성(멀티 에이전트 동시성 제어), 지속성(장기 메모리를 시스템 인프라화하는 문제) 등 다수의 핵심 난제가 아직 미해결임을 인정</li>
+</ul>
+<h2>시사점</h2>
+<ul>
+<li>데이터베이스 트랜잭션 이론(ACID)을 LLM 에이전트 신뢰성 설계에 매핑하는 시도는, "탐색-실행-검증" 사이클을 명시적 트랜잭션 단위로 취급하고 실패 시 상태 오염을 막는 격리 메커니즘을 도입한다는 점에서 장기 호라이즌 에이전트/코딩 에이전트 설계에 실무적으로 참고할 만함(특히 실패한 중간 스텝을 컨텍스트/메모리에서 격리하는 아이디어는 재현성·안정성 문제 완화에 바로 적용 가능)</li>
+<li>신뢰도 발산(confidence divergence) 기반 검증 — 즉 "증거 유무에 따라 판단이 얼마나 바뀌는가"로 근거 부족을 탐지하는 방식은, RAG나 도구 사용 에이전트에서 hallucination을 낮은 비용으로 탐지하는 방법론으로 응용 가능</li>
+<li>다만 짧은 논문(6페이지) 형태로 포지션 페이퍼에 가까우며 실험도 예비적이라, 프레임워크의 일반성과 확장성은 후속 연구(저자들이 명시한 open problems)를 통해 검증되어야 함</li>
+</ul>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.13900" target="_blank" rel="noopener">huggingface.co/papers/2608.13900</a> · 2026-08-18</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

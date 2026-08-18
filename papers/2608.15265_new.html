@@ -1,0 +1,138 @@
+<meta charset="UTF-8">
+<title>바이브월딩</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#4 · Daily Papers 2026-08-18</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 44</span>
+    </div>
+    <h1 class="article-title">VibeWorlding: Can Multimodal Agents Construct 3D Open Worlds End-to-End?</h1>
+    <p class="article-title-ko">바이브월딩: 멀티모달 에이전트는 3D 오픈월드를 처음부터 끝까지 구성할 수 있는가?</p>
+    <p class="article-sub">사용자 쿼리로부터 3D 오픈월드를 처음부터 끝까지(end-to-end) 구성하는 "vibe worlding" 에이전트를 벤치마킹·학습시키는 통합 프레임워크(벤치마크 + RL 훈련 짐)를 제안하고, RL 후처리로 오픈소스 MLLM이 최고 수준 폐쇄형 모델을 능가할 수 있음을 보였다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.15265" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.15265" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: VibeWorlding: Can Multimodal Agents Construct 3D Open Worlds End-to-End?</li>
+<li><strong>저자</strong>: Yansong Ning 외 7명 (HKUST(GZ) AI Thrust, Tencent TEG AIPD)</li>
+<li><strong>출처</strong>: arXiv:2608.15265 (2026-08-15), Technical Report</li>
+<li><strong>공개 자료</strong>: <a href="https://github.com/usail-hkust/VibeWorlding-Gym">코드(GitHub)</a> · <a href="https://huggingface.co/collections/usail-hkust/vibeworlder">모델(HuggingFace)</a> · <a href="https://huggingface.co/datasets/usail-hkust/VWE-Bench">데이터셋(VWE-Bench)</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.15265">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>사용자 쿼리로부터 3D 오픈월드를 처음부터 끝까지(end-to-end) 구성하는 "vibe worlding" 에이전트를 벤치마킹·학습시키는 통합 프레임워크(벤치마크 + RL 훈련 짐)를 제안하고, RL 후처리로 오픈소스 MLLM이 최고 수준 폐쇄형 모델을 능가할 수 있음을 보였다.</p>
+<h2>배경 및 문제의식</h2>
+<ul>
+<li>기존 3D 월드 구성 연구는 이상적이고 단순한 쿼리에서만 평가되어, 에이전트가 사용자 의도 파악·3D 도구 사용·시각/텍스트 정보 추론을 실제로 얼마나 잘 하는지 체계적으로 비교하기 어려웠음.</li>
+<li>기존 프레임워크는 대부분 비공개(closed-source)라 학습(특히 에이전틱 RL) 효과를 검증할 공개 인프라가 없었음.</li>
+<li>두 가지 근본적 난제: (1) 고품질·물리적으로 일관된 3D 에셋과 조작 도구가 파편화되어 통합 샌드박스가 부재, (2) 물리적 타당성(충돌 없음, 높이)과 사용자 의도 충족을 동시에 검증하기 어려움.</li>
+</ul>
+<h2>핵심 기여</h2>
+<ol>
+<li><strong>VWE-Bench</strong>: 2,616개 고품질 3D 에셋, 323개 인간 주석 시드 3D 월드, 6,828개 역합성(reverse-synthesized) 멀티모달 쿼리로 구성된 벤치마크(검증 가능 쿼리 1,710개 + 검증 불가 쿼리 5,118개)</li>
+<li><strong>VibeWorlding-Gym</strong>: 에셋 검색/편집/렌더링을 MCP 도구로 통합한 샌드박스 + 물리적 타당성과 의도 충족을 함께 검증하는 이중 제약(dual-constraint) 검증기 + SFT/RL 통합 학습 파이프라인</li>
+<li><strong>6가지 능력 분석</strong>: 충돌 회피, 높이 적합성, 생태적 타당성, 3D 이해, 3D 추론, 검색 적합성으로 세분화해 병목 지점 규명</li>
+<li><strong>SOTA 결과</strong>: VibeWorlder-8B(Qwen3-VL-8B 기반 RL 후학습)가 Gemini 3.1-pro와 동급, 플래그십 VibeWorlder-30B-A3B가 GPT-5.5·Qwen3.8-Max를 능가하는 전체 최고 Pass@1 달성</li>
+</ol>
+<h2>방법론</h2>
+<ul>
+<li><strong>태스크 정의</strong>: 멀티모달 쿼리(텍스트만 or 기존 월드+수정 지시) → 에이전트가 5개 3D 도구(asset_retrieve/add/rotate/translate/delete)를 여러 턴에 걸쳐 호출 → 최종 3D 월드(텍스트 맵 + 5개 시점 렌더 이미지) 산출</li>
+<li><strong>벤치마크 구축</strong>: 아티스트-MLLM 협업 3단계 파이프라인 — 에셋 합성(Gemini 이미지 생성 → Hunyuan3D 3.1로 3D 메시화 → 필터링) → 시드 월드 주석 → 역방향 쿼리 합성(테마만/테마+요소/전체 청사진/방해 쿼리, 그리고 정밀/모호 편집·씬 비평/유도/재진술/복합 설명)</li>
+<li><strong>검증기</strong>: 물리적 타당성(충돌·높이, 파이썬 기하 검사) → 통과 시 의도 충족(생태적 타당성/3D 이해/3D 추론/검색 적합성, MLLM 심판)을 순차 적용</li>
+<li><strong>학습</strong>: Gemini 3.1-pro로 콜드스타트 SFT 궤적 합성 → GRPO 기반 멀티모달 RL(텍스트 전용 구성 쿼리 + 멀티모달 수정 쿼리를 함께 학습), outcome-based 이진/연속 보상</li>
+</ul>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li>8B~2.8T 규모의 프론티어 MLLM(GPT-5.5, Gemini 3.1-pro/3.5-flash, Claude-Opus-4.8, Kimi-K3, Qwen3.8-Max)과 3개 기존 에이전트 스캐폴드(SceneWeaver, SAGE, SceneAssistant), 오픈소스 백본(Qwen3-VL-8B/30B-A3B) 비교</li>
+<li><strong>주요 결과</strong>: 최강 프론티어 모델도 전체 Pass@1 60% 미만(p.9). Qwen3-VL-8B/30B-A3B는 각 5.3%/13.6%에 불과했으나, SFT+RL 후 각각 41.4%/59.3%로 상승 — VibeWorlder-30B-A3B가 GPT-5.5(57.3%), Qwen3.8-Max(56.9%)를 능가하는 전체 1위 달성 (p.9-10, Table 4)</li>
+<li><strong>병목 지점</strong>: 6가지 능력 중 "충돌 회피(collision)"가 RL 후에도 59-68%로 가장 취약. 반면 3D 추론은 RL로 6-20% → 56-85%까지 크게 개선 (p.10, Figure 5)</li>
+<li><strong>SFT vs RL 역할 분리</strong>: SFT는 물리/생태적 기초 역량과 3D 이해(0.02→0.17)에 기여, RL은 3D 이해(0.17→0.80)와 3D 추론(0.04→0.69)을 실질적으로 끌어올림 (p.11)</li>
+<li><strong>검증-불가(unverified) 쿼리</strong>는 MLLM 심판 기반이라 RL 보상이 상대적으로 불안정 — 검증 신뢰도가 RL 개선폭을 제한</li>
+<li><strong>자동-인간 평가 일치도</strong>: 시스템 수준 Spearman ρ=0.88로 높은 상관 확인 (p.9)</li>
+<li><strong>실패 사례 분석(p.12)</strong>: (1) 부정확한 3D 거리 편집(방향 반전 등 좌표계 오해), (2) 오버에디팅(요청하지 않은 삭제 등 범위 위반)이 주요 실패 패턴</li>
+</ul>
+<h2>한계점 (저자 명시, p.14-15)</h2>
+<ul>
+<li>도구 세트가 최소 단위(원자적) 조작에 그쳐, 축구장 생성·숲 산포 같은 고수준·재사용 가능한 "스킬"이 부재</li>
+<li>최대 규모 시드 월드가 258개 에셋에 그쳐, 진정한 대규모 오픈월드 구성에는 한계</li>
+<li>보상이 궤적 전체에 대한 outcome-based sparse reward라 장기 호라이즌 학습에 비효율적일 수 있음(턴별 크레딧 할당 필요)</li>
+<li>데이터가 Tencent 내부 크라우드소싱 기반이며 카툰 아트 스타일에 한정, 이미지-투-3D/비디오-투-3D 등 멀티모달 입력 형태는 미포함</li>
+<li>근본적으로 에이전트의 3D 공간 추론(거리·각도 관계) 능력이 아직 부족함이 재확인됨</li>
+</ul>
+<h2>시사점</h2>
+<ul>
+<li>"정밀하게 검증 가능한 보상(verifiable reward)"이 있는 태스크일수록 RL 후학습 효과가 크고 안정적이라는 점은, 유사한 도구-사용/장기 호라이즌 에이전트 설계 시 참고할 만한 원칙임(가능하면 규칙 기반 검증 신호를 확보하라는 시사점)</li>
+<li>공개된 MCP 기반 샌드박스·검증기·데이터셋은 3D 에이전트 연구뿐 아니라, "도구 호출 + 멀티모달 피드백 루프" 패턴을 요구하는 다른 에이전틱 RL 연구에도 재사용 가능한 참고 아키텍처로 볼 수 있음</li>
+</ul>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.15265" target="_blank" rel="noopener">huggingface.co/papers/2608.15265</a> · 2026-08-18</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

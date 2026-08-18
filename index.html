@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Daily Papers 아카이브</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --bg-dark:#1d1d1f; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --danger:#d70015; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.5; -webkit-font-smoothing:antialiased; }
+  a{ color:inherit; text-decoration:none; }
+  .wrap{ max-width:1120px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:100; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px); -webkit-backdrop-filter:saturate(180%) blur(20px);
+    border-bottom:1px solid var(--line); }
+  #nav .navwrap{ max-width:1120px; margin:0 auto; padding:0 24px; width:100%; display:flex; align-items:center; justify-content:space-between; }
+  #nav .brand{ font-weight:600; font-size:1.02rem; }
+
+  header.hero{ padding: 3.6rem 0 2.6rem; text-align:center; }
+  .hero-kicker{ font-family:var(--font-mono); font-size:0.78rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-secondary); }
+  .hero-title{ margin-top:0.9rem; font-size:clamp(2rem,4vw + 1rem,3.2rem); line-height:1.1; font-weight:700; letter-spacing:-0.02em; }
+  .hero-title .accent{ color:var(--accent); }
+  .hero-sub{ margin-top:1rem; font-size:1.05rem; color:var(--text-secondary); max-width:620px; margin-left:auto; margin-right:auto; }
+
+  .controls{ margin-top:2.4rem; display:flex; flex-wrap:wrap; gap:0.8rem; justify-content:center; align-items:center; }
+  .controls select, .controls input{
+    font-family:var(--font); font-size:0.92rem; padding:0.65rem 1rem; border-radius:12px;
+    border:1px solid var(--line); background:var(--bg-alt); color:var(--text); outline:none;
+  }
+  .controls select{ cursor:pointer; }
+  .controls input{ width:260px; max-width:60vw; }
+  .controls input:focus, .controls select:focus{ border-color:var(--accent); }
+
+  .segmented{ position:relative; display:inline-flex; flex-wrap:wrap; background:var(--bg-alt); border-radius:980px; padding:3px; }
+  .segmented button{ position:relative; z-index:2; background:none; border:none; padding:0.55rem 1.05rem; font-size:0.82rem; font-weight:500; color:var(--text-secondary); cursor:pointer; border-radius:980px; transition:color 0.25s; font-family:var(--font); white-space:nowrap; }
+  .segmented button[aria-pressed="true"]{ color:var(--text); }
+  .segmented .thumb{ position:absolute; top:3px; bottom:3px; left:3px; border-radius:980px; background:#fff; box-shadow:0 1px 4px rgba(0,0,0,0.15); transition: transform 0.3s cubic-bezier(.2,.8,.2,1), width 0.3s; z-index:1; }
+
+  .stat-strip{ margin-top:2.6rem; display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .stat{ padding:1.6rem 1.2rem; text-align:center; border-left:1px solid var(--line); }
+  .stat:first-child{ border-left:none; }
+  .stat-value{ font-family:var(--font-mono); font-variant-numeric:tabular-nums; font-size:clamp(1.4rem,2vw + 0.6rem,2rem); font-weight:600; }
+  .stat-label{ margin-top:0.4rem; color:var(--text-secondary); font-size:0.8rem; }
+  @media (max-width:600px){ .stat-strip{ grid-template-columns:repeat(2,1fr); } .stat{ border-left:none; border-top:1px solid var(--line); } }
+
+  main{ padding-bottom:5rem; }
+  .paper-list{ margin-top:1.5rem; border-top:1px solid var(--line); }
+  .paper-item{ border-bottom:1px solid var(--line); padding:1.5rem 0; }
+  .paper-top{ display:flex; justify-content:space-between; align-items:flex-start; gap:1rem; }
+  .paper-rank{ font-family:var(--font-mono); font-size:0.76rem; color:var(--text-secondary); }
+  .paper-title-en{ font-size:1.08rem; font-weight:700; margin-top:0.3rem; }
+  .paper-title-ko{ font-size:0.92rem; color:var(--text-secondary); font-weight:500; margin-top:0.25rem; }
+  .paper-upvote{ font-family:var(--font-mono); font-size:0.82rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.35rem 0.8rem; flex-shrink:0; white-space:nowrap; }
+  .paper-body{ margin-top:0.9rem; color:var(--text-secondary); max-width:720px; font-size:0.94rem; }
+  .paper-body a{ color:var(--accent); }
+  .paper-body a:hover{ text-decoration:underline; }
+  .empty-msg{ padding:3rem 0; text-align:center; color:var(--text-secondary); }
+
+  footer{ padding:2.4rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="navwrap">
+    <a class="brand" href="index.html">Daily Papers</a>
+    <a href="https://huggingface.co/papers" target="_blank" rel="noopener" style="color:var(--text-secondary); font-size:0.86rem;">원본 huggingface.co/papers →</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="hero-kicker">HUGGING FACE · DAILY PAPERS 아카이브</span>
+    <h1 class="hero-title">오늘, 세상은<br><span class="accent">무엇을 연구했나</span></h1>
+    <p class="hero-sub">huggingface.co/papers 업보트 상위 논문을 날짜별로 정리하고 한글로 분석합니다. 날짜를 선택하거나 키워드로 검색해보세요.</p>
+
+    <div class="controls">
+      <select id="dateSelect" aria-label="날짜 선택"></select>
+      <input id="searchInput" type="text" placeholder="키워드 검색 (제목·요약·카테고리)">
+    </div>
+    <div class="controls" style="margin-top:0.6rem;">
+      <div class="segmented" role="group" aria-label="분야 필터" id="catFilter">
+        <span class="thumb"></span>
+        <button type="button" aria-pressed="true" data-cat="all">전체</button>
+        <button type="button" aria-pressed="false" data-cat="agent">에이전트</button>
+        <button type="button" aria-pressed="false" data-cat="gen">생성모델</button>
+        <button type="button" aria-pressed="false" data-cat="method">모델·기법</button>
+        <button type="button" aria-pressed="false" data-cat="bench">벤치마크</button>
+      </div>
+    </div>
+
+    <div class="stat-strip" id="statStrip">
+      <div class="stat"><div class="stat-value" id="statCount">-</div><div class="stat-label">표시 중인 논문 수</div></div>
+      <div class="stat"><div class="stat-value" id="statTop">-</div><div class="stat-label">최고 upvote</div></div>
+      <div class="stat"><div class="stat-value" id="statDates">-</div><div class="stat-label">누적 날짜 수</div></div>
+      <div class="stat"><div class="stat-value" id="statAgent">-</div><div class="stat-label">에이전트 관련</div></div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="paper-list" id="paperList"></div>
+    <div class="empty-msg" id="emptyMsg" hidden>조건에 맞는 논문이 없습니다.</div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers" target="_blank" rel="noopener" style="color:var(--accent)">huggingface.co/papers</a></span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  var ALL_DATES_VALUE = "__all__";
+  var state = { dates: [], selectedDate: null, category: "all", query: "", cache: {} };
+
+  var dateSelect = document.getElementById("dateSelect");
+  var searchInput = document.getElementById("searchInput");
+  var paperList = document.getElementById("paperList");
+  var emptyMsg = document.getElementById("emptyMsg");
+
+  function fetchJson(path){
+    return fetch(path).then(function(r){
+      if (!r.ok) throw new Error("failed to load " + path);
+      return r.json();
+    });
+  }
+
+  function loadDate(date){
+    if (state.cache[date]) return Promise.resolve(state.cache[date]);
+    return fetchJson("data/" + date + ".json").then(function(d){
+      state.cache[date] = d.papers;
+      return d.papers;
+    });
+  }
+
+  function loadAllDates(){
+    return Promise.all(state.dates.map(loadDate)).then(function(lists){
+      var merged = [];
+      state.dates.forEach(function(date, i){
+        lists[i].forEach(function(p){ merged.push(Object.assign({ _date: date }, p)); });
+      });
+      return merged;
+    });
+  }
+
+  function currentPapers(){
+    if (state.selectedDate === ALL_DATES_VALUE) return loadAllDates();
+    return loadDate(state.selectedDate).then(function(list){
+      return list.map(function(p){ return Object.assign({ _date: state.selectedDate }, p); });
+    });
+  }
+
+  function matchesQuery(p, q){
+    if (!q) return true;
+    q = q.toLowerCase();
+    return (p.en_title + " " + p.ko_title + " " + p.one_liner + " " + p.category_label)
+      .toLowerCase().indexOf(q) !== -1;
+  }
+
+  function render(){
+    currentPapers().then(function(papers){
+      var filtered = papers.filter(function(p){
+        return (state.category === "all" || p.category === state.category) && matchesQuery(p, state.query);
+      });
+
+      paperList.innerHTML = "";
+      filtered.forEach(function(p){
+        var item = document.createElement("div");
+        item.className = "paper-item";
+        var dateTag = state.selectedDate === ALL_DATES_VALUE ? (p._date + " · ") : "";
+        item.innerHTML =
+          '<div class="paper-top">' +
+            '<div>' +
+              '<div class="paper-rank">' + dateTag + p.rank + ' · ' + escapeHtml(p.category_label) + '</div>' +
+              '<div class="paper-title-en">' + escapeHtml(p.en_title) + '</div>' +
+              '<div class="paper-title-ko">' + escapeHtml(p.ko_title) + '</div>' +
+            '</div>' +
+            '<span class="paper-upvote">▲ ' + p.upvote + '</span>' +
+          '</div>' +
+          '<div class="paper-body">' +
+            escapeHtml(p.one_liner) + '<br>' +
+            '<a href="' + p.hf_url + '" target="_blank" rel="noopener">원문 보기 →</a>' +
+            ' · <a href="' + p.detail_url + '">상세 분석 보기 →</a>' +
+          '</div>';
+        paperList.appendChild(item);
+      });
+
+      emptyMsg.hidden = filtered.length !== 0;
+
+      document.getElementById("statCount").textContent = filtered.length;
+      var top = filtered.reduce(function(m, p){ return Math.max(m, p.upvote); }, 0);
+      document.getElementById("statTop").textContent = top;
+      document.getElementById("statDates").textContent = state.dates.length;
+      var agentCount = filtered.filter(function(p){ return p.category === "agent"; }).length;
+      document.getElementById("statAgent").textContent = agentCount;
+    });
+  }
+
+  function escapeHtml(s){
+    return String(s).replace(/[&<>"']/g, function(c){
+      return { "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;" }[c];
+    });
+  }
+
+  function setupSegmented(container, onChange){
+    var buttons = Array.prototype.slice.call(container.querySelectorAll("button"));
+    var thumb = container.querySelector(".thumb");
+    function place(btn){
+      thumb.style.width = btn.offsetWidth + "px";
+      thumb.style.transform = "translateX(" + (btn.offsetLeft - 3) + "px)";
+    }
+    var active = buttons.filter(function(b){ return b.getAttribute("aria-pressed") === "true"; })[0];
+    place(active);
+    buttons.forEach(function(btn){
+      btn.addEventListener("click", function(){
+        buttons.forEach(function(b){ b.setAttribute("aria-pressed", b === btn ? "true" : "false"); });
+        place(btn);
+        onChange(btn.getAttribute("data-cat"));
+      });
+    });
+    window.addEventListener("resize", function(){ place(container.querySelector('[aria-pressed="true"]')); });
+  }
+
+  setupSegmented(document.getElementById("catFilter"), function(cat){
+    state.category = cat;
+    render();
+  });
+
+  searchInput.addEventListener("input", function(){
+    state.query = searchInput.value.trim();
+    render();
+  });
+
+  dateSelect.addEventListener("change", function(){
+    state.selectedDate = dateSelect.value;
+    render();
+  });
+
+  fetchJson("data/index.json").then(function(idx){
+    state.dates = idx.dates;
+    dateSelect.innerHTML = "";
+    var allOpt = document.createElement("option");
+    allOpt.value = ALL_DATES_VALUE;
+    allOpt.textContent = "전체 날짜";
+    dateSelect.appendChild(allOpt);
+    idx.dates.forEach(function(date){
+      var opt = document.createElement("option");
+      opt.value = date;
+      opt.textContent = date;
+      dateSelect.appendChild(opt);
+    });
+    state.selectedDate = idx.dates[0] || ALL_DATES_VALUE;
+    dateSelect.value = state.selectedDate;
+    render();
+  }).catch(function(err){
+    paperList.innerHTML = '<div class="empty-msg">데이터를 불러오지 못했습니다: ' + err.message + '</div>';
+  });
+})();
+</script>
+</body>
+</html>

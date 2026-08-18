@@ -1,0 +1,140 @@
+<meta charset="UTF-8">
+<title>메가파츠</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#1 · Daily Papers 2026-08-18</span>
+      <span class="cat-tag">생성모델</span>
+      <span class="upvote-tag">▲ 504</span>
+    </div>
+    <h1 class="article-title">MegaParts: Scaling Part-Aware 3D Object Generation to 300 Parts via Token-Efficient Autoregressive Modeling</h1>
+    <p class="article-title-ko">메가파츠: 토큰 효율적 자기회귀 모델링으로 파트 인식 3D 객체 생성을 300개 부품까지 확장하기</p>
+    <p class="article-sub">토큰 효율적인 가변 길이(adaptive-length) VQ-VAE와 장문맥 자기회귀(autoregressive) LLM을 결합해, 최대 300개 부품(파트)으로 구성된 복잡한 3D 객체를 파트 단위로 생성하는 프레임워크를 제안하고, 확산(diffusion) 기반 기존 기법의 확장성 한계를 극복했다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.14783" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.14783" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: MegaParts: Scaling Part-Aware 3D Object Generation to 300 Parts via Token-Efficient Autoregressive Modeling</li>
+<li><strong>저자</strong>: Manwen Liao 외 다수 (Shanghai Artificial Intelligence Laboratory, The University of Hong Kong, Fudan University, Tongji University, USTC, Shanghai Jiao Tong University, Zhejiang University 공동 연구)</li>
+<li><strong>출처</strong>: arXiv:2608.14783v1 [cs.CV] (2026-08-14)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://expmaster.github.io/megaparts_webpage">expmaster.github.io/megaparts_webpage</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.14783">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>토큰 효율적인 가변 길이(adaptive-length) VQ-VAE와 장문맥 자기회귀(autoregressive) LLM을 결합해, 최대 300개 부품(파트)으로 구성된 복잡한 3D 객체를 파트 단위로 생성하는 프레임워크를 제안하고, 확산(diffusion) 기반 기존 기법의 확장성 한계를 극복했다.</p>
+<h2>배경 및 문제의식</h2>
+<ul>
+<li>기존 전체형(holistic) 3D 생성 기법은 객체를 하나의 단일 형상으로 다뤄 구조적 편집·조작(articulation)이 어려움.</li>
+<li>파트 인지(part-aware) 생성이 대안으로 떠올랐으나, 기존 방식 대부분은 확산 모델 기반이며 파트 수가 늘어날수록(주로 50개 미만에 국한) 토큰 길이·메모리 비용이 급격히 증가해 확장성이 떨어짐.</li>
+<li>자기회귀 모델은 구조적 시퀀스 모델링과 자연스럽게 맞고 장문맥 LLM 발전으로 대규모 시퀀스 처리가 가능해졌지만, "기하 충실도 대 토큰 효율성"의 트레이드오프가 핵심 난제였음 — 파트마다 긴 토큰을 쓰면 디테일은 보존되나 시퀀스 총 길이가 폭증하고, 토큰을 줄이면 효율은 좋아지나 품질이 저하됨.</li>
+</ul>
+<h2>핵심 기여</h2>
+<ol>
+<li><strong>토큰 효율적 VQ 토크나이저</strong>: 파트별 기하 정보를 최소 토큰으로 인코딩하면서 고충실도 복원을 유지하는 가변 길이 이산 표현 학습 (인과적/causal 인코더-디코더 구조)</li>
+<li><strong>구조화된 장문맥 자기회귀 프레임워크</strong>: 객체 수준 바운딩박스 → 파트별 바운딩박스 → 파트별 형상 토큰을 하나의 통합 시퀀스로 생성 (chain-of-thought식 계층 생성)</li>
+<li><strong>300개 파트, 최대 256K 토큰까지 확장</strong>: 기존 파트 인지 생성의 실질적 규모를 크게 확장하면서도 기하 충실도를 오히려 개선</li>
+<li><strong>응용</strong>: 파트 단위 세밀 편집·2차 창작, 관절형(articulated) 에셋 제작(피아노 건반, 제어판 버튼 등 세밀 기능 부품 분리)에 활용 가능함을 시연</li>
+</ol>
+<h2>방법론</h2>
+<ul>
+<li><strong>1단계 — 인과적 VQ-VAE (Causal Autoencoder for SDF)</strong>: Cube(Roblox 2025) 아키텍처를 기반으로 인코더·디코더의 양방향 어텐션을 완전 인과적(causal) 어텐션으로 교체. 이렇게 하면 초반 토큰에 핵심 기하 정보가 집중되어, 뒷부분 토큰을 잘라내도(prefix truncation) 복원 품질이 급격히 나빠지지 않음.</li>
+<li>학습 시 무작위 길이(2^4~2^12)의 잠재 프리픽스로 복원을 학습시켜 가변 길이 토큰화 유도</li>
+<li>인코더-전용/디코더-전용 교대(alternating) 최적화 단계 도입 + optimal-transport quantization + Stochastic Gradient Shortcut(SGS)으로 코드북 불안정성 해결</li>
+<li>손실함수: TSDF 재구성 손실 + eikonal 정규화 + 표면 법선 정합 손실 + VQ 손실의 가중합 (논문 3.2절, 식 2~7)</li>
+<li><strong>2단계 — 레이트-왜곡(Rate-Distortion) 기반 적응형 토큰 길이 결정</strong>: 객체를 파트 단위(G={M(c)})로 분해, 각 파트를 정규화된 좌표계에서 인코딩. 후보 프리픽스 길이 L ∈ {16,...,4096} 중 왜곡(Chamfer거리+법선 불일치+bbox IoU)과 토큰 사용률(rate)의 가중합을 최소화하는 최적 길이 L*를 파트마다 선택 (식 8~10, Fig. 3, p.6)</li>
+<li><strong>3단계 — 파트 인지 자기회귀 생성</strong>: 사전학습된 Qwen3(8B)를 파인튜닝. 시퀀스는 [글로벌 레이아웃(각 파트의 bbox 중심/스케일 + 토큰길이) → 파트별 형상 토큰]으로 구성. 파트는 바운딩박스 중심의 공간 순서(z-x-y)로 정렬해 시퀀스 규칙성 확보. 텍스트/객체 bbox/파트 bbox를 조건으로 받을 수 있으며 없으면 모델이 직접 예측. context/tensor parallelism으로 장문맥(최대 256K) 학습 지원 (3.4절)</li>
+<li>학습은 3단계: 토큰 정렬(1000 iter) → 짧은 문맥 사전학습(8,192토큰, 100,000 iter) → 장문맥 파인튜닝(32K→128K→256K 순차, 총 90,000 iter) (부록 A.3, p.15)</li>
+</ul>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li><strong>VQ-VAE 복원 평가</strong> (PartObjaverse-Tiny, Table 1, p.7): 동일 1024토큰 기준 Cube 대비 파트 수준 Chamfer Distance 3.95→0.12로 대폭 개선(NC 0.89→0.93). 토큰 예산을 512→4096으로 늘릴수록 coarse-to-fine 경향으로 품질 지속 향상.</li>
+<li><strong>텍스트 조건 생성</strong> (Table 2, p.7): SAR3D, Cube, TRELLIS-text, ShapeLLM-Omni 대비 FID 43.40(최저, 타 기법 54.8~94.7), CLIP 0.27(최고)로 최고 성능.</li>
+<li><strong>파트 바운딩박스 조건 생성</strong> (Table 3, p.7): FullPart, XPart 대비 Part CD 3.01(최저), Part IoU 0.63, BBox IoU 0.94로 모두 최고.</li>
+<li><strong>파트 수 구간별 스트레스 테스트</strong> (부록 Table 7~8, p.16~17): 파트 수 [1,50)~[200,300] 전 구간에서 CLIP 0.26~0.27 유지, FID는 46.3→73.2로 증가하지만 베이스라인보다 항상 낮음(우수). 성공률(success rate)은 자사 모델이 0.99→0.77로 완만히 감소하는 반면, FullPart/XPart는 50개 파트 초과부터 OOM으로 급격히 붕괴(100~200개 구간에서 0.05~0.00).</li>
+<li><strong>추론 효율</strong> (Table 9, p.16): naive HuggingFace 생성은 17.0 tokens/s, vLLM 적용 시 42.5 tokens/s. 300파트(188K 토큰) 객체 생성 시 피크 GPU 메모리 71.24GB(80GB GPU 1장에서 가능).</li>
+<li><strong>인간 평가</strong> (Table 10, p.17): 텍스트 정합성 64%, 기하 품질 69% 선호도로 비교 대상 전부(0~18%)를 크게 앞섬.</li>
+<li><strong>어블레이션</strong> (Table 4, p.8): phased VQ-VAE 최적화 제거 시, 인과적 어텐션 제거 시 모두 복원 품질 저하 확인 — 두 설계 요소 모두 필수적임.</li>
+</ul>
+<h2>한계점 (저자 명시, 6절 결론 및 부록 C.1~C.2, p.8, 15~17)</h2>
+<ul>
+<li>장문맥 자기회귀 생성은 학습·추론 비용이 여전히 크며, 특히 매우 복잡한 객체에서 부담이 큼(300파트 객체 AR 생성만 최대 6735초 소요, Table 9)</li>
+<li>현재 프레임워크는 기하(geometry)만 모델링하며 텍스처, 재질, 시맨틱 주석, 부품 간 물리적/기능적 관계는 다루지 않음</li>
+<li>300파트 미만 객체도 파트 복잡도에 따라 300파트 객체보다 더 긴 시퀀스를 요구할 수 있어, 실패는 파트 수보다 시퀀스 길이에 더 좌우됨</li>
+<li>저자들은 향후 더 효율적인 시퀀스 모델링, 계층적 표현, 기하-외형-시맨틱 통합 모델링을 향후 과제로 제시</li>
+</ul>
+<h2>시사점</h2>
+<ul>
+<li>"정보를 프리픽스에 집중시키는 인과적 이산 표현 + 레이트-왜곡 기반 적응형 토큰 할당"이라는 조합은, 3D 생성뿐 아니라 가변 복잡도를 갖는 다른 구조화 시퀀스(예: 계층적 씬 그래프, 멀티파트 CAD) 압축·생성에도 응용 가능한 설계 원칙으로 볼 수 있음</li>
+<li>사전학습된 LLM(Qwen3)을 그대로 파인튜닝해 3D 형상 토큰까지 다루게 한 점은, LLM 서빙 인프라(vLLM 등)를 그대로 재사용해 추론을 가속할 수 있다는 실용적 이점을 보여줌</li>
+</ul>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.14783" target="_blank" rel="noopener">huggingface.co/papers/2608.14783</a> · 2026-08-18</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

@@ -1,0 +1,138 @@
+<meta charset="UTF-8">
+<title>젠라우터</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#11 · Daily Papers 2026-08-18</span>
+      <span class="cat-tag">생성모델</span>
+      <span class="upvote-tag">▲ 18</span>
+    </div>
+    <h1 class="article-title">GenRouter: Unified Workflow Routing for Agentic Image Generation</h1>
+    <p class="article-title-ko">젠라우터: 에이전틱 이미지 생성을 위한 통합 워크플로우 라우팅</p>
+    <p class="article-sub">에이전틱 이미지 생성(agentic image generation) 파이프라인들이 각각 고정된 "일률적(one-size-fits-all)" 워크플로우로 동작해 단순한 요청에도 과도한 연산을 낭비하는 문제를 해결하기 위해, 다양한 에이전틱 파이프라인을 공통 원시 요소(primitive)와 표준 템플릿으로 통합한 워크플로우 공간 GenCanvas와, 프롬프트별로 최적의 워크플로우-생성기 조합을 동적으로 라우팅하는 자기진화형 라우터 GenRouter를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.16721" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.16721" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: GenRouter: Unified Workflow Routing for Agentic Image Generation</li>
+<li><strong>저자</strong>: Harold Haodong Chen, Zhiyu Hou 외 (HKUST(GZ), HKUST, SUSTech, ZODA, CUHK)</li>
+<li><strong>출처</strong>: arXiv:2608.16721v1 [cs.CV] (2026-08-17)</li>
+<li><strong>공개 자료</strong>: <a href="https://github.com/EnVision-Research/GenRouter">코드(GitHub)</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.16721">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>에이전틱 이미지 생성(agentic image generation) 파이프라인들이 각각 고정된 "일률적(one-size-fits-all)" 워크플로우로 동작해 단순한 요청에도 과도한 연산을 낭비하는 문제를 해결하기 위해, 다양한 에이전틱 파이프라인을 공통 원시 요소(primitive)와 표준 템플릿으로 통합한 워크플로우 공간 GenCanvas와, 프롬프트별로 최적의 워크플로우-생성기 조합을 동적으로 라우팅하는 자기진화형 라우터 GenRouter를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<ul>
+<li>Text-to-image 생성 모델의 원시 픽셀 합성 문제는 사실상 해결되었고, 관심은 외부 지식 검색·반복 추론 등 복잡한 사용자 요구를 충족하는 에이전틱 워크플로우로 이동함.</li>
+<li>그러나 기존 에이전틱 프레임워크(Mind-Brush, GEMS, SCOPE, GenClaw 등)는 두 가지 근본 문제를 안고 있음: (i) <strong>파편화(fragmentation)</strong> — 각 프레임워크가 고립된 실루엣(silo)으로 특정 능력에만 특화되어 서로 다른 능력을 통합하기 어려움, (ii) <strong>연산 불일치(compute-mismatch)</strong> — 모든 요청에 동일한 무거운 워크플로우를 강제해 단순한 프롬프트조차 불필요하게 비용이 큰 추론/반복 정제를 거치게 됨.</li>
+<li>핵심 연구 질문: "이질적인 프롬프트를 시각 품질과 연산 비용 사이의 균형을 맞추며 최적의 워크플로우로 동적으로 라우팅하려면 어떻게 해야 하는가?"</li>
+</ul>
+<h2>핵심 기여</h2>
+<ol>
+<li><strong>GenCanvas</strong>: 에이전틱 이미지 생성 실행 방식을 표준화하는 최초의 통합 워크플로우 공간. 8가지 기초 원시 요소와 9가지 표준 워크플로우 템플릿, 모듈형 오픈소스 코드베이스 및 평가 스위트를 제공</li>
+<li><strong>GenRouter</strong>: 수요 프로파일링(demand profiling), 경험 매칭(experience matching), 파레토 필터링(Pareto filtering)의 3단계로 구성된 경험 기반 자기진화형 워크플로우 라우터</li>
+<li><strong>실증 검증</strong>: 다양한 벤치마크에서 GEMS 같은 무거운 정적 파이프라인 대비 실행 비용 95% 이상, 지연시간 65% 절감을 유지하면서 더 우수한 시각적 정합성 달성. 경험 누적을 통해 지속적으로 자기진화하며 제로샷 일반화 성능도 향상</li>
+</ol>
+<h2>방법론</h2>
+<ul>
+<li><strong>문제 정식화(p.6, Sec.3)</strong>: 에이전틱 생성 계획 p=(w, g) (워크플로우 w와 생성기 g의 쌍)로 정의하고, 라우팅 목표를 효용함수 U(p|x) = S(p|x) - λc·C(p|x) - λl·L(p|x) (품질 S, 비용 C, 지연 L)를 최대화하는 p*를 찾는 문제로 공식화. 기존 프레임워크는 |P|=1로 제약된 정적 인스턴스로 간주됨.</li>
+<li><strong>GenCanvas 원시 요소(p.4-5, Sec.4.1)</strong>: Π = {rewrite, decompose, search, reason, skill, verify, refine, sketch} 8종 원시 요소를 정의하고, 이를 조합해 4단계 인지 수준(의미 정렬/외부 근거화/구조적 추론/반복 정제)에 걸친 9개 표준 템플릿(DirectGen, RewriteGen, SearchGen, RefGen, ReasonGen, SkillGen, SketchGen, VerifyGen, HybridGen)을 구성 (Table 1, p.6)</li>
+<li><strong>GenRouter 3단계 라우팅(p.6-8, Sec.5)</strong>:</li>
+<li><strong>수요 프로파일링</strong>: 경량 LLM(Qwen3.5-4B)이 프롬프트를 7차원 의도 시그니처 z(x)=(z_sem, z_fct, z_ref, z_log, z_cmp, z_crt, z_lay) ∈ {0..5}^7 로 매핑, 능력 호환성과 시그니처 게이팅(예: HybridGen은 6개 축 중 2개 이상이 3점 이상일 때만 활성화)으로 후보 공간을 축소</li>
+<li><strong>경험 기반 매칭</strong>: 궤적 메모리(trajectory memory, 인스턴스 단위 실행 기록)와 경로 메모리(route memory, 버킷 단위 통계)를 결합한 이중 메모리 시스템으로 신뢰도 가중합(confidence-weighted sum)을 통해 예상 품질/비용/지연 산출, 콜드스타트 시 시그니처 기반 결정적 임계값으로 대체</li>
+<li><strong>파레토 필터링</strong>: 모든 지표에서 열등하지 않고 하나 이상에서 우월한 계획을 지배(dominate)로 정의, 비지배 파레토 집합 내에서 최고 효용 계획을 최종 선택</li>
+<li><strong>평가 벤치마크</strong>: 주류 벤치마크(WISE, DPG-Bench, OneIG-Bench, GenEval2)와 다운스트림 벤치마크(LongText, SpatialGenEval, ArtiMuse)를 사용, 성능/비용($)/지연(h) 3개 축으로 측정</li>
+</ul>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li><strong>베이스라인</strong>: 원본 생성기(Qwen-Image, Z-Image-Turbo), Mind-Brush(검색형), SCOPE(하이브리드 스킬형), GEMS(검증형) 3개 오픈소스 에이전틱 프레임워크와 비교 (p.8-9)</li>
+<li><strong>주요 결과(Table 2-3, p.9)</strong>: OneIG-EN/CN 등 5개 벤치마크 평균에서 GenCanvas+GenRouter(Qwen-Image 백엔드)가 71.3%로 최고 성능을 달성하면서 비용 $2.97(GEMS $59.70 대비 95% 이상 절감), 지연 4.68h(GEMS 13.62h 대비 65% 절감)</li>
+<li><strong>정성적 비교(p.9-10, Fig.4)</strong>: 정적 파이프라인은 복잡한 공간 제약을 풀지 못하거나 단순 쿼리를 과도하게 처리하는 반면, GenRouter는 작업별 최적 템플릿(다중 객체 배치엔 SketchGen, 텍스트 렌더링엔 SkillGen 등)을 선택해 오류를 교정하면서 비용·지연을 동시에 낮춤(예: 피아노 사례 $0.74→$0.18)</li>
+<li><strong>라우팅 해석가능성(p.10-11, Fig.5)</strong>: 벤치마크 특성에 따라 라우팅 분포가 뚜렷이 다름 — 미적 중심 DPG-Bench는 RewriteGen(68.83%)·SkillGen(21.03%) 위주, 공간·논리 제약이 많은 OneIG-EN/CN은 HybridGen(18.93%/10.61%)·ReasonGen(OneIG-CN 28.48%) 비중이 큼. 500개 프롬프트 혼합 테스트셋에서 HybridGen·VerifyGen을 모든 프롬프트에 획일 적용하면 성능은 높지만(73.53/73.11) 비용($6.27/$5.68)·지연(8.78h/6.94h)이 과다한 반면, GenRouter는 동등한 성능(73.52)을 비용 $1.37·지연 1.76h로 달성해 파레토 최적 프론티어에 위치</li>
+<li><strong>자기진화 및 일반화(p.11, Fig.6, Fig.5 Right)</strong>: OneIG-EN, OneIG-CN, LongText-CN 3개 벤치마크 경험을 순차 누적한 결과, 혼합 테스트셋 성능이 73.5→75.2로 향상되고 비용·지연은 각각 8.7%/7.9% 감소. WISE 경험만으로 DPG-Bench에 제로샷 전이 시(경험 고정) 87.1점으로 표준 LLM-as-Router(86.4)를 능가하면서 비용은 절반 수준($1.51 vs $2.40), 온라인 업데이트 허용 시 87.7점·$1.34까지 개선 — 재학습 없이도 새 도메인에 일반화됨을 확인</li>
+</ul>
+<h2>한계점</h2>
+<ul>
+<li>논문 본문에 별도의 "한계점" 절이 명시적으로 제시되지 않았으며(추출된 본문 기준), Appendix에 추가 세부사항(원시 요소 정의, 사례 연구, 소거 실험)이 있으나 이번 분석에서는 본문 위주로 검토함.</li>
+<li>외부 도구(검색 엔진, 검증기 등) 백엔드는 "모듈형이지만 고정(modular but fixed)"으로 유지된다고 명시되어 있어, 라우팅이 워크플로우 토폴로지와 생성기 조합에는 유연하지만 보조 원시 요소의 백엔드 자체는 실험 내내 고정된 한계가 있음(p.8, Sec.6.1).</li>
+<li>라우터가 사용하는 7차원 의도 시그니처와 게이팅 임계값(≥3점 등)은 수작업으로 설계된 규칙에 의존하며, 이 임계값 설계의 민감도나 다른 도메인(이미지 외 다른 생성 태스크)으로의 이식성은 본문에서 충분히 논의되지 않음.</li>
+<li>경험 기반 라우팅이므로 초기 콜드스타트 구간이나 경험이 매우 희소한 신규 태스크 분포에서는 시그니처 기반 임계값에 의존해야 하며, 이 결정적 사전(prior)의 품질이 전체 라우팅 정확도에 영향을 줄 수 있음.</li>
+</ul>
+<h2>시사점</h2>
+<ul>
+<li>LLM/에이전트 라우팅을 "모델 선택" 수준을 넘어 "워크플로우 토폴로지 + 생성기"의 결합 공간으로 확장한 접근은, 이미지 생성 외에도 여러 도구·전략을 조합하는 다른 멀티모달 에이전틱 시스템(예: 비디오 생성, 3D 생성 에이전트) 설계에도 참고할 수 있는 일반적 패턴임.</li>
+<li>궤적 메모리(인스턴스 단위)와 경로 메모리(버킷 단위 통계)를 신뢰도 가중으로 결합하는 이중 메모리 구조는, 데이터가 희소한 초기 단계와 데이터가 축적된 이후 단계를 매끄럽게 전환시키는 실용적 설계로, 유사한 경험 기반 자기진화 시스템에 재사용 가능함.</li>
+<li>균일하게 무거운 워크플로우를 적용하는 대신 파레토 필터링으로 비용·품질·지연을 동시에 고려하는 방식은, 비용에 민감한 프로덕션 환경에서 에이전틱 파이프라인을 설계할 때 실무적으로 적용할 만한 원칙임.</li>
+</ul>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.16721" target="_blank" rel="noopener">huggingface.co/papers/2608.16721</a> · 2026-08-18</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

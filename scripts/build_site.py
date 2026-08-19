@@ -5,9 +5,11 @@ Daily Papers 아카이브 사이트 빌드 스크립트.
 새 날짜를 추가하려면:
 1. downloads/ 아래에 해당 날짜 논문들의 {베이스파일명}_summary_new.md 를 준비한다
    (paper-analyzer 에이전트로 생성, 파일명 규칙은 .claude/agents/paper-analyzer_new.md 참고)
-2. 아래 DAY_CONFIG 에 새 날짜 항목을 추가한다 (arxiv_id -> 메타데이터)
+2. data/day_config/{날짜}.json 파일을 추가한다 (arxiv_id -> 메타데이터, 아래 CONFIG_SCHEMA 참고)
+   파이썬 소스(이 파일)는 건드리지 않는다 — 자동화 스크립트/에이전트가 데이터 파일만 쓰면 된다.
 3. `py -3 scripts/build_site.py` 실행 -> papers/*.html, data/{date}.json, data/index.json 생성/갱신
 """
+import glob
 import json
 import os
 import re
@@ -18,95 +20,30 @@ BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DOWNLOADS = os.path.join(BASE, "downloads")
 PAPERS_DIR = os.path.join(BASE, "papers")
 DATA_DIR = os.path.join(BASE, "data")
+DAY_CONFIG_DIR = os.path.join(DATA_DIR, "day_config")
 
 os.makedirs(PAPERS_DIR, exist_ok=True)
 os.makedirs(DATA_DIR, exist_ok=True)
+os.makedirs(DAY_CONFIG_DIR, exist_ok=True)
 
 # ---------------------------------------------------------------------------
-# 날짜별 논문 메타데이터
-# 각 항목: arxiv_id -> {
-#   base: downloads/ 안의 파일 베이스명 (확장자 제외, "_summary_new.md" 앞부분)
-#   rank, category, category_label, upvote
-#   en_title: 원제목(영문, arXiv 그대로)
-#   ko_title: 한글 번역 제목
-# }
+# 날짜별 논문 메타데이터는 data/day_config/{YYYY-MM-DD}.json 에 저장한다.
+# 각 파일: { arxiv_id: {
+#   "base": downloads/ 안의 파일 베이스명 (확장자 제외, "_summary_new.md" 앞부분)
+#   "rank", "category", "category_label", "upvote"
+#   "en_title": 원제목(영문, arXiv 그대로)
+#   "ko_title": 한글 번역 제목
+# }, ... }
 # ---------------------------------------------------------------------------
-DAY_CONFIG = {
-    "2026-08-18": {
-        "2608.14783": dict(
-            base="2608_메가파츠_300개-부품-규모-3D-객체-생성",
-            rank="#1", category="gen", category_label="생성모델", upvote="504",
-            en_title="MegaParts: Scaling Part-Aware 3D Object Generation to 300 Parts via Token-Efficient Autoregressive Modeling",
-            ko_title="메가파츠: 토큰 효율적 자기회귀 모델링으로 파트 인식 3D 객체 생성을 300개 부품까지 확장하기",
-        ),
-        "2608.15045": dict(
-            base="2608_모스브이엘_기술보고서",
-            rank="#2", category="method", category_label="모델·기법", upvote="430",
-            en_title="MOSS-VL Technical Report",
-            ko_title="모스브이엘 기술 보고서",
-        ),
-        "2608.16859": dict(
-            base="2608_하네스이벨더블유_시각세계-평가의-에이전트화",
-            rank="#3", category="bench", category_label="벤치마크", upvote="73",
-            en_title="HarnessEval-W: Agentifying the Evaluation of Visual Worlds",
-            ko_title="하네스이벨더블유: 시각적 세계 평가의 에이전트화",
-        ),
-        "2608.15265": dict(
-            base="2608_바이브월딩_멀티모달-에이전트의-3D-오픈월드-구축",
-            rank="#4", category="agent", category_label="에이전트", upvote="44",
-            en_title="VibeWorlding: Can Multimodal Agents Construct 3D Open Worlds End-to-End?",
-            ko_title="바이브월딩: 멀티모달 에이전트는 3D 오픈월드를 처음부터 끝까지 구성할 수 있는가?",
-        ),
-        "2608.16798": dict(
-            base="2608_클로짐-2_에이전트-하네스-블랙박스-강화학습",
-            rank="#5", category="agent", category_label="에이전트", upvote="32",
-            en_title="ClawGym II: Exploring Black-Box RL on Agent Harness",
-            ko_title="클로짐 II: 에이전트 하네스에서의 블랙박스 강화학습 탐구",
-        ),
-        "2608.15930": dict(
-            base="2608_유아이메이트_오픈웨이트-GUI-에이전트-발전",
-            rank="#6", category="agent", category_label="에이전트", upvote="26",
-            en_title="UI-Mate: Advancing Open-Weight Foundation GUI Agents with In-Context Demonstrations",
-            ko_title="유아이메이트: 인컨텍스트 시연으로 오픈웨이트 파운데이션 GUI 에이전트 발전시키기",
-        ),
-        "2608.16072": dict(
-            base="2608_에스에이엠알피오_다중보상-정책최적화-포화인지-재가중",
-            rank="#7", category="method", category_label="모델·기법", upvote="24",
-            en_title="Learn What's Left, Not What's Mastered: Saturation Aware Advantage Reweighting for Multi-Reward Policy Optimization",
-            ko_title="남은 것을 배우고 이미 숙달한 것은 그만: 다중 보상 정책 최적화를 위한 포화 인지 어드밴티지 재가중",
-        ),
-        "2608.15669": dict(
-            base="2608_대형발견모델_경험기반-개방형-탐색",
-            rank="#8", category="method", category_label="모델·기법", upvote="22",
-            en_title="Large Discovery Models: Empirically-Grounded Model-Based Open-Ended Search",
-            ko_title="대형 발견 모델: 경험적으로 근거한 모델 기반 개방형 탐색",
-        ),
-        "2608.13900": dict(
-            base="2608_에이전트트랜잭션_ACID-준수-에이전트-시스템",
-            rank="#9", category="agent", category_label="에이전트", upvote="21",
-            en_title="Agentic Transaction: Towards ACID-Compliant Agent Systems",
-            ko_title="에이전틱 트랜잭션: ACID를 준수하는 에이전트 시스템을 향하여",
-        ),
-        "2608.16887": dict(
-            base="2608_픽셀공간확산모델_텍스트-이미지-확산모델-학습",
-            rank="#10", category="gen", category_label="생성모델", upvote="20",
-            en_title="An Empirical Study of Training Pixel-Space Text-to-Image Diffusion Models",
-            ko_title="픽셀 공간 텍스트-이미지 확산 모델 학습에 관한 실증 연구",
-        ),
-        "2608.16721": dict(
-            base="2608_젠라우터_이미지생성-워크플로우-통합라우팅",
-            rank="#11", category="gen", category_label="생성모델", upvote="18",
-            en_title="GenRouter: Unified Workflow Routing for Agentic Image Generation",
-            ko_title="젠라우터: 에이전틱 이미지 생성을 위한 통합 워크플로우 라우팅",
-        ),
-        "2608.14905": dict(
-            base="2608_오토리서치_100개-연구과제-에이전트-실패분석",
-            rank="#12", category="agent", category_label="에이전트", upvote="17",
-            en_title="How Do Agents Fail on AutoResearch: End-to-End Diagnostic Evaluation on 100 Real-World Frontier Research Tasks",
-            ko_title="오토리서치: 100개의 실제 프런티어 연구 과제에서 에이전트는 어떻게 실패하는가",
-        ),
-    },
-}
+
+
+def load_day_configs():
+    configs = {}
+    for path in sorted(glob.glob(os.path.join(DAY_CONFIG_DIR, "*.json"))):
+        date = os.path.splitext(os.path.basename(path))[0]
+        with open(path, "r", encoding="utf-8") as f:
+            configs[date] = json.load(f)
+    return configs
 
 PAGE_TEMPLATE = """<meta charset="UTF-8">
 <title>{title_tag}</title>
@@ -211,9 +148,10 @@ def strip_top_heading(md_text):
 
 
 def build():
-    dates = sorted(DAY_CONFIG.keys(), reverse=True)
+    day_configs = load_day_configs()
+    dates = sorted(day_configs.keys(), reverse=True)
 
-    for date, papers in DAY_CONFIG.items():
+    for date, papers in day_configs.items():
         day_list = []
         for arxiv_id, meta in papers.items():
             md_path = os.path.join(DOWNLOADS, f"{meta['base']}_summary_new.md")

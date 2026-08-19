@@ -10,17 +10,19 @@ GitHub Pages로 배포되며, `index.html`이 진입점입니다.
 index.html          날짜 선택 + 키워드 검색 + 카테고리 필터가 있는 메인 페이지
 data/
   index.json         존재하는 날짜 목록
-  YYYY-MM-DD.json    해당 날짜의 논문 목록(제목/한글제목/요약/링크 등)
+  YYYY-MM-DD.json    해당 날짜의 논문 목록(제목/한글제목/요약/링크 등) — build_site.py 생성 결과
+  day_config/
+    YYYY-MM-DD.json  해당 날짜 논문의 원본 메타데이터(rank/카테고리/upvote/원제목/한글제목/베이스파일명) — 사람 또는 자동화가 직접 작성
 papers/
   <arXiv ID>_new.html  논문별 상세 분석 페이지
 scripts/
-  build_site.py        summary 마크다운 -> data/*.json + papers/*.html 생성 스크립트
+  build_site.py        summary 마크다운 + data/day_config/*.json -> data/*.json + papers/*.html 생성 스크립트
 ```
 
 ## 새 날짜 추가하는 방법
 
 1. `paper-analyzer` 에이전트(`.claude/agents/paper-analyzer_new.md`)로 그날의 논문들을 분석해 `downloads/{베이스파일명}_summary_new.md`를 생성합니다.
-2. `scripts/build_site.py`의 `DAY_CONFIG`에 새 날짜 항목을 추가합니다 (arXiv ID별 rank/카테고리/upvote/원제목/한글제목/베이스파일명).
+2. `data/day_config/{날짜}.json` 파일을 새로 작성합니다 (arXiv ID별 rank/카테고리/upvote/원제목/한글제목/베이스파일명). **파이썬 소스(`build_site.py`)는 건드리지 않습니다** — 데이터 파일만 추가하면 됩니다.
 3. 스크립트를 실행합니다.
 
    ```bash

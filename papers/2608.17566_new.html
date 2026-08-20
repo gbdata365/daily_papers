@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>코인브이이-200K</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#11 · Daily Papers 2026-08-20</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 13</span>
+    </div>
+    <h1 class="article-title">CoinVE-200K: A Large-Scale High-Quality Dataset for Compositional Instruction-Guided Video Editing</h1>
+    <p class="article-title-ko">코인브이이-200K: 합성적 지시 기반 영상 편집을 위한 대규모 고품질 데이터셋</p>
+    <p class="article-sub">여러 편집 의도를 하나의 지시문에 동시에 담아야 하는 "합성적(compositional) 지시 기반 영상 편집" 문제를 겨냥해, 200K 규모의 고품질 데이터셋 CoinVE-200K와 전용 벤치마크 CoinVE-Bench, 그리고 22B 규모의 편집 모델 CoinVE-Edit을 함께 제안한 연구이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.17566" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.17566" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: CoinVE-200K: A Large-Scale High-Quality Dataset for Compositional Instruction-Guided Video Editing</li>
+<li><strong>저자</strong>: Fuchen Long, Cong Wang, Zitao Gao, Wenhao Zhong, Yu Cheng, Xiaolu Hou, Yan Li, Xiao Cao, Xinlong Sun(프로젝트 리더), Xi Chen(교신저자), Yu Liu — Tencent(Smart Creation Platform Department, Online Video BU) 소속</li>
+<li><strong>출처</strong>: arXiv:2608.17566v1 [cs.CV] (2026년 8월 18일 제출)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://coinve200k.github.io">https://coinve200k.github.io</a> (데이터셋: <a href="https://huggingface.co/datasets/FireCRT/CoinVE-200K">https://huggingface.co/datasets/FireCRT/CoinVE-200K</a>)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.17566">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>여러 편집 의도를 하나의 지시문에 동시에 담아야 하는 "합성적(compositional) 지시 기반 영상 편집" 문제를 겨냥해, 200K 규모의 고품질 데이터셋 CoinVE-200K와 전용 벤치마크 CoinVE-Bench, 그리고 22B 규모의 편집 모델 CoinVE-Edit을 함께 제안한 연구이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>FLUX-Kontext, Qwen-Image-Edit 등 지시 기반 이미지 편집 모델의 성공은 대규모 편집 데이터셋에 크게 힘입었으며, 영상 편집 분야도 유사한 흐름을 따르고 있다. 그러나 OpenVE, Ditto, Señorita 등 기존 지시 기반 영상 편집 데이터셋은 대부분 배경 교체나 객체 제거처럼 단일 편집 연산에 초점을 맞추고 있어, 실제 사용자가 흔히 요구하는 "인물 교체 + 객체 제거 + 배경 스타일 변경"과 같은 복합 지시(2~5개의 원자적 편집을 한 번에 수행)에는 취약하다. 이런 합성적 편집은 서로 다른 지시 간 간섭, 의도치 않은 영역 수정, 시간적 불일치를 유발하기 쉬워 기존 방법으로는 다루기 어렵다는 것이 이 논문의 출발점이다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>CoinVE-200K</strong>: 1080p, 최대 201프레임의 영상-편집 쌍 20만 개로 구성된 대규모 데이터셋으로, 샘플마다 2~5개의 원자적 편집(추가/제거/수정/스타일화)이 결합되어 있고 인물·사물·배경 등 다양한 편집 대상을 포괄한다.</li>
+<li><strong>CoinVE-Edit</strong>: Wan2.1-T2V-14B와 Qwen3-VL-8B를 결합한 22B 규모의 합성 편집 모델로, 서로 다른 편집 지시별로 영역을 분리해 어텐션을 적용하는 region-aware 메커니즘을 도입해 다중 영역 편집의 정밀도를 높였다.</li>
+<li><strong>CoinVE-Bench</strong>: 편집 대상·연산 유형·지시 복잡도의 다양한 조합을 포괄하는 합성적 영상 편집 전용 평가 벤치마크로, 11개의 세부 지표로 구성된 통합 평가 프로토콜을 제공한다.</li>
+</ul>
+<h2>방법론</h2>
+<p>데이터 구축은 3단계 파이프라인으로 이뤄진다. (1) 원본 영상(OpenVid-HD 기반, 프레임 수·해상도·미학점수·광류로 1차 필터링해 42만 개 확보)을 Qwen3.6-27B로 분석해 주체(subject)·사물(object)·배경(background) 관점의 편집 가능 요소를 파악하고, 템플릿 기반으로 여러 원자적 연산을 조합해 합성 지시문을 생성한다. (2) 지시문에서 편집 키워드를 추출한 뒤 SAM3로 키프레임의 대상 영역을 분할하고 SAM2로 전체 영상에 마스크를 전파하며, HunyuanImage-3.0/Nano Banana로 키프레임을 먼저 편집한 후 파인튜닝된 Wan2.2-Animate 또는 VACE로 최종 편집 영상을 합성하는 마스크 기반 방식을 사용한다. (3) Gemini 2.5 Pro를 이용해 지시별 실행 정확도, 의미적 일관성, 시간적 일관성, 물리적 타당성을 모두 통과한 샘플만 남기는 엄격한 2차 품질 필터링을 거친다.</p>
+<p>CoinVE-Edit은 Qwen3-VL 기반 MLLM이 학습 가능한 쿼리 토큰으로 영상과 각 지시문을 이해하고, Connector가 이를 DiT 조건 토큰으로 변환한다. Mask Predictor가 지시별 시공간 편집 마스크를, GateNet이 지역적/전역적 편집 여부를 나타내는 게이트를 예측하며, 이 둘을 결합한 "Q-Blending Cross-Attention"이 DiT의 크로스 어텐션 출력을 지시별로 부드럽게 재가중하여 여러 지시가 서로 간섭하지 않고 해당 영역에서만 효과를 내도록 한다. 학습은 (i) 이미지 편집 데이터로 MLLM-DiT 간 특징을 정렬하는 사전학습, (ii) 이미지·영상 혼합 데이터로 단일 지시 편집을 학습, (iii) CoinVE-200K로 Mask Predictor·GateNet을 먼저 오프라인 학습(IoU 0.71, 게이트 정확도 0.95)한 뒤 전체를 종단간 파인튜닝하는 3단계로 구성된다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>CoinVE-200K는 6개 원자 편집 유형(로컬 추가 24.1%, 배경 교체 23.8%, 객체 교체 22.8%, 로컬 제거 18.5%, 배경 스타일화 6.4%, 객체 스타일화 4.5%)에 걸쳐 비교적 균형 잡힌 분포를 보이며, 영상당 평균 2.55개 지시문을 포함하고 평균 편집 품질 점수 4.85를 기록했다. 32개의 H200 GPU로 학습된 CoinVE-Edit은 단일 지시 편집 벤치마크(OpenVE-Bench)에서 VACE, Ditto, VINO, OmniWeaving, KiwiEdit, SAMA 등 오픈소스 모델과 비교해 최고 종합 점수(3.41)를 기록했고, 자체 제안한 CoinVE-Bench의 합성적 편집 평가에서는 편집 정확도(SA 87.97, SPA 89.45)와 물리적 자연스러움 지표에서 Seedance 2.0, Kling O3 같은 폐쇄형 대형 모델과 대등하거나 우수한 성능을 보였다. Ablation 결과, 마스크 예측과 Q-Blending을 모두 제거한 지시문 단순 결합(Instr.-Concat.) 방식이나 경성 마스크 편향을 쓰는 Q-Bias 방식보다 제안한 Q-Blending 방식이 모든 지표에서 우세함을 확인했다.</p>
+<h2>한계점</h2>
+<p>논문은 CoinVE-200K가 참조 기반(reference-based) 편집, 세밀한 모션 편집, 복잡한 카메라 제어와 같은 시나리오는 아직 다루지 못한다고 밝히고 있다. 또한 긴 영상이나 상호작용이 많은 장면에 대한 효율적인 합성 편집은 여전히 어려운 과제로 남아 있다.</p>
+<h2>시사점</h2>
+<p>단일 편집 연산 중심이던 지시 기반 영상 편집 연구를, 여러 편집 의도가 동시에 얽히는 실제 사용 시나리오로 확장했다는 점에서 의미가 크다. 마스크 기반 데이터 생성·필터링 파이프라인과 Q-Blending 방식의 영역 분리 어텐션은 향후 대규모 비전-언어-생성 통합 모델에서 다중 지시를 다루는 일반적인 설계 원칙으로 참고될 수 있으며, 공개된 데이터셋과 벤치마크는 상용 폐쇄형 모델을 포함한 후속 연구의 성능 한계를 끌어올리는 공용 자원으로 기능할 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.17566" target="_blank" rel="noopener">huggingface.co/papers/2608.17566</a> · 2026-08-20</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

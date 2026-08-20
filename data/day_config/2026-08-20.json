@@ -1,0 +1,110 @@
+{
+  "2608.14036": {
+    "base": "2608_에이전트스킬_에이전트-스킬은-왜-작동하다가-실패하는가",
+    "rank": "#1",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "136",
+    "en_title": "Demystifying Agent Skills: Why They Work-Until They Don't",
+    "ko_title": "에이전트 스킬 파헤치기: 왜 작동하다가 실패하는가"
+  },
+  "2608.17310": {
+    "base": "2608_이에스옵트_최소-GPU로-장기-에이전트-미세조정",
+    "rank": "#2",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "91",
+    "en_title": "Agentic ESOpt: Fine-Tuning Long-Horizon LLM Agents with Minimal GPU Requirements",
+    "ko_title": "에이전틱 이에스옵트: 최소 GPU 요구사항으로 장기 호라이즌 LLM 에이전트 미세조정하기"
+  },
+  "2608.16157": {
+    "base": "2608_프리토큰_대역폭-적응형-엣지-MoE-서빙",
+    "rank": "#3",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "59",
+    "en_title": "FreeToken: Efficient Edge-Native MoE Serving with Bandwidth-Adaptive Execution",
+    "ko_title": "프리토큰: 대역폭 적응형 실행을 통한 효율적인 엣지 네이티브 MoE 서빙"
+  },
+  "2608.17512": {
+    "base": "2608_임바디드내비게이터_효율적-내비게이션을-위한-사고와-기억",
+    "rank": "#4",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "44",
+    "en_title": "Embodied-Navigator: Point, Think, Memorize, and Align for Efficient Navigation",
+    "ko_title": "임바디드 내비게이터: 효율적인 내비게이션을 위한 포인팅, 사고, 기억, 정렬"
+  },
+  "2608.13556": {
+    "base": "2608_브이레이_영상생성을-위한-비디오-잠재공간-재고",
+    "rank": "#5",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "43",
+    "en_title": "V-RAE: Rethinking Video Latent Spaces for Generation",
+    "ko_title": "브이레이: 생성을 위한 비디오 잠재 공간 재고찰"
+  },
+  "2608.12313": {
+    "base": "2608_에이바인코더_에이전트-네이티브-영상-표현학습",
+    "rank": "#6",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "38",
+    "en_title": "AVA-Encoder: Towards Agent-Native Video Representation Learning",
+    "ko_title": "에이바 인코더: 에이전트 네이티브 비디오 표현 학습을 향하여"
+  },
+  "2608.17271": {
+    "base": "2608_에이에스아이벤치_인공초지능-여명기-벤치마크",
+    "rank": "#7",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "32",
+    "en_title": "ASI-Bench: At the Dawn of Artificial Superintelligence",
+    "ko_title": "에이에스아이벤치: 인공초지능의 여명기에서"
+  },
+  "2608.18063": {
+    "base": "2608_에딧브릿지_초고해상도-이미지-편집",
+    "rank": "#8",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "21",
+    "en_title": "EDITBRIDGE: Towards Faithful and Efficient Ultra-High-Resolution Image Editing",
+    "ko_title": "에딧브릿지: 충실하고 효율적인 초고해상도 이미지 편집을 향하여"
+  },
+  "2608.17528": {
+    "base": "2608_에이전트라이트닝_하네스-기반-에이전틱-강화학습",
+    "rank": "#9",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "16",
+    "en_title": "Agent Lightning v1.0: Towards Harnessed Agentic RL",
+    "ko_title": "에이전트 라이트닝 v1.0: 하네스 기반 에이전틱 강화학습을 향하여"
+  },
+  "2608.17067": {
+    "base": "2608_디스코_분포기반-대조-프롬프트-최적화로-생성-방어",
+    "rank": "#10",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "15",
+    "en_title": "DiSCO: Defending text-to-image generation through distribution-guided contrastive prompt optimization",
+    "ko_title": "디스코: 분포 기반 대조 프롬프트 최적화를 통한 텍스트-이미지 생성 방어"
+  },
+  "2608.17566": {
+    "base": "2608_코인브이이_합성-지시-기반-영상편집-데이터셋",
+    "rank": "#11",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "13",
+    "en_title": "CoinVE-200K: A Large-Scale High-Quality Dataset for Compositional Instruction-Guided Video Editing",
+    "ko_title": "코인브이이-200K: 합성적 지시 기반 영상 편집을 위한 대규모 고품질 데이터셋"
+  },
+  "2608.15454": {
+    "base": "2608_멀티바이트예측_계층적-언어모델의-동적-예측",
+    "rank": "#12",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "13",
+    "en_title": "Dynamic Multi-Byte Prediction With Hierarchical Language Models",
+    "ko_title": "계층적 언어 모델을 활용한 동적 멀티바이트 예측"
+  }
+}

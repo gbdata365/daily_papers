@@ -1,0 +1,125 @@
+<meta charset="UTF-8">
+<title>브이레이</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#5 · Daily Papers 2026-08-20</span>
+      <span class="cat-tag">생성모델</span>
+      <span class="upvote-tag">▲ 43</span>
+    </div>
+    <h1 class="article-title">V-RAE: Rethinking Video Latent Spaces for Generation</h1>
+    <p class="article-title-ko">브이레이: 생성을 위한 비디오 잠재 공간 재고찰</p>
+    <p class="article-sub">V-RAE는 고정된(frozen) 비전 파운데이션 모델의 특징 공간을 그대로 비디오 생성용 잠재 공간으로 재사용하고, 여기에 경량 시간축 풀링과 시공간 트랜스포머 디코더만 새로 학습시켜, 기존 비디오 VAE보다 재구성·의미 보존·생성 품질·수렴 속도 모두에서 우수한 성능을 보이는 비디오 오토인코더이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.13556" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.13556" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: V-RAE: Rethinking Video Latent Spaces for Generation</li>
+<li><strong>저자</strong>: Minghui Guo (National University of Singapore), Shengqiong Wu, Hao Fei (University of Oxford)</li>
+<li><strong>출처</strong>: arXiv:2608.13556v1 [cs.CV] (2026년 8월 13일 제출)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://v-rae.github.io/">https://v-rae.github.io/</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.13556">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>V-RAE는 고정된(frozen) 비전 파운데이션 모델의 특징 공간을 그대로 비디오 생성용 잠재 공간으로 재사용하고, 여기에 경량 시간축 풀링과 시공간 트랜스포머 디코더만 새로 학습시켜, 기존 비디오 VAE보다 재구성·의미 보존·생성 품질·수렴 속도 모두에서 우수한 성능을 보이는 비디오 오토인코더이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>최신 비디오 생성 모델은 대부분 오토인코더가 만든 압축 잠재 공간 위에서 디퓨전이나 자기회귀 모델을 학습시킨다. 그런데 기존 비디오 VAE, 이산 토크나이저, 쿼리 기반 설계 등은 모두 픽셀 단위 재구성 품질(질감, 색상, 세부 외형)을 최적화하는 데 집중되어 있어, 정작 생성 모델이 학습하기 좋은 잠재 공간 구조나 고수준 의미 정보는 충분히 담지 못한다. 즉 "재구성에 최적인 잠재 공간"이 "생성에 최적인 잠재 공간"과 반드시 일치하지 않는다는 문제의식에서 출발한다. 최근 이미지 도메인에서 RAE/RAEv2 같은 연구가 고정된 이미지 인코더의 특징 공간을 그대로 생성 잠재 공간으로 채택해 좋은 결과를 냈지만, 이를 비디오로 확장하는 것은 (1) 이미지/일부 비디오 인코더의 시간 압축률이 매우 낮다는 점, (2) 압축된 잠재와 복원된 모션 모두에서 시간적 일관성을 유지해야 한다는 점, (3) 시간 압축 과정에서 인코더가 갖고 있던 의미 구조가 손상되지 않아야 한다는 점 등 세 가지 도전 과제로 인해 아직 충분히 탐구되지 않았다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>V-RAE 제안</strong>: 고정된 비전 표현 인코더 위에 학습 가능한 경량 시간 풀링 모듈과 시공간 트랜스포머 디코더를 결합해, 시간 압축·시간적 일관성·의미 보존 문제를 동시에 해결하는 비디오 표현 오토인코더를 제시.</li>
+<li><strong>tFVD(Temporal FVD) 도입</strong>: 재구성 충실도(rFVD)만으로는 잠재 공간의 생성 적합성을 온전히 설명할 수 없음을 보이고, 잠재 궤적의 시간적 매끄러움을 진단하는 새로운 지표 tFVD를 제안. 이는 실제 생성 품질(gFVD)과 rFVD보다 훨씬 강한 상관관계를 보인다.</li>
+<li><strong>네 가지 인코더에 대한 체계적 검증</strong>: DINOv3, SigLIP2, EUPE, V-JEPA 2.1 등 서로 다른 사전학습 방식의 인코더로 V-RAE를 구성해, 대규모 비디오 VAE에 필적하는 재구성 성능, 우수한 생성 품질, 최대 6배 빠른 학습 수렴을 입증.</li>
+</ul>
+<h2>방법론</h2>
+<p>V-RAE는 고정된 비전 파운데이션 모델(VFM) 인코더와, 학습 가능한 시간 풀링 모듈, 그리고 트랜스포머 기반 비디오 디코더로 구성된다. 인코더 자체는 학습 중 고정되며, 오직 풀링 모듈과 디코더만 학습된다.</p>
+<ul>
+<li><strong>인코더</strong>: DINOv3, SigLIP2, EUPE 같은 이미지 사전학습 인코더는 프레임을 독립적으로 인코딩해 시간축으로 정렬하고, V-JEPA 2.1 같은 비디오 네이티브 인코더는 여러 프레임을 함께 인코딩해 시공간 특징을 생성한다.</li>
+<li><strong>시간 풀링</strong>: 인코더가 만든 시간적으로 조밀한 특징을 인접한 시간 구간별로 압축한다. 논문은 평균 풀링, 3D 컨볼루션 풀링, Q-Former 풀링, 시간 어텐션 풀링 네 가지를 비교했으며, 학습 가능한 쿼리와 시간 편향을 0으로 초기화해 학습 초기에는 평균 풀링처럼 동작하다가 점차 내용에 적응하는 "시간 어텐션 풀링"을 기본값으로 채택했다. 이는 파라미터 수(약 3M)가 적으면서도 재구성 품질과 의미 보존의 균형이 가장 좋았다.</li>
+<li><strong>디코더</strong>: MAE 스타일의 경량 ViT 디코더에 3D RoPE를 적용해 시공간 위치 정보를 부여하고, 프레임 단위로 독립 인코딩되는 인코더(DINOv3, SigLIP2, EUPE)에는 청크 단위 인과적 셀프 어텐션을, 이미 시공간을 통합해 인코딩하는 V-JEPA 2.1에는 완전(비인과적) 셀프 어텐션을 사용한다. 멀티프레임 unpatchify 층을 통해 하나의 잠재 시간 스텝이 여러 연속 프레임으로 복원되도록 한다.</li>
+<li><strong>학습 목표</strong>: L1, LPIPS, 적대적 손실(GAN), Gram-행렬 손실을 결합해 재구성 학습을 수행한다.</li>
+<li><strong>생성 단계</strong>: 재구성 학습을 마친 후 V-RAE 전체를 고정하고, 그 잠재 공간 위에서 rectified flow 기반 DiT를 학습한다. 잠재 차원에 따라 노이즈 스케줄을 조정하는 shift를 적용하고, RAEv2 방식을 따라 8번째 트랜스포머 블록에 보조 예측 헤드를 붙여 학습 및 추론(내부 가이던스) 시 활용한다.</li>
+</ul>
+<h2>실험 설정 및 결과</h2>
+<p>UCF101과 Kinetics-600(K600)을 주요 재구성·클래스 조건부 생성 벤치마크로 사용했고, UCF101, Something-Something V2(SSv2), Kinetics-400(K400)에서 의미 정보 보존 여부를 프로빙으로 평가했다. 또한 Cityscapes 데이터셋으로 미래 비디오 예측 실험도 수행했다.</p>
+<ul>
+<li><strong>재구성 성능</strong>: K600에서 V-RAE(V-JEPA 2.1)는 rFVD 2.13을 기록해 평가된 모든 대규모 사전학습 비디오 VAE(최고 성능 기준선 3.58)를 40.5% 앞섰다. UCF101에서는 V-RAE(DINOv3-L)가 rFVD 6.12로 Wan2.1 VAE(6.05)에 근소하게 이어 2위를 기록했다.</li>
+<li><strong>의미 보존</strong>: V-RAE 잠재는 기존 VAE 잠재보다 훨씬 풍부한 의미 정보를 유지했다. 예컨대 UCF101 프로빙 정확도에서 V-RAE(DINOv3-L)는 89.13%인 반면 가장 강력한 VAE 기준선은 30.83%에 그쳤다.</li>
+<li><strong>생성 성능</strong>: 동일한 DiT 백본과 1,280개 잠재 토큰 예산으로 비교한 결과, 최고 성능 변형인 V-RAE(V-JEPA 2.1)가 UCF101 gFVD 117.86, K600 gFVD 19.16을 달성해 모든 VAE 기반 잠재 공간을 능가했으며, 학습 수렴 속도도 기존 대비 최대 6배 빨랐다.</li>
+<li><strong>rFVD와 gFVD의 괴리</strong>: 재구성 지표(rFVD)와 생성 지표(gFVD)의 순위가 서로 크게 달라(피어슨 상관계수 UCF101 0.200, K600 0.473), 재구성 품질만으로는 생성 적합성을 판단할 수 없음을 보였다. 반면 새로 제안한 tFVD는 gFVD와 훨씬 강한 상관관계(K600 0.919, UCF101 0.621)를 보여 더 신뢰할 수 있는 진단 지표임을 입증했다.</li>
+<li><strong>미래 비디오 예측</strong>: Cityscapes에서 V-RAE(EUPE-B) 잠재 공간은 동일한 조건부 DiT와 학습 예산 하에서 Wan2.2 VAE 대비 gFID를 15.02에서 11.52로, gFVD를 144.47에서 111.36으로 낮춰, 비디오 생성 외의 예측 과제에서도 효과적임을 보였다.</li>
+</ul>
+<h2>한계점</h2>
+<p>저자들은 논문에서 직접 세 가지 한계를 명시했다. 첫째, 실험이 비교적 통제된 벤치마크와 중간 규모 생성 모델에 국한되어 있어, 대규모 개방형 텍스트-투-비디오 생성(더 큰 데이터셋, 고해상도, 긴 영상, 더 큰 DiT 백본)으로 확장될 때도 이점이 유지될지는 불확실하다. 둘째, 여러 대표적인 이미지/비디오 인코더를 평가했지만, 서로 다른 사전학습 목표·아키텍처·시공간 귀납 편향이 재구성과 생성에 미치는 영향을 체계적으로 분리해 분석하지는 않았다. 셋째, 의미 보존과 하위 생성 품질 사이에 강한 연관성을 확인했지만, 잠재 공간의 의미 구조와 생성 유용성 사이의 정확한 관계는 아직 충분히 규명되지 않았다.</p>
+<h2>시사점</h2>
+<p>이 연구는 비디오 오토인코더 설계에서 "재구성 최적화"와 "생성 최적화"가 별개의 목표일 수 있다는 점을 실증적으로 보여주며, 이미지 도메인에서 성공한 RAE 계열 패러다임(고정된 표현 인코더를 생성 잠재 공간으로 직접 사용)이 비디오에도 효과적으로 확장될 수 있음을 입증했다. 특히 tFVD라는 새로운 진단 도구는 향후 비디오 토크나이저/오토인코더 설계 시 재구성 지표에만 의존하지 않고 생성 적합성을 사전에 가늠할 수 있는 실용적 수단을 제공한다. 또한 프레임 단위 이미지 인코더든 비디오 네이티브 인코더든 모두 효과적인 잠재 공간을 구성할 수 있다는 결과는, 비디오 생성 파이프라인 설계 시 사전학습된 파운데이션 모델을 재구성용으로 별도 미세조정하지 않고도 재활용할 수 있는 가능성을 시사하며, 이는 비디오 이해와 생성을 하나의 표현 공간으로 통합하는 후속 연구로 이어질 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.13556" target="_blank" rel="noopener">huggingface.co/papers/2608.13556</a> · 2026-08-20</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

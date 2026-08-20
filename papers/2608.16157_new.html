@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>프리토큰</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#3 · Daily Papers 2026-08-20</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 59</span>
+    </div>
+    <h1 class="article-title">FreeToken: Efficient Edge-Native MoE Serving with Bandwidth-Adaptive Execution</h1>
+    <p class="article-title-ko">프리토큰: 대역폭 적응형 실행을 통한 효율적인 엣지 네이티브 MoE 서빙</p>
+    <p class="article-sub">개인용 GPU 한 대만으로도 수백억~수천억 파라미터급 MoE(Mixture-of-Experts) 모델을 에이전트 워크로드에서 실시간에 가깝게 서빙할 수 있도록, PCIe 대역폭과 CPU 실행을 동적으로 배분하는 엣지 네이티브 서빙 시스템 FreeToken을 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.16157" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.16157" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: FreeToken: Efficient Edge-Native MoE Serving with Bandwidth-Adaptive Execution</li>
+<li><strong>저자</strong>: Shuo Yang, Xiaoze Fan (공동 1저자), Melissa Pan, Haocheng Xi, Zhe Wang, Shanlin Sun, Kurt Keutzer, Song Han, Matei Zaharia, Chenfeng Xu, Ion Stoica (UC Berkeley, UT Austin 등 소속으로 추정되며 Chenfeng Xu와 Ion Stoica가 공동 지도)</li>
+<li><strong>출처</strong>: arXiv:2608.16157v1 [cs.DC] (2026년 8월 17일 제출)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/FlashML-org/FreeToken">코드: https://github.com/FlashML-org/FreeToken</a>, <a href="https://flashml.ai">다운로드: https://flashml.ai</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.16157">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>개인용 GPU 한 대만으로도 수백억~수천억 파라미터급 MoE(Mixture-of-Experts) 모델을 에이전트 워크로드에서 실시간에 가깝게 서빙할 수 있도록, PCIe 대역폭과 CPU 실행을 동적으로 배분하는 엣지 네이티브 서빙 시스템 FreeToken을 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>Kimi-K3, GLM-5.2, DeepSeek-V4-Flash 같은 오픈 웨이트 모델들은 성능 면에서 최상위 폐쇄형 모델에 근접하고 있지만, 이를 실제로 구동하려면 여전히 데이터센터급 GPU 클러스터가 필요해 개인·소규모 팀은 비용 부담이 크다. 반면 게이밍 데스크톱, 워크스테이션, 고성능 노트북 등 이산 GPU를 갖춘 소비자용 기기는 이미 1억 대 이상 존재하지만 제대로 활용되지 못하고 있다. MoE 아키텍처는 토큰마다 전체 전문가(expert) 중 일부만 활성화하므로 연산량은 줄일 수 있지만, 전체 전문가 풀은 여전히 GPU 메모리를 초과하는 크기라 비활성 전문가를 호스트 메모리나 디스크에 두고 필요할 때마다 불러와야 한다. 기존 엣지 서빙 시스템(llama.cpp, KTransformers, Ollama 등)은 프리필(prefill) 단계에서 사실상 거의 모든 전문가가 활성화되어 희소성이 무너지는 문제, 디코드 단계에서 캐시 미스가 발생해도 이를 GPU 전송과 CPU 실행 중 어디로 보낼지에 대한 원칙적 정책이 없는 문제, 그리고 기기마다 GPU/CPU/PCIe 대역폭이 크게 다르고 실행 중에도 자원이 변동한다는 문제를 안고 있어, 엣지 하드웨어의 이론적 성능에 크게 못 미치는 서빙 속도를 보인다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li><strong>대역폭 적응형 실행(bandwidth-adaptive execution)</strong>: 프리필에서는 레이어 단위 더블 버퍼링으로 전문가 전송을 계산과 겹치고, 디코드에서는 캐시 미스를 PCIe 전송(GPU 캐시 채움)과 직접 CPU 실행 사이에 최적 비율로 나누는 q* 정책을 제안한다.</li>
+<li><strong>의미론 기반 캐싱(semantic-aware caching)</strong>: 에이전트 하네스가 문맥을 편집하는 지점(생각 블록, 툴 호출/출력 등 특수 토큰 경계)에 순환 상태(recurrent state) 체크포인트를 앵커링해, 편집 후에도 새로 생긴 접미사만 재계산하도록 한다. 디코드에서는 인접 토큰 간 라우팅이 겹치는 시간적 지역성을 활용한 공유 LRU 전문가 캐시를 둔다.</li>
+<li><strong>탄력적 엣지 자원 관리(elastic edge resource management)</strong>: 실행 중에도 GPU 메모리 예산(KV 캐시 vs. 전문가 캐시 배분)을 엔진 재시작이나 호스트 전문가 풀 재적재 없이 동적으로 재조정하며, 디스크 로딩을 최종 레이아웃으로 바로 읽어들여 시동 시간을 단축한다.</li>
+</ol>
+<h2>방법론</h2>
+<p>FreeToken은 CPU에 상주하는 전체 라우팅 전문가 풀을 진실 원천(source of truth)으로 두고, GPU 메모리 잔여분을 모든 MoE 레이어가 공유하는 하나의 탄력적 전문가 캐시로 사용한다. 프리필 단계에서는 GPU가 레이어 l을 계산하는 동안 전송 스트림이 레이어 l+1의 전체 전문가 세트를 백그라운드로 로드하는 풀-레이어 더블 버퍼링을 적용해 전송을 계산 뒤로 완전히 숨긴다. 디코드 단계에서는 매 스텝의 라우팅 미스 m개를, 측정된 PCIe 대역폭(B_P)과 CPU 측 전문가 처리 대역폭(B_H)의 비율로 유도한 닫힌 형태 공식 q* ≈ m·B_P/B_H에 따라 GPU 캐시 채움 집합과 CPU 직접 실행 집합으로 나눈다. 이는 두 경로(PCIe 전송, 잔여 호스트 대역폭을 쓰는 CPU 실행)가 동시에 끝나도록 균형을 맞추는 잔여 대역폭 논리에서 유도되며, GPU와 CPU의 부분합을 정확히 병합해 근사 없이 정확한 MoE 출력을 낸다. 이 모든 동적 제어(미스 탐지, 크기 산정, 희생자 선정, CPU 브랜치 실행)는 호스트-디바이스 동기화 없이 CUDA Graph 안에 정적으로 캡처되도록 설계했다. 또한 모델별 체크포인트를 레이어-전문가 식별자 기준의 통일된 "전문가 뱅크"와 FTW(FreeToken Weight) 포맷으로 정규화해 텐서 탐색·리패킹 없이 빠르게 로딩한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>RTX 3090/4090/5090(서버), RTX 5090 데스크톱, RTX 4060 노트북(8GB), RTX PRO 6000 워크스테이션(96GB) 등 6종 하드웨어에서 Qwen3.6-35B-A3B, DeepSeek-V4-Flash(284B), GLM-5.2(753B) 모델을 대상으로, 수학 추론(AIME), 코딩 에이전트(OpenCode, Claude Code), 이메일/캘린더 에이전트(OpenClaw) 등 4개의 실제 에이전트 워크로드로 llama.cpp, Ollama, KTransformers, MoE-Infinity와 비교 평가했다. RTX 5090에서 FreeToken은 Qwen3.6에서 77–83 tok/s, DeepSeek-V4-Flash에서 22–25 tok/s를 달성해 최강 베이스라인 대비 1.5–2.3배 높은 디코드 처리량을 보였고, 에이전트 턴이 늘어나도 처리량이 단일 턴 대비 12% 이내로 유지되어 매우 안정적이었다(경쟁 시스템은 최대 31%까지 저하). TTFT 꼬리 지연 역시 모든 워크로드에서 44초 이하로 유지된 반면, 베이스라인들은 최대 946초까지 치솟아 실제 에이전트 클라이언트의 타임아웃을 유발할 수 있는 수준이었다. 5종 소비자 하드웨어 전반에서 1.3–2.1배의 처리량 개선을 보였으며, 8GB RTX 4060 노트북에서 35B 모델을 39.3 tok/s(Codex 실사용 중앙값 33 tok/s 초과)로, 32GB 게이밍 데스크톱에서 284B 모델을, 단일 RTX PRO 6000에서 753B GLM-5.2를 llama.cpp 대비 2배 속도로 서빙했다. 세부 분석에서는 풀-레이어 더블 버퍼링이 프리필을 순수 전송 바운드로 만들어 최대 6.7k tok/s의 프리필 처리량을 달성했고, 공유 LRU 전문가 캐시가 동일 캐시 용량에서 정적 배치보다 훨씬 낮은 디코드 미스율(예: DeepSeek-V4-Flash에서 39% vs. llama.cpp의 89%)을 보임을 확인했다.</p>
+<h2>한계점</h2>
+<p>논문에 명시된 한계로는, 슬롯 풀이 두 개의 전체 레이어 버퍼를 확보하지 못할 경우 온디맨드 프리필 로딩으로 폴백해야 하는 점, 전문가 풀을 pin/DMA 등록할 수 없는 일부 OS·드라이버 환경에서는 순수 CPU MoE 백엔드로 전환되어 전송 대역폭 이점을 포기해야 하는 점, MoE-Infinity 같은 일부 베이스라인은 긴 프롬프트 워크로드에서 아예 서빙이 불가능해 비교 범위가 제한된 점 등이 있다. 또한 실험 중 3090/4090/5090 서버는 실제 엣지 CPU 조건을 모사하기 위해 스레드 수와 대역폭을 인위적으로 제한(캡)한 환경이며, 저자들 스스로 그 타당성을 데스크톱·노트북의 실측치와 대조해 검증했다고 밝히고 있어 완전한 실제 배포 환경은 아니다. 그 외 정량적 실패율, 정확도 저하, 특정 모델 아키텍처(예: MoE 외 다른 희소 구조)로의 일반화 한계 등은 논문에 명시되지 않음.</p>
+<h2>시사점</h2>
+<p>FreeToken은 모델이 GPU 메모리에 들어가는지 여부가 아니라, 서빙 소프트웨어가 GPU·CPU·호스트 메모리·인터커넥트라는 이질적 자원을 얼마나 잘 오케스트레이션하는지가 로컬 AI의 실질적 한계를 결정한다는 점을 보여준다. 대역폭을 고정된 병목이 아니라 런타임 스케줄링 신호로 활용하는 접근은, 오픈 웨이트 모델의 "접근 가능성 격차"를 하드웨어 구매가 아닌 서빙 시스템 설계로 좁힐 수 있음을 시사하며, 개인이 소유한 소비자용 GPU를 프론티어급 모델의 실용적인 추론 플랫폼으로 전환할 수 있는 가능성을 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.16157" target="_blank" rel="noopener">huggingface.co/papers/2608.16157</a> · 2026-08-20</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

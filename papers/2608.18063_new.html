@@ -1,0 +1,113 @@
+<meta charset="UTF-8">
+<title>에딧브릿지</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#8 · Daily Papers 2026-08-20</span>
+      <span class="cat-tag">생성모델</span>
+      <span class="upvote-tag">▲ 21</span>
+    </div>
+    <h1 class="article-title">EDITBRIDGE: Towards Faithful and Efficient Ultra-High-Resolution Image Editing</h1>
+    <p class="article-title-ko">에딧브릿지: 충실하고 효율적인 초고해상도 이미지 편집을 향하여</p>
+    <p class="article-sub">저해상도로 편집한 이미지를 원본 고해상도 소스 이미지에 조건화된 디퓨전 브릿지(diffusion bridge)로 정교하게 복원함으로써, 4K급 초고해상도 이미지 편집을 기존 대비 훨씬 빠르고 충실하게 수행하는 프레임워크를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.18063" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.18063" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: EDITBRIDGE: Towards Faithful and Efficient Ultra-High-Resolution Image Editing</li>
+<li><strong>저자</strong>: Jiayi Song, Shijie Huang, Fangtai Wu, Yubo Huang, Zhenxiong Tan, Songhua Liu(교신저자), Jiaming Liu(프로젝트 리드), Ruihua Huang. 상하이교통대학교(Shanghai Jiao Tong University), 알리바바 Qwen 사업부(Qwen Business Unit of Alibaba), 싱가포르국립대학교(National University of Singapore) 소속 연구진의 공동 연구</li>
+<li><strong>출처</strong>: arXiv:2608.18063v1 [cs.CV] (2026년 8월 18일 제출)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://editbridge.github.io/">https://editbridge.github.io/</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.18063">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>저해상도로 편집한 이미지를 원본 고해상도 소스 이미지에 조건화된 디퓨전 브릿지(diffusion bridge)로 정교하게 복원함으로써, 4K급 초고해상도 이미지 편집을 기존 대비 훨씬 빠르고 충실하게 수행하는 프레임워크를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>기존의 확산 모델 기반 이미지 편집 모델들은 어텐션 연산의 이차 복잡도와 막대한 메모리 요구량 때문에 대체로 1K(1024×1024) 이하 해상도에서만 동작한다. 이를 극복하기 위해 흔히 "저해상도에서 편집 후 별도의 초해상도(Super-Resolution, SR) 모델로 업스케일"하는 2단계 파이프라인이 사용되는데, 이 방식은 두 가지 근본적인 문제를 안고 있다. 첫째는 정보 발산(information divergence)으로, SR 모델이 원본 고해상도 소스의 정보 없이 세부 디테일을 환각(hallucination)하여 원본과 상충하는 결과를 만든다는 점이다. 둘째는 텍스처 열화(texture degradation)로, 과도하게 매끄럽거나 과도하게 날카로운 인공적 텍스처가 생성되는 문제다. 고해상도 전용 모델을 처음부터 학습시키는 방법도 있으나 막대한 연산 자원과 대규모 고해상도 데이터셋이 필요해 현실적이지 않다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>DiT(Diffusion Transformer) 기반으로, 연산 효율성과 충실한 디테일 보존을 동시에 달성하는 고해상도 이미지 편집 프레임워크를 제시했다.</li>
+<li>디퓨전 브릿지 기반의 정교화(refinement) 단계와, 이를 뒷받침하는 사전 정보 기반 블록 단위 희소 어텐션(prior-guided block-wise sparse attention) 메커니즘을 결합하여 의미적으로 선택적인 이미지 간 상호작용을 가능케 했다.</li>
+<li>기존 확산 기반 접근법 대비 최대 2.2배의 속도 향상을 보이며 최첨단 고해상도 편집 성능을 달성했다.</li>
+</ul>
+<h2>방법론</h2>
+<p>EditBridge는 크게 2단계로 구성된다. 1단계에서는 사전학습된 저해상도(LR) 편집 모델(본 논문에서는 Qwen-Image-Edit을 기반으로 사용)이 다운샘플링된 소스 이미지와 편집 지시문으로부터 LR 편집 결과를 생성한다. 2단계에서는 이 LR 결과를 업샘플링한 이미지를 시작점(x0), 최종 목표인 HR 편집 결과를 종점(x1)으로 삼아 브라운 운동 브릿지(Brownian bridge) 형태의 디퓨전 브릿지로 정교화한다. 이때 원본 HR 소스 이미지를 조건으로 명시적으로 결합하여, 노이즈에서부터 전체를 다시 생성하는 일반적인 확산 모델과 달리 LR 결과의 구조 정보를 유지하면서 원본의 진짜 디테일을 복원한다.</p>
+<p>HR 소스를 조건으로 넣을 때 발생하는 연산 부담을 줄이기 위해 저자들은 사전 정보 기반 블록 단위 희소 어텐션(PG-BSA)을 제안한다. 1단계 LR 편집 과정에서 나온 타깃-소스 간 어텐션 맵으로부터 각 타깃 토큰에 대응하는 소스 상의 최적 앵커(anchor)를 찾아 대응 관계 사전 정보(correspondence prior)를 구축하고, 이를 좌표 기반으로 고해상도로 업스케일한다. 어텐션은 텍스트·타깃·소스 각 영역 내부의 자기 어텐션(intra-domain self-attention)과, 이 대응 관계 사전 정보로 제한된 국소 윈도우 내에서만 이루어지는 교차 도메인 희소 어텐션(prior-guided cross-domain attention)으로 분리되어, 연산 복잡도를 O(N²)에서 O(N·k²) 수준으로 낮춘다. 학습에는 VMoBA, FlashAttention, Prodigy 옵티마이저와 LoRA(rank=128)가 사용되었으며, 8장의 H800 GPU로 학습을 진행했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>학습 데이터는 Aesthetic-4K, Aesthetic-Train-V2 등 공개 데이터셋에서 고해상도 소스 이미지를 수집하고, Gemini 3로 편집 지시문을, Nano Banana Pro로 타깃 이미지를 생성해 구성했다(1K/2K 각 5,000쌍, 4K 1,500쌍). 평가는 HaarPSI, 영역별 M-PSNR/M-SSIM/M-MSE(비편집 영역의 충실도), M-LPIPS(편집 영역의 지각 품질) 지표를 사용했다.</p>
+<p>DiT-SR, DiT4SR, PiSA-SR, TSD-SR 등 SR 기반 방법 및 ScaleEdit, HiFlow와 비교한 결과, EditBridge는 1K/2K/4K 전 해상도에서 대부분의 지표에서 최고 성능을 보였다. 속도 면에서는 2K에서 SR 계열 대비 3.6~8.4배, 4K에서는 1.8~2.1배 빠르며, 직접 고해상도 추론 대비 4K에서 약 11배 가속되어 61초 만에 4K 편집을 완료했다. 어블레이션 결과 전체(full) 어텐션은 일부 픽셀 단위 지표에서는 근소하게 우수했지만 편집 영역 외부에도 무분별하게 주의를 기울여 유령(ghosting) 아티팩트를 유발했고, 제안된 희소 어텐션이 오히려 시각적 충실도를 더 잘 유지했다. 또한 추론 스텝 수 실험에서는 놀랍게도 단일 스텝(N=1)이 다중 스텝보다 더 우수한 지각 품질과 효율을 보였다. 30명이 참여한 사용자 연구에서도 디테일 보존, 사실감, 미적 품질 세 항목 모두에서 EditBridge가 가장 높은 선호도를 얻었다.</p>
+<h2>한계점</h2>
+<p>논문이 명시한 한계는 다음과 같다. 첫째, 방법이 사전에 추출되거나 합성되어야 하는 대응 관계 사전 정보(indices prior)에 의존하기 때문에, 완전 자동화된 파이프라인 구축에 병목이 되며 최종 품질이 이 사전 정보의 정확도에 좌우된다. 둘째, 디퓨전 브릿지 샘플링 과정 자체가 반복적(iterative) 특성을 가지므로, 특히 초고해상도나 복잡한 다단계 변환 시 여전히 무시할 수 없는 연산 오버헤드가 발생한다. 저자들은 향후 과제로 학습 기반의 자동 사전 정보 추정, 부분 영역에 대한 사후 보정(post-hoc localized repair), 비디오-투-비디오 편집이나 3D 애셋 스타일화로의 확장을 제시했다.</p>
+<h2>시사점</h2>
+<p>EditBridge는 노이즈로부터 전체를 재생성하는 대신 데이터-투-데이터 변환으로 문제를 재정의함으로써, "저해상도 편집 후 업스케일"이라는 관행적 파이프라인의 근본적 결함을 겨냥한 점이 특징적이다. 특히 편집 단계에서 자연스럽게 얻어지는 어텐션 맵을 재활용해 고해상도 단계의 희소 어텐션 패턴을 유도하는 아이디어는 별도의 학습 없이도 효율성과 충실도를 동시에 얻을 수 있음을 보여주며, 이는 향후 다른 조건부 생성·편집 과제에서 대응 관계 정보를 재사용하는 설계로 확장될 여지가 있다. 또한 단일 스텝 추론만으로도 우수한 품질을 얻을 수 있다는 결과는 실제 서비스 환경에서의 4K 이미지 편집 실용화 가능성을 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.18063" target="_blank" rel="noopener">huggingface.co/papers/2608.18063</a> · 2026-08-20</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

@@ -1,0 +1,117 @@
+<meta charset="UTF-8">
+<title>에이전틱 이에스옵트</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#2 · Daily Papers 2026-08-20</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 91</span>
+    </div>
+    <h1 class="article-title">Agentic ESOpt: Fine-Tuning Long-Horizon LLM Agents with Minimal GPU Requirements</h1>
+    <p class="article-title-ko">에이전틱 이에스옵트: 최소 GPU 요구사항으로 장기 호라이즌 LLM 에이전트 미세조정하기</p>
+    <p class="article-sub">장기 호라이즌(long-horizon) LLM 에이전트를 미세조정할 때, 역전파 기반 강화학습(RL) 대신 진화전략(Evolution Strategies, ES)을 사용하면 추론 수준의 최소 GPU 메모리만으로 전체 파라미터를 최적화할 수 있고, 호라이즌이 길어질수록 오히려 RL보다 유리해진다는 것을 이론과 실험으로 보인 연구다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.17310" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.17310" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Agentic ESOpt: Fine-Tuning Long-Horizon LLM Agents with Minimal GPU Requirements</li>
+<li><strong>저자</strong>: Zhi Zheng, Wee Sun Lee (싱가포르국립대학교, NUS), Rongsheng Chen, Yunpeng Ba, Zhenkun Wang (남방과기대학교, SUSTech), Yee Whye Teh (옥스퍼드대학교)</li>
+<li><strong>출처</strong>: arXiv:2608.17310v1 [cs.LG] (2026년 8월 18일 제출)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/zz1358m/Agentic-ESOpt">GitHub 저장소</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.17310">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>장기 호라이즌(long-horizon) LLM 에이전트를 미세조정할 때, 역전파 기반 강화학습(RL) 대신 진화전략(Evolution Strategies, ES)을 사용하면 추론 수준의 최소 GPU 메모리만으로 전체 파라미터를 최적화할 수 있고, 호라이즌이 길어질수록 오히려 RL보다 유리해진다는 것을 이론과 실험으로 보인 연구다.</p>
+<h2>배경 및 문제의식</h2>
+<p>Qwen3, DeepSeek-R1 같은 최신 LLM들은 웹 탐색, 코드 저장소 편집, 다단계 워크플로우 조율 등 에이전트 역할을 잘 수행하지만, 특수 도구나 전문 작업에는 여전히 약점을 보여 태스크 특화 미세조정이 필요하다. 단일 턴(single-turn) 추론에서는 GRPO, PPO 같은 강화학습 기법이 효과적이었지만, 장기 호라이즌 에이전트 문제는 분기하는 상호작용과 희소 보상(trajectory 종료 시에만 보상 발생)을 특징으로 한다. 이 경우 에이전트 RL은 (1) 활성화값·옵티마이저 상태 저장과 역전파로 인한 막대한 GPU 메모리 요구, (2) 턴이 늘어날수록 어려워지는 신용 할당(credit assignment) 문제라는 두 가지 근본적 한계에 부딪힌다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>장기 호라이즌 에이전트 미세조정에서는 ES가 단순히 "값싼 RL 대체재"가 아니라 구조적으로 더 적합한 방법이라는 점을 제시했다. 그 근거로 (1) 모델 확장성(추론 수준 메모리만으로 전체 파라미터 최적화 가능), (2) 유연성(블랙박스 피드백이라 스킬/프롬프트 공간 진화와 쉽게 결합), (3) 장기 호라이즌 확장성(호라이즌 전체에 걸쳐 보상을 분해하지 않고 trajectory 단위로 파라미터에 귀속시킴) 세 가지를 든다.</li>
+<li>역전파 없이 전체 파라미터를 최적화하는 프레임워크 <strong>Agentic ESOpt</strong>를 제안했다. perturbation 스케일 σ에 코사인 감쇠 스케줄을 적용해 탐색-수렴(exploration-adaptation) 트레이드오프를 개선했다.</li>
+<li>Sudoku, ReAct 스타일 Math/DocVQA 도구 사용, WebArena 웹 에이전트, 테스트 타임 자동 휴리스틱 설계(AHD) 등 4B~27B 규모 모델에 걸쳐 폭넓게 검증했다.</li>
+</ul>
+<h2>방법론</h2>
+<p>Agentic ESOpt는 현재 LLM 파라미터 θ 주변에 가우시안 perturbation ε을 G개 샘플링하여 perturbation된 에이전트들을 환경에서 굴려(rollout) 각각의 trajectory 보상 R을 얻는다. 이 보상들을 population 내에서 z-score로 정규화한 뒤, 보상 가중 평균으로 파라미터를 업데이트한다(θ ← θ + (α/G)Σ R̂ᵢεᵢ). 노이즈 시드만 저장하고 in-place 덧셈/뺄셈으로 perturbation을 적용하므로 순전파(forward pass)만 필요하며, GPU 메모리 요구량이 추론 시와 동일한 최소 수준으로 유지된다. 이론적으로는, RL의 정책경사 추정량이 호라이즌 H에 걸쳐 행동별 점수 항을 누적하여 분산이 H에 비례해 커지는 반면, ES 추정량은 trajectory 전체에 대해 하나의 perturbation만 사용하므로 이런 호라이즌별 누적이 발생하지 않는다는 점을 논문은 스케일링 분석으로 보인다. 또한 perturbation 반경 σ에 코사인 감쇠를 적용해, 훈련 초반에는 크게(탐색·정규화), 후반에는 작게(수렴·편향 감소) 조절한다. 이 방식은 프롬프트/스킬 공간 최적화(Trace2Skill, EoH 등)와 동일한 rollout을 공유하며 파라미터-프롬프트 공진화(co-evolution)를 가능하게 한다.</p>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li><strong>장기 호라이즌 Sudoku</strong>: 최소 성공 호라이즌 H<em>를 5/10/15로 통제한 환경에서 Qwen3.5-4B를 사용해 PPO, GRPO, Agentic ESOpt를 비교했다. H</em>=5에서는 PPO가 우세, H<em>=10에서는 GRPO가 우세했지만, H</em>=15에서는 Agentic ESOpt가 53.13%로 가장 강한 GRPO(40.63%) 대비 +12.50%p 우위를 보였고 PPO는 사실상 0%로 붕괴했다. GPU 메모리는 8.41GB로 GRPO(58.88GB) 대비 85.7% 절감되었으며, 동일한 4×H100 환경에서 학습 FLOPs와 실제 소요 시간도 GRPO와 비슷하거나 더 적었다.</li>
+<li><strong>ReAct 스타일 Math(DAPO/AIME 2026)·DocVQA</strong>: Qwen3.5-4B 기준 Agentic ESOpt는 기본 모델 대비 평균 13.7%p, Agentic GRPO 대비 평균 8.3%p 개선했으며, Trace2Skill과 결합 시 가장 좋은 결과를 냈다. Pass@K 지표에서도 GRPO를 항상 상회했다.</li>
+<li><strong>WebArena-Lite(웹 에이전트)</strong>: Qwen3.5-27B에 전체 파라미터 ES를 적용해 No Skill 베이스라인을 29.47%→36.16%(+6.69%p)로, Trace2Skill 베이스라인을 33.94%→36.36%(+2.42%p)로 개선했다. 이 규모에서는 4×H100 환경에서 전체 파라미터 RL 미세조정 자체가 사실상 불가능한데, ES는 추론 수준 메모리로 이를 가능케 했다.</li>
+<li><strong>테스트 타임 자동 휴리스틱 설계(AHD)</strong>: TSP, KP, ASP, CVRP, BPP 등 조합최적화 문제에서 Sample 및 EoH 탐색 절차에 ES 파라미터 업데이트를 결합해, 총 36개 매칭 비교 중 28개에서 성능을 개선했다.</li>
+<li><strong>population 크기 민감도</strong>: 4B 모델은 population을 8→16으로 늘리면 성능이 크게 개선(+677%)되지만, 9B 모델은 거의 변화가 없어(0%), 더 강한 백본일수록 적은 population으로도 유효한 ES 업데이트를 얻을 수 있음을 시사했다.</li>
+</ul>
+<h2>한계점</h2>
+<p>논문은 부록에서 다음을 명시했다. (1) perturbation 반경 σ 등 새로운 하이퍼파라미터가 도입되지만, 실험 전반에서 σ₀≈1e-3, α≈5e-4 정도로 비교적 일관되게 사용 가능했다. (2) ES는 역전파 대신 더 많은 독립 환경 평가를 필요로 하므로, 환경 평가 자체가 매우 비싼 경우에는 이 트레이드오프가 불리해질 수 있다. (3) ES 업데이트는 엄밀히는 조밀(dense)하여 지속학습(continual learning) 시 목표와 무관한 방향으로의 랜덤워크 우려가 제기되나, 실제 업데이트 크기의 96% 이상이 perturbation 스케일 이내로 집중되어 있음을 확인했다. 그 외에도 초대형 모델로의 확장, population 스케일링 법칙 정립, 양자화된 ES, 스킬-파라미터 완전 공진화 등은 향후 과제로 남겨두었다.</p>
+<h2>시사점</h2>
+<p>이 연구는 ES를 RL의 저렴한 대체재가 아니라, 장기 호라이즌·희소 보상 에이전트 미세조정에 더 구조적으로 적합한 최적화 방식으로 재조명한다. 에이전트 시스템이 더 긴 상호작용, 더 큰 모델, 더 복잡한 프롬프트/스킬 구성요소로 나아갈수록, 역전파 없이 순전파만으로 전체 파라미터를 업데이트할 수 있는 Agentic ESOpt 같은 접근이 대형 에이전트의 온라인 자기개선(self-improvement) 및 산업 현장에서의 GPU 자원 제약 하 파라미터 적응에 실용적 경로가 될 수 있음을 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.17310" target="_blank" rel="noopener">huggingface.co/papers/2608.17310</a> · 2026-08-20</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

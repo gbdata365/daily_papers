@@ -1,0 +1,120 @@
+<meta charset="UTF-8">
+<title>디스코</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#10 · Daily Papers 2026-08-20</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 15</span>
+    </div>
+    <h1 class="article-title">DiSCO: Defending text-to-image generation through distribution-guided contrastive prompt optimization</h1>
+    <p class="article-title-ko">디스코: 분포 기반 대조 프롬프트 최적화를 통한 텍스트-이미지 생성 방어</p>
+    <p class="article-sub">텍스트-이미지(T2I) 생성 모델이 언어적으로는 안전해 보이지만 실제로는 유해한 이미지를 만들어내는 "선의의 적대적(benign adversarial)" 프롬프트 문제를, 모델 내부에 전혀 접근하지 않고 프롬프트 접미사(suffix)만 최적화하여 방어하는 블랙박스 기법 DiSCO를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.17067" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.17067" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: DiSCO: Defending text-to-image generation through distribution-guided contrastive prompt optimization</li>
+<li><strong>저자</strong>: Tong Zhang, Carlos Hinojosa, Bernard Ghanem (KAUST) / Motasem Alfarra, Christos Louizos (Qualcomm AI Research). Alfarra와 Hinojosa는 공동 2저자(equal contribution)로 표기됨.</li>
+<li><strong>출처</strong>: arXiv:2608.17067v1 [cs.AI] (2026년 8월 17일 제출)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.17067">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>텍스트-이미지(T2I) 생성 모델이 언어적으로는 안전해 보이지만 실제로는 유해한 이미지를 만들어내는 "선의의 적대적(benign adversarial)" 프롬프트 문제를, 모델 내부에 전혀 접근하지 않고 프롬프트 접미사(suffix)만 최적화하여 방어하는 블랙박스 기법 DiSCO를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>Stable Diffusion, SD3, Flux 등 T2I 모델은 폭력·노출 등 NSFW 콘텐츠를 생성할 위험이 있으며, 레드티밍 기반 적대적 공격(Ring-A-Bell, MMA-Diffusion, UnlearnDiffAtk 등)이 이를 더욱 부추긴다. 기존 방어는 크게 두 갈래로 나뉜다. 하나는 텍스트 인코더 미세조정, 가중치 편집, 추론 시 개입 등 화이트박스 방식으로, 모델 내부 접근이 필요해 폐쇄형(proprietary) 모델에는 적용할 수 없다. 다른 하나는 LLM 기반 프롬프트 재작성 같은 블랙박스 방식인데, 저자들은 이 방식이 근본적인 한계를 갖는다고 지적한다. 즉 텍스트 상으로는 안전 판정을 받지만 실제로는 모델이 학습한 시각적 분포상 유해한 이미지를 높은 확률로 생성하는 프롬프트가 존재하며, 이를 "선의의 적대적(benign adversarial)" 문제로 공식화한다. 저자들은 이를 텍스트 공간만의 방어로는 해결할 수 없는 분포 정렬(distributional alignment) 문제로 재정의하고, 모델을 수정하는 대신 프롬프트 자체를 모델의 안전한 출력 영역으로 이동시키는 접근을 제안한다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li><strong>문제 정형화</strong>: 텍스트는 안전하지만 이미지는 유해한 "선의의 적대적" 프롬프트 문제를 수식으로 정의함.</li>
+<li><strong>방법 제안</strong>: 학습이 전혀 필요 없고(training-free), 모델 파라미터·그래디언트·내부 표현에 전혀 접근하지 않는(strictly black-box) 플러그앤플레이 프롬프트 최적화 모듈 DiSCO를 제안. 분포 기반 대조(contrastive) 접미사 탐색을 빔 서치로 수행함.</li>
+<li><strong>실험적 검증</strong>: I2P 벤치마크의 4가지 공격, 4가지 방어 기법(추론 시 개입, 가중치 편집, 파인튜닝 계열 포함), 4가지 모델 아키텍처(UNet 계열·DiT 계열)에 걸쳐 32개 시스템-공격 조합, 5개 시드로 검증하여 NudeNet 기준 평균 ASR을 23.6%→2.4%, Q16 기준 8.3%→1.7%로 낮추면서도 생성 품질(CLIP, ImageReward)은 유지 또는 개선함을 보임.</li>
+</ol>
+<h2>방법론</h2>
+<p>DiSCO는 다음 단계로 작동한다.
+1. <strong>안전/유해 참조 풀 구축</strong>: 대상 모델 자체를 I2P의 비적대적 프롬프트로 구동시켜 이미지를 생성하고, NudeNet과 Q16 두 분류기가 모두 동의(consensus)하는 경우에만 각각 안전 풀(P_safe)과 유해 풀(P_unsafe)에 포함시킨다(불일치 시 폐기). 이는 대상 모델 고유의 시각적 분포를 반영하며 외부 유해 데이터셋이나 모델 내부 접근이 필요 없다.
+2. <strong>대조 점수 함수</strong>: 후보 프롬프트로 생성한 이미지를 CLIP 인코더로 임베딩한 뒤, 안전 풀 샘플들과의 평균 코사인 유사도에서 유해 풀 샘플들과의 평균 코사인 유사도를 뺀 값(J)을 점수로 사용한다. 매 스텝마다 각 풀에서 R개(기본값 8개)를 무작위 재샘플링하여 다양한 분포 뷰를 반영한다.
+3. <strong>빔 서치 기반 접미사 확장</strong>: 입력 프롬프트(이미 텍스트 정화를 거쳤을 수도 있음)에 LLaMA-3-8B를 이용해 토큰 단위로 접미사를 자기회귀적으로 확장하며, 빔 폭 K(기본 4), 스텝 수 T(기본 16)로 매 단계마다 대상 모델에 질의해 이미지를 생성하고 J 점수가 높은 상위 K개 후보만 유지한다. T 스텝 후 J가 가장 높은 프롬프트를 최종 출력으로 선택한다.
+4. <strong>선택적 적용</strong>: 계산 비용을 줄이기 위해 모든 프롬프트가 아니라 최초 생성 이미지가 유해로 판정된 "선의의 적대적" 사례에만 DiSCO를 적용하고, 안전하게 생성된 프롬프트는 그대로 통과시킨다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>UNet 기반(SD v1.4, SD v2.0)과 DiT 기반(Flux, SD3) 무방어 모델, 그리고 SLD-Max·SAFREE·RECE·ESD 등 4종의 기존 방어 기법에 DiSCO를 결합해 Ring-A-Bell, UnlearnDiffAtk, MMA-Diffusion, P4D 네 가지 공격으로 평가했다. 무방어 모델에서는 예를 들어 Ring-A-Bell 공격 시 NudeNet ASR이 SD v1.4에서 84.2%→7.8%, Flux에서 89.7%→5.0%로 크게 감소했다. 기존 방어 기법과 결합했을 때도 32개 방어-공격-탐지기 조합 전부에서 안전성이 개선되었으며, 특히 SLD-Max+DiSCO는 평균 NudeNet ASR을 21.1포인트, SAFREE+DiSCO는 20.8포인트 낮췄다. 안전성 향상은 품질 저하를 동반하지 않았고, 오히려 원 프롬프트 대비 CLIP 정합도(+0.036~+0.086)와 ImageReward(최대 +2.22)가 함께 개선되었다.</p>
+<p>부록에서는 다양한 강건성 분석을 제공한다. 참조 풀 크기를 25%까지 줄여도 성능이 거의 유지되며, 참조 풀 구축·평가에 쓰인 분류기(NudeNet, Q16)와 무관한 ShieldGemma2-4B로 재평가해도 순환 논증(circularity) 우려 없이 일관된 개선을 보였다. 대조(contrastive) 목적함수가 안전전용/유해전용 단일 풀 방식보다 우수함을 확인했고, 학습에 쓰이지 않은 T2I-RiskyPrompt 데이터셋과 프롬프트 확장형 공격 APT에 대해서도 일반화됨을 보였다. I2P의 7개 유해 카테고리(성적, 폭력, 혐오, 괴롭힘, 자해, 충격, 불법행위) 전반에서도 효과가 확인되었다.</p>
+<h2>한계점</h2>
+<ol>
+<li><strong>연산 오버헤드</strong>: 기본 설정(K=4, T=16)에서 프롬프트당 최대 256회의 후보 이미지 생성이 필요해 A100 GPU 기준 약 3.5분이 소요된다(스코어링 단계의 디노이징 스텝을 4단계로 줄이면 약 34초까지 단축 가능하나 여전히 즉각적이지 않음).</li>
+<li><strong>의미 왜곡(semantic drift) 위험</strong>: 드물게 접미사 확장이 모델 학습 분포에서 시각적으로 지배적인 개념(예: 유명 캐릭터, 흔한 동물)을 삽입해 원래 프롬프트의 의미나 스타일을 덮어써버리는 사례가 관찰됨.</li>
+<li>참조 풀 구축이 NudeNet·Q16 두 분류기의 합의에 의존하므로 이들 분류기의 편향이 완전히 배제되지는 않으며(다만 별도 분류기로 검증함), APT와 같은 적응적(adaptive) 공격이 DiSCO의 방어 메커니즘을 직접 겨냥할 경우 완전히 중화되지 않는 잔여 사례(SD v2.0 사례 등)가 존재한다.</li>
+</ol>
+<h2>시사점</h2>
+<p>DiSCO는 모델 재학습이나 내부 접근 없이 프롬프트 단만 조작해 안전성을 높일 수 있어, 소스코드나 가중치를 공개하지 않는 폐쇄형(proprietary) 상용 T2I 서비스에도 그대로 적용 가능한 실용적 방어 계층을 제시한다. 기존의 화이트박스 방어(가중치 편집·파인튜닝)나 다른 블랙박스 방어와도 상호 보완적으로 결합될 수 있음을 보여, 안전성과 생성 품질을 동시에 개선하는 "플러그앤플레이" 안전 부스터로서의 실무적 가치를 시사한다. 또한 이진 안전/유해 분류를 넘어 다단계 선호도(preference) 기반 안전 설정으로 일반화할 수 있는 여지를 열어, 아동용 서비스처럼 더 엄격한 기준이 필요한 배포 환경에도 응용될 가능성을 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.17067" target="_blank" rel="noopener">huggingface.co/papers/2608.17067</a> · 2026-08-20</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

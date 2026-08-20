@@ -1,0 +1,107 @@
+<meta charset="UTF-8">
+<title>계층적 언어 모델을 활용한 동적 멀티바이트 예측</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#12 · Daily Papers 2026-08-20</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 13</span>
+    </div>
+    <h1 class="article-title">Dynamic Multi-Byte Prediction With Hierarchical Language Models</h1>
+    <p class="article-title-ko">계층적 언어 모델을 활용한 동적 멀티바이트 예측</p>
+    <p class="article-sub">바이트 단위 계층적 언어 모델이 가진 "한 번에 한 바이트씩만 생성한다"는 추론 속도 병목을, 모델이 학습한 잠재 세그먼트(latent token) 경계에 맞춰 여러 바이트를 동시에 예측하는 동적 멀티바이트 예측(LCA-MBP) 기법으로 해결한 연구다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.15454" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.15454" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Dynamic Multi-Byte Prediction With Hierarchical Language Models</li>
+<li><strong>저자</strong>: Abraham Toluwase Owodunni, Sachin Kumar (Ohio State University), Chibuzor Okocha, Christan Grant (University of Florida), Tomasz Limisiewicz (University of Washington)</li>
+<li><strong>출처</strong>: arXiv:2608.15454v1 [cs.AI] (2026년 8월 16일 제출)</li>
+<li><strong>프로젝트 페이지</strong>: 실험 코드가 공개된 GitHub 저장소가 명시됨 — <a href="https://github.com/skai-research/lca-multibyte">skai-research/lca-multibyte</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.15454">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>바이트 단위 계층적 언어 모델이 가진 "한 번에 한 바이트씩만 생성한다"는 추론 속도 병목을, 모델이 학습한 잠재 세그먼트(latent token) 경계에 맞춰 여러 바이트를 동시에 예측하는 동적 멀티바이트 예측(LCA-MBP) 기법으로 해결한 연구다.</p>
+<h2>배경 및 문제의식</h2>
+<p>서브워드 토크나이저는 고정된 어휘 때문에 희귀 단어 과분절, 언어·스크립트 편향, 도메인 일반화 저하 문제를 겪는다. 이를 피하기 위해 바이트 단위로 직접 텍스트를 처리하는 바이트 레벨 언어 모델이 대안으로 떠올랐지만, 바이트 시퀀스는 서브워드보다 훨씬 길어 어텐션 비용과 자기회귀적(autoregressive) 디코딩 속도가 크게 느려진다는 단점이 있다. 최근의 계층적(hierarchical) 바이트 모델들은 바이트 스트림을 더 짧은 잠재 토큰(segment)으로 압축해 학습·표현 효율은 높였지만, 추론 시에는 여전히 한 번에 한 바이트씩 생성한다. 한편 서브워드 모델에서 쓰이는 다중 토큰 예측(Multi-Token Prediction, MTP) 기법은 여러 미래 토큰을 병렬로 예측해 속도를 높이지만, 예측할 토큰 수(n)만큼 별도의 예측 헤드가 필요해 파라미터가 선형으로 늘고, 항상 고정된 개수의 토큰을 예측하기 때문에 텍스트의 국소적 예측 난이도 변화에 대응하지 못한다는 한계가 있다.</p>
+<h2>핵심 기여</h2>
+<p>이 논문은 Latent Causal Attention(LCA)이라는 계층적 언어 모델용 동적 멀티바이트 예측(MBP) 기법을 제안한다. 핵심 아이디어는 모델이 학습한 바이트 세그먼트(잠재 토큰)를 압축 표현 용도뿐 아니라 병렬 생성의 단위로도 재사용하는 것이다. 이를 통해 (1) 예측할 바이트 수마다 별도의 헤드를 두지 않고 단일 멀티바이트 디코더 헤드만으로 세그먼트 전체를 병렬 예측하며, (2) 세그먼트 경계를 인지하는 새로운 어텐션 마스킹 기법으로 인과성(causality)을 위반하지 않으면서 병렬 예측을 가능하게 했고, (3) 고정 길이가 아닌 가변 길이(세그먼트 정렬) 예측 창을 사용해 기존 MTP의 고정 오프셋 문제를 해결했다.</p>
+<h2>방법론</h2>
+<p>모델은 FlexiTokens 구조를 기반으로 인코더, 언어 모델(LM) 모듈, 경계 예측기(boundary predictor), 디코더의 4개 구성 요소로 이루어진다. 인코더가 바이트 시퀀스를 인과적 어텐션으로 처리하면 경계 예측기가 세그먼트 경계 확률을 산출하고(Gumbel-Sigmoid로 이산화), 경계 위치를 기준으로 평균 풀링해 짧아진 잠재 토큰 시퀀스를 만든다. 이 잠재 시퀀스는 LM 모듈을 거친 뒤 다시 원래 길이로 업샘플링되어 디코더로 전달된다. 디코더는 두 개의 헤드로 분리되는데, 하나는 기존과 같은 다음-바이트 예측(NBP) 헤드이고, 다른 하나가 이 논문이 제안하는 멀티바이트 예측(MBP) 헤드다. MBP 헤드는 LCA 마스크를 사용하는 트랜스포머 층으로 구성되며, 이 마스크는 한 세그먼트 내의 각 바이트 위치가 자기 자신, 같은 세그먼트 내 이전 위치, 그리고 바로 이전 세그먼트의 모든 바이트에는 주의(attend)할 수 있지만 같은 세그먼트의 이후 위치나 더 과거의 세그먼트에는 주의할 수 없도록 제한한다. 이렇게 하면 세그먼트 단위의 인과성은 유지하면서 한 세그먼트 안의 모든 바이트를 단일 헤드에서 동시에 생성할 수 있다. 학습은 다음-바이트 손실과 멀티바이트 손실, 경계 예측기 손실을 결합한 목적함수로 이루어지며, 추론 시에는 예측 확률이 임계값 τ 이상인 후보 바이트만 왼쪽부터 순서대로 채택하는 방식(threshold acceptance)과, 별도의 검증 모델로 후보를 검증하는 추측 디코딩(speculative decoding) 방식 두 가지를 지원한다. 특히 LCA는 추론 시 후보 바이트 개수 n을 재학습 없이 자유롭게 조절할 수 있다는 것이 특징이다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>373M 파라미터 규모의 계층적 트랜스포머를 FineWeb-edu 영어 데이터 500억 바이트로 사전학습(압축률 3배)하고, Tulu-3 SFT 데이터로 미세조정한 뒤 IFEval(지시 따르기), CoQA(질의응답), CNN/DailyMail(요약), Opus-100 스페인어·프랑스어-영어 번역 총 4개 과제에서 평가했다. 비교 대상은 LlamaByte, SpaceByte, FlexiTokens(FxT), 효율화된 FxT(Eff-FxT), MLP 기반 MTP 베이스라인(MLP-MBP) 등 5개 모델이며 모두 파라미터 수를 맞춰 공정하게 비교했다. 그 결과 LCA-MBP는 4개 과제 중 3개(IFEval, CoQA, 요약)에서 처리량(throughput)과 성능의 파레토 최적(Pareto-optimal) 프런티어에 위치했고, 번역 과제에서도 약간의 성능 손실로 상당한 처리량 이득을 얻었다. 흥미롭게도 LCA-MBP는 MLP-MBP보다 바이트 수용률(acceptance rate)이 낮음에도 다운스트림 성능은 더 높았는데, 이는 MLP 헤드가 서로 독립적으로(조건부 독립 가정) 예측하는 반면 LCA는 트랜스포머 층을 통해 이전 세그먼트 맥락과 세그먼트 내 위치를 함께 반영해 더 일관된 예측을 하기 때문으로 분석됐다. 추가 분석에서는 임계값 τ와 후보 수 n을 조절하는 절충 관계, 추측 디코딩 검증 방식에서는 성능 저하 없이 n을 늘릴수록 처리량이 최대 37%까지 증가하는 결과, 그리고 LCA를 외부 FxT 모델의 검증을 받는 드래프터로 사용했을 때 동일한 성능을 유지하면서 1.4~1.7배의 속도 향상을 달성하는 "드롭인 가속기(drop-in accelerator)" 활용 사례도 제시했다.</p>
+<h2>한계점</h2>
+<p>논문은 세 가지 한계를 명시한다. 첫째, 실험이 373M 파라미터 단일 규모와 단일 학습 코퍼스에서만 이루어져 더 큰 규모에서도 효과가 유지되는지는 향후 연구 과제로 남겨두었다(계산 자원 제약). 둘째, 평가가 영어 중심 또는 영어와 짝을 이루는 과제로 한정되어 있어 저자원 언어나 형태론적으로 복잡한 언어에 대한 검증은 이루어지지 않았다(다만 저자들은 LCA가 경계 예측기의 토큰화 동작을 그대로 물려받으므로 구조 변경 없이 전이 가능할 것으로 추정한다). 셋째, threshold acceptance 방식에서는 최적의 후보 수 n이 과제마다 달라 약간의 튜닝 비용이 발생하지만, 추측 디코딩 검증 방식을 쓰면 이 비용이 사라진다고 언급한다.</p>
+<h2>시사점</h2>
+<p>이 연구는 계층적 바이트 모델이 학습하는 잠재 토큰(세그먼트)이 단순한 표현 압축 수단을 넘어 병렬 생성의 자연스러운 단위가 될 수 있음을 보여준다. 별도의 예측 헤드 없이 단일 헤드와 어텐션 마스크만으로 가변 길이 멀티바이트 예측을 구현했다는 점에서 파라미터 효율적이며, FlexiTokens 외에도 BLT, H-Net 등 유사한 설계의 다른 계층적 LM에도 일반화 가능하다고 저자들은 주장한다. 또한 외부 검증 모델과 결합해 기존 계층적 바이트 모델의 추론 속도를 성능 저하 없이 높이는 범용 가속기로 활용될 수 있다는 점에서, 토크나이저에 의존하지 않는 바이트 레벨 언어 모델의 실용성을 높이는 방향의 실용적 기여로 볼 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.15454" target="_blank" rel="noopener">huggingface.co/papers/2608.15454</a> · 2026-08-20</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

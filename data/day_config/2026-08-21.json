@@ -1,0 +1,110 @@
+{
+  "2608.17426": {
+    "base": "2608_셈컴벤치_비디오-생성-의미-과제-완수-벤치마크",
+    "rank": "#1",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "151",
+    "en_title": "SemComp-Bench: Benchmarking Semantic Task Completion in Video Generation",
+    "ko_title": "셈컴벤치: 비디오 생성에서의 의미적 과제 완수 벤치마킹"
+  },
+  "2608.16590": {
+    "base": "2608_제타_자기진화-물리지능-폐루프-임바디드-하네스",
+    "rank": "#2",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "129",
+    "en_title": "Zetta ζ: An Efficient Closed-Loop Embodied Harness for Self-Evolving Physical Intelligence",
+    "ko_title": "제타 ζ: 자기진화형 물리 지능을 위한 효율적 폐루프 임바디드 하네스"
+  },
+  "2608.18565": {
+    "base": "2608_세마피엘씨_PLC-코드-생성-검증게이트-에이전트-하네스",
+    "rank": "#3",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "110",
+    "en_title": "SemaPLC: A Project-Grounded, Verification-Gated Agent Harness for PLC Code Generation",
+    "ko_title": "세마피엘씨: PLC 코드 생성을 위한 프로젝트 기반 검증-게이트 에이전트 하네스"
+  },
+  "2608.13558": {
+    "base": "2608_옴니사이언티스트_전모달-전분야-AI과학자",
+    "rank": "#4",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "83",
+    "en_title": "OmniScientist: An Omni-Modal Omni-Discipline AI Scientist",
+    "ko_title": "옴니사이언티스트: 전모달·전분야 AI 과학자"
+  },
+  "2608.17253": {
+    "base": "2608_코알엘_다중에이전트-RL-다양집단-비지도-추론-출현",
+    "rank": "#5",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "82",
+    "en_title": "Co-RL: Unsupervised Reasoning Emerges from Diverse Cohort in Multi-agent RL",
+    "ko_title": "코알엘(Co-RL): 다중 에이전트 강화학습에서 다양한 집단으로부터 출현하는 비지도 추론"
+  },
+  "2608.19197": {
+    "base": "2608_스페이드_적응형-합성-실행환경-자기대국",
+    "rank": "#6",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "41",
+    "en_title": "SPADE: Self-Play in Adaptive Synthetic Executable Environments",
+    "ko_title": "스페이드(SPADE): 적응형 합성 실행 환경에서의 자기대국"
+  },
+  "2608.18940": {
+    "base": "2608_화학타당성_단일단계-역합성-화학타당성인지-LLM학습",
+    "rank": "#7",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "29",
+    "en_title": "Training Chemical Plausibility-Aware Large Language Models for Single-Step Retrosynthesis",
+    "ko_title": "단일 단계 역합성을 위한 화학적 타당성 인지 대형언어모델 학습"
+  },
+  "2608.14929": {
+    "base": "2608_학습흔적_언어모델-계보검증-중심잔차-시그니처",
+    "rank": "#8",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "16",
+    "en_title": "Training Leaves Traces: Centered Residual Signatures for Language Model Lineage Verification",
+    "ko_title": "학습은 흔적을 남긴다: 언어모델 계보 검증을 위한 중심 잔차 시그니처"
+  },
+  "2608.18746": {
+    "base": "2608_결정지표정렬_잠재세계모델-MPC플래닝-행동조건-목적함수",
+    "rank": "#9",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "15",
+    "en_title": "Decision-Metric Alignment in Latent World Models: Diagnostics and Action-Conditioned Objectives for MPC Planning",
+    "ko_title": "잠재 세계모델에서의 결정 지표 정렬: MPC 플래닝을 위한 진단 및 행동조건부 목적함수"
+  },
+  "2608.18171": {
+    "base": "2608_반복언어모델_구성적-도구호출-성능향상",
+    "rank": "#10",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "15",
+    "en_title": "Looped Language Models Improve Compositional Tool Calling",
+    "ko_title": "반복(루프) 언어모델은 구성적 도구 호출 능력을 향상시킨다"
+  },
+  "2608.18423": {
+    "base": "2608_에프엠벤치_경쟁형-에이전트-장기경영-벤치마크",
+    "rank": "#11",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "13",
+    "en_title": "FM-Bench: A Benchmark for Long-Horizon Management with Competing Agents",
+    "ko_title": "에프엠벤치(FM-Bench): 경쟁 에이전트를 위한 장기 경영 벤치마크"
+  },
+  "2608.14229": {
+    "base": "2608_적응인기도_LLM언러닝-적응형-인기도가중",
+    "rank": "#12",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "13",
+    "en_title": "The More Popular, The Harder to Forget: Adaptive Popularity for LLM Unlearning",
+    "ko_title": "인기가 많을수록 잊기 어렵다: LLM 언러닝을 위한 적응형 인기도"
+  }
+}

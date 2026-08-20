@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>단일 단계 역합성을 위한 화학적 타당성 인지 대형언어모델 학습</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#7 · Daily Papers 2026-08-21</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 29</span>
+    </div>
+    <h1 class="article-title">Training Chemical Plausibility-Aware Large Language Models for Single-Step Retrosynthesis</h1>
+    <p class="article-title-ko">단일 단계 역합성을 위한 화학적 타당성 인지 대형언어모델 학습</p>
+    <p class="article-sub">Top-K 프롬프팅 기반 학습과 ChemCensor 화학적 타당성·신규성 보상을 결합한 강화학습으로 미세조정한 C3LM 모델이, 약 4,560만 건의 초대형 반응 데이터셋(CREED-CCV-2+USPTO-XL)을 학습해 도전적인 OOD 벤치마크(URSA-expert-2026)에서 기존 전통적 단일단계 역합성 모델들을 능가했다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.18940" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.18940" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Training Chemical Plausibility-Aware Large Language Models for Single-Step Retrosynthesis</li>
+<li><strong>저자</strong>: Bogdan Zagribelnyy, Ivan Ilin, Nikita Bondarev, Maksim Kuznetsov, Mathieu Reymond, Vladimir Aladinskiy, Alex Aliper, Alex Zhavoronkov (Insilico Medicine AI Limited, 아랍에미리트 아부다비 / Insilico Medicine Canada Inc., 캐나다 몬트리올 / Insilico Medicine Hong Kong Ltd., 홍콩)</li>
+<li><strong>출처</strong>: arXiv:2608.18940v1 [cs.LG] (2026년 8월 19일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시된 별도 프로젝트 페이지는 없음. 다만 갱신되는 벤치마크 결과 페이지로 https://dddbench.insilico.com/ 가 제시됨, ChemCensor 코드는 https://github.com/insilicomedicine/ChemCensor 에 공개</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.18940">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>Top-K 프롬프팅 기반 학습과 ChemCensor 화학적 타당성·신규성 보상을 결합한 강화학습으로 미세조정한 C3LM 모델이, 약 4,560만 건의 초대형 반응 데이터셋(CREED-CCV-2+USPTO-XL)을 학습해 도전적인 OOD 벤치마크(URSA-expert-2026)에서 기존 전통적 단일단계 역합성 모델들을 능가했다.</p>
+<h2>배경 및 문제의식</h2>
+<p>단일단계 역합성(SSRS)은 신약 후보 물질의 합성 가능성을 판단하는 컴퓨터 기반 합성 계획(CASP)의 핵심 요소이지만, 하나의 표적 분자에 대해 여러 타당한 분해 경로가 존재하는 "일대다" 특성이 기존의 단일 정답 기반 평가 방식으로는 잘 포착되지 않는다는 문제가 있다. 저자들의 선행 연구(URSA 프레임워크, ChemCensor 지표 활용)는 LLM 기반 SSRS 모델이 유망하지만 아직 LocalRetro, MHNreact 같은 최고 수준의 전통적 모델에는 미치지 못한다는 점을 보인 바 있다. 이 논문은 이러한 격차를 좁히기 위한 학습 방법을 제안한다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>다양한 반응 생성을 유도하는 학습·추론 패러다임인 Top-K 프롬프팅 방식을 제안.</li>
+<li>전문가 코딩 반응 템플릿 기반으로 약 4,560만 건의 검증된 반응으로 구성된 초대형 데이터셋 CREED-CCV-2+USPTO-XL을 구축.</li>
+<li>새 버전의 C3LM(Chemistry Constraint-Consistent Language Model)을 훈련시켜 기존 SSRS 모델 및 다른 범용 LLM보다 우수한 성능을 달성.</li>
+<li>반응 고유성 관점에서 LLM과 전통 모델을 비교 분석하여, 서로 다른 화학 반응 공간을 탐색한다는 점을 밝히고 앙상블 기반 역합성 시스템의 필요성을 제기.</li>
+</ol>
+<h2>방법론</h2>
+<p>프롬프팅은 한 번에 하나의 최적 반응을 요청하는 Top-1 모드와, "서로 다른 답 15개를 달라"고 명시적으로 요청하는 Top-K 모드로 나뉜다. 학습 데이터는 기존 USPTO(약 95만 건 반응), ChemCensor(v0.5.2)로 검증한 CREED-CCV(약 640만 건), ChEMBL 화합물과 가상합성엔진(VSE)으로 생성해 CREED-CCV와 병합·중복제거한 CREED-CCV-2(약 3,600만 건, ChemCensor v1.1.1 검증), USPTO 제품에 VSE로 반응물을 추가 열거한 USPTO-XL(약 1,060만 건)로 구성되며, 이들을 합쳐 최종적으로 약 368만 개의 고유 제품과 4,565만 개의 고유 반응을 가진 CREED-CCV-2+USPTO-XL을 만들었다. C3LM은 LFM2 2.6B 체크포인트에서 시작해 지도 미세조정(SFT)을 5만 스텝 수행한 뒤, GRPO(Group Relative Policy Optimization) 기반 온라인 강화학습 미세조정(RFT)을 적용했다. 보상 함수는 사고 형식 유효성, SMILES 문법 유효성, 지정한 개수(k)만큼 답변 생성, 답변 간 고유성, ChemCensor 기반 화학적 타당성 점수, 학습 데이터 밖의 타당한 반응물 생성을 장려하는 신규성 점수 등 6개 요소의 가중합으로 정의된다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>평가는 전문가 검증을 거친 OOD 벤치마크 URSA-expert-2026(신규 표적분자 100개)과 USPTO-50K-test의 10% 무작위 부분집합인 USPTO-50K-test-mini(497개 표적)에서 ChemCensor(v1.1.1)를 사용해 이루어졌다. Top-1에서 Top-K 프롬프팅으로 전환하면 대부분의 LLM 성능이 크게 향상되고 모델 순위도 바뀌었으며(Top-1에서는 Grok-4.1이, Top-K에서는 Gemini 3.1 Pro가 최고 LLM), 이에 따라 저자들은 Top-K 방식을 SSRS 벤치마킹의 새로운 표준으로 제안했다. C3LM을 Top-1 대신 Top-K 모드로 학습시키자 다양성 관련 지표(Av. PT-Top-10)가 2.5배 이상 향상되었고, 데이터셋을 CREED-CCV-2+USPTO-XL로 6배 이상 확장하자 추가로 성능이 개선되었다. 최종적으로 ChemCensor 보상과 신규성 보상을 모두 적용한 RFT 모델(C3LM-LFM2-RFT-CC-NR)은 URSA-expert-2026 벤치마크에서 CC 관련 지표 기준 전통적 SSRS 모델들(LocalRetro, MHNreact 등)을 능가했다. 또한 반응 고유성 분석에서, 전통 모델 중 가장 다양한 답을 내는 MHNreact와 비교했을 때 C3LM의 두 모델(CREED-CCV-2+USPTO-XL, RFT-CC-NR)만이 평균적으로 더 많은 고유 타당 반응(각각 +0.4, +0.3개)을 생성해, LLM과 전통 모델이 상호 보완적인 화학 공간을 탐색한다는 점이 확인되었다.</p>
+<h2>한계점</h2>
+<p>저자들은 ChemCensor 점수를 학습 최적화 목표이자 평가 지표로 동시에 사용함으로써 발생하는 순환성(circularity)을 인정하면서도, 이는 실용적 유용성을 극대화하기 위한 의도적 설계라고 설명한다. 또한 ChemCensor는 반응 조건, 용매, 정제 방법 등 실제 실험실 유기합성 변수를 충분히 반영하지 못하며, 참조 데이터셋이 특허 기반 반응 공간으로 한정되어 있다. 화학적 다양성 평가는 정확한 SMILES 문자열 일치로만 판정되어 반응 유형이나 메커니즘적 관점의 비교는 이루어지지 않는다. 마지막으로 학습 데이터가 템플릿 기반 생성 엔진에 의존하므로 특정 화학 패턴에 편향되거나 새로운 화학 변환을 놓칠 가능성이 있다.</p>
+<h2>시사점</h2>
+<p>이 연구는 Top-K 프롬프팅·학습 방식이 LLM 기반 역합성 연구에서 향후 표준적인 실천이 될 수 있음을 시사한다. 아울러 LLM과 전통적 알고리즘 기반 SSRS 모델이 서로 다른, 보완적인 화학 반응 공간을 탐색한다는 발견은 두 접근 방식을 결합한 앙상블 기반 역합성 시스템 개발이 유망한 방향임을 보여준다. 논문은 ChemCensor 코드를 공개하고 최신 벤치마크 결과를 지속적으로 갱신하는 웹페이지를 제공함으로써 후속 연구를 지원한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.18940" target="_blank" rel="noopener">huggingface.co/papers/2608.18940</a> · 2026-08-21</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

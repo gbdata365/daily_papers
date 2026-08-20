@@ -1,0 +1,107 @@
+<meta charset="UTF-8">
+<title>셈컴벤치</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#1 · Daily Papers 2026-08-21</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 151</span>
+    </div>
+    <h1 class="article-title">SemComp-Bench: Benchmarking Semantic Task Completion in Video Generation</h1>
+    <p class="article-title-ko">셈컴벤치: 비디오 생성에서의 의미적 과제 완수 벤치마킹</p>
+    <p class="article-sub">비디오 생성 모델이 중간 과정 없이도 지시된 "결과(outcome)"를 달성하면서 참조 이미지와의 의미적 정합성(semantic grounding)을 유지하는지를 평가하는 새로운 과제 정의와 벤치마크 SemComp-Bench를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.17426" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.17426" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: SemComp-Bench: Benchmarking Semantic Task Completion in Video Generation</li>
+<li><strong>저자</strong>: Keyu Tu, Zhuowei Chen, Mengqi Huang(교신저자), Yuxin Wang, Jiahao Zhu, Zhendong Mao, Yongdong Zhang. University of Science and Technology of China, FrameX.AI, Sun Yat-sen University 소속 연구진.</li>
+<li><strong>출처</strong>: arXiv:2608.17426v1 [분류 논문에 명시되지 않음] (2026-08-19)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://SemComp-Bench.github.io">https://SemComp-Bench.github.io</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.17426">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>비디오 생성 모델이 중간 과정 없이도 지시된 "결과(outcome)"를 달성하면서 참조 이미지와의 의미적 정합성(semantic grounding)을 유지하는지를 평가하는 새로운 과제 정의와 벤치마크 SemComp-Bench를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>기존 비디오 생성 벤치마크(VBench, EvalCrafter 등)는 시각적 품질, 시간적 일관성, 프롬프트 충실도 등을 주로 평가하지만, "지시된 작업을 실제로 완수했는가"와 "완수된 결과가 참조 이미지의 과제 관련 속성과 의미적으로 맞닿아 있는가"를 함께 검증하지는 않는다. 저자들은 예를 들어 지폐를 접어 거북이 모양을 만들라는 지시가 주어졌을 때, 접는 중간 과정은 없어도 되지만 결과물이 실제로 그 지폐로 만든 거북이여야 한다는 점을 들어 "Semantic Task Completion Video Generation"이라는 결과 중심(outcome-oriented) 과제를 새롭게 정의한다.</p>
+<h2>핵심 기여</h2>
+<p>1) 결과 달성과 의미적 정합성을 동시에 요구하는 새로운 과제 정식화. 2) Koala-36M의 실제 영상에서 참조 프레임, 결과 중심 클립, 간략/상세 지시문 쌍으로 구성된 이미지-텍스트-비디오 트리플렛 데이터셋 SemComp-Data를 4단계 파이프라인으로 저비용·확장 가능하게 구축. 3) 비전-언어모델(VLM)이 구조화된 이진 질문에 답하는 방식으로 Outcome Achievement(OA)와 Generation Reliability(GR) 두 지표를 산출하는 평가 프로토콜 SemComp-Bench 도입.</p>
+<h2>방법론</h2>
+<p>SemComp-Data는 (1) Candidate Filtering(제목 키워드 기반으로 내레이션 의존적 영상 제외 후 VLM이 6개 도메인·과제 카테고리로 분류), (2) State Mining(카테고리별 상태 정의를 바탕으로 참조·결과 프레임의 타임스탬프를 VLM이 탐지하고 QA 방식으로 검증), (3) Video Extension(Panda-70M 방식의 샷 검출로 결과 시점 주변을 병합해 평균 약 4.03초의 결과 중심 클립 추출), (4) Instruction Structuring(30단어 이내의 간략 지시문과, 보존/폐기할 속성 및 정렬 유형(Object Element, Person Identity, Object Appearance, Scene)을 반영한 상세 지시문 생성)의 4단계로 구성된다. 평가 시 SemComp-Bench는 생성 영상에서 균일 샘플링한 27프레임을 대상으로, OA 차원에서는 결과 실현·의미적 정합성·핵심 개체 일관성·전역 시각적 연속성 4가지 이진 질문을, GR 차원에서는 물리적 타당성·시각적 선명도·아티팩트 없음·장면 내 시공간 안정성·텍스트/인터페이스 무결성 5가지 이진 질문을 VLM(Doubao-Seed-1.8)에 던져 판정하고, 각각 OA Score(4개 기준 결합 통과율)와 GR Score(5개 기준 평균 통과율)를 산출한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Koala-36M에서 약 2만 개 영상을 처리해 1,273개 인스턴스를 구축했고, 도메인별 균형을 맞춘 60개 인스턴스로 구성된 SemComp-Core에서 Seedance 2.0, Wan2.2(TI2V-5B, I2V-A14B), CogVideoX1.5, SkyReels-V2, HunyuanVideo-1.5, Phantom-1.3B 등 대표 모델을 평가했다. 상세 지시문 기준 OA Score는 HunyuanVideo-1.5-720P-I2V가 37.8%로 가장 높았고 Wan2.2-I2V-A14B가 28.3%로 뒤를 이었으나, 최고 성능도 40%를 넘지 못해 결과 달성과 의미적 정합성을 동시에 만족시키는 것이 여전히 어려움을 보였다. GR Score는 Seedance 2.0이 91.8%로 가장 높았으며, 모든 모델에서 장면 내 시공간 안정성이 공통적인 약점으로 나타났다. 또한 I2V 조건이 T2V보다 의미적 정합성과 개체 일관성에서 뚜렷이 우수했고, 상세 지시문이 간략 지시문보다 결과 실현에는 유리하지만 개체 일관성·연속성 면에서는 오히려 간략 지시문이 나은 트레이드오프도 관찰되었다.</p>
+<h2>한계점</h2>
+<p>논문 자체가 언급하듯 SemComp-Data로 모델을 실제로 파인튜닝했을 때 성능이 개선되는지는 아직 검증되지 않았다. 또한 평가가 VLM(Doubao-Seed-1.8)의 이진 판단에 의존하므로 VLM 자체의 오류나 편향이 결과에 영향을 줄 수 있으며, 평가 대상 모델 수와 인스턴스 수(SemComp-Core 60개)가 상대적으로 제한적이다.</p>
+<h2>시사점</h2>
+<p>결과 중심적이고 의미 정합성을 요구하는 이 새로운 평가 축은 현재의 비디오 생성 모델들이 시각적 품질이나 시간적 일관성에서는 발전했음에도 실제 "과제 완수"라는 목표에는 크게 미달함을 드러낸다. 이는 향후 비디오 생성 모델 학습에 결과 지향적 데이터와 목표를 반영할 필요성을 시사하며, SemComp-Data 자체도 향후 과제 특화 학습에 활용될 잠재력이 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.17426" target="_blank" rel="noopener">huggingface.co/papers/2608.17426</a> · 2026-08-21</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

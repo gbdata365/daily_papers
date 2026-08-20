@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>스페이드(SPADE)</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#6 · Daily Papers 2026-08-21</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 41</span>
+    </div>
+    <h1 class="article-title">SPADE: Self-Play in Adaptive Synthetic Executable Environments</h1>
+    <p class="article-title-ko">스페이드(SPADE): 적응형 합성 실행 환경에서의 자기대국</p>
+    <p class="article-sub">하나의 LLM이 "환경 설계자(Environment Designer)"와 "추론 에이전트(Reasoning Agent)" 두 역할을 동시에 수행하면서, 스스로 만든 실행 가능한 코드 환경 위에서 자기대국(self-play)을 벌여 지속적으로 성장하는 강화학습 프레임워크 SPADE를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.19197" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.19197" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: SPADE: Self-Play in Adaptive Synthetic Executable Environments</li>
+<li><strong>저자</strong>: Bo Liu, Simon Yu 등 다수 공동 저자 (University of Washington, Stanford University, Northeastern University, Carnegie Mellon University, Massachusetts Institute of Technology, National University of Singapore, Seoul National University, Stevens Institute of Technology, University of Chicago 소속 연구자들이 참여)</li>
+<li><strong>출처</strong>: arXiv:2608.19197v1 [cs.CL] (2026년 8월 19일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://spade-rl.github.io">https://spade-rl.github.io</a> (코드: <a href="https://github.com/spade-rl/spade">https://github.com/spade-rl/spade</a>)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.19197">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>하나의 LLM이 "환경 설계자(Environment Designer)"와 "추론 에이전트(Reasoning Agent)" 두 역할을 동시에 수행하면서, 스스로 만든 실행 가능한 코드 환경 위에서 자기대국(self-play)을 벌여 지속적으로 성장하는 강화학습 프레임워크 SPADE를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>에이전트가 계속 개선되려면 다양하고 난이도가 계속 갱신되는 학습용 목표(환경) 풀이 필요하지만, 기존의 수작업 큐레이션·정적 합성·고정된 검증자 기반 방식은 학습자가 성장해도 환경 분포가 고정되어 있어, 에이전트가 그 풀을 다 소화하면 더 이상 향상되지 않는다. 논문은 환경 구축이 이미 업계에서 연간 10억 달러 이상 투자되는 병목 자원이 되었다고 지적하며, 자기대국 기반 접근도 정보 대칭성 한계(자기 지식 이상을 넘어서는 과제를 내지 못함)와 모드 붕괴 위험이 있고, 기존 방법 대부분은 완전한 다중턴 MDP가 아니라 단일 문제(task)만 생성한다는 점을 문제로 제기한다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>동일한 LLM이 실행 가능한 코드로 환경을 설계하고 그 환경을 직접 푸는 역할까지 겸하는 self-play 프레임워크를 제시하여, 단일턴 추론과 다중턴 에이전틱(tool-use) 과제를 하나의 인터페이스로 통합.</li>
+<li>힌트 기반 regret 보상(hint-based regret reward): 특권 정보(hint)를 준 경우와 안 준 경우의 에이전트 성능 차이로 PAIRED류의 minimax regret을 경량화하여 근사, Designer가 "풀 수는 있지만 힌트 없이는 어려운" 최전선(frontier) 환경을 만들도록 유도.</li>
+<li>사전학습 코퍼스에서 매 라운드 문서를 샘플링해 그라운딩(corpus grounding)하고, 과거에 생성한 환경과 그 regret 점수를 누적한 메모리(environment memory)를 함께 사용하는 설계 파이프라인 도입.</li>
+<li>게임(games)과 도구 사용(tool-use) 두 영역, 최대 30B 파라미터급 모델에서 self-play가 실제로 작동함을 실증하는 학습 레시피(환경 검증, 보상 해킹 방지, 커리큘럼 설계 포함) 제공.</li>
+</ol>
+<h2>방법론</h2>
+<p>환경은 OpenAI Gym 스타일의 reset()/step() 인터페이스를 갖는 Python 클래스(즉 상태·전이·보상함수가 코드로 표현된 완전한 MDP)로 작성된다. 하나의 정책 πθ가 시스템 프롬프트만 바꿔 Designer 역할(role=D)과 Agent 역할(role=A)을 오간다. Designer는 코퍼스 문서와 메모리를 조건으로 환경 e와 특권 힌트 h를 생성하고, Agent는 같은 환경 e를 힌트 없이/있이 각각 여러 번 굴려(rollout) 두 평균 보상의 차이 rD(e) = r̄A(e|h) − r̄A(e)를 Designer의 보상(regret)으로, 과제 성공 여부(0/1)를 Agent의 보상으로 삼는다. 두 보상 모두 GRPO(Group Relative Policy Optimization)로 같은 파라미터를 업데이트하며, 역할별 advantage 정규화, Designer 업데이트 지연 및 truncated importance sampling, 비대칭 clipping, regret 하한(0)과 목표 승률 밴드(0.4~0.6)에 기반한 난이도 앵커 보상을 결합하는 등 두 역할 공동 학습을 안정화하는 여러 장치를 적용했다. 게임 설정은 수학추론·논리연역·공간추론·패턴인식·최적화·인과추론 등 6개 인지 스킬 범주를 순환시키며 수학·과학 문서(약 1.5만 건)로 그라운딩했고(k=4), 툴사용 설정은 함수 호출 형식의 도구 집합·백엔드 상태·순차적 사용자 지시로 구성된 환경을 코드 코퍼스(약 1.5만 건)로 그라운딩했다(k=8, 힌트는 단계별 계획 형태).</p>
+<h2>실험 설정 및 결과</h2>
+<p>Qwen3-4B-Instruct-2507, Qwen3-8B, Qwen3-30B-A3B-Instruct-2507 세 가지 backbone에 대해 400회의 GRPO 롤아웃으로 학습했으며(RL 프레임워크는 slime 사용), 비교 대상은 GPT-5.5로 생성한 정적 환경에 학습한 Fixed-env GRPO와 공식 RLVE 400개 환경에 학습한 Fixed-env RLVE이다. 게임 설정에서는 AIME 2025/2026, GPQA-Diamond, LiveCodeBench-v6, Reasoning-Gym(4개 범주) 등 8개 held-out 벤치마크 평균 기준 30B 모델에서 58.3점을 기록하여 base 대비 +8.1, 가장 강력한 baseline(Fixed-env RLVE) 대비 +5.3의 향상을 보였고, 이 격차는 모델 규모가 커질수록 늘어났다. 툴사용 설정에서는 BFCL v4 multi-turn에서 +5.7(30B)·+10.3(4B), ACEBench-Agent에서 +13.9(30B), τ2-bench에서 +3.6의 향상을 얻었으며, 30B 모델은 AgentScaler, Agent-World, AWM, EnvScaler 등 전용 합성 데이터 시스템 대비 BFCL v4 multi-turn과 ACEBench-Agent에서 앞섰다. 정성 분석에서는 corpus grounding이 있을 때 생성 환경의 다양성이 유지되었고(Vendi/n 0.68 vs. 그라운딩 제거 시 0.04), Designer 학습이 진행될수록 물리 환경 문제에서 정답 공식을 프롬프트에 노출하는 비율이 25%에서 5%로 줄었으며, 보상 단계가 더 세분화되었다. Agent의 행동도 학습 초반의 "사전 도출형" 추론에서 후반의 "증거 우선 탐색형" 행동으로 변화했다. Ablation 결과 전체 구성(Designer 학습 + corpus grounding + memory)이 각 요소를 제거한 버전이나 고정 Designer(GPT-5.5로 대체) 버전보다 모든 벤치마크에서 우수했다.</p>
+<h2>한계점</h2>
+<p>논문 본문에서 명시적으로 확인되는 한계로는, corpus grounding이 없으면 Designer가 다양성을 잃고 동일한 환경을 반복 생성한다는 점(예: 290~312 스텝 구간에서 동일한 RotatingMaze 과제가 41회 연속 생성됨)과, 힌트가 소형 backbone에서는 오히려 오도(misleading)하여 regret이 음수로 관측되는 경우가 있다는 점이 있다. 또한 Designer 목적함수가 지연 업데이트로 인해 off-policy가 되어 이를 보정하기 위한 추가 기법(truncated importance sampling)이 필요하다는 점도 언급된다. 다만 추출된 논문 텍스트 범위 내에서는 별도의 "한계(Limitations)" 절이나 결론(Conclusion) 절 본문이 확인되지 않아, 더 포괄적인 한계 논의는 논문에 명시되지 않음.</p>
+<h2>시사점</h2>
+<p>환경 설계 자체를 고정된 도구가 아니라 강화학습으로 함께 학습되는 구성요소로 만듦으로써, 학습자가 성장함에 따라 학습 환경도 함께 진화하는 개방형(open-ended) 자기개선의 구체적 사례를 제시한다. 코드로서의 환경(code-as-environment) 표현은 단일턴 추론 문제와 다중턴 에이전틱 도구 사용 문제를 하나의 학습 파이프라인으로 통합할 수 있음을 보여주며, 30B급 모델까지 확장 가능함을 실증하여 실제 대규모 post-training 파이프라인에 적용될 잠재력을 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.19197" target="_blank" rel="noopener">huggingface.co/papers/2608.19197</a> · 2026-08-21</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

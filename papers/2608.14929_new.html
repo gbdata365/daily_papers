@@ -1,0 +1,107 @@
+<meta charset="UTF-8">
+<title>학습은 흔적을 남긴다</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#8 · Daily Papers 2026-08-21</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 16</span>
+    </div>
+    <h1 class="article-title">Training Leaves Traces: Centered Residual Signatures for Language Model Lineage Verification</h1>
+    <p class="article-title-ko">학습은 흔적을 남긴다: 언어모델 계보 검증을 위한 중심 잔차 시그니처</p>
+    <p class="article-sub">학습 데이터나 순전파 없이, 오직 가중치(weight)만 비교해서 두 개의 공개 언어모델 체크포인트가 같은 조상 모델에서 파생됐는지(계보 관계)를 판별하는 "centered residual signature" 기법을 제안한 논문이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.14929" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.14929" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Training Leaves Traces: Centered Residual Signatures for Language Model Lineage Verification</li>
+<li><strong>저자</strong>: Aman Singh Thakur (Amazon, USA), Rayan Khoury (Massachusetts Institute of Technology, USA)</li>
+<li><strong>출처</strong>: arXiv:2608.14929v1 [cs.CL] (14 Aug 2026)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.14929">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>학습 데이터나 순전파 없이, 오직 가중치(weight)만 비교해서 두 개의 공개 언어모델 체크포인트가 같은 조상 모델에서 파생됐는지(계보 관계)를 판별하는 "centered residual signature" 기법을 제안한 논문이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>오픈 웨이트 언어모델은 파인튜닝, 양자화(quantization), 가지치기(pruning), LoRA 병합 등을 거쳐 배포되지만, 그 출처(provenance)가 문서화되지 않거나 의도적으로 감춰지는 경우가 많다. 저자들은 암호학적 해시(가중치가 조금만 바뀌어도 무효화됨), 메타데이터/모델 카드(배포자가 정직해야만 유효함), 워터마킹(사전에 삽입해야 함), CKA·SVCCA 같은 행동/표현 기반 유사도 측정(데이터와 순전파가 필요하고 "유사하게 행동함"과 "가중치를 물려받음"을 구분하지 못함) 등 기존 방법들이 저마다 한계를 가진다고 지적한다. 이에 따라 데이터 없이(data-free) 가중치만으로 백서(white-box) 방식의 계보 검증을 수행하는 문제를 정식화한다.</p>
+<h2>핵심 기여</h2>
+<p>논문은 세 가지 기여를 제시한다. 첫째, 데이터 없이 두 체크포인트 간 가중치 계보를 쌍(pairwise)으로 검증하는 문제를 정의하고, 체크포인트 고유 구조만을 분리해내는 centered residual signature 개념을 도입했다. 둘째, 독립적으로 학습된 모델들을 기준으로 경험적 귀무분포(empirical null)를 보정한 대칭적(symmetric) 모델 수준의 계보 점수(lineage score)를 구성했으며, 이 점수는 은닉 유닛의 순열(permutation)과 역수 스케일링(reciprocal rescaling)에 대해 대수적으로 불변이다. 셋째, 파인튜닝·양자화·가지치기·LoRA 병합·증류(distillation) 및 "체크포인트 세탁(checkpoint laundering)" 공격에 대한 강건성을 검증하고, 이 신호가 GPT-2, BERT, LLaMA-2, Mistral, Qwen2.5, DeepSeek-R1 등 6개 언어모델 계열과 비전·음성 모델에서도 나타남을 보였다.</p>
+<h2>방법론</h2>
+<p>잔차 블록(residual block)은 x_{l+1} = x_l + F_l(x_l) 형태로 계산되며, 저자들은 비선형성을 제외하고 잔차 분기(branch)의 선형 계층들을 곱한 "잔차 분기 곱(residual branch product)" M_l = W_K...W_1을 정의한다. 이 행렬은 프로베니우스 내적(Frobenius inner product) 관점에서 항등행렬 방향 성분(tr(M)/d · I)과 대각합이 0인 나머지 성분(traceless remainder, E_l)으로 분해된다. 정규화된 트레이스 집중도(normalized trace concentration) s(M) = |tr(M)|/||M||_F는 학습이 진행됨에 따라 항등 성분 쪽으로 에너지가 이동하는(diagonal dominance) 현상을 포착하는데, 이는 독립적으로 학습된 모델들도 공유하는 일반적 성질이라 그 자체로는 계보를 증명하지 못한다. 따라서 저자들은 이 항등 성분을 제거한 traceless 잔차 E_l(=R_l)을 단위벡터로 정규화한 시그니처 φ_l을 만들고, 헝가리안 알고리즘(Hungarian algorithm)으로 두 체크포인트 간 블록 대응을 찾은 뒤 대응된 블록들의 φ 코사인 유사도를 평균해 대칭적 계보 점수 L(A,B)를 계산한다. 독립 모델들과의 점수 분포로 임계값(threshold)을 보정해 RELATED/UNRELATED를 판정한다. 또한 이 항등 정렬 현상의 원인에 대해 "그래디언트 커플링(gradient-coupling)" 가설을 제시하고, ResNet vs PlainNet 비교, 초기화 방식 비교, Jacobian 직교성 측정, 그래디언트 셔플링/합성 주입 실험 등으로 이를 뒷받침했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>저자들은 두 개의 통제된 벤치마크(깊이 16/24 잔차 MLP, 약 3천만 파라미터 GPT-2 유사 모델을 TinyStories로 학습)에서 파인튜닝·LoRA 병합·가지치기·양자화로 만든 파생 모델과 독립 학습·증류 모델을 구분하는 실험을 수행했다. 그 결과 제안 기법은 두 벤치마크 모두에서 AUROC=1.00을 달성했으며, 이는 가중치 코사인 유사도, 정렬된 프로베니우스 거리(aligned Frobenius) 등 일부 단순 기준선과 동률이었다. 그러나 순열·재스케일링 등 함수를 보존하면서 가중치만 위장하는 "체크포인트 세탁" 조건에서는 단순 기준선들의 성능이 붕괴(예: aligned Frobenius가 순열 하에서 AUROC 0.50, 강한 재스케일링 하에서 0.0)한 반면, 제안 기법은 AUROC=1.00을 그대로 유지했고, 유일하게 견고했던 Re-Basin+scale 대비 GPT-2 벤치마크에서 76배 빠른 속도를 보였다. 또한 실제 공개 체크포인트인 LLaMA-2-7B를 기준으로 Llama-2-7B-chat, Vicuna-7B, CodeLlama-7B 등 3개의 알려진 파생 모델은 높은 점수(0.336~0.996)를 받은 반면, OpenLLaMA, Amber, Baichuan, InternLM, Yi 등 독립적으로 학습된 7개 모델은 모두 5×10^-5 미만의 점수를 받아 명확히 구분되었다.</p>
+<h2>한계점</h2>
+<p>이 방법은 두 체크포인트 모두에 대한 백서(white-box) 접근이 필요해 API 전용 모델에는 적용할 수 없고, 잔차(residual) 구조를 가진 아키텍처에만 적용 가능하며 순수 피드포워드망·RNN·상태공간모델(SSM)에는 적용되지 않는다. 또한 비교 대상 모델의 층 수와 은닉 차원이 동일해야 하므로 LLaMA와 GPT-2처럼 서로 다른 아키텍처 간 비교는 지원하지 않는다. 점수는 대칭적이라 외부 메타데이터 없이는 어느 쪽이 조상인지 방향성을 알 수 없고, 다단계 계보(family tree) 복원도 하지 못한다. 강한 가지치기(85% 희소성)나 광범위한 추가 사전학습(CodeLlama 사례)에서는 신호가 약화되며(각각 L=0.58, 0.336), 학습된 스케일 파라미터가 없는 순수 RMSNorm 구조라면 직교 회전(Q-rotation) 공격에 취약할 수 있다는 점도 언급된다. 아울러 귀무분포 보정에 사용 가능한 독립 루트(root) 모델의 수가 제한적이어서(GPT-2 벤치마크는 8개, LLaMA-2 사례 연구는 7개) 엄밀한 통계적 가설검정의 유효 표본 크기는 작다고 밝히고 있다.</p>
+<h2>시사점</h2>
+<p>이 연구는 오픈 웨이트 언어모델 공급망에서 사전 조치(워터마킹 등) 없이도 사후적으로, 데이터 없이 가중치만으로 모델 간 계보 관계를 감사(audit)할 수 있는 실용적 수단을 제공한다. 다만 저자들은 이 점수가 법적 소유권이나 부정행위를 단독으로 입증하는 것이 아니라 메타데이터·배포 기록·인간 검토와 함께 사용되어야 하는 유사도 지표임을 명시하며, 무단 침해 주장이나 경쟁 정보 수집 등으로 오용될 가능성에 대한 윤리적 고려도 함께 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.14929" target="_blank" rel="noopener">huggingface.co/papers/2608.14929</a> · 2026-08-21</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

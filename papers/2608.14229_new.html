@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>인기가 많을수록 잊기 어렵다</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#12 · Daily Papers 2026-08-21</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 13</span>
+    </div>
+    <h1 class="article-title">The More Popular, The Harder to Forget: Adaptive Popularity for LLM Unlearning</h1>
+    <p class="article-title-ko">인기가 많을수록 잊기 어렵다: LLM 언러닝을 위한 적응형 인기도</p>
+    <p class="article-sub">사전학습 중 더 자주 등장해 깊이 각인된(인기 있는) 사실일수록 언러닝(unlearning)으로 지우기 어렵다는 문제에 대해, 위키데이터 사이트링크 수 같은 모델 외부의 인기도 신호를 이용해 사실별로 forget 손실의 가중치를 다르게 주는 AdaPop 기법을 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.14229" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.14229" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: The More Popular, The Harder to Forget: Adaptive Popularity for LLM Unlearning</li>
+<li><strong>저자</strong>: Anna Borisiuk, Andrey Savchenko, Alexander Panchenko, Elena Tutubalina (소속: AIRI, Sber AI Lab, Skoltech, ISP RAS Research Center for Trusted Artificial Intelligence)</li>
+<li><strong>출처</strong>: arXiv:2608.14229v1 [cs.CL] (2026년 8월 14일)</li>
+<li><strong>프로젝트 페이지</strong>: 별도 프로젝트 페이지는 논문에 명시되지 않음. 코드 저장소는 공개됨 — <a href="https://github.com/Anya-wUw/open-unlearning">GitHub: Anya-wUw/open-unlearning</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.14229">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>사전학습 중 더 자주 등장해 깊이 각인된(인기 있는) 사실일수록 언러닝(unlearning)으로 지우기 어렵다는 문제에 대해, 위키데이터 사이트링크 수 같은 모델 외부의 인기도 신호를 이용해 사실별로 forget 손실의 가중치를 다르게 주는 AdaPop 기법을 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>기존의 그래디언트 기반 LLM 언러닝 기법들(GA, GD, NPO, WGA 등)은 forget set에 속한 모든 사실을 동일한 강도로 지우려 하지만, 실제로는 사전학습에서 자주 등장한(인기 있는) 사실일수록 파라미터에 더 깊이, 더 선형적으로 각인되어 있어 동일한 그래디언트로는 잘 지워지지 않는다. 그 결과 희귀한 사실은 과도하게 지워져 retain 성능이 손상되고, 인기 있는 사실은 표면적으로만 억제되어 patch/역질문(paraphrase, adversarial query)에 취약한 "popularity gap" 현상이 발생한다. 저자들은 기존의 WGA 같은 신뢰도(confidence) 기반 가중치는 모델이 현재 출력하는 확률(로컬 신호)에 불과해 파라미터에 인코딩된 깊이를 반영하지 못한다고 지적하며, 외부 신호가 필요하다고 주장한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>각 사실의 외부 인기도 점수(위키데이터 사이트링크 수, LLM-as-Judge 점수 등)를 거듭제곱(power-law) 지수로 변환해 토큰 단위 forget 손실 가중치에 반영하는 <strong>인기도 인식 그래디언트 가중치</strong> 기법을 제안.</li>
+<li>retain 손실 드리프트를 라그랑주 승수처럼 다루어 매 epoch마다 retain 페널티 계수(α)를 자동 조정하는 <strong>dual-ascent 컨트롤러</strong>를 도입해, 데이터셋별 하이퍼파라미터 탐색 없이 forget-retain 균형을 유지.</li>
+<li>Llama, Qwen, Gemma 3개 모델 계열과 DUET, RWKU 2개 벤치마크에서 실험적으로 검증하고, hidden state 및 로그확률 순위 변화 같은 내부 지표로 실제 파라미터 수준의 망각인지 표면적 억제인지를 구분.</li>
+</ul>
+<h2>방법론</h2>
+<p>각 forget 샘플 i의 인기도 점수 s_i로부터 지수 β_i = a·s_i^(-b)를 계산하며, 희귀/인기 두 앵커 점수에서 각각 β=1.5(자기제한 영역), β=0.1(압력유지 영역)이 되도록 a, b를 닫힌 형태로 결정한다. 토큰별 가중치 w_i,t = sg<a href="stop-gradient 적용">p_i,t^β_i</a>를 모델 신뢰도 p_i,t에 곱해 forget NLL 손실을 구성하며, β=1을 기준으로 그래디언트 크기가 커지거나(β&lt;1, 인기 사실) 스스로 줄어드는(β&gt;1, 희귀 사실) 방식으로 작동한다. 전체 손실은 forget 손실과 α·retain 손실의 합이며, α는 매 epoch 종료 시 retain loss의 상대적 드리프트 δ_k를 관측해 projected gradient ascent로 갱신되는 dual variable(λ)에 의해 결정된다(Algorithm 1).</p>
+<h2>실험 설정 및 결과</h2>
+<p>Llama-3.1-8B-Instruct, Gemma-7B-it, Qwen2.5-7B-Instruct 3개 모델에 LoRA 파인튜닝(r=32)을 적용해, 사실 중심 QA 벤치마크인 DUET와 정밀 삭제를 평가하는 RWKU에서 실험했다. GA, GD, NPO, WGA를 기준선으로 비교했으며(추가 11개 기법은 부록), 붕괴하지 않는 안정적 기법들 중 AdaPop은 6개 모델×벤치마크 조합 전부에서 forget Cosine Similarity가 가장 낮았고, RWKU의 adversarial reformulation에서 3개 모델 모두 최저 ROUGE-L(기존 기법 대비 약 1.6배 적은 정보 노출), DUET paraphrase에서는 3개 중 2개 모델에서 최저 점수(경쟁 기법 대비 약 5배 적은 노출)를 기록했다. 내부 지표(ΔLP, ΔRank, Hid.Cos, KL)에서도 AdaPop은 forget set의 hidden state가 언러닝 전 모델과 가장 크게 달라졌고, WGA는 ΔRank가 음수로 나타나 표면적 억제에 그쳤음을 시사했다. MMLU/HellaSwag로 측정한 일반 능력은 언러닝 이전 대비 MMLU 기준 0.05 이내로 유지되었다. 인기도 신호를 위키데이터 점수, LLM-as-Judge, 실측 코퍼스 빈도로 교체하는 ablation에서도 결과가 안정적이었으며, 위키데이터 점수가 가장 낮은 비용으로 가장 좋은 retain 성능을 보였다.</p>
+<h2>한계점</h2>
+<p>AdaPop은 사실 단위의 외부 인기도 점수에 의존하는데, 위키데이터 점수는 엔티티 중심 사실 QA에는 적합하지만 절차적 지식이나 창작 콘텐츠에는 적용하기 어렵다. 지수 계수 a, b는 DUET 점수 분포에서 보정되었기 때문에 다른 스케일의 프록시를 쓰려면 재보정이 필요하며, 이를 하지 않으면(예: 코퍼스 빈도 신호) 성능이 저하될 수 있음을 실험으로 보였다. 또한 모든 실험이 LoRA 파인튜닝에 한정되어 있으며, 완전 파인튜닝(full fine-tuning) 환경에서의 검증은 향후 과제로 남겨두었다.</p>
+<h2>시사점</h2>
+<p>이 연구는 모델의 현재 출력 신뢰도만으로는 사실이 파라미터에 얼마나 깊이 각인되었는지 알 수 없으며, 언러닝 신호를 모델 외부에서 가져와야 popularity gap을 근본적으로 해결할 수 있음을 보여준다. 저자들은 인기도가 "사실을 지우기 얼마나 어려운가"라는 더 일반적인 난이도(difficulty) 개념의 한 사례일 뿐이며, 절차적·코드 지식 등 위키데이터가 다루지 못하는 영역에도 유사한 난이도 프록시나 피해 심각도, 보존 우선순위 같은 다른 기준으로 같은 메커니즘을 확장할 수 있다고 제안한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.14229" target="_blank" rel="noopener">huggingface.co/papers/2608.14229</a> · 2026-08-21</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

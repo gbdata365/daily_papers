@@ -1,0 +1,110 @@
+<meta charset="UTF-8">
+<title>코알엘(Co-RL)</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#5 · Daily Papers 2026-08-21</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 82</span>
+    </div>
+    <h1 class="article-title">Co-RL: Unsupervised Reasoning Emerges from Diverse Cohort in Multi-agent RL</h1>
+    <p class="article-title-ko">코알엘(Co-RL): 다중 에이전트 강화학습에서 다양한 집단으로부터 출현하는 비지도 추론</p>
+    <p class="article-sub">정답 라벨이나 외부 심판 없이도, 서로 다른 파라미터를 가진 여러 모델이 동료(peer)의 다수결 답을 보상 신호로 삼아 함께 강화학습하면 추론 능력이 향상된다는 것을 보인 다중 에이전트 비지도 RL 프레임워크 Co-RL을 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.17253" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.17253" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Co-RL: Unsupervised Reasoning Emerges from Diverse Cohort in Multi-agent RL</li>
+<li><strong>저자</strong>: Yunhao Yang, Yuexin Bian(이상 공동 1저자), Yunjie Tian, Di Fu, Tianjin Huang, Yuanyuan Shi, Ziang Xiao, Nuno Vasconcelos, Yijiang Li(프로젝트 리드) — Johns Hopkins University, UC San Diego, University of Exeter, 독립 연구자 공동 저술</li>
+<li><strong>출처</strong>: arXiv:2608.17253v1 [cs.LG] (2026-08-19)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음 (코드 저장소: https://github.com/DrStranded/Co-RL)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.17253">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>정답 라벨이나 외부 심판 없이도, 서로 다른 파라미터를 가진 여러 모델이 동료(peer)의 다수결 답을 보상 신호로 삼아 함께 강화학습하면 추론 능력이 향상된다는 것을 보인 다중 에이전트 비지도 RL 프레임워크 Co-RL을 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>검증 가능한 보상(RLVR)을 이용한 강화학습은 언어·비전언어모델의 추론 능력을 크게 향상시켰지만, 고품질 정답 라벨 확보 비용이 크고 모델의 추론 수준이 인간 평가 능력을 넘어설수록 라벨 확보가 더 어려워진다. 이를 해결하기 위한 self-rewarding RL(TTRL, Intuitor, RENT 등)은 모델 스스로 만든 신호(다수결, 자기확신도, 엔트로피 등)로 보상을 구성하지만, 결국 하나의 모델 자신의 관점에서만 신호가 나오기 때문에 기존 편향과 오답을 그대로 강화하고 응답 다양성이 줄어들며 결국 훈련 붕괴(training collapse)로 이어지는 문제가 있다.</p>
+<h2>핵심 기여</h2>
+<p>1) 파라미터를 공유하지 않는 독립적인 여러 에이전트가 서로의 다수결 답(pseudo-label)을 보상으로 삼아 동시에 학습하는 협력형 다중 에이전트 RL 프레임워크 Co-RL을 제안했다.
+2) 모델 계열·크기·입력 형태(질문 재구성)를 다양화할수록 에이전트 간 오류 상관성이 낮아지고 상호 보정 신호가 강해져 성능이 향상됨을 실증적으로 보였다.
+3) Self-rewarding 대비 Co-RL이 정답 수렴 영역(basin of correct convergence)을 확장한다는 것을 이론적으로 증명했다(단일 에이전트는 자기확신을 강화하는 self-confirming 동역학을 갖는 반면, Co-RL은 두 에이전트의 정답 확률 합이 1을 넘으면 항상 정답으로 수렴).
+4) 텍스트 7개 벤치마크에서 평균 3.0~8.6%, 멀티모달 4개 벤치마크에서 평균 2.3~7.2% 성능 향상을 라벨 없이 달성했으며, LLM 판정자나 학습된 보상 모델 없이도 기존 다중 에이전트 RL(CoMAS)보다 절반의 에이전트 수로 더 높은 성능을 보였다.</p>
+<h2>방법론</h2>
+<p>Co-RL은 N개의 독립적으로 파라미터화된 정책(에이전트)을 두며, 각 에이전트는 라벨 없는 문제 x에 대해 K개의 응답을 샘플링하고 답을 추출한다. 각 에이전트 n의 학습 보상은 자기 자신이 아니라 순환적으로 지정된 동료 에이전트(n-1)의 응답들에 대한 다수결 답(pseudo-label)과 일치하는지 여부(0 또는 1)로 정해진다. 즉 자신의 생성물이 자신의 지도 신호 구성에 전혀 관여하지 않는 것이 핵심이며, 이렇게 얻은 보상으로 각 에이전트를 GRPO(또는 REINFORCE++)로 독립적으로 업데이트한다. 에이전트 간에는 그레디언트나 파라미터 공유 없이 오직 보상 계산 단계에서만 상호작용한다. 다양성을 극대화하기 위해 (i) 독립적인 정책 최적화, (ii) 서로 다른 모델 계열·크기(예: Qwen과 Llama, 3B와 8B 조합), (iii) DeepSeek-V3로 문제를 재서술해 입력 형태를 달리 부여하는 방법을 함께 사용한다. 이론 분석에서는 self-rewarding이 현재 더 우세한 답(정답 여부와 무관하게)을 강화하는 self-confirming 동역학을 갖는 반면, Co-RL의 두 에이전트 동역학은 (1/2,1/2)을 안장점으로 하고 pA+pB=1을 경계로 하는 상호 보완적 수렴 구조를 갖는다는 것을 증명했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>언어모델은 MATH(레벨 3~5)로 학습했으며 Qwen3-1.7B, Qwen2.5-3B/Llama-3.2-3B, Qwen2.5-7B/Llama-3.1-8B 조합을 사용했다. 비전언어모델은 MMR1-Math, multimodal-open-r1 데이터셋으로 Qwen2.5-VL, InternVL3.5, Gemma-3(2B~12B급)를 학습했다. GSM8K, MATH-500, AMC, HumanEval, MBPP, LiveCodeBench, GPQA 등 7개 텍스트 벤치마크와 MathVision, MathVerse, MathVista, We-Math 등 4개 멀티모달 벤치마크로 평가했다. 결과적으로 Co-RL(Same family)만으로도 base 대비 큰 향상을 보였고, 서로 다른 모델 계열을 묶은 Co-RL(Different family/+)이 TTRL, RENT, Intuitor, Co-rewarding-II 등 기존 self-rewarding 기법들을 모두 앞섰으며, 여러 설정에서 정답 라벨을 사용한 GRPO(GT-Reward)와 대등하거나 이를 능가했다. CoMAS와 동일한 평가 프로토콜에서는 에이전트 수를 절반만 쓰고도 평균 4.0% 더 높은 성능을 얻었고, 3개 에이전트로 확장한 실험에서도 각 모델이 일관되게 향상되었다. 학습 동역학 분석에서는 self-rewarding 기법들이 보상 붕괴나 응답 길이 발산 등 훈련 붕괴 양상을 보인 반면 Co-RL은 안정적인 학습 곡선을 유지했다.</p>
+<h2>한계점</h2>
+<p>논문은 향후 과제로 에이전트의 수, 다양성 정도, 상호작용 토폴로지가 교차 에이전트 학습에 미치는 영향을 더 깊이 이해할 필요가 있다고 언급하며, 상호 보완적 전문성을 더 효과적으로 활용하는 적응형 지도 메커니즘 개발이 필요하다고 밝혔다. 그 밖의 구체적 한계(예: 계산 비용, 에이전트 수 증가에 따른 확장성, 특정 도메인 실패 사례 등)는 논문 본문에 명시되지 않음.</p>
+<h2>시사점</h2>
+<p>정답 라벨이나 외부 LLM 심판 없이도, 서로 다른 모델 계열·크기·입력 형태로 다양성을 확보한 에이전트 집단을 구성하는 것만으로 self-rewarding의 근본적 약점인 자기 편향 강화 문제를 완화할 수 있음을 보여준다. 이는 라벨링 비용이 큰 고난도 추론 영역이나 인간 평가가 어려운 초인적 성능 영역에서 비지도 방식으로 모델을 지속적으로 개선할 수 있는 실용적 경로를 제시하며, 기존의 무겁고 복잡한 다중 에이전트 토론·심판 기반 방법 대비 가볍고 대칭적인 대안이 될 수 있음을 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.17253" target="_blank" rel="noopener">huggingface.co/papers/2608.17253</a> · 2026-08-21</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

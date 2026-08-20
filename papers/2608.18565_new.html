@@ -1,0 +1,107 @@
+<meta charset="UTF-8">
+<title>세마피엘씨</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#3 · Daily Papers 2026-08-21</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 110</span>
+    </div>
+    <h1 class="article-title">SemaPLC: A Project-Grounded, Verification-Gated Agent Harness for PLC Code Generation</h1>
+    <p class="article-title-ko">세마피엘씨: PLC 코드 생성을 위한 프로젝트 기반 검증-게이트 에이전트 하네스</p>
+    <p class="article-sub">LLM이 생성한 PLC(프로그래머블 로직 컨트롤러) 제어 로직을 실제 프로젝트에 통합하고 라이브 런타임에서 검증받기 전까지는 완료로 인정하지 않는 "검증 게이트(verification-gated)" 에이전트 하네스 SemaPLC를 제안한 논문.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.18565" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.18565" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: SemaPLC: A Project-Grounded, Verification-Gated Agent Harness for PLC Code Generation</li>
+<li><strong>저자</strong>: Yanlun Tu, Huacan Wang, Ziyue Zhou, Jie Zhou, Ningyan Zhu, Ge Chen, Wangyi Chen, Tengfei Zhou, Yifan Zhou, Dasheng Yang, Xiaofeng Mou, Hui Zhang, Yi Xu. 소속은 Midea AIRC, KUKA, 상하이자오퉁대학교(SJTU), 저장대학교(ZJU)로 표기됨.</li>
+<li><strong>출처</strong>: arXiv:2608.18565v1 [cs.SE] (2026년 8월 19일)</li>
+<li><strong>프로젝트 페이지</strong>: 별도의 프로젝트 페이지는 명시되지 않았으며, 코드가 <a href="https://github.com/midea-ai/SemaPLC">GitHub: midea-ai/SemaPLC</a>에 공개되어 있음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.18565">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>LLM이 생성한 PLC(프로그래머블 로직 컨트롤러) 제어 로직을 실제 프로젝트에 통합하고 라이브 런타임에서 검증받기 전까지는 완료로 인정하지 않는 "검증 게이트(verification-gated)" 에이전트 하네스 SemaPLC를 제안한 논문.</p>
+<h2>배경 및 문제의식</h2>
+<p>PLC는 공장, 발전소, 정수 처리 시설 등 산업 현장을 제어하며 주로 IEC 61131-3 언어 중 하나인 Structured Text(ST)로 프로그래밍된다. 기존 연구들은 LLM이 독립적인 POU(Program Organization Unit)를 생성하고 컴파일러 피드백, 정형 검증, 멀티 에이전트 반복 등으로 개선될 수 있음을 보였지만, 실제 산업 현장에서는 코드가 기존 프로젝트의 모듈·변수·인터페이스와 통합되어야 하고(project grounding), 컴파일과 정적 검사를 통과하더라도 타이머 오작동, 잘못된 상태 전이, 인터락 위반 등 런타임 동작이 틀릴 수 있다는 문제가 있다. 저자들은 기존 시스템들이 실행 가능함을 "보여주는" 수준에 그치고 신뢰도를 벤치마크 규모로 "측정"하지 않았다는 공백을 지적한다.</p>
+<h2>핵심 기여</h2>
+<p>1) 프로젝트 맥락에 근거한 생성과, 스펙(사양)·컴파일·라이브 런타임 검증이라는 세 가지 외부 검증을 완료 조건으로 삼는 SemaPLC 하네스를 제시. 모델이 스스로 판단해 종료하는 것이 아니라 로깅된 외부 검증 결과가 있어야만 작업 완료로 인정한다. 2) 기존 벤치마크와 비교 가능한 함수 단위(function) 트랙과, 실제 프로젝트 통합 및 런타임 동작을 평가하는 프로젝트 맥락(project-context) 트랙 두 가지를 상호보완적으로 제시. 3) 정적 평가에서는 비슷해 보이는 방법들이 실제 런타임 동작에서는 크게 갈린다는 실증적 발견을 제시.</p>
+<h2>방법론</h2>
+<p>SemaPLC는 범용 이벤트 기반 도구 사용 에이전트 코어 위에서 동작하며, 다섯 가지 요소로 구성된다: (1) 계획·생성·수정·해석을 담당하는 에이전트 코어, (2) 프로젝트/작업 맥락 파악(project and task grounding), (3) IEC 61131-3 관례·함수 블록 패턴·타이머/카운터·안전 인터락 등을 담은 PLC 스킬 라이브러리, (4) 스펙 감사·컴파일·라이브 런타임 검증의 세 가지 검증 프로세스, (5) 이 검증 결과에 따라 완료 여부를 결정하는 검증 게이트. 모든 구성 요소는 Model Context Protocol(MCP) 기반의 공유 PLC 도구 서버(문법 검사, 컴파일, 배포, 런타임 상태·로그 조회, 변수 강제 주입, 트레이스 샘플링 등)를 통해 환경과 상호작용한다. 검증 게이트는 세 가지 불변식을 따른다: 각 점검당 최대 2회의 반복 수리를 허용하는 '제한된 재시도', 코드가 수정되면 이전 검증 결과를 모두 무효화하는 '수정 무효화', 그리고 도구 호출 로그로 교차 검증되지 않은 주장은 인정하지 않는 '입증된 주장(earned claims)' 원칙이다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>평가는 두 트랙으로 이뤄진다. 함수 트랙은 Agents4PLC 벤치마크에서 가져온(결함이 있던 오라클을 PLC 엔지니어가 감수·수정한) 117개의 독립 POU 과제로 구성되며, 컴파일 및 PLCverif(nuXmv 백엔드) 모델 체킹을 통한 엄격한 검증 통과율(VerifiedPass, 요구사항 충족 비율 0.80 이상)로 평가한다. 프로젝트 맥락 트랙은 Spec2Control에서 가져온 10개 산업 플랜트, 65개 과제로 구성되며 통합 컴파일, 정적 동작(요구사항 기반 어서션 충족률), 동적 동작(실제 런타임에 배포해 참조 구현과 트레이스를 비교)의 세 지표를 각각 산출한다. MiniMax-M2.7/M3, Qwen3.5-Plus, DeepSeek-V4-Flash/Pro, GLM-5.2, GPT-5.5 등 7개 백본 모델과 LLM4PLC, AutoPLC, Agents4PLC 세 베이스라인을 비교했다. 결과적으로 SemaPLC는 함수 트랙에서 전 모델 최고 성능(평균 72.6%, 베이스라인 최고 대비 +8.8점)을 기록했고, 프로젝트 트랙에서도 통합 컴파일(평균 89.4%), 정적 동작(평균 81.6), 동적 동작(평균 52.2, 베이스라인 최대 31.4)에서 모두 최고 성능을 보였다. 특히 정적 점수는 방법들 간 격차가 크지 않은 반면(베이스라인 간 4점 이내) 동적 점수는 크게 벌어져(22.4~31.4 대 52.2), 정적 평가만으로는 신뢰도 있는 방법을 가려낼 수 없다는 점을 보였다. 상호작용 비용 측면에서는 함수 트랙에서 SemaPLC가 베이스라인과 비슷한 요청 수로 더 짧은 시간에 완료했으나, 프로젝트 트랙에서는 동적 성능 향상을 위해 훨씬 많은 모델 요청(평균 34.1회 대 6.9회)을 사용했다.</p>
+<h2>한계점</h2>
+<p>논문이 스스로 밝힌 한계로, 동적 점수는 숨겨진 참조 구현에서 파생된 제한된 시나리오 집합에서만 측정되므로 미지의(unseen) 조건에서의 동작은 측정되지 않는다는 점, 그리고 GPT-5.5와 같은 가장 강력한 모델에서는 SemaPLC의 우위가 좁아진다는 점(동적 점수 차이 1.8점에 불과, 정적 점수는 오히려 일부 베이스라인에 뒤짐)을 들었다. 또한 함수 트랙의 정형 검증 파이프라인(PLCverif/nuXmv)은 타이머(TON)가 포함된 프로그램에서는 결론적 검증 결과를 전혀 얻지 못했다는 한계도 보고된다.</p>
+<h2>시사점</h2>
+<p>정적 컴파일·정적 검사만으로는 산업용 PLC 코드 생성 방법의 신뢰도를 제대로 구분할 수 없으며, 실제 런타임에서 실행해 트레이스를 비교하는 평가가 필수적이라는 점을 시사한다. 또한 완료 여부를 모델의 자체 판단이 아니라 로깅된 외부 검증 증거에 결부시키는 '검증 게이트' 설계가 모델에 무관하게(model-agnostic) 신뢰성을 높이는 범용 계층으로 작동할 수 있음을 보여준다. 저자들은 향후 편집·생성·배포가 동일한 검증 게이트로 통제되고 공정 시뮬레이션까지 검증을 확장한 종단 간(end-to-end) PLC 개발 환경을 향후 과제로 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.18565" target="_blank" rel="noopener">huggingface.co/papers/2608.18565</a> · 2026-08-21</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

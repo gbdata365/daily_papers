@@ -1,0 +1,122 @@
+<meta charset="UTF-8">
+<title>에이에스아이벤치</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#7 · Daily Papers 2026-08-20</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 32</span>
+    </div>
+    <h1 class="article-title">ASI-Bench: At the Dawn of Artificial Superintelligence</h1>
+    <p class="article-title-ko">에이에스아이벤치: 인공초지능의 여명기에서</p>
+    <p class="article-sub">ASI-Bench는 AI가 인간이 제공하는 방법론적 가이드를 단계적으로 줄여가면서도 프로젝트 수준의 과학 연구를 스스로 기획·수행·검증할 수 있는지를 측정하는 최초의 벤치마크로, 현재 최고 수준 에이전트조차 가이드가 없으면 성능이 절반 이하로 급락함을 보여준다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.17271" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.17271" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: ASI-Bench: At the Dawn of Artificial Superintelligence</li>
+<li><strong>저자</strong>: Junwei Zhou, Zhen Sun(공동 1저자), Binyu Li, Jiangyu Zhou, Yuexi Pan, Hengyu Wang, Honghe Ren, Xiaohan Jia, Xueyang Zhou, Xiaoyu Cao, Yongchao Chen(교신저자) 외 다수 기여자. Tsinghua University, MIT, Harvard University, Carnegie Mellon University, University of Michigan, UIUC, Boston University, University of Queensland, USTC, Flatiron Institute, Microsoft Research, AG2 AI 등 다수 기관 소속 40명 이상의 전문가가 참여</li>
+<li><strong>출처</strong>: arXiv:2608.17271v1 [cs.AI] (2026년 8월 18일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://asibench.apexin.ai/submit">ASI-Bench 웹사이트</a> (GitHub, HuggingFace, 리더보드도 함께 공개되어 있으며, 논문 표지에 링크가 명시됨. 신규 과제 제출도 위 사이트에서 가능)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.17271">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>ASI-Bench는 AI가 인간이 제공하는 방법론적 가이드를 단계적으로 줄여가면서도 프로젝트 수준의 과학 연구를 스스로 기획·수행·검증할 수 있는지를 측정하는 최초의 벤치마크로, 현재 최고 수준 에이전트조차 가이드가 없으면 성능이 절반 이하로 급락함을 보여준다.</p>
+<h2>배경 및 문제의식</h2>
+<p>현재 AI 시스템은 인류가 축적한 지식을 학습·압축·적용하는 데는 뛰어나지만, 인공초지능(ASI)으로 나아가기 위해서는 미지의 문제를 스스로 탐구하고 새로운 지식을 창출하며 이를 검증 가능한 결과로 만들어내는 능력이 필요하다. 그러나 기존 벤치마크(HLE, Terminal-Bench, ScienceAgentBench, MLE-Bench, PaperBench 등)는 대부분 정답이 정해진 문제를 풀거나, 방법과 절차가 상당 부분 인간에 의해 사전에 명시된 과제를 수행하는지만 평가한다. 이 때문에 문제와 해결 경로가 모두 열려 있는 상황에서 AI가 자율적으로 과학 연구를 수행할 수 있는지에 대한 증거는 부족하다. 저자들은 "인간의 방법론적 가이드를 점진적으로 제거했을 때 현재 AI 시스템이 얼마나 독자적으로 프로젝트 수준의 과학 연구를 탐구·수행할 수 있는가"라는 질문을 직접 측정 가능하게 만들고자 했다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>40명 이상의 전문가가 31,000시간 이상을 투입하여 구축한, 11개 과학 분야에 걸친 60개의 프로젝트 수준 연구 과제로 구성된 벤치마크 ASI-Bench를 제시</li>
+<li>동일한 연구 과제 내에서 인간의 방법론적 가이드를 단계적으로 철회(B1→B2→B3→B4)하며 AI의 자율성을 측정하는 최초의 설계를 도입: B1은 완전한 방법 제공, B2는 방법 이름만 제공, B3은 연구 목표와 데이터만 제공(방법은 스스로 결정), B4는 B3에 과제와 무관한 방해 정보(distractor)를 추가하여 견고성까지 평가</li>
+<li>혁신적 탐구 능력과 자율적 과학 수행 능력을 동시에, 범용 연구 도메인에 걸쳐 종합 평가하는 최초의 벤치마크라고 주장하며, 기존 벤치마크(HLE, SWE-bench, Terminal-Bench, PaperBench, MLE-Bench, RE-Bench, DiscoveryBench, SciCode 등)와의 비교표(Table 1)를 통해 교차 도메인 일반성·방법 자율성·엔드투엔드 연구·가이드 그라디언트를 모두 갖춘 유일한 벤치마크임을 강조</li>
+<li>18개의 최신 Agent×Model 조합에 대한 대규모 실험을 통해 방법론적 가이드 의존도를 정량적으로 드러내고, 커뮤니티가 새로운 과제를 지속적으로 기여할 수 있는 공개 제출 플랫폼(https://asibench.apexin.ai/submit)을 함께 공개</li>
+</ul>
+<h2>방법론</h2>
+<p>ASI-Bench의 각 과제는 단답형 질문이 아니라, 연구 목표·과제 특화 데이터·실행 가능한 환경·검증 가능한 산출물(reference artifacts)로 구성된 장기적(multi-stage) 연구 과정으로 설계되었다. 60개 과제 전체를 완수하는 데 2,600회 이상의 상호작용 턴과 2,400개 이상의 실행 스텝, 35시간 이상의 에이전트 실행 시간이 소요된다. 과제는 수학, 물리, 화학, 생물, 천문, 재료과학, 지구과학, 의학/생물통계, 컴퓨터과학, 로보틱스, 전기공학 등 11개 분야를 아우른다.</p>
+<p>구축 과정은 매우 엄격하다. 1,300개 이상의 후보 연구 아이디어를 과학 문헌 등 추적 가능한 출처에서 수집한 뒤, 전문가들이 5회의 검토 라운드와 1,100건 이상의 검토 배정, 2,000건 이상의 수정을 거쳐 과제를 다듬었다. 이후 AI 보조 감사(auditing), 과학적 논리·정보 유출·평가 지름길 여부 점검을 거치고, 1,500회 이상의 샌드박스 실행을 통해 참조 해(reference solution)와 채점 로직의 재현성·안정성을 검증했다. 이 과정을 통과하지 못한 과제는 수정되거나 제외되었으며, 최종적으로 60개 과제가 남았다.</p>
+<p>핵심 평가 축은 B1~B4의 "가이드 그라디언트"이다. 부록 D의 2차원 비선형 동역학계(이방성 Kuramoto-Sivashinsky형 편미분방정식) 사례에서 보듯, B1은 지배 방정식·수치화 기법(Fourier 유사분광법, ETDRK4 시간적분)까지 상세히 제공하고, B2는 방정식 종류와 적절한 수치기법 후보만 제시하며, B3은 관측 데이터와 연구 목표·요구 산출물만 주고 모델·수치기법 선택을 전적으로 에이전트에 맡기고, B4는 B3과 동일하되 그럴듯하지만 무관한 정보(다른 PDE 계열 가설, 잡담 등)를 추가해 주의를 흐트러뜨린다. 전체 연구 문제, 데이터, 요구 산출물, 채점 기준은 B1~B4 전 구간에서 동일하게 유지된다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>18개의 대표적 Agent×Model 조합(Codex 하네스의 GPT-5.5/GPT-5.6 Sol, Claude Code 하네스의 Claude Opus 5/4.8·GLM-5.3/5.2·DeepSeek V4·Kimi K3/K2.7·MiniMax M3·MiMo V2.5 Pro, 이 외 Kimi Code, MiMo Code, OpenHands 하네스 조합 등)를 외부 툴 접근 없이 60개 과제에 대해 각 3회씩(일부 1회) 실행하여 평가했다.</p>
+<p>주요 결과는 다음과 같다.
+- 전체 평균 점수는 B1(완전 가이드) 50.91에서 B2(방법명만 제공) 29.10, B3(자율 방법 결정) 26.62로 급락했으며, B4(방해정보 추가)에서는 26.99로 B3과 거의 차이가 없었다.
+- 가장 강력한 조합인 Codex+GPT-5.6 Sol(ultra)만이 B3에서 50을 넘는 51.60점을 기록했고, 추론 강도를 xhigh에서 ultra로 올리면 B3 점수가 40.86에서 51.60으로 10.74점 상승해 강한 추론이 자율성 확보에 도움이 됨을 보여주었다.
+- B1→B2 하락폭(21.82점)이 B2→B3 하락폭(2.48점)보다 훨씬 커서, 병목은 "어떤 방법을 쓸지 선택하는 것"이 아니라 "그 방법을 완전한 연구 절차로 구체화(operationalize)하는 것"에 있음을 시사한다.
+- 동일 모델이라도 하네스(agent framework)에 따라 성능이 크게 달라졌다(예: MiMo V2.5 Pro는 MiMo Code 16.17 → Claude Code 23.25로 상승). 다만 이 효과는 모델마다 균일하지 않았다(Kimi K3는 하네스 간 차이가 작음).
+- 연산 비용 분석에서는 B1이 가장 저렴(평균 4.4M 토큰, 37.8분)했고, 놀랍게도 방법명만 주어진 B2가 오히려 가장 비쌌다(6.9M 토큰, 49.7분, B1 대비 +59%/+32%). 이는 불완전한 가이드가 오히려 탐색 부담을 늘릴 수 있음을 의미한다.
+- 비용과 성능이 항상 비례하지는 않았다(예: GPT-5.6 xhigh는 약 $684로 Claude Opus 5+Claude Code의 $2,728 대비 1/4 비용으로 비슷한 B3 점수를 기록). 최고 성능은 GPT-5.6 Sol(ultra), 약 $1,550/run이었다.
+- ASI-Bench(B3 평균 26.62)는 HLE, SWE-bench, Terminal-Bench 등 기존 벤치마크에서의 점수(대체로 40~90점대)에 비해 현저히 낮아, 기존 벤치마크들이 이미 포화(saturated)에 가까운 반면 ASI-Bench는 아직 변별력이 충분함을 보여준다.</p>
+<h2>한계점</h2>
+<p>논문은 명시적 한계 섹션을 별도로 두지는 않았으나, 본문에서 다음을 스스로 언급한다. 첫째, 60개 과제는 "닫힌 테스트셋이 아니라 시작점"으로 간주되며 특정 연구팀 혼자서는 미래 AI가 마주해야 할 다양한 문제를 온전히 대표할 수 없다고 밝혀, 현재 규모와 범위가 제한적임을 인정한다. 둘째, 평가는 외부 툴 접근이 없는(without external tool access) 조건으로 수행되어 실제 연구 환경(예: 문헌 검색, 외부 API 활용)과는 차이가 있을 수 있다. 셋째, 다수 조합은 3회 반복 실행에 그쳐(Claude Opus 5는 단일 실행) 통계적 변동성이 존재하며, 채점은 자동화된 스코어러에 의존하므로 복잡한 과학적 타당성을 완전히 포착하지 못할 가능성이 있다. 논문에 명시되지 않음: 정성적 실패 사례(오류 유형)에 대한 세부 분석이나 인간 전문가 대비 절대적 성능 비교는 본문에서 상세히 다루어지지 않았다.</p>
+<h2>시사점</h2>
+<p>ASI-Bench는 "지식 회상과 절차 수행"을 넘어 "일반 지능, 혁신, 자율 실행"을 함께 측정하는 공용 기준점을 제공한다. 실험 결과는 현재 최첨단 AI 에이전트가 상세한 절차적 가이드에 강하게 의존하고 있으며, 방법을 스스로 완전한 연구 절차로 구체화하는 능력(method operationalization)이 자율 과학 연구의 핵심 병목임을 보여준다. 이는 향후 연구개발이 단순히 모델 규모를 키우는 것보다, 에이전트 하네스(작업 실행 체계) 설계와 절차 구체화 능력 향상에 집중할 필요가 있음을 시사한다. 저자들은 이 벤치마크를 리더보드 그 이상으로, 과학계와 AI 커뮤니티가 함께 새로운 과제를 지속적으로 제출·검증하며 성장시키는 "공유 연구 인프라"로 자리매김시키고자 하며, 이를 통해 인공초지능으로 가는 경로에서 진정한 진전을 식별하는 표준을 만들고자 한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.17271" target="_blank" rel="noopener">huggingface.co/papers/2608.17271</a> · 2026-08-20</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

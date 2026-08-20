@@ -1,0 +1,128 @@
+<meta charset="UTF-8">
+<title>에이바 인코더</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#6 · Daily Papers 2026-08-20</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 38</span>
+    </div>
+    <h1 class="article-title">AVA-Encoder: Towards Agent-Native Video Representation Learning</h1>
+    <p class="article-title-ko">에이바 인코더: 에이전트 네이티브 비디오 표현 학습을 향하여</p>
+    <p class="article-sub">영상을 "필름 지식 그래프(Film KG)"라는 에이전트 친화적 구조로 인코딩했다가 다시 영상으로 복원하는 자기진화형 오토인코더를 만들어, 영상 생성 에이전트가 사람이 만든 고품질 영화로부터 직접 학습할 수 있게 하는 프레임워크.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.12313" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.12313" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: AVA-Encoder: Towards Agent-Native Video Representation Learning</li>
+<li><strong>저자</strong>: Chuyue Li, Jinpeng Yu(프로젝트 리드), Haozhe Wang, Tian Xueyun, Zhijing Zhang, Bingnan Li, Shuqi Gu, Kan Ren(공동 교신저자), Jiaming Liu(공동 교신저자), Ruihua Huang. Alibaba Qwen Business Unit을 중심으로 ShanghaiTech University, Hong Kong University of Science and Technology, Institute of Computing Technology, Southeast University 소속 연구진이 참여</li>
+<li><strong>출처</strong>: arXiv:2608.12313v2 [cs.CV] (2026년 8월 18일 제출)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://ava-encoder.github.io/">https://ava-encoder.github.io/</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.12313">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>영상을 "필름 지식 그래프(Film KG)"라는 에이전트 친화적 구조로 인코딩했다가 다시 영상으로 복원하는 자기진화형 오토인코더를 만들어, 영상 생성 에이전트가 사람이 만든 고품질 영화로부터 직접 학습할 수 있게 하는 프레임워크.</p>
+<h2>배경 및 문제의식</h2>
+<p>영상 생성 에이전트는 스토리 작성, 키프레임 설계, 영상 생성까지 가능해졌지만 여전히 영화 수준의 완성도 높은 결과물을 안정적으로 만들지 못한다. 근본 원인은 각본·인물·샷·오디오 요소를 아우르는 복합적 연출 판단을 학습할 데이터, 즉 에이전트가 따라 배울 수 있는 "고품질 영상 창작 과정 기록"이 거의 없다는 데 있다. 세상에는 인간 감독이 만든 훌륭한 영화가 풍부하게 존재하지만, 이 영상들은 픽셀 형태로만 존재할 뿐 에이전트가 이해·추론·편집할 수 있는 구조화된 표현(텍스트, 그래프 등)으로 되어 있지 않다. 기존의 저수준 시각 표현(픽셀·잠재 임베딩)은 정보는 풍부하나 에이전트가 다루기 어렵고, 캡션 같은 텍스트 표현은 다루기는 쉽지만 개체 관계나 장면 구조를 압축하는 과정에서 정보를 크게 잃는다. 장면 그래프·영상 지식 그래프 등 구조화 표현도 대부분 영상 이해(검색·질의응답)용으로 설계되어 있어, 영상을 다시 만들어낼 만큼 충분한 정보를 담고 있는지 검증되지 않은 상태였다. 즉 "에이전트가 읽고 조작할 수 있으면서도 영화적 정보를 충실히 보존하는" 표현이 부재했다는 것이 이 논문의 출발점이다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li><strong>Agentic Video Auto-Encoder 패러다임 제안</strong>: 에이전트 네이티브 영상 표현 학습을 자기진화형 오토인코딩 문제로 정식화하고, 정책 사전학습·표현 정제 두 단계의 최적화가 재구성 충실도를 42.4%에서 49.0%로(6.6%p, 상대 15.6%) 끌어올림을 보임.</li>
+<li><strong>에이전트 영상 표현 벤치마크 구축</strong>: 재구성 충실도를 통해 표현 품질을 평가하는 최초의 벤치마크. 4개 비교 방향(직접 비디오/키프레임 비교, 비디오/키프레임 역캡셔닝)과 8개 세부 차원으로 구성되며, 자동 평가지표가 인간 판단과 730개 블라인드 비교 중 710개(97.3%)에서 일치함을 확인.</li>
+<li><strong>Film KG 데이터셋 및 편집 프레임워크 공개</strong>: 고품질 인간 제작 영화로부터 추출한 수만 샷 규모의 Film KG 텍스트 표현 데이터셋과, 그래프 위상 기반 연쇄 편집 프레임워크를 함께 공개.</li>
+</ol>
+<h2>방법론</h2>
+<p>AVA-Encoder는 영상 V를 에이전틱 비디오 인코더 E(정책 P로 구동)를 통해 Film KG 표현 G로 변환하고, 고정된 디코더 Dec(·)로 다시 영상 V̂를 재구성한다(V → G → V̂). 디코더가 고정되어 있으므로 재구성 잔차 R(V, V̂)는 곧 표현 G의 정보 보존 품질을 직접 측정하는 신호가 된다.</p>
+<ul>
+<li><strong>에이전틱 비디오 인코더</strong>: 필름 전체 → 샷 → 키프레임 순으로 3단계 계층적 이해를 수행하며, 상위 단계의 맥락(전체 서사, 등장인물·장면·오브젝트 레지스트리)을 하위 단계에 주입해 정보 손실을 줄인다.</li>
+<li><strong>Film KG 표현</strong>: Story-Event-Shot의 서사 계층과 Character/Scene/Object/Style/Camera/Audio 등 6종의 상태 노드를 텍스트로 저장하고, 생성된 이미지·오디오·비디오 등 멀티모달 자산은 별도의 링크된 자산 계층에 둔다. 총 10종 노드, 11종 타입 엣지(계층·시간순서·의미 관계 등)로 구성되어 국지적 편집이 그래프를 따라 관련 콘텐츠에 자동 전파될 수 있다.</li>
+<li><strong>이중 루프 텍스트 그래디언트 진화</strong>: TextGrad 개념을 확장해, (외부 루프) 여러 영상에 걸쳐 재사용 가능한 인코딩 정책 P를 사전학습하는 Data-Agnostic Encoding Policy Pseudo-Training과, (내부 루프) 특정 입력 영상의 Film KG 표현 G만을 테스트 시점에 정제하는 Data-Dependent KG Representation Refinement로 구성된다. 두 루프 모두 "재구성 → 실패 진단 → 텍스트 그래디언트 생성 → 후보 제안 → 검증 → 수락/거부"의 동일한 사이클을 따르며, 각각 Anti-Forgetting Gate(과거 학습 퇴행 방지)와 Anti-Degradation Gate(기존 정확한 부분 훼손 방지)로 안전장치를 둔다. 최적화 신호로는 약 30개의 원자적 사실 질의응답(QA)으로 구성된 R_reward를 쓰고, 최종 비교·보고용 지표 R_eval은 별도로 분리해 보상 해킹을 방지한다.</li>
+</ul>
+<h2>실험 설정 및 결과</h2>
+<p>비디오 이해에는 Gemini-3.1-Pro-Preview, 표현 수정에는 Qwen-3.7-Plus, 이미지/영상 생성에는 각각 Nano Banana Pro와 HappyHorse 1.0을 사용했다. 6개의 사전학습 클립과 서로 겹치지 않는 18개(129샷, 246키프레임) 평가 클립으로 구성된 데이터를 썼으며, 모든 방법에 걸쳐 원본 영상의 픽셀은 재구성 생성기에 전달되지 않도록 엄격히 통제했다(표현이 담은 정보만으로 재구성).</p>
+<ul>
+<li>VideoAnalyzer, Storyboard Studio, soap2soap 등 기존 방법 대비, AVA-Encoder는 Overall 49.0%로 최강 베이스라인 soap2soap(28.3%) 대비 20.7%p(상대 73.1%) 향상을 달성했으며 네 비교 방향(V, KF, V-BC, KF-BC) 모두에서 우위를 보였다.</li>
+<li>정책만 비교하는 통제 실험에서, 사전학습된 정책(45.8%)이 사람이 직접 튜닝한 정책(44.4%)을 상회하면서도 샷 단위 프롬프트 토큰을 74.3%, 키프레임 단위 프롬프트 토큰을 70.1% 절감했다.</li>
+<li>계층적 이해 구조 자체도 중요해, 단일 레벨 이해만 쓰는 Naive 인코더(27.5%) 대비 계층 구조 도입만으로 18.3%p 상승했다.</li>
+<li>그래프 편집 실험(RQ3)에서는 캐릭터 교체, 화풍(비주얼 트리트먼트) 교체 등 국지적 편집이 관련 샷·키프레임에만 정합적으로 전파됨을 정성적으로 보였다.</li>
+<li>다운스트림 재사용 실험(RQ4)에서는 AVA-Encoder 표현을 텍스트로 한 번 주입하는 것만으로 MovieAgent, FilmAgent, Anim-Director, VideoStudio 등 기존 영상 생성 에이전트 프레임워크 전부의 종합 품질 점수가 향상됐다.</li>
+</ul>
+<h2>한계점</h2>
+<p>논문에 별도의 "한계점" 절은 없으나 본문에서 확인 가능한 제약은 다음과 같다.
+- 재구성 파이프라인이 Gemini, Qwen, Nano Banana Pro, HappyHorse 등 고정된 소수의 외부 파운데이션 모델에 강하게 의존하며, 디코더 성능에 재구성 결과가 좌우된다(부록 실험에서 디코더를 바꾸면 최대 1.5%p 변동 관찰).
+- 사전학습(정책 학습)에 사용된 영상이 6편에 불과해, 대규모 다양성 데이터로의 일반화는 18개 held-out 클립으로만 검증되었다.
+- 원자적 QA 기반 보상과 다단계 평가 프로토콜은 계산 비용이 상당히 크고(샷·키프레임당 약 30개 질문), 시스템 프롬프트 자체도 매우 길고 복잡하다.
+- 평가·최적화 신호 모두 VLM(Gemini)의 판단에 의존하므로 VLM 자체의 편향이나 오류가 결과에 반영될 수 있다.
+- 소스 영상은 공개된 오픈소스 데이터를 사용했다고만 명시되어 있어, 저작권이 있는 상업 영화 클립을 포함한 데이터 공개 범위에 대한 논의는 제한적이다.</p>
+<h2>시사점</h2>
+<p>이 연구는 "영상을 에이전트가 이해·추론·편집 가능한 구조로 바꾸는 것" 자체를 재구성(오토인코딩) 문제로 정식화하고, 재구성 충실도를 표현 품질의 정량적 척도이자 자기개선의 최적화 신호로 동시에 활용한다는 점에서 표현학습과 에이전트 학습을 연결하는 새로운 관점을 제시한다. 텍스트 중심 그래프 표현은 향후 영상 생성 에이전트가 사람이 만든 방대한 영화 자산으로부터 스토리텔링·촬영 기법 등의 암묵지를 직접 학습할 수 있는 데이터 파이프라인으로 기능할 수 있으며, 실제로 기존 여러 영상 생성 에이전트에 즉시 적용해 성능을 끌어올린 결과는 이 표현이 특정 시스템에 종속되지 않는 범용 인터페이스가 될 가능성을 시사한다. 또한 이중 루프(정책 대 표현) 및 보상-평가 분리 설계는 LLM 기반 텍스트 그래디언트 최적화가 안정적으로 자기진화하도록 만드는 일반적인 방법론으로서 다른 에이전틱 파이프라인에도 참고가 될 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.12313" target="_blank" rel="noopener">huggingface.co/papers/2608.12313</a> · 2026-08-20</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

@@ -1,0 +1,119 @@
+<meta charset="UTF-8">
+<title>스킬에보</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#7 · Daily Papers 2026-08-22</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 22</span>
+    </div>
+    <h1 class="article-title">SkillEvo: Self-Renewing Evolution Gradients from Multi-Turn Interaction Feedback</h1>
+    <p class="article-title-ko">스킬에보: 다중 턴 상호작용 피드백을 통한 자기 갱신형 진화 그래디언트</p>
+    <p class="article-sub">SkillEvo는 단일 턴 QA 평가에 의존하던 기존 에이전트 스킬 자기진화 방식의 한계를 넘어, 다중 턴 사용자 시뮬레이션을 "평가용 종착점"이 아닌 "지속적인 피드백 생성기"로 재구성하고, 독립적인 거버넌스 레이어로 구조적 퇴화를 능동적으로 복구함으로써 스킬이 계속해서 진화할 수 있도록 만든 프레임워크이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.13120" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.13120" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: SkillEvo: Self-Renewing Evolution Gradients from Multi-Turn Interaction Feedback</li>
+<li><strong>저자</strong>: Qianxi Yan, Chunrong Chen, Jiuzhou Zhao, Min Zhang, Yongzhou Xu, Xiaochuan Xu (Tencent Cloud Andon 및 Zhejiang University 소속)</li>
+<li><strong>출처</strong>: arXiv:2608.13120v1 [cs.AI] (2026년 8월 13일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.13120">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>SkillEvo는 단일 턴 QA 평가에 의존하던 기존 에이전트 스킬 자기진화 방식의 한계를 넘어, 다중 턴 사용자 시뮬레이션을 "평가용 종착점"이 아닌 "지속적인 피드백 생성기"로 재구성하고, 독립적인 거버넌스 레이어로 구조적 퇴화를 능동적으로 복구함으로써 스킬이 계속해서 진화할 수 있도록 만든 프레임워크이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>에이전트 스킬(Skill)은 도메인 지식과 처리 절차를 캡슐화한 재사용 가능한 모듈로 각광받고 있지만, 여전히 수작업 저작에 의존하며 실제 상호작용에서 발생한 실패 사례를 자동으로 재사용 가능한 지식으로 통합하지 못한다. 기존의 자기진화 연구는 단일 턴 질의응답(QA) 평가에서 얻은 피드백으로 스킬을 개정하는데, 이는 첫 번째 상호작용에서 드러나는 결함만 patch할 뿐 여러 턴에 걸쳐서만 노출되는 잠재적 결함은 보지 못해 한두 라운드 만에 진화 그래디언트가 소진(saturate)되는 비대칭 문제를 낳는다. 또한 거버넌스는 통과/실패를 가르는 스칼라 점수에만 의존하여, 퇴화한 후보를 거부할 수는 있어도 그 구조적 원인을 진단하거나 고치지 못한다. 저자들은 스킬의 지속적 진화를 막는 진짜 병목이 편집 능력이나 반복 횟수가 아니라 "평가 피드백이 신뢰할 수 있는 진화 그래디언트를 계속 공급하는가"에 있다고 주장한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>신뢰 가능한 피드백의 세 가지 필요조건(커버리지, 정확성, 귀속 가능성)을 정식화하고, 다중 턴 사용자 시뮬레이션을 평가 종착점이 아닌 피드백 생성기로 재구성했다. 의도 상태 머신(intent state machine)으로 커버리지를 보장하고, 시뮬레이터와 서비스 에이전트 책임을 분리하는 양측 직교 평가(dual-sided orthogonal evaluation)로 정확성을 확보하며, 집단 귀속(collective attribution)으로 수리 가능한 격차만 선별해 공통점을 추출한다.</li>
+<li>스킬을 라우팅 노드와 지식 노드가 상호 참조하는 구조화된 지식 그래프로 보고, 다회차 개정에서 발생하는 지식 팽창(knowledge bloat), 참조 파손(reference breakage), 사실 과잉일반화(factual over-generalization) 등 스칼라 점수로는 진단할 수 없는 세 가지 퇴화 유형을 식별했다. 이중 앵커(원본 baseline과 직전 라운드)를 이용해 사실 일관성을 지키고, 그래프 구조 진단을 통해 이를 능동적으로 복구함으로써 거버넌스를 "스칼라 게이트 기반 수동 거부"에서 "진단 기반 능동 복구"로 전환했다.</li>
+<li>텐센트 클라우드의 6개 클라우드 서비스 카테고리, 9개 프로덕션 스킬, 98개 스킬 참조 파일 대상 실험에서 원본 스킬 대비 51.8점, self-reflection 기반 진화 대비 23.0점, 단일 턴 QA 기반 진화 대비 15.4점의 TSR(Task Success Rate) 향상을 보였으며, 실제 텐센트 클라우드 프로덕션 환경에 배포되어 효과를 검증했다.</li>
+</ul>
+<h2>방법론</h2>
+<p>SkillEvo는 Scenario Synthesizer → User Agent → Verifier → Collective Attribution → Skill Optimizer → Skill Governor로 이어지는 닫힌 루프로 구성된다.
+1. <strong>Scenario Synthesizer</strong>: 실제 인간 상담원이 처리한 티켓에서 의도 어젠다(intent agenda), 행동 사실(behavior facts), 감정 궤적(emotion trajectory), 인간 참조 해법을 추출해 제약된 사용자 시나리오를 합성한다.
+2. <strong>User Agent</strong>: 합성된 사용자 에이전트가 현재 스킬을 탑재한 서비스 에이전트와 여러 턴에 걸쳐 상호작용하며 대화 궤적을 생성한다. 의도 상태 머신이 모든 핵심 의도가 실제로 제기되고 해결되었는지 추적해 조기 종료나 불필요한 반복을 방지한다.
+3. <strong>Verifier</strong>: 생성된 대화 궤적을 인간 참조 해법과 대조해 성공/실패를 판정하고 실패 원인과 근거를 담은 피드백을 생성한다. 시뮬레이터 측(의도 커버리지 c_U)과 에이전트 측(노출된 의도에 대한 가중 정확도 s_C)을 직교적으로 평가하여, 의도가 애초에 제기되지 않아 발생한 실패(시뮬레이션 왜곡)와 실제 에이전트 능력 부족을 구분한다.
+4. <strong>Collective Attribution</strong>: 실패를 Knowledge Gap(지식 격차), Capability Limit(권한/도구 등 한계), Evaluation Noise(평가 잡음)로 분류하고, 오직 Knowledge Gap만 유사도에 따라 병합해 진화 피드백 L_t로 투영한다.
+5. <strong>Skill Optimizer</strong>: L_t를 바탕으로 스킬을 "경계가 있는(bounded)" 방식으로 개정한다. 근거가 확인된 격차만 patch하고(증거 경계), 프로덕션 baseline S_0에 앵커링하여 기존의 안정된 사실을 덮어쓰지 않는다(참조 경계).
+6. <strong>Skill Governor</strong>: 개정 이후 독립적인 거버넌스 레이어가 지식 팽창·참조 파손·사실 과잉일반화 등 구조적 퇴화를 탐지하고, 이를 다음 라운드의 귀속 신호와 병합해 지식 보강과 구조 복구를 동시에 수행하게 한다. 사실 일관성은 하드 제약(위반 시 후보 거부 및 즉시 복구)으로, 구조적 일관성은 소프트 제약(권고안을 다음 라운드에 반영)으로 다룬다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>텐센트 클라우드의 프로덕션 기술지원 시나리오(6개 클라우드 서비스 카테고리, 9개 프로덕션 스킬, 98개 스킬 참조 파일)에서 평가했다. 모든 티켓은 실제로 인간 상담원에게 에스컬레이션된 것으로, 이는 기존 스킬의 지식 격차를 나타내는 실패 사례 집합이다. 티켓을 시간순으로 4등분해 앞의 3/4은 진화 루프(개발셋)에, 나머지 1/4은 순수 평가용(평가셋)으로만 사용했다.</p>
+<p>비교 대상은 원본 스킬(Original Skill), 평가 없이 자기반성으로 편집하는 Self-Reflection, 단일 턴 QA 평가 기반 진화(SkillForge, Liu et al. 2026), 그리고 SkillEvo이며 각 4라운드씩 진행했다. 라운드별 TSR(%) 결과는 다음과 같다: Original Skill 30.0(고정), Self-Reflection 59.2→58.7→57.4→58.8(정체·진동), Single-turn QA 58.9→64.5→65.7→66.4(그래디언트 감쇠), SkillEvo 59.4→71.3→77.9→81.8(지속 상승). 최종적으로 SkillEvo는 원본 대비 +51.8점, Self-Reflection 대비 +23.0점, 단일 턴 QA 대비 +15.4점을 기록했다.</p>
+<p>Ablation에서 다중 턴 상호작용을 단일 턴 QA로 대체하면 TSR이 66.4로 떨어져(SkillEvo 전체 81.8과 15.4점 차이) 성능 향상이 다중 턴 피드백 자체에서 온다는 것을 확인했고, 거버넌스 레이어를 제거하면 TSR은 78.6으로 소폭 하락(-3.2)하지만 라운드 간 회귀율(RegR, R1→2: 28.2%, R2→3: 24.4%, R3→4: 21.1%)과 지식 팽창(Bloat, 거버넌스 있음 +2.8% vs 없음 +16.2%, 약 6배 차이)에서 큰 차이를 보여 거버넌스의 역할이 점수 향상보다는 퇴화 방지에 있음을 보였다. 시뮬레이터 신뢰성 측면에서는 의도 커버리지 98.9%, 인간 평가 기반 시뮬레이션 충실도(fidelity) 95.3%, Verifier와 인간 판정 간 일치도 90% 이상을 보고했다.</p>
+<h2>한계점</h2>
+<p>저자들은 두 가지 재현성 관련 한계를 명시했다. 첫째, 실험에 사용된 티켓은 프로덕션 고객지원 시스템에서 나온 것으로 사용자 프라이버시 및 상업적 기밀 제약 때문에 데이터셋 자체는 공개할 수 없으나, 방법론 자체는 특정 티켓 소스에 종속되지 않고 인간 참조 해법이 있는 다중 턴 상담 로그가 있는 어떤 환경에도 적용 가능하다고 설명한다. 둘째, 모델 선택과 관련해 유일한 아키텍처적 요구사항은 Generator ≠ Evaluator(생성자와 평가자가 서로 다른 모델이어야 함)이며, 특정 모델의 고유 능력에 의존하지 않으므로 다른 모델 계열로 대체 가능하다고 밝힌다. 그 외 스킬 자동 개정이 잘못될 경우 실제 사용자에게 오류가 전달될 수 있는 위험을 인정하며, 이를 완화하기 위해 사실 일관성을 하드 제약으로 두고 모든 개정본이 프로덕션에 반영되기 전 인간의 확인을 거치도록 했다고 명시했다(완전 자동 배포가 아님).</p>
+<h2>시사점</h2>
+<p>이 연구는 에이전트 스킬의 자기진화에서 "얼마나 많이 반복하는가"보다 "평가 피드백이 얼마나 신뢰할 수 있고 지속적으로 새로운 그래디언트를 공급하는가"가 핵심 병목이라는 점을 실증적으로 보여준다. 다중 턴 사용자 시뮬레이션을 평가 종착점이 아닌 피드백 생성기로 재정의하는 아이디어는 스킬뿐 아니라 프롬프트 최적화, RAG 지식베이스 관리 등 텍스트 기반 지식 시스템의 자기개선 전반에 적용될 수 있는 일반적 원칙을 제시한다. 또한 스킬을 구조화된 지식 그래프로 취급하고 사실/구조 일관성을 별도의 하드/소프트 제약으로 분리해 관리하는 거버넌스 설계는, 스칼라 점수 하나로 품질을 판단하는 기존 방식이 놓치는 "보이지 않는 퇴화"를 다루는 데 실용적인 프레임을 제공한다. 실제 프로덕션 환경(텐센트 클라우드)에 배포되어 검증되었다는 점에서 산업적 적용 가능성도 높다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.13120" target="_blank" rel="noopener">huggingface.co/papers/2608.13120</a> · 2026-08-22</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

@@ -1,0 +1,116 @@
+<meta charset="UTF-8">
+<title>위드에브리원</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#5 · Daily Papers 2026-08-22</span>
+      <span class="cat-tag">생성모델</span>
+      <span class="upvote-tag">▲ 34</span>
+    </div>
+    <h1 class="article-title">WithEveryone: Unified Planning and Identity Grounding for Group Image Generation</h1>
+    <p class="article-title-ko">위드에브리원: 그룹 이미지 생성을 위한 통합 계획 수립 및 정체성 그라운딩</p>
+    <p class="article-sub">WithEveryone은 하나의 통합 멀티모달 모델 안에서 5~10명의 참조 인물 정체성을 배치·자세까지 포함한 구조화된 계획(Layout Chain-of-Thought)으로 먼저 추론한 뒤, 그 계획에 정확히 그라운딩된 정체성 손실(Layout-Grounded ID Loss)로 이미지를 생성함으로써 대규모 그룹 사진에서도 각 인물의 정체성을 안정적으로 보존하는 프레임워크다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.20336" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.20336" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: WithEveryone: Unified Planning and Identity Grounding for Group Image Generation</li>
+<li><strong>저자</strong>: Hengyuan Xu, Qixun Wang, Yiji Cheng, Miles Yang, Zhao Zhong, Wei Cheng, Xingjun Ma, Yu-Gang Jiang (Fudan University, Hunyuan/Tencent, The University of Hong Kong 소속 공동 연구진)</li>
+<li><strong>출처</strong>: arXiv:2608.20336v1 [cs.CV] (2026년 8월 20일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음 (본문에 "Project Page"와 "Code" 링크 아이콘이 표기되어 있으나 추출된 텍스트에는 실제 URL이 포함되어 있지 않음)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.20336">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>WithEveryone은 하나의 통합 멀티모달 모델 안에서 5~10명의 참조 인물 정체성을 배치·자세까지 포함한 구조화된 계획(Layout Chain-of-Thought)으로 먼저 추론한 뒤, 그 계획에 정확히 그라운딩된 정체성 손실(Layout-Grounded ID Loss)로 이미지를 생성함으로써 대규모 그룹 사진에서도 각 인물의 정체성을 안정적으로 보존하는 프레임워크다.</p>
+<h2>배경 및 문제의식</h2>
+<p>정체성 보존 이미지 생성은 한두 명의 인물을 다루는 데는 상당히 발전했지만, 등장인물 수가 늘어날수록 정체성 유사도가 급격히 떨어지고 얼굴이 중복되거나 서로 다른 정체성이 뒤섞이는 문제가 널리 보고되어 왔다. 기존 오픈소스 방법은 대개 1~5명, 강력한 상용 시스템인 NanoBanana Pro조차 최대 7명까지만 지원한다. 원인은 두 가지로 요약된다. 첫째, 참조 이미지·정체성 임베딩 등 조건 신호가 많아질수록 각 정체성 신호가 희석되고 상호 간섭이 심해지는데도 생성 과정에서 특정 정체성을 계속 "읽고" 있다는 보장이 없다. 둘째, 기존의 출력 측 정체성 손실(identity loss)은 생성된 얼굴과 참조 얼굴을 임베딩 매칭(예: 헝가리안 매칭)으로 대응시키는데, 학습 초기·고노이즈 구간에서는 얼굴들이 서로 거의 구별되지 않아 이 매칭이 사실상 무작위가 되고, 잘못 매칭된 손실이 오히려 서로 다른 정체성을 뒤섞어버려 인원이 늘어날수록 학습이 무너진다. 여기에 더해 인원이 늘수록 배치·자세 등 공간적 관계도 기하급수적으로 복잡해져 한 사람의 위치 오류가 전체 구도로 전파된다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>단일 통합 모델 내에서 정체성 추론과 레이아웃 추론을 인터리빙: 선택된 각 참조 인물을 ID 토큰으로 로드하고, ATLAS 스타일의 구조화된 Layout Chain-of-Thought(LayoutCoT)를 확장해 정체성-레이아웃 결속(얼굴 영역, 신체 범위, 자세)까지 함께 예측한 뒤 이를 결정적 렌더러가 시각적 조건 이미지로 변환한다. 여기에 ID Representation Forcing을 추가해 이미지 합성 이전에 각 정체성에 대한 표현을 명시적으로 예측하도록 지도한다.</li>
+<li>Layout-Grounded ID Loss(LG-ID Loss) 제안: 임베딩 기반 얼굴 매칭 대신 레이아웃 주석(annotated face region)에서 정답 대응 관계를 직접 읽어옴으로써, 기존 정체성 손실이 2명을 넘어서면 무너지던 실패 모드를 근본적으로 제거한다. 논문에서 정체성 개선의 가장 큰 단일 원인으로 지목된다.</li>
+<li>5~10인 규모의 그룹 이미지 생성 시스템을 구축하고, 참조 인물과 완전히 겹치지 않는(identity-disjoint) 벤치마크로 체계적으로 평가하여 GPT-Image2 등 최신 상용 모델 대비 더 나은 정체성-복사(copy-paste) 균형을 달성했다.</li>
+</ul>
+<h2>방법론</h2>
+<p>WithEveryone은 transfusion 스타일의 mixture-of-transformers 멀티모달 아키텍처를 기반으로 하며, 텍스트와 구조화된 추론은 자기회귀(autoregressive)로, 목표 이미지 잠재변수는 flow matching으로 학습된다. 전체 파이프라인은 세 단계로 구성된다.</p>
+<p>1) 정체성 선택과 ID 토큰: 프롬프트가 요구하는 참조 인물 부분집합을 모델이 먼저 식별하고, 각 인물의 512차원 ArcFace 임베딩을 경량 MLP로 모델 은닉 차원에 투영해 해당 ID 토큰 위치에 주입한다. 선택과 결속(binding)은 순차적으로 이루어지며, 구체적 인물과의 결속은 이후 레이아웃 단계에서 완성된다.</p>
+<p>2) ID Representation Forcing: 10~20K 토큰에 달하는 긴 인터리빙 시퀀스 속에서 단일 연속 토큰으로 표현되는 ID 토큰이 무시되기 쉬운 문제를 해결하기 위해, 목표 이미지 생성 이전 위치에 표현 토큰을 두고 이를 ArcFace 공간으로 사상하는 출력 프로젝터로 코사인 정렬 손실(L_RF)을 부과한다. 이를 통해 각 정체성에 대한 예측이 사전에 강제되어 이후 이미지 토큰까지 인과적으로 전달되는 "정체성 스캐폴드"를 형성한다.</p>
+<p>3) 구조화된 LayoutCoT와 LG-ID Loss: 모델은 2,002개 토큰(축당 1,001개 위치)으로 이산화된 좌표 어휘를 사용해 정체성-레이아웃 결속, 얼굴/신체 영역, 자세 키포인트를 고정된 인과 순서로 자기회귀적으로 예측하고, 이를 캔버스에 렌더링해 조건 이미지로 사용한다. 출력 측 지도는 이 레이아웃 주석에서 얻은 정답 위치를 이용해, 예측 이미지와 목표 이미지를 동일한 주석 영역에서 잘라내 ArcFace로 인코딩한 뒤 비교하는 방식(Layout-Grounded ID Loss)으로 이루어진다. 이는 얼굴 매칭 문제 자체를 제거하며, 노이즈가 큰 학습 초반 조건에서도 견고하다. 전체 목적함수는 next-token prediction 손실, flow matching 손실, Representation Forcing 손실, LG-ID 손실의 가중합(L_FM, L_RF 가중치 1.0, L_ID 가중치 0.5)으로 구성된다. 학습 데이터는 40만 개의 실제 그룹 사진에서 파생된 샘플로, 참조 이미지·프롬프트·정체성 선택·레이아웃 계획·렌더링된 조건·캡션·정체성 예측·목표 이미지를 하나의 인과 시퀀스로 인터리빙해 구성했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>평가를 위해 5~10명의 참조 정체성을 포함하는 실제 그룹 사진 210개로 구성된 벤치마크를 새로 구축했으며, 학습 데이터와 정체성이 전혀 겹치지 않도록(identity-disjoint) 설계해 미지 인물에 대한 일반화 성능을 측정했다. 비교 대상은 UMO, WithAnyone, UniPortrait, DreamO, ID-Patch 등 학계 정체성 보존 기법, FLUX.2 Klein, Qwen-Image-Edit, BAGEL 등 오픈소스 범용 모델, 그리고 NanoBanana 계열, Seedream 계열, GPT-Image2 등 상용 시스템이다.</p>
+<p>주요 결과(Table 1, 3-인코더 평균 프로토콜 기준): WithEveryone은 Sim(Tgt) 0.499로 전체 1위(GPT-Image2 0.462), Sim(Ref) 0.540으로 GPT-Image2(0.583)에 이어 2위를 기록했다. Copy-Paste 점수는 0.055로 GPT-Image2(0.169)보다 크게 낮아 참조 얼굴을 그대로 복사하기보다 맥락에 맞게 재구성함을 시사한다. 정체성 커버리지는 0.973(중복률 0.028)으로 모든 비교 모델 중 최고였으며, 이미지 품질 지표인 CLIP-I도 0.861로 최고 수준(NanoBanana2 0.860과 통계적으로 유사)이었다. 참조 인원 수(5→10명)에 따른 ArcFace 유사도 저하 폭도 WithEveryone이 0.629→0.571로 가장 완만했다(GPT-Image2는 0.593→0.496, UMO는 0.412→0.330).</p>
+<p>Ablation 결과(Table 2): 기본 모델(P1) 대비 LayoutCoT만 추가(P2)하면 Sim(Ref) 0.339→0.364, Coverage 0.741→0.813로 개선되고, 정답(ground-truth) 레이아웃을 주면(P3, 오라클 상한) 추가로 크게 향상된다. ID 토큰과 Representation Forcing(P4, P5)은 상대적으로 작지만 일관된 개선(Sim(Ref) +0.013~0.025)을 가져왔다. 가장 큰 개선은 LG-ID Loss(P6)로, 단독으로도 Sim(Ref) 0.339→0.506, Sim(Tgt) 0.304→0.435, Coverage 0.741→0.947까지 끌어올려 단일 요소 중 최대 기여를 보였다. 모든 요소를 결합한 완전 모델(P7)은 Sim(Ref) 0.555, Sim(Tgt) 0.461을 기록했다. 추가 분석에서는 얼굴 크기 축소가 정체성 저하의 주된 원인이 아니며(WithEveryone의 유사도-얼굴크기 기울기는 거의 평평, −0.002), 오히려 계획 실행(Plan Execution, PlanIoU 0.773~0.814)은 상당히 빨리 수렴하는 반면 계획 자체의 품질(Plan Prediction)이 남은 오차의 주요 원인임을 보였다.</p>
+<h2>한계점</h2>
+<p>논문 본문에는 세부 한계가 직접 서술되지 않았으며, "Appendix E에서 한계, 향후 연구, 책임 있는 사용을 논의한다"고만 언급되어 있어 구체적 내용은 논문에 명시되지 않음(추출된 본문 범위에 Appendix E 내용이 포함되어 있지 않음). 다만 본문 분석에서 스스로 지적한 시사점으로는, 계획(LayoutCoT) 예측 품질이 여전히 정답 레이아웃 대비 열등해 남은 오차의 주요 원인이라는 점, 그리고 그룹 크기가 커질수록 얼굴 크기 감소만으로는 설명되지 않는 정체성 저하 요인(교차 정체성 간섭, 가려짐, 구도 복잡성 등 추정)이 남아 있다는 점을 들 수 있다.</p>
+<h2>시사점</h2>
+<p>이 연구는 다인원 정체성 보존 이미지 생성에서 "누가 생성되는가"(정체성)와 "어디에, 어떻게 배치되는가"(레이아웃)를 별도 모듈이 아닌 하나의 통합 문맥에서 함께 계획하고, 그 계획을 정체성 지도(supervision)의 정답 대응 관계로 직접 활용하는 것이 확장성의 핵심임을 보여준다. 즉, 임베딩 매칭 기반의 정체성 손실이 인원 수 증가에 취약했던 근본 원인(대응 관계 자체의 불확실성)을 레이어아웃 주석으로 해소함으로써, 별도의 매칭 알고리즘 개선 없이도 대규모 그룹 이미지 생성의 정체성 보존 성능을 크게 끌어올릴 수 있음을 실증했다. 이는 향후 다중 객체·다중 인물 조건부 생성 전반에서 "구조화된 계획을 먼저 세우고 그 계획에 지도 신호를 그라운딩한다"는 설계 원칙이 유용한 일반적 전략이 될 수 있음을 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.20336" target="_blank" rel="noopener">huggingface.co/papers/2608.20336</a> · 2026-08-22</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

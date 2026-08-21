@@ -1,0 +1,114 @@
+<meta charset="UTF-8">
+<title>포지더블유엠</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#8 · Daily Papers 2026-08-22</span>
+      <span class="cat-tag">생성모델</span>
+      <span class="upvote-tag">▲ 14</span>
+    </div>
+    <h1 class="article-title">ForgeWM: Progressive Causal Training for Few-Step Action-Conditioned Video World Models</h1>
+    <p class="article-title-ko">포지더블유엠: 소수단계 행동조건 비디오 세계모델을 위한 점진적 인과 학습</p>
+    <p class="article-sub">ForgeWM은 양방향(bidirectional) 행동조건 비디오 생성 모델을 4단계의 점진적 학습 절차를 통해 1/2/4스텝짜리 인과적(causal) 소수단계 세계모델로 변환하고, 키보드·마우스 등 게임 고유의 이산·연속 조작을 잠재 청크와 정렬된 채로 유지하는 프레임워크이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.14022" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.14022" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: ForgeWM: Progressive Causal Training for Few-Step Action-Conditioned Video World Models</li>
+<li><strong>저자</strong>: Xinye Li, Lingshuai Lin 등 (공동 1저자)이 주도하고 Wai Lam이 교신저자로 참여한 연구진으로, CUHK(홍콩중문대), Tencent PCG, 푸단대학교(FDU), Shanghai AI Laboratory, HKUST 소속 저자들의 협업 연구</li>
+<li><strong>출처</strong>: arXiv:2608.14022v1 [cs.CV] (2026년 8월 14일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음 (본문에 "Page", "Code", "Models" 리소스 아이콘 표기는 있으나 실제 URL은 추출 텍스트에 나타나지 않음)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.14022">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>ForgeWM은 양방향(bidirectional) 행동조건 비디오 생성 모델을 4단계의 점진적 학습 절차를 통해 1/2/4스텝짜리 인과적(causal) 소수단계 세계모델로 변환하고, 키보드·마우스 등 게임 고유의 이산·연속 조작을 잠재 청크와 정렬된 채로 유지하는 프레임워크이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>행동조건 비디오 세계모델을 실시간 상호작용에 쓰려면 인과적(과거 프레임만 참조하는) 생성, 지속적인 조작 반응성, 그리고 제어 루프를 닫을 수 있을 만큼 적은 디노이징 스텝이 필요하다. 그러나 소수단계로 압축할수록 시각적 오차, 행동 오차, 캐시 오차가 뒤이은 청크로 계속 전파되어 화질·조작성·다중 청크 안정성이 서로 얽히는 문제가 커진다. 특히 게임 조작은 이산적인 키보드 상태와 연속적인 마우스 움직임이 프레임 단위로 들어오고 전용 경로를 통해 모델에 입력되기 때문에, 단순한 카메라 궤적 조건화보다 다루기 어렵다. 기존의 인과적 증류(causal distillation) 연구들은 소수단계 비디오 생성을 가능케 했지만, 이를 상호작용형 세계모델에 확장할 때 행동-잠재 정렬과 인과적 상태 갱신 프로토콜을 훈련 및 자기회귀 롤아웃 전 과정에서 보존하는 방법은 충분히 다뤄지지 않았다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>양방향 행동조건 생성기를 예산(스텝 수)별로 특화된 소수단계 인과적 세계모델로 변환하는 4단계(도메인 적응 → 교사강제 인과학습 → 인과 일관성 증류 → 온폴리시 분포매칭) 프레임워크를 제시</li>
+<li>잠재 압축, 인과 학습, 자기회귀 롤아웃 전 과정에서 프레임 정렬된 이산(키보드) 및 연속(마우스) 게임 조작을 보존하는 모듈형 액션 인터페이스 설계</li>
+<li>1, 2, 4스텝의 서로 다른 품질-지연시간 운용점을 제공하는 예산 특화 학생 모델들과, 동일 체크포인트로 오프라인 화질을 개선하면서도 사용자가 실제 경험한 궤적을 유지하는 재생(replay) 프로토콜 제안</li>
+</ul>
+<h2>방법론</h2>
+<p>ForgeWM은 동일한 베이스 생성기에서 출발한 두 갈래(양방향 도메인 교사와 인과적 학생)를 자기회귀 자기롤아웃 과정에서 만나게 하는 구조다. 기반 모델은 Matrix-Game 2.0 계열의 이미지-투-비디오 생성기이며, VAE로 인코딩된 잠재에 대해 flow-matching 목적함수로 속도장(velocity) v_θ를 학습한다(z_σ=(1-σ)z+σϵ). ActionModule은 이산 키보드 입력을 크로스어텐션의 키/값으로, 윈도우 처리된 연속 마우스 입력은 시각 특징과 결합해 시간적 어텐션으로 처리하며, VAE가 4프레임을 1잠재프레임으로 압축하므로 3개 잠재프레임(12비디오프레임) 단위의 인과 청크마다 정렬된 행동 윈도우와 별도의 키보드/마우스 캐시를 유지한다.</p>
+<p>4단계 학습은 다음과 같다. (0단계) 전체 클립에 대한 양방향 어텐션으로 게임 도메인에 적응한 "도메인 교사"를 만들고 이를 이후 3단계의 고정된 실제 디노이저로 사용한다. (1단계) 동일 베이스에서 블록 단위 인과 어텐션으로 대체한 뒤, 청크 내부는 양방향, 청크 간에는 이전 청크만 참조하도록 마스킹한 깨끗한(teacher-forced) 이력으로 학습해 "인과 교사"를 얻는다. (2단계) 1단계 체크포인트에서 시작해 온라인 인과 일관성 증류(causal consistency distillation)를 수행한다. 48단계의 이산 노이즈 그리드에서 인접 쌍을 뽑아 고정 교사가 classifier-free guidance를 적용한 오일러 스텝으로 한 단계 전진한 지점을, 학생의 EMA 사본이 만든 정지-그라디언트 타깃과 일치시켜 "소수단계 초기화 모델"을 얻는다. (3단계) 학생이 자기 생성 이력(self-generated history) 위에서 자기회귀 롤아웃을 수행하며, distribution matching distillation(DMD)과 유사하게 고정된 실제 디노이저와 학습 가능한 가짜 디노이저의 예측 차이로 그래디언트 방향을 구성해 온폴리시 분포매칭을 수행한다. 이 단계에서 K∈{1,2,4} 스텝별로 별도의 예산 특화 학생을 훈련하며, 1·2스텝 학생도 첫 잠재 청크만은 4스텝 스케줄을 쓰고 이후 정상상태에서 목표 스텝 수를 사용한다.</p>
+<p>배포 단계에서는 이중 경로(dual-path) 전략을 취해, 온라인 상호작용에는 저지연 예산 특화 학생을 그대로 쓰고, 상호작용이 끝난 뒤 선택적으로 "재생 시점 정제(Replay-Time Refinement)"를 적용한다. 저장된 롤아웃의 각 청크를 중간 노이즈 수준 r_i로 재노이즈한 뒤, 동일한 1스텝 학생이 기록된 행동 윈도우와 이미 정제된 인과 프리픽스 조건 하에 4회의 디노이징으로 다시 정제한다. 이는 별도의 정제 전용 체크포인트 없이 동일 모델로 노이즈부터 새로 생성하지 않고 실제 경험한 궤적을 보존하며 화질만 개선한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>공개된 Matrix-Game 2.0 계열에서 초기화하여 GF-Minecraft에서 만든 40,000개 클립(640×352 해상도)으로 학습했다. 비교 대상은 Matrix-Game 2.0과 WorldPlay(HY-WorldPlay 체크포인트)이며, 77프레임 롤아웃, 동일 초기 프레임·조작 조건에서 평가했다. 평가지표는 VBench의 Imaging Quality(IQ), Aesthetic Quality(AQ), Subject Consistency, LPIPS, 광류 기반 모션 프로파일 유사도, GameWorld Score 기반 Mouse Accuracy, 그리고 저자들이 제안한 키보드 방향 정확도 지표 KCtrl 등이다. 기준 궤적 정렬 평가에는 1,000개 페어 궤적을, 무기준 평가에는 462개 고정조작 영상을 사용했다.</p>
+<p>주요 결과: ForgeWM의 세 변형(1/2/4스텝)이 7개 품질·조작 지표 중 6개에서 최고치를 기록했으며, ForgeWM-1은 168.2ms 지연시간/72.10 FPS로 가장 높은 처리량을 보였다(Matrix-Game 2.0은 370.9ms/32.35 FPS, HY-WorldPlay는 2164.3ms/7.54 FPS). ForgeWM-2와 ForgeWM-4는 KCtrl(방향 정확도)에서 공동 1위(0.9740)를 기록했다. 41명이 참여한 3지선다 블라인드 사용자 선호도 평가(615회 선택)에서 ForgeWM-4는 시각 품질 68.8%, 행동 정확도 57.6%, 시공간 일관성 55.6%, 종합 60.7%의 선호율로 다른 두 모델을 크게 앞섰다. 테스트타임 스텝 스케일링 실험에서는 고정된 ForgeWM-1 체크포인트에 대해 스텝 수를 1~32로 늘려도 성능이 급격히 무너지지 않고 안정적이며, Imaging Quality는 2스텝, Subject Consistency는 4스텝에서 정점을 찍었다. 재생 시점 정제 실험에서는, ForgeWM-1 초안을 4스텝으로 정제한 결과가 기준 대비 LPIPS 0.6155로 노이즈부터 새로 생성한 ForgeWM-4(0.6168)와 비슷한 화질을 내면서도, 저장된 초안과의 거리(D_draft)는 0.1970으로 직접 재생성(0.6187)보다 약 3배 더 원래 경험 궤적에 가까웠다. 동일한 4단계 학습법을 게임패드 기반 FPS 게임(Halo Infinite, Modern Warfare, SF 슈터 등)에도 적용해 ForgeWM-CrossFPS를 만들었으며, 평균 페어 LPIPS 0.656, 생성/기준 모션 비율 1.45를 기록해 레시피 전이 가능성을 보였다.</p>
+<h2>한계점</h2>
+<p>논문은 주요 정량 평가를 통제된 Minecraft 환경에 국한했다고 명시하며, 더 넓은 분포외(out-of-distribution) 일반화는 이번 연구 범위 밖이라고 밝힌다. HY-WorldPlay는 다른 조작 파라미터화를 쓰기 때문에 결정론적 어댑터를 통한 매핑에 의존해, 정량 비교 신뢰도에 영향을 줄 수 있다고 인정한다. 또한 확장된 정성적 롤아웃(22초 길이)에서는 시간이 지날수록 블록 구조가 서서히 무너지거나 색상 아티팩트가 번지는 장기 열화(long-horizon degradation) 현상이 일부 관찰되었다고 밝히고 있다. CrossFPS 실험은 Minecraft 비교와 다른 도메인·프로토콜을 사용하므로 직접 비교는 어렵다고도 언급한다.</p>
+<h2>시사점</h2>
+<p>ForgeWM은 화질·조작성·효율성을 모두 만족시키는 실시간 상호작용형 비디오 세계모델을 만들기 위해, 기존의 양방향 생성기를 단계적으로(교사강제 인과학습→일관성 증류→온폴리시 분포매칭) 변환하는 실용적 레시피를 제시했다는 점에서 의미가 있다. 특히 이산·연속 게임 조작을 전용 경로로 분리해 잠재 압축 및 인과 학습 전 과정에서 정렬을 유지한 설계는, 카메라 포즈나 프롬프트 기반 조건화에 의존하던 기존 연구들과 차별화된다. 또한 "온라인 상호작용은 최소 지연으로, 화질 개선은 사후 재생 시점에" 라는 이중 경로 배포 전략은 별도의 정제 모델 없이도 실시간성과 고화질을 양립시킬 수 있음을 보여주며, 이는 향후 실시간 게임 세계모델이나 인터랙티브 콘텐츠 생성 시스템 설계에 실용적 참고가 될 수 있다. 동일한 4단계 레시피가 Minecraft에서 FPS 게임패드 조작으로도 전이된다는 점은 이 방법론이 특정 게임이나 조작 체계에 국한되지 않는 일반적 프레임워크로 확장될 가능성을 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.14022" target="_blank" rel="noopener">huggingface.co/papers/2608.14022</a> · 2026-08-22</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

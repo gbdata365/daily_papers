@@ -1,0 +1,116 @@
+<meta charset="UTF-8">
+<title>레포제로</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#9 · Daily Papers 2026-08-22</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 10</span>
+    </div>
+    <h1 class="article-title">Repo0: Design-Driven Zero-to-All Code Generation</h1>
+    <p class="article-title-ko">레포제로: 설계 기반 제로-투-올(zero-to-all) 코드 생성</p>
+    <p class="article-sub">Repo0은 자연어 요구사항만으로 저장소 전체를 생성하는 "zero-to-all" 코드 생성 문제를, 한 번에 설계도를 만들고 고정하는 방식이 아니라 개발 전 과정에서 저장소 아키텍처를 모듈성 지표에 따라 지속적으로 진화시키는 문제로 재정의한 프레임워크이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.19854" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.19854" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Repo0: Design-Driven Zero-to-All Code Generation</li>
+<li><strong>저자</strong>: Silin Chen, Haoyi Teng(공동 1저자) 외 Xiaodong Gu(교신저자), Yuling Shi, Jiale Huang, Yongpan Wang, Haibing Guan (상하이자오퉁대학교), Hongyu Zhang (충칭대학교)</li>
+<li><strong>출처</strong>: arXiv:2608.19854v1 [cs.SE] (2026년 8월 20일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/cslsolow/Repo0">GitHub - cslsolow/Repo0</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.19854">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>Repo0은 자연어 요구사항만으로 저장소 전체를 생성하는 "zero-to-all" 코드 생성 문제를, 한 번에 설계도를 만들고 고정하는 방식이 아니라 개발 전 과정에서 저장소 아키텍처를 모듈성 지표에 따라 지속적으로 진화시키는 문제로 재정의한 프레임워크이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>기존 LLM 기반 코드 생성 에이전트들은 대부분 이미 설계된 저장소 구조(컴포넌트 경계, 패키지 구성, 의존성 그래프 등)가 주어진 상태에서 코드를 채워 넣는 "저장소 완성" 설정을 가정한다. 그러나 실제로는 자연어 요구사항만 가지고 저장소 전체를 처음부터 구축해야 하는 zero-to-all 상황이 존재하며, 이 경우 에이전트는 소프트웨어의 기능과 아키텍처를 동시에 추론해야 한다. RPG와 같은 최근의 그래프 기반 저장소 계획 기법들도 저장소 설계를 한 번의 초기 계획 단계에서 완성되는 정적인 산출물로 취급한다는 한계가 있다. 그러나 실제 소프트웨어 개발에서는 개발이 진행되면서 컴포넌트가 실제로 응집력이 있는지, 의존성이 과도하게 얽혀 있는지가 드러나며 분할·병합 등 구조 조정이 반복적으로 필요해진다. 저자들은 저장소 생성의 핵심 병목이 코드 합성 자체가 아니라 개발 전 과정에서 저장소의 모듈성(높은 응집도·낮은 결합도)을 확립하고 유지하는 것이라고 주장한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>기존 저장소 생성 방법들이 아키텍처를 구현 이전에 고정되는 정적 산출물로 취급한다는 근본적 한계를 지적하고, 저장소 모듈성은 요구사항만으로는 부분적으로만 파악 가능하며 코딩 과정에서 점차 드러난다는 점을 근거로 저장소 생성을 일회성 계획 문제가 아닌 지속적 구조 진화(continuous structural evolution) 문제로 재정식화했다.</li>
+<li>고정된 계획 대신, 모듈성 지표(응집도·결합도)에 기반한 명시적 구조 행동(add, split, merge, revise, save)을 통해 저장소 아키텍처를 구조적 수렴(structural convergence)에 이를 때까지 반복적으로 진화시키는 방법론을 제안했다.</li>
+<li>요구사항 수준의 기능적 조정 관계와 구현 수준의 컴포넌트·의존성 관계를 분리해 표현하면서도 요구사항→아키텍처→코드 전 과정의 추적 가능성을 유지하는 Dual-Directed-Acyclic-Graph(Dual-DAG) 표현을 도입한 Repo0을 구현했다.</li>
+</ul>
+<h2>방법론</h2>
+<p>Repo0은 시간에 따라 진화하는 아키텍처 상태 S_t = (GR_t, GC_t, A_t)를 유지한다. GR_t는 요구사항 단위 간의 기능적 조정 관계를 나타내는 요구사항 수준 DAG, GC_t는 모듈·객체 등 컴포넌트와 그 구현 의존성(상속, 재사용, 포함 등)을 나타내는 컴포넌트 수준 DAG, A_t는 요구사항과 이를 실현하는 컴포넌트 간의 다대다 정렬(alignment) 관계이다.</p>
+<p>전체 과정은 3단계로 구성된다.
+1. <strong>요구사항 분해 및 초기 아키텍처 구축</strong>: 요구사항 문서에서 후보 요구사항 항목을 추출하고 중복·포함 관계를 병합해 상위 요구사항을 만든 뒤, Atom of Thoughts에서 영감을 받은 "추론 후 라벨링(reasoning-then-labeling)" 3단계 절차로 하위 요구사항과 그 논리적 의존 관계를 도출해 초기 요구사항 DAG를 구성한다. 이어 LLM이 하위 요구사항들을 경계가 있는 컴포넌트 집합으로 변환하여 초기 컴포넌트 DAG와 정렬 관계를 만든다.
+2. <strong>모듈성 기반 구조 진화 루프</strong>: 요구사항 DAG(GR)는 고정한 채, 컴포넌트 DAG(GC)와 정렬 관계(A)를 다음 지표로 반복 갱신한다. Responsibility(컴포넌트가 담당하는 요구사항 수), Cohesion(같은 컴포넌트에 묶인 요구사항 간 기능적 조정 관계의 밀도), Coupling(두 컴포넌트가 담당하는 하위 요구사항 집합 간 Jaccard 유사도), Connectivity(두 컴포넌트 사이를 잇는 요구사항 DAG 상의 엣지 수). 응집도가 임계값(γ_split=2/3) 미만이고 담당 요구사항 수가 임계치를 넘으면 split, 결합도가 임계값(θ_merge=0.7)을 넘고 연결성이 있으면 (LLM 검증을 거쳐) merge를 수행하며, 그 외 revise(경계는 유지하되 설명·인터페이스 정보 수정)와 save(안정적인 컴포넌트 유지)를 반복하다가 더 이상 지표가 트리거되는 조정이 없으면 구조적 수렴에 도달한 것으로 본다.
+3. <strong>코드 생성</strong>: 수렴한 컴포넌트 DAG를 패키지·파일 경로·공개 심볼·생성 순서로 구체화한 뒤, 테스트 주도 개발(TDD) 방식으로 각 컴포넌트에 대해 스켈레톤 생성→테스트 합성→구현 채우기 순으로 코드를 생성한다. 임포트/인터페이스 검사와 pytest 실행 결과에서 실패가 발견되면 국소적 수정(localized repair)을 적용하고, 필요 시 revise 행동으로 컴포넌트 설명이나 인터페이스 가정을 갱신한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>RepoCraft 벤치마크(scikit-learn, pandas, sympy, statsmodels, requests, django를 각각 paraphrase한 6개 실제 Python 저장소)에서 GPT-5 mini와 DeepSeek V3.2 두 백본으로 평가했다. 비교 대상은 mini-SWE-agent(경량 코딩 에이전트), Paper2Code(단계적 다중 에이전트 계획), RPG(그래프 기반 저장소 계획, 가장 강력한 베이스라인), 그리고 참조용 원본 저장소(Gold Project)이다. 평가지표는 Functionality Coverage(요구 기능 커버율), Functionality Novelty(추가 생성된 기능 비율), Pass Rate/Voting Rate(테스트 통과율 및 의미론적 투표 일치율)이다.</p>
+<p>주요 결과(requests, statsmodels, django 3개 저장소 기준): Repo0은 두 백본 모두에서 모든 저장소에 걸쳐 최고 Functionality Coverage와 Pass Rate를 달성했다. 예: GPT-5 mini에서 requests 100.00%, statsmodels 80.68%, django 80.50% 커버리지를 기록했다. RPG 대비 Functionality Coverage는 최대 20.08%p, Pass Rate는 최대 29.74%p 개선되었다(구체적으로 requests에서 Pass Rate +19.47p, statsmodels +7.61p, django +27.03p). 소거 실험(RQ2)에서는 Requirement Context, Component-Graph Ordering, Dual-DAG, Structural Evolution 네 가지 설계 요소 중 하나라도 제거하면 최소 한 저장소·지표에서 성능이 저하되었으며, 특히 Structural Evolution 제거 시 저하 폭이 가장 컸다(예: requests Pass Rate -8.47p, django Pass Rate -13.33p). 구조 수렴 분석(RQ3)에서는 지표 기반(cohesion/coupling) 진화가 예산 고정형 LLM 임의 구조 진화(1/3/5라운드)보다 우수했으며, 무제한적인 LLM 결정 구조 행동은 과도한 분해(over-decomposition)를 유발해 정확도를 저하시켰다. 비용 분석에서는 DeepSeek V3.2 기준 Repo0의 총 비용이 requests $21.28, statsmodels $41.12, django $100.06이었고, RPG 대비 대부분의 설정에서 더 낮은 총 비용으로 더 높은 품질을 달성했다(단, statsmodels·requests에서는 생성 비용 자체는 RPG보다 다소 높았음).</p>
+<h2>한계점</h2>
+<p>저자들이 명시한 한계는 다음과 같다. (1) 내적 타당성 측면에서, 구조 조정 행동의 품질이 백본 LLM의 아키텍처 추론 능력에 의존하며, 모듈성 지표가 후보 행동을 선별하더라도 실제 컴포넌트 경계·설명 재작성은 LLM이 수행하기 때문에 이 의존성이 완전히 제거되지는 않는다(반복적 진화 루프와 revise 행동으로 부분적으로 완화). (2) 외적 타당성 측면에서, 실험이 RepoCraft의 6개 Python 저장소 및 단일 벤치마크에 한정되어 있어 다른 프로그래밍 언어 생태계에서의 효과는 검증되지 않았다(다만 저자들은 제안된 아키텍처 상태와 구조 행동, 모듈성 지표가 언어 특정 문법이 아닌 저장소 아키텍처 수준에서 동작하므로 Python에 본질적으로 국한되지는 않을 것으로 추정하며, 이는 향후 연구 과제로 남겨둠).</p>
+<h2>시사점</h2>
+<p>이 연구는 저장소 수준 코드 생성에서 "설계"와 "구현"을 분리된 순차 단계가 아니라 서로 깊이 얽힌 지속적 과정으로 다뤄야 함을 보여준다. 정적 계획 그래프 대신 응집도·결합도 같은 소프트웨어 공학의 고전적 모듈성 원리를 정량 지표화해 구조 진화를 안내하고 명시적인 수렴 조건을 두는 접근은, 장기적(long-horizon) 자율 소프트웨어 개발 에이전트가 요구사항 변화나 구현 중 발견되는 설계 결함에 적응할 수 있는 방향을 제시한다. 또한 요구사항 수준과 구현 수준을 분리한 Dual-DAG 표현과 요구사항-아키텍처-코드 간 추적 가능성 유지는, 아키텍처 인식(architecture-aware) 에이전트 연구 전반에 적용 가능한 설계 패턴으로 볼 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.19854" target="_blank" rel="noopener">huggingface.co/papers/2608.19854</a> · 2026-08-22</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

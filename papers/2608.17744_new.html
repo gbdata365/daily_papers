@@ -1,0 +1,121 @@
+<meta charset="UTF-8">
+<title>저자원 언어로 사고하기</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#11 · Daily Papers 2026-08-22</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 7</span>
+    </div>
+    <h1 class="article-title">Thinking in a Low-Resource Language: What SFT Builds, What RL Fixes, What Accuracy Cannot See</h1>
+    <p class="article-title-ko">저자원 언어로 사고하기: SFT가 만드는 것, RL이 고치는 것, 정확도가 보지 못하는 것</p>
+    <p class="article-sub">그리스어(저자원 언어)로 추론하도록 3개 프론티어 랩의 MoE(전문가 혼합) 모델을 파인튜닝한 결과, 정확도 벤치마크는 시드(seed)만 바꿔도 7.7점이 흔들리는 "노이즈"에 불과했지만, SFT는 모델이 실제로 그 언어로 "생각"하게 만드는 근본적 변화를 일으켰고, SFT가 스스로 고치지 못하는 결함(답변 형식 실패, 채널 누출, 언어 지시 불복종)은 RL(RLVR)이 상당 부분 해결했다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.17744" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.17744" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Thinking in a Low-Resource Language: What SFT Builds, What RL Fixes, What Accuracy Cannot See</li>
+<li><strong>저자</strong>: Ayoub Kirouane, Christos Petrocheilos (그리스 소재 Sophea AI / KIEFER SA 소속)</li>
+<li><strong>출처</strong>: arXiv:2608.17744v1 [cs.CL] (2026년 8월)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://huggingface.co/KIEFERSA">Hugging Face - KIEFERSA</a> (모델 및 벤치마크 공개)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.17744">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>그리스어(저자원 언어)로 추론하도록 3개 프론티어 랩의 MoE(전문가 혼합) 모델을 파인튜닝한 결과, 정확도 벤치마크는 시드(seed)만 바꿔도 7.7점이 흔들리는 "노이즈"에 불과했지만, SFT는 모델이 실제로 그 언어로 "생각"하게 만드는 근본적 변화를 일으켰고, SFT가 스스로 고치지 못하는 결함(답변 형식 실패, 채널 누출, 언어 지시 불복종)은 RL(RLVR)이 상당 부분 해결했다.</p>
+<h2>배경 및 문제의식</h2>
+<p>추론형 언어모델을 저자원 언어(이 논문에서는 그리스어)에 맞게 파인튜닝할 때, 통상적인 평가 방식은 파인튜닝 전후의 정확도 점수 하나만을 비교한다. 그러나 이 지표는 모델이 실제로 어떤 언어로 추론하는지, 얼마나 많은 토큰을 소모하는지, 문제의 난이도를 구분할 수 있는지, 무엇을 잃었는지를 전혀 알려주지 않는다. 저자들은 베이스 모델이 그리스어 질문에 정답을 맞히더라도 실제로는 영어로 사고하고 마지막에만 번역해 답을 내는 경우가 대부분이라는 점을 지적하며(1,000개 추론 트레이스 중 그리스어로 사고한 것은 0건), 이는 사용자가 모델의 사고 과정을 읽거나 감사(audit)하거나 교정할 수 없게 만드는 문제라고 본다. 또한 그리스어는 이미 Meltemi, Krikri 같은 공개 모델 생태계가 있지만, 이들 중 어느 것도 "장문 추론을 실제로 그 언어로 하는지"를 측정하지 못한다는 공백이 존재한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>활성 파라미터 규모(3.6~4.0B)를 고정한 채 Alibaba(Qwen), OpenAI(Gpt-OSS), NVIDIA(NemotronH 2세대)의 서로 다른 스파스 MoE 아키텍처 3개 계열, 4개 체크포인트에 대해 동일한 레시피·코퍼스·평가 도구로 파인튜닝 실험을 수행.</li>
+<li>정확도만으로는 포착할 수 없는 "6가지 행동 차원"(정확성, 언어 충실도, 추론 예산/토큰 소모, 종료 여부, 추론 스텝 수, 예산 초과)을 제안하고, 각 지표가 단순히 출력 길이와 상관되지 않도록 통제 장치를 마련.</li>
+<li>시드(random seed)만 바꿔도 정확도가 7.7점 요동친다는 것을 실증하여, 단일 실행 기반의 정확도 비교가 통계적으로 무의미함을 지적("노이즈 바닥"의 발견).</li>
+<li>SFT 이후 모든 공개 체크포인트가 질문 언어(그리스어)로 약 98%의 항목에서 추론하게 됨을 확인하고, 이 언어적 습관과 트레이스 길이는 시드를 바꿔도 거의 흔들리지 않는 안정적 효과임을 보임.</li>
+<li>SFT가 스스로 만들어낸 결함(답변 형식 누락, 답변이 추론 채널로 새는 현상, "영어로 생각하라"는 명시적 지시 불복종)을 확인하고, 사전 등록(pre-registered)된 RLVR(검증 가능한 보상 기반 강화학습)로 이 중 앞의 두 가지를 거의 완전히 해결(24%→2.5%, 3.5%→0.0%)함을 보이며, 그리스어 추론 습관은 정확도만을 보상으로 하는 RL 그래디언트에도 98.2% 그대로 유지됨을 보임.</li>
+<li>자체 측정 도구가 만들어낸 6가지 "거짓 발견"(잘못된 스코어러, 형식 아티팩트로 오인된 능력 손실 등)을 통제 실험으로 걸러낸 사례를 상세히 공개.</li>
+<li>5개의 파인튜닝된 체크포인트(Sophea 시리즈)를 공개.</li>
+</ul>
+<h2>방법론</h2>
+<p>연구는 저자원 언어 배포가 실제로 마주하는 제약(서빙 비용)을 반영해 활성 파라미터 수를 3.6~4.0B로 고정한 3개 랩(Qwen3.6-35B-A3B, Gpt-OSS-20B, NemotronH-30B-A3B 및 차세대 Nemotron-3.5-Lightning)에 동일한 LoRA(r=32, α=64, 1 epoch) 어댑터를 적용했다. 코퍼스는 명시적 추론 트레이스가 있는 "추론 절반"(59,107행, 대부분 LLM이 직접 그리스어로 다시 풀어 생성하고 정답과 일치하는 트레이스만 채택하는 방식으로 생성)과 트레이스가 없는 "직접 응답 절반"(58,985행, 기존 공개 Sophea-Titan-1 코퍼스 재사용)으로 구성했다. 세 가지 학습 순서(코퍼스 두 절반을 한 번에 섞는 One-Phase, 추론 절반 후 전체를 잇는 Two-Phase, 추론 절반만 사용하는 Reasoning-only)를 비교하는 사이드 실험도 수행했다. 평가는 5개의 독립된 도구(그리스어 추론 벤치마크, 영어 대조군, Titan-1 일반능력 스위트, 문장 단위 언어 전환 프로브, 그리스어 NLU 벤치마크)로 나뉘며, 정확성 외에 언어 충실도(트레이스 내 그리스어 문자 비율), 추론 예산(단어/토큰 수), 종료율, 추론 스텝 수, 예산 초과율(easy한 문항에서 불필요하게 긴 트레이스를 쓰는 정도)을 정의해 측정했다. 핵심적으로, 시드만 바꾼 반복 실험(3회)으로 훈련 자체의 분산을 노이즈 바닥으로 설정하고, 이후 모든 개입 효과를 이 대역과 비교하는 방법론을 취했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>벤치마크는 그리스어 수학(GSM8K/MGSM 기반, 인간·기계 번역 혼합), 상식(HellaSwag, WinoGrande 그리스어 번역), 논리(ProofWriter-el, 탈오염 처리) 등 총 5,156문항으로 구성되었다. 주요 결과는 다음과 같다.
+- <strong>정확도</strong>: 15개 실험군 중 최고 성능(76.5)이 베이스(77.2)와 거의 차이가 없었고, 시드만 바꿔도 7.7점이 흔들려 이보다 작은 모든 데이터/레시피 효과는 통계적으로 유의미하지 않았다.
+- <strong>언어 충실도</strong>: 베이스 모델은 1,000개 트레이스 중 0개가 그리스어로 추론(그리스어 문자 비율 0.9 이상)했으나, SFT 후에는 네 모델 모두 97.4~98.7%가 그리스어로 추론했다. 트레이스 길이(132~152 단어)와 함께 이 두 지표는 시드에 거의 흔들리지 않는 안정적 효과였다.
+- <strong>추론 예산</strong>: 동일 정확도(72.9 vs 72.9)에서 베이스는 정답당 평균 1,454단어를, 파인튜닝 모델은 239단어를 사용(최대 3.7배 단축). 다만 그리스어의 토큰 대 단어 비율(2.3~2.5배)까지 고려하면 실제 서빙 토큰 절감 효과는 모델별로 부호가 달라져, Qwen은 3.0배 절감, NemotronH는 손익분기, Gpt-OSS는 오히려 1.6배 증가했다.
+- <strong>결함과 RL 교정</strong>: SFT 단독으로는 답변 형식 누락(약 24%), 답변-추론 채널 혼선(3.5%), "영어로 생각하라"는 명시 지시 불복종(절반 이상 무시) 등의 결함이 남았다. 사전 등록된 RLVR을 적용하자 형식 누락은 24%→2.5%, 채널 누출은 3.5%→0.0%로 거의 해소되었고(무작위 보상 대조군 대비 확인), 영어 지시 순응은 +9.1%p 개선(사전 등록한 목표에는 못 미침)되었으나, 그리스어로 추론하는 습관 자체는 정확도만을 보상하는 RL 그래디언트에도 98.2%의 충실도로 그대로 유지되었다.
+- <strong>사이드 실험(코퍼스 구성)</strong>: 비추론(직접 응답) 절반을 포함하지 않고 추론 데이터만으로 학습한 레시피가 15개 독립 실행에 걸쳐 +6.9%p(순열검정 p=0.0008)로 유일하게 노이즈 바닥을 넘어선 정확도 효과였다.
+- <strong>도구의 오류들</strong>: 요청된 답변 줄을 무시하고 전체 응답을 스캔하던 스코어러가 장황한 답변에 불리한 편향을 만들어 최대 +29.8%p(18시그마)의 허위 효과를 냈고, 상식 능력의 "망각"처럼 보였던 –3.0%p 격차는 답변 형식(letter-only)으로 다시 물으면 +1.7%p로 반전되어 실제로는 형식 문제였음이 드러나는 등, 저자들은 6가지 유사한 오류 사례를 상세히 기록했다.</p>
+<h2>한계점</h2>
+<p>논문(추출된 범위 내)에서 명시한 한계는 다음과 같다. 첫째, 실험 대상이 모두 스파스 MoE 모델이므로 그 결과가 밀집(dense) 모델에도 일반화되는지는 확인되지 않았다(MoE는 LoRA가 부착되는 방식 자체가 dense 모델과 다름). 둘째, 라우팅이 시드 분산을 밀집 모델보다 증폭시키는지는 미해결 질문으로 남겨두었다. 셋째, 시드 반복은 3회에 그쳐 분산 추정치(σ) 자체의 신뢰구간이 넓다(95% 신뢰구간 [2.3, 27.7]pp). 넷째, "영어로 생각하라"는 명시적 지시에 대한 few-shot 방식은 테스트되지 않았다. 다섯째, 일반 능력 유지가 평탄하게 나타난 것은 부분적으로 LoRA 어댑터라는 방법 자체의 특성일 수 있어, 전체 파인튜닝(full fine-tuning)에도 동일하게 적용될지는 불확실하다고 저자들 스스로 인정한다. (추출된 텍스트에는 8.2절까지만 포함되어 있어, 논문 후반부(9절 이후)에 명시되었을 추가 한계는 확인하지 못함 — 이 부분은 "논문에 명시되지 않음".)</p>
+<h2>시사점</h2>
+<p>이 연구는 저자원 언어를 위한 추론 파인튜닝을 평가할 때 벤치마크 정확도 하나만 보는 관행이 근본적으로 부적절하다는 것을 실증적으로 보여준다. 정확도는 훈련 노이즈, 답변 형식 효과, 오염(contamination) 등에 쉽게 왜곡되는 반면, 실제로 SFT가 만들어내는 핵심 변화(모델이 어떤 언어로 사고하는가, 얼마나 효율적으로 사고하는가)는 별도의 행동 지표로만 포착 가능하다. 또한 SFT와 RL의 역할이 명확히 분리된다는 점도 중요한 시사점이다: SFT는 "언어 습관"이라는 근본적 행동 변화를 설치하지만 그 과정에서 생기는 부작용(형식 실패, 채널 누출, 지시 불복종)은 스스로 고치지 못하며, 검증 가능 보상 기반 RL이 이런 표면적 결함을 정밀하게 교정하면서도 SFT가 만든 핵심 습관(그리스어 추론)은 건드리지 않는다는 것이다. 저자들은 이 지표·통제·사전등록 프레임워크가 그리스어에 국한되지 않고 다른 저자원 언어 전반에 이전 가능하다고 주장하며, 이는 향후 저자원 언어 추론 모델 개발 및 평가에 있어 방법론적 표준을 제시할 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.17744" target="_blank" rel="noopener">huggingface.co/papers/2608.17744</a> · 2026-08-22</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

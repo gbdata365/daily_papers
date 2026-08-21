@@ -1,0 +1,117 @@
+<meta charset="UTF-8">
+<title>페이싯</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#2 · Daily Papers 2026-08-22</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 102</span>
+    </div>
+    <h1 class="article-title">FACET: Preserving Source Intent and Executable State in Terminal Task Synthesis</h1>
+    <p class="article-title-ko">페이싯: 터미널 작업 합성에서 원본 의도와 실행 가능 상태 보존하기</p>
+    <p class="article-sub">FACET은 여러 에이전트 스킬을 하나의 정합적인 시나리오로 재구성하고, 실제로 빌드·실행되는 컨테이너 상태를 지시문·솔루션·검증기가 공유하도록 강제함으로써, 정보 손실과 아티팩트 간 불일치 문제를 동시에 해결하는 터미널 작업 합성 프레임워크이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.18580" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.18580" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: FACET: Preserving Source Intent and Executable State in Terminal Task Synthesis</li>
+<li><strong>저자</strong>: Kou Shi, Zun Wang, Qisheng Su 등 (University of Science and Technology of China MoE Key Lab of BIPC, Shanghai AI Laboratory, Fudan University 소속 공동 연구진), 교신저자 Feng Zhao</li>
+<li><strong>출처</strong>: arXiv:2608.18580v1 [cs.AI] (2026년 8월 19일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 코드/모델·데이터셋/프로젝트 페이지 링크가 언급되어 있으나 구체적 URL은 본문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.18580">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>FACET은 여러 에이전트 스킬을 하나의 정합적인 시나리오로 재구성하고, 실제로 빌드·실행되는 컨테이너 상태를 지시문·솔루션·검증기가 공유하도록 강제함으로써, 정보 손실과 아티팩트 간 불일치 문제를 동시에 해결하는 터미널 작업 합성 프레임워크이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>터미널 에이전트를 학습시키려면 지시문(instruction), 초기화된 환경(environment), 참조 솔루션(reference solution), 실행 가능한 검증기(verifier)가 하나로 묶인 대규모의 실행 가능한 작업 데이터가 필요하다. 그러나 기존의 다단계 합성 파이프라인은 두 가지 근본적 문제를 안고 있다. 첫째, 원본 스킬/자료에 담긴 능력, 의존관계, 중간 상태, 입출력 계약, 절차적 제약 등의 정보가 생성 단계를 거치며 점점 단순화되어 소실된다(정보 손실). 둘째, 지시문이 실제로 존재하지 않는 파일을 참조하거나, 솔루션이 다른 스키마·의존성을 가정하거나, 검증기가 생성될 수 없는 상태를 검사하는 등 각 아티팩트가 서로 다른 암묵적 가정 위에서 독립적으로 생성되어 상호 어긋나는 문제(아티팩트 간 표류)가 발생한다. 텍스트 명세를 단계 간에 전달하는 것만으로는 모든 아티팩트가 동일한 실행 상태에 기반하도록 보장할 수 없다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>이질적인 에이전트 스킬 모음으로부터 복잡하고 검증 가능한 터미널 작업을 합성하는 프레임워크 FACET을 제안. 스킬을 단순한 작업 템플릿으로 취급하지 않고, 그 이면의 시나리오와 워크플로우를 재구성하여 원본 정보의 풍부함을 최대한 보존.</li>
+<li>공유된 실제(realized) 실행 환경을 통해 작업 아티팩트들을 조율하는 "실행 상태 기반 구성(executable-state-grounded construction)" 패러다임을 제시. 각 구성요소를 독립적으로 그럴듯하게 생성하는 방식에서, 하나의 정합적 실행 가능 작업 전체를 구성하는 방식으로 전환.</li>
+<li>신뢰할 수 있는 터미널 에이전트 학습 데이터를 만들기 위한 완전한 합성·검증 파이프라인을 구축하고, 생성 설계가 작업 품질에 미치는 영향을 분석하는 동시에 여러 모델 규모에서의 사후학습(post-training) 실험으로 데이터의 효과를 입증.</li>
+</ul>
+<h2>방법론</h2>
+<p>FACET은 3단계 파이프라인으로 구성된다.</p>
+<p><strong>1단계 – 정보원 확보</strong>: OpenClaw, ClawHub, GitHub 등에서 공개 스킬 패키지를 수집·필터링(안전하지 않거나 비공개 리소스에 의존하는 스킬 제거)하여 7만 개 이상의 유효 스킬을 구조화된 레코드(설명, 필요 도구, 입출력, 절차, 출처)로 정규화한다. 각 스킬에 대해 적용 맥락·사용자 목표·초기/최종 상태 가설을 추출하고 임베딩 유사도로 관련 스킬 조합 후보(시나리오-스킬 쌍)를 구성한 뒤, 모델 기반 심사자(judge)가 관련성·상호보완성·비중복성·실행 가능성을 평가해 최종 저장소를 구축한다.</p>
+<p><strong>2단계 – 시나리오 재구성 및 참조 구축</strong>: 선택된 시나리오-스킬 쌍을 곧바로 작업으로 변환하지 않고, 스킬 분석 → 시나리오 탐색 → 연관성 필터링 → 진화 및 복구(교차 스킬 의존성·중간 산출물·상태 전이 복원) → 정보 확장의 5단계 에이전틱 재구성을 거쳐 목표(goal), 맥락(context), 능력(capability), 상태(state), 입출력·도구(io-tool)의 5개 차원으로 시나리오를 표현한다. 이를 하나의 자연어 시나리오로 통합한 뒤, 이를 바탕으로 솔루션 참조(R_S)를 먼저 생성하고, 이어서 시나리오와 솔루션 참조를 함께 이용해 지시문 참조(R_I)를 생성한다. 별도의 정합성 검사 모델이 두 참조가 동일한 초기 상태·목표 결과를 공유하는지 확인한다.</p>
+<p><strong>3단계 – 실행 상태 기반 작업 구성</strong>: 먼저 환경 매니페스트를 계획하고 파일·서비스·의존성·자산을 실제로 구현(materialize)한다. 이 과정에서 공개 리소스를 검색·지역화하고, 구조화된 픽스처를 추가 레코드·왜란(distractor) 등으로 보강해 지나치게 단순한 템플릿형 데이터가 되지 않도록 한다. 환경을 빌드·초기화하며 실패 시 최대 3회의 환경 복구(repair) 루프를 수행한다. 환경이 성공적으로 구축되면 그 실제 컨테이너 상태를 공유 그라운딩 인터페이스로 노출하고, 지시문 → 솔루션 → 검증기 순서로 순차 생성한다(정방향 순서, Forward). 즉 지시문은 실제 존재하는 파일/서비스/스키마에 기반해 생성되고, 솔루션은 지시문과 동일한 환경을 직접 관찰하며 생성되며, 솔루션을 실제 실행해 얻은 최종 상태를 바탕으로 검증기가 마지막에 생성된다. 완성된 작업은 Harbor 포맷(environment/, solution/, tests/, instruction.md, task.toml)으로 패키징되며, 환경 빌드 성공 여부·초기 상태에서 검증기 불통과·솔루션 실행 성공·최종 상태에서 검증기 통과의 네 조건을 모두 만족해야 통과된다. 검증 실패 시 실패 원인(환경/솔루션/검증기/지시문)을 특정해 해당 구성요소만 표적 복구하며(최대 5회), 예산 소진 시 후보를 폐기한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Terminus-2 에이전트(DeepSeek-V4-Pro 기반)로 약 6천 개의 검증된 작업에서 롤아웃을 생성하고, 그중 1.2천 개의 완전 성공 궤적을 선별해 Qwen3.5-4B/9B/27B를 LLaMA-Factory로 지도 미세조정(SFT)했다. 평가는 Terminal-Bench 2.1에서 Terminus-2 스캐폴드로 작업당 3회 시도 평균 통과율을 사용했다.</p>
+<p>기존 데이터셋과 비교(Nemotron-Terminal, Endless-Terminals, Terminal-Lego, TerminalWorld, Tmax)했을 때, FACET은 궤적 수(1.2K)는 적지만 평균 궤적 길이(11.86턴)가 길고, 작업당 실행 가능 테스트 수가 평균 22.77개로 가장 많았다(Terminal-Lego 16.60, 다른 데이터셋은 10 미만). 반면 P@1 27.00%, P@3 35.00%로 다른 데이터셋보다 통과율은 낮았는데, 이는 요구조건이 결합적(conjunctive)이라 모든 검사를 통과해야 하기 때문으로 해석된다.</p>
+<p>미세조정 결과, Qwen3.5-4B는 17.60→24.72(+7.12), 9B는 27.34→35.58(+8.24), 27B는 40.82→47.57(+6.75)로 전 규모에서 일관된 성능 향상을 보였다. 특히 27B 모델은 약 15배 큰 Qwen3.5-397B(49.06)에 근접하는 결과를 1.2K개의 궤적만으로 달성했다.</p>
+<p>추가 분석에서, 성공하지 못한 교사 롤아웃 중 개별 체크의 89.40%는 통과했지만 완전한 작업 성공률은 20.94%에 그쳐, 부분적 진척과 최종 성공 사이에 큰 간극이 있음을 보였다(실패 롤아웃의 54%는 검사 1~2개만 실패). 또한 생성 순서 비교 실험(Forward I→S→V, Reverse I→V→S, Joint 동시 생성)에서 Forward 방식이 초기 유효율 46.5%로 가장 높았고(Reverse 24.2%, Joint 37.5%), 페어드 비교에서도 Forward가 Reverse보다 통계적으로 유의하게 우수함을 확인하여(p=0.0017), 솔루션을 먼저 생성한 뒤 검증기를 만드는 순차적·환경 기반 구성 방식의 타당성을 뒷받침했다.</p>
+<h2>한계점</h2>
+<p>논문에 명시적인 "한계점" 절은 없으나, 본문에서 언급된 제약과 향후 과제로는 다음이 있다: 데이터 구성이 조합적(compositional) 요구사항 중심이라 작업 통과율(P@1/P@3)이 낮게 나타나며, 긴 지시문과 폭넓은 검증기 커버리지를 가진 작업일수록 성능이 저하되는 경향이 있다. 또한 저자들은 향후 FACET을 더 다양한 절차적 지식 소스와 상호작용 환경으로 확장하고, 생성된 작업과 실행 피드백을 강화학습 및 지속적 에이전트 개선에 활용하는 방향을 과제로 남겼다.</p>
+<h2>시사점</h2>
+<p>이 연구는 터미널 에이전트 학습 데이터를 대량으로 늘리는 것보다, 시나리오 재구성을 통한 원본 의도 보존과 실행 상태 공유를 통한 아티팩트 간 정합성 확보가 데이터 품질과 학습 효율성에 더 결정적임을 보여준다. 소수(1.2K)의 고품질·고밀도 검증 작업만으로도 여러 모델 규모에서 일관된 성능 향상을 이끌어냈다는 점은, 향후 에이전트 학습 데이터 합성에서 "얼마나 많이"보다 "얼마나 정합적이고 실행 가능한가"가 핵심 설계 원칙이 되어야 함을 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.18580" target="_blank" rel="noopener">huggingface.co/papers/2608.18580</a> · 2026-08-22</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

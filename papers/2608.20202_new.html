@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>멤트랩벤치</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#6 · Daily Papers 2026-08-22</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 24</span>
+    </div>
+    <h1 class="article-title">MemTrapBench: Benchmarking Cognitive Traps in LLM Memory Use</h1>
+    <p class="article-title-ko">멤트랩벤치: LLM 메모리 사용의 인지적 함정 벤치마킹</p>
+    <p class="article-sub">이 논문은 LLM이 사실적으로 정확하고 관련성 있는 기억(memory)을 사용하더라도 오히려 현재 과제의 추론을 왜곡시키는 "기억 유발 인지 함정(memory-induced cognitive traps)" 현상을 정의하고, 이를 체계적으로 평가하는 벤치마크인 MemTrapBench와 이를 완화하는 프롬프트 기법 AdaptiveMem을 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.20202" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.20202" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: MemTrapBench: Benchmarking Cognitive Traps in LLM Memory Use</li>
+<li><strong>저자</strong>: Mengru Wang, Haozhe Luo 등 Zhejiang University, National University of Singapore, Northeastern University, Heriot-Watt University, Tencent 소속 연구진 (교신저자: Junfeng Fang, Ningyu Zhang)</li>
+<li><strong>출처</strong>: arXiv:2608.20202v1 [cs.AI] (2026년 8월 20일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/zjunlp/MemTrapBench">GitHub - zjunlp/MemTrapBench</a> (논문에 "데이터와 코드는 추후 공개 예정"이라고 명시됨)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.20202">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>이 논문은 LLM이 사실적으로 정확하고 관련성 있는 기억(memory)을 사용하더라도 오히려 현재 과제의 추론을 왜곡시키는 "기억 유발 인지 함정(memory-induced cognitive traps)" 현상을 정의하고, 이를 체계적으로 평가하는 벤치마크인 MemTrapBench와 이를 완화하는 프롬프트 기법 AdaptiveMem을 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>최근 LLM 및 에이전트의 장기 상호작용 능력을 확장하기 위해 다양한 메모리 프레임워크(메모리 추출·저장·갱신·검색)가 활발히 연구되고 있으며, 기존 벤치마크들도 주로 메모리가 얼마나 정확하게 추출·저장·검색되는지를 평가하는 데 집중해 왔다. 그러나 저자들은 메모리가 항상 도움이 되는 것은 아니며, 오래되거나 잘못된 정보가 아니라 "충실하게 기록되고 의미적으로 관련 있는" 메모리조차도 모델의 추론 방식이나 믿음을 왜곡시켜 현재 과제 성능을 떨어뜨릴 수 있다는 점에 주목한다. 예컨대 24 게임에서 이전에 사칙연산으로 풀었던 사례들이 메모리에 남아 있으면, 모델은 새로운 문제에서 필요한 계승(factorial) 연산을 시도하지 못하고 사칙연산에만 집착하는 "전략 고착" 현상을 보인다. 이러한 실패 양상은 기존의 메모리 관리 오류(추출/갱신 오류, 관련 없는 검색 등) 연구와는 구분되는, 메모리 사용 자체가 추론을 재구성하는 문제라는 것이 이 논문의 문제의식이다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>메모리 사용이 모델의 추론이나 믿음을 왜곡해 현재 과제 성능을 떨어뜨리는 현상을 "메모리 유발 인지 함정(Memory Trap)"으로 공식적으로 정의함 (메모리 사용 시 응답 품질 s(ŷ_M)이 메모리 없을 때 s(ŷ_∅)보다 낮아지는 경우).</li>
+<li>이러한 인지 함정을 평가하기 위한 벤치마크 MemTrapBench를 구축하고, 다섯 가지 대표적 메모리 프레임워크가 모두 이 함정에 취약함을 실증함.</li>
+<li>프롬프트 기반의 경량 완화 기법 AdaptiveMem을 제안하여, 기존 메모리 아키텍처를 수정하지 않고도 인지 함정을 줄이면서 일반적인 메모리 벤치마크 성능은 유지·향상시킴을 보임.</li>
+</ul>
+<h2>방법론</h2>
+<p>MemTrapBench는 메모리 유발 인지 함정을 크게 두 범주, 네 가지 시나리오로 분류한다. (1) Reasoning Fixation(추론 고착): 이전에 확립된 전략에 모델이 고착되는 경우로, 과제가 바뀌었는데도 이전 규칙을 계속 적용하는 Task Boundary(과제 경계)와, 동일 과제 내에서 이전에 성공한 전략을 새로운 사례에 과도하게 일반화하는 Cognitive Bias(인지 편향), 그리고 과거의 부정적 피드백 때문에 올바른 전략을 회피하는 Trauma(트라우마)를 포함한다. (2) Belief Distortion(믿음 왜곡): 대화 이력에 심어진 반사실적/샌드박스 전제가 실제 안전 판단을 뒤엎는지 검증하는 Safety(안전성) 시나리오로 구성된다.</p>
+<p>구축 과정은 (a) 도메인·함정 메커니즘·정답(Ground Truth)·심어진 전제(Planted Prior)를 명시한 시드(seed)를 수작업으로 설계하고, (b) GPT-5.4를 이용해 "함정 심기 → 노이즈로 함정 은폐(18~40턴의 무관한 대화 삽입) → 함정 발동(최종 질의)"의 3단계로 다중 턴 대화를 생성한 뒤, (c) 자동 필터링(주제·맥락 일관성, 상호작용의 현실성, 독립적 해결 가능성 등)과 전문가 검수를 결합한 2단계 품질관리를 거쳐 최종 데이터셋을 확정하는 방식이다. 이렇게 구성된 벤치마크는 총 1,050개 인스턴스(Cognitive Bias 350, Task Boundary 350, Safety 200, Trauma 150)로 이루어져 있으며, 각 인스턴스는 정답(gold standard)과 예상되는 실패 유형이 함께 주석되어 있다. 평가는 정확성(Correctness), 형식 준수(Format), 관련성(Relevance), 효율성(Efficiency) 네 가지 차원에서 GPT-5.2를 주 심판 모델로, Claude Sonnet 4.6을 검증용 심판으로 사용해 이루어진다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Gemini-3-Flash-Preview와 Qwen3-30B-A3B-Instruct-2507 두 모델에 대해, 메모리 없음(wo/Mem) 기준선과 FullText, LightMem, MemOS, SimpleMem, EverMemOS 다섯 가지 메모리 전략을 비교했다. 메모리 없이 답할 때 평균 점수는 Gemini 85.16%, Qwen3-30B 81.83%였으나, 어떤 메모리 전략을 적용하더라도 예외 없이 성능이 하락했다. 가장 성능이 좋았던 메모리 전략(Gemini에서 EverMemOS 71.17%, Qwen에서 LightMem 70.13%)조차 메모리 없음 대비 10%포인트 이상 하락했으며, 특히 Cognitive Bias와 Safety 시나리오에서 낙폭이 컸다(예: Safety 점수가 95.90%에서 56~70%대로 하락). 통제 실험(트라우마 유발 요소만 제거한 비교, Table 2·3)을 통해 이러한 성능 저하가 단순히 대화 이력이 길어서가 아니라 실제로 설계된 인지 함정에 기인함을 확인했다(예: Task Boundary 부분집합에서 함정이 없으면 94.39%, 함정이 있으면 31.05%로 급락). 또한 메모리 길이를 25%~100%로 늘려갈수록 평균 점수가 36.03%에서 31.05%로 점진적으로 더 나빠져, 함정은 적은 양의 메모리만으로도 발생하며 메모리가 길어질수록 심화됨을 보였다. GPT-5.2와 Claude-Sonnet-4.6 두 심판 모델 모두 메모리 사용 시 점수가 크게 떨어지는 동일한 경향(각각 61.24%p, 55.50%p 하락)을 보여 평가의 신뢰성을 뒷받침했다. 마지막으로, 제안된 AdaptiveMem 프롬프트를 FullText, LightMem, EverMemOS에 적용한 결과, MemTrapBench에서 Gemini 기준 각각 11.8, 14.9, 11.3%포인트, Qwen 기준 4.2, 2.5, 2.6%포인트 성능이 향상되었고, 기존 메모리 벤치마크인 LongMemEval에서도 성능이 유지되거나 개선되었다(최대 +4.0%포인트).</p>
+<h2>한계점</h2>
+<p>논문에 명시된 별도의 "한계점(Limitations)" 절은 없다. 다만 본문에서 유추할 수 있는 제약으로는, 평가 대상이 두 모델 계열(Gemini-3-Flash-Preview, Qwen3-30B-A3B-Instruct-2507)과 다섯 가지 메모리 프레임워크로 한정되어 있다는 점, 벤치마크 인스턴스 생성에 GPT-5.4를 사용해 데이터 생성 과정에 특정 모델의 편향이 개입될 가능성이 있다는 점, 그리고 "Trauma" 시나리오 명칭은 LLM이 실제 감정이나 심리적 외상을 가진다는 것을 의미하지 않는 행동적 유비(analogy)일 뿐이라고 저자들이 스스로 명시하고 있다는 점을 들 수 있다.</p>
+<h2>시사점</h2>
+<p>이 연구는 메모리 시스템의 품질을 "정보를 얼마나 정확히 저장·검색하는가"로만 평가해서는 안 되며, 정확하고 관련성 높은 메모리조차 모델의 추론 전략과 믿음을 왜곡시켜 오히려 성능을 저해할 수 있다는 새로운 실패 축을 제시한다. 이는 장기 대화형 에이전트나 개인화 시스템을 설계할 때, 메모리를 "무조건 더 많이, 더 충실히" 유지하는 것이 목표가 아니라 현재 과제 맥락에 맞게 메모리의 적용 가능성을 재평가하는 메커니즘이 필요함을 시사한다. 특히 Safety 시나리오에서 나타난 결과(과거 대화의 잘못된 전제가 실제 안전 판단을 뒤엎는 현상)는 메모리 기반 어시스턴트의 안전성 설계에 중요한 경고를 던진다. AdaptiveMem처럼 아키텍처 변경 없이 프롬프트만으로 인지 함정을 완화할 수 있다는 결과는, 기존에 배포된 메모리 시스템에도 비교적 손쉽게 적용 가능한 실용적 개선 방향을 제공한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.20202" target="_blank" rel="noopener">huggingface.co/papers/2608.20202</a> · 2026-08-22</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

@@ -1,0 +1,127 @@
+<meta charset="UTF-8">
+<title>저자원 언어로 사고하기</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#11 · Daily Papers 2026-08-23</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 13</span>
+    </div>
+    <h1 class="article-title">Thinking in a Low-Resource Language: What SFT Builds, What RL Fixes, What Accuracy Cannot See</h1>
+    <p class="article-title-ko">저자원 언어로 사고하기: SFT가 만드는 것, RL이 고치는 것, 정확도가 보지 못하는 것</p>
+    <p class="article-sub">그리스어처럼 자원이 적은 언어로 "생각하게" 만드는 파인튜닝을 세 개 프론티어 MoE 모델(Qwen, Gpt-OSS, NemotronH)에 적용해 보니, 정답률(accuracy)은 거의 변하지 않지만 실제로는 추론에 사용하는 언어, 토큰 사용량, 난이도 인지 능력 등 정확도로는 보이지 않는 여섯 가지 행동 차원이 크게 달라졌으며, SFT가 남긴 형식·언어락 결함은 검증 가능한 보상 기반 강화학습(RLVR)으로 고쳐진다는 것을 보인 실증 연구다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.17744" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.17744" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Thinking in a Low-Resource Language: What SFT Builds, What RL Fixes, What Accuracy Cannot See</li>
+<li><strong>저자</strong>: Ayoub Kirouane, Christos Petrocheilos (Sophea AI, KIEFER SA, 그리스 아테네)</li>
+<li><strong>출처</strong>: arXiv:2608.17744v1 [cs.CL] (2026년 8월 18일 제출)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://huggingface.co/collections/KIEFERSA/sophea-reasoning-models">Sophea Reasoning Models (Hugging Face)</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.17744">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>그리스어처럼 자원이 적은 언어로 "생각하게" 만드는 파인튜닝을 세 개 프론티어 MoE 모델(Qwen, Gpt-OSS, NemotronH)에 적용해 보니, 정답률(accuracy)은 거의 변하지 않지만 실제로는 추론에 사용하는 언어, 토큰 사용량, 난이도 인지 능력 등 정확도로는 보이지 않는 여섯 가지 행동 차원이 크게 달라졌으며, SFT가 남긴 형식·언어락 결함은 검증 가능한 보상 기반 강화학습(RLVR)으로 고쳐진다는 것을 보인 실증 연구다.</p>
+<h2>배경 및 문제의식</h2>
+<p>저자원 언어에 대한 추론 파인튜닝은 보통 벤치마크 정확도 하나로만 평가되는데, 이는 모델이 실제로 어떤 언어로 사고하는지, 토큰을 얼마나 쓰는지, 쉬운 문제와 어려운 문제를 구분하는지, 무엇을 잃었는지를 전혀 알려주지 않는다. 그리스어는 이미 Meltemi, Krikri 같은 지시(instruction) 모델 생태계가 있지만, 어느 공개 모델도 그리스어로 "소리 내어" 추론(long-form reasoning)하지는 못했고, 이를 구분할 그리스어 벤치마크도 없었다는 문제의식에서 출발한다. 저자들은 서빙 비용이 동일한(활성 파라미터 3.6~4.0B) 세 개 서로 다른 랩의 희소 MoE 모델을 같은 레시피·코퍼스·측정도구로 비교함으로써, 특정 아키텍처의 우연한 효과와 파인튜닝 자체의 효과를 분리하고자 했다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li><strong>노이즈 바닥(noise floor) 규명</strong>: 동일 설정에서 랜덤 시드만 바꿔도 정확도가 7.7점 변동하며, 이는 논문에서 측정한 모든 데이터·레시피 개입 효과보다 크다. 이후 모든 주장은 이 변동폭과 비교해서만 유의미하다고 판단한다.</li>
+<li><strong>정확도가 보지 못하는 여섯 가지 행동 차원 제안</strong>: 정답성(correctness), 언어 충실도(language fidelity), 추론 예산(토큰/단어 사용량), 종료 여부, 추론 단계 수, 예산 초과(budget overrun)를 정의하고, 트레이스 길이와 상관관계가 높은(|r|≥0.6) 지표는 모두 폐기하는 게이팅 규칙을 적용했다.</li>
+<li><strong>SFT가 만드는 것</strong>: 베이스 모델은 그리스어 질문에도 1,000개 트레이스 중 0개만 그리스어로 추론하지만, SFT 후에는 97~98%가 질문 언어로 추론하며 문법성(grammaticality)도 전 모델에서 개선되고 일반 능력(general ability)은 거의 손실되지 않는다.</li>
+<li><strong>SFT가 못 고치는 것과 RL이 고치는 것</strong>: SFT 결과물은 요청된 답 형식을 약 24%에서 생략하고, 답이 추론 채널로 새어나가는(leak) 문제(3.5%)가 있으며, "영어로 생각하라"는 명시적 지시도 절반 이하로만 따른다. 사전 등록된(pre-registered) RLVR이 형식 결함과 누출 문제는 거의 완전히 해결(24%→2.5%, 3.5%→0%)하고, 언어 지시 순응도는 부분적으로만 개선(+9.1pp)시킨다. 동시에 정확도만을 보상으로 준 조건에서도 그리스어 추론 습관은 훼손되지 않았다(98.2% 유지).</li>
+<li><strong>여섯 가지 측정 도구 실패 사례 보고</strong>: 답 추출 스코어러 오류, 형식 아티팩트로 오인된 "망각" 현상, 벤치마크 오염, 같은 모델 계열로 번역한 벤치마크의 편향, 그리스어 숫자 표기(천 단위 구분자) 오독, 평가 모드 전환 기본값 오류 등 실제로 잘못된 결론에 이르게 했던 계측 실패를 통제 실험으로 하나씩 드러내고 정정한다.</li>
+</ol>
+<h2>방법론</h2>
+<ul>
+<li><strong>모델</strong>: Qwen3.6-35B-A3B(Alibaba), Gpt-OSS-20B(OpenAI), NemotronH-30B-A3B 및 Nemotron-3.5-Lightning-30B-A3B(NVIDIA), 모두 활성 파라미터 3.6~4.0B의 희소 MoE.</li>
+<li><strong>어댑테이션</strong>: LoRA(r=32, α=64, 1 epoch), 단일 8×B200 GPU 노드에서 학습. MoE 구조에 따라 어댑터 부착 방식(stride 3, 전문가별 개별 어댑터 등)이 다르며 이로 인한 구현상 함정들을 상세히 기록.</li>
+<li><strong>코퍼스</strong>: 그리스어 118,092행, 추론 트레이스가 있는 "reasoning half"(59,107행, 대부분 합성 생성)와 트레이스 없는 "direct half"(58,985행, 기존 Sophea-Titan-1 코퍼스 재사용)로 구성. 트레이스는 번역이 아니라 LLM이 그리스어로 문제를 다시 풀게 하여 생성하고, 정답이 일치하는 것만 채택(STaR 방식).</li>
+<li><strong>평가</strong>: 5,156개 그리스어 문항(수학, 상식, 논리)으로 구성된 벤치마크, 영어 대조군, Titan-1 일반 능력 스위트, 문장 단위 언어 전환 탐지, 그리스어 NLU 벤치마크 등 5개의 독립된 평가 라인을 병행.</li>
+<li><strong>RLVR</strong>: GRPO 기반, 정답성·언어 일관성·형식·종료·지시 순응(override obedience) 등 심판(judge) 없이 결정론적으로 계산되는 5개 보상 항으로 구성. 무작위 보상 대조군(random-reward control)을 포함해 모든 개선이 실제 학습에 의한 것인지 검증하고, 사전 등록된 판정 규칙(성공/실패 기준)을 학습 전에 고정.</li>
+</ul>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li>노이즈 바닥 실험에서 시드만 바꾼 세 번의 학습이 정확도 68.7~76.4(범위 7.7pp)를 보였으나, 같은 시드들에서 그리스어 트레이스 비율은 1.00/1.00/1.00으로 안정적이었다.</li>
+<li>데이터 선별(구조 점수 기준 상위 행 선택)은 무작위 샘플링 대비 유의미한 이득이 없었다(−0.5pp).</li>
+<li>언어 충실도: 베이스 모델은 그리스어 질문에도 0/1,000 트레이스만 그리스어(중앙값 비율 0.33, 영어로 뼈대를 잡고 섞어 쓰는 형태), SFT 후에는 97.4~98.7%가 그리스어.</li>
+<li>추론 예산: 동일 정확도(72.9%)에서 베이스는 정답당 1,454단어, 파인튜닝 모델은 239단어를 사용. 다만 그리스어 토큰 팽창률(2.3~2.5배)을 반영한 토큰 기준으로는 모델별로 부호가 갈려 Qwen은 3.0배 절감, NemotronH는 손익분기, Gpt-OSS는 오히려 1.6배 더 비쌈.</li>
+<li>"언어 락(lock)" 문제: 한 방향(그리스어만)으로 학습한 모델은 영어로 생각하라는 명시 지시를 1,000/1,000 무시했지만, 언어를 짝지어(matched pair) 학습하면 질문 언어를 따르는 기본 동작이 모든 계열에서 복원되고, 지시 순응(override) 능력은 Qwen·Gpt-OSS 두 계열에서만 부분 복원(각각 44.8%, 62.5%)됐고 Nemotron 두 계열은 0%였다.</li>
+<li>세 가지 학습 레시피(단일 단계, 2단계, reasoning-only) 비교에서 reasoning-only만 학습(non-reasoning 절반 제외)이 15개 독립 학습 런에 걸쳐 +6.9pp(순열검정 p=0.0008)로 노이즈 바닥을 넘어선 유일한 정확도 효과였다.</li>
+<li>RLVR 결과: 형식 미준수 24.1%→2.5%, 답 누출 3.5%→0.0%(둘 다 사전 등록 기준 통과), 무작위 보상 대조군은 두 지표 모두 개선 없음(학습이 실제 원인임을 확인). 언어 지시 순응은 44.8%→53.9%(+9.1pp)로 개선됐지만 사전 등록한 "학습 가능" 판정 기준(+15pp 이상)에는 못 미쳤다. 언어 보호 항 없이도 그리스어 추론 비율은 98.2%로 유지되어 붕괴하지 않았다.</li>
+</ul>
+<h2>한계점</h2>
+<p>모든 모델이 희소 MoE이고 LoRA로만 어댑테이션했기 때문에, 결과는 "MoE+LoRA" 조합에 국한되며 조밀(dense) 모델이나 완전 파인튜닝(full fine-tuning)에는 일반화되지 않는다. 시드 반복은 대부분 설정에서 1회뿐이고 노이즈 바닥 추정 자체도 n=2~3의 적은 표본에 기반한다. 세 평가 축 모두 영어 벤치마크의 그리스어 번역본이며, 논리 축은 표본이 작고 세 클래스 중 하나(거짓/False)에 매우 취약하다. 그리스어는 EU 공용어로서 이미 강력한 베이스 모델과 언어 특화 코퍼스가 존재하는 "중자원(mid-resource)" 언어이므로, 진짜 저자원 언어에 이 레시피가 통할지는 검증되지 않은 가설이다. 또한 트레이스를 사람이 직접 읽고 검증한 경우는 거의 없어(작은 규모의 LLM 판정 실험 제외), "사용자가 읽고 감사할 수 있는 트레이스"라는 주장은 스크립트(문자) 일치 여부로만 측정되었을 뿐 유창성이나 충실성까지 검증된 것은 아니다.</p>
+<h2>시사점</h2>
+<p>이 연구는 저자원 언어 파인튜닝을 평가할 때 정확도 단일 지표에 의존하는 관행이 위험하다는 것을 강하게 보여준다. 실무자에게는 (1) 어떤 개입을 해석하기 전에 반드시 시드만 바꾼 대조 실험을 먼저 돌려 노이즈 바닥을 파악할 것, (2) 정확도와 함께 형식 미준수율(fallback rate) 등 보조 지표를 함께 보고할 것, (3) 기계번역 벤치마크에는 사람이 번역한 소규모 검증셋을 반드시 포함할 것을 제안한다. 또한 정확도가 그대로여도 파인튜닝이 실패한 것은 아니며, 언어·비용·형식 준수 같은 "정확도가 보지 못하는" 차원에서 실질적 개선이 있을 수 있음을 시사한다. 마지막으로 SFT로 설치된 습성(언어 락 등)의 결함은 추가 SFT 데이터보다 검증 가능한 보상 기반 RL이 더 효과적으로 교정할 수 있음을 실증적으로 보였다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.17744" target="_blank" rel="noopener">huggingface.co/papers/2608.17744</a> · 2026-08-23</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

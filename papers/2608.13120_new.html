@@ -1,0 +1,122 @@
+<meta charset="UTF-8">
+<title>스킬에보</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#7 · Daily Papers 2026-08-23</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 29</span>
+    </div>
+    <h1 class="article-title">SkillEvo: Self-Renewing Evolution Gradients from Multi-Turn Interaction Feedback</h1>
+    <p class="article-title-ko">스킬에보: 다중턴 상호작용 피드백을 통한 자기 갱신 진화 그래디언트</p>
+    <p class="article-sub">다중턴 사용자 시뮬레이션을 "평가의 종착점"이 아니라 "피드백 생성기"로 재정의하고, 여기에 구조적 저하를 진단·복구하는 거버넌스 계층을 결합해 에이전트 Skill(도메인 지식·처리 절차를 담은 모듈)이 반복적으로 스스로 진화하도록 만든 프레임워크 SkillEvo를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.13120" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.13120" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: SkillEvo: Self-Renewing Evolution Gradients from Multi-Turn Interaction Feedback</li>
+<li><strong>저자</strong>: Qianxi Yan(교신저자), Chunrong Chen, Jiuzhou Zhao, Min Zhang, Yongzhou Xu, Xiaochuan Xu — Tencent Cloud Andon 및 Zhejiang University 소속</li>
+<li><strong>출처</strong>: arXiv:2608.13120v1 [cs.AI] (2026년 8월 13일 제출)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.13120">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>다중턴 사용자 시뮬레이션을 "평가의 종착점"이 아니라 "피드백 생성기"로 재정의하고, 여기에 구조적 저하를 진단·복구하는 거버넌스 계층을 결합해 에이전트 Skill(도메인 지식·처리 절차를 담은 모듈)이 반복적으로 스스로 진화하도록 만든 프레임워크 SkillEvo를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>클라우드 기술지원 등 실무 환경에서 Agent Skill은 대부분 수작업으로 작성되거나 LLM이 한 번에 생성한 뒤 갱신되지 않아, 실제 상담 실패에서 학습하는 폐쇄 루프가 없다. 최근 연구들이 이 루프를 시도하지만, 피드백을 단일턴 질의응답(QA) 평가에서만 얻는다는 한계가 있다. 그 결과 첫 라운드에서 눈에 보이는 결함을 패치하고 나면 진화 gradient가 급격히 줄어들고, 여러 턴에 걸쳐서만 드러나는 잠재적 결함은 계속 미해결로 남아 진화가 정체된다. 또한 기존 거버넌스는 end-to-end 검증 점수라는 scalar 게이트에 의존하는데, 이는 저하된 후보를 기각할 수는 있어도 구조적 원인을 짚어내거나 고칠 수는 없다. 저자들은 지속적인 skill 진화의 실질적 병목이 편집 능력이나 반복 횟수가 아니라, 평가 피드백이 신뢰할 수 있는(trustworthy) 진화 gradient를 계속 공급하는지 여부라고 주장한다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>신뢰가능한 피드백의 세 가지 필요조건 — 커버리지(coverage), 정확성(accuracy), 귀속가능성(attributability) — 을 공식화하고, 다중턴 사용자 시뮬레이션을 평가 종착점에서 피드백 생성기로 전환했다. Intent state machine이 커버리지를 보장하고, 양측(시뮬레이터·서비스 에이전트) 직교 평가(dual-sided orthogonal evaluation)가 정확성을 담보하며, collective attribution이 반복 가능한 지식 격차만 선별해 낸다.</li>
+<li>Skill을 구조화된 지식 시스템으로 규정하고, 다중 라운드 개정이 유발하는 knowledge bloat(지식 비대화), reference breakage(참조 단절), factual over-generalization(사실의 모호화)이라는 세 가지 저하를 scalar 점수로는 진단할 수 없다는 점을 지적한다. Dual anchor 기반 fact consistency와 그래프 구조 진단을 통해 거버넌스를 "scalar 게이트에 의한 수동적 거부"에서 "진단 기반 능동적 복구"로 전환한다.</li>
+<li>6개 카테고리의 클라우드 서비스, 9개 production Skill, 98개 skill-reference 파일에서 SkillEvo는 원본 Skill 대비 51.8점, self-reflection 기반 진화 대비 23.0점, 단일턴 QA 기반 진화 대비 15.4점 높은 TSR(Task Success Rate)을 달성했으며, 실제 Tencent Cloud production 환경에 배포되었다.</li>
+</ol>
+<h2>방법론</h2>
+<p>SkillEvo는 Scenario Synthesizer → User Agent → Verifier → Collective Attribution → Skill Optimizer → Skill Governor로 이어지는 폐쇄 루프로 구성된다.</p>
+<ul>
+<li><strong>Scenario Synthesizer</strong>: 실제 사람이 처리한 티켓에서 intent agenda(핵심/부차 의도), behavior facts(사용자가 이미 아는 정보·시도한 조치), emotion trajectory(감정 변화), human reference solution(정답 해법)을 추출해 제약된 평가 태스크를 구성한다.</li>
+<li><strong>User Agent(Verifier)</strong>: 제약된 사용자 에이전트가 현재 Skill을 탑재한 서비스 에이전트와 다중턴으로 상호작용해 trajectory를 만들고, Verifier가 이를 human reference와 비교해 성공/실패와 근거(failure cause, evidence)를 산출한다.</li>
+<li><strong>Collective Attribution</strong>: 실패를 Knowledge Gap(지식 부재/오류로 Skill이 고칠 수 있는 문제), Capability Limit(권한·도구 제약 등 Skill로는 못 고치는 문제), Evaluation Noise(평가 오류·시나리오 왜곡)로 분류하고, Knowledge Gap만 의미론적으로 병합해 하나의 피드백 신호로 만든다.</li>
+<li><strong>Skill Optimizer(Bounded Editing)</strong>: evidence boundary(검증된 격차만 패치, 근거 없는 내용 추가 금지)와 reference boundary(원본 baseline S₀를 기준으로 삼아 기존 안정적 사실을 덮어쓰지 않음)라는 두 경계 안에서만 개정을 수행한다.</li>
+<li><strong>Skill Governor</strong>: fact consistency는 하드 제약으로, S₀(누적 손실 탐지)와 S_{t-1}(당 라운드 신규 오류 탐지)이라는 이중 앵커로 지식 손실·신규 오류·자기모순을 구분해 위반 시 후보를 거부하고 즉시 재수정을 유도한다. structural consistency는 소프트 제약으로, 지식 비대화·참조 단절·사실 모호화를 그래프 구조 관점에서 탐지해 권고안을 다음 라운드 개정에 반영한다.</li>
+</ul>
+<p>Intent state machine은 모든 의도가 제기되고 실질적으로 다뤄져야만 정상 종료를 허용해 조기 종료나 불필요한 턴 반복을 막는다. Dual-sided orthogonal evaluation은 시뮬레이터 측 intent coverage(c_U)와 에이전트 측의 노출된 의도에 대한 가중 정확도(s_C, 핵심 의도 가중치 α=0.7)를 분리 측정함으로써, 시뮬레이션 왜곡으로 인한 실패와 실제 에이전트 능력 부족을 구분한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Tencent Cloud의 실제 기술지원 시나리오를 사용해 6개 서비스 카테고리, 9개 production Skill, 98개 reference 파일, 총 2,000개 티켓(모두 사람에게 escalate된 사례)으로 평가했다. 각 Skill의 티켓을 시간순으로 4등분해 앞의 3/4은 개발셋(진화 루프 구동)으로, 나머지 1/4은 평가셋(측정 전용)으로 분리했다.</p>
+<p>비교 대상은 Original Skill(미개정), Self-Reflection(평가 없이 자기반성만으로 편집), Single-turn QA(선행 연구 SkillForge 방식의 단일턴 QA 기반 진화), SkillEvo(다중턴 상호작용 기반, 4라운드)였다. TSR은 Original 30.0 → Self-Reflection 4라운드 후 58.8(라운드마다 진동, 뚜렷한 개선 없음) → Single-turn QA 66.4(초반 상승 후 정체) → SkillEvo 81.8(4라운드에 걸쳐 꾸준히 상승)로 나타났다.</p>
+<p>Ablation에서 다중턴 상호작용을 단일턴 QA로 대체하면 66.4로 떨어져 Single-turn QA 베이스라인과 사실상 동일해졌으며, 이는 15.4점 격차가 온전히 피드백 소스(다중턴 여부)에서 비롯됨을 보여준다. 거버넌스 계층을 제거하면 78.6으로 소폭 하락(−3.2)해, 거버넌스의 역할이 점수 자체를 끌어올리기보다는 라운드가 누적되며 발생하는 저하를 막는 데 있음을 시사한다.</p>
+<p>Dual-sided orthogonal evaluation 지표로는 intent coverage(c_U) 98.9%, 200개 대화를 대상으로 한 전문가 평가 기준 시뮬레이터 fidelity 95.3%, 노출된 의도에 대한 에이전트 정확도(s_C) 71.1%가 보고되었다. Governance 효과로는 cross-round regression rate가 28.2% → 24.4% → 21.1%로 라운드가 진행될수록 감소했고, 누적 knowledge bloat는 거버넌스 적용 시 2.8%인 반면 미적용 시 16.2%로 약 6배 차이가 났다. Verifier의 판정은 무작위 샘플에 대한 전문가 평가와 90% 이상 일치해 신뢰할 수 있는 대리 평가로 검증되었다.</p>
+<h2>한계점</h2>
+<p>논문은 별도의 "한계점" 절을 두지 않았지만, Reproducibility Statement에서 두 가지를 명시한다. 첫째, 사용된 티켓 데이터셋은 production 고객지원 시스템에서 나온 것으로 사용자 프라이버시 및 상업적 기밀 문제로 공개할 수 없다(다만 방법론 자체는 특정 데이터 출처에 종속되지 않는다고 언급). 둘째, 모델 선택에서는 "Generator ≠ Evaluator"라는 아키텍처적 요구사항만 있으며 특정 모델 계열에 의존하지 않는다고 밝힌다. 그 밖에 실험이 Tencent Cloud라는 단일 기업의 클라우드 기술지원 도메인에 국한되어 있어 다른 도메인으로의 일반화는 논문에 명시되지 않았고, Bounded editing이 검증된 Knowledge Gap에만 반응하도록 설계되어 있어 Capability Limit(권한·도구 제약 등)으로 분류된 실패는 애초에 Skill 개정으로 해결할 수 없는 범위로 남는다는 구조적 한계가 있다.</p>
+<h2>시사점</h2>
+<p>"Skill 자기진화의 병목은 편집 능력이 아니라 신뢰가능한 피드백의 지속적 공급"이라는 핵심 통찰은 다른 self-evolving agent 및 도구 사용(tool-use) 연구에도 폭넓게 적용될 수 있는 관점이다. Scalar 점수 대신 구조적 진단에 기반한 거버넌스를 도입하는 접근은 RAG 문서나 구조화된 프롬프트처럼 지식베이스 형태로 관리되는 다른 시스템에도 확장 가능하다. 또한 자동 개정이 production에 반영되기 전 반드시 사람의 확인을 거치도록 설계한 점은, 지식을 스스로 써넣는 에이전트 시스템을 실사용 서비스에 배포할 때의 안전장치 설계 방향을 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.13120" target="_blank" rel="noopener">huggingface.co/papers/2608.13120</a> · 2026-08-23</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

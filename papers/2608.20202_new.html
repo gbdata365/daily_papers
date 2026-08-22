@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>멤트랩벤치</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#6 · Daily Papers 2026-08-23</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 31</span>
+    </div>
+    <h1 class="article-title">MemTrapBench: Benchmarking Cognitive Traps in LLM Memory Use</h1>
+    <p class="article-title-ko">멤트랩벤치: LLM 메모리 사용에서의 인지적 함정 벤치마킹</p>
+    <p class="article-sub">LLM의 기억(메모리) 시스템이 사실적으로 옳고 관련성 있는 정보를 담고 있어도, 과거 맥락에 과도하게 얽매여 현재 과제에서 오히려 성능을 떨어뜨리는 "인지적 함정(cognitive trap)" 현상을 체계적으로 정의하고, 이를 평가하는 벤치마크 MemTrapBench와 완화 기법 AdaptiveMem을 제안한 연구.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.20202" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.20202" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: MemTrapBench: Benchmarking Cognitive Traps in LLM Memory Use</li>
+<li><strong>저자</strong>: Mengru Wang, Haozhe Luo 등 (Zhejiang University, National University of Singapore, Northeastern University, Heriot-Watt University, Tencent 소속 공동 연구팀)</li>
+<li><strong>출처</strong>: arXiv:2608.20202v1 [cs.AI] (2026년 8월 20일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시된 코드/데이터 저장소는 https://github.com/zjunlp/MemTrapBench</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.20202">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>LLM의 기억(메모리) 시스템이 사실적으로 옳고 관련성 있는 정보를 담고 있어도, 과거 맥락에 과도하게 얽매여 현재 과제에서 오히려 성능을 떨어뜨리는 "인지적 함정(cognitive trap)" 현상을 체계적으로 정의하고, 이를 평가하는 벤치마크 MemTrapBench와 완화 기법 AdaptiveMem을 제안한 연구.</p>
+<h2>배경 및 문제의식</h2>
+<p>장기 상호작용에서 정보를 저장·검색하는 메모리 프레임워크는 LLM과 에이전트의 핵심 구성 요소로 자리잡았지만, 기존 메모리 벤치마크는 주로 "정보가 정확히 추출·저장·검색되는가"만을 평가해왔다. 저자들은 이와 달리, 충실하게 기록되고 의미상 관련성 있는 기억이라도 모델의 추론 방식이나 신념을 왜곡시켜 현재 과제 수행을 오히려 악화시킬 수 있다는 점에 주목한다. 즉 메모리 관리 자체의 오류(잘못된 추출·업데이트 실패 등)가 아니라, "올바른 기억이 오작동을 유발하는" 새로운 실패 유형을 다룬다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>메모리로 인해 유발되는 인지적 함정(memory-induced cognitive trap) 개념을 정식화: 메모리를 사용했을 때 응답 품질이 메모리를 사용하지 않았을 때보다 낮아지는 경우로 정의.</li>
+<li>Reasoning Fixation(추론 고착)과 Belief Distortion(신념 왜곡) 두 범주, 그리고 Cognitive Bias·Task Boundary·Trauma·Safety 네 가지 세부 시나리오로 구성된 1,050개 인스턴스 규모의 MemTrapBench 벤치마크를 구축.</li>
+<li>다섯 가지 대표적 메모리 프레임워크가 모두 무메모리(no-memory) 기준선보다 낮은 성능을 보인다는 것을 실증적으로 확인.</li>
+<li>추론 시점에 적용 가능한 경량 프롬프트 기법 AdaptiveMem을 제안해, 기존 메모리 프레임워크의 구조 변경 없이도 인지적 함정을 완화.</li>
+</ol>
+<h2>방법론</h2>
+<p>MemTrapBench는 "함정 씨앗(trap seed) 설계 → 다중턴 대화 생성 → 2단계 품질 검증"의 파이프라인으로 구축된다. 각 씨앗은 Domain(도메인), Trap Mechanism(유발할 함정 메커니즘), Ground Truth(정답), Planted Prior(대화 이력에 심어질 전략·피드백·규칙) 네 요소로 구성된다. GPT-5.4를 이용해 씨앗을 (1) 함정 심기(Plant the Trap) → (2) 무관한 대화로 희석(Bury It in Noise, 18~40턴) → (3) 함정 발동(Spring the Trap) 3단계의 다중턴 대화로 확장하고, 자동 필터링과 전문가 검수를 결합한 2단계(Two-Gate) 품질관리로 최종 인스턴스를 선별한다. 평가는 정답성(correctness)·형식(format)·관련성(relevance)·효율성(efficiency) 네 축으로 이루어지며 GPT-5.2를 주 평가자로, Claude Sonnet 4.6을 일관성 검증용 평가자로 사용한다. Task Boundary는 과제 전환 후에도 이전 규칙이 잔존하는지, Cognitive Bias는 과거 성공 전략을 새 상황에 과도 일반화하는지, Trauma는 과거의 부정적 피드백으로 인해 원래 옳은 전략을 회피하는지(단, 논문은 이를 어디까지나 "행동적 비유"로 사용할 뿐 LLM이 실제 감정이나 심리적 트라우마를 가진다는 의미가 아님을 명시), Safety는 대화 이력 속 반사실적/가상의 전제가 실제 안전 판단을 왜곡시키는지를 각각 검증한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Gemini-3-Flash-Preview와 Qwen3-30B-A3B-Instruct-2507 두 모델에, FullText·LightMem·MemOS·SimpleMem·EverMemOS 다섯 가지 메모리 전략과 무메모리 기준선을 적용해 비교했다. 무메모리 기준선은 두 모델에서 각각 평균 85.16%, 81.83%를 기록한 반면, 모든 메모리 전략은 이보다 낮은 54.69%~71.17%(Gemini), 62.87%~70.13%(Qwen3-30B) 수준에 그쳤다. 특히 Cognitive Bias와 Safety 시나리오에서 성능 저하가 두드러졌다. 대조 실험을 통해 이 저하가 단순히 대화 이력의 길이 때문이 아니라 함정을 유발하는 의미적 구조 자체에서 비롯됨을 확인했으며, 메모리 분량을 25%→100%로 늘릴수록 성능이 단조적으로 더 악화되는 경향도 관찰됐다. 제안 기법 AdaptiveMem을 FullText·LightMem·EverMemOS에 적용한 결과, MemTrapBench에서 Gemini 기준 최대 14.9%p, Qwen3-30B 기준 최대 4.2%p 성능이 향상되었고, 기존 장기 기억 벤치마크(LongMemEval)에서도 성능 저하 없이 유지되거나 개선되었다.</p>
+<h2>한계점</h2>
+<p>논문 본문(부록 이전)에는 별도의 "한계점" 절이 명시되어 있지 않다. 다만 본문 내용에서 유추할 수 있는 한계로는, 벤치마크 인스턴스가 GPT-5.4를 이용한 생성과 규칙 기반 시나리오 설계에 의존한다는 점, 평가에 사용된 모델과 메모리 프레임워크의 종류가 제한적이라는 점, 그리고 실제 프로덕션 환경의 다양한 사용자 상호작용 패턴을 완전히 포괄하지는 못할 수 있다는 점을 들 수 있다.</p>
+<h2>시사점</h2>
+<p>이 연구는 "메모리가 많을수록, 정보가 정확할수록 항상 좋다"는 통념에 반례를 제시하며, 메모리 시스템 설계 시 정보의 정확성뿐 아니라 "언제 과거 정보를 적용하지 말아야 하는가"에 대한 판단 능력이 필요함을 보여준다. 특히 안전이 중요한 응용에서, 대화 이력에 심어진 그럴듯하지만 잘못된 전제가 모델의 판단을 왜곡할 수 있다는 점은 장기 대화형 에이전트나 개인화 시스템을 설계할 때 반드시 고려해야 할 위험 요인으로 시사하는 바가 크다. AdaptiveMem과 같은 경량 프롬프트 기법이 별도의 아키텍처 변경 없이 다양한 메모리 프레임워크에 적용될 수 있다는 점도 실무적 적용 가능성을 높인다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.20202" target="_blank" rel="noopener">huggingface.co/papers/2608.20202</a> · 2026-08-23</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

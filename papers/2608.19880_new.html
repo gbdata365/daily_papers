@@ -1,0 +1,122 @@
+<meta charset="UTF-8">
+<title>EnvHarness</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#1 · Daily Papers 2026-08-23</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 246</span>
+    </div>
+    <h1 class="article-title">EnvHarness: Awakening Static Worlds for Agent Learning</h1>
+    <p class="article-title-ko">EnvHarness: 정적 세계를 깨워 에이전트를 학습시키다</p>
+    <p class="article-sub">정적인 기존 에이전트 학습 환경을 원본 코드를 건드리지 않고 감싸는(wrapping) "환경 하네스" 계층과, 이를 정책의 약점에 맞춰 자동으로 설계해주는 EnvRigger를 결합해, 다섯 개 벤치마크에서 스킬 학습과 강화학습 모두의 성능을 끌어올린 프레임워크를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.19880" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.19880" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: EnvHarness: Awakening Static Worlds for Agent Learning</li>
+<li><strong>저자</strong>: Chengsong Huang(Washington University in St. Louis, Google Cloud AI Research 인턴) 외, Zifeng Wang, Rujun Han, Jun Yan, Chen-Yu Lee, Tomas Pfister 등 Google Cloud AI Research 소속 다수 저자, Peng Xia(University of North Carolina at Chapel Hill) 포함 총 16인</li>
+<li><strong>출처</strong>: arXiv:2608.19880v1 [cs.AI] (2026년 8월 20일 제출)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/google-research/envharness">github.com/google-research/envharness</a> / <a href="https://www.envharness.com">www.envharness.com</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.19880">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>정적인 기존 에이전트 학습 환경을 원본 코드를 건드리지 않고 감싸는(wrapping) "환경 하네스" 계층과, 이를 정책의 약점에 맞춰 자동으로 설계해주는 EnvRigger를 결합해, 다섯 개 벤치마크에서 스킬 학습과 강화학습 모두의 성능을 끌어올린 프레임워크를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>LLM 에이전트는 웹 탐색, 코드 수정, 로봇 제어 등 다양한 환경과의 상호작용을 통해 학습 신호를 얻지만, 이런 환경은 대부분 사람이 직접 상호작용 로직과 검증기를 하드코딩해 만든 것이라 한 번 만들어지면 정적으로 고정된다. 그 결과 환경은 특정 에이전트가 어떤 약점을 가지고 있는지에 맞춰 신호를 주지 못하고, 에이전트가 기존 과제를 다 풀고 나면 더 이상 가르칠 것이 없어진다. 이를 보완하려는 자동 환경 생성 연구들도 있지만, 도메인별로 파이프라인을 새로 구축해야 하고 LLM이 생성한 환경과 검증기의 신뢰성을 확보하기 위해 대량 생성 후 필터링이 필요해 여전히 비용이 크고 신뢰성이 떨어진다는 한계가 있다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li><strong>EnvHarness</strong>: 기존 정적 환경을 reset/step 표준 인터페이스 수준에서만 감싸 초기 상태·행동관찰 공간·복수 환경 연결을 변형하는 프로그래머블 레이어로, 원본 환경의 로직과 검증기(verifier)는 전혀 수정하지 않는다. 에이전트 하네스(Agent Harness)가 도구·메모리로 고정된 LLM을 능력 있는 에이전트로 만드는 것과 대비되는 개념으로 제시된다.</li>
+<li><strong>EnvRigger</strong>: 대상 정책을 블랙박스로 취급해 실행 궤적을 관찰(Observe)하고, 실패·성공 패턴에서 정책의 약점을 진단(Diagnose)한 뒤, 이를 겨냥한 EnvHarness 컴포넌트를 작성(Write)하고 새 롤아웃으로 검증(Validate)하는 4단계 루프를 통해 환경 커스터마이징을 완전 자동화한다.</li>
+<li>다섯 개 벤치마크·네 개 도메인에 걸친 실험에서 원본 환경 및 도메인 특화 생성 파이프라인 대비 최대 9.0점의 성능 향상과 9.8%의 실행 스텝 절감을 동시에 달성함을 보였다.</li>
+</ol>
+<h2>방법론</h2>
+<p>EnvHarness는 환경을 튜플 E=(S,A,O,T,R,s0)로 정의하고, 컴포넌트 w를 인터페이스 수준의 변환(E'=w(E))으로 취급하는 세 가지 유형을 도입한다.
+- <strong>Stage</strong>: reset() 직후 상태에 행동 시퀀스 δ를 재생해 초기 상태 s0'만 바꾼다(예: 목표 물체를 서랍에 숨겨 탐색을 강제).
+- <strong>Contract</strong>: 행동·전이·관찰 함수 (f_A, f_T, f_O)를 재작성해 특정 행동을 차단하거나, 관찰을 잘라내거나, 특정 결과에 구조화된 피드백을 붙인다.
+- <strong>Chain</strong>: 두 개 이상의 기반 환경을 합성 로직 g로 이어붙여 장기 호라이즌 에피소드를 만들고, 합성 보상은 각 하위 환경 검증기의 결과를 결합해 산출한다.</p>
+<p>세 컴포넌트는 비가환적으로 자유롭게 합성될 수 있다. EnvRigger는 이 컴포넌트들의 선택과 파라미터를 정책 π와 과제 t에 맞춰 자동 결정하는 매핑 H를 구현하며, Observe→Diagnose→Write→Validate의 write-and-validate 루프를 최대 반복 예산까지 돌려 검증에 성공한 컴포넌트만 채택한다. 정책이 너무 못 풀면 과제를 쉽게, 너무 잘 풀면 어렵게 조정하는 방향으로 진단이 이루어진다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>ALFWorld(임바디드), WebArena(웹 탐색), SWE-bench Verified(소프트웨어 엔지니어링), OfficeQA·SpreadsheetBench(오피스 자동화) 등 4개 도메인 5개 벤치마크에서 스킬 기반 학습(SL)과 강화학습(RL) 두 패러다임으로 평가했다. 정책과 EnvRigger는 동일 백본(ALFWorld/WebArena는 Gemini-3.1-Flash-Lite, 나머지는 Gemini-3.5-Flash)을 사용해 성능 향상이 더 강한 외부 모델 증류에서 오지 않았음을 통제했다.</p>
+<p>주요 결과는 다음과 같다.
+- SL 설정에서 원본 환경 대비 held-out 과제에서 최대 9.0점(ALFWorld OOD) 향상, SWE-bench Verified에서는 평균 스텝을 53.6→49.6으로 줄이며 9.8% 효율 개선을 달성했다.
+- 도메인 특화 생성 베이스라인(GenEnv, VeriEnv, SWE-smith)과 비교해도 전 영역에서 우수했으며(ALFWorld에서 GenEnv 대비 평균 +5.7점, SWE-bench에서 SWE-smith 대비 +2.46점·5.11스텝 절감), 원본 환경에서 뽑은 스킬은 SpreadsheetBench에서 오히려 스킬 없는 경우보다 성능이 떨어지기도 했다.
+- RL 설정(ALFWorld·WebShop, Qwen3-8B-base + GRPO)에서도 EnvHarness로 재구성한 환경이 대부분의 지표에서 원본 환경보다 우수한 정책을 만들어냈다.
+- 환경 스캐일링 실험에서는 EnvHarness가 정책과 환경을 공진화시키며 300개 환경까지도 지속적으로 성능이 상승한 반면, 원본 환경과 SWE-smith 생성 환경은 곧 정체됐다.
+- Gemini 3.1 Flash-Lite, Qwen3.6 27B, Gemini 3.5 Flash, Claude Sonnet 4.6 네 개 모델 백본에서 모두 일관된 개선(+2.7~+3.7점)을 보여 모델 규모나 종류에 크게 의존하지 않았다.
+- Chain 컴포넌트는 장기 호라이즌 과제 해결 효율을 크게 높였고(평균 스텝 53.6→42.0 수준), Stage/Contract와 결합했을 때 성공률과 효율 모두 최고치를 기록했다.</p>
+<h2>한계점</h2>
+<p>논문은 세 가지 한계를 명시한다. 첫째, EnvRigger의 write-and-validate 루프 자체가 여러 번의 롤아웃과 추론 비용을 요구하므로, 설계자 모델이 약할수록 고품질 환경 풀을 만드는 데 상당한 시간·연산 비용이 든다. 둘째, EnvHarness는 재현 가능한(resettable) gym 스타일 reset/step 인터페이스를 전제하므로, 실제 이메일 발송이나 주문처럼 되돌릴 수 없는 라이브 서비스 기반 환경이나 초기 상태로 복원되지 않는 물리 로봇 환경에는 적용할 수 없다. 셋째, Chain 컴포넌트는 하위 과제들을 순차적으로만 연결하고 각 검증기의 결과를 단순 결합(AND)하는 방식이라, 하위 과제 간 의미적 연관성을 표현하거나 분기·공유 상태를 가진 워크플로를 구성할 수는 없다.</p>
+<h2>시사점</h2>
+<p>새로운 환경을 처음부터 만드는 대신 기존에 신뢰받는 벤치마크를 인터페이스 수준에서 감싸 재구성한다는 접근은, 검증기의 신뢰성을 유지하면서도 도메인에 무관하게 적용 가능한 환경 생성 방법을 제시한다는 점에서 의미가 있다. 특히 정책의 실제 실행 궤적을 관찰해 약점을 진단하고 그에 맞춰 환경을 조정하는 폐루프 방식은, 단순히 환경(과제) 수를 늘리는 기존의 스케일링 전략보다 학습 신호의 질을 높이는 데 더 효과적임을 시사하며, 향후 에이전트-환경 공진화 연구의 실용적 경로로 제시된다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.19880" target="_blank" rel="noopener">huggingface.co/papers/2608.19880</a> · 2026-08-23</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

@@ -1,0 +1,110 @@
+{
+  "2608.19880": {
+    "base": "2608_env하네스_정적세계-에이전트학습으로-깨우기",
+    "rank": "#1",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "246",
+    "en_title": "EnvHarness: Awakening Static Worlds for Agent Learning",
+    "ko_title": "EnvHarness: 정적 세계를 깨워 에이전트를 학습시키다"
+  },
+  "2608.18580": {
+    "base": "2608_페이싯_터미널작업합성-의도와-실행상태-보존",
+    "rank": "#2",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "112",
+    "en_title": "FACET: Preserving Source Intent and Executable State in Terminal Task Synthesis",
+    "ko_title": "페이싯: 터미널 작업 합성에서 원천 의도와 실행 가능 상태 보존하기"
+  },
+  "2608.20335": {
+    "base": "2608_포디애니원_캐주얼-단안영상에서-4D-인물-생성",
+    "rank": "#3",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "66",
+    "en_title": "4DAnyone: Create Anyone in 4D from a Casual Monocular Video",
+    "ko_title": "포디애니원(4DAnyone): 캐주얼 단안 영상으로부터 누구나 4D로 만들기"
+  },
+  "2608.19799": {
+    "base": "2608_스위이벤치사이언스_과학공학-과제-해결-코딩에이전트-벤치마크",
+    "rank": "#4",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "58",
+    "en_title": "SWE-bench Science: Can Coding Agents Resolve Engineering Tasks in Science?",
+    "ko_title": "SWE-bench Science: 코딩 에이전트는 과학 분야의 엔지니어링 과제를 해결할 수 있는가?"
+  },
+  "2608.20336": {
+    "base": "2608_위드에브리원_그룹이미지생성-통합계획-정체성고정",
+    "rank": "#5",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "39",
+    "en_title": "WithEveryone: Unified Planning and Identity Grounding for Group Image Generation",
+    "ko_title": "위드에브리원: 그룹 이미지 생성을 위한 통합 계획 및 정체성 접지"
+  },
+  "2608.20202": {
+    "base": "2608_멤트랩벤치_LLM기억-사용-인지함정-벤치마크",
+    "rank": "#6",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "31",
+    "en_title": "MemTrapBench: Benchmarking Cognitive Traps in LLM Memory Use",
+    "ko_title": "멤트랩벤치: LLM 메모리 사용에서의 인지적 함정 벤치마킹"
+  },
+  "2608.13120": {
+    "base": "2608_스킬에보_다중턴-상호작용-피드백-자기갱신-진화",
+    "rank": "#7",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "29",
+    "en_title": "SkillEvo: Self-Renewing Evolution Gradients from Multi-Turn Interaction Feedback",
+    "ko_title": "스킬에보: 다중턴 상호작용 피드백을 통한 자기 갱신 진화 그래디언트"
+  },
+  "2608.14022": {
+    "base": "2608_포지더블유엠_소수-스텝-행동조건-비디오-월드모델",
+    "rank": "#8",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "22",
+    "en_title": "ForgeWM: Progressive Causal Training for Few-Step Action-Conditioned Video World Models",
+    "ko_title": "ForgeWM: 소수 스텝 행동조건 비디오 월드모델을 위한 점진적 인과 학습"
+  },
+  "2608.19854": {
+    "base": "2608_레포제로_설계기반-제로투올-코드생성",
+    "rank": "#9",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "17",
+    "en_title": "Repo0: Design-Driven Zero-to-All Code Generation",
+    "ko_title": "레포제로: 설계 기반 제로투올 코드 생성"
+  },
+  "2608.19758": {
+    "base": "2608_플래시프리필브이투_블록희소-프리필-어텐션-장문맥서빙",
+    "rank": "#10",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "14",
+    "en_title": "FlashPrefill V2: Block-Sparse Prefill Attention for Long-Context LLM Serving",
+    "ko_title": "플래시프리필 V2: 장문맥 LLM 서빙을 위한 블록 희소 프리필 어텐션"
+  },
+  "2608.17744": {
+    "base": "2608_저자원언어추론_SFT와-RL의-역할-정확도의-사각지대",
+    "rank": "#11",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "13",
+    "en_title": "Thinking in a Low-Resource Language: What SFT Builds, What RL Fixes, What Accuracy Cannot See",
+    "ko_title": "저자원 언어로 사고하기: SFT가 만드는 것, RL이 고치는 것, 정확도가 보지 못하는 것"
+  },
+  "2608.20281": {
+    "base": "2608_인젝트얼라인리커버_검색없는-문서지식-내재화-단계별-사후학습",
+    "rank": "#12",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "10",
+    "en_title": "Inject, Align, Recover: Staged Post-Training for Retrieval-Free Document Knowledge Internalization",
+    "ko_title": "인젝트, 얼라인, 리커버: 검색 없는 문서 지식 내재화를 위한 단계별 사후학습"
+  }
+}

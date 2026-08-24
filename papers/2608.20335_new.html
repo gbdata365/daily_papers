@@ -1,0 +1,113 @@
+<meta charset="UTF-8">
+<title>포디애니원(4DAnyone)</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#3 · Daily Papers 2026-08-23</span>
+      <span class="cat-tag">생성모델</span>
+      <span class="upvote-tag">▲ 66</span>
+    </div>
+    <h1 class="article-title">4DAnyone: Create Anyone in 4D from a Casual Monocular Video</h1>
+    <p class="article-title-ko">포디애니원(4DAnyone): 캐주얼 단안 영상으로부터 누구나 4D로 만들기</p>
+    <p class="article-sub">카메라 정보를 알 수 없는 단안(monocular) 영상 한 편만으로, 4D Gaussian Splatting(4DGS) 재구성에 필요한 수십 개의 다시점(multi-view) 영상을 일관성 있게 생성해 자유 시점 인물 볼류메트릭 비디오를 만드는 프레임워크 4DAnyone을 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.20335" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.20335" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: 4DAnyone: Create Anyone in 4D from a Casual Monocular Video</li>
+<li><strong>저자</strong>: Yudong Jin, Tao Xie(공동 1저자), Qihang Zhang, Zehong Shen, Zhen Xu, Yujun Shen, Hujun Bao, Xiaowei Zhou(교신저자), Yinghao Xu(교신저자) — Zhejiang University State Key Lab of CAD&amp;CG, Robbyant, Ant Group, Chinese University of Hong Kong, Hong Kong University of Science and Technology 공동 연구</li>
+<li><strong>출처</strong>: arXiv:2608.20335v1 [cs.CV] (2026년 8월 20일 제출)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://4danyone.github.io">https://4danyone.github.io</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.20335">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>카메라 정보를 알 수 없는 단안(monocular) 영상 한 편만으로, 4D Gaussian Splatting(4DGS) 재구성에 필요한 수십 개의 다시점(multi-view) 영상을 일관성 있게 생성해 자유 시점 인물 볼류메트릭 비디오를 만드는 프레임워크 4DAnyone을 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>4D 인물 재구성은 몰입형 콘텐츠, 가상현실, 임바디드 AI 등에서 중요하지만, 기존 4DGS 기법들은 보정된 다중 카메라 어레이로 촬영한 밀집 다시점 영상을 요구한다. 카메라 제어 비디오 확산 모델을 이용해 단안 영상에서 새로운 시점 영상을 생성한 뒤 재구성하는 방식이 대안으로 떠올랐지만, 목표 시점 수가 4DGS 재구성에 필요한 수준(수십 개)으로 늘어나면 시점 간 일관성이 무너져 외형 불일치와 구조적 드리프트가 발생한다. 저자들은 이 원인을 "bounded-attention-context" 문제로 규정한다: 단일 DiT(Diffusion Transformer) forward pass가 처리할 수 있는 어텐션 컨텍스트가 한정되어 있어, 목표 시점 수가 이를 초과하면 여러 그룹으로 나눠 디노이징해야 하고, 이로 인해 (1) 참조 컨텍스트 길이가 O(N)으로 커져 외형 가이던스가 약화되는 문제와 (2) 서로 다른 그룹 간에는 정보 교환이 불가능해 전역 구조가 어긋나는 문제가 동시에 발생한다는 것이다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>4DAnyone 프레임워크</strong>: 단안 영상으로부터 재구성 등급(reconstruction-grade)의 다시점 일관성을 갖는 인물 영상을 생성하는 최초의 통합 파이프라인 제안.</li>
+<li><strong>Reference Context Packing (RCP)</strong>: 점점 늘어나는 참조 시점 영상을 고정 길이의 혼합 해상도 컨텍스트로 압축해, 참조 컨텍스트 복잡도를 O(N)에서 O(1)로 낮추면서도 외형 가이던스를 유지.</li>
+<li><strong>Target Context Routing (TCR)</strong>: 디노이징 도중 목표 시점 그룹핑을 동적으로 회전(rotate)시켜, 고노이즈 단계에서는 그룹 간 컨텍스트를 공유해 전역 구조 드리프트를 줄이고, 저노이즈 단계에서는 인접 시점을 고정 그룹화해 세부 디테일을 안정화.</li>
+<li>게임 엔진으로 제작한 <strong>MVGameHuman</strong> 데이터셋을 라이트스테이지·실사 단안 영상 데이터와 결합해 학습에 활용, 실세계(in-the-wild) 일반화 성능을 확보.</li>
+</ul>
+<h2>방법론</h2>
+<p>전체 파이프라인은 다음과 같다. 먼저 HMR(Human Mesh Recovery) 모델(GVHMR)로 소스 영상에서 3D 스켈레톤 시퀀스를 추정하고, 이를 목표 시점들로 깊이 버퍼링(depth-buffered)하여 렌더링한다. 2D 스켈레톤 렌더링은 신체 부위 간 전후 가림(occlusion)을 표현하지 못해 모호성이 생기므로, z-버퍼를 이용한 3D-aware 스켈레톤 조건화로 이를 해소한다. 키포인트는 308개의 Goliath 어휘 중 얼굴·손가락 세부 관절을 제외한 40개(신체 17, 발 6, 손바닥 레벨 10, 보조 관절 7)만 선택해 노이즈가 큰 세밀한 검출에 의존하지 않도록 했다. 이 스켈레톤 조건은 zero-initialized 인코더를 통해 노이즈 잠재(latent) 토큰에 residual 형태로 더해진다.</p>
+<p>핵심은 두 메커니즘이다. RCP는 FramePack에서 착안해, 커널·스트라이드를 (1, 2r, 2r)로 설정한 멀티스케일 패치화 레이어(r∈{2,4})로 이미 생성된 참조 시점들을 압축된 고정 개수의 토큰으로 패킹한다. 추론 시에는 farthest-point sampling으로 시점을 선택해 2라운드에 걸쳐 참조 영상을 먼저 생성한 뒤, 이 고정 RCP 컨텍스트를 모든 이후 목표 그룹이 공유한다. TCR은 4개 뷰 단위 그룹으로 목표 시점을 나누되, 스위칭 타임스텝 t_s를 기준으로 고노이즈 구간에서는 스텝마다 뷰 인덱스를 순환 이동(cyclic shift)시켜 그룹을 재편성하고, 저노이즈 구간에서는 인접 뷰로 그룹을 고정한다. 학습은 DNA-Rendering 기반 스켈레톤 조건 학습(1단계) → 배경 포함 전체 다시점 데이터 확장(2단계) → 단안 데이터 추가로 실세계 일반화(3단계)의 3단계 커리큘럼으로 진행되며, latent flow-matching 손실에 LPIPS 지각 손실(가중치 0.25)을 결합해 학습한다. 최종 생성된 다시점 영상은 FreeTimeGS로 4DGS 모델을 학습하는 데 사용된다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Wan2.2-TI2V-5B(5B 파라미터 DiT 기반 비디오 확산 모델)를 백본으로, 704×1280 해상도에서 128대의 H20-3E GPU로 학습했다(3단계 합산 약 3일 소요). MVGameHuman(자체 게임 엔진), SynCamMaster의 SynCamVideo, DNA-Rendering, 그리고 실사 단안 데이터셋인 TedTalk·Pexels를 함께 사용했다. 평가는 DNA-Rendering 10개 시퀀스와 DyMVHumans 3개 시퀀스(모두 학습에 미포함)에서 16개 균등 분포 시점을 대상으로, (i) 4DGS 재구성 품질, (ii) 생성 영상 간 3D 일관성, (iii) 생성 영상의 GT 대비 재구성 품질 세 가지 관점에서 PSNR/SSIM/LPIPS로 측정했다. MV-Performer, TrajectoryCrafter, 그리고 동일 프로토콜로 RCP/TCR을 적용해 파인튜닝한 ReCamMaster를 베이스라인으로 비교한 결과, 4DAnyone은 모든 지표·모든 데이터셋에서 최고 성능을 기록했다(예: DNA-Rendering 4DGS 재구성 PSNR 24.15 대 차선 20.55). 정성적으로도 측면·후면 시점에서 베이스라인들이 형태 왜곡이나 전후면 전환 실패를 보이는 반면, 4DAnyone은 보이지 않는 후면 외형까지 그럴듯하게 환각(hallucination)하며 기하학적으로 정확한 결과를 유지했다. Ablation 결과 RCP와 TCR을 모두 제거하면 성능이 크게 저하되고, 둘 중 하나만 제거해도 각각 유의미한 저하가 관찰되어 두 구성 요소가 상호 보완적임을 확인했다. 라우팅 전략 비교에서는 인접성을 보존하는 Sliding 방식이 Random·Strided보다 우수했다. 실세계 영상에 대한 추가 실험에서도 강건한 일반화 성능을 보였다.</p>
+<h2>한계점</h2>
+<p>논문 본문에는 세부 한계점이 "Limitations and failure cases are analyzed in Supp. H"로 부록에 위임되어 있어 본문에서는 구체적으로 다루지 않는다. 다만 방법론적으로 유추 가능한 한계로는, 스켈레톤 기반 조건화가 얼굴 표정과 손가락 디테일을 소스 영상 참조에 전적으로 의존한다는 점, 그리고 4개 뷰 단위 그룹·고정된 스위칭 타임스텝 등 여러 하이퍼파라미터에 성능이 좌우될 수 있다는 점을 들 수 있다.</p>
+<h2>시사점</h2>
+<p>이 논문은 "그룹으로 쪼개 디노이징할 때 발생하는 참조 컨텍스트 증가"와 "그룹 간 정보 단절"이라는 두 병목을 명확히 분리해 정의하고, 각각을 O(1) 복잡도의 컨텍스트 패킹과 노이즈 스케줄에 따른 동적 라우팅이라는 상대적으로 단순한 아이디어로 해결했다는 점에서 스케일러블한 다시점 비디오 생성 설계에 일반적으로 적용 가능한 통찰을 제공한다. 또한 "밀도보다 정확도"라는 원칙 아래 조밀한 깊이 대신 희소하지만 신뢰도 높은 3D 스켈레톤을 기하 조건으로 사용한 선택은, 실세계 단안 영상처럼 노이즈가 많은 입력에서 기하 추정의 신뢰도가 곧 생성 품질을 좌우한다는 점을 시사한다. 생성-후-재구성(generation-then-reconstruction) 패러다임이 특수 촬영 장비 없이도 고품질 4D 인물 볼류메트릭 비디오를 만들 수 있는 실용적 경로가 될 수 있음을 보여준다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.20335" target="_blank" rel="noopener">huggingface.co/papers/2608.20335</a> · 2026-08-23</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

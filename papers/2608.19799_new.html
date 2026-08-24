@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>SWE-bench Science</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#4 · Daily Papers 2026-08-23</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 58</span>
+    </div>
+    <h1 class="article-title">SWE-bench Science: Can Coding Agents Resolve Engineering Tasks in Science?</h1>
+    <p class="article-title-ko">SWE-bench Science: 코딩 에이전트는 과학 분야의 엔지니어링 과제를 해결할 수 있는가?</p>
+    <p class="article-sub">코딩 에이전트가 과학 연구용 소프트웨어의 실제 GitHub 저장소 버그를 얼마나 잘 고칠 수 있는지 평가하기 위해, 20개 과학 분야·98개 저장소·119개 과제로 구성된 저장소 단위 벤치마크 SWE-bench Science를 제시하고, 최상위 에이전트조차 Pass@1이 50%를 넘지 못함을 보인 연구다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.19799" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.19799" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: SWE-bench Science: Can Coding Agents Resolve Engineering Tasks in Science?</li>
+<li><strong>저자</strong>: Zhipeng Xu, Jiahao Lu, Yining Zheng, Yuxin Wang, Xipeng Qiu (Shanghai Innovation Institute, Fudan University 소속. Yuxin Wang와 Xipeng Qiu가 교신저자)</li>
+<li><strong>출처</strong>: arXiv:2608.19799v1 [cs.CL] (2026년 8월 20일 제출)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://swescience.github.io">https://swescience.github.io</a> (리더보드), 코드는 <a href="https://github.com/OpenMOSS/SWE-bench-Science">GitHub</a>, 데이터는 <a href="https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science">Hugging Face</a>에 공개</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.19799">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>코딩 에이전트가 과학 연구용 소프트웨어의 실제 GitHub 저장소 버그를 얼마나 잘 고칠 수 있는지 평가하기 위해, 20개 과학 분야·98개 저장소·119개 과제로 구성된 저장소 단위 벤치마크 SWE-bench Science를 제시하고, 최상위 에이전트조차 Pass@1이 50%를 넘지 못함을 보인 연구다.</p>
+<h2>배경 및 문제의식</h2>
+<p>현대 과학 연구에서 소프트웨어는 시뮬레이션, 계측 데이터 처리, 대리모델 학습, 실험 재현 등 과학적 증거 생성 과정 자체의 일부가 되었으며, 코드의 결함은 단순한 프로그램 오류를 넘어 과학적 결론 자체를 훼손할 수 있다. 그러나 기존 코딩 에이전트 평가는 대체로 테스트 통과율 같은 총괄 성공률에만 초점을 맞추어, 에이전트가 왜 실패하는지에 대한 통찰을 주지 못한다. 또한 기존 과학 코딩 벤치마크들은 논문 기반 함수 구현이나 연구 워크플로 재현 등에 치우쳐 있어, 저장소 단위(repository-level)로 다양한 과학 분야를 포괄하며 실패 원인까지 분석하는 벤치마크는 부재했다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>98개 실제 GitHub 저장소, 20개 과학 분야에 걸친 119개 저장소 단위 과제로 구성된 SWE-bench Science를 구축하고, 여러 프런티어 코딩 에이전트를 평가했다.</li>
+<li>실패한 복구 시도들을 수작업으로 분석해 과학 지식/추상화 결핍, 잘못된 탐색/표면적 수정, 불완전한 수정 범위/시스템 통합 실패, 과학 지식 일반화 실패라는 네 가지 반복적 실패 메커니즘을 규명했다.</li>
+<li>저장소·실행 맥락은 유지한 채 명시적 과학 지식(scientific rationale 등)만 제거하는 짝지은(paired) 제거 실험을 수행해, 과학 지식 제공이 항상 유익한 것은 아니며 모델·정보 정합성에 따라 효과가 달라짐을 보였다.</li>
+</ol>
+<h2>방법론</h2>
+<p>과제는 Issue-driven(공개된 결함 수정), Expert-exploratory(원인 미상의 과학적 이상 현상을 전문가처럼 자율 탐구), Engineering-integration(여러 모듈에 걸친 엔드투엔드 기능 사슬 완성)의 세 가지 패러다임으로 구성된다. 모든 원시 과제는 4단계의 "Chain-of-Evidence Protocol"로 제작된다: (1) 실제 이슈·PR·커밋·문헌에서 후보 저장소를 수집·선별, (2) 결함 발생 직전 시점(𝒮bug)으로 코드 스냅샷을 고정하고 컨테이너에서 재현성을 검증, (3) 해법 위치나 숨은 검증 기준을 노출하지 않도록 공개 자료(문제 설명, 재현 스크립트, 도메인 배경 문서)를 추상화, (4) 하드코딩된 해법이나 부분적 수정을 걸러내는 숨겨진(private) 검증 스위트와 역방향 검증을 구축. 세 패러다임은 각각 별도의 세부 재설계 단계(예: Issue-driven의 퇴행/고립화·현상 축소·과적합 방지 검증)를 거친다. 평가는 에이전트가 볼 수 없는 비공개 테스트로 이루어지며, PublicScore, PrivateScore, Fail2Pass(이전에 실패하던 비공개 테스트 중 통과 비율), Pass2Pass(이전에 통과하던 테스트 유지 비율), 그리고 모든 비공개 테스트를 통과해야 1이 되는 이진 지표 Pass@1로 성능을 측정한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Claude Code(Opus 계열), Codex(GPT, DeepSeek, GLM, Nex, Qwen 계열), Kimi Code 등 총 8개 에이전트-모델 조합을 119개 공통 과제에서 평가했다. Public score는 대부분 90%대 후반으로 매우 높았지만, Private score와 Pass@1은 크게 낮았다. Claude-Opus-5(max, Claude Code)가 전체 Pass@1 47.90%로 최고였고, Issue-driven과 Expert-exploratory 과제에서도 1위였다. GPT-5.6-sol(max, Codex)은 Private score·Fail2Pass·Pass2Pass에서 최고 수치를 보였으며, DeepSeek-V4-Pro(max)는 Public score와 Engineering-integration 과제에서 가장 우수했다. 가장 낮은 성능을 보인 Qwen3.5-397B는 Pass@1 14.29%에 그쳤다. 토큰 소비 대비 성능을 보면 Claude-Opus-5는 중간 수준 토큰으로 최고 성능을, GPT-5.6-sol은 훨씬 적은 출력 토큰으로 유사한 성능을 냈다. 실패 원인 분석에서는 Claude-Opus-5가 총 오류 수(58건, 별도 런타임/평가 실패 4건 제외)와 표면적 수정 오류(2건)가 가장 적었고, DeepSeek-V4-Pro는 지식/추상화 오류와 시스템 통합 오류가 가장 적었으며, DeepSeek-V4-flash는 일반화 실패가 가장 적었다. 과학 지식 제거 실험(91개 과제 부분집합)에서는 GPT-5.6-sol의 경우 과학 정보를 주면 Public/Private score는 소폭 상승하지만 Pass@1은 오히려 36.26%→31.87%로 하락(정보가 고착·과신을 유발)한 반면, DeepSeek-V4-flash는 과학 정보 제공 시 Pass@1이 16.48%→23.08%로 상승해, 정보의 효과가 모델 성능 수준에 따라 상반된다는 결과를 보였다.</p>
+<h2>한계점</h2>
+<p>논문은 각 과학 분야별 과제 수가 아직 상대적으로 적어 분야 간 비교의 신뢰도가 제한적이라는 점, 그리고 과학 지식이 SWE 과제 해결에 어떤 역할을 하는지에 대한 분석이 아직 예비적 수준이며 도메인 지식이 실제로 어떻게 활용되고 성공에 기여하도록 만들지에 대한 탐구가 부족하다는 점을 스스로 밝히고 있다.</p>
+<h2>시사점</h2>
+<p>Public score와 Pass@1 사이의 큰 격차(최고 96.64% vs 47.90%)는 표면적으로 그럴듯해 보이는 패치가 실제 과학적 타당성 검증은 통과하지 못하는 경우가 많다는 것을 보여주며, 향후 과학 소프트웨어 코딩 에이전트는 과학적 추상화 능력, 절제된 탐색, 시스템 전반의 통합적 수정, 관찰되지 않은 사례로의 일반화 능력을 갖춰야 함을 시사한다. 또한 외부 과학 지식 제공이 만능 해법이 아니며, 에이전트가 그 지식을 실행 가능한 증거와 얼마나 잘 연결·검증하는지가 관건이라는 점은, 향후 과학 도메인 특화 에이전트 설계 시 지식 주입 방식과 실행 기반 검증 절차의 설계가 중요한 연구 방향임을 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.19799" target="_blank" rel="noopener">huggingface.co/papers/2608.19799</a> · 2026-08-23</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

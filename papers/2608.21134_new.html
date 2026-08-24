@@ -1,0 +1,123 @@
+<meta charset="UTF-8">
+<title>라마모바일</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#12 · Daily Papers 2026-08-25</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 5</span>
+    </div>
+    <h1 class="article-title">Llama-Mobile: Efficient 2.7-Bit Quantization of VLMs</h1>
+    <p class="article-title-ko">라마모바일: VLM의 효율적인 2.7비트 양자화</p>
+    <p class="article-sub">비전-언어 모델(VLM)을 스마트폰 등 자원 제약 환경에서도 돌릴 수 있도록, 모델 스스로 생성한 데이터를 이용한 양자화 인식 학습(QAT)과 Arm CPU 전용의 새로운 2.7비트 가중치 포맷(S3D8)을 결합해 Llama 3.2 11B Vision Instruct 모델을 21.3GB에서 3.7GB로 압축하면서도 성능 저하를 최소화한 연구.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.21134" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.21134" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Llama-Mobile: Efficient 2.7-Bit Quantization of VLMs</li>
+<li><strong>저자</strong>: Luka Ribar, Jeevan Bhoot, Douglas Orr (Graphcore Research 및 Arm 소속, 교신저자 Luka Ribar)</li>
+<li><strong>출처</strong>: arXiv:2608.21134v1 [cs.CV] (2026년 8월 21일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 별도의 프로젝트 웹페이지는 명시되지 않았으며, 코드 저장소로 <code>graphcore-research/llama-mobile-vlm</code> (GitHub)가 언급됨</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.21134">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>비전-언어 모델(VLM)을 스마트폰 등 자원 제약 환경에서도 돌릴 수 있도록, 모델 스스로 생성한 데이터를 이용한 양자화 인식 학습(QAT)과 Arm CPU 전용의 새로운 2.7비트 가중치 포맷(S3D8)을 결합해 Llama 3.2 11B Vision Instruct 모델을 21.3GB에서 3.7GB로 압축하면서도 성능 저하를 최소화한 연구.</p>
+<h2>배경 및 문제의식</h2>
+<p>Llama 3.2 Vision, Gemma 3, Qwen3-VL과 같은 VLM은 이미지와 텍스트를 함께 이해할 수 있어 모바일 응용에 적합하지만, 메모리와 연산량이 커서 실제 모바일 기기에 배포하기 어렵다. 양자화는 이를 해결하는 실용적 방법이지만, 3비트 미만의 공격적인 저비트 양자화는 모델 성능을 크게 훼손하는 경우가 많다. 또한 양자화 인식 학습(QAT)이 효과적이라는 것은 알려져 있지만, 그 성능은 학습에 사용하는 데이터 분포에 매우 민감하다. 저자들은 (1) 원본 학습 데이터나 학습 레시피에 접근할 수 없는 현실적인 제약 속에서, (2) 3비트 미만으로 압축하면서도 Arm CPU에서 효율적으로 실행 가능한 포맷을 설계하는 두 가지 실용적 난제를 동시에 다룬다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>모델 자기생성 기반 QAT 파이프라인</strong>: 원본 학습 데이터 없이도 멀티모달 모델에 적용 가능한, 범용적이고 재현 가능한 QAT 데이터 생성 및 학습 절차를 제안했다.</li>
+<li><strong>S3D8 포맷</strong>: 파라미터당 약 2.7비트를 사용하는 새로운 벡터 양자화 포맷으로, Arm CPU에서의 효율적인 디코딩을 고려해 하드웨어와 함께 설계되었다.</li>
+<li><strong>엔드투엔드 구현체 공개</strong>: Linux 및 Android의 Arm CPU에서 동작하는 전체 VLM 추론 구현체를 공개했다.</li>
+</ul>
+<h2>방법론</h2>
+<p>전체 파이프라인은 세 단계로 구성된다.</p>
+<ol>
+<li><strong>합성 데이터 생성</strong>: 대규모 범용 텍스트 코퍼스와 달리 멀티모달 QAT에 적합한 학습 데이터가 마땅치 않다는 문제를 해결하기 위해, ImageNet 이미지에 다양한 프롬프트(설명 요청, 지시문 템플릿 적용 여부, 답변 길이·형식 제약 등을 확률적으로 조합해 총 495종 이상의 질문 풀 구성)를 던져 원본(교사) 모델 스스로 응답을 생성하게 하고, 이 이미지-프롬프트-응답 쌍을 학습 데이터로 사용한다. 고정된 단일 프롬프트만 쓰면 응답의 다양성이 부족해 하류 성능이 크게 떨어진다는 것을 실험적으로 확인했다.</li>
+<li><strong>양자화 인식 학습(QAT)</strong>: bfloat16 원본 모델을 교사로, 양자화된 모델을 학생으로 하여 생성된 응답 토큰에 대해서만 KL divergence 기반 지식 증류를 수행한다. 학생의 순전파에는 양자화 연산자를 통과한 파라미터를 사용하고, 역전파에는 straight-through estimator를 적용한다.</li>
+<li><strong>S3D8 포맷 및 모바일 배포</strong>: S3D8은 3개의 부호 있는 가중치를 1바이트에 담는 벡터 양자화 방식으로, 채널별 5비트 중심점(centroid) 인덱스 1개와 원소별 부호 비트 3개로 구성된다. 중심점은 Lloyd-Max 알고리즘(k-means++ 초기화)으로 채널 절댓값 최대치로 정규화한 가중치 분포에 맞춰 미리 한 번 학습되고, 이후 QAT 동안에는 중심점을 고정한 채 채널 스케일·양자화 인덱스·부호만 갱신한다. Arm SIMD의 TBL(테이블 조회) 명령어를 활용할 수 있도록 비트 배치를 설계해, 단 5개의 논리 연산으로 3개의 조회 인덱스를 만들어 INT8로 빠르게 역양자화할 수 있게 했다.</li>
+</ol>
+<h2>실험 설정 및 결과</h2>
+<p>Llama 3.2 11B Vision Instruct 모델을 대상으로, 직접 캐스팅(direct cast), GPTQ(사후 양자화 기준선), QAT 세 가지 방식을 비교했다. 평가는 VQAv2, ChartQA, DocVQA, AI2D 네 가지 시각질의응답 과제의 1024개 샘플 서브셋에서 수행했다.</p>
+<ul>
+<li>같은 크기(약 2.7비트/파라미터, 3.6GB대)에서 S3D8+QAT는 평균 성능 0.661을 기록해, 동일 크기의 균등 정수 포맷(INT, 0.347), student-t 포맷(0.565), Lloyd-Max 스칼라 포맷(0.436)을 모두 크게 앞섰다. 원본 bfloat16 모델의 평균 성능은 0.744였다.</li>
+<li>양자화 방법 비교에서는 direct cast가 3.5비트 미만에서 급격히 무너지는 반면, GPTQ는 이를 개선하지만 저비트 영역에서는 QAT가 더 우수했다. 같은 2.7비트 수준에서 S3D8+GPTQ는 0.340, 동일한 GPTQ를 적용한 INT는 0.018에 그쳐, 포맷 자체의 효과가 크다는 것을 보였다. S3D8에 QAT를 적용하면 0.661까지 개선되었다.</li>
+<li>프롬프트 다양성 실험에서, 고정 프롬프트 대신 샘플링된 다양한 프롬프트를 쓰는 것이 QAT 성능에 큰 영향을 준다는 것을 확인했다.</li>
+<li>런타임 벤치마크(Google Pixel 8a, AWS Graviton4 96코어)에서 S3D8은 INT8 대비 낮은 역양자화 오버헤드를 보였으며, 메모리 대역폭이 병목인 소규모(batch=1) 텍스트 생성 구간에서는 INT8보다 빠른 처리량을 보였다(예: Graviton4에서 텍스트 생성 시 36.8 tok/s vs INT8 26.4 tok/s). 반면 배치가 큰 프리필/비전 인코딩 등 연산 바운드 구간에서는 INT8과 비슷하거나 약간 느렸다.</li>
+<li>최종적으로 커스텀 C++ 추론 구현체를 통해 어휘·메타데이터 포함 3.73GB 모델 파일로 Pixel 8a에서 실제 종단 간(end-to-end) 토큰 생성 속도(중앙값 약 3.8 tok/s)를 검증했으며, 이는 INT8로는 메모리에 모델이 올라가지 않는 상황에서 달성한 결과다.</li>
+</ul>
+<h2>한계점</h2>
+<p>저자들은 다음을 한계로 명시했다. 실험이 Llama 3.2 11B Vision Instruct라는 단일 모델과 CPU 실행 환경에만 국한되어 있다는 점, S3D8이 Arm 전용 64-엔트리 테이블 조회 디코더에 최적화되어 있어 다른 아키텍처에는 별도 커널이 필요할 수 있다는 점, 평가에 사용한 VQA 스타일 벤치마크 세트가 제한적이라는 점, 모든 가중치에 동일한 양자화 포맷을 적용했으며 일부 레이어(출력 프로젝션, 비전 인코더)를 고정밀도로 유지하는 예비 실험에서는 정확도-압축률 트레이드오프가 유의미하게 개선되지 않았다는 점, 그리고 프롬프트·이미지 선택 전략이 하류 과제 일반화를 위해 추가로 최적화될 여지가 있다는 점이다.</p>
+<h2>시사점</h2>
+<p>이 연구는 원본 학습 데이터나 레시피에 접근하지 못하는 현실적인 제약 속에서도, 모델 자신이 생성한 합성 멀티모달 데이터만으로 효과적인 QAT가 가능함을 보여준다. 또한 수치 포맷을 하드웨어의 SIMD 디코딩 경로와 함께 공동 설계하는 접근이 순수 압축률뿐 아니라 실제 기기에서의 실행 속도까지 함께 개선할 수 있음을 시사한다. 이는 sub-3비트 수준의 공격적인 VLM 압축이 자원 제약 모바일 기기에서의 실질적 멀티모달 추론으로 가는 실용적인 경로가 될 수 있음을 뒷받침한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.21134" target="_blank" rel="noopener">huggingface.co/papers/2608.21134</a> · 2026-08-25</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

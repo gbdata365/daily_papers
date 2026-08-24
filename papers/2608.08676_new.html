@@ -1,0 +1,121 @@
+<meta charset="UTF-8">
+<title>유니스페이스</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#9 · Daily Papers 2026-08-25</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 8</span>
+    </div>
+    <h1 class="article-title">UniSpace: Unified Visual Representation and Scalable Multimodal Modeling</h1>
+    <p class="article-title-ko">유니스페이스: 통합 시각 표현과 확장 가능한 멀티모달 모델링</p>
+    <p class="article-sub">사전학습된 시맨틱 ViT(예: SigLIP2, DINOv2, Qwen-ViT)의 패치 임베딩만 재구성 가능하도록 확장하는 "Patch Reparameterization" 기법을 통해, 별도의 VAE 없이도 이미지 이해·생성·편집을 하나의 시각 표현 공간에서 수행하는 8B 규모의 통합 멀티모달 모델 UniSpace를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.08676" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.08676" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: UniSpace: Unified Visual Representation and Scalable Multimodal Modeling</li>
+<li><strong>저자</strong>: Jinbo Yan, Limeng Qiao, Jie Qin, Junyan He, Feize Wu, Guanglu Wan (Meituan)</li>
+<li><strong>출처</strong>: arXiv:2608.08676v1 [cs.CV] (2026년 8월 9일 제출)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://yjb6.github.io/UniSpace/">https://yjb6.github.io/UniSpace/</a> (Hugging Face: https://huggingface.co/yjb6/UniSpace, GitHub: https://github.com/yjb6/UniSpace)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.08676">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>사전학습된 시맨틱 ViT(예: SigLIP2, DINOv2, Qwen-ViT)의 패치 임베딩만 재구성 가능하도록 확장하는 "Patch Reparameterization" 기법을 통해, 별도의 VAE 없이도 이미지 이해·생성·편집을 하나의 시각 표현 공간에서 수행하는 8B 규모의 통합 멀티모달 모델 UniSpace를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>SigLIP, CLIP 같은 시맨틱 비전 인코더는 이미지-텍스트 정렬과 이해 과제에서는 강력한 성능을 보이지만, 최종 레이어 토큰은 의미적 추상화에 최적화되어 있어 세밀한 픽셀 수준 정보를 대부분 버린다. 그 결과 이러한 인코더는 이미지 생성이나 참조 이미지 기반 편집처럼 원본 디테일 보존이 중요한 과제에는 그대로 쓰기 어렵다. 이 문제를 우회하기 위해 기존 생성 모델들은 보통 VAE 잠재 공간에서 이미지를 생성하고, 이해가 필요할 때만 별도의 시맨틱 인코더를 덧붙이는 방식을 취해왔다. BAGEL과 같은 최근의 "통합" 멀티모달 모델들도 아키텍처(백본) 수준에서는 이해와 생성을 하나로 묶었지만, 실제 시각 정보는 시맨틱 인코더 토큰과 VAE 잠재값이라는 서로 다른 두 표현 공간으로 여전히 분리되어 있다. 저자들은 이러한 "아키텍처적 통합"과 "표현 수준 통합"의 간극에 주목하며, 사전학습된 시맨틱 ViT를 기반으로 이해·생성·편집을 하나의 시각 표현 공간에서 모델링할 수 있는지를 질문한다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li><strong>Patch Reparameterization 제안</strong>: 고정된(frozen) 시맨틱 ViT의 트랜스포머 블록 자체가 세밀한 시각 정보를 나르지 못하는 것이 아니라, 원래의 패치 임베딩(patch embedding)이 정보 손실의 병목이라는 사실을 진단 실험으로 규명했다. 패치 임베딩을 무작위 초기화된 프로젝션으로 교체하기만 해도(트랜스포머 블록은 그대로 고정) 마지막 레이어의 픽셀 복원 PSNR이 20.96에서 24.66으로(+3.70dB) 개선되는 것을 확인했다.</li>
+<li><strong>통합 비전 인코더 패밀리 구축</strong>: 이 통찰을 바탕으로 원래의 시맨틱 패치 임베딩은 그대로 두고, 재구성에 특화된 패치 임베딩을 추가로 학습시켜 같은 고정 트랜스포머 블록에 통과시키는 방식으로 PR-SigLIP2, PR-DINOv2, PR-Qwen-ViT라는 통합 인코더 패밀리를 만들었다.</li>
+<li><strong>UniSpace 모델 개발</strong>: PR-Qwen-ViT를 유일한 시각 인터페이스로 삼아, Qwen3-8B 기반 Mixture-of-Transformer-Experts(MoT) 구조 위에서 이해·텍스트-이미지 생성·명령 기반 이미지 편집을 하나의 통합된 시각 표현 공간에서 동시에 수행하는 8B 규모 모델을 구축했다.</li>
+</ol>
+<h2>방법론</h2>
+<p><strong>Patch Reparameterization</strong>: 입력 이미지 I에 대해 원래의 사전학습 패치 임베딩 Ps와 고정 트랜스포머 블록 Fϕ로 얻은 시맨틱 토큰 Ts = Fϕ(Ps(I))는 그대로 유지한다. 여기에 Ps로부터 초기화된 재구성 인식(reconstruction-aware) 패치 임베딩 Pr을 새로 도입하고, 동일한 고정 블록 Fϕ에 통과시켜 재구성 토큰 Tr = Fϕ(Pr(I))을 얻는다. 즉 Tr은 별도의 인코더가 아니라 같은 파라미터 공간을 다른 입력 매개변수화로 통과시켜 얻는 결과다.</p>
+<p><strong>Token Fusion</strong>: 두 토큰을 MLP로 암묵적으로 섞는 대신, Tr을 저차원(128채널)으로 선형 압축한 뒤 채널 축을 따라 Ts와 명시적으로 concat하여 통합 표현 Tu를 구성한다. 이렇게 채널을 분리해 두는 이유는, 별도 진단 실험(5.1.4절)에서 암묵적(entangled)으로 병합한 표현이 재구성·이해에는 강하지만 생성 학습 시 재구성에 필요한 세부 정보가 소실되는 실패 사례를 확인했기 때문이다(생성된 잠재값을 고화질 디코더로 복원하면 FID가 급격히 나빠짐).</p>
+<p><strong>학습 전략</strong>: 재구성 학습 단계에서는 Pr, 압축 프로젝션, ViT 디코더(RAE 방식)만 픽셀·지각(perceptual)·적대적(adversarial) 손실로 학습하고, 원본 패치 임베딩과 트랜스포머 블록은 고정한다. 생성 모델링에는 conditional flow matching을 사용하되, 시맨틱 성분과 재구성 성분의 오차를 각각 차원 수로 정규화한 뒤 재구성 성분에 λr=0.75의 가중치를 부여하는 "balanced flow matching" 목적함수를 설계해, 생성 프라이어가 디코더에 중요한 재구성 정보를 놓치지 않도록 했다.</p>
+<p><strong>UniSpace 아키텍처</strong>: Qwen3-8B 디코더 전용 백본에 BAGEL 스타일의 이해 전문가/생성 전문가 MoT 구조를 결합한다. 텍스트·조건 이미지 토큰은 이해 전문가로, 노이즈가 섞인 예측 대상 시각 토큰은 생성 전문가로 라우팅되며 self-attention을 통해 두 경로가 상호작용한다. 기존 MoT 기반 모델(BAGEL)이 이해용 시맨틱 인코더와 생성용 VAE라는 두 개의 표현 공간을 쓰는 것과 달리, UniSpace는 PR-Qwen-ViT 인코더-디코더 하나만을 시각 토크나이저로 사용해 참조 이미지·타깃 이미지·생성 이미지를 모두 동일한 Tu 공간에서 표현한다. 학습은 이해에는 cross-entropy 다음 토큰 예측, 생성·편집에는 balanced flow matching을 사용하며, 해상도를 256→512→1024로 점진적으로 늘리는 3단계 사전학습과 이후 SFT 단계로 구성된다. 전체 학습은 약 5억1천만 샘플, 약 4,700억 토큰 규모이며 256개의 Ascend 910B NPU(약 142K NPU-시간)를 사용했다. 시각 인코더-디코더는 전 과정에서 고정된다.</p>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li><strong>재구성(ImageNet-1K, 256×256)</strong>: PR-DINOv2가 rFID 0.14, PSNR 30.84, SSIM 0.90을 기록해 동일 백본을 쓰는 RAE(rFID 0.57) 대비 rFID를 약 75% 낮췄고, RAEv2 등 최신 기법과 비교해도 우수했다.</li>
+<li><strong>멀티모달 이해(LLaVA-v1.5/Vicuna-7B 세팅)</strong>: 통합 표현 Tu를 그대로 투입해도 원본 시맨틱 인코더 대비 성능이 유지되거나 소폭 향상됐다(PR-SigLIP2 평균 64.37 vs SigLIP2 63.39, PR-Qwen-ViT 68.94 vs 68.29).</li>
+<li><strong>ImageNet 생성</strong>: PR-DINOv2 기반 latent generative modeling에서 rFID 0.14를 유지하면서도 gFID 2.10(CFG 미적용)/1.87(CFG 적용)의 경쟁력 있는 생성 성능을 보여, 재구성-생성 트레이드오프를 개선했다.</li>
+<li><strong>진단 실험(entangled representation)</strong>: MLP로 암묵적으로 병합한 표현은 실제 인코딩된 잠재값에서는 강한 이해·재구성 성능(제로샷 정확도 78.53, rFID 0.069)을 보이지만, 생성된 잠재값을 고화질 디코더로 복원하면 FID가 120.9까지 급증해 생성 모델링에 부적합함을 확인했다. 이는 채널을 명시적으로 분리하는 설계가 필요함을 뒷받침한다.</li>
+<li><strong>시스템 레벨 이미지 편집</strong>: ImgEdit 벤치마크에서 UniSpace(8B)는 종합 점수 4.28을 기록해 동급 통합 모델인 SenseNova-U1(3.90), BAGEL(3.20)을 크게 앞섰고, 32B 규모의 Emu3.5(4.41)에 근접했다. GEdit 벤치마크에서도 영어/중국어 평균 7.39로 BAGEL을 상회했다.</li>
+<li><strong>텍스트-이미지 생성</strong>: GenEval 종합 점수 0.84, OneIG-Bench 영/중 평균 0.547(비교 대상 중 최고), DPG-Bench 86.49(관계형 제약 항목 최고 점수 94.97)를 기록해 통합 모델 중 경쟁력 있는 생성 성능을 보였다.</li>
+</ul>
+<h2>한계점</h2>
+<p>UniSpace는 생성·편집에 최적화되어 있어, 시스템 레벨의 시각 이해 성능은 여전히 전용 VLM에는 미치지 못한다. 인코더가 이해와 생성 양쪽에 공유되는 구조이기 때문에, 이해 데이터로 자유롭게 추가 학습을 하면 생성 능력이 손상될 위험이 있어 학습 방식에 구조적 제약이 생긴다(논문은 인코더 자체를 학습 전 과정에서 고정함으로써 이 문제를 회피). 또한 카운팅·색상 결합 등 일부 세부 생성 능력과 GEdit에서의 지각 품질(perceptual quality)이 상대적으로 약한 것으로 나타났다.</p>
+<h2>시사점</h2>
+<p>이 연구는 별도의 VAE 잠재 공간 없이도, 사전학습된 시맨틱 ViT의 패치 임베딩만 재설계하면 이해와 고품질 재구성/생성을 동일한 표현 공간에서 함께 지원할 수 있음을 실증했다. 이는 향후 통합 멀티모달 모델을 설계할 때 아키텍처(백본) 수준의 통합뿐 아니라 시각 표현 공간 자체의 통합이 중요한 설계 축이 될 수 있음을 시사하며, 8B 규모의 MoT 구조로 확장해도 실용적 수준의 생성·편집 성능을 달성할 수 있음을 보여준다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.08676" target="_blank" rel="noopener">huggingface.co/papers/2608.08676</a> · 2026-08-25</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

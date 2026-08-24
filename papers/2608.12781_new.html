@@ -1,0 +1,113 @@
+<meta charset="UTF-8">
+<title>정답 너머</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#6 · Daily Papers 2026-08-25</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 16</span>
+    </div>
+    <h1 class="article-title">Beyond Correctness: Benchmarking and Aligning Response Behaviors in Hybrid-Thinking MLLMs</h1>
+    <p class="article-title-ko">정답 너머: 하이브리드씽킹 MLLM의 응답 행동 벤치마킹과 정렬</p>
+    <p class="article-sub">하이브리드씽킹(thinking/non-thinking 모드 전환) 멀티모달 대형언어모델(MLLM)이 정답을 맞히더라도 사고 흔적 노출, 반복, 논리적 모순, 겉치레식 추론 같은 "응답 패턴 결함"을 얼마나 자주 드러내는지 진단하는 벤치마크 PatternEval과, 이를 보상 신호로 삼아 강화학습 단계에서 결함을 줄이는 PatternRM/PatternRL을 제안한 연구다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.12781" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.12781" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Beyond Correctness: Benchmarking and Aligning Response Behaviors in Hybrid-Thinking MLLMs</li>
+<li><strong>저자</strong>: Xinming Wang, Weinong Wang, Hongming Yang, Yansong Lin, Zheng Ruan, Shangpin Peng, Qiming Peng, Nan Qiao, Fengyuan Lu, Guoqing Ma, Marito Li, Songyang Zhang, Saiyong Yang, Han Hu, Yonglong Tian, Xu-Yao Zhang (중국과학원 자동화연구소, 텐센트 대형언어모델 부서, 중국전자과기대학, 홍콩과기대, 중관춘 아카데미 소속 공동 연구팀)</li>
+<li><strong>출처</strong>: arXiv:2608.12781v2 [cs.CV] (2026년 8월 17일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.12781">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>하이브리드씽킹(thinking/non-thinking 모드 전환) 멀티모달 대형언어모델(MLLM)이 정답을 맞히더라도 사고 흔적 노출, 반복, 논리적 모순, 겉치레식 추론 같은 "응답 패턴 결함"을 얼마나 자주 드러내는지 진단하는 벤치마크 PatternEval과, 이를 보상 신호로 삼아 강화학습 단계에서 결함을 줄이는 PatternRM/PatternRL을 제안한 연구다.</p>
+<h2>배경 및 문제의식</h2>
+<p>최근 MLLM들은 하나의 모델 안에 시간을 들여 깊이 사고하는 thinking 모드와, 지연시간을 줄인 non-thinking(직답) 모드를 함께 제공하는 하이브리드씽킹 인터페이스를 채택하고 있다. 문제는 두 모드가 추론 예산은 다르더라도 사용자에게 전달되는 최종 응답은 동일한 품질 기준(근거에 기반하고, 일관되고, 적절히 간결하며, 불필요한 사고 과정 노출이 없는 상태)을 만족해야 한다는 점이다. 그러나 정답 정확도만을 목표로 하는 사후학습(post-training)은 이런 응답의 형태적 품질을 직접 통제하지 못하며, 그 결과 답이 맞아도 사고 과정이 그대로 새어 나오거나, 같은 내용을 반복하거나, 서로 모순된 진술을 남기거나, 근거 없는 분석을 그럴듯하게 포장하는 경우가 발생한다. 저자들은 이를 "응답 패턴 불일치(response-pattern misalignment)"로 정의하고, 추론 모드가 바뀌어도 사용자에게 보이는 응답 행동이 일관되게 유지되는지를 정답률과는 별개의 축에서 평가해야 한다고 주장한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>PatternEval 벤치마크</strong>: 시각 지각/그라운딩, OCR 및 구조화 이미지 이해, 멀티모달 지식 추론 세 범주(9개 세부 카테고리)에 걸쳐 2,415개의 실패 유발형 멀티모달 프롬프트를 구축하고, 사고 흔적 유출(CoT leakage), 응답 반복(Repetition), 논리적 모순(Contradiction), 겉치레식 추론(Performative Reasoning) 4가지 실패 유형을 조작적으로 정의했다.</li>
+<li><strong>모드 간 불일치의 광범위한 확인</strong>: GPT, Claude, Seed, Kimi, Qwen, Mimo 등 다양한 제공사의 25개 모델 구성을 동일 프롬프트로 thinking/non-thinking 페어 평가한 결과, 예외 없이 non-thinking 모드가 더 높은 패턴 실패율(Trigger)을 보였으며 최상위 모델 간에도 격차가 최대 48.64%p에 달했다.</li>
+<li><strong>PatternRM &amp; PatternRL</strong>: 4가지 실패 유형을 예측하는 응답 수준 보상모델(PatternRM)을 학습하고, 이를 정답 검증 보상과 결합한 페널티로 강화학습(PatternRL)에 반영해 정확도를 크게 해치지 않으면서 non-thinking 응답의 패턴 실패를 줄였다.</li>
+</ul>
+<h2>방법론</h2>
+<p>PatternEval은 (1) 후보 이미지-프롬프트 풀에서 롤아웃 응답을 생성해 반복적으로 나타나는 실패 사례를 발굴하고, (2) 이를 유사 과제·프롬프트 구조·응답 형태로 확장하며, (3) 패턴 지향적 샘플링과 카테고리 균형 조정(정형적 정답 판별 위주 카테고리는 축소, 응답 변이가 풍부한 카테고리는 우대, 대형 소스 카테고리는 상한 제한)을 거쳐 완성되었다. 평가 시에는 정답 검증자(Qwen3-Max)가 정확도(Acc)를, 패턴 판정자(이미지 입력을 포함한 Seed-2.0-Pro)가 4가지 이진 레이블을 매기며, 하나라도 실패가 감지되면 Trigger로 집계한다. CoT 유출과 반복이 우선 판정되고, 이미 CoT 유출로 귀속된 근거는 모순·겉치레식 추론으로 중복 집계하지 않는 "CoT 우선 귀속 규칙"을 적용한다. 패턴 판정자 선정을 위해 사람이 라벨링한 2,500개 캘리브레이션 세트로 GPT-5.5, Seed-2.0-Pro, Kimi-K2.6, Qwen3.5-397B 등 5개 후보 판정자를 비교했고, 최종적으로 이미지 접근이 가능한 Seed-2.0-Pro를 정식 판정자로 채택했다.</p>
+<p>PatternRM은 Qwen3.5-27B를 초기화 지점으로, 90K 규모의 롤아웃 풀 중 3개 판정자(Kimi-K2.6, Seed-2.0-Pro, Qwen3.5-397B)가 4개 레이블 전체에 만장일치로 동의한 약 5.2만 건을 정제해 5.7만여 건의 지도학습 데이터로 학습되며, 추론 비용을 줄이기 위해 이미지 없이 텍스트만 보는 직접 예측(non-thinking) 방식을 채택했다. PatternRL은 GRPO 알고리즘을 사용해, 정답 검증 보상(0/1)에 PatternRM이 예측한 4개 결함 확률에 가중치(CoT·반복 각 0.05, 모순·겉치레식 추론 각 0.02)를 곱해 최대 -0.1까지 깎는 보조 페널티를 더한 뒤 [0,1]로 클리핑하는 보상 함수를 사용한다. Qwen3-VL-4B/8B-Instruct를 멀티모달 수학·논리·문서이해 혼합 데이터(약 4.4만 프롬프트)로 학습시켰다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>25개 모델 구성 전반에서 모든 페어가 양(+)의 응답 패턴 격차(Δpat)를 보였고, 25쌍 중 17쌍에서 격차가 20%p를 넘었다. CoT 유출이 가장 지배적인 실패 유형이었고(평균 트리거율 약 12.75%), 응답 반복(8.49%)이 뒤를 이었으며 겉치레식 추론(4.72%)과 논리적 모순(2.74%)은 상대적으로 드물었다. Qwen3.5 계열을 통한 추가 분석에서는 모델 파라미터 규모가 커져도 정확도는 꾸준히 향상되는 반면 thinking-non-thinking 격차는 크게 줄지 않아, 모델 능력 향상이 자동으로 응답 패턴 정렬을 보장하지 않음을 확인했다. 또한 응답 길이가 길어질수록 패턴 실패율이 높아지는 경향(비사고 모드 상관계수 r=0.64, 사고 모드 r=0.84)이 관찰되었고, 길면서 오답인 non-thinking 응답의 실패율이 가장 높았다(최대 약 86%).</p>
+<p>PatternRL 적용 결과, Qwen3-VL-4B와 8B 모두에서 정답 정확도만으로 학습한 BaseRL 대비 non-thinking Trigger가 각각 13.08%p, 14.35%p 감소했으며 전체 정확도 변화는 1%p 미만에 그쳤다. 수학·논리·문서이해 10개 벤치마크에서의 검증에서는 4B 모델이 8B보다 더 큰 정확도 손실을 보여, 모델 용량이 작을수록 패턴 제약과 성능 사이의 트레이드오프가 커진다는 점도 확인됐다.</p>
+<h2>한계점</h2>
+<p>저자들 스스로 밝힌 한계로는, PatternRL이 응답 패턴 실패를 상당히 줄이지만 완전히 제거하지는 못한다는 점, 그리고 이런 결함이 이미 SFT 등 이전 학습 단계에서 데이터에 내재화되어 있을 가능성이 있어 강화학습 단계의 가벼운 보조 보상만으로는 근본적 해결이 어렵다는 점을 들었다. 또한 소형 모델(4B)일수록 패턴 제약이 정답 탐색 공간을 위축시켜 정확도 손실이 크다는 용량 의존적 트레이드오프가 존재하며, PatternEval 자체도 실패 사례를 의도적으로 농축한 스트레스 테스트 셋이라 실제 배포 환경에서의 자연 발생 빈도를 대표하지는 않는다. 판정자 신뢰도 면에서도 CoT 유출·반복은 비교적 정확히 판별되지만 논리적 모순과 겉치레식 추론은 F1이 상대적으로 낮아(56~65% 수준) 판정 자체의 불확실성이 남아 있다.</p>
+<h2>시사점</h2>
+<p>이 연구는 "정답이면 충분하다"는 통념을 반박하며, 하이브리드씽킹 인터페이스를 제공하는 모델이라면 추론 모드 전환 시 사용자에게 노출되는 응답의 형태적 품질까지 별도로 평가·정렬해야 한다는 실무적 기준을 제시한다. 특히 지연시간이 중요한 non-thinking 모드가 실제로는 사고 흔적 유출과 반복에 더 취약하다는 사실은, 효율을 위해 사고 모드를 끄는 배포 전략이 사용자 경험 저하로 이어질 수 있음을 경고한다. 정답 검증 보상에 패턴 인식 보상모델을 결합하는 PatternRL의 접근은, 강화학습 단계에서 정확도와 응답 품질을 동시에 관리할 수 있는 실용적인 후처리 전략을 제공하며, 향후 사전/중간 학습 단계에서의 데이터 큐레이션과 결합한다면 더 근본적인 개선이 가능함을 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.12781" target="_blank" rel="noopener">huggingface.co/papers/2608.12781</a> · 2026-08-25</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

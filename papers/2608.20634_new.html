@@ -1,0 +1,132 @@
+<meta charset="UTF-8">
+<title>에이전트머큐리</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#11 · Daily Papers 2026-08-25</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 6</span>
+    </div>
+    <h1 class="article-title">AgentMercury: Your Agent Can Synthesize Verifiable Environments for Business Scenarios at scale</h1>
+    <p class="article-title-ko">에이전트머큐리: 비즈니스 시나리오를 위한 대규모 검증 가능 환경 자동 합성</p>
+    <p class="article-sub">개별 태스크가 아니라 기업(비즈니스) 시나리오로부터 지속적이고 실행 가능한 "세계(world)" 자체를 대규모로 자동 합성하는 프레임워크 AgentMercury를 제안하고, 이렇게 만들어진 4,783개의 검증 가능한 비즈니스 환경이 강화학습 훈련 substrate로서 벤치마크 특화 학습을 넘어서는 범용적 전이 성능을 만들어냄을 보이며, 나아가 환경 구축 과정 자체도 파인튜닝을 통해 학습 가능한 능력이 될 수 있음을 실증한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.20634" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.20634" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: AgentMercury: Your Agent Can Synthesize Verifiable Environments for Business Scenarios at scale</li>
+<li><strong>저자</strong>: Minbyul Jeong (Meridian Intelligence Global Inc., 교신저자), Chanwoong Yoon (University of Massachusetts Amherst)</li>
+<li><strong>출처</strong>: arXiv:2608.20634v1 [cs.CL] (2026년 8월 21일 제출)</li>
+<li><strong>프로젝트 페이지</strong>: 논문 표지에 HuggingFace 및 Project Page 링크 아이콘이 표기되어 있으나, PDF 텍스트 추출 결과 실제 URL 문자열은 확인되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.20634">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>개별 태스크가 아니라 기업(비즈니스) 시나리오로부터 지속적이고 실행 가능한 "세계(world)" 자체를 대규모로 자동 합성하는 프레임워크 AgentMercury를 제안하고, 이렇게 만들어진 4,783개의 검증 가능한 비즈니스 환경이 강화학습 훈련 substrate로서 벤치마크 특화 학습을 넘어서는 범용적 전이 성능을 만들어냄을 보이며, 나아가 환경 구축 과정 자체도 파인튜닝을 통해 학습 가능한 능력이 될 수 있음을 실증한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>기존 에이전트 학습 환경은 대부분 특정 태스크나 벤치마크를 중심으로 수작업 또는 태스크 조건부 합성 방식으로 만들어진다. 이런 "태스크 중심(task-centric)" 패러다임에서는 태스크 개수를 늘려도 그 근간이 되는 세계(world)의 다양성이 함께 늘어나지 않으며, 벤치마크 커버리지 확장이 곧바로 상태·행동이 풍부한 상호작용 환경의 확장으로 이어지지 않는다는 한계가 있다.</p>
+<p>저자들은 에이전트 학습 루프를 정책(policy, 무엇을 할지 결정)과 월드모델(world model, 세계가 어떻게 반응할지 예측)의 상호작용으로만 보는 기존 시각에 대해, "어떤 세계가 존재하는가"를 결정하는 제3의 역할—이를 PLANET이라 명명—이 학습 루프 바깥에 방치되어 있다고 지적한다. 실제 SWE나 Tau-스타일 도메인처럼 현실적인 에이전트 응용에서는 태스크가 독립적으로 정의되는 것이 아니라, 지속적 상태·다중 서비스·사용자 의도가 얽힌 진화하는 워크플로우에서 자연스럽게 발생한다. 이에 저자들은 태스크 중심 구성에서 벗어나, 고수준 비즈니스 시나리오를 소스로 삼아 실행 가능한 세계와 그로부터 파생되는 다양한 태스크를 생성하는 "시나리오 기반(scenario-grounded)" 세계 생성으로의 전환을 주장한다. 비즈니스 워크플로우는 구조화된 운영 프로세스와 사용자·소프트웨어 시스템·도구·상태 변화가 얽힌 다양한 상호작용을 자연스럽게 포함하기 때문에 이러한 세계 생성의 적합한 소재로 선택되었다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>시나리오 기반으로 실행 가능한 환경을 합성하는 확장 가능한 프레임워크 AgentMercury를 제안하고, 환경 구축을 에이전트-환경 시스템의 명시적 역할(PLANET)로 정식화함.</li>
+<li>14개 산업, 50개국에 걸친 4,783개의 실행 가능한 비즈니스 환경(지속적 상태, 다중 서비스 상호작용, 실행 가능한 교차서비스 제약 포함)을 구축·공개하여 재사용 가능한 강화학습 substrate를 제공함.</li>
+<li>평가 벤치마크와 독립적으로 구축된 환경에서 훈련한 정책이 인도메인(엔터프라이즈 워크플로우)뿐 아니라 추론·코딩·과학 계산·지식·툴 사용을 아우르는 아웃오브도메인 벤치마크에서도 향상됨을 보임.</li>
+<li>AgentMercury가 노출하는 구축 트레이스(construction traces)를 지도학습 신호로 활용해, 모델이 고수준 비즈니스 시나리오로부터 실행 가능한 세계를 저작(authoring)하도록 학습시킬 수 있음을 보임.</li>
+<li>합성된 환경·태스크, 구축 코드 diff, 학습된 정책 모델을 공개하여 후속 연구를 지원함.</li>
+</ol>
+<h2>방법론</h2>
+<p>전체 파이프라인은 σ → PLANET → w → TASK → (u, ρ) → π → τ → GRADE → r 로 요약된다. 즉 고수준 비즈니스 시나리오 σ가 주어지면 PLANET이 실행 가능한 세계 w를 생성하고, 그 세계로부터 태스크(지시문 u와 채점 규격 ρ)가 인스턴스화되며, 정책 π가 이를 수행해 트ajectory τ를 만들고, 마지막으로 결정론적 GRADE 절차가 보상 r을 산출한다. 세계와 태스크 생성을 분리함으로써, 하나의 세계가 여러 태스크와 훈련·평가 설정에서 재사용될 수 있다.</p>
+<p><strong>PLANET(세계 구축).</strong> 세계는 w = ⟨S, A, Ω, T, O, s0, R⟩로 표현되며, 여기서 S/A/Ω는 상태·행동·관측 공간, T는 실행 전이 함수, O는 관측 함수, s0는 시드된 초기 상태, R은 "세계 수준 불변식(world-level invariants)" 집합이다. 특히 R은 전이 규칙에 하드코딩되지 않고 사후에 검증 가능한 조건으로만 존재한다는 점이 특징적이다(예: 상위 이벤트 후 하위 레코드가 반드시 생성되어야 한다는 교차서비스 제약을 에이전트가 스스로 충족해야 하며, 시뮬레이터가 자동으로 만들어주지 않음). 세계 생성 과정은 회사 정체성 C, 서비스 그래프 G, 상태 스키마 Σ, 초기 상태 s0, 불변식 R 순으로 조건부 확률을 분해하는 구조화된 과정으로 factorize된다. 또한 불변식은 에이전트가 문서·정책을 통해 발견해야 하는 "가시적(visible)" 뷰와 결정론적 평가에 쓰이는 "은닉(hidden)" 뷰로 구분된다.</p>
+<p><strong>태스크 인스턴스화와 상호작용.</strong> 세계가 구축되면, 태스크 생성기가 초기 상태와 불변식으로부터 태스크별 상태 시딩 Δs0, 지시문 u, 채점 루브릭 ρ를 생성한다. 여러 태스크가 같은 세계 구조를 공유하되 서로 다른 초기 상태에서 시작할 수 있다. 에이전트는 시점 t마다 정책에 따라 행동을 선택하고, 환경은 결정론적 전이 함수로 상태를 갱신하며, 관측만이 에이전트에게 노출된다(부분 관측). 전이가 결정론적이고 시드가 고정되므로 트래젝토리는 재현 가능하다.</p>
+<p><strong>결정론적 채점.</strong> 완료된 트래젝토리는 태스크 루브릭 ρ와 은닉 불변식 R_hid를 기준으로 사후에 채점되며, 가능한 경우 DB 상태에 대한 결정론적 검사를 사용해 모델 기반 판단에만 의존하지 않는다. 교차서비스 제약은 실행 중에 강제되지 않고 완료 후에 검증되는 방식이어서, 워크플로우를 좀 더 현실적으로 반영한다.</p>
+<p><strong>정책 학습.</strong> 이렇게 만들어진 환경 분포 위에서 GRPO(및 대안으로 단일-롤아웃 비동기 최적화, SAO)를 이용해 정책을 직접 훈련한다. 훈련용 코퍼스는 4,326개 실행 가능한 회사 환경으로부터 인스턴스화된 43,300개 태스크로 구성되며, 2,287개 산업 기술, 842개 고유 도구, 222개 상태 테이블, 148개 서비스 조합을 포괄한다. 부록 분석에 따르면 태스크 간 의미적 다양성은 텍스트 표현보다 실제로 노출되는 툴 조합(실행 인터페이스) 구조에서 두드러지게 나타난다.</p>
+<p><strong>환경 저작 학습.</strong> AgentMercury는 시나리오→세계 변환 과정에서 발생하는 중간 구축 트레이스(엔티티·서비스·상태·전이 로직·검증 조건의 변경 이력)를 노출한다. 이 트레이스를 지도학습 데이터로 사용해 별도 모델을 파인튜닝함으로써, 환경 구축 자체를 에이전트가 학습 가능한 역량으로 전환할 수 있음을 보인다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Qwen3.5-4B와 Qwen3.5-35B-A3B를 기반 모델로, GRPO(Dr.GRPO 계수 적용)와 SAO 두 가지 RL 알고리즘으로 훈련했다. 인도메인 평가는 비즈니스 지향 에이전트 벤치마크 EnterpriseOps-Gym(8개 도메인: Teams, CSM, Email, ITSM, Calendar, HR, Drive, Hybrid)을, 아웃오브도메인 평가는 AIME26, HMMT, LiveCodeBench v5–v6, SciCode, τ³(Airline/Retail/Telecom), BFCL, GPQA-Diamond를 사용했다. 훈련 환경은 평가 벤치마크의 태스크를 전혀 참조하지 않고 독립적으로 구축되었다.</p>
+<ul>
+<li><strong>EnterpriseOps-Gym</strong>: Qwen3.5-4B는 GRPO 훈련 후 평균 점수가 12.3→15.7(+27.6%)로 상승했으며, 특히 Drive(6.2→15.6)와 Email(23.9→33.3)에서 큰 폭으로 개선되었다(단, CSM은 9.2→5.6으로 하락). Qwen3.5-35B-A3B는 GRPO로 24.8→28.1, SAO로는 24.8→28.3까지 상승했고 8개 도메인 모두에서 개선을 보였다.</li>
+<li><strong>아웃오브도메인 벤치마크</strong>: Qwen3.5-4B+GRPO는 AIME26 45.9→56.0, HMMT 28.5→35.4, LiveCodeBench 36.6→44.0, SciCode 22.6→25.7, BFCL 30.3→31.7, GPQA-Diamond 76.5→77.5로 상승했다. τ³ 중 Airline(48.8→58.7)·Retail(70.4→73.6)은 개선되었으나 Telecom(92.5→91.9)은 거의 변화가 없었다. 35B-A3B 모델은 이미 포화된 추론 벤치마크에서는 개선폭이 작았지만, τ³와 BFCL 같은 툴 사용 지표에서는 크게 개선되었고(SAO 기준 BFCL 31.1→42.1) 특히 τ³의 런-간 표준편차가 크게 줄어 정책의 일관성이 향상되었음을 보였다.</li>
+<li><strong>학습 동역학</strong>: 훈련이 진행됨에 따라 보상은 꾸준히 증가하고, 응답 절단(truncation) 비율은 감소하며, 퇴화(degenerate) 응답 비율은 거의 0에 가까워, 성능 향상이 응답 붕괴 등 병리적 최적화가 아니라 점진적인 정책 개선에서 비롯되었음을 시사한다.</li>
+<li><strong>환경 저작(authoring) 실험</strong>: 30개의 held-out 비즈니스 브리프에 대해 5개 API 모델(Claude Opus 4.8, GPT-5.4, DeepSeek-V4-Pro, GLM-5.2 등)은 zero-shot으로 평균 약 80%의 오라클 통과율을 보였으나, 구축 레시피(불변식 다이제스트+예시)를 추가로 제공해도 성능이 일관되게 향상되지는 않았다. 반면 기본 Qwen3.5-35B-A3B는 zero-shot 3.3%에 그쳤지만, 29,823개 구축 트레이스로 파인튜닝한 후에는 83.3%까지 상승해 최상위 API 모델 수준에 도달했다(Fisher 정확검정 p=1.2×10⁻¹⁰). 흥미롭게도 파인튜닝된 모델에 레시피를 추가로 제공하면 오히려 성능이 83.3%→10.0%로 급락했는데, 이는 파인튜닝을 통해 구축 절차가 모델 파라미터에 내재화된 이후에는 외부 프롬프트 정보가 오히려 간섭 요인이 될 수 있음을 보여준다.</li>
+</ul>
+<h2>한계점</h2>
+<ul>
+<li>논문이 스스로 밝히듯, 환경 생성과 정책 학습을 잇는 "닫힌 루프"는 아직 완성되지 않았다. 즉 정책의 실패 경험을 바탕으로 학습된 월드모델이 다음에 필요한 시나리오를 능동적으로 제안·생성하는 적응형 커리큘럼은 향후 과제로 남아 있다.</li>
+<li>정책 최적화 알고리즘 간 비대칭이 존재한다: SAO는 4B 규모 모델에서는 충분히 효과적인 학습 신호를 제공하지 못해 주요 비교에서 제외되었고, 35B 규모에서만 GRPO와 비슷하거나 나은 성과를 보였다.</li>
+<li>EnterpriseOps-Gym의 8개 도메인 중 CSM(4B 모델), τ³의 Telecom 도메인에서는 개선이 없거나 오히려 하락해, 전이 효과가 모든 도메인에 균일하게 나타나지는 않는다.</li>
+<li>환경 저작 실험에서 GPT-5.4 등 강력한 API 모델조차 교차서비스 불변식(트리거와 타깃이 서로 다른 서비스에 있어야 하는 제약)을 같은 서비스 내에 잘못 배치하는 실패가 반복적으로 관찰되었으며, 이는 표면적으로는 타당해 보이는 명세라도 실제 상호작용 구조를 정확히 반영하지 못할 수 있음을 시사한다.</li>
+<li>구축 레시피(추가 절차 정보)가 항상 성능을 높이는 것은 아니며, 일부 오픈 모델에서는 형식·파싱 실패를 오히려 증가시켰다.</li>
+</ul>
+<h2>시사점</h2>
+<p>이 연구는 에이전트 환경 확장(scaling)의 방향에 대해 중요한 재정의를 제안한다. 벤치마크에 맞춰 태스크 인스턴스 수를 늘리는 대신, 현실적인 비즈니스 시나리오에 기반한 "세계"의 다양성과 구조 자체를 확장하는 것이 더 일반화 가능한 학습 신호를 제공할 수 있다는 것이다. 특히 평가 벤치마크를 전혀 참조하지 않고 만든 환경에서 훈련했음에도 수학 추론·코딩·과학 계산·툴 사용 등 이질적인 영역에서 광범위한 전이 효과가 나타났다는 점은, 환경의 유용성이 목표 벤치마크와의 직접적 대응 관계가 아니라 상태 추적·제약 충족·도구 매개 의사결정 같은 재사용 가능한 상호작용 패턴에서 비롯됨을 시사한다.</p>
+<p>또한 환경 구축 트레이스만으로 저작 성공률을 3.3%에서 83.3%까지 끌어올린 결과는, 세계 구축이라는 작업이 더 이상 학습 루프 바깥의 고정된 엔지니어링 파이프라인이 아니라 에이전트가 스스로 학습할 수 있는 능력이 될 수 있음을 보여준다. 이는 향후 정책·월드모델·PLANET(환경 저작자) 세 역할이 상호작용하며 서로의 부족한 역량을 보완하는 방향으로 에이전트 학습 시스템을 설계할 수 있다는 가능성을 열어준다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.20634" target="_blank" rel="noopener">huggingface.co/papers/2608.20634</a> · 2026-08-25</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

@@ -1,0 +1,123 @@
+<meta charset="UTF-8">
+<title>LLM 에이전트 시대의 그래프 엔지니어링</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#1 · Daily Papers 2026-08-25</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 40</span>
+    </div>
+    <h1 class="article-title">Graph Engineering in the Era of LLM Agents: From Individual Intelligence to System Intelligence</h1>
+    <p class="article-title-ko">LLM 에이전트 시대의 그래프 엔지니어링: 개별 지능에서 시스템 지능으로</p>
+    <p class="article-sub">단일 LLM 에이전트의 한계를 넘어서기 위해, 작업(Task)·에이전트(Agent)·실행 상태(Runtime State)를 명시적 그래프 구조로 표현하고 조율하는 새로운 엔지니어링 패러다임인 "그래프 엔지니어링(Graph Engineering)"을 제안하고, 이를 통해 개별 지능(Individual Intelligence)에서 시스템 지능(System Intelligence)으로 나아가는 길을 체계적으로 정리한 서베이 논문이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.21156" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.21156" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Graph Engineering in the Era of LLM Agents: From Individual Intelligence to System Intelligence</li>
+<li><strong>저자</strong>: 지린대학교(Jilin University)를 중심으로 샤먼대학교, 홍콩이공대학교, 난양이공대학교, 상하이인공지능연구소, 칭화대학교, 저장대학교, 마카오시티대학교, 일리노이대학교 어바나-샴페인, 텐센트, 홍콩과기대(HKUST 및 HKUST 광저우), 난징이공대학교, 모나쉬대학교, 샤오홍슈(Xiaohongshu) 등 다수 기관 소속 저자 약 30여 명 (Yuyuan Feng, Zhishang Xiang, Chaobin Yang, Qichao Ma가 공동 제1저자, Zhihong Zhang·Jinsong Su·Qinggang Zhang·Yi Chang이 교신저자이며 Qinggang Zhang이 프로젝트 리더)</li>
+<li><strong>출처</strong>: arXiv:2608.21156v1 [cs.IR] (2026년 8월 21일 제출)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/DEEP-JLU/Awesome-Graph-Engineering">https://github.com/DEEP-JLU/Awesome-Graph-Engineering</a> (관련 논문·오픈소스·프로젝트 정리 저장소)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.21156">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>단일 LLM 에이전트의 한계를 넘어서기 위해, 작업(Task)·에이전트(Agent)·실행 상태(Runtime State)를 명시적 그래프 구조로 표현하고 조율하는 새로운 엔지니어링 패러다임인 "그래프 엔지니어링(Graph Engineering)"을 제안하고, 이를 통해 개별 지능(Individual Intelligence)에서 시스템 지능(System Intelligence)으로 나아가는 길을 체계적으로 정리한 서베이 논문이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>LLM은 사전학습·후속학습을 통해 지식과 추론 능력(모델 지능)을 갖추고, 프롬프트/컨텍스트 엔지니어링으로 추론 시점의 활용을 조건화하며, 하네스(Harness) 엔지니어링과 루프(Loop) 엔지니어링을 통해 도구·메모리·스킬 등을 지속적으로 활용하는 자율 에이전트(개별 지능)로 발전해 왔다. 그러나 실제 과업은 이질적 전문성, 상호 의존적 하위작업, 병렬 실행, 독립적 검증, 지속적 상태 유지를 요구하는 경우가 많다. 이런 요구는 단일 에이전트의 순차적 실행 루프가 감당할 수 있는 범위를 넘어선다. 저자들은 이를 다음 세 가지 구조적 병목으로 요약한다: (1) 병렬·상호의존 작업을 하나의 순차 루프에 억지로 밀어넣어 병렬성이 사라지고 오류 위치 추적이 어려워짐, (2) 동일 에이전트가 코드 작성과 평가를 동시에 맡아 역할 혼동·확증 편향이 발생함, (3) 개별 에이전트의 컨텍스트는 구조화된 영속 상태가 아니어서 오류가 후속 단계로 전파되어도 복구 지점을 찾기 어려움. 이러한 한계는 에이전트 개수를 단순히 늘리는 것으로는 해결되지 않으며, 작업·에이전트·상태 간의 관계를 명시적으로 표현·제약·최적화하는 시스템 수준의 조직화가 필요하다는 것이 이 논문의 핵심 문제의식이다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>Individual Agent와 Agent System의 개념을 수식으로 정식화하고(Agent = Loop(Foundation Model, Harness; state)), 모델 지능→개별 지능→시스템 지능으로 이어지는 전체 발전 경로를 하나의 taxonomy(Fig. 1, Fig. 2)로 정리</li>
+<li>"그래프 엔지니어링"을 새로운 패러다임으로 제안하며, 이를 (i) 작업 조직화(Task Organization), (ii) 에이전트 조율(Agent Coordination), (iii) 실행 상태 관리(Runtime State Management)라는 세 축으로 구조화하고, 여기에 시스템 진화(System Evolution)를 결합해 서술</li>
+<li>온톨로지 엔지니어링(Ontology Engineering)을 다음 단계의 과제로 제시하여, 그래프 구조만으로는 보장되지 않는 "공유된 의미 체계"의 필요성을 논함</li>
+<li>Model/Individual/System 세 층위에 걸친 벤치마크·데이터셋·실행 환경(Table 1), 오픈소스 라이브러리·엔지니어링 생태계(Table 2)를 방대하게 정리</li>
+<li>소프트웨어 엔지니어링, 과학적 발견, 헬스케어, 엔터프라이즈 워크플로우, 범용 디지털 에이전트, 사회·경제 시뮬레이션 등 6개 응용 도메인에서 그래프 엔지니어링의 실제 적용 사례를 분석(Table 3)하고, 기존 서베이들과의 차별점을 부록에서 상세히 논증</li>
+</ul>
+<h2>방법론</h2>
+<p>논문은 새로운 알고리즘을 제안하기보다, 방대한 기존 연구를 하나의 개념적 틀 안에 재배치하는 서베이/포지션 논문이다. 핵심 프레임은 다음과 같다.</p>
+<p>먼저 "개별 에이전트"를 파운데이션 모델(인지 핵심), 하네스(도구·메모리·스킬·권한 등 실행 자원), 루프(지각-추론-행동-피드백의 반복 과정)의 조합으로 정의하고, "에이전트 시스템"은 여러 에이전트, 공유 자원, 외부 환경, 조율 메커니즘, 시스템 상태로 구성된다고 정식화한다.</p>
+<p>그래프 엔지니어링은 이 시스템의 세 가지 관계를 그래프로 externalize한다. 첫째, 작업 조직화는 목표를 하위목표 그래프로 분해(Goal Decomposition)하고, 이를 실제 실행 가능한 연산자·제어흐름으로 컴파일하는 워크플로우 최적화(Workflow Optimization)로 나뉜다. 초기에는 HuggingGPT, ReWOO처럼 의존관계를 명시화하는 수준이었으나, LLMCompiler·Plan-over-Graph 등은 이를 DAG 형태의 스케줄링 가능한 구조로 발전시켰고, TDAG·Flow·DyFlow·EvoFlow 등은 실행 중 피드백에 따라 그래프 자체를 동적으로 갱신하는 방향으로 나아갔다.</p>
+<p>둘째, 에이전트 조율은 (a) 에이전트의 역량·자원·권한을 그래프로 표현하는 Agent Capability Modeling, (b) 체인/라우팅/팬아웃-팬인 구조로 팀을 조직하는 Agent Team Organization(MetaGPT, ChatDev, Magentic-One, Mixture-of-Agents, MacNet 등), (c) 런타임에 정보 교환과 피드백을 다루는 Multi-agent Communication(G-Designer, AgentPrune, DyTopo 등)으로 구성된다.</p>
+<p>셋째, 실행 상태 관리는 (a) 상태 변화의 근거·출처·버전을 기록하는 State Recording(Magentic-One의 Task/Progress Ledger, PatchBoard, MemTX 등), (b) 이상 탐지 후 원인을 추적하는 Fault Localization(Who&amp;When, MAST, TraceElephant 등), (c) 유효한 부분을 보존하며 복구하는 Failure Recovery(MAGE, ALAS, SagaLLM, Atomix 등)로 구성된다.</p>
+<p>마지막으로 System Evolution은 이 세 그래프(작업/팀/상태)가 실행 경험을 통해 지속적으로 갱신·검증·롤백되는 폐루프를 설명하며, 저자들은 이를 단순한 런타임 적응과 "영속적 시스템 진화"를 구분해서 강조한다. 논문 후반부는 이러한 그래프 구조만으로는 시스템 구성요소들이 개념을 일관되게 해석한다고 보장할 수 없다는 한계를 지적하며, 목표·에이전트·증거·상태에 대한 공유된 기계 해석 가능 모델을 제공하는 온톨로지 엔지니어링을 차세대 방향으로 제시한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>이 논문 자체는 새로운 실험을 수행하지 않으며, 대신 기존 연구들의 벤치마크·데이터셋·실행 환경을 세 지능 층위(Model/Individual/System Intelligence)로 분류해 정리한다(Table 1). 예를 들어 Model Intelligence는 MMLU-Pro, GPQA, HumanEval 같은 전통적 벤치마크로, Individual Intelligence는 AgentBench, GAIA, SWE-bench, WebArena처럼 지속적 트래젝토리를 평가하는 벤치마크로, System Intelligence는 TaskBench, MultiAgentBench, MAST, Who&amp;When처럼 작업 조직화·팀 조율·실행 상태·시스템 진화를 평가하는 벤치마크로 구분된다. 또한 오픈소스 생태계(Table 2)를 Model(Transformers, vLLM, SGLang 등), Individual(LangChain, Claude Agent SDK, LlamaIndex Workflows 등), System(LangGraph, AutoGen, CrewAI, GPTSwarm 등) 층위별로 정리한다. 저자들이 지적하는 공통된 관찰은 "작업 조직화"와 "에이전트 팀 구성"은 이미 널리 실무에 자리잡았지만, 실행 상태의 명시적 관리는 아직 발전 초기 단계이고, 실행 경험이 영속적인 구조 개선으로 이어지는 "지속적 시스템 진화"는 현재 자원 대부분에서 거의 다뤄지지 않는다는 점이다.</p>
+<h2>한계점</h2>
+<p>논문이 스스로 인정하는 한계는 다음과 같다.
+- 그래프로 조직된(graph-structured) 시스템과 실제로 그래프에 의해 엔지니어링되는(graph-engineered) 시스템은 다르며, 현재 대부분의 시스템은 구조가 수동으로 설계되거나 실행 전에 고정되어 있어 완전한 그래프 엔지니어링에 도달하지 못했다고 지적
+- 그래프 구조가 명시적이라 해도 시스템 구성요소들이 "작업 완료", "충분한 증거", "유효한 상태"와 같은 개념을 일관되게 해석한다는 보장은 없으며, 이는 온톨로지 엔지니어링이라는 별도의 의미론적 기반이 필요함을 시사
+- 최종 과제 성공 여부만으로는 시스템 지능이 실제로 발전했는지 판단할 수 없으며(더 강력한 모델·더 긴 컨텍스트·더 많은 연산 때문일 수 있음), 구성요소 수준 역량과 시스템 조직의 기여를 분리하는 평가 방법론이 부재
+- 시스템 지능은 다중 에이전트·도구·메모리·상태가 장기간 조율되기 때문에 개인정보 유출, 책임 소재 불분명, 편향·오류의 시스템적 증폭 등 프라이버시·윤리 리스크가 개별 에이전트보다 크다고 명시
+- 현재 오픈소스 생태계는 모델 서빙, 하네스, 워크플로우 엔진, 메모리 시스템, 다중 에이전트 프레임워크 간 표현 방식이 서로 호환되지 않으며, 구조적 변화(위상 최적화 등)의 지속적·범 실행(cross-run) 진화 사례도 드묾</p>
+<h2>시사점</h2>
+<p>이 논문은 "에이전트를 더 많이 쓰는 것"이 아니라 "작업·행위자·상태 간 관계를 명시적으로 조직하는 것"이 시스템 지능의 핵심이라는 관점을 제시하며, LLM 에이전트 연구의 다음 단계로 그래프 기반 인프라(그래프 네이티브 역량 기반, 자기진화형 그래프 시스템, 그래프 네이티브 에이전트 운영체제)를 제안한다. 특히 AIOS와 같은 운영체제적 접근을 참고해, 작업·에이전트·역량·상태를 타입이 지정되고 버전 관리되는 1급 시스템 객체로 다루는 방향을 미래 연구 기회로 제시한다. 또한 온톨로지 엔지니어링을 통해 목표 형성과 가치 정렬, 공유 의미론과 세계 접지(world grounding), 시스템 지능 측정이라는 후속 연구 방향을 구체적으로 제시함으로써, 그래프 엔지니어링이 최종 목표가 아니라 더 큰 "시스템 지능" 연구 의제로 가는 중간 다리임을 명확히 한다. 실무적으로는 소프트웨어 엔지니어링(Claude Code, Codex 등 병렬 코딩 에이전트), 과학적 발견(Virtual Lab, Co-Scientist), 헬스케어(AMIE, DeepRare), 엔터프라이즈 자동화 등 여러 도메인에서 이미 이러한 그래프 기반 조직화가 부분적으로 구현되고 있음을 보여주어, 연구자와 실무자 모두에게 향후 시스템 설계의 참조 지도를 제공한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.21156" target="_blank" rel="noopener">huggingface.co/papers/2608.21156</a> · 2026-08-25</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

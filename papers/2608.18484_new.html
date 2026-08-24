@@ -1,0 +1,128 @@
+<meta charset="UTF-8">
+<title>서포트 분할과 잔차 재구성 기반 학습 없는 희소 어텐션</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#10 · Daily Papers 2026-08-25</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 7</span>
+    </div>
+    <h1 class="article-title">Partition the Support, Reconstruct the Residual: Training-Free Sparse Attention for Video Generation and World Models</h1>
+    <p class="article-title-ko">서포트 분할과 잔차 재구성 기반 학습 없는 희소 어텐션</p>
+    <p class="article-sub">학습 없이(training-free) 적용 가능한 블록 희소 어텐션에서, "쿼리를 어떻게 묶어 함께 라우팅할지(파티션)"와 "생략된 상호작용이 남기는 오차를 어떻게 보정할지"를 함께 설계함으로써, 기존 방법 대비 더 낮은 실행 밀도에서도 원본(dense) 모델에 가까운 품질과 최대 2.61배의 종단간 속도 향상을 동시에 달성하는 SparsePR을 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.18484" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.18484" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Partition the Support, Reconstruct the Residual: Training-Free Sparse Attention for Video Generation and World Models</li>
+<li><strong>저자</strong>: Pardis Taghavi, Reza Langari, Gaurav Pandey (Texas A&amp;M University)</li>
+<li><strong>출처</strong>: arXiv:2608.18484v1 [cs.CV] (2026년 8월 19일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://pardistaghavi.github.io/SparsePR-website/">SparsePR 프로젝트 페이지</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.18484">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>학습 없이(training-free) 적용 가능한 블록 희소 어텐션에서, "쿼리를 어떻게 묶어 함께 라우팅할지(파티션)"와 "생략된 상호작용이 남기는 오차를 어떻게 보정할지"를 함께 설계함으로써, 기존 방법 대비 더 낮은 실행 밀도에서도 원본(dense) 모델에 가까운 품질과 최대 2.61배의 종단간 속도 향상을 동시에 달성하는 SparsePR을 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>비디오 생성 모델(HunyuanVideo, Wan 등)과 물리 세계 예측을 다루는 비디오 월드 모델(NVIDIA Cosmos 계열 등)은 매우 긴 시공간 토큰 시퀀스를 처리하기 때문에, 셀프 어텐션의 이차(quadratic) 연산량이 고해상도·긴 길이 추론에서 핵심 병목이 된다. 사전학습된 비디오 DiT들은 헤드마다 특정 패턴으로 어텐션이 집중되는 구조적 성질을 보이며, 이는 재학습 없이 어텐션을 성기게(sparse) 만들어 가속하는 접근을 가능케 한다.</p>
+<p>그러나 저자들은 기존 학습 없는 희소 어텐션 방법들이 간과해온 두 가지 근본적인 간극을 지적한다. 첫째, 개별 쿼리 단위의 어텐션 집중도(행 단위 sparsity)는 여러 쿼리가 같은 라우팅 경로(같은 블록)를 공유할 때 필요한 "풀링된(pooled)" 서포트 크기를 결정하지 않는다. 즉 개별 쿼리는 성기더라도, 그룹으로 묶인 쿼리들이 필요로 하는 키(key) 집합의 합집합은 훨씬 커질 수 있다. 둘째, 남겨진(retained) 어텐션 질량(attention mass)이 크다고 해서 생략된 상호작용이 만들어내는 softmax 이후의 출력 오차가 작다는 보장이 없다. 이 두 문제는 특히 조건부 생성(conditioning)과 예측(prediction) 국면에서 서로 다른 어텐션 구조를 보이는 비디오 월드 모델에서 더 두드러진다.</p>
+<h2>핵심 기여</h2>
+<p>저자들은 실행 가능한(executable) 블록 희소 어텐션 연산을 정의하는 선택지들 — 쿼리 파티션, 짝지어진 K/V 파티션, 라우팅 정책, 생략된 상호작용 처리 규칙 — 을 분리하여 분석하고, 4개의 서로 다른 비디오 생성·월드 모델에서 다음 세 가지 구조적 관찰을 제시한다.</p>
+<ol>
+<li><strong>쿼리별 희소성이 공유 라우팅 서포트를 결정하지 않는다</strong>: 예를 들어 Wan2.2에서는 개별 쿼리가 90% 어텐션 질량을 담기 위해 필요한 중앙값 서포트가 6.2%에 불과하지만, 8개 쿼리를 묶어 하나의 경로를 공유시키면 22.9%까지 커진다.</li>
+<li><strong>높은 유지 어텐션 질량이 낮은 출력 오차를 보장하지 않는다</strong>: 동일한 수준의 유지 질량에서도 모델과 상황에 따라 post-softmax 오차가 크게 달라질 수 있음을 실증했다.</li>
+<li><strong>파티션 방식이 잔차의 아핀(affine) 표현 가능성을 바꾼다</strong>: 동일한 실행 밀도(sparse execution)에서도 파티션 구성 방식에 따라, 생략된 상호작용에서 발생하는 잔차(residual) 중 얼마만큼이 희소 출력의 아핀 함수로 설명 가능한지가 달라진다.</li>
+</ol>
+<p>이러한 관찰에 기반해 저자들은 <strong>Response-Coupled Partitioning</strong>과 <strong>Probe-Fitted Residual Reconstruction</strong>을 결합한 학습 없는 프레임워크 <strong>SparsePR</strong>을 제안하고, 실행 시점 오버헤드까지 포함한 종단간(end-to-end) 벤치마크로 검증한다.</p>
+<h2>방법론</h2>
+<p>SparsePR은 두 구성요소로 이루어진다.</p>
+<p><strong>1) Response-Coupled Partitioning (응답 결합 파티셔닝)</strong>: 현재 어텐션 호출에서 샘플링한 일부 쿼리 행들을 이용해, 키(key)들이 이 샘플 쿼리들에 대해 보이는 "응답 프로파일(response profile)"이 유사한 것끼리 K/V를 그룹화한다. 이렇게 얻어진 K/V 그룹의 중심(centroid)들은 다시 쿼리를 위한 좌표 공간을 정의하는 데 사용되어, 유사한 응답 패턴을 갖는 쿼리들을 하나의 라우팅 경로로 묶는다. 이 과정은 K/V 쪽에서 쿼리 쪽으로 한 방향으로 정보를 전달하는 단일 패스(single-pass) 구조이며, 기존 방법들처럼 쿼리-키 클러스터링을 번갈아 정제(alternating refinement)하지 않는다. 단순히 임베딩 공간에서 가까운 토큰을 묶는 방식(semantic clustering)과 달리, "실제 어텐션 응답이 비슷한가"를 기준으로 삼는다는 점이 핵심이다.</p>
+<p><strong>2) Probe-Fitted Residual Reconstruction (프로브 기반 잔차 재구성)</strong>: 각 어텐션 호출마다 소수(M=64)의 쿼리 행을 정확하게(dense하게) 계산하는 "프로브(probe)"로 사용한다. 이 프로브들에서 관측된 (희소 출력, 정확한 잔차) 쌍으로부터, 해당 호출에 특화된 아핀 보정 함수(ridge 회귀, b + xB 형태)를 실시간으로 추정한다. 이때 프로브의 잔차로부터 관측된 출력 부분공간(subspace)에만 보정을 국한시켜(SVD 기반 투영), 관측되지 않은 방향으로의 과도한 외삽을 방지한다. 프로브는 쿼리 그룹별로 층화 추출(stratified)되며, 그룹 커버리지에 따라 가중치를 부여해 회귀의 안정성을 높인다. 이렇게 추정된 보정식을 프로브에 포함되지 않은 나머지 쿼리 행에 적용해 최종 출력을 근사한다.</p>
+<p>실행 단계에서는 Q, K, V를 그룹 단위로 재정렬(permute)하고, 실제 계산 비용(그룹 크기의 곱)을 반영한 쿼리-키 쌍 예산 하에서 셀을 선택한 뒤, FlashInfer의 가변 블록 희소 어텐션 커널로 정확히 계산하고 각 쿼리 행을 유지된 K/V 그룹에 대해 재정규화한다. 전체 실행 쌍 밀도(executed-pair density)는 라우팅된 셀뿐 아니라 프로브 행까지 포함해 산출한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>모든 실험은 단일 NVIDIA H100 GPU에서 BF16으로 수행되었다. 평가 대상은 HunyuanVideo-13B(텍스트-투-비디오, VBench), Wan2.2-I2V-A14B(이미지-투-비디오, VBench++), Cosmos-Predict2.5-14B와 Cosmos3-Nano-16B(물리 세계 생성/예측, VBench++ 및 PBench) 네 개 모델이다. 비교 대상은 SpargeAttn, SVG2, SVOO, SVG-EAR 등 기존 학습 없는 희소 어텐션 기법들이며, dense 기준 PSNR/SSIM/LPIPS, 생성 품질(ImgQual, SubCons), 물리 세계 품질(PBench Quality), 효율성(실행 밀도, FLOPs, 종단간 속도 향상)을 함께 보고한다.</p>
+<p>주요 결과는 다음과 같다.
+- SparsePR은 22.0%~26.0%의 실행 쌍 밀도에서 dense 벤치마크 품질에 근접하면서, 1.48배~2.61배의 종단간 속도 향상을 달성했다. 예를 들어 HunyuanVideo에서는 PSNR 31.84dB, ImgQual 0.850(dense와 거의 동일), 2.61배 속도 향상을 보였다.
+- 네 모델 모두에서 기존 방법들보다 낮은 실행 밀도로 더 높은 PSNR/SSIM/LPIPS를 기록했다(예: Cosmos3-Nano에서 SparsePR PSNR 24.42dB vs. 경쟁 기법들의 16.6~22.5dB).
+- Ablation 결과, Response-Coupled Partitioning은 semantic 파티션 대비 오차(mean/p99)를 일관되게 낮췄고, Probe-Fitted Residual Reconstruction(프로브 보정)이 오차 감소의 대부분을 차지했으며, 두 구성요소를 함께 사용할 때(SparsePR) 가장 낮은 오차를 보였다.
+- 밀도(12%~35%)를 바꿔가며 비교한 결과, SparsePR은 모든 밀도 구간에서 최저 오차를 유지했다.
+- 프로브 선택 방식 비교에서는 쿼리 그룹별 층화 추출(query-group-stratified probes)이 무작위 추출이나 균일 시공간 추출보다 우수했고, 잔차 출력 부분공간 투영이 순수 ridge 회귀보다 소폭이지만 일관된 개선을 보였다.
+- Wan2.2 기준 종단간 지연시간 분해 결과, Probe-Fitted Residual Reconstruction이 전체 지연시간에서 차지하는 비중은 단 1.1%에 불과해, 정확도 개선 대비 오버헤드가 매우 작음을 확인했다(dense 1650초 → SparsePR 917초, 1.80배 가속, 대조군 SVG2는 1038초·1.59배).</p>
+<h2>한계점</h2>
+<p>논문에서 명시적으로 정리한 한계 섹션은 없으나, 본문 내용에서 다음과 같은 제약이 확인된다.
+- 프로브 기반 잔차 보정은 각 호출(레이어·헤드·디노이징 스텝)마다 별도로 온라인 추정되는 "국소적(local)" 경험적 모델이며, 생략된 상호작용의 통계량이 희소 출력만으로 유일하게 결정된다는 이론적 보장은 없다.
+- 잔차를 아핀 함수로 근사하는 접근이므로, 전체 잔차 행렬이 전역적으로 저랭크(low-rank)라는 가정에 의존하지 않는다고 밝히면서도, 극단적으로 비선형적인 잔차 구조에서는 근사 효과가 제한될 가능성이 있다.
+- 평가는 4개의 특정 비디오 생성·월드 모델과 단일 GPU(H100) 환경에 한정되어 있어, 다른 아키텍처나 하드웨어에서의 일반화 가능성은 별도 검증이 필요하다.
+- Cosmos3-Nano 등 일부 모델에서는 다른 모델 대비 상대적으로 높은 오차 수준을 보여, 모델별로 서포트 구조와 잔차 재구성 난이도가 상이함을 저자들도 인정하고 있다.</p>
+<h2>시사점</h2>
+<p>이 연구는 "어텐션이 얼마나 희소한가"라는 행(row) 단위 관점에서 벗어나, "여러 쿼리가 실행 가능한 블록으로 묶일 때 실제로 필요한 서포트는 얼마인가"와 "생략된 상호작용이 출력에 남기는 오차를 어떻게 재구성할 것인가"라는 두 가지 실행 중심적 질문으로 문제를 재정의했다는 점에서 의미가 크다. 특히 파티션 지오메트리(어떻게 토큰을 묶는가)와 잔차 재구성(생략분을 어떻게 보정하는가)이 서로 독립적이지 않고 상호작용한다는 발견은, 향후 희소 어텐션 설계에서 두 요소를 함께 최적화해야 함을 시사한다. 또한 정확한 프로브 행을 소수만 사용해 호출별로 실시간 보정식을 적합시키는 아이디어는, 오프라인 학습이나 온도-불변 통계 재사용 없이도 거의 무시할 수 있는 오버헤드(1.1%)로 상당한 품질 개선을 이끌어낼 수 있음을 보여주며, 이는 비디오 생성뿐 아니라 다른 긴 시퀀스 트랜스포머 추론 가속에도 적용 가능한 일반적 원리로 확장될 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.18484" target="_blank" rel="noopener">huggingface.co/papers/2608.18484</a> · 2026-08-25</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

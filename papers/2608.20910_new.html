@@ -1,0 +1,121 @@
+<meta charset="UTF-8">
+<title>인피니티에딧</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#3 · Daily Papers 2026-08-25</span>
+      <span class="cat-tag">생성모델</span>
+      <span class="upvote-tag">▲ 30</span>
+    </div>
+    <h1 class="article-title">InfinityEdit: Infinite Video Editing with a Lightweight Edit-Ignition Adapter</h1>
+    <p class="article-title-ko">인피니티에딧: 경량 편집-점화 어댑터를 통한 무한 비디오 편집</p>
+    <p class="article-sub">기존 영상 편집 모델은 정해진 길이의 클립을 통째로 다시 그리는 "제자리(in-place) 편집" 방식에 머물러 있는데, 이 논문은 실시간으로 계속 이어지는 영상 스트림에 편집 지시를 끝없이 적용할 수 있는 "무한 비디오 편집(infinite video editing)"이라는 새로운 과제를 정의하고, 가볍게 붙여 쓰는 어댑터인 InfinityEdit로 이를 해결한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.20910" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.20910" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: InfinityEdit: Infinite Video Editing with a Lightweight Edit-Ignition Adapter</li>
+<li><strong>저자</strong>: Yunze Tong, Mushui Liu(이상 공동 1저자), Canyu Zhao, Shiyi Zhang, Didi Zhu, Peng Zhang, Wanggui He, Jinlong Liu, Ying Chen, Hao Jiang(교신저자), Pipei Huang, Bo Zheng — Zhejiang University 및 Alibaba Group 소속</li>
+<li><strong>출처</strong>: arXiv:2608.20910v1 [cs.CV] (2026년 8월 21일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://yunzetong.github.io/InfinityEdit">https://yunzetong.github.io/InfinityEdit</a> (GitHub: <a href="https://github.com/YunzeTong/InfinityEdit">https://github.com/YunzeTong/InfinityEdit</a>)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.20910">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>기존 영상 편집 모델은 정해진 길이의 클립을 통째로 다시 그리는 "제자리(in-place) 편집" 방식에 머물러 있는데, 이 논문은 실시간으로 계속 이어지는 영상 스트림에 편집 지시를 끝없이 적용할 수 있는 "무한 비디오 편집(infinite video editing)"이라는 새로운 과제를 정의하고, 가볍게 붙여 쓰는 어댑터인 InfinityEdit로 이를 해결한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>확산 트랜스포머 기반 대형 비디오 생성 모델이 발전하면서 자연어 지시에 따라 영상을 편집하는 연구도 함께 발전해 왔다. 그러나 기존 편집 기법들은 입력 클립과 동일한 길이·동일한 시간 구간을 프레임 단위로 대응시켜 다시 그리는 "제자리 편집"을 전제로 한다. 이 방식은 라이브 게임 화면의 스타일을 바꾸거나 촬영 중인 영상에 카메라 움직임을 추가하는 것처럼, 새로운 프레임이 계속 들어오는 열린 스트림에는 적용할 수 없다. 이런 상황에서는 편집이 이미 지나간 구간이 아니라 앞으로 생성될 미래 프레임에 계속 적용되어야 한다.</p>
+<p>저자들은 이를 "무한 비디오 편집" 과제로 정의한다. 이전까지 생성된 영상 구간과 편집 지시가 주어지면, 모델은 그 지시를 반영하면서 스트림을 자연스럽게 이어가는 다음 구간을 생성해야 하고, 이 과정이 편집 지시가 계속 들어오는 한 무한히 반복된다. 이 과제에는 기존 편집 과제에 없던 두 가지 난제가 추가된다. 첫째, 생성 구간이 입력 구간과 프레임 단위로 대응되지 않으므로 편집은 "프레임 재작성"이 아니라 "자연스러운 이어쓰기"여야 한다. 둘째, 매 편집 라운드에서 생성된 결과가 다음 라운드의 조건(history)이 되기 때문에, 오차가 누적되어도 화질과 편집 능력이 흔들리지 않아야 한다. 단순히 스트리밍 생성 모델에 매번 새 프롬프트를 주입하는 방식은, 앵커 프레임이나 다중 스케일 히스토리 캐시 같은 안정화 장치가 오히려 편집 결과를 원본 쪽으로 되돌리려는 경향이 있어 한계가 있다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>무한 비디오 편집 과제 정의</strong>: 진행 중인 영상 스트림에 편집을 반복 적용하는 새로운 문제를 제안하고, 편집 충실도 외에 "자연스러운 이어쓰기"와 "반복 편집에서의 안정성"이라는 두 핵심 난제를 규명했다.</li>
+<li><strong>전용 데이터 수집 파이프라인 구축</strong>: (직전 영상, 편집 지시, 목표 영상) 삼중항을 자동 생성하고 사람이 검수하는 파이프라인을 설계해, 이 과제에 맞는 학습 데이터를 확보했다.</li>
+<li><strong>InfinityEdit 제안</strong>: 스트리밍 비디오 생성기(고정된 사전학습 가중치)에 가볍게 붙는 편집 어댑터를 설계하여, 원본 모델의 장시간 안정 생성 능력을 해치지 않으면서 무한 편집 능력을 부여했다.</li>
+<li><strong>광범위한 실험적 검증</strong>: 기존 방식으로는 대응하기 어려운 분포 밖(OOD) 순차 편집 벤치마크를 직접 구축해, VBench 지표와 VLM 평가 양쪽에서 우수성과 안정성을 확인했다.</li>
+</ul>
+<h2>방법론</h2>
+<p><strong>기반 모델</strong>: 백본으로는 14B 규모의 실시간 장시간 비디오 생성 모델인 Helios(few-step로 증류된 Helios-Distilled 버전)를 사용하며, 이 가중치는 전부 고정(freeze)한다. Helios는 청크 단위로 영상을 생성하고, 과거 프레임(히스토리)을 장/중/단기 스케일로 압축해 일정한 메모리로 유지하며, 앵커 프레임 하나로 장기적인 외형 일관성을 유지한다.</p>
+<p><strong>Edit-Ignition 어댑터</strong>: 각 트랜스포머 레이어 뒤에 작은 어댑터 블록을 삽입하고, 이 어댑터만 학습한다. 어댑터는 세 단계의 어텐션으로 구성된다.
+1. <strong>히스토리 교차 어텐션(History Cross-Attention)</strong>: 새로 노이즈 제거할 청크의 앞쪽 몇 프레임이 과거 히스토리 토큰을 참조해 맥락에 고정(anchoring)되도록 한다.
+2. <strong>시간 인과 자기 어텐션(Temporal Causal Self-Attention)</strong>: 앞선 프레임의 정보만 뒤쪽 프레임으로 흐르도록 인과적 마스크를 적용해, 앵커링된 신호를 청크 전체로 전파한다.
+3. <strong>편집 교차 어텐션(Edit Cross-Attention)</strong>: 청크의 모든 토큰이 편집 지시 임베딩을 조회해, 편집 내용이 생성 과정 전체에 반영되도록 한다.</p>
+<p>각 단계의 출력 프로젝션은 0으로 초기화되어, 어댑터가 처음에는 항등 함수로 시작하고 편집은 원본 생성 능력 위에 잔차(residual)로 학습된다.</p>
+<p><strong>학습</strong>: 플로우 매칭(flow-matching) 손실로 어댑터만 학습하며, 추론 시 실제로 생성된(다소 부정확할 수 있는) 과거 프레임을 조건으로 쓰는 상황(exposure bias)에 대비해 학습 중 히스토리 프레임을 의도적으로 손상(history corruption)시킨다. 또한 노이즈 레벨 σ를 원래의 해상도 단계별 스케줄 대신 여러 개의 가우시안 성분으로 이루어진 혼합분포에서 샘플링하고, 1단계에서는 균등하게, 2단계에서는 중저 노이즈 구간과 뒤쪽 프레임에 가중치를 더 주는 2단계 커리큘럼으로 세부 디테일을 다듬는다.</p>
+<p><strong>추론(Inference)</strong>: 편집 지시가 들어올 때마다, 그 직후의 첫 번째 청크만 어댑터를 켠 채로("점화, ignition") 생성해 편집을 반영시키고, 이후의 청크들은 어댑터를 끄고 원래의 고정된 Helios 백본만으로 생성을 이어간다(이미 편집이 반영된 히스토리를 조건으로 삼기 때문). 또한 거의 노이즈가 없는 단계에서 한 번 더 디노이징 스텝을 추가해 세밀한 디테일까지 편집이 반영되도록 하며, 슬라이딩 히스토리 윈도우는 그대로 유지하되 편집이 일어날 때마다 앵커 프레임을 새로 편집된 첫 프레임으로 재설정(anchor resetting)함으로써, 이후 생성이 원본으로 되돌아가지 않고 편집된 내용을 계속 따라가도록 만든다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>기존 벤치마크(OpenVE 등)는 소스와 타깃이 프레임 단위로 대응하는 제자리 편집 전제라 이 과제에 맞지 않으므로, 저자들은 UltraVideo에서 뽑은 200개의 소스 영상에 Gemini 계열 모델로 3단계 연속 편집 지시(엔티티 변형, 스타일화, 카메라 이동, 모션 전이 등 15종)를 생성해 순차 편집(OOD) 벤치마크를 직접 구축했다. 비교 대상은 순수 백본(Helios, 어댑터 없이 프롬프트만 교체), 제자리 편집 계열(Lucy-Edit, SANA-Streaming), 프롬프트 전환 계열(Anchor-Forcing, Infinity-RoPE) 등 세 계열, 총 5개 베이스라인이다.</p>
+<p>VBench 기반 정량 평가에서 InfinityEdit는 카메라 움직임 정확도와 (3라운드 누적 후) 시간적 깜빡임 지표에서 최고 성능을 보였고, 모션 스무스니스도 최상위권에 근접했다. VLM(Gemini 계열)을 심판으로 쓴 4개 항목(편집 충실도, 화질, 장면 정체성 보존, 편집 간 일관성) 평가에서는 InfinityEdit가 모든 항목에서 1위를 차지했으며, 특히 보존력과 화질에서 격차가 컸다. 제자리 편집 계열은 매번 자기 출력을 다시 편집하다 보니 원본에서 점점 멀어지면서도 점수가 오히려 개선되는 착시를 보였고, 프롬프트 전환 계열은 소스 영상 없이 생성하다 보니 보존 점수가 2.0 미만으로 크게 낮았다. 3회 편집 라운드에 걸친 안정성 측정에서도 InfinityEdit는 편집 충실도가 약 3.8 선에서 표준편차 0.023으로 거의 흔들리지 않은 반면, 다른 방법들은 라운드별 편차가 크거나(0.7 이상) 점차 화질이 저하됐다(VBench 미학 점수 기준 라운드당 0.02~0.04 하락). 정성적 비교(풍경·인물 영상에 대한 카메라/스타일/엔티티 변형 연쇄 편집)에서도 InfinityEdit만이 편집을 충실히 반영하면서 원본 내용을 보존하고 구간 간 연속성을 유지했다. 1000프레임을 넘는 장시간 스트림 실험에서도 이전 편집(예: 특정 캐릭터 스타일)이 이후 편집 라운드에도 유지되는 등 화질 붕괴 없이 안정적으로 동작함을 보였다.</p>
+<h2>한계점</h2>
+<p>논문이 스스로 밝힌 한계는 다음과 같다. 첫째, 현재는 자연어 지시만 입력으로 받기 때문에 말로 표현하기 어려운 목표 외형은 이미지나 영상 예시로 지정할 수 없다. 둘째, 편집 경계 지점에서의 전환이 완전히 매끄럽지는 않아, 새로운 편집 지시로 넘어갈 때 다소 급작스러운 변화가 나타날 수 있다. 이 밖에도 방법 자체가 14B급 대형 모델과 32개의 H20 GPU를 활용한 학습·평가에 기반하고 있어 재현이나 적용에 상당한 컴퓨팅 자원이 필요하며, 벤치마크와 학습 데이터가 자동 파이프라인(Gemini, Qwen-Image-Edit, Wan2.2-I2V 등)으로 합성된 데이터에 크게 의존한다는 점도 실제 편집 다양성을 어느 정도 제한할 수 있다.</p>
+<h2>시사점</h2>
+<p>이 논문은 비디오 편집을 "고정된 클립의 재작성"에서 "끝없이 이어지는 스트림에 대한 지속적 개입"으로 문제 정의 자체를 확장했다는 점에서 의의가 크다. 백본을 완전히 고정한 채 작은 어댑터만 학습시켜 편집 능력을 이식하는 접근은, 원래 모델이 가진 장시간 안정 생성 능력을 훼손하지 않으면서 기능을 추가하는 실용적인 전략으로, 향후 라이브 스트리밍 콘텐츠 실시간 리스타일링, 게임 방송 효과 적용, XR/아바타 스트림 편집 등 "계속 생성되는" 영상 응용 전반에 적용될 잠재력이 있다. 또한 어댑터를 편집 순간에만 활성화하고 이후에는 원본 백본이 이어받게 하는 "점화 후 지속(ignite-then-continue)" 설계는, 스트리밍 생성과 조건부 제어를 결합해야 하는 다른 실시간 생성 과제에도 참고할 만한 아키텍처 패턴을 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.20910" target="_blank" rel="noopener">huggingface.co/papers/2608.20910</a> · 2026-08-25</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

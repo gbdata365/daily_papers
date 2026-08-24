@@ -1,0 +1,110 @@
+{
+  "2608.21156": {
+    "base": "2608_그래프엔지니어링_LLM-에이전트-시대의-그래프-엔지니어링",
+    "rank": "#1",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "40",
+    "en_title": "Graph Engineering in the Era of LLM Agents: From Individual Intelligence to System Intelligence",
+    "ko_title": "LLM 에이전트 시대의 그래프 엔지니어링: 개별 지능에서 시스템 지능으로"
+  },
+  "2608.20061": {
+    "base": "2608_단계별스케일링_MoE-하이퍼파라미터-전이",
+    "rank": "#2",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "32",
+    "en_title": "Let's Scale Step by Step: Compute-Efficient Hyperparameter Transfer for Large-Scale Mixture-of-Experts",
+    "ko_title": "단계별 스케일링: 대규모 Mixture-of-Experts를 위한 계산 효율적 하이퍼파라미터 전이"
+  },
+  "2608.20910": {
+    "base": "2608_인피니티에딧_무한-길이-비디오-편집",
+    "rank": "#3",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "30",
+    "en_title": "InfinityEdit: Infinite Video Editing with a Lightweight Edit-Ignition Adapter",
+    "ko_title": "인피니티에딧: 경량 편집-점화 어댑터를 통한 무한 비디오 편집"
+  },
+  "2608.21360": {
+    "base": "2608_옴니어시스트벤치_옴니LLM-어시스턴트-상호작용-벤치마크",
+    "rank": "#4",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "26",
+    "en_title": "OmniAssistBench: Assistant-style Interaction Benchmark for Omni-LLMs",
+    "ko_title": "옴니어시스트벤치: 옴니 LLM을 위한 어시스턴트형 상호작용 벤치마크"
+  },
+  "2608.16425": {
+    "base": "2608_파라템포_시간적-신뢰도-기반-병렬추론",
+    "rank": "#5",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "26",
+    "en_title": "ParaTempo: Efficient Parallel Reasoning via Temporal Confidence",
+    "ko_title": "파라템포: 시간적 신뢰도 기반 효율적 병렬 추론"
+  },
+  "2608.12781": {
+    "base": "2608_하이브리드씽킹벤치_정답너머-응답행동-정렬",
+    "rank": "#6",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "16",
+    "en_title": "Beyond Correctness: Benchmarking and Aligning Response Behaviors in Hybrid-Thinking MLLMs",
+    "ko_title": "정답 너머: 하이브리드씽킹 MLLM의 응답 행동 벤치마킹과 정렬"
+  },
+  "2608.16647": {
+    "base": "2608_온폴리시증류_일반화의-양면성",
+    "rank": "#7",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "14",
+    "en_title": "Every Coin Has Two Sides: On the Dual Nature of Generalization in On-Policy Distillation of Large Language Models",
+    "ko_title": "온폴리시 증류의 일반화 양면성"
+  },
+  "2608.20886": {
+    "base": "2608_에비랭크_멀티모달-이미지-재순위화",
+    "rank": "#8",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "11",
+    "en_title": "EviRank: Structured Relevance Evidence for Multimodal Image Re-ranking",
+    "ko_title": "에비랭크: 멀티모달 이미지 재순위화를 위한 구조적 관련성 근거"
+  },
+  "2608.08676": {
+    "base": "2608_유니스페이스_통합-시각표현-멀티모달모델링",
+    "rank": "#9",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "8",
+    "en_title": "UniSpace: Unified Visual Representation and Scalable Multimodal Modeling",
+    "ko_title": "유니스페이스: 통합 시각 표현과 확장 가능한 멀티모달 모델링"
+  },
+  "2608.18484": {
+    "base": "2608_서포트분할_학습없는-희소어텐션-비디오생성",
+    "rank": "#10",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "7",
+    "en_title": "Partition the Support, Reconstruct the Residual: Training-Free Sparse Attention for Video Generation and World Models",
+    "ko_title": "서포트 분할과 잔차 재구성 기반 학습 없는 희소 어텐션"
+  },
+  "2608.20634": {
+    "base": "2608_에이전트머큐리_비즈니스-환경-자동합성",
+    "rank": "#11",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "6",
+    "en_title": "AgentMercury: Your Agent Can Synthesize Verifiable Environments for Business Scenarios at scale",
+    "ko_title": "에이전트머큐리: 비즈니스 시나리오를 위한 대규모 검증 가능 환경 자동 합성"
+  },
+  "2608.21134": {
+    "base": "2608_라마모바일_2.7비트-VLM-양자화",
+    "rank": "#12",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "5",
+    "en_title": "Llama-Mobile: Efficient 2.7-Bit Quantization of VLMs",
+    "ko_title": "라마모바일: VLM의 효율적인 2.7비트 양자화"
+  }
+}

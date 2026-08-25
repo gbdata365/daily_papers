@@ -1,0 +1,137 @@
+<meta charset="UTF-8">
+<title>아포덱스 1.1</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#1 · Daily Papers 2026-08-26</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 171</span>
+    </div>
+    <h1 class="article-title">Apodex 1.1: Scaling Agentic Intelligence for Complex Work</h1>
+    <p class="article-title-ko">아포덱스 1.1: 복잡한 업무를 위한 에이전트 지능 확장</p>
+    <p class="article-sub">Apodex 1.1은 "환경 확장(Environment Scaling)"과 "에이전트 협업 확장(Agentic Coordination Scaling)"이라는 두 축을 공통 실행 하네스(AgentOS)와 통합 학습으로 결합해, 파일·검색·코드가 뒤섞인 장기 실행형 복잡 업무에서 소형 모델로도 프런티어급 성능을 달성한 범용 에이전트 모델·시스템이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.23283" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.23283" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Apodex 1.1: Scaling Agentic Intelligence for Complex Work</li>
+<li><strong>저자</strong>: Apodex Team (개인 저자명은 명시되지 않고 팀 명의로 발표됨)</li>
+<li><strong>출처</strong>: arXiv:2608.23283v1 [cs.AI] (2026-08-24)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://www.apodex.ai">Apodex 공식 웹사이트</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.23283">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>Apodex 1.1은 "환경 확장(Environment Scaling)"과 "에이전트 협업 확장(Agentic Coordination Scaling)"이라는 두 축을 공통 실행 하네스(AgentOS)와 통합 학습으로 결합해, 파일·검색·코드가 뒤섞인 장기 실행형 복잡 업무에서 소형 모델로도 프런티어급 성능을 달성한 범용 에이전트 모델·시스템이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>범용 언어모델은 지식·추론·수학·코딩 능력이 빠르게 향상되었지만, 정답을 알고 있어도 실제 업무를 끝까지 수행하지 못하는 경우가 많다. 실제 복잡한 업무는 근거를 찾아 해석하고, 이질적인 파일을 다루고, 코드를 실행·디버깅하며, 여러 단계에 걸쳐 일관된 계획을 유지하고, 실패로부터 유효한 진행 상황을 잃지 않고 복구하며, 검증 가능한 산출물을 전달하는 과정을 요구한다. 저자들은 이를 "작업 수행 능력(working capability)", 즉 장기간에 걸쳐 실제 목표를 향해 지속적이고 검증 가능한 진전을 만드는 능력으로 정의하고, 기존의 ReAct·도구 학습·대화형 다중 에이전트 연구들이 "정답의 질"과 "신뢰할 수 있는 행동" 사이의 간극을 완전히 메우지 못했다고 지적한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>장기 복잡 업무를 위한 에이전트 지능 확장</strong>: 추론, 도구 사용, 파일 처리, 코드 실행, 상태 유지, 복구, 전달을 분리된 전문 모드가 아닌 하나의 통합 정책(policy)으로 학습.</li>
+<li><strong>환경 확장(Environment Scaling)</strong>: 파일·검색·코드 세 가지 실행 가능한 세계(world)의 다양성·충실도·검증 가능성을 확장하여 학습 분포를 넓힘.</li>
+<li><strong>에이전트 협업 확장(Agentic Coordination Scaling)</strong>: 작업 분해, 위임, 단계적 결과 통합, 공유 상태 수정, 동적 재계획을 모델 행동으로 학습시키고 Agent Team이 런타임에서 이를 비동기 병렬 작업으로 구현.</li>
+<li><strong>공통 실행 하네스와 AgentOS</strong>: 두 확장 축을 하나의 지속적 실행 상태, 아티팩트 계보, 재현(replay), 검증 훅으로 연결하는 실행 기반 제공.</li>
+<li><strong>환경·협업 궤적을 함께 활용하는 학습</strong>: 통합 SFT와 에이전틱 RL(PIVOT-RL)이 실행 가능한 태스크 궤적과 Agent Team 상호작용 트레이스를 이용해 하나의 정책을 개선.</li>
+<li><strong>결과 중심을 넘어선 평가</strong>: 메인 벤치마크 표에 이어 과학, 금융, 전문직 업무, IMO 금메달급 수학, 코딩, 내부 장기 과제 평가, 그리고 과정 자체를 검증하는 HDS6 프레임워크까지 포함.</li>
+</ul>
+<h2>방법론</h2>
+<p>논문은 과제를 <code>E = (W, W0, q, A, T, Ω, B, D, VD)</code>라는 공식 태스크 계약(task contract)으로 정의한다. 여기서 W0는 초기 작업공간, q는 목표, A는 행동 집합, T는 상태 전이, Ω는 관측 함수, B는 자원 예산, D는 전달 계약, VD는 최종 검증자다. "완료된 작업(completed work)"이 지능의 기본 단위이며, 자연어 답변 자체는 성공을 정의하지 않고 VD가 산출물의 결과를 판정한다.</p>
+<ul>
+<li><strong>환경 확장</strong>: 파일 세계(권한 있는 자료 파악과 변환), 검색 세계(발견과 근거 정합), 코드 세계(실행 가능한 변환과 검증)의 세 계열을 구성하며, 각 계열은 별도의 구축·검증 경계를 갖는다(예: 파일은 33개 도메인·318개 직군·1,208개 산출물 클러스터로 확장된 시나리오 레지스트리 사용, 코드는 fail-to-pass/pass-to-pass 테스트와 리워드 해킹 방지 샌드박스 검증 등).</li>
+<li><strong>Apodex Agent Team 1.1</strong>: 메인(리드) 에이전트가 문제를 전역적으로 분해해 하위 에이전트를 필요에 따라 생성하는 구조를 유지하면서, ① 명시적 태스크 보드(Task Board)로 외재화된 분해, ② 실행 중 비동기 사용자 개입 수용, ③ 좁은 범위의 비대칭 검증(전체 재생성이 아닌 특정 주장 공격), ④ 적응형 Max Team Effort(불확실하거나 중요한 주장에만 추가 연산 배분), ⑤ 팀 실행 종료 후 증거 그래프 기반의 증거-근거 종합(Evidence-Grounded Synthesis) 단계를 추가.</li>
+<li><strong>AgentOS</strong>: 파일 상태·검색 결과·실행 로그·아티팩트 인덱스·의존성 그래프·제어 상태로 구성된 지속적 작업공간(Wt)을 관리하며, /inputs·/workspace·/outputs 3중 네임스페이스, 컨텍스트 압박 시 계층적 압축(compaction), 소프트/하드 마감 기반의 우아한 예산 소진 처리, 단일 발행자 리스와 매니페스트 대조를 통한 통제된 산출물 전달을 지원.</li>
+<li><strong>학습</strong>: 통합 SFT 믹스처(일반 추론·도구 사용·검색·파일·코딩·수학·과학/금융 추론·전문직 산출·다중 에이전트 협업)와 모델 수프 병합으로 초기화한 뒤, PIVOT-RL(궤적 중 실패로 이어지는 결정적 지점 "피벗"을 사후에 찾아 국소적으로 교정 힌트를 붙여 재학습)과 비동기 강화학습으로 장기 결정에 대한 크레딧 할당 문제를 개선.</li>
+</ul>
+<h2>실험 설정 및 결과</h2>
+<p>평가는 ReAct(최소 스캐폴드로 모델 자체 정책 측정)와 Agent Team(협업 시스템 성능 측정) 두 모드로 나뉘어 진행되었다.</p>
+<ul>
+<li><strong>전문직 업무</strong>: APEX-Agents에서 Apodex 1.1이 ReAct 34.4 → Agent Team 38.5 (Apodex 1.0 대비 16.5에서 대폭 향상), GDPVal에서 ReAct 69.5 → Agent Team 78.8(승률 기준).</li>
+<li><strong>금융</strong>: FrontierFinance에서 ReAct 48.7 → Agent Team 54.3으로 비교 대상 중 최고 수준.</li>
+<li><strong>과학 연구</strong>: FrontierScience-Research에서 ReAct 55.0% → Agent Team 63.3%(Apodex 1.0의 28.3% 대비 큰 향상), BioMysteryBench(Human-difficult) 23.5% → 35.3%.</li>
+<li><strong>일반 추론/검색</strong>: HLE 56.1, DeepSearchQA(F1) 92.4(Agent Team 기준).</li>
+<li><strong>수학</strong>: MathArena 기준 IMO 2025 36.5, IMO 2026 30.5, USAMO 2026 26.5로 세 대회 모두 금메달급 기준선 초과, IMO-ProofBench Basic 96.7%/Advanced 63.3%.</li>
+<li><strong>코딩</strong>: Terminal-Bench 2.1 70.8, SWE-bench Verified 77.7 (프런티어 상위권 대비 다소 낮은 편).</li>
+<li><strong>35B 소형 모델(Apodex 1.1 mini)</strong>: Agent Team 적용 시 FrontierFinance 50.2, FrontierScience-Research 51.7, APEX-Agents 27.7로, 훨씬 큰 모델들과 견줄 만한 성능 대역에 도달.</li>
+<li><strong>내부 벤치마크</strong>: FrontierSearchBench(41개 구조화 심층검색 과제)에서 Agent Team 평균 69.1점으로 비교 대상 중 최고. FrontierResearchBench(97개 고난도 과학 워크플로)에서는 Apodex 1.1 Agent Team이 12.4% 통과율로, 최고 성능 시스템(GPT-5.6-Sol+Codex, 20.6%)에도 못 미치는 등 모든 시스템에 걸쳐 여전히 어려운 과제임을 보임.</li>
+<li><strong>HDS6(과정 검증)</strong>: 장기 상태 일관성, 근거 충실도, 가설 관리, 경계/실패 추론, 도구 사용, 검증 하 자기수정의 6개 역량(24개 세부 항목)을 평가하는 프레임워크로, Apodex 1.0 대비 1.1에서 특히 "초기 분해"(+1.3), "최종 검증"(+0.8) 항목이 크게 개선.</li>
+</ul>
+<h2>한계점</h2>
+<ul>
+<li>FrontierResearchBench와 같은 고난도 end-to-end 과학 워크플로에서는 통과율이 12.4%에 그쳐, 지정된 모든 산출물을 일관되게 전달하는 능력은 모든 평가 시스템에서 여전히 미흡함을 스스로 인정.</li>
+<li>AgentOS의 통제 메커니즘(작업공간·전달 계약 등)은 상태 관리의 신뢰성을 보장할 뿐, 검색된 출처·계산·과학적 방법론·최종 결론의 정확성 자체를 보증하지 않으며, 고위험 상황에서는 별도의 과제별 검증과 인간 검토가 필요하다고 명시.</li>
+<li>협업(coordination) 상태는 지속적 분산 데이터베이스가 아니라 실행 프로세스 단위로 유지되어, 작업공간 파일시스템과 원자적으로 함께 체크포인트되지 않으며, 프로세스 재시작 시 복구나 과거 시점으로의 파일시스템 되돌리기는 현재 지원 범위 밖임.</li>
+<li>HDS6 평가는 모델·환경·협업·하네스 변화가 작업 과정에서 어디에 반영되는지 위치를 보여줄 뿐, 개별 시스템 구성요소의 인과적 기여도를 분리하지는 못함.</li>
+<li>Terminal-Bench 2.1, SWE-bench Verified 등 코딩 벤치마크에서는 일부 경쟁 모델(Gemini 3.6 Flash, Claude Opus 5 등) 대비 아직 낮은 점수를 보임.</li>
+</ul>
+<h2>시사점</h2>
+<p>이 연구는 에이전트 지능의 발전 축을 모델 파라미터·데이터·추론 연산 확장뿐 아니라 "실행 가능한 환경의 다양성·충실도"와 "에이전트 간 협업 조직화"라는 두 개의 독립적인 스케일링 표면으로 재정의했다는 점에서 의미가 크다. 특히 35B의 상대적으로 작은 모델이 공통 하네스와 협업 구조만으로 훨씬 큰 프런티어 모델들과 견줄 만한 성능을 낸 결과는, 앞으로 에이전트 시스템 설계에서 모델 스케일 확대보다 환경·협업·실행 상태 관리 인프라에 대한 투자가 효율적인 대안이 될 수 있음을 시사한다. 또한 HDS6와 같은 과정 검증 프레임워크는 최종 산출물 점수만으로는 드러나지 않는 근거 충실도·복구력·검증 절차의 신뢰성을 측정하는 방법론으로서, 향후 에이전트 벤치마크 설계에 참고할 만한 방향을 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.23283" target="_blank" rel="noopener">huggingface.co/papers/2608.23283</a> · 2026-08-26</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

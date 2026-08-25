@@ -1,0 +1,113 @@
+<meta charset="UTF-8">
+<title>안정성-탐색 딜레마를 넘어서</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#10 · Daily Papers 2026-08-26</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 15</span>
+    </div>
+    <h1 class="article-title">Beyond the Stability-Exploration Dilemma: Environmental Regularization for LLM Policy Optimization</h1>
+    <p class="article-title-ko">안정성-탐색 딜레마를 넘어서: LLM 정책 최적화를 위한 환경 정규화</p>
+    <p class="article-sub">LLM 정책 최적화(RLVR)에서 응답(action) 측이 아닌 입력 질의(query) 분포의 드리프트를 KL로 직접 규제함으로써, 탐색 능력을 훼손하지 않으면서도 학습 안정성을 확보하는 ERPO(Environment-Regularized Policy Optimization)를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.23311" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.23311" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Beyond the Stability-Exploration Dilemma: Environmental Regularization for LLM Policy Optimization</li>
+<li><strong>저자</strong>: Xianlei Zhou 등 (Alibaba Group AMAP, Xi'an Jiaotong University, JD.com, Beijing Normal University, National University of Singapore 공동 연구팀)</li>
+<li><strong>출처</strong>: arXiv:2608.23311v1 [cs.CL] (2026-08-24)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/alibaba/ERPO">GitHub - alibaba/ERPO</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.23311">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>LLM 정책 최적화(RLVR)에서 응답(action) 측이 아닌 입력 질의(query) 분포의 드리프트를 KL로 직접 규제함으로써, 탐색 능력을 훼손하지 않으면서도 학습 안정성을 확보하는 ERPO(Environment-Regularized Policy Optimization)를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>GRPO/PPO 등 현재 주류 정책 최적화 방법은 학습 안정성을 위해 현재 정책과 SFT 참조 모델 사이의 응답(action)측 Policy-KL을 규제항으로 사용한다. 그러나 이는 이중 곤경(double bind)을 만든다. Policy-KL을 유지하면 응답 분포 자체가 제약되어 탐색 예산을 소모하고, 반대로 이를 제거하면 학습 과정에 명시적인 드리프트 통제 수단이 사라져 장기 학습에서 진동이나 붕괴가 발생한다. 저자들은 학습 데이터셋이 고정되어 있더라도, 모델이 각 학습 질의(prompt)에 부여하는 시퀀스 우도(likelihood)가 파라미터 갱신에 따라 계속 변화하며, 이 질의 분포 자체의 드리프트(environment non-stationarity)가 그래디언트 분산을 키우고 불안정성을 유발하는 잘 통제되지 않은 원인이라고 지적한다. 실제로 Policy-KL을 고정 예산으로 유지해도 배치 단위로 추정한 Query-KL은 학습이 진행됨에 따라 계속 상승하는 현상이 관찰되었다(Figure 1).</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>질의(입력) 측 환경 통제</strong>: 모델의 질의 우도를 규제 가능한 입력측 통계량으로 취급하고, 정책이 유도하는 질의 분포 ρθ와 RL 이전 참조 분포 ρθ0 사이의 KL 발산(Query-KL, QKL)을 도입하여 드리프트를 제한한다.</li>
+<li><strong>데이터셋 정적 참조 기반 가중치</strong>: 참조 모델 하에서 전형적인(typical) 질의 쪽으로 업데이트를 편향시키는, 학습 중 변하지 않는 per-query 가중치를 함께 제안하여 추정 분산을 줄이고 고온 디코딩에서의 견고성을 높인다.</li>
+<li><strong>추정기 무관(estimator-agnostic) 설계</strong>: QKL의 그래디언트는 질의 우도 항 ∇θℓθ(q)을 통해서만 흐르고, 정책 그래디언트 추정에 쓰이는 응답측 score function ∇θ log πθ(o|q)에는 영향을 주지 않는다는 구조적 분리(Structural Decoupling, Proposition 1)를 증명하여, 탐색이 보존됨을 이론적으로 뒷받침한다.</li>
+<li><strong>범용 적용성</strong>: 추가 forward pass 없이 GRPO/PPO/REINFORCE 계열 파이프라인에 Policy-KL을 대체하는 방식으로 최소한의 변경만으로 적용 가능하며, DAPO·RLOO에도 적용해 효과를 확인했다.</li>
+<li><strong>다중 온도·다중 지표 안정성 평가 체계</strong>: Pass@k, Pass@1, Avg@k를 0.1~1.5의 다양한 샘플링 온도에서 종합 평가하는 프로토콜을 제시한다.</li>
+</ul>
+<h2>방법론</h2>
+<p>표준 RLVR 목적함수 J_RL(θ)에 질의 수준 정규화항 R_query(θ) = KL(ρθ ‖ ρθ0)를 추가한 JERPO(θ) = J_RL(θ) − α·R_query(θ)를 최적화한다. 여기서 ρθ(q)는 모델이 질의 q를 자기종결(self-terminating) 토큰열로 보았을 때의 자기회귀적 시퀀스 우도 Pθ(q)로 정의된다. 참조 모델의 로그우도 ℓθ0(q)는 학습 전체에 대해 한 번 계산되어 캐시되고, 현재 정책의 ℓθ(q)는 기존 정책 그래디언트(PG) 추정기가 이미 수행하는 forward pass에서 그대로 읽어오므로 추가 연산 비용이 거의 없다. 또한 ERPO는 학습 목표를 경험적 질의 분포 ρtrain 대신 참조 정합적 사전분포 ρθ0로 재설정하고, 이를 중요도가중치 w*(q) = ρθ0(q)/ρtrain(q)로 근사하되, 균등 샘플링 가정 하에서 상대적 순서만 보존하면 되므로 w(q) ∝ ℓθ0(q) 형태의 경계 있는(bounded) 정적 가중치로 단순화한다. 최종적으로 미니배치 손실은 (가중된 정책 그래디언트 손실) + α·(배치 추정 Query-KL)의 형태를 가지며, GRPO의 어드밴티지 계산식에 그대로 대입 가능한 PG-호환 서로게이트로 일반화된다(Appendix G에 GRPO/PPO/REINFORCE별 구체화 제시).</p>
+<h2>실험 설정 및 결과</h2>
+<p>MATH 데이터셋의 Level 3–5 문제(약 8.5K개)로 Qwen2.5-Math-7B와 Qwen2.5-32B 모델을 EasyR1 프레임워크에서 GRPO 및 ERPO로 학습시키고, AIME24, AIME25, AMC, MATH500, Minerva, OlympiadBench 6개 수학 추론 벤치마크에서 0.1~1.5 온도 구간에 걸쳐 평가했다. Avg@32 기준으로 ERPO는 GRPO 대비 최대 14.9%, 평균 6.2% 향상을 보였으며, Pass@32 3.64%, Pass@1 5.69% 개선을 달성해 모든 지표에서 GRPO를 능가했다. 장기 학습(최대 1K step) 실험에서는 GRPO가 400 step 이후 고온 샘플링 영역에서부터 성능 붕괴가 시작되어 전 온도 구간으로 확산되는 반면, ERPO는 붕괴에 완전히 면역은 아니지만 훨씬 완만한 성능 저하를 보였다. Train–Eval 격차(보상 해킹 지표) 분석에서 GRPO는 평균 6.47%의 격차를 보인 반면 ERPO는 3.14%로 약 51% 감소시켰다. 또한 ablation에서 Policy-KL을 Query-KL로 단순 대체하는 것만으로 평균 15.9% 개선을 얻었고, 정규화 강도 α를 높이거나(예: 5×10⁻²) 샘플링 수를 8에서 16으로 늘릴수록 특히 고온 영역에서 안정성이 크게 향상되었다. DAPO와 RLOO에 ERPO 개념을 적용한 추가 실험에서도 각각 저온 영역에서 10.24%p, 2.28%p의 절대 성능 향상이 관찰되었다.</p>
+<h2>한계점</h2>
+<p>논문이 스스로 언급한 한계는 다음과 같다: (1) 실험이 주로 수학 추론 벤치마크와 Qwen 계열 모델에 집중되어 있어, 명령 수행(instruction-following), 대화, 코드 생성, 다국어 등 더 넓은 설정으로의 전이 가능성은 검증되지 않았다. (2) ERPO는 학습 중 질의 수준 우도 또는 발생빈도 통계 추정에 의존하는데, 이 추정치의 품질과 계산 비용은 데이터 선택 메커니즘과 모델 규모에 따라 달라질 수 있다. (3) 정규화 계수 α에 대한 전면적인 탐색(exhaustive sweep)을 수행하지 않고 기본값을 사용했으며, 보다 체계적인 하이퍼파라미터 분석은 향후 과제로 남겼다.</p>
+<h2>시사점</h2>
+<p>이 연구는 RLHF/RLVR 계열 정책 최적화에서 안정성 확보의 초점을 응답(action) 공간에서 입력(query) 공간으로 옮길 수 있음을 보여준다. 즉, 안정성과 탐색이 반드시 같은 자원(action-side KL 예산)을 두고 경쟁할 필요가 없으며, 입력 분포 드리프트를 별도로 통제함으로써 두 목표를 동시에 달성할 수 있다는 관점을 제시한다. 이는 향후 RL 기반 LLM 후속 학습 파이프라인 설계 시 "무엇을 규제할 것인가"를 재고하게 하는 실용적 시사점을 주며, 기존 GRPO/PPO/REINFORCE/DAPO/RLOO 등 다양한 추정기에 거의 무비용으로 이식 가능하다는 점에서 실무 적용성도 높다. 다만 수학 추론 이외 도메인, 더 큰 모델, 그리고 정규화 강도의 체계적 탐색에 대한 후속 검증이 필요하다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.23311" target="_blank" rel="noopener">huggingface.co/papers/2608.23311</a> · 2026-08-26</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

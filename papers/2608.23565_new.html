@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>리월드</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#11 · Daily Papers 2026-08-26</span>
+      <span class="cat-tag">생성모델</span>
+      <span class="upvote-tag">▲ 15</span>
+    </div>
+    <h1 class="article-title">ReWorld: An Interactive World Model with Long-Horizon Memory</h1>
+    <p class="article-title-ko">리월드: 장기 기억을 갖춘 인터랙티브 월드 모델</p>
+    <p class="article-sub">ReWorld는 학습 시에는 어텐션 헤드별로 짧은/긴 윈도우를 분리해 제어(control)와 기억(memory) 능력을 서로 간섭 없이 학습시키고, 추론 시에는 포즈 기반 랜드마크 뱅크로 고정된 KV 캐시 예산 안에서 장기 기억을 되살리는 실시간 인터랙티브 월드 모델이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.23565" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.23565" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: ReWorld: An Interactive World Model with Long-Horizon Memory</li>
+<li><strong>저자</strong>: Zhifei Chen, Luozhou Wang 등 (HKUST(GZ) 및 ATH/Alibaba 소속 공동 연구팀, 인턴십 프로젝트)</li>
+<li><strong>출처</strong>: arXiv:2608.23565v1 [cs.AI] (2026-08-24)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://zhifeichen097.github.io/ReWorld/">https://zhifeichen097.github.io/ReWorld/</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.23565">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>ReWorld는 학습 시에는 어텐션 헤드별로 짧은/긴 윈도우를 분리해 제어(control)와 기억(memory) 능력을 서로 간섭 없이 학습시키고, 추론 시에는 포즈 기반 랜드마크 뱅크로 고정된 KV 캐시 예산 안에서 장기 기억을 되살리는 실시간 인터랙티브 월드 모델이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>인터랙티브 월드 모델은 (1) 사용자 액션에 즉각 반응하고, (2) 이전에 보여준 장소를 다시 방문했을 때 동일하게 재현하며, (3) 실시간으로 스트리밍해야 한다는 세 요구를 동시에 만족해야 한다. 그러나 제어는 짧은 윈도우만 있으면 되는 반면, 기억(재방문 인식)은 먼 과거까지 볼 수 있어야만 학습이 가능하다는 구조적 긴장이 있다. 기존 연구들은 카메라 포즈를 어텐션 인덱스에 접어 넣는 방식(포즈-조건 어텐션)이나 명시적 액션 신호를 직접 주입하는 방식으로 제어를, 그리고 과거 프레임 재선택·외부 메모리 뱅크·어텐션 인덱스 자체를 통한 검색으로 기억을 다뤄왔지만, 두 능력을 함께 학습시키면 액션 주입이 제어 지표는 개선해도 재방문 정확도(revisit fidelity)를 오히려 떨어뜨리는 간섭 현상이 발생한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>윈도우 분리 학습(Window-split training)</strong>: 헤드별 혼합 어텐션 윈도우로 대부분의 헤드는 최근 프레임만(로컬), 소수의 전역 헤드는 전체 과거를(글로벌) 학습하게 하고, 매 스텝마다 무작위로 전역/로컬 헤드 배정을 바꾸는 랜덤 헤드 라우팅으로 특정 헤드가 한 능력에 고착되지 않게 함.</li>
+<li><strong>청크 드롭 학습 + 통합 기반 추론(Chunk-drop training with consolidation-based inference)</strong>: 학습 중 과거 청크를 무작위로 마스킹해 희소한 캐시를 학습 분포 내로 만들고, 추론 시에는 오래된 청크를 중복도 기준으로 솎아낸 랜드마크 뱅크에 통합해 고정 KV 예산에서도 공간 기억이 유지되게 함.</li>
+<li><strong>미터 단위로 정렬된 다중 소스 데이터 파이프라인</strong>: 합성(UE 렌더링)·실제·게임 영상을 하나의 물리적 액션 스케일로 정렬하고, 팰린드롬(왕복) 궤적으로 재방문 학습 신호를 제공.</li>
+<li><strong>실시간 배포 및 평가 체계</strong>: LoRA에 국한된 소수 스텝 증류로 하나의 백본이 고품질 다단계 모드와 실시간 모드를 모두 지원하며, 액션 추종·장기 기억 회상·영상 품질을 아우르는 3축 평가 프로토콜 제시.</li>
+</ul>
+<h2>방법론</h2>
+<p>ReWorld는 Wan2.2-TI2V-5B 기반의 인과적 플로우 매칭 확산 트랜스포머로, 6-DoF 카메라 액션을 조건으로 잠재 청크(latent chunk) 단위로 비디오를 생성한다. 제어 신호로는 (1) Memory-RoPE(MRoPE) — 카메라 포즈를 쿼리/키의 위상 오프셋으로 접어 넣어 시간 거리 대신 포즈 거리 기준으로 어텐션이 작동하게 하는 암묵적 공간 기억 인덱스와, (2) Plücker 레이맵 기반의 직접 액션 주입을 함께 사용한다. 24개 헤드 중 18개는 최근 12프레임만 보는 로컬 헤드, 6개는 전체 과거를 보는 글로벌 헤드로 나누고(1:3 비율), 12개의 무작위 헤드 분할 풀을 매 옵티마이저 스텝마다 순환시키는 랜덤 헤드 라우팅으로 어느 헤드도 특정 윈도우에 종속되지 않게 한다. 추론 시에는 싱크 청크 1개, 최근 5개 청크, 현재 포즈에 가장 가까운 6개 랜드마크로 구성된 총 12청크 고정 캐시(B=12)를 사용하며, 최근 윈도우에서 밀려난 청크는 카메라가 일정 거리(오도미터 규칙) 이동했을 때만 최대 30개(K=30) 용량의 랜드마크 뱅크에 저장되고, 뱅크가 가득 차면 포즈 공간에서 가장 중복된 멤버를 제거한다. 학습 시에는 12개 청크 중 절반(싱크+5개)만 무작위로 남기는 청크 드롭으로 이런 희소 캐시 상황을 재현한다. 실시간화를 위해 분포 매칭 증류(DMD)와 self-forcing 롤아웃을 결합해 4단계 디노이징만으로 샘플링하는 rank-128 LoRA 어댑터를 얼린 백본 위에 학습시켜, 어댑터를 끄고 켜는 것만으로 고품질/실시간 두 모드를 전환한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>UE 렌더링(자체 파이프라인), DL3DV, RealEstate10K, Sekai(실사/게임), 게임 로밍, OmniWorld-Game 등 8개 소스에서 수집한 220,724개 포즈 주석 클립으로 학습했다(63% UE, 26% 실사, 11% 게임). 평가는 720p(704×1280) 해상도에서 진행되었으며, SANA-WM, DreamX, HY-WorldPlay, Matrix-Game 3.0, LingBot-World, Yume-1.5 등 6개 최신 인터랙티브 월드 모델과 비교했다. 40개 시작 이미지 × 6개 궤적으로 구성된 제어 정확도 벤치마크에서 ReWorld는 전체 회전 오차(RotErr) 11.95도와 카메라 모션 일관성(CamMC) 0.332로 최고 성능을 기록했다. 팰린드롬(왕복) 궤적 기반 needle-in-a-haystack 장기 기억 평가에서, 최대 384 잠재 프레임(약 64초) 길이의 롤아웃에서도 12청크 고정 캐시로 시작 지점을 성공적으로 재현했으며, 이는 슬라이딩 윈도우 방식이 이미 근거를 잃고 전체 KV 어텐션은 메모리 부족(OOM)에 도달하는 구간이다. VBench의 7개 영상 품질 지표에서도 평균 최고 점수(0.850)를 달성했다. 소거 실험에서는 청크 드롭과 랜덤 헤드 라우팅을 함께 적용했을 때 장거리(k=288~384) 재방문 SSIM이 가장 높았고, 액션 주입을 추가하면 제어 지표는 개선되지만(회전 오차 17.66도→13.21도) 재방문 SSIM이 0.3898에서 0.3376으로 하락하는 간섭이 확인되었으며, 라우팅을 적용하면 제어 성능은 유지하면서 재방문 SSIM을 0.3752까지 회복시켰다.</p>
+<h2>한계점</h2>
+<p>논문은 기억이 여전히 카메라 포즈만을 키로 사용한다는 점을 한계로 명시하며, 동적 장면(움직이는 물체나 변화하는 환경)이나 탐색을 넘어서는 더 풍부한 상호작용으로 통합(consolidation) 메커니즘을 확장하는 것을 향후 과제로 제시한다.</p>
+<h2>시사점</h2>
+<p>이 연구는 제어와 기억이라는 서로 다른 학습 요구(짧은 윈도우 vs 긴 윈도우)를 별도의 손실 함수나 모듈 추가 없이 헤드 단위의 윈도우 분리와 라우팅만으로 해소할 수 있음을 보여준다. 이는 향후 장시간 인터랙티브 생성 모델을 설계할 때 "능력별로 다른 학습 조건이 필요하다면 모델 구조가 아니라 학습 시 노출되는 컨텍스트 윈도우를 분리하라"는 일반적인 설계 원칙으로 확장될 수 있다. 또한 학습-추론 간 캐시 분포 불일치(train-test mismatch) 문제를 청크 드롭이라는 간단한 데이터 증강으로 해결한 접근은 다른 장기 컨텍스트 생성 모델에도 적용 가능한 실용적 기법으로 보인다. 다중 소스 데이터를 물리적 스케일 단위로 정렬하는 데이터 파이프라인 설계 역시, 이종 데이터(합성/실사/게임)를 하나의 액션 공간으로 통합해야 하는 후속 연구에 참고할 만한 방법론을 제공한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.23565" target="_blank" rel="noopener">huggingface.co/papers/2608.23565</a> · 2026-08-26</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

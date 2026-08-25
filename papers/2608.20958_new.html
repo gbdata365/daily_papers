@@ -1,0 +1,117 @@
+<meta charset="UTF-8">
+<title>티라이브옴니</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#3 · Daily Papers 2026-08-26</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 52</span>
+    </div>
+    <h1 class="article-title">TLive-Omni: An Omni-Modal Understanding Model for E-Commerce Live Streaming</h1>
+    <p class="article-title-ko">티라이브옴니: 이커머스 라이브 방송을 위한 옴니모달 이해 모델</p>
+    <p class="article-sub">알리바바 타오바오·티몰 팀이 이커머스 라이브 방송이라는 특수한 시나리오에 맞춰 이미지·비디오·오디오·텍스트를 하나의 표현 공간으로 통합하고, 시간 정렬 토큰 구조와 3단계 지도학습·강화학습 파이프라인을 결합해 상품 중심의 옴니모달 이해 성능을 크게 끌어올린 모델 TLive-Omni(4B/9B)를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.20958" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.20958" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: TLive-Omni: An Omni-Modal Understanding Model for E-Commerce Live Streaming</li>
+<li><strong>저자</strong>: TLive-Omni Team (Alibaba Taobao &amp; Tmall Group); Project Lead: Yibo Hu, Contributors: Yu Qian, Mao Gu, Yingfan Tao, Yuhao Chen, Yongdong Luo, Zhuoqun Liu, Yibo Hu, Meiguang Jin, Junfeng Ma</li>
+<li><strong>출처</strong>: arXiv:2608.20958v1 [cs.AI] (2026-08-21)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/TaoLiveAIGC/TLive-Omni">TaoLiveAIGC/TLive-Omni (GitHub)</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.20958">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>알리바바 타오바오·티몰 팀이 이커머스 라이브 방송이라는 특수한 시나리오에 맞춰 이미지·비디오·오디오·텍스트를 하나의 표현 공간으로 통합하고, 시간 정렬 토큰 구조와 3단계 지도학습·강화학습 파이프라인을 결합해 상품 중심의 옴니모달 이해 성능을 크게 끌어올린 모델 TLive-Omni(4B/9B)를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>이커머스 라이브 방송에서는 상품 정보가 진행자의 발화(음성), 화면 속 상품 이미지, 영상 프레임, 화면에 오버레이된 텍스트, 시청자 질문 등 여러 모달리티와 시간대에 걸쳐 흩어져 있다. 이를 제대로 이해하려면 모델이 이질적인 신호를 개별적으로가 아니라 동시에 해석하고, 오디오·비주얼 증거를 상품 중심의 특정 시간 구간에 정렬하며, 음성인식(ASR)·광학문자인식(OCR)·상품 시각적 접지(visual grounding)·시간적 접지(temporal grounding)·옴니모달 질의응답 같은 과제에 대해 지각한 내용을 충실하게 표현해야 한다. MiniCPM-o, Qwen3-Omni, OmniVinci, Nemotron 3 Nano Omni 같은 범용 옴니모델은 통합 상호작용의 가능성을 보여주었지만 데이터와 평가가 상품 중심 라이브 방송 이해를 겨냥해 구성되어 있지 않고, 이커머스 지향 모델인 Valley3 역시 라이브 방송에 특화된 세분화된 원자적(atomic) 능력 체계를 중심으로 설계되어 있지 않다는 한계가 있다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>Qwen3.5 백본과 Qwen3-Omni의 오디오 인코더(AuT)를 오디오 얼라이너로 결합해 이미지·비디오·오디오·텍스트를 통합 임베딩 공간에 매핑하고, 최대 256K 토큰의 멀티모달 컨텍스트를 지원하는 아키텍처를 제시.</li>
+<li>Per-vGrid: 각 비디오 그리드와 동일 시간 구간의 오디오를 명시적 경계 토큰으로 묶고 실제 샘플링된 프레임 인덱스로부터 계산한 텍스트 타임스탬프를 부여하는 시간 정렬 토큰 조직 방식을 제안.</li>
+<li>라이브 방송 이해를 위한 시나리오 지향 원자적 능력 분류체계(taxonomy)와, 음성인식·화자 분석·상품 시각적 접지·텍스트 인식·시간적 접지·비디오 밀집 캡션·옴니모달 QA 등을 위한 학습 신호를 자동 생성하는 컴팩트한 데이터 생산 엔진 구축.</li>
+<li>지각(perception)에서 지시 따르기(instruction-following)로 단계적으로 발전하는 3단계 지도 미세조정(SFT) 레시피 설계.</li>
+<li>Faithful-RFT: 명시적 사고 과정(think trace)을 억제하고 과제 검증 가능한 보상으로 최종 답변만 직접 채점하는 강화 미세조정 단계 제안, 실시간성 요구를 충족하면서 응답 충실도와 표현 품질 향상.</li>
+<li>대규모 이종 멀티모달 학습을 위한 동기화 길이-그룹 샘플러(synchronized length-grouped sampler)와, GRPO의 보상 분산이 거의 0인 롤아웃 그룹을 재생성하는 경량 동적 샘플링 전략 제안.</li>
+</ul>
+<h2>방법론</h2>
+<p>아키텍처는 Qwen3.5를 비전-언어 백본으로 삼고, Qwen3-Omni에서 가져와 2천만 시간 오디오로 처음부터 학습된 AuT 오디오 인코더를 경량 2계층 얼라이너로 연결한다. 오디오는 16kHz, 128차원 멜스펙트로그램 입력을 초당 약 13개 토큰으로 압축해 처리한다. Per-vGrid는 실제 샘플링된 프레임 인덱스를 기준으로 그리드별 타임스탬프와 오디오 구간 길이를 계산함으로써(예: 요청한 프레임레이트와 실제 샘플링 결과 사이의 정수 반올림 오차까지 반영), 오디오-비디오 대응 관계를 입력 시퀀스 안에서 명시적이고 국소적으로 유지한다.</p>
+<p>데이터 구축은 오디오·이미지·비디오 세 경로로 나뉘며 각각 노이즈 특성이 달라 별도의 파이프라인을 사용한다. 오디오 경로는 ASR 모델 앙상블의 교차 합의 투표로 의사 라벨을 만들고 LLM이 라이브 특화 저빈도 용어(브랜드명, 소재명 등) 사전을 구축하며, 음향 기반 화자 분리와 MLLM 기반 화자 예측을 시간적 IoU로 교차 검증한다. 이미지 경로는 VLM 탐지기-심판(Detector-Judger) 루프로 상품 시각적 접지 데이터를 생성하고, 마크다운/HTML 파싱 결과를 원본 이미지와 재렌더링 비교해 검증한다. 비디오 경로는 TransNet V2로 물리적 샷 경계를 분리해 밀집 캡션을, VLM 기반 의미적 이벤트 분할로 QA와 시간적 접지 데이터를 생성하며, VLM 심판이 사실성·논리 일관성·타임스탬프 정렬을 재확인한다.</p>
+<p>학습은 3단계 SFT로 진행된다. 1단계는 언어모델과 오디오 인코더를 고정하고 오디오 얼라이너만 500만 ASR 샘플로 학습해 초기 정렬을 형성한다. 2단계는 오디오 인코더와 얼라이너를 함께 2,600만 오디오 샘플(ASR, 캡셔닝, QA)로 학습해 음성 외 소리·음악·화자 단서까지 확장한다. 3단계는 오디오·이미지·비디오·텍스트 1,400만 샘플로 인코더는 고정한 채 얼라이너와 언어모델을 공동 미세조정한다. 이후 Faithful-RFT 단계에서는 GRPO를 사용하되, 이미지/오디오 있는 비디오/오디오 없는 비디오/오디오 네 개의 데이터 스트림에 대해 과제 조건부 보상 라우팅(task-conditioned reward routing)을 적용한다. 규칙 기반 보상(객관식, 접지, OCR)과 LLM 심판 보상을 과제별로 선택적으로 적용하고 유효한 보상만 정규화해 합산하며, 명시적 사고 태그 억제를 위한 경량 형식 제약만 둘 뿐 추론 길이나 사고 과정 자체에는 보상을 주지 않는다. 학습 효율을 위해 동기화 길이-그룹 샘플러가 모달리티별로 정렬된 동일한 전역 배치를 모든 워커가 동시에 사용하도록 하여 패딩과 워크로드 불균형을 줄이고, 롤아웃 시 보상 분산이 거의 0인 그룹을 감지해 재생성하는 동적 리샘플링으로 GRPO의 상대적 이점(advantage) 신호를 유지한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>자체 구축한 이커머스 라이브 방송 평가 스위트(음성 전사, 화자 귀속 ASR, 오디오 설명/QA, 상품 시각적 접지, 텍스트 위치/인식/분류, 시간적 접지, 비디오 밀집 캡션, 비디오 QA, 샷 이해)와 다수의 일반 벤치마크(MMMU, MathVista, DynaMath, VLMsAreBlind, MMBench, RealWorldQA, MMStar, SimpleVQA, HallusionBench, AI2D, OCRBench, CC-OCR, CharXiv, RefCOCO, ERQA, EmbSpatialBench, MVBench, MLVU, Video-MME, LongVideoBench, LVBench, MMVU, VideoMMMU, TimeLens-Bench, AVUT, WorldSense, VideoHolmes, DailyOmni, OmniVideoBench, FutureOmni)에서 Gemini 계열, Qwen3.5/3-Omni, MiniCPM-o, OmniVinci, Nemotron 3 Nano Omni 등과 비교 평가했다.</p>
+<p>라이브 방송 도메인에서 TLive-Omni-9B는 최저 CER(6.46)을 기록했고, 두 모델 모두 상품 이미지 시각적 접지(Prod AP 89.96/91.45)와 텍스트 인식(Rec. NED 4.24/4.72)에서 오픈소스 및 클로즈드소스 모델을 통틀어 최고 수준을 보였다. 비디오 쪽에서는 TLive-Omni-9B가 시간적 접지 mIoU 81.49, 비디오 QA 정확도 93.23, 밀집 캡션 정확도 74.63으로 오픈소스 모델 중 최상위를 차지했다. 일반 벤치마크에서도 Qwen3.5 4B/9B 백본 대비 다수 지표에서 개선을 보였으며(예: MMBench, RealWorldQA 1위), 일부 지표(MMMU, MathVista, DynaMath 등)에서는 2위 수준을 유지해 도메인 특화에도 불구하고 일반화 능력이 크게 손상되지 않았음을 보였다.</p>
+<h2>한계점</h2>
+<p>논문은 스스로 다음을 한계로 명시한다: TLive-Omni는 생성(generation)이나 완전한 양방향 실시간 상호작용(full-duplex real-time interaction)이 아니라 이해(understanding)에 초점이 맞춰져 있다. 향후 과제로 더 넓은 공개 벤치마크에서의 평가 확대, 더 길고 노이즈가 많으며 다양한 라이브 방송 상황에서의 견고성 향상, 그리고 불완전하거나 모호한 멀티모달 입력 상황에서 시간적 증거 보정(calibration)을 강화하는 것을 언급했다.</p>
+<h2>시사점</h2>
+<p>이 연구는 범용 옴니모달 모델을 그대로 적용하기보다 특정 산업 시나리오(이커머스 라이브 방송)에 맞춰 아키텍처(오디오-비디오 시간 정렬), 데이터 구축 파이프라인, 학습 목표(RFT의 충실도 중심 보상 설계), 평가 프로토콜을 함께 정렬하는 것이 실질적 성능 향상에 중요하다는 점을 보여준다. 특히 Faithful-RFT처럼 사고 과정 노출 없이 최종 답변의 충실도만을 검증 가능한 보상으로 채점하는 방식은 실시간성이 중요한 산업용 응용에서 추론 오버헤드를 줄이면서도 품질을 높이는 실용적인 RLHF/RFT 설계 방향을 제시한다. 또한 원자적 능력 분류체계와 자동화된 데이터 생산 엔진은 특정 수직 도메인을 위한 대규모 학습 데이터를 저비용으로 구축하는 방법론적 참고 사례가 될 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.20958" target="_blank" rel="noopener">huggingface.co/papers/2608.20958</a> · 2026-08-26</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

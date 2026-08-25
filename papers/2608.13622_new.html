@@ -1,0 +1,128 @@
+<meta charset="UTF-8">
+<title>ARC</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#12 · Daily Papers 2026-08-26</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 15</span>
+    </div>
+    <h1 class="article-title">ARC: Fair Relative Advantage Comparison in Open-Ended Real-World Interaction</h1>
+    <p class="article-title-ko">ARC: 개방형 실세계 상호작용에서의 공정한 상대적 이득 비교</p>
+    <p class="article-sub">개방형(open-ended) 실세계 상호작용에서는 하나의 프롬프트에 답변 직접 제공, 되묻기, 진행상황 보고, 확인 후 실행 등 여러 유효한 전략이 동시에 존재하는데, 이 논문은 이런 서로 다른 전략의 롤아웃들을 그룹 기반 RL에서 함께 비교하면 보상모델의 스타일 편향이 상대적 이득(advantage) 추정에 섞여 들어간다는 "보상 공정성(reward fairness)" 문제를 정식화하고, 전략별로 롤아웃을 나누어 비교하는 ARC라는 학습 기법으로 이를 해결한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.13622" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.13622" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: ARC: Fair Relative Advantage Comparison in Open-Ended Real-World Interaction</li>
+<li><strong>저자</strong>: Yongqi Tong, Tan Li Hui Faith, Choy Zhen Wen Marcus 외 (Ant International 소속)</li>
+<li><strong>출처</strong>: arXiv:2608.13622v1 [cs.AI] (2026-08-13)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음 (프레임워크 코드명 ASRI, 데이터셋명 ARC/INTER3-86K로 공개 예정이라고만 언급됨)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.13622">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>개방형(open-ended) 실세계 상호작용에서는 하나의 프롬프트에 답변 직접 제공, 되묻기, 진행상황 보고, 확인 후 실행 등 여러 유효한 전략이 동시에 존재하는데, 이 논문은 이런 서로 다른 전략의 롤아웃들을 그룹 기반 RL에서 함께 비교하면 보상모델의 스타일 편향이 상대적 이득(advantage) 추정에 섞여 들어간다는 "보상 공정성(reward fairness)" 문제를 정식화하고, 전략별로 롤아웃을 나누어 비교하는 ARC라는 학습 기법으로 이를 해결한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>GRPO 등 그룹 기반 RL/RLHF는 같은 그룹 내 롤아웃들이 "행동적으로 비교 가능하다"는 가정 위에서 상대적 보상으로 정책을 학습시킨다. 그러나 실세계 에이전트 상호작용은 턴 단위로 개방적(open-ended)이어서, 동일한 대화 상태에서도 즉답, 되묻기(clarify), 중간 진행상황 보고(progress update), 비가역적 행동 전 확인(alignment check) 등 여러 전략이 모두 과제 수준에서는 적절할 수 있다. 문제는 보상모델이 응답 길이나 문체 같은 표면적 속성에 편향되어 있다는 점인데, 한 롤아웃 그룹 안에 서로 다른 전략의 응답이 섞여 있으면 이 보상모델 편향이 그룹마다 다르게 작용해, 중심화된(centered) 상대 이득이 실제 품질 차이가 아니라 "보상모델이 선호하는 상호작용 스타일"을 반영하게 된다. 기존의 think-then-act(생각을 다 끝낸 뒤 답변) 방식이나 ReAct 방식(추론·행동·소통을 한 트레이스에 뒤섞음) 모두 이런 다양한 상호작용 전략을 명시적으로 분리해 관측·학습할 수 있는 구조를 제공하지 못한다는 한계가 있다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>여러 전략이 동시에 유효한 상황에서 그룹 기반 RL의 상대적 이득 추정이 편향될 수 있음을 "δ-보상 공정성(δ-Reward Fairness)"이라는 개념으로 정식화</li>
+<li><strong>ARC (Advantage Regularization via Conditioning)</strong>: 학습 시 각 예시에 전략 지시문을 붙여 같은 전략 조건 내에서만 롤아웃을 샘플링·비교하고, 하이브리드 보상과 엔트로피 정규화를 결합한 학습 레시피 제안</li>
+<li><strong>INTER3 (Interplay of Internal Reasoning, Tool Usage, and Interaction)</strong>: 사용자에게 보이는 소통(<answer> 구간)과 내부 추론·도구 실행을 분리하는 비동기 스트리밍 상호작용 프레임워크 제안, 사용자 인터럽트·전략 제어를 지원</li>
+<li><strong>INTER3-86K</strong>: 실제 서비스 트래픽, 공개 데이터, 합성 데이터를 결합해 만든 86.8K개 규모의 전략 주석(strategy-annotated) 학습 코퍼스 구축 및 공개 예정</li>
+<li>이상화된 분산 분해를 통해 전략 조건화가 그룹 간(inter-strategy) 분산 항을 제거함을 이론적으로 보임</li>
+</ul>
+<h2>방법론</h2>
+<p>INTER3는 <answer> 태그 밖의 텍스트는 잠재 추론(latent reasoning)으로, <answer> 태그 안은 사용자에게 스트리밍되는 발화로, 도구 호출은 구조화된 내부 액션으로 취급하는 채널 분리(channel-separated) 구조다. 이를 통해 내부 추론-도구 실행 트레이스가 끝나기 전에도 사용자 응답을 먼저 내보낼 수 있어 응답 지연을 줄인다. 상호작용 전략은 4개 상위 범주(Progress Update, Clarify First, Alignment Check, Direct Answer)와 9개 세부 전략(예: Tool Execute, Parallel Tools, Silent Execution, Error Recovery, Decision Support 등)으로 분류된다.</p>
+<p>ARC는 (1) 각 학습 예시에 전략 지시문 s<em>를 부여하고, (2) 정책 π_θ(·|x, s</em>)에서 여러 롤아웃을 샘플링하며, (3) 같은 전략 그룹 안에서만 상대적 이득을 계산하고, (4) 엔트로피 정규화 항이 포함된 목적함수로 정책을 업데이트하는 4단계로 구성된다. 추론(inference) 시에는 전략 지시문을 제거하고 정책이 스스로 전략을 선택하도록 한다. 이론적으로는 표준 그룹 기반 RL의 이득 분산이 그룹 내 분산(σ²_intra)과 그룹 간(전략 간) 분산(σ²_inter)의 합으로 분해되는데, 이상적인 전략 조건화 하에서는 σ²_inter 항이 제거된다고 분석한다(Theorem 5.1, 5.2). 또한 멀티채널(추론/답변/도구호출) 생성에서 엔트로피 붕괴(entropy collapse)를 막기 위해 엔트로피 보너스를 추가한 하이브리드 목적함수를 사용한다.</p>
+<p>INTER3-86K는 SFT 세트(57.9K, 도구사용/멀티홉 QA/논리추론 혼합)와 RL 세트(28.9K, 전량 도구사용 데이터에 전략 지시문 부착)로 구성되며, 강한 교사 모델(Qwen3.5-397B-A17B)을 이용한 재작성·증류와 두 LLM(Qwen3-235B-Instruct, Qwen3.5-27B)의 협업 주석(합의/불일치 시 신뢰도 비교, 애매한 경우 3인 인간 검수) 파이프라인으로 전략 라벨을 부여했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>백본 모델은 Qwen3-8B(및 4B) 기반으로, INTER3 SFT 체크포인트에서 시작해 PPO, DAPO, GRPO 각각에 ARC를 적용/비적용 비교했다. 평가는 (1) 도메인 내 tau-bench, tau2-bench(항공/리테일/통신 다중턴 도구 호출)와 (2) 도메인 외 Arena-Hard, AIME 2026, GPQA-Diamond, IFBench, HMMT로 구성된다.</p>
+<p>주요 결과:
+- ARC는 모든 RL 백본에서 성능을 향상시켰으며, GRPO에서 가장 큰 개선(평균 +5.37점, 28.09 → 33.46)을 보임. τ-airline 31.33→44.00, τ-retail 40.29→50.00, τ2-airline 36.67→48.00으로 상승
+- INTER3의 채널 분리 구조는 think-style 베이스라인 대비 첫 토큰까지의 시간(TTFT)을 4.91초에서 1.27초로 단축
+- 도메인 외 추론 벤치마크에서는 효과가 다소 혼재되었으나(AIME 2026에서 GRPO+ARC 31.67→40.83 개선), PPO/DAPO 백본에서는 일관되지 않음
+- GRPO는 학습 중반 이후 성능이 하락하는 반면 ARC는 동일 예산에서 성능을 유지·개선(보상 해킹 방지 효과 시사)
+- 4B 모델에서도 ARC 효과 유지(4B no-think 대비 도구사용 평균 약 53% 향상)
+- 커리큘럼 학습(전략 지시문 점진적 제거) 실험에서는 오히려 제거하지 않는 기본 ARC 설정이 가장 우수했고, 선형/상수 제거는 성능 저하
+- 전략 종류를 하나씩 늘려가는 스케일링 실험에서 전략 4종 모두 사용 시 최고 성능(총 36.1% 개선), 비율이 낮은 Alignment Check(2.5%)도 유의미하게 기여
+- 추론 시 전략 힌트를 유지/무작위화/제거해 비교한 결과, 힌트를 아예 제거한 기본 설정이 가장 높은 평균(41.73)을 기록해, 전략 지시문은 학습 시 비교 그룹을 구성하는 역할이지 추론 시 지속적 단서로 유지할 필요는 없음을 시사</p>
+<h2>한계점</h2>
+<p>논문이 명시한 4가지 한계는 다음과 같다.
+1. <strong>전략 추상화</strong>: ARC는 거친(coarse) 전략 분류체계에 의존하므로 실제 상호작용 행동의 세밀한 맥락 의존성을 완전히 포착하지 못함
+2. <strong>도메인 범위</strong>: 가장 강한 효과는 개방형 도구 사용 설정에 국한되며, 다른 도메인으로의 일반화는 추후 검증 필요
+3. <strong>데이터 및 주석 의존성</strong>: 정규화된 상호작용 트레이스와 전략 라벨에 의존하므로 주석 편향이나 배포 환경 특유의 패턴이 반영될 수 있음
+4. <strong>이론적 범위</strong>: 분산 및 표본 효율성 분석은 하나의 최적화 메커니즘을 설명할 뿐, 개방형 에이전트 RL에 대한 완전한 수렴 이론은 아님</p>
+<h2>시사점</h2>
+<p>이 연구는 에이전트 RL 연구에서 "보상을 어떻게 설계할 것인가"뿐 아니라 "롤아웃을 얼마나 공정하게 비교할 것인가"라는, 상대적으로 간과되어온 축을 부각시킨다. 다중 전략이 공존하는 실세계 상호작용(고객 서비스, 멀티턴 도구 사용 에이전트 등)을 다루는 후속 연구에서, 그룹 기반 RL(GRPO 계열)을 적용할 때 단순히 같은 프롬프트에서 샘플링된 응답을 무비판적으로 한 그룹으로 묶기보다, 응답의 전략/스타일을 조건화해 비교 그룹을 재구성하는 접근이 유용할 수 있음을 시사한다. 또한 사용자 응답 채널과 내부 추론·도구 실행을 분리하는 INTER3 같은 인터페이스 설계는 응답 지연 감소와 상호작용 다양성 확보라는 두 가지 실무적 이점을 동시에 제공할 수 있어, 실시간 대화형 에이전트 시스템 설계에도 참고할 만하다. 다만 저자들이 밝히듯 이 방법은 보편적 최적화 기법이라기보다 "비교 편향에 대한 표적화된 교정"으로 이해되어야 하며, 도메인·백본에 따라 효과 편차가 있다는 점은 실무 적용 시 유의할 부분이다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.13622" target="_blank" rel="noopener">huggingface.co/papers/2608.13622</a> · 2026-08-26</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

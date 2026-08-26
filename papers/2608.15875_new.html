@@ -1,0 +1,121 @@
+<meta charset="UTF-8">
+<title>기가브레인-0.7</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#1 · Daily Papers 2026-08-27</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 90</span>
+    </div>
+    <h1 class="article-title">GigaBrain-0.7: Scaling Embodied Foundation Models to Emergent Capabilities with a Three-System Architecture</h1>
+    <p class="article-title-ko">기가브레인-0.7: 3중 시스템 구조로 체화 파운데이션 모델을 창발적 능력으로 확장하기</p>
+    <p class="article-sub">이해·계획, 미래 예측·평가, 행동·제어를 담당하는 세 개의 시스템을 하나의 임바디드 파운데이션 모델로 통합하고 37,000시간 이상의 이종 로봇 데이터로 원스테이지 사전학습함으로써, 다양한 로봇 형태와 실환경 시나리오에서 제로샷 일반화와 후속 태스크 성능을 크게 끌어올린 모델.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.15875" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.15875" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: GigaBrain-0.7: Scaling Embodied Foundation Models to Emergent Capabilities with a Three-System Architecture</li>
+<li><strong>저자</strong>: GigaBrain Team (GigaAI) — Angen Ye, Axiang Sun 등 알파벳순으로 나열된 40명 이상의 공동저자로 구성된 팀 저작</li>
+<li><strong>출처</strong>: arXiv:2608.15875v1 [cs.RO] (2026-08-16)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://gigaai.ai/blog/gigabrain07">GigaBrain-0.7 블로그</a> / <a href="https://github.com/open-gigaai/giga-brain-0">GitHub 코드</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.15875">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>이해·계획, 미래 예측·평가, 행동·제어를 담당하는 세 개의 시스템을 하나의 임바디드 파운데이션 모델로 통합하고 37,000시간 이상의 이종 로봇 데이터로 원스테이지 사전학습함으로써, 다양한 로봇 형태와 실환경 시나리오에서 제로샷 일반화와 후속 태스크 성능을 크게 끌어올린 모델.</p>
+<h2>배경 및 문제의식</h2>
+<p>비전-언어-액션(VLA) 모델은 범용 로봇 제어의 지배적 패러다임이 되었지만, 아키텍처를 더 정교하게 설계하고 데이터 규모와 이질성을 확장하면 실제로 성능이 향상되는지, 그리고 태스크와 로봇 형태 전반으로 얼마나 폭넓게 일반화될 수 있는지는 여전히 불확실했다. 기존 VLA 대부분은 관찰에서 행동으로 직접 매핑하는 반응형(reactive) 예측에 머물러 미래 상태를 예상하거나 실행 진행도를 평가하는 메커니즘이 제한적이었다. 또한 로봇마다 임바디먼트, 액션 공간, 실행 조건이 크게 달라 적절한 정렬 없이 데이터를 단순히 합치면 전이 가능한 지식이 아니라 간섭(interference)을 유발할 수 있다는 문제가 있었다. 즉, 이해·예측·행동·경험 기반 개선을 학습 전 주기에서 통합적으로 조율하는 시스템이 필요했다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>3-시스템 아키텍처</strong>: System 1(행동·제어, VLA), System 2(이해·계획, VLM), System 3(예측·평가, 월드밸류모델)를 구조화된 시맨틱/비주얼/가치 기반 인터페이스로 연결하는 설계 제안.</li>
+<li><strong>원스테이지 멀티임바디먼트 VLA 프리트레이닝</strong>: 사전학습된 VLM 백본, 연속행동 전문가(Action Expert), 멀티모달 이해 목적함수를 한 번의 학습 단계에서 공동 최적화하여 기존 다단계 학습의 최적화 단절 문제를 해소. 이 과정에서 VLM 백본으로 유입되는 행동 그래디언트를 완화하는 <strong>Soft Knowledge Insulation(Soft KI)</strong> 도입.</li>
+<li><strong>대규모 이종 데이터 파이프라인</strong>: 16개 로봇 형태에 걸친 37,256.98시간의 임바디드 궤적(실로봇, UMI, EGO 인간시연, 시뮬레이션, 월드모델 생성 데이터)과 약 2.72억 개의 비전-언어 이미지-텍스트 샘플을 LeRobot v3.0 형식으로 표준화·정제하는 통합 처리 파이프라인 구축.</li>
+<li><strong>월드밸류모델(System 3)</strong>: GigaWorld-1을 확장하여 서브골 이미지(미래 관찰 예측)와 이진 어드밴티지(가치 기반 진행도 신호)라는 두 가지 보완적 조건 신호를 System 1에 제공.</li>
+<li><strong>경험 기반 강화학습 파이프라인</strong>: 지도 후속학습(SFT) → 오프라인 강화학습(AWR 스타일) → 사람 개입 교정을 포함한 온라인 강화학습으로 이어지는 3단계 파이프라인을 통해 배포 이후에도 정책이 지속적으로 개선되도록 설계.</li>
+</ul>
+<h2>방법론</h2>
+<p>System 1은 PaliGemma2(3B) 백본과 Action Expert(0.5B)를 Mixture-of-Transformers(MoT) 구조로 결합한다. VLM 스트림은 자기 자신에 대해 인과적(causal) self-attention을 유지하고, Action Expert는 VLM과 자신의 은닉 상태 전체에 양방향으로 attend하여 행동 특화 표현이 VLM 표현에 역주입되지 않도록 한다. 행동 생성은 다음 토큰 예측(NTP) 기반 이산 경로와 flow matching 기반 연속 경로 두 갈래를 동시에 학습하며, Soft KI가 연속 경로의 그래디언트를 계수 α_KI로 감쇠시켜 VLM 백본의 일반 비전-언어 능력을 보존한다. Temporal-Spatial Block을 시각 인코더에 삽입해 과거 프레임 정보를 현재 프레임 표현에 누적함으로써, 반복되는 유사 상태에서도 실행 단계를 구분하는 짧은 시각적 메모리를 부여한다. 이종 로봇 간 자유도·좌표계 차이는 통일된 상태-행동 표현(왼팔/오른팔/머리/허리/베이스 순서, 유효성 마스크)과 임바디먼트별 입출력 프로젝션, Robot ID 조건화로 흡수한다.</p>
+<p>System 3(GigaWorld-1 기반)은 2단계로 학습된다: (1) 로봇 중심 비디오로 계속 사전학습하여 현재 관찰·서브태스크로부터 짧은 미래 비디오를 생성하고 마지막 프레임을 서브골 이미지 g_t로 추출, (2) 궤적 완료 주석으로부터 태스크 진행도 스칼라 V_t를 예측하는 가치 경로를 추가 학습. 두 시점 간 진행도 차이를 이진화한 어드밴티지 A_t(식 9)를 System 1 프롬프트에 조건으로 주입하며, 후속학습 시 서브골/어드밴티지 조건을 각각 50%/15% 확률로 드롭아웃하여 과의존을 방지한다. 경험강화 단계에서는 배포된 정책의 롤아웃을 성공/실패로 구분해 어드밴티지 가중 회귀(AWR)로 오프라인 정제한 뒤, 액터-크리틱 구조로 온라인 롤아웃을 수집하면서 사람이 어려운 상태에서 교정 시연을 직접 제공한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>평가는 AgileX PiPER/PiPER-X(듀얼암 매니퓰레이터)와 사내 휴머노이드 플랫폼 Maker H01 두 로봇에서 수행되었으며, 비교 대상은 π0.5, GigaBrain-0.1, Xiaomi-Robotics-1, Galaxea G0.5 등이다.
+- <strong>아키텍처 비교</strong>: PaliGemma2 + dual-stream 결합이 last-layer/multi-layer cross-attention 방식보다 실로봇 성능이 우수해 기본 구성으로 채택.
+- <strong>데이터 스케일링</strong>: 사전학습 데이터량이 늘수록 검증 손실이 꾸준히 감소했고, 특히 옷 개기 같은 변형체 조작처럼 복잡한 태스크일수록 데이터 스케일에 더 민감하게 반응. 로봇 데이터에 UMI·EGO를 결합했을 때 가장 강한 성능.
+- <strong>System 3 어블레이션</strong>: 서브골 이미지·어드밴티지 조건을 추가하면 성공률뿐 아니라 평균 점수·완료 시간도 개선(예: 기프트 랩핑 성공률 0%→80%, 완료시간 단축).
+- <strong>제로샷 파운데이션 평가</strong>: 사전학습만으로도 언어 지시 다중 태스크 수행이 가능했으며, 분포 밖(OOD) 객체·장면·태스크 구성에서도 부분적으로 일반화하지만 ID 대비 성능은 하락(예: PiPER 언어추종 평균 94.5%→36.5%).
+- <strong>후속학습(post-training) 평가</strong>: 언어추종 6개 태스크·복합조작 태스크 모두에서 GigaBrain-0.1 대비 큰 향상, π0.5와 동등 이상. H01 언어추종 평균 69.6%(GigaBrain-0.1)→84.2%(GigaBrain-0.7), 복합조작 평균 43.2%→74.1%.
+- <strong>표준 벤치마크</strong>: MiMo-Embodied 비전-언어 평가에서 비교 모델 중 전체 최고(overall .4621, spatial .5215); RoboTwin 2.0 Hard 세팅 1위(67.9); EBench 공개 모델 중 SR·Score 최고(33.30/46.1); RoboColiseum 4개 평가 축(지시추종·공간추론·강건성·범용조작) 모두 1위.
+- <strong>경험강화학습</strong>: 4개 실제 정밀/장기 태스크에서 평균 성공률이 SFT 30.0% → 오프라인RL 57.5% → 온라인RL 100%로 단계적으로 향상.</p>
+<h2>한계점</h2>
+<p>논문은 OOD 평가에서 객체 정체성, 장면 구성, 태스크 조합 등 여러 요인이 동시에 바뀌면 두 로봇 플랫폼 모두 성능이 뚜렷이 저하됨을 인정하며, 강건한 크로스 임바디먼트 일반화는 여전히 추가 스케일링이 필요한 과제로 남아있다고 명시한다. 쌀 쓸기(rice sweeping)와 같은 일부 접촉 집약적 태스크는 후속학습 후에도 성능이 낮아 포화되지 않았다. 또한 온라인 강화학습에 사용된 사람 개입 프로토콜과 전체 RL formalization의 세부 사항은 이번 논문에서 다루지 않고 "추후 별도 기가브레인 보고서"에서 다룰 예정이라고 밝혀, 해당 부분의 재현 가능한 세부 정보는 아직 공개되지 않았다. MiMo-Embodied에서 보고된 최종(향상된) 점수는 해당 데이터가 이후 프리트레이닝 믹스에 포함되었기 때문에 완전한 held-out 벤치마크가 아니라 지속 사전학습 진단치로 해석해야 한다고 저자들 스스로 명시한다.</p>
+<h2>시사점</h2>
+<p>이해-예측-행동을 명시적으로 분리하면서도 서로 조건화하는 3-시스템 구조가 VLA를 대규모로 확장하는 데 유효한 설계 원칙임을 실증적으로 보여준다. 특히 월드모델 기반의 미래 예측과 가치 신호를 정책의 보조 조건으로 사용하는 접근은 후보 행동을 별도로 스코어링·선택하지 않고도 행동 생성의 강건성과 효율을 높일 수 있음을 시사한다. 로봇 실데이터·UMI·EGO 인간 시연·시뮬레이션·월드모델 생성 데이터를 하나의 표준 표현으로 통합하는 것이 단순히 궤적 수를 늘리는 것 이상으로 창발적 일반화 능력을 낳는다는 스케일링 증거를 제공하며, 오프라인→온라인 경험강화학습(사람 교정 포함)을 배포 후 정책 개선의 실용적 경로로 제시한다는 점에서 실제 로봇 파운데이션 모델 운영에 참고할 만한 사례다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.15875" target="_blank" rel="noopener">huggingface.co/papers/2608.15875</a> · 2026-08-27</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

@@ -1,0 +1,151 @@
+<meta charset="UTF-8">
+<title>장기 호라이즌 에이전트 하네스를 위한 재귀적 경험-작업 메모리 진화</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#8 · Daily Papers 2026-08-27</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 20</span>
+    </div>
+    <h1 class="article-title">Recursive Experiential-Working Memory Evolution for Long-Horizon Agent Harnesses</h1>
+    <p class="article-title-ko">장기 호라이즌 에이전트 하네스를 위한 재귀적 경험-작업 메모리 진화</p>
+    <p class="article-sub">LLM 에이전트 하네스(harness)의 "메모리 제어 계층"만을 재귀적으로 진화시켜, 모델 가중치를 전혀 건드리지 않고도 장기 호라이즌(long-horizon) 작업에서 프런티어 모델까지 포함해 일관된 성능 향상을 이끌어내는 Recuris 아키텍처를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.24876" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.24876" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Recursive Experiential–Working Memory Evolution for Long-Horizon Agent Harnesses</li>
+<li><strong>저자</strong>: Zhaochen Yu, Yingcheng Wu, Zhenfei Yin, Kaiyuan Chen, Zhe Zhao, Mengdi Wang, Shuicheng Yan, Ling Yang (NUS, Stanford University, University of Oxford, Princeton University 공동 연구, 교신저자 표시 포함)</li>
+<li><strong>출처</strong>: arXiv:2608.24876v1 [cs.AI] (2026-08-25)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/Gen-Verse/Recuris">GitHub</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.24876">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>LLM 에이전트 하네스(harness)의 "메모리 제어 계층"만을 재귀적으로 진화시켜, 모델 가중치를 전혀 건드리지 않고도 장기 호라이즌(long-horizon) 작업에서 프런티어 모델까지 포함해 일관된 성능 향상을 이끌어내는 Recuris 아키텍처를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<ul>
+<li>LLM 에이전트는 점점 더 외부 실행 계층인 "에이전트 하네스"(메모리, 스킬 호출, 작업 상태 추적, 도구 상호작용, 검증을 조율)를 통해 구동되는데, 장기 호라이즌 작업에서 재귀적 자기개선(RSI)을 달성하는 것은 여전히 근본적인 난제다.</li>
+<li>기존 경험 메모리(Experiential Memory) 기법들은 초기 지시문이나 전체 상호작용 히스토리에서 스킬을 검색하는데, 실행이 진행될수록 이 방식은 신뢰도가 떨어진다. 초기 지시문은 이후에 드러나는 요구를 반영하지 못하고, 전체 히스토리는 완료된 단계·오래된 정보·실행 노이즈가 뒤섞이기 때문이다.</li>
+<li>저자들은 핵심 문제를 "유용한 경험의 부재"가 아니라 "축적된 경험을 에이전트의 현재 실행 상태와 지속적으로 정렬시킬 수 있는 압축되고 신뢰 가능한 작업 상태(task state)의 부재"로 규정한다.</li>
+</ul>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>상태 기반(state-grounded) 메모리 사용의 필요성 제시</strong>: 장기 호라이즌 재귀적 자기개선을 위해서는 진화하는 작업 상태와 축적된 경험을 지속적으로 정렬해야 함을 논증.</li>
+<li><strong>Recuris 아키텍처 제안</strong>: 지속적인 경험(Experiential Memory, EM)과 동적으로 유지·근거화된 작업 상태(Working Memory, WM)를 결합하여 장기 실행 전반에서 적응적 스킬 호출을 가능하게 하는 재귀적 EM–WM 아키텍처.</li>
+<li><strong>구조화된 진단 증거 생성</strong>: EM–WM 결합이 하네스 실행을 구조화된 증거로 전환시켜, 실패를 특정 메모리 구성요소(EM/WM/정책/체커) 단위로 국소화(localization)하고 해당 구성요소만 표적 수정할 수 있게 함.</li>
+<li><strong>광범위한 실증 평가</strong>: 4개의 장기 호라이즌 벤치마크와 10개 모델(3B 오픈웨이트~프런티어)에 걸쳐 실행 신뢰성, 스킬 호출, 실패 국소화, 진화 안정성, 진화된 메모리의 교차 모델 전이(transfer)를 검증. GPT-5.6 Sol에 +17.8점, Claude Opus 5에 +15.6점(τ²-bench) 등 모델 규모 전반에 걸친 일관된 향상을 보고.</li>
+</ul>
+<h2>방법론</h2>
+<p>Recuris는 작업 내부(task-level) 실행 루프와 작업 간(cross-task) 진화 루프 두 가지로 구성된다.</p>
+<ol>
+<li><strong>작업 내 검증된 EM–WM 결합 (2.2절)</strong></li>
+<li><strong>구조화된 작업 메모리(Working State)</strong>: 각 목표(goal) 항목이 내용, 상태(pending/done/blocked), 근거 증거, 선택적 블로커를 기록. 이 상태가 "지금까지 완료된 것/남은 것/근거가 되는 관찰"을 노출하는 작업 대면 인터페이스 역할을 한다.</li>
+<li><strong>상태 기반 스킬 호출</strong>: 스킬 검색을 작업 전체에 한 번 수행하는 대신, "실행 이벤트"(예: 상태 변경 도구 호출 초안 작성 시점, 턴 경계) 시점마다 현재 검증된 작업 상태 w_t를 조건으로 하여 필요한 스킬만 호출. Call-time invocation(도구 호출 초안 시점에 발동)과 Boundary invocation(턴 경계에서 발동) 두 종류의 호출 정책을 사용.</li>
+<li>
+<p><strong>증거 기반 상태 갱신</strong>: 에이전트가 관찰(observation)을 받으면 다음 상태 후보가 제안되고, 체커(checker) 집합이 이 제안을 실제 관찰 근거와 대조해 검증한 뒤, 지지되는 변경만 커밋. 도구 호출 시도 자체는 완료 증거로 인정되지 않으며, 목표는 체커가 완료를 확인했을 때만 done으로 전환된다.</p>
+</li>
+<li>
+<p><strong>작업 간 경계 재귀적 스킬 메모리 진화 (2.3절)</strong></p>
+</li>
+<li><strong>트레이스 기반 실패 국소화</strong>: 고정된 Meta-Agent(Claude Code 기반)가 실패한 실행의 구조화된 트레이스를 읽고, 각 실패를 EM/WM/호출 정책(ρ)/체커(C) 네 구성요소 중 가장 효과적으로 수리 가능한 구성요소로 귀속(진단).</li>
+<li><strong>구성요소별 특정 패치</strong>: 진단이 지목한 구성요소마다 하나씩 수정안을 생성해 후보 패치를 구성하며, 지목되지 않은 구성요소는 그대로 복사되어 변경 범위가 엄격히 제한된다.</li>
+<li><strong>검증 게이트를 통한 패치 승인</strong>: 후보 패치는 실패했던 원인 작업과 별도의 held-out 개발셋(이미 풀리는 앵커 작업들)에서 모두 통과해야만 정식 메모리로 승인되며, 그렇지 않으면 기존 메모리가 유지된다. 테스트 작업/트레이스/점수는 국소화·패치 생성·승인 어디에도 관여하지 않는다.</li>
+<li><strong>경계가 있는 재귀</strong>: 매 승인마다 메모리 제어 계층(M_k)만 갱신되고, 기반 LLM·Meta-Agent·국소화 및 패치 절차·검증 게이트 등 외부 하네스는 고정된 채 유지된다. 즉 모델 가중치나 에이전트 프로그램 전체가 아니라 externalized memory-control layer 내부에서만 재귀가 일어난다.</li>
+<li><strong>테스트 타임 적응 모드</strong>: 단일 작업, N회 시도 예산이 주어졌을 때, 실패 시 숨겨진 검증자가 반환한 이진 신호(성공/실패)만을 근거로 Meta-Agent가 경험 메모리를 국소적으로 갱신하고 재시도하는 모드도 별도로 평가.</li>
+</ol>
+<p>메모리는 배포 모델(doubao-seed-2-0-pro, 프런티어가 아닌 중간 규모 모델)만으로 벤치마크별로 한 번 구축되며, 다른 9개 모델은 이 메모리를 변경 없이 그대로 받아 평가된다(단일 소스 설정).</p>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li><strong>벤치마크</strong>: τ²-Bench(τ²-Retail 114개 작업, τ²-Airline 50개 작업, 시뮬레이션 사용자와의 정책 제약 도구 호출), SkillFlow(20개 작업군·166개 작업으로 구성된 평생 스킬 발견 벤치마크), Terminal-Bench 2.1(테스트타임 적응 실험용).</li>
+<li><strong>모델</strong>: Qwen3(4B/9B/27B/35B), Granite-4.1-3B, GPT-OSS-20B 등 오픈웨이트 모델과 Gemini 3.7 Flash, GPT-5.6 Sol, Claude Opus 5, Doubao-2.0-Pro(배포 모델) 등 프런티어 모델 포함 총 10개 모델, 온도 0, 작업당 avg@4(4회 반복 평균).</li>
+<li><strong>전체 성능</strong>: 완료된 37개 모델-벤치마크 쌍 중 35개에서 Recuris가 성능을 향상. τ²-Retail에서 GPT-5.6 Sol 58.3→76.1(+17.8), Claude Opus 5 72.4→87.9(+15.6, Recuris 없이 평가한 어떤 모델보다 9.7점 높음), Doubao-2.0-Pro 58.1→81.4(+23.3). SkillFlow에서 Qwen3.6-27B 42.2→58.7(+16.6), Qwen3.6-35B 35.3→48.8(+13.5).</li>
+<li><strong>장기 호라이즌 특성</strong>: 성능 향상 폭은 상호작용 호라이즌(턴 수)이 길어질수록 오히려 커져 최장 구간에서 +32.2점에 달함(감소하지 않고 증가). 일반적인 장기 호라이즌 실패 유형(환각적 완료, 누락된 쓰기, 제로라이트 에피소드, 잘못된 첫 도구 호출, 오류 연쇄, 누락된 읽기 등)이 최대 80~86%까지 감소.</li>
+<li><strong>실패 국소화 정확도</strong>: 구조화된 트레이스를 이용한 실패 원인 국소화가 64.8%의 정확도를 보인 반면, 작업 결과(성공/실패)만으로 국소화하는 방식은 13.0%에 그쳐, 표적 수리를 가능케 하는 핵심 요인임을 입증.</li>
+<li><strong>작업 구조 의존성</strong>: τ²-Retail/Airline/SkillFlow처럼 도구·정책(및 SkillFlow의 경우 작업군)을 공유하는 구조가 있는 벤치마크에서는 교차 작업(cross-task) 진화가 효과적이었으나, 그런 구조가 없는 Terminal-Bench 2.1에서는 진화 루프 13회 실행에도 패치가 한 건도 승인되지 않았다(대신 테스트타임 적응 모드에서 이득 확인).</li>
+<li><strong>비용/맥락 비교</strong>: 스킬 라이브러리 전체를 프롬프트에 항상 포함하는 방식과 비교했을 때, Recuris는 첫 호출에서 3,111 토큰 적은 맥락을 사용하면서도 18점 더 높은 성능과 성공당 46% 낮은 비용을 달성.</li>
+</ul>
+<h2>한계점</h2>
+<ul>
+<li>교차 작업(cross-task) 메모리 진화는 작업들이 도구·정책·절차 등 공유 구조를 가질 때만 유효하며, Terminal-Bench 2.1처럼 공유 구조가 없는 환경에서는 13회의 진화 루프에도 패치가 전혀 승인되지 않아 별도의 테스트타임 적응 모드가 필요했다.</li>
+<li>스킬 메모리는 단일 "배포 모델"(중간 규모 모델)의 실패로부터만 구축되며, 이 모델이 만들어내는 실패 유형에 의해 메모리 내용이 좌우된다(저자들은 이를 의도적 설계로 제시하지만, 특정 모델에 기반한 진화라는 근본적 의존성은 남아 있음).</li>
+<li>실패를 특정 메모리 구성요소로 귀속하는 것은 "인과적 규명"이 아니라 "가장 효과적인 수리 대상에 대한 판단"이라고 저자들 스스로 명시하고 있어, 진단이 실제 근본 원인과 다를 수 있음.</li>
+<li>재귀는 메모리 제어 계층(EM/WM/정책/체커)에만 국한되며, 기반 LLM 가중치나 Meta-Agent·국소화/패칭 절차·검증 게이트 자체는 전혀 진화하지 않는 의도적으로 제한된 범위의 자기개선이다.</li>
+<li>논문에 명시되지 않음: 정량적인 계산/API 비용 총량, 실패한 벤치마크(37쌍 중 개선되지 않은 2쌍)에 대한 구체적 분석은 본문에서 상세히 다뤄지지 않음(부록 참조 필요).</li>
+</ul>
+<h2>시사점</h2>
+<ul>
+<li>모델 가중치를 전혀 수정하지 않고도, 에이전트 하네스의 "메모리 제어 계층"이라는 좁고 해석 가능한 표면만을 재귀적으로 진화시켜도 프런티어 모델을 포함한 폭넓은 모델군에서 SOTA 수준의 장기 호라이즌 성능을 이끌어낼 수 있음을 보여준다.</li>
+<li>작업 상태(Working Memory)를 검증된 형태로 유지하여 스킬 호출을 근거화하는 것이, 실행을 "구조화된 진단 증거"로 전환시켜 실패를 구성요소 단위로 정확히 국소화(64.8% vs 13.0%)하는 열쇠라는 점은, 향후 에이전트 자기개선 연구에서 "무엇을 저장할지"뿐 아니라 "언제·어떻게 호출할지"를 함께 설계해야 함을 시사한다.</li>
+<li>메모리 제어 계층은 "고정된 에이전트 위에서 재귀적으로 훈련 가능한 표면(trainable surface)"으로 기능할 수 있으며, 이 개선은 특정 구성요소에 귀속 가능하고(attributable), 되돌릴 수 있고(reversible), 모델 간 이식 가능하다(portable)는 점에서 실용적인 RSI 확장 경로로 제시된다.</li>
+</ul>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.24876" target="_blank" rel="noopener">huggingface.co/papers/2608.24876</a> · 2026-08-27</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

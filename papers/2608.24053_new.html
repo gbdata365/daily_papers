@@ -1,0 +1,121 @@
+<meta charset="UTF-8">
+<title>WeMM-임베딩</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#3 · Daily Papers 2026-08-27</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 54</span>
+    </div>
+    <h1 class="article-title">WeMM-Embedding: WeChat Multi-Modal Embedding Technical Report</h1>
+    <p class="article-title-ko">WeMM-임베딩: 위챗 멀티모달 임베딩 기술 보고서</p>
+    <p class="article-sub">텍스트·이미지·비디오·시각 문서 및 임의로 뒤섞인(interleaved) 멀티모달 입력을 하나의 공유 임베딩 공간에 표현하는 2B/4B/9B 규모의 범용 멀티모달 임베딩 모델 패밀리로, MMEB-v2 리더보드 1위(9B 기준 80.6점)를 달성하고 위챗 실서비스에 배포되어 검증되었다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.24053" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.24053" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: WeMM-Embedding: WeChat Multi-Modal Embedding Technical Report</li>
+<li><strong>저자</strong>: Junjie Zhou, Ke Mei, Lei Li, Tianyi Wang, Fengyun Rao, Jing Lyu (WeChat Vision, Tencent Inc.)</li>
+<li><strong>출처</strong>: arXiv:2608.24053v1 [cs.CV] (2026-08-25)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://huggingface.co/collections/tencent/wemm-embedding">Hugging Face 컬렉션</a>, <a href="https://github.com/Tencent/WeMM-Embedding">GitHub</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.24053">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>텍스트·이미지·비디오·시각 문서 및 임의로 뒤섞인(interleaved) 멀티모달 입력을 하나의 공유 임베딩 공간에 표현하는 2B/4B/9B 규모의 범용 멀티모달 임베딩 모델 패밀리로, MMEB-v2 리더보드 1위(9B 기준 80.6점)를 달성하고 위챗 실서비스에 배포되어 검증되었다.</p>
+<h2>배경 및 문제의식</h2>
+<p>CLIP류의 이중 인코더 모델은 대규모 교차모달 정렬에는 효과적이었지만, 텍스트-이미지가 결합된 문서, 복합 쿼리, 자막이 붙은 비디오처럼 여러 모달리티가 함께 들어오는 입력을 자연스럽게 표현하지 못한다. 이후 사전학습된 비전 인코더를 텍스트 인코더의 시각 토크나이저로 붙이는 방식이 나왔지만, 멀티모달 임베딩이 점점 더 다양한 태스크와 입력 조합으로 확장되면서 이런 인코더 기반 접근은 일반성에 한계를 보인다. 반면 멀티모달 대형언어모델(MLLM)은 텍스트·이미지·비디오의 임의 결합을 자연스럽게 지원하고 폭넓은 사전학습 능력을 갖추고 있어, MLLM의 은닉 상태를 범용 임베딩으로 전환하는 접근(대조학습 기반 continued training)이 유망한 패러다임으로 떠올랐다. 이 논문은 이러한 MLLM 기반 임베딩 패러다임을 2B~9B 규모로 확장하고, 데이터 구성과 2단계 학습 전략을 통해 성능-효율 프론티어를 새로 세우고자 한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>Qwen3.5 네이티브 멀티모달 백본 위에 구축된 2B/4B/9B 3개 규모의 범용 멀티모달 임베딩 모델 패밀리 WeMM-Embedding 공개(가중치·코드 오픈소스).</li>
+<li>텍스트/이미지/비디오/시각문서 및 이들의 임의 인터리브 입력을 단일 <code>&lt;embedding&gt;</code> 토큰의 마지막 은닉 상태로 인코딩하는 통합 표현 방식과, Matryoshka Representation Learning(MRL)을 통한 가변 출력 차원 지원.</li>
+<li>대규모 정렬(Stage 1) → 정제된 데이터 기반 미세조정 및 지식 증류(Stage 2)로 이어지는 2단계 학습 전략, 그리고 Semantic-ID 기반 리샘플링·품질 정제·하드네거티브 구성 등 데이터 큐레이션 파이프라인.</li>
+<li>MMEB-v2에서 8B 오픈소스 베이스라인을 능가하는 2B 모델, 공식 리더보드 1위(9B, 80.6점)를 포함해 MMEB-v3, 12개 공개 교차모달 검색 벤치마크, 26개 태스크의 위챗 자체 벤치마크 전반에서 최고 수준 성능 입증 및 14개 온라인 A/B 테스트를 통한 실서비스 효과 검증.</li>
+</ul>
+<h2>방법론</h2>
+<p><strong>모델링</strong>: 입력은 선택적 지시문(instruction)과 텍스트/이미지/비디오 세그먼트의 순서열로 구성되며, 시퀀스 끝에 전용 <code>&lt;embedding&gt;</code> 토큰을 붙여 Qwen3.5 백본(G_θ)에 통과시킨 뒤 이 토큰의 마지막 층 은닉 상태를 L2 정규화하여 최종 임베딩으로 사용한다(수식 3~5). 인과적 어텐션 구조 덕분에 하나의 시퀀스에 여러 <code>&lt;embedding&gt;</code> 토큰을 삽입해 비디오 단독 표현과 비디오+ASR 텍스트 결합 표현을 한 번의 forward pass로 동시에 얻을 수 있다. MRL을 적용해 은닉 상태의 앞부분 d차원만 잘라 재정규화하면 여러 임베딩 차원(예: 64~2048)을 단일 모델에서 지원한다.</p>
+<p><strong>데이터</strong>: 약 수억 개의 이질적 쌍을 텍스트/이미지/비디오 및 이들의 조합, 다양한 태스크(약한 지도 쌍, 캡션 쌍, 검색 쌍, 분류 쌍, 질의응답 쌍, 등급형 관련도 쌍)로 통일된 pair 형식 (I, q, c, N, y)으로 표현한다. 이와 별도로 원본 대비 약 1/10 규모의 큐레이션 데이터셋을 Semantic-ID 기반 리샘플링(빈도 높은 패턴의 과다 노출 완화), MLLM을 이용한 데이터 품질 정제, 명시적 하드네거티브 보강을 통해 구축한다.</p>
+<p><strong>학습 전략(2단계)</strong>:
+- Stage 1(대규모 정렬): 표준 쌍 데이터는 InfoNCE 기반 대조학습(중복 인지 마스킹 포함)으로, 등급형 관련도 데이터는 점수 간격 가중 CoSENT 스타일 랭킹 손실로 학습하며, 모든 배치에 MRL을 적용해 여러 차원에서 동시에 손실을 계산한다.
+- Stage 2(정제 및 증류): 큐레이션 데이터에 대조학습·랭킹 손실을 이어가면서, 리랭커가 채굴한 후보를 이용한 세밀한 순위 지도(reranker supervision)와, 더 큰 WeMM-Embedding 모델(9B)을 교사로 삼아 배치 내 유사도 분포를 양방향 KL로 정렬하는 임베딩 증류(embedding distillation)를 추가한다. 9B 모델 자체는 교사가 없으므로 서로 다른 데이터 구성/설정으로 학습한 여러 Stage-2 변형을 모델 병합(model merging)하여 얻는다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>MMEB-v2(78개 데이터셋, 이미지/비디오/시각문서), MMEB-v3(텍스트·에이전트·오디오·MCMR 태스크 확장), Gemini Embedding 2 논문 기준 12개 공개 교차모달 검색 벤치마크, 위챗 자체 26태스크 벤치마크(분류/검색/교차도메인 매칭/기사 관련도/비디오 관련도)에서 평가했다.
+- MMEB-v2: 2B 77.9점(Qwen3-VL-Embedding-2B 대비 +4.7, DME-2B 대비 +3.1, 8B급 Qwen3-VL-Embedding도 근소하게 상회), 4B 79.2점(8B~9B급 베이스라인 전부 상회), 9B 80.6점으로 공식 리더보드 1위.
+- MMEB-v3: 2B 모델이 V3-All 56.0점으로 비교 모델 전부를 능가하고, Text(45.3)·Agent(45.1) 그룹에서도 최고점. 4B는 58.2점, 9B는 59.5점.
+- 12개 공개 교차모달 검색 벤치마크: 2B 평균 79.8점으로 Gemini Embedding 2(79.5), Amazon Nova MME(70.2), Voyage Multimodal 3.5(71.8), Qwen3-VL-Embedding-8B(76.7)를 상회. 4B/9B는 각각 80.8/81.7점.
+- 위챗 자체 26태스크 벤치마크: 2B 모델 평균 72.0점으로 Qwen3-VL-Embedding-2B(60.9) 대비 전 카테고리에서 큰 폭 우위. 실서비스에서 14개 온라인 A/B 테스트를 통해 추천·검색 품질 개선을 확인했고, 위챗 채널·공식계정·모멘트·이커머스 등에 이미 배포됨.
+- 추가 분석: MRL 임베딩은 256~512차원에서 2048차원 대비 97~99% 이상 성능을 유지(시각문서 태스크가 차원 축소에 가장 민감). Stage 1 설계에서는 task-consistent batching 제거 시 3.4점 하락으로 가장 큰 영향을 보였고, task별 지시문·중복 인지 마스킹도 각각 유의미하게 기여. Stage 2 누적 분석에서는 큐레이션 데이터, 리랭커 지도, 임베딩 증류, 확장된 시각 입력 예산을 순차 적용해 총 2.2점 향상.</p>
+<h2>한계점</h2>
+<p>논문에 명시적인 "한계점" 절은 없으나, 본문 및 결론에서 다음을 언급한다: (1) 현재 모델은 오디오 입력을 지원하지 않아 MMEB-v3의 11개 오디오 태스크에서 0점 처리됨. (2) 리랭커가 채굴한 후보를 이용한 재순위 지도가 모든 멀티모달 태스크에서 일관되게 성능을 높이지는 못해, 안정적 개선이 확인된 일부 태스크에만 제한적으로 적용함. (3) 9B 모델은 별도의 상위 교사 모델이 없어 여러 Stage-2 변형을 모델 병합으로 결합해야 했다는 절차적 제약이 있음.</p>
+<h2>시사점</h2>
+<p>MLLM 백본 기반 임베딩이 소형 파라미터(2B)로도 8B급 오픈소스 모델을 능가할 수 있음을 보여주며, 데이터 큐레이션(Semantic-ID 리샘플링, 품질 정제, 하드네거티브)과 2단계(대규모 정렬→정제·증류) 학습 전략이 모델 규모 확장보다도 성능에 크게 기여할 수 있음을 시사한다. 또한 MRL을 통한 가변 차원 지원과 다중 <code>&lt;embedding&gt;</code> 토큰을 이용한 단일 forward pass 내 복수 표현 추출은 추천/검색 같은 대규모 실서비스에서 효율성과 유연성을 동시에 얻는 실용적 설계로, 산업 규모의 멀티모달 추천·검색 시스템 구축에 참고할 만한 청사진을 제공한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.24053" target="_blank" rel="noopener">huggingface.co/papers/2608.24053</a> · 2026-08-27</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

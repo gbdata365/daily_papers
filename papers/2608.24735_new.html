@@ -1,0 +1,132 @@
+<meta charset="UTF-8">
+<title>메타N</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#12 · Daily Papers 2026-08-27</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 8</span>
+    </div>
+    <h1 class="article-title">Meta^n: Recursive Self-Improvement through Emergent Depth</h1>
+    <p class="article-title-ko">메타N: 창발적 깊이를 통한 재귀적 자기개선</p>
+    <p class="article-sub">메타 연산 Ω 자체는 절대 바꾸지 않고 그것이 처리하는 입력(하위 스택의 실행 흔적과 코드)만 계속 불려나가도록 재귀시킴으로써, 기존 자기개선 에이전트들이 실질적으로 약 2단계에서 멈추던 "메타 깊이"의 한계를 깨고 수렴할 때까지 계속 깊어지는 에이전트 스택 Meta^n을 제시한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.24735" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.24735" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Meta^n: Recursive Self-Improvement through Emergent Depth</li>
+<li><strong>저자</strong>: Zae Myung Kim, Young-Jun Lee, Dongyeop Kang (미네소타 대학교), Seungyeon Jwa (서울대학교)</li>
+<li><strong>출처</strong>: arXiv:2608.24735v1 [cs.AI] (2026년 8월 25일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음 (코드: https://github.com/minnesotanlp/meta-n)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.24735">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>메타 연산 Ω 자체는 절대 바꾸지 않고 그것이 처리하는 입력(하위 스택의 실행 흔적과 코드)만 계속 불려나가도록 재귀시킴으로써, 기존 자기개선 에이전트들이 실질적으로 약 2단계에서 멈추던 "메타 깊이"의 한계를 깨고 수렴할 때까지 계속 깊어지는 에이전트 스택 Meta^n을 제시한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>기존의 자기개선(self-improving) LLM 에이전트는 대부분 답을 만들어내는 "과정" 자체가 아니라 "답변"만을 다듬는 단일 반성(reflection) 루프에 머물러 있다. 저자들은 메타 개선 방식을 두 갈래로 분류한다. (1) 진화적 프로그램 탐색이나 메타 스캐폴딩처럼 고정된 외부 메타 프로세스가 솔버를 개선하는 "손수 설계된 1계층 메타" 방식은 안정적이지만 메타 프로세스 자체는 절대 바뀌지 않아 실질적 메타 깊이가 1에 머문다. (2) 괴델 에이전트(Gödel Agent), DGM처럼 에이전트가 자기 소스코드를 직접 편집하는 "자기참조적 1계층 메타" 방식은 원칙적으로는 깊이에 제한이 없지만, 시스템이 스스로를 망가뜨리지 않도록 액션 API나 아카이브 유지 로직 같은 "드라이버"의 일부를 반드시 고정해 두어야 하며, 그 결과 실질적 메타 깊이는 약 2.5에서 막힌다. 즉 "개선자(improver)를 재귀시키면 깊이는 얻지만 안정성을 대가로 치른다"는 딜레마가 기존 연구 전반에 존재하며, 이를 해소한 시스템은 지금까지 없었다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li><strong>Meta^n 프레임워크</strong>: 하나의 고정된 범용 메타 연산 Ω를 반복 적용해, 계층 수가 미리 정해지지 않고 수렴에 의해 결정되는 계층적 에이전트 스택을 구축하는 재귀적 아키텍처. 메타 깊이가 2를 넘어서면 구조적으로 서로 다른 역할을 갖는 계층들이 등장함을 처음으로 보인 사례라고 주장한다.</li>
+<li><strong>진화적 오케스트레이션</strong>: 계층 체인(layer chain)들의 집단에 대해 아카이브 기반 탐색을 수행하는 진화적 오케스트레이터(선형 심화 방식과 함께 제공).</li>
+<li><strong>실증적 증거</strong>: 8개의 벤치마크 계열과 2개의 백본 모델 전반에서 Meta^n이 기존 자기개선 에이전트(OpenEvolve, 괴델 에이전트)를 모든 벤치마크 계열에서 능가하며, 가장 어려운 held-out 과제에서 격차가 가장 크다는 점을 보인다.</li>
+</ol>
+<h2>방법론</h2>
+<ul>
+<li>Ω는 하나로 고정된 LLM 프롬프트 절차로, 특정 깊이 d에서 이전 깊이까지의 실행 흔적들 {τ^(d-1)}, 지금까지 쌓인 코드 스택 [C2,...,C(d-1)], 과제 목록 T, 그리고 현재 깊이 d를 입력받아 다음 계층의 코드 C_d를 출력한다. C_d는 (1) 각 과제 호출 전에 전략적 맥락을 주입하는 짧은 파이썬 전처리 함수(pre-process)와 (2) 솔버가 호출할 수 있는 재사용 가능한 헬퍼 함수 라이브러리로 구성된다.</li>
+<li>각 메타 계층은 빌드 단계(오프라인, 계층을 한 번 작성)와 런 단계(온라인, 과제마다 계층을 실행)로 나뉜다. 런 단계에서는 래퍼 M_d가 새로 만든 C_d를 이전 솔버 S(d-1) 주위에 감싸서, 깊이 n의 솔버는 결국 기저 솔버 S1에서부터 시작해 계층들이 중첩 호출되는 형태(S_n = M_n∘...∘M_2∘S1)가 된다. M_d는 내부 솔버의 코드를 절대 직접 수정하지 않으며 주입된 코드를 샌드박스에서 검증·스모크 테스트한 뒤 앞에 붙인다.</li>
+<li>재귀가 주는 이득은 두 가지다. 첫째, 계층 간에 전략(상위)-전술(하위) 방식으로 조건을 주고받아 표현 가능한 행동 조합이 곱셈적으로 늘어난다("multiplicative coverage"). 둘째, Ω가 매 호출 시 단순히 무슨 일이 일어났는지의 흔적뿐 아니라 그 흔적을 만들어낸 코드 자체까지 함께 보므로, 이전 계층의 선택이 "좋은 아이디어였는지"까지 판단할 수 있는 더 풍부한 입력을 받는다(고정된 드라이버를 쓰는 기존 시스템들은 이 정보 중 일부만 볼 수 있다).</li>
+<li>깊은 계층은 얕은 계층의 유효했던 지침을 덮어써 성능을 오히려 퇴보시키는 "계층 간 간섭(interference)"이 발생할 수 있는데, 더 깊은 Ω는 코드 스택과 흔적을 모두 보므로 이런 퇴보 원인을 진단하고 롤백할 수 있다(논문은 LawBench 예시로 깊이 3에서 발생한 점수 하락을 깊이 4가 스스로 원인을 짚어내며 복구하는 과정을 보여준다).</li>
+<li>오케스트레이션은 두 방식: (1) 선형 메타 재귀는 개선이 멈출 때까지 한 번에 한 계층씩 탐욕적으로 깊이를 더한다. (2) 진화적 아카이브는 후보 체인들의 단조 증가하는 집단을 유지하며, 점수와 탐색 다양성 보너스에 비례해 부모를 샘플링하고 자식을 생성하는 방식으로 서로 다른 계층 체인들을 병렬 탐색한다. 또한 각 후보가 하나의 과제에만 집중해 개선하고 나머지는 아카이브의 최선 흔적을 그대로 물려받는 "합의(consolidation)" 모드도 지원해, 과제별 최선 궤적이 단조롭게(퇴보 없이) 향상되도록 보장한다.</li>
+<li>기저 솔버(S1)는 단일 LLM 호출이거나 최대 8턴의 관찰-행동 루프를 도는 에이전트형 솔버일 수 있으며, 두 경우 모두에 Meta^n을 적용해 비교한다.</li>
+</ul>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li>두 백본 모델(Gemma 4 31B-IT, GPT-5.2), 8개 벤치마크 계열(CO-Bench의 NP-hard 조합최적화 36종, AlphaEvolve Math, 기호 회귀(SR) 4개 도메인, AlgoTune 8개 과제, ARC-AGI-2, TerminalBench 2.0의 도커 샌드박스 89개 과제, Symptom2Disease 텍스트 분류, LawBench 죄명 예측 프롬프트 재작성)에서 각각 3개 시드로 실험했다.</li>
+<li>Meta^n은 두 백본 모두에서, 그리고 8개 벤치마크 계열 전체에서 적어도 하나의 지표(아카이브 최고 또는 최선 단일 체인) 기준으로 OpenEvolve와 괴델 에이전트를 능가했다. CO-Bench에서는 GPT-5.2 기준 OpenEvolve 대비 +0.168, AlphaEvolve Math에서도 비슷한 격차, SR에서는 4개 도메인 모두 우세했다.</li>
+<li>가장 극적인 사례는 스킬 암기를 방지하도록 설계된 ARC-AGI-2로, held-out 분할에서 OpenEvolve와 괴델 에이전트는 문제를 단 하나도 풀지 못한 반면(0점), Meta^n의 메타 수준 스택은 0.331점을 기록했다(단일 호출 수준 반복은 0.123점에 그침).</li>
+<li>구성요소 제거(ablation) 실험 결과, 재귀에서 얻는 이득의 약 72%는 계층 간에 전달되는 문맥 문자열(전략적 조건화) 하나에서 나오며, 재사용 코드 라이브러리 전달이 약 15%, 나머지 약 13%는 재귀 메커니즘 자체(빔 서치, 재시도, 다른 체인에서 영감 얻기 등)에서 온다.</li>
+<li>깊이별 역할 분석(GPT-5.2와 Kimi-K2.6 두 명의 독립적 LLM 평가자가 총 596개의 Ω 출력물에 라벨링)에서, 어떤 프롬프트도 역할을 지정하지 않았음에도 깊이가 깊어질수록 일관된 역할 분화가 관찰되었다. 얕은 계층(깊이 2)은 범용적인 전술적 원시함수(코드 라이브러리 함수)를 방출하고, 중간 계층(깊이 3)은 특정 과제군에 특화된 라이브러리를 방출하며, 더 깊은 계층(깊이 ≥4)은 이전 계층의 잘못된 지침을 되돌리는 교정·정제 역할을 주로 수행했다.</li>
+<li>OpenEvolve와 토큰 예산을 동일하게 맞춘 공정 비교(compute parity)에서도 Meta^n이 앞섰으며, CO-Bench에서는 OpenEvolve보다 약 13배 적은 후보 평가 횟수로 더 나은 성능을 냈다. 괴델 에이전트는 예산을 5~10배 늘려도 0.6점대에서 정체되어 Meta^n(0.870)에 크게 못 미쳤다.</li>
+<li>재귀를 제거하고 단일 계층 메타 개선만 남기는 절제 실험에서는 백본과 벤치마크 전반에서 점수가 하락했으며(예: Gemma CO-Bench 0.845→0.714), 기저 솔버가 가장 약한 경우에 하락 폭이 가장 컸다.</li>
+<li>다만 AlgoTune처럼 시드 커널이 이미 고도로 최적화되어 있어 Ω가 추가할 여지가 적은 벤치마크에서는 에이전트형 변형이 오히려 단일 호출형보다 성능이 낮게 나오는 등, Meta^n이 이득을 주지 못하거나 역효과를 내는 경우도 관찰되었다.</li>
+</ul>
+<h2>한계점</h2>
+<ul>
+<li>논문은 기저 솔버와 모든 Ω 호출에 동일한 모델을 사용했다. 이는 깊이에 따른 이득과 모델 능력에 따른 이득을 분리하기 위한 통제된 설계이지만, 더 강력한 모델을 Ω에, 더 약한 모델을 기저 솔버에 두는 실제 배포 시나리오는 검증하지 않았다. 개선자만 업그레이드해도 깊이의 이득이 계속 유지되는지는 향후 실험 과제로 남긴다.</li>
+<li>계층 간에 전달되는 조건화(문맥)가 이득의 대부분을 차지함에도, 현재는 자유 형식의 문자열로 전달되고 있어 구조화되거나 타입이 있는 표현으로 바꾸면 더 풍부해질 여지가 있다.</li>
+<li>스택이 얼마나 깊이 유용하게 확장될 수 있는지도 아직 규명되지 않았다. 실험에서는 대체로 깊이 3~6 사이에서 실행이 멈췄는데, 이는 기저 모델의 추론 능력 한계나 누적된 계층 문맥이 넘쳐서가 아니라 Ω가 더 이상 개선점을 찾지 못했기 때문이라고 저자들은 설명한다.</li>
+<li>AlgoTune처럼 시드 자체가 이미 최적화되어 있는 벤치마크나 SWE-Bench처럼 초기 후보가 이미 강력한 경우, Meta^n의 추가 문맥이 오히려 코드를 과도하게 제약하거나 Ω가 거의 활성화되지 않는 등 이득이 나지 않는 경계 조건이 존재한다.</li>
+</ul>
+<h2>시사점</h2>
+<p>자기개선 시스템의 병목이 "얼마나 똑똑한 개선 규칙을 설계하는가"가 아니라 "개선자가 얼마나 풍부한 맥락(과거의 결과뿐 아니라 그 결과를 만든 코드까지)을 볼 수 있는가"에 있을 수 있음을 시사한다. 메타 연산 자체를 고정하고 그 입력만 재귀적으로 불려나간다는 단순한 설계 원칙이, 자기 자신을 편집하다 불안정해지는 문제 없이도 실질적인 다단계 메타 추론을 가능하게 한다는 점은 향후 자기개선 에이전트나 에이전트 하네스 설계에 실용적인 청사진을 제공한다. 또한 역할이 프롬프트로 지정되지 않아도 깊이에 따라 자연스럽게 분화된다는 관찰은, 계층적 에이전트 시스템에서 위계적 노동 분업이 명시적 설계 없이도 창발할 수 있음을 보여주는 사례로 볼 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.24735" target="_blank" rel="noopener">huggingface.co/papers/2608.24735</a> · 2026-08-27</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

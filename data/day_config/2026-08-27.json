@@ -1,0 +1,110 @@
+{
+  "2608.15875": {
+    "base": "2608_기가브레인0.7_3중시스템-구조-체화-파운데이션모델",
+    "rank": "#1",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "90",
+    "en_title": "GigaBrain-0.7: Scaling Embodied Foundation Models to Emergent Capabilities with a Three-System Architecture",
+    "ko_title": "기가브레인-0.7: 3중 시스템 구조로 체화 파운데이션 모델을 창발적 능력으로 확장하기"
+  },
+  "2608.20492": {
+    "base": "2608_비디오오라_주석을-롤아웃으로-비디오MLLM-강화학습",
+    "rank": "#2",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "88",
+    "en_title": "Annotations as Rollouts: Efficient and Scalable Reinforcement Learning for Video MLLMs",
+    "ko_title": "주석을 롤아웃으로: 비디오 MLLM을 위한 효율적이고 확장 가능한 강화학습"
+  },
+  "2608.24053": {
+    "base": "2608_위엠엠_위챗-멀티모달-임베딩-모델",
+    "rank": "#3",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "54",
+    "en_title": "WeMM-Embedding: WeChat Multi-Modal Embedding Technical Report",
+    "ko_title": "WeMM-임베딩: 위챗 멀티모달 임베딩 기술 보고서"
+  },
+  "2608.23041": {
+    "base": "2608_오토새들러_실행흔적-기반-하네스-자동최적화",
+    "rank": "#4",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "49",
+    "en_title": "AutoSaddler: Automatic Harness Optimization with Durable Updates from Agent Execution Traces",
+    "ko_title": "오토새들러: 에이전트 실행 흔적으로부터 지속 가능한 업데이트를 만드는 자동 하네스 최적화"
+  },
+  "2608.24646": {
+    "base": "2608_디퓨전오피에스디_온폴리시-자기증류-확산모델-정렬",
+    "rank": "#5",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "48",
+    "en_title": "On-Policy Self-Distillation in Diffusion Models",
+    "ko_title": "확산 모델에서의 온폴리시 자기증류"
+  },
+  "2608.21500": {
+    "base": "2608_시큐옵디_프롬프트인젝션-방어-온정책증류",
+    "rank": "#6",
+    "category": "sec",
+    "category_label": "보안",
+    "upvote": "36",
+    "en_title": "SecOPD: Mitigating Adaptive Prompt Injections by On-Policy Distillation",
+    "ko_title": "SecOPD: 온폴리시 증류를 통한 적응형 프롬프트 인젝션 완화"
+  },
+  "2608.23181": {
+    "base": "2608_사이버팩토리_야생-데이터로-확장하는-사이버보안-역량",
+    "rank": "#7",
+    "category": "sec",
+    "category_label": "보안",
+    "upvote": "28",
+    "en_title": "CyberFactory: Scaling Cyber Security Capabilities with Instances from the Wild",
+    "ko_title": "사이버팩토리: 야생의 인스턴스로 사이버보안 역량 확장하기"
+  },
+  "2608.24876": {
+    "base": "2608_리커리스_장기-호라이즌-에이전트-메모리-진화",
+    "rank": "#8",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "20",
+    "en_title": "Recursive Experiential-Working Memory Evolution for Long-Horizon Agent Harnesses",
+    "ko_title": "장기 호라이즌 에이전트 하네스를 위한 재귀적 경험-작업 메모리 진화"
+  },
+  "2608.24696": {
+    "base": "2608_오피디브이알_검증가능한-보상-기반-온폴리시-증류",
+    "rank": "#9",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "12",
+    "en_title": "On-policy Distillation with Verifiable Reward",
+    "ko_title": "검증 가능한 보상 기반 온폴리시 증류"
+  },
+  "2608.23566": {
+    "base": "2608_비피코_모범-사례-크리틱-최적화",
+    "rank": "#10",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "11",
+    "en_title": "Best Practice Critic Optimization",
+    "ko_title": "모범 사례 크리틱 최적화 (BPCO)"
+  },
+  "2608.24680": {
+    "base": "2608_게임투월드_인더와일드-게임플레이-UI-제거-월드모델데이터",
+    "rank": "#11",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "8",
+    "en_title": "Game2World Engine: Unlocking In-the-Wild Gameplay Videos for World Model Training",
+    "ko_title": "게임투월드 엔진: 야생의 게임플레이 영상을 월드 모델 학습 데이터로 전환하기"
+  },
+  "2608.24735": {
+    "base": "2608_메타엔_창발적-깊이를-통한-재귀적-자기개선",
+    "rank": "#12",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "8",
+    "en_title": "Meta^n: Recursive Self-Improvement through Emergent Depth",
+    "ko_title": "메타N: 창발적 깊이를 통한 재귀적 자기개선"
+  }
+}

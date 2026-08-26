@@ -1,0 +1,125 @@
+<meta charset="UTF-8">
+<title>모범 사례 크리틱 최적화 (BPCO)</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#10 · Daily Papers 2026-08-27</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 11</span>
+    </div>
+    <h1 class="article-title">Best Practice Critic Optimization</h1>
+    <p class="article-title-ko">모범 사례 크리틱 최적화 (BPCO)</p>
+    <p class="article-sub">GRPO류 그룹 기반 강화학습을 대체할 수 있도록, 단일 롤아웃만으로도 안정적으로 학습되는 크리틱(critic) 기반 LLM 강화학습 레시피 "BPCO"를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.23566" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.23566" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Best Practice Critic Optimization</li>
+<li><strong>저자</strong>: Penghui Qi, Xiangxin Zhou, Wee Sun Lee (싱가포르국립대학교(NUS), 텐센트 훈위안(Tencent Hunyuan))</li>
+<li><strong>출처</strong>: arXiv:2608.23566v1 [cs.LG] (2026년 8월 25일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음 (코드: https://github.com/QPHutu/golden_critic)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.23566">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>GRPO류 그룹 기반 강화학습을 대체할 수 있도록, 단일 롤아웃만으로도 안정적으로 학습되는 크리틱(critic) 기반 LLM 강화학습 레시피 "BPCO"를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>GRPO와 같은 그룹 기반 강화학습 방법은 크리틱(가치 함수) 학습을 회피하기 위해 프롬프트마다 여러 응답을 샘플링하고 그 보상들을 비교해 이점(advantage)을 추정한다. 이 방식은 크리틱 학습 없이도 동작하지만, 한 응답 안의 모든 토큰에 동일한 결과 기반 이점을 부여하기 때문에 토큰 단위의 세밀한 신용 할당이 어렵다. 반대로 학습된 크리틱을 사용하면 응답의 각 접두어(prefix)로부터 기대 보상을 추정해 토큰 수준의 이점을 만들 수 있어 원칙적으로 더 정교하지만, 실제로는 크리틱 기반 LLM 학습이 불안정해지기 쉽다는 문제가 있다. 저자들은 그 불안정성의 원인으로 PPO의 비율 클리핑이 저확률·고확률 토큰을 다르게 다루는 문제, 부트스트랩된 가치 타깃이 크리틱 오차를 전파하는 문제, 고정된 GAE 파라미터가 응답 길이에 따라 최종 보상에 부여하는 가중치가 달라지는 문제, 그리고 기존 구현에서 흔히 쓰이는 (1) 선형 헤드가 보상의 실제 범위를 벗어난 값을 예측하는 문제와 (2) 배치 단위 이점 정규화가 정책이 최적에 가까워져도 신호를 인위적으로 단위 스케일로 키우는 문제를 지목한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>단일 롤아웃(one response per prompt) 환경에서도 안정적으로 작동하는 크리틱 기반 액터-크리틱 학습 레시피인 BPCO(Best Practice Critic Optimization, "Bounded Privileged Critic Optimization"의 약어이기도 함)를 제시했다.</li>
+<li>크리틱 불안정성을 유발하는 두 가지 구현상의 불일치(비유계 선형 가치 헤드, 배치 단위 이점 정규화)를 새롭게 규명했다.</li>
+<li>크리틱은 학습 시에만 사용되고 정책(policy) 배포에는 관여하지 않는다는 점에 착안해, 참조 정답이나 채점 루브릭 같이 정책에는 숨겨진 "특권 정보(privileged information)"를 크리틱에만 조건으로 제공하는 기법을 도입했다.</li>
+<li>수학 추론 여러 데이터셋과 1.5B~30B-A3B(MoE) 규모 모델, 그리고 루브릭 기반 보상 과제까지 통제된 실험을 통해 각 설계 선택의 효과를 개별적으로 검증했다.</li>
+</ul>
+<h2>방법론</h2>
+<p>BPCO는 다음 요소들을 결합한다.
+1. <strong>DPPO(Divergence Proximal Policy Optimization)</strong>: 기존 PPO의 비율 클리핑이 저확률 토큰과 고확률 토큰에 서로 다른 크기의 변화를 허용하는 문제를 해결하기 위해, 샘플링된 토큰의 "확률 변화량" 자체를 기준으로 클리핑 경계를 정의한다.
+2. <strong>보상 범위로 유계화된 가치 예측</strong>: 선형 헤드 출력을 스케일된 아크탄젠트 함수로 변환해 크리틱의 예측값이 항상 알려진 보상 범위 [R_min, R_max] 안에 들어오도록 강제한다.
+3. <strong>비편향 몬테카를로 가치 타깃</strong>: 정책과 크리틱 타깃 각각에 서로 다른 GAE 파라미터(λ)를 사용하는 디커플링 방식을 채택하여, 크리틱 학습 타깃은 λ_V=1로 두어 부트스트래핑 편향이 없는 몬테카를로 추정치(즉 최종 관측 보상 그 자체)를 사용한다.
+4. <strong>비정규화된 정책 이점</strong>: 배치 단위로 이점을 평균 0, 분산 1로 정규화하는 관행을 제거하고, GAE로 계산된 원본 이점 크기를 그대로 정책 업데이트에 사용한다. 정책이 최적에 가까워질수록 이점과 그 분산이 자연히 작아지는 성질을 보존하기 위함이다.
+5. <strong>길이 적응형 GAE(LA-GAE)</strong>: 응답 길이 L에 따라 정책용 GAE 파라미터 λ_π(L) = 1 − 1/(αL)를 적용해, 짧은 응답과 긴 응답 모두에서 말단 보상에 실리는 가중치의 편향-분산 트레이드오프를 완화한다.
+6. <strong>특권 정보를 활용한 크리틱</strong>: 크리틱에만 참조 정답, 공식 풀이, 채점 루브릭 등 프롬프트별 보상 결정 정보를 추가 입력으로 제공한다(정책의 입력·배포 방식은 그대로 유지). 이는 협력 다중 에이전트 강화학습의 "중앙집중 학습·분산 실행(CTDE)" 개념을 크리틱 기반 LLM RL에 적용한 것이다.</p>
+<p>이 구성 요소들은 소규모의 통제된 "새너티 테스트(sanity test)"에서 한 번에 하나씩 추가되며 그 효과가 검증되었다.</p>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li><strong>새너티 테스트</strong>: DeepSeek-R1-Distill-Qwen-1.5B 모델을 초기 모델이 풀 수 있는 1,460개의 수학 문제로 파인튜닝하며, AIME 2025 avg@32를 검증 지표로 사용. 기본 PPO(λ=1)는 학습 보상이 초반 상승 후 붕괴하는 반면, DPPO는 안정적으로 학습된다. λ를 0.99로 낮추면 DPPO도 다시 불안정해지며, 이는 유계 가치 예측, 비편향 몬테카를로 타깃, 이점 비정규화, 길이 적응형 GAE를 차례로 추가하면서 순차적으로 해결된다.</li>
+<li><strong>40.3K 문제 규모 데이터셋(DeepScaleR)</strong>: DeepSeek-R1-Distill-Qwen-1.5B를 대상으로, BPCO(및 특권 정보 변형인 BPCO+Ans, BPCO+Sol)가 그룹 기반 기준선(Dr. GRPO)과 강한 크리틱 기반 기준선(decoupled GAE + 비편향 몬테카를로 타깃을 갖췄지만 비유계 가치 헤드와 배치 정규화를 유지한 버전) 모두를 일관되게 능가했다. 학습 보상, AIME 2025 avg@32, explained variance 모든 지표에서 우위를 보였다.</li>
+<li><strong>대형 MoE 모델(Qwen3-30B-A3B, Qwen3-30B-A3B-Base)</strong>: DAPO-Math-17K 데이터셋에서 BPCO+Ans가 크리틱 기준선을 크게 앞섰고(특히 Qwen3-30B-A3B에서는 크리틱 기준선이 첫 100스텝 이후 성능이 정체됨), 그룹 기반 기준선과 비교해도 Qwen3-30B-A3B에서는 더 우수하고 Base 모델에서는 대등한 성능을 보였다 — 응답당 1개의 롤아웃만 사용하면서도 이런 결과를 달성했다.</li>
+<li><strong>루브릭 기반 보상</strong>: Qwen3-4B-Base를 정책·크리틱으로, Qwen3-4B-Instruct-2507을 채점 모델로 하여 Open-Rubrics 데이터셋으로 학습했을 때도 BPCO와 BPCO+Rubrics가 그룹·크리틱 기준선보다 더 빠르게 학습되었으며, 이 과제에서는 특권 정보(루브릭 노출)가 추가 이득을 주지 않았다(과제가 비교적 단순해 크리틱이 이미 잘 근사 가능했기 때문으로 추정).</li>
+<li><strong>어블레이션</strong>: 유계 가치 예측을 제거하면 학습 속도와 AIME 성능이 저하되고, 이점 정규화를 다시 넣으면 이점의 크기가 학습 중 커지는 현상이 재현되었다(다만 대규모 데이터셋에서는 그 영향이 새너티 테스트보다 약함). 특권 정보는 데이터가 충분하고 과적합 위험이 낮을 때 크리틱 학습을 가속했지만, 소규모 데이터셋에서는 검증 성능이 더 일찍 정점을 찍고 하락하는 과적합 위험을 키웠다.</li>
+</ul>
+<h2>한계점</h2>
+<p>저자들이 명시한 한계는 다음과 같다: (1) 증거가 수학 문제와 루브릭 기반 보상 과제에 국한되어 있다. (2) BPCO는 보상 범위(R_min, R_max)를 미리 알고 있다고 가정한다. (3) 특권 정보를 활용하는 변형은 별도의 평가자/정답 정보가 필요하다. (4) 크리틱 학습은 추가적인 연산과 메모리 비용을 수반하며, 이는 궤적 수를 맞춘 비교에서는 반영되지 않았다.</p>
+<h2>시사점</h2>
+<p>이 논문은 크리틱 기반 강화학습이 본질적으로 불안정한 것이 아니라, 출력 범위·타깃·입력·유도되는 정책 신호를 일관성 있게 설계하면 단일 응답만으로도 그룹 기반 방법과 대등하거나 그 이상의 성능을 내는 안정적인 대안이 될 수 있음을 보여준다. 특히 그룹 기반 방법이 요구하는 프롬프트당 다중 샘플링 비용을 줄일 수 있다는 점에서, 대규모 LLM 강화학습의 효율성을 높이는 실용적 방향을 제시한다. 또한 크리틱에만 특권 정보를 제공하는 아이디어는 정책의 배포 조건을 바꾸지 않으면서도 학습 신호의 질을 높일 수 있는 일반적인 설계 원칙으로, 향후 다양한 보상 체계(코드 실행 결과, 검증기 출력 등)에도 확장 적용될 수 있을 것으로 보인다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.23566" target="_blank" rel="noopener">huggingface.co/papers/2608.23566</a> · 2026-08-27</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

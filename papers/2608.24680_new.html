@@ -1,0 +1,116 @@
+<meta charset="UTF-8">
+<title>게임투월드 엔진</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#11 · Daily Papers 2026-08-27</span>
+      <span class="cat-tag">생성모델</span>
+      <span class="upvote-tag">▲ 8</span>
+    </div>
+    <h1 class="article-title">Game2World Engine: Unlocking In-the-Wild Gameplay Videos for World Model Training</h1>
+    <p class="article-title-ko">게임투월드 엔진: 야생의 게임플레이 영상을 월드 모델 학습 데이터로 전환하기</p>
+    <p class="article-sub">인터넷에 널려 있는 실제 게임플레이 영상은 화면 위에 덧씌워진 HUD·메뉴·워터마크 때문에 그대로는 월드 모델 학습 데이터로 쓰기 어려운데, 이 문제를 "인터페이스-월드 분리(disentanglement)"로 정식화하고 이를 자동으로 해결하는 데이터 엔진(G2WEngine)과 마스크 없이 게임 UI를 제거하는 모델(GameCleaner)을 제안한 논문이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.24680" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.24680" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Game2World Engine: Unlocking In-the-Wild Gameplay Videos for World Model Training</li>
+<li><strong>저자</strong>: Wenxuan Shen, Dongna Jin, Dongping Chen (교신저자: Dongping Chen)</li>
+<li><strong>출처</strong>: arXiv:2608.24680v1 [cs.CV] (2026-08-25)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음 (코드/데이터/모델은 GitHub "Dongping-Chen/Game2World"에 공개 예정으로만 언급됨)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.24680">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>인터넷에 널려 있는 실제 게임플레이 영상은 화면 위에 덧씌워진 HUD·메뉴·워터마크 때문에 그대로는 월드 모델 학습 데이터로 쓰기 어려운데, 이 문제를 "인터페이스-월드 분리(disentanglement)"로 정식화하고 이를 자동으로 해결하는 데이터 엔진(G2WEngine)과 마스크 없이 게임 UI를 제거하는 모델(GameCleaner)을 제안한 논문이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>비디오 게임은 다양한 3D 환경, 상호작용, 시점을 담고 있어 월드 모델(world model) 학습에 이상적인 데이터 소스가 될 수 있지만, 실제 게임플레이 녹화 영상은 게임 세계 자체가 아니라 체력바, 미니맵, 채팅창, 스트리밍 오버레이 등 화면 공간(screen-space) UI가 뒤섞인 합성 렌더링 결과물이다. 저자들은 통제된 파일럿 실험을 통해, 동일한 5,442개 클립을 UI가 있는 버전과 없는 버전으로 나누어 각각 비디오 생성 모델을 파인튜닝한 결과, UI를 제거한 깨끗한 데이터로 학습했을 때 VideoReward가 6.83% 향상되고(모션 품질 +18.8%, 화질 +2.7%) 미적 점수도 8.59% 개선됨을 확인했다. 즉 게임 UI는 월드 모델 학습에 불필요한 편향과 시각적 지름길(shortcut)을 주입해 데이터 가치를 떨어뜨린다는 문제의식에서 출발한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>GameUI-Taxonomy</strong>: 게임 HUD 요소를 기능적 역할(공간 정보, 상태, 목표, 메시지, 액션/장비, 외부 오버레이 등)에 따라 체계적으로 분류한 통합 분류 체계.</li>
+<li><strong>파일럿 스터디</strong>: 동일 영상의 UI 유무만 다르게 하여 학습한 두 모델을 비교, 클린 데이터가 세계 모델 학습에 우월함을 정량적으로 입증.</li>
+<li><strong>G2WEngine</strong>: 실제 게임플레이 영상에서 재사용 가능한 UI 에셋을 자동 추출하고, 이를 깨끗한 영상 위에 시간적으로 일관되게 합성하는 완전 자동화된 데이터 처리 파이프라인.</li>
+<li><strong>Game2World 데이터셋</strong>: 정밀한 정답(ground truth)이 있는 합성 페어 영상 96K개(Game2World-S)와 303개 게임에서 수집한 실제 야생(in-the-wild) 클립 1,079개(Game2World-W), 21개 분류 범주에 걸친 검증된 UI 에셋 5,132개를 포함하는 대규모 벤치마크/데이터셋.</li>
+<li><strong>GameCleaner</strong>: 멀티모달 의미 이해와 비디오 편집 능력을 결합해, 입력 마스크 없이 다양한 HUD 요소를 식별·제거하면서 원래 장면 내용과 시간적 동역학을 보존하는 마스크-프리 게임 UI 제거 모델.</li>
+<li>MLLM-as-a-judge 기반 평가 프로토콜을 제안하고 인간 평가와 비교해 신뢰성(Cohen's κ = 0.820)을 검증.</li>
+</ul>
+<h2>방법론</h2>
+<p>G2WEngine은 인터페이스-월드 분리를 4단계로 수행한다. (1) GameUI-Taxonomy로 UI 카테고리를 정의하고, (2) 303개 게임, 65.72시간 분량의 원본 영상에서 대표 프레임(1,010장)을 샘플링해 GPT 기반 주석 모델과 사람 검수로 UI 바운딩박스를 추출한 뒤 투명 에셋(3.69개/프레임)으로 변환하며, (3) CLIP 임베딩 기반 클러스터링으로 중복을 제거한 클린 게임플레이 영상 코퍼스를 별도로 구축하고, (4) 추출된 UI 에셋을 카테고리별 확률·배치 규칙·시간적 애니메이션(정적/팝업 등)에 따라 클린 영상 위에 합성하여 페어 데이터를 생성한다.</p>
+<p>GameCleaner는 Kiwi-Edit 아키텍처를 계승하여, 사전학습된 MLLM 인코더와 비디오 디퓨전 트랜스포머(DiT)를 결합한 구조다. 소스 영상과 제거 지시문(instruction)을 MLLM으로 함께 인코딩하고, 학습 가능한 잠재 쿼리(latent query)가 크로스어텐션을 통해 과제 관련 의미 정보를 추출해 DiT의 조건(condition)으로 투영한다. 소스 영상의 VAE 잠재 벡터는 시간단계(timestep) 의존적 잔차 연결을 통해 노이즈 잠재 벡터에 주입되어 공간·시간 구조를 보존한다. 학습은 표준 플로우 매칭(flow-matching) 목적함수로 이루어지며, DiT에는 LoRA(rank 64)를 적용하고 MLLM 인코더는 동결한 채로 Game2World-S에서 파인튜닝한다. 참조 이미지(reference image)를 20% 확률로 드롭하는 방식으로 참조 유무 양쪽에서 모두 동작하도록 학습한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Aurora, Kiwi-Edit, LoomVideo, LTX-2, Lucy-Edit-5B, OmniWeaving, VACE-14B, EffectErase 등 최근 범용 비디오 편집·객체 제거 모델들을 베이스라인으로 삼아 비교했다. 평가지표는 Artifact-Adjusted Removal(AAR, 제거 성공도와 아티팩트를 함께 고려), UI(요소 제거 여부), Clean(아티팩트 없는 완전 제거), Background Preservation(BG, 비UI 영역 보존도)이며, MLLM(GPT 계열)을 평가자로 사용하고 200개 영상에 대해 인간 주석과 대조해 신뢰성(Cohen's κ=0.820, 제거 F1 87.78%)을 검증했다.</p>
+<p>합성(Game2World-S) 벤치마크에서 GameCleaner는 AAR 95.36(참조 없이)으로 가장 강력한 마스크-프리 베이스라인 대비 57.3% 앞섰고, BG 99.00을 유지했다. 참조 이미지를 사용한 변형은 Overall 점수 93.34로 마스크 기반 최강 베이스라인(VACE-1.3B, 69.37)을 23.97점 앞섰다. 실제 야생(Game2World-W) 벤치마크에서는 참조 기반 GameCleaner가 AAR 80.05, BG 99.80으로 가장 우수했으며, 이는 최강 베이스라인(Aurora, AAR 51.19) 대비 28.86점 높은 수치다. 참조 없이도 AAR 51.60을 기록해 베이스라인 수준의 제거 성능과 훨씬 우수한 장면 보존을 동시에 달성했다. 데이터 스케일링 실험에서는 학습 데이터가 늘어날수록 특히 야생 벤치마크 성능이 뚜렷이 향상되며 아직 포화되지 않았음을 확인했다.</p>
+<h2>한계점</h2>
+<p>저자들이 명시한 한계는 다음과 같다. 현재 학습 데이터 규모가 약 100K 페어 영상으로, 게임 장르·인터페이스·녹화 조건의 전체 다양성을 아직 포괄하지 못한다. 큰 불투명 인터페이스, 빠르게 변하는 오버레이, 장면과 시각적으로 뒤엉킨 UI 요소에 대해서는 GameCleaner의 복원이 불완전할 수 있다. 또한 다운스트림 검증에 사용한 것은 액션 조건이 없는 텍스트-투-비디오 생성 모델이며, 완전한 상호작용형 월드 모델 학습에 필요한 플레이어 액션 복원(inverse-dynamics/latent-action 모델)은 아직 다루지 않았다. 이상적으로는 GameCleaner가 소수 스텝으로 증류된 효율적 모델이어야 하나, 이는 향후 과제로 남겨두었다.</p>
+<h2>시사점</h2>
+<p>게임플레이 영상은 월드 모델 학습을 위한 확장 가능한 데이터 소스이지만, 화면 UI를 "인터페이스-월드 분리"라는 명확한 문제로 정식화하고 이를 자동화된 파이프라인으로 해결함으로써 인터넷상의 방대한 야생 게임 영상을 고품질 학습 데이터로 전환할 수 있음을 보여준다. 이는 향후 액션 조건부 상호작용형 월드 모델이나 게임 에이전트 학습을 위한 데이터 수집 전략에 실질적인 시사점을 제공하며, 마스크 없이 구조화된 화면 오버레이를 이해·제거하는 GameCleaner의 접근 방식은 게임 UI 제거를 넘어 유사한 화면 공간 아티팩트가 있는 다른 영상 도메인(예: 앱 녹화, 스트리밍 방송)에도 확장될 가능성을 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.24680" target="_blank" rel="noopener">huggingface.co/papers/2608.24680</a> · 2026-08-27</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

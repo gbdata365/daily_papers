@@ -1,0 +1,120 @@
+<meta charset="UTF-8">
+<title>스트림파이</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#12 · Daily Papers 2026-08-28</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 16</span>
+    </div>
+    <h1 class="article-title">StreamPI: Streaming Multimodal Temporal Modeling for Vision-Language-Action Models</h1>
+    <p class="article-title-ko">스트림파이: 비전-언어-행동 모델을 위한 스트리밍 멀티모달 시간적 모델링</p>
+    <p class="article-sub">StreamPI는 추가 파라미터 없이 단일 프레임 기반 VLA(Vision-Language-Action) 모델인 π0.5에 스트리밍 방식의 시간적 추론 능력을 부여하여, 기억이 필요한 작업과 정밀한 공간 지각이 필요한 로봇 조작 작업 모두에서 성능을 향상시키는 프레임워크이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.26067" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.26067" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: StreamPI: Streaming Multimodal Temporal Modeling for Vision-Language-Action Models</li>
+<li><strong>저자</strong>: Zhe Liu, Jinghua Hou 외 8인 (Zhe Liu와 Jinghua Hou는 공동 1저자) — 홍콩대학교(The University of Hong Kong) 및 ACE Robotics 소속, 교신저자는 Hengshuang Zhao</li>
+<li><strong>출처</strong>: arXiv:2608.26067v1 [cs.CV] (2026년 8월 26일 제출, 논문 헤더에 명시됨)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://happinesslz.github.io/projects/StreamPI">https://happinesslz.github.io/projects/StreamPI</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.26067">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>StreamPI는 추가 파라미터 없이 단일 프레임 기반 VLA(Vision-Language-Action) 모델인 π0.5에 스트리밍 방식의 시간적 추론 능력을 부여하여, 기억이 필요한 작업과 정밀한 공간 지각이 필요한 로봇 조작 작업 모두에서 성능을 향상시키는 프레임워크이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>π0, π0.5와 같은 최신 VLA 모델들은 매 시점마다 하나의 이미지 관측치만으로 행동을 예측하는 단일 프레임(single-frame) 방식을 사용한다. 이 방식은 과거 관측을 기억하고 추론하는 능력과, 시간적 정보 누적을 통해 얻어지는 정밀한 공간 지각 능력 두 가지를 원천적으로 배제한다. 기존의 다중 프레임(window-based) VLA 방법들은 여러 프레임을 한꺼번에 처리하기 때문에 시퀀스 길이가 선형으로 늘어나 연산 비용이 크게 증가하고, 별도의 비디오 인코더를 도입할 경우 사전학습된 시각-언어 표현이 손상될 위험이 있다. 또한 학습은 일정한 간격의 프레임으로 이루어지는 반면 실제 로봇 배포 환경에서는 관측이 비동기적, 가변적 간격으로 들어와 학습-배포 간 불일치가 발생한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>명령어 고정 시간 모델링(Instruction-Anchored Temporal Modeling)</strong>: (시각 관측, 언어 지시) 쌍을 하나의 원자적 시간 단위로 취급하여, 쌍 내부에는 양방향 어텐션(bidirectional attention)으로 교차 모달 융합을, 쌍 사이에는 인과적 어텐션(causal attention)으로 자기회귀적 스트리밍 추론을 가능하게 함으로써 언어 지시가 작업 수행 내내 지속적인 의미적 기준점 역할을 하도록 설계함.</li>
+<li><strong>랜덤 간격 스트리밍 학습(Random-Interval Streaming Training)</strong>: 학습 시 프레임 간 간격을 무작위로 변화시켜, 동기식 학습과 비동기식 실제 로봇 배포 사이의 간극을 줄이고 프레임 타이밍 변동에 대한 강건성을 향상시킴.</li>
+<li><strong>파라미터 추가 없는 시간적 확장</strong>: LLM 백본의 길이 외삽(length extrapolation) 능력을 활용해 어텐션 마스크 재구성만으로 시간적 모델링을 구현, π0.5의 사전학습 가중치를 그대로 계승하면서 단일/다중 프레임 추론을 유연하게 지원함.</li>
+<li><strong>KV 캐시 기반 스트리밍 추론</strong>: 매 시점 전체 관측 윈도우를 다시 처리하는 대신 과거 시점의 Key&amp;Value를 캐싱해 재사용함으로써, 시간 지평(temporal horizon)이 늘어나도 추론 비용을 거의 일정하게 유지함.</li>
+<li><strong>실제 로봇 및 시뮬레이션(LIBERO, CALVIN) 실험을 통한 광범위한 검증</strong>으로 π0.5 대비 일관된 성능 우위를 입증함.</li>
+</ul>
+<h2>방법론</h2>
+<p>StreamPI는 π0.5 백본 위에 구축되며, 매 시점의 입력을 시각 관측 집합과 언어 지시로 구성된 원자 단위 u_t = (V_t, l_t)로 정의한다. 최근 T개의 이러한 단위를 이어붙여 입력 시퀀스를 구성한 뒤, 두 단계의 계층적 어텐션 구조를 적용한다. 첫째, 쌍 내부(intra-pair)에서는 이미지·텍스트 토큰이 서로 양방향으로 어텐션하여 풍부한 교차 모달 융합을 수행한다. 둘째, 쌍 사이(inter-pair)에서는 인과적 어텐션을 적용해 과거 시점들의 융합 표현을 자기회귀적으로 집계한다. 이 구조는 기존 VLA 백본의 어텐션 마스크만 바꾸는 것으로 구현되므로 새로운 파라미터가 필요 없다. 학습 단계에서는 기준 간격 δ̄에 균등분포 U(−Δ, +Δ)의 무작위 섭동을 더한 간격으로 프레임을 샘플링하는 랜덤 간격 샘플링과, 시퀀스의 초반 k개 프레임을 무작위로 마스킹하여 스트리밍 추론 상황을 모사하는 시간 마스킹(temporal masking) 기법을 함께 사용한다. 추론 시에는 새로 들어오는 프레임만 인코딩하고 이전 시점들의 표현은 KV 캐시에서 불러와 교차 어텐션으로 활용함으로써 중복 연산을 제거한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>StreamPI는 π0.5를 백본으로 전체 미세조정(full fine-tuning)하며, 학습 시 스트리밍 프레임 수 T=3/5, 프레임 간격 δ는 [3, 7] 범위에서 균등 샘플링, 8×NVIDIA H100 GPU로 학습을 진행했다.</p>
+<ul>
+<li><strong>실제 로봇 실험</strong>: AgileX PiperX 6-자유도 로봇팔을 사용해 기억 의존 작업(셸 게임, 굴러가는 물체 잡기)과 정밀 지각 의존 작업(좁은 병에 펜 삽입, 컵 슬리브에 컵 삽입) 총 4개 과제에서 π0.5 대비 큰 폭의 성공률 향상을 보였다(굴러가는 물체 잡기 +36.6%p, 셸 게임 +33.3%p, 좁은 병 펜 삽입 +26.7%p, 컵 슬리브 삽입 +32.0%p).</li>
+<li><strong>LIBERO 벤치마크</strong>: LIBERO-Spatial/Object/Goal/Long 4개 스위트에서 StreamPI(T=5)는 평균 98.3%의 성공률로 π0.5(96.9%)를 상회했으며, 특히 장기 호라이즌 과제인 LIBERO-Long에서 +2.6%p로 가장 큰 향상을 보였다. 다만 정적 공간 관계가 지배적인 LIBERO-Spatial에서는 개선이 거의 없었다.</li>
+<li><strong>CALVIN 벤치마크</strong>: 최대 5개 연속 작업을 수행해야 하는 CALVIN에서 StreamPI(T=5)는 평균 시퀀스 길이 4.547을 달성하여 π0.5(4.313), MemoryVLA(4.090)를 모두 능가했으며, 특히 후반 작업 단계로 갈수록 성능 저하가 적었다.</li>
+<li><strong>어블레이션</strong>: 쌍 내부 양방향 어텐션을 인과적 어텐션으로 바꾸면 성능이 뚜렷이 하락하고(T=5의 LIBERO-Long에서 −5.6%p), 랜덤 간격 학습은 고정 간격 학습 대비 일관되게 우수했다(T=5 기준 97.0→98.3). 또한 T=5로 학습한 모델은 T=3, T=1로 추론해도 성능 저하가 크지 않아 프레임 수에 대한 유연성을 보였다.</li>
+<li><strong>추론 효율</strong>: 단일 NVIDIA RTX 4090에서 단일 프레임 추론 지연시간은 94.4±3.4ms이며, 5프레임으로 확장해도 103.6±6.3ms에 그쳐 약 9.2ms의 추가 오버헤드만 발생했다.</li>
+</ul>
+<h2>한계점</h2>
+<p>논문이 스스로 밝힌 한계는 다음과 같다. 첫째, 학습 시 모든 프레임을 한꺼번에 로드해야 하므로 매우 긴 시간 지평을 다룰 경우 학습 비용이 감당하기 어려워질 수 있다. 둘째, 랜덤 간격 스트리밍 학습이 가변 프레임율에 대한 강건성을 높이기는 하지만, 실제 로봇 배포 환경에서 발생할 수 있는 극단적인 비동기성 문제까지는 완전히 해결하지 못한다. 이에 대해 저자들은 향후 100프레임 이상의 긴 호라이즌을 낮은 연산 비용으로 지원하는 효율적 학습 프레임워크와, 초장기 시간 지평에서도 표현 품질을 유지하는 적응형 KV 캐시 가지치기(pruning) 기법을 후속 연구로 제안하고 있다.</p>
+<h2>시사점</h2>
+<p>StreamPI는 새로운 파라미터나 별도의 비디오 인코더 없이, 기존 VLA 백본의 어텐션 마스크 재구성과 학습 전략 변경만으로 시간적 추론 능력을 부여할 수 있음을 보여준다. 이는 사전학습된 강력한 단일 프레임 VLA 파운데이션 모델(π0.5 등)을 자산으로 유지하면서 시간적 문맥을 저비용으로 확장할 수 있는 실용적 경로를 제시한다는 점에서 의의가 크다. 특히 언어 지시를 시각 관측과 지속적으로 결합하는 명령어 고정 설계와, 학습-배포 간극을 겨냥한 랜덤 간격 학습 전략은 향후 다른 VLA 모델이나 로봇 정책에도 폭넓게 적용될 수 있는 일반적인 설계 원칙으로 확장될 가능성이 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.26067" target="_blank" rel="noopener">huggingface.co/papers/2608.26067</a> · 2026-08-28</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

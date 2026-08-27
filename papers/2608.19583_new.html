@@ -1,0 +1,113 @@
+<meta charset="UTF-8">
+<title>브이지아이벤치</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#2 · Daily Papers 2026-08-28</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 143</span>
+    </div>
+    <h1 class="article-title">VGI-Bench: Probing Visual Intelligence in Video Generation Models</h1>
+    <p class="article-title-ko">브이지아이벤치: 영상 생성 모델의 시각 지능 탐색</p>
+    <p class="article-sub">영상 생성 모델이 단순한 시각적 시뮬레이터를 넘어 "시각적 추론자"로 기능할 수 있는지를 사실적인 이미지 입력과 과정 검증형 평가로 정밀하게 진단하는 벤치마크 VGI-Bench를 제안하고, 최신 상용 모델조차 51.0점(100점 만점 환산)에 그치는 뚜렷한 한계를 보인다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.19583" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.19583" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: VGI-Bench: Probing Visual Intelligence in Video Generation Models</li>
+<li><strong>저자</strong>: Xuan He 외 다수 (총 20여 명, 공동 주저자 다수) — 일리노이대학교 어바나샴페인(UIUC)을 중심으로 칭화대학교, 워털루대학교, MIT, 브리티시컬럼비아대학교, Vector Institute, Microsoft Research, NetMind.ai, Etude AI 등 다수 기관이 참여</li>
+<li><strong>출처</strong>: arXiv:2608.19583v3 [cs.CV] (2026년 8월 26일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문 표지에 "Project Page / Data / Code" 링크 표시가 있으나 구체적 URL은 본문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.19583">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>영상 생성 모델이 단순한 시각적 시뮬레이터를 넘어 "시각적 추론자"로 기능할 수 있는지를 사실적인 이미지 입력과 과정 검증형 평가로 정밀하게 진단하는 벤치마크 VGI-Bench를 제안하고, 최신 상용 모델조차 51.0점(100점 만점 환산)에 그치는 뚜렷한 한계를 보인다.</p>
+<h2>배경 및 문제의식</h2>
+<p>최근 연구들은 영상 생성 모델이 외형이나 움직임 같은 저수준 시각 지식뿐 아니라 공간-시간 관계, 규칙적 제약, 행동-결과 인과관계 같은 구조화된 표현을 학습해 제로샷 시각 추론을 수행할 가능성을 시사해왔다. 그러나 기존 평가 벤치마크들은 (1) 선화(line-art)나 도식 같은 비현실적 입력을 사용해 모델의 실제 시각 사전지식과 괴리되고, (2) 최종 상태만 보고 판단해 중간 과정의 타당성을 검증하지 못하며, (3) 난이도가 통제되지 않아 실패가 진단적 의미를 갖지 못하는 세 가지 한계를 지닌다. 이에 저자들은 사실적 입력, 과정 민감성, 난이도 보정이라는 세 조건을 모두 만족하는 새로운 벤치마크의 필요성을 제기한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>VGI-Bench 제안</strong>: 27개 과제, 810개 인스턴스로 구성되며, 4개의 상호 배타적인 과제 도메인(시각 조직화, 물리적 조작, 구조화된 퍼즐, 시공간 역학)과 7개의 비배타적 스킬 태그(공간, 시간, 계획, 속성 파악, 물리, 위상, 어포던스)로 이루어진 2단계 분류 체계를 도입</li>
+<li><strong>사실적 입력과 과정 민감 설계</strong>: 모든 입력 이미지를 16:9 사실적 스타일로 표준화하고, 최종 상태뿐 아니라 중간 궤적의 타당성까지 요구하는 과제만 채택</li>
+<li><strong>사전 생성 필터링과 난이도 보정</strong>: 여러 최신 영상 생성 모델로 사전 테스트해 "일부 모델은 풀고 일부는 실패하는" 과제만 채택함으로써 난이도를 현재 모델의 능력 경계 근처로 조정</li>
+<li><strong>이중 평가지표(Completeness × Rubric)와 VLM 심판 체계</strong>: 전역적 목표 달성도(Completeness)와 국소적 규칙 준수도(Rubric Score)를 곱하여 최종 점수를 산출하는 방식을 고안</li>
+<li><strong>다각도 진단 분석</strong>: 실패 유형 분류, 입력 조건(프롬프트·시각 스타일) 민감도, 합성 데이터 파인튜닝의 전이 한계, 디노이징 궤적 상의 자기교정 능력 분석까지 폭넓게 수행</li>
+</ul>
+<h2>방법론</h2>
+<p>VGI-Bench의 각 과제 인스턴스는 텍스트 프롬프트와 첫 프레임 역할을 하는 입력 이미지로 구성되며, 모델은 지정된 시각적 절차를 완수하는 영상을 생성해야 한다. 입력 이미지는 웹 이미지나 기존 데이터셋에서 수집하거나 GPT-Image-2, Nano Banana Pro 같은 이미지 생성 모델로 제작한 뒤 사람이 직접 검수하여 의도한 과제 설계에 부합하도록 반복 수정한다. 각 과제는 쉬움·보통·어려움 3단계 난이도로 인스턴스화되며, 사전 생성 단계에서 Sora2, Veo3.1, Kling3.0 등 최신 모델로 시험해 "적어도 하나는 풀고 적어도 하나는 실패하는" 과제만 최종 채택한다. 평가는 두 지표를 곱해 산출한다. Completeness는 균일 샘플링된 프레임을 VLM 심판(Gemini-3-Flash)에 보여 완료/부분/실패 3단계로 판정하고, Rubric Score는 과제별 세부 체크리스트를 대상으로 저해상도(4fps)에서 시작해 의심스러운 구간을 고해상도(8fps)로 재검사하는 적응형 슬라이딩 윈도 방식으로 위반 횟수를 집계한 뒤 역감쇠 함수(1/(x+1))로 점수화한다. 아울러 일부 과제를 단일 이미지 출력 형식으로 변형해 이미지 생성 모델도 함께 평가한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>상용 모델(Seedance2.0, Sora2, Veo3.1, Kling3.0, Wan2.7, Gen4.5)과 오픈소스 모델(MiniMax-H3, HunyuanVideo-1.5, Wan2.2)을 포함해 폭넓은 영상 생성 모델을 절반 인스턴스 서브셋으로 평가했다. 최고 성능은 Seedance2.0의 51.0점(100점 만점)이었고, 2위는 Kling3.0(44.0), MiniMax-H3(44.4)였다. 도메인별로는 구조화된 퍼즐(Structured Puzzles)이 가장 어려운 영역이었고, 스킬 태그 중에서는 위상(Topology)과 시간(Temporal)이 가장 취약했다. 완벽한 완료·규칙 준수를 요구하는 엄격 성공률(Strict Success Rate) 기준으로는 Seedance2.0조차 14.0%에 그쳤고, 인간 참가자의 성공률은 평균 97.1%로 여전히 큰 격차가 존재했다. 이미지 생성 모델 평가에서는 Nano-Banana-Pro(55.0%)와 Seedream-4.5(52.1% 등)가 선두였다. 평가자 신뢰도 검증에서는 적응형 프레임 샘플링과 슬라이딩 포커스 윈도를 모두 사용한 Gemini-3-Flash 기반 심판이 인간 평가와 가장 높은 일치도(AUC 0.803, 쌍별 정확도 73.2%)를 보였다. 추가 분석에서는 오라클 프롬프트(정답 절차를 명시적으로 제공)를 주어도 성능 향상이 제한적이었고, 선화(line-art) 입력으로 바꾸면 특히 오픈소스 모델의 순위와 성능이 크게 달라졌다. 또한 VBVR의 대규모 합성 데이터 파인튜닝은 훈련 분포와 구조적으로 겹치는 과제에서는 크게 향상되지만(예: Wan2.2 기반 모델이 겹침 과제에서 15.3→55.8) 겹치지 않는 과제에서는 향상 폭이 작거나 오히려 저하되었다. 디노이징 궤적 분석에서는 자기교정(오답→정답 전환)이 모든 단계에서 1% 미만에 그친 반면, 오답→다른 오답으로의 전환은 최대 24.8%에 달해, 후반 디노이징 단계가 초기 가설을 교정하기보다는 답습·정제하는 데 그친다는 것을 보여주었다.</p>
+<h2>한계점</h2>
+<p>저자들이 명시한 한계는 다음과 같다. 첫째, 모든 과제는 현재 영상 모델의 전형적 생성 길이(약 5~10초)에 맞춰 설계되어 다분(多分) 단위의 장기 절차적 추론은 다루지 못한다. 둘째, 이미지-투-비디오(i2v) 설정과 16:9 고정 비율만을 다루며, 텍스트-투-비디오, 다중 이미지 조건, 오디오 조건 생성은 향후 과제로 남겨두었다. 셋째, 모든 프롬프트와 채점 기준이 영어로 작성되어 다국어·교차언어 평가는 다루지 않는다. 넷째, 과제 구성이 전체를 총망라하기보다는 대표성을 지향해 설계되었으므로, 향후 모델 능력이 향상됨에 따라 벤치마크 확장이 필요할 수 있다.</p>
+<h2>시사점</h2>
+<p>이 연구는 영상 생성 모델을 단순한 콘텐츠 생성기가 아니라 "시각적 세계 시뮬레이터" 및 잠재적 "시각적 추론자"로 보는 최근 관점에 대해, 신뢰할 수 있는 진단 도구를 제공함으로써 이 분야의 발전 방향을 가늠하는 척도를 제시한다. 특히 사실적 입력과 과정 검증이라는 조건을 함께 만족시켜, 기존 벤치마크들이 혼동하기 쉬웠던 "시각 스타일 불일치로 인한 실패"와 "실제 추론 능력의 한계"를 분리해서 볼 수 있게 한다는 점이 방법론적으로 의미가 크다. 또한 디노이징 궤적에서 자기교정이 거의 일어나지 않는다는 관찰은, 확산 언어모델(dLLM) 연구에서 제기된 "반복적 정제=추론"이라는 낙관적 가설이 현재의 영상 생성 모델에는 아직 적용되기 어렵다는 점을 시사하며, 향후 학습 방법이나 아키텍처가 실제 오류 교정 능력을 갖추도록 발전할 필요성을 제기한다. 합성 데이터 파인튜닝의 전이 한계에 대한 분석 역시 데이터 구성 전략 수립에 실질적인 시사점을 준다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.19583" target="_blank" rel="noopener">huggingface.co/papers/2608.19583</a> · 2026-08-28</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

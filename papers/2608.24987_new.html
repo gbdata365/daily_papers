@@ -1,0 +1,121 @@
+<meta charset="UTF-8">
+<title>디쓰리엠오피디</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#7 · Daily Papers 2026-08-28</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 22</span>
+    </div>
+    <h1 class="article-title">D^3-MOPD: Adaptive Dynamic Domain ScheDuling for Efficient Multi-Teacher Distillation</h1>
+    <p class="article-title-ko">디쓰리엠오피디: 효율적인 다중교사 증류를 위한 적응형 동적 도메인 스케줄링</p>
+    <p class="article-sub">여러 도메인 전문 교사(teacher) 모델을 하나의 학생(student) 모델로 증류하는 다중교사 온폴리시 증류(MOPD)에서, 학습 중 이미 계산되는 도메인별 reverse-KL 신호를 재활용해 데이터 혼합 비율을 온라인으로 동적 조정하는 제로 오버헤드 스케줄러 D³-MOPD를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.24987" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.24987" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: D^3-MOPD: Adaptive Dynamic Domain ScheDuling for Efficient Multi-Teacher Distillation</li>
+<li><strong>저자</strong>: AllSpark Team 소속 연구진. 부록에 명시된 기여자는 Zechen Sun, Zhiwei Zhang, Fei Zhao, Juntao Li, Mu Chuan, Huayu Deng, Guojian Zhan, Wenliang Chen, Yao Hu, Min Zhang 등 10인이며, 구체적인 소속 기관명은 논문에 명시되지 않음.</li>
+<li><strong>출처</strong>: arXiv:2608.24987v1 [cs.LG] (2026년 8월 25일 제출, 논문 상단에는 2026년 8월 22일자 문서로 표기됨)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.24987">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>여러 도메인 전문 교사(teacher) 모델을 하나의 학생(student) 모델로 증류하는 다중교사 온폴리시 증류(MOPD)에서, 학습 중 이미 계산되는 도메인별 reverse-KL 신호를 재활용해 데이터 혼합 비율을 온라인으로 동적 조정하는 제로 오버헤드 스케줄러 D³-MOPD를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>다중교사 온폴리시 증류(Multi-Teacher On-Policy Distillation, MOPD)는 수학, 코드, 지시 따르기(Instruction Following), 도구 사용(Tool-use) 등 여러 도메인 전문 교사의 능력을 하나의 학생 모델에 통합하는 효과적인 방법으로 주목받고 있다. 그런데 기존 구현들은 학습 시작 전에 도메인별 데이터 혼합 비율(mixture)을 프롬프트 풀 크기에 맞춰 고정한 채 학습 내내 유지한다. 저자들은 실제로는 도메인마다 수렴 속도가 크게 달라, 어떤 도메인(예: 코드)은 학습 초반에 이미 성능이 정체(plateau)되는 반면 어떤 도메인(예: 지시 따르기)은 전체 학습 예산 동안 계속 개선된다는 점을 실증적으로 관찰했다. 고정된 혼합 비율은 이미 수렴한 도메인에 불필요한 연산을 낭비하고, 아직 학습 여지가 남은 도메인은 충분히 학습시키지 못하는 비효율을 야기한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>도메인별 학습 속도가 서로 다르다는 점을 단일 도메인 온폴리시 증류(OPD) 실험으로 정량적으로 입증하고, 고정 혼합 비율이 초래하는 연산 낭비를 분석함(§2).</li>
+<li>학습 루프를 전혀 수정하지 않고 별도 프로세스(off-process watcher)로 동작하며, 이미 계산되는 도메인별 reverse-KL 신호만을 이용해 데이터 혼합 비율을 주기적으로 갱신하는 D³-MOPD 스케줄러를 제안함.</li>
+<li>"잔여 격차(remaining gap)"와 "하강 속도(descent velocity)"라는 두 신호의 곱으로 구성된 복합 신호(composite signal)를 정의하고, 이를 온도 조절 소프트맥스와 도메인별 하한(floor)을 가진 함수로 매핑해 유효한 혼합 비율을 산출함.</li>
+<li>임의의 도메인 수 K로 자연스럽게 확장 가능하며, 도메인이 많아질수록(수렴 패턴이 다양해질수록) 이득이 커진다고 주장함.</li>
+<li>지수 감쇠(exponential decay) 모델 하에서 복합 신호가 정규화된 KL의 한계 감소량에 비례함을 보이는 이론적 분석(부록 E)과, 4B 규모 모델로의 일반화 실험(부록 D)을 포함함.</li>
+</ul>
+<h2>방법론</h2>
+<p>D³-MOPD는 기존 MOPD 학습 루프에 두 요소를 추가한다. 첫째, 오프프로세스 워처(watcher)는 트레이너가 기록하는 도메인별 reverse-KL 로그를 주기적으로(매 n=10 스텝) 읽어 새로운 혼합 비율을 계산하고 상태 파일(status file)에 기록한다. 둘째, 계층화된 데이터 소스(stratified data source)는 이 상태 파일을 읽어 각 배치를 목표 비율에 맞춰 구성한다. 이렇게 함으로써 롤아웃 생성, 교사 프리필, 학생 업데이트 등 핵심 학습 루프는 전혀 건드리지 않는다.</p>
+<p>복합 신호는 두 요소의 곱으로 계산된다. (1) 잔여 격차: 현재 EMA(지수이동평균) KL 값을 학습 초기 KL 값으로 정규화한 값으로, 도메인 간 절대 KL 스케일 차이(수십 배 이상 차이 날 수 있음)를 보정한다. (2) 하강 속도: 최근 R개의 겹치지 않는 시간 윈도우에 걸친 KL 감소율의 음의 평균을 0 이하로 클리핑한 값으로, 노이즈에 의한 순간적 신호 소실을 막기 위해 여러 윈도우를 평균한다. 두 신호의 곱은 "아직 개선 여지가 있으면서 실제로 계속 개선되고 있는" 도메인에만 높은 값을 부여한다. 이 신호는 온도 T와 하한 ε을 가진 소프트맥스 함수를 통해 확률 혼합 비율로 변환되며, 하한 ε은 이미 수렴한 도메인이라도 파국적 망각(catastrophic forgetting)을 막기 위해 최소한의 샘플링 비율을 보장한다. 또한 워처가 비율을 매 n스텝마다만 갱신하므로, 배치 간 다양성을 유지하기 위해 균일분포 노이즈를 곱하는 "배치 단위 지터(jitter)"를 적용한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Qwen3.6-35B-A3B를 학생 모델로, GRPO로 각각 수학·코드·지시 따르기·도구 사용 도메인에 특화 학습된 4개의 동일 백본 교사 모델을 사용했다(slime 프레임워크, Megatron 백엔드, 총 256 롤아웃 스텝, 배치 크기 128). 평가는 AIME 2025, HMMT Nov 2025(수학), LiveCodeBench, OJBench C++(코드), IFBench, IFEval(지시 따르기), BFCL v3 Multi-Turn(도구 사용) 등 7개 벤치마크에서 이루어졌다.</p>
+<p>주요 결과는 다음과 같다.
+- D³-MOPD는 학생-교사 성능 격차의 97%를 해소한 반면, 바닐라 MOPD는 63%만 해소함(정규화 점수 기준).
+- 바닐라 MOPD가 최고 평균 정확도(61.4)에 도달하는 데 143 스텝이 필요했던 반면, D³-MOPD는 47 스텝 만에 동일 수준(62.1)에 도달해 약 3배의 학습 효율 향상을 보였고, 최종적으로 더 높은 피크(62.3, 95 스텝)를 기록함.
+- 7개 벤치마크 중 HMMT(N), IFEval, OJBench C++ 세 개에서 도메인 전문 교사 모델을 능가함(바닐라 MOPD는 하나도 능가하지 못함).
+- 절제 실험(ablation) 결과, 잔여 격차 신호와 하강 속도 신호 중 하나만 사용해도 바닐라 MOPD보다 낫지만(각각 61.46, 61.41), 두 신호를 결합한 복합 신호가 가장 우수함(62.34). 배치 지터와 속도 평활화(R=3)도 각각 성능에 기여함.
+- 워처 프로세스가 트레이너를 차단하지 않으므로 처리량(throughput) 오버헤드가 거의 없음(D³-MOPD 520 vs 바닐라 531 tokens/GPU/s, 차이 2.1%).
+- Qwen3.5-4B 학생 모델로도 검증해 유사한 경향(정규화 점수 1.01 vs 0.86, 수렴 스텝 25% 단축)을 확인해 모델 규모에 대한 일반화 가능성을 보임.</p>
+<h2>한계점</h2>
+<p>논문이 명시적으로 한계로 서술한 부분은 제한적이지만, 본문에서 관찰되는 유의점은 다음과 같다. 코드/지시 따르기 등 개별 벤치마크의 피크가 서로 다른 체크포인트에서 발생하므로, 단일 배포 체크포인트를 선택하면(부록 C의 최고-평균 체크포인트 비교) 정규화 점수가 개별 최고점 대비 낮아진다(예: D³-MOPD 0.97→0.73). 또한 하강 속도 평활화 없이(R=1) 사용한 변형이 BFCL 벤치마크에서는 오히려 D³-MOPD보다 높은 점수를 기록하는 등, 복합 신호 설계가 모든 도메인·모든 지표에 균일하게 최적은 아님을 시사한다. 이론적 분석(부록 E)은 지수 감쇠라는 단순화 가정에 기반하며, 저자들 스스로 이는 실제 필요조건이 아니라 설계 근거로 제시한 것이라고 밝히고 있다. 그 외 소수 도메인(4개)·특정 프레임워크(slime, Megatron)에 한정된 실험이라는 점, 그리고 명시적인 사회적·안전성 한계에 대한 논의는 없다.</p>
+<h2>시사점</h2>
+<p>이 연구는 다중교사 증류에서 그동안 "무엇을(어떤 토큰/샘플을) 학습할 것인가"에 초점을 맞춘 기존 온폴리시 증류 연구들과 달리, "어떤 도메인에서 얼마나 학습할 것인가"라는 데이터 배분(스케줄링) 차원의 문제를 다룬다는 점에서 상호보완적 기여를 한다. 특히 별도의 학습 신호나 추가 연산 없이 이미 계산되는 loss 신호(reverse-KL)를 재활용해 학습 루프를 수정하지 않고도 실질적인 성능·효율 개선을 이끌어냈다는 점은, 대규모 언어모델 사후학습(post-training) 파이프라인에 손쉽게 통합할 수 있는 실용적 기법으로서 의의가 크다. 도메인 수가 늘어날수록 이득이 커진다는 주장이 사실이라면, 여러 전문 능력을 하나의 모델로 통합하는 최신 대규모 모델 개발(MiMo, DeepSeek, GLM 등에서 사용되는 MOPD 스타일 파이프라인) 전반에 적용 가능한 범용 스케줄링 기법으로 확장될 잠재력이 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.24987" target="_blank" rel="noopener">huggingface.co/papers/2608.24987</a> · 2026-08-28</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

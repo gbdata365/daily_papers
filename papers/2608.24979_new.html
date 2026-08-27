@@ -1,0 +1,124 @@
+<meta charset="UTF-8">
+<title>프론티어챌린지</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#3 · Daily Papers 2026-08-28</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 129</span>
+    </div>
+    <h1 class="article-title">FrontierChallenge: Evaluating Scientific Workflow Completion</h1>
+    <p class="article-title-ko">프론티어챌린지: 과학 워크플로우 완성도 평가</p>
+    <p class="article-sub">FrontierChallenge는 화학·재료·생명과학 등 6개 과학 분야에 걸친 300개의 종단간(end-to-end) 과학 워크플로우 벤치마크로, 12개 프론티어 모델을 평가한 결과 부분 점수(Avg. Score)는 높아도 완전 완료율(Pass Rate)은 최고 20.6%에 그쳐 "부분 진척"과 "완전한 과학적 산출물 인도" 사이에 큰 간극이 있음을 보여준다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.24979" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.24979" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: FrontierChallenge: Evaluating Scientific Workflow Completion</li>
+<li><strong>저자</strong>: Liangcai Su, Zhaopeng Feng, Zhuo Chen, Zhen Zhang (이상 4인 공동 1저자) 외 Xiang Lin, Ruilin Li, Handuo Zhang, Ning Wang, Kailong Wen, Yueqi Guo, Feng Xing, Yiling Guo, Chenxiong Qian, Simon Shaolei Du, Lidong Bing, Xinyu Wang(프로젝트 리드) 등 총 16인 (Apodex Team). 세부 소속기관은 논문에 명시되지 않음</li>
+<li><strong>출처</strong>: arXiv:2608.24979v1 [cs.AI] (2026년 8월 25일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문 상단에 Website(Leaderboard), GitHub(Evaluation), Hugging Face(Dataset) 링크가 언급되어 있으나 본문 텍스트에는 구체적 URL이 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.24979">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>FrontierChallenge는 화학·재료·생명과학 등 6개 과학 분야에 걸친 300개의 종단간(end-to-end) 과학 워크플로우 벤치마크로, 12개 프론티어 모델을 평가한 결과 부분 점수(Avg. Score)는 높아도 완전 완료율(Pass Rate)은 최고 20.6%에 그쳐 "부분 진척"과 "완전한 과학적 산출물 인도" 사이에 큰 간극이 있음을 보여준다.</p>
+<h2>배경 및 문제의식</h2>
+<p>언어모델 기반 에이전트는 이제 단순 텍스트 생성을 넘어 계획 수립, 도구 호출, 코드 실행, 파일 수정까지 수행하며 다단계 연구 워크플로우를 조율하는 수준으로 발전하고 있다. 그러나 기존 벤치마크(HLE, SWE-bench, ScienceAgentBench 등)는 대부분 최종 답, 단일 프로그램, 또는 하나의 학문 분야에 국한된 평가 단위를 사용해, 이질적인 여러 분석 단계와 여러 종류의 필수 산출물(코드, 표, 그림, 보고서 등)로 구성된 실제 과학 업무를 에이전트가 끝까지 완수할 수 있는지는 제대로 측정하지 못했다. 이에 저자들은 "입력과 목표가 고정된 상태에서 에이전트가 독립적으로 워크플로우를 처리부터 최종 산출물까지 완수하고 전체 과업 계약(task contract)을 만족할 수 있는가?"라는 좁지만 핵심적인 질문을 제기한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>양자화학, 분자동역학, 재료 특성분석, 분석화학, 생명과학, 전기화학/환경 등 6개 분야, 21개 워크플로우 패밀리에 걸친 300개의 종단간 과학 워크플로우 풀을 구축하고, 이 중 97개 과제를 공개·평가함(나머지 203개는 내부 보류 세트).</li>
+<li>각 과제를 고정 입력, 사용 가능한 소프트웨어/도구, 요구 산출물 계약(output contract), 과제별 실행 가능한 채점기(Grader)로 표준화하여 패키징함.</li>
+<li>단일 정답이 아닌 "완전 산출물 번들"을 평가 단위로 삼는 계약 수준(contract-level) 평가 체계를 제안하고, 엄격한 완전완료 지표인 Pass Rate와 부분 진척 지표인 Avg. Score를 함께 보고함.</li>
+<li>12개 프론티어 모델과 3개 에이전트 스캐폴드(Codex, Claude Code, Frontier Agent)를 결합한 다수의 구성으로 970개의 Claude Code 궤적을 포함해 대규모 평가를 수행하고, 도메인별 완료 격차와 실패 양상을 분석함.</li>
+</ul>
+<h2>방법론</h2>
+<ul>
+<li>과제는 실제 전문 실무를 반영하는 대표성(Representativeness), 여러 의존적 단계를 요구하는 복잡성(Complexity), 템플릿 반복을 피하는 다양성(Diversity), 파일·수치·정량 기준으로 채점 가능한 검증가능성(Verifiability) 4가지 원칙으로 선별되었다.</li>
+<li>각 과제 패키지는 과제 설명, 고정 입력 데이터, 실행 환경(도구/소프트웨어, 예: ORCA, CP2K, LAMMPS, AmberTools, PLUMED), 요구 산출물 목록, 단계별 채점 루브릭과 실행 가능한 Grader로 구성된다. 일부 의미적 채점 기준은 GPT-5.6 Sol을 심판(Judge)으로 사용해 3회 반복 평가한다.</li>
+<li>평가 지표는 과제별 0~100점 원점수 s_mi를 기반으로, s_mi ≥ 99.9를 만족해야 "완전완료(pass)"로 인정하는 엄격한 이진 지표 Pass Rate(주 지표)와, 평균 점수인 Avg. Score(보조 지표, 부분 진척 측정용)로 정의된다.</li>
+<li>실패 원인 분석을 위해 Judge/Grader/Infra/누락산출물 등 계약 위반 신호(contract-breach signature), 최종 메시지 내 "완료 주장" 언어 여부, 도구 오류(tool error) 발생률 등 여러 관점을 결합해 살펴본다.</li>
+</ul>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li>12개 모델(GPT-5.6 Sol/Terra, Grok 4.6, Kimi K3, Claude Opus 5, Qwen 3.8 Max, Qwen3.5-397B-A17B, DeepSeek V4 Flash/Pro, Apodex 1.1, GLM-5.2, Gemini 3.7 Flash)을 Codex, Claude Code, Frontier Agent(Agent Team) 스캐폴드와 조합해 97개 과제(Hard 74개, Medium 23개)에서 평가했다.</li>
+<li>전체 Pass Rate는 3.1%~20.6%, Avg. Score는 67.5~87.9로 나타났다. 최고 성능은 Codex+GPT-5.6 Sol(Avg. Score 87.9, Pass Rate 20.6%)과 Claude Code+Grok 4.6(Avg. Score 86.6, Pass Rate 20.6%)이 공동 1위를 기록했다.</li>
+<li>Avg. Score가 80점을 넘는 8개 구성 중 어느 것도 Pass Rate 20.6%를 넘지 못해, 높은 평균 점수가 완전 인도를 보장하지 않음을 확인했다. 특히 분석화학은 최고 Avg. Score 87.6에도 Pass Rate가 최대 4%에 그쳤고, 전기화학/환경 분야는 최고 Avg. Score 94.9에도 모든 구성에서 Pass Rate가 0%였다.</li>
+<li>도메인별로는 양자화학에서 Claude Code+Grok 4.6이 60%의 최고 Pass Rate를 기록했으나, 재료 특성분석·분석화학·전기화학/환경에서는 대부분 구성이 사실상 실패했다.</li>
+<li>리소스 사용량은 모델별로 입력 토큰이 218만~1,373만 토큰(6배 이상 차이), 실행 시간은 과제당 평균 21.8분~112.8분으로 큰 편차를 보였다.</li>
+<li>970개의 Claude Code 궤적 분석 결과, 완료에 실패한 849개 궤적 중 75.5%(641개)가 최종 메시지에 "완료" 주장을 담고 있었고, 도구 오류는 성공/실패 궤적 모두에서 흔하게 관찰되어(각각 94.2%, 80.7%) 오류 발생 여부나 자기보고식 완료 선언이 실제 완료 여부의 신뢰할 만한 지표가 아님을 보여주었다.</li>
+</ul>
+<h2>한계점</h2>
+<p>저자들은 결과가 (1) 이번에 공개된 97개 과제 세트, (2) 평가에 사용된 특정 모델·스캐폴드 구성, (3) 트레일 상세 분석이 가능했던 Claude Code 궤적 범위, (4) 제공자별로 상이한 리소스(토큰) 집계 방식, (5) 단일 실행(single run) 결과에 한정된다는 점을 명시적으로 밝히고 있다. 또한 6개 분야는 해당 과학 분야 전체를 대표하는 확률 표본이 아니라 이번 공개 세트의 서술적 구획일 뿐이므로, 도메인 간 성능 차이를 학문 분야 고유의 난이도 서열로 해석해서는 안 된다고 강조한다.</p>
+<h2>시사점</h2>
+<p>이 연구는 부분 점수나 모델의 자기 완료 선언만으로는 과학 워크플로우의 실제 완수 여부를 판단할 수 없음을 실증적으로 보여줌으로써, 에이전트 평가에서 "종단간 실행"과 "산출물 완전성"을 별도로, 그리고 함께 측정해야 할 필요성을 제기한다. 저자들은 보다 신뢰할 수 있는 과학 에이전트를 만들기 위해서는 명시적인 계약 추적(contract tracking), 산출물 간 교차 검증(cross-artifact validation), 증거 기반 완료 확인(evidence-based completion check) 메커니즘이 필요하다고 결론짓는다. 이는 향후 과학 연구 자동화 에이전트의 설계 및 평가 방법론에 실질적인 방향을 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.24979" target="_blank" rel="noopener">huggingface.co/papers/2608.24979</a> · 2026-08-28</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

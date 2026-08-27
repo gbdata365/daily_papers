@@ -1,0 +1,119 @@
+<meta charset="UTF-8">
+<title>브이비브이알프로</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#6 · Daily Papers 2026-08-28</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 43</span>
+    </div>
+    <h1 class="article-title">VBVR-Pro: A Scalable and Verifiable Suite for Native Visual Reasoning</h1>
+    <p class="article-title-ko">브이비브이알프로: 네이티브 시각 추론을 위한 확장 가능하고 검증 가능한 스위트</p>
+    <p class="article-sub">VBVR-Pro는 이미지·비디오·인터리브(텍스트-이미지) 생성 모델이 "생성 그 자체를 통해 추론"하는 네이티브 시각 추론(native visual reasoning) 능력을 대규모로 학습·검증·최적화·비교할 수 있도록 만든 300개 과제, 검증 가능한 보상 채점기, 강화학습 파이프라인을 포함한 폐루프(closed-loop) 종합 스위트이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.26105" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.26105" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: VBVR-Pro: A Scalable and Verifiable Suite for Native Visual Reasoning</li>
+<li><strong>저자</strong>: Junxiang Xu, Ruisi Wang, Fanyi Pu 등 50인 이상의 대규모 공동 연구 (난양이공대학교(NTU) 주도, UC 버클리, UC 샌디에이고, 도쿄대, 홍콩중문대, 미시간대, 존스홉킨스대, 카네기멜런대, 컬럼비아대, 스탠퍼드대, 옥스퍼드대 등 20개 기관 및 VBVR Community Contributors 참여). 교신저자는 Zhongang Cai(NTU), Hokin Deng(CMU).</li>
+<li><strong>출처</strong>: arXiv:2608.26105v1 [cs.CV] (2026년 8월 26일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://video-reason.com">video-reason.com</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.26105">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>VBVR-Pro는 이미지·비디오·인터리브(텍스트-이미지) 생성 모델이 "생성 그 자체를 통해 추론"하는 네이티브 시각 추론(native visual reasoning) 능력을 대규모로 학습·검증·최적화·비교할 수 있도록 만든 300개 과제, 검증 가능한 보상 채점기, 강화학습 파이프라인을 포함한 폐루프(closed-loop) 종합 스위트이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>언어모델의 성공으로 "추론"은 주로 언어를 매개로 연구되어 왔지만, 공간 변형·시간적 연속성·물체 지속성 같은 물리 세계의 지능은 언어보다 시각적 생성(이미지·비디오)을 통해 더 잘 드러날 수 있다는 최근 관찰이 있다. 그러나 이러한 "네이티브 시각 추론" 패러다임은 (1) 대규모 학습 가능한 과제의 부재, (2) 신뢰할 수 있는 채점(피드백)의 부재, (3) 이미지·비디오·인터리브 등 서로 다른 생성 매체 간 통제된 비교 수단의 부재로 인해 체계적으로 연구되지 못했다. 저자들은 이 세 가지를 모두 갖춘 폐루프 인프라가 필요하다고 주장하며 VBVR-Pro를 제안한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>과제 확장(Task Scaling)</strong>: 절차적으로 생성되는 300개의 시각 추론 과제(기존 VBVR의 150개를 재구성 + 신규 150개)로 구성된 대규모 학습 데이터셋(VBVR-Pro-Dataset)을 구축, RISE-Video·MME-CoF-Pro·BabyVision 등 7개 외부 벤치마크에서 평균 20%p 이상의 전이 성능 향상을 확인.</li>
+<li><strong>검증 가능한 보상 채점기(Verifiable Reward Scorers)</strong>: VLM-as-a-judge 방식의 고질적 오류(정밀한 지각 실패, 세부 오류 간과, 과제 규칙 오해, 낮은 재현성)를 실증적으로 규명하고, 규칙 기반의 결정론적 채점기를 100개 과제에 대해 설계하여 사람 평가와의 정합도와 비용 효율성 모두에서 VLM 판정자를 능가함을 입증.</li>
+<li><strong>메커니즘 연구(Mechanism Study)</strong>: 30개 이상의 이미지·비디오·인터리브 생성기를 동일 과제 분포 하에서 통제 비교하여, 시공간 상태 추적이 필요한 과제에는 비디오 생성이, 압축된 효율성 면에서는 인터리브 생성이 우수함을 규명하고, 명시적 언어 사고연쇄(CoT)보다 시각 상태 궤적(visual trajectory) 자체가 시각 추론의 더 핵심적인 매체임을 반사실적 개입 실험으로 증명.</li>
+<li><strong>검증 가능한 보상 기반 강화학습(RLVR)</strong>: Coefficients-Preserving Sampling(CPS)이라는 탐색-충실도 균형 샘플링 기법을 도입하고, 이를 활용한 다중 과제 RL이 VLM 보상 기반 RL(RLVLM) 및 지도미세조정(SFT)보다 일관되게 우수한 성능을 보임을 실증.</li>
+<li><strong>연구 재현성 확보</strong>: 데이터, 모델, 채점기, 코드 전체를 공개하여 후속 연구를 촉진.</li>
+</ul>
+<h2>방법론</h2>
+<p>VBVR-Pro는 지각(Perception), 공간성(Spatiality), 변형(Transformation), 추상화(Abstraction), 지식(Knowledge)이라는 5개의 인지 능력 분류 체계 하에, 각 과제를 매개변수화된 절차적 생성기(procedural generator)로 구현한다. 각 생성기는 무작위 파라미터(격자 크기, 물체 수, 난이도 등)로 문제 인스턴스를 만들고, 전용 솔버(solver)가 정답과 메타데이터(정답 경로, 핵심 속성 등)를 함께 생성해 사람의 수작업 라벨링 없이 검증 가능한 정답을 확보한다. 각 인스턴스는 비디오, 이미지(Last-Frame/Key-Frame/Multi-Frame의 세 출력 방식), 인터리브 텍스트-이미지의 세 가지 정렬된 양식으로 동시에 렌더링되어 매체 간 공정한 비교가 가능하다. 채점기는 HSV 색 분할, 윤곽선 검출, OCR, 궤적 추적 등 고전적 컴퓨터비전 기법으로 물체 속성(색, 형태, 위치, 개수)을 추출한 뒤, 과제별로 설계된 가중합 또는 곱셈형(제약 위반 시 급격히 감점) 규칙으로 점수를 산출해 해석 가능한 오류 분해를 제공한다. 강화학습에서는 Flow-GRPO/DanceGRPO 계열의 그룹 상대 최적화를 사용하되, 표준 확률적 노이즈가 시각 추론에 필요한 "의미론적" 탐색(예: 미로에서 좌/우 선택)을 유도하지 못하는 문제를 해결하기 위해 CPS 샘플링으로 시각적 충실도를 유지하면서도 다양한 과제 결정을 탐색하도록 한다.</p>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li>300개 과제 중 50개를 OOD(분포 외) 평가용으로 분리하고, 나머지 250개 중 50개를 ID(분포 내) 평가용으로 추가 지정해 총 100개 과제(VBVR-Pro-Bench)로 평가. 학습 데이터는 250개 과제에서 125만 개 인스턴스를 샘플링.</li>
+<li>BAGEL-7B-MoT, FLUX.2-dev, Qwen-Image-Edit(이미지), ThinkMorph-7B, SenseNova-U1-8B-MoT(인터리브), Wan2.1/2.2, LTX-2.3-I2AV(비디오) 등 9개 오픈소스 모델을 VBVR-Pro-Dataset으로 파인튜닝한 결과, 전체 평균 0.290점(0~1 척도) 향상, ID에서 +0.401, OOD에서 +0.179 향상.</li>
+<li>최고 성능 모델(VBVR-Pro-Wan2.2-I2V-A14B)은 RISE-Video, V-ReasonBench, RULER-Bench, MME-CoF-Pro, VideoThinkBench, BabyVision-Gen, IntelligentVBench 등 7개 외부 벤치마크에서 최대 20%p 이상의 향상을 보였고, 최근접 이웃 분석 결과 이는 단순 암기가 아닌 일반화된 시각 개념 학습에 기인함을 확인.</li>
+<li>검증 가능한 채점기는 사람 선호도와의 일치도(4수준 아레나 형식)에서 0.60 이상을 기록해 GPT-5.5(0.54), Gemini-3.1-Pro(0.52) 등 VLM 판정자를 능가했고, 비용은 가장 저렴하며 재현율(동일 입력 재평가 시 점수 변화 비율)이 0%인 반면 VLM 판정자는 55~93%가 변동.</li>
+<li>RL 실험(VBVR-Pro-Wan2.2-TI2V-5B 기반)에서 RLVR은 전체 점수 0.548로 RLVLM(0.508), SFT(0.503)를 능가했으며, GPU 자원을 사용하지 않는 CPU 기반 채점 덕분에 128×H800 GPU 환경에서 학습 시간을 38.7% 단축(RLVR 5.1일 vs RLVLM 8.3일).</li>
+</ul>
+<h2>한계점</h2>
+<p>논문에 명시적인 "한계점" 절은 없으나, 본문에서 관찰되는 한계로는: 최고 성능의 파인튜닝 모델조차 여전히 사람 수준 성능에 크게 못 미치는 것으로 나타났고, 대다수 오픈소스 생성 모델은 학습 데이터 부족으로 최상위 독점(proprietary) 모델(Seedance 2.0, GPT-Image-2 등)에 비해 크게 뒤처진다. 단일 이미지 생성 방식은 특히 변형(transformation) 과제에서 중간 상태 정보를 담지 못해 비디오·인터리브 방식보다 현저히 약하다는 한계도 확인되었다. 또한 VLM 판정자를 보상으로 쓴 RL(RLVLM)은 특정 구간(400~500 스텝)에서 배경색이 흐려지는 등 미세한 결함을 판정자가 제대로 벌점화하지 못해 불안정한 학습 곡선을 보였다.</p>
+<h2>시사점</h2>
+<p>이 연구는 시각 생성을 단순한 입력 이해나 최종 출력물이 아니라 추론을 수행하는 "1급 매체(first-class substrate)"로 자리매김시키며, 언어 중심 사고연쇄(CoT)를 보완하는 독자적 패러다임으로서 네이티브 시각 추론 연구를 학습 가능·검증 가능·실험적으로 통제 가능한 문제로 전환한다. 특히 검증 가능한 규칙 기반 채점기가 VLM 판정자보다 저렴하면서도 더 신뢰할 수 있는 보상 신호를 제공한다는 결과는, 향후 시각 생성 모델의 대규모 강화학습 연구에서 평가·보상 설계 방향에 실질적인 지침을 제공할 것으로 기대된다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.26105" target="_blank" rel="noopener">huggingface.co/papers/2608.26105</a> · 2026-08-28</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

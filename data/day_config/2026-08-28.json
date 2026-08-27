@@ -1,0 +1,110 @@
+{
+  "2608.26005": {
+    "base": "2608_보이스멤_실시간-이중두뇌-메모리",
+    "rank": "#1",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "149",
+    "en_title": "VoiceMem: Streaming Dual-Brain Memory for Real-Time Interaction",
+    "ko_title": "보이스멤: 실시간 상호작용을 위한 스트리밍 이중 두뇌 메모리"
+  },
+  "2608.19583": {
+    "base": "2608_브이지아이벤치_영상생성모델-시각지능-평가",
+    "rank": "#2",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "143",
+    "en_title": "VGI-Bench: Probing Visual Intelligence in Video Generation Models",
+    "ko_title": "브이지아이벤치: 영상 생성 모델의 시각 지능 탐색"
+  },
+  "2608.24979": {
+    "base": "2608_프론티어챌린지_과학-워크플로우-완성도-평가",
+    "rank": "#3",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "129",
+    "en_title": "FrontierChallenge: Evaluating Scientific Workflow Completion",
+    "ko_title": "프론티어챌린지: 과학 워크플로우 완성도 평가"
+  },
+  "2608.24479": {
+    "base": "2608_워프삭_확장가능-오프폴리시-강화학습",
+    "rank": "#4",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "122",
+    "en_title": "WarpSAC: Towards the Pinnacle of Scalable Off-policy RL by Rethinking Exploration and Exploitation",
+    "ko_title": "워프삭: 탐색과 활용의 재고를 통한 확장 가능한 오프폴리시 강화학습의 정점을 향하여"
+  },
+  "2608.25593": {
+    "base": "2608_지트에이전트_즉시-하네스-진화",
+    "rank": "#5",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "47",
+    "en_title": "JIT-Agent: Scaling Harness Intelligence via Just-in-Time Harness Evolution",
+    "ko_title": "지트에이전트: 즉시 하네스 진화를 통한 하네스 지능 확장"
+  },
+  "2608.26105": {
+    "base": "2608_브이비브이알프로_검증가능-시각추론-벤치마크",
+    "rank": "#6",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "43",
+    "en_title": "VBVR-Pro: A Scalable and Verifiable Suite for Native Visual Reasoning",
+    "ko_title": "브이비브이알프로: 네이티브 시각 추론을 위한 확장 가능하고 검증 가능한 스위트"
+  },
+  "2608.24987": {
+    "base": "2608_디쓰리엠오피디_다중교사-증류-동적스케줄링",
+    "rank": "#7",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "22",
+    "en_title": "D^3-MOPD: Adaptive Dynamic Domain ScheDuling for Efficient Multi-Teacher Distillation",
+    "ko_title": "디쓰리엠오피디: 효율적인 다중교사 증류를 위한 적응형 동적 도메인 스케줄링"
+  },
+  "2608.23318": {
+    "base": "2608_에이전트지스퀘어_가우시안-유도-에이전트-강화학습",
+    "rank": "#8",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "20",
+    "en_title": "Agent-G^2: Gaussian Guidance for Agentic Reinforcement Learning",
+    "ko_title": "에이전트지스퀘어: 에이전틱 강화학습을 위한 가우시안 유도"
+  },
+  "2608.23256": {
+    "base": "2608_넥스트청크추론_RL-SFT-비교분석",
+    "rank": "#9",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "19",
+    "en_title": "Is Next-Chunk Reasoning RL Really Better than SFT? Revisiting Training Strategies under no-CoT Data",
+    "ko_title": "넥스트청크 추론 강화학습이 정말 SFT보다 나은가? no-CoT 데이터 하에서의 학습 전략 재고찰"
+  },
+  "2608.23383": {
+    "base": "2608_롱호라이즌오디오비주얼_장기-스토리-생성",
+    "rank": "#10",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "19",
+    "en_title": "Long-Horizon Audio-Visual Generation for Persistent Stories and Interactive Worlds",
+    "ko_title": "지속적 스토리와 인터랙티브 월드를 위한 장기 오디오-비주얼 생성"
+  },
+  "2608.19098": {
+    "base": "2608_오픈엠오피디_다중교사-증류-불균형해소",
+    "rank": "#11",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "17",
+    "en_title": "Open-MOPD: Diagnosing and Fixing Capability Imbalance in Multi-Teacher On-Policy Distillation",
+    "ko_title": "오픈엠오피디: 다중 교사 온폴리시 증류의 능력 불균형 진단 및 해소"
+  },
+  "2608.26067": {
+    "base": "2608_스트림파이_스트리밍-멀티모달-VLA",
+    "rank": "#12",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "16",
+    "en_title": "StreamPI: Streaming Multimodal Temporal Modeling for Vision-Language-Action Models",
+    "ko_title": "스트림파이: 비전-언어-행동 모델을 위한 스트리밍 멀티모달 시간적 모델링"
+  }
+}

@@ -1,0 +1,125 @@
+<meta charset="UTF-8">
+<title>오픈엠오피디</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#11 · Daily Papers 2026-08-28</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 17</span>
+    </div>
+    <h1 class="article-title">Open-MOPD: Diagnosing and Fixing Capability Imbalance in Multi-Teacher On-Policy Distillation</h1>
+    <p class="article-title-ko">오픈엠오피디: 다중 교사 온폴리시 증류의 능력 불균형 진단 및 해소</p>
+    <p class="article-sub">다중 교사 온폴리시 증류(Multi-Teacher On-Policy Distillation, M-OPD)에서 라우팅 오류가 없어도 발생하는 "능력 통합 격차(capability integration gap)"의 원인이 토큰 단위 최적화 예산의 불균형 배분임을 규명하고, 이를 해결하는 Open-MOPD 프레임워크(토큰 지분 균형화, 격차 인지 동적 예산 배분, 학생 보상 갱신)를 제안하여 회복률을 35.6%에서 83.4%로 끌어올린 연구이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.19098" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.19098" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Open-MOPD: Diagnosing and Fixing Capability Imbalance in Multi-Teacher On-Policy Distillation</li>
+<li><strong>저자</strong>: Huan-ang Gao, Haohan Chi(이상 공동 1저자) 외 8인 — Yong Yan, Shiyuan Feng, Hanlin Wu, Zheng Jiang, Bingxiang He, Wei-Ying Ma, Ya-Qin Zhang, Hao Zhou(교신저자). 소속은 SIA-Lab of Tsinghua AIR and ByteDance Seed, 칭화대학교 AI산업연구원(Institute for AI Industry Research, AIR), 칭화대학교 컴퓨터과학과이다.</li>
+<li><strong>출처</strong>: arXiv:2608.19098v1 [cs.LG] (2026년 8월 19일 제출)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://bytedtsinghua-sia.github.io/Open-MOPD/">https://bytedtsinghua-sia.github.io/Open-MOPD/</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.19098">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>다중 교사 온폴리시 증류(Multi-Teacher On-Policy Distillation, M-OPD)에서 라우팅 오류가 없어도 발생하는 "능력 통합 격차(capability integration gap)"의 원인이 토큰 단위 최적화 예산의 불균형 배분임을 규명하고, 이를 해결하는 Open-MOPD 프레임워크(토큰 지분 균형화, 격차 인지 동적 예산 배분, 학생 보상 갱신)를 제안하여 회복률을 35.6%에서 83.4%로 끌어올린 연구이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>강화학습(RL)으로 만든 수학, 코드, 지시 따르기(instruction following, IF) 등 도메인별 전문가(teacher) 모델을 하나의 범용 학생(student) 모델로 통합하는 것은 배포 효율성 측면에서 매우 중요하다. 다중 교사 온폴리시 증류(M-OPD)는 각 프롬프트를 해당 도메인 전문가에게 라우팅하여 토큰 단위의 조밀한 보상 신호로 학생을 학습시키는 유망한 방법이지만, 산업계에서 널리 쓰이는 것에 비해 그 최적화 동역학은 제대로 규명되지 않았고 재현 가능한 오픈소스 레시피도 부재했다. 저자들은 정답 도메인 라벨을 이용한 오라클 라우팅(oracle routing)으로 라우팅 오류를 배제한 통제된 실험 환경을 SmolLM3-3B-Base 위에 구축하여, 순수하게 "능력 통합" 자체의 실패 원인을 파헤친다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>경험적 진단</strong>: 오라클 라우팅 환경에서도 표준 M-OPD가 RouteRL(도메인별 최적 성능의 조합) 대비 개선폭의 35.6%만 회복하는 뚜렷한 "능력 통합 격차"를 확인했으며, 특히 응답이 짧은 지시 따르기(IF) 과제가 수학 대비 3.3배 큰 성능 저하와 조기 정체를 겪음을 보였다.</li>
+<li><strong>메커니즘 분해</strong>: 교사 간 토큰 단위 불일치(teacher disagreement)를 정량화한 결과 이는 지배적 병목이 아니며, 진짜 원인은 (1) 도메인 간 시퀀스 길이 차이로 인한 구조적 토큰 예산 불균형, (2) 도메인별로 다른 수렴 속도, (3) 하나의 롤아웃을 여러 미니배치로 재사용할 때 발생하는 보상 지연(staleness)이라는 세 가지로 분리해 규명했다.</li>
+<li><strong>방법론 제안</strong>: 위 세 원인에 각각 대응하는 토큰 지분 균형화(token-share balancing), 격차 인지 동적 예산 배분(gap-aware/gap-following allocation), 학생 보상 갱신(student reward refresh)으로 구성된 Open-MOPD 프레임워크를 제시했다.</li>
+<li><strong>오픈소스 레시피 공개</strong>: SFT부터 도메인별 RL 교사 학습, 다중 교사 증류까지 전체 파이프라인, 학습 궤적, 평가 스위트를 8×A100-80GB급 학술 컴퓨팅 환경에서 재현 가능하도록 전면 공개했다.</li>
+</ul>
+<h2>방법론</h2>
+<ul>
+<li><strong>기본 목적함수</strong>: 학생이 스스로 생성한 응답의 각 위치에서 상위 k개(top-k=16) 토큰에 대해 교사-학생 로그확률 차이(δ)를 계산하고, 학생 분포에 대한 소프트맥스 가중치로 집계한 조밀 보상(dense reward)을 PPO의 어드밴티지 자리에 직접 사용한다.</li>
+<li><strong>3단계 학습 파이프라인</strong>: (1) SmolLM3-3B-Base에서 수학·코드·IF 혼합 데이터로 4에폭 SFT를 수행해 공유 초기 체크포인트 πmixsft를 만들고, (2) πmixsft에서 각각 분기하여 도메인별 검증 가능 보상만으로 RL 교사(πϕmath, πϕcode, πϕIF)를 학습시키며, (3) 다시 πmixsft에서 시작한 학생을 세 교사의 하드 라우팅 신호로 다중 교사 증류한다.</li>
+<li><strong>토큰 지분 균형화</strong>: 손실이 토큰 단위 평균으로 집계되기 때문에 실제 최적화 지분은 프롬프트 빈도가 아니라 응답 길이(그레디언트 토큰 수)에 좌우된다는 점에 착안해, 각 도메인의 손실에 목표 지분(g*, 기본값 1/3씩)을 실제 토큰 지분으로 나눈 가중치를 곱해 배치 내 토큰 지분을 강제로 균등화한다.</li>
+<li><strong>격차 인지 동적 배분</strong>: 도메인별 평균 보상 크기(교사-학생 격차의 대리 지표)를 관찰해, 격차가 큰 도메인에는 더 많은 예산을, 이미 수렴한 도메인에는 적은 예산을 배분한다. 반대로 격차가 작은 도메인에 더 많은 예산을 주는 역방향 정규화는 양의 되먹임 고리를 만들어 학습이 붕괴(74스텝에서 발산)함을 실험으로 보였다.</li>
+<li><strong>학생 보상 갱신</strong>: 하나의 롤아웃 배치를 K번의 내부 업데이트에 재사용할 때, 교사 로그확률은 캐시해 재사용하되 학생 로그확률만은 매 내부 업데이트 직전에 다시 계산해 보상의 시간적 불일치(staleness)를 제거한다. 이는 PPO가 이미 수행하는 액터 순전파를 재사용하므로 추가 연산 비용이 거의 없다.</li>
+</ul>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li><strong>평가 프로토콜</strong>: 수학(AIME24/AIME25, mean@64), 코드(LiveCodeBench v5/v6, mean@10), 지시 따르기(IFEval, IFBench_test, mean@1) 총 6개 벤치마크의 도메인별 매크로 평균을 다시 평균한 총점을 사용했다.</li>
+<li><strong>핵심 수치</strong>: 나이브 M-OPD 총점 28.05는 πmixsft(25.67)보다는 높지만 RouteOPD(단일 교사 증류 조합, 31.55)보다 3.50점 낮았다. 특히 IF는 RouteOPD 대비 6.16점 낮아(수학의 1.89점 대비 3.3배) 가장 큰 격차와 가장 느린 회복(200~300스텝 구간에서 격차의 26%만 해소, 수학은 64%)을 보였다.</li>
+<li><strong>교사 불일치 검증</strong>: 교사 간 로그확률 차이(ct)의 평균은 0.126nat, 300스텝 내내 0.27nat를 넘지 않아 1nat 충돌 기준보다 훨씬 작았고, 고충돌 토큰(ct&gt;1) 비율도 평균 0.62%에 불과했다. 고충돌 토큰을 제거하거나 교사 평균으로 대체하는 개입은 오히려 성능을 0.52~0.83점 저하시켜, 교사 충돌이 주된 병목이 아님을 확인했다.</li>
+<li><strong>토큰/보상 불균형 측정</strong>: IF는 전체 프롬프트의 20.3%를 차지하지만 그레디언트 토큰은 0.99%에 불과했다(수학·코드 응답 길이 약 10,500토큰 대 IF 약 409토큰). 도메인별 평균 보상 크기도 초기에 최대 4.9배 차이가 났고, 서로 다른 속도로 수축했다. 내부 업데이트 횟수(K)가 늘수록 롤아웃-현재 정책 간 KL이 K=1의 0에서 K=32의 0.216까지 커지고 PPO 클리핑 비율도 최대 0.86까지 상승했다.</li>
+<li><strong>소거 실험(ablation)</strong>: 나이브 M-OPD(28.05) 대비 토큰 지분 균형화 단독 적용 시 +1.17점, 격차 인지 배분 추가 시 +1.89점(K=1 기준)이었다. K=4의 처리량 설정에서 세 메커니즘을 모두 결합한 최종 Open-MOPD는 31.24점(수학 22.42, 코드 21.73, IF 49.58)을 기록해 회복률이 35.6%에서 83.4%로 상승했고, RouteOPD와의 격차는 3.50점에서 0.31점으로 줄었다. 학생 보상 갱신은 스텝당 실행 시간에 측정 가능한 추가 비용을 유발하지 않으면서 +0.81점을 더했다.</li>
+<li><strong>기반 모델 선정 근거</strong>: 부록에서 Qwen3-1.7B-Base는 긴 추론 궤적을 끝맺지 못하고 잘림(truncation)이 69~80%에 달해 AIME24가 7.08%에 그친 반면, Qwen2.5-7B-Base는 AIME24 31.25%까지 개선되지만 반복 소거 실험을 수행하기엔 계산 비용이 과도해, 절충안으로 SmolLM3-3B-Base(8×A100-80GB에서 전체 파이프라인 재현 가능)를 채택했다고 밝혔다.</li>
+</ul>
+<h2>한계점</h2>
+<p>논문은 3B 규모, 3개 도메인(수학·코드·IF), 오라클(정답 라벨) 라우팅이라는 통제된 조건에서 실험을 수행했다는 점을 스스로 명시하며, 이는 계산 자원 제약과 재현성을 위한 의도적 설계임을 밝혔다. 또한 격차 인지 배분에서 지수 α의 부호가 반대일 경우 학습이 붕괴하는 등 하이퍼파라미터(예: 목표 지분 g*, α, 클리핑 범위)에 민감할 수 있음을 실험적으로 보였다. 실제 배포 환경에서 흔한 라우팅 오류나 더 많은 수(10개 이상)의 교사, 더 큰 모델 규모로의 일반화는 논문에 명시적으로 다뤄지지 않았다.</p>
+<h2>시사점</h2>
+<p>이 연구는 다중 교사 온폴리시 증류의 실패가 흔히 짐작되는 "교사 간 상충된 신호" 때문이 아니라 토큰 단위 최적화 예산의 구조적 불균형 때문임을 정량적으로 밝혀, 향후 다중 도메인/다중 교사 후처리(post-training) 파이프라인 설계에서 응답 길이·수렴 속도·보상 신선도를 명시적으로 관리해야 함을 시사한다. 또한 저자들이 언급한 DeepSeek-V4, Kimi K3, Nemotron-Cascade 2 등 산업계 대형 모델들이 이미 유사한 다중 교사 증류 레시피를 채택하고 있다는 점에서, 이 논문이 제시한 진단 방법론과 오픈소스 레시피는 학계가 검증 가능한 기준선(baseline)을 갖고 이러한 산업적 관행을 재현·개선하는 데 실질적인 토대를 제공할 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.19098" target="_blank" rel="noopener">huggingface.co/papers/2608.19098</a> · 2026-08-28</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

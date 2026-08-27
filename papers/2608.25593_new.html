@@ -1,0 +1,119 @@
+<meta charset="UTF-8">
+<title>지트에이전트</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#5 · Daily Papers 2026-08-28</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 47</span>
+    </div>
+    <h1 class="article-title">JIT-Agent: Scaling Harness Intelligence via Just-in-Time Harness Evolution</h1>
+    <p class="article-title-ko">지트에이전트: 즉시 하네스 진화를 통한 하네스 지능 확장</p>
+    <p class="article-sub">에이전트의 성능을 좌우하는 "하네스(harness, 메모리·계획·행동·도구 오케스트레이션을 아우르는 실행 골격)"를 작업이 주어질 때마다 즉석에서(Just-in-Time) 생성·수리·진화시키는 전용 모델 JIT-Agent를 제안하여, 모델 가중치를 바꾸지 않고도 기존 에이전트 LLM의 성능을 크게 끌어올린다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.25593" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.25593" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: JIT-Agent: Scaling Harness Intelligence via Just-in-Time Harness Evolution</li>
+<li><strong>저자</strong>: Guibin Zhang 외 다수 (LV-NUS Lab, 싱가포르국립대학교 Learning and Vision Laboratory). 프로젝트 리드는 Guibin Zhang이며, Leo Lu, Fangzhou Xie가 핵심 기여자로 참여했고, 교신저자는 Wangchunshu Zhou와 Shuicheng Yan이다.</li>
+<li><strong>출처</strong>: arXiv:2608.25593v1 [cs.CL] (2026년 8월 26일 제출)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://bingreeky.github.io/JIT-site">https://bingreeky.github.io/JIT-site</a> (GitHub: https://github.com/bingreeky/JIT, HuggingFace: https://huggingface.co/JIT-Agent)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.25593">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>에이전트의 성능을 좌우하는 "하네스(harness, 메모리·계획·행동·도구 오케스트레이션을 아우르는 실행 골격)"를 작업이 주어질 때마다 즉석에서(Just-in-Time) 생성·수리·진화시키는 전용 모델 JIT-Agent를 제안하여, 모델 가중치를 바꾸지 않고도 기존 에이전트 LLM의 성능을 크게 끌어올린다.</p>
+<h2>배경 및 문제의식</h2>
+<p>LLM 에이전트의 능력은 모델 자체뿐 아니라 이를 감싸는 "하네스"(무엇을 기억하고, 어떻게 다음 행동을 계획하고, 어떤 도구를 노출하고, 언제 검증·복구할지 결정하는 운영 계층)에 크게 좌우된다. 그러나 기존 하네스 설계는 대부분 수작업이거나, 설령 자동 최적화를 하더라도 하나의 "지속 가능한 아티팩트"를 사전에(Ahead-of-Time, AOT) 만들어 여러 작업에 두루 통하기를 기대하는 방식이었다. 문제는 검색형, 터미널형, 심층 리서치형, 코딩형 등 과제 유형마다 요구되는 하네스 구조가 근본적으로 다르며, 심지어 같은 유형 내에서도 개별 인스턴스마다 다르다는 점이다. 저자들은 이런 이질성을 하나의 고정 하네스로 흡수하기 어렵다고 보고, "Model-as-a-Harness"라는 새로운 관점—학습된 메타 에이전트가 매 작업마다 맞춤 하네스를 즉석 생성한다는 아이디어—을 제시한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>하네스 지능(Harness Intelligence) 개념 정립</strong>: 하네스를 구성·수리·진화시키는 능력을 적응성(adaptivity), 신뢰성(reliability), 진화가능성(evolvability) 세 요소로 정의하고, 이를 학습 가능한 독립적 능력 축으로 formalize했다.</li>
+<li><strong>4모듈 실행 프로토콜과 HarnessFactory</strong>: 하네스를 메모리(M)·계획(P)·행동(A)·능력(도구/스킬) 오케스트레이션(F) 4개 모듈의 튜플로 표준화하고, ReAct·Plan-and-Execute·AgentFold·ROMA 등 13개 대표 하네스를 동일 인터페이스로 재구현한 코드베이스(HarnessFactory)를 구축했다.</li>
+<li><strong>3단계 학습 파이프라인</strong>: (1) 교사 모델의 시연으로 작업 맞춤 하네스 생성을 학습하는 Stage I, (2) 컴파일 오류·인터페이스 불일치 등 실패를 복구 경로로 전환해 학습하는 Stage II(Repair), (3) 온라인으로 하네스 아카이브의 프런티어를 갱신해가는 강화학습형 Stage III(Evo-GDPO)를 제안했다.</li>
+<li><strong>Evolutionary Group-Decoupled Policy Optimization(Evo-GDPO)</strong>: 보상·지연시간·비용을 별도로 정규화한 뒤 결합하여, 후보 하네스가 기존 아카이브를 능가할 때만 보상을 부여하는 PPO 스타일 온라인 최적화 기법을 새로 설계했다.</li>
+<li><strong>정적/스트리밍 두 가지 추론 모드</strong>: 병렬로 여러 하네스를 생성해 하나를 선택하는 정적(static) 추론과, 작업 스트림 전반에 걸쳐 실행 피드백으로 하네스 아카이브를 계속 갱신하는 스트리밍(streaming) 추론을 모두 지원한다.</li>
+</ul>
+<h2>방법론</h2>
+<p>JIT-Agent는 Qwen3.6-27B를 기반으로 학습된 27B 규모의 메타 에이전트로, 작업 명세·프로토콜·도구/스킬 레지스트리·소수의 참조 하네스를 입력받아 실행 가능한 하네스(h = M, P, A, F)를 생성한다. 생성된 하네스는 별도의 고정된(frozen) 백본 에이전트 LLM(예: GLM-5.2, DeepSeek-V4-Flash 등)을 감싸 실행을 지휘한다. 학습은 세 단계로 구성된다. Stage I은 더 강한 교사 모델이 생성한 프로토콜 준수 하네스를 지도학습(SFT)과 보상·효율성 기반 선호학습으로 모방하도록 한다. Stage II는 실패한 생성물의 진단 리포트(컴파일 오류, 런타임 예외 등)를 활용해 최대 2회 이내의 수리(repair) 경로를 학습시켜 신뢰성을 높인다. Stage III는 Evo-GDPO를 통해 후보 하네스 그룹을 현재 하네스 아카이브(뱅크)의 최고 성능 항목과 비교하고, 보상이 유지되면서 지연시간·비용이 개선될 때만 아카이브를 갱신하며 정책을 온라인으로 강화학습한다. 추론 시에는 정적 모드(N개 후보를 병렬 생성해 하나 선택)와 스트리밍 모드(작업이 이어질수록 실행 피드백으로 아카이브를 지속 갱신)를 선택적으로 사용할 수 있다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>심층 리서치(BrowseComp-Plus, DeepSearchQA, xBench-DeepSearch), 일상 업무(AgentIF-Oneday, PinchBench), 계획(DeepPlanning-Shopping/Travel), 워크스페이스(OfficeBench, OdysseyBench) 등 4개 범주 9개 벤치마크에서 평가했다. 백본으로는 GLM-5.2, DeepSeek-V4-Flash를 주로 사용하고 Qwen3.6, Mimo-V2.5 등으로 일반화도 검증했다. 주요 결과는 다음과 같다.
+- 동일 백본 기준 JIT 하네스 적용 시 GLM-5.2는 9개 벤치마크 평균 74.1→81.8(+7.7점), DeepSeek-V4-Flash는 66.7→75.5(+8.8점)로 상승했으며, 18개 백본-벤치마크 조합 전부에서 개선을 보였다.
+- JIT-Agent+GLM-5.2는 DeepSearchQA 93.9점, AgentIF 69.9점 등 9개 중 7개 벤치마크에서 1위를 기록했고, DeepSeek-V4-Flash와 결합 시 GPT-5.6을 DeepSearchQA(+9.1), OdysseyBench(+4.3) 등에서 능가했다.
+- 백본을 고정하고 하네스만 바꾼 통제 비교에서, JIT-Agent는 Claude Code·Codex·OpenCode·Hermes·NanoBot 등 5개 기존 하네스 대비 6개 설정 중 4개에서 최고 성능을 기록했으며, 모든 설정에서 토큰·비용을 가장 적게 사용(평균 36.0% 비용 절감)했다.
+- DeepSeek-V4/Qwen3.6/Mimo-V2.5의 각 Flash/Pro 변형 등 6개 백본, 24개 조합에서 ReAct 대비 평균 +7.6점의 일관된 개선을 보여 모델군에 걸친 전이성을 확인했다.
+- 스트리밍 추론(경험을 누적하며 하네스 아카이브를 갱신)이 정적 추론보다 DeepPlanning-Shopping/Travel, OfficeBench 모두에서 최종 누적 정확도가 더 높았다.
+- 생성된 하네스를 시각화한 사례(Palimpsest, Trapdoor 등 10개)를 통해, 동일한 4모듈 프로토콜 아래에서도 과제 구조(DAG 기반 아티팩트 생성, 재귀적 위임 리서치, 단계 전환형 실행, 증거 매트릭스 탐색 등)에 따라 서로 전혀 다른 하네스가 생성됨을 정성적으로 보였다.</p>
+<h2>한계점</h2>
+<p>저자들은 논문에서 현재 4모듈 설계 공간이 Claude Code, Codex, DeepSeek Harness 같은 실제 프로덕션 런타임이 갖춘 훨씬 풍부한 메커니즘에 비해 의도적으로 단순화되어 있음을 인정한다. 이는 전체 프로덕션 런타임을 재현하려는 것이 아니라, 압축된 하네스만으로도 즉석 생성이 유의미한 이득을 낼 수 있음을 보이기 위한 것이라고 설명한다. 또한 향후에는 하네스 전체를 매번 재설계하는 급진적 형태 대신, 안정적인 핵심부는 유지하면서 필요한 구성 요소만 모델이 생성·수정·교체하는 절충적 형태가 프로덕션 시스템에는 더 적합할 수 있다고 밝히고 있다. 그 외 세부적인 실패 사례 분석이나 정량적 한계(예: 특정 벤치마크에서 고정 하네스에 뒤처지는 경우)는 6.3절에서 일부 언급되지만, 별도의 "한계" 절로 명시적으로 정리되어 있지는 않다.</p>
+<h2>시사점</h2>
+<p>이 연구는 에이전트 성능 향상의 축을 "모델 파라미터 확장"에서 "하네스(운영 골격) 지능"이라는 새로운 차원으로 확장했다는 점에서 의미가 크다. 동일한 오픈소스 백본이라도 하네스를 작업에 맞게 즉석에서 생성·진화시키는 것만으로 GPT-5.6 같은 프런티어 모델급 성능에 도달하거나 이를 능가할 수 있음을 보여, 값비싼 모델 재학습 없이도 비용 대비 성능을 크게 개선할 수 있는 실용적 경로를 제시한다. 저자들은 이를 모델 용량, 추론 연산량에 이은 "제3의 스케일링 축"으로 규정하며, 장기적으로는 모델과 하네스를 공동 설계(co-design)하거나 모델이 스스로 자신의 실행 구조를 개선하는 방향으로 나아갈 것으로 전망한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.25593" target="_blank" rel="noopener">huggingface.co/papers/2608.25593</a> · 2026-08-28</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

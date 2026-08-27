@@ -1,0 +1,113 @@
+<meta charset="UTF-8">
+<title>보이스멤</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#1 · Daily Papers 2026-08-28</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 149</span>
+    </div>
+    <h1 class="article-title">VoiceMem: Streaming Dual-Brain Memory for Real-Time Interaction</h1>
+    <p class="article-title-ko">보이스멤: 실시간 상호작용을 위한 스트리밍 이중 두뇌 메모리</p>
+    <p class="article-sub">정보(좌뇌)와 감정·페르소나(우뇌)를 병렬로 관리하는 "이중 두뇌" 스트리밍 메모리 아키텍처 VoiceMem을 제안해, 음성 대화 시스템이 표준 VAD(음성 활동 감지) 지연 시간 안에 top-5 수준의 소수 후보만으로도 기존 최고 수준(Mem0 등)의 top-100 검색을 능가하는 정확도의 기억 검색을 수행하게 한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.26005" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.26005" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: VoiceMem: Streaming Dual-Brain Memory for Real-Time Interaction</li>
+<li><strong>저자</strong>: Zhifei Xie 외 9인 (Jiaqi Lang, Ze An, Yifan Zhao, Dongchao Yang, Kai Li, Ziyang Ma, Mingbao Lin, Chunyan Miao, Shuicheng Yan) — 난양이공대(NTU), 싱가포르국립대(NUS), 칭화대, 홍콩중문대, Open Interaction Lab 소속</li>
+<li><strong>출처</strong>: arXiv:2608.26005v1 [eess.AS] (2026년 8월 26일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://xzf-thu.github.io/VoiceMem/">https://xzf-thu.github.io/VoiceMem/</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.26005">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>정보(좌뇌)와 감정·페르소나(우뇌)를 병렬로 관리하는 "이중 두뇌" 스트리밍 메모리 아키텍처 VoiceMem을 제안해, 음성 대화 시스템이 표준 VAD(음성 활동 감지) 지연 시간 안에 top-5 수준의 소수 후보만으로도 기존 최고 수준(Mem0 등)의 top-100 검색을 능가하는 정확도의 기억 검색을 수행하게 한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>실시간 음성 대화 시스템(듀플렉스 음성언어모델, SLM)은 사람처럼 느껴지기 위해 정보 기억뿐 아니라 감정과 성격(페르소나)에 대한 기억도 필요하지만, 두 요소를 하나의 아키텍처로 통합하려는 시도는 거의 없었다. 기존 텍스트 기반 메모리 시스템(Mem0, Zep 등)은 검색에 2~3초가 걸리고 top-100 수준의 방대한 후보를 반환하는데, 이는 500ms 내외의 응답 지연이 요구되는 실시간 음성 대화에는 맞지 않는다. 저자들은 이를 (O1) 정보-감정 통합 아키텍처 부재, (O2) 낮은 지연시간에서 높은 정보 밀도 확보의 어려움, (O3) 빠르게 발전하는 메모리 백엔드·음성모델과의 결합성 문제라는 세 가지 장애물로 정리한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>좌뇌(Informative Left Brain)</strong>: 스키마(schema)-엔티티(entity) 2단계 계층 인덱스로 후보 메모리 풀을 좁혀, top-5라는 적은 검색 예산에서도 높은 정보 밀도를 유지하는 구조를 제안했다.</li>
+<li><strong>군집 출현(Cluster Emergence) 메커니즘</strong>: 질의 빈도, 의미, 좌뇌 상태를 함께 고려해 서브클러스터가 자연스럽게 새로운 스키마로 승격되도록 하여, 장기간 운영 시 스키마 수와 검색 정밀도 간 균형을 유지한다.</li>
+<li><strong>우뇌(Emotional Right Brain)</strong>: 사용자 고유의 지속적 성향을 담는 "독립 노드"와 특정 엔티티(사람/사건)에 결부된 감정을 담는 "교차 엔티티 노드"를 구분해, 단기(턴 단위)·장기(세션 단위) 감정 귀속(attribution) 메커니즘으로 관리한다.</li>
+<li><strong>4단계 스트리밍 검색 파이프라인</strong>: 발화 꼬리(0-200ms)→예측(200-400ms)→검색(400-500ms) 단계로 ASR·엔티티/감정 인식·임베딩 추출·검색을 겹쳐 수행함으로써, 표준 VAD가 대기하는 침묵 구간 안에 전체 검색을 숨긴다.</li>
+<li><strong>모델·데이터·인프라</strong>: SLM-검증 블랙박스 온라인 정책증류(OPD)로 Qwen2.5-Omni/Qwen3-Omni/Step-Audio2-Mini를 메모리 인지형 음성언어모델로 변환했고, 이 과정에서 생성된 CHATMEM-400K(학습용) 및 CHATMEM-BENCH(평가용, 4개 영역·14개 세부 범주) 데이터셋을 구축했으며, 메모리 백엔드(Mem0 등)를 자유롭게 교체 가능한 분리형(decoupled) 아키텍처로 설계했다.</li>
+</ul>
+<h2>방법론</h2>
+<p>좌뇌는 스키마(거친 의미 라우팅 단위)와 엔티티(구체적 사람·사건·개념)로 구성된 2단계 그래프 구조로, 부분 전사(streaming transcript)에서 매칭된 엔티티·스키마를 1-hop(강/약 연결) 확장해 후보 메모리 풀을 구성하고, 이 축소된 풀 안에서만 백엔드(Mem0) 검색을 수행한다. 매 턴 이후에는 비동기 업데이터가 ADD/UPDATE/DELETE/KEEP 연산으로 메모리를 갱신한다. 클러스터가 커져 정보 밀도가 떨어지면, 반복적으로 함께 검색되는 엔티티 하위집합의 응집도(coherence)를 측정하고 LLM 판정을 거쳐 새로운 클러스터로 승격시키는 "출현" 알고리즘을 적용한다. 우뇌는 독립 노드(지속적 성향)와 교차 엔티티 노드(상황·대상에 결부된 감정)를 병렬로 유지하며, 턴 단위 단기 귀속과 세션 단위 장기 귀속(반복 증거의 통합)으로 페르소나 그래프를 갱신한다. 검색 시에는 좌뇌에서 확장된 엔티티 집합과 연결된 교차 엔티티 노드까지 포함해 후보 풀을 만든다. 전체 파이프라인은 (i) 0-200ms 구간에 스트리밍 ASR·엔티티/스키마 매칭·화자 식별, (ii) 200-400ms 구간에 쿼리 임베딩과 그래프 확장, (iii) 400-500ms 구간에 백엔드 검색 및 결과 병합을 수행하도록 설계되어, 실제 검색 자체는 134ms 만에 끝난다. 오디오 확장으로는 화자 목소리 지문, 음향 임베딩, 원시 파형을 엔티티 노드에 부착해 배경음·다중 화자 등 멀티모달 기억도 지원한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>정보 기억 벤치마크(LoCoMo, LongMemEval, Memora), 페르소나 기억 벤치마크(ES-MemEval, PersonaMem, PersonaLens), 음성 기반 장기 기억 벤치마크(자체 구축한 CHATMEM-BENCH, 316문항·53시간 오디오)에서 Mem0, Zep, LangMem, A-MEM, MemoryOS, MemOS, MemoryBank, EverMemOS, Emotional RAG 등 총 9개 베이스라인 및 Full-Context 기준과 비교했다. 모든 베이스라인은 GPT-4o-mini와 text-embedding-3-small을 사용했고, VoiceMem은 top-5(K=5)를 기본 설정으로 K∈{1,3,5,10,30,100}에서 평가했다. 결과: 정보 기억에서 평균 76.39점으로 Mem0 대비 +24.12, Full-Context 대비 +15.90점 우위를 보였고, 페르소나 기억에서 74.16~76.56점으로 기존 최강 베이스라인 MemOS를 +1.89점 앞섰다. CHATMEM-BENCH에서는 14개 세부 범주 중 11개에서 1위를 차지했으며, 특히 텍스트 정보가 전혀 없는 음향(Paralinguistics &amp; Environment) 영역에서 다른 시스템(3.23~26.92점)을 크게 앞서는 45~54점을 기록했다. LoCoMo 기준 K=5에서 91.2점, 메모리 토큰 430개, 검색 지연 134ms로, 최강 베이스라인 EverMemOS(83.13점, 1,899토큰) 대비 +8.1점을 4.4배 적은 토큰으로 달성했다. 5가지 구성요소(상위 인덱스, 우뇌, 클러스터 출현, 장단기 갱신, 조인트 검색) 각각을 제거하는 절제 실험에서 모두 성능이 하락했으며, 특히 상위 인덱스 제거가 가장 큰 손실(최대 -9.9점)을 보였다. 또한 동일 인덱스를 Mem0/LangMem/Zep 세 백엔드에 적용했을 때 각각 +29.5/+15.8/+22.9점의 일관된 개선을 얻어 백엔드 독립성을 확인했다.</p>
+<h2>한계점</h2>
+<p>논문에 명시된 명시적 한계 섹션은 없다. 다만 본문에서 확인되는 관찰로는, 백엔드 전이 실험에서 "백엔드 품질이 여전히 회복 가능한 성능의 상한을 좌우한다"(LangMem은 Mem0와 5.5점 이내로 시작하지만 최종적으로 19.26점 차이로 벌어짐)는 점, CHATMEM-BENCH 구축 과정에 상당한 인력이 투입되어 세부 벤치마크 소개는 별도 후속 기술보고서로 미뤄졌다는 점, 그리고 감정 귀속(Affective Attribution) 영역에서는 텍스트 베이스라인도 경쟁력을 유지해 음성 증분 효과가 제한적이라는 점 등이 언급된다.</p>
+<h2>시사점</h2>
+<p>VoiceMem은 정보와 감정을 분리된 두 개의 병렬 그래프로 관리하면서도 스트리밍 대화의 지연시간 예산(수백 ms) 안에서 동작하는 실용적 설계를 제시함으로써, 실시간 음성 에이전트가 "기억하는 인격체"로 발전하는 데 필요한 실질적인 메모리 기반을 제공한다. 특히 백엔드와 상위 라우팅 로직을 분리한 아키텍처는 빠르게 발전하는 메모리 엔진 생태계에 지속적으로 적응할 수 있게 하며, CHATMEM-400K/BENCH와 같은 데이터·평가 자원은 음성 언어모델에 메모리 능력을 결합하려는 후속 연구에 실질적인 토대를 제공할 것으로 보인다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.26005" target="_blank" rel="noopener">huggingface.co/papers/2608.26005</a> · 2026-08-28</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

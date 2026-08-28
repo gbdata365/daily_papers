@@ -1,0 +1,119 @@
+<meta charset="UTF-8">
+<title>게임왬</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#8 · Daily Papers 2026-08-29</span>
+      <span class="cat-tag">생성모델</span>
+      <span class="upvote-tag">▲ 37</span>
+    </div>
+    <h1 class="article-title">GameWAM: A World Action Model for Video Games</h1>
+    <p class="article-title-ko">게임왬: 비디오 게임을 위한 월드-액션 모델</p>
+    <p class="article-sub">비디오 게임의 1인칭 시각·키보드-마우스 제어 환경에서 미래 화면과 실행 가능한 조작 궤적을 동시에 생성하는 최초의 World-Action Model(WAM)인 GameWAM을 제안하고, Minecraft와 ViZDoom에서 더 적은 조작 횟수로도 경쟁력 있는 과제 성공률을 달성했다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.26200" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.26200" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: GameWAM: A World Action Model for Video Games</li>
+<li><strong>저자</strong>: Yuncheng Guo (Fudan University), Zhanqiu Zhang (LIGHTSPEED), Yiwen Guo (독립 연구자), Weijia Li (Tsinghua Shenzhen International Graduate School) 등</li>
+<li><strong>출처</strong>: arXiv:2608.26200v1 [cs.AI] (2026년 8월 25일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://yunncheng.github.io/GameWAM/">https://yunncheng.github.io/GameWAM/</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.26200">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>비디오 게임의 1인칭 시각·키보드-마우스 제어 환경에서 미래 화면과 실행 가능한 조작 궤적을 동시에 생성하는 최초의 World-Action Model(WAM)인 GameWAM을 제안하고, Minecraft와 ViZDoom에서 더 적은 조작 횟수로도 경쟁력 있는 과제 성공률을 달성했다.</p>
+<h2>배경 및 문제의식</h2>
+<p>기존 게임 에이전트(행동 복제, VLA, 계층적 컨트롤러 등)는 시각·과제 맥락을 곧바로 행동으로 매핑할 뿐, 자신의 행동이 세계 상태를 어떻게 바꾸는지에 대한 명시적 모델을 갖지 않는다. 반대로 상호작용형 게임 월드 모델은 외부에서 주어진 행동에 따른 미래 화면을 예측할 뿐 스스로 과제 지향적 행동을 선택하는 정책 역할을 하지 못한다. 즉 "행동을 고르는 모델"과 "행동의 결과를 예측하는 모델"이 분리되어 있었다는 것이 저자들의 문제의식이다. World-Action Model(WAM)은 이 둘을 통합하지만, 지금까지는 탁상 조작이나 실내 로봇 팔 같은 제한된 환경에서만 검증되었고, 빠르게 변하는 1인칭 시점, 지속적인 월드 상태, 이질적인 네이티브 컨트롤(게임플레이+GUI)이 공존하는 비디오 게임 환경에서는 거의 탐구되지 않았다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>GameWAM 제안</strong>: 게임플레이와 GUI 조작을 모두 지원하는, 네이티브 클로즈드루프 제어를 위한 최초의 WAM. 병렬 Video-DiT/Action-DiT, block-causal attention, joint flow matching으로 구성된다.</li>
+<li><strong>동기화된 학습 데이터 구축</strong>: Minecraft VPT 녹화를 기반으로 일반 궤적, 이벤트 앵커링(Event-Anchored) 궤적, 스크립트 기반 GUI 궤적을 결합해 WAM 학습에 맞는 관측-상태-행동 데이터를 구성했다.</li>
+<li><strong>이종 네이티브 행동 처리</strong>: 타임스텝 단위 라우터가 게임플레이/GUI 모드를 예측해 각 모드에 특화된 행동 분포와 정규화를 적용함으로써, 동일한 물리적 키보드-마우스 채널이 서로 다른 통계적 특성을 갖는 문제를 해결했다.</li>
+<li><strong>블록-사이클 제어 구조</strong>: 긴 구간(P 스텝)을 예측하되 짧은 구간(E 스텝)만 실행하고 다시 계획하는 predict-long/execute-short 방식과, 사이클 내 세밀한 문맥 + 사이클 간 계층적 압축 기억을 결합해 장기 상호작용에서도 빈번한 피드백과 긴 예측 지평을 동시에 확보했다.</li>
+<li><strong>LASI(Low-Frequency Action Source Imprinting) 현상 발견</strong>: 클로즈드루프 재계획 시 동일한 샘플링 소스(노이즈)를 재사용하면, 그 소스의 저주파 성분이 생성된 카메라 모션을 지속적으로 한 방향으로 편향시켜 제자리 회전 등 실패를 유발할 수 있음을 실험적으로 규명했다.</li>
+</ul>
+<h2>방법론</h2>
+<p>GameWAM은 사이클 c의 블록 k에서 조건 컨텍스트 Γ = (깨끗한 사이클 내 관측, 언어 지시, 사이클 간 시각 기록, 고유수용감각 상태)를 입력받아, 비디오 잠재변수와 (연속+이산) 네이티브 행동으로 구성된 블록 단위 결합 분포를 block-causal하게 모델링한다. Video-DiT와 Action-DiT는 각각 독립적으로 flow matching을 통해 노이즈에서 목표 신호를 복원하며, 두 모달리티는 "Fast-WAM 스타일"의 모달리티 분리 마스크를 사용한다. 즉 두 브랜치는 동일한 깨끗한 시각 프리픽스(clean prefix)를 공유하지만, 동시에 노이즈가 섞인 미래 비디오/행동 변수끼리는 서로 참조하지 않는다. 이 설계 덕분에 온라인 추론 시 행동만 생성할 때는 미래 비디오의 반복적 디노이징을 생략할 수 있어 효율적이다.</p>
+<p>행동 생성에서는 매 타임스텝마다 학습된 라우터가 게임플레이용/GUI용 예측 분기 중 하나를 선택하고(학습 시엔 관측된 상호작용 모드가 정답 라벨), 연속 좌표는 모드별 정규화 통계를, 이산 좌표는 공유 정규화를 사용한다.</p>
+<p>시간적 측면에서는 "블록-사이클(block-cycle)" 제어를 도입한다. 하나의 계획은 P개의 행동을 예측하지만 그 중 앞의 E개(E&lt;P)만 실제로 실행(commit)한 뒤 새 관측을 받아 다시 계획한다. 이를 통해 긴 예측 지평과 빈번한 클로즈드루프 피드백을 동시에 얻는다. 과거 맥락 관리를 위해 사이클 내에서는 K/V 캐시를 사용하고, 사이클 경계를 넘어서는 최근 이력(Conv3D로 압축된 최근 세그먼트)과 장기 이력(어텐션 풀링 및 슬롯별 게이팅으로 다중 시간 스케일에서 압축된 메모리 슬롯)을 계층적으로 결합해 유한한 메모리로도 장기 문맥을 보존한다.</p>
+<p>학습 목표는 비디오 flow loss, (연속/이산을 분리 가중한) 행동 flow loss, 모드 라우팅에 대한 마스킹된 이진교차엔트로피 loss, 그리고 압축된 사이클 간 기억이 현재 시각 특징을 예측하도록 강제하는 보조 loss의 가중합으로 구성된다. 학습 데이터는 이벤트(채굴, 전투, 제작 등) 주변을 조밀하게, 그 외 구간은 성기게 샘플링하는 "이벤트 앵커링 클립 샘플링" 전략을 사용해 유용한 전이에 학습 용량을 집중시킨다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>평가는 두 가지 클로즈드루프 벤치마크에서 이루어졌다: 800개 이상의 과제를 포함하는 Minecraft Universe(MCU, Mini 30개 과제 및 전체 과제)와 4개 맵으로 구성된 ViZDoom(전투 2종, 방어 2종). MCU에서는 과제 성공률(ASR)과 성공 에피소드당 평균 실행 스텝 수를 함께 측정한다.</p>
+<p>MCU 결과, GameWAM은 Mini/전체 과제 모두에서 가장 높은 평균 ASR(Mini 50.7, All 46.6)을 기록했으며, 임바디드/GUI/전투 모든 범주에서 비교 대상(VPT, STEVE-1, ROCKET-1, JARVIS-VLA, 여러 VLM 기반 에이전트, OpenHA, Game-TARS 등)보다 훨씬 적은 실행 스텝으로 과제를 완료했다. 예컨대 임바디드 과제는 138스텝으로 다른 모델(약 300~400스텝) 대비 크게 줄었다. ViZDoom 4개 맵에서도 GameWAM은 Game-TARS 및 o4-mini, GPT-5, Gemini-2.5-Pro, Claude-4-Sonnet 등 멀티모달 에이전트 대비 경쟁력 있거나 더 높은 평균 보상을 보였다.</p>
+<p>절제 실험(ablation)에서는 미래 비디오 예측(supervision)을 제거하거나 시간 샘플링을 성기게 하면 성능이 가장 크게 떨어졌고, 이벤트 앵커링 샘플링 제거, 게임플레이/GUI 통합 행동 분포 사용, 예측-실행 지평을 동일하게 맞추는 것(P=E) 모두 성능 저하로 이어져 각 설계 요소의 기여를 확인했다. 사이클 간 기억은 GUI·전투에는 도움이 되었으나 임바디드 과제에는 오히려 약간의 성능 향상이 관찰되어 과제 의존적임을 시사했다.</p>
+<p>가장 흥미로운 발견은 LASI(저주파 행동 소스 각인) 현상이다. 재계획 시 동일한 노이즈 소스를 재사용하면 일부 소스 실현값이 지속적인 방향성 카메라 편향(제자리 회전 등)을 유발했다. DCT(이산 코사인 변환)를 이용한 통제 실험에서, 고정된 조건 하에 저주파(모드 0~2) 소스 성분과 생성된 요(yaw) 각속도 성분 간 상관관계가 최대 r=0.890에 달했고, 저주파 성분만 다른 값으로 치환하면 94.8%의 확률로 출력이 그 값을 따라갔으며, 저주파 성분을 0으로 만들면 관련 분산의 99.25%가 제거되었다. 이는 상관관계를 넘어선 인과적 증거로 제시된다. 재계획마다 소스를 다시 샘플링하면 이 누적 편향이 완화됨을 확인했고, 실제 평가에서도 이 방식을 채택했다.</p>
+<h2>한계점</h2>
+<p>GameWAM은 저수준 클로즈드루프 컨트롤러로 설계되었으며, 명시적인 심볼릭 과제 그래프나 인벤토리/레시피 계획, 장기 탐색 과정을 갖지 않는다. 따라서 다단계 자원 계획이나 의미적 분해가 필요한 실패는 현재 모델의 범위 밖이다. 또한 사이클 간 기억은 주로 시각 정보 위주로 구성되어 있어, 어떤 과거 정보를 검색·활용해야 하는지에 대한 과제/행동 인지적 지도가 부족하다. 평가는 Minecraft와 ViZDoom이라는 디지털 게임 환경에 국한되어 있어, 센서 지연·구동 노이즈·안전 제약·접촉 역학이 다른 물리적 로봇 제어로의 전이는 검증되지 않았다. LASI 현상에 대해서도, 저자들은 소스 재샘플링이 평가 시점의 완화책일 뿐 근본적인 메커니즘 수준의 해결책은 아니라고 명시했으며, 주파수 선택적 목적함수나 일관성 손실 등 여러 학습 단계 개입을 시도했으나 행동 학습 성능 저하와의 트레이드오프 없이 문제를 해결하지는 못했다고 밝혔다.</p>
+<h2>시사점</h2>
+<p>GameWAM은 세계 모델링(월드 모델)과 정책 학습(액션 모델)을 하나의 프레임워크로 통합하는 것이 게임처럼 빠르게 변화하고 이질적인 상호작용이 공존하는 환경에서도 유효할 수 있음을 보여준다. 특히 "예측은 길게, 실행은 짧게" 하는 블록-사이클 구조와 계층적 기억은 제한된 연산·메모리 예산 안에서 장기 문맥과 빈번한 피드백을 모두 취하는 실용적인 설계 패턴으로, 로봇 등 다른 임바디드 제어 영역에도 응용 가능성이 있다. 한편 LASI의 발견은 생성적 행동 정책 전반에 걸쳐 존재할 수 있는 새로운 유형의 실패 모드(소스 민감성)를 드러내며, diffusion·flow 기반 제어 모델을 실제 클로즈드루프 시스템에 배치할 때 샘플링 소스의 재사용 여부를 신중히 고려해야 함을 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.26200" target="_blank" rel="noopener">huggingface.co/papers/2608.26200</a> · 2026-08-29</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

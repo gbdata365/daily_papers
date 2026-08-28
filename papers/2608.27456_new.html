@@ -1,0 +1,115 @@
+<meta charset="UTF-8">
+<title>어반그라운드</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#3 · Daily Papers 2026-08-29</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 69</span>
+    </div>
+    <h1 class="article-title">UrbanGround: From Local Perception to Spatial Agency in a Real-Scale City</h1>
+    <p class="article-title-ko">어반그라운드: 실제 규모 도시에서 국소 지각에서 공간 에이전시로</p>
+    <p class="article-sub">홍콩 전역의 실제 3D 지리 데이터를 그대로 재현한 실도시 규모 시뮬레이터 UrbanGround를 통해, 멀티모달 대형언어모델(MLLM) 에이전트가 국소적 장면 인식 능력을 이동이 계속되는 상황에서도 신뢰할 수 있는 행동으로 이어갈 수 있는지를 체계적으로 검증한 벤치마크 연구다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.27456" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.27456" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: UrbanGround: From Local Perception to Spatial Agency in a Real-Scale City</li>
+<li><strong>저자</strong>: Tianjie Ju, Zheng Wu, Yueqing Sun 등 Shanghai Jiao Tong University, National University of Singapore, Meituan, CUHK, Shanghai University, University of Oxford 소속 공동 연구진 (교신저자: Hao Fei, Qi Gu, Gongshen Liu, Zhuosheng Zhang)</li>
+<li><strong>출처</strong>: arXiv:2608.27456v1 [cs.CV] (2026년 8월 27일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://urbanground.github.io/">urbanground.github.io</a> (코드: github.com/UrbanGround/UrbanGround)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.27456">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>홍콩 전역의 실제 3D 지리 데이터를 그대로 재현한 실도시 규모 시뮬레이터 UrbanGround를 통해, 멀티모달 대형언어모델(MLLM) 에이전트가 국소적 장면 인식 능력을 이동이 계속되는 상황에서도 신뢰할 수 있는 행동으로 이어갈 수 있는지를 체계적으로 검증한 벤치마크 연구다.</p>
+<h2>배경 및 문제의식</h2>
+<p>MLLM 에이전트는 하나의 스트리트뷰 이미지에서 사물을 인식하는 데는 강점을 보이지만, 실제 도시에서의 "에이전시(agency)"는 에이전트가 이동을 시작한 뒤에도 이전에 확보한 국소적 증거가 계속 유효하게 활용되는지에 달려 있다. 모퉁이를 돌면 방금까지 판단 근거였던 랜드마크가 시야에서 사라지지만 그 위치 정보는 여전히 중요하며, 새로운 관측과 예전 증거를 정합적으로 통합해야 위치추정(pose)이 유지된다. 기존 연구는 게임 샌드박스(현실성 부족), 실내 구속 공간(공간 규모 협소), 항공/파노라마 기반 도시 데이터(연속적 물리 이동 부재), 인공 합성 도시 시뮬레이터(실제 지리 구조 미반영) 등 각각 한 측면만을 다뤄, "국소 지각이 실제 도시 규모에서 지속적인 목표지향 행동으로 이어지는가"라는 질문을 온전히 검증할 환경이 없었다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>홍콩 정부 Lands Department가 공개한 영토 전역 3D Visualisation Map(오블리크 항공사진 기반 텍스처 메시)과 3D Pedestrian Network(보행 연결 그래프)를 Unity에 그대로 스트리밍하여, 실제 지리 좌표계를 유지한 채 물리적 충돌·이동이 가능한 실도시 규모 샌드박스 UrbanGround를 구축했다.</li>
+<li>Grounding(국소 관계 형성) → Persistence(시야 밖에서도 관계 유지, 지도 정보와의 정합) → Adaptation(외부 조건 변화 시 상태 갱신)이라는 3단계 누적 능력으로 "공간 에이전시"를 형식화하고, 이를 반영한 5단계(Level 1~5) 810개의 과제로 구성된 "spatial agency evaluation ladder"를 설계했다.</li>
+<li>시간대(낮/황혼/밤), 날씨(맑음/흐림/폭우), 도로 폐쇄, 동적 보행자 등 실행 중 변화하는 조건을 지원해 에이전트의 지각-행동 루프가 실제 환경 변화에도 견고한지 측정 가능하게 했다.</li>
+<li>GPT, Claude, Gemini, Doubao, GLM, Kimi 등 10개 최신 MLLM을 대상으로 대규모 비교 실험을 수행하고, 정답률뿐 아니라 보행 네트워크 준수율(PNA), 안전 진행률(SPR), 보행자 충돌률(PCR) 등 물리적 타당성 지표를 함께 제시했다.</li>
+</ul>
+<h2>방법론</h2>
+<p>UrbanGround는 세 계층으로 구성된다. (1) Geospatial layer는 3D Tiles(WGS84 좌표계) 형태의 지형/건물 메시와 보행자 네트워크 그래프를 하나의 시뮬레이션 좌표계로 통합해 실시간 스트리밍한다. (2) Simulation layer는 1인칭 캐릭터의 연속적 물리 이동과 충돌, 시간에 따른 조명 변화, 비/안개 등 날씨 효과, Microsoft Rocketbox 아바타 기반 보행자 군집을 구현한다. (3) Agent layer는 외부 MLLM과 Unity 환경을 클라이언트-서버로 연결해, 에이전트가 매 턴 1인칭 RGB 관측(및 필요시 지도 뷰)을 받고 이동(move/sprint/look/jump), 지도 조작(pan/zoom/select/orbit), 종료(terminate) 등 구조화된 행동 하나를 선택하도록 한다. 상호작용은 논문에서 관측함수 O, 상태전이 T, 정책 π로 이루어진 폐루프 수식(식 1)으로 형식화되며, 에이전트에게는 최단경로나 남은 거리 등 특권 정보가 노출되지 않는다. 평가는 시각인식·방향이해·능동탐색(레벨1), 명시적/암묵적 목적지 내비게이션 및 다중 목표 계획(레벨2~4), 도로 폐쇄·보행자 회피 등 동적 상호작용(레벨5)의 5단계로 나뉘며, 각 과제는 100스텝(최대 200초 상당 이동) 제한 안에서 사람 테스터 기준으로도 검증되었다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>GPT-5.5/5.4/5.2, Claude-Opus-5/4.6, Gemini-3.6-Flash/3.1-Pro, Doubao-Seed-2.0-Pro, GLM-5V-Turbo, Kimi-K3 등 10개 모델을 810개의 검증된 과제 인스턴스에 대해 평가했다. 주요 결과는 다음과 같다.
+- <strong>RQ1(국소 그라운딩)</strong>: 시각 인식 정답률은 대체로 높지만(예: Claude-Opus-5 91.3%), 방향(orientation) 관련 질문에서는 정확도가 크게 떨어져 일부 모델은 4지선다 무작위 추측 수준에 근접했다. 정답을 맞히면서도 보행 네트워크를 이탈하는 등, 정답률이 곧 물리적으로 타당한 행동을 보장하지 않음을 확인했다.
+- <strong>RQ2(목표지향 내비게이션)</strong>: 목적지가 근거리에 명시된 경우 일부 성공하지만, 몇 블록만 늘어나도 거의 모든 모델의 성공률이 급락했다(예: GPT-5.5 단거리 75.0% → 장거리 0.0%). 거리 구간별 분석에서도 이동 거리가 늘수록 성공률이 지속적으로 하락했으며, 장거리 내비게이션 에피소드의 절반 이상이 목표에 더 가까워지긴 했으나 최종 도달에는 대부분 실패했다. 다중 목표(Multi-stop) 계획에서도 평균 10~20%의 목적지만 도달하는 데 그쳤다.
+- <strong>RQ3(동적 환경 적응)</strong>: 황혼·야간 등 조명 저하 조건은 질의응답 정확도를 뚜렷이 낮췄지만 단거리 내비게이션 성공률에는 일관된 영향을 주지 않았다. 도로 폐쇄 시나리오에서는 보행 네트워크 준수율(PNA)은 높게 유지되면서도 안전 진행률(SPR)과 목표 도달률(SR)은 거의 0%에 가까워, 폐쇄 사실을 인지하고도 경로를 재계획하지 못하는 경향이 드러났다. 동적 보행자 상황에서는 대부분 모델의 보행자 충돌률(PCR)이 76~90%에 달해, 국소적으로 '규칙을 지키는 듯한' 이동이 실제로는 충돌 회피에 실패함을 보였다.</p>
+<h2>한계점</h2>
+<p>논문에 별도의 "한계점" 섹션은 명시되어 있지 않으나, 본문에서 스스로 지적한 제약은 다음과 같다. 보행자 네트워크는 에이전트의 이동을 강제로 제한하지 않고 자유 이동을 허용하기 때문에 실제 준수 여부는 사후 궤적 분석에 의존한다. 또한 평가는 홍콩이라는 단일 도시의 특정 지역들에 한정되어 있으며, 지형·거리 패턴이 다른 다른 도시로의 일반화 여부는 논문에 명시되지 않음. 장거리 내비게이션 실패의 구체적 원인(조기 종료, 진행 정체, 진행 상실 등)은 부록에서 추가 분류되었다고만 언급되어 있어 본문에서는 상세히 다루지 않는다.</p>
+<h2>시사점</h2>
+<p>현재의 최상위 MLLM들은 단일 시점에서의 시각 인식과 단거리 공간 추론에는 이미 실용적 수준에 도달했지만, 이동이 지속되면서 국소적 능력들이 누적적 오류 없이 하나의 지속가능한 목표지향 행동으로 합성되지 못한다는 근본적 한계를 보여준다. 이는 "도시 규모의 에이전시"가 단순히 개별 지각 능력의 총합이 아니라, 시야 밖에서도 공간 상태를 유지(persistence)하고 환경 변화에 맞춰 이를 갱신(adaptation)하는 별도의 능력임을 시사한다. UrbanGround는 실제 지리 데이터에 기반한 폐루프 평가 환경을 공개함으로써, 향후 에이전트가 복잡한 실제 도시에서 더 견고하게 탐색·적응할 수 있도록 하는 연구의 기반을 제공한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.27456" target="_blank" rel="noopener">huggingface.co/papers/2608.27456</a> · 2026-08-29</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

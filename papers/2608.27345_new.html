@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>PAWBench</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#2 · Daily Papers 2026-08-29</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 73</span>
+    </div>
+    <h1 class="article-title">PAWBench: How Far Are We from Probabilistically Aligned World Modeling?</h1>
+    <p class="article-title-ko">PAWBench: 확률적으로 정합된 세계 모델링으로부터 우리는 얼마나 멀리 있는가?</p>
+    <p class="article-sub">비디오 생성 모델을 "세계 모델(world model)"로 볼 때 가장 중요한 것은 그럴듯한 영상 한 편이 아니라 동일한 초기 상황에서 반복 생성했을 때 나타나는 결과들의 확률분포이며, 이를 측정하는 벤치마크 PAWBench와 평가 프로토콜 PAWEval을 도입해 현재 11개 최신 비디오 생성 모델이 이 "확률적 정합(probabilistic alignment)" 기준에서 크게 미달함을 보인 연구다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.27345" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.27345" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: PAWBench: How Far Are We from Probabilistically Aligned World Modeling?</li>
+<li><strong>저자</strong>: Yuandong Pu, Le Zhuo, Sayak Paul, Gabriel Jorge Menezes, Avram Đorđević, Shiyang Li, Yifan Zhou, Bin Fu, Wenlong Zhang, Junjun He, Qiao Yu, Yihao Liu, Jinbo Xing, Xi Chen 등 (Shanghai Jiao Tong University, Shanghai AI Laboratory, Krea AI, Hugging Face, Shanghai Innovation Institute, Tongyi Lab, The University of Hong Kong 소속 공동연구)</li>
+<li><strong>출처</strong>: arXiv:2608.27345v1 [cs.CV] (2026년 8월 27일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://pawbench.github.io">pawbench.github.io</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.27345">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>비디오 생성 모델을 "세계 모델(world model)"로 볼 때 가장 중요한 것은 그럴듯한 영상 한 편이 아니라 동일한 초기 상황에서 반복 생성했을 때 나타나는 결과들의 확률분포이며, 이를 측정하는 벤치마크 PAWBench와 평가 프로토콜 PAWEval을 도입해 현재 11개 최신 비디오 생성 모델이 이 "확률적 정합(probabilistic alignment)" 기준에서 크게 미달함을 보인 연구다.</p>
+<h2>배경 및 문제의식</h2>
+<p>최근 비디오 생성 모델들은 명령어 이해, 화질, 시간적 일관성 면에서 크게 발전하며 단순한 콘텐츠 생성 도구를 넘어 물리 세계를 시뮬레이션하는 "세계 모델"로 여겨지기 시작했다. 그러나 현실의 많은 물리 과정은 확률적이어서, 동일한 초기 관측과 동일한 행동이 주어져도 여러 개의 서로 다른 물리적으로 타당한 미래가 존재할 수 있다(예: 동전 던지기, 볼링공 충돌, 탑에서 블록 빼내기 등). 저자들은 세계 모델이라면 그럴듯한 궤적 하나를 만드는 데 그치지 않고, 가능한 미래들에 대한 조건부 분포—어떤 미래가 가능한지(지지집합, support)와 각 미래가 얼마나 그럴듯한지(확률질량)—를 올바르게 재현해야 한다고 주장한다. 그런데 기존 비디오 생성 벤치마크들은 화질, 시간 일관성, 텍스트-영상 정합성, 물리적 그럴듯함 등을 개별 영상 단위로 평가할 뿐, 반복 생성이 올바른 분포를 복원하는지는 전혀 검증하지 않는다. 이 공백에서 "현재의 비디오 생성기는 확률적으로 정합된 세계 모델링으로부터 얼마나 멀리 있는가?"라는 질문이 제기된다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>확률적 정합(probabilistic alignment)의 정식화</strong>: 세계 모델 M이 초기 관측 x와 행동 a가 주어졌을 때 미래 궤적에 대한 조건부 분포 P_M(τ|x,a)를 유도한다고 보고, 각 궤적을 유한한 종결 결과(terminal outcome) 집합 Y로 매핑하는 함수 g(τ)를 통해 결과 분포 p_M(y|x,a)를 정의한다. 이로부터 지지집합 정합(support alignment, 가능한 결과를 모두 실현하는지)과 확률질량 정합(probability-mass alignment, 각 결과에 올바른 확률을 부여하는지)이라는 두 단계 기준을 구분한다.</li>
+<li><strong>PAWBench 벤치마크</strong>: 8개 물리 메커니즘 그룹에 걸친 50개 시나리오로 구성되며, 분석적으로 또는 대칭성으로 정확한 기준 분포를 도출할 수 있는 25개 시나리오(PAW-Calibration: 던지기, 회전, 경로 분기, 추첨 등)와 결과 집합은 열거 가능하지만 정확한 확률을 특정할 수 없는 25개 시나리오(PAW-Coverage: 충돌, 안정성, 에이전트 상호작용, 재질 변화 등)로 나뉜다.</li>
+<li><strong>PAWEval 평가 프로토콜</strong>: 동일한 (이미지, 행동 프롬프트) 조건에서 반복 생성한 영상들을 규칙 기반 판정기(Gemini 3.5 Flash)로 종결 결과 라벨에 매핑하고, 판독 실패는 별도로 집계하여 경험적 결과 분포를 산출한다. PAW-Calibration은 총변동거리(Total Variation Distance, TVD)로, PAW-Coverage는 유효 지지집합 회복 비율로 평가한다.</li>
+<li><strong>개입 실험을 통한 원인 분석</strong>: 언어 프롬프트 조작(prompt engineering), 초기 노이즈 샘플링 기법(Couple to Control, C2C), 모델 파라미터 미세조정(LoRA) 세 가지 개입 지점에서 분포를 개선할 수 있는지 체계적으로 검증했다.</li>
+</ul>
+<h2>방법론</h2>
+<p>각 벤치마크 항목은 초기 관측 이미지, 행동을 지정하는 프롬프트, 유효한 종결 결과 집합 Y, (가능한 경우) 기준 분포 q로 구성된다. 시나리오 구축 시 세 가지 원칙을 지켰다: (1) 확률성은 프롬프트의 모호함이나 숨겨진 초기조건이 아니라 눈에 보이는 물리적 메커니즘에서 나와야 하고, (2) 행동 프롬프트는 완료 여부를 영상에서 판별 가능한 하나의 원자적 개입이어야 하며, (3) 종결 결과는 유한하고 시각적으로 구별 가능한 집합을 이뤄야 한다. 각 시나리오마다 이미지 생성 모델로 초기 이미지를 만들고, 행동 프롬프트·결과 집합·실패 기준·(PAW-Calibration의 경우) 기준 분포를 사람이 직접 검토해 확정했다. 평가 시에는 동일한 (x, a) 쌍에 대해 모델당 K=50회 독립 rollout을 생성하고, 각 시나리오는 50개 중 30개 이하만 판독 실패일 때(즉 20개 이상이 판독 가능할 때) "통과"로 간주해 Scene Pass Rate(SPR)를 계산한다. PAW-Calibration은 조건부 TVD(×100, 낮을수록 좋음)를, PAW-Coverage는 유효 결과 회복률(%, 높을수록 좋음)을 통과한 장면들에 대해 평균낸다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>HappyHorse, Veo3.1 Fast, Kling 3 Std., Seedance 2, Wan2.7, Wan2.2, LTX-2.3, LTX-2.5, Cosmos 3 Super I2V, LingBot-Video-MoE, MiniMax H3 등 11개 최신 상용·오픈 비디오 생성 모델을 동일 조건으로 평가했다. 결과적으로 확률질량 정합, 지지집합 커버리지, 장면 전반의 신뢰성(SPR) 세 가지를 모두 만족하는 모델은 하나도 없었다. 예를 들어 Cosmos 3 Super I2V는 Calibration TVD가 가장 낮지만 통과율은 80%에 그쳤고, LTX-2.3은 Coverage 평균이 가장 높지만 통과 장면이 72%뿐이었다. 지지집합을 폭넓게 회복하는 모델이 확률질량도 정확히 맞추는 것은 아니어서, 두 축이 서로 다른 실패를 드러냈다. 인과적 개입(예: 연필을 기울이는 것처럼 물리적 전이 자체를 바꾸는 조작)에는 분포 변화가 미미한 반면, 비인과적 단서(관련 없는 텍스트 등)에는 오히려 확률질량이 쏠리는 경향도 확인됐다. 롤아웃 수를 K=1부터 100까지 늘려도 커버리지는 다소 오르지만 캘리브레이션 오차는 거의 개선되지 않아, 관측된 격차가 단순히 샘플 부족 때문이 아님을 몬테카를로 분석으로 뒷받침했다. 또한 사람 평가자 7인의 판정과 비교했을 때 PAWEval은 명확한 결과가 나온 888개 영상 중 81.3%에서 사람 판단과 일치해, 자동 평가 자체의 신뢰성도 검증했다. 개입 실험에서는 VLM에게 직접 미래를 예측시켜도 분포 자체가 이미 편향되어 있었고, 언어로 목표 결과를 지정한 프롬프트 엔지니어링(PE)은 SPR은 높였지만 오히려 캘리브레이션을 악화시키는 경우가 많았으며, 정답 결과를 프롬프트에 직접 명시한 Oracle PE조차 요청한 결과가 실제 영상에 반영되는 비율이 37.6~58.1%에 그쳤다. 초기 노이즈를 반발적으로 결합하는 C2C 기법은 커버리지와 캘리브레이션을 다소 개선했지만 이는 기존에 모델이 가진 가능성을 더 넓게 탐색한 효과일 뿐, 학습된 분포 자체를 바꾸지는 못했다. 좌/우로 떨어지는 연필 영상 비율을 달리해 LoRA로 미세조정한 실험에서는 학습 데이터의 결과 비율을 조정하면 생성 분포도 따라 움직였지만, 그 변화가 비선형적이고 장면 전반에 걸쳐 획일적으로 적용되어 한 장면의 정합을 개선하면 다른 장면은 악화되는 트레이드오프가 나타났다.</p>
+<h2>한계점</h2>
+<p>논문은 스스로 세 가지 한계를 명시한다. 첫째, PAWBench는 궤적 전체가 아니라 종결 결과(terminal outcome)만으로 확률적 정합을 측정하기 때문에 궤적 수준의 동역학이나 중간 물리 과정은 충분히 포착하지 못한다. 둘째, 유한한 rollout 수에 기반한 추정이므로, 샘플 수를 늘리면 분포를 더 신뢰성 있게 드러낼 수 있지만 비용이 증가하고 그 자체로 모델의 편향된 분포를 교정해주지는 않는다. 셋째, 통제되고 시각적으로 명확히 판별 가능한 시나리오만을 다루어, 더 긴 시간 범위의 상호작용적·체화된(embodied) 환경에 대한 평가는 향후 과제로 남겨두었다.</p>
+<h2>시사점</h2>
+<p>이 연구는 비디오 생성 모델을 세계 모델로 평가할 때 "그럴듯한 영상 한 편"이라는 개별 샘플 기준을 넘어서 반복 생성의 분포 자체를 검증해야 한다는 새로운 평가 축을 제시한다. 언어적 유도, 노이즈 샘플링, 미세조정이라는 세 가지 개입 방식이 모두 부분적 효과만 있을 뿐 근본적인 확률적 정합 문제를 해결하지 못한다는 결과는, 향후 세계 모델 학습이 단순히 시각적 사실성이나 개별 결과의 정확성을 넘어 물리적 상태에 따라 달라지는 보정된 확률분포를 명시적으로 학습하는 목적함수를 필요로 함을 시사한다. 계획 수립이나 의사결정에 세계 모델을 활용하려는 로보틱스·강화학습·시뮬레이션 응용 분야에서, 생성 모델이 실제로 신뢰할 수 있는 확률적 추론 도구가 되기 위해 넘어야 할 구체적 격차를 제시했다는 점에서 실용적 의의가 크다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.27345" target="_blank" rel="noopener">huggingface.co/papers/2608.27345</a> · 2026-08-29</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

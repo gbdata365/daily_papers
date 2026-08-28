@@ -1,0 +1,130 @@
+<meta charset="UTF-8">
+<title>TTPO</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#4 · Daily Papers 2026-08-29</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 62</span>
+    </div>
+    <h1 class="article-title">TTPO: Test-Time Policy Optimization</h1>
+    <p class="article-title-ko">TTPO: 테스트 시점 정책 최적화 (라벨 없는 테스트타임 학습)</p>
+    <p class="article-sub">정답 라벨 없이도, 모델 스스로 만든 다수결 pseudo-label을 "동의하는 롤아웃"에는 distillation, "반대하는 롤아웃"에는 RL 페널티로 비대칭적으로 처리함으로써 테스트 시점에 라벨 없이도 라벨 지도 학습 수준의 수학 추론 성능을 달성하는 test-time training(TTT) 기법.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.27448" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.27448" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: TTPO: Test-Time Policy Optimization</li>
+<li><strong>저자</strong>: Aozhe Wang, Zhengxi Lu 등(공동 1저자) 포함 Zhejiang University 및 Alibaba Group 소속 연구진 (교신저자: Qianglong Chen, Yongliang Shen)</li>
+<li><strong>출처</strong>: arXiv:2608.27448v1 [cs.CL] (2026년 8월 27일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/ZJU-REAL/TTPO">GitHub - ZJU-REAL/TTPO</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.27448">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>정답 라벨 없이도, 모델 스스로 만든 다수결 pseudo-label을 "동의하는 롤아웃"에는 distillation, "반대하는 롤아웃"에는 RL 페널티로 비대칭적으로 처리함으로써 테스트 시점에 라벨 없이도 라벨 지도 학습 수준의 수학 추론 성능을 달성하는 test-time training(TTT) 기법.</p>
+<h2>배경 및 문제의식</h2>
+<p>최근 수학 추론 성능 향상은 RLVR(검증 가능 보상 기반 RL)과 On-Policy Self-Distillation(OPSD) 같은 post-training 기법에 힘입은 바가 크다. 그러나 이들 기법은 모두 정답(ground-truth) 라벨을 필요로 한다 — RL은 보상 계산에, OPSD는 정답을 조건으로 하는 teacher 구성에 라벨이 필요하다. 반면 test-time training(TTT)은 모델이 풀어야 할 바로 그 문제(테스트셋)에 대해 라벨 없이 스스로 개선해야 하는 상황이라 기존 기법들을 적용할 수 없다.</p>
+<p>라벨이 없을 때 자연스러운 대안은 여러 번 샘플링한 뒤 다수결(majority vote)로 얻은 답을 pseudo-label로 삼는 것이다. TTRL 같은 선행 연구는 이를 RL 보상으로 사용했지만, 다수결이 틀리면 그 오류가 학습에 그대로 강화된다는 취약점이 있다. pseudo-label을 OPSD의 teacher 조건으로 사용하는 방법도 시도되었으나, distillation은 매 토큰마다 오류를 전파시키기 때문에 pseudo-label 오류에 훨씬 더 취약하다. 실제로 저자들은 AIME 2026에서 Qwen3-1.7B로 TTT를 수행할 때 pseudo-label이 약 85%의 문제에서 틀린다는 것을 관찰했다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>다수결 pseudo-label이 자주 틀림에도 불구하고 여전히 유용함을 보였다: pseudo-label이 경쟁 수준 문제의 약 85%에서 틀리지만, pseudo-label과 "다른" 답을 낸 롤아웃(disagreeing rollout) 중 약 79%는 정답(ground truth)과도 다른, 즉 실제로 틀린 답이다. 따라서 "다수결과 다르다"는 이유로 페널티를 주는 것은 pseudo-label의 정오와 무관하게 대체로 옳은 판단이 된다는 비대칭적 구조를 발견했다.</li>
+<li>이 관찰에 기반해 TTPO를 제안: pseudo-label에 동의하는(agreeing) 롤아웃은 OPSD 방식으로 distillation하고, 반대하는(disagreeing) 롤아웃은 Grouped RL(GRPO)로 페널티를 주는 비대칭 목적함수이며, 두 갈래 모두에 토큰 단위 선택(token-level selection)을 추가로 적용한다.</li>
+<li>라벨 없이 학습했음에도 5개의 경쟁 수준 수학 벤치마크에서 라벨 지도 OPSD와 동등하거나 이를 능가했고, 순수 TTT 설정에서 Qwen3-1.7B를 38.0%에서 45.2%로 끌어올렸으며, non-thinking 모드에서는 +25.2%~+36.4%의 큰 폭 향상을 보였고, 벤치마크 간 교차 일반화 능력도 입증했다.</li>
+</ol>
+<h2>방법론</h2>
+<p><strong>문제 설정</strong>: 라벨 없는 문제 x에 대해 정책 πθ로부터 K개의 롤아웃(trajectory) {y1,...,yK}를 샘플링하고, 각 롤아웃의 최종 답 ak를 추출한다.</p>
+<p><strong>다수결 pseudo-labeling</strong>: 답들을 수학적 동치로 클러스터링해 가장 큰 클러스터를 pseudo-label â로 삼고, 롤아웃을 â에 동의하는 positive 집합 P와 반대하는 negative 집합 N으로 나눈다.</p>
+<p><strong>Answer-conditioned teacher</strong>: OPSD를 따라, 같은 모델을 pseudo-label â로 조건화한 것을 teacher로 사용해(그래디언트 없음) student(그래디언트 있음)의 롤아웃을 토큰 단위로 재평가한다.</p>
+<p><strong>Positive 샘플 - OPSD 브랜치</strong>: agreeing 롤아웃에는 forward KL(FKL) distillation을 적용한다. 이때 teacher가 조건화한 답 â가 바로 학생 자신이 만든 답이므로, â가 틀렸더라도 이 distillation은 "생각 모드(thinking)에서 비생각 모드(non-thinking)로의" 지식 전이로 축소되어 여전히 유익한 신호가 된다. 토큰별로 학생의 엔트로피 H(t)와 teacher-student 간 KL divergence Δ(t)를 정규화해 Soft-OR 방식(w(t) = Ĥ(t) + Δ̂(t) − Ĥ(t)·Δ̂(t))으로 결합, 이미 수렴된(학생이 확신하고 teacher와 일치하는) 위치의 가중치는 낮추고 학습 가치가 있는 위치의 가중치는 높인다.</p>
+<p><strong>Negative 샘플 - GRPO 브랜치</strong>: disagreeing 롤아웃에는 GRPO를 적용한다. pseudo-label과 일치하면 보상 1, 아니면 0의 이진 보상을 부여하고 그룹 상대적 advantage를 계산하면 negative 샘플은 항상 음의 advantage(페널티)를 받는다. 이때 GRPO는 positive-advantage에 의한 상쇄 효과 없이 오직 페널티만 가하므로, 부정확하게 "국소적으로는 맞는" 토큰까지 억누르는 부작용(False Penalties)이 생길 수 있다. 이를 줄이기 위해 토큰의 음의 로그확률과 (1-정규화 엔트로피)를 곱한 점수로 순위를 매겨 상위 50% 토큰만 마스킹해 페널티를 적용한다(낮은 확률·낮은 엔트로피인 "확신에 찬 오류" 토큰에 집중).</p>
+<p><strong>통합 목적함수</strong>: 전체 손실은 positive 샘플들의 가중 OPSD 손실과 negative 샘플들의 가중 GRPO 손실(가중치 λ)의 합으로 구성된다. 실험적으로 K=64개 롤아웃 중 8개(양성/음성 각 50%, 가장 짧은 completion 우선 선택)를 학습에 사용하고 λ=0.1을 사용한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Qwen3-1.7B/4B/8B 모델에 LoRA(r=64, α=128)를 적용해 두 가지 설정에서 평가했다: (1) OpenThoughts 설정(라벨이 있는 데이터로 학습하되 TTPO는 라벨을 쓰지 않음), (2) TTT 설정(테스트셋 자체에서 라벨 없이 직접 학습). 평가는 AIME 2025/2026, HMMT 2025/2026, BRUMO 2025의 5개 경쟁 수준 수학 벤치마크에서 Avg@12로 측정했다.</p>
+<ul>
+<li><strong>OpenThoughts 설정</strong>: TTPO는 라벨을 전혀 쓰지 않았음에도 라벨 지도 OPSD보다 평균 점수가 높았다(1.7B: 40.1 vs 39.7, 4B: 58.6 vs 58.4, 8B: 62.6 vs 61.7).</li>
+<li><strong>TTT 설정</strong>: TTPO는 TTRL, OPSD-TTT 등 기존 라벨-프리 기법들을 뚜렷하게 앞섰다. Qwen3-1.7B에서 base 38.0% → TTPO 45.2%(TTRL 대비 +5.4, OPSD-TTT 대비 +3.3). Qwen3-4B에서 TTPO(61.1)는 Qwen3-8B의 base 성능(60.7)을 능가했다.</li>
+<li><strong>Non-thinking 평가</strong>: thinking 모드를 끈 상태에서 TTPO는 OPSD보다 훨씬 큰 향상 폭을 보였다(예: 1.7B에서 +25.2 vs OPSD +7.1).</li>
+<li><strong>교차 벤치마크 일반화</strong>: 한 벤치마크로만 학습해도 다른 벤치마크 성능이 함께 향상되어, 문제별 암기가 아닌 일반화 가능한 추론 능력 향상임을 확인했다.</li>
+<li><strong>Ablation</strong>: 토큰 가중치(positive)와 토큰 마스킹(negative) 둘 다 성능에 기여하며, 두 신호를 결합했을 때 최고 성능을 보였다. 업데이트 전략 비교에서도 "positive=FKL, negative=GRPO"의 비대칭 조합이 다른 모든 조합(양쪽 모두 FKL, 역할을 뒤바꾼 조합 등)보다 크게 우수했다.</li>
+<li><strong>흥미로운 발견</strong>: pseudo-label 대신 실제 ground-truth로 라우팅한 "TTPO w/ GT"는 오히려 pseudo-label 버전보다 성능이 낮았다. 어려운 문제에서는 정답과 일치하는 롤아웃이 거의 없어(|P|≈0) 두 브랜치 모두 신호가 소실되기 때문이며, 다수결 기반 라우팅은 모델이 나아짐에 따라 pseudo-label의 정확도도 함께 개선되는 자기진화(self-evolving) 사이클을 만든다는 점을 실험적으로 보였다.</li>
+<li>RL 가중치 λ는 0.1에서 최적 성능을 보였고, K_train 구성은 양성/음성 50:50 고정 비율과 "가장 짧은 completion" 선택 전략이 가장 좋은 결과를 냈다.</li>
+</ul>
+<h2>한계점</h2>
+<ul>
+<li><strong>다수결 품질 의존성</strong>: 샘플 수 K가 매우 작거나 문제가 너무 어려워 어떤 롤아웃도 정답을 내지 못하면 투표 신호 자체가 저하되어 두 브랜치 모두 잡음이 섞인 지도를 받게 된다.</li>
+<li><strong>도메인 범위</strong>: 실험이 정답을 자동으로 검증 가능한 수학 추론에 국한되어 있으며, 코드 생성(실행 기반 검증 필요)이나 개방형 추론(학습된 보상 모델 필요) 등으로의 확장은 다루지 않았다.</li>
+<li><strong>고정된 학습 커리큘럼</strong>: TTPO는 학습 내내 고정된 비대칭 목적함수(고정 λ, 고정 양/음성 비율)를 사용하는데, 모델이 개선되어 pseudo-label 정확도가 올라가면 distillation과 RL 사이의 최적 균형점이 달라질 수 있어 동적 커리큘럼 도입이 향후 과제로 남는다.</li>
+</ul>
+<h2>시사점</h2>
+<p>TTPO는 "틀린 다수결도 부분적으로는 신뢰할 수 있다"는 통계적 관찰(반대 답 대부분이 실제로도 오답)을 활용해, 라벨 없는 테스트 시점에서도 라벨 지도 학습에 준하는 성능을 낼 수 있음을 보여준다. 이는 dense한 토큰 단위 지도(distillation)와 성긴 시퀀스 단위 지도(RL)를 각각의 신뢰 구간에 맞춰 분리 적용한다는 설계 원칙이 노이즈가 심한 자기지도 환경에서 특히 유효함을 시사하며, 정답 라벨이 부족하거나 아예 없는 실제 배포 환경에서 LLM을 지속적으로 자기개선시키는 실용적 경로를 제시한다. 또한 "완벽한 라벨보다 다수결 pseudo-label이 오히려 더 나은 학습 신호를 만들 수 있다"는 역설적 결과는, 특히 매우 어려운 문제에서 라벨 기반 학습 신호가 희소해지는 문제를 다수결 기반 라우팅이 자연스럽게 완화한다는 점에서 향후 RLVR/self-distillation 설계에 시사하는 바가 크다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.27448" target="_blank" rel="noopener">huggingface.co/papers/2608.27448</a> · 2026-08-29</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

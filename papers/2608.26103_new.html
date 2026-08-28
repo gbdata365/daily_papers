@@ -1,0 +1,123 @@
+<meta charset="UTF-8">
+<title>Zero-WAM</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#10 · Daily Papers 2026-08-29</span>
+      <span class="cat-tag">생성모델</span>
+      <span class="upvote-tag">▲ 16</span>
+    </div>
+    <h1 class="article-title">Zero-WAM: In-Context World-Action Modeling from Human Videos for Open-Ended Task Generalization</h1>
+    <p class="article-title-ko">Zero-WAM: 사람 영상을 이용한 인컨텍스트 월드-액션 모델링을 통한 개방형 로봇 과제 일반화</p>
+    <p class="article-sub">로봇이 한 번도 훈련받지 않은 조작 과제를, 사람이 그 과제를 수행하는 영상을 in-context 프롬프트로 제시받아 별도의 파인튜닝 없이 그대로 수행하도록 만든 인과적 비디오-액션(world-action) 모델이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.26103" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.26103" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Zero-WAM: In-Context World-Action Modeling from Human Videos for Open-Ended Task Generalization</li>
+<li><strong>저자</strong>: Jiaming Zhou, Qihang Zhang 외 (Robbyant, HKUST(GZ), HKUST 소속 공동 연구팀)</li>
+<li><strong>출처</strong>: arXiv:2608.26103v1 [cs.RO] (2026년 8월)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://robbyant-research.github.io/Zero-WAM/">Zero-WAM 프로젝트 페이지</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.26103">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>로봇이 한 번도 훈련받지 않은 조작 과제를, 사람이 그 과제를 수행하는 영상을 in-context 프롬프트로 제시받아 별도의 파인튜닝 없이 그대로 수행하도록 만든 인과적 비디오-액션(world-action) 모델이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>로봇 매니퓰레이션에서 "제로샷 크로스 태스크 일반화"(훈련 때 본 적 없는 과제를 배포 시점에 곧바로 수행하는 능력)는 오랜 난제다. 기존 비전-언어-액션(VLA) 모델과 비디오-액션 모델들은 대부분 언어 지시문을 과제 명세 수단으로 사용하는데, 언어는 공간 제약, 중간 상태, 시간적 흐름 같은 정보를 표현하기 어렵고, 아무리 상세히 서술해도 장면이 실제로 어떻게 바뀌어야 하는지에 대한 시각적 증거를 주지 못한다. 저자들은 대형 언어모델의 in-context learning(문맥만으로 새 문제를 푸는 능력)에서 착안해, 로봇 조작에 가장 자연스러운 과제 명세는 "사람이 그 과제를 수행하는 시연 영상"이라고 주장한다. 다만 이를 실현하려면 두 가지 난관이 있다: (1) 과제 다양성이 큰 사람-로봇 페어 데이터가 절대적으로 부족하고 수집 비용이 크다는 점, (2) 학습 중 정책이 "직전 로봇 히스토리만으로 다음 행동을 예측하는" 지름길(shortcut)을 학습해 정작 필요할 때(미지의 과제) 문맥으로 주어진 사람 영상을 무시하게 된다는 점이다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>로봇 과제 일반화를 "in-context world-action modeling" 문제로 재정의하여, 하나의 인과적(causal) 정책이 언어 지시문과 사람 시연 영상을 모두 과제 명세로 받아들이도록 함.</li>
+<li>과제 단위로 샘플링한 로봇 궤적을 의미적으로 대응되는 사람 조작 영상으로 자동 변환하는 확장 가능한 파이프라인을 제안하고, 이를 통해 8.6K개 과제에 걸친 74.2K개의 사람-로봇 in-context 학습(ICL) 쌍으로 구성된 HumanGen 데이터셋을 구축.</li>
+<li>동일한 과제 단위 샘플링으로 6,000개 이상의 과제, 약 400K개의 로봇 궤적으로 이루어진 과제 균형 사전학습 코퍼스 Task-diverse VA도 함께 구성.</li>
+<li>지름길 학습을 억제하고 모델이 실제로 사람 영상에서 과제 정보를 끌어오도록 강제하는 in-context future chunk prediction(IFP) 학습 목표를 도입.</li>
+<li>RoboTwin 2.0 시뮬레이션의 미지 과제 7종에서 평균 성공률 47.0%를 달성해, 가장 강력한 비디오-액션 베이스라인 대비 29.5%p 절대 향상을 실증. 실제 로봇 환경에서도 다중 객체, 장기 과제, 정밀 삽입 작업에서 사람 영상 지시를 따라 일반화하는 것을 확인.</li>
+</ul>
+<h2>방법론</h2>
+<p>Zero-WAM은 Wan-2.2-TI2V-5B라는 범용 이미지/텍스트-투-비디오 생성 모델을 개조해 만든 인과적 비디오-액션 정책이다. 각 제어 스텝에서 모델은 과거 로봇 비디오·액션 히스토리와 과제 조건(언어 지시문 또는 사람 영상)을 입력받아, 먼저 다음 로봇 비디오 청크를 flow matching으로 예측하고, 그다음 그 예측 비디오로부터 실행 가능한 액션 청크를 역동역학(inverse dynamics) 방식으로 디코딩한다. 비디오 예측과 액션 예측은 별도 파라미터를 갖는 비디오 트랜스포머와 액션 트랜스포머로 구성된 Mixture-of-Transformers(MoT) 구조로 구현되며, 두 트랜스포머는 공유 어텐션 계층을 통해서만 상호작용한다.</p>
+<p>사람 영상을 과제 명세로 사용할 때는, 생성된 사람 영상 h를 로봇 궤적 앞에 프리픽스로 붙이고 teacher-forcing 어텐션 마스크를 적용해 비디오 트랜스포머가 h를 참고해 다음 로봇 비디오 청크를 예측하도록 학습한다. 액션 트랜스포머는 사람 영상에 직접 접근하지 않고, 이미 사람 영상 정보를 흡수한 예측 비디오만으로 액션을 디코딩한다. 사람 영상과 로봇 영상이 동일한 VAE 잠재 공간을 공유하므로, 둘을 구분하기 위해 RoPE의 높이축 좌표에 오프셋(ΔH=32)을 주어 사람 영상 잠재값이 로봇 영상 좌표 범위 밖에 위치하도록 한다.</p>
+<p>IFP(in-context future chunk prediction)는 학습 시에만 사용하는 보조 목표로, 현재 로봇 비디오 표현으로부터 여러 개의 시간 간격을 둔(strided) 미래 비디오 청크(K=4개, 간격 s=2)를 동시에 예측하도록 강제한다. 이는 직전 히스토리만 보고 다음 청크를 맞히는 지름길을 어렵게 만들어, 모델이 사람 영상이 전달하는 장기적 과제 흐름을 실제로 인코딩하도록 유도한다. IFP 모듈은 사람 영상에 직접 조건화되지 않고, 메인 브랜치가 이미 사람 영상과 상호작용한 결과인 융합 표현(φ)에만 조건화되며, 추론 시에는 제거된다.</p>
+<p>데이터 측면에서는 (1) 공개 로봇 데이터셋(AgiBot, InternData-A1, Open-X-Embodiment, RoboCOIN, RoboMIND)을 "동작+객체" 조합으로 재정의한 과제 단위로 재샘플링해 반복 텔레오퍼레이션 편중을 줄인 Task-diverse VA, (2) VLM(Gemini/Qwen 계열)으로 로봇 영상의 과제 정보를 추출하고, 이미지 편집 모델(Nano Banana/Qwen-Image)로 사람 시연의 첫 프레임을 생성한 뒤, 비디오 생성 모델(Wan/Kling AI)로 사람 조작 영상을 만들고 VLM으로 의미적·물리적 타당성을 재검증하는 파이프라인을 통해 HumanGen을 구축한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>RoboTwin 2.0 시뮬레이션(양팔 조작 과제 50종)에서 43개 과제로 사후학습하고 7개 과제(물체 저울에 올리기, 도장 찍기, 전자레인지 열기, 스테이플러 옮기기, 빵을 바구니에 담기, 빈 컵 놓기, 블록 3개 쌓기)를 미지 과제로 남겨 평가했다. Zero-WAM은 평균 성공률 46.95%로, LingBot-VA(17.45%)와 WAN-Action(10.98%) 대비 각각 29.50%p, 35.97%p 높았으며, 7개 과제 모두에서 두 베이스라인을 능가했다. 특히 전자레인지 열기(관절형 물체)와 블록 3개 쌓기(장기 과제)처럼 어려운 과제에서 격차가 컸다.</p>
+<p>실제 양팔 Franka 로봇 실험에서는 세 가지 과제군을 평가했다: 물체-용기 배치(53.3% vs LingBot-VA 43.3%), 세 물체 순차 조작(33.3% vs 10.0%), 두 개의 테이블 다리 정밀 삽입(16.7% vs 0.0%). 모든 경우에서 Zero-WAM은 사람 영상만으로(언어 지시 없이) 지시받았고, LingBot-VA는 상세한 텍스트 지시를 받았음에도 더 낮은 성공률을 보였다.</p>
+<p>Ablation 실험에서는 (1) 사람 영상 ICL 도입만으로 성공률이 10.98%→36.36%로 상승, (2) IFP 추가로 28.55%→46.95%로 상승(특히 블록 쌓기 과제에서 0%→9%로 성공 자체가 처음 발생), (3) 과제 균형 사전학습 데이터만으로도(사람 영상 조건 없이) LingBot-VA 대비 21.99%p 향상을 각각 확인해 세 가지 구성 요소가 모두 유효함을 보였다.</p>
+<h2>한계점</h2>
+<ul>
+<li>실험이 주로 정지된 탁상 매니퓰레이션에 국한되어 있으며, 이동형 매니퓰레이션이나 훨씬 더 긴 시간 지평의 과제로는 아직 확장되지 않았다(저자들이 향후 과제로 명시).</li>
+<li>정밀도가 요구되는 두 테이블 다리 삽입 과제는 절대 성공률 자체가 낮아(16.7%), 정밀 물리적 조작의 난이도가 여전히 성능을 제한한다.</li>
+<li>가장 어려운 장기 과제(블록 3개 쌓기)에서도 성공률이 9%에 그쳐, 소규모 ICL 데이터만으로는 장기 과제 해결이 부족하며 대규모 과제 다양성 사전학습이 필수적임을 저자들 스스로 지적한다.</li>
+<li>사람 영상은 실행 가능한 로봇 액션을 직접 제공하지 않으므로, 사람과 로봇 간의 체화(embodiment), 관측, 행동 공간의 차이를 완전히 메우지는 못한다는 점을 논문에서 논의로 남기고 있다.</li>
+</ul>
+<h2>시사점</h2>
+<p>언어만으로는 표현하기 어려운 공간적·시간적 과제 정보를 사람 시연 영상이라는 시각적 in-context 프롬프트로 대체함으로써, 로봇 정책이 별도의 파라미터 업데이트 없이도 미지의 과제를 수행할 수 있음을 보였다는 점에서 의미가 크다. 특히 사람-로봇 페어 데이터를 수작업 대신 VLM과 이미지·비디오 생성 모델을 조합한 파이프라인으로 자동 생성해 과제 다양성을 대규모로 확보한 접근은, 상대적으로 풍부한 에고센트릭 사람 영상과 희소한 로봇 궤적 데이터 사이의 간극을 잇는 실용적 방법론으로 향후 범용 로봇 파운데이션 모델 구축에 참고할 만하다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.26103" target="_blank" rel="noopener">huggingface.co/papers/2608.26103</a> · 2026-08-29</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

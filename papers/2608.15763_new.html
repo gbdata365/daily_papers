@@ -1,0 +1,133 @@
+<meta charset="UTF-8">
+<title>하니스와 함께 진화하는 에이전트 훈련</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#7 · Daily Papers 2026-08-29</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 43</span>
+    </div>
+    <h1 class="article-title">Training Agents to Evolve with Their Harness: TaoLive Digital Avatar Agent Technical Report</h1>
+    <p class="article-title-ko">하니스와 함께 진화하는 에이전트 훈련: TaoLive 디지털 아바타 에이전트 기술 보고서</p>
+    <p class="article-sub">라이브커머스 디지털 아바타 에이전트에서, 모델 재학습 없이 스킬·툴·프롬프트·훅으로 구성된 실행 환경(Harness)을 자유롭게 바꿔가며 운영할 수 있도록, 학습 단계에서부터 다양한 Harness 변형에 노출시켜 "고정된 설정을 암기"하는 대신 "현재 Harness를 이해"하도록 만드는 Harness-Aware Training(HAT)을 제안하고, 이를 타오바오 라이브 실서비스에 배포해 GMV와 상품 페이지 조회수 개선을 확인했다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.15763" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.15763" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Training Agents to Evolve with Their Harness: TaoLive Digital Avatar Agent Technical Report</li>
+<li><strong>저자</strong>: TaoLive AIGC LLM Team (Alibaba, Taobao Live) — 프로젝트 리더 Yuhan Sun 외 다수 연구진</li>
+<li><strong>출처</strong>: arXiv:2608.15763v3 [cs.CL] (2026년 8월 26일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.15763">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>라이브커머스 디지털 아바타 에이전트에서, 모델 재학습 없이 스킬·툴·프롬프트·훅으로 구성된 실행 환경(Harness)을 자유롭게 바꿔가며 운영할 수 있도록, 학습 단계에서부터 다양한 Harness 변형에 노출시켜 "고정된 설정을 암기"하는 대신 "현재 Harness를 이해"하도록 만드는 Harness-Aware Training(HAT)을 제안하고, 이를 타오바오 라이브 실서비스에 배포해 GMV와 상품 페이지 조회수 개선을 확인했다.</p>
+<h2>배경 및 문제의식</h2>
+<p>라이브커머스 방송 중 AI 아바타 호스트는 시청자 질문에 실시간으로 답하고, 마케팅 전략을 즉시 반영해야 한다. 이를 위해 업계에서는 모델 가중치와 독립적으로 스킬(Skill), 훅(Hook), 프롬프트, 툴을 수정할 수 있는 "Harness" 구조를 도입해 몇 시간 단위로 정책을 갱신한다. 그런데 이 구조는 학습 문제를 새롭게 만든다. DeepSeek-V4-flash 같은 대형 모델은 Harness 변화에 제로샷으로 잘 적응하지만 응답 지연이 11초를 넘어 실시간 방송에 부적합하다. 반대로 저지연 소형 모델(예: Qwen3.6-35B-A3B)은 특정 Harness로 파인튜닝하면 스킬 이름, 툴 이름, 프롬프트 템플릿의 "표면 형태"를 암기하는 표면형태 과적합(surface-form overfitting)에 빠져, Harness가 바뀌면 성능이 무너진다. 실험적으로 고정 Harness SFT는 IFEval 점수를 기존 대비 7.7점 떨어뜨렸다. 테스트타임 적응은 지연시간 제약을 위반하고, 지속학습(continual learning)은 Harness가 바뀔 때마다 재학습 비용이 들어 현실적이지 않다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>진화 가능한 Harness 아키텍처 정식화</strong>: 정책 모델을 스킬(S), 툴 레지스트리(T), 프롬프트(P), 훅(K)으로 구성된 Harness 상태 h=(S,T,P,K)와 분리하고, 사람이 개입하는 진단-확인-편집-평가-회귀검사 루프(Harness Evolution)로 모델 재학습 없이 비즈니스 로직을 갱신하는 구조를 제시.</li>
+<li><strong>Harness-Aware Training(HAT)</strong>: Harness 상태의 변주를 학습 분포 자체에 포함시키는 3단계 학습 파이프라인(HSA-SFT → General OPD → HSA-RL) 제안.</li>
+<li><strong>Harness-State Augmentation(HSA)</strong>: 스킬 식별자·내용, 툴 정의, 시스템 프롬프트, 훅을 과제 의미를 보존한 채 변형하는 5가지 증강 기법.</li>
+<li><strong>4종의 평가셋과 사람 정렬 심판(Judge) 구축</strong>: 실제 라이브 QA, Harness 변형 QA, 합성 툴/프롬프트 강건성셋, IFEval을 포함한 종합 평가 체계와, 사람 라벨에 맞춰 보정한 Harness 기반 Agent-as-a-Judge.</li>
+<li><strong>오프라인 평가부터 실배포까지 검증</strong>: 단일 H20 GPU 지연시간 측정, 사람 블라인드 테스트, 타오바오 라이브 온라인 A/B 테스트로 실효성 확인.</li>
+</ul>
+<h2>방법론</h2>
+<p>Harness는 h=(S,T,P,K)로 정의되며, 정책 πθ(a|x,h)는 사용자 입력 x와 함께 현재 Harness h를 조건으로 응답을 생성한다. 문제는 학습 시점 t의 Harness h_t만 관찰한 모델이 배포 이후 h_{t+1}, h_{t+2}, ... 로 계속 바뀌는 환경에 대응해야 한다는 점이다.</p>
+<p><strong>Harness-State Augmentation(HSA)</strong>은 5가지 축으로 표면형태를 교란한다: (1) 스킬 식별자 — 가짜 스킬 추가, 일부 마스킹, 이름/설명 재작성, (2) 스킬 내용 — 규칙 패러프레이즈·마스킹·재정렬, (3) 툴 정의 — 이름/설명 재작성, (4) 시스템 프롬프트 — 명령 블록 순서 변경, 숫자 제약(응답 길이, 라운드 수) 변주, (5) 훅 — 재시도 동작과 메시지 구조의 변형. 이를 통해 모델이 고정된 식별자·템플릿을 매칭하는 지름길 대신 스킬·툴의 "기능적 의미"를 활용하도록 유도한다.</p>
+<p><strong>3단계 학습 파이프라인</strong>:
+1. <strong>HSA-SFT</strong>: 원본 및 HSA로 증강된 다양한 Harness 하에서 강한 교사 모델(DeepSeek-V4-pro 등)이 생성한 궤적을 정확도·유효성 기준으로 거부 샘플링(rejection sampling)해 정제한 후, 소형 학생 모델을 지도학습. 훅이 트리거한 재시도 궤적은 대부분 최종 성공 결과만 남기되, 일부는 훅 응답에서 회복하는 법을 학습하도록 원본 그대로 보존.
+2. <strong>General OPD(On-Policy Distillation)</strong>: HSA-SFT로 손상된 일반 능력(지시 따르기 등)을 회복하기 위해, SFT 이전 베이스 모델을 교사로 삼아 Tulu3 일반 지시 데이터에서 학생이 온폴리시로 샘플링한 응답과 베이스 모델 분포 간 KL divergence를 최소화.
+3. <strong>HSA-RL</strong>: 실제 운영을 반영한 라이브방송 시뮬레이터(입력 시뮬레이션, Harness 스케줄링, 툴 실행 시뮬레이션 및 오류 주입, 증강 Harness 적용) 안에서 GRPO 기반 강화학습을 수행. 매 롤아웃 전 원본 또는 증강 Harness를 선택하며, 툴 세그먼트와 응답 세그먼트를 분리해 정확도(Accuracy), 유효성(Effectiveness), 툴 합리성(Tool Rationality), 스킬 선택(Skill Selection) 4가지 보상 차원을 GDPO(Group reward Decomposed Policy Optimization)로 정규화하고, GSPO 방식의 시퀀스 단위 중요도 샘플링으로 최적화. 불필요하게 긴 사고사슬(CoT)에는 페널티를 부여하는 보조 정규화 항도 포함.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Qwen3.6-35B-A3B를 베이스 모델로 하여 실제 라이브방송 데이터(SFT 1만 건, RL 4천 건)로 학습했다. 평가는 T1 Live-Stream QA(978건, 고정 Harness), T2 Harness-Variant QA(978건, 증강 Harness), T3 합성 툴/프롬프트 강건성셋(2,023건), T4 IFEval(541건), 그리고 배포 재현(Deployment replay, 110건)으로 구성.</p>
+<ul>
+<li><strong>주요 성능</strong>: HAT 모델은 T1에서 평균(AVG) 94.8점, T2에서 94.6점을 기록해 DeepSeek-V4-pro, GLM-5.2, Qwen3.7-max 등 최상위 대형 모델(최고 93.0~93.5)을 능가했다. 원본과 변형 Harness 간 성능 차이는 0.2점에 불과해(베이스 모델 4.9점, 고정 Harness SFT 1.3점 차이), Harness 변화에 대한 강건성을 입증.</li>
+<li><strong>고정 Harness SFT 대비 우위</strong>: 고정 Harness SFT는 IFEval에서 7.7점(IFE-P), 5.3점(IFE-I) 하락시켰지만, HAT은 오히려 IFE-P 83.5(+2.0), IFE-I 88.7(+1.0)로 개선.</li>
+<li><strong>단계별 기여 분석(Ablation)</strong>: HSA-SFT는 T1·T2·툴 강건성을 각 9.7/14.8/15.7점 높이면서도 IFEval 성능을 거의 유지. General OPD는 지시 따르기 능력 회복에 주효했고, HSA-RL은 스킬 선택·툴 합리성 등 에이전트적 행동을 특히 강화했다. 반면 증강 없는 RL은 프롬프트 강건성을 72.6→66.7로 오히려 악화시켜, HSA가 RL 단계의 과적합 방지에 핵심적임을 확인.</li>
+<li><strong>배포 지연시간</strong>: 단일 NVIDIA H20 GPU + MTP(Multi-Token Prediction) 최적화 적용 시 P50 3.407초, P95 8.114초(동시성 1)로 15초 기준을 100% 충족. MTP는 디코딩 처리량을 1.69배(동시성 1), 1.52배(동시성 2) 향상.</li>
+<li><strong>사람 블라인드 테스트</strong>: ReAct 방식 대비 100건 중 35건 Harness 우세, 64건 동률, 1건 ReAct 우세(비동률 승률 97.2%, p&lt;0.001).</li>
+<li><strong>온라인 A/B 테스트</strong>: 타오바오 라이브 실서비스에서 약 198만 UV 대상 80/20 분할 실험 결과, Harness 처리군이 ReAct 대비 UV 정규화 기준 확정구매 GMV +4.33%, 상품 페이지 조회수(IPV) +0.91% 상승(플랫폼 판정상 유의미).</li>
+</ul>
+<h2>한계점</h2>
+<ul>
+<li>IPV·GMV A/B 테스트는 정책 모델·Harness·라우팅을 포함한 전체 시스템 버전 간 비교로, 정책 모델 단독 효과를 분리하지 못함.</li>
+<li>플랫폼이 제공한 A/B 대시보드에는 통계 검정 방식, p-값, 신뢰구간이 노출되지 않아 유의성 수준을 추가로 추정할 수 없었고, 단 하루치 유의성 결과만 반영됨.</li>
+<li>CoT 길이 감소, MTP 손실 곡선 등 여러 학습 다이나믹스 결과는 단일 실행(single-run) 진단으로, 교차 시드(cross-seed) 안정성이나 인과적 효율성 증거는 아님.</li>
+<li>사람 블라인드 테스트 스케일은 100건으로 비교적 작음.</li>
+<li>Harness Evolution(진단-편집-평가 루프)은 여전히 사람 개입이 필요한 반자동 프로세스이며, 완전 자율화되지 않음.</li>
+<li>MTP 가속은 저동시성(C=1~2) 구간에서 효과적이나 고동시성(C=4~8)에서는 이득이 크게 줄어드는 것으로 나타남.</li>
+</ul>
+<h2>시사점</h2>
+<p>운영 중 빈번히 바뀌는 실행 환경(Harness)을 가진 산업용 에이전트에서는, 단일 설정으로 파인튜닝하는 방식이 필연적으로 표면형태 과적합과 일반화 능력 손실을 초래한다는 점을 실증적으로 보여준다. Harness 상태 자체를 학습 분포의 일부로 다루는 접근(HSA + 3단계 파이프라인)은 저지연 소형 모델도 대형 모델 수준 이상의 성능을 유지하면서 잦은 운영 업데이트에 견딜 수 있게 하는 실용적 해법이 될 수 있으며, 이는 라이브커머스뿐 아니라 스킬/툴/프롬프트가 자주 개정되는 다른 산업용 에이전트 시스템 설계에도 참고할 만한 방법론적 틀을 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.15763" target="_blank" rel="noopener">huggingface.co/papers/2608.15763</a> · 2026-08-29</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

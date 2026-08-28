@@ -1,0 +1,92 @@
+{
+  "2608.25518": {
+    "base": "2608_아워모_게임개발-검증가능-궤적-데이터엔진",
+    "rank": "#1",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "118",
+    "en_title": "Agentic Game Development as a Verifiable Trajectory Data Engine for Scaling World Models",
+    "ko_title": "에이전트형 게임 개발: 월드 모델 확장을 위한 검증 가능한 궤적 데이터 엔진"
+  },
+  "2608.27345": {
+    "base": "2608_파브벤치_확률적정합-세계모델-평가",
+    "rank": "#2",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "73",
+    "en_title": "PAWBench: How Far Are We from Probabilistically Aligned World Modeling?",
+    "ko_title": "PAWBench: 확률적으로 정합된 세계 모델링으로부터 우리는 얼마나 멀리 있는가?"
+  },
+  "2608.27456": {
+    "base": "2608_어반그라운드_실제도시-공간에이전시-테스트베드",
+    "rank": "#3",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "69",
+    "en_title": "UrbanGround: From Local Perception to Spatial Agency in a Real-Scale City",
+    "ko_title": "어반그라운드: 실제 규모 도시에서 국소 지각에서 공간 에이전시로"
+  },
+  "2608.27448": {
+    "base": "2608_티티피오_레이블없는-테스트타임-정책최적화",
+    "rank": "#4",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "62",
+    "en_title": "TTPO: Test-Time Policy Optimization",
+    "ko_title": "TTPO: 테스트 시점 정책 최적화 (라벨 없는 테스트타임 학습)"
+  },
+  "2608.26872": {
+    "base": "2608_셀프오피디_교사없는-플로우매칭-온폴리시-증류",
+    "rank": "#5",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "55",
+    "en_title": "Self-OPD: On-Policy Distillation for Flow Matching Models without Teacher",
+    "ko_title": "셀프-OPD: 교사 모델 없는 플로우 매칭용 온폴리시 증류"
+  },
+  "2608.27260": {
+    "base": "2608_에이스렌즈_좋은-에이전틱-데이터-분석",
+    "rank": "#6",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "55",
+    "en_title": "What Makes Good Agentic Data? An ACE Lens on Data Generation for LLM Agents",
+    "ko_title": "좋은 에이전틱 데이터란 무엇인가? LLM 에이전트를 위한 데이터 생성에 대한 ACE 렌즈"
+  },
+  "2608.15763": {
+    "base": "2608_하니스적응훈련_라이브커머스-디지털아바타-에이전트",
+    "rank": "#7",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "43",
+    "en_title": "Training Agents to Evolve with Their Harness: TaoLive Digital Avatar Agent Technical Report",
+    "ko_title": "하니스와 함께 진화하는 에이전트 훈련: TaoLive 디지털 아바타 에이전트 기술 보고서"
+  },
+  "2608.26200": {
+    "base": "2608_게임왬_게임을-위한-월드액션모델",
+    "rank": "#8",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "37",
+    "en_title": "GameWAM: A World Action Model for Video Games",
+    "ko_title": "게임왬: 비디오 게임을 위한 월드-액션 모델"
+  },
+  "2608.26530": {
+    "base": "2608_파일럿_장기-호라이즌-에이전트-실시간-자기개선",
+    "rank": "#9",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "25",
+    "en_title": "PILOT in the Loop: Live Self-Improvement for Long-Horizon Agents",
+    "ko_title": "PILOT 인 더 루프: 장기 호라이즌 에이전트를 위한 실시간 자기개선"
+  },
+  "2608.26103": {
+    "base": "2608_제로왬_인간영상-기반-제로샷-로봇-태스크-일반화",
+    "rank": "#10",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "16",
+    "en_title": "Zero-WAM: In-Context World-Action Modeling from Human Videos for Open-Ended Task Generalization",
+    "ko_title": "Zero-WAM: 사람 영상을 이용한 인컨텍스트 월드-액션 모델링을 통한 개방형 로봇 과제 일반화"
+  }
+}

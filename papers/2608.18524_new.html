@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>DART-SD</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#2 · Daily Papers 2026-09-01</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 60</span>
+    </div>
+    <h1 class="article-title">DART-SD: Diamond-topology Aware Retrieval and Tuning for Self-Distillation of Multi-Turn Tool-Calling Agents</h1>
+    <p class="article-title-ko">DART-SD: 멀티턴 툴콜링 에이전트 자기증류를 위한 다이아몬드 위상 인식 검색 및 튜닝</p>
+    <p class="article-sub">멀티턴 툴콜링 에이전트를 학습시킬 때 전체 궤적을 통째로 모방하는 대신, 성공 가능한 상태 그래프 상에서 학생 모델이 처음 이탈하는 지점(Critical Topological Breakpoint)만 국소적으로 교정하는 자기증류 프레임워크 DART-SD를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.18524" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.18524" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: DART-SD: Diamond-topology Aware Retrieval and Tuning for Self-Distillation of Multi-Turn Tool-Calling Agents</li>
+<li><strong>저자</strong>: Hangrui Xu, Jiarui Wang, Yang Yang 외 (ByteDance, 중국과학기술대학교)</li>
+<li><strong>출처</strong>: arXiv:2608.18524v1 [cs.CL] (2026년 8월 19일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.18524">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>멀티턴 툴콜링 에이전트를 학습시킬 때 전체 궤적을 통째로 모방하는 대신, 성공 가능한 상태 그래프 상에서 학생 모델이 처음 이탈하는 지점(Critical Topological Breakpoint)만 국소적으로 교정하는 자기증류 프레임워크 DART-SD를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>순서에 무관한 여러 하위 목표가 있는 작업에서는 최적의 해 공간이 다이아몬드(마름모) 형태의 격자 구조를 이룬다. 즉 서로 다른 경로가 같은 중간 상태에서 다시 합쳐질 수 있다. 그런데 기존의 지도 미세조정(SFT)이나 행동복제(BC)는 전체 궤적을 하나의 선형 시퀀스로 취급해 무차별적으로 손실을 부과하기 때문에, 학생 모델의 유효한 대안 탐색까지 억누르는 "위상 붕괴(topological collapse)"가 발생한다. 표준 강화학습(GRPO 등) 역시 보상을 모든 중간 툴콜에 균등하게 분산시켜, 실패한 궤적 속의 유효한 단계까지 잘못 처벌하는 크레딧 오배정 문제를 겪는다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li><strong>상호작용-상태 전이 그래프(ISTG)</strong>: 툴 실행 과정을 누적된 정보 상태 기준의 노드로 표현하여, 순서 무관 탐색이 만드는 다이아몬드 위상을 그래프로 포착한다.</li>
+<li><strong>결정적 위상 이탈점(CTB, Critical Topological Breakpoint)</strong>: 학생의 상호작용 상태를 성공-도달가능 영역에 투영해, 학생이 교사 지원 영역을 처음으로 벗어나는 지점을 정의하고 이곳에서만 복구 참조를 검색한다.</li>
+<li><strong>점진적 자기증류(Progressive Self-Distillation)</strong>: 학생 모델을 반복적으로 롤아웃하고 CTB를 갱신하며 국소적으로만 지도학습을 수행해, 학생의 능력 경계를 점진적으로 확장한다.</li>
+</ol>
+<h2>방법론</h2>
+<p>DART-SD는 먼저 교사(teacher) 모델의 성공·실패 롤아웃들로부터 ISTG를 구축한다. 각 노드는 누적 정보 원자(information atom) 집합과 무의미한 조작(useless operation) 기록으로 정의되며, 새로운 정보를 획득하는 "메인 노드"와 그렇지 않은 "보조 노드"로 구분된다. 학생 모델이 실패한 롤아웃을 생성하면, 이를 동일한 상태 공간에 투영해 성공 도달 가능 영역(예산으로 제한된 R+) 안에 머무는 마지막 지점을 찾고, 이후 처음으로 이 영역을 벗어나는 전이를 CTB로 정의한다. CTB 이전의 학생 접두사는 그대로 보존한 채, 무작위로 샘플링한 교사의 성공·실패 궤적(특권 참조)을 조건으로 증강 생성기가 복구 연속 구간을 생성하고, 이 복구 구간에 대해서만 토큰 단위 손실을 마스킹하여 학습한다(식 15). 이 과정을 반복하며 학생 모델의 유효 접두사 길이를 점진적으로 늘려간다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Qwen3-4B와 Qwen3-8B를 학생 모델로, Qwen3.6-27B와 GLM-5.2를 교사로 사용해 FTRL 데이터셋(2,215개 작업)에서 5회의 CTB 기반 반복 SFT를 수행했다. FTRL(인도메인)과 BFCL, ToolHop, τ-bench, RoTBench(아웃오브도메인) 5개 벤치마크에서 SFT, SCoRe-SFT, OPSD 등 증류 기법과 FTRL-GRPO, ToolRL, MatchTIR 등 강화학습 기법을 모두 능가했다. 예컨대 Qwen3-8B 기준 평균 성능이 45.58로 최고치를 기록했으며, FTRL·ToolHop·τ-bench에서는 학생 모델이 교사 모델(66.0 vs 학생 45.7 등 벤치마크별 상이)의 성능을 넘어서기도 했다. 반복이 진행될수록 성공 궤적의 평균 툴콜 횟수는 줄고(4.23→3.55) Solve-F1은 향상되었으며, 최종 궤적은 데이터 구축 시 제공된 골든 레퍼런스(4.02)보다도 짧았다(3.55). CTB 위치도 반복마다 뒤로 밀려(0.348→1.452) 학생의 유효 탐색 범위가 넓어짐을 확인했다. 구성요소 제거 실험에서는 자기증류, CTB 국소 지도, 점진적 반복, ISTG 기반 이탈점 탐지가 각각 성능에 기여함을 보였고, IFEval·AIME24/25·MMLU 등 범용 능력 평가에서도 저하 없이 향상(43.92→49.89)됨을 확인했다.</p>
+<h2>한계점</h2>
+<p>논문에 명시되지 않음(별도의 한계점 섹션 없이 결론에서 향후 연구 방향으로 구조 인식 에이전트 학습 및 그래프 기반 장기 추론 표현 연구를 제안).</p>
+<h2>시사점</h2>
+<p>멀티턴 에이전트 학습을 "선형 궤적 모방"이 아니라 "상호작용 상태의 위상 구조"로 재구성함으로써, 이미 잘하는 부분은 건드리지 않고 취약한 지점만 정밀하게 보강하는 학습 패러다임을 제시한다. 이는 소형 오픈소스 모델이 대형 교사 모델을 능가할 수 있는 실용적 경로를 보여주며, 향후 장기 추론·에이전트 증류 연구에서 그래프 기반 상태 표현이 핵심적인 도구가 될 수 있음을 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.18524" target="_blank" rel="noopener">huggingface.co/papers/2608.18524</a> · 2026-09-01</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

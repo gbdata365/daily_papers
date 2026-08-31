@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>코드로서의 세계</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#5 · Daily Papers 2026-09-01</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 43</span>
+    </div>
+    <h1 class="article-title">Code as Worlds: Agentic Discovery of Executable World Representations for Physical Reasoning</h1>
+    <p class="article-title-ko">코드로서의 세계: 물리적 추론을 위한 실행 가능한 세계 표현의 에이전틱 발견</p>
+    <p class="article-sub">물리 세계를 픽셀·3D·언어가 아닌 "실행 가능한 코드"로 표현하는 Code-as-World 패러다임을 제안하고, 제안-실행-렌더링-검증을 반복하는 에이전틱 탐색 루프로 자연어나 실제 영상으로부터 이 표현을 자동으로 구성해 정량적 물리 추론용 VLM 학습에 활용한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.27549" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.27549" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Code as Worlds: Agentic Discovery of Executable World Representations for Physical Reasoning</li>
+<li><strong>저자</strong>: MirroS 기술 보고서 (MirroS Technical Report)</li>
+<li><strong>출처</strong>: arXiv:2608.27549v1 [cs.CV] (2026년 8월 27일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://mirros-lab.github.io/code-as-world">mirros-lab.github.io/code-as-world</a>, <a href="https://github.com/mirros-lab/code-as-world">GitHub</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.27549">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>물리 세계를 픽셀·3D·언어가 아닌 "실행 가능한 코드"로 표현하는 Code-as-World 패러다임을 제안하고, 제안-실행-렌더링-검증을 반복하는 에이전틱 탐색 루프로 자연어나 실제 영상으로부터 이 표현을 자동으로 구성해 정량적 물리 추론용 VLM 학습에 활용한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>현대 비전-언어 모델(VLM)은 다양한 물리적 현상을 인식하고 설명할 수 있지만, 현상을 "설명"하는 것과 그 현상을 만들어내는 "메커니즘"(물체 상태, 물리 파라미터, 지배 동역학)을 실제로 복원하는 것은 다르다. 기존의 물리 세계 표현 방식들은 각각 한계가 있다: 픽셀 기반 영상 생성 모델은 미래 관측을 예측할 뿐 관측 변화의 근본 원인(카메라 이동 vs 물체 이동 등)을 구분할 필요가 없고, 3D 재구성은 기하 구조는 복원하지만 왜 물체가 그렇게 움직이는지(물리적 메커니즘)는 설명하지 않으며, 자연어는 압축적이고 의미론적이지만 정밀한 기하·궤적·물리 파라미터 같은 연속적 물리량을 표현하기 어렵다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li><strong>실행 가능한 세계 표현(Executable World Representation, EWR)</strong>: 물리적 구성(C), 동적 진화(E), 시각적 외양(A)의 세 요소로 이루어진 코드 기반 표현 p=(C,E,A)를 제안해, 물체·관계·물리 파라미터·이벤트를 상태에 대한 연산으로 명시적으로 표현한다.</li>
+<li><strong>에이전틱 탐색 루프</strong>: 귀추적 추론(abductive reasoning)에서 영감을 받아, 에이전트가 텍스트 설명이나 실제 영상 같은 멀티모달 증거로부터 세계 가설을 "제안(propose)-인스턴스화(instantiate)-실행(execute)-렌더링(render)-검증(verify)"하고 반복적으로 수정하는 루프를 개발했다.</li>
+<li><strong>정량적 물리 추론을 위한 물리 감독 신호</strong>: 검증된 실행 가능 세계로부터 정확한 세계 좌표계 라벨을 가진 질의응답 쌍을 생성해, Code-as-World-VL이라는 VLM 계열을 학습시켜 QuantiPhy 벤치마크에서 최고 성능을 달성했다.</li>
+</ol>
+<h2>방법론</h2>
+<p>EWR은 물리적 구성(장면 속 물체, 기하, 질량·마찰 등 물리 속성, 바닥·벽 같은 정적 요소), 동적 진화(초기 상태, 시간에 따른 변화, 접촉·충돌 등 핵심 이벤트), 시각적 외양(카메라, 배경, 재질, 조명 등 렌더링 설정)의 세 컴포넌트로 구성되며 물리 시뮬레이션 엔진과 직접 연동된다. 텍스트 입력의 경우 에이전트가 개체·공간관계·물리 이벤트를 구조화된 의미 증거로 추출하고 물리적 사전지식과 기본값으로 초기 가설을 만든 뒤 시뮬레이션·의미 검증으로 점진적으로 정제한다. 실제 영상 입력의 경우 깊이 지도·인스턴스 마스크·객체 추적을 시각 증거로 추출하고, 3D 객체 생성 모델로 각 물체의 메시를 만들어 이를 깊이·추적 정보와 결합해 실행 가능한 3D 장면을 복원한 뒤, 후보 EWR의 롤아웃을 입력 시점으로 재투영해 관측된 기하·깊이·마스크·궤적과의 일관성을 반복 평가한다. 이렇게 검증된 EWR로부터 동기화된 영상과 시뮬레이션 상태 궤적을 얻어 물체 크기·변위·속도·가속도에 대한 정확한 세계 좌표계 정답을 가진 VQA 쌍을 생성하고, 이미지 공간 측정 지도학습(1단계) 후 GRPO 기반 강화학습(2단계, 스케일 정규화된 수치 정확도·단위 정확성·형식 보상을 결합)으로 Code-as-World-VL을 학습시킨다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Code-as-World-VL을 4B, 9B, 27B(추론 모드) 규모로 학습해 QuantiPhy-validation 벤치마크에서 평가했다. Code-as-World-VL-9B(55.4점)는 Gemini-3.1 Flash(54.8점), ChatGPT-5.1(48.4점), Gemini-2.5 Pro(46.4점) 등 훨씬 크거나 독점적인(proprietary) 모델들을 능가했으며, 27B 추론 버전은 58.6점으로 평가된 모든 모델 중 최고 성능을 기록했다. 4B 버전조차 50.6점으로 대다수의 오픈웨이트 모델(예: Qwen3-VL-32B 40.2점, InternVL-3.5-30B 35.5점)을 상회했다. 이미지 공간 측정(RefCOCO, RefCOCO+, RefCOCOg, RefCLEF, GOT-10K)에 대한 지도학습으로 물체 위치·크기·속도 측정 기반을 다진 뒤, 텍스트 기반·영상 기반 실행 가능 세계에서 나온 물리 감독 신호를 결합해 학습함으로써 정확한 물리 감독과 실제 영상에 대한 시각적 일반화를 모두 확보했다.</p>
+<h2>한계점</h2>
+<p>논문 본문에 4.4절과 5.5절에 "한계점(Limitations)" 섹션이 별도로 존재한다고 명시되어 있으나, 발췌된 본문 범위에서 구체적 내용은 확인되지 않음(논문에 명시되지 않음).</p>
+<h2>시사점</h2>
+<p>물리 세계를 코드로 표현함으로써 압축성·정량적 근거·조작 가능성을 동시에 얻을 수 있으며, 이는 데이터 생성, 검증 가능한 보상 설계, 하위 물리 추론 등 다양한 응용에 활용될 수 있는 인터페이스를 제공한다. 특히 실행 가능한 세계 표현이 대형 독점 모델보다 적은 파라미터로도 정량적 물리 추론 성능을 크게 끌어올릴 수 있음을 보임으로써, 물리 지능(physical intelligence) 연구에서 확장 가능한 감독 신호원으로서의 가능성을 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.27549" target="_blank" rel="noopener">huggingface.co/papers/2608.27549</a> · 2026-09-01</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

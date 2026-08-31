@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>J-Zero</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#6 · Daily Papers 2026-09-01</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 35</span>
+    </div>
+    <h1 class="article-title">J-Zero: Unified Challenger–Solver–Judge Co-Evolution from Zero Data</h1>
+    <p class="article-title-ko">J-Zero: 데이터 없이 이루어지는 통합 챌린저-솔버-판사 공진화</p>
+    <p class="article-sub">외부 데이터 없이 스스로 문제를 내고(Challenger) 풀고(Solver) 평가하는(Judge) 삼각 구도에서, 고정된 평가자가 자기진화의 성능 상한을 만드는 문제를 해결하기 위해 Judge까지 함께 진화시키는 프레임워크 J-Zero를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.26582" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.26582" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: J-Zero: Unified Challenger–Solver–Judge Co-Evolution from Zero Data</li>
+<li><strong>저자</strong>: Gyouk Chu, Myeongho Jeon, Eunho Yang (KAIST)</li>
+<li><strong>출처</strong>: arXiv:2608.26582v1 [cs.LG] (2026년 8월 27일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 프로젝트 페이지·GitHub·HuggingFace 링크가 있다고 언급되나 구체적 URL은 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.26582">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>외부 데이터 없이 스스로 문제를 내고(Challenger) 풀고(Solver) 평가하는(Judge) 삼각 구도에서, 고정된 평가자가 자기진화의 성능 상한을 만드는 문제를 해결하기 위해 Judge까지 함께 진화시키는 프레임워크 J-Zero를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>자기진화(self-evolving) 언어모델은 인간이 만든 과제·레이블에 의존하지 않고 스스로 학습 신호를 생성함으로써 초지능으로 가는 유망한 경로로 주목받고 있다. 정답이 명확한 검증 가능 도메인에서는 이런 자기진화가 비교적 잘 확립되어 있지만, 정답이 하나로 정해지지 않고 품질이 사람의 선호로 판단되는 검증 불가능 도메인에서는 연구가 부족하다. 이런 도메인에서는 검증기 대신 Judge(평가 모델)가 학습 신호를 제공하는데, Judge가 고정되어 있으면 Solver가 이미 Judge가 구분할 수 있는 선호 차이를 모두 학습해버린 이후로는 더 이상 유용한 신호가 나오지 않는 "천장(ceiling)" 문제가 생긴다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li><strong>Judge까지 포함한 삼자 공진화 프레임워크</strong>: Challenger와 Solver의 적대적 게임(GRPO 기반 미니맥스)에 더해, Judge 자체도 루프 내부에서 지속적으로 갱신되는 통합 프레임워크 J-Zero를 제안한다.</li>
+<li><strong>외부 신호 없이 Judge를 학습시키는 두 가지 선호 쌍 구성법</strong>: (1) 역할 비대칭(role-asymmetry) 쌍 — Solver의 답변이 Challenger 자신의 답변보다 항상 우월하다는 구조적 사실을 이용, (2) 하위과제 증폭(subtask-amplification) 쌍 — 어려운 과제를 하위과제로 분해해 푼 뒤 재조합한 답변이 한 번에 푼 답변보다 우월하다는 사실을 이용해, Judge 자신의 점수에 의존하지 않고 선호 순서가 이미 정해진 데이터를 확보한다.</li>
+<li><strong>검증·비검증 도메인 모두에서 성능 및 지속적 개선 입증</strong>: 검증 가능 도메인에서 평균 4.2점, 검증 불가능 도메인에서 평균 8.0점의 성능 향상을 보였으며, 베이스라인이 2회 반복 후 성능이 떨어지는 것과 달리 J-Zero는 최소 10회 반복까지 계속 개선된다.</li>
+</ol>
+<h2>방법론</h2>
+<p>각 반복은 세 단계로 구성된다. 먼저 Challenger가 Judge가 부여한 보상을 최소화하도록(즉 Solver가 풀기 어려운 과제를 만들도록) GRPO로 학습되며, 과제 난이도 보상(1−평균 Judge 점수)에 반복 패널티와 형식 검사를 결합한 복합 보상을 사용한다. 다음으로 Solver는 응답 점수의 분산이 큰(=현재 능력의 경계에 위치한) 상위 K개 과제를 선별해, 그 과제들에서 Judge 보상을 최대화하도록 GRPO로 학습된다. 마지막으로 Judge는 루프 내부에서 구성된 두 종류의 선호 쌍(역할 비대칭 쌍 D_role, 하위과제 증폭 쌍 D_amp)에 대해 Bradley-Terry 손실로 갱신된다. 역할 비대칭 쌍은 동일 질문에 대해 Solver의 답변(y^S)이 Challenger 자신의 답변(y^C)보다 항상 선호되도록(y^S ≻ y^C) 구성하고, 하위과제 증폭 쌍은 Challenger가 어려운 held-out 과제를 하위질문들로 분해하고 Solver가 각각을 푼 뒤 Challenger가 재조합한 응답(y^amp)이 Solver의 원샷 응답(y^S)보다 선호되도록(y^amp ≻ y^S) 구성한다. 이 두 유형 모두 Judge 자신의 점수가 아니라 정책들의 역할 구조에서 순서가 자연히 도출되므로, 순환 논리 없이 Judge를 지속적으로 향상시킬 수 있다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>J-Zero는 검증 가능 도메인(표 1)에서 베이스라인 대비 평균 4.2점, 검증 불가능 도메인 3개 벤치마크(표 2)에서 평균 8.0점의 성능 향상을 달성했다. 반복 학습에 따른 안정성 분석(표 3, 그림 3·4)에서는 기존 베이스라인들이 2회 반복 이후 성능이 저하되는 반면, J-Zero는 최소 10회 반복까지 지속적으로 개선되는 것으로 나타났다. 이는 Judge 공진화가 반복 학습에서 성능 저하 없이 지속적 향상을 유지하는 핵심 요소임을 보여준다.</p>
+<h2>한계점</h2>
+<p>논문에 명시되지 않음.</p>
+<h2>시사점</h2>
+<p>평가자(Judge) 자체를 고정된 외부 신호원이 아니라 학습 루프의 일부로 포함시켜 함께 진화시킨다는 아이디어는, 검증 불가능한 개방형 도메인에서도 데이터 없이 지속 가능한 자기진화 학습을 가능케 하는 실마리를 제공한다. 역할 비대칭과 반복 증폭이라는 구조적으로 보장된 선호 순서를 활용하는 방식은, 순환 논리에 빠지지 않으면서 평가 모델 자체를 개선하려는 향후 연구에 일반적인 설계 원칙을 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.26582" target="_blank" rel="noopener">huggingface.co/papers/2608.26582</a> · 2026-09-01</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

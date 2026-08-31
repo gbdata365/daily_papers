@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>데이터 스케일링을 넘어서</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#3 · Daily Papers 2026-09-01</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 59</span>
+    </div>
+    <h1 class="article-title">Beyond Data Scaling: Representation-Centric Continued Pre-training for Vision-Language-Action Models</h1>
+    <p class="article-title-ko">데이터 스케일링을 넘어서: 비전-언어-행동 모델을 위한 표현 중심 지속 사전학습</p>
+    <p class="article-sub">로봇 데이터는 웹 데이터처럼 무한히 확장하기 어렵다는 한계를 인정하고, 고정된 데이터 예산 안에서도 전이 가능한 시각-행동 표현을 배우도록 설계한 표현 중심(representation-centric) 지속 사전학습 기법 VLAct로 대형 산업용 VLA 시스템들을 능가하는 성능을 보인다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.27550" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.27550" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Beyond Data Scaling: Representation-Centric Continued Pre-training for Vision-Language-Action Models</li>
+<li><strong>저자</strong>: StarVLA 팀</li>
+<li><strong>출처</strong>: arXiv:2608.27550v1 [cs.RO] (2026년 8월 27일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://starvla.github.io/VLAct">https://starvla.github.io/VLAct</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.27550">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>로봇 데이터는 웹 데이터처럼 무한히 확장하기 어렵다는 한계를 인정하고, 고정된 데이터 예산 안에서도 전이 가능한 시각-행동 표현을 배우도록 설계한 표현 중심(representation-centric) 지속 사전학습 기법 VLAct로 대형 산업용 VLA 시스템들을 능가하는 성능을 보인다.</p>
+<h2>배경 및 문제의식</h2>
+<p>언어·비전 분야의 파운데이션 모델은 데이터·모델·연산량 스케일링으로 성공을 거뒀지만, 로봇 궤적 데이터는 웹에서 긁어올 수 없고 물리적 실행(원격조작 등)을 통해서만 수집되므로 물리적 상호작용 공간을 성기게(sparse) 커버할 수밖에 없다. 이 때문에 VLA(Vision-Language-Action) 모델의 지속 사전학습은 단순히 더 많은 궤적으로 행동을 맞추는 것을 넘어, 제한된 궤적으로부터 전이 가능한 시각-행동 지식을 뽑아내는 표현 학습 문제로 봐야 한다는 것이 이 논문의 핵심 문제의식이다. 저자들은 사전 실험을 통해 나이브한 VLA 지속 사전학습의 세 가지 실패 양상을 확인했다: (1) 전체 파라미터를 끝단까지 업데이트하면 VLM의 폭넓은 시각-언어 특징이 훼손되고, (2) 단일 행동 헤드로만 지도학습하면 백본이 그 헤드의 디코딩 기하구조에 과특화되며, (3) 로봇별로 별도의 출력 공간을 쓰면 물리적으로 동일한 동작(예: 그리퍼 개폐)조차 공유되지 못한다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li><strong>VLM 사전지식 보존</strong>: 얕은 층(비전 인코더 및 LLM 하위층)을 동결하고 캡션 데이터를 혼합 학습하여, 로봇 궤적 학습 중에도 원본 VLM의 시각-언어 표현이 훼손되지 않도록 한다.</li>
+<li><strong>다중 헤드 연속 행동 공동지도(co-supervision)</strong>: 동일한 백본 잠재표현에 OFT, PI, GR00T라는 세 가지 서로 다른 연속 행동 헤드를 동시에 붙여 학습시켜, 특정 헤드에 특화되지 않고 여러 헤드가 재사용할 수 있는 행동 표현을 학습한다.</li>
+<li><strong>부분적으로 통합된 크로스-엠보디먼트 행동 공간</strong>: 그리퍼 개폐처럼 물리적으로 의미가 같은 차원은 로봇 종류(embodiment)에 상관없이 공유하고, 호환되지 않는 팔 자유도는 로봇별로 분리·마스킹하며, 주기적 관절각을 위한 wrap-aware 손실을 적용한다.</li>
+</ol>
+<h2>방법론</h2>
+<p>사전학습된 Qwen3-VL-4B를 시작점으로 삼아, DROID·InternA1·RoboCoin·MolmoAct 등 완전 공개된 다중 엠보디먼트 로봇 데이터와 캡션 데이터를 함께 사용해 지속 사전학습을 수행한다. 학습 중에는 비전 인코더와 LLM 하위층을 동결하고 상위층과 행동 헤드만 갱신하며(얕은 층 보호), OFT·PI·GR00T 세 헤드에 대한 손실을 합산한 L_action = L_OFT + L_PI + L_GR00T로 학습해 헤드 특정적 표현 붕괴를 방지한다. 행동 공간은 그리퍼처럼 물리적으로 정렬 가능한 차원만 공유하고 나머지는 엠보디먼트별로 마스킹하는 부분 통합 방식을 쓴다. 사전학습에 사용된 컴포넌트(다중 헤드, 캡션 혼합 등)는 다운스트림 미세조정 시에는 모두 제거되고, 새로 초기화된 태스크 전용 행동 헤드만 붙여 각 벤치마크의 표준 프로토콜로 미세조정한다. 즉 개선 효과는 오직 사전학습된 백본 자체에서만 나온다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>LIBERO-Plus, VLA-Arena, RoboTwin 2.0, RoboDojo, RoboCasa-GR1(휴머노이드) 등 다양한 시뮬레이션 벤치마크와 실제 로봇 실험에서 검증했다. LIBERO-Plus에서 82.6%, RoboTwin 2.0에서 92.5%의 성공률로 ABot-M0, LingBot-VLA 등 대형 산업용 VLA 시스템을 능가했고, VLA-Arena에서는 54.8%를 기록했다. 최근 공개된 RoboDojo 벤치마크에서는 평균 점수 10.66, 성공률 7.60%로 전체 정책 중 6위를 차지했으며, 명시적으로 세계-행동모델(WAM)로 분류된 모든 모델을 두 지표 모두에서 능가했다. 사전학습에 전혀 노출되지 않은 휴머노이드 환경인 RoboCasa-GR1에서는 다운스트림 궤적을 단 20%만 사용하고도 전체 데이터를 사용한 GR00T-N1.6 베이스라인(47.6%)을 넘어서는 49.5%를 달성했다. 이 모든 결과는 완전 공개 데이터와 GPU 16장이라는 비교적 적은 연산 자원만으로 얻어졌다. 파일럿 실험에서는 이산 행동 토큰(FAST) 지도학습이 세밀한 정보 손실을 낳고, 단일 연속 헤드(OFT) 지도학습은 헤드 특정적 표현 붕괴를 일으켜 다른 연속 헤드로의 전이가 나빠짐을 확인했다.</p>
+<h2>한계점</h2>
+<p>논문에 명시되지 않음(부록에 "향후 연구 및 파급효과" 절이 있으나 본문 발췌 범위에서 구체적 한계는 확인되지 않음).</p>
+<h2>시사점</h2>
+<p>로봇 데이터 자체를 무작정 늘리는 것 대신, 고정된 데이터 예산에서 "무엇을 학습하게 만드는가"라는 표현 설계가 VLA 성능의 독립적인 축이 될 수 있음을 실증했다. 특히 VLM 백본을 고정된 요소가 아니라 VLA 설계의 1차 변수로 취급해야 한다는 주장은, 향후 로봇 파운데이션 모델 연구에서 사전학습 레시피 설계에 더 많은 투자가 필요함을 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.27550" target="_blank" rel="noopener">huggingface.co/papers/2608.27550</a> · 2026-09-01</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

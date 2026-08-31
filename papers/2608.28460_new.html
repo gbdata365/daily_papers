@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>레이어리콜</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#9 · Daily Papers 2026-09-01</span>
+      <span class="cat-tag">생성모델</span>
+      <span class="upvote-tag">▲ 25</span>
+    </div>
+    <h1 class="article-title">LayerRecall: A State-Conditioned Memory Router for Long-Horizon Consistency in Video Generation</h1>
+    <p class="article-title-ko">레이어리콜: 비디오 생성의 장기 일관성을 위한 상태 조건부 메모리 라우터</p>
+    <p class="article-sub">장기 자기회귀 비디오 생성에서 인물·물체·속성이 장면 밖으로 사라졌다가 다시 등장할 때 발생하는 정체성 붕괴 문제를, "무엇을 기억할지"뿐 아니라 "어느 레이어에서 그 기억을 사용할지"까지 함께 학습하는 레이어 선택형 메모리 라우터 LayerRecall로 해결한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.28460" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.28460" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: LayerRecall: A State-Conditioned Memory Router for Long-Horizon Consistency in Video Generation</li>
+<li><strong>저자</strong>: Yixuan Ding, Jiahao Kong, Wei Huang, Ruijie Quan, Yi Yang (저장대학교, 홍콩대학교)</li>
+<li><strong>출처</strong>: arXiv:2608.28460v1 [cs.CV] (2026년 8월 28일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 Webpage·GitHub·HuggingFace 링크가 있다고 언급되나 구체적 URL은 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.28460">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>장기 자기회귀 비디오 생성에서 인물·물체·속성이 장면 밖으로 사라졌다가 다시 등장할 때 발생하는 정체성 붕괴 문제를, "무엇을 기억할지"뿐 아니라 "어느 레이어에서 그 기억을 사용할지"까지 함께 학습하는 레이어 선택형 메모리 라우터 LayerRecall로 해결한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>자기회귀 비디오 디퓨전은 제한된 최근 컨텍스트로부터 청크 단위로 영상을 생성해 긴 영상을 확장 가능하게 만들지만, 최신성 기반 캐싱은 국소적 연속성은 지켜주는 대신 피사체·물체·장면·속성이 장면 밖으로 나갔다가 다시 등장할 때 필요한 과거 단서를 밀어내 버린다. 기존 메모리 메커니즘들은 모델이 비국소적 과거에 접근할 수 있게는 해주지만, 접근이 곧 효과적인 활용을 보장하지는 않는다. 저자들은 자기회귀 비디오 DiT의 각 레이어가 현재·최근·먼 과거 컨텍스트에 대해 서로 다른 선호(preference)를 보인다는 것을 프로파일링으로 발견했고, 이 레이어별 이질성이 백본에 따라 다르지만 일관되게 나타난다는 점에서, 장거리 메모리를 효과적으로 쓰려면 "무엇을 검색할지"와 "어디서 그것을 쓸지"를 함께 결정해야 한다고 주장한다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li><strong>레이어별 시간적 선호 발견</strong>: 자기회귀 비디오 DiT의 레이어들이 현재/최근/먼 과거 컨텍스트에 대해 뚜렷이 다른 선호를 보인다는 점을 발견하고, 제한된 메모리 활용을 "과거 콘텐츠와 네트워크 깊이에 대한 결합 할당" 문제로 정식화한다.</li>
+<li><strong>LayerRecall</strong>: 현재 생성 상태로부터 과거를 검색하고, 이를 백본별로 식별된 "메모리 민감 레이어"에만 주입하며 나머지 레이어는 원래의 국소 어텐션(싱크+슬라이딩 윈도우)을 그대로 유지하는 현재-조건부 레이어 선택형 메모리 라우터를 제안한다.</li>
+<li><strong>Cross-Horizon Prediction Matching (CHPM)</strong>: 명시적 메모리 할당 라벨이나 장기 고품질 학습 영상 없이도, 특권적(privileged) 장기 컨텍스트 교사 모델의 예측을 참조해 제한된 메모리를 쓰는 학생 라우터를 예측 공간에서 지도학습시키는 기법.</li>
+</ol>
+<h2>방법론</h2>
+<p>LayerRecall은 사전학습된 청크 단위 자기회귀 DiT의 국소 경로는 그대로 두고, 희소한 과거 K/V 상태 접근을 추가한다. "무엇을 검색할지"는 매 컨텍스트 갱신마다 각 레이어가 과거 청크의 정규화된 사전-RoPE 키를 요약 벡터로 풀링해 저장하고, 현재 청크의 은닉 상태로부터 만든 쿼리와의 코사인 유사도로 물리적으로 저장된 과거 레코드들의 순위를 매겨 최고 점수 청크의 전체 K/V를 검색하는 방식으로 이뤄진다(식 1). "어디서 사용할지"는 온도 프로파일링·라우팅 사용량 분석·통제된 정책 비교를 통해 식별한 고정된 백본별 메모리 민감 레이어 집합(L_mem)에만 검색된 과거를 주입하고, 나머지 레이어는 원래의 싱크+슬라이딩 윈도우 컨텍스트를 그대로 유지하도록 설계된다. 학습은 CHPM으로 이뤄지는데, 동결된 장기-컨텍스트 교사 모델이 확장된 과거 컨텍스트로부터 예측을 만들고, 동결된 단기-컨텍스트 학생 모델(LayerRecall 라우팅이 추가된)이 제한된 국소 컨텍스트로부터 예측을 만든 뒤, 두 예측 간 차이를 MSE 손실(L_pred, 식 2)로 최소화하도록 라우터만 최적화한다. 이 방식은 교사가 어떤 과거 청크를 사용했는지, 혹은 교사의 어텐션 분포를 직접 관찰·모방하지 않고도, 예측 격차를 줄이는 과정에서 라우터가 과거 K/V를 어떻게 검색·주입해야 하는지를 자연스럽게 학습하게 만든다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>LongLive-2.0 백본을 기준으로 레이어별 어텐션 프로파일링을 수행해 100개 프롬프트에 걸쳐 레이어 선호 패턴이 안정적임을 확인했다. 100개의 다중 샷(multi-shot) 평가 프롬프트에 걸쳐 MemoBench와 MovieBench(장거리 재등장 시나리오를 평가하는 벤치마크)에서 LayerRecall이 최고 종합 성능을 달성했으며, 동시에 VBench-Long(국소 연속성·모션 품질 평가)에서는 백본과 동등한 성능을 유지해 국소 연속성을 희생하지 않고도 더 강한 장거리 복원력을 보였다. 정성 분석에서는 "메모리 기반 자기 교정" 현상, 즉 국소적으로 잘못 매칭된 속성이 진행 중인 모션이나 장면 구조를 리셋하지 않고도 역사적 외형으로 되돌아가는 현상을 확인했다. 추가 분석에서는 다른 백본으로의 이식 가능성과 무시할 만한 수준의 추론 오버헤드도 함께 입증했다.</p>
+<h2>한계점</h2>
+<p>논문에 명시되지 않음.</p>
+<h2>시사점</h2>
+<p>"무엇을 기억할지"뿐 아니라 "어디서 그 기억을 쓸지"까지 함께 결정해야 한다는 통찰은, 장기 시퀀스 생성 모델의 메모리 설계를 검색(retrieval) 문제에서 검색+라우팅(routing) 문제로 확장한다. 명시적 메모리 라벨이나 방대한 장기 고품질 학습 데이터 없이도 특권적 교사의 예측 행동을 참조해 제한된 메모리 정책을 지도학습할 수 있다는 CHPM의 아이디어는, 장기 컨텍스트가 필요한 다른 자기회귀 생성 모델에도 폭넓게 적용될 수 있는 일반적인 학습 전략을 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.28460" target="_blank" rel="noopener">huggingface.co/papers/2608.28460</a> · 2026-09-01</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

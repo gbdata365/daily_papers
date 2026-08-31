@@ -1,0 +1,110 @@
+{
+  "2608.28281": {
+    "base": "2608_루프아레나_에이전트-루프-제어-벤치마크",
+    "rank": "#1",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "82",
+    "en_title": "LoopArena: Benchmarking Models as Runtime Controllers for Loop Engineering",
+    "ko_title": "루프아레나: 루프 엔지니어링을 위한 런타임 컨트롤러로서의 모델 벤치마킹"
+  },
+  "2608.18524": {
+    "base": "2608_다트에스디_다이아몬드-위상-인식-툴콜링-자기증류",
+    "rank": "#2",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "60",
+    "en_title": "DART-SD: Diamond-topology Aware Retrieval and Tuning for Self-Distillation of Multi-Turn Tool-Calling Agents",
+    "ko_title": "DART-SD: 멀티턴 툴콜링 에이전트 자기증류를 위한 다이아몬드 위상 인식 검색 및 튜닝"
+  },
+  "2608.27550": {
+    "base": "2608_브이엘액트_VLA-표현중심-지속사전학습",
+    "rank": "#3",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "59",
+    "en_title": "Beyond Data Scaling: Representation-Centric Continued Pre-training for Vision-Language-Action Models",
+    "ko_title": "데이터 스케일링을 넘어서: 비전-언어-행동 모델을 위한 표현 중심 지속 사전학습"
+  },
+  "2608.28122": {
+    "base": "2608_에이전틱아티팩트_에이전트기반-산출물-생성-서베이",
+    "rank": "#4",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "51",
+    "en_title": "Agentic Artifact Creation: Systems, Evaluation, Principles, and Opportunities",
+    "ko_title": "에이전틱 아티팩트 생성: 시스템, 평가, 원칙, 그리고 기회"
+  },
+  "2608.27549": {
+    "base": "2608_코드애즈월드_실행가능-세계표현-물리추론",
+    "rank": "#5",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "43",
+    "en_title": "Code as Worlds: Agentic Discovery of Executable World Representations for Physical Reasoning",
+    "ko_title": "코드로서의 세계: 물리적 추론을 위한 실행 가능한 세계 표현의 에이전틱 발견"
+  },
+  "2608.26582": {
+    "base": "2608_제이제로_챌린저솔버판사-공진화",
+    "rank": "#6",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "35",
+    "en_title": "J-Zero: Unified Challenger–Solver–Judge Co-Evolution from Zero Data",
+    "ko_title": "J-Zero: 데이터 없이 이루어지는 통합 챌린저-솔버-판사 공진화"
+  },
+  "2608.27529": {
+    "base": "2608_에이봇리콘_로컬컨텍스트-스트리밍-3D-재구성",
+    "rank": "#7",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "28",
+    "en_title": "Revisiting Local Context for Long-Horizon Streaming 3D Reconstruction",
+    "ko_title": "장기 스트리밍 3D 재구성을 위한 지역 컨텍스트 재고찰"
+  },
+  "2608.27370": {
+    "base": "2608_퓨로2비_저비용-소비자GPU-LLM-사전학습",
+    "rank": "#8",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "26",
+    "en_title": "Puro-2B: Poor Lab's Qwen2-1.5B Trained on RTX 5090 within $5090",
+    "ko_title": "퓨로-2B: 5,090달러로 RTX 5090에서 학습한 가난한 연구실의 Qwen2-1.5B"
+  },
+  "2608.28460": {
+    "base": "2608_레이어리콜_장기영상생성-상태조건-메모리라우터",
+    "rank": "#9",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "25",
+    "en_title": "LayerRecall: A State-Conditioned Memory Router for Long-Horizon Consistency in Video Generation",
+    "ko_title": "레이어리콜: 비디오 생성의 장기 일관성을 위한 상태 조건부 메모리 라우터"
+  },
+  "2608.28476": {
+    "base": "2608_컨텍스트파일럿_능동적-컨텍스트관리-정밀강화학습",
+    "rank": "#10",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "24",
+    "en_title": "ContextPilot: Teaching Agents for Proactive Context Management via Fine-grained RL",
+    "ko_title": "컨텍스트파일럿: 세밀한 강화학습을 통한 에이전트의 능동적 컨텍스트 관리 학습"
+  },
+  "2608.23478": {
+    "base": "2608_인디_행동의도-증류-VLA모델",
+    "rank": "#11",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "24",
+    "en_title": "Act with Intent: Distilling Behavior Intent for Vision-Language-Action Models",
+    "ko_title": "의도를 가지고 행동하기: 비전-언어-행동 모델을 위한 행동 의도 증류"
+  },
+  "2608.27763": {
+    "base": "2608_팰컨_지속학습을위한-패스트웨이트-어텐션",
+    "rank": "#12",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "16",
+    "en_title": "Fast Weight Attention for Continual Learning",
+    "ko_title": "지속학습을 위한 패스트웨이트 어텐션"
+  }
+}

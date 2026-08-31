@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>에이전틱 아티팩트 생성</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#4 · Daily Papers 2026-09-01</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 51</span>
+    </div>
+    <h1 class="article-title">Agentic Artifact Creation: Systems, Evaluation, Principles, and Opportunities</h1>
+    <p class="article-title-ko">에이전틱 아티팩트 생성: 시스템, 평가, 원칙, 그리고 기회</p>
+    <p class="article-sub">프롬프트 한 번으로 산출물을 만드는 "직접 생성"과 달리, AI 시스템이 산출물 상태를 유지하며 중간 관찰 결과로 이후 작업을 스스로 재조정하는 "에이전틱 아티팩트 생성"을 정의하고, 2026년 8월까지의 관련 시스템 230개와 벤치마크 29개(총 259편)를 체계적으로 정리·비교한 서베이 논문이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.28122" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.28122" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Agentic Artifact Creation: Systems, Evaluation, Principles, and Opportunities</li>
+<li><strong>저자</strong>: Tianfu Wang, Zhezheng Hao, Xilin Xia 외 (홍콩과기대 광저우, 저장대, 중국과학기술대, 칭화대, 홍콩대, 시드니대, 중산대 공동)</li>
+<li><strong>출처</strong>: arXiv:2608.28122v1 [cs.MM] (2026년 8월 28일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://agentic-creation.github.io">agentic-creation.github.io</a>, <a href="https://github.com/GeminiLight/awesome-agentic-artifact-creation">GitHub 목록</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.28122">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>프롬프트 한 번으로 산출물을 만드는 "직접 생성"과 달리, AI 시스템이 산출물 상태를 유지하며 중간 관찰 결과로 이후 작업을 스스로 재조정하는 "에이전틱 아티팩트 생성"을 정의하고, 2026년 8월까지의 관련 시스템 230개와 벤치마크 29개(총 259편)를 체계적으로 정리·비교한 서베이 논문이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>생성 모델은 이미지, 텍스트, 코드 등을 자연어 프롬프트로부터 만들어내며 초안·부품 제작 비용을 낮추고 있지만, 실질적 가치는 그 부분들이 완전하고 신뢰할 수 있는 "산출물(deliverable)"로 완성될 수 있는가에 달려 있다. 포스터 제작(원문 보존, 페이지 제약, 명료한 전달), 소프트웨어 수정(테스트·실행 피드백 해석) 같은 사례처럼, 요구사항들이 서로 얽혀 있고 최종 출력에서만 드러나는 실패는 원인 추적과 수정이 어렵다. 기존 서베이들은 모델군, 에이전트 아키텍처, 도메인, 프로세스 등을 기준으로 분류해왔지만 "전달되는 산출물(Delivered Artifact)" 자체를 1차 분석 단위로 삼지 않았다는 공백이 있다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li><strong>에이전틱 아티팩트 생성의 정의와 기능적 모델</strong>: AI 시스템이 산출물을 실질적으로 구축·수정하고, 산출물/프로세스 상태를 단계 간에 유지하며, 최소 하나의 중간 관찰이 이후 작업을 재조정하는 에피소드로 정의한다.</li>
+<li><strong>259편 코딩 코퍼스 구축과 6개 산출물군 비교</strong>: 조건을 충족하는 시스템 230개와 구축 벤치마크 29개를 수집·분류하여, 산출물군별로 의사결정 결합도와 실패 관측 가능성·수정 가능성의 차이를 분석한다.</li>
+<li><strong>응용 맥락과 평가 관행의 독립적 분석</strong>: 산출물 자체에 대한 증거와 궤적·시스템에 대한 증거를 구분해 평가 프로토콜의 다양한 수준을 정리한다.</li>
+<li><strong>네 가지 설계 원칙과 연구 의제 제시</strong>: 커밋먼트·책임 명시화, 피드백을 표적화된 수정으로 전환, 변경 후 영향받은 상태 재검증 등의 원칙과 향후 과제를 도출한다.</li>
+</ol>
+<h2>방법론</h2>
+<p>저자들은 세 가지 기능적 역할로 구성된 "구성 루프(Construction Loop)"를 제안한다: (1) <strong>운영적 표현(Operational Representation)</strong>은 현재 산출물 상태 R_t를 중간 형태(아티팩트 인스턴스/구조화 모델/실행 가능한 프로그램)와 편집 인터페이스(단위 편집/관계 편집/전체 편집)로 노출한다. (2) <strong>구성 정책(Construction Policy)</strong>은 과제 명세 T, 현재 표현 R_t, 피드백 f_t를 받아 다음 행동 a_t = π(T, R_t, f_t)를 선택하며, 워크플로우 제어(사전 정의된 단계)와 자율 제어(에이전트가 스스로 수정 대상·행동을 선택) 두 방식과 단일/중앙집중형/분산형 다중 에이전트 토폴로지로 실현된다. (3) <strong>런타임 검증(Runtime Verification)</strong>은 f_{t+1} = V(T, R_{t+1}, o_{t+1})로 갱신된 상태를 관찰하고 수용 기준과 비교해 피드백을 생성하며, 수용되면 최종 산출물 A = D(R_τ)가 전달된다. 리뷰는 2023년 1월부터 2026년 8월 20일까지 arXiv, Google Scholar, Semantic Scholar, ACM DL, IEEE Xplore를 검색하고 인용 추적·표적 학회 감사로 보완했으며, 상태 기반 구성 정의에 부합하지 않는 직접 생성기·관찰 독립적 워크플로우·산출물 소비/평가 전용 시스템은 제외했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>본 논문은 시스템을 새로 개발·실험하는 논문이 아니라 서베이이므로, "실험" 대신 코퍼스 분석 결과를 제시한다. 총 259편(전략적 구성 시스템 230개, 벤치마크 29개)을 텍스트, 2D 시각물, 오디오, 비디오, 공간(3D), 행동(behavioral) 등 6개 산출물군으로 분류했다. 2023~2026년(2026년은 8월 20일까지 부분 반영) 누적 기록 수는 매년 뚜렷이 증가하는 추세를 보였으며, NeurIPS, ICLR, CVPR, ACL, CHI, WWW 등 다양한 학회에 걸쳐 발표되고 있음을 확인했다. 산출물군별 비교에서는 구축상의 어려움이 단순히 모달리티 차이가 아니라 결정들이 얼마나 밀접하게 결합되어 있는지, 그리고 실패가 아직 수정 가능한 시점에 드러나는지에 좌우된다는 점을 발견했다. 작업을 세분화(decomposition)하면 국소적 복잡도는 줄지만 조율·재조립 비용이 늘어나는 트레이드오프가 있으며, 학습된 평가자(judge)가 생성기와 같은 선호나 맹점을 공유할 경우 독립적인 검증 근거를 거의 추가하지 못한다는 점도 지적했다.</p>
+<h2>한계점</h2>
+<p>논문에 명시되지 않음(서베이 특성상 별도 한계 섹션 대신 8장에서 향후 과제로 논의됨: 실패 진단이 어렵거나 여러 결과가 모두 유효할 수 있는 상황에서 일관되고 책임 있는 제어를 유지하는 문제, 산출물·창작자 의도·구성 시스템이 함께 진화하는 상황에서의 정합성 유지 등).</p>
+<h2>시사점</h2>
+<p>"전달되는 산출물"을 1차 분석 단위로 삼는 통일된 틀은 서로 다른 모달리티(텍스트, 이미지, 3D, 소프트웨어 등)의 에이전틱 생성 시스템들을 공통 기준으로 비교할 수 있게 해준다. 특히 표적화된 수정, 커밋먼트 명시화, 변경 후 재검증이라는 설계 원칙은 향후 에이전트 기반 콘텐츠 생성 시스템을 설계할 때 실패 국소화와 신뢰할 수 있는 반복 개선을 위한 구체적 지침이 될 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.28122" target="_blank" rel="noopener">huggingface.co/papers/2608.28122</a> · 2026-09-01</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

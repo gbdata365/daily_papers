@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>컨텍스트파일럿</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#10 · Daily Papers 2026-09-01</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 24</span>
+    </div>
+    <h1 class="article-title">ContextPilot: Teaching Agents for Proactive Context Management via Fine-grained RL</h1>
+    <p class="article-title-ko">컨텍스트파일럿: 세밀한 강화학습을 통한 에이전트의 능동적 컨텍스트 관리 학습</p>
+    <p class="article-sub">에이전트가 스스로 자신의 작업 컨텍스트를 편집하는 "능동적 컨텍스트 관리"의 한계(제한된 도구, 비효율적 탐색, 거친 크레딧 할당)를 계획·장기기억·소프트 오프로딩 도구 확장과 세밀한 강화학습 기법으로 해결하는 ContextPilot 프레임워크를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.28476" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.28476" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: ContextPilot: Teaching Agents for Proactive Context Management via Fine-grained RL</li>
+<li><strong>저자</strong>: Zhuoshi Pan, Qizhi Pei, Junru Lu, Honglin Lin, H. Vicky Zhao, Di Yin, Xing Sun (칭화대학교, 텐센트 유투랩, 상하이 AI Lab)</li>
+<li><strong>출처</strong>: arXiv:2608.28476v1 [cs.CL] (2026년 8월 28일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://tencent.github.io/ContextPilot">tencent.github.io/ContextPilot</a>, <a href="https://github.com/Tencent/ContextPilot">GitHub</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.28476">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>에이전트가 스스로 자신의 작업 컨텍스트를 편집하는 "능동적 컨텍스트 관리"의 한계(제한된 도구, 비효율적 탐색, 거친 크레딧 할당)를 계획·장기기억·소프트 오프로딩 도구 확장과 세밀한 강화학습 기법으로 해결하는 ContextPilot 프레임워크를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>장기 에이전틱 과제에서 LLM은 여러 턴에 걸쳐 정보를 검색·통합·유지해야 하는데, 모든 상호작용 이력을 그대로 보존하면 작업 컨텍스트가 계속 증가한다. 최근의 "능동적 컨텍스트 관리"는 모델이 전용 도구로 자신의 컨텍스트를 직접 편집하게 하지만 세 가지 한계가 있다: (1) 검색·삭제·요약에 국한된 좁은 도구 집합이라 전역 계획, 장기 기억, 적응적 압축을 지원하지 못하고, (2) 컨텍스트 관리 행동들이 최종 결과에 미치는 영향이 서로 크게 다름에도 이를 균일하게 탐색하며, (3) 강화학습에서 최종 궤적 단위 보상을 모든 중간 컨텍스트 편집 행동에 그대로 부여하는 거친 크레딧 할당을 사용한다. 저자들의 사전 실험에서, 특정 컨텍스트 관리 행동(readChunk, deleteContext 등)에서 분기한 궤적들의 최종 성공률 표준편차가 다른 행동보다 훨씬 크다는 것과, 정답 궤적이라도 컨텍스트 관리 품질이 나쁠 수 있고 그 반대도 가능하다는 것을 확인했다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li><strong>확장된 도구 집합</strong>: 지각·계획(계획 수립, 예산 확인), 정보 검색(인덱스 구축, 검색, 청크 읽기), 장기 기억 관리(memorize, updateMemory, readMemory), 소프트 컨텍스트 오프로딩(요약, 경량 압축모델 기반 compressContext, 히스토리를 인덱스로 대체하는 foldHistory) 등 계획·장기기억·오프로딩 도구를 새로 추가했다.</li>
+<li><strong>컨텍스트 인지 부분 롤아웃(Context-Aware Partial Rollout)</strong>: 컨텍스트 길이 변화량과 엔트로피 변화량을 결합한 민감도 점수로 영향력이 큰 컨텍스트 관리 결정을 식별해, 그 지점에서 추가 분기 샘플링을 수행함으로써 탐색 예산을 효율적으로 배분한다.</li>
+<li><strong>세밀한 크레딧 할당</strong>: 최종 궤적 보상을 모든 중간 스냅샷에 균일하게 부여하는 대신, 각 컨텍스트 편집 행동을 거친 모든 후속 분기 궤적들의 보상으로부터 해당 행동의 가치를 추정한다.</li>
+</ol>
+<h2>방법론</h2>
+<p>ReAct 스타일 에이전트는 매 스텝 컨텍스트 c_i로부터 사고와 도구 호출을 생성하고, 컨텍스트 편집 행동이 발생하면 컨텍스트 전이 함수 F로 인터랙션 이력이 갱신된다(식 2). 컨텍스트 편집 행동은 궤적을 여러 개의 독립적인 "스냅샷"으로 분절하며, 토큰 단위 손실 마스킹으로 중복 최적화를 방지한다. 학습은 먼저 하네스가 적절한 시점에 힌트·제약을 제공해 교사 모델의 궤적으로 SFT 데이터를 구성한 뒤, 강화학습 단계에서 (1) 컨텍스트 변화량 ΔC와 초기 엔트로피 대비 엔트로피 변화량 ΔH를 가중합한 민감도 점수 S(a^cm_t) = α·ΔC + β·ΔH로 각 컨텍스트 관리 행동의 영향력을 추정하고, 궤적 단위 롤아웃에서 나온 스냅샷이 목표 예산 N보다 적으면 민감도 점수가 높은 상위 행동들에서 추가로 부분 롤아웃을 수행한다. (2) 크레딧 할당에서는 결과 보상·형식 보상·페널티로 구성된 최종 보상 R(S_M) = R_out + R_fmt + R_pen을 정의하고(식 7), 중간 스냅샷의 가치는 그 스냅샷에서 파생된 모든 후속 분기 궤적들의 보상으로부터 추정해, 반복 검색처럼 정답으로 이어지는 합리적 행동과 비합리적 컨텍스트 관리 행동을 구분할 수 있는 세밀한 신호를 만든다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>장문맥 QA(NovelQA 등)와 딥서치 과제에서 ContextPilot을 여러 베이스 모델(Qwen3-8B 등)과 벤치마크(BrowseComp+ 등)에 걸쳐 평가한 결과, 기존 베이스라인(StateLM 등) 대비 더 컴팩트한 작업 컨텍스트를 유지하면서도 일관되게 더 우수한 성능을 달성했다. 사전 실험(파일럿 스터디)에서는 readChunk, deleteContext, searchContext 등의 도구가 memorize, plan 등의 도구보다 최종 성공률의 표준편차가 훨씬 크다는 것을 정량적으로 보였으며(그림 2), StateLM-8B의 사례 분석에서는 반복적인 검색을 사용한 정답 궤적과 삭제·업데이트를 반복한 오답 궤적을 대조해 컨텍스트 관리 품질과 최종 정답 여부가 항상 일치하지 않음을 보였다(그림 3).</p>
+<h2>한계점</h2>
+<p>논문에 명시되지 않음.</p>
+<h2>시사점</h2>
+<p>컨텍스트 관리 행동을 균일하게 다루지 않고 그 영향력에 따라 차등적으로 탐색·보상을 배분해야 한다는 통찰은, 도구 사용 에이전트의 강화학습 설계에서 "어떤 행동에 더 많은 학습 신호를 투자할지"를 결정하는 일반적인 원칙을 제시한다. 계획·장기기억·소프트 오프로딩까지 아우르는 확장된 도구 집합은 향후 장기 에이전틱 시스템이 단순 요약·삭제를 넘어 더 정교하게 자신의 작업 상태를 관리하도록 설계하는 데 참고할 수 있는 청사진이 된다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.28476" target="_blank" rel="noopener">huggingface.co/papers/2608.28476</a> · 2026-09-01</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

@@ -1,0 +1,122 @@
+<meta charset="UTF-8">
+<title>페이퍼짐</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#6 · Daily Papers 2026-09-02</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 35</span>
+    </div>
+    <h1 class="article-title">PaperGym: Rubric-Centered Evolution for Research-Plan Generation</h1>
+    <p class="article-title-ko">페이퍼짐: 연구계획 생성을 위한 루브릭 중심 진화</p>
+    <p class="article-sub">arXiv 논문을 "질문(연구 목표+배경)"과 "채점 기준(방법+실험설계)"으로 서로 겹치지 않는 섹션에서 분리 추출해 채점 기준 유출을 크게 낮춘 20,000건 규모의 연구계획 생성 학습 환경 PaperGym을 구축하고, 동일한 루브릭을 자기지식증류(self-distillation) 교사의 특권 정보로, 이후 GRPO의 보상으로 두 번 활용하는 2단계 학습 스케줄을 제시해 Qwen3 계열 모델의 연구계획 생성 능력을 크게 끌어올린 연구.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.31119" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.31119" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: PaperGym: Rubric-Centered Evolution for Research-Plan Generation</li>
+<li><strong>저자</strong>: Yuhan Wang, Zhengxi Lu(공동 1저자), Yuchen Yan, Kaitao Song, Wenqi Zhang, Weiming Lu, Jun Xiao, Yueting Zhuang, Yongliang Shen(교신저자) (Zhejiang University, Apple)</li>
+<li><strong>출처</strong>: arXiv:2608.31119v1 [cs.CL] (2026-08-31)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://zju-real.github.io/PaperGym">zju-real.github.io/PaperGym</a> (코드: https://github.com/ZJU-REAL/PaperGym)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.31119">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>arXiv 논문을 "질문(연구 목표+배경)"과 "채점 기준(방법+실험설계)"으로 서로 겹치지 않는 섹션에서 분리 추출해 채점 기준 유출을 크게 낮춘 20,000건 규모의 연구계획 생성 학습 환경 PaperGym을 구축하고, 동일한 루브릭을 자기지식증류(self-distillation) 교사의 특권 정보로, 이후 GRPO의 보상으로 두 번 활용하는 2단계 학습 스케줄을 제시해 Qwen3 계열 모델의 연구계획 생성 능력을 크게 끌어올린 연구.</p>
+<h2>배경 및 문제의식</h2>
+<p>AI 과학자(AI scientist)를 향한 최근 연구들은 연구 논문 전체와 새로운 발견을 자동 생성하는 데까지 진전했지만, 모든 성과는 연구계획(research plan) 수립에서 시작된다. 그런데 수학 문제나 코드 생성과 달리 연구계획에는 비교할 정답(ground truth)이 없어 검증 가능한 보상(verifiable reward) 기반 강화학습을 그대로 적용하기 어렵고, 품질 평가에는 전문가 검토가 필요하다. 반면 방대한 과학 논문들은 이미 현실적인 문제와 그 해결책을 텍스트 형태로 대량 보유하고 있어, 이를 학습 환경으로 변환하려는 시도들이 있었다.</p>
+<p>그러나 기존 파이프라인(Goel et al., DEEPINNOVATOR, EvoIdeator 등)은 질문과 채점 기준을 같은 논문 내용에서 별도 구분 없이 추출해, 채점 기준이 질문 자체의 내용을 되풀이하는 "채점 기준 유출(criterion leakage)" 문제가 심각했다(기존 데이터셋에서 11.90%~34.10%의 기준이 질문만으로 추론 가능). 이 경우 모델은 실제로 더 나은 계획을 만들지 않고 질문을 다른 말로 바꾸어 쓰는 것만으로도 보상을 높일 수 있다. 또한 방법론에 대한 기준은 인스턴스별로 상세히 마련되어 있지만 실험 설계에 대한 기준은 인스턴스와 무관한 일반 지침만 존재해 균형이 맞지 않았다. 학습 방식 측면에서도, 루브릭 보상 학습(rubric-as-reward)은 각 기준을 별도 판정 호출로 채점한 뒤 롤아웃당 하나의 스칼라로 압축해 버려 루브릭이 가진 세밀한 정보 대부분이 낭비되고, 지도 미세조정(SFT)은 루브릭을 활용하지 않고 단일 참조 계획을 모방하는 데 그쳐 출력 다양성을 해친다. 최근 등장한 루브릭 조건부 자기지식증류(OPSD) 방법도 루브릭 대비 검증 없이 증류만 하다 보니 특권 정보(privileged context)에 과적합되는 문제가 관찰되었다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>논문을 연구 목표, 배경, 연구 방법, 실험 설계라는 서로 겹치지 않는 네 단계로 분해해, 질문은 목표+배경에서만, 참조 답과 채점 기준은 방법+실험 설계에서만 만들도록 구조를 설계함으로써 채점 기준 유출을 3.7%까지 낮췄다(기존 데이터셋 대비 3~9배 낮은 수치). 이를 통해 컴퓨터과학·물리학·경제학 3개 도메인, 20,000건 규모의 학습용 데이터셋 PaperGym-20k와 방법론 혁신성(Innov)·실험설계(Design)를 각각 평가하는 2개의 held-out 벤치마크(PaperGym-Innov, PaperGym-Design)를 구축했다.</li>
+<li>각 인스턴스마다 방법론 혁신성과 실험 설계 두 축에 걸쳐 10개의 원자적 이진 채점 기준(specialized rubric)을 부여하고, 질문만으로 만든 기준(R_Q)과 질문+참조답으로 만든 기준(R_A)을 통합·중복 제거·중요도순 정렬해 최종 기준을 선정함으로써 방법과 실험 양쪽에 근거한 기준을 확보했다.</li>
+<li>동일한 루브릭을 두 단계에서 서로 다른 용도로 재사용하는 "루브릭-중심 진화(rubric-centered evolution)" 학습 스케줄을 제안했다. 1단계는 루브릭을 특권 정보로 삼는 On-Policy Self-Distillation(OPSD)으로 넓고 다양한 사전 분포를 형성하고, 2단계는 동일 루브릭을 보상으로 쓰는 GRPO로 정책을 정교화한다.</li>
+<li>이 두 단계 스케줄이 SFT, 단일 단계만 사용, 순서를 뒤바꾼 경우보다 세 가지 모델 규모(Qwen3-1.7B/4B/8B) 모두에서 다섯 벤치마크 평균 기준 각각 +5.6, +5.0, +4.8점 우수함을 실험적으로 입증했고, 학습된 Qwen3-8B가 ResearchQA에서 73.48점을 기록해 훨씬 큰 규모인 Kimi K2.6(73.19)을 능가함을 보였다.</li>
+</ul>
+<h2>방법론</h2>
+<p>연구계획 생성을 정책 π_θ(a|q)가 연구 질문 q에 대해 정합적인 해결책 a를 만들어내는 문제로 정식화한다. 데이터 구축은 (1) 데이터 정제: arXiv 논문의 LaTeX 원문을 절 단위로 분할한 뒤 Qwen3-235B-A22B로 맵-리듀스 방식 요약을 수행해 연구 목표·배경·연구 방법·실험 설계 네 단계로 재구성(구체적 수치 결과는 암기를 막기 위해 제외), (2) 문제 구성: 목표+배경에서 질문을, 방법+실험 설계에서 참조 답을 각각 추출, (3) 루브릭 생성: DeepSeek-V4-Flash로 질문 조건부 기준(R_Q)과 답 근거 기준(R_A)을 각각 생성한 뒤 의미상 중복을 제거하고 중요도순으로 상위 n개(m=n=10)를 선별해 인스턴스별 특화 루브릭을 만들고, 여기에 완결성·구체성·타당성 등을 평가하는 일반 루브릭(Goel et al. 2025 방식 채택)을 결합한다.</p>
+<p>학습은 두 단계로 진행된다. 1단계 루브릭 조건부 OPSD에서는, 학생 모델이 온-폴리시 롤아웃을 생성하는 동안 동일 모델의 교사 버전이 루브릭 전체(단일 정답이 아닌 평가 원칙 집합)를 특권 정보로 받아 다음 토큰 분포를 예측하고, 학생과 교사 간 Jensen-Shannon 발산을 최소화해 학생이 루브릭이 함의하는 넓은 범위의 유효한 계획 분포를 학습하게 한다. 2단계 루브릭 보상 GRPO에서는, 고정된 기본 모델 자신이 채점자 역할을 맡아 질문·참조답·루브릭을 조건으로 각 후보 응답을 기준별로 이진 채점하고(별도 학습된 보상모델 불필요), 특화 기준 점수와 일반 기준 점수를 r_i = α·r_spec + (1-α)·r_gen (α=0.7)으로 결합한 보상을 GRPO 목적함수(그룹 상대 이득, 클리핑, 참조 정책 대비 KL 페널티 포함)에 대입해 정책을 최적화한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>PaperGym-20k의 컴퓨터과학 부분집합(2015~2025년 논문, 약 10,000건)으로 Qwen3-1.7B/4B/8B를 학습시키고, 학습 데이터와 무관한 held-out 벤치마크(PaperGym-Innov, PaperGym-Design, 2026년 1월 이후 논문 400편씩 3개 도메인)와 외부 벤치마크(ResearchQA, ResearchPlanGen-ML, RubricHub Science)에서 평가했다.</p>
+<ul>
+<li>학습 전략 비교: SFT는 단일 참조 계획을 모방하는 데 그쳐 8B 규모에서 오히려 평균 -0.96점 하락했다. 반면 OPSD 단독은 낮은 학습 비용으로 단일단계 GRPO와 비슷한 성능을 내며 안정적인 초기 정책을 제공했고, OPSD+GRPO 2단계 스케줄이 모든 벤치마크·모든 규모에서 최고 점수를 기록해 1.7B/4B/8B 각각 평균 +5.56/+5.04/+4.81점의 향상을 보였다.</li>
+<li>기존 모델과의 비교: 학습된 Qwen3-8B는 과학 특화 모델인 Intern-S1-Mini, Rebicon-Preview를 PaperGym-Innov(24.47 vs. 7.48, 20.88)와 PaperGym-Design(21.88 vs. 4.48, 20.42)에서 능가했고, S1-VL-RL도 넘어섰다. ResearchQA에서는 일반 목적 대형 모델인 Kimi K2.6(73.19)보다도 높은 73.48을 기록했다.</li>
+<li>3자 승률 비교(judge 기반): 학습 레시피를 고정한 채 PaperGym-20k로 학습한 모델은 동일 레시피로 RubricHub Science에서 학습한 모델(승률 28.2%) 및 미학습 기본 모델(승률 13.7%)을 상대로 58.1%의 승률을 기록해, 성능 향상이 데이터 구성 자체에서 비롯됨을 확인했다.</li>
+<li>데이터 스케일링: 데이터 규모를 0.5k에서 15k로 늘릴수록 PaperGym-Innov(16.12→19.21), PaperGym-Design(13.89→16.96) 점수가 멱법칙 형태로 꾸준히 개선되어 프레임워크의 확장 가능성을 시사했다.</li>
+<li>채점 기준 유출 검증: DeepSeek-V4-Flash로 각 기준이 질문만으로 추론 가능한지 판정한 결과, PaperGym-20k/Innov/Design은 각각 3.73%/4.71%/4.97%의 유출률로, 기존 벤치마크(HealthBench 11.90%, RubricHub Science 17.39%, ResearchPlanGen-ML 31.29%, ResearchPlanGen-ArXiv 34.10%, ResearchQA 19.22%)보다 3~9배 낮았다.</li>
+<li>소거 실험: 루브릭 생성 시 R_Q 단독(-0.97/-0.21)이나 R_A 단독(-1.87/-1.11)은 전체 파이프라인보다 성능이 낮아 두 출처의 통합이 필요함을 확인했다. 특권 정보 선택 실험에서는 루브릭 조건부 교사가 참조답 조건부 교사보다 우수했으며(+1.08/+0.88), 루브릭과 참조답을 함께 주면 오히려 Design 점수가 더 떨어져(9.17 vs. 10.45) 단일 해에 대한 정보가 넓은 원칙 기반 지도와 상충함을 시사했다. 학습 단계 순서 실험(Figure 3 우측)에서는 OPSD를 먼저 적용한 뒤 GRPO를 적용하는 순서가 반대 순서보다 일관되게 우수했으며, 엔트로피 추이 분석 결과 OPSD가 새로운 지식을 주입해 엔트로피를 높이고 이후 GRPO가 고보상 영역으로 수렴하며 엔트로피를 낮추는 상호보완적 패턴이 관찰됐다.</li>
+</ul>
+<h2>한계점</h2>
+<p>Claude-Sonnet-5가 ResearchQA에서 다른 일반 목적 모델보다 낮은 점수를 기록한 것은 실제 계획 생성 능력의 한계라기보다 정보가 불충분하다고 판단할 때 답변을 거부하는 모델 특유의 행동 때문이라고 저자들이 별도로 설명한다(무응답은 0점 처리됨). 채점 자체는 고정된 기본 모델의 자기 채점(self-grading)에 의존하는데, 소거 실험에서 루브릭 생성기의 품질이 결과에 큰 영향을 미친다는 점(약한 생성기로 교체 시 최대 -2.00점 하락)이 확인되어, 루브릭 생성 모델의 품질이 전체 파이프라인의 핵심 병목임을 시사한다. 논문 자체에서 별도의 "한계" 절을 명시적으로 두고 있지는 않다.</p>
+<h2>시사점</h2>
+<p>이 논문은 검증 불가능해 보이는 개방형 과제(연구계획 수립)에도, 텍스트 구조를 신중하게 분해해 정보 유출 없는 질문-기준 쌍을 구성하면 강화학습 가능한 학습 환경을 구축할 수 있음을 보여준다. 동일한 루브릭을 특권 정보(증류)와 보상(강화학습) 두 역할로 재사용하는 "루브릭-중심 진화" 아이디어는, 스칼라 보상으로 압축되며 버려지던 세밀한 채점 정보를 밀도 높은 토큰 수준 지도로 되살릴 수 있는 일반적인 레시피로서, 연구계획 생성 외에 다른 개방형·비검증형 생성 과제(에세이 평가, 코드 리뷰, 디자인 문서 작성 등)에도 응용될 수 있는 잠재력을 지닌다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.31119" target="_blank" rel="noopener">huggingface.co/papers/2608.31119</a> · 2026-09-02</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

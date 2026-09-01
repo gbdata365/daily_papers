@@ -1,0 +1,110 @@
+{
+  "2608.31046": {
+    "base": "2608_옵사_노이즈-교사에서-자기개선으로",
+    "rank": "#1",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "93",
+    "en_title": "Does On-Policy Distillation Really Distill? From Noisy Teacher to Self-Improvement",
+    "ko_title": "온폴리시 증류는 정말 증류하는가? 노이즈 교사에서 자기개선으로"
+  },
+  "2608.31106": {
+    "base": "2608_드림엑스크리에이터_2K-네이티브-오디오비디오-생성",
+    "rank": "#2",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "86",
+    "en_title": "DreamX-Creator: Democratizing Native Audio-Video Generation at 2K Resolution",
+    "ko_title": "DreamX-Creator: 2K 해상도 네이티브 오디오-비디오 생성의 대중화"
+  },
+  "2608.30821": {
+    "base": "2608_루시다_파싱생성배치-리얼투심-장면모델링",
+    "rank": "#3",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "69",
+    "en_title": "Lucida: Parse, Generate, and Place for Composable Real-to-Sim Scene Modeling",
+    "ko_title": "Lucida: 컴포저블 리얼투심 장면 모델링을 위한 파싱, 생성, 배치"
+  },
+  "2608.29335": {
+    "base": "2608_젠퍼스트_생성-우선-재구성-VAE-생성모델-엔드투엔드-학습",
+    "rank": "#4",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "58",
+    "en_title": "GenFirst: Generation Before Reconstruction for Stable End-to-End Latent Generative Modeling",
+    "ko_title": "젠퍼스트: 안정적인 엔드투엔드 잠재 생성 모델링을 위한 재구성 이전의 생성"
+  },
+  "2608.31036": {
+    "base": "2608_노라_정규화된-저랭크-적응",
+    "rank": "#5",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "38",
+    "en_title": "Normalized Low-Rank Adaptation",
+    "ko_title": "노라: 정규화된 저랭크 적응(Normalized Low-Rank Adaptation)"
+  },
+  "2608.31119": {
+    "base": "2608_페이퍼짐_루브릭-기반-연구계획-생성-진화",
+    "rank": "#6",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "35",
+    "en_title": "PaperGym: Rubric-Centered Evolution for Research-Plan Generation",
+    "ko_title": "페이퍼짐: 연구계획 생성을 위한 루브릭 중심 진화"
+  },
+  "2608.30320": {
+    "base": "2608_큐원38넥스트_아키텍처설계-평가-효율성-학습안정성",
+    "rank": "#7",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "32",
+    "en_title": "On the Design of Qwen3.8-Next Architecture: Evaluation, Efficiency, and Training Stability",
+    "ko_title": "Qwen3.8-Next 아키텍처 설계에 관하여: 평가, 효율성, 그리고 학습 안정성"
+  },
+  "2608.30968": {
+    "base": "2608_코그이볼_효율적-신뢰가능-학습환경생성",
+    "rank": "#8",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "26",
+    "en_title": "CogEvol: Towards Efficient and Reliable Learning Environment Generation",
+    "ko_title": "CogEvol: 효율적이고 신뢰할 수 있는 학습 환경 생성을 향하여"
+  },
+  "2608.30935": {
+    "base": "2608_라이트내브제로_VLM-공간지능-범용체화내비게이션",
+    "rank": "#9",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "24",
+    "en_title": "LightNav-0: Eliciting VLM Spatial Intelligence for Generalist Embodied Navigation",
+    "ko_title": "LightNav-0: 범용 체화 내비게이션을 위한 VLM 공간 지능 이끌어내기"
+  },
+  "2608.28833": {
+    "base": "2608_프리스크_LLM-개인화-숨은-비용-평가",
+    "rank": "#10",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "24",
+    "en_title": "Evaluating the Hidden Costs of Personalization in Large Language Models",
+    "ko_title": "대규모 언어 모델의 개인화가 초래하는 숨겨진 비용 평가"
+  },
+  "2608.28600": {
+    "base": "2608_쉐이프_수학추론-사고연쇄-형태분석",
+    "rank": "#11",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "24",
+    "en_title": "SHAPE of Chain-of-Thought in Math Reasoning",
+    "ko_title": "수학 추론에서 사고 연쇄(Chain-of-Thought)의 SHAPE 분석"
+  },
+  "2608.29310": {
+    "base": "2608_슈퍼라이브러리에이전트_다중앱-공동생성-유지보수",
+    "rank": "#12",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "23",
+    "en_title": "Super Library Agent: Joint Generation and Maintenance of Multiple Applications Beyond the Single Codebase",
+    "ko_title": "슈퍼 라이브러리 에이전트: 단일 코드베이스를 넘어선 다중 애플리케이션의 공동 생성과 유지보수"
+  }
+}

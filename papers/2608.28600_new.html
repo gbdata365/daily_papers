@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>수학 추론에서 사고 연쇄(Chain-of-Thought)의 SHAPE 분석</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#11 · Daily Papers 2026-09-02</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 24</span>
+    </div>
+    <h1 class="article-title">SHAPE of Chain-of-Thought in Math Reasoning</h1>
+    <p class="article-title-ko">수학 추론에서 사고 연쇄(Chain-of-Thought)의 SHAPE 분석</p>
+    <p class="article-sub">수학 교육학에서 사용되는 "의미 공간(semantic space)"과 "휴리스틱(heuristic)" 개념을 빌려와 LLM의 사고 연쇄(Chain-of-Thought)가 문제를 어떤 수학적 관점으로 해석하며 어떤 전략적 행동을 취하는지 자동으로 분석하는 SHAPE 프레임워크를 제안하고, 이를 통해 정답 예측력 향상, 강화학습 후 전략 다양성 붕괴 현상, 그리고 이를 완화하는 학습 기법까지 제시한 연구다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.28600" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.28600" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: SHAPE of Chain-of-Thought in Math Reasoning</li>
+<li><strong>저자</strong>: Jonghyun Song, Sangjun Song, Minjae Oh, Haesung Pyun, Sungsik Lee, Yohan Jo (서울대학교 데이터사이언스대학원 및 수학교육과)</li>
+<li><strong>출처</strong>: arXiv:2608.28600v1 [cs.AI] (2026-08-28)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음 (코드는 GitHub에 공개: github.com/holi-lab/SHAPE-of-CoT)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.28600">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>수학 교육학에서 사용되는 "의미 공간(semantic space)"과 "휴리스틱(heuristic)" 개념을 빌려와 LLM의 사고 연쇄(Chain-of-Thought)가 문제를 어떤 수학적 관점으로 해석하며 어떤 전략적 행동을 취하는지 자동으로 분석하는 SHAPE 프레임워크를 제안하고, 이를 통해 정답 예측력 향상, 강화학습 후 전략 다양성 붕괴 현상, 그리고 이를 완화하는 학습 기법까지 제시한 연구다.</p>
+<h2>배경 및 문제의식</h2>
+<p>최근 LLM들은 긴 사고 연쇄를 생성하며 수학 문제에서 높은 정답률을 보이지만, 정답 여부만으로는 모델이 "어떻게" 풀이를 조직하는지 알 수 없다. 기존 CoT 분석 연구들은 길이, "wait"·"aha" 같은 자기수정 표현, 계획·검증 같은 광범위한 인지 단계, 그래프·트리 구조 등 표면적 특징에 주로 주목했을 뿐, 모델이 문제를 대수적으로 볼지 기하적으로 볼지와 같은 구체적인 수학적 해석 틀은 추적하지 못했다. 반면 수학 교육 연구에서는 풀이자가 문제를 어떻게 조직하는가를 오랫동안 다뤄왔으며, 풀이자의 현재 해석(의미 공간)과 그 안에서 취하는 목적 있는 행동(휴리스틱)이라는 두 축으로 이를 분석해왔다. 저자들은 이 두 개념을 LLM이 생성한 CoT 궤적에 적용하면 모델이 문제를 어떻게 프레이밍하고, 추구하고, 재구성하는지를 원리에 기반해 진단할 수 있다고 보았다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>수학 교육학의 의미 공간·휴리스틱 개념을 결합해 LLM의 CoT 궤적을 의미 공간과 휴리스틱의 시퀀스로 표현하는 SHAPE(Semantic-space and Heuristic Analysis for Problem-solving Evolution) 프레임워크를 제안했다.</li>
+<li>콘텐츠 단위 분할, 휴리스틱 태깅, 의미 공간 추적의 3단계로 구성된 자동화 파이프라인을 구축해 수천 개의 CoT 궤적에 대한 대규모 분석을 가능하게 했다.</li>
+<li>휴리스틱 수준 특징이 길이·자기수정 표지·인지 에피소드 라벨 등 기존 CoT 표현보다 정답 여부를 더 잘 예측함을 입증했고, 강화학습(RLVR) 후처리가 휴리스틱 사용 분포를 좁히는 "모드 추구(mode-seeking)" 현상을 유발함을 밝혔으며, 이를 완화하는 휴리스틱 증강 강화학습(HA-Plan-GRPO)을 제안해 성능 향상을 보였다.</li>
+</ul>
+<h2>방법론</h2>
+<p>SHAPE는 CoT 궤적을 콘텐츠 단위(content unit) 단위로 분할한 뒤, 각 단위에 하나 이상의 휴리스틱 라벨(H1~H11, 총 11개 상위 범주 및 세부 하위 라벨)이나 비휴리스틱 라벨(N1~N4)을 부여하고, 표현이 바뀌는 지점마다 의미 공간 상태를 MAINTAIN(유지)·NEW(신규)·RETURN(복귀) 중 하나로 추적하는 상태 기계로 구성된다. 이 파이프라인은 콘텐츠 단위 분할 모델, 휴리스틱 태깅 모델, 의미 공간 추적 모델의 세 단계로 이루어지며, 사람이 직접 합의(consensus) 방식으로 주석을 단 48개의 골드 궤적을 기준으로 후보 주석 모델들을 비교해 Grok-4.1-Fast(비공개)와 Qwen3.5-27B(공개 가중치)를 최종 주석 모델로 선정했다. 분석 지표로는 궤적 내 헤리스틱 활동이 몇 개의 의미 공간에 걸쳐 분산되는지를 나타내는 유효 의미 공간 수(N_space^eff), 세그먼트(연속 방문) 단위로 전환이 얼마나 자주 일어나는지를 나타내는 유효 전환 수(N_trans^eff), 그리고 개별 휴리스틱의 사용 비중을 나타내는 휴리스틱 빈도 분포를 정의했다. 이후 이 지표들을 이용해 (1) 정답 예측력 검증, (2) 문제 변형(MATH-Perturb)에 대한 모델의 적응 양상 분석, (3) 강화학습 전후 성공 궤적의 휴리스틱 분포 변화를 밀도(Density)·커버리지(Coverage) 지표로 비교, (4) 휴리스틱 정보를 명시적으로 제공하는 계획 기반 GRPO 학습법(HA-Plan-GRPO)의 효과 검증까지 진행했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Omni-MATH 100문제에 대한 15개 모델의 CoT를 이용한 로지스틱 회귀 실험에서, 길이 기반 특징(AUROC 0.504)이나 자기수정 마커(0.618)에 비해 SHAPE의 휴리스틱 빈도 특징이 가장 높은 예측력(AUROC 0.664, 12개 특징만 사용)을 보였다. 추론 모델(reasoning model)들은 지시조정(instruction-tuned) 모델보다 일관되게 더 많은 의미 공간을 탐색하고 전환 빈도도 높았으며, 대부분의 모델에서 오답 궤적이 정답 궤적보다 같은 의미 공간을 더 집중적으로 재방문하는(전환 비율 ρ가 더 높은) 경향을 보여, 이는 과도한 재고(overthinking) 현상과 연관될 수 있음을 시사했다. MATH-Perturb를 이용한 통제 실험에서는, 풀이 접근법 자체를 바꿔야 하는 "hard" 변형 문제에서 모델들이 휴리스틱 선택은 눈에 띄게 바꾸지만(초기 5~10개 콘텐츠 단위에서부터 이미 차이가 나타남) 의미 공간의 폭 자체는 넓히지 못하고 이미 방문한 공간을 더 자주 재방문하는 데 그쳐, 정답률 하락으로 이어졌다. 사후 훈련(post-training) 분석에서는 Olmo-3-7B와 Qwen3-1.7B의 base 모델과 RLVR/GRPO 사후훈련 모델을 비교한 결과, 사후훈련된 모델의 성공 궤적이 base 모델 분포의 밀집 영역(Density &gt; 1)에 집중되면서도 일부 base 궤적의 패턴은 재현하지 못하는(Coverage &lt; 1) 모드 추구 현상이 일관되게 관찰되었다. 마지막으로, 계획 단계에서 11개의 수학적 휴리스틱을 명시적으로 제공하는 HA-Plan-GRPO는 단순 계획만 추가한 Plan-GRPO보다 원본·간단한 변형·어려운 변형 문제 모두에서 Avg@64 기준 더 큰 정답률 향상을 보였다.</p>
+<h2>한계점</h2>
+<p>저자들은 SHAPE가 관측 가능한 CoT 텍스트만을 분석 대상으로 하므로, 겉으로 드러나지 않는 모델의 내부 계산과 CoT 표현 간의 충실성(faithfulness) 문제는 다루지 않는다고 명시했다. 또한 현재의 검증은 수학 벤치마크에 국한되어 있으며, 다른 도메인으로의 확장은 향후 과제로 남겨두었다.</p>
+<h2>시사점</h2>
+<p>이 연구는 최종 정답 정확도만으로는 포착할 수 없는 과정 수준(process-level)의 구조가 LLM 추론을 진단하고 개선하는 데 유용한 신호를 제공할 수 있음을 보여준다. 특히 강화학습 기반 사후훈련이 표면적 다양성뿐 아니라 전략적 휴리스틱 공간 자체를 좁힐 수 있다는 발견은, 다양성 붕괴를 완화하려는 향후 post-training 방법론 설계에 중요한 시사점을 제공하며, 휴리스틱 정보를 학습 과정에 명시적으로 주입하는 것이 실질적인 성능 개선으로 이어질 수 있음을 보여준다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.28600" target="_blank" rel="noopener">huggingface.co/papers/2608.28600</a> · 2026-09-02</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

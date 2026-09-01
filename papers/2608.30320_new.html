@@ -1,0 +1,130 @@
+<meta charset="UTF-8">
+<title>Qwen3.8-Next 아키텍처 설계에 관하여</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#7 · Daily Papers 2026-09-02</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 32</span>
+    </div>
+    <h1 class="article-title">On the Design of Qwen3.8-Next Architecture: Evaluation, Efficiency, and Training Stability</h1>
+    <p class="article-title-ko">Qwen3.8-Next 아키텍처 설계에 관하여: 평가, 효율성, 그리고 학습 안정성</p>
+    <p class="article-sub">Qwen 팀이 총 1250억(활성 60억) 파라미터의 희소 MoE 모델 Qwen3.8-Flash-Next를 설계하면서, 아키텍처 변경 하나하나를 "성능(loss·벤치마크)", "효율(학습·프리필·디코드 비용)", "안정성(최적 하이퍼파라미터·학습 안정성)"이라는 세 축에서 동시에 검증한 방법론과, 이를 통해 이전 세대 3970억(활성 170억) 파라미터 플래그십 모델과 동등한 성능을 약 1/9의 학습 FLOPs로 달성한 결과를 보고한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.30320" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.30320" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: On the Design of Qwen3.8-Next Architecture: Evaluation, Efficiency, and Training Stability</li>
+<li><strong>저자</strong>: Qwen Team (Alibaba) — Zihan Qiu, Zekun Wang, Xiao Li 등 핵심 기여자 다수 (교신저자: Bo Zheng, Dayiheng Liu) 및 다수의 추가 기여자</li>
+<li><strong>출처</strong>: arXiv:2608.30320v1 [cs.CL] (2026년 8월 31일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 별도 프로젝트 페이지는 명시되지 않음 (GDN 커널 라이브러리 FlashQLA는 GitHub(QwenLM/FlashQLA)에 공개)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.30320">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>Qwen 팀이 총 1250억(활성 60억) 파라미터의 희소 MoE 모델 Qwen3.8-Flash-Next를 설계하면서, 아키텍처 변경 하나하나를 "성능(loss·벤치마크)", "효율(학습·프리필·디코드 비용)", "안정성(최적 하이퍼파라미터·학습 안정성)"이라는 세 축에서 동시에 검증한 방법론과, 이를 통해 이전 세대 3970억(활성 170억) 파라미터 플래그십 모델과 동등한 성능을 약 1/9의 학습 FLOPs로 달성한 결과를 보고한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>대규모 언어모델의 아키텍처 개선은 흔히 학습 손실(loss) 하나만을 기준으로 판단되지만, 저자들은 손실 개선이 실제 다운스트림 벤치마크 성능이나 서빙 비용, 학습 안정성과 항상 함께 움직이지 않는다는 문제를 제기한다. 예컨대 n-gram 임베딩 어휘를 키우면 손실은 단조롭게 낮아지지만 다운스트림 정확도는 곧 포화되고, 반대로 게이트 residual의 읽기·쓰기 가중치를 데이터 의존적으로 만들면 손실 개선은 미미하지만 벤치마크 향상은 뚜렷하다. 또한 위치 인코딩을 제거하는 변경은 사전학습 단계에서는 무해해 보이지만 post-training 이후 생성이 끝없이 이어지는 문제를 유발하는 등, 한 축에서만 판단하면 이후 단계에서 드러나는 부작용을 놓칠 위험이 있다. 이 논문은 이러한 "가짜 손실 개선"의 함정을 피하기 위해 loss·벤치마크·효율·안정성을 하나의 결합된 설계 문제로 취급해야 한다는 문제의식에서 출발한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>GDN-어텐션 하이브리드 토큰 믹싱</strong>: Gated DeltaNet(GDN) 레이어 3개마다 전역 어텐션(추후 Qwen Sparse Attention, QSA로 대체) 레이어 1개를 배치하여, 선형 비용의 고정 크기 순환 상태 압축과 직접적인 토큰 단위 검색 능력을 절충.</li>
+<li><strong>Qwen Sparse Attention(QSA)</strong>: 컨텍스트를 마이크로블록 단위로 압축·평가하는 경량 인덱서를 도입해, 인덱싱 비용 자체를 시퀀스 길이에 따라 O(n²)에서 O(n²/r)로 낮춤. 100만 토큰 컨텍스트에서 프리필 7.6배, 디코드 4.9배 가속.</li>
+<li><strong>Gated Residual(GR)</strong>: residual 스트림을 4개 브랜치로 확장하고, 각 서브레이어가 이를 elementwise 시그모이드 게이트로 읽고 쓰도록 설계. 안정성과 성능을 동시에 개선하며, 기존 Hyper-Connections 계열보다 추론 비용(메모리 트래픽)이 낮음.</li>
+<li><strong>n-gram 임베딩 레이어</strong>: 가속기 밖 호스트 메모리에 저장된 510억 파라미터 규모의 n-gram 임베딩 테이블을 프리페치 방식으로 활용, 토큰당 FLOPs 증가 없이 파라미터 용량만 확장.</li>
+<li><strong>Muon 옵티마이저 엔지니어링</strong>: 행렬 형태의 파라미터에만 Muon을 선택적으로 적용하고, 결합된(fused) 파라미터를 직교화 전에 분리하며, Canzona라는 분산 파티셔닝 기법과 CUDA 그래프로 Megatron-LM 상에서 Muon을 효율적으로 구현.</li>
+<li><strong>하이퍼파라미터 스케일링 법칙 재적합</strong>: 새 아키텍처·옵티마이저 조합이 더 큰 배치 크기와 학습률을 선호하도록 최적점을 이동시킴을 확인하고, 배치 크기 워밍업이 더 이상 필요 없음을 실험적으로 입증.</li>
+<li><strong>스트레스 테스트 기반 안정성 검증</strong>: 학습률을 최적값의 2배·4배로 고정하는 스트레스 테스트를 통해, 새 레시피가 명시적 클리핑 기법(qk-clip, SwiGLU-clip) 없이도 기존 Qwen3.5 구조보다 훨씬 안정적임을 확인.</li>
+</ul>
+<h2>방법론</h2>
+<p>모델은 레이어의 4분의 3을 GDN(짧은 인과적 컨볼루션 + L2 정규화된 쿼리/키 + gated delta rule)으로, 나머지 4분의 1을 전역 어텐션으로 구성한 하이브리드 구조를 취한다. Continued pretraining 단계에서는 이 전역 어텐션 레이어들이 QSA로 교체되는데, QSA는 MQA 구조의 경량 인덱서가 키를 블록 단위로 평균 풀링·압축한 뒤 파셜 RoPE로 위치 정보를 부여하고, block-causal한 중요도 점수로 상위 K개 블록만 선택해 스파스 코어 어텐션을 수행한다. 학습은 2단계로 진행되며, 1단계에서는 전체 어텐션의 소프트맥스 분포를 KL 발산으로 인덱서에 증류하고, 2단계에서는 백본 전체를 인덱서가 선택한 블록에 맞춰 공동 미세조정한다.</p>
+<p>Residual 설계는 우선 AltUp 스타일로 단순히 4개 브랜치로 폭만 넓혀도 손실이 상당히 낮아짐을 확인한 뒤, Hyper-Connections 계열의 읽기/쓰기/브랜치혼합 연산자를 단계적으로 추가하며 각 구성 요소의 기여를 분리했다. 그 결과 (1) 시그모이드 게이트가 tanh보다 우수하고, (2) 읽기 연산의 세분화(브랜치·채널별 가중치)가 쓰기 연산 세분화보다 중요하며, (3) 브랜치 간 혼합 연산자(Hres)는 읽기·쓰기가 충분히 표현력 있으면 불필요하다는 결론에 도달했다. 이를 바탕으로, 별도 연구에서 개발한 GatedNorm(정규화 뒤에 elementwise 자기 게이트를 다는 기법)을 확장된 residual 스트림에 적용한 것이 최종 GR 설계다. 저자들은 residual 브랜치별 기여도를 정확히 분해하는 통계량을 제시해, GR이 확보한 여분의 폭이 실제로는 소수의 특정 경로—특히 초기 GDN 레이어의 출력을 깊은 층의 전역 어텐션 레이어까지 장거리로 보존하는 하나의 브랜치—에 집중적으로 쓰인다는 것을 실증했다.</p>
+<p>옵티마이저 측면에서는 2차원 선형 사상 역할을 하는 가중치(어텐션 QKV, GDN 프로젝션, MoE 전문가의 FC1/FC2 등)에만 Muon을 적용하고, MoE 라우터·GR의 저랭크 프로젝션·n-gram 임베딩 테이블 등은 AdamW/Adam에 남겨두었다. 또한 Megatron-LM에서 하나로 결합(fused)되어 저장되는 QKV·SwiGLU FC1·GDN 입력 프로젝션을 직교화 전에 서브 행렬 단위로 분리해야 함을 보였다. 하이퍼파라미터 스케일링 법칙은 소규모 실험에서 적합한 뒤, 배치 크기 예측은 많은 토큰으로 학습되는 소형 모델에서, 학습률 예측은 제한된 토큰 예산의 대형 모델에서 각각 별도로 검증했다. 안정성은 학습률을 최적값의 배수로 고정한 스트레스 테스트로 평가했다.</p>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li><strong>아키텍처 어블레이션</strong>(25B-A3B MoE, 400B+80B 토큰): GDN 하이브리드가 순수 어텐션 대비 9개 벤치마크 중 8개에서, SWA 하이브리드 대비 7개에서 우위를 보임(평균 53.81 vs 49.87/51.15).</li>
+<li><strong>QSA 평가</strong>: Qwen3.8-Flash-Next에 QSA를 적용한 결과, 8개 벤치마크 평균이 75.9→76.8로 오히려 상승했고, RULER·MRCR 등 장문 컨텍스트 검색 벤치마크에서도 512K~1M 토큰 구간에서 전체 어텐션을 능가(예: MRCR 1M에서 20.71→26.44).</li>
+<li><strong>GR 어블레이션</strong>(28층 MoE, 560B 토큰): pre-norm 대비 GR 적용 시 평균 벤치마크 점수 50.91→54.66으로 상승, mHC(dynamic) 대비도 소폭 우위이면서 추론 비용은 더 낮음.</li>
+<li><strong>n-gram 임베딩</strong>: 어휘 크기를 20배~200배로 늘릴수록 loss는 단조 감소하지만 다운스트림 성능은 포화·변동하며, 중국어 벤치마크(C-Eval, CMMLU)에서는 꾸준한 향상을 보임.</li>
+<li><strong>하이퍼파라미터 스케일링</strong>: 새 스케일링 법칙이 예측한 배치 크기·학습률을 20층 10.8B-A0.89B 모델(4T 토큰) 및 48층 156B-A7B 모델(419B 토큰)에서 각각 검증, 이전 Qwen3.5 레시피보다 손실과 벤치마크 모두 개선. 배치 크기 워밍업은 오히려 최종 손실을 악화시키고 옵티마이저 스텝을 18.8% 더 소모함을 확인.</li>
+<li><strong>안정성 스트레스 테스트</strong>: 최적 학습률의 4배에서 기존 AdamW+Qwen3.5 구조는 1만 스텝당 183회의 loss spike가 발생하는 반면, Muon+GR 조합은 spike가 전혀 발생하지 않음.</li>
+<li><strong>최종 사전학습 평가</strong>(14개 벤치마크): Qwen3.8-Flash-Next-Base(활성 60억 파라미터)가 Qwen3.8-27B-Base(활성 270억)를 14개 벤치마크 전부에서 능가하고, 훨씬 큰 Qwen3.7-Plus-Base(활성 170억)와 비교해도 14개 중 8개에서 우위를 보이면서, 활성 파라미터·학습 토큰 각각 약 1/3, 학습 FLOPs 약 1/9만 사용.</li>
+</ul>
+<h2>한계점</h2>
+<ul>
+<li>논문은 성능 순위 판단이 단일 평가 실행에 기반해 상위 설정 간 차이가 평가 노이즈 범위에 있을 수 있음을 스스로 인정한다.</li>
+<li>저자들은 현재 가장 큰 병목이 "평가 처리량(evaluation throughput)"이라고 명시한다. 즉, post-training 이후의 최종 순위를 사전학습 단계에서 저렴하게 예측할 수 있는 중간 규모 프록시 지표가 없어, 설계 공간 탐색이 여전히 비용이 많이 든다.</li>
+<li>Residual 브랜치 희소화(상위 2개 브랜치만 사용) 같은 일부 최적화는 사전학습 단계 지표로는 문제가 없어 보였지만 post-training 이후 품질 저하가 드러나, 사전학습 지표만으로 결정을 내리는 것이 위험할 수 있음을 시사한다(다만 이는 논문이 채택하지 않은 설계임).</li>
+<li>논문은 Qwen 팀 내부의 특정 학습 인프라(Megatron-LM, Canzona 파티셔너)와 대규모 자원에 강하게 의존한 실험이며, 외부 재현을 위한 전체 학습 코드나 가중치 공개 여부는 논문에 명시되지 않음(단, FlashQLA 커널만 GitHub에 공개).</li>
+</ul>
+<h2>시사점</h2>
+<p>이 논문은 단일 지표(주로 loss) 최적화가 아니라, 성능·효율·안정성을 하나의 결합된 설계 문제로 놓고 상호 트레이드오프를 명시적으로 추적하는 것이 대규모 모델 아키텍처 설계에서 실질적으로 중요하다는 점을 여러 구체적 사례(n-gram 어휘 크기, residual 브랜치 희소화, 배치 크기 워밍업)로 보여준다. 특히 GR의 게이트가 학습 안정성 마진을 확보하고, 그 안정성 여유가 다시 더 큰 학습률·배치 크기를 가능케 하여 처리량과 수렴 속도를 동시에 개선한다는 인과 사슬은, 향후 하이브리드 어텐션·희소 MoE·옵티마이저 설계를 함께 고려해야 할 필요성을 시사한다. 또한 "사전학습 손실이 좋아 보여도 post-training 이후에야 문제가 드러나는" 사례들은 아키텍처 검증 파이프라인이 사전학습 단계를 넘어서야 함을 보여주는 실용적 교훈이다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.30320" target="_blank" rel="noopener">huggingface.co/papers/2608.30320</a> · 2026-09-02</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

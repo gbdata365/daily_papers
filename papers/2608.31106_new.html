@@ -1,0 +1,116 @@
+<meta charset="UTF-8">
+<title>DreamX-Creator</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#2 · Daily Papers 2026-09-02</span>
+      <span class="cat-tag">생성모델</span>
+      <span class="upvote-tag">▲ 86</span>
+    </div>
+    <h1 class="article-title">DreamX-Creator: Democratizing Native Audio-Video Generation at 2K Resolution</h1>
+    <p class="article-title-ko">DreamX-Creator: 2K 해상도 네이티브 오디오-비디오 생성의 대중화</p>
+    <p class="article-sub">7B 규모의 컴팩트한 생성기 하나로 오디오와 비디오를 하나의 흐름 안에서 동시에 생성하고, 강화학습 기반 후처리와 1스텝 자기회귀 리파이너를 결합해 2K 해상도까지 동기화된 오디오-비디오를 만들어내는 오픈웨이트 시스템 DreamX-Creator 1.0을 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.31106" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.31106" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: DreamX-Creator: Democratizing Native Audio-Video Generation at 2K Resolution</li>
+<li><strong>저자</strong>: Jiashu Zhu, Yanhao Zheng, Ruitian Tian, Rujing Dang 외 (DreamX Team, Alibaba Group)</li>
+<li><strong>출처</strong>: arXiv:2608.31106v1 [cs.CV] (2026년 8월 31일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음 (7B 생성기와 2K Refiner를 공개 배포한다고 언급)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.31106">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>7B 규모의 컴팩트한 생성기 하나로 오디오와 비디오를 하나의 흐름 안에서 동시에 생성하고, 강화학습 기반 후처리와 1스텝 자기회귀 리파이너를 결합해 2K 해상도까지 동기화된 오디오-비디오를 만들어내는 오픈웨이트 시스템 DreamX-Creator 1.0을 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>기존 비디오 생성 모델들은 오디오를 아예 생략하거나, 비디오 생성 이후 별도 단계에서 오디오를 덧붙이는 방식(video-to-audio, audio-driven animation 등)을 취해왔다. 이런 방향성 파이프라인은 한쪽 모달리티를 고정된 조건으로 취급하기 때문에, 말과 입 모양, 충돌과 그에 따른 효과음, 분위기·음악·카메라 움직임 사이의 장면 단위 관계처럼 시각-청각이 상호적으로 결정되는 상황을 제대로 모델링하지 못한다. 최근 네이티브 조인트 생성 모델들이 등장했지만, (1) 원본 오디오-비디오 데이터의 신뢰할 수 있는 정제·주석 체계 구축, (2) 모달리티별 표현을 해치지 않으면서 레이어·헤드·토큰·샘플별로 다르게 필요한 크로스모달 상호작용의 도입, (3) 지각 품질·프롬프트 정합성·동기화를 직접 최적화하지 못하는 우도/플로우 기반 학습의 한계, (4) 조인트 잠재 생성과 2K 해상도 복원이 요구하는 서로 다른 연산 특성이라는 네 가지 과제가 여전히 해결되지 않았다. 또한 기존 시스템 다수는 수백억 파라미터 규모이거나 호스팅 전용으로만 제공되어 재현 가능한 연구 접근이 어렵다는 실용적 장벽도 있었다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>통합 오디오-비디오 데이터 시스템</strong>: 이질적인 원본 영상으로부터 클립을 구성·정제하고, 구조화된 멀티모달 주석을 생성하며, 클립을 능력별(capability-oriented) 데이터 풀로 조직화하는 파이프라인을 구축했다.</li>
+<li><strong>네이티브 조인트 오디오-비디오 생성기</strong>: Gated Cross-Modal Attention과 Progressive Joint Training(단계적 조인트 학습)을 결합한 생성기를 개발하고, 여기에 Modality-Aware Multimodal Feedback을 활용한 오디오-비디오 강화학습(post-training)을 적용했다.</li>
+<li><strong>자기회귀 1스텝 2K 리파인먼트</strong>: 양방향 다단계 교사 모델을 자기회귀 다단계 리파이너로 변환하고, 이를 다시 시간 청크당 한 번의 디노이징만 필요한 1스텝 학생 모델로 증류하는 파이프라인을 제시했다.</li>
+<li><strong>컴팩트한 7B 오픈웨이트 모델 공개</strong>: 공개된 총 백본 크기 기준으로, 다운로드 가능한 가중치·네이티브 조인트 생성·공식적인 2K 이상 로컬 출력 경로라는 세 조건을 모두 만족하는 가장 작은 모델임을 제시하며 7B 생성기와 2K Refiner를 공개했다.</li>
+</ul>
+<h2>방법론</h2>
+<p>DreamX-Creator 1.0은 첫 프레임과 텍스트 프롬프트를 조건으로, 비디오와 오디오 잠재(latent) 스트림을 함께 디노이징한다. 네트워크의 전반부는 두 스트림을 독립적으로 처리하고(각자의 토큰 레이트, 위치 인코딩, 트랜스포머 백본 유지), 후반부에서는 audio-to-video(A2V)와 video-to-audio(V2A) 양방향 크로스어텐션 경로를 도입해 상호작용시킨다. 두 스트림의 서로 다른 시간 해상도를 맞추기 위해 공유 시간 좌표계에 위치를 매핑하고 시간축 회전위치인코딩(temporal RoPE)을 크로스모달 쿼리·키에 적용한다.</p>
+<p>이 크로스모달 어텐션에는 Gated Cross-Modal Attention이 적용되는데, 각 방향(경로)마다 토큰 단위·헤드 단위의 시그모이드 출력 게이트가 타깃 토큰의 은닉 상태와 크로스모달 어텐션 출력 모두에 조건화되어, 각 어텐션 헤드의 출력 세기를 스케일링한 뒤 합산한다. 샘플별 방향 마스크(direction mask)는 두 스트림 중 어느 쪽의 손상도(noise level)가 더 큰지에 따라 A2V, V2A, Joint 중 하나의 학습 모드를 선택하며, 노이즈가 적은(더 깨끗한) 조건 스트림 쪽으로는 stop-gradient를 적용해 타깃 스트림의 손실이 조건 스트림 백본을 오염시키지 않도록 한다.</p>
+<p>학습은 3단계로 구성된 Progressive Joint Training을 따른다: (1) 모달리티별 사전학습된 백본을 초기화로 사용하고 후반부에 LoRA 어댑터를 적용하는 1단계, (2) LoRA를 병합한 뒤 전체 파라미터를 광범위한 페어 데이터로 학습하는 2단계, (3) 오디오-비디오 동기화·미학 점수·해상도·클립 길이 등으로 정제하고 샷 경계 검출(OmniShotCut)로 시간적으로 일관된 클립만 남긴 고품질 데이터로 파인튜닝하는 3단계. 전 과정은 flow matching으로 최적화된다.</p>
+<p>이후 Audio-Video Reinforcement Learning 단계에서는, 하나의 전역 보상만으로는 비디오 품질과 오디오 품질이 독립적으로 달라지는 문제를 해결하지 못하므로, 비디오 특화·오디오 특화·크로스모달(동기화) 세 가지로 어드밴티지를 분해해 각각 해당 스트림(과 공유 상호작용 모듈)에만 전달하는 Modality-Aware Multimodal Feedback을 도입한다. 특히 립싱크나 소리 나는 물체처럼 동기화가 국소적으로만 중요한 지점을 식별하기 위해, video-to-audio 어텐션 응답을 이용해 프레임 내 상대적 중요도를 계산한 토큰 가중치를 사용하고, 얕은 레이어일수록 오디오→비디오 방향 그래디언트를 더 강하게 억제하는 깊이별 그래디언트 스케일링도 함께 적용한다.</p>
+<p>마지막으로 2K 해상도 출력을 위해 Autoregressive 1-Step 2K Refinement를 도입한다. 먼저 양방향(과거·미래 프레임을 모두 참조) 다단계 확산 교사 모델을 저해상도→고해상도 복원용으로 학습하고(현실적인 열화 커리큘럼 포함), 이를 teacher forcing으로 자기회귀(causal) 다단계 리파이너로 변환한 뒤, Distribution Matching Distillation(DMD/DMD2)을 이용해 시간 청크당 한 번의 디노이징만 수행하는 1스텝 학생 모델로 증류한다. 노출 편향(exposure bias)을 막기 위해 학생 모델 자신이 생성한 롤아웃에 대해 증류를 수행하며, 지각 손실(DISTS)과 픽셀 재구성 손실(ℓ2)을 함께 사용한다. 이 리파이너는 오디오 스트림은 그대로 두고 비디오만 2K로 향상시킨다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>평가는 오디오 품질과 오디오-비디오 정합성까지 포함하는 Verse-Bench에서 수행되었으며, 비디오 품질(VQ), 오디오 미학(Audiobox Aesthetics의 4개 지표: CE/CU/PC/PQ), 발화 정확도(WER)와 립싱크(LSE-C), 오디오-비주얼 정합성(ImageBind 유사도, Synchformer 기반 DeSync)을 종합 평가했다. NAVA(6.3B), UniAVGen(7.1B), Ovi(10B), DaVinci-MagiHuman(15B) 등 연구용 베이스라인과 비교했을 때, 7B 규모의 DreamX-Creator 1.0은 다수 지표에서 경쟁력 있는 성능을 보였고, 특히 강화학습 후처리(RL) 및 리파이너 적용 버전은 DeSync(동기화 오차)에서 가장 우수했다(0.1351/0.1731, 낮을수록 좋음). 다만 LTX-2.3(22B), MiniMax-H3(33B) 같은 훨씬 큰 오픈웨이트 시스템과 비교하면 오디오 미학(CE/CU/PQ)과 크로스모달 의미 정합성(IB), 립싱크(LSE-C, MiniMax-H3 대비) 등에서는 아직 격차가 있음을 저자들 스스로 밝혔다. 2K 리파이너는 FlashVSR, SeedVR, LTX-2.5 Refiner 등 기존 비디오 복원 기법과 비교해 MUSIQ·MANIQA 등 지각 품질에서 최고 수준을 보이면서도 LSE-C와 IB, DeSync를 가장 잘 보존해 가장 균형 잡힌 트레이드오프를 달성했다. 블라인드 사용자 선호도 평가에서는 Ovi·UniAVGen·NAVA·DaVinci 대비 전 항목에서 승률이 패율보다 높았으며(비디오 품질 61.7~73.7% 승리), Wan2.7·Kling v3·MiniMax-H3 같은 산업용 대형 시스템과 비교해서는 비디오 품질에서는 근접했으나 오디오 품질과 AV 정합성에서는 아직 열세임을 확인했다.</p>
+<h2>한계점</h2>
+<p>저자들은 7B 모델이 오디오 미학과 크로스모달 의미 정합성, 그리고 일부 시스템 대비 립싱크 정확도 면에서 대형 오픈웨이트 시스템과 전면적인 동등 성능에는 이르지 못했다고 명시했다. 사용자 연구에 사용된 샘플에는 매우 동적이고 구성이 복잡한 장면이 충분히 포함되지 않아, 산업용 시스템의 역량을 완전히 검증하지는 못했다는 한계도 밝혔다. 또한 결론부에서 저자들은 이번 보고서에서 다룬 멀티모달 강화학습과 2K 리파이너 단계를 "완결된 실증적 주장이 아니라 명시적 검증이 필요한 설계"로 규정하고 있어, 추가 검증이 필요함을 인정하고 있다.</p>
+<h2>시사점</h2>
+<p>DreamX-Creator 1.0은 대형·비공개 시스템이 주도해온 네이티브 오디오-비디오 생성 분야에서, 상대적으로 작은 7B 모델과 공개 가중치만으로도 경쟁력 있는 동기화 생성 품질을 달성할 수 있음을 보여준다. 모달리티별 어드밴티지 분해라는 아이디어는 여러 상충하는 품질 기준(영상 품질, 오디오 품질, 의미 정합성, 시간 동기화)을 동시에 다뤄야 하는 멀티모달 생성 모델의 강화학습 후처리에 일반적으로 적용 가능한 설계 원칙을 제시한다. 또한 자기회귀 1스텝 리파인먼트 구조는 고해상도 비디오 생성의 연산 비용 문제를 실용적으로 해결하는 방안으로서, 향후 다른 조인트 생성 시스템에도 참고가 될 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.31106" target="_blank" rel="noopener">huggingface.co/papers/2608.31106</a> · 2026-09-02</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

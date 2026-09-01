@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>슈퍼 라이브러리 에이전트</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#12 · Daily Papers 2026-09-02</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 23</span>
+    </div>
+    <h1 class="article-title">Super Library Agent: Joint Generation and Maintenance of Multiple Applications Beyond the Single Codebase</h1>
+    <p class="article-title-ko">슈퍼 라이브러리 에이전트: 단일 코드베이스를 넘어선 다중 애플리케이션의 공동 생성과 유지보수</p>
+    <p class="article-sub">서로 연관된 여러 애플리케이션을 순차적으로 생성·유지보수하는 LLM 코딩 에이전트가 공유 코드를 중복 생산하고 코드 슬롭(slop)을 누적시키는 문제를 해결하기 위해, 요약 기반 후보 추출과 호출 그래프를 활용한 마이그레이션으로 공유 "슈퍼 라이브러리"를 함께 구축·유지하는 Super Library Agent(SLA) 프레임워크를 제안한 연구다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.29310" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.29310" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Super Library Agent: Joint Generation and Maintenance of Multiple Applications Beyond the Single Codebase</li>
+<li><strong>저자</strong>: Daegyu Sung, Yukyeong Lee, Geon Park, Yumin Choi, Sung Ju Hwang (KAIST, DeepAuto.ai)</li>
+<li><strong>출처</strong>: arXiv:2608.29310v1 [cs.SE] (2026-08-29)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음 (코드는 GitHub에 공개: github.com/sbigstar0310/super-library-agent)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.29310">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>서로 연관된 여러 애플리케이션을 순차적으로 생성·유지보수하는 LLM 코딩 에이전트가 공유 코드를 중복 생산하고 코드 슬롭(slop)을 누적시키는 문제를 해결하기 위해, 요약 기반 후보 추출과 호출 그래프를 활용한 마이그레이션으로 공유 "슈퍼 라이브러리"를 함께 구축·유지하는 Super Library Agent(SLA) 프레임워크를 제안한 연구다.</p>
+<h2>배경 및 문제의식</h2>
+<p>조직은 흔히 도메인 로직이나 인터페이스 패턴을 공유하는 여러 애플리케이션의 포트폴리오를 함께 개발·유지보수한다. LLM 코딩 에이전트가 이런 작업을 맡을 때, 각 애플리케이션을 독립적으로 생성하면 공통 로직이 코드베이스마다 중복되어 DRY 원칙을 위반하고, 버그 수정이나 정책 변경을 여러 유사 코드베이스에 일일이 반영해야 하는 유지보수 부담이 생긴다. 여기에 더해 LLM 코드 생성기는 이미 측정 가능한 코드 냄새(code smell)를 만들어내는 것으로 알려져 있으며, 장시간 에이전트 코딩은 기능은 유지되지만 점점 장황하고 구조적으로 얽혀가는 "슬롭"을 만들어낸다는 선행 연구(SlopCodeBench)가 있다. N개의 애플리케이션을 N개의 독립된 에이전트로 생성·유지보수하면 이 효과가 배가되어, 각 에이전트가 조금씩 다른 형태로 공통 로직을 재발명하고 자기만의 죽은 코드(dead code)를 쌓아가며 유지보수 주기마다 서로 더 멀어지게 된다. 기존 라이브러리 학습 연구(Librarian 등)는 입력 파일이 하나의 논리적 프로젝트 안에 있다고 가정하며, 대규모 다중 저장소 라이브러리 구축 문제는 열린 과제로 남겨두었다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>연관된 N개의 애플리케이션 요청이 순차적으로 주어질 때, 에이전트가 각 애플리케이션을 생성하면서 재사용 가능한 컴포넌트로 이루어진 공유 슈퍼 라이브러리를 함께 유지해야 하는 새로운 문제 상황인 Super Library Agent(SLA) 문제를 정식화했다.</li>
+<li>순진한(naive) 라이브러리 구축 방식이 실패하는 두 가지 핵심 원인, 즉 (1) 표면적으로 다르게 작성된 기능적으로 동일한 코드를 놓치는 낮은 추출 재현율과 (2) 로컬 구현을 라이브러리로 옮긴 뒤 임포트·호출부·의존성을 제대로 갱신하지 못하는 취약한 마이그레이션 문제를 규명했다.</li>
+<li>코드 청크의 자연어 요약을 기반으로 후보를 선정하는 인덱스 기반 추출과, 추출 이력(extraction trace) 및 호출 그래프 맥락을 활용하는 컨텍스트 인식 마이그레이션을 결합한 SLA-FULL 스캐폴드를 제안하고, WebGen-Bench와 PaperBench에서 기능성을 유지하면서 유지보수성 지표를 개선함을 보였다.</li>
+</ul>
+<h2>방법론</h2>
+<p>SLA는 요청 시퀀스 X=(x1,...,xN)가 주어질 때, 매 단계마다 새 애플리케이션을 생성하면서 이전 코드베이스와 현재 라이브러리를 함께 갱신하는 문제로 정식화되며, 목표는 애플리케이션 기능성과 코드베이스 전체(라이브러리+모든 애플리케이션)의 유지보수성 사이의 파레토 절충을 찾는 것이다. 최소 스캐폴드(SLA-NAIVE)는 코딩 에이전트가 새 코드베이스를 생성한 뒤, 단일 라이브러리 에이전트가 공유 컴포넌트 추출과 이전 코드베이스 마이그레이션을 한 번에 처리하지만, 실제로는 추출 재현율과 마이그레이션 정확성이 낮다. SLA-FULL은 이를 두 가지 전략으로 보완한다. 첫째, 인덱스 기반 후보 추출에서는 AST 경계로 나눈 각 코드 블록을 LLM으로 자연어 요약하고, 이 요약 인덱스를 기준으로 별도의 후보 선택 에이전트가 여러 애플리케이션에 걸쳐 공통 기능을 구현하는 추출 후보와, 라이브러리 컴포넌트가 대체할 수 있는 애플리케이션 로컬 블록(마이그레이션 후보)을 각각 제안한다. 라이브러리 추출 전에는 각 신규 코드베이스 내부의 중복을 먼저 하나로 합치는 "사전 추출 코드베이스 통합"도 수행한다. 둘째, 컨텍스트 인식 의존성 마이그레이션에서는 라이브러리 추출 에이전트가 새로 추출·갱신된 각 심볼에 대해 출처, 일반화 근거, 교체 방법을 담은 "추출 이력"을 작성해 마이그레이션 에이전트에게 전달하고, 각 마이그레이션 후보에는 관련 임포트 선언과 호출자/피호출자 관계를 담은 "함께 리팩터링할 목록(also-refactor list)"을 첨부해 죽은 코드나 깨진 참조를 줄인다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>WebGen-Bench(8개 작업으로 이루어진 3개의 스위트)와 PaperBench(4개 작업으로 이루어진 5개의 스위트)에서 동일한 백본 모델(deepseek-v4-flash)과 mini-SWE-agent 하네스를 사용해 평가했다. Zero-Shot, 후처리 방식의 Librarian, 두 가지 후보 선택 방식의 SLA-NAIVE, 그리고 SLA-FULL을 비교한 결과, 모든 방법이 비슷한 수준의 기능성(정답률·외형 점수)을 달성한 가운데 SLA-FULL은 코드 라인 수, 토큰 길이, 중복도(Verbosity), 구조적 부식도(Structural Erosion) 등 여러 유지보수성 지표에서 Zero-Shot 대비 유의미하게 개선된 결과를 보였다(WebGen-Bench에서 LOC -9.0%, 토큰 길이 -6.7%, Verbosity -38.0%). 반면 SLA-NAIVE 변형들은 일부 크기 지표는 줄이지만 오히려 구조적 부식도를 높이는 경향을 보여, 통제되지 않은 라이브러리 추출이 복잡도를 특정 컴포넌트에 집중시킬 수 있음을 시사했다. 완성된 포트폴리오에 공통 정책 변경을 패치로 적용하는 사후 유지보수 실험에서도 SLA-FULL은 다른 방법 대비 가장 작은 패치 크기(추가된 코드 라인 수)를 기록해, 공유 변경사항을 라이브러리에 집중시켜 애플리케이션별 수정량을 크게 줄이는 효과를 확인했다. 추가 분석에서는 SLA-FULL이 단순 UI 위젯을 넘어 행동 관련 훅(hook)이나 페이지/도메인 수준의 패턴까지 더 폭넓게 추출하며, 사전 추출 통합과 호출 그래프 조건화라는 두 구성요소를 각각 제거한 소거 실험에서 두 요소 모두 정확도와 유지보수성에 유의미하게 기여함을 확인했다.</p>
+<h2>한계점</h2>
+<p>저자들은 이 문제에 특화된 벤치마크가 없어 기존 단일 작업 벤치마크를 순차 스위트로 변형해 사용했다는 점, 유지된 애플리케이션이 실제 사용자나 커밋 이력이 없는 벤치마크 산출물이라 패치 크기 감소 효과가 실제 애플리케이션에서도 유지될지는 검증되지 않았다는 점, 그리고 한 차례의 유지보수 라운드만 측정해 요구사항이 계속 바뀌는 다중 라운드 상황에서 라이브러리가 어떻게 유지되는지는 관찰하지 못했다는 점을 명시했다. 또한 코드 크기·중복도·라이브러리 활용도 같은 대리 지표(proxy metric)가 코드베이스의 실제 이해·수정·확장 용이성을 완전히 대변하지는 못한다는 한계도 언급했다. 아울러 사람의 검토 없이 자동으로 코드를 수정하고, 하나의 라이브러리 심볼이 여러 애플리케이션에서 공유되므로 결함 있는 수정이 한 번에 여러 곳으로 전파될 수 있다는 점을 윤리적 고려사항으로 지적했다.</p>
+<h2>시사점</h2>
+<p>LLM 코딩 에이전트가 대규모로 여러 관련 애플리케이션 포트폴리오를 구축하는 시대에는, 단순히 더 강력한 단일 에이전트 스캐폴드를 사용하는 것만으로는 애플리케이션 간 중복을 줄일 수 없으며, 공유 라이브러리를 명시적으로 함께 관리하는 별도의 메커니즘이 필요함을 보여준다. 이 연구는 코드 요약 기반 추출과 호출 그래프 기반 마이그레이션이라는 비교적 단순한 구조적 장치만으로도 기능을 해치지 않으면서 장기적인 유지보수 부담을 크게 줄일 수 있음을 시사하며, 지속 가능한 대규모 LLM 코드 생성·유지보수 워크플로 설계에 실질적인 방향을 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.29310" target="_blank" rel="noopener">huggingface.co/papers/2608.29310</a> · 2026-09-02</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

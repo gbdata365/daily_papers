@@ -1,0 +1,117 @@
+<meta charset="UTF-8">
+<title>Lucida</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#3 · Daily Papers 2026-09-02</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 69</span>
+    </div>
+    <h1 class="article-title">Lucida: Parse, Generate, and Place for Composable Real-to-Sim Scene Modeling</h1>
+    <p class="article-title-ko">Lucida: 컴포저블 리얼투심 장면 모델링을 위한 파싱, 생성, 배치</p>
+    <p class="article-sub">실제 실내 공간을 촬영한 영상만으로, 개별 조작 가능한 완전한 3D 오브젝트 자산들과 그 배치까지 복원하는 "파싱-생성-배치" 3단계 파이프라인 Lucida를 제안하며, 특히 배치 단계를 VLM이 3D 편집 툴의 기즈모(gizmo)를 직접 조작하는 멀티턴 GUI 상호작용으로 재정의했다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.30821" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.30821" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Lucida: Parse, Generate, and Place for Composable Real-to-Sim Scene Modeling</li>
+<li><strong>저자</strong>: Minghan Qin, Yuang Wang, Xiuyu Yang 외 (ByteDance Seed, Peking University, Zhejiang University)</li>
+<li><strong>출처</strong>: arXiv:2608.30821v1 [cs.CV] (2026년 8월 31일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://lucida-r2s.github.io/">https://lucida-r2s.github.io/</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.30821">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>실제 실내 공간을 촬영한 영상만으로, 개별 조작 가능한 완전한 3D 오브젝트 자산들과 그 배치까지 복원하는 "파싱-생성-배치" 3단계 파이프라인 Lucida를 제안하며, 특히 배치 단계를 VLM이 3D 편집 툴의 기즈모(gizmo)를 직접 조작하는 멀티턴 GUI 상호작용으로 재정의했다.</p>
+<h2>배경 및 문제의식</h2>
+<p>로봇 시뮬레이션, 임바디드 AI, AR/VR을 위해서는 실제 공간을 개별적으로 편집·조작 가능한 오브젝트 자산들의 조합으로 복원하는 "컴포저블 장면 모델링"이 필요하다. NeRF나 3D Gaussian Splatting 같은 미분 가능 렌더링 기반 재구성은 촬영된 방을 충실히 재현하지만 하나의 통짜(monolith) 형태로만 나오고, 오브젝트 단위로 분해하려는 확장 연구도 관측된 형상에만 묶여 가려진(occluded) 표면은 복원하지 못한다. 로봇 학습용 real-to-sim 시스템이나 CAD 검색·정합 방법은 시뮬레이션 준비가 된 장면을 만들어내지만 데이터베이스에 있는 라이브러리 자산으로만 채우기 때문에 충실도가 제한된다. 대화형 장면 합성은 그럴듯한 방을 만들지만 특정 촬영 장면에 실제로 근거하지 않는다.</p>
+<p>이 작업은 통상 파싱(관측을 오브젝트 인스턴스로 분해)→생성(각 인스턴스의 자산 생성)→배치(각 자산을 장면에 되돌려 놓기)의 세 단계로 나뉘는데, 각 단계마다 강력한 기존 방법이 있음에도 그 방법들은 어수선한 실제 촬영 영상이 좀처럼 제공하지 않는 입력(정확한 인스턴스 형상, 가려짐 없는 시점, 관측과 정확히 일치하는 자산)을 전제로 한다는 문제가 있다. 예컨대 파싱 단계는 정밀한 마스크나 깨끗한 인스턴스 포인트클라우드를 기대하지만 가려짐 때문에 오브젝트 경계가 모호해지고 반복되는 가구 때문에 크로스뷰 연관·중복제거가 신뢰하기 어렵다. 생성 단계는 가려지지 않은 중심 시점이나 깨끗하게 분할된 포인트클라우드를 전제하는데 실내 영상은 이를 제공하지 않는다. 배치 단계는 관측과 기하학적으로 일치하는 자산을 전제하지만 생성된 자산은 실제 관측과 차이가 있다. 세 단계가 고정된 순서로 실행되므로, 한 단계에서 충족되지 않은 요구사항은 이후 모든 단계를 저하시킨다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>실제 촬영이 신뢰성 있게 제공할 수 있는 것만 각 단계가 소비하도록, 정밀도 요구를 파이프라인 처음이 아니라 끝(폐루프 배치 단계)으로 재배치한 컴포저블 장면 모델링 재구성.</li>
+<li>인스턴스별 멀티뷰 증거(evidence)를 갖춘 장면 그래프를 구축하는 장면 단위 3D 오브젝트 탐지 방법을 제안, R2S-Scene에서 전체 어노테이션 프로토콜 기준 mAP를 Boxer 대비 0.351→0.592로 개선.</li>
+<li>자산 배치를 멀티턴 GUI 상호작용으로 규정하는 VLM 정책 GizmoAct를 제안. 오브젝트의 기즈모를 폐루프로 조작해 정렬하고 스스로 정지(stop) 시점을 판단하며, 지도학습 파인튜닝과 강화학습으로 학습되어 불일치하는 자산과 부정확한 초기 자세를 수용하면서도 엄격한 정합 성공률(ADD-SB@0.05)을 최대 25.6%p 끌어올림.</li>
+<li>이 모듈들을 통합한 Lucida를 3D 오브젝트 탐지, 오브젝트 자세 추정, 장면 재구성의 세 수준에서 실제 real-to-sim 벤치마크 R2S로 평가해, 합성된 장면의 Scene F-Score를 0.924(기존 최고 0.794 대비)까지 향상.</li>
+</ul>
+<h2>방법론</h2>
+<p>Lucida는 posed RGB(-D) 관측을 파싱→생성→배치 순서로 처리해 편집 가능한 오브젝트 단위 복제본을 만든다.</p>
+<p><strong>파싱(Multi-View Object-Centric Scene Parsing)</strong>: 먼저 기하학적 중복도(covisibility)와 시간적 분산을 함께 고려해 시퀀스 전체에서 대표성 있는 소수의 키프레임을 선택한다(연속 프레임들은 중복도가 높아 매 프레임에서 오브젝트를 다시 찾는 것은 비효율적이기 때문). 선택된 키프레임에서 VLM이 오브젝트 인스턴스를 식별하고 3D 탐지기가 각 오브젝트의 박스를 예측하며, 공통 3D 좌표계에서 시맨틱·기하 일관성으로 관측들을 그룹화한다. 이후 "오브젝트 중심 전체 시퀀스 증거 통합" 단계에서, 키프레임만으로는 충분한 관측이 보장되지 않는 오브젝트에 대해 대표 3D 박스를 전체 프레임에 투영하고 비디오 분할·추적으로 부족한 관측을 보강한다. 마지막으로 "관계 인식 장면 정제" 단계에서 오브젝트 간 외형·기하를 비교해 잘못된 그룹화나 공간적 불일치를 교정하고, 지지 관계(support)가 누락된 오브젝트를 추가 시점에서 찾아 보완한다. 최종적으로 각 오브젝트는 멀티뷰 관측, 마스크/박스, 부분 포인트클라우드, 대표 3D 박스, 카테고리명/참조 설명을 담은 "증거 번들(evidence bundle)"로 정리되어 장면 그래프의 노드가 된다.</p>
+<p><strong>생성(Amodal Object Asset Generation)</strong>: 각 증거 번들을 완전한 독립 3D 자산으로 변환한다. 포인트클라우드 관측은 가려짐과 노이즈로 불완전하지만, 멀티뷰 RGB 관측은 시점마다 서로 다른 부분을 보완적으로 드러낸다는 점에 착안해, 먼저 신뢰도 높고 상호보완적인 소수의 시점을 선택하고 Set-of-Mark 프롬프팅으로 대상 오브젝트를 표시한 뒤, VLM이 이 시점들을 앵커·레퍼런스로 조직해 이미지 편집 지시를 만들고, 이미지 편집 모델이 가려짐 없는 완전한 오브젝트 이미지를 합성한다. 이 이미지를 이미지-투-3D 모델로 3D 자산으로 변환하고, 대표 3D 박스로 장면에 초기 배치한다.</p>
+<p><strong>배치(Agentic 3D Grounding with GizmoAct)</strong>: 3D 그라운딩(오브젝트를 3D 박스로 위치시키는 것)을 하나의 3D 요소(모델, 박스, 평면 등)를 참조 증거에 맞춰 정렬·조정하는 동작으로 일반화하고, 이를 멀티턴 GUI 상호작용으로 재구성한다. 즉 현재 상태를 렌더링해 관측하고, VLM이 실행 가능한 한 번의 편집(회전/이동/스케일)을 예측하며, 편집된 상태를 다시 렌더링해 다음 턴으로 넘긴다. 대상은 오브젝트 중심(위치), 회전(SO(3)), 이방성(anisotropic) 스케일로 구성된 9자유도 상태이며, 모든 편집은 기즈모가 정의하는 오브젝트의 로컬 좌표계 기준 상대적 증분으로 표현되어 절대 자세를 예측할 필요가 없다. 관측에는 원본 이미지, 기즈모 오버레이, 포인트클라우드 렌더링에 더해, 큰 회전 오차를 한 번에 교정하기 위한 6개 직교 시점(orthographic view)과, 모델과 포인트클라우드 간 깊이 관계를 명확히 하는 반투명 가려짐 표시가 포함된다. 액션 공간은 update_pose(자세 편집)와 stop(종료) 두 가지를 핵심으로 하며, 큰 회전 오차를 한 번에 해소하는 permute_axis(24가지 축정렬 재배향 중 선택)라는 보조 액션도 있다. 정책은 먼저 합성 전문가 궤적(3가지 데이터 소스를 혼합하고, DART 방식으로 오류를 주입해 스스로 복구하는 법도 학습)으로 지도 파인튜닝한 뒤, GRPO 기반 강화학습(동적 샘플링, 회전오차·3D IoU를 4단계로 양자화한 보상 설계)으로 온라인 롤아웃에서 추가 개선한다.</p>
+<p>이렇게 개별 오브젝트가 배치된 이후에는 지지 관계, 충돌, 접촉 일관성 등을 규칙·물리 체크로 다듬는 선택적 후처리를 통해 전체 장면을 구성한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>CA-1M(레이저 스캔 기반 정밀 어노테이션 벤치마크), 자체 구축한 실세계 real-to-sim 벤치마크 R2S(및 그 하위 R2S-Scene, R2S-Object), Aria Digital Twin(ADT)에서 세 층위로 평가했다. (1) 장면 단위 3D 오브젝트 탐지에서 Lucida는 프롬프트 기반 3D 탐지기 Boxer, WildDet3D 대비 모든 프로토콜에서 최고 mAP를 기록했다(R2S-Scene _all 프로토콜 기준 0.351→0.592). (2) 오브젝트 자세 추정에서는 GizmoAct가 Any6D, SAM 3D, RecGen 등 기존 방법을 상회해, CA-1M에서 ADD-SB@0.05를 57.8%→83.4%로, R2S-Object에서 79.2%→92.0%로 끌어올렸고, 3D IoU도 크게 개선했다. 초기화 방식(Boxer/Any6D-스타일/SAM 3D)이 달라도 재학습 없이 하나의 정책이 대응 가능함을 보였다. (3) 완전한 시스템의 장면 재구성 평가에서는 SceneGen, SAM 3D 대비 Scene F-Score를 0.794→0.924로, 오브젝트 단위 F-Score를 0.704→0.736으로 개선했다. 정성적 비교에서도 다양한 카테고리·형상 복잡도·시점에서 GizmoAct가 참조 오브젝트에 더 가깝게 정렬함을 확인했다. 절제 연구에서는 기하 인식 키프레임 선택, 전체 시퀀스 증거 통합, 관계 인식 정제 각각이 탐지 mAP와 Scene F-Score에 유의미하게 기여함을 보였고, 강화학습이 지도학습 단독 대비 특히 큰 초기 오차가 있는 어려운 사례에서 회전 오차를 크게 줄임을 확인했다(경사(rotation) 오차 45.19°→20.98°).</p>
+<h2>한계점</h2>
+<p>저자들은 장면 파싱 단계에서 끝내 누락된 오브젝트는 이후 생성·그라운딩 단계에서 복구할 수 없다는 한계를 명시했다. 또한 현재는 에이전틱(폐루프) 정제가 최종 배치 단계에만 적용되며, 이를 파싱-생성-배치 전체 파이프라인에 걸친 완전한 에이전틱 프레임워크로 확장하는 것은 향후 과제로 남겨두었다.</p>
+<h2>시사점</h2>
+<p>Lucida는 "각 단계가 실제 촬영이 신뢰성 있게 제공하는 것만 소비하고, 정밀도 요구는 파이프라인 끝의 폐루프 단계로 미룬다"는 설계 원칙을 통해, 기존 파싱-생성-배치 파이프라인이 초기 단계의 불완전한 입력 때문에 오류가 누적되는 문제를 완화할 수 있음을 보여준다. 특히 3D 그라운딩(자세 추정)을 VLM이 3D 편집 툴의 인터페이스(기즈모)를 직접 조작하는 멀티턴 GUI 에이전트 문제로 재정의한 GizmoAct의 발상은, 렌더-비교(render-and-compare) 방식의 포즈 추정을 넘어 다양한 3D 정렬·배치 작업에 일반화될 수 있는 새로운 패러다임을 제시하며, 로봇 시뮬레이션과 임바디드 AI를 위한 실사 기반 시뮬레이션 환경 구축에 실용적인 기여를 한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.30821" target="_blank" rel="noopener">huggingface.co/papers/2608.30821</a> · 2026-09-02</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

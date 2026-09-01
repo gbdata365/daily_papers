@@ -1,0 +1,122 @@
+<meta charset="UTF-8">
+<title>노라</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#5 · Daily Papers 2026-09-02</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 38</span>
+    </div>
+    <h1 class="article-title">Normalized Low-Rank Adaptation</h1>
+    <p class="article-title-ko">노라: 정규화된 저랭크 적응(Normalized Low-Rank Adaptation)</p>
+    <p class="article-sub">LoRA의 다운프로젝션 행렬 A를 랭크(rank) 차원을 따라 정규화(normalize)하는 것만으로 LoRA의 초기 최적화 편향을 교정하는 NoRA(및 초기화 시점에만 정규화를 적용하는 NoRA-init)를 제안해, 추가 파라미터나 추론 비용 없이 사전학습·지도 미세조정·강화학습 전반에서 수렴 속도, 학습 안정성, 하위 성능, 재앙적 망각 저항성을 일관되게 개선했다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.31036" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.31036" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Normalized Low-Rank Adaptation</li>
+<li><strong>저자</strong>: Jiale Kang, Ziyin Yue, Zheng Zhan, Yangyi Huang, Weiyang Liu (Yuanshi Intelligence, Microsoft Research, The Chinese University of Hong Kong, Shenzhen Loop Area Institute)</li>
+<li><strong>출처</strong>: arXiv:2608.31036v1 [cs.LG] (2026-08-31)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://spherelab.ai/NoRA">spherelab.ai/NoRA</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.31036">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>LoRA의 다운프로젝션 행렬 A를 랭크(rank) 차원을 따라 정규화(normalize)하는 것만으로 LoRA의 초기 최적화 편향을 교정하는 NoRA(및 초기화 시점에만 정규화를 적용하는 NoRA-init)를 제안해, 추가 파라미터나 추론 비용 없이 사전학습·지도 미세조정·강화학습 전반에서 수렴 속도, 학습 안정성, 하위 성능, 재앙적 망각 저항성을 일관되게 개선했다.</p>
+<h2>배경 및 문제의식</h2>
+<p>LoRA(Low-Rank Adaptation)는 사전학습된 가중치 W에 대한 업데이트를 ΔW = αBA (B는 0으로, A는 무작위로 초기화)로 저랭크 분해하는 파라미터 효율적 미세조정(PEFT) 기법으로 널리 쓰인다. B가 0으로 초기화되기 때문에 학습 초기의 그래디언트는 오직 A에 의해 유도되는 잠재 표현(latent representation)에 의해 결정되는데, 이 A의 스케일이나 구조를 어떻게 정규화(regularize)해야 최적화가 안정적이고 효과적인지는 그동안 충분히 연구되지 않았다. PiSSA, MiLoRA 같은 기존 초기화 개선 기법들은 사전학습 가중치의 특이값 분해(SVD)를 이용해 초기 저랭크 부분공간을 구성하지만, SVD 계산이 필요해 대규모 학습이나 강화학습 설정에서 다루기 번거롭고 불안정할 수 있다.</p>
+<p>저자들은 Multi-head Latent Attention(MLA)에서 사용되는 정규화된 잠재 병목(bottleneck)이 학습을 크게 안정화하고 수렴도 개선한다는 관찰에서 출발한다. 이는 업프로젝션에 제시되는 잠재 표현의 수치적 구조가 안정적인 최적화에 중요한 역할을 한다는 것을 시사한다. 그러나 MLA처럼 잠재 표현 자체를 입력 의존적으로 정규화(BNorm(Ax))하면 변환이 입력에 대해 비선형이 되어 LoRA 특유의 장점인 "학습 후 사전학습 가중치에 정확히 병합 가능"이라는 성질을 잃게 된다. 따라서 핵심 질문은 "다운프로젝션 행렬 A 자체의 정규화가 LoRA 최적화를 개선하는 유용한 설계 축이 될 수 있는가"이다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>다운프로젝션 행렬 A를 이전까지 충분히 탐구되지 않은 중요한 설계 차원으로 지목하고, A의 크기(스케일)가 학습 동역학과 최종 성능에 결정적 영향을 미침을 보였다.</li>
+<li>LoRA의 병합 가능성(exact mergeability)을 훼손하지 않으면서 MLA의 정규화 효과를 이식하는 방법으로, A의 각 열(랭크 차원)을 단위 노름으로 정규화하는 NoRA(Normalized Low-Rank Adaptation)를 제안했다. Δy = αB·Norm(A)x 형태로, 정규화가 입력 x가 아니라 파라미터 A에만 의존하므로 선형성이 유지되어 학습 후 정규화된 A를 그대로 B에 흡수시켜 병합할 수 있다.</li>
+<li>학습 전체에 걸쳐 정규화 제약을 유지하는 대신, 초기화 시점에만 A를 정규화하고 이후에는 표준 LoRA처럼 자유롭게 최적화하는 경량 변형 NoRA-init을 제안했다. 이는 랜덤 초기화 후 정규화하는 방식과, 랭크-항등 구조를 이용한 블록 항등행렬 초기화(BIMI, Block Identity Matrix Initialization) 두 가지 변형으로 구현된다.</li>
+<li>프리컨디셔닝(preconditioning) 관점에서 왜 정규화가 효과적인지 이론적으로 설명했다: LoRA는 사실상 입력 좌표에 A로 유도된 랭크-r 준양정치 행렬을 우측 곱한 프리컨디셔너를 가진 전체 미세조정으로 볼 수 있는데, A가 무작위 초기화되면 좌표별 학습률이 불균형해지고 전반적으로 지나치게 작아진다. 랭크 차원을 정규화하면 이 프리컨디셔너의 대각 성분이 항등에 가까워져(Diag(P)=I) 전체 미세조정 수준의 그래디언트 크기를 회복할 수 있음을 보였다.</li>
+<li>최근 제안된 파라미터 공유 기반 PEFT 기법 MiSS가 사실상 고정된 블록-항등 다운프로젝션을 쓰는 NoRA의 특수 사례임을 규명해, 서로 다른 계열의 방법들을 랭크-차원 정규화라는 공통 원리로 통합 설명했다.</li>
+</ul>
+<h2>방법론</h2>
+<p>LoRA 등 다양한 저랭크 적응 기법을 Δy = αBφ(x)라는 통합된 잠재-특징(latent-feature) 형식으로 재해석한다. 여기서 φ(x)는 방법에 따라 무작위 투영(Ax, LoRA), 구조화된 투영(A_init x, PiSSA/MiLoRA), 정규화된 투영(Norm(Ax), MLA) 등으로 달라진다. MLA의 입력 의존적 정규화 Norm(Ax)를 그대로 LoRA에 적용하면 비선형이 되어 병합성이 깨지므로, 저자들은 정규화 대상을 "잠재 특징"에서 "다운프로젝션 행렬 자체"로 옮긴다. 구체적으로 A ∈ ℝ^(r×k)의 각 열 a_j(입력 좌표 j에 대응하는 잠재 투영 벡터)를 그 L2 노름(작은 상수 ε로 하한 처리)으로 나누어 Norm(A) = [a_1/max(‖a_1‖,ε), ..., a_k/max(‖a_k‖,ε)]를 얻고, 이를 이용해 Δy = αB·Norm(A)x로 업데이트한다. 이 정규화는 학습 도중 A의 열별 스케일 불균형을 제거하며, 학습이 끝난 뒤 정규화된 A를 표준 LoRA 파라미터로 흡수시킬 수 있어 정확한 가중치 병합성을 유지한다.</p>
+<p>이론적 분석은 프리컨디셔닝 관점에서 이루어진다. LoRA의 초기 그래디언트 스텝을 전체 미세조정 그래디언트 G에 P=α²AᵀA를 우측 곱한 형태(ΔW=-ηGP)로 표현할 수 있는데, 무작위 초기화된 A는 열 노름이 좌표마다 흩어져 있어(order 1/√r의 상대적 변동) 좌표별 학습률이 매우 불균형하고 전반적으로 작아진다. 각 열 노름을 1로 고정하면(즉 α=r인 랭크-차원 정규화) Diag(P)=I가 결정론적으로 성립해, 무작위 방향에 대한 기댓값에서 어댑터의 그래디언트 크기가 전체 미세조정과 랭크 r에 무관하게 일치하게 된다. 반면 행(row) 방향 정규화는 이런 효과가 없음을 보인다.</p>
+<p>또한 실험적으로 "초기화 시점의 스케일 제어가 이득의 대부분을 이미 만들어낸다"는 점을 확인해, 학습 내내 정규화를 유지하는 NoRA와 초기화 시 한 번만 정규화하고 이후엔 표준 LoRA처럼 최적화하는 NoRA-init을 함께 제안한다. NoRA-init의 한 실현체인 BIMI는 A를 반복된 항등행렬 블록([I_r, I_r, ..., I_r, E_q])으로 구성해 자동으로 열 단위 정규화 조건을 만족시킨다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>사전학습(FineWeb-10BT/SlimPajama, MLA 및 표준 MHA 아키텍처), 지도 미세조정(Llama-3.2-3B, 수학·코드 과제 및 지식 유지 벤치마크), 검증 가능한 보상 기반 강화학습(RLVR, DeepSeek-R1-Distill-Qwen-1.5B, DAPO 목적함수) 세 단계에 걸쳐 폭넓게 평가했다.</p>
+<ul>
+<li>정규화 차원 소거 실험: 열(랭크) 방향 정규화(Norm_r)는 다양한 무작위/가우시안/카이밍 초기화 전반에서 일관되게 성능을 개선한 반면, 행(입력) 방향 정규화(Norm_k)는 거의 개선 효과가 없었다. NoRA 적용 후에는 초기화 방식에 관계없이 비슷한 성능에 수렴했다.</li>
+<li>사전학습: MLA 아키텍처에서 잠재 표현 Ax를 직접 정규화하는 것이 성능과 수렴 속도를 일관되게 높였고, 이를 계승한 NoRA-init도 표준 저랭크 파라미터화 대비 더 빠른 수렴과 더 나은 하위 성능을 보였다(다만 완전한 BNorm(Ax) 방식보다는 약간 낮은 성능이나 선형 구조와 병합성을 유지). 표준 MHA 아키텍처의 저랭크 어텐션 프로젝션(rank=64)에서는 표준 저랭크 파라미터화가 LAMBADA 등에서 성능 붕괴(퍼플렉시티 발산)를 겪은 반면, NoRA-init은 이런 붕괴를 방지하고 안정적인 학습 곡선과 더 나은 하위 성능을 달성했다.</li>
+<li>지도 미세조정: NoRA는 비교된 PEFT 방법 중 최고의 평균 성능(37.93→43.37, +5.44점)을 달성했으며, GSM8K(61.63)와 HumanEval(42.10)에서 특히 큰 향상을 보였다. PiSSA, OFT, RSLoRA, MiSS보다도 우수했다. NoRA-init만으로도 이미 이득의 상당 부분(37.93→42.38)을 확보했으며, DoRA에도 같은 원리를 적용해 일관된 개선(38.30→41.40)을 보여 원리의 범용성을 확인했다. 지식 유지 측면에서도 NoRA는 MMLU/AGIEval/ARC-C 평균 변화가 +0.02로, LoRA(-0.56)와 MiSS(-0.70)보다 재앙적 망각에 강했다.</li>
+<li>RLVR: 수학 추론 벤치마크(AIME24/25, AMC, HMMT, MATH500, Minerva)에서 기본모델 41.0, 표준 LoRA 42.8 대비 NoRA는 44.4로 가장 높은 평균 성능을 기록했다. 반면 SVD 기반 초기화 방법(PiSSA, MiLoRA)은 지도 미세조정에서는 효과적이었으나 RLVR 설정에서는 성능이 크게 저하되어(거의 0에 가까운 점수), NoRA가 사전학습 가중치의 스펙트럼 구조에 의존하지 않아 여러 학습 체제에서 더 견고함을 보여주었다.</li>
+</ul>
+<h2>한계점</h2>
+<p>논문에 명시된 한계로는, NoRA-init이 지속적 정규화를 적용하는 NoRA보다 일반적으로 약간 낮은 성능을 보인다는 점(단, 파라미터 재화 구조와 병합성을 그대로 유지하는 대가)이 언급된다. 또한 완전한 MLA 스타일의 입력 의존적 잠재 정규화(BNorm(Ax))가 사전학습 실험에서 NoRA-init보다 다소 더 나은 성능을 보였는데, 이는 정확한 병합 가능성을 희생하는 대신 얻는 성능임을 시사한다. 논문은 이 외에 스케일링 팩터 α=2r처럼 더 공격적인 설정이 손실 적합은 개선하지만 사전학습 지식의 망각을 늘릴 수 있다는 트레이드오프도 지적하며, 이에 따라 α:r=1:1을 기본 권장값으로 삼는다.</p>
+<h2>시사점</h2>
+<p>이 논문은 LoRA의 효과가 랭크 크기뿐 아니라 다운프로젝션 행렬의 기하학적 구조와 스케일에도 크게 좌우된다는 점을 프리컨디셔닝 관점에서 명확히 규명했다. 특히 SVD나 그래디언트 추정, 활성화 통계 같은 추가 데이터·연산 없이 단순한 열 단위 정규화만으로 LoRA의 근본적 최적화 병목을 교정할 수 있다는 결과는, 실무에서 거의 비용 없이 적용 가능한 개선책이라는 점에서 실용적 가치가 크다. 또한 MiSS를 NoRA의 특수 사례로 재해석한 것처럼, 서로 달라 보이는 PEFT 기법들이 "랭크-차원 정규화"라는 공통된 설계 원리 아래 통합될 수 있음을 보여줘, 향후 PEFT 설계에서 초기화·정규화 축을 랭크 배분이나 구조적 제약과 별개의 독립적 설계 차원으로 고려해야 함을 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.31036" target="_blank" rel="noopener">huggingface.co/papers/2608.31036</a> · 2026-09-02</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

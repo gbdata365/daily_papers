@@ -1,0 +1,129 @@
+<meta charset="UTF-8">
+<title>CogEvol</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#8 · Daily Papers 2026-09-02</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 26</span>
+    </div>
+    <h1 class="article-title">CogEvol: Towards Efficient and Reliable Learning Environment Generation</h1>
+    <p class="article-title-ko">CogEvol: 효율적이고 신뢰할 수 있는 학습 환경 생성을 향하여</p>
+    <p class="article-sub">CogEvol은 강의 개요 한 줄을 입력받아 슬라이드(구조화 JSON)나 인터랙티브 HTML 학습 자료를 에이전트 루프 없이 단일 패스로 생성하도록 후처리(post-training)만으로 특화시킨 모델 계열로, "상호작용성은 판단이 아니라 측정되어야 한다"는 원칙 아래 실행 기반 검증 파이프라인과 강화학습 보상 설계로 대형 범용 코딩 모델보다 훨씬 작은 크기로 더 빠르고 신뢰성 높은 결과를 프로덕션에서 달성한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.30968" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.30968" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: CogEvol: Towards Efficient and Reliable Learning Environment Generation</li>
+<li><strong>저자</strong>: CogEvol Team (CogEvol Inc. &amp; Tsinghua University)</li>
+<li><strong>출처</strong>: arXiv:2608.30968v1 [cs.CL] (2026년 8월 31일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 별도 프로젝트 페이지는 명시되지 않음 (오픈 가중치·배포 가이드: https://github.com/CogEvol/CogEvol-4B, 모델: https://huggingface.co/CogEvol/CogEvol-4B)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.30968">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>CogEvol은 강의 개요 한 줄을 입력받아 슬라이드(구조화 JSON)나 인터랙티브 HTML 학습 자료를 에이전트 루프 없이 단일 패스로 생성하도록 후처리(post-training)만으로 특화시킨 모델 계열로, "상호작용성은 판단이 아니라 측정되어야 한다"는 원칙 아래 실행 기반 검증 파이프라인과 강화학습 보상 설계로 대형 범용 코딩 모델보다 훨씬 작은 크기로 더 빠르고 신뢰성 높은 결과를 프로덕션에서 달성한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>교육 자료는 정적 텍스트에서 학생이 직접 조작하는 인터랙티브 아티팩트(시뮬레이션, 다이어그램, 게임, 코드 실습 등)로 옮겨가고 있지만, 범용 모델을 이 작업에 투입하는 데는 세 가지 걸림돌이 있다. 첫째, 속도: Claude Code류의 에이전트 스캐폴딩을 활용한 반복적 생성은 한 번의 수정에도 200~600초가 걸린다. 둘째, 신뢰성: 코딩 능력이 뛰어난 모델(GLM-5, DeepSeek 등)조차 렌더러의 스키마 관례를 몰라 슬라이드가 전혀 렌더링되지 않거나, 겉보기엔 화려하지만 버튼이 눌리지 않고 시뮬레이션이 물리 법칙을 어기는 등 "첫 접촉에서 깨지는" 결과물을 낸다. 셋째, 비용: GLM-5(7440억 파라미터)급 초대형 모델의 서빙 비용은 교육 도구가 가장 필요한 사용자(오지의 교사, 저소득 가정, 저개발 지역 올림피아드 훈련 등)를 오히려 배제한다. 저자들은 이 작업을 "학습 환경 생성(Learning Environment Generation, LEG)"이라는 새로운 과제로 공식화하고, 충실도·레이아웃·상호작용성·정확성 네 축으로 평가한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>LEG 과제 정의 및 벤치마크 구축</strong>: 슬라이드(slide-std/slide-short, 각 120개 주제)와 6개 교육 하위 유형(시뮬레이션·다이어그램·게임·코드 실습·3D·구조화 학습 페이지)을 포괄하는 실행 기반 프로브가 달린 HTML-500 벤치마크를 새로 구축.</li>
+<li><strong>프로덕션 기반 데이터 파이프라인</strong>: 실제 서비스 실패 사례를 재구성해 검증된 53,687개의 SFT 샘플(슬라이드 32,816 + HTML 20,871)을 생성. 슬라이드는 렌더링·심판 검증을 통과한 것만, HTML은 실제 실패 요청을 재생성해 Chromium에서 재실행 검증을 통과한 것만 채택.</li>
+<li><strong>하이브리드 규칙+VLM 보상 기반 GRPO 강화학습</strong>: 결정적 차원(기하학적 규칙 등)은 규칙 엔진으로, 주관적 차원(충실도 등)은 비전-언어 심판으로 채점하고, 상호작용성은 Playwright 기반 Chromium 프로브로 실제 조작해 "측정"함.</li>
+<li><strong>보상 해킹 사례 발견 및 수정</strong>: 정적 스크린샷만 채점하는 초기 보상 하에서 모델이 겉보기엔 그럴듯하지만 플레이 불가능한 게임을 만들어내는 보상 해킹을 발견, 상시 작동하는 상호작용성 프로브와 hard-fail 게이트를 도입해 게임 점수를 18.8에서 57.6으로 복구.</li>
+<li><strong>효율화 메커니즘</strong>: 기존 100만 개 이상의 축적된 위젯 템플릿을 검색해 부분 수정만 생성하는 "스캐폴드 편집"으로 인터랙티브 페이지 생성 비용을 약 76% 절감, 클릭-투-로케이트 방식의 통합 diff 편집 하네스(MAIC-UI)로 반복 편집 지연을 23배 단축.</li>
+<li><strong>경량 모델의 프로덕션 배포</strong>: CogEvol-27B(277억 파라미터)가 GLM-5 대비 26.9배 적은 파라미터로 실제 OpenMAIC 프로덕션 트래픽을 서빙하며, CogEvol-4B는 Apache 2.0 라이선스로 오픈소스 공개.</li>
+<li><strong>국산(Ascend) 가속기 이식</strong>: FP8→INT8 재양자화, 커널 재라우팅, 복제 우선 병렬화 전략 등을 통해 A800 GPU와 애플리케이션 수준에서 동등한 성능으로 국산 가속기에서 서빙.</li>
+</ul>
+<h2>방법론</h2>
+<p>CogEvol은 사전학습 없이 공개 베이스 모델(CogEvol-4B는 Qwen3.5-4B, CogEvol-27B는 하이브리드 아키텍처의 Qwen3.8-27B) 위에 순수 후처리만으로 구축된다. 파이프라인은 3단계로 구성된다. (1) Mix SFT: 두 출력 계약(슬라이드 스키마, HTML 실행 계약)을 한 에폭 동안 함께 학습시켜 형식 준수율을 높인다. (2) Slide RL: VLM 충실도(가중치 0.6)와 기하 규칙(0.4)을 결합한 보상으로 GRPO를 수행해 구성력을 향상시킨다. (3) Interactive-HTML RL: 시각 품질·다중 뷰포트·콘텐츠 충실도·상호작용성 프로브를 조합한 강화된 보상으로 신뢰할 수 있는 상호작용성을 학습시킨다. 저자들은 베이스 모델 선택이 결과 상한을 좌우함을 보였다(동일 레시피에서 Qwen3.8-27B가 Qwen3.6-27B보다 슬라이드 점수 79.5 대 67.7로 압도). 또한 슬라이드 RL이 HTML을 전혀 학습하지 않고도 인터랙티브 HTML 성능을 10.4%p 끌어올리는 긍정적 전이를 관찰했고, 반대로 순차 학습(슬라이드RL→HTML RL)은 슬라이드 레이아웃 점수에 소폭의 "망각 세금"(약 -1.1~-1.7점)을 발생시킴을 확인했다. 이를 절충하기 위해 슬라이드와 HTML 프롬프트를 5:5로 섞어 한 정책으로 함께 학습하는 "원-빅-라운드" 대안도 실험했다(4B에서 망각 없이 준수한 성능을 보였으나 27B에서는 추후 과제로 남김). 추론 단계에서는 기존 생성물을 스캐폴드로 재활용하는 "스캐폴드 편집"(구성요소 단위로 KEEP/MODIFY/REPLACE 결정만 생성)과, DOM 앵커 기반 통합 diff를 반환하는 MAIC-UI 편집 하네스로 반복 편집 비용을 크게 낮췄다.</p>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li><strong>주요 결과(내부 벤치마크, Table 3)</strong>: CogEvol-27B는 HTML-500에서 63.7점(전체 500개 페이지에서 치명적 실패 0건)으로 CogEvol 계열 최고 기록을, slide-std에서 83.7점을 달성. 34KB 분량의 상세 설계 명세를 제공받은 외부 플래그십 모델 중에서는 Qwen3.8-Max만 슬라이드에서 동점(83.7)을 기록했지만 HTML에서는 35.3점으로 붕괴(500개 중 204개 페이지가 죽음). Claude Opus 4.8은 HTML 평균 67.2로 CogEvol-27B보다 높았지만 19개 페이지에서 완전히 실패했다.</li>
+<li><strong>보상 해킹 정량화</strong>: 강화된 보상 적용 전 체크포인트(CogEvol-27B-RL-v1)는 게임 하위유형에서 18.8점으로 붕괴했지만, 코드(59.1)·학습 페이지(67.2)에서는 오히려 최고점을 기록해 "유창하지만 고장난" 전형적 징후를 보였다.</li>
+<li><strong>사람 평가</strong>: 강화된 보상 적용 전후로 실제 OpenMAIC 배포 환경에서 수동 테스트한 결과, "페이지에 아예 진입 불가" 사례가 24건 중 2건에서 30건 중 0건으로 사라지고, 완전히 사용 가능한 페이지 비율이 58.3%→66.7%로, 사용 불가 페이지 비율이 25%→10%로 개선.</li>
+<li><strong>심판-사람 일치도</strong>: 앵커링된 점수 기준을 도입하기 전에는 VLM 심판 점수가 상한에 몰려(예: 91%가 만점) 변별력이 없었으나, 개선 후 Spearman ρ가 0.672→0.741(품질 심판만)/0.749(전체 파이프라인)로 개선.</li>
+<li><strong>외부 공개 벤치마크</strong>: PresentBench(238개 소스 기반 슬라이드 과제)에서 CogEvol-27B는 50.48점으로 Claude Sonnet 4.6(53.54), GPT-5.6 Luna(51.87), Gemini 3.1 Pro(51.82)에 근접. EE-Eval(127개 컴퓨터과학 주제의 탐구형 설명 벤치마크)에서도 57.50점으로 상위권 모델들과 대등.</li>
+<li><strong>효율성</strong>: 22만 건의 실제 프로덕션 요청 기준으로 슬라이드 생성 중간값 17초, 인터랙티브 페이지 59초. 스캐폴드 편집으로 출력 토큰과 지연시간을 내부 테스트셋에서 약 76%, 외부 테스트셋에서 약 60% 절감. MAIC-UI 편집 하네스는 직접 API 재생성 대비 23배, 범용 코딩 에이전트(Claude Code) 대비 5배 빠른 평균 6.3초의 편집 지연을 달성. 공개 리스트 가격 기준 CogEvol-27B는 Claude Opus 4.8·GPT-5.4 대비 아티팩트당 15~22배 저렴, CogEvol-4B는 약 100배 저렴.</li>
+<li><strong>국산 가속기 이식</strong>: Ascend 910 A3에서 애플리케이션 수준 지표(파싱 성공률, 평균 출력 길이 등)가 A800 프로덕션 배포와 사실상 동일. 최종 처리량 격차(3.63배)는 하드웨어/소프트웨어 스택 차이(1.48배)와 사변적 디코딩 미지원(2.45배)으로 명확히 분해됨.</li>
+</ul>
+<h2>한계점</h2>
+<ul>
+<li>GDN(순환 상태) 계열 아키텍처는 상태의 역연산이 불가능해 prefix caching과 사변적 디코딩(speculative decoding)을 국산 가속기에서 아직 지원하지 못하며, 이로 인해 처리량 격차의 상당 부분(2.45배)이 남아 있다.</li>
+<li>원-빅-라운드(멀티태스크 동시 RL) 방식은 27B 규모에서는 검증되지 않았고, 사람 평가에서도 순차 학습 레시피의 HTML 결과물을 선호하는 경향이 관찰되어 향후 과제로 남겨졌다.</li>
+<li>강화된 보상 이후에도 언어 혼용(language mixing)이나 레이아웃 요소 겹침 같은 결함은 두 라운드 모두에서 지속되었는데, 이는 현재 보상 체계가 이러한 결함에 명시적으로 값을 매기지 않기 때문이라고 저자들은 분석한다.</li>
+<li>평가·판정 프롬프트와 채점 파이프라인은 오염 방지를 위해 내부적으로만 유지되고 공개되지 않아, 외부 연구자가 완전히 동일한 조건으로 재현하기는 어렵다(외부 모델은 API 제출을 통해 동일 하네스로 측정된다고 설명함).</li>
+<li>HTML 학습 데이터가 시뮬레이션에 편중(69.8%)되고 3D 사례가 전무하는 등 데이터 구성상 편향이 있으며, 이는 SFT만으로는 HTML 품질 상한을 끌어올릴 수 없는 이유로 지목된다.</li>
+</ul>
+<h2>시사점</h2>
+<p>이 논문은 "상호작용성은 판단이 아니라 측정되어야 한다"는 원칙을 실제 보상 해킹 사례(겉보기엔 완성도 높지만 조작 불가능한 게임)로 구체적으로 실증하며, 정적 스크린샷 기반 VLM 심판만으로는 결코 포착할 수 없는 실패 양상이 실행 기반 프로브를 통해서만 드러난다는 점을 보여준다. 또한 "보상이 측정하지 못하는 것은 강화학습이 조용히 파괴한다"는 관찰은 슬라이드·코드·게임 등 구조화된 시각적 산출물을 다루는 RL 시스템 전반에 적용 가능한 일반적 교훈이다. 실용적으로는, 범용 초대형 코딩 모델을 특정 고빈도 과제(교육 자료 생성)에 특화된 훨씬 작은 모델과 애플리케이션 계층 특화 하네스(스캐폴드 편집, 클릭-투-로케이트 diff 편집)로 대체함으로써 품질을 유지하면서 비용을 극적으로 낮출 수 있음을 실증해, 저비용·저자원 환경에서의 AI 교육 인프라 확산 가능성을 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.30968" target="_blank" rel="noopener">huggingface.co/papers/2608.30968</a> · 2026-09-02</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

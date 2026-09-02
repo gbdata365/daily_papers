@@ -1,0 +1,129 @@
+<meta charset="UTF-8">
+<title>UI-Venus-2 기술 보고서</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#4 · Daily Papers 2026-09-03</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 54</span>
+    </div>
+    <h1 class="article-title">UI-Venus-2 Technical Report</h1>
+    <p class="article-title-ko">UI-Venus-2 기술 보고서</p>
+    <p class="article-sub">모바일·웹·데스크톱 환경을 하나의 폐루프(reasoning-action) 프레임워크로 통합해 다루는 범용 GUI 에이전트 UI-Venus-2를, 환경·과제·검증(reward) 3가지 축을 동시에 스케일업하여 학습시킨 오픈소스 기술 보고서.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.00028" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.00028" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: UI-Venus-2 Technical Report</li>
+<li><strong>저자</strong>: Venus Team, Ant Group (교신저자: Shuheng Shen, Changhua Meng)</li>
+<li><strong>출처</strong>: arXiv:2609.00028v1 [cs.AI] (2026년 8월 27일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://ui-venus.github.io/UI-Venus-2">UI-Venus-2 프로젝트</a> / <a href="https://github.com/inclusionAI/UI-Venus">코드(GitHub)</a> / <a href="https://huggingface.co/collections/inclusionAI/ui-venus">모델(HuggingFace)</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.00028">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>모바일·웹·데스크톱 환경을 하나의 폐루프(reasoning-action) 프레임워크로 통합해 다루는 범용 GUI 에이전트 UI-Venus-2를, 환경·과제·검증(reward) 3가지 축을 동시에 스케일업하여 학습시킨 오픈소스 기술 보고서.</p>
+<h2>배경 및 문제의식</h2>
+<p>멀티모달 대형언어모델(MLLM)의 발전과 함께 GUI 에이전트는 API 없이도 화면을 보고 클릭·타이핑·스크롤 등 사람과 같은 방식으로 디지털 작업을 자동화할 수 있는 유망한 접근으로 주목받아왔다. 그러나 벤치마크 중심 모델을 실제 신뢰 가능한 서비스로 전환하는 데에는 세 가지 근본적 한계가 있다고 저자들은 지적한다. 첫째, 환경 커버리지가 소수 앱에 국한되어 다국어 모바일 생태계, 동적인 웹사이트, 전체 데스크톱 OS까지 확장되지 못한다. 둘째, 과제 생성이 실제 애플리케이션 기능에 기반하지 않아 모호하거나 실행 불가능한 지시가 섞인다. 셋째, 강화학습(RL)의 보상 신호를 제공하는 검증기(verifier)가 거칠면 부분적 진행과 실제 완료를 혼동하거나, 정책이 보상을 악용(reward hacking)할 여지를 남긴다. 저자들은 전작인 UI-Venus, UI-Venus-1.5의 통합 GUI 그라운딩·내비게이션 프레임워크를 계승하면서, 이 세 가지 축을 동시에 확장하는 것을 목표로 삼는다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>다국어 모바일 환경 및 과제 생성 확장</strong>: 중국어 100개 이상, 영어 70개 이상 앱을 포괄하도록 실행 환경을 확장하고, 딥리서치(deep-research) 기반의 질의 생성 전략으로 실제 앱 기능에 기반한(function-grounded) 고품질 과제를 대량 생성.</li>
+<li><strong>데스크톱(Computer-use) 능력의 처음부터 구축</strong>: 기존 UI-Venus 계열이 모바일·웹 중심이었던 것과 달리, 데스크톱 OS 상호작용 데이터 수집과 전용 학습을 통해 모바일·웹·OS를 아우르는 단일 에이전트로 확장.</li>
+<li><strong>트레이스(trace) 수준 및 샘플(sample) 수준의 이중 검증 체계</strong>: 과제 목표에서 추출한 시각적 핵심 지점(keypoint) 기반으로 완료 여부를 판단하고, 여러 이종 모델의 투표(voting)를 결합해 검증 강건성을 높이고 보상 해킹 가능성을 줄임.</li>
+<li><strong>오픈소스 공개</strong>: 전체 파라미터 가중치와 평가 인프라를 공개하여 동급 규모 모델 중 최상급 성능을 재현 가능하게 제공.</li>
+<li>부가적으로 로그인·가입 등에서 발생하는 CAPTCHA를 자동 해결하는 능력과, 위험한 행동을 통제하는 안전성 인식 메커니즘도 함께 통합.</li>
+</ul>
+<h2>방법론</h2>
+<p>UI-Venus-2는 Qwen3.5-9B, Qwen3.6-27B를 기반 모델로 초기화하며, 3단계 학습 파이프라인을 따른다.
+1. <strong>Stage I: 멀티모달 중간학습(Mid-training)</strong> — 대규모 합성 및 실제 상호작용 데이터를 혼합해 모바일·웹·OS 내비게이션 지식을 대규모 SFT로 주입. 사람-판별기 협업 검증으로 저품질 궤적을 필터링.
+2. <strong>Stage II: 오프라인 강화학습</strong> — 모바일/OS/웹은 스텝 단위 RL 궤적으로 상태 인지형 행동 선택을 학습시키고, CAPTCHA와 그라운딩은 프로그램적으로 합성한 검증 가능 데이터로 정밀한 목표 식별과 공간 위치추정을 학습.
+3. <strong>Stage III: 다중교사 온폴리시 증류(Multi-teacher On-policy Distillation, MOPD)</strong> — 그라운딩·CAPTCHA·모바일·웹·컴퓨터 등 도메인별로 독립 학습된 전문가 모델들을 하나의 정책으로 통합. 일반적인 OPD는 추론 과정과 실행 행동(action)을 동일하게 취급하는 문제가 있어, 저자들은 (1) 행동이 완전히 맞으면 증류 신호를 억제, (2) 행동 타입은 맞지만 파라미터가 틀리면 해당 구간 지도를 강화, (3) 행동 타입 자체가 틀리면 파라미터는 마스킹하고 타입 토큰에 집중하는 "구조화된 행동 인지 증류(Structured Action-Aware Distillation)"를 제안한다. 또한 교사 모델에게만 정답 행동 타입 힌트를 프롬프트로 제공해(학생에게는 노출되지 않음) 더 정밀한 채점을 유도하는 "교사측 행동타입 조건화" 기법을 함께 사용한다.</p>
+<p>데이터 생성은 능력 카탈로그 구축 → 과제 생성 → 궤적 수집의 폐루프 파이프라인으로 이뤄지며, 웹은 4,000개 이상 도메인 풀과 InSTA-150k-v3 시드 활용, 데스크톱은 TaskSpec 기반의 결정론적 환경 스냅샷과 장기 과제의 계층적 서브골 분할, 그라운딩은 HTML/CSS/JS로 합성한 화면에서 9단계 히트 테스트로 검증한 픽셀 정합 타겟, CAPTCHA는 70종 유형별 룰 엔진으로 정답이 보장된 퍼즐을 합성한다. 검증 단계에서는 VLM을 판사로 활용한 Semantic Guided Verification(SGV, 트레이스 수준: completed/partial/infeasible/failed 4단계 분류)와, 실행 전 정보만으로 스텝별 정합성을 매기는 샘플 수준 검증(correct/exploratory/ineffective/incorrect)을 결합한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>모바일(MobileGym, VenusBench-Mobile, AndroidWorld, MobileWorld, KnowUBench, MemGUI), 컴퓨터 사용(OSWorld-Verified, DeskCraft, OSWorld 2.0), 웹 내비게이션(WebVoyager, Online-Mind2Web, REAL, Odysseys), GUI 그라운딩(VenusBench-GD, ScreenSpot-Pro, OSWorld-G-R, UI-Vision), CAPTCHA(VenusBench-CAPTCHA 등 5종), 안전성(OSHarm, OSBlind) 등 폭넓은 벤치마크에서 UI-Venus-2-9B/27B 두 모델을 평가했다.</p>
+<p>주요 결과(27B 기준):
+- MobileGym 60.5%, VenusBench-Mobile 48.7%, AndroidWorld 84.0%로 해당 그룹 최고 성능.
+- MobileWorld(50-step)에서는 76.1%로 특화 에이전트인 Qwen-UI-Agent-27B(82.1%)에는 못 미치지만 범용 모델 대비 우위.
+- 컴퓨터 사용: OSWorld-Verified 80.5%(Claude-Opus-4.8의 83.4%보다는 낮지만 다른 경쟁모델 상회), DeskCraft 55.5%로 최고 성능. OSWorld 2.0에서는 Binary Accuracy 2.8%로 여전히 매우 낮은 수준(GPT-5.5 13.0%보다 낮음)이며, 이는 초장기 데스크톱 작업이 여전히 매우 어렵다는 것을 보여줌.
+- 웹 내비게이션: WebVoyager 93.4%, Online-Mind2Web 78.3%, REAL 80.2%, Odysseys(Avg.) 80.4%로 모두 해당 벤치마크에서 최고 성능 달성.
+- GUI 그라운딩: VenusBench-GD 80.1%(신규 최고), ScreenSpot-Pro 74.1%(Qwen-UI-Agent-27B에 이어 2위).
+- CAPTCHA: 다중 시각 추론이 필요한 벤치마크에서 최대 34.1%p 격차로 압도적 우위를 보였으나, Open CaptchaWorld처럼 일반 VLM도 잘 푸는 유형에서는 격차가 거의 없음(0.7%p).
+- 안전성: OSHarm(명시적 공격) ASR 11.3~15.3%로 최저 수준, OSBlind(선의로 보이는 지시에 내재된 위험) 상황에서도 기저 모델 대비 공격성공률을 거의 절반으로 낮춤(47.9~48.8% vs 79~93%대 타 모델).</p>
+<h2>한계점</h2>
+<p>논문은 별도의 "한계점" 절을 명시하지 않았으나, 본문 결과에서 다음과 같은 한계가 드러난다.
+- OSWorld 2.0과 같은 초장기·다중 애플리케이션 데스크톱 워크플로우에서는 Binary Accuracy가 여전히 매우 낮아(9B 0.0%, 27B 2.8%) 장기 계획·기억 능력이 부족함을 시사.
+- MobileWorld, ScreenSpot-Pro, UI-Vision 등 일부 벤치마크에서는 특화된 경쟁 모델(Qwen-UI-Agent-27B)에 근소하게 뒤처짐.
+- OSBlind에서 공격성공률을 크게 낮췄지만 여전히 47.9~48.8% 수준으로 완전히 해소되지는 않음.
+- 비교에 사용된 일부 baseline 결과는 서로 다른 행동 스캐폴드(action scaffold)나 스텝 예산을 사용해 보고된 값이라, 엄격히 통제된 비교라기보다 벤치마크 수준의 참고치로 해석해야 한다고 저자들 스스로 밝힘.</p>
+<h2>시사점</h2>
+<p>UI-Venus-2는 모바일·웹·데스크톱을 아우르는 범용 GUI 에이전트를 구축하는 데 있어 "환경-과제-검증"을 함께 스케일업하는 것이 성능 향상의 핵심 축임을 실증적으로 보여준다. 특히 트레이스/샘플 이중 검증과 행동 인지형 증류(MOPD)는 이질적인 도메인 전문가를 하나의 정책으로 안정적으로 통합하는 실용적 레시피를 제공하며, CAPTCHA 처리와 안전 인식 메커니즘의 결합은 실제 배포 환경에서 "마지막 한 걸음"의 자율성과 신뢰성을 확보하는 데 중요한 시사점을 준다. 전체 가중치와 평가 인프라의 오픈소스 공개는 GUI 에이전트 연구의 재현성과 커뮤니티 기반 발전에 기여할 것으로 기대된다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.00028" target="_blank" rel="noopener">huggingface.co/papers/2609.00028</a> · 2026-09-03</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

@@ -1,0 +1,132 @@
+<meta charset="UTF-8">
+<title>드론 제어를 위한 범용 시각-언어-행동 에이전트로서의 멀티모달 LLM 평가</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#9 · Daily Papers 2026-09-03</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 20</span>
+    </div>
+    <h1 class="article-title">Evaluating Multimodal LLMs as Generalist Vision-Language-Action Agents for Drone Control</h1>
+    <p class="article-title-ko">드론 제어를 위한 범용 시각-언어-행동 에이전트로서의 멀티모달 LLM 평가</p>
+    <p class="article-sub">멀티모달 LLM(MLLM)을 별도의 파인튜닝이나 함수 호출 스키마 없이 순수 프롬프트만으로 드론 조종 루프에 직접 투입하는 범용 에이전트 DroneCATS-Agent와, 이를 통해 접근·추적·탐색·다중 드론 지휘라는 네 가지 능력을 하나의 기준으로 평가하는 벤치마크 DroneCATS를 제안하고, 소형 오픈 모델의 진짜 실패 원인이 "비행 능력"이 아니라 "종료 선언(도착 보고) 프로토콜 준수"에 있음을 밝힌 연구.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.01404" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.01404" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Evaluating Multimodal LLMs as Generalist Vision-Language-Action Agents for Drone Control</li>
+<li><strong>저자</strong>: Jaewoo Park, Minyoung Lee, Sukmin Seo 등 (공동 1저자) 및 Geewook Kim(교신저자) 등 총 14인, NAVER Cloud Drone AI Team</li>
+<li><strong>출처</strong>: arXiv:2609.01404v1 [cs.RO] (2026년 9월 1일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/naver-ai/DroneCATS">GitHub - naver-ai/DroneCATS</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.01404">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>멀티모달 LLM(MLLM)을 별도의 파인튜닝이나 함수 호출 스키마 없이 순수 프롬프트만으로 드론 조종 루프에 직접 투입하는 범용 에이전트 DroneCATS-Agent와, 이를 통해 접근·추적·탐색·다중 드론 지휘라는 네 가지 능력을 하나의 기준으로 평가하는 벤치마크 DroneCATS를 제안하고, 소형 오픈 모델의 진짜 실패 원인이 "비행 능력"이 아니라 "종료 선언(도착 보고) 프로토콜 준수"에 있음을 밝힌 연구.</p>
+<h2>배경 및 문제의식</h2>
+<p>MLLM은 이미지·영상 인식에서는 강력한 성능을 보이지만, 체화된(embodied) 환경에서는 관찰로부터 직접 다음 행동을 선택하고 그 결과로 생긴 새로운 관찰과 다시 상호작용해야 한다. 드론 제어는 카메라 자세 자체가 곧 행동이고 오차가 누적되는 대표적인 예시이다.</p>
+<p>기존의 TypeFly, PIVOT, See-Point-Fly(SPF), Fly0, OnFly 등 MLLM 기반 드론 시스템들은 대체로 모델이 담당하는 역할을 점점 좁혀왔다(외부 탐지기, 검증기, LiDAR 플래너 등이 모델의 판단을 대신 보정). 이 때문에 Fly0 등의 연구에서는 GPT-5, Gemini, Claude, Qwen 등 서로 다른 백본들이 접지(grounding) 성능에서 거의 차이가 없다는 결과가 보고되었는데, 저자들은 이것이 "모델과 무관한 부분"만 측정했기 때문이라고 지적한다. 즉, 시스템을 바꾸고 모델을 고정하는 기존 연구 방식으로는 어떤 능력이 실제로 모델에 좌우되는지 알 수 없으므로, 이 논문은 반대로 에이전트 구조를 고정하고 모델만 바꿔가며 비교하는 방식을 택한다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li><strong>DroneCATS-Agent</strong>: 모델에 구애받지 않는 범용 드론 에이전트. go(지점+깊이 지정), rotate(제자리 회전으로 탐색), think(숙고를 위한 정지), finished(도착 선언) 네 가지 행동만으로 구성되며, 모든 행동 공간이 프롬프트에 자연어로 선언되어 있어 파인튜닝이나 함수 호출 스키마 없이 어떤 MLLM이든 그대로 장착할 수 있다.</li>
+<li><strong>통합 성공 판정 기준</strong>: 접근·추적·탐색이라는 4가지 과제 셀 전체를 하나의 규칙(도착 선언 시점에 목표까지 3차원 거리 δ=5m 이내이고 목표가 카메라에 보였는가)으로 채점하여, 단순히 목표 반경을 스쳐 지나가는 것만으로는 성공으로 인정하지 않는다.</li>
+<li><strong>광범위한 평가</strong>: 9개 모델(프론티어 API 모델 4종 + Qwen3.5 패밀리 4개 크기 + 임베디드 특화 Cosmos3-Edge-2B)을 두 개의 맵에서 80개 단일 드론 에피소드와 20개의 4대 드론 동시 지휘 에피소드(총 100개)로 평가.</li>
+<li><strong>"선언(declaration) 문제" 발견</strong>: 소형 오픈 모델의 성능 격차가 항법이 아니라 도착을 스스로 알리는 행동 프로토콜 준수 능력에서 비롯됨을 규명.</li>
+</ol>
+<h2>방법론</h2>
+<ul>
+<li><strong>행동 공간</strong>: 모델은 매 스텝마다 하나의 JSON 행동만 반환한다. go는 이미지 좌표(0~1000 정규화)와 깊이(추정치, 실측 센서 아님)를 지정해 전진을, rotate는 제자리 회전(최대 ±90도/스텝)으로 시야 밖 탐색을 가능케 하고, think는 드론을 정지시킨 채 더 깊이 추론할 수 있게 하며, finished는 도착을 "주장"만 할 뿐 실제 종료를 결정하지 않는다 — 이후 별도의 검증기(사후 로그 분석)가 그 주장이 타당했는지 판정한다.</li>
+<li><strong>실행 구조</strong>: 모델이 선택한 픽셀과 깊이는 규칙 기반 컨트롤러가 핀홀 카메라 모델로 3차원 변위(바디 프레임 속도 setpoint)로 변환하고, 이는 표준 비행 제어 캐스케이드(속도→자세→로터)를 거쳐 실제 기체를 움직인다. 모델의 책임은 JSON 출력까지이며, 그 아래 파이프라인은 모든 모델에 대해 동일하다.</li>
+<li><strong>과제 축</strong>: 목표가 움직이는지(정지/이동) × 첫 프레임에서 보이는지(가시/비가시)의 2×2 조합으로 접근(Approach)·추적(Track)·탐색(Search)·탐색후추적(Search-and-Track) 네 과제를 정의. 추가로 한 모델이 동시에 4대의 드론(각기 다른 시점)을 지휘해 여러 유사 후보 중 정답을 찾는 "지휘(Commanding)" 설정을 둔다.</li>
+<li><strong>환경</strong>: AirSim(언리얼 엔진) 기반 주거 지역 맵과 캠퍼스 맵에서 단일 드론 실험을, Blocks 맵을 추가해 지휘 실험을 수행.</li>
+</ul>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li>단일 드론 접근 과제에서 최고 성능 모델(Gemini 3.7 Flash)도 성공률 65%에 그쳤고, 목표를 첫 프레임에서 숨기면(탐색 과제) 40% 이하로 떨어져 어떤 모델도 40%를 넘지 못함.</li>
+<li>모델 순위는 과제마다 뒤바뀐다: GPT-5는 정지 목표 접근에서는 Gemini 3.7 Flash와 근접하지만(60% vs 65%), 이동 목표 추적에서는 15%에 그친 반면 Gemini는 80%를 기록.</li>
+<li>체화 특화 모델(Gemini Robotics-ER 2)이 범용 형제 모델(Gemini 3.7 Flash) 대비 뚜렷한 우위를 보이지 않음(평균 47.5% vs 57.5%).</li>
+<li><strong>핵심 발견</strong>: Qwen3.5-9B는 목표 반경(δ) 진입률(OSR)이 90%로 어떤 프론티어 모델보다 높지만, 실제 성공률(SR)은 35%에 불과 — 도착 선언을 하지 않거나(미선언) 목표까지 도달하기 훨씬 전에 조기 선언(평균 시작 거리의 0.63배 지점)을 해버리기 때문. Qwen3.5-2B는 아예 성공률 0%이며, 시작 거리의 1.28배 지점(즉 목표에 다가가기도 전)에서 도착을 선언하는 경우가 있었음. Cosmos3-Edge-2B는 목표 반경에 25% 진입하고도 단 한 번도 도착을 선언하지 않음.</li>
+<li>프론티어 모델들은 반경 진입률·선언율·성공률이 서로 비슷하게 움직여(항법이 병목인 정상적 패턴) 이런 괴리가 나타나지 않음.</li>
+<li><strong>다중 드론 지휘 실험</strong>: 단일 드론 순위가 지휘 성능을 예측하지 못함. GPT-5는 단일 드론 접근 60% 대비 지휘 성공률 20%에 그쳤고(300초 시간 초과로 실패), Qwen3.5-27B/9B는 지휘에서 100%/30% 선언율을 보이면서도 목표에 도달하지 못해(15%/55%) 성공률이 낮았음. Qwen3.5-9B와 27B는 4개의 서로 다른 시점 이미지에 동일한 좌표를 그대로 복사해 응답하는 실패(70%, 58% 빈도)를 보임 — 이는 한 대의 드론만으로는 나타날 수 없는 유형의 오류.</li>
+<li>3회 반복 비행 분산 검증에서 표준편차가 이항분포 기대치와 대체로 일치해, 관측된 차이가 파이프라인 불안정성이 아닌 에피소드 단위의 자연적 변동임을 확인.</li>
+<li>test-time 숙고(think 행동)는 스텝 수준에서 유의미하게 성능을 개선하지 못함(개입 후 진행 거리 개선폭 미미, 정체 탈출 확률도 일반 스텝보다 낮음).</li>
+</ul>
+<h2>한계점</h2>
+<ul>
+<li>모든 실험이 AirSim 시뮬레이션에서만 이루어졌으며 실제 하드웨어 비행 검증은 이루어지지 않음(다만 저자들은 속도 setpoint 인터페이스가 실제 오토파일럿의 오프보드 모드와 동일하다고 언급).</li>
+<li>계층적 지휘 구조(지휘자-하위 드론 에이전트)는 설계상 가능하지만 실제 평가는 이루어지지 않음.</li>
+<li>제어 루프의 처리량(스루풋)이 느려지면 특히 이동 목표 추적 성능이 저하되는 민감성이 관찰되었으며, 이는 실제 탑재 환경에서 전력·연산이 보장되지 않는 상황에서 더 심각해질 수 있음.</li>
+<li>벤치마크 규모가 에피소드당 20개로, 퍼센트 단위 성공률 변화의 통계적 유의성에 한계가 있음(에피소드 단위 5%p 단위로만 구분 가능).</li>
+</ul>
+<h2>시사점</h2>
+<p>행동 공간을 파인튜닝 없이 프롬프트로만 정의하는 "제너럴리스트 VLA" 접근에서, 실제로 모델 간 차이를 만드는 것은 시각적 접지(grounding)나 항법 능력이 아니라 스스로 선언한 행동 프로토콜(특히 종료 조건 판단)을 끝까지 일관되게 지키는 능력이라는 점을 시사한다. 이는 온보드 저전력 환경에 배치 가능한 소형 모델을 프론티어 모델과 실질적으로 구분 짓는 지점이 "비행"이 아니라 "언제 멈출지 아는 규율"임을 의미하며, 향후 연구는 이 행동(도착 선언 등)을 모델 가중치 안으로 학습시키는 방향, 그리고 실제 하드웨어 비행과 계층적 다중 드론 지휘 평가로 확장될 필요가 있음을 제안한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.01404" target="_blank" rel="noopener">huggingface.co/papers/2609.01404</a> · 2026-09-03</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

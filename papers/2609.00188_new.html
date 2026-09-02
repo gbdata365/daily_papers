@@ -1,0 +1,125 @@
+<meta charset="UTF-8">
+<title>지마블루</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#6 · Daily Papers 2026-09-03</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 39</span>
+    </div>
+    <h1 class="article-title">ZimaBlue: Evolving Generalizable World Action Models through Scalable Video Pre-training</h1>
+    <p class="article-title-ko">지마블루: 대규모 비디오 사전학습을 통한 범용 월드-액션 모델의 진화</p>
+    <p class="article-sub">행동 라벨이 없는 대규모 1인칭(에고센트릭) 비디오를 활용해 범용 로봇 제어를 위한 "World Action Model(WAM)"을 사전학습시키고, Slow-Fast 이중 시스템 구조로 실시간 30Hz 제어까지 가능하게 만든 프레임워크.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.00188" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.00188" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: ZimaBlue: Evolving Generalizable World Action Models through Scalable Video Pre-training</li>
+<li><strong>저자</strong>: Joy Future Academy 소속 연구팀 (핵심 기여자 Xionghao Wu, Yijun Yang, Shiyang Zhou, Haoze Sun, Jianhui Liu, Songsong Yu, Jiyao Zhang, Wenbo Li 외 다수의 협력 연구진)</li>
+<li><strong>출처</strong>: arXiv:2609.00188v1 [cs.CV] (2026년 8월 31일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://zimablue-wam.github.io/">https://zimablue-wam.github.io/</a> (코드: <a href="https://github.com/ZimaBlue-WAM/ZimaBlue">https://github.com/ZimaBlue-WAM/ZimaBlue</a>)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.00188">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>행동 라벨이 없는 대규모 1인칭(에고센트릭) 비디오를 활용해 범용 로봇 제어를 위한 "World Action Model(WAM)"을 사전학습시키고, Slow-Fast 이중 시스템 구조로 실시간 30Hz 제어까지 가능하게 만든 프레임워크.</p>
+<h2>배경 및 문제의식</h2>
+<p>로봇 조작 정책이 다양한 환경에 일반화되려면 폭넓은 물리적 경험이 필요하지만, 행동(action) 라벨이 붙은 로봇 궤적 데이터는 수집 비용이 크고 다양성도 제한적이다. 반면 사람의 1인칭 비디오는 물체 상호작용, 접촉 역학, 도구 사용, 장기 과업 구조에 대한 풍부한 정보를 담고 있지만 행동 라벨이 없어 기존 Vision-Language-Action(VLA) 모델 학습에 직접 활용하기 어렵다. 저자들은 "미래 시각 상태와 로봇 행동을 함께 예측"하는 WAM 패러다임이 이 문제, 즉 행동 라벨이 없는 방대한 비디오 경험을 로봇 제어로 전환하는 데 적합하다고 보았다. 다만 기존 WAM들은 범용 비디오 생성 모델을 그대로 가져다 쓰는 경우가 많아, 로봇에 특화된 인과적·순차적 예측 구조가 부족하고, 반복적 디노이징으로 인한 느린 추론 속도 때문에 실시간 폐루프 제어에 부적합하다는 한계가 있었다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>비디오 규모 확장이 실제로 제로샷 일반화 성능을 크게 향상시킨다는 것을 실증적으로 보인 ZimaBlue 프레임워크 제안 (도전적인 조작 벤치마크에서도 성능 강화 확인).</li>
+<li>에고센트릭 비디오 사전학습 → 다중 embodiment 비디오-행동 중간학습 → 목표 로봇 후속학습의 3단계 학습 커리큘럼과, 서로 다른 로봇 플랫폼의 상태·행동을 하나의 100차원 표준 표현으로 통합하는 unified state-action representation을 함께 제시.</li>
+<li>고용량 Slow 월드모델과 경량 Fast 행동모델을 결합한 비동기 Slow-Fast 이중 시스템 아키텍처를 제안해, NVIDIA RTX 4090에서 30Hz 폐루프 실시간 로봇 제어를 실현.</li>
+</ul>
+<h2>방법론</h2>
+<p>ZimaBlue는 Wan2.2-TI2V-5B라는 사전학습된 텍스트-투-비디오 diffusion transformer를 기반으로 한다.
+- <strong>1단계 (비디오 사전학습)</strong>: EPIC-KITCHENS, Egocentric-100K, EgoDex, DROID, AgiBot 등 사람·로봇의 대규모 에고센트릭 비디오(최대 120,000시간 규모)를 사용해, 행동 라벨 없이 미래 시각 상태를 예측하도록 학습한다. 여러 카메라 뷰를 하나의 3분할 캔버스로 표준화하고, 블록 단위 인과적 디노이징으로 순차적 예측 구조를 학습시킨다.
+- <strong>2단계 (비디오-행동 중간학습)</strong>: DROID, AgiBot, Galaxea, RoboMIND2-Franka 등 이질적인 로봇 플랫폼의 궤적 데이터를 100차원 통합 상태-행동 공간(엔드이펙터 위치·회전, 그리퍼, 관절, 손 등)으로 매핑하고, 비디오와 행동을 함께 예측하는 flow-matching 목적함수로 시각적 동역학을 행동 의미와 결속시킨다.
+- <strong>3단계 (후속학습)</strong>: 목표 로봇(DROID 등) 또는 시뮬레이션 벤치마크에 맞춰 Slow 브랜치를 특화한 뒤, 이를 고정하고 경량 Fast 브랜치(0.5B)를 학습시켜 실시간 행동 생성을 담당하게 한다.
+- <strong>Slow-Fast 이중 시스템</strong>: 대형 Slow DiT(5B)가 미래 비디오 잠재표현과 레이어별 Key/Value 캐시를 생성하면, 경량 Fast DiT(0.5B)가 최신 관측·상태와 함께 이 캐시를 어텐션으로 참조해 고빈도(최대 30Hz) 행동을 예측한다. Real-Time Chunking 기법으로 이전 행동 청크와의 연속성을 유지한다.
+- <strong>가속화</strong>: Distribution Matching Distillation(DMD)으로 8단계 디노이징을 2단계로 압축하고, Torch Compile 등을 적용해 폐루프 지연시간을 450ms에서 33ms로(약 13.6배) 단축했다.</p>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li><strong>실물 로봇 제로샷 평가</strong>: 7자유도 Franka 팔 기반, 표준(8과제)·교란(4과제) 총 12개 제로샷 조작 과제에서 평가. 목표 로봇 데이터만 사용한 베이스라인은 36.1% 성공률이었으나, 다중 embodiment 데이터 추가 시 46.1%, 60,000시간 비디오 사전학습 추가 시 66.9%, 120,000시간 비디오 사전학습 시 77.8%까지 단조 증가했다. 이는 π0.5(54.4%), DreamZero(53.6%)를 크게 상회하는 결과다. 특히 배경·조명 등이 바뀐 교란(Perturbed) 과제에서 비디오 사전학습 확장의 이득이 두드러졌다(35.0%→57.5%).</li>
+<li><strong>Slow-Fast 구조 효과</strong>: 동일 후속학습 조건에서 Slow 단독 대비 Dual-System이 표준 과제 성공률을 80.8%→87.9%, 교란 과제를 30.0%→57.5%로 끌어올렸으며, DMD 증류+컴파일 적용 시 지연시간이 449.6ms→33.0ms로 줄면서도 전체 성공률은 75.0%로 크게 저하되지 않았다.</li>
+<li><strong>시뮬레이션 벤치마크</strong>: LIBERO-Plus 제로샷 전이에서 86.7%(기존 WAM 기반 방법 전체 능가), SFT 후 92.0%로 최고 성능 달성. RoboTwin 2.0(50개 양팔 조작 과제)에서 평균 94.5%로 비교 대상 VLA·WAM 방법을 모두 상회. RoboCasa365(365개 과제)에서는 100,000시간의 실제 로봇 데이터를 사용한 VLA 기반 Xiaomi-Robotics-1(57.4%)에 이어 전체 2위(49.5%)를 기록했으나, 미학습(Composite-Unseen) 과제에서는 기존 최고 WAM 대비 성공률을 7.9%에서 16.5%로 두 배 이상 끌어올려, 비디오 사전학습이 특히 미지 과제 일반화에 크게 기여함을 보였다.</li>
+</ul>
+<h2>한계점</h2>
+<ul>
+<li>논문 저자들이 스스로 언급한 한계로, 현재 사용된 120,000시간의 비디오 데이터도 로봇 학습 확장의 초기 단계에 불과하다고 설명한다.</li>
+<li>카메라 시점(viewpoint) 변화에 대한 제로샷 일반화가 상대적으로 취약해 핵심 병목으로 지적되었다(LIBERO-Plus에서 카메라 항목 점수가 다른 항목 대비 낮음).</li>
+<li>실물 로봇 교란(Perturbed) 과제에서는 표준 과제(87.9%)에 비해 여전히 낮은 성공률(5/10~7/10 수준)을 보이며, 정답 중간 상태에서 다음 단계로 진행하지 못하거나 접촉 상실·목표물 이탈 등 지역적 상호작용 오류가 남아있어, 더 정교한 진행 인지형 재계획과 반응형 보정 제어가 필요하다.</li>
+<li>각 과제가 10회 내외의 소규모 시행으로 평가되어 개별 과제 결과에 샘플링 노이즈가 존재할 수 있다.</li>
+</ul>
+<h2>시사점</h2>
+<p>행동 라벨이 없는 방대한 1인칭 비디오가 로봇 조작 일반화를 위한 실질적이고 경제적인 확장 축이 될 수 있음을 실증했다는 점에서 의미가 크다. 특히 미학습(unseen) 과제·환경에서 성능 격차가 가장 크게 벌어진다는 결과는, 향후 로봇 파운데이션 모델 개발에서 로봇 궤적 데이터 확보보다 대규모 비디오 사전학습에 투자하는 것이 일반화 능력 확보에 더 효율적일 수 있음을 시사한다. 아울러 Slow-Fast 이중 시스템과 디퓨전 단계 증류를 결합한 접근은, 무겁고 느린 생성형 월드모델을 실제 폐루프 로봇 제어에 실용적으로 배치할 수 있는 구조적 해법을 제공한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.00188" target="_blank" rel="noopener">huggingface.co/papers/2609.00188</a> · 2026-09-03</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

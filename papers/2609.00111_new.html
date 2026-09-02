@@ -1,0 +1,119 @@
+<meta charset="UTF-8">
+<title>Qwen-Drive-1.0</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#2 · Daily Papers 2026-09-03</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 336</span>
+    </div>
+    <h1 class="article-title">Qwen-Drive-1.0: An Initial Step towards a Vision-Language Foundation Model for Autonomous Driving</h1>
+    <p class="article-title-ko">Qwen-Drive-1.0: 자율주행을 위한 비전-언어 파운데이션 모델을 향한 초기 단계</p>
+    <p class="article-sub">사전학습된 비전-언어 모델(VLM)의 구조를 바꾸지 않고 3D 인지, 주행 관련 시각질의응답(VQA), 경로 계획(motion planning)을 하나의 프레임워크로 통합한 자율주행용 비전-언어 파운데이션 모델 Qwen-Drive-1.0을 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.00111" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.00111" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Qwen-Drive-1.0: An Initial Step towards a Vision-Language Foundation Model for Autonomous Driving</li>
+<li><strong>저자</strong>: Xin Zhou, Zongchuang Zhao, Zhibo Yang, Mingsheng Li, Humen Zhong, Shuai Bai, Dingkang Liang, Xiang Bai, Dayiheng Liu 등 (Qwen Team, Huazhong University of Science and Technology)</li>
+<li><strong>출처</strong>: arXiv:2609.00111v1 [cs.CV] (2026년 8월 31일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://huggingface.co/Qwen/Qwen-Drive-1.0-4B">Hugging Face</a> / <a href="https://modelscope.cn/models/Qwen/Qwen-Drive-1.0-4B">ModelScope</a> / <a href="https://github.com/QwenLM/Qwen-Drive-1.0">GitHub</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.00111">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>사전학습된 비전-언어 모델(VLM)의 구조를 바꾸지 않고 3D 인지, 주행 관련 시각질의응답(VQA), 경로 계획(motion planning)을 하나의 프레임워크로 통합한 자율주행용 비전-언어 파운데이션 모델 Qwen-Drive-1.0을 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>최근 자율주행 연구는 모듈형 파이프라인 대신 사전학습된 VLM을 활용해 장면 이해·추론·행동 생성을 하나로 묶는 vision-language-action(VLA) 방식으로 옮겨가고 있다. 그러나 기존 방식은 주로 텍스트 기반 VQA로 주행 지식을 주입하는데, 여기에는 두 가지 한계가 있다. 첫째, 텍스트 응답만으로는 3D 레이아웃·깊이·점유(occupancy) 같은 공간 정보를 직접 제약하거나 검증하기 어려워 모델이 유창한 설명은 만들면서도 3D 공간 인식은 부정확할 수 있다. 둘째, 주행 데이터로 대규모 도메인 적응을 하면 사전학습에서 얻은 범용 지식을 망각(catastrophic forgetting)하는 문제가 발생하는데, 이는 드물거나 처음 보는(OOD) 상황에 대한 대응력을 떨어뜨린다. 또한 실제 양산 차량에서는 인포테인먼트(콕핏)와 주행 시스템이 하나의 컴퓨팅 플랫폼을 공유하는 추세이므로, 하나의 모델이 범용 대화·명령 수행 능력과 주행 능력을 동시에 갖춰야 한다는 요구도 있다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>사전학습된 VLM 구조를 변경하지 않으면서 3D 인지, 주행 VQA, 경로 계획을 하나의 모델에 통합한 최초의(저자 주장) 자율주행용 비전-언어 파운데이션 모델 제시.</li>
+<li>3D 객체 검출·시맨틱 점유 예측(occupancy)·BEV(조감도) 맵 분할을 동시에 학습하는 외부 BEV 인지 헤드(perception head)를 설계하여, 사전학습 표현이 3D 구조를 얼마나 담고 있는지 확인하는 "탐침(probe)" 역할과 함께 해석 가능한 3D 출력을 제공.</li>
+<li>이종(heterogeneous) 데이터셋의 라벨 체계를 통일하고, 주행 VQA 응답을 재작성/필터링하며, 범용 VQA 데이터를 함께 섞는 단계별(staged) 학습·데이터 파이프라인을 구축해 도메인 적응과 망각 방지를 동시에 달성.</li>
+<li>VLM의 표현을 조건으로 flow matching 방식으로 미래 궤적을 생성하는 Planning Expert를 설계하고, 여러 공개 주행 데이터셋의 궤적을 통일된 waypoint 형식으로 합쳐 공동 학습, open-loop/pseudo-closed-loop/closed-loop 전 영역에서 경쟁력 있는 성능을 달성.</li>
+</ul>
+<h2>방법론</h2>
+<p>Qwen-Drive-1.0은 멀티모달 VLM인 Qwen3.5-4B를 공유 backbone으로 사용하고, 여기에 두 개의 외부 모듈을 추가한다. 뷰(view)·프레임(frame) 태그를 텍스트 토큰으로 삽입해 다중 시점·다중 시점 영상 입력을 구분하며, 질의응답 과제는 프레임 우선(frame-major), 계획 과제는 뷰 우선(view-major) 순서로 입력을 직렬화한다.</p>
+<p>(1) BEV 인지 헤드: 비전 인코더의 저수준 특징과 VLM 출력의 고수준 문맥 특징을 함께 사용한다. depth-based view transform으로 카메라 특징을 3D 복셀 볼륨으로 투영하고, 쿼리 기반 BEV 트랜스포머로 특징 피라미드와 결합해 ego-frame BEV 표현을 만든다. 이 표현으로 DETR 스타일 디코더(3D 검출), 3D UNet(점유 예측), UNet 스타일 헤드(맵 분할)를 각각 학습시키며, 세 손실(Ldet, Locc, Lmap)의 합으로 공동 최적화한다.</p>
+<p>(2) Planning Expert: 32층 diffusion transformer 구조로, VLM의 8개 grouped-query attention 층에서 캐시한 key/value를 조건으로 사용한다. flow matching 기반 x-prediction(정답 궤적을 직접 예측)으로 미래 5초(10Hz, 50 waypoint) ego 궤적을 생성하며, 시간적 규제 항(temporal regularization)을 추가해 궤적의 떨림을 줄인다.</p>
+<p>학습은 4단계로 진행된다: ① BEV 인지 헤드만 학습(초기화), ② 인지 헤드+비전 인코더+VLM을 주행 데이터와 범용 VQA 데이터로 공동 학습(범용 능력 보존), ③ VLM/비전 인코더를 고정한 채 Planning Expert를 flow matching으로 학습(SFT 모델), ④ NAVSIM, WOD-E2E, PAI-AV 등 다중 소스의 과제 단위 보상(충돌 회피, 주행 가능 영역 준수, 진행도, 사람 선호 등)을 이용해 그룹 상대적 정책 경사(GRPO 유사 방식)로 Planning Expert를 강화학습으로 추가 미세조정(RL 모델). 데이터 측면에서는 nuScenes와 OpenScene 등 서로 다른 라벨 체계를 공통 클래스 체계로 통합하고, 주행 VQA 응답을 재작성·검증하며, 여러 데이터셋의 궤적 표현을 단일 waypoint 형식으로 정규화했다.</p>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li><strong>3D 인지</strong>: nuScenes와 OpenScene 검증셋에서 평가. Qwen-Drive-1.0-SFT는 nuScenes에서 43.95 mAP·60.99 map mIoU, OpenScene에서 43.45 mAP·71.27 map mIoU를 기록하며 BEVFormerV2, PETR/PETRv2 등 기존 3D 검출기 대비 검출·맵 분할에서 우수한 성능을 보였다. 다만 헤드만 학습한 경우 성능이 제한적이어서, 사전학습된 VLM 표현만으로는 3D 구조가 충분히 노출되지 않으며 공동 미세조정(Stage 2)이 중요함을 확인했다.</li>
+<li><strong>주행 VQA 및 범용 VQA</strong>: LingoQA, Ego3D-Bench, VLADBench, SURDS, WaymoQA 등 5개 공개 벤치마크와 자체 제작한 인과추론 벤치마크(PAI-AV-CoC), 중국어 도심 주행 의사결정 벤치마크에서 평가. Qwen-Drive-1.0-SFT는 주행 QA 평균 69.43점으로 비교 모델(Qwen3.5-4B, Gemma4-12B, Cosmos 계열, MiMo-Embodied, UniDriveVLA, Alpamayo-1.5 등) 중 최고를 기록했으며, 특히 인과추론(causal reasoning) 평균 58.30점으로 2위(Gemma4-12B, 22.05점)를 크게 앞섰다. 동시에 MMBench, MMMU, OCRBench 등 14개 범용 비전-언어 벤치마크에서 기반 모델 Qwen3.5-4B 대비 지식·추론 그룹은 1점 이내 유지, 공간 이해 그룹은 오히려 향상되어 범용 능력을 크게 잃지 않았음을 보였다.</li>
+<li><strong>경로 계획</strong>: WOD-E2E(open-loop, 장꼬리 시나리오), PAI-AV(open-loop, 6개 후보 궤적), NAVSIM(pseudo-closed-loop), AlpaSim(closed-loop, 916개 시나리오) 4단계로 평가. NAVSIM에서 Predictive Driver Model Score(PDMS) 90.7(RL 모델), WOD-E2E 테스트셋에서 Rater Feedback Score 7.91을 달성해 비교 기법들과 대등하거나 우수한 성능을 보였다. 강화학습(Stage 4) 적용 후 NAVSIM PDMS가 87.8~88.2에서 90.7로, AlpaSim 도로 이탈률이 24%에서 12%로 개선되는 등 안전성이 향상되었으나, 진행도(progress)가 다소 감소하는 트레이드오프도 관찰되었다.</li>
+</ul>
+<h2>한계점</h2>
+<p>논문이 명시한 한계는 다음과 같다. 첫째, 서로 다른 시간 스케일에서 작동하는 여러 원인(예: 멀리 있는 신호등 vs. 가까이서 갑자기 나타난 보행자)이 동시에 존재할 때, 모델이 어떤 원인이 지배적인지와 그 시간적 범위를 안정적으로 식별하지 못하는 경우가 있다. 둘째, 생성된 궤적이 모델이 제시한 텍스트 근거(reasoning)와 항상 일치하지는 않으며, reasoning이 성능을 높이는 이유가 실제 인과적 정합성 때문인지 단순히 조건 문맥 정보가 늘어난 효과인지 명확히 구분되지 않는다. 셋째, 3D 인지·주행 이해·경로 계획 세 과제가 서로 다른 입력 형식·시간적 문맥·이미지 해상도를 사용하고 있어 표현 간 전이(transfer)가 제한적이며, 저자들은 향후 다중 시간축 인과 모델링과 근거-궤적 간 일관성 지도학습, 세 과제 설정의 정렬(alignment)이 필요하다고 제안한다.</p>
+<h2>시사점</h2>
+<p>이 연구는 사전학습된 VLM 구조를 그대로 유지한 채 외부 모듈(BEV 인지 헤드, Planning Expert)만 추가하는 방식으로 3D 인지와 경로 계획 능력을 부여할 수 있음을 보여준다. 이는 콕핏-주행 통합 플랫폼처럼 하나의 모델이 범용 대화 능력과 전문 주행 능력을 모두 갖춰야 하는 실제 배포 환경에 실용적인 시사점을 준다. 또한 이종 데이터셋의 라벨·궤적 표현을 통일하는 데이터 파이프라인과, 모방학습(flow matching) 이후 과제 단위 보상으로 강화학습을 추가하는 단계적 학습 전략은 여러 공개 벤치마크를 넘나드는 통합 학습이 가능함을 실증적으로 보여준다는 점에서, 향후 범용 VLM 기반 자율주행 파운데이션 모델 연구에 참고할 만한 설계 지침을 제공한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.00111" target="_blank" rel="noopener">huggingface.co/papers/2609.00111</a> · 2026-09-03</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

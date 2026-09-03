@@ -1,0 +1,115 @@
+<meta charset="UTF-8">
+<title>NeoMME</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#11 · Daily Papers 2026-09-04</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 21</span>
+    </div>
+    <h1 class="article-title">NeoMME: A Single-Tower Multimodal-Native Multilingual Foundation Encoder for Efficient Fine-Tuning and Inference</h1>
+    <p class="article-title-ko">NeoMME: 효율적 미세조정과 추론을 위한 단일 타워 멀티모달-네이티브 다국어 기초 인코더</p>
+    <p class="article-sub">NeoMME는 별도로 사전학습된 비전 인코더나 인과적 언어모델에 의존하지 않고, 다국어 텍스트와 원본 이미지 패치를 하나의 양방향 Transformer로 처음부터 함께 학습시킨 260M·800M 규모의 멀티모달 기초 인코더로, 이를 미세조정한 NeoMME-Retriever가 동급 크기에서 최고 수준의 시각 문서 검색 성능과 뛰어난 압축·속도 효율을 동시에 달성했다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.01657" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.01657" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: NeoMME: A Single-Tower Multimodal-Native Multilingual Foundation Encoder for Efficient Fine-Tuning and Inference</li>
+<li><strong>저자</strong>: Aurélien Lac, Tony Wu (H Company, 동등 기여)</li>
+<li><strong>출처</strong>: arXiv:2609.01657v1 [cs.IR] (2026년 8월 31일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://hf.co/collections/Hcompany/neomme">https://hf.co/collections/Hcompany/neomme</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.01657">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>NeoMME는 별도로 사전학습된 비전 인코더나 인과적 언어모델에 의존하지 않고, 다국어 텍스트와 원본 이미지 패치를 하나의 양방향 Transformer로 처음부터 함께 학습시킨 260M·800M 규모의 멀티모달 기초 인코더로, 이를 미세조정한 NeoMME-Retriever가 동급 크기에서 최고 수준의 시각 문서 검색 성능과 뛰어난 압축·속도 효율을 동시에 달성했다.</p>
+<h2>배경 및 문제의식</h2>
+<p>현재 대부분의 멀티모달 모델은 생성형 비전-언어 모델링을 위해 설계된 구조, 즉 별도로 사전학습된 비전 인코더(예: SigLIP)와 인과적(causal) 언어모델을 결합하는 방식을 따른다. ColPali와 같은 시각 문서 검색기(visual document retriever)들은 이런 생성형 VLM 구조를 검색이라는 비생성적 과제에 재활용하면서, VLM이 가진 파라미터와 연산 비용의 오버헤드를 그대로 떠안게 된다. 저자들은 두 모달리티가 같은 계산 경로를 공유하지 않는 이중 타워(dual-tower) 구조나, 별도 비전 인코더를 유지한 채 언어모델만 양방향으로 바꾼 ModernVBERT류 접근과 달리, 이미지 패치와 텍스트 토큰이 처음부터 하나의 Transformer 전 계층을 함께 통과하는 단일 타워(single-tower) 설계가 모델 생명주기(사전학습·미세조정·병렬화·서빙)를 통일하고 효율을 높일 수 있다고 보았다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li><strong>NeoMME</strong>: 사전학습된 비전 타워 없이 32×32 원본 이미지 패치와 다국어 텍스트를 하나의 장문맥(최대 16,384 토큰) 양방향 Transformer 인코더로 처음부터 학습한 260M·800M 파라미터 모델군. 텍스트 전용 예시와 이미지-텍스트 쌍 모두에서 마스크드 이산 확산(masked discrete-diffusion) 목적함수로 학습되었으며, 텍스트 마스킹 시 이미지 패치는 그대로 보여 이미지 근거를 활용하도록 유도한다.</li>
+<li><strong>NeoMME-Retriever</strong>: 하나의 백본 순전파로 밀집(dense) 표현과 후기 상호작용(late-interaction) 다중벡터 표현을 동시에 산출하는 효율적 시각 문서 검색 임베더. ViDoRe v1·v2·v3 벤치마크에서 파레토 최적(Pareto-optimal) 성능을 보인다.</li>
+<li>Late-Interaction Kernels(LIK)라는 융합된 MaxSim 커널 모음을 함께 공개해, 후기 상호작용 추론과 학습 시의 최대 VRAM 사용량과 실행 시간을 줄였다.</li>
+</ol>
+<h2>방법론</h2>
+<p>NeoMME는 텍스트 토큰을 ALBERT 스타일의 인수분해된 임베딩(256차원 조회 후 모델 폭으로 투영)으로, 이미지 패치는 32×32 RGB 블록을 레이어정규화 후 2계층 MLP로 투영해 입력한다. 패치 병합 모듈이나 사전학습된 비전 인코더 없이 이 MLP를 처음부터 학습시켰으며, 가로세로 비율을 유지하면서 긴 변 기준 1,024~2,048픽셀 사이에서 무작위로 크기 상한을 샘플링하는 동적 해상도 방식을 사용한다. 위치 정보는 텍스트와 이미지 행·열 좌표를 모두 표현할 수 있도록 2차원으로 확장된 회전 위치 임베딩(2D RoPE)으로 처리한다.</p>
+<p>백본은 260M(17층, 은닉폭 1024)과 800M(20층, 은닉폭 1792) 두 크기로 구성되며, 대부분의 층은 대칭형 슬라이딩 윈도우 주의(반경 256 또는 1024 토큰씩 교대)를 쓰고 6개 층마다 및 마지막 층은 전역 주의를 사용한다. 그룹 쿼리 주의(GQA), 쿼리-키 정규화, 제곱-ReLU MLP, 게이트형 주의 출력, 잔차 스케일링(Depth-μP 방식) 등 여러 최신 Transformer 설계 요소를 결합했다.</p>
+<p>사전학습은 텍스트 전용 스트림(전체 토큰의 55%)과 멀티모달 스트림(45%)을 혼합한 약 524B 토큰 규모로 진행되며, 텍스트 전용 세그먼트는 손상률(corruption rate)을 U(0,1)에서, 멀티모달 세그먼트는 U(0.30,1)에서 뽑아 마스킹 비율을 더 높게 설정함으로써 모델이 텍스트만으로 답을 유추하는 지름길을 줄이고 이미지 정보를 더 적극적으로 활용하도록 유도했다(교차모달 입력-제거 프로브 실험에서 90% 마스킹 시 이미지 이득이 260M에서 38.4%p, 800M에서 40.5%p로 확인됨). 옵티마이저는 행렬 파라미터에 NorMuon, 나머지 1차원 파라미터에 MasterAdamW를 사용하는 WSD(warmup-stable-decay) 스케줄을 채택했다.</p>
+<p>검색용 미세조정에서는 사전학습된 백본 위에 후기 상호작용 헤드(토큰당 128차원 벡터, ColBERT/ColPali 방식의 MaxSim)와 밀집 헤드(평균 풀링 후 L2 정규화, Matryoshka 방식으로 여러 차원 동시 학습)를 공동 학습시켰다. 학습에는 텍스트 검색(mLateOn 등)과 문서 이미지 검색(ColPali, VisRAG 등) 데이터를 1:2 비율로 섞었고, 대규모 대조학습을 메모리 효율적으로 수행하기 위해 GradCache와 자체 개발한 Late-Interaction Kernels(LIK, MaxSim 계산을 타일 단위로 수행해 전체 유사도 텐서를 메모리에 올리지 않는 기법)를 활용했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>ViDoRe v3(시각 문서 검색) 벤치마크에서 NeoMME-Retriever 260M은 nDCG@10 0.523을 기록해 800M 미만의 모든 평가 모델을 능가했으며, 250M 규모의 ColModernVBERT(0.261)나 ColSmol-256M(0.207)을 큰 격차로 앞섰다. 800M 모델은 0.556을 기록해 유사 크기의 Vultron Flash(0.565)에 근접했고, 3.75B 파라미터의 ColQwen2.5(0.524)보다도 14.4배 작은 크기로 더 높은 점수를 얻었다. BEIR-15 텍스트 검색에서는 800M 모델이 후기 상호작용 방식으로 nDCG@10 0.513을 기록했다.</p>
+<p>효율성 측면에서, 2048×2048 해상도 기준 NVIDIA L40S에서 NeoMME-260M은 초당 51.3페이지를 인코딩해 ColModernVBERT(초당 26.0페이지)의 약 1.97배 처리량을 보였다. 계층적 토큰 풀링(hierarchical token pooling)과 비대칭 양자화(질의는 int8, 문서는 이진화)를 결합하면 후기 상호작용 임베딩을 페이지당 약 1.5MB에서 6KB로 255배 압축하면서도 nDCG@10의 95% 이상을 유지할 수 있음을 보였다. 또한 언어 전이 실험(GLUE·SuperGLUE 등 17개 과제)에서 NeoMME-260M은 평균 75.3점을 얻어 텍스트 전용 모델인 LFM2.5-Encoder-230M(79.3점)에 근접했고, RVL-CDIP 문서 분류에서는 소량의 미세조정(6,000개 예시)만으로 정확도가 51.6%에서 81.5%로 크게 향상되어 문서 이미지에 대한 빠른 적응력을 보였다. 반면 자연 이미지 분류(Food101, Oxford Pets 등)에서는 동결된 표현의 성능이 낮았는데, 이는 사전학습이 이미지 자체를 재구성하거나 분류하는 목적함수를 전혀 사용하지 않았기 때문으로 분석된다.</p>
+<h2>한계점</h2>
+<p>저자들이 직접 밝힌 한계는 다음과 같다. 사전학습 데이터 규모가 ModernBERT(약 2조 토큰) 대비 약 7분의 1 수준(약 5240억 토큰)에 불과해 데이터 스케일링의 여지가 남아 있다. 이미지 콘텐츠를 직접 예측·재구성하는 목적함수가 전혀 없어(텍스트만 마스킹 예측), 동결된 자연 이미지 표현력이 약하다. 검색 미세조정에 사용된 텍스트 대조학습 데이터 양이 mLateOn 같은 최신 검색 시스템(약 6.6억 쌍) 대비 훨씬 적다(약 43만 개). 텍스트와 이미지 문서를 하나의 임베딩 공간에서 함께 검색하는 혼합 모달리티(mixed-modality) 시나리오는 학습은 되었으나 실제 평가는 수행하지 않았다. 시각 문서 검색 데이터의 언어 커버리지가 텍스트 검색 데이터보다 훨씬 좁으며(영어·프랑스어·독일어·이탈리아어·스페인어·포르투갈어 정도), 주요 아키텍처·스케일링·데이터 선택의 영향을 분리하는 어블레이션 연구가 부족하다. 또한 지식 증류(distillation)를 사용하지 않았고, 데이터 편향과 반복적 마스크 토큰 샘플링이 유해하거나 편향된 텍스트를 생성할 가능성에 대한 안전성 평가도 이루어지지 않았다.</p>
+<h2>시사점</h2>
+<p>NeoMME는 시각 문서 검색을 위해 굳이 대형 VLM 구조를 재활용할 필요 없이, 처음부터 멀티모달을 위해 설계된 소형 단일 타워 인코더만으로도 훨씬 큰 모델들과 경쟁할 수 있음을 보여준다. 이는 특히 자원이 제한된 환경에서 실용적인 다국어·멀티모달 검색 시스템을 구축하려는 연구자와 실무자에게 의미 있는 대안을 제시하며, 계층적 토큰 풀링과 비대칭 양자화를 결합한 압축 기법은 대규모 문서 코퍼스에서 고해상도 시각 검색을 현실적으로 가능하게 하는 실용적 청사진을 제공한다. Hugging Face Transformers에 통합되고 체크포인트가 Apache 2.0으로 공개되었다는 점에서, 효율적인 멀티모달·다국어 표현 모델 연구를 위한 기반으로 활용될 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.01657" target="_blank" rel="noopener">huggingface.co/papers/2609.01657</a> · 2026-09-04</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

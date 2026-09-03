@@ -1,0 +1,114 @@
+<meta charset="UTF-8">
+<title>얼리이벌</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#5 · Daily Papers 2026-09-04</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 110</span>
+    </div>
+    <h1 class="article-title">EarlyEval: Cheaper Agent Evaluation via Early Outcome Prediction</h1>
+    <p class="article-title-ko">얼리이벌: 조기 결과 예측을 통한 저비용 에이전트 평가</p>
+    <p class="article-sub">LLM 에이전트 평가에서 최종 성공/실패 여부는 대개 실행이 끝나기 훨씬 전에 이미 드러난다는 통찰을 바탕으로, 에이전트의 중간 행동 궤적만 보고 결과를 예측해 실행을 조기에 중단시키는 경량 프레임워크 EarlyEval을 제안해 평가 비용을 크게 절감한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.02783" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.02783" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: EarlyEval: Cheaper Agent Evaluation via Early Outcome Prediction</li>
+<li><strong>저자</strong>: Yuling Shi, Zhensu Sun, Junsen Dong, Chengcheng Wan, David Lo, Xiaodong Gu (상하이자오퉁대학교, 싱가포르경영대학교, 화동사범대학교 공동 연구팀)</li>
+<li><strong>출처</strong>: arXiv:2609.02783v1 [cs.CL] (2026년 9월 2일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음 (코드 저장소: <a href="https://github.com/inphotoo/earlyeval">github.com/inphotoo/earlyeval</a>)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.02783">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>LLM 에이전트 평가에서 최종 성공/실패 여부는 대개 실행이 끝나기 훨씬 전에 이미 드러난다는 통찰을 바탕으로, 에이전트의 중간 행동 궤적만 보고 결과를 예측해 실행을 조기에 중단시키는 경량 프레임워크 EarlyEval을 제안해 평가 비용을 크게 절감한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>SWE-bench Verified 같은 에이전트 벤치마크를 프런티어 모델로 한 번 평가하는 데 수백에서 수천 달러가 들며, 프롬프트·스캐폴딩·모델을 반복적으로 조정하는 개발 주기에서는 이 비용이 수십 차례 누적된다. 기존 연구는 주로 "벤치마크 증류(distillation)"를 통해 평가할 과제 수 자체를 줄이는 데 집중해왔지만, 남겨진 각 과제를 끝까지 실행하는 비용은 그대로였다. 저자들은 대부분의 과제에서 에이전트가 끝까지 실행되지 않아도 최종 결과를 정확히 예측할 수 있다는 점—예를 들어 정답 패치를 이미 적용했다면 이후 테스트 실행은 불필요하다는 점—에 주목했다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>과제 개수를 줄이는 기존 접근과 상호보완적인 새로운 효율화 축인 "조기 결과 예측(early outcome prediction)" 개념을 제안했다.</li>
+<li>행동적·텍스트적·참조 정답 기반 특징을 이용해 LightGBM 성공/실패 분류기 쌍을 학습하고, 신뢰도 임계값을 넘는 순간 실행을 중단하는 경량 프레임워크 EarlyEval을 구현했다.</li>
+<li>SWE-bench Verified, TerminalBench, Toolathlon 세 벤치마크에서 에이전트를 학습에서 완전히 제외하는 leave-one-agent-out 프로토콜로 엄격히 검증해, 스텝 수·토큰 소비를 크게 줄이면서도 벤치마크 점수와 순위를 충실히 보존함을 보였다.</li>
+</ol>
+<h2>방법론</h2>
+<p>EarlyEval은 과거에 이미 완료되고 정답 여부가 라벨링된 에이전트 실행 기록(다른 에이전트들의 궤적)을 학습 데이터로 활용한다. 각 궤적을 여러 길이의 "접두사(prefix)"로 잘라 각 시점의 행동·텍스트·참조 정답 특징 벡터를 추출하고, 최종 라벨을 그대로 지도학습 목표로 사용한다. 특징은 크게 세 범주로 나뉜다: (1) 행동적 특징 — 스텝 수, 파일 편집·검색·테스트 실행 횟수, 마지막 행동의 성격, 오류·테스트 통과 신호, 정체(멈춤) 패턴 등; (2) 텍스트 특징 — 과제 설명, 행동 이력, 환경 피드백을 각각 TF-IDF로 벡터화 후 SVD로 압축; (3) 참조 정답 특징 — 정답 패치가 공개된 벤치마크에서만 사용하며, 현재 진행 상황과 정답 패치 간의 파일·API·테스트명 중첩도를 측정한다.</p>
+<p>성공 예측기와 실패 예측기를 별도의 LightGBM 앙상블로 각각 학습해, 성공 신호와 실패 신호가 비대칭적인 패턴을 지닌다는 점을 반영했다. 출력 확률은 Platt 스케일링으로 보정되며, 두 예측기 중 하나라도 지정된 신뢰도 임계값(s 또는 f)을 넘으면 그 시점에서 실행을 중단하고 해당 예측을 최종 점수로 기록한다. 임계값을 낮추면 더 많은 실행을 조기 중단시켜 비용을 아끼지만 정확도는 떨어지는 트레이드오프가 존재한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>세 벤치마크에서 총 21,000개 이상의 라벨링된 궤적(SWE-bench Verified 16개 에이전트/7,805개, TerminalBench 37개/6,757개, Toolathlon 22개/7,116개)을 수집했다. 학습에 사용된 에이전트와 평가 대상 에이전트가 절대 겹치지 않도록 하는 leave-one-agent-out 프로토콜을 적용했으며, TerminalBench에서는 모델과 스캐폴드 각각을 따로 제외하는 두 가지 엄격한 설정으로 오염을 추가로 통제했다.</p>
+<p>주요 결과로, SWE-bench Verified에서 임계값 0.95 설정 시 실행 스텝의 26.0%, 입력 토큰의 32.7%, 출력 토큰의 28.7%를 절감하면서도 해결률(Pass@1) 편차는 평균 1.1%포인트에 불과했다. Toolathlon에서도 임계값 0.90에서 스텝 23.0% 절감, 편차 0.9%포인트를 기록했다. 임계값을 낮추면(예: 0.75) 스텝 절감이 63.4%까지 커지지만 편차도 4.1%포인트로 늘어나는 명확한 트레이드오프가 확인됐다. 순위 보존 측면에서는 SWE-bench Verified에서 스피어만 순위상관 ρ=0.991, TerminalBench에서 ρ=0.959~0.994, Toolathlon에서 ρ=0.994를 기록해 전체 리더보드 순위가 대체로 유지됐다.</p>
+<p>특징 소거 실험에서는 행동적 특징이 조기 중단의 핵심 동력임이 드러났고(제거 시 스텝 절감이 26.0%→16.4%로 감소), 참조 정답 특징을 완전히 제거해도 성능이 소폭만 하락해(24.7%) 정답이 공개되지 않은 벤치마크에서도 프레임워크가 잘 작동함을 뒷받침했다. 구조 비교 실험에서는 LightGBM이 MLP, 선형 회귀, 그리고 LoRA로 파인튜닝한 Qwen-0.5B LLM 심판보다 정확도·커버리지·효율성 모든 축에서 우수했으며, LLM 심판은 스텝 자체를 판단하는 데 추가 추론 비용이 들어 조기 종료로 아낀 계산량을 상쇄해버리는 한계가 있었다.</p>
+<h2>한계점</h2>
+<p>EarlyEval은 대상 벤치마크에 대해 이미 완료되고 라벨링된 궤적 풀이 존재해야 학습이 가능하므로, 사전 실행 기록이 전혀 없는 완전히 새로운 벤치마크에는 곧바로 적용할 수 없다. 또한 조기 중단은 약 1~2%포인트의 체계적 편차를 유발하므로, 공식적으로 발표하는 벤치마크 점수나 리더보드 확정치를 산출하는 용도로는 적합하지 않으며 어디까지나 반복 개발 과정에서의 저비용·고신뢰 신호로 사용되어야 한다고 저자들은 명시한다. TerminalBench에서 미지의 스캐폴드(구조 자체가 처음 보는 경우)에 대한 예측 정확도는 미지의 모델에 대한 예측보다 상대적으로 더 크게 저하되는 경향도 관찰됐다.</p>
+<h2>시사점</h2>
+<p>이 연구는 벤치마크 과제 수를 줄이는 기존 방향과 달리 "과제 내부"에서 비용을 절감하는 새로운 축을 제시함으로써 두 접근을 결합하면 훨씬 큰 비용 절감이 가능함을 시사한다. 특히 개발 주기 중 빈번한 재평가가 필요한 실무 환경에서, 절대적인 최종 점수보다 상대적 비교(어떤 변경이 더 나은가)가 중요한 상황에 EarlyEval과 같은 저비용 조기 예측 신호가 실질적인 반복 개발 속도 향상에 기여할 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.02783" target="_blank" rel="noopener">huggingface.co/papers/2609.02783</a> · 2026-09-04</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

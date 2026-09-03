@@ -1,0 +1,117 @@
+<meta charset="UTF-8">
+<title>ZipTok3D</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#12 · Daily Papers 2026-09-04</span>
+      <span class="cat-tag">생성모델</span>
+      <span class="upvote-tag">▲ 20</span>
+    </div>
+    <h1 class="article-title">ZipTok3D: High-Fidelity 3D Tokenization with Compact Token Prefixes</h1>
+    <p class="article-title-ko">ZipTok3D: 압축된 토큰 프리픽스를 이용한 고품질 3D 토큰화</p>
+    <p class="article-sub">ZipTok3D는 3D 형상의 잠재 토큰 시퀀스를 짧을수록 핵심 기하 정보를 담도록 학습시키고(중첩 프리픽스), 동일한 파라미터를 공유하는 Transformer 블록을 반복 적용해 이 압축된 정보를 점진적으로 펼쳐내는(반복 정제) 3D 토크나이저로, 단 1~4개의 토큰만으로 기존에 32개 토큰이 필요했던 COD-VAE와 맞먹는 재구성 품질을 달성했다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.01740" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.01740" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: ZipTok3D: High-Fidelity 3D Tokenization with Compact Token Prefixes</li>
+<li><strong>저자</strong>: Mingda Lin, Weijie Wang, Zeyu Zhang, Bowen Cui, Yefei He, Haoyu Zhao, Yuanyu He, Donny Y. Chen, Feng Chen, Bohan Zhuang (Zhejiang University, Monash University, Adelaide University)</li>
+<li><strong>출처</strong>: arXiv:2609.01740v1 [cs.CV] (2026년 9월 1일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://forthloth.github.io/ziptok3d/">https://forthloth.github.io/ziptok3d/</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.01740">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>ZipTok3D는 3D 형상의 잠재 토큰 시퀀스를 짧을수록 핵심 기하 정보를 담도록 학습시키고(중첩 프리픽스), 동일한 파라미터를 공유하는 Transformer 블록을 반복 적용해 이 압축된 정보를 점진적으로 펼쳐내는(반복 정제) 3D 토크나이저로, 단 1~4개의 토큰만으로 기존에 32개 토큰이 필요했던 COD-VAE와 맞먹는 재구성 품질을 달성했다.</p>
+<h2>배경 및 문제의식</h2>
+<p>최근 3D 생성 모델들은 복잡한 물체 형상을 잠재 토큰 시퀀스로 변환하는 토크나이저에 의존하며, 이 시퀀스 길이는 후속 생성 모델링 비용에 큰 영향을 준다. 기존 3D 토크나이저는 크게 두 갈래로 나뉜다. 하나는 지역적으로 고정된 위치에 토큰을 배치해 공간 구조를 보존하는 방식(예: LION, 3DILG, TRELLIS)이고, 다른 하나는 물체 전체 기하를 고정된 개수의 전역(global) 토큰 집합으로 압축하는 방식(예: VecSet, COD-VAE)이다. 후자는 시퀀스가 짧아질 수 있지만, 토큰 예산을 극단적으로 줄이면 재구성 품질이 급격히 떨어지는 문제가 있다. 이는 각 토큰이 물체의 훨씬 더 넓은 부분을 요약해야 하면서, 전역 구조와 세부 디테일이 제한된 잠재 용량을 두고 경쟁하기 때문이다. 기존 방법들은 고정 예산에서 전체 잠재 집합을 한 번에 최적화하기 때문에, 어떤 정보를 먼저 보존해야 하는지를 명시적으로 결정하지 않고 최종 재구성 목적함수를 통해서만 암묵적으로 이 경쟁을 해소한다. 저자들은 "극도로 짧은 토큰 시퀀스만으로 물체 전체를 충실하게 재구성할 수 있는가"라는 근본적 질문을 던진다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>극도로 짧은 토큰 시퀀스로부터도 충실한 재구성이 가능하도록 설계된 3D 토크나이저 ZipTok3D를 제안했다.</li>
+<li>중첩 프리픽스 토큰화(nested prefix tokenization)와 파라미터 공유 반복 정제(iterative refinement)를 결합해, 선행 토큰들이 물체 전체의 기하 정보를 보존하고 그 압축된 정보를 점진적으로 상세한 3D 표현으로 펼쳐내도록 했다.</li>
+<li>실험을 통해 ZipTok3D의 토큰 1개만으로 ShapeNet에서 COD-VAE-32에 근접한 성능을, 토큰 4개로 TRELLIS의 모든 보고 지표에서 COD-VAE-32를 능가하는 성능을 각각 32배, 8배 더 적은 토큰으로 달성함을 보였다.</li>
+</ol>
+<h2>방법론</h2>
+<p>ZipTok3D는 저품질 재구성의 근본 원인을 압축 자체가 아니라 두 가지로 분리해서 본다. 즉 "잠재 시퀀스를 줄였을 때 어떤 기하 정보가 남아 있는가"와 "그 압축된 표현을 공간적 필드로 변환하는 데 얼마나 많은 계산이 필요한가"라는 서로 다른 두 문제를, 각각 프리픽스 길이 K와 디코더 반복 횟수 L이라는 두 개의 독립적인 추론 시점 제어 변수로 명시적으로 분리했다.</p>
+<p>인코더 측에서는, 점진적 포인트 인코더(progressive point encoder)가 입력 표면 점들을 최대 M=128개의 잠재 벡터 시퀀스 Z로 변환한다. 학습 시 중첩 드롭아웃(nested dropout)을 적용해, 인코딩된 잠재 시퀀스를 {1,2,4,8,16,32,64,128} 중 무작위로 샘플링한 길이 K로 잘라내고, 남은 프리픽스 Z:K만으로 전체 입력을 재구성하도록 강제한다. 짧은 프리픽스는 항상 더 긴 프리픽스에 포함되는 중첩 구조이므로, 선행 토큰들이 짧은 길이에서도 재구성을 지탱할 수 있는 정보를 담도록 자연스럽게 유도된다.</p>
+<p>디코더 측에서는, 학습 가능한 트라이플레인(triplane) 토큰 T⁰이 먼저 프리픽스 Z:K와 상호작용하는 선택 블록을 거쳐 선택된 상태 H⁰_K와 나머지(redundant) 토큰 R_K로 나뉜다. 이후 6층짜리 파라미터 공유 Transformer 블록 g_θ를 L번(주로 5회) 반복 적용해 트라이플레인 상태를 H⁰_K → H¹_K → ... → H^L_K로 점진적으로 정제하며, 매 반복마다 프리픽스 Z:K에 조건화된다. 정제된 상태는 매번 나머지 토큰과 함께 완전한 트라이플레인 표현으로 복원되고, occupancy MLP가 질의 좌표에서 점유 확률을 예측한다. 별도의 생성적 샘플링 단계 없이 결정론적으로(feed-forward) 반복 정제만으로 기하를 복원한다는 점이 특징이다.</p>
+<p>학습 목적함수는 최종 출력뿐 아니라 무작위로 선택한 하나의 중간 반복 출력도 함께 지도학습하는데, 이는 파라미터 공유만으로는 마지막 반복 외의 중간 상태들이 유효한 재구성이 되도록 보장하지 못하기 때문이다. 최종 재구성 손실은 균등 샘플링된 부피 질의점과 표면 근접 질의점에 대한 이진 교차엔트로피(BCE)의 가중합이며, COD-VAE에서 물려받은 트라이플레인 초기화 손실과 불확실성 손실도 안정화를 위해 함께 사용한다. 중간 반복 상태에는 최종 예측(그래디언트 차단됨)을 소프트 타깃으로 삼는 자기증류(self-distillation) 손실을 추가로 적용해 정제 궤적 전반에 걸친 지도 신호를 제공한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>ShapeNet-v2(COD-VAE와 동일한 전처리, 55개 범주 1,283개 객체 평가 분할)와 TRELLIS-500K(다각형 메시가 있는 자산만 워터타이트 전처리, 시드 42로 분할한 2,613개 자산 평가셋)에서 3D 재구성 성능을 평가했다. 토크나이저는 2,048개 표면 점을 입력받아 최대 128개, 폭 512의 잠재 토큰을 생성하며, 디코더는 동일한 6층 Transformer 블록을 반복 재사용해 5회 정제를 거쳐 128×128 트라이플레인을 만든다. FP16, AdamW(학습률 1e-4), 유효 배치 크기 672로 4개의 A800 GPU에서 ShapeNet은 1,000 에폭, TRELLIS는 300 에폭 학습했다.</p>
+<p>주요 결과: ShapeNet에서 ZipTok3D는 토큰 1개만으로 IoU 96.8%, CD 0.012, F1 97.8%를 기록해, 32개 토큰을 쓴 COD-VAE-32(IoU 97.1%, CD 0.012, F1 97.8%)와 반올림 기준 동일한 CD·F1을 IoU 0.3점 이내 차이로 달성했다(32배 짧은 시퀀스). 반면 COD-VAE는 토큰을 32개에서 2개로 줄이면 성능이 급격히 무너진다(IoU 77.7%). TRELLIS에서는 ZipTok3D 토큰 4개(IoU 75.31%, CD 0.0166, F1 95.92%)가 COD-VAE-32(IoU 75.25%, CD 0.0172, F1 95.67%)보다 8배 짧은 시퀀스로 동등하거나 더 우수한 성능을 보였다. 20,000회 리샘플링 부트스트랩 분석에서 COD-VAE-32 대비 ZipTok3D(K=4)는 query-IoU는 유의하지 않게(95% CI가 0을 포함) 비슷했지만, mesh CD와 F1은 유의하게(CI가 0을 배제) 개선되었다.</p>
+<p>클래스 조건부 생성 실험에서는 2×32 잠재 코드(2토큰 프리픽스, 각 32차원)로 2단계 causal VAE를 학습시켜 airplane, car, chair, table, rifle 5개 범주에서 평가했다. ZipTok3D-2는 COD-VAE-32 대비 16배 짧은 2단계 잠재 시퀀스를 쓰면서도 MMD·COV·1-NNA 세 분포 지표에서 근접한 성능을 보였고, 효율성 지표(샘플링 처리량, 전체 처리량, 최대 메모리)에서는 COD-VAE-32와 비슷하거나 더 우수했으며 VecSet 계열보다는 전 구간에서 훨씬 빨랐다.</p>
+<p>어블레이션 연구(ShapeNet, K=2)에서는 (1) 중첩 프리픽스 학습만 적용해도(Prefix only, 원래 12층 단일패스 디코더 사용) COD-VAE 대비 세 지표 모두 개선되고, (2) 6층 디코더를 5회 반복 적용하는 것이 파라미터 추가 없이 단일 적용 대비 가장 큰 추가 개선을 가져왔으며, (3) 중간 상태에 대한 지도(자기증류)가 최종 재구성 품질을 추가로 소폭 개선함을 확인했다. 즉 프리픽스 구조화와 공유 반복 정제가 핵심 기여 요소이고, 중간 지도는 보완적 이득을 제공한다. 프리픽스 길이 K와 정제 깊이 L의 상호작용 분석에서는, 단일 패스(L=1)에서는 긴 프리픽스가 가장 큰 이득을 주지만 3~5회 반복 후에는 K에 대한 민감도가 급격히 줄어들며, 반대로 K=1이나 K=4처럼 짧은 프리픽스에서는 추가 정제 단계가 가장 큰 이득을 준다는 상보적 관계를 확인했다. 질적으로도, L=1에서는 전역 구조 일부만 포착되고 조각나거나 누락된 표면이 나타나지만 L=3이면 주요 구조가 복원되고 5회째는 가는 구조와 경계를 다듬는 데 주로 기여하는 거친-정밀(coarse-to-fine) 진행 양상을 보였다.</p>
+<h2>한계점</h2>
+<p>논문은 명시적인 한계 섹션을 별도로 두지 않았으나, 결론에서 향후 과제로 두 가지를 언급한다. 첫째, 짧은 잠재 시퀀스를 더 잘 활용하는 생성 모델(generative model)에 대한 추가 연구가 필요하다. 둘째, 현재는 프리픽스 길이와 정제 깊이가 데이터셋 단위로 고정되어 있는데, 입력별로 이를 적응적으로(adaptively) 할당하는 방향은 다루지 않았다. 또한 실험에서 반복 정제는 성능이 L=5 근방에서 포화되며 반복마다 지연 시간(latency)이 증가하는 트레이드오프가 있다는 점, TRELLIS처럼 더 다양한 데이터셋일수록 더 깊은 정제가 필요하다는 점 등 계산 비용과 품질 간의 균형은 사용자가 직접 조절해야 하는 부분으로 남아 있다.</p>
+<h2>시사점</h2>
+<p>ZipTok3D는 3D 토크나이저 설계에서 "정보를 어떻게 정렬하는가"와 "그 정보를 어떻게 계산적으로 풀어내는가"를 분리해서 다룸으로써, 극단적으로 짧은 토큰 예산에서도 고품질 재구성을 가능하게 하는 새로운 설계 원칙을 제시한다. 이는 3D 생성 모델의 다운스트림 비용(시퀀스 길이에 비례하는 생성 모델링 비용)을 크게 낮출 수 있는 실용적 경로를 제공하며, 특히 클래스 조건부 생성 실험이 보여주듯 압축된 프리픽스가 후속 생성 모델링에도 유효하게 활용될 수 있음을 시사한다. 파라미터 공유 반복 정제라는 아이디어는 3D뿐 아니라 다른 압축-복원 문제 전반에 적용 가능한 일반적 설계 패턴으로 볼 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.01740" target="_blank" rel="noopener">huggingface.co/papers/2609.01740</a> · 2026-09-04</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

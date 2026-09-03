@@ -1,0 +1,110 @@
+{
+  "2609.02749": {
+    "base": "2609_레포투스킬_깃허브-저장소를-AI-스킬로-증류",
+    "rank": "#1",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "457",
+    "en_title": "Repo-To-Skill: Distilling GitHub Repositories Into AI4AI Skills",
+    "ko_title": "레포투스킬: 깃허브 저장소를 AI 스킬로 증류하기"
+  },
+  "2609.02886": {
+    "base": "2609_솔라WM_장기영상-월드모델을-위한-개방데이터-학습",
+    "rank": "#2",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "273",
+    "en_title": "SolarWM: Open Data and Scalable Training for Long-Horizon Video World Models",
+    "ko_title": "솔라WM: 장기 영상 월드모델을 위한 개방형 데이터와 확장 가능한 학습"
+  },
+  "2609.01437": {
+    "base": "2609_하네스데브_LLM의-자체-에이전트-하네스-구축과-진화",
+    "rank": "#3",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "216",
+    "en_title": "HarnessDev: Can LLMs Create and Evolve Their Own Agent Harness?",
+    "ko_title": "하네스데브: LLM은 스스로 에이전트 하네스를 만들고 진화시킬 수 있는가?"
+  },
+  "2608.31111": {
+    "base": "2608_어스파이어_모호한-목표-자가진화-벤치마크",
+    "rank": "#4",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "169",
+    "en_title": "Aspire: Can Models Self-Evolve from Vague Goals?",
+    "ko_title": "어스파이어: 모델은 모호한 목표로부터 스스로 진화할 수 있는가?"
+  },
+  "2609.02783": {
+    "base": "2609_얼리이벌_조기-결과-예측-저비용-에이전트-평가",
+    "rank": "#5",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "110",
+    "en_title": "EarlyEval: Cheaper Agent Evaluation via Early Outcome Prediction",
+    "ko_title": "얼리이벌: 조기 결과 예측을 통한 저비용 에이전트 평가"
+  },
+  "2609.00638": {
+    "base": "2609_코지알_질의-아이템-공진화-생성형-검색",
+    "rank": "#6",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "64",
+    "en_title": "It Takes Two to Match: Co-Evolving Generative Retriever with Reinforcement Learning",
+    "ko_title": "코지알: 강화학습으로 공진화하는 생성형 검색기"
+  },
+  "2609.02737": {
+    "base": "2609_선언적어텐션_LLM-스스로-주의범위-선언-기법",
+    "rank": "#7",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "51",
+    "en_title": "Language Models Can Control Their Own Attention",
+    "ko_title": "언어 모델은 스스로 자신의 어텐션을 제어할 수 있다"
+  },
+  "2609.01147": {
+    "base": "2609_픽셀링구이스트2_픽셀-텍스트-표현학습-설계원칙",
+    "rank": "#8",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "28",
+    "en_title": "On the Design Fundamentals of Pixel Text Representation Learning",
+    "ko_title": "픽셀 텍스트 표현 학습의 설계 기초에 관하여"
+  },
+  "2608.21450": {
+    "base": "2608_KBMR_지식기반-VQA-개체정렬-검색",
+    "rank": "#9",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "26",
+    "en_title": "Beyond Visual Similarity: Entity-Aligned Retrieval for Knowledge-Based Visual Question Answering",
+    "ko_title": "시각적 유사성을 넘어서: 지식 기반 시각 질의응답을 위한 개체 정렬 검색"
+  },
+  "2608.31100": {
+    "base": "2608_에스3짐_자기테스트로-자기개선-가능한가",
+    "rank": "#10",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "25",
+    "en_title": "S3Gym: Can LLMs Turn Self-Testing and Self-Judging into Self-Improvement?",
+    "ko_title": "S3Gym: LLM은 자기테스트와 자기평가를 자기개선으로 전환할 수 있는가?"
+  },
+  "2609.01657": {
+    "base": "2609_네오엠엠이_멀티모달-멀티링구얼-단일타워-인코더",
+    "rank": "#11",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "21",
+    "en_title": "NeoMME: A Single-Tower Multimodal-Native Multilingual Foundation Encoder for Efficient Fine-Tuning and Inference",
+    "ko_title": "NeoMME: 효율적 미세조정과 추론을 위한 단일 타워 멀티모달-네이티브 다국어 기초 인코더"
+  },
+  "2609.01740": {
+    "base": "2609_집톡3D_짧은-토큰-프리픽스로-고품질-3D-토큰화",
+    "rank": "#12",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "20",
+    "en_title": "ZipTok3D: High-Fidelity 3D Tokenization with Compact Token Prefixes",
+    "ko_title": "ZipTok3D: 압축된 토큰 프리픽스를 이용한 고품질 3D 토큰화"
+  }
+}

@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>시각적 유사성을 넘어서</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#9 · Daily Papers 2026-09-04</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 26</span>
+    </div>
+    <h1 class="article-title">Beyond Visual Similarity: Entity-Aligned Retrieval for Knowledge-Based Visual Question Answering</h1>
+    <p class="article-title-ko">시각적 유사성을 넘어서: 지식 기반 시각 질의응답을 위한 개체 정렬 검색</p>
+    <p class="article-sub">지식 기반 시각 질의응답(KB-VQA)에서 기존 CLIP류 검색기가 표면적 시각 유사도에 치우쳐 개체(entity) 단위 의미를 놓치는 문제를, MLLM을 임베딩 검색기로 사용하고 MLLM 기반 "의미 판별기"가 생성하는 연속적인 개체 일관성 가중치로 어려운 부정 샘플(hard negative)을 선별·학습시키는 KBMR을 제안해, 여러 벤치마크에서 검색 재현율과 최종 VQA 정확도를 크게 향상시켰다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.21450" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.21450" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Beyond Visual Similarity: Entity-Aligned Retrieval for Knowledge-Based Visual Question Answering</li>
+<li><strong>저자</strong>: Hangrui Xu, Zhengxian Wu, Yunyao Yu (공동 1저자), Zhuohong Chen, Rui Cong, Xiangwen Deng, Zhifang Liu, Peng Jiao, Haoqian Wang (교신저자) — 칭화대 선전국제대학원, 애리조나대학교 소속</li>
+<li><strong>출처</strong>: arXiv:2608.21450v1 [cs.CV] (2026년 8월 19일), ACM Multimedia (MM '26) 2026년 11월 리우데자네이루 게재 예정</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/realHarryX/KBMR">GitHub - realHarryX/KBMR</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.21450">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>지식 기반 시각 질의응답(KB-VQA)에서 기존 CLIP류 검색기가 표면적 시각 유사도에 치우쳐 개체(entity) 단위 의미를 놓치는 문제를, MLLM을 임베딩 검색기로 사용하고 MLLM 기반 "의미 판별기"가 생성하는 연속적인 개체 일관성 가중치로 어려운 부정 샘플(hard negative)을 선별·학습시키는 KBMR을 제안해, 여러 벤치마크에서 검색 재현율과 최종 VQA 정확도를 크게 향상시켰다.</p>
+<h2>배경 및 문제의식</h2>
+<p>KB-VQA는 이미지에 대한 질문에 답하기 위해 위키백과 규모의 외부 지식 소스에서 관련 근거를 검색한 뒤, 이를 바탕으로 답을 생성하는 검색증강생성(RAG) 파이프라인을 따른다. 이 파이프라인에서 1단계 검색은 전체 성능의 병목이 되는데, 기존 KB-VQA 시스템은 거의 예외 없이 CLIP류의 듀얼 인코더를 검색기로 사용한다. 그러나 위키백과 코퍼라에서는 같은 개체(entity)라도 촬영 시점·각도·스타일에 따라 외형이 크게 달라질 수 있고, 반대로 서로 다른 개체가 시각적으로 매우 유사해 보이는 경우도 흔하다. 즉 KB-VQA의 검색은 본질적으로 의미(semantics) 중심이어야 하는데, 표면적 시각 유사도는 실제 관련성과 반드시 일치하지 않는다. 선행 연구들은 다단계 검색이나 질의 재처리 같은 외적 개선 전략을 시도했지만, 여전히 후보 풀 자체는 CLIP류 검색기가 생성하므로 전체 파이프라인이 CLIP 패러다임에 근본적으로 묶여 있었다. 한편 최근 등장한 MLLM은 자기회귀적(autoregressive) 방식으로 개체·개념 수준의 세밀한 관계를 더 표현력 있게 모델링할 수 있지만, 기존에 MLLM 임베딩을 범용 교차모달 검색에 사용한 연구들은 대체로 넓은 의미적 관련성이나 모달리티 간 매칭을 목표로 했을 뿐, KB-VQA처럼 정확히 동일한 개체를 식별해야 하는 세밀한 판별 능력까지는 검증되지 않았다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li><strong>KBMR 제안</strong>: 저자들의 주장에 따르면 KB-VQA를 위한 최초의 MLLM 기반 검색기로, 큰 외형 변화 속에서도 검색 유사도를 개체 수준의 의미적 관련성과 일치시킨다.</li>
+<li><strong>MLLM 기반 의미 판별기(Semantic Discriminator, SD) 도입</strong>: 질의-후보 쌍이 동일 개체를 가리키는지 판단해 연속적인 "개체 일관성 가중치"를 생성하고, 이를 통해 견고한 어려운 부정 샘플 채굴과 소프트(soft) 지도학습을 가능하게 한다.</li>
+<li><strong>연속 의미 증류(Continuous Semantic Distillation) 목적함수 개발</strong>: 검색기의 유사도 분포를 판별기가 유도한 가중치 분포와 정렬시켜, 시각적으로 혼동되기 쉬운 이웃 후보들 사이에서도 개체 중심의 세밀한 판별을 유도한다.</li>
+<li><strong>다수 벤치마크에서 최고 성능 달성</strong>: E-VQA, InfoSeek, OK-VQA에서 검색 성능과 종단간(end-to-end) KB-VQA 정확도 모두 최고 수준을 기록했다.</li>
+</ol>
+<h2>방법론</h2>
+<p>KBMR은 CLIP의 듀얼 타워(dual-tower) 구조 대신, 비전 타워·프로젝션 레이어·LLM 백본으로 구성된 MLLM 전체를 활용한다. "<Image> Summary above image in one word:\n"라는 프롬프트로 MLLM에게 이미지를 하나의 공유 의미 공간으로 요약하도록 지시하고, 마지막 토큰의 은닉 상태를 검색 임베딩으로 사용한다. 학습 데이터 구성은 3단계로 이루어진다. 1단계(Prefilter)에서는 고정된(frozen) EVA-CLIP으로 질의와 후보 이미지를 임베딩해, 정답을 제외한 상위 50개의 시각적으로 유사한 후보를 "잠재적 어려운 부정 샘플 집합"으로 뽑는다. 2단계(의미 관련성 채점)에서는 "주어진 후보와 질의가 같은 개체를 가리키는지 판단하라"는 지시문으로 MLLM 의미 판별기(Qwen2.5-VL-7B)에 각 질의-후보 쌍을 입력하고, "Yes"와 "No" 토큰의 로짓을 보정된 로짓 스케일링(온도 계수 γ를 포함한 시그모이드 함수)으로 변환해 연속적인 개체 일관성 가중치 wᵢ를 산출한다. 3단계(어려운 부정 샘플링)에서는 질의-정답 쌍의 일관성 가중치보다 마진 β만큼 낮은 임계값을 기준으로, 그 이상으로 여전히 정답과 의미적으로 가까운(혼동을 유발할 수 있는) 후보는 제거한 뒤, 남은 후보들을 가중치 기준 4개 난이도 구간으로 층화 샘플링해 최소 8개의 어려운 부정 샘플 집합을 구성한다. 학습 단계에서는 질의와 후보(정답+어려운 부정 샘플들)를 모두 학습 대상 MLLM 검색기에 입력해 마지막 토큰 임베딩을 얻은 뒤, 코사인 유사도를 온도 스케일링한 소프트맥스로 검색기의 사후 분포(posterior) p_q를 정의하고, 판별기의 일관성 가중치 또한 소프트맥스로 정규화해 "소프트 교사 분포" s_q를 만든다. 최종 학습 목표는 두 분포 사이의 대칭 KL 발산(symmetric KL divergence)을 최소화하는 것으로, 이는 검색기가 단순히 정답 후보만 선호하는 것을 넘어 이웃 후보들 사이의 세밀한 의미적 구조까지 반영하도록 유도한다. 학습은 Qwen2-VL과 LLaVA-OneVision 두 MLLM 백본에 LoRA(rank 16)와 DeepSpeed ZeRO-2를 적용해, 8개의 A100(80GB) GPU에서 E-VQA·InfoSeek·OK-VQA 학습셋에서 추출한 60만 개 샘플로 5000스텝 동안 진행되었다(누적 배치 크기 1024, 어려운 부정 샘플 수 k=8).</p>
+<h2>실험 설정 및 결과</h2>
+<p>평가는 E-VQA(세밀한 자연종·랜드마크 질문), InfoSeek(OVEN 기반 위키 개체에 대한 정보 탐색 질문, 검증셋이 학습셋과 개체·질문 모두 겹치지 않음), OK-VQA(MS COCO 이미지에 대한 외부 지식 요구 질문) 세 벤치마크에서 이루어졌다. 검색은 Recall@k, VQA는 E-VQA의 경우 BEM 점수, InfoSeek의 경우 VQA 정확도로 측정했다. 검색 성능에서, KBMR(LLaVA-OV-7B)은 E-VQA에서 최강 MLLM 검색기 베이스라인 대비 R@1 +12.8점, 최강 CLIP 검색기(EVA-CLIP-8B) 대비 +11.4점 향상되었고, InfoSeek에서는 최강 CLIP 검색기 대비 +14.7점, 최강 MLLM 검색기 대비 +19.0점 향상되었다. 흥미롭게도 기존 zero-shot MLLM 임베딩(BLIP-2, Qwen2-VL, LLaVA-OneVision 등)은 오히려 강력한 CLIP 검색기보다도 성능이 낮아, 범용 멀티모달 이해력이 곧바로 KB-VQA에 효과적인 검색 공간을 보장하지는 않음을 보여주었다. 종단간 VQA 정확도 측면에서, 기존 검색기를 KBMR로 교체하는 것만으로 EchoSight, ReflectiVA, MMKB-RAG, OMGM 등 다양한 파이프라인에서 최대 +9.3점의 향상을 보였고, 리랭커가 포함된 파이프라인(EchoSight‡)에서도 여전히 큰 폭의 개선이 있어, 상위 단계 후보 풀 개선이 후속 정제 단계와 상호보완적임을 시사했다. 이 결과로 E-VQA에서 54.7, InfoSeek에서 50.8, OK-VQA에서 79.3의 새로운 최고 성능(SOTA)을 달성했다. 절제 연구(ablation)에서는, (1) SD 기반 어려운 부정 샘플링과 소프트 지도학습을 함께 쓰는 것이 무작위/CLIP 기반 샘플링이나 이산(hard one-hot) 라벨보다 항상 우수했고, SD 가중치를 30%/10% 무작위로 뒤집으면 성능이 뚜렷이 저하되어 가중치의 신뢰성이 실제로 중요함을 확인했다. (2) 동일 개체 여부를 직접 라벨링한 1만 쌍의 긍정/부정 쌍으로 판별력을 측정한 결과, SD의 AUC(0.91)가 CLIP 코사인 유사도의 AUC(0.79)보다 뚜렷이 높아, SD가 표면적 시각 유사도보다 실제 개체 정체성을 더 충실히 포착함을 보였다. (3) 판별기로 Qwen2.5-VL-7B가 InternVL3-8B/14B보다 우수했고, (4) 어려운 부정 샘플 수는 8개에서 성능이 포화되었으며, (5) 의미 선명도 계수 γ는 1.1에서 최적 균형을 보였다. 정성적 사례(까마귀 종 Corvus albicollis 질문)에서는 EVA-CLIP이 시각적으로 비슷하지만 다른 종의 새들을 상위에 올리고 정답을 5위로 밀어낸 반면, KBMR은 정답 문서를 1위로 검색해 개체 중심 정렬의 효과를 시각적으로 보여주었다.</p>
+<h2>한계점</h2>
+<p>논문에 별도의 "한계점" 절은 명시되어 있지 않다. 다만 본문의 분석 결과에서 시사되는 한계로, (1) 상위 50개 시각 유사 후보 중 여전히 높은 일관성 가중치를 받는 사례가 존재해(그림 3의 가중치 분포 분석), 시각적으로 매우 혼동스러운 일부 경우는 MLLM 판별기로도 완전히 해소되지 않는 어려운 사례로 남는다는 점, (2) 판별기의 성능(및 그에 따른 지도학습 품질)이 사용하는 MLLM의 능력에 크게 좌우되며(예: InternVL3-8B는 Qwen2.5-VL-7B보다 뚜렷이 낮은 성능), 판별기 자체의 편향이나 오류가 학습 신호에 그대로 반영될 위험이 있다는 점, (3) MLLM 기반 검색기는 CLIP류 듀얼 인코더 대비 추론 비용과 학습 파이프라인 복잡도(3단계 데이터 구축, LoRA 파인튜닝 등)가 높아질 수 있다는 점이 구조적으로 내포되어 있다고 볼 수 있다.</p>
+<h2>시사점</h2>
+<p>이 연구는 KB-VQA 검색의 근본적 병목이 CLIP류 검색기의 표면적 시각 유사도 편향에 있음을 명확히 지적하고, 이를 리랭킹이나 질의 정제 같은 후처리 계층을 쌓는 방식이 아니라 검색기 자체를 MLLM으로 대체함으로써 근본적으로 해결하려 시도했다는 점에서 의의가 있다. 특히 이산적인 이진 라벨 대신 MLLM 판별기가 제공하는 연속적 소프트 지도학습을 활용해, 시각적으로 유사하지만 의미적으로 다른 개체와 부분적으로만 관련된 개체를 구분해 학습시키는 방식은 장꼬리(long-tail) 지식과 강한 시각적 모호성이 특징인 실세계 지식베이스 검색 문제에 폭넓게 적용될 수 있는 일반적 전략으로 보인다. 또한 KBMR을 기존 여러 KB-VQA 파이프라인(EchoSight, ReflectiVA, MMKB-RAG, OMGM)에 검색기만 교체해 넣어도 일관된 성능 향상이 나타난다는 점은, 상위 단계 검색 품질 개선이 하위 단계의 재순위화·필터링·추론 모듈과 상호보완적으로 작동하며, 향후 KB-VQA 시스템 설계에서 검색기 자체의 의미 정렬 능력이 핵심 설계 변수로 다뤄져야 함을 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.21450" target="_blank" rel="noopener">huggingface.co/papers/2608.21450</a> · 2026-09-04</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

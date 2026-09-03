@@ -1,0 +1,114 @@
+<meta charset="UTF-8">
+<title>S3Gym</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#10 · Daily Papers 2026-09-04</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 25</span>
+    </div>
+    <h1 class="article-title">S3Gym: Can LLMs Turn Self-Testing and Self-Judging into Self-Improvement?</h1>
+    <p class="article-title-ko">S3Gym: LLM은 자기테스트와 자기평가를 자기개선으로 전환할 수 있는가?</p>
+    <p class="article-sub">LLM 에이전트가 스스로 행동을 테스트하고(Self-Testing) 그 결과를 판단하며(Self-Judging) 이를 바탕으로 실제로 더 나은 행동을 학습(Self-Improvement)할 수 있는지를 7개의 텍스트 기반 게임 환경에서 체계적으로 측정하는 벤치마크 S3Gym을 제안한 논문이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.31100" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.31100" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: S3Gym: Can LLMs Turn Self-Testing and Self-Judging into Self-Improvement?</li>
+<li><strong>저자</strong>: ByteDance Seed, M-A-P, TokenWave.AI 소속 연구진 (핵심 저자 Jiajun Shi, Siyuan Tao, Yuhao Wu 등, 교신저자 Jian Yang, Zhoujun Li, Shen Yan, Wenhao Huang, Ge Zhang)</li>
+<li><strong>출처</strong>: arXiv:2608.31100v1 [cs.CL] (2026년 8월 31일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://self-developing-agents.github.io/">https://self-developing-agents.github.io/</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.31100">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>LLM 에이전트가 스스로 행동을 테스트하고(Self-Testing) 그 결과를 판단하며(Self-Judging) 이를 바탕으로 실제로 더 나은 행동을 학습(Self-Improvement)할 수 있는지를 7개의 텍스트 기반 게임 환경에서 체계적으로 측정하는 벤치마크 S3Gym을 제안한 논문이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>기존 에이전트 벤치마크(AgentBench, AgentBoard, TextWorld, ALFWorld, ScienceWorld 등)는 평가 시점의 모델을 고정된 정책으로 취급하기 때문에, 모델이 자신의 과거 상호작용 경험을 스스로 활용해 미래 행동을 향상시킬 수 있는지는 제대로 검증하지 못한다. 저자들은 경험이 유용해지려면 단순히 축적되는 것이 아니라 능동적으로 검증되고 해석되어 재적용되어야 한다는 듀이(Dewey), 콜브(Kolb), 포퍼(Popper)의 성찰적 학습 이론에 착안해, 자기개선 능력을 Self-Testing(전략 탐색과 증거 수집), Self-Judging(행동과 결과의 평가), Self-Improvement(경험을 반영한 행동 변화)라는 세 가지 상호 연계된 능력으로 분해한다. 아울러 실제 산업 현장에서 범용 모델을 특정 배포 환경에 맞게 다듬는 역할(Forward-Deployed Engineer)이 여전히 사람에게 의존하고 있다는 점을 들어, 신뢰할 수 있는 피드백 신호 구축과 경험 기반 개선 루프가 왜 중요한지를 설명한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>Self-Testing, Self-Judging, Self-Improvement를 연결하는 경험 기반 자기개선의 통일된 정식화를 제시하고, 탐색(Exploration)과 엄격한 홀드아웃 평가(Evaluation)를 분리한 S3Gym 프로토콜을 도입했다.</li>
+<li>History ICL(직접 이력 활용), Summary Memory(점수 조건부 요약 메모리), 파라미터 Training(학습을 통한 내재화)이라는 세 가지 경험 통합 경로를 동일한 조건에서 비교했다.</li>
+<li>모델이 스스로 매긴 점수(자기 판단)와 환경이 계산한 실제 보상을 명시적으로 비교하여, 에이전트가 유용한 경험과 해로운 경험을 실제로 식별할 수 있는지 평가했다.</li>
+<li>7개 대표 LLM을 7개 게임 환경에서 종합 평가하여 개선 양상, 판단 신뢰도, 요약의 효과, 게임 간 일관성, 공통 실패 유형을 분석했다.</li>
+</ul>
+<h2>방법론</h2>
+<p>S3Gym의 한 사이클은 Explore → Judge → Consolidate → Update → Evaluate의 5단계로 구성된다. 탐색 단계에서 에이전트는 비교적 관대한 환경 설정(예: 더 넓은 실패 허용치, 추가 기회)에서 상호작용하며 성공·실패·부분 성공 궤적을 만들고, 매 스텝마다 행동과 함께 자기 판단 점수를 함께 산출한다. 이때 환경이 계산하는 검증 보상(reward)은 에이전트에게 노출되지 않고 벤치마크 내부에만 기록되어, 자기 판단의 정확도를 사후에 독립적으로 검증할 수 있다.</p>
+<p>경험은 두 가지 컨텍스트 수준 방식으로 정리된다. History Context는 점수가 주석된 궤적을 그대로 직렬화해 이후 컨텍스트에 이어 붙이는 방식이고, Summary Memory는 모델이 스스로 유지할 전략(Retain), 피할 실수(Avoid), 다음 사이클을 위한 구체적 방향(Next Direction)을 요약해 압축된 형태로 재사용하는 방식이다. 세 번째 경로인 Parameter Training은 탐색 궤적과 자기 판단 점수를 지도학습 예제로 변환해 실제로 모델 파라미터를 갱신한다(고득점 행동은 긍정 예제로 유지, 저득점 행동은 걸러내거나 교정). 갱신된 에이전트는 이후 탐색에 쓰이지 않은 별도 시드의 더 엄격한 평가 환경(state space 축소, 실패 페널티 강화 등)에서 테스트되어, 탐색에서 얻은 경험이 실제로 전이되는지 확인한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>평가에는 Chess, Minesweeper, Nullify, Tetris, Snake, Plants-vs-Zombies(PvZ), Trust Evolution의 7개 텍스트 기반 게임이 사용되었으며, 각각 규칙 유도, 제약 충족, 수치 변환, 공간 계획, 반응형 제어, 자원 배분, 다중 에이전트 전략 등 서로 다른 추론 유형을 대표한다. GPT-4o, GPT-4.1, o3-mini, Gemini-2.5-Flash, Gemini-2.5-Pro, GPT-5.5, Gemini-3.5-Flash 등 7개 모델을 대상으로 30회의 탐색 에피소드마다 3회씩 엄격 모드 평가를 진행했다.</p>
+<p>주요 결과는 다음과 같다. 첫째, 어떤 방식이 가장 효과적인지는 모델과 게임 조합에 따라 크게 달라졌으며, 높은 기본 성능이 곧 높은 자기개선 능력을 의미하지는 않았다. 둘째, Summary Memory는 Nullify·Tetris·Trust Evolution처럼 재사용 가능한 규칙으로 압축될 수 있는 과제에서는 History ICL보다 우수했지만(예: Gemini-2.5-Flash의 Minesweeper AUC+가 0에서 7.79로, PvZ AUC+가 24.4에서 238.5로 상승), Minesweeper·PvZ·Snake처럼 정확한 상태 정보가 중요한 과제에서는 오히려 원본 이력보다 성능이 떨어지는 경우가 많았다(예: GPT-5.5의 PvZ AUC+가 548.5에서 33.2로 급락). 셋째, Qwen3-8B를 대상으로 한 파라미터 학습 실험에서는 Trust Evolution에서는 뚜렷한 개선(평균 점수 8.68, AUC+ 163.5)을 보였으나 Chess·Snake에서는 미미하거나 일시적인 개선에 그쳤고, Minesweeper·Nullify·Tetris에서는 전혀 개선되지 않았으며, PvZ에서는 초기 점수 23에서 학습 후 6으로 떨어지는 심각한 부정적 전이(negative transfer)가 관찰되었다. 넷째, Self-Judging의 신뢰도를 측정한 결과, 이진 일치율(Agreement)은 게임에 따라 0.50~0.88 수준이었고 Chess와 Trust Evolution에서 특히 낮았으며, 자기 판단의 정확도와 이후 실제 성능 향상 사이의 상관관계는 전반적으로 거의 0에 가까웠다(ρ(A,g)=-0.010). 이는 국소적으로 정확한 자기 평가만으로는 자기개선이 보장되지 않으며, 경험을 실행 가능한 규칙으로 변환하는 능력이 별도로 필요함을 시사한다.</p>
+<h2>한계점</h2>
+<p>논문은 Self-Judging의 정확도가 실제 개선으로 이어지지 않는 이유를 상관관계 분석까지만 제시했을 뿐 인과적 메커니즘을 완전히 규명하지는 못했다고 밝힌다. 또한 Minesweeper·Nullify·Tetris에서 파라미터 학습이 전혀 개선되지 않은 원인에 대해, 탐색 과정에서 성공 궤적이 너무 적어 효과적인 지도학습 신호를 구성하지 못했을 가능성을 제시하지만 이를 검증하려면 궤적 수준의 추가 분석이 필요하다고 인정한다. 파라미터 훈련은 실험된 게임 전반에서 불안정하고 일관성이 낮았으며, 특정 과제(PvZ)에서는 심각한 부정적 전이를 보여 현재 구현이 여전히 실용적 수준에는 미치지 못함을 시사한다.</p>
+<h2>시사점</h2>
+<p>이 연구는 LLM 에이전트가 상호작용 경험을 축적하는 것만으로는 자동으로 더 똑똑해지지 않으며, 경험을 어떻게 판단하고 압축하며 어떤 경로로 재사용하는지가 실제 성능 향상의 핵심 병목이라는 점을 실증적으로 보여준다. 특히 요약 기반 메모리가 만능 해법이 아니라 과제 구조(압축 가능한 전략 규칙 대 상태 의존적 세부 정보)에 따라 선택적으로 유효하다는 발견은, 향후 자기 발전형 에이전트를 설계할 때 판단 보정(calibration), 메모리 선택 전략, 궤적 필터링 메커니즘을 정교하게 다듬어야 함을 시사한다. S3Gym은 이러한 병목을 진단할 수 있는 재현 가능한 평가 프레임워크로서, 향후 자기개선 에이전트 연구의 기준점 역할을 할 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.31100" target="_blank" rel="noopener">huggingface.co/papers/2608.31100</a> · 2026-09-04</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

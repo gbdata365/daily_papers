@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>레포투스킬</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#1 · Daily Papers 2026-09-04</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 457</span>
+    </div>
+    <h1 class="article-title">Repo-To-Skill: Distilling GitHub Repositories Into AI4AI Skills</h1>
+    <p class="article-title-ko">레포투스킬: 깃허브 저장소를 AI 스킬로 증류하기</p>
+    <p class="article-sub">GitHub 저장소와 논문 같은 선언적(declarative) 자료를 AI 에이전트가 바로 쓸 수 있는 "운영적 지식(operational knowledge)" 스킬로 자동 증류하는 DisCo 에이전트를 제안하고, 이를 대규모로 적용해 1,000개 ML 저장소에서 5,000개 이상의 검증된 스킬을 담은 AREX-Skill 라이브러리를 구축했다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.02749" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.02749" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Repo-To-Skill: Distilling GitHub Repositories Into AI4AI Skills</li>
+<li><strong>저자</strong>: Jianlyu Chen, Yuyang Hu, Hongjin Qian 등 (Beijing Academy of Artificial Intelligence, 중국과학기술대학교, 중국인민대학교, 홍콩이공대학교 공동 연구팀)</li>
+<li><strong>출처</strong>: arXiv:2609.02749v1 [cs.AI] (2026년 9월 2일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/VectorSpaceLab/AREX-Skill">GitHub 코드 저장소</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.02749">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>GitHub 저장소와 논문 같은 선언적(declarative) 자료를 AI 에이전트가 바로 쓸 수 있는 "운영적 지식(operational knowledge)" 스킬로 자동 증류하는 DisCo 에이전트를 제안하고, 이를 대규모로 적용해 1,000개 ML 저장소에서 5,000개 이상의 검증된 스킬을 담은 AREX-Skill 라이브러리를 구축했다.</p>
+<h2>배경 및 문제의식</h2>
+<p>자율 ML 연구 에이전트는 통상 LLM 백본(이해·추론·계획·실행)과 하네스(오케스트레이션·기억·검증·반복 개선)라는 두 요소로 구성된다고 여겨진다. 그러나 실제 ML 연구는 전문성이 많이 요구되는 작업으로, 어떤 방법과 도구를 언제 어떻게 써야 하는지에 대한 지식이 결과를 크게 좌우한다. 저자들은 이 부분을 "운영적 지식"이라 명명하며, 이는 모델의 고정된 사전지식에도, 하네스의 절차 제어 능력에도 담기지 않는 별도의 층이라고 주장한다. 이러한 지식은 저장소나 논문에 이미 존재하지만 사람이 읽기 위한 형태로 흩어져 있고 한 작업에서 불러오기에는 분량이 너무 많아, 에이전트는 매번 시행착오로 이를 재발견해야 하고 그 과정에서 예산을 낭비하게 된다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>모델과 하네스에 더해 "운영적 지식"이라는 세 번째 층을 자율 연구 에이전트의 필수 요소로 제시했다.</li>
+<li>스스로 스킬을 만들고 그 스킬로 연구를 수행하는 DisCo라는 스킬 기반 연구 에이전트를 제안했다. 증류는 소스 중심(task-agnostic)과 과제 중심(task-oriented)의 두 방식으로 이루어지며, 모든 스킬은 채택 전에 검증을 거친다.</li>
+<li>DisCo를 개방형 생태계 전반에 적용해, 1,000개의 널리 쓰이는 ML 저장소에서 5,000개 이상의 스킬을 20개 영역·178개 능력군으로 정리한 AREX-Skill 라이브러리를 구축했다.</li>
+<li>MLE-bench, PaperBench, FrontierCS, PassNet 네 가지 벤치마크에서 동일한 백본·하네스·실행 예산 조건 아래 스킬 유무만 다르게 하여 성능 향상을 측정했다.</li>
+</ol>
+<h2>방법론</h2>
+<p>DisCo는 스킬을 SKILL.md(지식 인터페이스), references/(지식 기반 자료), scripts/(실행 인터페이스)의 3계층으로 구성하며, 하나의 소스에서 나온 여러 스킬은 라우팅·의존·구성 관계로 연결된 "스킬 그래프"를 이룬다. 증류 과정은 네 단계(범위 설정 → 근거 수집 → 구성 → 검증)로 이루어지며, 앵커(시작점)가 저장소·논문 등 소스인 경우는 "소스 비의존적 증류", 구체적 과제인 경우는 "과제 지향적 증류"로 구분된다. 소스 비의존적 증류는 저장소의 문서·예제·테스트·설정 파일 등을 근거로 저장소별 스킬 그래프를 만들고, 실행 가능한 검사(assertion 기반 사례, 안전한 네이티브 테스트, CLI 검사 등)로 검증한 뒤 실패 시 국소적으로 수리한다. 과제 지향적 증류는 과제를 분해해 부족한 능력을 식별하고, 그에 맞는 자료를 검색해 스킬을 생성한다. 저장소 분류 체계(taxonomy)는 LLM을 이용해 반복적으로 제안·평가·수정하는 과정을 거쳐 20개 영역과 178개 능력군으로 고정되며, 이후 각 저장소를 해당 경로에 배정하는 라우터가 구축되어 연구 시 필요한 부분만 점진적으로 공개(progressive disclosure)된다. 연구 에이전트는 이렇게 구축된 라이브러리에서 과제에 관련된 가지(branch)만 열어 운영 맥락(K)으로 활용한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>연구 하네스로는 Codex(OpenAI)를 사용했고 GPT-5.5 백본을 xhigh 추론 노력 수준으로 고정한 뒤, 스킬 유무만 다르게 하여 비교했다. MLE-bench(75개 대회 전체)에서 스킬을 추가하자 Any-Medal 점수가 31.11%에서 72.89%로 상승(134.3% 상대 개선)했고, 난이도가 높은 과제일수록 개선폭이 더 컸다(High 난이도에서 13.33%→62.22%). PaperBench(20편 논문 재현)에서는 평균 재현 점수가 29.45%에서 39.59%로 상승(34.4% 개선)했으며 20개 중 18개 과제에서 개선되었다. FrontierCS(188개 과제)에서는 점수가 70.63에서 77.14로(9.2% 개선) 상승했고, 특히 기존 점수가 낮았던 과제군에서 개선폭이 컸다. PassNet(그래프 컴파일러 패스 생성)에서는 AS Score가 1.343에서 1.5313으로(14.0% 개선) 상승했고, 실패 샘플 수가 14개에서 5개로 줄었다. 부록에서는 저장소 스킬 그래프 구축에 저장소당 약 40달러가 소요되었고, MLE-bench에서는 탐색-실행 2단계로 진행되었으며, FrontierCS 스킬 그래프는 반복적 검증을 통해 하나의 공유 그래프로 정제되었다는 세부 사항을 제공한다.</p>
+<h2>한계점</h2>
+<p>스킬이 항상 도움이 되는 것은 아니며, PaperBench에서 20개 중 2개 과제(sample-specific-masks, stay-on-topic)는 스킬을 추가했을 때 오히려 점수가 하락했다. 저자들은 이를 검색된 스킬 내용이 특이하고 좁은 구현 선택을 요구하는 과제에서 에이전트를 잘못된 방향으로 이끄는 "검색 정밀도-재현율" 트레이드오프로 해석한다. 또한 FrontierCS에서도 188개 중 8개 과제는 스킬 적용 시 성능이 저하되었다. PassNet 구축 과정에서는 지나치게 보수적인 규칙(벤더 최적화 연산자 재구현 금지)이 실제로 유리한 경우를 차단하는 등, 스킬의 규칙이 절대적으로 표현될 때 발생하는 오류 사례도 보고되었다. 이 외에 스킬 구축 자체에 상당한 계산 비용(저장소당 약 40달러, PassNet 학습셋 전체 처리에 20일 이상 소요 추정)이 든다는 점도 실용적 제약으로 언급된다.</p>
+<h2>시사점</h2>
+<p>이 연구는 자율 연구 에이전트의 성능 향상이 반드시 더 강력한 모델이나 새로운 제어 루프(하네스)를 통해서만 가능한 것이 아니라, 기존 선언적 자료(저장소·논문)를 실행 가능한 형태로 증류해 명시적 운영 지식으로 제공하는 것만으로도 상당한 개선이 가능함을 보여준다. 특히 하네스나 백본을 전혀 바꾸지 않고도 공개 리더보드의 강력한 기준선을 능가했다는 점은, 스킬 라이브러리가 다양한 호환 가능한 에이전트 시스템에 이식 가능한 독립적 자산이 될 수 있음을 시사한다. 이는 향후 에이전트 설계에서 "무엇을 알고 있는가"를 분리된 자원으로 관리하고 축적하는 방향으로 연구가 확장될 수 있음을 보여준다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.02749" target="_blank" rel="noopener">huggingface.co/papers/2609.02749</a> · 2026-09-04</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>솔라WM</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#2 · Daily Papers 2026-09-04</span>
+      <span class="cat-tag">생성모델</span>
+      <span class="upvote-tag">▲ 273</span>
+    </div>
+    <h1 class="article-title">SolarWM: Open Data and Scalable Training for Long-Horizon Video World Models</h1>
+    <p class="article-title-ko">솔라WM: 장기 영상 월드모델을 위한 개방형 데이터와 확장 가능한 학습</p>
+    <p class="article-sub">서로 다른 10개 소스의 이질적인 비디오 데이터를 하나의 통일된 프레임 정합 계약(schema)으로 정규화하는 재구성 가능한 데이터 엔진과, 서로 다른 4개의 비디오 생성 백본(Wan2.2, LTX-2.5, MiniMax-H3)에 공통 학습 레시피를 적용하는 백본-네이티브 적응 프레임워크를 결합해, 5초짜리 짧은 시퀀스만으로 학습하고도 시간 단위의 장기 상호작용 영상 월드모델을 구현하는 완전 공개형 파이프라인 SolarWM을 제시한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.02886" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.02886" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: SolarWM: Open Data and Scalable Training for Long-Horizon Video World Models</li>
+<li><strong>저자</strong>: Junchao Huang, Guian Fang, Shengju Qian 등 (CUHK-SZ, SLAI, NUS, CUHK, HKUST, HKUST-GZ, NVIDIA, UCLA, MSRA 소속 공동 연구팀)</li>
+<li><strong>출처</strong>: arXiv:2609.02886v1 [cs.CV] (2026년 9월 2일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://junchao-cs.github.io/SolarWM-Web/">SolarWM 웹사이트 (데이터·코드·모델)</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.02886">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>서로 다른 10개 소스의 이질적인 비디오 데이터를 하나의 통일된 프레임 정합 계약(schema)으로 정규화하는 재구성 가능한 데이터 엔진과, 서로 다른 4개의 비디오 생성 백본(Wan2.2, LTX-2.5, MiniMax-H3)에 공통 학습 레시피를 적용하는 백본-네이티브 적응 프레임워크를 결합해, 5초짜리 짧은 시퀀스만으로 학습하고도 시간 단위의 장기 상호작용 영상 월드모델을 구현하는 완전 공개형 파이프라인 SolarWM을 제시한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>카메라 움직임, 플레이어 조작, 의미적 지시에 따라 미래 시각 관측을 상상하는 상호작용형 영상 월드모델은 시뮬레이션, 체화된 학습, 인터랙티브 콘텐츠 제작 등에서 주목받고 있다. 그러나 짧은 클립 생성에서 장기간 상호작용형 롤아웃으로 넘어가려면 통제에 반응하면서도 시각 품질과 시간적 일관성을 유지해야 하는데, 이를 위해서는 이질적인 데이터 소스에 걸친 일관된 지도(supervision)와 서로 다른 비디오 생성 백본에 대한 효과적인 적응이 모두 필요하다. 기존 데이터셋들은 시간적 규모, 카메라 관례, 시각 품질, 캡션 스타일이 제각각이라 단순히 섞으면 개별 소스에서는 잘 작동하던 모델이 다중 소스 학습에서 성능이 저하되는 문제가 있다. 또한 비디오 생성기마다 잠재표현·주의 구조·조건화 방식이 크게 다르기 때문에, 공유 가능한 적응 전략이 필요하지만 이질성을 무시하면 사전학습된 능력이 손상되고, 반대로 백본별 맞춤 구현은 재현성과 확장성을 제한한다. 기존 오픈소스 시스템들은 이 두 문제(데이터 통합과 백본 적응)의 결합을 간과한 채, 제한된 데이터 소스와 모델별 구현에 의존해 왔다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>데이터 구축부터 장기 추론까지 전 과정을 아우르는 완전 공개형·통합형 상호작용 영상 월드모델 기반인 SolarWM을 제시했다.</li>
+<li>10개 데이터셋에서 나온 약 143만 개의 정규 클립을 실세계·합성·게임 환경을 아우르도록 처리하고, 코퍼스와 처리 파이프라인 전체를 공개하는 재구성 가능한 다중 소스 데이터 인프라를 구축했다.</li>
+<li>하나의 통일된 데이터 레시피와 양방향 학습·자기회귀(AR) 적응·분포 매칭 증류(DMD)로 구성된 단순하고 효율적인 3단계 학습 절차를 이용해, 5B~33B 파라미터 규모의 4개 이질적 백본 모델을 학습시켰다. 이 모델들은 5초 시퀀스만으로 학습됐음에도 분·시간 단위의 개방형 롤아웃을 지원한다.</li>
+</ol>
+<h2>방법론</h2>
+<p>데이터 측면에서는 각 소스 클립을 비디오·카메라 자세(P)·내부 파라미터(K)·캡션(C)·메타데이터(m)·품질 기록(q)·출처 정보(π)로 구성된 통일된 프레임 정합 스키마로 정규화한다. 카메라 주석은 Pi3X와 MoGe-2로 얻은 깊이를 결합해 VIPE SLAM 백엔드로 6자유도 궤적과 초점거리를 추정하며, 실측 카메라 궤적이 있는 경우 이를 우선 보존한다. 동적 인물·차량이 카메라 통제와 무관한 모호성을 유발하는 문제를 해결하기 위해 LTX-2.3 Clean Plate IC-LoRA 파이프라인으로 동적 개체를 제거한 "클린 플레이트" 파생 소스도 별도로 생성한다. 모든 143만 클립은 Kimi-K2.6으로 지속적인 환경·장면 요소만 기술하는 캡션을 얻고, 카메라 무결성·시각 품질(DOVER)·모션(VMAF Motion, UniMatch)·시간적 일관성·의미적 적합성 등 다축 품질 지표를 함께 기록한다. 소스별로 고정된 정책에 따라 xhigh/high/rejected 세 등급으로 분류하되, 거부된 샘플도 이유와 함께 그대로 보존해 재구성 가능하게 한다. 원본 전처리와 학습용 믹스처 구성을 분리함으로써, 연구자는 값비싼 카메라 추정·캡셔닝·품질 평가를 다시 돌리지 않고도 필터링 기준·표본 비율·소스 가중치를 자유롭게 바꿀 수 있다.</p>
+<p>모델 측면에서는 카메라 조건화를 위해 fused-PRoPE(투영 회전 위치 임베딩)를 도입해, 카메라 자세와 내부 파라미터로부터 유도한 투영 회전을 어텐션의 쿼리·키·값 텐서에 직접 적용함으로써 별도의 카메라 전용 브랜치 없이 기존 셀프 어텐션 경로 안에서 카메라 정보를 주입한다. 학습은 3단계로 진행된다. 1단계(양방향 적응)는 양방향 어텐션 하에서 사전학습된 비디오 생성기를 카메라 조건화된 월드 데이터에 적응시킨다. 2단계(Teacher-Forced AnyFlow 초기화)는 인과적(causal) 어텐션으로 전환하되 깨끗한 과거 이력에 대한 teacher forcing과 AnyFlow 손실을 결합해, 별도의 Causal ODE나 Consistency Distillation 단계 없이도 곧바로 몇 단계(few-step) 자기회귀 초기화 모델을 얻는다. 3단계(DMD 기반 인과 학습)는 학생 모델이 스스로 생성한 궤적으로 학습해 추론 시 분포와 정렬시키는 분포 매칭 증류를 적용한다. 이 동일한 3단계 레시피를 Wan2.2-5B, Wan2.2-14B, LTX-2.5-22B, MiniMax-H3-33B라는 서로 다른 4개 백본에 그대로 적용하되, 각 백본의 고유한 잠재 표현·조건화 방식·최적화 목표는 그대로 보존한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>저자들은 정량적 벤치마크 점수 대신, 4개 백본 모델 각각에 대해 정성적 평가를 수행했다. 우선 양방향 사전학습 단계 모델을 GPT Image 2나 Krea로 생성한 분포 외(OOD) 첫 프레임과 카메라 궤적으로 평가해, 통일된 데이터·카메라 조건화 계약이 이질적인 백본 전반에 걸쳐 잘 전이됨을 보였다. 이후 증류된 인과 생성 모델을 인도메인(held-out 검증 풀)과 OOD 조건 모두에서 10초·분 단위·시간 단위의 롤아웃으로 평가했다. 인도메인 3인칭 시점 및 분 단위 롤아웃 실험에서는 모델이 카메라 궤적을 따라가면서도 피사체의 외형과 장면 배치를 유지함을 확인했다. OOD 초기화 실험에서는 스타일화된 삽화, 초현실적 기하 구조 등 학습 코퍼스에 흔치 않은 시각 조건에서도 스타일과 팔레트를 유지하며 새로운 영역을 그럴듯하게 생성했다. 특히 SolarWM-wan2.2-5B-fast 학생 모델은 5초 시퀀스로만 학습되었음에도, 추가적인 장기 시퀀스 파인튜닝이나 attention-sink 메커니즘 없이 분 단위 및 최대 1시간에 이르는 연속 자기회귀 롤아웃에서도 장면의 전체 구조와 시각적 정체성을 유지하며 카메라 통제에 계속 반응함을 보였다. 저자들은 최적화의 대부분이 양방향 학습 단계에서 이루어져야 하며, AR 적응은 빠르게 수렴하고 DMD는 더 적은 최적화 스텝만 필요하다는 점, 그리고 특화된 ODE나 Consistency Distillation 초기화 없이도 최신 수준의 성능을 얻을 수 있다는 점을 핵심 발견으로 제시한다. 관련 시스템 비교표(Table 1)에 따르면, SolarWM은 가중치·추론/학습 코드·완전한 데이터 기록·실행 가능한 파이프라인·정확한 레시피·다중 백본 지원(4개)을 모두 공개하는 유일한 시스템으로, 다른 오픈소스 월드모델 대비 공개 범위가 가장 포괄적이다.</p>
+<h2>한계점</h2>
+<p>이 논문은 정량적 벤치마크 지표(PSNR, FID, FVD 등)나 사용자 평가(user study), 소거 실험(ablation) 결과를 제시하지 않고 정성적 사례 위주로 결과를 보여준다는 점에서 엄밀한 수치 비교가 부족하다. 또한 카메라 궤적 주석은 SLAM 기반 추정에 의존하는 소스가 많아 추정 오차가 하위 학습 신호의 품질에 영향을 줄 수 있으며, Clean Plate 처리 과정에서 텍스처 손상이나 시간적 불연속, 모션 통계 변화 같은 부작용이 발생할 수 있음을 저자들 스스로 언급한다. 장기 롤아웃 결과도 여전히 반복 조건화에 의한 누적 오차나 드리프트 가능성을 완전히 배제하지 못하며, 논문에서는 이에 대한 정량적 열화 곡선을 제시하지 않는다.</p>
+<h2>시사점</h2>
+<p>이 연구는 서로 다른 비디오 생성 백본과 이질적 데이터 소스라는 두 축의 결합 문제를 데이터 엔진과 백본-네이티브 적응 프레임워크로 분리해 해결함으로써, 복잡한 학습 파이프라인이나 긴 영상에 대한 계산 집약적 학습 없이도 확장 가능한 장기 월드모델을 얻을 수 있음을 보여준다. 데이터 처리와 믹스처 구성의 분리, 그리고 백본별 고유 표현을 보존하면서도 공유 인터페이스를 적용하는 설계는 향후 다양한 비디오 생성 모델을 월드모델로 확장하려는 연구에 재사용 가능한 청사진을 제공한다. 특히 원본 데이터·주석·거부 샘플·파이프라인·학습 레시피·가중치를 모두 공개함으로써, 이 분야에서 드물었던 완전한 재현성과 체계적 비교 연구를 가능하게 한다는 점이 실용적 기여로 평가된다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.02886" target="_blank" rel="noopener">huggingface.co/papers/2609.02886</a> · 2026-09-04</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

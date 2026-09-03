@@ -1,0 +1,115 @@
+<meta charset="UTF-8">
+<title>코지알</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#6 · Daily Papers 2026-09-04</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 64</span>
+    </div>
+    <h1 class="article-title">It Takes Two to Match: Co-Evolving Generative Retriever with Reinforcement Learning</h1>
+    <p class="article-title-ko">코지알: 강화학습으로 공진화하는 생성형 검색기</p>
+    <p class="article-sub">질의(query)와 아이템(item) 양쪽 모두에서 LLM이 직접 키워드를 생성하고 이를 역색인을 통해 매칭하도록 훈련하는 검색 프레임워크 CoGR을 제안하며, 두 생성기를 번갈아 강화학습으로 공진화(co-evolve)시켜 기존 희소·밀집·생성형 검색 기법들을 큰 폭으로 능가하는 성능을 보인다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.00638" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.00638" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: It Takes Two to Match: Co-Evolving Generative Retriever with Reinforcement Learning</li>
+<li><strong>저자</strong>: Runpeng Dai, Kaili Huang, Changsung Kang, Ciya Liao (노스캐롤라이나대학교 채플힐, Apple)</li>
+<li><strong>출처</strong>: arXiv:2609.00638v1 [cs.IR] (2026년 9월 1일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.00638">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>질의(query)와 아이템(item) 양쪽 모두에서 LLM이 직접 키워드를 생성하고 이를 역색인을 통해 매칭하도록 훈련하는 검색 프레임워크 CoGR을 제안하며, 두 생성기를 번갈아 강화학습으로 공진화(co-evolve)시켜 기존 희소·밀집·생성형 검색 기법들을 큰 폭으로 능가하는 성능을 보인다.</p>
+<h2>배경 및 문제의식</h2>
+<p>검색(retrieval)은 검색·광고 시스템의 첫 단계로, 대규모 아이템 전체 집합에서 후보군을 추려 이후 랭킹·경매 단계로 넘기는 역할을 한다. 이 단계의 오류는 되돌릴 수 없다는 점에서 매우 중요하다. 최근 LLM을 검색에 활용하는 연구가 늘고 있지만, 대부분 LLM은 질의 확장이나 재작성 등 "질의 측"의 보조 역할에만 쓰이고, 실제 최종 매칭은 여전히 별도의 다운스트림 검색기(BM25, 밀집 임베딩 등)에 위임된다. 저자들은 "질의와 아이템 양쪽 모두에서 LLM이 직접 검색 표현을 구성하고, 그 결과로 곧바로 매칭까지 수행하게 할 수는 없는가"라는 질문을 제기한다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>질의 측과 아이템 측에 각각 별도의 LLM 생성기를 두어 두 쪽 모두에서 직접 키워드 기반 검색 표현을 만들어내는 CoGR 프레임워크를 제안했다. 생성된 키워드는 기존의 키워드 기반 역색인 인프라와 호환된다.</li>
+<li>SFT로 정렬된 초기 키워드 공간을 만든 뒤, GRPO를 이용해 질의 측과 아이템 측 생성기를 번갈아 최적화하는 "공진화 강화학습" 2단계 학습 파이프라인을 설계했다. 이때 상대편의 색인은 고정(freeze)한 채 학습해 각 생성기가 안정된 환경에서 최적화되도록 했다.</li>
+<li>질의 측에는 검색 F1 점수를 직접 보상으로 주고, 아이템 측에는 해당 아이템의 키워드 교체가 전체 질의 측 F1에 미치는 한계적(marginal) 변화를 반사실적(counterfactual)으로 계산해 보상으로 주는 비대칭적 보상 설계를 제시했다.</li>
+</ol>
+<h2>방법론</h2>
+<p>CoGR은 질의 생성기 G^q와 아이템 생성기 G^i를 각각 학습시켜, 질의 q와 아이템 i에 대해 키워드 집합 S_q, S_i를 생성한다. 두 키워드 집합(및 원문)이 겹치는 아이템만 검색 결과로 채택하며, BM25 점수로 순위를 매긴다.</p>
+<p>1단계(SFT)에서는 우선 기본 LLM으로 각 아이템의 초기 키워드 집합을 생성한 뒤, 각 질의에 대해 그 질의와 관련된 아이템들의 키워드를 모아 가장 빈도 높은 키워드들을 질의 측 목표로 삼아 SFT를 수행한다. 이를 통해 관련 있는 질의-아이템 쌍 사이에 처음부터 키워드 중첩이 생기도록 정렬된 초기화를 확보한다.</p>
+<p>2단계(공진화 RL)에서는 질의 측과 아이템 측을 번갈아 GRPO로 최적화한다. 질의 측 RL에서는 아이템 측 색인을 고정한 상태에서, 질의 생성기가 만든 키워드로 검색했을 때의 정밀도-재현율 F1 점수를 그대로 보상으로 사용한다(최대 키워드 개수를 초과하면 보상 0). 아이템 측 RL에서는 질의 측 색인을 고정한 채, 특정 아이템 i의 키워드만 새 후보로 교체한 "반사실적 색인"을 구성하고, 이 교체로 인해 전체 질의 측 F1 합이 얼마나 변했는지(새 색인 F1 합 − 기존 색인 F1 합)를 그 아이템의 보상으로 삼는다. 이 차분 방식은 영향을 받지 않는 질의들이 계산에서 자동으로 상쇄되므로, 전체 질의 집합을 매번 다시 검색·계산할 필요 없이 영향받은 질의만 효율적으로 갱신할 수 있게 해준다. 이러한 질의-아이템 교대 최적화를 5라운드 반복하며, 두 키워드 공간이 서로의 최신 상태에 점진적으로 적응해 나가도록 한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>내부 앱마켓플레이스 검색 데이터셋(질의 13,500/1,500건, 아이템 약 39,600개)과 공개 제품검색 벤치마크 WANDS(질의 430/50건, 아이템 약 42,994개) 두 곳에서 실험했다. 백본으로는 Qwen3-4B-Instruct(CoGR-4B)와 Qwen3-1.7B(CoGR-1.7B)를 사용했다.</p>
+<p>BM25·SPLADE-v2(희소), DPR·ANCE·Qwen3 임베딩 기반(밀집), DSI·DSI-QG·RIPOR·DeepRetrieval(생성형) 등 10개 대표 베이스라인과 비교한 결과, CoGR-4B는 내부 데이터셋에서 F1 0.3963, WANDS에서 F1 0.6819를 기록해 각각 최강 베이스라인(ANCE-Qwen4B, 0.3575 / 0.5012) 대비 10.9%, 36.1% 개선을 보였다. 아이템 측을 고정한 채 질의 측만 최적화한 CoGR(아이템 동결) 및 DeepRetrieval 같은 "한쪽만 학습" 방식보다 뚜렷하게 우수해, 양쪽을 함께 진화시키는 것이 중요함을 확인했다.</p>
+<p>학습 과정을 추적한 결과, 공진화 RL 진행 중 검증 F1은 초기 약 0.16에서 5라운드 후 약 0.40까지 상승했으며 첫 라운드에서 가장 큰 폭의 개선이 나타났다. 키워드 어휘 변화를 분석한 결과, 단일 단어(유니그램) 비율이 37%에서 13%로 줄고 세 단어 이상의 구체적인 구(phrase) 비율이 12%에서 31%로 늘어나는 등 키워드가 점차 더 구체적이고 서술적으로 변했으며, 질의 측과 아이템 측 어휘 규모도 학습이 진행되면서 점차 비슷한 수준으로 수렴했다. 추가 소거 실험에서는 반사실적 아이템 보상, 별도의 두 생성기 사용, SFT 초기화가 모두 성능에 유의미하게 기여함을 확인했고, 아이템 설명 텍스트를 제거하거나 반대로 질의 측에 검색결과 힌트를 추가하는 등 입력 정보량 변화도 성능에 직접 영향을 미쳤다(설명 제거 시 F1 하락, 검색결과 추가 시 F1 상승).</p>
+<h2>한계점</h2>
+<p>현재 CoGR은 정밀도-재현율의 균형을 나타내는 F1을 보상으로 사용하지만, 실제 비즈니스 목표(예: 부적합 광고 비율, 매출 증대)를 직접 반영하지는 못한다. 또한 최종 순위화 단계에서는 여전히 생성된 키워드 위에 전통적인 BM25를 적용하고 있어, 더 정교한 검색 랭킹 기법을 결합할 여지가 남아 있다. 실험은 특정 산업 도메인(앱마켓, 제품검색)에 한정되어 있어 다른 검색 시나리오에 대한 일반화는 추가 검증이 필요하다.</p>
+<h2>시사점</h2>
+<p>이 연구는 질의 측 보강에만 의존해 온 기존 LLM 기반 검색 연구와 달리, 검색의 양쪽 당사자(질의와 아이템)를 함께 학습 가능한 대상으로 삼아 공진화시키는 것이 가능하고 효과적임을 실증적으로 보여준다. 생성된 키워드가 기존 역색인 인프라와 완전히 호환되므로, 프로덕션 검색·광고 시스템에 비교적 쉽게 통합할 수 있다는 실용적 장점도 있다. 이는 자가진화형 LLM 시스템에서 서로 상호작용하는 여러 역할이 상대방의 진화하는 행동에 맞춰 함께 발전해 나가는 더 넓은 흐름과도 맞닿아 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.00638" target="_blank" rel="noopener">huggingface.co/papers/2609.00638</a> · 2026-09-04</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

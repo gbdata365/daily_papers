@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>게이트 델타넷은 왜 4비트 양자화에서 살아남는가</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#7 · Daily Papers 2026-09-05</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 66</span>
+    </div>
+    <h1 class="article-title">Why Gated DeltaNet Survives 4-Bit Quantization: NVFP4 W4A4 for the Recurrent Half of a Hybrid 27B LLM</h1>
+    <p class="article-title-ko">게이트 델타넷은 왜 4비트 양자화에서 살아남는가: 하이브리드 27B LLM 순환 절반을 위한 NVFP4 W4A4</p>
+    <p class="article-sub">하이브리드 27B LLM(Qwen3.8-27B)에서 기존 커뮤니티가 오류 누적을 우려해 8~16비트로 보호해온 Gated DeltaNet(GDN)의 게이트 프로젝션까지 포함한 전체 496개 선형 레이어를 NVFP4 W4A4로 양자화한 "Minima" 모델을 만들어, BF16과 동등한 정확도를 유지하면서도 가장 작고 빠른 프리필 성능을 달성하고 그 이유를 메커니즘 차원에서 규명한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.04098" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.04098" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Why Gated DeltaNet Survives 4-Bit Quantization: NVFP4 W4A4 for the Recurrent Half of a Hybrid 27B LLM</li>
+<li><strong>저자</strong>: Sergii Kozyrev, Davyd Maiboroda</li>
+<li><strong>출처</strong>: arXiv:2609.04098v1 [cs.AI] (2026-09-03)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://huggingface.co/minima-ai/mnma_qwen3.8_27b_nvfp4">HuggingFace 체크포인트</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.04098">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>하이브리드 27B LLM(Qwen3.8-27B)에서 기존 커뮤니티가 오류 누적을 우려해 8~16비트로 보호해온 Gated DeltaNet(GDN)의 게이트 프로젝션까지 포함한 전체 496개 선형 레이어를 NVFP4 W4A4로 양자화한 "Minima" 모델을 만들어, BF16과 동등한 정확도를 유지하면서도 가장 작고 빠른 프리필 성능을 달성하고 그 이유를 메커니즘 차원에서 규명한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>Gated DeltaNet 같은 선형 어텐션 레이어는 고정 크기 상태로 전체 컨텍스트를 요약하는 순환 구조를 가지므로, 매 스텝의 양자화 오류가 누적되어 특히 감쇠·기록강도 게이트 프로젝션에서 오류가 가장 빨리 쌓일 것이라는 직관 때문에, 기존 4비트 양자화 레시피들은 GDN 블록(특히 게이트)을 8~16비트로 보호해왔다. 이 논문은 이 직관이 이 아키텍처에서는 정반대라는 것을 실증하고 설명한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>GDN 게이트를 포함한 496개 전체 선형 레이어를 NVFP4 W4A4로 양자화한 Minima 모델을 구축하고, 퍼플렉시티·MMLU-Pro·GSM8K·AIME'25·GPQA-Diamond·LiveCodeBench·RULER 등 6개 스위트에서 BF16 및 두 커뮤니티 레시피와 시드 노이즈 범위 내 동등한 성능을 보이면서 가장 작고(17.5GiB) 프리필이 가장 빠름(+14~19%)을 입증</li>
+<li>활성화 통계, 프로젝션별 민감도 재현, 락스텝 FP32 오류 전파, 위치별 퍼플렉시티 분해라는 4단계 메커니즘 분석으로 "왜 작동하는가"를 아키텍처적으로 설명</li>
+<li>모듈별 보정된 NVFP4 체크포인트를 퓨즈드 GEMM으로 서빙할 때 발생하는 전역 스케일 불일치 문제를 발견·수정하고, FP8 KV 캐시 스케일 보정이 성능 저하 없이 장기 컨텍스트 페널티의 83%를 회복함을 보임</li>
+</ul>
+<h2>방법론</h2>
+<p>GDN 레이어의 감쇠 게이트(α_t)와 기록강도 게이트(β_t)는 로그공간의 softplus/exponential 및 sigmoid로 파라미터화되며, 상태는 델타 규칙 S_t=α_t S_{t-1}+β_t k_t(v_t-S_{t-1}^T k_t)^T 로 갱신된다. 저자들은 실제 32K 토큰 입력에 대한 GDN 레이어의 활성화를 포착해 NVFP4의 16개 원소 블록 스케일링이 이상치를 국소화함을 보였고, 각 프로젝션을 하나씩만 양자화하는 96회 재현 실험으로 게이트 프로젝션의 GEMM 오류(~11%)가 비선형 함수를 거치며 출력 오류(~2%)로 크게 압축됨을 확인했다. 또한 5개 레이어에 대해 락스텝 FP32로 32K 토큰 동안 순환을 실행해, 델타 규칙이 매 기록마다 현재 키 방향을 따라 상태를 덮어써 주입된 양자화 노이즈를 감쇠 게이트가 예측하는 것보다 훨씬 빠르게(수백 스텝 내) 지워버림을 보였다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>FP8 KV 캐시, vLLM 0.27.1, 단일 RTX PRO 6000 환경에서 Minima는 5개 과제 평균 정확도가 BF16 대비 −0.52점에 불과했고, AIME'25에서는 BF16과 정확히 동일한 점수(4시드 모두 26/30)를 기록했다. GDN 블록(전체 디코드 가중치의 약 23%)을 4비트로 양자화한 유일한 체크포인트로서 BF16 대비 VRAM을 2.9배 줄였고, 프리필 지연시간(TTFT)을 32K 기준 6.90초에서 4.03초로 단축했다. 32K 퍼플렉시티 격차는 컨텍스트 전반부(+0.081 nats)보다 후반부(+0.011 nats, 마지막 구간은 오히려 BF16보다 우수)에서 줄어들어, 커뮤니티가 우려한 오류 누적과 정반대의 패턴을 보였다.</p>
+<h2>한계점</h2>
+<p>평가는 하나의 모델 계열·크기(Qwen3.8-27B)와 하나의 양자화 포맷(NVFP4), 32K 퍼플렉시티·64K 검색까지로 국한되며, 128K 이상의 더 긴 컨텍스트 거동은 외삽에 해당한다. Minima는 디코드 단계에서 RadixArk보다 2~4% 뒤처지는데, 이는 소배치 NVFP4 활성화 양자화 오버헤드라는 커널 수준의 부수 현상으로 분석된다. 게이트 보호 논리는 로그공간 softplus/exponential 파라미터화에 의존하므로, 선형적으로 파라미터화된 감쇠 게이트를 쓰는 다른 순환 믹서에는 그대로 적용되지 않을 수 있다.</p>
+<h2>시사점</h2>
+<p>하이브리드 LLM에서 순환 구조를 가진 절반(선형 어텐션 블록)이 오히려 양자화하기 쉬운 절반일 수 있음을 보여주며, 커뮤니티가 보호해온 프로젝션이 실은 아키텍처 자체가 이미 보호하고 있던 부분이었음을 시사한다. "전부 양자화하고 KV 스케일을 보정해 배포하라"는 실용적 지침을 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.04098" target="_blank" rel="noopener">huggingface.co/papers/2609.04098</a> · 2026-09-05</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

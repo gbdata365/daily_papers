@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>편집 가능한 비주얼 디자인</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#11 · Daily Papers 2026-09-05</span>
+      <span class="cat-tag">생성모델</span>
+      <span class="upvote-tag">▲ 32</span>
+    </div>
+    <h1 class="article-title">Editable Visual Design</h1>
+    <p class="article-title-ko">편집 가능한 비주얼 디자인</p>
+    <p class="article-sub">VLM을 "창작 뇌", 이미지 생성 모델을 주문형 "시각 세계 시뮬레이터"로 분업시켜, "먼저 상상하고 그다음 행동한다"는 폐루프 워크플로우로 레이어가 분리되고 텍스트가 정확한 편집 가능한 디자인 산출물(포스터, 인포그래픽 등)을 코딩 에이전트가 생성하는 새로운 패러다임을 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.04034" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.04034" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Editable Visual Design</li>
+<li><strong>저자</strong>: Junyan Ye, Wei Liu, Dongzhi Jiang 외 (Tencent Hunyuan, Sun Yat-sen University, CUHK, Shanghai Jiao Tong University, Tsinghua University)</li>
+<li><strong>출처</strong>: arXiv:2609.04034v1 [cs.CV] (2026-09-03)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/yejy53/Editable-Design">GitHub</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.04034">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>VLM을 "창작 뇌", 이미지 생성 모델을 주문형 "시각 세계 시뮬레이터"로 분업시켜, "먼저 상상하고 그다음 행동한다"는 폐루프 워크플로우로 레이어가 분리되고 텍스트가 정확한 편집 가능한 디자인 산출물(포스터, 인포그래픽 등)을 코딩 에이전트가 생성하는 새로운 패러다임을 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>확산 모델 기반 이미지 생성(GPT-Image-2, Nano-Banana 등)은 시각적 표현력은 뛰어나지만 결과물이 평면화된 비트맵이라 텍스트 오류가 잦고 레이어별 후편집이 불가능하다. 반대로 코딩 에이전트를 통한 코드 기반 시각 생성은 정밀한 레이아웃 제어와 레이어 분리를 제공하지만, 전역적인 미적 직관이 부족하고 복잡한 시각 자산(영화 같은 배경, 3D 히어로 비주얼, 정교한 일러스트 등)을 코드로 그려내기 어렵다는 상반된 한계를 갖는다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>VLM(창작 뇌)이 요구사항 이해·작업 계획·미적 판단을 담당하고, 이미지 생성 모델(시각 세계 시뮬레이터)이 독립적인 시각 자산을 합성하는 협업 메커니즘을 갖춘 Editable Visual Design 패러다임 제안</li>
+<li>"먼저 상상하고 그다음 행동한다"는 폐루프 워크플로우: 상상된 비주얼 생성 → 독립적인 자산 생성 → 네이티브 HTML/CSS 작성 → 렌더링 피드백 기반 반복 수정</li>
+<li>전문 디자이너의 창작·추론 궤적을 충실히 재현하는 "Agent Design Replay"를 도입해 요구사항 분해부터 자산 생성, 코드 반영·수정까지 전체 과정을 투명하고 추적 가능하게 기록</li>
+<li>레이어가 분리되고 실제 텍스트를 가진 편집 가능한 산출물을 전달해 사용자가 마우스로 드래그하며 직관적으로 레이아웃을 조정할 수 있게 함</li>
+</ul>
+<h2>방법론</h2>
+<p>전체 워크플로우는 5단계로 구성된다: (1) 이해 및 디자인 계획 — 에이전트가 요구사항을 파악하고 이미지 모델을 호출해 "상상된 비주얼"을 만들어 미적 참조로 삼음, (2) 시각 시뮬레이션 — VLM이 상상된 비주얼에서 색조·구도·스타일 특징을 시각적으로 파싱해 이후 코드 구축의 전역 참조로 사용, (3) 구조적 코딩 및 생성 — 텍스트 없는 배경이나 독립된 피사체 같은 깔끔한 개별 시각 자산을 온디맨드로 생성하고(알파 채널 직접 요청 또는 그린 배경+매팅 스크립트로 분리), 이를 네이티브 HTML/CSS로 조합해 명확한 타이포그래피 계층과 그리드 정렬을 갖춘 다층 페이지를 구성, (4) 검증 및 시각적 자가 치유 — 헤드리스 브라우저에서 결정론적 레이아웃 규칙 검사를 수행한 뒤 렌더링된 스크린샷을 VLM 리뷰어에게 제공해 시각적 반성과 국소적 패치 수정을 반복, (5) 편집 가능한 디자인 전달 — 텍스트·자산·배경 레이어가 완전히 분리된 네이티브 DOM 노드 형태로 최종 산출물 전달. 실험 시스템에서 창작 뇌는 GPT-5.6 Sol 기반 Codex, 시각 시뮬레이터는 GPT Image 2를 사용했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>동일한 요구사항에 대해 순수 확산 이미지 생성, 순수 LLM 코드 레이아웃, Editable Visual Design 세 방식을 비교한 결과, 순수 확산 모델은 시각 품질은 좋지만 텍스트가 왜곡되고 레이어가 뒤엉켜 편집이 어려웠고, 순수 코드 생성은 구조는 깔끔하지만 전역적 미적 사전지식이 없어 결과물이 단조로웠다. 반면 Editable Visual Design은 이미지 시뮬레이터로부터 좋은 색감과 분위기를 얻으면서도 코드 재구성을 통해 명확한 타이포그래피와 레이어 분리를 동시에 달성했다. 이벤트 포스터, 인포그래픽, 마케팅 자료, 장문 레이아웃 등 다양한 디자인 유형에 걸쳐 파이프라인이 적응함을 보였으며, 레드판다 백과사전 인포그래픽 사례 연구에서는 Agent Design Replay가 요구사항 파싱부터 자산 생성, 렌더링 관찰, 레이아웃 세부 수정까지의 전체 창작 궤적을 투명하게 보여주었다.</p>
+<h2>한계점</h2>
+<p>이 방법은 기저 모델이 갖지 못한 능력을 새로 만들어내지 않으며, 코딩 에이전트나 이미지 모델 중 어느 하나의 능력이 부족하면 결과물도 그만큼 제한된다. 특히 이미지 모델이 반환하는 참조가 기술적으로는 깨끗하지만 구도상 평범하고 뚜렷한 초점이나 색 아이디어가 없을 경우, 에이전트가 이를 발전시킬 여지가 적다. 여러 페이지에 걸친 일관성이 필요한 다중 페이지 덱이나 전체 웹사이트는 단일 포스터보다 훨씬 어렵고, 본 보고서의 사례는 모두 단일 페이지 디자인에 국한된다. 또한 미적 품질에는 정답이 없어 정량적 점수 대신 사례 중심으로 보고했으며, 편집 가능성 역시 레이어 수나 DOM 구조로는 완전히 측정되지 않는다.</p>
+<h2>시사점</h2>
+<p>생성 모델을 최종 산출물이 아니라 "상상"을 통해 미적·구성적 사전지식을 코딩 에이전트에 공급하는 전처리 시뮬레이터로 배치하는 것이, 생성이 멀티모달 이해와 의사결정에 피드백하는 자연스러운 방식이 될 수 있음을 시사한다. 이는 "비트맵 출력"에서 "구조화된 전달"로 나아가는 디자인 자동화의 실용적 방향을 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.04034" target="_blank" rel="noopener">huggingface.co/papers/2609.04034</a> · 2026-09-05</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

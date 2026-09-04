@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>랜덤 어텐션</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#5 · Daily Papers 2026-09-05</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 122</span>
+    </div>
+    <h1 class="article-title">Random Attention: Rethinking KV Cache Eviction for Efficient Reasoning</h1>
+    <p class="article-title-ko">랜덤 어텐션: 효율적인 추론을 위한 KV 캐시 축출 재고하기</p>
+    <p class="article-sub">프롬프트만 보존하고 나머지 KV 캐시는 헤드별로 완전히 무작위로 축출하는 "Random Attention"이 점수 기반 최신 기법들과 동등한 정확도를 내면서 훨씬 빠른 서빙 속도를 보여, 기존 KV 캐시 축출 연구의 핵심 전제인 "중요도 점수"가 정확도에 거의 기여하지 않음을 입증한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.03430" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.03430" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Random Attention: Rethinking KV Cache Eviction for Efficient Reasoning</li>
+<li><strong>저자</strong>: Heng Wang, Jielin Qiu, Wenting Zhao, Cheng Qian, Liangwei Yang, Jiawei Han, Heng Ji, Silvio Savarese, Shelby Heinecke, Huan Wang (Salesforce AI Research, University of Illinois Urbana-Champaign)</li>
+<li><strong>출처</strong>: arXiv:2609.03430v1 [cs.CL] (2026-09-03)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/SalesforceAIResearch/Random-Attention">GitHub</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.03430">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>프롬프트만 보존하고 나머지 KV 캐시는 헤드별로 완전히 무작위로 축출하는 "Random Attention"이 점수 기반 최신 기법들과 동등한 정확도를 내면서 훨씬 빠른 서빙 속도를 보여, 기존 KV 캐시 축출 연구의 핵심 전제인 "중요도 점수"가 정확도에 거의 기여하지 않음을 입증한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>추론 모델은 수만 토큰에 이르는 긴 사고 사슬(chain of thought)을 생성하며 KV 캐시가 선형으로 커져 메모리 병목이 된다. 기존 KV 캐시 축출 기법들은 모두 "각 캐시 토큰의 미래 중요도를 점수화하고 상위 점수만 유지한다"는 동일한 패러다임을 공유하며, 축적된 어텐션, 최근 윈도우 어텐션, 중복성 결합, 값 크기, 위치 기반 통계 등으로 점점 정교한 점수를 제안해왔다. 그러나 이 논문은 이 전제, 즉 "점수가 압축 하의 정확도를 결정한다"는 가정 자체를 직접 검증한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>프롬프트를 보존하고 나머지는 헤드별로 균등 무작위 축출하는 점수 없는 방법 Random Attention 제안</li>
+<li>4개 모델·6개 추론 과제에서 최신 축출 기법과 동등한 정확도를 내면서 vLLM 서빙에서 32~43% 높은 처리량 달성</li>
+<li>프롬프트가 캐시 중 취약한 부분이며, 추론 궤적은 텍스트 및 어텐션 헤드 차원에서 이중으로 중복 저장되어 스스로를 보호한다는 두 가지 통제 실험으로 원인 규명</li>
+</ul>
+<h2>방법론</h2>
+<p>Random Attention은 두 가지 구조적 선택으로 정의된다: (1) 프롬프트(시스템 프롬프트, 채팅 템플릿, 질문 전체)는 절대 축출하지 않고, (2) 나머지 캐시된 위치는 각 KV 헤드마다 독립적으로 i.i.d. 균등 무작위 점수를 부여해 상위 K개만 유지한다. 저자들은 planted-fact probing 실험을 통해, 하나의 어텐션 헤드가 정보를 보유했을 때는 거의 검색되지 않지만 여러 헤드가 각자의 사본을 보유하면 슈퍼애디티브하게(한 헤드씩 합친 것보다 훨씬 크게) 검색 확률이 오르는 교차 헤드 중복성을 확인했고, 실제 추론 궤적에서는 텍스트 자체가 필요한 정보를 반복 진술하는 중복성도 함께 작동함을 보였다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Qwen3-4B/14B/32B와 Phi-4-reasoning 4개 모델, MATH500·GPQA-Diamond·AIME·HMMT·LiveCodeBench 등 6개 수학·과학·코드 추론 과제에서 약 4배 압축 조건으로 평가한 결과, Random Attention은 60개 베이스라인 비교 중 31개에서 유의하게 앞섰고 단 1개(Qwen3-32B의 코드 추론, 긴 프롬프트가 원인)에서만 뒤처졌다. vLLM 페이지드 서빙 환경에서 32k 토큰 생성 기준 최강 베이스라인인 TriAttention 대비 32~43% 높은 처리량을 보였는데, 이는 점수 계산 패스가 전혀 없어 축출당 0.30ms(TriAttention은 1.47~1.64ms)만 소요되기 때문이다. 프롬프트를 강제로 보존하도록 통일하자 기존 베이스라인 간 격차가 대부분 사라졌으며(Table 2), 한 번만 언급되고 다시 반복되지 않는 "희귀 사실"을 찾는 극단적 사례에서만 점수 기반 방법(R-KV)이 우위를 보였다.</p>
+<h2>한계점</h2>
+<p>Random Attention이 유일하게 취약한 경우는 한 번만 진술되고 다시는 반복되지 않는 정보(예: 패스코드)를 훨씬 나중에 회수해야 하는 상황으로, 이때는 R-KV 같은 콘텐츠 기반 점수가 필요하다. 코드 추론처럼 프롬프트가 예산의 상당 부분을 차지하는 경우, 프롬프트 전체를 그대로 보존하는 것이 비효율적일 수 있어 프롬프트 자체를 압축하는 더 스마트한 규칙은 향후 과제로 남겨두었다.</p>
+<h2>시사점</h2>
+<p>KV 캐시 축출 연구의 초점이 "무엇을 더 잘 순위 매길까"에서 "무엇을 반드시 보호해야 하는가"로 이동해야 함을 시사하며, 긴 프롬프트 예산 관리와 한 번만 언급되는 희귀 사실 보존이라는 실질적으로 남은 문제를 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.03430" target="_blank" rel="noopener">huggingface.co/papers/2609.03430</a> · 2026-09-05</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

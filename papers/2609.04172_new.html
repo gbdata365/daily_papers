@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>대형 언어모델의 온폴리시 증류 재고하기 II</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#8 · Daily Papers 2026-09-05</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 64</span>
+    </div>
+    <h1 class="article-title">Rethinking On-Policy Distillation of Large Language Models II: One Training Example</h1>
+    <p class="article-title-ko">대형 언어모델의 온폴리시 증류 재고하기 II: 단 하나의 학습 예제</p>
+    <p class="article-sub">온폴리시 증류(OPD)를 단 하나의 학습 쿼리로 수백 스텝 동안 학습해도 전체 데이터로 학습한 것과 비슷한 성능 향상을 얻을 수 있음을 보이고, 그 이유가 "데이터는 과잉 공급되지만 알고리즘의 흡수 속도가 느리기 때문"임을 상태(state) 커버리지와 흡수율 분석으로 규명한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.04172" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.04172" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Rethinking On-Policy Distillation of Large Language Models II: One Training Example</li>
+<li><strong>저자</strong>: Zixuan Fu, Bingxiang He, Yuxin Zuo 외 (Tsinghua University, UCAS, Northeastern University, UIUC, Johns Hopkins University)</li>
+<li><strong>출처</strong>: arXiv:2609.04172v1 [cs.AI] (2026-09-03)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/Thinking-Space/One-Shot-OPD">GitHub</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.04172">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>온폴리시 증류(OPD)를 단 하나의 학습 쿼리로 수백 스텝 동안 학습해도 전체 데이터로 학습한 것과 비슷한 성능 향상을 얻을 수 있음을 보이고, 그 이유가 "데이터는 과잉 공급되지만 알고리즘의 흡수 속도가 느리기 때문"임을 상태(state) 커버리지와 흡수율 분석으로 규명한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>온폴리시 증류는 학생 모델이 직접 생성한 롤아웃에 교사 모델이 토큰 단위의 조밀한 분포 감독을 제공하는 방식으로, Qwen3, GLM-5, DeepSeek-V4 등 최신 후속학습 파이프라인에서 널리 쓰이고 있다. 기존 연구는 주로 알고리즘 관점에서 OPD의 작동 원리를 분석했지만, 학습 데이터가 OPD에 어떤 역할을 하는지, 데이터와 알고리즘이 어떻게 상호작용하는지는 규명되지 않았다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>단 하나의 쿼리만으로 학습하는 "원샷 OPD"가 수백 스텝 동안 계속 성능을 개선하며, 수학·코드·지시 따르기·에이전틱 도구 사용 등 4개 도메인과 3개 모델 계열에 걸쳐 전체 데이터 학습 성과의 상당 부분을 회복함을 실증</li>
+<li>"상태 커버리지(state coverage)" 지표를 도입해, 단일 쿼리가 전체 데이터 OPD가 방문하는 상태 공간의 71.5%를 커버하며, 의미적으로 다양한 16개 쿼리만으로 98.9% 커버리지와 전체 데이터 수준의 성능을 달성함을 보임</li>
+<li>"흡수율(absorption rate)"이라는 지표로 학생이 교사와의 격차를 줄이는 속도가 쿼리 개수와 무관하게 비슷한 속도로 느려짐을 보여, OPD가 "데이터 과잉·알고리즘 기아" 상태임을 규명</li>
+<li>멀티 티처 OPD, 콘텐츠가 거의 없는 템플릿, 도메인 외 WildChat 쿼리로도 유사한 효과가 재현됨을 보여 일반화 가능성 제시</li>
+</ul>
+<h2>방법론</h2>
+<p>OPD는 상태 s=(x,y_&lt;i)마다 학생과 교사의 로그 확률 차이를 어드밴티지로 사용해 학생을 교사에 정렬시킨다. 저자들은 전체 데이터 OPD가 방문한 상태들을 교사의 최종층 은닉벡터로 표현하고 PCA 후 K-평균으로 200개 클러스터로 나누어, 특정 설정의 롤아웃이 도달하는 클러스터 비율을 "상태 커버리지"로 정의했다. 또한 매 스텝 학생-교사 간 남은 거리(distance)와 한 번의 업데이트가 그 거리를 얼마나 줄이는지(흡수율)를 별도로 추적해, 데이터 측면(상태 커버리지)과 알고리즘 측면(흡수 속도)을 분리해 분석했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>수학 추론에서 원샷 OPD는 300스텝에서 전체 데이터 OPD의 87%에 해당하는 성능 향상을 회복했고, 1000스텝에서는 72%를 유지했다. 이 효과는 R1-Distill-1.5B, Llama-3B-It, OLMo-7B-It-DPO 등 세 모델 계열과 코드 생성(73%), 지시 따르기(66%), 에이전틱 도구 사용(64%) 등 다른 도메인에서도 재현되었으며, 쿼리 난이도·응답 길이·샘플링 온도에 대해서도 강건했다. 상태 커버리지 분석에서 단일 쿼리는 300스텝까지 71.5%의 클러스터를 커버했고(대부분 초기 100스텝 내), 16개의 의미적으로 다양한 쿼리는 98.9% 커버리지로 전체 데이터 성능과 일치했다. 반면 흡수율은 1개, 4개, 16개, 전체(약 17,000개) 쿼리 모두에서 비슷한 속도로 감소했으며, 상태를 고정한 오프폴리시 학습도 200스텝 이상 지속적인 성능 향상을 보여 "고정된 상태 집합조차 흡수하는 데 수백 스텝이 걸린다"는 것을 확인했다. 멀티 티처 OPD에서도 도메인당 16개의 다양한 쿼리가 전체 데이터 성능의 101%를 회복했다.</p>
+<h2>한계점</h2>
+<p>콘텐츠가 거의 없는 템플릿이나 도메인 외 쿼리도 효과가 있다는 결과가 과제 내용 자체가 일반적으로 불필요하다는 것을 의미하지는 않으며, 실험에서 명시적 도메인 콘텐츠는 여전히 약 1점의 성능 차이를 만들었다. 원샷 RLVR와의 비교는 동일한 쿼리에서 수행되었지만, 이 두 방법의 근본적으로 다른 신호 구조(검증 가능한 결과 대 조밀한 분포 신호) 때문에 직접적인 일반화에는 한계가 있다.</p>
+<h2>시사점</h2>
+<p>데이터 큐레이션의 핵심 질문이 "얼마나 많은 문제를 모을 것인가"에서 "이 입력이 어떤 상태를 유도하는가"로 바뀌어야 함을 시사하며, 향후 연구가 OPD의 스텝 효율성(알고리즘이 공급된 감독을 더 빠르게 흡수하는 방법)에 초점을 맞춰야 함을 제안한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.04172" target="_blank" rel="noopener">huggingface.co/papers/2609.04172</a> · 2026-09-05</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

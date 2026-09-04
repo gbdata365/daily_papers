@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>스칼3알</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#10 · Daily Papers 2026-09-05</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 33</span>
+    </div>
+    <h1 class="article-title">Scal3R: Learning Efficient Multi-Relative Pose Query for Scalable Online 3D Reconstruction</h1>
+    <p class="article-title-ko">스칼3알: 확장 가능한 온라인 3D 재구성을 위한 효율적 다중 상대 포즈 질의 학습</p>
+    <p class="article-sub">CUT3R, STream3R 같은 온라인 3D 재구성 모델이 첫 프레임 기준 전역 포즈 회귀 때문에 긴 시퀀스에서 파국적으로 붕괴하는 문제를, 프레임별 깊이는 안정적이라는 관찰에 착안해 완전히 동결된 백본에 경량 토큰만 주입하는 다중 참조 상대 포즈 질의 방식으로 해결한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.04201" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.04201" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Scal3R: Learning Efficient Multi-Relative Pose Query for Scalable Online 3D Reconstruction</li>
+<li><strong>저자</strong>: Chin-Yang Lin, Yang-Che Sun, Cheng Sun, Fu-En Yang, Min-Hung Chen, Yen-Yu Lin, Wei-Chen Chiu, Yu-Lun Liu (National Yang Ming Chiao Tung University, NVIDIA)</li>
+<li><strong>출처</strong>: arXiv:2609.04201v1 [cs.CV] (2026-09-03)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://linjohnss.github.io/scal3r/">프로젝트 페이지</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.04201">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>CUT3R, STream3R 같은 온라인 3D 재구성 모델이 첫 프레임 기준 전역 포즈 회귀 때문에 긴 시퀀스에서 파국적으로 붕괴하는 문제를, 프레임별 깊이는 안정적이라는 관찰에 착안해 완전히 동결된 백본에 경량 토큰만 주입하는 다중 참조 상대 포즈 질의 방식으로 해결한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>기존 피드포워드 온라인 3D 재구성 모델은 첫 프레임을 고정 기준점으로 삼아 전역 카메라 포즈를 회귀하는데, 이는 짧은 시퀀스에서는 잘 작동하지만 수백 미터~킬로미터 규모의 긴 궤적에서는 학습 분포를 크게 벗어나는 외삽을 강요해 작은 특징 드리프트가 기하학적 붕괴로 증폭된다. 그러나 저자들은 이러한 실패가 국소적임을 관찰했다: 전역 포즈 오차는 발산해도 프레임별 깊이는 안정적으로 유지되며, 이는 백본의 지역 기하 표현 자체는 온전하고 실패가 전역 포즈 회귀 헤드에만 국한됨을 시사한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>전역 포즈 회귀 대신 다중 참조 상대 포즈 질의로 온라인 재구성을 재정식화하고, 전체 파라미터의 약 1%에 불과한 경량 학습 가능 토큰을 완전히 동결된 백본에 비대칭 어텐션으로 주입</li>
+<li>여러 과거 키프레임에 동시에 상대 포즈를 질의하고 이를 온라인 포즈그래프 최적화(PGO)로 집계해 드리프트 없는 궤적을 생성하며, 루프 클로저를 자연스럽게 통합</li>
+<li>단일 GPU에서 8시간 만에 파인튜닝이 수렴하며, KITTI에서 온라인 베이스라인 대비 평균 궤적 오차(ATE)를 60% 이상 절감하고 Virtual KITTI·Sintel·TUM-Dynamic·ScanNet·7-Scenes에서 최고 성능 달성</li>
+</ul>
+<h2>방법론</h2>
+<p>공유 기본 질의 토큰 q에 참조 프레임의 카메라 토큰을 경량 MLP로 투영해 더한 상대 포즈 토큰을 만들고, 이 토큰들이 디코더에서 오직 쿼리로만 작동해 이미지 토큰의 키·값에는 영향을 주지 않는 "비대칭 어텐션 주입"을 적용함으로써 원본 포인트맵 생성 품질을 그대로 보존한다. 각 포즈 토큰은 현재 프레임과 특정 참조 프레임 간의 상대 변환(SE(3), 6D 회전 표현)을 디코딩하며, 추론 시에는 재학습 없이 참조 프레임 수를 자유롭게 늘릴 수 있다(학습은 K=3, 추론은 K=12). 온라인 백엔드는 3D 중첩 기반 키프레임 선택, iSAM2 기반 증분 포즈그래프 최적화, DINOv2+SALAD 기반 루프 탐지로 구성되어 지역적 상대 제약들을 전역적으로 일관된 궤적으로 통합한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>KITTI에서 Scal3R(CUT3R 기반)은 평균 ATE 69.7을 기록해 가장 강력한 온라인 경쟁자인 TTT3R(182.2) 대비 60% 이상 오차를 줄였고, Virtual KITTI에서는 평균 ATE 5.63으로 모든 스트리밍 방법을 큰 차이로 앞서며 오프라인 방법인 π3(2.04)에 근접했다. Sintel(0.168), TUM-Dynamic(0.018), ScanNet(0.049)에서도 최고 성능을 보여 보지 못한 실내·합성 도메인에도 강건하게 일반화했다. 어블레이션에서 다중 참조 학습, 키프레임 선택, PGO, 루프 클로저 각각이 성능에 필수적임이 확인되었으며(루프 클로저만으로 평균 ATE 48% 개선), 추론 시 참조 프레임을 4개에서 12개로 늘리면 재학습 없이 ATE가 지속적으로 감소했다. 전체 파이프라인 지연시간의 대부분(86~91%)은 동결된 순전파가 차지해 추가 오버헤드는 미미했다.</p>
+<h2>한계점</h2>
+<p>성능은 동결된 백본에 의해 상한이 정해지므로, 백본이 가림이나 텍스처 없는 영역에서 실패하면 함께 저하된다. 또한 외형 기반 루프 클로저는 극단적인 시점이나 조명 변화에서 재방문을 놓칠 수 있고, 키프레임 선택과 루프 탐지가 수작업으로 설정한 임계값에 의존한다.</p>
+<h2>시사점</h2>
+<p>시각 오도메트리 분야의 통찰인 "상대적 정식화가 절대적 정식화보다 더 잘 일반화된다"는 원리를 3D 재구성 파운데이션 모델에 적용해, 전역 회귀를 개선하려 하기보다 문제 자체를 국소적 상대 질의로 재구성함으로써 단 1%의 추가 파라미터만으로 근본적인 외삽 실패를 해결할 수 있음을 보여준다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.04201" target="_blank" rel="noopener">huggingface.co/papers/2609.04201</a> · 2026-09-05</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

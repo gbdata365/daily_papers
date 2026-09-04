@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>컴파일 바이 트레이닝</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#1 · Daily Papers 2026-09-05</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 247</span>
+    </div>
+    <h1 class="article-title">Compile by Training: Turning Natural-Language Specifications into Local Neural Functions</h1>
+    <p class="article-title-ko">컴파일 바이 트레이닝: 자연어 명세를 로컬 신경망 함수로 컴파일하기</p>
+    <p class="article-sub">자연어로 작성한 함수 명세를 교사 모델이 생성한 예시로 한 번 학습시켜, 이후에는 대형 모델 호출 없이 로컬에서 반복 실행 가능한 소형 신경망 함수로 "컴파일"하는 방법을 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.04199" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.04199" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Compile by Training: Turning Natural-Language Specifications into Local Neural Functions</li>
+<li><strong>저자</strong>: Yuntian Deng(University of Waterloo), Pengyu Nie(University of Waterloo), Stuart Shieber(Harvard University)</li>
+<li><strong>출처</strong>: arXiv:2609.04199v1 [cs.CL] (2026-09-03)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://programasweights.com/playground?compiler=paw-ft-bs48">PAW Playground</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.04199">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>자연어로 작성한 함수 명세를 교사 모델이 생성한 예시로 한 번 학습시켜, 이후에는 대형 모델 호출 없이 로컬에서 반복 실행 가능한 소형 신경망 함수로 "컴파일"하는 방법을 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>이메일 분류처럼 규칙으로 구현하기는 애매하지만 매번 대형 원격 LLM을 호출하기에는 너무 좁고 빈번한 텍스트 함수들이 존재한다. 매 호출마다 원격 모델을 쓰면 지연시간, 비용, 외부 서비스 의존성이라는 반복 비용이 발생한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>자연어 명세를 한 번의 빌드 과정을 통해 재사용 가능한 신경망 프로그램으로 변환하는 "compile by training" 개념 제시</li>
+<li>기존 Program-as-Weights(PAW)의 즉시 예측 방식보다 정확도를 크게 높이는 컴파일타임 학습 전략</li>
+<li>웹사이트 헬퍼, 언어 제어 3D 아바타, 영어-Claudish 양방향 번역기 등 실제 서비스에 배포하여 여러 컴파일된 함수의 조합 가능성을 시연</li>
+</ul>
+<h2>방법론</h2>
+<p>사용자가 자연어로 함수를 명세하면, 교사 모델(주로 저비용 모델과 고성능 모델을 2:1로 혼합)이 입력-출력 예시 데이터셋을 생성한다. 이 데이터로 공유된 동결(frozen) Qwen3-0.6B 인터프리터 위에 가벼운 LoRA 어댑터를 파인튜닝하며, PAW의 amortized 컴파일러가 예측한 초기 파라미터를 웜스타트로 활용한다. 완성된 프로그램(어댑터+런타임 스캐폴드+명세)은 패키징되어 로컬 SDK에서 교사 모델 호출 없이 실행된다. 또한 교사 생성과 학습을 오버랩시켜 컴파일 지연시간을 줄이는 서비스 아키텍처를 구현했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>PAW 고속 컴파일러가 정확히 일치하는 답을 내지 못한 FuzzyBench-Hard 부분집합에서, LLM 판정 기반 지표인 LEM(LLM Exact Match)으로 평가한 결과 PAW의 0.224에서 compile by training은 0.836으로 크게 향상되었다(컴파일 시간은 3.5초에서 50.9초로 증가). 교사 모델 혼합 비율과 데이터 규모에 대한 스윕 실험에서도 성능 향상이 확인되었으며, B300 GPU 기준 콜드 컴파일은 약 51초가 소요되었다. 공개 서비스에서는 4개 동시 컴파일 작업의 평균 대기시간이 1초 수준이었고, 영어-Claudish 번역 데모는 약 열흘간 10만 건 이상의 요청을 성공적으로 처리했다.</p>
+<h2>한계점</h2>
+<p>교사 모델이 생성한 합성 데이터의 오류를 그대로 물려받을 수 있어, 정확성이 보장되어야 하는 응용에서는 출력 검증이나 결정론적 제어 경로를 별도로 두어야 한다. 논문은 조합과 구조화된 실행 사례를 중심으로 다루며, 체계적인 사용자 연구는 향후 과제로 남겨두었다.</p>
+<h2>시사점</h2>
+<p>반복적이고 좁은 범위의 텍스트 함수를 매번 원격 LLM 호출 없이 처리할 수 있게 함으로써, LLM 활용을 "런타임 의존"에서 "빌드타임 도구"로 전환하는 소프트웨어 개발 패러다임의 가능성을 보여준다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.04199" target="_blank" rel="noopener">huggingface.co/papers/2609.04199</a> · 2026-09-05</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

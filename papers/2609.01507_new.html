@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>레이턴트프레스</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#6 · Daily Papers 2026-09-05</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 102</span>
+    </div>
+    <h1 class="article-title">LatentPress: Context Compression Beyond Text and Vision</h1>
+    <p class="article-title-ko">레이턴트프레스: 텍스트와 비전을 넘어선 컨텍스트 압축</p>
+    <p class="article-sub">대화 이력과 긴 문서를 텍스트나 이미지로 재구성하지 않고, 동결된(frozen) 디코더가 입력 임베딩 인터페이스로 직접 읽는 연속적 소프트 토큰으로 압축하는 LatentPress를 제안하여, 4~16배 압축에도 원문 그대로 읽는 것과 동등하거나 더 나은 정확도를 유지한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.01507" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.01507" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: LatentPress: Context Compression Beyond Text and Vision</li>
+<li><strong>저자</strong>: Zhengze Zhou (Cornell University), Hejian Sang (Iowa State University)</li>
+<li><strong>출처</strong>: arXiv:2609.01507v2 [cs.LG] (2026-09-03)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/HJSang/LatentPress">GitHub</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.01507">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>대화 이력과 긴 문서를 텍스트나 이미지로 재구성하지 않고, 동결된(frozen) 디코더가 입력 임베딩 인터페이스로 직접 읽는 연속적 소프트 토큰으로 압축하는 LatentPress를 제안하여, 4~16배 압축에도 원문 그대로 읽는 것과 동등하거나 더 나은 정확도를 유지한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>장기 실행 어시스턴트나 에이전트는 다 읽을 수 없을 만큼 많은 이력을 축적하며, 긴 문서 질의응답에서도 같은 압박이 발생한다. 기존 방식은 텍스트를 검색·요약·가지치기하거나 다른 모달리티(이미지)로부터 텍스트를 재구성한 뒤에야 언어모델이 사용할 수 있게 하지만, 모델이 저장·압축된 맥락을 반드시 사람이 읽을 수 있는 형태로 유지할 필요는 없다는 문제의식에서 출발한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>텍스트를 압축된 상태로 바꾸는 WRITE와, 그 상태를 동결된 디코더에 공급해 하류 질의응답을 수행하는 READ로 맥락 사용을 분리하는 직접 읽기(direct-read) 소프트 토큰 인터페이스 제안</li>
+<li>디코더의 최하위 2개 레이어를 재사용하는 소형 "리더-매치드" 라이터(전체 디코더 파라미터의 약 0.1%)만 학습하여, 추론 시 텍스트 재구성 없이 4~16배 압축 달성</li>
+<li>대화 이력에는 역할 기반(발화자 유형별) 압축률, 문서에는 균일 압축률을 적용하는 실용적 압축 스케줄과, 재구성 손실+정방향 KL 증류를 결합한 학습 목적함수 제시</li>
+</ul>
+<h2>방법론</h2>
+<p>컨텍스트 x를 세그먼트 시퀀스로 보고, 소형 학습 가능한 라이터가 이를 짧은 연속 벡터 시퀀스 m으로 매핑하면, 동결된 디코더가 [m; 질문 임베딩]을 입력으로 받아 바로 답을 생성한다. 압축률 π는 세그먼트별로 지정되며, 대화의 경우 사용자 발화(k_user=1, 무손실 보존)와 어시스턴트 발화(k_assistant∈{8,16,32}, 풀링)에 서로 다른 비율을 적용하는 역할 기반 스케줄을, 문서의 경우 균일 풀링을 사용한다. 학습은 재구성 손실(L_rec)과, 전체 맥락 대비 압축된 맥락에서의 다음 토큰 분포 차이를 줄이는 정방향 KL 손실(L_fkl)의 합으로 이루어지며, 디코더 전체와 차용한 인코더 레이어는 동결한 채 라이터 헤드만 학습한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>LongMemEval(오라클 증거 500문항)에서 Qwen2.5-7B 리더 기준, 압축하지 않은 오라클 증거는 0.490인 반면 LatentPress는 7.70배 압축에서 0.504를 기록해 이를 능가했고, 텍스트 요약(0.184)과 DeepSeek-OCR 기반 시각 압축(0.426→0.312로 하락)을 크게 앞질렀다. Qwen2.5-7B/14B, Qwen3-8B/1.7B 등 다양한 백본에서도 균일 풀링 대비 +0.34~+0.45의 정확도 우위를 유지했다. LongBench-QA에서는 도메인 내 지도학습을 적용한 라이터가 4~8배 압축에서 원문 그대로 읽는 것보다 높은 점수를 냈지만(Qwen2.5-14B: 47.93→57.99), 16배에서는 원문 읽기보다 낮아졌다. 효율성 측면에서 소프트 토큰 생성은 대화당 43ms로 텍스트 요약이나 OCR 재구성보다 한 자릿수 이상 빠르며, 읽기 단계도 원문이나 캐시된 OCR 대비 5~9배 빠르다.</p>
+<h2>한계점</h2>
+<p>현재의 역할 기반·균일 압축률은 의도적으로 단순화된 수작업 휴리스틱이며, 세그먼트별 압축률을 자동으로 학습하는 정책은 향후 과제로 남겨두었다. LongMemEval 평가는 검색이 이상적으로 이루어진 오라클 증거 설정에 국한되어 있어, 실제 검색·메모리 갱신·충돌 해결까지 포함하는 완전한 메모리 시스템과의 통합은 다루지 않는다. 가장 공격적인 16배 압축에서는 두 벤치마크 모두 원문 읽기보다 성능이 하락한다.</p>
+<h2>시사점</h2>
+<p>압축된 맥락이 반드시 텍스트나 이미지 형태를 거칠 필요가 없으며, 동결된 언어모델이 직접 읽을 수 있는 연속 벡터가 실용적인 기계 지향 맥락 인터페이스가 될 수 있음을 보여준다. 이는 검색·메모리·리트리버 파이프라인 위에 결합될 수 있는 경량 압축 계층으로서의 활용 가능성을 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.01507" target="_blank" rel="noopener">huggingface.co/papers/2609.01507</a> · 2026-09-05</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

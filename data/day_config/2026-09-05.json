@@ -1,0 +1,110 @@
+{
+  "2609.04199": {
+    "base": "2609_컴파일학습_자연어-명세를-신경망-함수로-컴파일",
+    "rank": "#1",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "247",
+    "en_title": "Compile by Training: Turning Natural-Language Specifications into Local Neural Functions",
+    "ko_title": "컴파일 바이 트레이닝: 자연어 명세를 로컬 신경망 함수로 컴파일하기"
+  },
+  "2609.04148": {
+    "base": "2609_터미널유니버스_에이전트-궤적을-터미널-환경으로-전환",
+    "rank": "#2",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "213",
+    "en_title": "Terminal-Universe: Turning Agent Trajectories into Scalable Terminal Environments",
+    "ko_title": "터미널 유니버스: 에이전트 궤적을 확장 가능한 터미널 환경으로 전환하기"
+  },
+  "2609.03796": {
+    "base": "2609_라다이미지_완전공개-레시피-이미지-생성모델",
+    "rank": "#3",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "188",
+    "en_title": "LLaDA-Image: Building Strong Image Generators with Fully Open Training Recipes",
+    "ko_title": "라다이미지: 완전 공개형 학습 레시피로 강력한 이미지 생성기 구축하기"
+  },
+  "2608.26730": {
+    "base": "2608_비씨아이티_조건부-경험-전이-자율-후속학습",
+    "rank": "#4",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "139",
+    "en_title": "Knowing When Not to Reuse: Conditional Experience Transfer in Autonomous LLM Post-Training",
+    "ko_title": "언제 재사용하지 말아야 하는지 알기: 자율 LLM 후속학습에서의 조건부 경험 전이"
+  },
+  "2609.03430": {
+    "base": "2609_랜덤어텐션_무작위-kv캐시-축출-추론-효율화",
+    "rank": "#5",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "122",
+    "en_title": "Random Attention: Rethinking KV Cache Eviction for Efficient Reasoning",
+    "ko_title": "랜덤 어텐션: 효율적인 추론을 위한 KV 캐시 축출 재고하기"
+  },
+  "2609.01507": {
+    "base": "2609_레이턴트프레스_텍스트-비전-너머-컨텍스트-압축",
+    "rank": "#6",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "102",
+    "en_title": "LatentPress: Context Compression Beyond Text and Vision",
+    "ko_title": "레이턴트프레스: 텍스트와 비전을 넘어선 컨텍스트 압축"
+  },
+  "2609.04098": {
+    "base": "2609_미니마_gdn-4비트-양자화-생존",
+    "rank": "#7",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "66",
+    "en_title": "Why Gated DeltaNet Survives 4-Bit Quantization: NVFP4 W4A4 for the Recurrent Half of a Hybrid 27B LLM",
+    "ko_title": "게이트 델타넷은 왜 4비트 양자화에서 살아남는가: 하이브리드 27B LLM 순환 절반을 위한 NVFP4 W4A4"
+  },
+  "2609.04172": {
+    "base": "2609_원샷온폴리시증류_단일-학습-예제",
+    "rank": "#8",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "64",
+    "en_title": "Rethinking On-Policy Distillation of Large Language Models II: One Training Example",
+    "ko_title": "대형 언어모델의 온폴리시 증류 재고하기 II: 단 하나의 학습 예제"
+  },
+  "2609.04196": {
+    "base": "2609_퍼핀월드_네이티브-3d-세계상태-통합모델",
+    "rank": "#9",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "57",
+    "en_title": "Puffin-World: Scaling a Unified Multimodal Model with Native 3D World States",
+    "ko_title": "퍼핀-월드: 네이티브 3D 세계 상태로 통합 멀티모달 모델 확장하기"
+  },
+  "2609.04201": {
+    "base": "2609_스칼3알_다중참조-상대포즈-온라인-3d재구성",
+    "rank": "#10",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "33",
+    "en_title": "Scal3R: Learning Efficient Multi-Relative Pose Query for Scalable Online 3D Reconstruction",
+    "ko_title": "스칼3알: 확장 가능한 온라인 3D 재구성을 위한 효율적 다중 상대 포즈 질의 학습"
+  },
+  "2609.04034": {
+    "base": "2609_편집가능비주얼디자인_코딩에이전트-디자인",
+    "rank": "#11",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "32",
+    "en_title": "Editable Visual Design",
+    "ko_title": "편집 가능한 비주얼 디자인"
+  },
+  "2609.02367": {
+    "base": "2609_템포럴컨텍스트라우팅_대본기반-오디오비디오생성",
+    "rank": "#12",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "26",
+    "en_title": "The Missing Temporal Link: Temporal Context Routing for Script-Driven Audio-Video Generation",
+    "ko_title": "누락된 시간적 연결고리: 대본 기반 오디오-비디오 생성을 위한 템포럴 컨텍스트 라우팅"
+  }
+}

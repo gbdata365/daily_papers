@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>터미널 에이전트를 위한 환경 진화</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#11 · Daily Papers 2026-09-07</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 17</span>
+    </div>
+    <h1 class="article-title">Environment Evolution for Terminal Agents</h1>
+    <p class="article-title-ko">터미널 에이전트를 위한 환경 진화</p>
+    <p class="article-sub">모델의 온폴리시 롤아웃 없이도 터미널 에이전트 훈련 환경의 난이도를 세대(generation)를 거듭하며 오프폴리시 방식으로 점진적으로 증가시키는 "환경 진화(Environment Evolution)" 기법을 제안하고, 이를 통해 장기간 RL 훈련에서도 지속적으로 유효한 학습 신호를 제공함을 보인 연구다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.04128" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.04128" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Environment Evolution for Terminal Agents</li>
+<li><strong>저자</strong>: Tencent Hunyuan Team (Hunyuan Team, Tencent) 소속 Zhiyuan Fan, Tinghao Yu, Yuanjun Cai 등 11명</li>
+<li><strong>출처</strong>: arXiv:2609.04128v1 [cs.AI] (2026년 9월)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.04128">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>모델의 온폴리시 롤아웃 없이도 터미널 에이전트 훈련 환경의 난이도를 세대(generation)를 거듭하며 오프폴리시 방식으로 점진적으로 증가시키는 "환경 진화(Environment Evolution)" 기법을 제안하고, 이를 통해 장기간 RL 훈련에서도 지속적으로 유효한 학습 신호를 제공함을 보인 연구다.</p>
+<h2>배경 및 문제의식</h2>
+<p>프론티어 모델의 역량이 커질수록 처음부터 합성된 터미널 환경은 쉽게 풀려버려 학습 신호로서의 가치가 떨어진다. 최근의 에이전트-환경 공진화(co-evolution) 방법들은 모델의 온폴리시 롤아웃에서 드러난 약점을 기반으로 더 어려운 환경을 생성하지만, 이는 롤아웃에 사용된 모델과 초기 환경 분포에 종속적이어서 일반화가 제한되고, 모델이 강해질수록 실패 사례가 줄어들어 지속적인 학습 신호 제공이 어려워진다는 한계가 있다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>다중 턴(multi-turn) 학습 목적함수로부터 환경 난이도를 모델에 무관하게(model-agnostic) 정식화하고, 이를 시나리오 참신성(novelty), 스킬 희귀도(rarity), 실행 길이(length)라는 세 가지 요인으로 분해했다.</li>
+<li>이 세 방향을 따라 기존 환경을 점진적으로 변형해 난이도가 검증된 계보(lineage)를 구성하는 루프 기반 멀티에이전트 하네스인 "환경 진화"를 제안했다.</li>
+<li>Qwen3.6-27B와 Qwen3.6-35B-A3B에 대한 200스텝 장기 호라이즌 RL 실험으로 Terminal-Bench 2.1에서 각각 14.4%p, 18.0%p의 성능 향상을 보이며, 기존 공진화 및 앙상블 기법보다 더 오래 지속되는 학습 신호를 제공함을 검증했다.</li>
+</ol>
+<h2>방법론</h2>
+<p>저자들은 에이전트-환경 상호작용을 고수준 시나리오(σ)와 스킬(κ)이 교차하는 궤적으로 모델링하고, 모델별 우도 대신 광범위한 웹 지식에 기반한 참조 분포(reference distribution)를 사용해 정책에 무관한 난이도 D_T(ξ)를 정의한다. 이를 통해 온폴리시 공진화가 주로 겨냥하는 "에이전트의 약점(weakness)"과 환경 자체의 난이도를 구분한다.</p>
+<p>구현은 두 단계 루프로 이루어진 멀티에이전트 하네스다. Loop 1(계획 정제)에서 Proposer가 환경의 실행 시퀀스를 추출하고 선택된 진화 방향(길이 삽입/시나리오 교체/스킬 교체)에 따라 갱신한 뒤 Reviewer가 루브릭 기반으로 검토한다. Loop 2(환경 정제)에서 Modifier가 승인된 계획을 실제 환경에 반영하고, Oracle 검증기(정답 솔루션 통과), Invalid-test 검증기(빈 답이 통과하지 않는지), 적응형 루브릭 검증기(환경 품질) 세 가지를 병렬로 통과해야 다음 세대로 인정된다. "진화 강도(evolution effort)"라는 파라미터(low/high/max)로 한 세대당 수정 범위를 조절하며, 세 방향은 무작위 순서로 시도되고 실패 시 다른 방향으로 대체된다(cross-mode fallback). 또한 훈련 중에는 Evolution-Lineage(EL) 스케줄러가 현재 세대의 통과율이 임계값 이하로 떨어질 때만 다음 세대로 진행하도록 하여, 정책이 아직 풀 수 없는 환경에 조기 노출되는 것을 방지한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Hugging Face와 GitHub에서 수집한 47,678개 환경 중 엄격한 루브릭 필터링과 난이도 기준(Claude Opus 5 기준 통과율 4/8 이하 등)을 거쳐 127개를 추리고, SkillSynth로 보강해 총 500개의 균형 잡힌 시드 환경 풀을 구성했다. Hy4 preview, Claude Opus 5, GPT-5.6 Sol 세 모델로 15세대에 걸친 롤아웃 실험을 수행한 결과, high/max 강도에서는 통과율이 단조적으로 0에 수렴하고 평균 턴 수는 증가하여 난이도가 꾸준히 상승함을 확인했다. Claude Code 하네스와 GRPO를 이용한 Terminal-Bench 2.1 Verified 기준 200스텝 RL 훈련에서, 환경 진화는 Qwen3.6-27B에서 71.5%, Qwen3.6-35B-A3B에서 64.9%의 최고 정확도를 기록해 공진화(각각 62.9%, 55.1%) 및 환경 앙상블(60.0%, 52.8%) 기법을 능가했다. 또한 EL 스케줄러가 무작위 스케줄링보다 훈련 초기 50스텝 동안 더 많은 부분 성공 롤아웃 그룹과 높은 보상을 만들어 GRPO 학습에 유리함을 보였다.</p>
+<h2>한계점</h2>
+<p>논문 자체는 부록에서 "향후 버전에서 더 자세한 내용을 제공할 예정이며, 동일 모델이 환경을 구성하고 그로부터 학습하는 RSI(recursive self-improvement) 결과도 추후 보고하겠다"고 명시해, 현재 버전이 초기 단계의 보고서임을 인정하고 있다. 또한 방법론은 터미널 에이전트 환경에 한정해 검증되었으며, SWE 에이전트나 컴퓨터 사용 에이전트(Computer-Use Agent) 등으로의 확장은 향후 과제로 남겨두었다.</p>
+<h2>시사점</h2>
+<p>환경 난이도를 모델 롤아웃과 분리해 오프폴리시로 정의하고 진화시킨다는 발상은, 모델이 강해질수록 공진화 기반 방법이 겪는 "학습 신호 고갈" 문제에 대한 실용적 해법을 제시한다. 시나리오·스킬·실행 길이라는 세 축으로 난이도를 분해한 정식화는 터미널 에이전트뿐 아니라 다른 장기 호라이즌 에이전트 RL 환경 설계에도 참고할 수 있는 일반적 프레임워크로 보인다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.04128" target="_blank" rel="noopener">huggingface.co/papers/2609.04128</a> · 2026-09-07</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

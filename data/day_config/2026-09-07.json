@@ -1,0 +1,110 @@
+{
+  "2609.03199": {
+    "base": "2609_로보톡_인터넷-규모-로봇-시연-데이터-엔진",
+    "rank": "#1",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "115",
+    "en_title": "RoboTok: An Internet-Scale Data Engine for Human Demonstration Retrieval and Dexterous Manipulation Learning",
+    "ko_title": "로보톡: 인터넷 규모 인간 시연 검색 및 정교 조작 학습 데이터 엔진"
+  },
+  "2609.04131": {
+    "base": "2609_점진기억모델_스트리밍-영상-이해-잠재기억-진화",
+    "rank": "#2",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "29",
+    "en_title": "Beyond Retrieval: Progressive Latent Memory Evolution for Streaming Video Understanding",
+    "ko_title": "검색을 넘어서: 스트리밍 영상 이해를 위한 점진적 잠재 기억 진화"
+  },
+  "2609.04173": {
+    "base": "2609_라스트번역벤치_번역-모델-한계-측정-벤치마크",
+    "rank": "#3",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "29",
+    "en_title": "Last Translation Benchmark",
+    "ko_title": "라스트 번역 벤치마크"
+  },
+  "2608.27831": {
+    "base": "2608_리얼스위_현실적-요청-기반-코딩에이전트-평가",
+    "rank": "#4",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "26",
+    "en_title": "RealSWE: A Compositional Evaluation of Coding Agents under Realistic User Requests",
+    "ko_title": "리얼스위: 현실적 사용자 요청 기반 코딩 에이전트 합성 평가"
+  },
+  "2609.04094": {
+    "base": "2609_드라코_동적루브릭-장기-에이전트-학습-신용할당",
+    "rank": "#5",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "24",
+    "en_title": "DRACO: Fine-Grained Credit Assignment with Dynamic Rubrics for Long-Horizon Agent Training",
+    "ko_title": "드라코: 동적 루브릭 기반 장기 에이전트 학습의 세밀한 신용 할당"
+  },
+  "2609.04083": {
+    "base": "2609_코어_재순위화-증류-멀티모달-임베딩-합성추론-개선",
+    "rank": "#6",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "24",
+    "en_title": "CORE: Improving Compositional Reasoning in MLLM Embedding via Reranker Distillation",
+    "ko_title": "코어: 재순위화기 증류를 통한 멀티모달 임베딩 합성적 추론 개선"
+  },
+  "2609.03952": {
+    "base": "2609_월드리워드_카메라조건-월드모델-보상모델링",
+    "rank": "#7",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "23",
+    "en_title": "WorldReward: Reward Modeling for Camera-Conditioned World Models",
+    "ko_title": "월드리워드: 카메라 조건부 월드 모델을 위한 보상 모델링"
+  },
+  "2609.03293": {
+    "base": "2609_페이스_사용자요청-숨은-충돌-탐지",
+    "rank": "#8",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "22",
+    "en_title": "PACE: Towards Surfacing Hidden Conflicts in User Requests",
+    "ko_title": "페이스: 사용자 요청 속 숨은 충돌 드러내기"
+  },
+  "2609.03563": {
+    "base": "2609_플래시렌더_카메라제어-비디오-소수단계-생성렌더링",
+    "rank": "#9",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "19",
+    "en_title": "FlashRender: Few-Step Generative Rendering via Camera-Controlled Video MeanFlow",
+    "ko_title": "플래시렌더: 카메라 제어 비디오 MeanFlow를 통한 소수 단계 생성 렌더링"
+  },
+  "2608.30391": {
+    "base": "2608_그라운디드에이전트_근거이론-기반-대규모-행동분석",
+    "rank": "#10",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "18",
+    "en_title": "Using Grounded Theory for Agent Behavior Analysis at Scale",
+    "ko_title": "근거이론을 활용한 대규모 에이전트 행동 분석"
+  },
+  "2609.04128": {
+    "base": "2609_터미널에이전트진화_환경-진화-학습",
+    "rank": "#11",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "17",
+    "en_title": "Environment Evolution for Terminal Agents",
+    "ko_title": "터미널 에이전트를 위한 환경 진화"
+  },
+  "2609.04200": {
+    "base": "2609_프린키피아_비디오모델-관계적-물리-테스트",
+    "rank": "#12",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "16",
+    "en_title": "Principia: Relational Physics Tests for Video Models",
+    "ko_title": "프린키피아: 비디오 모델을 위한 관계적 물리 테스트"
+  }
+}

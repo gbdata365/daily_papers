@@ -1,0 +1,108 @@
+<meta charset="UTF-8">
+<title>근거이론을 활용한 대규모 에이전트 행동 분석</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#10 · Daily Papers 2026-09-07</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 18</span>
+    </div>
+    <h1 class="article-title">Using Grounded Theory for Agent Behavior Analysis at Scale</h1>
+    <p class="article-title-ko">근거이론을 활용한 대규모 에이전트 행동 분석</p>
+    <p class="article-sub">사회과학의 질적 연구 방법론인 근거이론(Grounded Theory)을 자동화하여, 수천 개의 LLM 에이전트 궤적으로부터 이론적 포화(theoretical saturation)에 이를 때까지 행동 분류 체계(코드북)를 귀납적으로 도출하는 다중 에이전트 파이프라인 AutoTraceGT를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.30391" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.30391" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Using Grounded Theory for Agent Behavior Analysis at Scale</li>
+<li><strong>저자</strong>: Purdue University, Stevens Institute of Technology, Cornell University, University of Texas at El Paso, Johns Hopkins University 소속 Zhuoran Lu, Yangyang Yu, Zhuoyan Li, Yibo Meng, Nan Jiang, Chengxi Zang, Jie Gao, Ziang Xiao 8명 (교신저자 Ziang Xiao)</li>
+<li><strong>출처</strong>: arXiv:2608.30391v1 [cs.CL] (2026년 8월)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/ZhuoranLu/Qual-Agent-Behavior-Analysis">https://github.com/ZhuoranLu/Qual-Agent-Behavior-Analysis</a> (코드 공개)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.30391">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>사회과학의 질적 연구 방법론인 근거이론(Grounded Theory)을 자동화하여, 수천 개의 LLM 에이전트 궤적으로부터 이론적 포화(theoretical saturation)에 이를 때까지 행동 분류 체계(코드북)를 귀납적으로 도출하는 다중 에이전트 파이프라인 AutoTraceGT를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>LLM 기반 에이전트는 소프트웨어 공학, 웹 탐색, 컴퓨터 사용, 심층 리서치 등 복잡한 과업을 다루게 되었지만, 국지적으로는 합리적으로 보이는 결정들이 누적되어 실패로 이어지는 경우가 많아 "에이전트가 실제로 무엇을 하고 있으며 그 행동을 어떻게 대규모로 특성화할 것인가"라는 문제가 남아 있다. 기존 접근은 두 가지로 나뉜다. 궤적 길이, 액션 수, 성공 여부 같은 가벼운 정량 지표는 확장성은 있지만 문제 해결 과정 자체를 설명하지 못하고("무슨 일이 일어났는지"만 알 뿐 "왜"는 알 수 없는 process-blind 문제), 사람이 직접 분석하는 방식은 해석력은 있지만 수백 스텝에 이르는 궤적을 다루기에는 비용이 지나치게 크다. 전문가가 미리 정의한 행동 패턴을 기반으로 분류기를 만드는 절충안도 새로운 과업이나 새로 등장하는 행동 양상에는 지나치게 경직되어 일반화되지 않는다. 저자들은 이 공백을, 사회과학이 이미 오랫동안 다뤄온 "확장 가능하고 일반화 가능한 행동 연구 방법론의 부재" 문제로 규정한다.</p>
+<h2>핵심 기여</h2>
+<p>1) 근거이론이라는 60년 된 질적 연구 방법론을 ML 커뮤니티, 특히 에이전트 행동 분석에 활용 가능한 새로운 분석 도구로 제시했다. 2) 개방 코딩(open coding), 축 코딩(axial coding), 이론적 코딩(theoretical coding)을 역할이 분리된 에이전트들로 구현하고 코드북 매니저가 이들을 조율하는, 근거이론을 완전 자동화한 최초의 종단간 파이프라인 AutoTraceGT를 구축했다. 3) 6개 데이터셋, 4개의 백본 LLM, 7,500개 이상의 궤적에 대한 실증 검증을 통해 AutoTraceGT가 실제로 포화에 도달하고, 재현 가능한 코드북을 생성하며, 사람이 만든 분류 체계의 실패 유형 대부분을 포괄하면서 그것이 놓친 패턴까지 추가로 발견하고, 기존 전문가 이론과 수렴하며, 실패 예측을 위한 특징 공간으로도 활용될 수 있음을 보였다.</p>
+<h2>방법론</h2>
+<p>AutoTraceGT는 서로 다른 규모에서 작동하는 4개의 에이전트로 구성된다. OpenCode는 개별 궤적 단위에서 각 행동 사건에 (코드, 위치, 인용 근거)로 이루어진 개념적 코드를 부여한다. AxialCode는 한 라운드에 샘플링된 궤적 배치를 대상으로 이 코드들을 범주(category)와 그 사이의 유형화된 관계로 묶는다. Manage는 매 라운드마다 새로 생성된 범주/관계를 기존의 누적 코드북과 비교해 추가(add)·병합(merge)·분할(split)·보류(flag) 등의 조치를 결정하고 수정 이력을 append-only 로그로 남기는, 근거이론 특유의 "지속적 비교(constant comparison)"를 구현한다. 포화 여부는 한 라운드에서 새로 추가된 범주 수(a_t)가 임계값 ε 미만인 상태가 연속 W회 라운드 동안 유지되는지로 판정한다. 포화에 도달하면 TheoreticalCode가 최종 코드북과 수정 이력을 바탕으로 핵심 범주(core category)와 이를 조건·전략·결과 등으로 엮은 서술적 이론(narrative)을 생성한다. 전체 과정은 Algorithm 1로 정식화되며, 매 코드·범주·주장이 원본 궤적의 근거로 추적 가능하다는 점에서 감사 가능한(auditable) 분석 경로를 제공한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>평가는 두 축으로 이루어졌다. 첫째, 프로세스 신뢰성(RQ1)을 검증하기 위해 Tau-Bench, Go-Browse, SWE-Agent(각 2,000개 궤적, 성공/실패 라벨만 존재)와 ALFWorld, GAIA, WebShop(전문가의 실패 원인 주석 포함) 총 6개 코퍼스, 7,500개 이상의 궤적을 사용했다. 라운드가 진행될수록 add 비율은 줄고 merge/confirm 비율이 늘며 코드북 크기와 내용이 안정화되어 실제로 포화가 일어남을 확인했고, 같은 설정에서 반복 실행한 코드북들은 서로 다른 설정 간 코드북보다 유의하게 유사했으며(Mann-Whitney U, p&lt;10⁻²⁰), 백본 LLM을 바꾸어도 데이터셋 고유의 행동 구조가 안정적으로 재현됨을(순열 검정 p&lt;0.001) 보였다.</p>
+<p>둘째, 산출물의 품질(RQ2)을 검증하기 위해 ALFWorld, GAIA, WebShop에서 전문가가 별도로 구축한 인간 분류 체계(H)와 AutoTraceGT가 도출한 코드북(C)을 비교했다. AutoTraceGT의 코드북은 세 데이터셋 모두에서 인간 실패 유형의 73~91%(WebShop 최고 90.9%)를 포괄했고, 개별 궤적의 자연어 근거 설명과도 58~88%가 일치했다. 재현율이 정밀도를 넘어서는 경우도 있었는데, 이는 AutoTraceGT가 기존 인간 분류 체계에는 없던 새로운 범주(예: ALFWorld의 "행동 자체를 하지 않는 불이행", GAIA의 "선언은 했지만 실행되지 않은 계획 전환", WebShop의 "피드백 없이 반복되는 모드 오실레이션")를 발견했음을 시사한다. 이론적 코딩 단계에서 도출된 서사는 선행 연구(Zhu et al., 2025)의 "오류 연쇄" 관점과 독립적으로 수렴했다. 또한 코드북을 연역적 특징 공간으로 활용해 실패 예측 과업에 적용했을 때, 여러 백본 모델(GPT-4.1-mini, GPT-5, GPT-5-mini, GPT-OSS-120B) 설정에서 few-shot LLM 기준선 및 few-shot 코드북 기준선보다 MCC와 ROC AUC 기준으로 우수하거나 이들을 보완하는 성능을 보였다.</p>
+<h2>한계점</h2>
+<p>저자들은 다음의 한계를 명시적으로 제시했다. 첫째, 모든 코딩 단계가 LLM으로 수행되므로 백본 모델의 사각지대가 코드북에 그대로 반영될 수 있으며, 교차-LLM 안정성 결과가 특정 모델에 대한 의존을 배제하긴 하지만 프런티어 모델들이 공유하는 편향까지 배제하지는 못한다. 둘째, 인간 분류 체계와의 비교 및 다운스트림 특징 주석 평가 모두 LLM을 판정자로 사용하므로 절대적인 포괄률·예측 수치는 해당 판정자의 판단에 좌우된다. 셋째, 궤적 하나당 다수의 LLM 호출이 필요하고 고정된 예산이 아니라 포화까지 실행되므로, 온라인 실시간 적용보다는 오프라인 코퍼스 분석에 적합하다. 넷째, 이 연구는 하나의 방법론(근거이론)을 하나의 행동 표면(성공/실패 결과가 있는 단일 에이전트 궤적)과 영어 공개 벤치마크에만 적용했으며, 다른 방법론·다중 에이전트/대화 상황·다른 언어로의 확장은 다루지 않았다. 다섯째, 알고리즘적 정지 기준이 이론적 포화 개념을 조작화한 것일 뿐 방법론적 개념 자체와 완전히 동일하지는 않다.</p>
+<h2>시사점</h2>
+<p>이 연구는 사회과학의 오래된 질적 분석 방법론을 ML 커뮤니티, 특히 대규모 에이전트 궤적 분석에 자동화된 형태로 이식할 수 있음을 보여주며, 이는 "왜 에이전트가 실패하는가"를 사전에 정의된 분류 체계 없이도 데이터 기반으로 발견할 수 있는 새로운 도구를 제공한다. 특히 발견된 코드북이 사후 해석뿐 아니라 실패 예측을 위한 특징 공간으로도 활용될 수 있다는 점은, 향후 학습 데이터 구축, 강화해야 할/억제해야 할 행동 식별, 행동 인지형 평가 지표, 프로세스 수준의 보상 신호 설계 등 에이전트 개발 전반에 실용적으로 연결될 수 있는 가능성을 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.30391" target="_blank" rel="noopener">huggingface.co/papers/2608.30391</a> · 2026-09-07</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

@@ -1,0 +1,108 @@
+<meta charset="UTF-8">
+<title>페이스</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#8 · Daily Papers 2026-09-07</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 22</span>
+    </div>
+    <h1 class="article-title">PACE: Towards Surfacing Hidden Conflicts in User Requests</h1>
+    <p class="article-title-ko">페이스: 사용자 요청 속 숨은 충돌 드러내기</p>
+    <p class="article-sub">겉보기에는 정상적인 사용자 요청이라도 개인화된 지식 베이스(KB)에 흩어진 숨은 상황 정보를 고려하면 실행해서는 안 되는 경우를 판별하는 능력을 평가하는 데이터셋 PACE와, 이를 위한 다중 에이전트 검색 프레임워크 PACEMAKER를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.03293" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.03293" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: PACE: Towards Surfacing Hidden Conflicts in User Requests</li>
+<li><strong>저자</strong>: POSTECH(포항공과대학교) 컴퓨터공학과 및 인공지능대학원 소속 Yoojin Kim, Jihyoung Jang, Hyounghun Kim 3명</li>
+<li><strong>출처</strong>: arXiv:2609.03293v1 [cs.CL] (2026년 9월)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/p2chp2t/pacemaker">https://github.com/p2chp2t/pacemaker</a> (코드 및 데이터셋 공개)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.03293">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>겉보기에는 정상적인 사용자 요청이라도 개인화된 지식 베이스(KB)에 흩어진 숨은 상황 정보를 고려하면 실행해서는 안 되는 경우를 판별하는 능력을 평가하는 데이터셋 PACE와, 이를 위한 다중 에이전트 검색 프레임워크 PACEMAKER를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>개인화 비서형 LLM은 사용자의 요청을 정확히 수행하는 데 집중해 왔지만, 요청이 사용자의 현재 상황(일정, 건강 상태, 동반자의 제약 등)에 비추어 적절한지 판단하는 능력은 상대적으로 소홀히 다뤄졌다. 예를 들어 저녁 식사 예약처럼 표면적으로는 문제없어 보이는 요청도, 동반자가 채식주의자인데 예약하려는 식당의 메뉴가 고정된 육류 위주 메뉴라는 사실을 알면 부적절한 요청이 된다. 기존의 안전성/위험 탐지 벤치마크는 입력 자체에 명시적으로 드러난 위험이나 유해 콘텐츠를 다루는 데 집중해 왔고, 방대한 개인 지식 베이스 속에 흩어진, 표면적으로는 질의와 의미적 연관성이 낮은 소수의 결정적 사실들을 찾아내야 하는 실제 상황은 다루지 못했다는 한계가 있다.</p>
+<h2>핵심 기여</h2>
+<p>1) 개인화된(에고센트릭) 지식 베이스를 바탕으로 요청과 잠재적 충돌 여부를 판단해야 하는 새로운 데이터셋 PACE(Personalized Assistants for Conflict Evaluation)를 제안했다. 2) 충돌 신호를 찾기 위한 다중 에이전트 검색 프레임워크 PACEMAKER(Personalized Agent for Conflict-Evident Multi-hop Adaptive Knowledge Extraction)를 제안했다. 3) 기존 검색 기법이 명시적 요인이 아닌 암묵적·분산된 충돌 증거를 찾는 데 상당히 취약함을 실험적으로 보여, 이 문제가 여전히 열린 도전 과제임을 확인했다.</p>
+<h2>방법론</h2>
+<p>PACE의 각 사례는 사용자 요청, 관련 인물(alter)을 포함한 에고센트릭 지식 베이스, 그리고 요청의 실행 가능 여부(충돌/비충돌) 라벨과 근거(judgment)로 구성된다. 충돌 유형은 일정·시간 제약에 관한 Temporal, 개인 선호나 대인 관계 제약에 관한 Personal, 현재 조건이나 자원 가용성에 관한 State 세 가지로 분류된다. 데이터는 GPT-5.4-mini를 활용해 (1) 페르소나 확장, (2) 에고-알터 프로필 합성, (3) 질의 및 맥락 생성, (4) 방해 요소(distractor) 생성 및 사실 단위 원자화의 단계를 거쳐 구축되며, 정답이 되는 사실들은 여러 개로 분해되어 KB에 독립적인 항목으로 저장된다. 저자 검수와 자동 필터링, 사람 평가(생성된 라벨과 사람 판단 간 93.3% 일치)를 통해 품질을 검증했으며 최종적으로 약 3.2천 개의 질의, 약 37.6만 개의 사실을 포함하는 데이터셋을 구성했다.</p>
+<p>PACEMAKER는 학습이 필요 없는(training-free) 다중 에이전트 검색 프레임워크로, (1) 충돌 계획(conflict planner) 에이전트가 최대 3개의 잠재적 충돌 단서를 식별하고 원본 질의와 반대 관점의 "카운터 질의"를 함께 생성하는 충돌 인지 질의 계획, (2) 밀집/희소 검색 결과를 가중 상호순위융합(WRRF)으로 결합하는 하이브리드 검색과 사전 홉 필터링, (3) k-최근접 이웃(k-NN) 그래프 위에서 너비 우선 탐색으로 이웃 문서를 확장하는 다중 홉 그래프 순회, (4) 순회 후 후보군에서 결정에 실제로 기여하는 문서만 남기는 충돌 인지 증거 선택, (5) 최종 선별된 증거로 답변을 생성하는 응답 생성의 5단계로 구성된다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Qwen3, GPT-5.4-mini/text-embedding-3-small, Gemini 3.1 Flash-Lite/gemini-embedding-2 세 가지 모델 구성에서 PACEMAKER를 정답만 제공하는 Oracle, 전체 KB를 그대로 제공하는 Full KB, 희소(BM25) 및 밀집 검색 기준선과 비교했다. 결과적으로 Full KB 방식은 모든 정답 문서를 갖고 있음에도 Oracle보다 크게 낮은 성능(예: 오픈소스 설정 57.49% vs Oracle 86.89%)을 보여, 정제되지 않은 대량의 맥락이 충돌 추론을 오히려 방해함을 확인했다. PACEMAKER는 세 가지 모델 구성 모두에서 검색 기반 기준선들보다 높은 응답 정확도(PASS율)와 검색 성능(Recall, Hit, Gold, MRR)을 기록했으며, 특히 충돌(Conflict) 질의에서 가장 강력한 기준선 대비 3.47~11.40%p의 개선을 보이면서도 비충돌(Non-conflict) 질의 성능은 유지했다. 정답 근거 문서를 일부만 확보했을 때보다 전부 확보했을 때 PASS율이 뚜렷하게 상승해, 충돌 판단에는 흩어진 증거의 완전한 회수가 중요함을 보였다. 구성요소 소거 실험에서는 다중 홉 순회를 제거했을 때 성능 저하가 가장 컸고, 질의 계획과 증거 선택 제거도 각각 유의미한 성능 저하를 유발해 세 요소가 상호 보완적임을 확인했다. GraphRAG, HippoRAG2 같은 구조화된 검색 기법과 비교했을 때도 PACEMAKER가 특히 충돌 질의에서 큰 폭으로 앞섰으며, 인덱싱 단계에서 LLM 호출이 필요 없어 초기 구축 비용도 낮았다.</p>
+<h2>한계점</h2>
+<p>저자들은 이 벤치마크가 충돌 여부 판단 자체에 초점을 맞추고 있어, 실제 예약·일정 조정·추천과 같은 후속 작업 수행 능력까지는 평가하지 않는다는 점을 명시했다. 또한 PACEMAKER는 별도의 과제 특화 학습 없이(training-free) 평가되었는데, 이는 프레임워크의 범용성을 보여주지만 동시에 질의 재구성, 증거 선택, 그래프 순회, 판단 보정을 담당하는 에이전트들을 전용 학습시키면 성능을 더 끌어올릴 여지가 있음을 시사한다. 데이터셋 자체는 합성 페르소나로 구성되어 실제 개인정보를 포함하지 않지만, 합성 데이터 특유의 현실성 한계도 존재할 수 있다.</p>
+<h2>시사점</h2>
+<p>이 연구는 "요청 실행"과 "요청의 적절성 판단"을 분리해서 다뤄야 할 별개의 과제로 명확히 제시하고, 특히 그 판단 근거가 명시적으로 드러나지 않고 방대한 개인 지식 베이스에 흩어져 있는 현실적 시나리오를 다뤘다는 점에서 의미가 있다. 단순 검색-증강 생성(RAG)이 아니라 "충돌을 능동적으로 찾아내기 위한" 질의 재구성과 다중 홉 탐색, 필터링을 결합한 설계는 향후 개인화 비서, 메모리 기반 에이전트가 실세계에서 안전하고 맥락에 맞는 결정을 내리도록 하는 후속 연구에 실용적인 방향을 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.03293" target="_blank" rel="noopener">huggingface.co/papers/2609.03293</a> · 2026-09-07</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

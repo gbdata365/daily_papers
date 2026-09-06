@@ -1,0 +1,109 @@
+<meta charset="UTF-8">
+<title>월드리워드</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#7 · Daily Papers 2026-09-07</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 23</span>
+    </div>
+    <h1 class="article-title">WorldReward: Reward Modeling for Camera-Conditioned World Models</h1>
+    <p class="article-title-ko">월드리워드: 카메라 조건부 월드 모델을 위한 보상 모델링</p>
+    <p class="article-sub">카메라 조건부 월드 모델이 생성한 두 영상을 액션 단위 청크로 나누어 비교함으로써, 행동(카메라 명령) 실행 여부와 시각적 품질을 하나의 VLM으로 동시에 판단하는 쌍대(pairwise) 선호 보상 모델 WorldReward를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.03952" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.03952" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: WorldReward: Reward Modeling for Camera-Conditioned World Models</li>
+<li><strong>저자</strong>: Fudan University, Tencent Hunyuan, Shanghai Innovation Institute, Shanghai Jiao Tong University, Shanghai Artificial Intelligence Laboratory 등 소속 저자 16명 (Yibin Wang, Zehan Wang, Junshu Tang 등, Tianyu Pang 교신저자)</li>
+<li><strong>출처</strong>: arXiv:2609.03952v1 [cs.CV] (2026년 9월)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://codegoat24.github.io/WorldReward">https://codegoat24.github.io/WorldReward</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.03952">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>카메라 조건부 월드 모델이 생성한 두 영상을 액션 단위 청크로 나누어 비교함으로써, 행동(카메라 명령) 실행 여부와 시각적 품질을 하나의 VLM으로 동시에 판단하는 쌍대(pairwise) 선호 보상 모델 WorldReward를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>카메라 궤적이나 키보드/마우스 입력으로 제어되는 월드 모델은 명령된 동작을 정확히 수행하면서도 외형, 기하 구조, 시간적 일관성을 유지해야 한다. 그러나 기존 보상 신호는 이 두 요구사항을 따로 평가한다. 3D 기하 추정 기반 보상은 궤적 실행 여부는 판단하지만 실행된 움직임의 시각적 품질(떨림, 아티팩트 등)은 보지 못하고, HPSv3 같은 이미지 기반 보상은 프레임별 품질만 볼 뿐 행동 실행이나 시간적 역학은 포착하지 못한다. VLM에게 전체 영상과 전체 행동 시퀀스를 한 번에 판단하게 하면, 짧게 나타나는 국소적 행동 증거가 길고 잡음이 많은 멀티모달 컨텍스트 속에 묻혀버리는 문제가 생긴다.</p>
+<h2>핵심 기여</h2>
+<p>1) 행동 일관성과 시각 품질을 하나의 VLM 추론으로 통합 평가하는 최초의 카메라 조건부 월드 모델용 쌍대 보상 모델 WorldReward를 제안했다. 2) 프런티어 VLM 증류, 다중 턴 도구 기반 에이전트 감사, 표적 인간 검수를 결합한 대규모 추론 증강 선호 데이터셋 구축 파이프라인을 설계했다. 3) 행동 일관성·외형 품질·움직임 품질을 독립적으로 라벨링한 760쌍 규모의 인간 주석 벤치마크 WorldReward-Bench를 공개했다. 4) WorldReward를 강화학습 보상으로 사용해 HY-WorldPlay 1.5를 후처리 학습시켜, 단기부터 장기 horizon까지 행동 실행과 시각 품질을 동시에 개선했다.</p>
+<h2>방법론</h2>
+<p>WorldReward는 소스 이미지·캡션·행동 궤적이 주어졌을 때, 같은 조건에서 생성된 두 영상(A, B)에 대해 행동 일관성과 시각 품질 각각에 대한 선호를 예측한다. 전체 영상을 한 번에 넣는 대신, 궤적을 4개 행동 단위의 "청크"로 분할하고 각 청크마다 (1) 장면 정체성을 고정하는 소스 이미지, (2) 각 행동의 시작-중간-끝 프레임을 보여주는 프레임 그리드, (3) 각 행동의 처음-마지막 프레임을 대조하는 행동별 상세 패널로 구성된 6장 이미지 입력을 구성한다. 모델은 각 청크에서 행동별 승자와 시간적 일관성·역동성 생성 품질·아티팩트/구조 무결성을 종합한 시각 품질 승자를 판단하고, 청크별 판정을 투표로 집계하여 영상 전체의 행동/시각 품질 선호를 산출한다.</p>
+<p>학습 데이터는 8종의 서로 다른 월드 모델(HY-WorldPlay, LingBot-World-Fast, Infinite-World, Yume-1.5, SANA-WM, Matrix-Game 등)로 동일 조건에서 쌍을 생성하고, Gemini 3.1 Pro로 청크 단위 추론 근거를 증류한 뒤, GPT-5.5 기반 에이전트 하니스가 이미지 열람 도구를 여러 라운드에 걸쳐 호출하며 국소적 증거를 재검증해 오류를 교정하고, 마지막으로 사람이 에이전트의 수정 제안을 검토·확정하는 3단계 파이프라인으로 구축된다. WorldReward는 Qwen3.5-9B를 초기화 모델로 하여 이 데이터로 지도 미세조정(teacher forcing 기반 언어모델링 손실)된다. 후처리 학습에서는 WorldCompass의 클립 단위 롤아웃과 DiffusionNFT 최적화 틀을 그대로 사용하되, 기하 기반/이미지 기반의 이질적 보상 대신 WorldReward가 산출한 행동·시각 품질 승률 기반 보상을 각각 정규화된 어드밴티지로 결합해 정책을 학습시킨다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>WorldReward-Bench(760쌍, 다양한 궤적·스타일·월드 모델 출처 포함)에서 WorldReward는 행동 일관성, 외형 품질, 움직임 품질 세 항목 모두에서 사람 선호와의 일치도가 가장 높았으며, GPT-5.5 대비 각각 3.42, 1.45, 3.56%p 앞섰고 자신을 학습시키는 데 쓰인 Gemini 3.1 Pro·GPT-5.5보다도 최종적으로 더 높은 정확도를 보였다. 소거 실험 결과 소스 이미지·프레임 그리드·행동별 패널을 하나라도 제거하면 성능이 하락했고, 라벨만 학습한 경우보다 전반 비교 요약과 영상별 상세 분석까지 추론 근거로 함께 학습시켰을 때 성능이 크게 향상되었다. 데이터 정제 단계별 비교에서는 단순 VLM 증류만으로는 이득이 거의 없었고, 에이전트 감사 단계가 평균 일치도를 68.69%에서 75.94%로 크게 끌어올렸으며 이후 인간 검수가 추가로 소폭 개선했다.</p>
+<p>HY-WorldPlay 1.5를 WorldReward로 강화학습 후처리했을 때(WorldReward-RL), 기존 WorldCompass 대비 단기·중기·장기 horizon 모두에서 결합 행동 정확도가 1.58~2.78점, 기본 행동 정확도가 2.28~5.81점 향상되었고 HPSv3로 측정한 시각 품질도 함께 개선되었다. 200쌍에 대한 블라인드 인간 평가에서도 WorldReward, GPT-5.5, 인간 평가자 모두 WorldReward-RL을 기존 모델과 WorldCompass보다 일관되게 선호했으며, 특히 시각 품질 측면 우위가 두드러졌다(사람 평가 기준 약 49% vs 25%).</p>
+<h2>한계점</h2>
+<p>논문은 별도의 "한계" 절을 명시하지 않았지만, 본문 내용에서 다음과 같은 한계를 유추할 수 있다. 학습 데이터의 상당 부분이 폐쇄형 상용 VLM(Gemini, GPT-5.5)의 증류와 에이전트 감사를 거치므로 이들 모델의 편향이나 오류가 부분적으로 이어질 수 있고, 최종 성능 향상의 핵심이 대규모 인간 검수 파이프라인에 의존하므로 재현·확장에는 상당한 주석 비용이 든다. 또한 벤치마크와 학습 데이터 모두 특정 카메라 궤적 taxonomy(순수 이동·순수 회전·복합)와 8종의 월드 모델 풀에 한정되어 있어, 이와 다른 형태의 상호작용(예: 텍스트 명령, 자유형 게임 조작)으로의 일반화는 검증되지 않았다.</p>
+<h2>시사점</h2>
+<p>행동 실행과 시각 품질을 별개의 이질적 보상 시스템으로 다루던 기존 관행에서 벗어나, 하나의 VLM이 동일한 국소적 시각 증거를 근거로 두 차원을 함께 판단하게 하는 접근은 월드 모델뿐 아니라 시간적으로 구조화된 다른 생성 평가 과제(예: 로봇 조작 영상, 에이전틱 시뮬레이션)에도 적용될 수 있다. 특히 "긴 컨텍스트를 통째로 판단하게 하기보다 국소 증거 단위로 쪼개 투표로 집계"하는 local-to-global 설계와, 프런티어 VLM 증류에 에이전트 기반 다단계 감사 및 인간 검수를 결합해 데이터 품질을 끌어올리는 전략은 다른 보상 모델·평가자 학습에도 참고할 만한 실용적 패턴을 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.03952" target="_blank" rel="noopener">huggingface.co/papers/2609.03952</a> · 2026-09-07</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

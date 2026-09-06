@@ -1,0 +1,115 @@
+<meta charset="UTF-8">
+<title>플래시렌더</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#9 · Daily Papers 2026-09-07</span>
+      <span class="cat-tag">생성모델</span>
+      <span class="upvote-tag">▲ 19</span>
+    </div>
+    <h1 class="article-title">FlashRender: Few-Step Generative Rendering via Camera-Controlled Video MeanFlow</h1>
+    <p class="article-title-ko">플래시렌더: 카메라 제어 비디오 MeanFlow를 통한 소수 단계 생성 렌더링</p>
+    <p class="article-sub">FlashRender는 임의 길이의 입력 비디오와 목표 카메라 궤적이 주어졌을 때, 단 4번의 샘플링 스텝(4-NFE)만으로 기존 다단계(50-step) 생성 렌더링 모델과 동등한 화질·기하학적 일관성을 유지하면서도 카메라 제어 정확도는 오히려 더 뛰어난 소수 스텝 카메라 제어 비디오 재촬영(re-rendering) 프레임워크다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.03563" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.03563" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: FlashRender: Few-Step Generative Rendering via Camera-Controlled Video MeanFlow</li>
+<li><strong>저자</strong>: EverEx, Yonsei University, Korea University 소속 Byeongjun Park, Byung-Hoon Kim, Hyungjin Chung 3명 (Byung-Hoon Kim, Hyungjin Chung 교신저자)</li>
+<li><strong>출처</strong>: arXiv:2609.03563v1 [cs.CV] (2026년 9월)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://byeongjun-park.github.io/FlashRender/">https://byeongjun-park.github.io/FlashRender/</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.03563">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>FlashRender는 임의 길이의 입력 비디오와 목표 카메라 궤적이 주어졌을 때, 단 4번의 샘플링 스텝(4-NFE)만으로 기존 다단계(50-step) 생성 렌더링 모델과 동등한 화질·기하학적 일관성을 유지하면서도 카메라 제어 정확도는 오히려 더 뛰어난 소수 스텝 카메라 제어 비디오 재촬영(re-rendering) 프레임워크다.</p>
+<h2>배경 및 문제의식</h2>
+<p>카메라 제어 비디오 생성 및 생성적 렌더링(generative rendering) 기법들은 촬영이 불가능한 시점에서의 비디오 캡처, 흔들림 보정 등 다양한 응용이 가능하지만, 대부분 많은 샘플링 스텝을 요구해 추론 비용이 크다. 이를 줄이기 위해 스텝 수를 낮추면 디노이징 궤적의 곡률(curvature)이 큰 구간에서 이산화 오차(discretization error)가 심해지는데, 저자들은 이 문제가 생성 렌더링에서 특히 "샘플링 스텝 수에 따라 카메라 제어 결과가 달라지는" 현상(sampling-step-dependent camera control)으로 나타난다는 점을 새롭게 지적한다. 즉 동일한 목표 카메라 궤적을 주더라도 샘플링 스텝 수가 바뀌면 장면 스케일이나 동적 객체의 위치가 달라져, 소수 스텝으로의 증류(distillation)를 어렵게 만든다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>카메라 제어의 스텝 의존성을 소수 스텝 생성 렌더링의 핵심 실패 요인으로 규명했다.</li>
+<li>Representation Transformation and Alignment(RETA)를 제안해, 고정된(frozen) 시각 기하 모델(VGGT)의 목표 시점 특징과 소스 비디오의 은닉 표현을 정렬함으로써 샘플링 스텝에 무관하게 일관된 카메라 제어를 가능하게 하고, 그 결과 디노이징 궤적의 곡률을 낮춘다.</li>
+<li>RETA로 곡률이 완화된 궤적 위에서 MeanFlow 목적함수로 모델을 미세조정해 평균 속도장을 학습시킴으로써 이산화 오차를 완화한다.</li>
+<li>고정된 소수 스텝(4-NFE) 샘플링 하에서 자기 롤아웃(self-rollout) 오차를 교정하기 위한 온폴리시 플로우맵 증류(on-policy flow map distillation)를 도입했다. RETA, MeanFlow, 온폴리시 증류 세 요소가 상호 보완적으로 작동해 25배 낮은 샘플링 비용으로도 다단계 기준선과 대등한 성능, 그리고 분포 외(out-of-distribution) 카메라 궤적에서도 더 우수한 제어력을 달성했다고 보고한다.</li>
+</ol>
+<h2>방법론</h2>
+<p>FlashRender는 Wan2.1-1.3B-CamCtrl을 기반으로 3단계 학습 파이프라인을 거친다.</p>
+<p>1단계(다단계 생성 렌더링, FlashRender-MS)에서는 카메라 파라미터를 Plücker ray 표현으로 변환하고, 소스·목표 비디오 잠재변수를 토큰 차원으로 이어붙여 공유 3D RoPE와 프레임별 상대 포즈 인코딩(RoCE)으로 처리한다. 여기에 RETA를 추가하는데, 이는 생성 모델의 중간 소스 비디오 표현을 경량 3D 컨볼루션으로 투영한 뒤, 고정된 VGGT 인코더에서 추출한 목표 시점 특징과 코사인 유사도를 이용해 정렬하는 보조 손실이다(가중치 λ=0.1). 이를 통해 모델이 소스→목표 기하학적 변환을 비디오 표현 내부에 내재화하게 만든다.</p>
+<p>2단계(MeanFlow 학습)에서는 RETA로 곡률이 낮아진 궤적 위에서, 두 시점 구간 [r,t]에 대한 평균 속도장 u_θ(z_t, r, t)를 예측하도록 모델을 미세조정한다. 시간 임베딩을 보간 방식으로 조건화하고, 자코비안-벡터곱(JVP) 항을 유한차분으로 근사하며, classifier-free guidance를 목표 속도에 반영하고 적응적 손실 가중치를 적용해 4-NFE 소수 스텝 생성을 가능하게 한다.</p>
+<p>3단계(온폴리시 플로우맵 증류)에서는 2단계에서 학습한 MeanFlow 모델을 학생(student)으로, 1단계의 다단계 모델을 교사(teacher)로 삼아, 실제 추론과 동일한 4단계 샘플링 스케줄로 자기 롤아웃 샘플을 생성한 뒤 DMD(Distribution Matching Distillation) 손실과 적대적 손실(GAN)을 결합해 학습-추론 간 불일치를 교정한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>ReDirector의 평가 프로토콜을 따라 DAVIS 데이터셋의 50개 소스 비디오와 10개 목표 카메라 궤적으로 구성된 500개 평가 사례에서, VBench의 Aesthetic/Imaging Quality, 기하학적 일관성 지표(Dyn-MEt3R, MEt3R), 카메라 정확도 지표(TransErr, RotErr)를 사용해 CogNVS, TrajectoryCrafter, Vista4D, GCD, ReCamMaster, ReDirector, GeoAlign, NeoVerse 등과 비교했다. FlashRender-MS(다단계, 50-NFE)는 기존 다단계 기준선과 대등하거나 더 나은 기하 일관성·카메라 정확도를 보였고, 최종 FlashRender(4-NFE)는 few-step 기준선(NeoVerse, ReDirector-FS, GeoAlign-FS)을 대부분의 지표에서 능가하면서 25배 적은 샘플링 비용으로 다단계 모델과 유사한 화질을 달성했다. 분포 외 조건 검증을 위해 DyCheck 데이터셋에서도 실험했으며, FlashRender는 시각 품질과 기하 일관성에서 다단계·소수단계 기준선을 모두 능가했다(다만 GT와의 스케일 불일치로 인해 PSNR 등 전체 충실도 지표는 일부 다단계 모델보다 소폭 낮았다). 절제 실험(ablation)에서는 RETA, MeanFlow, 온폴리시 증류(DMD2/DFD 대비 MeanFlow 기반 증류가 우수) 각각을 제거하면 성능이 저하되어 세 요소가 모두 필요함을 확인했다.</p>
+<h2>한계점</h2>
+<p>DyCheck 데이터셋 실험에서 나타났듯, 장면 스케일이 실제(ground-truth) 비디오와 불일치하는 경우 전체 충실도(PSNR 등) 지표가 다단계 모델보다 낮게 나오는 한계가 있다. 또한 방법은 카메라 자세 추정(ViPE 등 외부 도구 이용 가능)에 의존하며, 1.3B 파라미터 규모의 비교적 작은 백본에서 검증되었다는 점에서 대형 모델로의 확장성은 논문에 명시적으로 다루어지지 않았다.</p>
+<h2>시사점</h2>
+<p>소수 스텝 생성 렌더링에서 화질뿐 아니라 "제어 가능성(controllability)"도 이산화 오차의 영향을 받는다는 관찰은, 단순히 화질 지표만으로 few-step 증류의 성공 여부를 판단해서는 안 된다는 점을 시사한다. 고정된 기하학적 파운데이션 모델(VGGT)의 표현을 정렬해 생성 모델의 궤적 곡률 자체를 낮추는 접근은, 카메라 제어 외에도 다른 조건부 생성 작업의 few-step 증류에도 응용될 수 있는 일반적인 아이디어로 볼 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.03563" target="_blank" rel="noopener">huggingface.co/papers/2609.03563</a> · 2026-09-07</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

@@ -1,0 +1,114 @@
+<meta charset="UTF-8">
+<title>로보톡</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#1 · Daily Papers 2026-09-07</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 115</span>
+    </div>
+    <h1 class="article-title">RoboTok: An Internet-Scale Data Engine for Human Demonstration Retrieval and Dexterous Manipulation Learning</h1>
+    <p class="article-title-ko">로보톡: 인터넷 규모 인간 시연 검색 및 정교 조작 학습 데이터 엔진</p>
+    <p class="article-sub">RoboTok은 인터넷에 존재하는 방대한 인간 시연 영상을 3D 손 궤적 기반으로 인덱싱하여, 로봇의 정교한(dexterous) 조작 학습에 필요한 관련 시연을 검색해주는 인터넷 규모의 데이터 엔진이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.03199" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.03199" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: RoboTok: An Internet-Scale Data Engine for Human Demonstration Retrieval and Dexterous Manipulation Learning</li>
+<li><strong>저자</strong>: Rice University 및 NVIDIA 소속 9명 (Howard Qian, Yiting Chen, Yunfei Xie, Kejia Ren, Podshara Chanrungmaneekul, Gaotian Wang, Bowen Wen, Chen Wei, Kaiyu Hang)</li>
+<li><strong>출처</strong>: arXiv:2609.03199v1 [cs.CV] (2026년 9월)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 "Project Site" 링크가 언급되어 있으나 본문에 URL이 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.03199">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>RoboTok은 인터넷에 존재하는 방대한 인간 시연 영상을 3D 손 궤적 기반으로 인덱싱하여, 로봇의 정교한(dexterous) 조작 학습에 필요한 관련 시연을 검색해주는 인터넷 규모의 데이터 엔진이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>로봇 학습은 다양하고 방대한 시연 데이터를 필요로 하지만, 실제 세계의 다양한 과제·환경을 포괄하는 로봇 데이터를 직접 수집하는 것은 비용이 매우 크다. 기존 연구들은 로봇 자체 데이터셋이나 소규모의 목적 특화 인간 시연 데이터셋에서 관련 경험을 검색하는 방식을 시도했지만, 커버리지가 제한적이다. 반면 인터넷의 인간 시연 영상은 양과 다양성 면에서 압도적이지만, 시각적·의미적으로 유사해 보이는 영상이 실제 조작 행동까지 유사하다는 보장이 없어(반대의 경우도 마찬가지) 자동으로 조작 관련성이 높은 클립을 걸러내는 것이 핵심 난제다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>인터넷 영상에서 인간 손의 조작 행동만을 기준으로 하는 최초의 검색 프레임워크인 RoboTok을 제안했다.</li>
+<li>카메라 시점, 장면 외형, 신체 가림에 무관하게 조작 행동을 비교할 수 있도록, 3D 손 궤적을 행위자 중심(actor-centered) 좌표계로 정규화하는 표현법을 도입했다.</li>
+<li>Dynamic Time Warping(DTW) 기반 궤적 유사도를 감독 신호로 사용해 경량 임베딩 인코더를 학습시킴으로써, 인터넷 규모에서도 효율적인 최근접 이웃 검색이 가능하게 했다.</li>
+<li>기존 검색 기법(FlowRetrieval, HAND, STRAP) 대비 검색 품질과 다운스트림 로봇 정책 성능 모두에서 우위를 실증했다.</li>
+</ol>
+<h2>방법론</h2>
+<p>RoboTok의 파이프라인은 크게 세 단계로 구성된다. 먼저 Action100M과 같은 대규모 인터넷 영상 코퍼스에서 손이 잘 보이고 카메라가 거의 고정된 4~8초 분량의 클립만 필터링한다. 다음으로 WiLoR 등을 이용해 프레임별 3D 손 키포인트를 추출하고 MoGe-2로 metric depth를 추정해 카메라 좌표계의 3D 손 자세 시퀀스를 얻는다. 이후 손목 궤적만으로 시연자의 정적인 몸통(torso) 기준 좌표계를 예측하는 경량 모델을 학습시켜, 몸 전체가 보이지 않아도 각 궤적을 행위자 중심의 egocentric 좌표계로 정규화한다.</p>
+<p>이렇게 정규화된 궤적 쌍 사이의 유사도는 DTW로 계산되며, 이를 pseudo-ground-truth 감독 신호로 삼아 경량 크로스어텐션 인코더 Γ를 학습한다. 인코더는 각 궤적을 단위 초구(hypersphere) 위의 임베딩으로 사상하고, 내적 유사도 순위가 DTW로 정의된 순위를 보존하도록 set loss와 rank loss를 결합한 목적함수로 학습된다. 배치 구성 시에는 앵커별 DTW 상위 K=20 이웃 중 일부를 양성으로, 관련 집합 바로 바깥의 궤적을 경계 음성(boundary negative)으로 샘플링해 검색에 실질적으로 유용한 판별력을 갖추도록 했다. 추론 시에는 모든 궤적을 오프라인으로 한 번만 인코딩해 벡터 인덱스에 저장하고, 질의 시에는 코사인 유사도 최근접 이웃 검색만 수행하므로 코퍼스가 계속 늘어나도 확장 가능하다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>검색 품질 평가는 RoboTok 학습 코퍼스에서 보류한 1만 개 클립과, 별도의 AssemblyHands(양손 조립 작업) 데이터셋에서 진행되었다. mAP, nDCG, Recall, Kendall's τ, DTW 비용 등 다양한 지표에서 RoboTok은 Random, FlowRetrieval, HAND, STRAP을 큰 격차로 앞섰다(RoboTok 코퍼스에서 mAP@20=0.353, Recall@20≈0.996 대 STRAP의 mAP@20=0.007). AssemblyHands로 도메인을 바꾼 교차 평가에서도 RoboTok이 모든 지표에서 최고 성능(mAP@5=0.261)을 유지해 특정 데이터셋에 과적합되지 않았음을 보였다.</p>
+<p>다운스트림 정책 학습 평가는 VTDexManip 시뮬레이션 벤치마크에서 수행됐다. 기존(원본) 과제 설정에서 RoboTok이 검색한 시연으로 유도된 PPO 정책은 6개 과제 중 5개에서 최고 사전학습 베이스라인을 능가했다(평균 성공률 seen +7.45%p, unseen +5.83%p). 손목 위치 제약을 풀고 밀집 보상을 제거해 훨씬 어렵게 만든 변형 과제(BottleCap Turning, Faucet Screwing, Lever Sliding)에서는 격차가 더욱 커져, 예를 들어 Lever Sliding에서 RoboTok 79.3% 대 차순위 HAND 19.5%로 큰 차이를 보였다.</p>
+<h2>한계점</h2>
+<p>RoboTok은 카메라가 거의 고정되어 있고 손이 뚜렷이 보이는 클립만을 대상으로 학습·필터링되어 있어, 카메라가 움직이는 3인칭·1인칭(egocentric) 영상까지는 아직 다루지 못한다. 저자들도 이를 향후 연구 방향으로 명시하며, 움직이는 카메라 영상으로 확장하는 것을 향후 과제로 남겼다.</p>
+<h2>시사점</h2>
+<p>이 연구는 로봇 학습에 필요한 시연 데이터를 별도로 수집하지 않고도, 계속 증가하는 인터넷 영상 자체를 검색 가능한 학습 데이터 소스로 활용할 수 있음을 보여준다. 시각적 유사성이 아닌 손 동작의 궤적 유사성에 기반한 검색이라는 관점은, 향후 휴머노이드 로봇이나 정교한 손 조작을 다루는 다양한 로봇 학습 파이프라인에서 데이터 확보 병목을 완화하는 실용적 방향을 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.03199" target="_blank" rel="noopener">huggingface.co/papers/2609.03199</a> · 2026-09-07</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>리얼스위</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#4 · Daily Papers 2026-09-07</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 26</span>
+    </div>
+    <h1 class="article-title">RealSWE: A Compositional Evaluation of Coding Agents under Realistic User Requests</h1>
+    <p class="article-title-ko">리얼스위: 현실적 사용자 요청 기반 코딩 에이전트 합성 평가</p>
+    <p class="article-sub">SWE-bench류 벤치마크의 정제되고 정보량 많은 GitHub 이슈와 달리 실제 사용자 요청은 짧고 정보가 부족하다는 점을 실증적으로 밝히고, 동일한 과제를 정보 구성과 문체만 다르게 표현한 멀티-변형(task family) 벤치마크 RealSWE를 통해 코딩 에이전트 성능에 미치는 영향을 통제된 방식으로 분석한 연구다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.27831" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.27831" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: RealSWE: A Compositional Evaluation of Coding Agents under Realistic User Requests</li>
+<li><strong>저자</strong>: Sungkyunkwan University 소속 5명 (Gyuhyeong Kim, Hyojung Gwon, Jeonghyeon Kim, Kyuhong Shim, Sunjae Lee)</li>
+<li><strong>출처</strong>: arXiv:2608.27831v2 [cs.AI] (2026년 8월)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 GitHub 링크가 언급되어 있으나 구체적 URL은 본문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.27831">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>SWE-bench류 벤치마크의 정제되고 정보량 많은 GitHub 이슈와 달리 실제 사용자 요청은 짧고 정보가 부족하다는 점을 실증적으로 밝히고, 동일한 과제를 정보 구성과 문체만 다르게 표현한 멀티-변형(task family) 벤치마크 RealSWE를 통해 코딩 에이전트 성능에 미치는 영향을 통제된 방식으로 분석한 연구다.</p>
+<h2>배경 및 문제의식</h2>
+<p>현재 코딩 에이전트의 성능은 주로 SWE-bench 계열 벤치마크로 측정되는데, 이 벤치마크들은 잘 정리된 GitHub 이슈(재현 절차, 환경 정보, 원하는 동작 등을 포함)를 과제로 사용한다. 그러나 실제 사용자가 코딩 에이전트에게 보내는 요청은 훨씬 짧고 비격식적이며 정보가 부족한 경우가 많다. 저자들은 실제 개발자-에이전트 상호작용 데이터셋인 SWE-CHAT을 분석해, 실제 요청의 88%가 문제 상황 설명만 담은 정보 빈약(sparse)한 형태인 반면 SWE-bench Verified/Pro 문제의 93%는 그렇지 않다는 벤치마크-현실 간극을 확인했다. 이 간극이 벤치마크 점수를 실제 성능보다 낙관적으로 만들 수 있다는 문제의식에서 출발한다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>실제 SWE 요청에 대한 실증적 특성화: 정보 구성을 나타내는 6가지 정보 분류 체계(문제 진술, 원하는 동작, 재현 절차, 환경 정보, 동기, 추가 정보 등)와 4가지 언어적 스타일 축(격식성, 문장 유형, 확신도, 시점)을 정의하고, SWE-CHAT과 SWE-bench Verified/Pro의 분포 차이를 정량화했다.</li>
+<li>데이터 기반 벤치마크 및 설정 가능한 프레임워크 구축: 이 분석을 바탕으로 SWE-bench Verified/Pro의 381개 문제를 정보 구성과 문체만 다르게 변형한 멀티-변형 과제군(task family)으로 재구성해, 고정 평가셋인 RealSWE-Bench와 임의 조합이 가능한 RealSWE-Framework 두 형태로 공개했다.</li>
+<li>통제된 평가와 실행 가능한 시사점 도출: 7개의 최신 LLM을 평가해 벤치마크-현실 간극을 정량화하고, 버그 수정에는 "원하는 동작(Desired Behavior)"이, 기능 요청에는 "동기(Motivation)"가 특히 중요한 신호임을 밝혔다.</li>
+</ol>
+<h2>방법론</h2>
+<p>연구는 4단계로 구성된다. 첫째, GitHub 기본 이슈 템플릿에 기반해 버그 수정용(문제 진술/원하는 동작/재현 절차/환경 정보/추가 정보)과 기능 요청용(문제 진술/동기/추가 정보) 정보 분류 체계를 정의한다. 둘째, GPT-5.4 기반 LLM 파이프라인으로 SWE-CHAT의 실사용자 요청 718건과 SWE-bench Verified/Pro 문제 1,229건에 이 분류 체계와 문체 축을 적용해 분포 차이를 측정한다. 셋째, 벤치마크 문제를 과제 유형 분류 → 정보 분해(문장 단위로 정보 카테고리에 재배치) → 실사용자 문체로의 재작성이라는 3단계 LLM 파이프라인을 거쳐, 동일한 근본 과제와 정답 패치(gold patch)를 공유하되 정보 구성과 문체만 다른 변형들의 집합(task family)으로 변환한다. 넷째, 각 단계에 대해 사람이 100개 표본을 검증하고 LLM 심판(GPT-5.6 Terra)으로 전체를 감사해 품질이 낮은 후보를 제거, 최종 381개 과제군(버그 수정 192개, 기능 요청 189개)을 확정한다. RealSWE-Bench는 SWE-CHAT에서 관찰된 정보 분포([P] 74%, [PA] 26% 등)를 반영해 변형 하나씩을 표본추출한 고정 벤치마크이며, RealSWE-Framework는 임의의 정보 조합·문체를 설정할 수 있는 프레임워크다. 평가는 mini-SWE-agent v2 스캐폴드로 7개 LLM(DeepSeek V4 Pro/Flash, MiMo V2.5 Pro/일반, Claude Haiku 4.5, Qwen3.7 Plus, MiniMax M3)에 대해 수행했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>원본 문제 대비 RealSWE-Bench에서 7개 모델 모두 해결률이 평균 6.4%p(상대적으로 13.6%) 하락했으며, 하락 폭은 모델별로 4.0~8.0%p였다. 성능 저하와 함께 비용과 스텝 수도 소폭 증가해(평균 각각 6.2%, 1.8%) 에이전트가 부족한 정보를 추가 탐색으로 보완하려 하지만 완전히 만회하지는 못함을 시사했다. 특히 모델 순위가 뒤바뀌는 현상이 관찰되었는데, MiMo V2.5 Pro는 원본에서 4위였으나 RealSWE-Bench에서는 2위로 올라섰고 비용도 더 저렴했다. 버그 수정(-9.1%p)이 기능 요청(-3.7%p)보다 정보 빈약 입력에 더 취약했다. RealSWE-Framework를 이용한 통제된 필드 제거(ablation) 실험에서는, 문체(격식/캐주얼 등)를 바꾸는 것만으로는 성능에 유의미한 영향이 없었던 반면(평균 0.0~-1.8%p, 통계적으로 유의하지 않음), 버그 수정에서 "원하는 동작" 필드를 제거하면 평균 8.0%p(모든 모델에서 유의미)나 성능이 하락했고, 기능 요청에서는 "동기" 필드 제거가 평균 3.4%p 하락(신뢰구간이 0을 포함하지 않는 유일한 필드)을 가져왔다. 반면 재현 절차, 환경 정보, 추가 정보 필드는 제거해도 유의미한 성능 변화가 없었다. 그러나 실제 사용자 요청의 단 5%만이 원하는 동작을 명시하는 것으로 나타나, 사용자가 제공하는 정보와 에이전트가 실제로 필요로 하는 정보 사이에 큰 괴리가 있음을 보였다.</p>
+<h2>한계점</h2>
+<p>평가에 사용된 DeepSeek V4 Pro, MiMo V2.5 Pro 등은 최상위급 모델이지만 GPT-5.6, Claude Opus 5, Kimi K3 같은 최신 프론티어 모델은 포함하지 않아 결과가 최강 모델에는 그대로 일반화되지 않을 수 있다. 또한 SWE-bench 관행을 따라 단일 턴(single-turn) 평가만 수행했기 때문에, 실제로는 에이전트가 추가 질문을 통해 정보 부족을 해소할 수 있는 반복적 대화 상황을 반영하지 못한다. 저자들은 이를 향후 연구 과제로 남겼다.</p>
+<h2>시사점</h2>
+<p>이 연구는 코딩 에이전트에게 좋은 요청을 작성하는 방법에 대한 실질적 지침을 제시한다. 사용자가 GitHub 이슈처럼 모든 필드를 정성껏 작성할 필요는 없지만, 버그 수정 요청 시에는 "원하는 동작"을, 기능 요청 시에는 "동기"를 명시하는 것이 성능 향상에 결정적임을 보여준다. 또한 코딩 에이전트 인터페이스가 이런 핵심 정보가 누락된 경우 명시적으로 되묻거나, 문맥에서 추론해 과제 명세에 반영하는 메커니즘을 갖추면 사용자 경험과 실제 문제 해결 성능을 모두 개선할 수 있음을 시사한다. 아울러 기존 SWE-bench류 리더보드가 실제 환경에서의 성능을 과대평가하고 있을 가능성과, 모델 순위가 입력의 현실성에 따라 달라질 수 있다는 점은 벤치마크 설계와 모델 선택 시 신중함이 필요함을 보여준다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.27831" target="_blank" rel="noopener">huggingface.co/papers/2608.27831</a> · 2026-09-07</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

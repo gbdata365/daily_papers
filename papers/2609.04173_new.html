@@ -1,0 +1,115 @@
+<meta charset="UTF-8">
+<title>라스트 번역 벤치마크</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#3 · Daily Papers 2026-09-07</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 29</span>
+    </div>
+    <h1 class="article-title">Last Translation Benchmark</h1>
+    <p class="article-title-ko">라스트 번역 벤치마크</p>
+    <p class="article-sub">Last Translation Benchmark(LTB)는 최신 기계번역 모델들이 실제로 실패하는 어려운 예시들을 크라우드소싱으로 지속적으로 수집하고, 예시마다 딸린 "검증 규칙(verification rule)"을 LLM 검증자가 확인하는 방식으로 번역 품질을 신뢰성 있게 평가하는 살아있는(live) 벤치마크다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.04173" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.04173" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Last Translation Benchmark</li>
+<li><strong>저자</strong>: ETH, JHU, MBZUAI, KIT, UvA, QUB 등 소속 핵심 저자 6명(Vilém Zouhar, Niyati Bafna, Mukund Choudhary, Maike Züfle, Sara Rajaee, Pinzhen Chen)을 중심으로, 166개 기관 소속 총 244명의 데이터셋 기여자가 크라우드소싱 방식으로 참여</li>
+<li><strong>출처</strong>: arXiv:2609.04173v1 [cs.CL] (2026년 9월)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://last-translation-benchmark.vilda.net">last-translation-benchmark.vilda.net</a> (데이터셋: hf.co/datasets/zouhar/last-translation-benchmark, 코드: github.com/zouharvi/last-translation-benchmark)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.04173">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>Last Translation Benchmark(LTB)는 최신 기계번역 모델들이 실제로 실패하는 어려운 예시들을 크라우드소싱으로 지속적으로 수집하고, 예시마다 딸린 "검증 규칙(verification rule)"을 LLM 검증자가 확인하는 방식으로 번역 품질을 신뢰성 있게 평가하는 살아있는(live) 벤치마크다.</p>
+<h2>배경 및 문제의식</h2>
+<p>기계번역은 최근 급격히 발전해 "인간 수준 품질(human parity)"을 달성했다는 주장까지 나오지만, 정작 사용자들은 여전히 자동번역을 신뢰하지 않는 경우가 많다. 이는 하나의 치명적 오류만으로도 신뢰가 무너질 수 있는데, 기존 연구 벤치마크는 지나치게 쉬워서 모델의 실패 지점을 제대로 드러내지 못하기 때문이다. 인위적으로 어려운 예시를 만드는 합성 벤치마크는 실제 번역 수요를 반영하지 못하는 경우가 많고, BLEU·ChrF 같은 표층 일치 지표나 신경망 기반 지표, LLM-as-judge 방식은 번역 품질이 좋아질수록 판별력이 떨어지고 보상 해킹(reward-hacking)이나 자기선호 편향에 취약하다. 사람이 직접 평가하는 방법도 재현성·객관성·확장성이 부족하다는 문제가 있다. 이러한 상황은 번역 분야가 객관적으로 발전을 추적하고 개선 방향을 찾는 것을 어렵게 만든다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>텍스트뿐 아니라 이미지·오디오·비디오를 포함해 109개 언어에 걸쳐 3,456개의 "번역하기 어려운" 예시를 담은 크라우드소싱 데이터셋 LTB(v1)를 구축했다.</li>
+<li>각 예시에 사람이 직접 작성한 "검증 규칙"을 부여해, LLM 검증자가 이 규칙 통과 여부만 판정하도록 하는 새로운 평가 방식을 제안함으로써 기존 LLM-as-judge 방식보다 객관적이고 재현 가능한 평가를 가능케 했다.</li>
+<li>29개 최신 번역 모델(공개/비공개 LLM 및 전용 번역 모델 포함)을 이 벤치마크로 평가해, 모든 모델이 상당수 예시에서 실패함을 보였다.</li>
+<li>수집된 예시들을 분석해 번역 난이도의 원인(다의어, 은유, 문화적 지식, 코드믹싱, 음운적 언어유희, 메타추론 등)을 분류하는 귀납적 taxonomy를 제시했다.</li>
+<li>계속 새로운 기여를 받아들이는 살아있는(live) 데이터셋으로 설계해, 모델이 발전함에 따라 지속적으로 갱신되는 장기적 평가 기준점을 제공한다.</li>
+</ol>
+<h2>방법론</h2>
+<p>데이터는 자체 제작한 온라인 플랫폼을 통해 크라우드소싱으로 수집된다. 기여자는 원하는 언어쌍(방언·표기 변형 포함)을 고르고, 번역하기 어려운 입력(텍스트/이미지/오디오/비디오)과 정답 번역을 제출한다. 플랫폼은 여러 최신 번역 모델(Google Translate, Gemini, GPT 등 최대 10개)로 자동 번역을 생성해 보여주고, 기여자는 이 자동 번역들의 공통적인 실패 양상을 관찰해 해당 실패를 정확히 짚어내는 "검증 규칙"을 작성한다. 채택 기준은 엄격해서, 자동 번역 10개 중 최소 8개는 규칙을 통과하지 못해야 하고(어려움 확인), 동시에 사람이 작성한 정답 번역은 반드시 모든 규칙을 통과해야 한다(번역 가능함 확인). 제출된 예시는 다른 기여자가 검수하는 동료 평가(peer review)를 거쳐 품질을 보장하며, 10개 이상의 예시를 채택받은 기여자는 데이터셋 공동저자로 인정된다.</p>
+<p>평가 시에는 대상 모델이 각 예시를 번역하면, LLM 검증자가 그 번역이 해당 예시에 딸린 모든 검증 규칙을 만족하는지 개별적으로 판정한다. 최종 지표는 "검증 통과율(verifier pass rate)", 즉 전체 예시 중 모든 규칙을 통과한 비율이다. 이 방식은 일반적인 채점 기준 대신 예시별로 특정된 규칙을 사용하기 때문에, 평가자가 정답을 몰라도(생성자보다 우위의 특권 정보인 규칙만 알면) 실패를 정확히 짚어낼 수 있다는 비대칭성을 확보한다. 저자들은 검증 규칙 기반 평가가 모델 선택에 따라 순위가 흔들리지 않고(안정적), 자기선호 편향(self-bias)도 일반 LLM-as-judge 방식보다 훨씬 작다는 점을 실증적으로 검증했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>LTBv1은 3,456개 예시로 구성되며 영어 포함 언어쌍이 다수지만 비영어-비영어 쌍도 13%를 차지한다. 29개 모델(19개는 플랫폼에 노출된 적 없는 모델 포함)을 검증 통과율, LLM-as-judge, 표준 자동번역 지표(ChrF, Comet, MetricX 등), 일부 인간 평가로 비교한 결과, 인간 번역(99%대)을 제외하면 최고 성능 모델(Gemini 3.1 Pro)도 약 42%의 통과율에 그쳤고 대다수 모델은 10~20% 수준에 머물러, 벤치마크가 실제로 최신 모델들의 약점을 폭넓게 드러냄을 확인했다. 반면 같은 모델들에 대해 일반 LLM 판정(judge)은 "거의 완벽하다"는 식의 후한 점수를 주는 경향이 있어, 자동 지표·LLM judge는 검증 규칙 기반 평가와 상당히 다른(그리고 덜 신뢰할 만한) 결론을 내림을 보였다.</p>
+<p>모델에게 검증 규칙을 미리 알려주고 번역시키면 통과율이 7.2%에서 89.8%로 급증했는데, 이는 모델이 특정 현상을 몰라서라기보다 무엇을 조심해야 하는지 몰라서 실패하는 경우가 많음을 시사한다. 반면 모델이 스스로 검증 규칙(합성 규칙)을 생성하게 하면 개선 폭이 미미했는데, 이는 실패를 사전에 인지하고 규칙화하는 것 자체가 어려운 능력이기 때문이다. 22명의 숙련된 평가자를 동원한 소규모 인간 재평가에서는, 검증 규칙 기반 순위가 인간 판단과 가장 잘 일치했고, 데이터 일부만 사용해도 안정적인 순위를 유지했다. 자기선호 편향 분석에서도 검증자 방식은 LLM judge 방식보다 편향 정도가 훨씬 작았다(예: Gemini 4의 자기선호 편향이 judge에서는 28.2%였으나 검증자에서는 8.9%). 마지막으로, 수집 예시를 분석해 언어적(다의어, 관용어, 비단일언어적 요소 등) 및 초언어적(문화 지식, 형식 제약, 멀티모달 등) 난이도 유형 taxonomy를 구축했다.</p>
+<h2>한계점</h2>
+<p>저자들은 LTB가 전형적인 사용자 번역 경험의 평균 품질을 추정하기 위한 것이 아니라, 특정 실패 유형을 표적으로 삼는 "스트레스 테스트"임을 명확히 밝힌다. 따라서 검증 규칙은 번역 품질의 모든 측면을 포괄하지 않으며, 제시된 taxonomy도 완전히 망라적이지 않다. 또한 모델이 발전함에 따라 특정 예시들은 더 이상 어렵지 않게 될 수 있어, 지속적인 갱신이 필요하다. 검증 자체도 LLM 기반이라는 점에서 완전히 편향에서 자유롭지는 않으며, 평가에 사용하는 검증자 LLM의 선택에 따라 미세한 차이가 있을 수 있다(다만 저자들은 이 편차가 LLM judge 방식보다 훨씬 작다고 보고했다).</p>
+<h2>시사점</h2>
+<p>이 연구는 번역 벤치마크가 정체(saturation)되는 문제와 기존 자동 평가 지표의 신뢰성 문제를 동시에 해결하려는 시도로, "예시별 맞춤 검증 규칙"이라는 아이디어가 LLM 기반 평가의 자기선호 편향과 불안정성을 크게 줄일 수 있음을 보여준다. 크라우드소싱과 동료 검토를 결합해 계속 성장하는 살아있는 데이터셋이라는 설계는, 모델이 좋아질수록 평가 난이도도 함께 높아지는 장기적인 벤치마킹 방법론의 한 사례로서, 번역뿐 아니라 다른 개방형 생성 과제의 평가 설계에도 시사점을 준다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.04173" target="_blank" rel="noopener">huggingface.co/papers/2609.04173</a> · 2026-09-07</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

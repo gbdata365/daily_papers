@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>드라코</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#5 · Daily Papers 2026-09-07</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 24</span>
+    </div>
+    <h1 class="article-title">DRACO: Fine-Grained Credit Assignment with Dynamic Rubrics for Long-Horizon Agent Training</h1>
+    <p class="article-title-ko">드라코: 동적 루브릭 기반 장기 에이전트 학습의 세밀한 신용 할당</p>
+    <p class="article-sub">정답 검증기(verifier)가 존재하지 않는 "결과-블라인드(outcome-blind)" 환경에서, 학습 중 동적으로 생성되는 궤적별 루브릭(rubric)을 이용해 트랙토리 단위 보상을 스텝 단위로 재분배함으로써 GRPO 기반 장기 에이전트 학습의 신용 할당(credit assignment)을 개선하는 DRACO 기법을 제안한 연구다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.04094" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.04094" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: DRACO: Fine-Grained Credit Assignment with Dynamic Rubrics for Long-Horizon Agent Training</li>
+<li><strong>저자</strong>: Carnegie Mellon University 및 IBM Research 소속 4명 (Shubham Gandhi, Saurabh Goyal, Kiran Kate, Yara Rizk)</li>
+<li><strong>출처</strong>: arXiv:2609.04094v1 [cs.AI] (2026년 9월)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/IBM/draco">GitHub - IBM/draco</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.04094">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>정답 검증기(verifier)가 존재하지 않는 "결과-블라인드(outcome-blind)" 환경에서, 학습 중 동적으로 생성되는 궤적별 루브릭(rubric)을 이용해 트랙토리 단위 보상을 스텝 단위로 재분배함으로써 GRPO 기반 장기 에이전트 학습의 신용 할당(credit assignment)을 개선하는 DRACO 기법을 제안한 연구다.</p>
+<h2>배경 및 문제의식</h2>
+<p>검증 가능한 보상 기반 강화학습(RLVR)은 코드 유닛테스트, 수학 정답 매칭처럼 프로그램적 채점기가 있는 과제에서는 잘 작동하지만, 고객 지원이나 개방형 리서치 에이전트처럼 정답 검증기 자체가 존재하지 않는 실제 장기 호라이즌(long-horizon) 에이전트 도메인에서는 적용하기 어렵다. 이런 경우 다기준 루브릭으로 궤적 하나를 한 번에 채점하는 방식이 대안으로 쓰이지만, 이는 수십 스텝에 걸친 궤적 전체에 단일 스칼라 점수를 부여하는 것이어서 신호가 매우 거칠다. 성공한 궤적에도 불필요하거나 운이 좋았던 스텝이 섞여 있고, 실패한 궤적에도 옳은 행동이 대부분일 수 있으므로, 트랙토리 수준 보상을 모든 스텝에 균등하게 적용하는 것은 통계적으로 비효율적이고 오히려 해로울 수 있다는 문제의식에서 출발한다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>결과-블라인드 루브릭 기반 강화학습 문제를 정식화하고, 정답 결과에 신호를 의존하는 기존 루브릭·스텝 신용·프로세스 보상 연구들과의 관계를 정리했다.</li>
+<li>두 가지 상호보완적 메커니즘을 제안했다: (i) 학습이 진행되며 정책 모델의 실제 실패 양상에 맞춰 진화하는 동적 궤적별 루브릭 생성, (ii) 루브릭 판정을 궤적 구조를 존중하며 스텝 단위 이점(advantage)으로 변환하는 폐쇄형(closed-form) 신용 재분배 규칙(학습된 귀속 모듈 불필요).</li>
+<li>검증기 없이 정책 모델이 스스로를 채점하는 "self-judge" 설정으로도 프론티어 판사(judge)와 유사한 성능을 낼 수 있음을 보여 비용을 크게 절감할 수 있는 실용적 대안을 제시했다.</li>
+</ol>
+<h2>방법론</h2>
+<p>DRACO는 GRPO(Group Relative Policy Optimization)를 기반으로 한다. 먼저 각 과제 instruction으로부터 판사(고정된 외부 LLM, GPT-5.4)가 채점 기준(criteria)을 제안하고, 샘플링된 각 롤아웃이 실제로 드러낸 실패 양상에 맞춰 기준을 확장한 뒤, 그룹 내 모든 제안을 병합·중복 제거한다. 이때 "적어도 한 롤아웃이 실패한 기준만 유지"하는 판별적 드롭아웃(discriminative dropout)을 적용해 무의미한 기준을 걸러낸다. 각 트랙토리는 이 병합된 기준 집합에 대해 pass/fail/not-applicable로 채점되고, 통과/실패 수의 비율로 결과-블라인드 보상 R_i = (p_i - f_i)/(p_i + f_i)를 계산한다. 이렇게 얻은 R_i는 GRPO 식대로 그룹 내에서 정규화되어 트랙토리 단위 이점 A_i가 되는데, 여기서 DRACO의 두 번째 핵심 요소인 스텝 단위 신용 재분배가 적용된다. 각 기준이 어느 스텝(에이전트의 한 턴)을 근거로 판정되었는지 판사가 명시한 정보를 이용해, 스텝 j의 품질 Q_j(그 스텝을 인용한 기준들의 통과 비율)를 계산하고, A_i의 부호(양/음)를 보존하면서 Q_j 또는 1-Q_j를 가중치로 삼아 트랙토리의 전체 이점을 스텝별로 재분배한다(식 4~7). 이 재분배는 트랙토리의 총 "밀어붙이는 힘(push)"을 보존하며, 어떤 학습된 모듈도 사용하지 않는 폐쇄형 수식으로 이루어진다. 학습은 Qwen3.6-27B와 Qwen2.5-32B-Instruct에 LoRA 어댑터를 붙여 AppWorld의 90개 학습 과제에 대해 진행했고, 판사 모델은 GPT-5.4로 고정했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>평가는 두 개의 장기 호라이즌 툴 사용 벤치마크, AppWorld(정상 분할 AppWorld_TN 168개 과제, 미학습 앱/조합이 포함된 챌린지 분할 AppWorld_TC 417개 과제)와 τ-bench 뱅킹 도메인(제로샷 전이 평가로만 사용, 학습에는 사용하지 않음)에서 수행됐다. 지표는 Task Goal Completion(TGC), Scenario Goal Completion(SGC), τ-bench의 Success Rate(SR)이며, pass@k 및 passᵏ으로 발견율과 일관성을 함께 측정했다. Qwen3.6-27B 기준 DRACO는 AppWorld_TN에서 TGC/SGC를 69.4/41.1에서 85.3/70.6으로(+15.9/+29.5) 끌어올렸고, 검증기 기반 유닛테스트로 학습한 "결과 보상(outcome reward)" 베이스라인 대비로도 +5.3 TGC를 기록했다. 정답 신호를 전혀 사용하지 않았음에도 τ-bench로의 제로샷 전이에서도 성능이 개선되었으며, 정답 검증기를 사용한 SALT라는 참조 기법과 대등하거나 이를 능가하는 결과를 보였다. 세 가지 축(동적 루브릭 유무, 스텝 신용 유무)의 절제(ablation) 실험 결과, 두 구성 요소 중 하나만 적용했을 때는 개선 폭이 작았지만(+0.8~+1.0 TGC), 두 요소를 함께 적용했을 때 시너지 효과로 최대 +14.3 SGC(고일관성 pᵌ 기준)까지 향상되어 스텝 신용 할당이 궤적별 루브릭과 결합될 때 가장 큰 효과를 낸다는 점을 확인했다. 또한 판사를 프론티어 모델 대신 정책 모델 자체("self-judge")로 대체해도 채점 비용을 약 5배 절감하면서(100 스텝 기준 $1,607→$316) 유사한 성능(89.4%의 판정 일치율)을 유지할 수 있음을 보였다.</p>
+<h2>한계점</h2>
+<p>루브릭 기반 보상은 검증 불가능한 과제에서 판정 기준이 실제로 과제 성공을 충실히 반영하는지 확인할 독립적 신호가 없다는 근본적 한계를 지닌다. 본 연구는 단일 고정 판사를 주로 사용했고, 사람 평가자와의 chance-corrected 합치도는 측정하지 않아 판사가 내적으로 일관되더라도 체계적으로 틀릴 가능성을 배제하지 못한다. 같은 문제가 신용 재분배 단계에도 이어져, 최종 성능으로만 DRACO를 검증했기 때문에 재분배가 실제로 "옳은" 스텝에 신용을 부여하는지는 별도로 검증되지 않았다(잘못된 스텝에 신용을 줘도 정책이 개선될 수 있고, 반대의 경우도 가능). 또한 판별적 드롭아웃으로 인해 동일한 프롬프트라도 학습 시점에 따라 다른 기준 집합으로 채점되어 기준 집합이 그룹 표본에 의존적이며, 반복 실행에 따른 분산도 측정되지 않았다(고정 체크포인트에 대한 추론 시점 반복만 수행).</p>
+<h2>시사점</h2>
+<p>이 연구는 정답 검증기가 없는 실세계 에이전트 도메인(고객 지원, 오픈엔디드 리서치 등)에서도 강화학습을 통한 성능 향상이 가능함을 보여주며, 특히 "루브릭을 어떻게 스텝에 귀속시키는가"가 "루브릭을 얼마나 잘 만드는가" 못지않게 중요하다는 점을 실증했다. 자가 판정(self-judge) 방식이 프론티어 판사에 근접한 성능을 내면서 비용을 크게 낮출 수 있다는 결과는 실무 적용 시 비용-성능 트레이드오프를 완화하는 실질적 방향을 제시한다. 저자들은 판사가 최적화 목표 자체를 정의하는 역할을 하므로, 필요한 판사 품질의 수준을 규명하는 것이 중요한 후속 연구 방향이라고 지적한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.04094" target="_blank" rel="noopener">huggingface.co/papers/2609.04094</a> · 2026-09-07</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

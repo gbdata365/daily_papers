@@ -1,0 +1,113 @@
+<meta charset="UTF-8">
+<title>프린키피아</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#12 · Daily Papers 2026-09-07</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 16</span>
+    </div>
+    <h1 class="article-title">Principia: Relational Physics Tests for Video Models</h1>
+    <p class="article-title-ko">프린키피아: 비디오 모델을 위한 관계적 물리 테스트</p>
+    <p class="article-sub">Principia는 비디오 생성 모델과 비전-언어 모델(VLM)의 물리적 추론 능력을, 카메라 보정이나 절대 척도에 의존하지 않고 "같은 장면 속 두 물체가 동일한 물리 법칙을 따라야 한다"는 관계적 불변량(relational invariant)으로 검증하는 벤치마크이며, 최신 모델들이 시각 품질 벤치마크(VBench)에서는 높은 점수를 받지만 물리적 일관성에서는 크게 미달함을 보인다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.04200" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.04200" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Principia: Relational Physics Tests for Video Models</li>
+<li><strong>저자</strong>: Indian Institute of Science 및 Johns Hopkins University 소속 Varun Varma Thozhiyoor, Shivam Tripathi(이상 공동 1저자), Venkatesh Babu Radhakrishnan, Anand Bhattad 4명</li>
+<li><strong>출처</strong>: arXiv:2609.04200v1 [cs.CV] (2026년 9월)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://PrincipiaBench.github.io">https://PrincipiaBench.github.io</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.04200">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>Principia는 비디오 생성 모델과 비전-언어 모델(VLM)의 물리적 추론 능력을, 카메라 보정이나 절대 척도에 의존하지 않고 "같은 장면 속 두 물체가 동일한 물리 법칙을 따라야 한다"는 관계적 불변량(relational invariant)으로 검증하는 벤치마크이며, 최신 모델들이 시각 품질 벤치마크(VBench)에서는 높은 점수를 받지만 물리적 일관성에서는 크게 미달함을 보인다.</p>
+<h2>배경 및 문제의식</h2>
+<p>생성 비디오의 물리적 타당성을 평가하기 어려운 이유는 절대적인 운동량 측정(속도, 가속도, 질량 등)이 프레임레이트, 물체 크기, 카메라 보정 값에 의존하는데, 이런 값들이 생성 비디오에서는 모호하거나 아예 알 수 없기 때문이다. 기존 벤치마크들은 그럴듯해 보이는 정성적 타당성 판정에 그치거나(plausibility 기반), 특정 참조 비디오와의 궤적 일치도를 요구하거나(하지만 물리적으로 타당한 여러 미래 경로가 있어도 하나의 기준과 다르면 감점됨), 명시적 물리 법칙과 비교하려면 결국 절대 척도 정보를 복원하거나 가정해야 하는 한계가 있다. 저자들은 예시로, 서로 다른 질량의 두 블록을 동일한 조건의 경사면 위에서 동시에 놓으면 마찰이 있어도 질량과 무관하게 동시에 바닥에 도달해야 한다는 사실을 든다. 이 "동시 도착"이라는 관계는 절대적인 질량·속도·가속도 값을 몰라도 이미지 공간에서 직접 검증 가능한 불변량이다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>500개 이상의 실제 촬영 장면으로 구성된 Principia 벤치마크를 제안했다. 보정된 물체, 정렬된 기하 구조, 동시 방출(synchronized release) 등을 통해 8가지 뉴턴 역학 현상(반발계수, 마찰, 회전관성, 발사체 운동, 운동량, 진자, 질량-스프링, 중력)에 대한 쌍(pair)-물체 관계 검증 데이터를 구축했다.</li>
+<li>카메라 내부 파라미터, 절대 척도, 프레임레이트에 전혀 의존하지 않고 이미지 공간의 비율과 등식만으로 물리 위반 정도를 정량화하는 "관계 일관성 점수(relational consistency score)"를 정의했다.</li>
+<li>Isaac Sim 기반의 확장 가능한 합성 데이터 파이프라인(Principia-Synth)을 구축해, 물리적으로 올바른 비디오와 해당 관계 불변량을 의도적으로 위반한 "반물리(anti-physics)" 비디오 쌍을 대규모로 생성하고 이를 VLM 평가에 활용했다.</li>
+<li>6개의 최신 비디오 생성 모델과 4개의 VLM을 평가해, VBench에서 약 0.8점을 받는 모델들도 Principia에서는 0.42를 넘지 못하며, 모델 크기를 키워도 물리적 일관성이 일관되게 향상되지 않음을 보였다.</li>
+</ol>
+<h2>방법론</h2>
+<p>Principia는 각 장면에서 두 물체가 동일한 물리 법칙을 따를 때 성립해야 하는 관계식 F_φ(o1)=F_φ(o2) (또는 비율·순서 관계)를 8개 현상별로 정의한다. 예를 들어 반발(restitution)에서는 서로 다른 높이에서 떨어뜨린 두 공의 반발 높이 비율이 낙하 높이 비율과 같아야 하고(r1/h1 = r2/h2), 마찰이 있는 경사면에서는 질량이 다른 두 블록의 도착 시간이 같아야 하며(t1=t2), 회전관성에서는 속이 찬 원통과 빈 원통의 도착 시간 비율이 관성모멘트 비율의 제곱근 함수로 예측되고, 진자에서는 길이가 다른 두 진자의 주기 비율이 길이 비율의 제곱근과 같아야 한다(T1/T2 = √(l1/l2)) 등이다.</p>
+<p>데이터 수집 시에는 접촉면 재질, 동시 방출을 위한 기계적 정렬 지그, 표면 조건 검증, 측면 힘 최소화 등 4가지 제약을 엄격히 적용했으며, 약 750개 이상의 영상을 촬영한 뒤 엄격한 필터링과 자동/수동 검증을 거쳐 최종 529개 장면을 확보했다. 모든 물체는 SAM3로 분할·추적되며, 측정은 전적으로 픽셀 공간 비율에 기반하므로 카메라 내부 파라미터나 실제 척도를 몰라도 된다. 관계 일관성 점수 S_φ는 두 물체의 물리량 차이를 그 합으로 정규화한 값(1 - |F(o1)-F(o2)|/(|F(o1)|+|F(o2)|))으로 정의되며, 완전히 불변량을 만족하면 1, 위반이 커질수록 0에 가까워진다. 발사체·운동량처럼 등식이 아닌 순서 관계인 경우는 해당 순서가 만족된 장면의 비율로 별도 산출한다. 추가로 Isaac Sim으로 물리적으로 올바른 비디오와 명시적으로 관계 불변량을 위반한 반물리 비디오를 함께 생성하는 Principia-Synth를 만들어, VLM이 PASS/FAIL 형태로 위반 여부를 탐지할 수 있는지 별도로 평가한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Omni, Veo-3.1, Wan2.2-5B/14B, Cosmos-2.5-2B/14B 등 6개 비디오 생성 모델과 Gemini-3.1-Pro, Gemini-3-Flash, Qwen-32B, Qwen-4B 등 4개 VLM을 평가했다(총 추론 연산량 2,600 A100-시간 이상, 4,000개 이상 비디오 생성). VBench에서는 6개 생성 모델 모두 약 0.8점 근처로 밀집해 있는 반면 Principia 점수는 0.14~0.42 범위에 그쳐, 시각 품질과 물리적 충실도가 사실상 독립적임을 보였다. 전체 평균 기준으로는 Wan2.2-14B가 0.419로 가장 높았고 Omni(0.409), Veo-3.1(0.38)이 뒤를 이었으나, 어떤 모델도 0.5를 넘지 못했다. 모델별로 강점 현상이 서로 달라(Omni는 관성·마찰에 강하지만 반발·중력·운동량에 약함, Wan2.2-14B는 스프링과 운동량을 제외한 대부분에서 우수), 동일 계열 내에서도 모델 크기를 키운다고 모든 현상이 고르게 개선되지는 않았다(예: Cosmos-2.5는 2B→14B로 커지면서 마찰·관성·진자는 향상되지만 반발·중력·운동량은 오히려 저하). 모든 모델이 다중 물체 상호작용이 복잡한 운동량(momentum) 과제에서 특히 취약했다. VLM 평가에서는 Principia-Synth의 실제/반물리 비디오 쌍에 대해 PASS/FAIL 판정 정확도를 측정했는데, 최고 성능인 Gemini-3-Flash도 평균 0.661에 그쳤고 나머지는 거의 무작위 수준(약 0.5)이었다.</p>
+<h2>한계점</h2>
+<p>Principia는 거시적 뉴턴 역학만을 다루며 유체역학, 연체(soft-body) 변형, 열역학적 현상은 다루지 않는다. 또한 생성 모델이 물체를 환각하거나 누락하거나 심하게 왜곡하는 등 물리 위반과 무관한 실패도 발생할 수 있는데, 현재 파이프라인은 이런 경우를 물리 법칙 위반과 자동으로 구분하지 못하며, 평가 범위를 해석 가능한(비-왜곡) 비디오로 한정하고 있다.</p>
+<h2>시사점</h2>
+<p>시각적 사실성과 물리적 정합성이 서로 독립적인 축이라는 관찰은, 비디오 생성 모델을 "월드 모델(world model)"로 홍보하고 활용하려는 최근 흐름에 중요한 경고를 던진다. 또한 모델 규모 확장이 물리 일관성 향상과 반드시 비례하지 않는다는 결과는, 현재의 스케일링 및 학습 목적함수만으로는 관계적 물리 제약을 학습하기 어려우며, 이를 개선하려면 새로운 학습 신호나 아키텍처적 편향(inductive bias)이 필요함을 시사한다. VLM 역시 물리 위반 탐지에서 준-무작위 수준에 머물러, 생성뿐 아니라 판별(judge) 역할에도 한계가 있음을 보여준다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.04200" target="_blank" rel="noopener">huggingface.co/papers/2609.04200</a> · 2026-09-07</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

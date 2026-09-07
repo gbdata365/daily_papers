@@ -1,0 +1,110 @@
+{
+  "2609.02750": {
+    "base": "2609_바이레벨반사_멀티에이전트-게임이론적-반성-조율",
+    "rank": "#1",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "92",
+    "en_title": "Bilevel Coordinated Reflection: A Game-Theoretic Approach to Multi-Agent LLM Systems",
+    "ko_title": "바이레벨 조율 반성: 멀티에이전트 LLM 시스템에 대한 게임이론적 접근"
+  },
+  "2609.04304": {
+    "base": "2609_아이리스_검색-에이전트-최전선-도달",
+    "rank": "#2",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "50",
+    "en_title": "Iris: Climbing to the Search Frontier",
+    "ko_title": "아이리스: 검색 최전선을 향한 등반"
+  },
+  "2609.04250": {
+    "base": "2609_모션옴니_음성-전신동작-통합-대화모델",
+    "rank": "#3",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "35",
+    "en_title": "Motion-Omni: End-to-End Joint Speech and Full-Body Motion for Spoken Dialogue",
+    "ko_title": "모션옴니: 음성 대화를 위한 종단간 음성·전신동작 통합 생성"
+  },
+  "2609.03586": {
+    "base": "2609_어텐션트라이앵글_오디오비디오-모델-어텐션-누출-완화",
+    "rank": "#4",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "25",
+    "en_title": "The Attention Triangle in Audio-Video Models",
+    "ko_title": "오디오-비디오 모델에서의 어텐션 트라이앵글"
+  },
+  "2609.05416": {
+    "base": "2609_월드스컬프트_그라운딩된-비디오-기반-조합형-3D-월드-생성",
+    "rank": "#5",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "21",
+    "en_title": "WorldSculpt: Generating Compositional Worlds from Grounded Videos",
+    "ko_title": "그라운딩된 비디오로부터 조합형 3D 월드 생성하기"
+  },
+  "2609.00581": {
+    "base": "2609_에노키_다중수준-환각-탐지-프레임워크",
+    "rank": "#6",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "16",
+    "en_title": "Enoki: Efficient Multi-Level Hallucination Detection",
+    "ko_title": "에노키: 효율적인 다중 수준 환각 탐지"
+  },
+  "2609.05258": {
+    "base": "2609_인터옵트_최적화-전-대화형-명확화",
+    "rank": "#7",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "15",
+    "en_title": "Ask Before You Optimize: Dynamic Pre-Formulation Clarification for Interactive Optimization",
+    "ko_title": "최적화 전에 물어보기: 대화형 최적화를 위한 동적 정식화-전 명확화"
+  },
+  "2609.05275": {
+    "base": "2609_레이어드롭아웃_LLM-학습-추론-효율화",
+    "rank": "#8",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "14",
+    "en_title": "Don't Drop Dropout: Optimizing Layer Sparsity for Efficient LLM Training and Inference",
+    "ko_title": "드롭아웃을 버리지 마라: 효율적인 LLM 학습과 추론을 위한 레이어 희소성 최적화"
+  },
+  "2609.04753": {
+    "base": "2609_씨오티벡터_추론연산-기계적-해석",
+    "rank": "#9",
+    "category": "interpret",
+    "category_label": "해석연구",
+    "upvote": "10",
+    "en_title": "Beneath the Surface of Chains-of-Thought: A Mechanistic Interpretation of Reasoning Operations in LLMs",
+    "ko_title": "사고연쇄의 표면 너머: LLM 추론 연산에 대한 기계적 해석"
+  },
+  "2609.05415": {
+    "base": "2609_유니메이트_다양한-스켈레톤-통합-애니메이션",
+    "rank": "#10",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "10",
+    "en_title": "UniMate: One Unified Model to Animate Diverse Skeletons",
+    "ko_title": "유니메이트: 다양한 스켈레톤을 애니메이션화하는 통합 모델"
+  },
+  "2609.05295": {
+    "base": "2609_라이즈_자기외삽-정책증류-재귀개선",
+    "rank": "#11",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "9",
+    "en_title": "RISE: Recursive Improvement via Self-Extrapolating Policy Distillation",
+    "ko_title": "라이즈: 자기외삽 정책 증류를 통한 재귀적 개선"
+  },
+  "2609.04523": {
+    "base": "2609_맥스커널_TPU-에이전트-커널-생성",
+    "rank": "#12",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "9",
+    "en_title": "MaxKernel: Agentic Kernel Generation for TPUs",
+    "ko_title": "맥스커널: TPU를 위한 에이전트 기반 커널 생성"
+  }
+}

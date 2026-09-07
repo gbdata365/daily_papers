@@ -1,0 +1,114 @@
+<meta charset="UTF-8">
+<title>맥스커널</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#12 · Daily Papers 2026-09-08</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 9</span>
+    </div>
+    <h1 class="article-title">MaxKernel: Agentic Kernel Generation for TPUs</h1>
+    <p class="article-title-ko">맥스커널: TPU를 위한 에이전트 기반 커널 생성</p>
+    <p class="article-sub">컴파일러 피드백과 하드웨어 프로파일링을 실시간으로 활용하는 다중 에이전트 시스템 MaxKernel을 제안해, TPU용 JAX/Pallas 커널을 사람이 직접 튜닝한 수준 이상으로 자동 생성·최적화한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.04523" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.04523" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: MaxKernel: Agentic Kernel Generation for TPUs</li>
+<li><strong>저자</strong>: Shangkun Wang, Nina Cai, Charles Hong, Julian Walker 등 Google 및 Google DeepMind 소속 연구진</li>
+<li><strong>출처</strong>: arXiv:2609.04523v1 [cs.AI] (2026년 9월 3일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/AI-Hypercomputer/accelerator-agents/tree/main/MaxKernel">GitHub</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.04523">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>컴파일러 피드백과 하드웨어 프로파일링을 실시간으로 활용하는 다중 에이전트 시스템 MaxKernel을 제안해, TPU용 JAX/Pallas 커널을 사람이 직접 튜닝한 수준 이상으로 자동 생성·최적화한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>딥러닝 아키텍처 규모가 커지면서 가속기의 연산 성능과 메모리 대역폭을 최대한 활용하려면 표준 컴파일러 파이프라인을 우회하는 커스텀 커널(TPU의 JAX/Pallas, GPU의 CUDA/Triton 등)을 직접 작성해야 하는 경우가 많다. 그러나 이는 HBM과 SRAM/VMEM 같은 메모리 계층을 수동으로 관리하고, DMA 파이프라이닝을 조율하고, 다차원 타일링 전략을 도출해야 하는 고도의 하드웨어 전문성을 요구하는 복잡한 작업이다. LLM을 활용한 커널 생성 연구들이 등장했지만, 가속기 API의 경직성과 엄격한 메모리 제약, 불투명한 저수준 컴파일러 오류 때문에 단순한 제로샷/퓨샷 LLM 접근만으로는 부족하며 실시간 컴파일러 피드백으로 보강해야 한다. 또한 기능적으로 올바른 코드를 생성하더라도 최적의 하드웨어 성능을 달성하려면 프로파일링, 구성 튜닝, 진화적/탐욕적/협업적 탐색 등을 결합한 반복적 과정이 필요하다. Halide, TVM, Ansor 같은 전통적 컴파일러 최적화 기법은 알고리즘 정의와 스케줄링을 분리해 이 문제를 다루지만 여전히 상당한 도메인 지식이나 값비싼 진화적 탐색 단계를 요구한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>계획·구현·자기디버깅·테스트·하드웨어 프로파일링을 담당하는 특화된 서브에이전트 풀을 공유하는 모듈형 다중 에이전트 프레임워크 MaxKernel 제안</li>
+<li>세 가지 오케스트레이션 방식 제공: (1) 사람이 각 단계마다 개입하는 Human-in-the-Loop(HITL) 에이전트, (2) 메트릭/트레이스 기반 최적화 루프를 완전 자동으로 반복하는 Autonomous(Auto) 에이전트, (3) Auto 에이전트를 검색 그래프로 감싸 전역 탐색을 수행하는 Graph-Based Autonomous Search</li>
+<li>JaxBench(50개 다양한 TPU 커널 과제) 및 실제 최신 오픈소스 모델의 커널에서 엄밀한 실증 평가를 수행해, JaxBench 전반에서 XLA 대비 기하평균 1.58배 속도향상을 달성했고, 사람이 작성한 8개 프로덕션 커널과 비교했을 때 에이전트 방식이 기하평균 2.32배로 사람 손튜닝 커널(2.02배)을 능가함을 입증</li>
+</ul>
+<h2>방법론</h2>
+<p>MaxKernel은 계획(Planning), 구현(Implementation), 테스트/검증, 오토튜닝, 프로파일링을 담당하는 전문 서브에이전트들로 구성된다. 커널 생성/수정 에이전트는 하드웨어 사양과 참조 구현을 바탕으로 고수준 최적화 계획을 세우는 계획 에이전트와, 이를 실제 Pallas 코드로 번역하는 구현 에이전트로 나뉘며, 컴파일 실패 시 컴파일러 피드백을 해석해 오류를 반복적으로 수정하는 검증-수정 루프를 갖는다. 테스트 합성 에이전트가 종합적인 테스트 스위트를 구성하고 실행 에이전트가 이를 TPU에서 안전하게 실행해 수치적 정확성을 검증하며, 오토튜닝 에이전트는 블록 크기·타일 차원 등 구성 공간을 탐색하고, 프로파일링 에이전트는 XProf 도구로 실행 지연시간·메모리 대역폭·연산 밀도 등의 저수준 트레이스를 분석해 다음 최적화 반복에 피드백을 제공한다. 또한 Pallas/Mosaic/XLA 문서, 메모리 레이아웃 가이드, 성능 핸드북 등 정적 자료만으로 구성된 RAG(검색 증강 생성) 지식 저장소를 두되, 손튜닝 커널 코드는 검색 대상에서 의도적으로 제외해 에이전트가 사람이 작성한 예시 없이 스스로 TPU 특화 최적화를 일반화·발견할 수 있는지를 평가한다.</p>
+<p>HITL 모드는 "하나의 에이전트 실행 후 대기" 방식의 인터랙티브 라우터로, 각 서브에이전트 단계가 끝나면 자동 실행을 멈추고 사용자가 중간 산출물(최적화 계획, 코드 초안)을 검토·수정할 수 있게 한다. Auto 모드는 계획 생성→구현→컴파일 검증→테스트 실행→오토튜닝→프로파일링의 순환을 사람 개입 없이 반복하는 폐루프 최적화이며, 준비 단계에서 참조 코드 기반 테스트 스위트를 고정(freeze)해 하위 구현 에이전트가 검증 기준 자체를 조작(보상 해킹)하지 못하도록 막는다. 실패가 반복되면 오류 맥락을 보존한 채 계획 단계로 되돌아가며, 매 성공적 반복의 코드·테스트 결과·지연시간·프로파일링 요약을 스냅샷으로 기록해 파이프라인 종료 시 최적(최저 지연시간) 유효 해로 자동 롤백하는 Best-of-N 상태 복구 메커니즘을 갖는다. Graph-Based Autonomous Search는 커널 생성 과정을 형식적 검색 문제로 모델링해, 각 노드가 소스 코드·최적화 계획·평가 지표를 포함하는 SearchGraph를 유지한다. 검색 오케스트레이터가 프런티어에서 유망한 노드를 선택해 병렬 워커들에게 확장 작업을 위임하고, 각 워커는 독립적인 Auto 에이전트 세션으로 새로운 최적화 전략을 적용·컴파일·테스트·프로파일링한다. 현재 두 가지 탐색 알고리즘을 구현하는데, Parallel Search는 여러 독립 궤적을 경쟁 없이 각각 깊은 반복 예산(5회)으로 실행하는 방식이고, Beam Search는 상위 k개 후보만 유지하며 얕은 반복 예산(2회)으로 넓게 탐색하고 성능이 낮은 경로를 적극적으로 가지치기하는 방식이다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>평가는 TPU v6e 하드웨어에서 진행되었으며, 모든 LLM 질의는 Gemini 3.1 Pro를 사용했다. 지표는 컴파일 성공률, 정확성 비율(jnp.allclose 기반 수치 동등성, atol/rtol 기본 10⁻²), XLA 컴파일러 대비 기하평균 속도향상, 특정 임계값 p를 초과하는 정확한 결과 비율(fast_p)이다. JaxBench(17개 일반 연산자 + KernelBench 유래 33개 융합 연산자로 구성된 50개 과제)에서 Best-of-N(N=100 제로샷 샘플링)은 컴파일/정확성 10/50, 기하평균 속도향상 1.08배에 그쳤다. MaxKernel Auto(5회 반복 단일 궤적)는 컴파일 49/50, 정확성 48/50, 기하평균 1.39배(중앙값, 범위 1.19~1.42)로 크게 개선했으나 단일 실행의 분산이 컸다. MaxKernel Parallel(5개 병렬 궤적 중 최고 선택)은 컴파일/정확성 모두 50/50을 달성하고 기하평균 1.58배, fast1 34/50으로 최고 성능을 보였으며, MaxKernel Beam(폭 3, 최대 깊이 3)도 정확성 50/50에 기하평균 1.49배, fast1 31/50으로 경쟁력 있는 결과를 냈다.</p>
+<p>사람이 작성한 손튜닝 Pallas 커널이 존재하는 8개 실제 워크로드 비교에서는 MaxKernel Parallel이 기하평균 2.32배, Beam이 1.78배의 속도향상을 기록해 사람 손튜닝 기준선(2.02배)과 대등하거나 이를 능가했으며, 8개 중 7개 워크로드에서 에이전트가 사람 전문가보다 우수했다(예: MLA Attention에서는 사람 전문가가 기준선보다 느린 결과를 냈으나 에이전트는 이를 능가; Paged Attention에서는 Beam Search가 6.74배로 사람 기준(2.41배)의 두 배 이상). 유일한 예외는 Ragged Paged Attention으로, 사람 전문가(4.65배)가 에이전트(1.42배)보다 우수했다. 탐색 동역학 분석에서는 Parallel Search가 깊은 반복 예산 덕분에 복잡한 컴파일 오류를 디버깅하고 까다로운 메모리 레이아웃을 점진적으로 개선하는 데 강한 반면, Beam Search는 초기 2단계 깊이까지는 잘 상승하지만 깊이 3에서 정체되는 경향을 보였는데, 이는 저수준 커널 최적화가 다단계에 걸친 디버깅을 요구하는 경우 얕은 예산이 불리하게 작용하기 때문으로 분석된다.</p>
+<p>또한 Qwen3-Next Gated DeltaNet, DeepSeek-V4 Sparse Attention, Mamba v2 SSD, StreamIndex_topk 등 최신 오픈소스 모델의 실제 워크로드에서도 검증했다: MLA v1에서 사람 작성 Pallas 대비 지연시간 8.68% 감소·처리량 9.50% 증가, Qwen3-Next GDN에서 순전파 1.63배·전체 학습 스텝 최대 4.70배 가속, DeepSeek-V4 Sparse Attention의 프리필에서 최대 7.85배 가속을 달성했다. 추가로 MaxKernel은 Ragged Page Attention v3의 크래시·데드락 버그를 스스로 진단해 ALU clamp 명령을 삽입, 음수 슬라이스 크기를 방지하고 DMA 프리페치가 안전하게 실행되도록 수정하는 등 성능 최적화를 넘어선 디버깅 유용성도 보여주었다.</p>
+<h2>한계점</h2>
+<p>저자들은 결론에서 진화적 탐색이나 그리디 탐색 등 다른 최적화 알고리즘을 향후 탐구할 계획이며, 과거 실험으로부터 동적으로 갱신되는 지식 베이스와, 서로 다른 탐색 전략 간 탐색-활용 트레이드오프를 다루는 상태 유지형 하이브리드 최적화가 추가 개선을 가져올 수 있다고 언급한다. 본문에서는 Ragged Paged Attention에서 사람 전문가가 에이전트보다 우수한 사례가 유일한 예외로 보고되며, Beam Search는 다단계 디버깅이 필요한 최적화에서 얕은 반복 예산 때문에 성능이 정체되는 한계를 보였다. 또한 모든 실험이 단일 LLM(Gemini 3.1 Pro)으로 수행되었고 다른 LLM에 대한 소거 실험은 향후 과제로 남겨두었다.</p>
+<h2>시사점</h2>
+<p>MaxKernel은 LLM 기반 에이전트 시스템이 실시간 컴파일러 피드백과 하드웨어 프로파일링을 결합할 경우, 손튜닝 예시 코드 없이도 사람 전문가 수준 혹은 그 이상의 저수준 가속기 커널을 자동으로 생성할 수 있음을 실증한다. 이는 TPU 개발자의 수작업 부담을 크게 줄일 뿐 아니라, 새로운 모델 아키텍처(예: 최신 어텐션 변형)가 등장할 때마다 반복되는 커널 최적화 병목을 자동화 파이프라인으로 해소할 수 있는 가능성을 보여준다. 또한 Parallel Search와 Beam Search라는 서로 다른 탐색 전략의 트레이드오프 분석은 향후 에이전트 기반 코드 최적화 시스템 설계 시 탐색 폭과 깊이를 어떻게 배분할지에 대한 실용적 지침을 제공한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.04523" target="_blank" rel="noopener">huggingface.co/papers/2609.04523</a> · 2026-09-08</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

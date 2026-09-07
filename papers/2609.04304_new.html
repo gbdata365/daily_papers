@@ -1,0 +1,120 @@
+<meta charset="UTF-8">
+<title>아이리스</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#2 · Daily Papers 2026-09-08</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 50</span>
+    </div>
+    <h1 class="article-title">Iris: Climbing to the Search Frontier</h1>
+    <p class="article-title-ko">아이리스: 검색 최전선을 향한 등반</p>
+    <p class="article-sub">웹 그래프의 하이퍼링크 구조로부터 어려운 다중 홉 검색 질문을 자동 생성하고, SFT와 RL을 반복적으로 교차시키는 "SFT-RL climbing" 기법으로 학습한 35B/397B 규모의 검색 에이전트 Iris-mini/Iris-pro가 여러 벤치마크에서 오픈소스 최고 성능을 달성했다는 기술 보고서.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.04304" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.04304" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Iris: Climbing to the Search Frontier</li>
+<li><strong>저자</strong>: AllSpark Team (Ziyuan Liu, Hengqi Liu, Zichuan Wang, Yang Qin 등)</li>
+<li><strong>출처</strong>: arXiv:2609.04304v1 [cs.AI] (2026년 9월 3일; 보고서 자체 날짜는 2026년 9월 4일로 명시)</li>
+<li><strong>프로젝트 페이지</strong>: GitHub · HuggingFace (구체적 URL은 논문에 명시되지 않음)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.04304">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>웹 그래프의 하이퍼링크 구조로부터 어려운 다중 홉 검색 질문을 자동 생성하고, SFT와 RL을 반복적으로 교차시키는 "SFT-RL climbing" 기법으로 학습한 35B/397B 규모의 검색 에이전트 Iris-mini/Iris-pro가 여러 벤치마크에서 오픈소스 최고 성능을 달성했다는 기술 보고서.</p>
+<h2>배경 및 문제의식</h2>
+<p>검색 에이전트는 무엇을 검색할지, 증거를 어떻게 해석할지, 언제 탐색을 멈출지를 스스로 판단해야 하는 어려운 과제다. 기존 연구들은 툴 사용과 추론을 결합한 학습(ReAct 계열), 정적/실시간 웹 검색 기반 RL, 하이퍼링크·지식 그래프를 이용한 어려운 질문 합성 등으로 발전해왔지만, 자연 발생한 웹 질문은 학습에 너무 쉬운 경우가 많고, 벤치마크 간 성능 차이가 실제 정책(policy) 능력이 아니라 추론 시점의 컨텍스트 관리(context management, CM) 전략 차이에서 비롯되는 경우가 많다는 문제가 있었다. 이 논문은 이 두 문제(데이터 난이도, CM에 의한 성능 왜곡)를 동시에 다룬다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>웹 그래프 하이퍼링크 구조에서 다중 홉 질문을 역구성(reverse-construct)하고, 정답이 아닌 모든 개체명을 서술적 표현으로 재작성하여 문자열 매칭으로 답을 찾을 수 없게 만드는 완전 LLM 기반 데이터 파이프라인</li>
+<li>참조 모델이 폐쇄형(closed-book)에서는 실패하지만 증거가 주어지면 성공하는 질문만 채택하는 이중 기준(난이도·해결가능성) 검증</li>
+<li>궤적(trajectory) 수준 필터링(정확성, 퇴화, 검색 깊이)과 턴(turn) 수준 필터링(데이터로부터 유도한 루브릭을 사용하는 LLM 판정)의 2단계 필터링을 거친 SFT</li>
+<li>실시간 웹 검색에 대한 강화학습(RL)을 훈련 클러스터 내부에 보상 판정자와 관찰 요약기를 함께 배치하여 수행하고, 긴 롤아웃을 요청 단위로 중단·재개하는 부분 롤아웃(partial rollout) 기법 적용</li>
+<li>SFT와 RL을 반복 교차시키는 "SFT-RL climbing": 각 RL 라운드에서 가장 어렵고 효율적인 성공 궤적을 다음 SFT 라운드에 되먹임하는 자기-페이스(self-paced) 커리큘럼</li>
+<li>컨텍스트 관리(CM) 유무를 모두 보고하는 평가 프로토콜을 도입해, 정책 자체의 능력과 추론 시점 하네스의 기여를 분리</li>
+</ul>
+<h2>방법론</h2>
+<p>데이터 파이프라인은 웹 페이지를 노드, 하이퍼링크를 엣지로 하는 방향 그래프를 구성한 뒤, 시드 페이지와 그 외부 링크로 이루어진 서브그래프에서 핵심 개체와 관계로 이루어진 압축된 "개체 그래프"를 추출한다. 이 그래프 위에서 최소 N개의 관계를 거쳐야 답에 도달하는 질문을 생성하고, 정답을 제외한 모든 개체명을 고유하게 식별 가능한 서술적 표현으로 치환(anchor abstraction)해 단순 검색으로 답을 찾을 수 없게 만든다. 이렇게 만든 질문은 참조 모델이 도구 없이는 못 풀지만 그래프가 주어지면 유일한 정답으로 풀 수 있는 경우에만 채택된다.</p>
+<p>훈련은 두 단계로 진행된다. 먼저 강한 교사 모델이 ReAct 방식(추론-도구호출-관찰 반복)으로 각 질문을 풀어 궤적을 생성하면, 압축비 기반 퇴화 탐지(반복 루프 등)와 정확성 판정을 거친 뒤(coarse filtering), 데이터 유도 루브릭을 사용하는 LLM 판정자가 개별 턴 단위로 불필요하거나 잘못된 턴을 최대 10%까지 마스킹하는(fine filtering) 과정을 거쳐 SFT 데이터셋을 구성한다. 이후 실시간 검색에 대해 그룹 상대 정책 경사(group-relative policy gradient) 방식의 RL을 수행하며, 자체 In-house 모델(Qwen3.5-397B-A17B)을 훈련 클러스터 내부에서 보상 판정자 겸 관찰 요약기로 동시에 서빙한다. 긴 롤아웃의 긴 꼬리(long tail) 문제를 완화하기 위해 요청 단위로 미완료 세션을 중단하고 다음 스텝에서 이어받는 부분 롤아웃 방식을 사용하며, 서로 다른 정책 가중치에서 생성된 프리픽스가 섞이는 문제는 절단 중요도 샘플링(truncated importance sampling)으로 보정한다. 마지막으로 각 RL 라운드에서 통과율이 0~50% 사이인(풀 수는 있지만 아직 불안정한) 질문 중 성공한 궤적 가운데 가장 짧은 것을 골라 다음 SFT 라운드의 학습 데이터로 되먹이는 반복(climbing) 절차를 사용한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Qwen3.6-35B-A3B, Qwen3.5-397B-A17B를 각각 기반으로 한 Iris-mini(35B), Iris-pro(397B)를 BrowseComp, BrowseComp-ZH, DeepSearchQA, HLE(텍스트 전용) 네 가지 벤치마크에서 평가했다. 모든 벤치마크는 동일한 도구셋, 컨텍스트 한도, 판정 절차 하에서 CM(discard-all 전략) 유무 두 가지 설정으로 보고된다.
+- CM 적용 시: 30~35B급에서 Iris-mini는 BrowseComp 82.2, BrowseComp-ZH 84.8, HLE 52.3으로 동급 최고 성능(XYZ-Aquila-mini 대비 BrowseComp +3.4점); DeepSearchQA(86.9)는 XYZ-Aquila-mini(89.5)보다 낮음
+- ~400B급에서 Iris-pro는 BrowseComp 88.6, DeepSearchQA 92.9, HLE 56.4로 4개 중 3개 벤치마크 최고, BrowseComp-ZH는 XYZ-Aquila-pro와 85.1로 동률
+- CM 미적용(w/o) 상태에서도 Iris-mini/pro가 FORT-Searcher, OpenSeeker-v2, REDSearcher 등 기존 공개 결과를 능가해, 성능 우위가 CM 전략만이 아니라 정책 자체의 검색 능력에서 비롯됨을 보임
+- CM의 효과는 벤치마크·모델 크기에 따라 크게 달라짐(Iris-mini는 BrowseComp에서 최대 +21.2점, HLE에서는 +9.2점 수준); 이는 지식 위주인 HLE보다 장기 검색이 필요한 BrowseComp류 과제에서 컨텍스트 소진이 더 큰 병목이기 때문으로 분석
+- 부록에서는 BrowseComp-ZH 문제의 정답 주석이 원작(왕좌의 게임)과 불일치하는 사례를 제시하며 벤치마크 품질 문제도 논의</p>
+<h2>한계점</h2>
+<p>논문은 최상위 프론티어 모델(Claude Fable 5, GPT-5.6 Sol, Kimi-K3 등) 대비 여전히 성능 격차가 있음을 인정하며, 이를 향후 과제로 남긴다고 명시했다. 또한 이 보고서를 "초기 탐색"으로 규정하고, 벤치마크 성능이 에이전트의 전체 능력 중 일부만을 포착한다는 점, retry와 같은 공격적인 추론 시점 전략은 추가 추론 비용을 수반한다는 점을 명시적으로 언급했다.</p>
+<h2>시사점</h2>
+<p>이 연구는 (1) 컨텍스트 관리가 검색 에이전트 벤치마크 점수에 크게 기여하지만 이를 분리해 보고하지 않으면 시스템 간 공정한 비교가 어렵다는 방법론적 문제를 제기하고, (2) 웹 그래프 기반 질문 합성과 SFT-RL 반복 교차 학습이 상대적으로 작은 모델(35B)도 1T급 모델에 근접한 검색 성능을 내도록 만들 수 있음을 보인다. 또한 검색으로 학습된 데이터와 모델이 일반 도구 사용(BFCL, τ-bench)이나 사무 작업(OfficeQA, APEX) 등 검색과 무관한 영역에도 전이된다는 관찰은, "검색"이 수직 특화 능력이 아니라 불완전한 정보 하에서 행동하는 에이전트의 원자적(atomic) 능력일 수 있다는 시사점을 제공한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.04304" target="_blank" rel="noopener">huggingface.co/papers/2609.04304</a> · 2026-09-08</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

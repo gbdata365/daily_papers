@@ -1,0 +1,119 @@
+<meta charset="UTF-8">
+<title>드롭아웃을 버리지 마라</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#8 · Daily Papers 2026-09-08</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 14</span>
+    </div>
+    <h1 class="article-title">Don't Drop Dropout: Optimizing Layer Sparsity for Efficient LLM Training and Inference</h1>
+    <p class="article-title-ko">드롭아웃을 버리지 마라: 효율적인 LLM 학습과 추론을 위한 레이어 희소성 최적화</p>
+    <p class="article-sub">레이어 드롭아웃(층 단위 확률적 스킵)의 스케일 파라미터·분포·시간 스케줄·옵티마이저 하이퍼파라미터를 체계적으로 최적화하면, 대규모 LLM 사전학습에서도 학습 FLOPs를 최대 25% 절감하면서 검증 손실을 유지 또는 개선하고, 조기 종료(early exit)·레이어 스킵·자기추측 디코딩 등 추론 최적화에서 최대 1.5배의 속도 향상을 무손실로 얻을 수 있음을 2,400여 회의 학습 실험으로 입증한 연구.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.05275" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.05275" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Don't Drop Dropout: Optimizing Layer Sparsity for Efficient LLM Training and Inference</li>
+<li><strong>저자</strong>: Mostafa Elhoushi, Alex Pretko, Nolan Dey 등 Cerebras Systems 및 MBZUAI 소속 연구진</li>
+<li><strong>출처</strong>: arXiv:2609.05275v1 [cs.AI] (2026년 9월 4일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.05275">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>레이어 드롭아웃(층 단위 확률적 스킵)의 스케일 파라미터·분포·시간 스케줄·옵티마이저 하이퍼파라미터를 체계적으로 최적화하면, 대규모 LLM 사전학습에서도 학습 FLOPs를 최대 25% 절감하면서 검증 손실을 유지 또는 개선하고, 조기 종료(early exit)·레이어 스킵·자기추측 디코딩 등 추론 최적화에서 최대 1.5배의 속도 향상을 무손실로 얻을 수 있음을 2,400여 회의 학습 실험으로 입증한 연구.</p>
+<h2>배경 및 문제의식</h2>
+<p>레이어 드롭아웃(Stochastic Depth)은 과거 비전 트랜스포머와 초기 트랜스포머에서 학습 속도 향상, 정확도 개선, 제로샷 레이어 프루닝 강건성을 제공하는 것으로 알려졌으나, 모델과 데이터셋 규모가 커지면서 (활성화) 드롭아웃 전반이 최신 LLM 사전학습 레시피에서 사실상 사라졌다. 단일 에폭으로 방대한 데이터를 학습하는 현대 LLM에서는 고전적 과적합이 거의 발생하지 않고, 일부 연구는 활성화 드롭아웃이 오히려 성능을 저해한다고 보고했다. 그러나 이런 성능 저하가 근본적 한계 때문인지, 아니면 단지 스케줄이나 하이퍼파라미터가 최적화되지 않았기 때문인지를 규명한 포괄적 연구는 없었다. 저자들은 "레이어 드롭아웃을 현대 대규모 LLM 학습에 써야 하는가, 쓴다면 어떻게 구성해야 하는가"라는 근본 질문을 제기한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>압축-정확도 트레이드오프 개선</strong>: 적절히 구성된 레이어 드롭아웃은 학습 FLOPs를 줄이면서도 밀집(dense) 베이스라인과 경쟁하거나 이를 능가하는 검증 손실을 달성</li>
+<li><strong>결합 최적화 프레임워크</strong>: 드롭아웃 구성·스케줄·옵티마이저 하이퍼파라미터 간의 핵심 상호작용을 규명해 선행 연구에서 관찰된 성능 저하를 완화</li>
+<li><strong>깊이 탄력적 추론(Depth-Elastic Inference)</strong>: 평균 학습 드롭아웃 비율이 재학습 없는 조기 종료·레이어 스킵에 대한 제로샷 강건성을 예측함을 발견</li>
+<li><strong>스케일링 분석과 모범 사례 제시</strong>: 깊이 방향으로 증가하는 분포와 시간에 따라 감소하는 스케줄을 결합한 구성을 권장하며, 이를 통해 학습 FLOPs 최대 25% 절감과 추론 최대 1.5배 속도 향상을 달성</li>
+</ul>
+<h2>방법론</h2>
+<p>레이어 드롭아웃은 각 트랜스포머 블록(어텐션 잔차, FFN 잔차)을 학습 스텝마다 베르누이 마스크로 확률적으로 건너뛰는 방식이다. 저자들은 먼저 학습 시 스케일 인자 r_train으로 1/ρ(ρ=1-드롭아웃 비율, 즉 층 밀도)를 사용하는 것이 CompleteP의 "최대 잔차 스트림 업데이트" 원칙을 만족시켜 서로 다른 드롭아웃 비율 간 학습률·배치 크기·가중치 감쇠 등 하이퍼파라미터 전이를 가능하게 함을 좌표 점검(coordinate check)으로 확인했다. 이후 세 가지 축을 체계적으로 탐구한다: (1) <strong>입도(granularity)</strong> — 어텐션·FFN을 통째로 함께 드롭하는 Layer Dropout이 따로 드롭하는 Sub-Layer Dropout보다, 그리고 시퀀스 단위 드롭이 배치 단위 드롭보다 더 우수함을 확인; (2) <strong>층별 분포</strong> — 균일(Uniform), 층이 깊어질수록 비율이 증가하는 ILD(Increasing Layer Distribution), 격층 적용하는 ALD(Alternating Layer Distribution)를 비교; (3) <strong>시간 스케줄</strong> — 일정(Constant), 증가(ITS), 감소(DTS) 스케줄을 비교. 이 모든 실험은 20 토큰/파라미터(TPP)의 연산 최적 예산 하에서 수행되었다.</p>
+<p>추론 단계에서는 사전학습된 가중치를 그대로 두고 (1) 제로샷 정적 조기 종료, (2) 중간 레이어 스킵, (3) Balcony 프레임워크 기반 조기 종료 어댑터(사후학습으로 KL 자기증류 손실 학습), (4) Draft &amp; Verify 방식의 자기추측 디코딩(유전 알고리즘·언덕 오르기·모의 담금질 등으로 초안 레이어 부분집합 탐색)을 각각 검증했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>271M~8.2B 파라미터, 최대 160B 토큰 규모에서 2,400회 이상의 학습 실험을 수행했다(모든 사전학습은 Cerebras CS-3 시스템에서 진행). 주요 결과:
+- <strong>입도</strong>: 271M/503M 모델에서 Layer Dropout이 Sub-Layer Dropout 대비 검증 손실 저하를 완화(예: 503M에서 손실 증가율 2.84% vs 3.03%); 시퀀스 단위가 배치 단위보다 일관되게 우수
+- <strong>분포</strong>: 동일 FLOPs 절감(예: 20%) 조건에서 비균일 분포(ILD, ALD)가 균일 분포보다 항상 우수했고, 모델이 커질수록 ILD의 우위가 더 커짐
+- <strong>시간 스케줄</strong>: 감소 스케줄(DTS)이 일정·증가 스케줄보다 모든 규모에서 일관되게 최고 성능을 보였으며, 503M·906M에서는 ILD+DTS 조합이 5% FLOPs 절감 상태에서 밀집 베이스라인보다 오히려 손실이 더 낮게 나타남(최초 사례)
+- <strong>추론 이득</strong>: 드롭아웃으로 학습된 모델은 조기 종료·레이어 스킵에서 밀집 모델보다 항상 낮은 손실을 유지했고(제로샷 탄력성), 사후 조기 종료 어댑터(Balcony) 및 자기추측 디코딩에서도 드롭아웃 학습 모델이 유리했다(906M 기준 최대 1.40배 속도 향상)
+- <strong>대규모 실험</strong>: 1.8B(드롭아웃 최대 0.6, FLOPs 절감 15%), 3.9B(최대 0.8, 20%), 8.2B(최대 0.99, 25%) 모델에서 밀집 베이스라인과 동등하거나 더 나은 검증 손실을 유지했으며, 3.9B 모델은 자기추측 디코딩에서 1.54배 속도 향상(밀집 베이스라인은 1.02배에 그침)을, 격층 스킵 시 교차엔트로피 손실이 6.446(밀집)에서 2.129(드롭아웃)로 크게 개선됨을 보임
+- 다운스트림 벤치마크(BBH, PIQA, HellaSwag 등)에서도 드롭아웃 학습 모델이 밀집 모델과 대체로 대등한 성능을 유지</p>
+<h2>한계점</h2>
+<p>논문이 명시한 한계로는: 공격적으로 높은 드롭아웃 비율에서는 최적 학습률·가중치 감쇠가 여전히 감소하는 경향이 있어 하이퍼파라미터 전이가 완전하지 않음; 트랜스포머 블록 단위 이외의 다른 입도(어텐션 헤드·뉴런 단위)는 검토하지 않음; Mixture-of-Depths 등 학습된 깊이 최적화 기법과의 비교는 수행하지 않음; 8.2B 이상 규모나 MoE·비트랜스포머 아키텍처로의 일반화는 검증하지 않음; 최대 드롭아웃 비율에 대한 스케일링 법칙은 아직 정립하지 못함; TPP 증가에 따른 추론 이득의 스케일링도 정량화하지 않음.</p>
+<h2>시사점</h2>
+<p>이 연구는 레이어 드롭아웃이 단순한 정규화 기법이 아니라, 학습 비용 절감과 추론 시 유연한 깊이 조정(elastic depth)을 동시에 제공하는 구조적 희소성 메커니즘임을 대규모로 입증했다. 특히 아키텍처 변경이나 추가 손실 없이 표준 사전학습 파이프라인에 바로 적용 가능하다는 점에서, 최신 LLM 학습 레시피에 레이어 드롭아웃을 재도입할 실용적 근거를 제공하며, 향후 폭·양자화 비트 폭 등 다른 차원으로 "점진적 모델 성장" 전략을 확장하는 연구 방향을 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.05275" target="_blank" rel="noopener">huggingface.co/papers/2609.05275</a> · 2026-09-08</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

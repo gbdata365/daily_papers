@@ -1,0 +1,126 @@
+<meta charset="UTF-8">
+<title>에노키</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#6 · Daily Papers 2026-09-08</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 16</span>
+    </div>
+    <h1 class="article-title">Enoki: Efficient Multi-Level Hallucination Detection</h1>
+    <p class="article-title-ko">에노키: 효율적인 다중 수준 환각 탐지</p>
+    <p class="article-sub">텍스트에 고정(anchor)된 오픈 정보 추출(Open IE) 사실을 공통 중간 표현으로 사용해, 별도의 정렬 단계 없이도 클레임(claim) 수준 검증과 스팬(span) 수준 환각 위치 파악을 동시에 수행하는 다중 수준 환각 탐지 프레임워크 Enoki를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.00581" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.00581" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Enoki: Efficient Multi-Level Hallucination Detection</li>
+<li><strong>저자</strong>: Elisei Rykov, Timur Ionov, Nikolay Ivanov, Maksim Savkin, Maksim Makarenko, Alexander Panchenko, Vasily Konovalov, Julia Belikova</li>
+<li><strong>출처</strong>: arXiv:2609.00581v2 [cs.CL] (2026년 9월 4일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음 (코드/데이터셋 저장소: https://github.com/s-nlp/Enoki)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.00581">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>텍스트에 고정(anchor)된 오픈 정보 추출(Open IE) 사실을 공통 중간 표현으로 사용해, 별도의 정렬 단계 없이도 클레임(claim) 수준 검증과 스팬(span) 수준 환각 위치 파악을 동시에 수행하는 다중 수준 환각 탐지 프레임워크 Enoki를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>대형 언어모델(LLM)은 유창하지만 근거 없는 진술(환각, hallucination)을 생성하는 경우가 많아 고위험·검색 기반 응용에서 신뢰성 확보가 중요한 과제다. 환각 탐지는 보통 두 개의 분리된 수준에서 연구되어 왔다. 클레임 수준 방법(FActScore, SAFE, VeriScore 등)은 생성된 답변을 사실 단위로 분해하고 각 단위를 독립적으로 검증해 해석 가능한 판정을 제공하지만, 분해 품질에 크게 의존하며 논항·수식어·시제 조건 등이 누락되면 원문과 다른 명제를 검증하게 되는 문제가 있다. 스팬 수준 방법(RAGTruth, MuSHROOM, HalluEntity 등을 대상으로 한 lettucedetect, haldetect 등)은 근거 없는 텍스트 조각을 정확히 짚어내 검수·수정에 유용하지만, 스팬 라벨만으로는 어떤 사실적 구조가 검증되었는지 드러나지 않는다. 두 관점을 하나로 묶으려면 보통 답변을 클레임으로 분해→각각 검증→미지지 클레임을 원문 스팬에 재정렬하는 파이프라인이 필요한데, 이는 비용이 크고 분해·검증·정렬 각 단계에서 오류가 누적되며 별도의 클레임-스팬 정렬 모듈이 필요하다는 근본적인 간극을 남긴다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>텍스트에 고정된 관계형 사실(fact)이 검증과 스팬 위치 파악 모두에 대한 공유 표현이 되는, 다중 수준 환각 탐지의 텍스트-앵커 OpenIE 정식화를 제시.</li>
+<li>엄격한 사실 구성, 점진적(incremental) 정제, LLM 기반·인코더 기반·규칙 기반 세 종류의 추출 백엔드를 아우르는 모듈형 환각 탐지 프레임워크 Enoki를 제안.</li>
+<li>클레임 수준 검증과 스팬 수준 위치 파악이 정렬되어 있고, 장문·전체 문서 근거를 갖춘 대규모 이중 세분화(dual-granularity) 데이터셋 EnokiQA(라벨 있는 예제 3,990개, 라벨 없는 예제 19,594개)를 공개.</li>
+</ul>
+<h2>방법론</h2>
+<p>Enoki 파이프라인은 사실 추출(fact extraction)과 사실 검증(fact verification), 스팬 매핑(span mapping)의 세 단계로 구성된다.</p>
+<ol>
+<li><strong>사실 추출</strong>: 생성된 답변의 각 문장에서 (주어, 술어, 목적어) 형태의 스키마 없는 OpenIE 스타일 관계형 트리플을 추출한다. 일반 OpenIE와 달리 Enoki는 "텍스트 앵커링" 제약을 부과해, 환각 판정에 관련된 논항이 항상 답변 원문의 특정 스팬에 정렬된 채로 유지되도록 한다. 또한 "점진적 사실 구성"을 핵심 요소로 도입해, 관련된 사실들을 자기완결적인 단계별 그룹으로 묶고 각 단계가 아주 작은 정보 조각(예: 수식어, 세부 날짜)을 추가하도록 함으로써, 지지되는 대략적 사실은 유지한 채 지지되지 않는 세부 정제만 정확한 스팬으로 국지화할 수 있게 한다. 세 가지 백엔드가 제공된다.</li>
+<li><strong>Enoki-LLM</strong>: CycleOIE의 추출 프롬프트를 확장해 점진적 사실 분해를 유도하는 세 가지 추가 지침을 더한 LLM 기반 추출기.</li>
+<li><strong>Enoki-Rule</strong>: spaCy 의존 구문 분석 결과에 35개의 규칙을 적용하는 결정론적·훈련 불필요 방식으로, 에이전트 보조 반복 정제 루프(제안→자동 채점 게이트→반영)를 통해 개발됨.</li>
+<li><strong>Enoki-Encoder</strong>: OpenIE6의 Iterative Grid Labeling(IGL) 구조를 기반으로 하되 인코더를 ModernBERT-large로 교체하고, 원래의 행(row) 단위 교차 엔트로피 대신 DETR 스타일의 집합 예측 손실(헝가리안 매칭 기반 순열 불변 손실)을 사용해 점진적 추출에서 행 순서가 불안정한 문제를 해결한 학습 가능한 인코더 기반 백엔드.</li>
+<li><strong>사실 검증</strong>: 추출된 각 트리플을 텍스트 가설로 변환해 NLI(자연어 추론) 스타일 검증기(ModernBERT-large-nli 또는 대안으로 LLM 검증기 Qwen3.5-9B)로 참조 근거와 대조 채점한다. 환각 확률은 모순(contradiction)과 중립(neutral) 라벨의 확률 합으로 정의되며, 이 값이 0.5를 넘으면 해당 트리플을 환각으로 판정한다. 근거 문맥이 모델의 최대 입력 길이를 넘는 경우 한 문장 겹침을 둔 조각들로 나누어 각 조각에 대해 사실을 평가하고, 조각들 중 최댓값 함의 점수를 최종 점수로 취하는 청크 단위 최대 집계를 사용한다.</li>
+<li><strong>스팬 매핑</strong>: 지지되지 않는 사실은 답변 원문으로 다시 투영되어, 환각과 관련된 논항 스팬(또는 점진적 정제에서 새로 추가된 델타 부분)이 국지화된 환각 스팬으로 표시된다. 이 방식은 하나의 사실 그룹 내에서 지지되는 대략적 사실과 지지되지 않는 정제를 구분할 수 있게 해준다.</li>
+</ol>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li><strong>EnokiQA 데이터셋</strong>: 영어 위키백과에서 구축한 장문 QA 환각 탐지 데이터셋으로, 다른 세분화 벤치마크(RAGTruthQA, PsiloQA, MuSHROOM, FactCheckBench, ANAH, HalluEntity)와 비교해 (1) 클레임-스팬 이중 세분화, (2) 다단락 답변·전체 문서 근거를 포함한 장문 설정, (3) 라벨 3,990개·비라벨 19,594개라는 규모를 갖춘다. GPT-OSS-120B로 장문 사실 질문을 생성하고 7개의 지시 튜닝 LLM이 문맥 없이 답하게 한 뒤, 질문·답변·길이·근접 중복 필터링을 거쳐 구성했다. 라벨은 Enoki-LLM(GPT-OSS-120B)으로 점진적 트리플을 추출하고 Qwen3.5-9B NLI 검증기로 전체 위키백과 문서와 대조해 자동 주석했으며, 사람 100개 표본 검증에서 문장 수준 F1 0.867, 스팬 수준 F1 0.569를 달성해 자동 파이프라인의 신뢰도를 확인함.</li>
+<li><strong>엔티티 수준 탐지(HalluEntity)</strong>: Enoki-LLM이 AUROC 79.70, AUPRC 55.09로 최고 성능을 기록하며, 기존 최강 탐지기 대비 AUPRC +15.3 향상. Enoki-Rule(AUROC 76.41)과 Enoki-Encoder(AUROC 70.47)도 표준 OpenIE 베이스라인 대비 우수한 정밀도 지향 성능을 보임.</li>
+<li><strong>스팬 수준 위치 파악(MuSHROOM, RAGTruth, PsiloQA)</strong>: Span Coverage F1 기준 Enoki-LLM이 MuSHROOM(52.07)과 PsiloQA(71.15)에서 최고 성능을 기록해, 기존 최강 대비 MuSHROOM에서 Span Coverage F1 +8.0 향상. RAGTruth에서는 RAGTruth로 직접 학습된 방법(FT on RAGTruth, 42.20)이 가장 강했지만 Enoki-LLM(37.32)도 경쟁력을 유지.</li>
+<li><strong>문장 수준 분류(FactCheckBench, ANAH, RAGTruth)</strong>: 결과가 더 혼재되어 있으며, 분해 없이 직접 판정하는 NLI나 강력한 LLM 기반 방법이 경쟁력을 유지하지만 Enoki는 국지화가 필요할 때 구조화된 사실도 함께 제공한다는 이점을 가짐.</li>
+<li><strong>효율성</strong>: Enoki-Encoder는 RAGTruth 기준 0.13초에 F1 69.1%를 달성해 경쟁 베이스라인보다 4~10배 빠르고, 다단계 LLM 파이프라인보다 최대 두 자릿수(약 100배) 빠름. LLM 기반 추출을 규칙·인코더 기반으로 대체해도 대부분의 성능 이득을 유지하면서 추론 비용을 크게 낮출 수 있음을 확인.</li>
+<li><strong>어블레이션</strong>: (1) 헝가리안 매칭을 도입한 순열 불변 손실이 원래의 행 단위 손실보다 세 벤치마크 모두에서 스팬 수준 성능을 개선(예: MuSHROOM 41.02→46.96). (2) GPT-OSS-120B 대신 GPT-5.4를 분해 백엔드로 쓰면 소폭 향상(AUROC +1.85, AUPRC +1.90)에 그쳐, 문장 수준 OpenIE 분해가 최상위 독점 LLM에 크게 의존하지 않음을 시사. (3) FastCoref 기반 선택적 탈맥락화(decontextualization) 전처리는 RAGTruth·ANAH처럼 문장 간 참조가 많은 데이터셋에는 도움이 되지만, HalluEntity·PsiloQA에는 중립적이거나 약간 해로워 기본 옵션으로 채택하지 않음.</li>
+</ul>
+<h2>한계점</h2>
+<p>저자들이 논문에서 직접 밝힌 한계는 다음과 같다: (1) 검증이 추출된 사실에 대해서만 이루어지므로 전체 성능이 분해 단계의 커버리지와 세분화 수준에 의존하며, 추출기가 중요한 명제를 누락하거나 서로 다른 사실을 병합하거나 지나치게 거친 논항 스팬을 만들면 검증기가 누락된 구조를 복원할 수 없다. (2) 스팬 위치 파악은 점진적 그룹 내 관련 사실들을 비교하는 방식에 의존하므로, 정제가 대체로 중첩(nested)될 때는 잘 작동하지만 하나의 사실 내 여러 부분이 동시에 미지지이거나 오류들이 비국소적으로 상호작용할 때는 정확도가 떨어져, 미지지 사실 자체는 올바르게 식별하면서도 사람이 라벨링한 최소 스팬보다 더 거친 스팬을 낼 수 있다. (3) 현재 구현은 주로 문장 단위로 답변을 분해하며, 선택적 탈맥락화가 일부 불충분 지시성 문제를 줄일 수는 있지만 실험에서 일관된 개선을 보이지 않아, 공지시(coreference)·생략·담화 수준 귀속과 같은 문장 간 현상은 부분적으로만 처리된다. (4) Enoki는 검증기에 대해 모듈적이지만 최종 판정은 검증기의 보정(calibration)과 견고성에 좌우되므로, 강한 검증기는 추출 잡음을 어느 정도 견딜 수 있지만 취약하거나 보정이 나쁜 검증기는 사실이 잘 구성되어 있어도 실패할 수 있다.</p>
+<h2>시사점</h2>
+<p>이 연구는 텍스트에 고정된 사실 구조를 클레임 검증과 스팬 위치 파악의 공통 표현으로 사용함으로써, 별도의 클레임-스팬 정렬 단계 없이도 해석 가능성과 정밀한 국지화라는 두 마리 토끼를 동시에 잡을 수 있음을 보여준다. 또한 LLM·인코더·규칙 기반이라는 세 가지 추출 백엔드를 하나의 통합 인터페이스로 제공해 정확도-효율성 트레이드오프를 유연하게 선택할 수 있게 함으로써, 실서비스 환경에서 저비용·저지연 환각 탐지를 배치할 수 있는 실용적 경로를 제시한다. 공개된 EnokiQA 데이터셋은 장문·이중 세분화·대규모라는 특성으로 향후 환각 탐지 연구의 학습 및 평가 자원으로 활용될 수 있으며, 헝가리안 매칭 기반 순열 불변 학습 목적함수는 점진적/다단계 구조 예측이 필요한 다른 시퀀스 라벨링 과제에도 응용될 수 있는 일반적인 기법으로 제시된다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.00581" target="_blank" rel="noopener">huggingface.co/papers/2609.00581</a> · 2026-09-08</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

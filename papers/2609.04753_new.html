@@ -1,0 +1,115 @@
+<meta charset="UTF-8">
+<title>사고연쇄의 표면 너머</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#9 · Daily Papers 2026-09-08</span>
+      <span class="cat-tag">해석연구</span>
+      <span class="upvote-tag">▲ 10</span>
+    </div>
+    <h1 class="article-title">Beneath the Surface of Chains-of-Thought: A Mechanistic Interpretation of Reasoning Operations in LLMs</h1>
+    <p class="article-title-ko">사고연쇄의 표면 너머: LLM 추론 연산에 대한 기계적 해석</p>
+    <p class="article-sub">추론 LLM이 생성하는 사고연쇄(Chain-of-Thought) 속 텍스트로 명시된 다양한 추론 연산(정보 추출, 문제 분해, 공식 회상, 연역 등)이 모델의 은닉 표현 공간에서도 서로 분리 가능한 기하학적 구조로 인코딩되어 있음을 여러 모델·데이터셋에 걸쳐 실증한 해석가능성(interpretability) 연구.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.04753" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.04753" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Beneath the Surface of Chains-of-Thought: A Mechanistic Interpretation of Reasoning Operations in LLMs</li>
+<li><strong>저자</strong>: Seogyeong Jeong (KAIST), Jaehui Hwang, Dongyoon Han, Geonmo Gu, Taekyung Kim (NAVER AI Lab), Alice Oh (KAIST) 등 KAIST 및 NAVER AI Lab 소속 연구진</li>
+<li><strong>출처</strong>: arXiv:2609.04753v1 [cs.CL] (2026년 9월 4일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/naver-ai/beneath-cot">GitHub</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.04753">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>추론 LLM이 생성하는 사고연쇄(Chain-of-Thought) 속 텍스트로 명시된 다양한 추론 연산(정보 추출, 문제 분해, 공식 회상, 연역 등)이 모델의 은닉 표현 공간에서도 서로 분리 가능한 기하학적 구조로 인코딩되어 있음을 여러 모델·데이터셋에 걸쳐 실증한 해석가능성(interpretability) 연구.</p>
+<h2>배경 및 문제의식</h2>
+<p>최근 추론 지향 LLM들은 최종 답의 정확도뿐 아니라 추론 과정 자체를 강화학습이나 탐색 알고리즘으로 최적화하는 방향으로 학습되고 있다. 그런데 이런 학습이 모델 내부에 어떤 구조를 만들어내는지는 잘 알려져 있지 않다. 선행 연구는 추론이 연속적인 잠재 역학을 수반하고, 은닉 표현이 정답 정확성과 관련된 신호를 담고 있음을 보였지만, CoT 텍스트에서 명시적으로 구분되는 서로 다른 추론 연산들(예: "문제에서 조건을 추출한다" 대 "공식을 회상한다")이 표현 공간에서 어떻게 조직되는지, 그리고 이 조직이 토큰이나 문제를 넘어 일반화되는지는 규명되지 않았다. 저자들은 Pólya의 문제해결 4단계 틀(이해-계획-실행-검토)을 바탕으로 추론 연산의 분류 체계를 세우고, 이 연산들이 실제로 모델 내부의 기하학적 구조와 대응하는지를 체계적으로 검증한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>Pólya의 문제해결 틀에 기반해 추출(Extraction), 직접매핑(Direct mapping), 분해(Decomposition), 회상(Recall), 연역(Deduction), 대수적 조작(Algebraic manipulation), 산술 계산(Arithmetic computation), 최종답(Final answer) 등 8개 핵심 추론 연산 분류 체계를 정의하고 GPT-5로 자동 주석(사람 검증으로 신뢰도 확인, Cohen's κ=0.715)</li>
+<li>held-out(보류) 은닉 표현에서 추론 연산들이 선형판별분석(LDA) 기반 프로브로 유의미하게 분리 가능하며, 분리도가 중간 층에서 최고조에 달함을 발견</li>
+<li>이 분리가 어휘적(표면 단어)·위치적 요인만으로는 설명되지 않음을 텍스트 전용 분류기, 어휘 매칭 비교, 경쟁 연산 어휘 부분집합, 숫자/수식 밀도 통제 등 다층적 대조 실험으로 확인</li>
+<li>층이 깊어질수록 연산 정렬 신호가 소수의 토큰에 집중되던 것에서 스팬(구간) 전체로 분산되는 양상, 그리고 동일한 표면 토큰도 주변 문맥의 연산에 따라 다르게 표현됨을 규명</li>
+<li>어텐션 마스킹 개입 실험으로 청크 시작 시점의 연산 정렬 표현이 선행 추론 문맥에 인과적으로 의존함을 입증</li>
+<li>사실 오류가 있는 실행에서도 연산 기하 구조가 유지되되 다소 약화됨을 보여, 연산의 기능적 정체성과 실행의 사실적 정확성이 부분적으로 분리됨을 시사</li>
+</ul>
+<h2>방법론</h2>
+<p>DAPO-Math-17K(수학 문제)와 TheoremQA(정리 기반 문제) 두 데이터셋에서 Qwen2.5-7B, Qwen3-8B, Gemma4-31B 세 추론 LLM이 생성한 정답 응답 500~700개를 확보한 뒤, GPT-5로 각 응답을 8개 연산 라벨의 연속된 토큰 스팬으로 분할한다(사람 7명이 84개 표본을 검증, 다수결 일치율 96.4%, GPT-5와의 일치율 76.2%). 각 스팬에 대해 모든 층에서 은닉 표현을 추출하고(중간 토큰 표현을 주로 사용), L2 정규화 후 PCA(128차원)와 지도학습 LDA를 훈련 스플릿에만 적용해 판별 부분공간을 학습한다. 각 연산 c에 대해 훈련 스팬의 평균과 나머지 평균의 차이를 정규화한 "일대다(one-vs-rest) 연산 벡터" d_c를 정의하고, 보류 스팬의 투영값과 d_c의 내적을 정렬 점수로 사용해 AUROC/AUPRC로 분리도를 평가한다.</p>
+<p>이 분리가 어휘·위치 혼입 효과가 아님을 확인하기 위해 (1) 단어가방/TF-IDF 텍스트 전용 분류기와 비교, (2) 어휘적으로 유사하지만 라벨이 다른 스팬과 어휘는 다르지만 라벨이 같은 스팬을 짝지어 비교, (3) 경쟁 연산과 연관된 어휘가 포함된 스팬에서도 프로브가 여전히 예측력을 유지하는지 검사, (4) 숫자/수식 밀도를 50~75%로 통제한 부분집합에서도 분리도가 유지되는지 확인한다. 또한 스팬 내부 토큰별 정렬 점수의 분산을 층별로 추적해 신호가 소수 토큰에 국한되는지 전체에 분산되는지 살피고, 서로 다른 연산 맥락에서 공통으로 등장하는 표면 토큰(주로 기능어)의 표현이 맥락에 따라 달라지는지 시각화한다. 마지막으로 목표 청크 시작 토큰이 직전 30개 토큰(혹은 직전 청크 전체, 무작위 블록)에 대한 어텐션을 하지 못하도록 마스킹해, 정렬 점수 변화(Δc)를 측정함으로써 선행 문맥의 인과적 기여를 검증한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>세 모델·두 데이터셋에서 일관되게, 8개 연산 모두 최고조 층(peak-layer) 기준 AUROC가 무작위 기준(0.5)을 크게 상회했고 분리도는 중간 층에서 가장 높았다(그림 2). 텍스트 전용 분류기 대비 은닉 표현 프로브의 매크로 AUROC/AUPRC 향상 폭은 모델별로 +0.041~+0.097 / +0.084~+0.193이었다(표 2). 경쟁 연산 어휘가 섞인 적대적 부분집합에서도 매크로 AUROC/AUPRC가 Qwen3-8B 기준 0.919/0.848로 견고했다. 스팬 내부 분산 분석 결과 초기 층에서는 정렬 신호가 소수 토큰에 국한되나 중간 층으로 갈수록 스팬 전체로 분산되는 패턴이 세 모델 모두에서 관찰되었다(그림 4). 공유 토큰 분석에서는 동일 토큰이라도 층이 깊어질수록 주변 연산 방향으로 점점 더 정렬됨을 확인했다(그림 5). 어텐션 마스킹 개입에서는 직전 30개 토큰을 가리면 목표 연산 정렬 점수가 유의하게 감소했으며, 감소폭은 무작위 블록 마스킹 &lt; 직전 청크 마스킹 &lt; 직전 토큰 마스킹 순으로 커졌다. 사실 오류가 포함된 잘못된 추론 궤적에서도 연산 기하는 유지되지만(평균 풀링 기준 매크로 AUROC/AUPRC 0.955/0.877 대 정상 스팬 0.971/0.901), Deduction과 Arithmetic computation에서 특히 유의한 저하가 나타났다. 추가로 Llama-3-8B, GPQA-Diamond, MATH-500 등 다른 모델·과제로도 프로브가 별도 재학습 없이 일반화됨을 확인했다.</p>
+<h2>한계점</h2>
+<p>논문이 스스로 밝힌 한계로는: 연산 주석이 GPT-5로 생성되고 84개 스팬에 대해서만 사람 검증(경계가 아닌 라벨 위주)이 이루어져 절대적 정답이라기보다 근사적 라벨로 봐야 함; 실험이 수학·정리 기반 추론 과제와 소수의 추론 LLM에 국한되어 상식 추론, 계획, 코드 생성 등 다른 영역이나 다른 아키텍처로의 일반화는 검증되지 않음; 본 연구는 진단적(diagnostic) 성격에 그치며, 학습된 연산 벡터를 이용해 실제로 모델 행동을 개선(오류 탐지, 검증, 디코딩 제어, 활성화 기반 조향 등)하는 개입 실험은 수행하지 않음.</p>
+<h2>시사점</h2>
+<p>이 연구는 LLM이 텍스트로 명시된 추론 연산과 내부 기하학적 조직 사이에 충실한 대응관계를 유지한다는 것을 보여줌으로써, CoT 추론을 텍스트 수준이 아니라 표현 공간 수준에서 해석할 수 있는 새로운 렌즈를 제공한다. 특히 동일 토큰도 맥락에 따라 다른 표현을 가지며 이 표현이 선행 문맥에서 인과적으로 형성된다는 결과는, 향후 추론 실패 탐지, 활성화 기반 개입, 디코딩 시점의 추론 과정 제어 등 실용적 응용으로 이어질 수 있는 기초를 마련한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.04753" target="_blank" rel="noopener">huggingface.co/papers/2609.04753</a> · 2026-09-08</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

@@ -1,0 +1,115 @@
+<meta charset="UTF-8">
+<title>유니메이트</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#10 · Daily Papers 2026-09-08</span>
+      <span class="cat-tag">생성모델</span>
+      <span class="upvote-tag">▲ 10</span>
+    </div>
+    <h1 class="article-title">UniMate: One Unified Model to Animate Diverse Skeletons</h1>
+    <p class="article-title-ko">유니메이트: 다양한 스켈레톤을 애니메이션화하는 통합 모델</p>
+    <p class="article-sub">리깅된 3D 에셋과 텍스트 프롬프트만으로, 별도의 스켈레톤별 미세조정이나 테스트 시점 최적화 없이 사람·동물·곤충·기계 등 이질적인 골격 구조를 하나의 모델로 애니메이션화하는 토폴로지 인식 확산 트랜스포머 UniMate를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.05415" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.05415" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: UniMate: One Unified Model to Animate Diverse Skeletons</li>
+<li><strong>저자</strong>: Linzhan Mou, Jiahui Lei, Zhiyang Dou, Chenyue Cai, Chaoyue Song, Adam Finkelstein, Szymon Rusinkiewicz (Princeton University, UC Berkeley, MIT, Nanyang Technological University 소속 연구진)</li>
+<li><strong>출처</strong>: arXiv:2609.05415v1 [cs.CV] (2026년 9월 4일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://linzhanmou.com/unimate/">https://linzhanmou.com/unimate/</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.05415">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>리깅된 3D 에셋과 텍스트 프롬프트만으로, 별도의 스켈레톤별 미세조정이나 테스트 시점 최적화 없이 사람·동물·곤충·기계 등 이질적인 골격 구조를 하나의 모델로 애니메이션화하는 토폴로지 인식 확산 트랜스포머 UniMate를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>최근 자동 리깅(rigging) 기술의 발전으로 대규모 3D 애니메이션 준비 에셋을 만들 수 있게 됐지만, 그 에셋을 실제로 움직이는 모션 생성은 여전히 병목이다. 기존 학습 기반 애니메이터는 SMPL, SMAL 같은 카테고리별 고정 스켈레톤 템플릿에 의존하거나(토폴로지 제약형), 이를 완화하더라도 추론 시점에 스켈레톤별 미세조정이나 참조 모션을 요구한다(토폴로지 비의존형). 메쉬 기반 방법은 스켈레톤 모델링 자체를 생략하지만 에셋별 값비싼 증류나 정점 단위 변형에 의존해 리그(rig) 기반 파이프라인(선형 블렌드 스키닝, 물리 컨트롤러 등)과 호환되지 않는다. 또한 텍스트-모션 페어 데이터셋은 대부분 사람이나 소수 사족보행 동물에 편중되어 있어, 이질적인 스켈레톤 전반에 걸친 일반화를 학습할 데이터 자체가 부족했다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>임의 위상(topology)의 스켈레톤에 대해 리깅된 3D 에셋과 텍스트 프롬프트만으로 모션을 합성하는 통합 파운데이션 모델 UniMate 제안 (테스트 시점 최적화·스켈레톤별 재학습 불필요)</li>
+<li>Topology-Aware Diffusion Transformer(TADiT) 제안: (1) 관절 쌍 관계와 측지 거리 기반 그래프 인식 어텐션 바이어스, (2) 그래프 라플라시안 스펙트럼으로 RoPE를 임의 운동학적 트리로 일반화한 Spec-RoPE, (3) 정지 자세 스켈레톤에서 어텐션 풀링으로 얻는 전역 토폴로지 조건자를 결합</li>
+<li>13,006개 모션 시퀀스(약 20시간 분량), 수천 개의 서로 다른 리그를 아우르는 UniML3D 데이터셋을 통일된 정규화 및 텍스트 페어링과 함께 구축</li>
+<li>품질·일반화·효율성 면에서 기존 최고 수준 기법을 능가함을 실험으로 입증</li>
+<li>제로샷으로 교차 토폴로지 모션 전이, 인비트위닝(in-betweening), 모션 확장, 텍스트 기반 편집 등 다운스트림 응용을 지원함을 시연</li>
+</ul>
+<h2>방법론</h2>
+<p>UniMate는 리깅된 3D 에셋의 정지 자세 스켈레톤과 텍스트 프롬프트를 입력받아 조건부 플로우 매칭(flow matching)으로 속도장 v_θ를 학습, 가우시안 노이즈에서 유효한 모션 시퀀스를 생성한다. 스켈레톤은 BFS로 정규화된 관절 순서, 정지 자세 위치, 부모-자식 등 관계 행렬, 그래프 거리 행렬, 관절 깊이, 관절명 의미 정보, 그래프 라플라시안 스펙트럼 좌표로 표현되며, 위상 지름(topology diameter)으로 정규화해 크기 차이를 제거한다.</p>
+<p>TADiT는 관절 토큰과 프레임별 모션 토큰을 하나의 통합 토큰 공간에 배치하고, 관절축(joint branch)과 시간축(temporal branch)으로 분리된 어텐션을 번갈아 적용한다. 관절축 어텐션에는 세 가지 토폴로지 인식 장치가 삽입된다: 그래프 인식 어텐션 바이어스는 관절 간 그래프 거리·관계 유형을 학습된 임베딩으로 변환해 어텐션 로짓에 더하며 프레임 수와 무관하게 메모리 비용이 일정하다. Spec-RoPE는 임의 순서를 갖지 않는 운동학적 트리에 대해, 그래프 라플라시안 고유벡터로부터 유도한 스펙트럴 좌표를 SignNet 형태의 학습된 매핑을 통해 회전 각도로 변환함으로써 스펙트럴 좌표상의 이동 불변성과 관절 순열에 대한 등변성을 만족시킨다. 전역 토폴로지 조건자는 학습 가능한 쿼리 토큰이 전체 관절 토큰을 어텐션 풀링해 얻은 고정 크기 요약을 AdaLN-Zero를 통해 모든 트랜스포머 블록에 주입한다. 학습 손실은 플로우 매칭 MSE, SO(3) 매니폴드 상의 측지 회전 손실, 속도 평활화 손실의 가중합으로 구성된다.</p>
+<p>UniML3D 데이터셋은 Truebones, Mixamo, Objaverse-XL 세 출처에서 원시 4D 모션을 수집한 뒤, 단일 트리 가지치기·루트 관절 재정렬·팬텀 관절 제거·정적 클립 제거·비현실적 모션 필터링의 5단계 골격 기반 필터링을 거치고, LLM 기반 관절명 표준화 및 멀티모달 LLM 캡셔닝으로 텍스트를 부여한 뒤, BFS 직렬화·위상 지름 정규화·정준 좌표계 정렬·정지 자세 상대 회전 표현으로 통일된 형식으로 정규화된다. 학습 시에는 롱테일 분포 완화를 위한 제곱근 균형 샘플링과 관절 제거·추가·스켈레톤 풀링·본 길이 왜곡 등 4가지 온라인 증강 기법을 적용한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>8개 블록, 은닉 차원 512의 확산 트랜스포머를 FLAN-T5 텍스트 인코더와 함께 H100 GPU 8개로 하루간 학습했으며 추론은 초당 50프레임으로 수행된다. 토폴로지 인식 모션 생성 비교에서는 텍스트 조건화를 추가로 확장한 AnyTop을 기준선으로 삼아 Truebones의 미공개 스켈레톤 7종(58개 시퀀스)에서 평가한 결과, FID를 2.711에서 0.757로 낮추고 다양성(Diversity)을 8.139에서 9.200으로 높였다. 텍스트 조건 메쉬 애니메이션 비교에서는 AnimateAnyMesh, V2M4 등 스켈레톤 프리 메쉬 애니메이션 기준선 대비 VBench 대부분 지표에서 우세했으며(전체 일관성 0.186, 동적 정도 0.833, 미적 품질 0.544), 생성 시간도 1.214초로 V2M4(1.641시간)보다 훨씬 빠르다. 32명 참가자 사용자 평가에서도 텍스트-모션 정합성, 타당성, 표현력, 형태 보존 모든 항목에서 최고점(평균 4.615/5)을 받았다. 소거 실험에서는 그래프 인식 어텐션 바이어스, Spec-RoPE, 전역 토폴로지 조건자 각각을 제거할 때 FID가 악화되어 세 요소 모두 기여함을 확인했다(전체 모델 FID 0.757 vs 조건자 제거 시 0.825). 제로샷 응용으로 텍스트 매개 모션 전이, 인비트위닝, 모션 확장, 편집을 정성적으로 시연했다.</p>
+<h2>한계점</h2>
+<p>논문이 명시한 한계로, 드문(rare) 스켈레톤 토폴로지와 분포 밖 모션에서는 결과가 정적이거나 지터가 발생하거나 의미적으로 부정확할 수 있으며, 이는 희소하고 롱테일인 4D 애니메이션 데이터가 사람형과 일반적인 보행 동작에 편중되어 있기 때문이다(예: 램프를 책상 위로 넘어뜨리라는 프롬프트에서 램프 머리만 숙였다가 다시 돌아옴). 또한 생성된 걸음걸이에서 뒷발이 지면을 따라 미끄러지는 발 미끄러짐(foot sliding) 현상이 관찰되며, 저자들은 접촉 제약 기반 샘플링이나 IK 기반 발 고정 후처리가 필요하다고 언급한다.</p>
+<h2>시사점</h2>
+<p>UniMate는 카테고리별 템플릿이나 스켈레톤별 재학습에 의존하지 않고 임의 위상의 리그를 단일 피드포워드 패스로 애니메이션화할 수 있는 최초의 대규모 통합 모델로서, 자동 리깅 기술로 대량 생산되는 3D 에셋을 실제로 움직이게 만드는 "애니메이션 병목"을 해소할 실용적 경로를 제시한다. 특히 그래프 구조를 어텐션 메커니즘에 원리적으로 통합하는 설계(그래프 바이어스, 스펙트럴 위치 인코딩, 전역 조건자)는 임의의 그래프/트리 구조를 다루는 다른 생성 모델링 문제에도 응용될 수 있는 일반적인 아이디어이며, 향후 비디오 프라이어 증류나 에이전트 기반 데이터 생성과 결합하면 희소한 토폴로지·모션 영역의 커버리지를 더욱 넓힐 수 있을 것으로 기대된다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.05415" target="_blank" rel="noopener">huggingface.co/papers/2609.05415</a> · 2026-09-08</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

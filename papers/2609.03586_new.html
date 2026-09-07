@@ -1,0 +1,129 @@
+<meta charset="UTF-8">
+<title>오디오-비디오 모델에서의 어텐션 트라이앵글</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#4 · Daily Papers 2026-09-08</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 25</span>
+    </div>
+    <h1 class="article-title">The Attention Triangle in Audio-Video Models</h1>
+    <p class="article-title-ko">오디오-비디오 모델에서의 어텐션 트라이앵글</p>
+    <p class="article-sub">오디오-비디오 동시 생성 모델(LTX-2)의 텍스트·오디오·비디오 삼각 크로스 어텐션 구조를 분석하여 소리의 발화 주체가 잘못된 개체로 새는 "시맨틱 누출(leakage)" 현상의 원인을 밝히고, 학습 없이 추론 시점에서 어텐션 로짓을 보정하는 방법으로 이를 완화한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.03586" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.03586" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: The Attention Triangle in Audio-Video Models</li>
+<li><strong>저자</strong>: Sagi Polaczek, Noa Kraicer, Gal Metzer, Zhuo Ning, Ali Mahdavi-Amiri, Daniel Cohen-Or, Raja Giryes (Tel Aviv University, Simon Fraser University 소속 연구진)</li>
+<li><strong>출처</strong>: arXiv:2609.03586v1 [cs.AI] (2026년 9월 3일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음 (보충자료로 정적 HTML 데모 페이지가 함께 제공된다고만 언급됨)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.03586">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>오디오-비디오 동시 생성 모델(LTX-2)의 텍스트·오디오·비디오 삼각 크로스 어텐션 구조를 분석하여 소리의 발화 주체가 잘못된 개체로 새는 "시맨틱 누출(leakage)" 현상의 원인을 밝히고, 학습 없이 추론 시점에서 어텐션 로짓을 보정하는 방법으로 이를 완화한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>디퓨전 트랜스포머 기반 생성 모델은 크로스 어텐션을 통해 텍스트, 이미지 등 조건 신호와 생성 결과를 연결하지만, 이 메커니즘은 국소성이나 배타성 제약이 없는 부드러운 전역 혼합 방식이어서 서로 다른 개체 간에 속성이 뒤섞이는 "누출" 문제를 안고 있다. 기존 연구는 주로 텍스트-이미지 생성에서 이런 누출(예: "줄무늬 고양이와 점박이 개"라는 프롬프트가 줄무늬 개를 만들어내는 현상)을 다뤄왔다. 그런데 오디오와 비디오를 동시에 생성하는 최신 모델(LTX-2, Ovi 등)에서는 텍스트·오디오·비디오라는 세 모달리티가 서로 얽히면서 문제가 더 심각해진다. 예를 들어 "해적 어깨 위의 앵무새가 말을 한다"는 프롬프트를 주어도, 모델은 인간형 존재가 말하는 것이 더 자연스럽다는 학습된 편향 때문에 실제로는 해적이 말하는 것처럼 생성하는 경우가 많다. 저자들은 이 세 모달리티 간의 상호작용을 "어텐션 트라이앵글"로 규정하고, 특히 오디오-비디오 간 크로스 어텐션 축이 이러한 오귀속의 핵심 원인이라고 지적한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>텍스트-오디오-비디오 세 모달리티 간 크로스 어텐션 관계를 하나의 "어텐션 트라이앵글"로 형식화하고, 각 변(edge)에 대응하는 편향(bias) 행렬을 정의함.</li>
+<li>오디오-비디오 변이 양방향적(오디오가 비디오에 영향을 주고, 비디오가 오디오에도 영향을 줌)이며, 프롬프트가 모델의 학습된 편향과 충돌할 때 이 변이 텍스트가 지정한 결합을 무시하고 소리를 시각적으로 더 "그럴듯한" 개체로 재라우팅한다는 것을 어텐션 시각화로 입증함.</li>
+<li>어텐션에서 파생된 신호(1차 오디오-비디오 어텐션, 오디오를 매개로 한 2차 비디오-비디오 결합)를 진단 도구로 제시해 누출을 의도적으로 유발하거나 분석할 수 있음을 보임.</li>
+<li>학습이 필요 없는 추론 시점 개입(steering) 알고리즘을 제안하여, 트라이앵글의 세 변(텍스트→비디오, 텍스트→오디오, 오디오↔비디오) 모두에 로짓 바이어스를 적용함으로써 발화 주체와 외형을 동시에 올바르게 복원함.</li>
+<li>정량 지표, VA-Judger 비교, 사람 선호도 평가를 통해 제안 방법이 기존 방법 대비 발화 주체 귀속, 시각적 누출, 전반적 품질에서 모두 우수함을 검증함.</li>
+</ul>
+<h2>방법론</h2>
+<p>저자들은 LTX-2라는 오픈 오디오-비디오 파운데이션 모델을 대상으로, 텍스트(T)·오디오(A)·비디오(V) 세 토큰 집합 간의 세 크로스 어텐션 표면(T→V, T→A, A↔V)에 소프트맥스 이전 단계에서 덧셈형 로짓 바이어스를 주입한다.</p>
+<ol>
+<li><strong>앵커(anchor) 추출</strong>: 개입되지 않은 기본 생성 결과 하나를 먼저 뽑아, (1) 프롬프트에서 지정된 "의도된 소리 발화원", "소리/행동", "경쟁 발화원(옵션)" 구절에 대한 텍스트 토큰 인덱스, (2) SAM3로 디코딩된 프레임에서 얻은 의도 발화원/경쟁 발화원의 시각 마스크, (3) 오디오-텍스트 어텐션에서 파생한 소리 활성 영역(사운드 마스크)을 한 번씩 고정 추출한다.</li>
+<li><strong>오디오↔비디오 변 보정</strong>: 의도된 발화원-소리 쌍과 비발화원-비소리 쌍에는 높은 값을, 발화원-소리가 어긋난 쌍에는 낮은 값을 주는 "일치 행렬" G_VA를 정의하고, 이 불일치도에 비례해 오디오-비디오 어텐션 로짓을 억제한다.</li>
+<li><strong>텍스트→비디오, 텍스트→오디오 변 보정</strong>: 의도된 개체와 경쟁 개체에 대해 "의도됨/충돌/중립" 세 부류의 마스크를 만들어, 의도된 결합은 강화(β)하고 충돌하는 결합은 억제(γ)한다(γ가 β보다 크게 설정되어 억제 쪽에 더 큰 비중을 둠).</li>
+<li>이 세 가지 바이어스를 모든 트랜스포머 블록과 디노이징 스텝에서 동시에 적용하는 것을 "Ours-Full"이라 부르며, 텍스트 변만 적용한 "Ours-Text", 오디오-비디오 변만 적용한 "Ours-AV"를 대조군으로 두어 각 변의 기여도를 개별적으로 검증한다.</li>
+</ol>
+<p>이 방법은 추가 학습이나 파인튜닝 없이 작동하며, 앵커 추출을 위한 한 번의 추가 디노이징 패스(및 SAM3 세그멘테이션) 때문에 기본 생성 대비 약 2.5배의 추론 비용이 든다.</p>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li><strong>모델/베이스라인</strong>: LTX-2(오픈소스 오디오-비디오 파운데이션 모델)를 기본 생성기로 사용하며, 외부 비교 대상으로 Ovi, 그리고 이미지 도메인의 Bounded Attention을 오디오-비디오에 맞게 변형한 베이스라인을 사용.</li>
+<li><strong>평가 데이터</strong>: 발화원과 경쟁 개체 간 충돌을 의도적으로 유발하도록 사람이 반복적으로 다듬은 100개의 "누출 챌린지" 프롬프트, 프롬프트당 4개 시드로 총 2,400개 비디오 생성.</li>
+<li><strong>정량 지표</strong>: Qwen3-Omni를 판정자로 쓴 5지선다 발화원 귀속 점수(1에 가까울수록 누출이 없음), VA-Judger를 이용한 쌍대 비교(프롬프트 충실도, 오디오-비디오 일치성, 오디오/비디오 품질, 완결성), CLAP 오디오-텍스트 정합도, VBench의 주체/배경 일관성 및 미학 점수.</li>
+<li>Qwen 발화원 귀속 점수: 기본 LTX-2 0.1216 → Ours-Full 0.1349(최고), Ovi 0.1207, Bounded Attention 0.0925.</li>
+<li>VA-Judger 쌍대 선호도: Ours-Full이 다른 모든 방법 대비 57.6%~73.3%의 우위를 보였으며, 부트스트랩 95% 신뢰구간이 모두 50% 이상.</li>
+<li>VBench: Ours-Full이 주체 일관성(0.990), 배경 일관성(0.986), 미학 점수(0.604)에서 최고치를 기록. CLAP 점수는 0.383으로 최상위(0.384)와 거의 대등.</li>
+<li><strong>사람 평가</strong>: 30명의 참가자가 480건의 쌍대 비교를 수행한 결과, 결정된 응답 중 Ours-Full이 발화원 귀속에서 79.2%, 시각적 누출 완화에서 82.9%, 전반적 품질에서 80.1%의 선호를 받았으며, 본페로니 보정 후에도 통계적으로 유의함(p&lt;10^-28).</li>
+<li><strong>대표 사례</strong>: 해적-앵무새, 말-기사, 강아지-고양이, 곰인형-괴물 등 다양한 프롬프트에서 텍스트 변만 보정하면 외형은 복원되지만 발화원 귀속은 여전히 틀리고, 오디오-비디오 변만 보정하면 발화원은 맞지만 외형 누출이 새로 생기며, 세 변을 모두 보정한 Ours-Full만이 두 문제를 동시에 해결함을 확인.</li>
+</ul>
+<h2>한계점</h2>
+<p>저자들이 논문에서 직접 밝힌 한계는 다음과 같다: (1) 어텐션 스티어링은 모델이 이미 내부적으로 표현하고 있는 연관성만 재조정할 수 있을 뿐, 모델의 학습 분포를 크게 벗어난 오디오-비디오 결합을 새로 만들어낼 수는 없다. (2) 방법이 초기 미개입 생성 결과에서 추출한 앵커에 의존하므로, 오디오가 전혀 근거가 없거나 의도된 발화원이 시각적으로 완전히 정적인 경우에는 보정에 필요한 신호가 부족할 수 있다. (3) 시각 앵커가 SAM3 세그멘테이션에 의존하기 때문에 작거나 가려지거나 모호한 개체에 대해서는 세그멘테이션 오류에 취약하다. (4) 추가적인 앵커 추출 패스로 인해 추론 비용이 증가하며, 실험이 LTX-2 계열 모델에 한정되어 있어 다른 아키텍처(특히 모든 모달리티를 하나의 자기 어텐션으로 처리하는 단일 스트림 구조)로의 일반화는 향후 과제로 남아 있다.</p>
+<h2>시사점</h2>
+<p>이 연구는 오디오-비디오 동시 생성 모델에서 크로스모달 어텐션이 강할수록 오히려 학습된 편향에 의한 오귀속(발화원 잘못 지정, 외형 오염, 음성 특성 오류, 생성 억제)이 증폭될 수 있다는 "Attention Lesson"을 제시한다. 이는 단순히 어텐션 결합을 늘리는 것이 항상 정합성을 개선하지는 않는다는 점을 보여주며, 향후 멀티모달 생성 모델 설계 시 모달리티 간 공간적 근거(spatial grounding)를 명시적으로 강화하거나, 학습 없는 추론 시점 개입을 통해 소스 귀속 문제를 진단·완화하는 방향의 후속 연구를 촉진할 수 있다. 또한 제안된 어텐션 기반 진단 신호(1차/2차 어텐션 시각화)는 다른 멀티모달 생성 모델의 내부 동작을 분석하는 범용 도구로도 활용될 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.03586" target="_blank" rel="noopener">huggingface.co/papers/2609.03586</a> · 2026-09-08</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

@@ -1,0 +1,119 @@
+<meta charset="UTF-8">
+<title>모션옴니</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#3 · Daily Papers 2026-09-08</span>
+      <span class="cat-tag">생성모델</span>
+      <span class="upvote-tag">▲ 35</span>
+    </div>
+    <h1 class="article-title">Motion-Omni: End-to-End Joint Speech and Full-Body Motion for Spoken Dialogue</h1>
+    <p class="article-title-ko">모션옴니: 음성 대화를 위한 종단간 음성·전신동작 통합 생성</p>
+    <p class="article-sub">음성 대화 모델(SDM)이 음성을 생성하는 바로 그 은닉 상태로부터 얼굴 표정과 손·상체·하체 동작을 함께 생성하도록 만든 최초의 종단간(end-to-end) 프레임워크로, 별도의 음성→동작 추론 단계 없이 교사 캐스케이드와 동등한 동작 품질을 5.4배 빠르게 달성한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.04250" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.04250" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Motion-Omni: End-to-End Joint Speech and Full-Body Motion for Spoken Dialogue</li>
+<li><strong>저자</strong>: Chengqian Ma(Peking University), Wei Tao(LIGHTSPEED), Haoyu Zhang(The Chinese University of Hong Kong, Shenzhen), Yiwen Guo(Independent Researcher)</li>
+<li><strong>출처</strong>: arXiv:2609.04250v1 [cs.SD] (2026년 8월 28일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://step-out.github.io/Motion-Omni-Page/">https://step-out.github.io/Motion-Omni-Page/</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.04250">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>음성 대화 모델(SDM)이 음성을 생성하는 바로 그 은닉 상태로부터 얼굴 표정과 손·상체·하체 동작을 함께 생성하도록 만든 최초의 종단간(end-to-end) 프레임워크로, 별도의 음성→동작 추론 단계 없이 교사 캐스케이드와 동등한 동작 품질을 5.4배 빠르게 달성한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>대화하는 아바타는 무엇을 말할지뿐 아니라 말하면서 어떻게 움직일지도 결정해야 하지만, 음성 대화 모델과 동작(co-speech motion) 생성 모델은 서로 다른 모델 계열로 발전해왔다. 표준적 해법은 캐스케이드 방식, 즉 SDM이 먼저 음성을 생성하고 완성된 오디오를 동작 모델에 넘기는 방식인데, 이는 (1) 오디오가 완성된 뒤 별도의 전체 추론 과정을 한 번 더 거쳐야 하고 (2) 동작 관련 손실이 음성/대화 파라미터를 전혀 갱신할 수 없다는 구조적 한계를 가진다. 기존의 관련 연구들(SOLAMI, U-Mind, Ex-Omni, ViBES, MIBURI 등)도 부분적으로만 이 문제를 완화했을 뿐, 얼굴·손·상체·하체를 모두 명시적으로 생성하면서 응답 생성 경로 전체를 공동 적응(co-adaptation)시키는 시스템은 없었다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>음성 생성기(Speech Generator)의 은닉 상태로부터 직접 얼굴·손·상체·하체 동작을 생성하며, 동작 손실이 LLM과 음성 생성기까지 공동으로 갱신하는 최초의 개방형(open-ended) 종단간 발화-동작 모델 제안</li>
+<li>소거 실험을 통해 음성 경로를 고정한 채 학습하면 동작이 음성과 정렬되지 않음을 확인하고, LLM·음성 생성기·동작 생성기의 공동 적응(co-adaptation)이 정렬 회복에 필수적임을 규명</li>
+<li>일관된 목소리로 답하는 음성-지시 응답에 교체 가능한 동작 교사(LOM)로 의사 라벨(pseudo-label)을 붙이는 확장 가능한 데이터 파이프라인을 구축, 422,856개(1,402시간)의 품질 순위가 매겨진 음성-동작 쌍 생성</li>
+<li>개방형·확률적 전신 발화 동작을 위한 최초의 공개 평가 프로토콜과 평가셋 SwDA-500 공개: 시스템 간 오디오를 일치시켜 렌더링·자동 지표·인간 평가·지연시간을 통일적으로 측정</li>
+</ul>
+<h2>방법론</h2>
+<p>Motion-Omni는 네 개 구성요소로 이루어진다: (1) 고정된 Whisper-large-v3 인코더와 이를 LLM 임베딩 공간으로 투영하는 음성 프로젝터, (2) Qwen2.5-7B-Instruct 기반 LLM 백본, (3) Qwen2.5-0.5B-Instruct에서 초기화되어 GLM-4-Voice의 12.5Hz 이산 음성 유닛을 자기회귀적으로 생성하는 음성 생성기, (4) 얼굴·손·상체·하체를 담당하는 4개의 병렬적인 파트별 동작 생성기(Part-Aware Motion Generator)로, LOM(Language of Motion)의 30Hz VQ 코드를 생성한다.</p>
+<p>핵심 아이디어는 동작 생성기가 렌더링된 파형이 아니라 음성 생성기의 마지막 레이어 은닉 상태(key/value)와, 음성 유닛 임베딩을 12.5Hz에서 30Hz로 보간한 쿼리를 동시에 입력받는 이중 입력 구조(Token-as-Query Gated Fusion, TQGF)라는 점이다. 이를 통해 별도의 오디오→동작 변환 단계 없이, 음성을 만드는 표현 자체에서 시간적 타이밍과 의미 정보를 함께 활용해 동작을 생성한다. 4개 파트 디코더는 SMPL-X/FLAME 특징 차원에 비례한 가중치(얼굴:손:상체:하체 = 106:180:78:61)로 교차 엔트로피 손실을 최소화하도록 학습된다.</p>
+<p>학습은 4단계 커리큘럼으로 진행된다: (1) 음성 프로젝터만 ASR로 학습, (2) LLM을 고정한 채 음성 생성기를 TTS 방식으로 학습, (3) 동작 생성기를 부착해 음성 생성기와 공동 학습(TTSM 단계, 품질 점수 기준 4단계 커리큘럼으로 점진적으로 어려운 데이터 노출), (4) LLM·음성 프로젝터·음성 생성기·동작 생성기를 모두 동시에 미세조정하며 ASR/TTS/음성+동작 동시생성(S2SM)/텍스트 대화(T2T) 4개 과제를 혼합 학습. 학습 데이터는 InstructS2S-200K 응답 파형에 LOM 교사 모델로 동작 의사 라벨을 붙이고, VQ-VAE 재구성 오차와 비트 상관(beat correlation) 점수를 결합한 이중 지표로 품질 순위를 매기는 방식으로 구축했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>평가는 Switchboard Dialog Act Corpus에서 파생한 자체 벤치마크 SwDA-500(500개 대화 프롬프트)을 중심으로 진행됐다.
+- 음성 품질(Seed-TTS-Eval, WER): Motion-Omni-Q7은 test-en에서 2.62%로, 비교한 옴니모달 LLM 중 최저(Qwen2.5-Omni 2.72%, Ex-Omni 2.67%보다 우수)
+- 대화 능력(VoiceBench): Overall 47.63으로 LLaMA-Omni(41.12), Ex-Omni(43.57), Mini-Omni2(33.49), Moshi(29.51)를 상회해 동작 학습 이후에도 대화 능력이 유지됨을 확인
+- 동작 품질(FGD, 다양성, 비트 상관, 립싱크): 동일 오디오를 사용하는 교사 캐스케이드(MO-audio + LOM)와 참조 없는(reference-free) 지표 기준 약 2% 이내로 근접했고, LOM을 추론 시점에 실행하지 않는 시스템들 중에서는 비트 상관·다양성·얼굴/립싱크 지표 전반에서 최고 성능
+- 인간 평가: 동일 음성 조건에서 EMAGE 대비 +25점(45승/10무/20패)의 뚜렷한 우위, 동작 교사 LOM과는 근소한 차이(25승/27무/23패)
+- 지연시간: 전체 응답(음성+동작) 생성 시간 4.32초(RTF=0.78, 실시간보다 빠름)로, 동일 조건의 교사 캐스케이드(MO-audio+LOM, 23.35초)보다 5.4배 빠름</p>
+<h2>한계점</h2>
+<p>논문이 명시한 한계: 동작 품질은 LOM VQ-VAE 코드북과 교사 기반 의사 라벨의 표현 범위에 갇혀 있어 그 분포 밖의 동작은 표현할 수 없음; 화자 정체성이나 감정을 명시적으로 조건화하지 않으며 학습 데이터가 전부 영어여서 다른 언어·문화의 동작 스타일로 일반화되기 어려움; 사용자 발화를 전부 받은 뒤에야 응답을 생성하는 오프라인 모델이라 스트리밍 상호작용에는 적합하지 않음; 기존 자동 동작 지표(FGD, BC)는 지각된 자연스러움의 불완전한 대리 지표이며, 4명의 평가자로 진행한 인간 평가는 탐색적 수준에 머무름; 비디오 입력 LLM 판정자(Gemini 3.1 Pro)로 평가를 자동화하려 시도했으나 인간 평가와의 상관관계가 낮아(음성 품질 외 대부분 지표에서 r≤0) 이를 부록에 부정적 결과로 보고하고 최종 평가에서 제외함.</p>
+<h2>시사점</h2>
+<p>이 연구는 음성과 전신 동작을 분리된 두 단계가 아니라 하나의 공유된 표현에서 동시에 생성할 수 있음을 보여줌으로써, 대화형 아바타·디지털 휴먼 시스템 설계에서 캐스케이드 구조가 필수가 아님을 실증한다. 특히 동작 손실이 음성 생성 경로까지 역전파되어야만 정렬이 회복된다는 소거 실험 결과는, 멀티모달 공동학습에서 "동결(freeze)로 안전하게 각 모듈을 보존"하는 흔한 설계 관행이 오히려 모달리티 간 정렬을 해칠 수 있음을 시사한다. 또한 확장 가능한 의사 라벨링 파이프라인과 공개 평가 프로토콜(SwDA-500)은 후속 연구가 더 강력한 백본이나 동작 교사로 이 레시피를 재현·확장하는 기반을 제공한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.04250" target="_blank" rel="noopener">huggingface.co/papers/2609.04250</a> · 2026-09-08</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

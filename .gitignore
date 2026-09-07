@@ -12,9 +12,21 @@ hf_papers_infographic_new.html
 huggingface_papers_20260818_new.md
 hf_papers_website_new.html
 
-# Claude Code 로컬 설정
-.claude/
-CLAUDE.md
+# Claude Code 로컬 설정 (report-generator 하네스 파일만 예외적으로 추적)
+.claude/*
+!.claude/CLAUDE.md
+!.claude/skills/
+!.claude/agents/
+.claude/agents/*
+!.claude/agents/analyst.md
+!.claude/agents/data-collector.md
+!.claude/agents/executive-summarizer.md
+!.claude/agents/report-writer.md
+!.claude/agents/visualizer.md
+/CLAUDE.md
+
+# report-generator 하네스 산출물(보고서 초안)
+_workspace/
 
 # 비밀값/환경변수 (절대 커밋 금지)
 .env

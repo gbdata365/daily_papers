@@ -1,0 +1,130 @@
+<meta charset="UTF-8">
+<title>인과 파운데이션 모델</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#4 · Daily Papers 2026-09-09</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 10</span>
+    </div>
+    <h1 class="article-title">Causal Foundation Models</h1>
+    <p class="article-title-ko">인과 파운데이션 모델</p>
+    <p class="article-sub">다양한 인과 구조에서 합성 생성된 데이터로 대규모 사전학습된 트랜스포머 모델(Causal Foundation Model, CFM)이, 파인튜닝이나 하이퍼파라미터 튜닝 없이 인컨텍스트 학습만으로 처음 보는 관측 데이터셋에서 평균처치효과(ATE)·조건부평균처치효과(CATE) 등의 인과량을 추정할 수 있음을 소개하고, 최초의 공개 CFM 3종(Do-PFN, CausalPFN, CausalFM)을 실제 벤치마크로 공정하게 비교한 실용 튜토리얼 겸 리뷰 논문이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.03003" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.03003" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Causal Foundation Models</li>
+<li><strong>저자</strong>: Christopher Stith, Hossein Rahmani, Jesse C. Cresswell (Layer 6 AI, TD Bank Group)</li>
+<li><strong>출처</strong>: arXiv:2609.03003v1 [cs.LG] (2026-09-02)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음 (GitHub 저장소: https://github.com/layer6ai-labs/cfms)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.03003">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>다양한 인과 구조에서 합성 생성된 데이터로 대규모 사전학습된 트랜스포머 모델(Causal Foundation Model, CFM)이, 파인튜닝이나 하이퍼파라미터 튜닝 없이 인컨텍스트 학습만으로 처음 보는 관측 데이터셋에서 평균처치효과(ATE)·조건부평균처치효과(CATE) 등의 인과량을 추정할 수 있음을 소개하고, 최초의 공개 CFM 3종(Do-PFN, CausalPFN, CausalFM)을 실제 벤치마크로 공정하게 비교한 실용 튜토리얼 겸 리뷰 논문이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>전통적 인과추론은 새로운 문제마다 (1) 데이터를 분석해 인과 메커니즘을 가정하고, (2) 그 메커니즘에 맞는 추정기(BART, causal forest, S/T/X-learner, double ML 등)를 선택하고, (3) 검증데이터로 하이퍼파라미터를 튜닝하고, (4) 최종 모델을 학습하는 과정을 매번 처음부터 반복해야 한다. 반면 최근 머신러닝 전반은 "한 번 대규모로 사전학습한 뒤 새 과업에 그대로 적용"하는 파운데이션 모델 패러다임으로 이동했다. 저자들은 이 패러다임을 인과추론에 도입한 CFM을 "관측 데이터만으로 학습 없이(가중치 갱신 없이) 인과량을 추정하는, 사전학습된 prior-data fitted network(PFN)"로 정의하고, 이 신생 분야를 체계적으로 정리·검증한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>인과추론(잠재결과 프레임워크, 식별가능성, 구조적 인과모형)과 머신러닝(PFN, amortized Bayesian inference)의 필요 배경지식을 통합적으로 정리</li>
+<li>CFM을 "PFN을 인과 추정량(CEPO, CID, CDTE 등)에 적용한 모델"로 명확히 정의하고, 학습에 필요한 causal prior-data loss와 SCM(구조적 인과모형) 기반 합성 prior 설계 방식을 상세히 설명</li>
+<li>최초로 공개된 3개 CFM(Do-PFN, CausalPFN, CausalFM)을 RealCause-Lalonde 준합성 벤치마크에서 EconML 기반의 고도로 튜닝된 전통적 추정기(S/T/X-learner, Double ML, DR-learner, IPW)와 표준화된 조건에서 공정 비교</li>
+<li>부분식별/민감도 분석, 연속·다중처치, 시계열 인과추론, causal discovery 파운데이션 모델, 단일세포 섭동 모델링, 생존분석 등 인접 분야로의 확장 연구를 폭넓게 리뷰</li>
+<li>예제 코드와 주피터 노트북, 전체 코드베이스를 공개해 독자가 바로 CFM을 사용해볼 수 있도록 제공</li>
+</ul>
+<h2>방법론</h2>
+<p>CFM의 핵심은 PFN을 인과추론에 맞게 확장한 것이다. PFN은 다양한 과업(φ)에 대한 prior 분포에서 무수히 많은 합성 데이터셋을 생성해 사전학습하며, 추론 시에는 레이블된 컨텍스트 데이터셋과 쿼리를 한 번의 forward pass로 받아 사후예측분포(PPD)를 직접 출력한다. CFM은 이를 인과 문제로 확장하기 위해 세 가지를 수정한다.</p>
+<ol>
+<li><strong>causal prior-data loss</strong>: 일반 PFN은 (x, y) 쌍으로 학습하지만, CFM은 관측 데이터 (x, t, y)만 보고도 개입적 결과(반사실 결과, CEPO, CATE 등)를 맞히도록 학습해야 하므로 구조적으로 더 어려운 과업이다.</li>
+<li><strong>SCM 기반 합성 prior</strong>: 인과량의 진짜 값(ground truth)은 실제 관측 데이터에서 얻을 수 없으므로, 무작위 구조적 인과모형(SCM)을 대량 샘플링해 관측 데이터와 개입 데이터(반사실)를 동시에 생성한다. 각 CFM은 서로 다른 SCM 샘플링 방식(랜덤 DAG+가법잡음모형, 랜덤 MLP, 베이지안 신경망 클러스터 등)을 사용한다.</li>
+<li><strong>트랜스포머 인코딩</strong>: 처치변수를 첫 번째 열로 고정하거나 별도로 인코딩하는 등, 처치의 특수한 역할을 반영한 임베딩/어텐션 설계를 사용한다.</li>
+</ol>
+<p>세 모델의 주요 차이는 다음과 같다: Do-PFN은 비식별 prior를 사용해 CID-PPD를 모델링(교란요인 불확실성을 반영), CausalPFN은 강한 무교란성(strong ignorability, backdoor) 가정 하 식별가능한 prior로 CEPO-PPD를 모델링, CausalFM은 backdoor·IV·frontdoor 세 설정별로 별도 모델을 두고 CDTE-PPD를 가우시안 혼합모형(GMM) 헤드로 출력한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>저자들은 준합성 RealCause-Lalonde 벤치마크(Lalonde-CPS 16,177건, Lalonde-PSID 2,675건)에서 강한 교란(confounding) 조건 하에 10개 시드로 CATE(PEHE 지표)와 ATE(상대오차 지표)를 평가했다. 비교 대상 CFM은 사전학습된 가중치를 그대로 사용(추가 학습 없음)했고, 전통적 추정기는 FLAML AutoML로 뉴이슨스 모델까지 엄격히 튜닝했다.</p>
+<ul>
+<li>CausalPFN이 CFM 중 최고 성능을 보이며, 엄격히 튜닝된 T-learner에 근접하거나 Lalonde-CPS에서는 이를 능가함(평균 순위 기준)</li>
+<li>Do-PFN과 CausalFM은 ATE 크기 회복(relative error)이 취약해, 추정치가 0에 가깝게 수축(shrinkage)하는 경향을 보임 — 반면 IPW는 ATE 추정에서는 가장 우수</li>
+<li>추론 속도 측면에서 CFM은 사전학습 비용을 제외하면 CPU 기준 전통적 추정기 대비 1~2자릿수(최대 약 100배) 빠름</li>
+<li>결론적으로 CFM은 학습 없이도 정교하게 튜닝된 전통적 인과추정기와 경쟁 가능한 정확도를, 훨씬 짧은 배포 시간에 제공함을 재현 가능한 형태로 입증</li>
+</ul>
+<h2>한계점</h2>
+<ul>
+<li>1세대 CFM들은 이진 처치 설정과 표(tabular) 데이터에만 국한되며, 연속/다중처치나 시계열, 구조적 사전지식 결합 등은 후속 연구에서 별도로 다뤄짐</li>
+<li>논문 자체에서도 지적하듯, 신원 가능성(identifiability) 가정이 prior 설계 안에 암묵적으로 숨겨질 위험이 있으며 이를 사용자가 명확히 검증하기 어려움</li>
+<li>prior의 다양성/품질을 정량적으로 측정하는 방법론이 CFM 분야에는 아직 확립되어 있지 않음(표 형태 파운데이션 모델 분야와 대비됨)</li>
+<li>다른 최근 연구들에서 CFM의 신뢰구간 커버리지가 낮거나(예: CausalPFN의 신용구간), prior에 내재된 편향(low-confounding prior에서 기인) 등 보정(calibration) 문제가 별도로 보고되고 있음</li>
+</ul>
+<h2>시사점</h2>
+<p>CFM은 "관측 데이터 → 인과 추정"이라는 파이프라인 전체를 하나의 forward pass로 압축함으로써, 특히 비전문가나 다수의 소규모 데이터셋을 빠르게 분석해야 하는 실무 환경에서 큰 효율성 이득을 제공할 잠재력이 있다. 향후에는 여러 처치유형·식별가정·추정량을 동시에 지원하는 통합 CFM, 부분적 구조지식이나 실험 데이터를 함께 활용하는 유연한 인터페이스, 그리고 causal discovery 파운데이션 모델과의 결합이 유망한 방향으로 제시된다. 다만 저자들은 이 분야가 아직 초기 단계이며, 식별가능성 가정을 투명하게 다루고 prior 품질을 정량화하는 연구가 뒤따라야 한다고 강조한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.03003" target="_blank" rel="noopener">huggingface.co/papers/2609.03003</a> · 2026-09-09</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

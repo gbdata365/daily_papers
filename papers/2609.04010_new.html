@@ -1,0 +1,143 @@
+<meta charset="UTF-8">
+<title>이산 확산을 통한 LLM 무손실 속도 향상</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#1 · Daily Papers 2026-09-09</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 86</span>
+    </div>
+    <h1 class="article-title">Unlocking Lossless Speedups in LLMs via Discrete Diffusion</h1>
+    <p class="article-title-ko">이산 확산을 통한 LLM 무손실 속도 향상</p>
+    <p class="article-sub">하나의 아키텍처 안에 자기회귀(AR) 가중치와 경량 확산(diffusion) 가중치를 분리해서 두고, AR 모델의 출력 분포를 그대로 보존하면서도 여러 토큰을 병렬로 초안(draft)한 뒤 검증하는 방식으로 무손실(lossless) 추론 가속을 달성하는 "확산 증강 LLM(diffusion-augmented LLM)"인 Uno를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.04010" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.04010" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Unlocking Lossless Speedups in LLMs via Discrete Diffusion</li>
+<li><strong>저자</strong>: Subham Sekhar Sahoo, Lingjie Chen, Khiem Pham, Jonathan Geuter 등 (Institute of Foundation Models, UIUC, Cornell Tech, Harvard, Cerebras Systems 소속 다수 저자)</li>
+<li><strong>출처</strong>: arXiv:2609.04010v1 [cs.LG] (2026-09-03)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://s-sahoo.com/uno/">https://s-sahoo.com/uno/</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.04010">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>하나의 아키텍처 안에 자기회귀(AR) 가중치와 경량 확산(diffusion) 가중치를 분리해서 두고, AR 모델의 출력 분포를 그대로 보존하면서도 여러 토큰을 병렬로 초안(draft)한 뒤 검증하는 방식으로 무손실(lossless) 추론 가속을 달성하는 "확산 증강 LLM(diffusion-augmented LLM)"인 Uno를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<ul>
+<li>현재 LLM은 다음 토큰 예측(NTP) 방식의 자기회귀 구조 덕분에 뛰어난 성능을 보이지만, 한 스텝에 토큰을 하나씩만 생성하는 순차적 디코딩 특성 때문에 추론 속도가 느리고, 특히 긴 추론 체인(reasoning trace)이나 강화학습(RL) 후처리에서 롤아웃 생성이 병목이 된다.</li>
+<li>언어에는 함께 예측할 수 있는 정형화된 구(phrase) 패턴이 많고, 디코딩은 메모리 대역폭에 의해 제약되는 경우가 많아 여러 토큰을 한 번에 생성하면 이런 비효율을 완화할 수 있다.</li>
+<li>기존 대안인 스펙큘레이티브 디코딩(speculative decoding)은 별도의 소형 드래프트 모델이 필요하고, 이산 확산 언어 모델(d-LLM)은 병렬 생성이 native하게 가능하지만 AR 모델 대비 품질-속도 트레이드오프가 있고 배치 크기가 커지면 속도 이득이 사라지는 문제가 있다.</li>
+<li>에이전트형 워크로드(도구 호출, 병렬 에이전트, 재시도 등)가 늘어나면서 배치 크기 1에서 측정한 지연시간만으로는 실제 서빙 환경의 속도 이득을 대표하지 못한다는 문제의식도 제기한다.</li>
+</ul>
+<h2>핵심 기여</h2>
+<ol>
+<li>AR 가중치(응답 품질 담당)와 경량 확산 가중치(생성 속도 담당)를 분리한 "확산 증강 LLM(diffusion-augmented LLM)" 프레임워크와 학습 파이프라인 제안.</li>
+<li>AR 분포로부터 손실 없이 샘플링하면서 동시에 추론 시점 스케일링도 가능하게 하는 Ψ-Spec(Ψ-Speculative) 샘플러 계열 제안.</li>
+<li>확산 증강 LLM을 처음부터 학습시키는 방법과, 기존 오픈소스 AR LLM(Qwen3-8B)에 경량 확산 가중치를 얹어 증강하는 방법을 모두 제시.</li>
+<li>기반 AR 모델이 지원하는 최대 배치 크기에서 최대 2배, 전체적으로 최대 3배의 속도 향상을 보이며, 이 가속이 추론뿐 아니라 RL 학습 롤아웃까지 가속함을 실증.</li>
+</ol>
+<h2>방법론</h2>
+<ul>
+<li><strong>구조</strong>: 각 레이어에 AR 가중치(θ_AR)와, 이에 대응하는 저랭크(rank-128) LoRA 형태의 확산 가중치(θ_Δ)를 추가한다. 확산 경로는 θ_AR+θ_Δ를 사용해 토큰을 초안 생성하고, 검증은 θ_AR만 사용하므로 검증 분포가 원본 AR 모델과 동일하게 유지된다.</li>
+<li><strong>디퓨전 증류(Diffusion Distillation)</strong>: AR 가중치는 고정한 채, "이산 일관성 증류(Discrete Consistency Distillation, DCD)"를 응용해 다단계 확산 과정을 단일 스텝으로 압축한다. 완전히 노이즈가 낀 시퀀스에서 한 번의 디노이징으로 블록 단위 토큰을 생성하도록 학생 모델이 교사(AR) 모델의 분포를 모사하도록 학습한다. 여기에 수락 길이를 늘리기 위한 총변동(Total Variation, TV) 손실 항을 추가로 사용한다. 이 학습 과정은 전체 LLM 학습 파이프라인에 거의 부담을 주지 않는 "드롭인(drop-in)" 단계로 설계되었다.</li>
+<li><strong>블록 확산 및 gated LoRA</strong>: 긴 시퀀스를 한 번에 복원하는 대신, 시퀀스를 블록 단위로 나누어 블록별로 한 스텝 디노이징을 수행한다. 깨끗한 위치에는 AR 가중치만, 노이즈가 낀 위치에는 AR+확산 가중치를 함께 적용하는 gated LoRA 기법으로 교사/학생 로짓을 한 번의 순전파에서 동시에 계산한다.</li>
+<li><strong>Ψ-Spec 샘플러</strong>: 확산 경로로 블록 단위 토큰 후보를 병렬로 제안한 뒤, 표준 스펙큘레이티브 디코딩의 기각 샘플링(rejection sampling) 규칙으로 AR 분포 대비 가장 긴 유효 접두어만 채택한다. 이를 통해 원본 AR 모델의 출력 분포를 정확히 보존하면서 병렬성을 얻는다. 시스템 처리량을 극대화하는 Linear 샘플러와, 단일 사용자 처리량을 극대화하는 Tree 샘플러(트리 형태로 다중 후보를 동시에 검증) 두 가지 방식을 제공한다.</li>
+<li><strong>추론 시점 스케일링</strong>: 디노이징 스텝 수를 드래프트 토큰 수보다 늘리면 문맥 길이를 늘리지 않고도 추가 연산을 투입해 샘플 품질을 높일 수 있는 새로운 축을 제공한다(다만 본 논문에서는 체계적 탐구는 향후 과제로 남김).</li>
+<li>학습은 (1) 추론 가속만을 목표로 AR 학습 완료 후 확산 가중치만 별도로 학습하는 방식과, (2) SFT 이후 RL 이전에 확산 가중치를 학습해 RL 롤아웃까지 가속하는 방식 두 가지로 구성된다.</li>
+</ul>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li>두 가지 설정에서 검증: (1) 자체 데이터로 처음부터 학습한 약 7B 규모 AR 모델을 기반으로 한 Uno, (2) 오픈소스 Qwen3-8B에 OpenThoughts 데이터로 확산 가중치만 별도 학습해 증강한 Uno_Qwen(이때 확산 가중치와 AR 가중치의 학습 데이터 분포가 달라도 무손실 가속이 가능함을 보임).</li>
+<li>평가 벤치마크는 에이전트형 도구 사용(τ²-Bench, τ³-Bench), 터미널 사용(Terminal-Bench v2.1), 코딩(SWE-bench Verified), 장문맥 추론(AA-LCR), 과학·지식(GPQA-Diamond, HLE, AA-Omniscience), 수학(GSM8K, MATH500, AIME 2024-26), 코딩(MBPP, HumanEval), 지시 따르기(IFEval) 등을 포괄한다.</li>
+<li><strong>Uno vs 기반 AR 모델</strong>: 품질은 AR 모델과 동등하게 유지하면서, 기반 모델이 지원하는 최대 배치 크기(64)에서 약 1.5배, 배치 크기 1에서는 약 2.2배 빠른 처리량을 보였다.</li>
+<li><strong>오픈소스 d-LLM 대비</strong>: Uno(8B)는 DiffusionGemma(26B-A4B), Nemotron-Labs-Diffusion(14B) 대비 모든 벤치마크에서 더 높은 정확도와 더 높은 최대 시스템 처리량을 동시에 달성했다. 특히 두 기준 모델 모두 자신의 기반 AR 모델보다도 대배치에서 더 느려지는 반면 Uno는 그렇지 않다.</li>
+<li><strong>독점(비공개) d-LLM 대비</strong>: Uno(8B)는 Inception Labs의 Mercury 2 대비 에이전트 도구 사용·코딩·장문맥 추론 벤치마크에서 모두 앞섰고, 최대 시스템 처리량은 더 느린 하드웨어(H200)에서도 약 4.6배 높았다.</li>
+<li><strong>스펙큘레이티브 디코딩(EAGLE-3, DFlash) 대비</strong>: 동일 Qwen3-8B 기반에서 Uno_Qwen은 시스템 처리량 기준 최고 약 5700+ 토큰/초로 EAGLE-3·DFlash를 능가했고, 배치 1 기준으로는 기반 AR 대비 약 2.5배 가속되었으며, 추가 파라미터 수와 최대 메모리 사용량도 더 적었다(단일 KV 캐시 공유).</li>
+<li><strong>RL 학습 가속</strong>: SFT 체크포인트에서 학습한 확산 가중치를 고정한 채 AR 가중치만 DAPO로 RL 학습해도(수학·코딩 위주로) 최대 약 40%의 종단간 학습 속도 향상이 있었고, RL 이후에도 TPF(스텝당 토큰 수)가 약 6%만 감소해 가속 효과가 대체로 유지되었다.</li>
+<li><strong>어블레이션</strong>: 손실 함수 항(DCD vs TV), LoRA 랭크·스케일, 학습 블록 크기 커리큘럼, LoRA를 적용할 프로젝션 범위 등을 조정한 결과, TV 손실 위주 목적함수와 모든 프로젝션에 LoRA를 적용하는 구성, 점진적으로 블록 크기를 늘리는 커리큘럼이 더 높은 TPF를 냄을 확인했다.</li>
+</ul>
+<h2>한계점</h2>
+<ul>
+<li>논문 스스로 밝힌 한계로, DCD(이산 일관성 증류)는 결정론적 확률흐름(probability-flow) 궤적으로 학습되지만 실제 샘플링 시점에는 확률적(stochastic) 디노이징 궤적을 따르므로 학습-추론 간 불일치가 존재하며 이는 방법의 효과를 제한할 수 있다고 명시한다.</li>
+<li>RL 학습 가속에 대한 상세 결과(수학/코드 전문가별)는 "다음 개정판에서 제공하겠다"고 명시되어 있어 본 버전에는 일부 세부 수치가 빠져 있다.</li>
+<li>추론 시점 스케일링(디노이징 스텝을 늘려 AR 품질을 능가할 수 있는지)에 대한 체계적 탐구는 향후 연구로 남겨두었다.</li>
+<li>콰드라틱 샘플러(초안·검증을 한 번의 순전파로 합치는 기법)와의 결합 등 실용적 커널 최적화도 향후 과제로 남아 있다.</li>
+<li>도구 호출이 지배적인 에이전트(툴 사용·검색) 태스크에서는 RL 학습 가속 효과가 상대적으로 작았다고 언급된다(툴 호출 자체가 실행 시간을 지배하기 때문).</li>
+</ul>
+<h2>시사점</h2>
+<ul>
+<li>별도의 드래프트 모델 없이도 기존 스펙큘레이티브 디코딩과 자기-스펙큘레이티브(self-speculative) 디코딩 방식을 대체할 수 있는 "드롭인" 가속 기법을 제시함으로써, 서빙 비용 절감과 RL 후처리 가속을 동시에 달성할 수 있는 실용적 경로를 제공한다.</li>
+<li>AR 모델의 원본 분포를 그대로 보존하는 무손실성(losslessness)을 유지하면서도 대배치(multi-user serving) 환경에서까지 속도 이득이 유지된다는 점은, 배치 크기가 커질수록 속도 이득이 사라지는 기존 d-LLM들의 근본적 한계를 극복한 사례로 볼 수 있다.</li>
+<li>기존 오픈소스 AR LLM에 소량의 LoRA 파라미터와 비교적 적은 토큰(수십억 토큰 수준)만으로 확산 가중치를 추가 학습시켜 가속할 수 있다는 점은, 대규모 사전학습 인프라가 없는 조직도 기존 모델을 손쉽게 가속할 수 있는 실용적 가능성을 시사한다.</li>
+</ul>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.04010" target="_blank" rel="noopener">huggingface.co/papers/2609.04010</a> · 2026-09-09</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

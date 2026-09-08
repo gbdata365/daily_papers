@@ -1,0 +1,131 @@
+<meta charset="UTF-8">
+<title>증류 전에 검증하라</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#7 · Daily Papers 2026-09-09</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 9</span>
+    </div>
+    <h1 class="article-title">Verify Before You Distill: Prompt-Level Teacher Gating for On-Policy Distillation</h1>
+    <p class="article-title-ko">증류 전에 검증하라: 온폴리시 증류를 위한 프롬프트 단위 교사 게이팅</p>
+    <p class="article-sub">On-policy distillation(OPD)에서 교사 모델의 신뢰도를 프롬프트 단위로 먼저 검증한 뒤, 신뢰할 수 있을 때만 조밀한 교사 지도 신호를 쓰고 그렇지 않으면 검증기 기반 GRPO로 전환하는 TGOPD를 제안하여, 성능 향상과 함께 유휴 상태였던 교사 GPU 자원 활용률을 크게 끌어올렸다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.02998" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.02998" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Verify Before You Distill: Prompt-Level Teacher Gating for On-Policy Distillation</li>
+<li><strong>저자</strong>: AllSpark Team (기여자: Zhiwei Zhang, Zechen Sun, Fei Zhao, Kang Peng, Bin Liang, Huayu Deng, Yao Hu, Kam-Fai Wong, Mu Chuan)</li>
+<li><strong>출처</strong>: arXiv:2609.02998v1 [cs.LG] (2026-09-02)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.02998">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>On-policy distillation(OPD)에서 교사 모델의 신뢰도를 프롬프트 단위로 먼저 검증한 뒤, 신뢰할 수 있을 때만 조밀한 교사 지도 신호를 쓰고 그렇지 않으면 검증기 기반 GRPO로 전환하는 TGOPD를 제안하여, 성능 향상과 함께 유휴 상태였던 교사 GPU 자원 활용률을 크게 끌어올렸다.</p>
+<h2>배경 및 문제의식</h2>
+<p>On-policy distillation은 학생 모델이 스스로 생성한 롤아웃에 대해 더 강한 교사 모델이 토큰 단위로 조밀한 지도 신호(reverse KL 기반)를 제공하는 방식으로, 희소한 보상만 주는 RLVR(강화학습)보다 훨씬 빠르게 교사 수준의 성능에 도달할 수 있게 해준다. 그러나 기존의 "바닐라 OPD"는 이 교사 신호를 모든 프롬프트에 대해 무조건적으로 신뢰하고 적용한다는 한계가 있다. Reverse KL은 mode-seeking(최빈값 추구) 성질을 가지므로, 교사가 특정 프롬프트에 대해 확신에 차 있지만 틀린 답을 낼 경우, 그 잘못된 신호가 학생에게 강하게 전이될 위험이 있다. 저자들은 실증 분석을 통해 교사의 자기 확신(응답의 로그확률)이 실제 정답 여부와 잘 상관되지 않음을 보였다(코드 도메인에서 AUROC 0.51로 거의 무작위 수준). 또한 교사 신뢰도가 낮은 프롬프트에서는 교사가 가장 확신하는 응답조차 코드 84%, 수학 61%의 비율로 틀린 것으로 나타났다. 한편 비동기 학습 구조에서는 교사 노드가 이미 생성된 롤아웃을 채점만 하면 되기 때문에 대부분의 시간 동안 GPU가 유휴 상태(4B 모델 기준 평균 활용률 9.8%, 59%의 시간 구간에서 5% 미만)로 남아있다는 시스템적 비효율도 함께 지적한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>교사 신뢰도를 프롬프트 단위로 사전에 검증한 뒤 지도 신호를 선택적으로 적용하는 새로운 프레임워크 TGOPD를 제안했다.</li>
+<li>교사의 자기 확신(엔트로피, 우도 등 분포 기반 지표)이 실제 정답 여부(outcome correctness)를 직접 반영하지 못함을 정량적으로 보였다.</li>
+<li>비동기 학습 파이프라인에서 원래 유휴 상태였던 교사 GPU 용량을 신뢰도 프로빙(probe)에 재활용함으로써, 별도의 추가 비용 없이 시스템 효율까지 개선했다(4B 단일 도메인 실험에서 교사 노드 활용률 9.8% → 78.9%).</li>
+<li>4B 및 35B 규모, 수학·코드·지시 따르기(IF) 세 도메인, 단일 도메인 및 다중 도메인 설정에서 폭넓게 검증하여 기존 방법 대비 일관된 성능 우위를 입증했다.</li>
+</ul>
+<h2>방법론</h2>
+<p>TGOPD의 핵심은 각 프롬프트마다 "교사를 감사(audit)한 뒤 지도 신호를 선택"하는 게이팅 메커니즘이다.
+1. <strong>신뢰도 프로브</strong>: 학생이 롤아웃을 생성하는 동안, 동일한 프롬프트에 대해 교사가 소규모(KT=3)의 독립적인 프로브 응답을 생성한다. 이 작업은 학생이 디코딩하는 동안 교사가 어차피 유휴 상태였던 시간대에 겹쳐서 실행되므로 추가 비용이 거의 들지 않는다.
+2. <strong>검증기 채점</strong>: 학생 롤아웃 채점에 쓰이는 것과 동일한 검증기(코드는 단위테스트, 수학·IF는 규칙 기반 판정기)로 교사의 프로브 응답들을 채점하여 통과율 qT(x)를 계산한다. 이는 교사의 기대 성공확률 RT(x)에 대한 불편추정량이다.
+3. <strong>게이트 결정</strong>: qT(x)가 임계값 τ(기본값 2/3, 즉 3개 중 2개 이상 통과) 이상이면 해당 프롬프트는 조밀한 OPD(토큰별 teacher-student 로그우도 비율 기반 advantage)로 학습한다. 미달이면 교사 신호를 완전히 배제하고, 대신 검증기 기반 GRPO(그룹 내 상대 보상, 표준편차 정규화는 생략)로 학습한다.
+4. <strong>선택적(배타적) 라우팅</strong>: 두 신호는 절대 혼합되지 않고 프롬프트마다 하나만 선택된다(수식으로는 이진 게이트에 의한 선택자 함수). 이는 서로 밀도와 성격이 다른 두 신호를 임의의 가중치로 섞는 것을 피하기 위한 설계 선택이다.
+5. <strong>다중 도메인 확장</strong>: 다중 교사(도메인별 전문 교사) 설정에서도 프롬프트가 해당 도메인 교사에게 라우팅된 뒤 동일한 게이팅 절차가 적용되므로 별도 수정 없이 확장 가능하다.</p>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li><strong>모델</strong>: 학생 모델로 Qwen3.5-4B(밀집)와 Qwen3.6-35B-A3B(MoE, 활성 파라미터 3B) 두 규모를 사용했고, 각 도메인(수학·코드·IF)마다 동일 베이스 모델을 GRPO로 학습시킨 전용 교사를 구성했다.</li>
+<li><strong>데이터</strong>: 수학은 DAPO-Math-17K, 코드는 CodeI/O의 입출력 예측 문제, IF는 Nemotron-Cascade 2에서 필터링한 데이터를 사용했다.</li>
+<li><strong>평가</strong>: AIME 2025/2026, HMMT-Feb(수학), LiveCodeBench·OJBench(코드), IFBench·IFEval(지시 따르기).</li>
+<li><strong>단일 도메인 결과</strong>: TGOPD는 6개의 도메인×규모 조합 모두에서 바닐라 OPD를 능가했으며, 특히 교사 확신도가 정답 여부와 가장 무관했던 코드 도메인에서 가장 큰 향상폭(4B +3.0, 35B +2.9)을 보였다. 35B 코드 실험에서는 다른 모든 비교 방법(바닐라 OPD, TrOPD, RG-OPD, RLSD 유사기법)이 기본 모델보다 오히려 성능이 떨어지는 부정적 전이를 보인 반면, TGOPD만 유일하게 기본 모델과 교사 모델을 모두 능가했다.</li>
+<li><strong>다중 도메인 결과</strong>: 7개 벤치마크 평균이 4B에서 53.40→54.54, 35B에서 60.99→61.94로 향상되었다.</li>
+<li><strong>시스템 효율</strong>: 프로브 도입으로 교사 노드 GPU 활용률이 단일 도메인 4B 기준 9.8%→78.9%, 35B 기준 8.8%→82.8%로 상승했으며, 다중 도메인에서도 유사한 개선(4B: 7.0%→66.6%, 35B: 5.0%→57.7%)을 보였다. 500회의 롤아웃 사이클을 정렬해 비교한 결과 평균 스텝 시간 증가는 5.9%에 불과했다.</li>
+<li><strong>소거 실험</strong>: 게이트 임계값(τ)을 바꿔가며 실험한 결과 τ≈2/3 부근에서 성능이 최고점을 이루는 완만한 역-U자 곡선을 보였다. 또한 게이트가 닫힌 프롬프트에서 아예 업데이트를 생략(masking)하는 것과 GRPO로 대체하는 것을 비교했을 때, 이득의 대부분(약 90%)은 "신뢰할 수 없는 교사 신호를 차단"하는 것 자체에서 나오며 GRPO 대체는 추가적이지만 작은 개선을 준다는 것을 확인했다.</li>
+</ul>
+<h2>한계점</h2>
+<ul>
+<li>TGOPD는 자동화된 검증기(코드 단위테스트, 규칙 기반 판정 등)가 존재하는 검증 가능한 작업에 의존하므로, 개방형(open-ended) 생성 과제처럼 명확한 정답 채점이 어려운 영역에는 그대로 적용하기 어렵다.</li>
+<li>신뢰도 판정이 이진(admit/reject) 게이트로 이루어지며, 프롬프트를 세밀하게 순위화하지 않는다. 저자들도 불확실성을 고려한(uncertainty-aware) 연속적 게이팅으로의 확장을 향후 과제로 남겼다.</li>
+<li>프로브가 교사의 유휴 시간을 대부분 활용하지만 완전히 무비용은 아니며(35B 코드 실험에서 평균 스텝 시간 5.9% 증가), 다중 도메인 설정에서는 교사 노드가 도메인별로 분할되어 있어 유휴 시간 활용도가 단일 도메인보다 낮다.</li>
+<li>게이트가 닫혔을 때의 대체 정책(GRPO 대체 vs 마스킹)의 우열이 도메인과 모델 규모에 따라 다르게 나타나, 명확한 단일 최적 규칙이 존재하지 않는다.</li>
+<li>논문은 텍스트 기반 작업(수학·코드·IF)에만 실험을 한정했으며, 다른 모달리티나 훨씬 큰 모델 규모에 대한 일반화는 논문에 명시되지 않음.</li>
+</ul>
+<h2>시사점</h2>
+<p>이 연구는 "더 강한 교사를 무조건 믿고 증류한다"는 기존 OPD의 암묵적 가정에 문제를 제기하고, 검증 가능한 보상이 존재하는 환경에서는 교사의 신뢰도를 실제로 검증한 뒤 선택적으로 지도 신호를 적용하는 것이 성능과 안정성 모두에 이롭다는 것을 보여준다. 특히 비동기 학습 구조에서 어차피 낭비되던 교사 GPU 유휴 시간을 신뢰도 검증에 재활용한다는 아이디어는, 추가적인 계산 자원 없이도 시스템 효율과 모델 품질을 동시에 개선할 수 있는 실용적인 설계로서, 향후 대규모 증류 파이프라인 설계에 참고할 만한 시사점을 제공한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.02998" target="_blank" rel="noopener">huggingface.co/papers/2609.02998</a> · 2026-09-09</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

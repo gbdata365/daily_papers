@@ -1,0 +1,101 @@
+{
+  "2609.04010": {
+    "base": "2609_유노_이산확산-기반-무손실-LLM-가속",
+    "rank": "#1",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "86",
+    "en_title": "Unlocking Lossless Speedups in LLMs via Discrete Diffusion",
+    "ko_title": "이산 확산을 통한 LLM 무손실 속도 향상"
+  },
+  "2609.03241": {
+    "base": "2609_플로우밸런스_검증기-기반-자기개선-강화학습",
+    "rank": "#2",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "67",
+    "en_title": "FlowBalance: Verifier-Grounded Self-Improvement from On-Policy Reasoning Experience",
+    "ko_title": "플로우밸런스: 온폴리시 추론 경험으로부터의 검증기 기반 자기개선"
+  },
+  "2609.03756": {
+    "base": "2609_에네아스_텍스트프롬프트-세그멘테이션-앙상블",
+    "rank": "#3",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "29",
+    "en_title": "ENEAS: Embedding-guided Neural Ensemble for Adaptive Segmentation",
+    "ko_title": "에네아스: 적응형 세그멘테이션을 위한 임베딩 기반 신경망 앙상블"
+  },
+  "2609.03003": {
+    "base": "2609_씨에프엠_인과-파운데이션-모델-실전-입문",
+    "rank": "#4",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "10",
+    "en_title": "Causal Foundation Models",
+    "ko_title": "인과 파운데이션 모델"
+  },
+  "2609.01281": {
+    "base": "2609_임바디드스킬즈_VLA-에이전트-통합-오케스트레이션-프레임워크",
+    "rank": "#5",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "10",
+    "en_title": "EmbodiedSkills: A Unified Framework for Orchestrating, Training, and Deploying VLA Agents",
+    "ko_title": "임바디드스킬즈: VLA 에이전트를 위한 통합 오케스트레이션·학습·배포 프레임워크"
+  },
+  "2608.25936": {
+    "base": "2608_옵에스디_온폴리시-자기증류-비판적-검토",
+    "rank": "#6",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "10",
+    "en_title": "One Symptom, Three Levers: A Critical Review of On-Policy Self-Distillation",
+    "ko_title": "하나의 증상, 세 개의 레버: 온폴리시 자기증류(OPSD)에 대한 비판적 검토"
+  },
+  "2609.02998": {
+    "base": "2609_티고피디_프롬프트-단위-교사-신뢰도-검증-증류",
+    "rank": "#7",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "9",
+    "en_title": "Verify Before You Distill: Prompt-Level Teacher Gating for On-Policy Distillation",
+    "ko_title": "증류 전에 검증하라: 온폴리시 증류를 위한 프롬프트 단위 교사 게이팅"
+  },
+  "2609.03005": {
+    "base": "2609_컨포멀릴레번스_문맥학습-앙상블-통합-컨포멀-언어-과제",
+    "rank": "#8",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "5",
+    "en_title": "Unifying Conformal Language Tasks with In-Context Ensembles",
+    "ko_title": "인컨텍스트 앙상블로 컨포멀 언어 과제 통합하기"
+  },
+  "2609.04482": {
+    "base": "2609_경계인식자기증류_안전거부-경계-제어-자기증류",
+    "rank": "#9",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "4",
+    "en_title": "Safety for Whom? Boundary-Aware Self-Distillation for Controlled LLM Safety Refusal",
+    "ko_title": "누구를 위한 안전인가? 통제된 LLM 안전 거부를 위한 경계 인식 자기증류"
+  },
+  "2609.03254": {
+    "base": "2609_리브프롭벤치_대화형-아티팩트-수정전파-테스트타임컴퓨트",
+    "rank": "#10",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "3",
+    "en_title": "What Else Needs Fixing? Exploring Cost-Effective Test-Time Compute for Revision Propagation in Artifacts Generated Through Conversation",
+    "ko_title": "대화를 통해 생성된 아티팩트의 수정 전파를 위한 비용 효율적 테스트타임 컴퓨트 탐구"
+  },
+  "2609.04382": {
+    "base": "2609_스플릿LLM유출_반환그래디언트가-디코이를-무력화",
+    "rank": "#11",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "2",
+    "en_title": "Privacy Failure in Split-LLM Training, The Returned Gradient Nullifies the Decoys",
+    "ko_title": "스플릿-LLM 학습에서의 프라이버시 실패: 반환 그래디언트가 디코이를 무력화하다"
+  }
+}

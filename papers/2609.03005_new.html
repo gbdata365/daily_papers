@@ -1,0 +1,140 @@
+<meta charset="UTF-8">
+<title>인컨텍스트 앙상블로 컨포멀 언어 과제 통합하기</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#8 · Daily Papers 2026-09-09</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 5</span>
+    </div>
+    <h1 class="article-title">Unifying Conformal Language Tasks with In-Context Ensembles</h1>
+    <p class="article-title-ko">인컨텍스트 앙상블로 컨포멀 언어 과제 통합하기</p>
+    <p class="article-sub">문서에서 관련 내용을 추출하는 다양한 NLP 과제(요약, 질의응답, 개인정보 탐지 등)를 하나의 프레임워크로 통합하기 위해, 수작업 프롬프트 대신 서로 다른 방식으로 선택된 인컨텍스트 학습(ICL) 예시들의 앙상블을 사용해 관련성 점수를 매기는 Conformal Relevance 프레임워크를 제안하고, 이론적으로 앙상블이 언제 더 나은지(complementarity 조건)를 규명했다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.03005" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.03005" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Unifying Conformal Language Tasks with In-Context Ensembles</li>
+<li><strong>저자</strong>: Xiao Shi Huang, Chen-Yuan Lin, Bruce Kuwahara (Signal 1 AI); Kin Kwan Leung, Jesse C. Cresswell (Layer 6 AI)</li>
+<li><strong>출처</strong>: arXiv:2609.03005v1 [cs.CL] (2026-09-02)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.03005">arXiv PDF 보기</a></li>
+<li><strong>코드</strong>: https://github.com/layer6ai-labs/conformal-relevance</li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>문서에서 관련 내용을 추출하는 다양한 NLP 과제(요약, 질의응답, 개인정보 탐지 등)를 하나의 프레임워크로 통합하기 위해, 수작업 프롬프트 대신 서로 다른 방식으로 선택된 인컨텍스트 학습(ICL) 예시들의 앙상블을 사용해 관련성 점수를 매기는 Conformal Relevance 프레임워크를 제안하고, 이론적으로 앙상블이 언제 더 나은지(complementarity 조건)를 규명했다.</p>
+<h2>배경 및 문제의식</h2>
+<p>요약, 추출형 질의응답, 법률 문서 검토, 임상 근거 선별 등 많은 NLP 과제는 결국 "문서에서 관련된 내용을 찾아내는" 문제로 환원된다. 이러한 시스템은 관련 내용을 놓치지 않는 커버리지(coverage)와, 불필요한 내용을 최대한 걸러내는 간결성(conciseness)이라는 두 요구를 동시에 만족해야 한다. Conformal prediction(컨포멀 예측)은 임의의 점수 함수를 특정 데이터셋으로 보정(calibration)하여 분포에 대한 가정 없이 유한 표본에서의 커버리지를 보장하는 범용 프레임워크로 인기를 얻었다. 그러나 커버리지는 보장되더라도, 실제로 얼마나 간결한 예측 집합을 얻는지는 전적으로 점수 함수(scoring function)의 품질에 달려 있다. 기존 연구들은 과제별로 "무엇이 중요한 내용인지"를 자연어로 세밀하게 서술한 수작업 프롬프트를 LLM에 입력해 점수를 매겼는데, 이는 노동집약적이고 특정 과제에만 적용 가능하며 확장성이 떨어진다는 한계가 있다. 저자들은 이런 관련성 기준을 자연어로 "서술"하는 대신, 라벨링된 예시들을 통해 "보여주는" 방식(ICL)으로 대체함으로써 다양한 콘텐츠 선택 과제를 하나의 범용 프레임워크로 통합하고자 했다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>서로 다른 콘텐츠 선택 과제에 대해 별도의 프롬프트 엔지니어링 없이 적용 가능한, 컨포멀 커버리지 보장을 갖춘 범용 ICL 앙상블 점수 함수를 제안했다.</li>
+<li>서로 다른 신호 유형(검색 방식)에 기반한 4가지 메커니즘적으로 이질적인 하위 점수 함수(sub-scoring function)를 설계했다.</li>
+<li>리콜(recall) 지향 컨포멀 예측에서 점수 앙상블링의 효과를 수학적으로 정식화했다: 두 점수 함수를 평균 앙상블할 때 성능이 향상되는 조건("complementarity 조건")과, 추가 점수 함수를 더할수록 이득이 O(1/K)로 감소한다는 소거(diminishing returns) 상한을 증명했다.</li>
+</ol>
+<h2>방법론</h2>
+<p><strong>컨포멀 배경</strong>: 문서 x의 각 내용 스팬(문장 등) c에 대해 관련성 함수 R(c;x)∈[0,1]을 정의하고, 정답 관련 스팬 집합 y*의 리콜 β 비율을 유지하는 최소 관련성 수준을 컨포멀 점수 Sβ로 정의한다(β=1일 때는 정답 스팬 중 최소 점수, 즉 "floor"). 보정 데이터셋에서 계산한 점수들의 분위수로 임계값 q̂를 정하고, 테스트 문서에서는 관련성이 q̂ 미만인 스팬을 제거한다. 이 방식은 어떤 R을 쓰든 커버리지(최소 β 비율의 정답 보존 확률이 1-α 이상)를 보장한다.</p>
+<p><strong>이론(3장)</strong>: 저자들은 단일 관련성 함수 R 대신 K개의 서로 다른 ICL 전략에서 나온 관련성 함수들의 평균 앙상블 R̄을 사용할 것을 제안한다.
+- <strong>타당성</strong>: ICL 예시가 보정/테스트셋과 분리된 풀(pool)에서 추출되는 한, 평균 앙상블도 exchangeability(교환가능성) 가정 하에서 원래의 1-α 커버리지를 그대로 보존한다(집합 단위 앙상블은 커버리지가 1-2α로 저하되는 것과 대조적).
+- <strong>K=2에서의 complementarity 조건</strong>(Lemma 1): 두 점수 함수의 floor를 각각 S(R1), S(R2)라 하고 더 나은/못한 쪽을 Smax, Smin이라 할 때, 두 함수가 서로 다른 위치에서 최저점을 갖는 정도를 Comp(complementarity)로 정의한다. 앙상블 floor S(2)가 Smax를 능가하는 것은 정확히 Comp &gt; Smax - Smin일 때이다. 즉, 두 점수 함수의 "약점"이 서로 다른 문장에 위치할수록(중복되지 않을수록) 앙상블이 유리하다.
+- <strong>소거 상한</strong>(Proposition 1): K개에서 K+1개로 점수 함수를 늘릴 때, 조건이 만족되면 floor가 상승하지만 그 개선폭은 (1-S^(K))/(K+1) 이하로, O(1/K) 속도로 줄어든다.
+- 이 이론은 β&lt;1(부분 리콜)로도 확장된다.</p>
+<p><strong>방법(4장, Conformal Relevance)</strong>: 위 이론에 따라 저자들은 서로 다른 검색 신호에 기반한 K=4개의 ICL 예시 선택 전략을 설계했다.
+- <strong>anchor_dpp</strong>: 쿼리 문서와 가장 유사한 앵커 문서를 고르고, 그 앵커를 조건으로 한 결정점과정(DPP)으로 나머지 예시를 다양하게 선택.
+- <strong>pattern_dpp</strong>: 각 풀 문서에서 "긍정 스팬 중심 - 부정 스팬 중심" 벡터(관련성 방향)를 구하고, 이 방향 벡터들에 대해 DPP를 적용해 다양한 예시를 선택.
+- <strong>bm25</strong>: BM25 어휘 검색으로 쿼리와 유사한 문서를 검색.
+- <strong>random</strong>: 무작위로 예시를 선택하여 앙상블의 정규화 역할을 함.</p>
+<p>각 전략마다 k=2개의 ICL 예시를 사용해 LLM(기본값 Gemini-2.5-Flash-Lite)에 프롬프트로 제공하고, 관련성 판단 기준을 예시로부터 스스로 추론하도록 유도한다(수작업으로 "무엇이 중요한지" 설명하지 않음). 4개 점수 함수의 산술 평균을 최종 점수 함수 R̄로 사용하며, 이 전체 파이프라인을 Ens4라 부른다.</p>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li><strong>데이터셋</strong>: 재무(ECTSum), 백과사전(SubSumE), 의료(PUMA, PhysioNet, Evidence Inference), 일반 QA(HotpotQA), 법률(ContractNLI) 등 5개 도메인, 4개 과제 유형(요약, QA, 개체/스팬 탐지, 조항 채점)에 걸친 7개 데이터셋을 사용했다. 라벨 예산은 데이터셋당 150~440개(ICL 풀 + 100개 보정 샘플)로 비교적 적은 편이다.</li>
+<li><strong>베이스라인</strong>: ICL0(과제별 수작업 프롬프트, ICL 예시 없음), Best Single(4개 전략 중 사후에 최고 성능을 낸 단일 전략, k도 튜닝됨).</li>
+<li><strong>주요 결과(MAP 기준)</strong>: Ens4는 단일 고정 설정으로 7개 데이터셋 모두에서 ICL0과 Best Single을 능가했다. ICL0 대비 +0.090~+0.170 MAP(+12%~+59%) 향상되었으며, 모든 향상폭의 95% 부트스트랩 신뢰구간이 0을 포함하지 않았다. 특히 HotpotQA에서는 단일 ICL 전략 중 ICL0을 능가하는 것이 하나도 없었음에도 Ens4는 +0.090 MAP 향상을 보였고, 어느 한 전략도 모든 데이터셋에서 최고 성능을 내지 못했다(random 전략조차 한 데이터셋에서 최고를 기록).</li>
+<li><strong>소거 실험</strong>: ICL 예시 수 k는 2~3이 가장 안정적이었고(k=1은 부족, k≥5는 성능 저하), 앙상블 크기 K=4가 모든 11가지 부분집합 조합 중 모든 데이터셋에서 최고 성능을 보였다. 다만 K=3→4로 늘릴 때의 한계 이득은 K=2→3보다 작아, 이론에서 예측한 O(1/K) 소거 현상과 일치했다.</li>
+<li><strong>complementarity 검증</strong>: 동일한 총 ICL 예시 수를 단일 전략에 몰아준 경우(Best Single k=8)보다 4개 전략으로 분산한 Ens4가 모든 데이터셋에서 +0.070~+0.119 MAP 더 우수했다. 지도학습 분류기(임베딩 기반)나 온도(temperature) 변화를 이용한 확률적 다양성 앙상블과 비교해도, ICL 전략 간의 "검색 유도 다양성"이 핵심 메커니즘임을 확인했다(12/16 설정에서 신뢰구간이 겹치지 않게 우세).</li>
+<li><strong>강건성</strong>: Gemini 외에 Llama3-8B, Qwen3-8B, GPT-5.6-terra로 교체해도 대부분의 (모델, 데이터셋) 조합에서 Ens4가 ICL0과 Best Single을 능가했다. 과제 힌트(한 줄 설명)를 제거해도 6/7 데이터셋에서 성능이 0.04 MAP 이내로 유지되었으나, 비의미적 기준(예: 개인건강정보 판별)을 사용하는 PhysioNet은 힌트 없이 0.879→0.549로 크게 저하되었다.</li>
+<li><strong>커버리지와 간결성</strong>: 실제 컨포멀 파이프라인 전체를 평가한 결과, 실증 커버리지는 목표치의 1퍼센트포인트 이내로 유지되었고, Ens4는 대부분의 β 값에서 ICL0보다 더 많은 불필요한 문장을 제거(최대 약 50% 길이 감소)했다. 평균 앙상블(mean ensembling)이 다수결 투표, 신뢰수준 할당(COLA), 합집합(union of sets) 등 다른 앙상블 규칙보다 목표 커버리지에 더 가까우면서도 가장 높은 간결성을 달성했다.</li>
+</ul>
+<h2>한계점</h2>
+<ul>
+<li>프레임워크는 여전히 약 150~440개의 라벨링된 예시(ICL 풀 + 100개 보정 샘플)에 접근해야 하며, 이는 실무에서 수작업 큐레이션이 필요할 수 있다.</li>
+<li>보정과 테스트 사이에 관련성 기준이 변하지 않는다는(정적 관련성 기준) exchangeability 가정에 의존한다.</li>
+<li>선택적으로 사용하는 한 줄 과제 힌트가 없으면 6/7 데이터셋은 큰 변화가 없었지만, 개인건강정보처럼 규제 기준에 기반해 의미적으로 추론하기 어려운 비의미적(non-semantic) 과제에서는 성능이 크게 저하되었다.</li>
+<li>주요 결과는 Gemini-2.5-Flash-Lite 한 모델로 보고되었고, 오픈소스 8B급 모델 두 종으로만 추가 검증했다. 이는 이후 더 강력한 모델들에 비해 제한적인 모델 집합이다.</li>
+<li>Ens4는 문서당 4회의 LLM 호출이 필요해(ICL0의 1회 대비) 테스트 시점 연산 비용이 증가한다(직렬 실행 기준 최대 약 18배의 지연시간 증가가 관측되었으나, 4개 호출은 병렬화 가능).</li>
+<li>온도(T=0), 시드, 모델 버전, 프롬프트를 고정해도 호스팅된 LLM의 서버 측 실행에서 잔여 변동이 발생할 수 있어, 개별 샘플 단위가 아닌 집계 지표(MAP) 수준에서 재현성을 목표해야 한다.</li>
+<li>1-α 보장은 테스트 분포에 대한 한계(marginal) 커버리지이며, 인텐트나 문서 길이, 보호 속성 등에 대한 조건부 커버리지는 보장하지 않는다.</li>
+<li>긍정 예시(관련 스팬)가 매우 희소한 데이터셋에서는 ICL 풀 내 유효한 긍정 후보 수가 적어 LLM이 충분한 맥락을 보지 못할 수 있다.</li>
+</ul>
+<h2>시사점</h2>
+<p>이 연구는 관련성의 정의가 과제마다 다르더라도, 이를 자연어로 서술하는 대신 예시로 "보여주는" 방식(ICL)과 서로 이질적인 신호를 결합하는 앙상블을 통해 하나의 범용 프레임워크로 통합할 수 있음을 실증적·이론적으로 보였다. 특히 두 점수 함수를 언제, 왜 앙상블해야 이득인지를 정량적으로 규정한 complementarity 조건과 O(1/K) 소거 법칙은, 향후 다른 컨포멀 언어 과제(에이전트 오류 귀속, RAG 컨텍스트 선택 등)에서 몇 개의, 어떤 성격의 하위 점수 함수를 조합해야 하는지 설계할 때 실질적 지침이 될 수 있다. 또한 수작업 프롬프트 엔지니어링에 대한 의존을 줄임으로써, 새로운 콘텐츠 선택 과제에 프레임워크를 적용하는 진입장벽을 크게 낮췄다는 점에서 실용적 의의가 크다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.03005" target="_blank" rel="noopener">huggingface.co/papers/2609.03005</a> · 2026-09-09</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

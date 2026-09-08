@@ -1,0 +1,140 @@
+<meta charset="UTF-8">
+<title>플로우밸런스</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#2 · Daily Papers 2026-09-09</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 67</span>
+    </div>
+    <h1 class="article-title">FlowBalance: Verifier-Grounded Self-Improvement from On-Policy Reasoning Experience</h1>
+    <p class="article-title-ko">플로우밸런스: 온폴리시 추론 경험으로부터의 검증기 기반 자기개선</p>
+    <p class="article-sub">추론 모델이 자기 자신의 온폴리시(on-policy) 경험으로부터 자가 개선(self-improvement)할 때, 검증기(verifier)의 희소하지만 신뢰할 수 있는 결과 신호로 조밀한(dense) 자기 안내(self-guidance) 신호의 방향을 보정하고, 이를 궤적 균형(trajectory balance) 방식으로 정규화된 완전 응답 분포로 학습시키는 FlowBalance를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.03241" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.03241" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: FlowBalance: Verifier-Grounded Self-Improvement from On-Policy Reasoning Experience</li>
+<li><strong>저자</strong>: Zixun Huang, Kishan Panaganti, Haitao Mi, Leowei Liang (Tencent HY LLM Frontier, University of Pennsylvania)</li>
+<li><strong>출처</strong>: arXiv:2609.03241v1 [cs.LG] (2026-09-03)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://alexhuang13.github.io/FlowBalance-Blog/">https://alexhuang13.github.io/FlowBalance-Blog/</a> / GitHub: <a href="https://github.com/alexhuang13/FlowBalance">https://github.com/alexhuang13/FlowBalance</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.03241">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>추론 모델이 자기 자신의 온폴리시(on-policy) 경험으로부터 자가 개선(self-improvement)할 때, 검증기(verifier)의 희소하지만 신뢰할 수 있는 결과 신호로 조밀한(dense) 자기 안내(self-guidance) 신호의 방향을 보정하고, 이를 궤적 균형(trajectory balance) 방식으로 정규화된 완전 응답 분포로 학습시키는 FlowBalance를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<ul>
+<li>추론 모델의 자가 개선 루프에는 두 가지 취약점이 있다. 첫째, 검증 가능한 보상을 사용하는 강화학습(RLVR)은 신뢰할 수 있는 결과 기반 근거를 제공하지만, 응답 전체에 대해 단 하나의 최종 보상만 주어지는 희소한 피드백이라는 한계가 있다. FlowRL 같은 분포적(distributional) 방법이 이 결과 신호를 완전 응답에 대한 확률로 잘 변환하지만, 결과만 사용하는 에너지 함수는 샘플링된 추론 경로 내부의 세밀한 증거를 활용하지 못한다.</li>
+<li>둘째, 같은 정책의 고정된(frozen) 복사본이 정답이나 과제 피드백 같은 학습 시점 전용(training-only) 특권 정보를 참고해 자신이 이미 생성한 각 토큰을 재평가할 수 있다. 이 "같은 모델·특권적 사후 관점(privileged-hindsight)" 신호는 조밀하고 저렴하지만 무조건 신뢰할 수는 없다. 추론 시점에는 없는 정보를 관찰하기 때문에, 결국 틀린 것으로 판명될 그럴듯한 궤적을 선호하거나, 추론을 짧게 만들거나, 불확실성 기반 탐색을 억제하거나, 학습을 하나의 좁은 지역 모드로 집중시킬 위험이 있다. 이런 확신을 무비판적으로 따르면 모델 자신의 잘못된 선호가 다음 업데이트의 지도(supervision)가 되는 "자기 확신 고착(self-confirmation)" 문제가 생긴다.</li>
+<li>논문은 이를 "온폴리시 추론 경험, 희소하게 검증된 결과, 조밀하지만 불완전한 자기 안내가 주어졌을 때, 다음 정책이 학습해야 할 정규화된 응답 분포는 무엇인가?"라는 분포적 자가 개선 질문으로 정식화한다.</li>
+</ul>
+<h2>핵심 기여</h2>
+<ol>
+<li>GRPO 같은 검증기 전용 RL과 RLSD 같은 RL-자기안내 혼합 방식 모두를 능가하는 분포적 자가 개선 목적함수 제안. 검증기 우위(advantage)와 특권적 사후 관점 안내를 하나의 기준정책(reference policy) 지지 궤적 에너지로 결합한 뒤, 프로파일된(profiled) 궤적 균형으로 이 분포를 학습시킨다.</li>
+<li>거짓양성(false-positive) 자기 안내를 검증기 기반 보정으로 전환하는 결과-보정(outcome-calibrated) 자기 안내: 그룹 상대 우위가 양수면 안내를 유지, 음수면 안내 부호를 반전, 0이면 안내를 비활성화한다.</li>
+<li>보수적이고 정보 효율적인 궤적균형 업데이트에 대한 이론적 보장: 로그-분배함수(log-partition)를 롤아웃 그룹당 하나만 프로파일링해도 그룹 내 모든 상대적 확률 대비(contrast)가 보존되며, 이 타깃 분포는 주어진 에너지 수준에서 기준정책으로부터의 역-KL(reverse-KL) 변위가 최소인 유일한 분포임을 증명.</li>
+<li>수학 추론에서 성능 향상뿐 아니라, 자가 개선이 하나의 추론 모드로 붕괴하지 않는다는 의미론적 다양성(diversity) 증거 제시.</li>
+</ol>
+<h2>방법론</h2>
+<ul>
+<li><strong>온폴리시 경험과 검증기 우위</strong>: 프롬프트 x에 대해 현재 정책의 고정된 스냅샷 π_θ⁻로 N개의 응답을 롤아웃하고, 검증기가 최종 정답 정확성에 따라 보상 R_i를 부여한다. GRPO 방식과 유사하게 그룹 평균/표준편차로 정규화한 우위 A_i = (R_i − μ_R)/(σ_R + ε)를 계산하며, 이 값에는 그래디언트가 흐르지 않는다.</li>
+<li><strong>특권적 사후 관점 자기 안내(privileged-hindsight self-guidance)</strong>: 학습 전용 문맥 c(참조 정답이나 과제 피드백)를 조건으로 하는 동일 스냅샷의 관점 π_H가, 롤아웃 시 관찰하지 않았던 c를 사후에 보고 이미 샘플링된 토큰들을 재채점한다. 기준정책 대비 로그확률 이득을 클리핑하여 토큰별로 계산한 뒤 응답 전체에 대해 평균해 궤적 수준 안내 이득 G_H를 얻는다. 이 과정에서 π_H는 새로운 궤적을 생성하지 않고 그래디언트도 받지 않는다.</li>
+<li><strong>결과-보정 에너지</strong>: E_FlowBalance(y|x,c) = η_A·A(y) + β_G·G_H(y|x,c)·sgn(A(y)). 즉 검증기 우위의 부호에 따라 자기 안내 항의 방향을 결정한다: 성공(A&gt;0)이면 긍정적 안내를 강화에 사용하고, 실패(A&lt;0)이면 같은 긍정적 안내를 반전시켜 자기 확신 고착을 방지하며, A=0이면 조밀한 안내 분기를 끈다.</li>
+<li><strong>기준정책 지지 타깃 분포와 궤적 균형</strong>: 이 에너지로 기준정책 π_ref를 지수적으로 재가중한 정규화 타깃 분포 p*_FlowBalance(y|x,c) ∝ π_ref(y|x)·exp(E(y|x,c)/τ)를 정의하고, 롤아웃 그룹마다 로그-분배함수를 하나만 추정(프로파일링)하는 궤적 균형(trajectory balance) 잔차를 최소화하는 방식으로 정책을 맞춘다. 별도의 토큰 단위 모방(imitation) 손실은 사용하지 않는다.</li>
+<li><strong>서브궤적 균형 확장</strong>: 완전 응답 단위 궤적균형뿐 아니라 중간 상태 간에도 적용 가능한 서브궤적 균형 형태를 제시하나, 본 논문의 주요 실험은 완전 응답 구현을 사용한다.</li>
+<li><strong>이론적 분석(명제 1~4)</strong>: (1) 프로파일된 균형은 그룹 내 N-1개의 모든 상대적 확률 대비를 보존한다(공통 오프셋만 제거). (2) FlowBalance 타깃은 주어진 복합 에너지 수준을 달성하는 분포들 중 기준정책으로부터의 역-KL 변위가 최소인 유일한 분포다(보수적 최소변화 업데이트). (3) 검증기 계수 η_A를 늘리면 타깃의 기대 검증 보상이 단조적으로 증가한다. (4) 부호 게이팅(sign gating)은 검증 성공 응답과 기각된 응답 간의 목표 확률비를 exp(2β_G·G_H(y₋)/τ) 배만큼 정확히 보정하여, 기각된 응답에 대한 거짓양성 안내를 자기 강화가 아닌 검증된 응답 쪽으로의 확률비 보정으로 바꾼다.</li>
+</ul>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li>Qwen3-4B와 Qwen3-8B 두 백본에서 GRPO, OPSD(온폴리시 자기증류), RLSD(같은 계열의 검증기+증류 혼합), FlowRL(결과 전용 궤적균형), FlowBalance를 비교했다. 평가 벤치마크는 AIME24(Pass@16), HMMT25·Minerva·MATH500·OlympiadBench(Pass@1)이며, 5개 시드에 대한 스텝 180 시점 성능을 보고한다.</li>
+<li><strong>주요 결과</strong>: Qwen3-4B에서 FlowBalance는 5개 벤치마크 평균 64.26을 기록해 GRPO 대비 +1.95점, OPSD 대비 +10.14점, RLSD 대비 +4.71점, FlowRL 대비 +1.04점 높았다. Qwen3-8B에서는 평균 67.61로 모든 벤치마크에서 최고 평균을 기록했으며 GRPO 대비 +2.12점, OPSD 대비 +26.45점, RLSD 대비 +3.49점, FlowRL 대비 +1.76점 향상되었다. 핵심 4개 벤치마크(AIME24, HMMT25, MATH500, OlympiadBench) 평균 기준으로는 FlowRL 대비 4B에서 +1.67점, 8B에서 +1.98점의 개선이다.</li>
+<li><strong>학습 역학</strong>: Qwen3-8B에서 FlowBalance는 AIME24 검증 정확도 0.5에 도달하는 데 약 100스텝이 걸려 GRPO(약 143스텝)보다 약 1.43배 빠르며, 400스텝 동안 성능이 안정적으로 유지되는 반면 GRPO는 약 180스텝 이후 급격히 성능이 저하된다. 또한 직접적인 OPSD는 응답 길이가 급격히 짧아지는 붕괴 현상을 보이는 반면, FlowBalance는 긴 추론 궤적을 유지한다.</li>
+<li><strong>어블레이션</strong>: 검증기 계수 η_A를 5→10→15로 늘리면 평균 성능이 65.65→65.41→67.61로(대체로) 향상되고, 자기 안내 계수 β_G를 1→2→3으로 늘리면 오히려 67.61→66.48→65.95로 감소해, 이득이 단순히 조밀 신호를 강하게 하는 데서 오는 것이 아니라 "보정된" 자기 안내에서 온다는 점을 보여준다.</li>
+<li><strong>정성적 다양성 진단</strong>: GPT-5.5를 판정자로 사용해 AIME24에서 정답 궤적들의 의미론적 전략을 클러스터링하고 Simpson 다양성 지수를 계산한 결과, FlowBalance가 0.2194로 GRPO(0.1017), RLSD(0.1456)보다 높은 다양성을 보였다. 사례 연구(AIME24 문제 23)에서 GRPO는 표준적인 Cayley–Menger 행렬식 풀이를 사용한 반면, FlowBalance는 41=4²+5², 80=4²+8², 89=5²+8²라는 관계를 발견해 숨겨진 4×5×8 직육면체 임베딩을 이용하는 전혀 다른 풀이 경로를 찾아냈다.</li>
+<li><strong>정확한(exact) 수치 진단</strong>: 완전히 열거 가능한 응답 공간에서 구성한 예시들로, 보상 전용 성형(shaping)은 성공 질량 0.818, 게이팅 없는 자기 안내는 0.832, FlowBalance는 0.900(강건한 성공 모드 비율도 0.327→0.440으로 증가)에 도달함을 보였다. 또한 그룹 크기 N=32에서 분배함수를 프로파일링하는 방식은 그룹당 하나의 대비만 사용하는 추정기 대비 약 1/34 수준의 국소 가우시안 파라미터 위험도만을 가진다.</li>
+</ul>
+<h2>한계점</h2>
+<ul>
+<li>논문이 명시한 한계로, 대규모 실험이 수학 추론에 집중되어 있어 에이전트형·멀티모달·기타 장기 호라이즌(long-horizon) 도메인으로의 일반화는 아직 열린 문제이다.</li>
+<li>응답 길이 비교는 상관관계가 있는 실패 양상을 진단할 뿐, 응답이 길수록 정확도가 높아진다는 인과관계를 입증하지는 않는다.</li>
+<li>다양성 분석은 하나의 체크포인트·하나의 시드에서 수행된 LLM 판정 기반 진단으로, 다중 시드 인간 평가 연구는 아니다.</li>
+<li>실험은 고정된 프롬프트(과제) 분포 하에서 경험→정책 업데이트의 내부 루프만을 분리해서 다룬 것으로, FlowBalance 자체는 새로운 과제를 생성하거나 큐레이션하는 완전한 자기진화(self-evolving) 시스템이 아니다. 저자들은 외부 루프 커리큘럼(예: R-Few 방식의 Challenger–Solver 시스템)과의 결합을 향후 과제로 제시한다.</li>
+<li>신뢰도-강도(reliability-strength) 경계 진단에서, 임의로 강한 자기 안내가 항상 안전한 것은 아니며 안내가 체계적으로 틀린 경우 오히려 검증 성공률을 낮출 수 있음을 스스로 보여준다(무제한적 게이팅 안전성을 주장하지 않음).</li>
+</ul>
+<h2>시사점</h2>
+<ul>
+<li>검증기의 희소하지만 신뢰할 수 있는 신호와, 모델 자신의 조밀하지만 불완전한 자기 평가 신호를 "정규화된 분포"라는 하나의 수학적 틀 안에서 결합함으로써, 단순히 두 신호를 더하는 것이 아니라 정책 업데이트의 목표 대상 자체를 국소 최적화 신호에서 명시적으로 정규화된 분포로 바꾸는 접근을 제시한다.</li>
+<li>검증기 방향을 유지하면서 자기 안내를 보정하는 부호 게이팅은, 최근 활발히 연구되는 온폴리시 자기증류(on-policy self-distillation) 계열 방법들이 겪는 "자기 확신 고착"이나 "추론 붕괴" 문제에 대한 비교적 단순하고 이론적으로 뒷받침된 해법을 제공한다.</li>
+<li>정확도 향상뿐 아니라 정답 전략의 다양성까지 함께 확보했다는 점은, RL 후처리 과정에서 흔히 발생하는 "하나의 지배적 풀이 템플릿으로의 붕괴" 문제를 완화하는 데 이 같은 분포 매칭(distribution-matching) 접근이 유용할 수 있음을 시사한다.</li>
+</ul>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.03241" target="_blank" rel="noopener">huggingface.co/papers/2609.03241</a> · 2026-09-09</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

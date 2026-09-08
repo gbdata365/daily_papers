@@ -1,0 +1,118 @@
+<meta charset="UTF-8">
+<title>하나의 증상</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#6 · Daily Papers 2026-09-09</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 10</span>
+    </div>
+    <h1 class="article-title">One Symptom, Three Levers: A Critical Review of On-Policy Self-Distillation</h1>
+    <p class="article-title-ko">하나의 증상, 세 개의 레버: 온폴리시 자기증류(OPSD)에 대한 비판적 검토</p>
+    <p class="article-sub">별도의 대형 교사모델 없이, 모델 자기 자신을 정답이나 힌트 같은 "특권 정보(privileged information)"로 조건화해 교사로 삼는 On-Policy Self-Distillation(OPSD) 기법을, 수학 추론 영역에 한정해 비판적으로 검토하고, 그 핵심 실패 모드인 "붕괴(collapse)"를 (A) 신호를 어디에 적용할지 (B) 교사에게 무엇을 보여줄지 (C) 신호가 언제 변화할지라는 세 가지 조절 레버로 구조화한 서베이형 리뷰 논문이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.25936" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.25936" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: One Symptom, Three Levers: A Critical Review of On-Policy Self-Distillation</li>
+<li><strong>저자</strong>: Justin Robert, Raheel Qader (OVHcloud, "OVHai LLM" 팀)</li>
+<li><strong>출처</strong>: arXiv:2608.25936v1 [cs.LG] (2026-08-26)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.25936">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>별도의 대형 교사모델 없이, 모델 자기 자신을 정답이나 힌트 같은 "특권 정보(privileged information)"로 조건화해 교사로 삼는 On-Policy Self-Distillation(OPSD) 기법을, 수학 추론 영역에 한정해 비판적으로 검토하고, 그 핵심 실패 모드인 "붕괴(collapse)"를 (A) 신호를 어디에 적용할지 (B) 교사에게 무엇을 보여줄지 (C) 신호가 언제 변화할지라는 세 가지 조절 레버로 구조화한 서베이형 리뷰 논문이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>DeepSeek-R1 이후 검증 가능한 보상 기반 강화학습(RLVR, GRPO 계열)이 LLM 추론 능력 향상의 주류가 되었지만, 궤적 끝에서만 주어지는 희소한 보상 때문에 신용할당(credit assignment)이 어렵고, 많은 롤아웃을 샘플링해야 해 비용이 크다. On-policy distillation(OPD)은 더 큰 교사모델이 학생의 롤아웃을 토큰 단위로 채점해 밀집된 학습신호를 제공함으로써 이 문제를 해결하지만, 학생보다 더 유능한 별도의 대형 교사모델이 항상 필요하다는 비용이 남는다. On-Policy Self-Distillation(OPSD)과 이와 거의 동시에 제안된 Self-Distillation Policy Optimization(SDPO)은 교사를 "더 유능한 모델"이 아니라 "정답이나 환경 피드백 같은 특권정보를 추가로 아는 동일한 모델"로 대체해 이 비용을 제거한다. 그러나 이 정보 비대칭이 학습 신호를 생성함과 동시에 편향시켜, 모델이 만들어낼 수 있는 추론 경로의 다양성이 점점 좁아지는 "붕괴"라는 실패 모드를 일으킨다는 것이 이 논문의 문제의식이다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>SFT → RLVR → OPD → OPSD로 이어지는 계보를 "각 방법이 앞선 방법의 결함을 하나씩 고쳐온 과정"으로 정리하고, OPSD/SDPO의 작동 메커니즘(롤아웃 생성 → 교사 채점 → forward KL 발산 계산 → 학생만 역전파)을 단계별로 상세히 설명</li>
+<li>붕괴 현상을 "한 가지 증상, 세 가지 레버" 구조로 재정리: (A) 신호 기하(signal geometry, 발산의 방향과 토큰별 가중치) (B) 특권정보의 성격(정답/CoT/계획/루브릭/피드백 등 무엇을 교사에게 보여줄지) (C) 루프 안정성(교사 가중치와 특권정보 노출량이 시간에 따라 어떻게 변하는지)</li>
+<li>로보틱스 분야의 오래된 "특권정보를 이용한 학습" 이론(Vapnik &amp; Vashist 2009, Learning by Cheating 등)을 LLM OPSD 문헌에 다시 연결하여, "학생이 테스트 시점에 스스로 재구성 가능한 정보만 안전하다"는 명확한 안전성 기준을 제시</li>
+<li>지금까지 검증된 특권정보의 종류(최종 정답, 전체 풀이, CoT, 부분 트레이스, 계획/힌트, 오류정렬 비평, 루브릭, 실행 피드백)를 위험도 순으로 정리한 비교표 제공</li>
+<li>소형 모델·추론 벤치마크 평가에서 흔히 발생하는 함정(분산, 데이터 오염, Qwen 계열 특이효과)을 지적하고, pass@k·G-Pass@k 등을 포함한 엄밀한 평가 체크리스트 제시</li>
+</ul>
+<h2>방법론</h2>
+<p>리뷰 논문이므로 새로운 방법을 제안하기보다 기존 메커니즘과 대응책을 체계적으로 정리한다. OPSD의 기본 절차는 다음과 같다: 학생이 문제 x에 대해 롤아웃 ŷ을 자기회귀적으로 생성하고, 학생과 동일한 가중치를 가지되 정답 y*로 추가 조건화된 "교사"가 같은 롤아웃의 각 위치에서 다음 토큰 분포를 산출한다. 두 분포 사이의 forward KL 발산을 위치별로 계산(극단값은 클리핑)하고 롤아웃·배치 단위로 평균해 손실로 삼되, 역전파는 학생에게만 적용하고 교사는 고정한다. SDPO는 정답 대신 코드 실행 오류 메시지 같은 환경의 텍스트 피드백을 특권정보로 쓰고, 교사를 EMA 등으로 서서히 갱신한다는 점이 다르다.</p>
+<p>이후 등장한 대응 기법들은 세 레버에 각각 대응한다. (A) 레버는 Entropy-Aware OPD(교사의 엔트로피가 높은 토큰에서만 forward KL 병행 적용)나 DPH-RL(과업을 이미 숙달했는지에 따라 mass-covering 발산 적용 여부를 문제 단위로 결정)처럼, 모든 토큰을 균일하게 가중하지 않고 선택적으로 신호를 배분한다. (B) 레버는 AR-OPD(트레이스의 절반만 보여주는 "앵커"와 나머지 "잔차"를 분리해 잔차 일부만 반영), Purified OPSD(문제 없이 답만 조건화한 교사로 "지름길" 성분을 분리·제거), DemoPSD(교사-학생 불일치도가 클 때는 교사를 따르지 않음), 루브릭 기반 증류(특정 경로가 아니라 좋은 답의 기준만 제시) 등으로 정답보다 덜 함축적인 정보를 사용한다. (C) 레버는 CGTR(학생이 실제로 개선된 시점에만 교사를 갱신), TOP-D(교사-학생 거리를 신뢰영역처럼 제한), ATESD(교사에게 보여주는 트레이스 비율을 학습 진행에 따라 자동 조절)처럼 교사의 갱신 시점·정도와 특권정보 노출량의 시간적 스케줄링을 다룬다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>이 논문은 새로운 실험을 수행하지 않고 기존 문헌의 결과를 종합·비교하는 리뷰이다. 인용된 주요 결과는 다음과 같다.
+- 원 OPSD 논문(Zhao et al.)에서 OPSD는 GRPO(문제당 최대 16k토큰짜리 롤아웃 8개) 대비 문제당 단일 1,024토큰 롤아웃만으로 AIME25 점수를 36.7→43.9로 끌어올리는 등 비슷하거나 더 나은 수학 추론 성능을 달성했으나, 스텝당 연산량(forward 2회 + backward 1회)은 GRPO의 약 2배(20.6초 대 11.2초, Qwen3-8B·8×H100 기준)로, 이득은 스텝 수 기준 수렴 속도이지 단위 비용 절감이 아니다.
+- 후속 연구들은 정답(y*)을 특권정보로 줄 경우 사고형(thinking) 모델에서 avg@16 기준 최대 −17%까지 성능이 저하되고, pass@k(다양성)가 pass@1 상승에도 불구하고 감소하는 현상을 반복적으로 보고한다.
+- 점별 상호정보(PMI) 분석에 따르면, 정답을 아는 교사는 "wait", "maybe" 같은 숙고(deliberation) 토큰의 필요성을 잃어 이를 억제하고 지름길 토큰을 과대평가하며, 이것이 학생의 추론시 탐색 능력을 훼손하는 OPSD 고유의 붕괴 메커니즘으로 지목된다.
+- 특권정보 종류를 통제된 조건에서 비교한 두 연구(Kara &amp; Ersoy; Yu et al.)는 공통적으로, 최종 정답만 주는 것이 정보를 전혀 주지 않는 기준선보다도 낮은 성능을 낸 반면, 단계별 힌트나 오류정렬 비평 같은 중간 수준 정보가 정확도와 다양성 모두에서 가장 우수함을 보였다.</p>
+<h2>한계점</h2>
+<p>저자들이 논문에서 명시적으로 밝힌 스코프상의 한계는 다음과 같다. 이 리뷰는 OPSD가 처음 등장하고 실패 모드가 가장 잘 문서화된 수학 추론 영역에만 한정되며, 200편이 넘는 관련 연구의 다른 두 주요 갈래인 멀티모달 학습과 도구사용 에이전트는 다루지 않는다. 새로운 실험은 수행하지 않고 기존 문헌을 종합하는 것이 목적이며, 인용된 연구 대부분이 발표된 지 6개월 이내의 프리프린트로 대개 단일 모델 계열(주로 Qwen)과 수십억 파라미터 이하 규모에서만 검증되었다는 한계가 있다. 또한 소형 모델의 추론 벤치마크 자체가 문항 수가 적어 분산이 크고, 사전학습 데이터 오염 가능성이 있으며, Qwen 계열에서만 나타나는 특이 효과가 섞여 있어 보고된 수치의 신뢰도 자체가 제한적이라는 점을 저자들이 강조한다.</p>
+<h2>시사점</h2>
+<p>저자들은 OPSD가 아직 프로덕션에 그대로 투입할 만한 성숙한 학습법은 아니며, "외부 교사 없이 토큰당 비용을 절감하는 post-SFT 파인튜닝 기법"으로 이해하고 사용해야 한다고 결론짓는다. 이 리뷰가 제시하는 핵심 원칙은 "특권정보는 학생이 테스트 시점에 스스로 재구성할 수 있을 때만 도움이 되며, 반드시 전제해야만 하는 정보(예: 정답 그 자체)라면 오히려 해롭다"는 것이다. 또한 붕괴는 평균 정확도나 토큰 엔트로피만으로는 드러나지 않으며 반드시 pass@k로 확인해야 한다는 점도 실무적으로 중요한 시사점이다. 저자들은 향후 연구 방향으로 (A) 학습 중 즉시 계산 가능하면서도 실제 유용성과 상관된 토큰 가중치 기준의 확립, (B) 정답·CoT·계획·루브릭·피드백 등 여러 특권정보 종류를 동일한 프로토콜에서 직접 비교하는 연구, (C) 교사 갱신 규칙(고정/EMA/게이트드 리프레시)과 정보 노출 스케줄을 체계적으로 비교하는 연구를 제안한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.25936" target="_blank" rel="noopener">huggingface.co/papers/2608.25936</a> · 2026-09-09</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

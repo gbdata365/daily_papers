@@ -1,0 +1,145 @@
+<meta charset="UTF-8">
+<title>에네아스</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#3 · Daily Papers 2026-09-09</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 29</span>
+    </div>
+    <h1 class="article-title">ENEAS: Embedding-guided Neural Ensemble for Adaptive Segmentation</h1>
+    <p class="article-title-ko">에네아스: 적응형 세그멘테이션을 위한 임베딩 기반 신경망 앙상블</p>
+    <p class="article-sub">텍스트 프롬프트만으로 특정 인스턴스를 추적(tracking)하거나 카테고리에 속하는 모든 인스턴스를 발견(discovery)하는 통합 세그멘테이션 방법 ENEAS를 제안하며, 임베딩 기반 고속 필터링과 비전-언어 모델(VLM)의 조건부 판정을 결합한 계단식(cascade) 검증층으로 SAM 3 같은 최신 파운데이션 모델이 겪는 시간적 환각(hallucination), 공간적 파편화, 존재론적(ontological) 오분류 문제를 해결한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.03756" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.03756" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: ENEAS: Embedding-guided Neural Ensemble for Adaptive Segmentation.</li>
+<li><strong>저자</strong>: Javier del Pino, Salvador Rodríguez, Alejandro Garabito, Javier Álvarez, Chema Garabito (SperidLabs)</li>
+<li><strong>출처</strong>: arXiv:2609.03756v1 [cs.CV] (2026-09-03)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://speridlabs.com/research/eneas">https://speridlabs.com/research/eneas</a> / GitHub: <a href="https://github.com/speridlabs/eneas">https://github.com/speridlabs/eneas</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.03756">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>텍스트 프롬프트만으로 특정 인스턴스를 추적(tracking)하거나 카테고리에 속하는 모든 인스턴스를 발견(discovery)하는 통합 세그멘테이션 방법 ENEAS를 제안하며, 임베딩 기반 고속 필터링과 비전-언어 모델(VLM)의 조건부 판정을 결합한 계단식(cascade) 검증층으로 SAM 3 같은 최신 파운데이션 모델이 겪는 시간적 환각(hallucination), 공간적 파편화, 존재론적(ontological) 오분류 문제를 해결한다.</p>
+<h2>배경 및 문제의식</h2>
+<ul>
+<li>SAM, SAM 2, 그리고 최신 SAM 3를 포함한 텍스트 프롬프트 기반 세그멘테이션 파운데이션 모델들은 여전히 세 가지 실패 양상을 보인다. (1) 대상이 화면 밖으로 나가도 대상 부재를 보고하지 못하고 비슷하게 생긴 다른 물체(distractor)에 정체성이 옮겨붙는 시간적 환각, (2) 극단적 클로즈업 시 물체 전체가 아니라 국소 텍스처만 분할하는 공간적 파편화, (3) 시각적 특징을 존재론적 실체보다 우선시해 조각상·그림·반사상 같이 시각적으로 유사한 인공물을 목표 개체(예: 사람)로 잘못 분할하는 의미론적 오분류다.</li>
+<li>저자들은 이 문제를 3D 재구성 파이프라인을 구축하는 과정에서 직접 겪었다. 순서 없는 부분 폐색된 뷰들 속에서 특정 물체를 분리해야 하고, 재구성 대상인 조각상은 건드리지 않으면서 모든 방문객을 제거해야 하는데, SAM 3 같은 기존 모델은 하나를 요청하면 여러 그림을 반환하거나 조각상을 사람으로 마스킹하는 등 실사용이 불가능한 수준이었다.</li>
+<li>저자들은 이 실패들의 공통 원인을 "강한 지각(perception)에 비해 약한 검증(verification)"으로 규정하고, 3D 재구성에서는 오탐(false positive)이 자산을 손상시키는 반면 미탐(false negative)은 눈에 보이는 잔여물만 남기는 비대칭적 비용 구조를 가진다는 점에서 정밀도(precision) 우선 설계가 필요하다고 주장한다.</li>
+</ul>
+<h2>핵심 기여</h2>
+<ol>
+<li>순서가 있는 비디오와 순서 없는 이미지 컬렉션 모두에 적용 가능한, 인스턴스 추적과 의미론적 발견을 하나의 프레임워크에서 처리하는 통합 텍스트 기반 세그멘테이션 방법.</li>
+<li>점(point) 상호작용에만 한정되어 있던 SeC 트래커에 개방형 어휘(open-vocabulary) 그라운딩 단계를 추가해 텍스트로 초기화 가능한 트래커로 확장. 대상이 사라져도 다른 대상으로 옮겨붙지 않고, 극단적 스케일 변화에서도 공간적 완전성을 유지한다.</li>
+<li>필요한 곳에서만 작동하는 의미 검증: 시그모이드 기반 임베딩 매칭과 프롬프트 앙상블을 결합하고, 불확실성 구간(uncertainty interval)에 속한 후보에만 VLM 판정을 호출하며, 이웃 후보 픽셀을 마스킹해 각 후보를 격리 평가함으로써 지연시간을 낮게 유지하면서도 높은 의미적 정밀도를 달성.</li>
+<li>초사실적(hyper-realistic) 조각상을 촬영한 실제 캡처(Church Statues)에서의 존재론적 강건성 실증 연구: SAM 3가 만들어내는 오탐을 대부분 제거하면서도 재현율(recall)의 상당 부분을 유지하며, 각 구성요소의 기여도와 불확실성 구간에 따른 정확도-지연시간 트레이드오프를 어블레이션으로 정량화.</li>
+</ol>
+<h2>방법론</h2>
+<p>ENEAS는 자연어 프롬프트 p와 프레임 집합 {I_t}를 입력받아 이진 마스크를 반환하며, 두 하위 모드를 공유 컴포넌트(그라운딩 연산자 G, 세그멘테이션 연산자 S) 위에서 구현한다. 그라운딩에는 Florence-2-Large, 세그멘테이션에는 SAM 2.1을 사용한다.</p>
+<ul>
+<li><strong>인스턴스 추적</strong>: 특정 인스턴스(예: "파란 자동차")를 지정하는 프롬프트의 경우, SeC(concept-level memory를 갖는 SAM 2 확장 아키텍처) 트래커를 기반으로 한다. 기준 프레임에서 그라운딩 연산자로 r₀ = G(I_t0, p)를 구해 트래커를 한 번만 초기화한 뒤, 이후 모든 프레임의 마스크는 M_t = T(I_t | r₀, H_t) 형태로 시간 메모리 H_t를 이용해 전파된다. 이를 통해 대상이 보이지 않을 때는 빈 마스크(True Negative)를 반환하고, 다른 유사 물체로 드리프트하지 않는다.</li>
+<li><strong>의미론적 발견</strong>: 카테고리(예: "person")를 지정하는 프롬프트의 경우, 매 프레임을 재평가하는 비용 증가 순서의 계단식(cascade) 구조를 사용한다.</li>
+<li><strong>영역 제안(Region proposal)</strong>: Florence-2로 매 프레임에서 후보 영역 R_t를 관대하게(permissive) 제안한다 — 놓치는 것은 최소화하되, 노이즈(잘못된 후보)는 뒤 단계에서 걸러낸다.</li>
+<li><strong>임베딩 검증</strong>: SigLIP 2로 각 후보를 카테고리 텍스트와 독립적으로(시그모이드 손실 기반) 채점한다. softmax 방식은 크롭 내 다른 물체(예: 마이크를 든 사람)가 있을 때 타깃 클래스 확률을 억제하는 "점수 억제(score suppression)" 문제가 있었으나, 시그모이드는 이미지-텍스트 쌍을 독립적인 이진 분류로 취급해 이 문제를 해결한다. 여러 문구(prompt ensemble)의 임베딩을 평균해 점수 s(r)을 얻고, 두 임계값 τ_rej &lt; τ_acc로 후보를 수락/거절/검증대기 세 그룹으로 나눈다.</li>
+<li><strong>의미 검증</strong>: 불확실성 구간(τ_rej ≤ s(r) &lt; τ_acc)에 속한 후보만 소형 VLM인 Qwen3-VL에 보내 이진 판정 v(r)을 받는다. 이웃 후보의 픽셀은 마스킹(black masking)해 판정이 해당 후보에만 집중되게 하고, 자유형식 추론 대신 고정 형식(구조화된 분석적 프롬프트, 심층 추론 비활성화)으로 답하게 해 지연시간을 낮춘다. 이 단계는 실제로 모호한 후보에만 도달하므로 비용이 장면의 모호성에 비례하지 각 프레임 물체 수에 비례하지 않는다.</li>
+<li><strong>마스크 생성</strong>: 수락된 집합(직접 수락 + v(r)=1)을 SAM 2로 넘겨 인스턴스별 이진 마스크를 생성한다.</li>
+<li><strong>아키텍처 진화 과정(4단계)</strong>: 논문은 최종 설계에 이르기까지의 4단계 반복 개발 과정을 상세히 기술한다. (1단계) 밀집 객체 캡셔닝 + 텍스트 임베딩 필터 + 복합 시각 프롬프트(하나의 이미지에 색상 코드 번호를 매긴 박스 여러 개를 표시) 방식은 "오픈셋 환각"(임의 고유명사 생성)과 공간적 병합, 프레임당 최소 15초의 과도한 지연시간 문제로 실패. (2단계) 텍스트 조건부 영역 제안 + softmax 대조 임베딩 매칭은 다른 부속물(예: 마이크)에 의한 점수 억제 문제 발생. (3단계) 시그모이드 독립성 + 원본 종횡비 최적화 인코더 + 프롬프트 앙상블로 이 문제 해결. (4단계) 경량 VLM을 도입하되, 심층 추론(deep reasoning) 사용 시 지연시간이 과도해 이를 비활성화하고 블랙 마스킹으로 문맥 간섭을 제거함으로써 불확실성 구간에서만 약 1초의 검증 지연시간을 달성.</li>
+</ul>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li>평가에는 저자들이 직접 촬영한 세 시퀀스(Church Statues: 초사실적 종교 조각상과 방문객이 섞인 저프레임율 촬영, "person" 프롬프트로 존재론적 모호성 최대화; Moving Boxes: 상자를 나르는 사람들과 가구가 섞인 실내 장면, "chair" 프롬프트; Blue Painting: 시점 변화·폐색·클로즈업이 있는 하나의 그림)와 외부 SA-Co/VEval 벤치마크를 사용했다. 하드웨어는 단일 NVIDIA L4 GPU(24GB) 기준.</li>
+<li><strong>인스턴스 추적 강건성(Blue Painting)</strong>: Grounded SAM은 대상이 사라지거나 심하게 가려지면 커튼이나 머리카락 등 배경 요소에 잘못된 탐지를 환각하는 반면, ENEAS는 SeC의 전파된 시간 메모리로 정체성을 유지해 대상 부재 시 정확히 빈 마스크를 반환한다. 또한 SAM 3와 Grounded SAM 모두 극단적 클로즈업에서 그림의 세부 붓터치 등 부분만 분할하는 공간적 파편화를 보이는 반면, ENEAS는 전체 대상을 온전한 개체로 유지한다.</li>
+<li><strong>다중 인스턴스 발견(Moving Boxes, Church Statues)</strong>: Grounded SAM은 "chair" 프롬프트에서 탁자·상자·벽까지 의자로 오분류하는 과분할(over-segmentation)을 보이는 반면, ENEAS는 VLM 검증으로 기하학적으로 유사한 방해물(쌓인 상자 등)을 일관되게 거부하면서 실제 의자만 정확히 식별한다. 또한 초기 프레임에만 국한되지 않고 매 프레임을 재평가하므로 재프롬프팅 없이 새로 등장하는 인스턴스도 탐지한다.</li>
+<li><strong>SAM 3와의 정량 비교(Church Statues, 표 1)</strong>: SAM 3는 재현율 83.7%로 가장 높지만 정밀도가 11.1%에 불과해(정답 1건당 약 8건의 인공물을 환각) F1은 19.5%에 그친다. ENEAS-2B는 정밀도 94.7% / 재현율 73.5% / F1 82.8%로 4배 이상의 F1 향상을 보였고, 더 큰 VLM 판정자(ENEAS-4B)는 정밀도 97.5% / 재현율 79.6% / F1 87.6%로 향상되었다.</li>
+<li><strong>SA-Co/VEval 벤치마크</strong>: 인스턴스 추적 분할에서 ENEAS는 HOTA 26.70%(SAM 3: 26.51%), 특히 시간적 연관 일관성을 나타내는 AssA에서 90.77%(SAM 3: 90.18%)로 소폭 앞섰고, 국소화 정확도 LocA는 SAM 3가 약간 더 높았다(89.22% vs 87.86%). 의미론적 발견 분할에서도 유사한 경향(ENEAS HOTA 9.23% vs SAM 3 9.19%)으로 전반적으로 대등하거나 소폭 개선된 트래킹 프로파일을 보였다.</li>
+<li><strong>컴포넌트 필요성 어블레이션(표 4)</strong>: 영역 제안망만 사용 시 재현율은 최고(79.6%)이나 정밀도가 10.5%에 불과. 임베딩 매칭만으로는 관대한 임계값(정밀도 55.7%)과 엄격한 임계값(정밀도 94.3%, 재현율 67.4%) 사이의 트레이드오프를 벗어날 수 없었으나, ENEAS의 적응형 불확실성 구간(0.10~0.90) 설계가 두 목표를 동시에 만족시켰다.</li>
+<li><strong>불확실성 구간 민감도(표 5)</strong>: 구간을 좁히면(Aggressive: 0.40~0.60) VLM 호출률 16.2%, 지연시간 1.04초, F1 74.3%; 넓히면(Robust: 0.10~0.90) VLM 호출률 78.1%, 지연시간 3.29초, F1 82.8%. 모든 후보를 VLM에만 맡기는 "VLM-Only" 구성(호출률 100%, 지연시간 5.05초)은 오히려 F1이 79.1%로 하락했는데, 이는 소형(2B) VLM이 애매하지 않은 소형·저해상도 크롭까지 과도하게 판정하려다("over-reasoning") 확률적 오류를 도입하기 때문으로 분석된다.</li>
+<li><strong>장면 적응성(Moving Boxes)</strong>: 존재론적으로 표준적인 장면에서는 임계값을 완화(Fast Mode)해 VLM 호출률이 78.1%(Church Statues)에서 27.0%로 낮아지고, 프레임당 지연시간이 3.29초에서 1.14초로 약 3배 빨라지면서도 F1 98.0%(오탐 0건)를 유지해, 방법이 장면 내용에 따라 계산 자원을 동적으로 배분함을 확인했다.</li>
+<li><strong>VLM 크기 어블레이션(표 6)</strong>: 4B 모델은 F1을 87.6%까지 끌어올리지만 지연시간이 2B 대비 52% 증가(3.29초→5.02초)해, 2B를 기본값으로 하고 4B는 오프라인 고정밀 옵션으로 제공한다.</li>
+</ul>
+<h2>한계점</h2>
+<ul>
+<li>의미론적 발견의 재현율은 영역 제안 단계(Florence-2)에 근본적으로 상한이 걸린다. 제안되지 않은(작거나 멀거나 심하게 가려진) 인스턴스는 이후 단계에서 복구할 수 없다.</li>
+<li>VLM 판정자는 문맥(주변 정보)에 의존하므로, 극단적 클로즈업처럼 재질이나 장면에 대한 단서가 크롭에 전혀 없는 경우 시각 전용 모델과 동일한 오탐을 낼 수 있으며, 작거나 저해상도인 크롭에서도 판정할 근거가 부족하다.</li>
+<li>검증 비용은 뷰당 후보 수에 비례해 증가하므로, 사람이 붐비는 거리처럼 밀집된 장면은 이 방법이 설계된 범위를 벗어난다.</li>
+<li>의미론적 발견은 프레임 단위로 수행되며 프레임 간 지속적인 인스턴스 정체성(persistent identity)을 부여하지 않고, 신뢰도 점수(confidence score)를 산출하지 않아 점수 기반 평가 프로토콜에는 활용도가 제한적이다.</li>
+<li>Robust 설정 기준 단일 L4 GPU에서 프레임당 약 3초가 소요되어, 계단식 구조가 장면의 모호성에 따라 비용을 적응시키더라도 실시간(real-time) 처리는 아니다.</li>
+</ul>
+<h2>시사점</h2>
+<ul>
+<li>텍스트 프롬프트 세그멘테이션의 실패 원인을 "강한 지각, 약한 검증"으로 재정의하고, 값싼 임베딩 필터와 비싼 VLM 판정을 계단식으로 결합해 필요한 곳에만 고비용 추론을 투입하는 설계는, 파운데이션 모델의 원시 성능을 새로 학습시키지 않고도 후처리 검증 계층만으로 신뢰성을 크게 높일 수 있음을 보여준다.</li>
+<li>3D 재구성처럼 오탐의 비용이 미탐보다 훨씬 큰 비대칭적 응용 분야에서, 정밀도 우선 설계(precision-first design)와 명시적 존재론적 판단 계층이 실무적으로 중요한 가치를 가진다는 점을 실증했다.</li>
+<li>softmax의 상호배타성이 시각-언어 임베딩 매칭에서 무관한 부속물에 의해 타깃 점수가 억제되는 문제를 일으킨다는 점과, 시그모이드 기반 독립 채점이 이를 해결한다는 발견은, 크롭 단위 후보 검증이 필요한 다른 오픈 어휘 인식 파이프라인에도 참고할 만한 설계 원칙이다.</li>
+</ul>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.03756" target="_blank" rel="noopener">huggingface.co/papers/2609.03756</a> · 2026-09-09</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

@@ -1,0 +1,139 @@
+<meta charset="UTF-8">
+<title>누구를 위한 안전인가? 통제된 LLM 안전 거부를 위한 경계 인식 자기증류</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#9 · Daily Papers 2026-09-09</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 4</span>
+    </div>
+    <h1 class="article-title">Safety for Whom? Boundary-Aware Self-Distillation for Controlled LLM Safety Refusal</h1>
+    <p class="article-title-ko">누구를 위한 안전인가? 통제된 LLM 안전 거부를 위한 경계 인식 자기증류</p>
+    <p class="article-sub">"이 주제 전체가 위험한가"라는 기존의 넓은 안전성 판단 대신, 같은 주제(예: 정치) 안에서도 배포 목적에 따라 "어떤 하위 요청만 거부해야 하는가"를 학습시키는 좁은 경계(narrow-boundary) 안전 정렬 프레임워크를 제안하고, 자기생성 데이터의 커버리지 공백을 복구하는 기법과 경계 양쪽(거부해야 할 쪽/응답해야 할 쪽)을 동시에 평가하는 방법론을 제시한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.04482" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.04482" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Safety for Whom? Boundary-Aware Self-Distillation for Controlled LLM Safety Refusal</li>
+<li><strong>저자</strong>: Alejo López-Ávila, Iker García-Ferrero, Jezabel Garcia, Antonio Tiene, Román Orús (Multiverse Computing)</li>
+<li><strong>출처</strong>: arXiv:2609.04482v1 [cs.CL] (2026-09-03)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음 (데이터셋과 생성 코드는 공개 예정이라고 언급)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.04482">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>"이 주제 전체가 위험한가"라는 기존의 넓은 안전성 판단 대신, 같은 주제(예: 정치) 안에서도 배포 목적에 따라 "어떤 하위 요청만 거부해야 하는가"를 학습시키는 좁은 경계(narrow-boundary) 안전 정렬 프레임워크를 제안하고, 자기생성 데이터의 커버리지 공백을 복구하는 기법과 경계 양쪽(거부해야 할 쪽/응답해야 할 쪽)을 동시에 평가하는 방법론을 제시한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>기존 LLM 안전 정렬 연구는 대개 "이 주제가 유해한가"라는 주제 단위(topic-level) 질문으로 문제를 설정한다. 그러나 실제 배포 환경은 훨씬 더 세밀하다. 예를 들어 시민교육 튜터와 공공기관용 어시스턴트는 동일한 베이스 모델을 쓰더라도, 같은 정치 주제 안에서 서로 다른 경계를 필요로 할 수 있다. 즉 특정 정치적 선동이나 조작성 설득 요청은 거부하되, 같은 선거에 관한 사실 확인성 질문에는 계속 답해야 한다. LlamaGuard-3 같은 기존 가드 분류체계는 선거를 "선거 제도에 대한 사실 오류 정보"로만 좁게 정의하여 설득이나 표적 조작 같은 위험, 그리고 반드시 응답해야 하는 사실 질문 모두를 제대로 표현하지 못한다. 저자들은 정치적 설득(political persuasion)을 좁은 경계 도메인의 사례 연구로 삼아, 조작·선전·급진화·표적 설득형 수사는 거부하되 사실적 시민교육 질문, 중립적 요약, 비설득적 설명은 계속 답할 수 있는 모델을 만드는 문제를 다룬다.</p>
+<p>이 문제 설정은 표준적인 자기생성(self-generated) 안전 튜닝의 세 가지 약점을 드러낸다. 첫째, 한 번만 생성을 시도하는(single-shot) 방식은 커버리지 공백을 남긴다: 특정 유해 프롬프트에 대해 스티어링(steering)을 걸어도 거부 응답이 나오지 않는 경우가 있는데, 이런 프롬프트가 조용히 누락되면서 감사 대상 프롬프트 풀의 19.88%가 사라진다(어려운 예시일수록 누락될 가능성이 큼에도). 둘째, 안전 튜닝은 표면적으로 위험해 보이지만 실제로는 무해한 프롬프트에 대한 과잉 거부(false refusal)라는 부작용을 낳을 수 있다. 셋째, 통상적인 유해/무해 이분법 평가로는 거부 경계의 "모양"을 측정할 수 없다: 모델은 유해 프롬프트에 대한 거부율을 높이면서 동시에 인접한 허용 가능 영역까지 거부를 확장할 수 있는데, 저자들의 실제 실험에서 유해 응답률이 가장 낮은 설정이 동시에 XSTest의 안전한 프롬프트 74%를 거부하는 "무딘 거부 기계"가 되는 것으로 나타났다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li><strong>좁은 경계 안전성(narrow-boundary safety) 개념화</strong>: 배포별 안전성을 "주제 전체를 거부"하는 것이 아니라 "주제 내 특정 유해 하위집합만 거부"하는 문제로 정식화하고, 거부해야 할 쪽과 응답해야 할 쪽 모두를 검증하는 쌍(pair)당 1,539개의 held-out 유해-무해 경계 쌍을 구축했다.</li>
+<li><strong>커버리지 지향 자기생성</strong>: 단일 시도 생성이 감사 대상 프롬프트의 19.88%(8,009개)를 조용히 누락시키는 커버리지 공백을 규명하고, 어려운 프롬프트를 버리지 않고 데이터를 완성하는 커버리지 복구 기법을 도입하여 잔여 실패율을 0.20%(79개)로 낮췄다.</li>
+<li><strong>통제된 주제별 데이터 구축</strong>: 페르소나, 길이, 문체, 재구성(paraphrasing)을 통제한 계층적 파이프라인으로 정치 도메인에서 커버리지 복구 후 40,293개의 유해 학습 프롬프트를 생성했다(같은 파이프라인으로 종교 도메인 데이터셋도 구축했으나 본 논문의 실험에는 사용하지 않음).</li>
+<li><strong>부작용(과잉 거부) 보정용 데이터</strong>: 무해 프롬프트 및 표면적으로 위험해 보이는 무해 프롬프트("FakeHarm")에 대한 인분포(in-distribution) 보정 데이터를 구축했다(18가지 유형에 걸쳐 검증된 11,955개). 외부에서 가져온 응답을 검증된 타깃 모델 자체 응답으로 대체하는 것만으로 XSTest 과잉 거부율이 크게 감소했다.</li>
+<li><strong>경계 인식 평가</strong>: 유해-무해 프롬프트 쌍을 이용해 경계의 정밀도를 직접 측정하는 방법을 제시했다. 경계 쌍 데이터는 응답해야 할 쪽의 과잉 거부를 크게 줄이면서도, 거부해야 할 쪽의 거부율은 상대적으로 소폭만 감소시켰다.</li>
+<li><strong>안전성 전이와 그 교란 요인</strong>: 정치 관련 유해 프롬프트만으로 거부 훈련을 해도 더 넓은 범위의 안전성 벤치마크에서 유해 응답률이 크게 낮아진다는 것을 보였으나, 이 효과가 XSTest 과잉 거부율 급증과 분리되지 않음을 확인하고, 안전성과 과잉 거부를 함께 보고해야 한다고 주장한다.</li>
+</ol>
+<h2>방법론</h2>
+<p><strong>배경 설정</strong>: 타깃 모델 Mθ와 안전 튜닝 이전의 동결된 참조 모델 M0을 둔다. 유해 프롬프트 x에 대해서는 거부 유도 함수(steering)를 적용한 상태에서 타깃 모델 스스로 응답 y를 샘플링하고, 가드 모델(WildGuard)이 이를 거부 응답인지 검증한다. 무해 프롬프트는 스티어링 없이 샘플링하거나 참조 모델 M0에 대해 정칙화(regularise)한다. 검증된 유해 트레이스는 교차 엔트로피(cross-entropy) 손실로, 무해 트레이스는 참조 모델과의 forward-KL로 학습한다.</p>
+<p><strong>경계 문제</strong>: 주제 전체 공간 Ω 안의 목표 유해 하위집합 H가 있을 때, 이상적인 정책은 H는 거부하고 나머지 Ω\H는 응답하는 것(T(x)=1[x∈H])이다. 그러나 학습된 모델의 거부 확률 Bθ(x)는 이 이상적인 계단 함수보다 매끄럽고, 경계 근처에서 무해 영역으로 "넘쳐흐를" 수 있다. 이 경계 ∂H를 같은 주제 앵커를 공유하지만 요청 의도만 다른 유해-무해 프롬프트 쌍의 집합으로 조작적 정의한다.</p>
+<p><strong>커버리지 문제</strong>: 데이터 생성·라벨링 과정 f를 정의할 때, 검증된 거부 트레이스가 나온 프롬프트 집합 f⁻¹(Ref)와 검증된 순응 트레이스가 나온 f⁻¹(Com)만 관측 가능하다. H 중 거부 트레이스를 얻지 못한 부분은 누락 집합 D=H\f⁻¹(Ref)를 형성한다.</p>
+<p><strong>데이터 파이프라인(4장)</strong>:
+- <strong>커버리지 복구 전략</strong>: 단일 시도(Single-shot) 생성에서 실패한 프롬프트에 대해, (a) <strong>Graft</strong>는 같은 빌드 내에서 이미 검증된 주제-중립적 거부 응답을 복원추출로 붙여준다. (b) <strong>Escalate</strong>는 최대 4단계에 걸쳐 점점 강한 거부 유도 강도로 재시도한다. (c) <strong>Escalate+Graft</strong>는 재시도를 먼저 적용하고 남은 프롬프트에 Graft를 적용한다.
+- <strong>통제된 계층적 생성</strong>: 주제→하위주제→의도 지점→페르소나 조건부 요청의 4단계 계층으로 프롬프트를 생성하며, 페르소나(정치 페르소나 풀 38개), 문체, 재구성, 목표 길이(4개 길이 버킷의 가중 분포)를 통제한다.
+- <strong>경계 인식 쌍 생성기</strong>: 각 원본 유해 학습 프롬프트를 주제상 인접한 두 변형으로 변환한다. PR은 거부되어야 할 유해 패러프레이즈, PB는 응답되어야 할 무해 대응 프롬프트다. 거부 강도는 명확(clear)·경계선(borderline)·혼합(mixed)으로 다양화된다. PB2는 타깃 모델 응답이 WildGuard 검증을 통과한 별도의 순응측 빌드다.
+- <strong>무해 데이터의 세 가지 유형</strong>: SC(SafeChain에서 가져온 외부 순응 응답), SC2(같은 프롬프트에 대해 타깃 모델이 직접 생성하고 검증한 응답으로 대체), FakeHarm(FH, 18가지 의미 유형에 걸쳐 표면적으로 위험해 보이지만 실제로는 무해한, 검증된 11,955개 프롬프트).
+- <strong>손실 라우팅</strong>: 핵심 거부 세트와 PR 같은 유해 예시는 교차 엔트로피로, SC·SC2·PB·PB2·FH 같은 무해 예시는 동결된 참조 모델 대비 forward-KL 정칙화로 학습해, H 내부의 거부는 강화하면서 Ω\H의 변화는 제한한다.</p>
+<p><strong>실험 설정</strong>: 타깃 모델은 Qwen3-8B(랭크 32의 LoRA 어댑터, AdamW, 학습률 1e-5, 최대 12 에폭)이며, DeepSeek-R1-Distill-Qwen-7B는 부록의 교차 모델 진단에 별도로 사용됐다. 거부 평가는 WildGuard로, 광범위 유해성은 LlamaGuard-3(HarmBench, StrongREJECT, WildJailbreak 평균)로 측정한다. 이전 자기생성 방법인 ThinkSafe와 동일한 타깃 모델, 어댑터 구성, 평가 저지(judge)를 공유하여 Single-shot을 그 사실상의 재현으로 삼고, 나머지 구성요소를 이에 대한 추가로 측정한다.</p>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li><strong>베이스라인(무학습 Qwen3-8B)</strong>: 인분포 정치 거부율 9.47%, XSTest 과잉 거부율 2.00%, 광범위 유해 응답률 26.26%.</li>
+<li><strong>커버리지 복구와 안전성-과잉거부 트레이드오프</strong>: Escalate로 완성된 거부 데이터로 학습할 경우(4에폭), 인분포 정치 거부율이 9.47%→84.75%로, 광범위 유해 응답률(harmful_unsafe_avg)이 26.26%→0.14%로 크게 개선됐다. 그러나 동시에 XSTest 과잉 거부율은 2.00%→74.00%로 급증하여, 안전성 개선이 사용성 저하와 분리되지 않음을 보였다.</li>
+<li><strong>보정 데이터의 역할</strong>: 외부 SafeChain 응답(SC)을 검증된 타깃 모델 자체 응답(SC2)으로 바꾸자, XSTest 과잉 거부율이 Single-shot 기준 15.20%→5.20%, Graft 기준 25.20%→4.40%로 낮아졌다(광범위 유해 응답률은 소폭 상승). FakeHarm은 표면적으로 위험해 보이는 무해 프롬프트에 대한 거부를 줄이는 데 특화되어, Escalate+Graft 계열에서 XSTest 과잉 거부율과 광범위 유해 응답률을 모두 낮췄고, 외부 순응 데이터(SC)보다 두 지표 모두에서 더 우수했다. 다만 이 보정 요소들은 단순히 가산적이지 않아, 여러 보정을 결합하면 한 축의 개선이 다른 축의 악화를 동반하기도 했다.</li>
+<li><strong>경계 쌍 데이터의 효과</strong>: PB(경계 쌍의 무해측) 데이터를 추가하자, held-out 경계 쌍의 순응측(comply-side) 과잉 거부율이 32.94%→4.16%로 크게 감소했다. 반면 거부측(refusal-side) 거부율은 91.88%→87.72%로 상대적으로 작게 감소해, 경계 보정에 일정한 재현율(recall) 비용이 따름을 보여준다.</li>
+<li><strong>길이 통제의 영향</strong>: 길이가 통제된 프롬프트 생성 방식이 자연 길이 방식보다 모든 프롬프트 길이 구간에서 더 높은 정치적 거부율을 달성했으며, 그 격차는 2~8단어의 짧은 프롬프트에서 가장 컸다.</li>
+<li><strong>교차 모델 진단(부록)</strong>: DeepSeek-R1-Distill-Qwen-7B에서도 검증된 경계 쌍 데이터(PB2)를 추가하면 순응측 경계 과잉 거부가 크게 감소하는(53.3%p) 동일한 방향의 효과가 재현되었으나, 절대적인 경계 정밀도는 모델에 따라 달랐다.</li>
+<li><strong>시드 안정성</strong>: 두 개의 랜덤 시드(42, 123)로 비교한 결과, 과잉 거부 관련 지표들이 상대적으로 가장 불안정했으나(최대 절대 차이 약 6.5%p), 경계 데이터가 만드는 큰 효과는 이러한 시드 변동보다 훨씬 컸다.</li>
+</ul>
+<h2>한계점</h2>
+<ul>
+<li>실험적 근거가 정치적 설득이라는 단일 도메인에 국한되어 있으며, 대부분의 실험이 Qwen3-8B와 단일 LoRA 구성만을 사용해 다른 주제, 모델 계열, 학습 구성으로의 일반화는 확립되지 않았다.</li>
+<li>광범위 유해성 벤치마크(HarmBench, StrongREJECT, WildJailbreak)는 LlamaGuard-3로 판정되는데, 이는 일반적 유해성을 측정할 뿐 설득이나 배포별 중립성을 반영하지 않으며 저지(judge) 편향의 영향을 받을 수 있다.</li>
+<li>평가에 신뢰구간이나 부트스트랩 추정이 제공되지 않으며, 시드 비교도 단 2개 시드에 그쳐 견고한 분산 추정이나 유의성 주장을 뒷받침하지 못한다.</li>
+<li>일부 벤치마크(WildJailbreak, HarmBench, StrongREJECT의 거부율 점수)에 상당한 수의 누락된 파일이 있어, WildGuard 기반의 보조 지표(harmful_refusal_avg)는 해당 점수가 존재하는 경우에만 보고되었다.</li>
+<li>종교 도메인용 데이터셋도 같은 파이프라인으로 구축했지만 종교 특화 평가는 완료하지 못해, 본 논문의 실험적 주장은 정치 도메인에만 한정된다.</li>
+<li>안전 대 유용성 간의 경계가 어디에 그어져야 하는지는 객관적 정답이 아니라 규범적 배포 판단이라는 점을 저자들도 인정하며, 이 파이프라인이 프로덕션 배포나 아동 대상 시스템에 대한 준비 완료를 주장하는 것은 아니라고 명시하고 있다.</li>
+</ul>
+<h2>시사점</h2>
+<p>이 논문은 안전 정렬을 "이 주제를 얼마나 강하게 거부하는가"라는 단일 축이 아니라, "의도한 경계를 얼마나 정밀하게 학습했는가"라는 다차원 문제로 재구성해야 한다는 점을 실증적으로 보여준다. 특히 자기생성 안전 데이터의 커버리지 공백(어려운 프롬프트가 조용히 누락되는 문제)을 명시적으로 측정하고 복구하는 방법론, 그리고 거부해야 할 프롬프트와 응답해야 할 인접 프롬프트를 짝지어 평가하는 경계 쌍(boundary pair) 프레임워크는, 배포 목적에 따라 서로 다른 안전 정책이 필요한 실제 서비스(교육용, 공공기관용, 일반 어시스턴트 등)를 설계할 때 유용한 도구가 될 수 있다. 결과적으로 데이터 구성(보정 데이터의 출처와 종류, 경계 쌍 포함 여부)이 안전성과 사용성 사이의 트레이드오프를 좌우하는 핵심 변수이며, 안전 정렬 평가는 반드시 거부 경계의 양쪽(유해측과 무해측)을 함께 보고해야 한다는 메시지를 전달한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.04482" target="_blank" rel="noopener">huggingface.co/papers/2609.04482</a> · 2026-09-09</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

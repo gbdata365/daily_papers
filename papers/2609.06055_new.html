@@ -1,0 +1,127 @@
+<meta charset="UTF-8">
+<title>드라이브제로</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#5 · Daily Papers 2026-09-10</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 50</span>
+    </div>
+    <h1 class="article-title">DriveZero: End-to-End Driving Beyond Human Demonstrations</h1>
+    <p class="article-title-ko">드라이브제로: 인간 시연을 넘어서는 종단간 자율주행</p>
+    <p class="article-sub">Xiaomi EV가 공개한 DriveZero는 인간 주행 로그를 그대로 모방하는 대신, 폐루프 강화학습으로 훈련한 특권 교사 정책(DriveRL)과 다중 비전 파운데이션 모델을 증류한 인지 백본(DriveVFM)을 결합해, 카메라만 사용하는 종단간(end-to-end) 주행 플래너가 인간 시연 데이터 없이도 사람 운전자를 능가하는 성능을 내도록 만든 시스템이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.06055" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.06055" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: DriveZero: End-to-End Driving Beyond Human Demonstrations</li>
+<li><strong>저자</strong>: Xiaomi EV AD &amp; Robotics L3 팀 (Hao He, Haisong Liu, Jinke Li, Haochen Tian 등 다수, 프로젝트 리드 Hao He, Zhichao Li, Zehao Huang, Naiyan Wang)</li>
+<li><strong>출처</strong>: arXiv:2609.06055v1 [cs.CV] (2026년 9월 5일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://xiaomiautol3.github.io/DriveZero">https://xiaomiautol3.github.io/DriveZero</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.06055">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>Xiaomi EV가 공개한 DriveZero는 인간 주행 로그를 그대로 모방하는 대신, 폐루프 강화학습으로 훈련한 특권 교사 정책(DriveRL)과 다중 비전 파운데이션 모델을 증류한 인지 백본(DriveVFM)을 결합해, 카메라만 사용하는 종단간(end-to-end) 주행 플래너가 인간 시연 데이터 없이도 사람 운전자를 능가하는 성능을 내도록 만든 시스템이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>대부분의 종단간 자율주행 시스템은 사람이 운전한 로그를 모방 학습(imitation learning)하는 방식으로 학습된다. 이 방식은 안정적이고 확장하기 쉽지만, 학습된 행동의 품질과 다양성이 결국 기록된 로그의 품질과 범위에 갇힌다는 근본적 한계가 있다. 각 로그 장면에는 실제로 일어난 단 하나의 미래만 존재하고, 안전이 중요한 상황에서의 회피·복구 동작은 드물게 등장하며, 정책 자신이 유발한 상태는 오프라인 데이터에 아예 없기 때문에, 학습된 정책이 시연 데이터의 분포를 벗어나는 순간 오차가 누적되는 문제가 생긴다.</p>
+<p>강화학습(RL)은 폐루프 상호작용을 통해 정책이 스스로 행동의 결과를 관찰하고 실패를 학습 신호로 바꿀 수 있다는 점에서 대안이 되지만, 카메라 기반 영상 정책에 직접 RL을 적용하면 샘플 효율이 낮은 탐색과 비용이 큰 시각적 시뮬레이션이 결합되어 확장성이 떨어진다. 이 논문은 "폐루프 RL은 운전 방법을 배우기에 적합하지만, 실제 배포에 필요한 카메라 전용 정책은 대규모 온라인 탐색에는 적합하지 않다"는 긴장 관계를 정면으로 다룬다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>주행을 인지(perception) 모델과 행동(action) 모델로 분리하여, 각각에 가장 적합한 방식으로 별도로 사전학습한 뒤 증류(distillation)로 다시 통합하는 프레임워크를 제안했다.</li>
+<li><strong>DriveRL</strong>: 실제 nuPlan 로그를 상호작용 가능한 시뮬레이션 월드로 변환하고, 그 안에서 특권(privileged) 구조화 상태를 입력으로 받는 교사 정책을 PPO로 처음부터(from scratch) 폐루프 강화학습시키는 혼합 에이전트(mixed-agent) 프레임워크를 제시했다.</li>
+<li>학습된 크리틱(critic)을 활용해 추론 시점에서 여러 행동 후보를 짧게 롤아웃해 평가하고 더 나은 후보로 교체하는 <strong>가치 기반 테스트타임 액션 탐색(value-guided test-time action search)</strong> 기법을 제안했다.</li>
+<li><strong>DriveVFM</strong>: DINOv3, SigLIP2, SAM, Depth Anything V2 등 여러 개의 고정된(frozen) 비전 파운데이션 모델의 특징을 하나의 백본으로 증류(agglomerative distillation)하여, 과제별 라벨 없이 원본 이미지만으로 주행에 유용한 시각 표현을 학습했다.</li>
+<li><strong>DriveZero</strong>: DriveVFM으로 인코딩한 카메라 영상을 입력으로 받고, 얼려진(frozen) DriveRL 교사가 롤아웃한 궤적을 승자독식(winner-takes-all) 방식으로 증류해 학습하는 카메라 전용 플래너를 완성했다. 교사가 목표 조건부(goal-conditioned)라는 점을 활용해 동일 장면을 다양한 주행 의도로 재질의함으로써, 로그 데이터로는 얻을 수 없는 다양하면서도 목표에 일관된 학습 신호를 생성했다(goal augmentation).</li>
+<li>nuPlan, NAVSIMv1, NAVSIMv2, HUGSIM 등 여러 벤치마크에서 인간 시연 없이도 기존 최고 성능(SOTA)을 달성했고, 특히 NAVSIMv1 navtest에서 사람 운전자보다 높은 점수를 낸 최초의 종단간 모델이라고 주장한다.</li>
+</ul>
+<h2>방법론</h2>
+<p>전체 파이프라인은 세 단계로 구성된다.</p>
+<ol>
+<li><strong>DriveRL(행동 모델) 사전학습</strong>: 각 학습 월드는 nuPlan 로그에서 초기화되며, 각 배경 행위자(다른 차량 등)는 로그 재생(log replay), 규칙 기반 모델(IDM 등), 또는 학습된 정책(Self-Play) 중 하나의 독립적인 행동 제공자를 통해 움직인다. 5.7M 파라미터의 정책망은 에이전트·자기차량 운동학·지도 정보를 크로스 어텐션으로 융합해 종방향 저크(jerk)와 조향각 변화율에 대한 Beta 분포를 출력하고, 이를 물리적 명령으로 변환해 차량을 직접 제어한다(경로 정제 없음). 보상은 하드 안전 이벤트, 목표 도달 보너스, 6가지 소프트 주행 품질 지표의 곱으로 구성되며, PPO로 96개 GPU에서 랭크당 2,048개 월드를 병렬로 굴려 학습한다. 추론 시에는 정책의 최빈 행동과 여러 샘플 행동을 짧게 롤아웃하여 크리틱 기반으로 점수를 매기고, 마진을 넘는 경우에만 더 나은 행동으로 교체하는 테스트타임 탐색을 적용한다.</li>
+<li><strong>DriveVFM(인지 모델) 사전학습</strong>: 공유 Vision Transformer가 각 파운데이션 모델별 요약 토큰과 공통 패치 토큰을 생성하고, 경량 어댑터를 통해 각 교사 모델의 특징(요약 또는 패치, 모델별로 가장 강점을 보이는 부분)과 매칭되도록 학습한다. 서로 다른 모델 간 특징 스케일 불균형을 없애기 위해 PHI Standardization(PHI-S)을 적용하고, 어텐션 로짓 발산을 막기 위해 QK-Clip 유사 기법으로 학습을 안정화한다. 학습 데이터는 LAION-2B, ImageNet-21K, SA-1B 같은 범용 이미지와 OpenDV, nuPlan, Waymo의 주행 이미지를 섞어 사용하며, 저해상도(256×256)에서 고해상도(512×512)로 점진적으로 확장하는 2단계 스케줄을 쓴다.</li>
+<li><strong>DriveZero(통합)</strong>: 4개의 카메라 뷰를 DriveVFM(LoRA로 미세조정)으로 인코딩하고, 학습 가능한 레지스터 토큰으로 압축한 뒤, 자기차량 운동학·주행 명령과 함께 트랜스포머 디코더에 넣어 다수(64개)의 궤적 후보와 각 후보의 점수를 예측한다. 학습 목표는 얼려진 DriveRL 교사가 같은 로그 프레임에서 롤아웃한 궤적을 정답으로 하는 승자독식 궤적 손실과, PDM 점수 6개 구성요소를 예측하는 점수 손실의 결합이다. 목표 증강(goal augmentation)을 통해 동일 장면에 대해 여러 주행 의도를 교사에게 질의해 다양한 감독 신호를 추가로 생성한다.</li>
+</ol>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li><strong>DriveRL(nuPlan)</strong>: Val14, Test14-hard, Test14-random의 6개 설정(NR/R)에서 평균 폐루프 점수(CLS) 93.01을 달성해 Log-Replay 전문가와 CaRL, GigaFlow(둘 다 인간 데이터 미사용) 등 기존 방법을 모두 앞섰다. 테스트타임 탐색을 적용하면 평균 93.57까지 상승한다.</li>
+<li><strong>DriveZero(NAVSIMv1 navtest)</strong>: 인간 시연 없이 94.8 PDMS를 기록해 사람 운전자(94.8)와 동등하고, 시뮬레이션 데이터(SimScale)로 학습 데이터를 확장한 DriveZero-Scale은 95.3 PDMS로 사람 운전자를 넘어선 최초의 종단간 모델이라 보고한다.</li>
+<li><strong>NAVSIMv2 navhard</strong>: DriveZero-Scale이 EPDMS 57.1로 새로운 SOTA를 기록했다(기존 최고 대비 다수 항목 개선).</li>
+<li><strong>HUGSIM(진짜 폐루프 벤치마크)</strong>: 별도의 파인튜닝 없이 제로샷으로 평균 HD-Score 46.6을 기록, 기존 최고(GigaPixel, 38.5)를 8.1점 앞섰다.</li>
+<li><strong>어블레이션</strong>: DriveVFM은 동급 크기의 DINOv2/DINOv3 단독 백본보다 높은 PDMS(94.41 vs 93.88)를 보였고, SAM과 Depth Anything V2를 추가 교사로 넣을수록 점수가 누적적으로 상승했다(93.69 → 94.10 → 94.41). 감독 신호 비교에서는 DriveRL 궤적만 쓰면 인간 궤적 감독보다 오히려 소폭 낮았지만(93.61 vs 93.92), 목표 증강을 추가하면 94.41로 인간 감독을 능가했다. 즉 목표 증강이 교사 감독이 인간 감독을 이기게 만드는 핵심 요소였다.</li>
+<li>소규모 차량 플릿에 DriveRL을 실제 도로에 배포해 혼잡한 도심 환경에서 폐루프 제어를 시연했다(자사 로그로 자가학습, 도메인 랜덤화 적용).</li>
+</ul>
+<h2>한계점</h2>
+<p>논문에 별도의 "한계" 절은 없다. 다만 본문에서 스스로 언급한 제약들은 다음과 같다: (1) 배경 차량과의 자가 대전(Self-Play)이 nuPlan 벤치마크 자체에서는 이득이 작았는데, 이는 벤치마크의 폐루프 평가가 배경 차량을 IDM으로 구동하여 더 자연스러운 상호작용을 보상하지 않기 때문이라고 저자들이 분석한다. (2) DriveZero의 학생 정책은 로그 프레임에서 오프라인(open-loop)으로만 학습되며 시뮬레이터에 직접 들어가지 않으므로, 교사(DriveRL)가 커버하지 못한 상태 분포에 대해서는 성능이 보장되지 않을 수 있다. (3) 실제 도로 배포 실험은 소규모 차량 플릿과 한정된 시나리오(혼잡 도심 도로)에서만 시연되었다고 기술되어 있어, 대규모 실차 검증에 대한 구체적 수치는 논문에 명시되지 않음.</p>
+<h2>시사점</h2>
+<p>이 연구는 "인간 시연이 곧 성능의 상한선"이라는 종단간 자율주행의 오래된 전제를 실험적으로 반박한다. 인지와 행동을 분리해 각자에게 가장 적합한 학습 방식(대규모·다양한 시각 데이터로부터의 표현학습 vs. 폐루프 상호작용 기반 강화학습)을 적용하고, 이를 증류로 다시 결합하는 전략은 로보틱스나 다른 구체화 AI(embodied AI) 분야에도 일반화될 수 있는 설계 원칙으로 보인다. 특히 목표 조건부 교사를 활용한 데이터 증강이 로그 데이터의 근본적 한계(단일 실현 미래만 존재)를 우회하는 실질적 해법으로 제시된 점이 인상적이며, 향후 시뮬레이션 데이터 스케일링과 결합될 때 성능이 계속 향상되는 경향(SimScale 확장 시 navhard·HUGSIM 점수 동반 상승)은 데이터보다 학습 패러다임의 전환이 성능 향상의 주된 동력이 될 수 있음을 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.06055" target="_blank" rel="noopener">huggingface.co/papers/2609.06055</a> · 2026-09-10</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

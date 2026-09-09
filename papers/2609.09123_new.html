@@ -1,0 +1,117 @@
+<meta charset="UTF-8">
+<title>마스크 포싱</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#10 · Daily Papers 2026-09-10</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 43</span>
+    </div>
+    <h1 class="article-title">Mask Forcing: Improving Autoregressive Video Diffusion Distillation via Dual-Noise Masking Rollout</h1>
+    <p class="article-title-ko">마스크 포싱: 이중 노이즈 마스킹 롤아웃을 통한 자기회귀 비디오 디퓨전 증류 개선</p>
+    <p class="article-sub">자기회귀(autoregressive) 비디오 디퓨전 모델을 distillation할 때 발생하는 과포화·과평탄화 문제를 해결하기 위해, 학생 모델의 self-rollout 과정에 공간·시간축으로 무작위 마스킹된 저노이즈(clean) 신호를 주입하는 "Mask Forcing" 기법을 제안하여 실데이터나 추가 post-training 없이도 생성 품질과 학습 수렴 속도를 함께 개선한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.09123" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.09123" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Mask Forcing: Improving Autoregressive Video Diffusion Distillation via Dual-Noise Masking Rollout</li>
+<li><strong>저자</strong>: Zhuoran Zhao 등 (HKUST(GZ), HKUST, LIGHTSPEED, UCSD, CUHK(SZ), NUS 소속 연구팀)</li>
+<li><strong>출처</strong>: arXiv:2609.09123v1 [cs.CV] (2026년 9월 8일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://alicezrzhao.github.io/mask-forcing">https://alicezrzhao.github.io/mask-forcing</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.09123">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>자기회귀(autoregressive) 비디오 디퓨전 모델을 distillation할 때 발생하는 과포화·과평탄화 문제를 해결하기 위해, 학생 모델의 self-rollout 과정에 공간·시간축으로 무작위 마스킹된 저노이즈(clean) 신호를 주입하는 "Mask Forcing" 기법을 제안하여 실데이터나 추가 post-training 없이도 생성 품질과 학습 수렴 속도를 함께 개선한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>비디오 디퓨전 모델은 고품질·장시간 영상 생성에서 발전해왔지만, 양방향(bidirectional) 어텐션과 다단계 디노이징에 의존하기 때문에 실시간 스트리밍 생성에는 한계가 있다. 이를 해결하기 위해 causal attention 기반의 자기회귀(AR) 디퓨전 모델이 등장했으며, 이전에 생성된 청크(chunk)에 조건화하여 순차적으로 다음 청크를 생성함으로써 실시간·무제한 길이의 영상 생성을 지원한다.</p>
+<p>AR 비디오 모델을 학습시키는 대표적 방법으로 Teacher Forcing(정답 프레임에 조건화하지만 학습-추론 간 노출 편향 발생), Diffusion Forcing(프레임마다 독립적인 노이즈를 부여하지만 학습-추론 정합성은 여전히 부족), 그리고 이 둘의 간극을 줄이기 위해 모델이 스스로 생성한 프레임에 조건화하여 학습하는 Self Forcing이 있다. Self Forcing은 Distribution Matching Distillation(DMD) 손실을 통해 사전학습된 양방향 teacher 모델의 지식을 causal AR student 모델로 distill한다.</p>
+<p>그러나 self-rollout과 DMD 손실을 결합하면 생성 영상이 과포화(over-saturation)되거나 과도하게 평탄화(over-smoothing)되어 시각적 품질과 사실성이 떨어지는 문제가 흔히 나타난다. 저자들은 이 원인을 두 가지로 분석한다: (1) DMD의 역-KL(reverse KL) 목적함수가 본질적으로 mode-seeking 특성을 가져 teacher 분포의 일부 고밀도 영역에만 student 분포가 집중되는 mode collapse를 유발하고, (2) rollout 중간 예측 단계에는 명시적 학습 신호가 없어 오류가 누적된다는 점이다. 기존 해결책들은 실제 비디오 데이터를 학습 목적함수에 추가하거나 강화학습 기반 post-training을 도입하지만, 복잡한 데이터 큐레이션이나 추가 학습 단계, 보상 모델에 대한 민감성 등의 단점이 있다. 이에 저자들은 "실데이터 큐레이션이나 추가 post-training 없이 AR 비디오 diffusion distillation을 개선할 수 있는가"라는 질문을 제기한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>Mask Forcing을 제안: self-rollout DMD 학습에서 reverse-KL의 mode-seeking 성향으로 인한 mode collapse를 완화하는 간단하고 효과적인 방법으로, 실비디오 데이터나 추가 post-training 단계 없이 동작한다.</li>
+<li>Dual-Noise Masking Rollout 전략을 도입: 공간(청크 내 프레임)·시간(청크 간) 축으로 무작위 마스크를 적용해 노이즈가 낀 rollout 입력에 더 저노이즈인 신호를 주입함으로써, student rollout 궤적을 다양화해 teacher의 더 많은 mode를 커버하는 동시에 노이즈가 심한 토큰을 디노이징하기 위한 깨끗한 컨텍스트를 제공한다.</li>
+<li>여러 AR 비디오 distillation 방법(Self Forcing, LongLive, Causal Forcing)에 chunk-wise·frame-wise 설정 모두에서 Mask Forcing을 적용해 시각적 품질과 수렴 속도가 동시에 개선됨을 광범위한 실험과 ablation으로 검증했다.</li>
+</ul>
+<h2>방법론</h2>
+<p>AR 비디오 모델은 영상을 F개의 청크 시퀀스로 표현하고, flow-matching 형식으로 노이즈가 섞인 청크 $x_i^t = (1-t)x_i^0 + t\epsilon$를 정의한다. Self-rollout 학습에서는 student 모델이 각 청크를 고정된 스케줄의 T번의 디노이징 스텝을 거쳐 순차적으로 생성하고, DMD는 완성된 rollout 결과에 대해서만 reverse-KL 기반 distillation 손실을 적용해 student 모델을 업데이트한다.</p>
+<p>Mask Forcing의 핵심 아이디어는 Self-Flow에서 영감을 받은 dual-timestep 스케줄링이다. 각 디노이징 스텝 $t_j$에서, 원래 timestep보다 노이즈가 낮은 추가 timestep $t'<em i_j_1="i,j+1">k$를 정해진 윈도우 크기 $\Delta$ 내에서 균등 분포로 샘플링한다. 그리고 청크별로 독립적인 마스킹 비율 $\alpha$를 가진 이진 마스크 $M_i$를 프레임(공간축)·청크(시간축) 단위로 각각 샘플링한다. 이전 스텝의 clean 예측값 $\hat{x}</em>^0$을 각각 $t'<em mix="mix">k$(저노이즈)와 $t_j$(원래 노이즈)로 재노이징한 두 샘플을 마스크로 결합해 "dual-noise" 입력 $x_i^{t</em>$을 만든다. 이 혼합 입력을 student 생성기에 넣지만, 조건으로 주는 timestep은 여전히 원래 스케줄의 $t_j$를 그대로 사용해, 모델이 local 노이즈 수준과 global timestep이 일치하지 않는 입력을 디노이징하도록 만든다. 이 과정은 추론 시에는 적용되지 않고 학습 시에만 rollout 궤적을 교란하는 용도로 쓰인다.}} = M_i \odot x_i^{t'_k} + (1-M_i) \odot x_i^{t_j</p>
+<p>이러한 이중 노이즈 교란은 두 가지 효과를 낸다. 첫째, student rollout 궤적을 다양화하여 DMD의 distillation score가 더 넓은 샘플 공간에서 평가되도록 함으로써 reverse-KL로 인한 mode collapse를 완화한다. 둘째, 저노이즈(clean에 가까운) 토큰이 노이즈가 심한 토큰을 디노이징하는 컨텍스트로 작용해 중간 rollout 예측의 정확도를 높이고 오류 누적을 줄인다. 저자들은 마스킹 궤적 $V$에 대한 마진 분포와 mutual information을 이용해, 서로 다른 마스킹 궤적이 서로 다른 조건부 student 분포를 유도할 때 개별 조건부 분포는 국소적으로 mode-seeking이더라도 이들의 혼합 분포는 teacher의 더 넓은 영역을 커버할 수 있음을 이론적으로 뒷받침하는 KL 분해식을 부록에서 제시한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Self Forcing, LongLive, Causal Forcing을 baseline으로, Wan2.1-T2V-1.3B를 student 기반 모델, Wan2.1-T2V-14B를 teacher로 사용했다. 학습 영상은 832×480 해상도, 81프레임이며 VidProM 데이터셋에서 샘플링한 텍스트 프롬프트로 학습했다. chunk-wise(청크당 3개의 latent 프레임)와 frame-wise 설정 모두에서 각 baseline에 Mask Forcing을 적용했다. 마스크 비율 $\alpha=0.2$, timestep 윈도우 $\Delta=250$을 기본값으로 사용했으며, 학습은 8개 GPU에서 약 1.5천 스텝, 14시간이 소요되었다.</p>
+<p>평가는 Causal Forcing에서 제안한 모션이 풍부한 100개 프롬프트 세트와 VBench 벤치마크를 사용했으며, HPSv3(시각적 품질), VisionReward 기반의 Vision/Instruct/Motion Quality 서브스코어, RAFT 기반 Dynamic Degree(모션 정도) 등을 지표로 사용했다. 결과적으로 Mask Forcing은 chunk-wise·frame-wise 설정 모두에서 세 가지 baseline 전반에 걸쳐 HPSv3, Vision, Instruct 점수를 일관되게 향상시켰고(예: Self Forcing 기준 HPSv3 9.55→9.84, Instruct 38.50→45.03), VBench Total/Quality/Semantic 점수도 대부분 개선했다. 30초 장편 영상 생성(LongLive + MovieGen/VBench-Long)에서도 HPSv3(8.44→9.11), Instruct(62.04→66.02) 등의 향상을 보였다.</p>
+<p>ablation 실험에서는 마스크 비율 $\alpha=0.2$, timestep 윈도우 $\Delta=250$, 그리고 공간축은 "per-frame"(프레임별 독립 마스크), 시간축은 "per-chunk"(청크마다 재샘플링)로 조합할 때 시각적 품질(HPSv3)과 모션 다이나믹스(Dynamic Degree) 사이의 균형이 가장 좋았다. 마스크 비율이 너무 작으면 rollout 다양성이 부족해 모션이 위축되고, 너무 크면 오히려 과도하게 clean한 예측에 의존해 모션 다양성이 줄어드는 트레이드오프가 관찰되었다. V-JEPA2/CLIP 기반 Maximum Mean Discrepancy(VMMD/CMMD)로 측정한 결과 Mask Forcing 적용 시 모든 baseline에서 학습 수렴이 더 빨라졌다. 24명의 사용자를 대상으로 한 pairwise 인간 평가에서도 Mask Forcing이 Self Forcing, Causal Forcing, LongLive 대비 각각 80%, 79%, 83%의 선호도를, 장편 영상에서는 72%의 선호도를 얻었다.</p>
+<h2>한계점</h2>
+<p>논문에 별도의 "한계점" 절은 명시되어 있지 않다. 다만 본문에서 유추 가능한 한계로, (1) 마스크 비율·timestep 윈도우 등 여러 하이퍼파라미터에 대한 민감도가 존재하며 최적값을 실험적으로 찾아야 하고, (2) 마스크 비율이 클 경우 모션 다이나믹스가 저하되는 품질-다양성 간 트레이드오프가 존재하며, (3) VBench의 Dynamic Degree 지표가 일부 baseline(LongLive)에서는 오히려 하락하는 등 지표 간 상충이 나타난다는 점을 들 수 있다.</p>
+<h2>시사점</h2>
+<p>Mask Forcing은 기존 DMD 목적함수 자체를 바꾸지 않고 self-rollout 입력에 대한 간단한 노이즈 마스킹 교란만으로 mode collapse 문제를 완화한다는 점에서, 실데이터 큐레이션이나 추가 강화학습 post-training 등 복잡한 파이프라인 없이도 여러 기존 AR 비디오 distillation 기법(Self Forcing, LongLive, Causal Forcing)에 plug-in 형태로 결합해 성능을 개선할 수 있음을 보여준다. 이는 masked modeling과 dual-timestep 스케줄링이라는 비교적 단순한 아이디어가 diffusion distillation의 근본적인 mode-seeking 문제에 효과적인 해법이 될 수 있음을 시사하며, 향후 다른 자기회귀 생성 모델(영상 외 다른 모달리티)의 distillation에도 유사한 원리가 적용될 수 있을 것으로 보인다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.09123" target="_blank" rel="noopener">huggingface.co/papers/2609.09123</a> · 2026-09-10</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

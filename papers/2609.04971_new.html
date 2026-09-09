@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>비콘KV</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#12 · Daily Papers 2026-09-10</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 32</span>
+    </div>
+    <h1 class="article-title">BeaconKV: Key-Value Cache Compression Guided by Beacon Queries for Efficient Large Reasoning Model Inference</h1>
+    <p class="article-title-ko">비콘KV: 비콘 쿼리 기반 추론 모델을 위한 효율적인 키-값 캐시 압축</p>
+    <p class="article-sub">긴 추론 과정에서 과거 맥락을 다시 참조하는 토큰("Thought Revisiting Token")을 예측하기 위해, 유사도 기준으로 선별한 "비콘 쿼리(beacon query)"를 최근 쿼리와 함께 활용하는 학습이 필요 없는 KV 캐시 압축 기법 BeaconKV를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.04971" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.04971" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: BeaconKV: Key-Value Cache Compression Guided by Beacon Queries for Efficient Large Reasoning Model Inference</li>
+<li><strong>저자</strong>: Janghyeon Kim, Minsoo Kim, Kyuhong Shim, Jungwook Choi (한양대학교, 성균관대학교)</li>
+<li><strong>출처</strong>: arXiv:2609.04971v1 [cs.LG] (2026년 9월 4일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.04971">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>긴 추론 과정에서 과거 맥락을 다시 참조하는 토큰("Thought Revisiting Token")을 예측하기 위해, 유사도 기준으로 선별한 "비콘 쿼리(beacon query)"를 최근 쿼리와 함께 활용하는 학습이 필요 없는 KV 캐시 압축 기법 BeaconKV를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>DeepSeek-R1, Qwen3 등 대규모 추론 모델(Large Reasoning Model, LRM)은 긴 Chain-of-Thought(CoT)를 생성해 성능을 높이지만, 디코딩 길이에 비례해 KV 캐시가 커져 GPU 메모리를 빠르게 소진시킨다. RPC, R-KV 같은 기존 KV 캐시 압축 기법은 "가장 최근에 생성된 쿼리"들이 앞으로의 어텐션 패턴을 잘 대표한다고 가정하고, 이를 기준으로 중요도가 낮은 토큰을 제거(eviction)한다. 그러나 저자들은 긴 추론 과정에서는 일부 디코딩 스텝이 훨씬 이전에 등장한 문제 설정이나 풀이 계획 등 멀리 떨어진 맥락을 다시 참조하는 현상이 있고, 이런 토큰은 최근 쿼리만으로는 예측할 수 없어 기존 방식이 중요한 KV를 조기에 삭제해버린다는 점을 지적한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>긴 추론 과정에서 과거의 먼 맥락(예: 초반에 세운 풀이 계획)을 다시 참조하는 디코딩 스텝을 "Thought Revisiting Token(TRT)"으로 정의하고, 어텐션 거리 분석을 통해 이런 전역(global) 쿼리가 여러 레이어와 헤드에 걸쳐 산발적으로 나타남을 실증적으로 보였다.</li>
+<li>이 전역 쿼리들이 임베딩 공간에서 무작위로 흩어져 있지 않고 소수의 유사도 군집(cluster)을 형성한다는 기하학적 구조를 코사인 유사도 및 PCA 분석으로 확인했다.</li>
+<li>이 군집을 대표하는 소수의 "비콘 쿼리"만 유지하면 전체 쿼리 이력을 저장하지 않고도 향후 재참조될 KV를 예측할 수 있다는 아이디어에 기반해, 학습이 필요 없는 압축 기법 BeaconKV를 제안했다.</li>
+<li>메모리 제한 하에서 비콘 쿼리를 온라인으로 갱신할 수 있는 경량 알고리즘인 Continual FPS(Farthest Point Sampling)를 설계했다.</li>
+</ul>
+<h2>방법론</h2>
+<p>BeaconKV는 KV 캐시가 예산(budget)에 도달하면 일부를 제거하는 주기적 eviction 구조를 따르되, eviction 기준이 되는 관찰 쿼리 집합(observation query set)을 "최근 쿼리"뿐 아니라 "비콘 쿼리"까지 포함하도록 확장한다. 비콘 쿼리는 RoPE(회전 위치 임베딩) 적용 전의 쿼리들에 대해 코사인 유사도 기반 FPS를 적용해 서로 기하학적으로 가장 다른(대표적인) 쿼리들을 선택한 것이다. 전체 쿼리 이력에 FPS를 매번 적용하면 메모리 부담이 커지므로, 각 어텐션 헤드마다 정해진 상한(buffer 최대 크기)까지 쿼리를 모아두었다가 그 시점에 FPS로 하한 크기까지 다운샘플링하는 "채우고-압축하기" 방식의 Continual FPS를 사용한다. 중요도 점수 계산 시에는 비콘 쿼리는 현재 디코딩 시점의 위치로 RoPE를 재적용해 "지금 TRT가 발생한다면 이 KV를 참조할 것인가"를 시뮬레이션하고, 최근 쿼리는 원래 생성 위치를 유지한다. 또한 TRT로 인한 어텐션 신호는 드물지만 강하게 나타나는 특성이 있으므로, 평균이 아닌 최댓값(max-aggregation) 방식으로 점수를 집계해 희소하지만 중요한 신호가 희석되지 않도록 한 뒤 상위 K개의 KV만 남기고 나머지를 제거한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>R1-Distill-Qwen-7B, R1-Distill-Llama-8B, Qwen3-4B, Qwen3-14B 네 가지 오픈소스 LRM을 대상으로 AIME24, MATH-500, LiveCodeBench, GPQA-Diamond 네 가지 추론 벤치마크에서 평가했다. 다양한 KV 캐시 예산 구간에서 BeaconKV는 SnapKV, RPC, R-KV 등 기존 압축 기법 대비 대체로 더 높은 정확도를 보였으며, 특히 예산이 작을 때 격차가 커서 Qwen3-14B, AIME24, 예산 1024 조건에서 최대 31.7%p의 정확도 개선을 보고했다. 비콘 쿼리와 최근 쿼리의 비율(예: 16개씩)이 균형 잡힌 설정이 정확도와 지연시간 측면에서 가장 좋은 트레이드오프를 보였고, 평균 집계 대비 최댓값 집계가 특히 저예산에서 더 우수했다. 단순히 초반 쿼리와 최근 쿼리를 함께 쓰는 "Initial+Recent" 베이스라인보다도 BeaconKV가 전 모델·과제에서 일관되게 우수해, 성능 향상이 초반 맥락 보존이 아니라 지속적으로 갱신되는 비콘 쿼리의 대표성에서 온다는 점을 확인했다. Qwen3-4B, 32K 토큰 생성, A100 80GB GPU 환경의 효율성 평가에서는 전체 KV 캐시 대비 최대 5.8배의 GPU 메모리 절감(77.0GB→13.3GB)과 4.3배 이상의 처리량 개선(82.3→356.4 tokens/s)을 보였고, 동일한 KV 예산에서 RPC와 비슷한 처리량·메모리를 유지하면서도 LiveCodeBench 정확도를 최대 12.3%p 더 높였다.</p>
+<h2>한계점</h2>
+<p>논문은 별도의 한계점 절을 두지 않았으나, Impact Statement에서 평가가 주로 오픈소스 LRM과 특정 벤치마크 환경에 한정되어 있어 더 넓은 범위의 생성 워크로드에 대한 이점 검증에는 추가 연구가 필요하다고 언급한다. 또한 추론 비용을 낮추는 기술이 원치 않는 대규모 추론 활용의 비용도 함께 낮출 수 있다는 점을 부작용으로 언급한다. 그 외 세부적인 실패 사례나 정량적 한계는 논문에 명시되지 않음.</p>
+<h2>시사점</h2>
+<p>이 연구는 KV 캐시 압축에서 "최근 쿼리가 미래 어텐션의 좋은 대리자"라는 널리 쓰이던 가정이 긴 추론 궤적에서는 깨질 수 있음을 구체적으로 보이고, 쿼리 임베딩의 기하학적 군집 구조를 활용해 이를 학습 없이 보완하는 방법을 제시했다는 점에서 의미가 크다. 별도의 학습이나 아키텍처 변경 없이 기존 어텐션 기반 압축 파이프라인에 쉽게 결합할 수 있어, 제한된 GPU 자원에서 대규모 추론 모델을 서비스하려는 실무적 상황에 바로 적용 가능한 방향을 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.04971" target="_blank" rel="noopener">huggingface.co/papers/2609.04971</a> · 2026-09-10</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

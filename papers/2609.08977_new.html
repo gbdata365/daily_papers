@@ -1,0 +1,117 @@
+<meta charset="UTF-8">
+<title>옴니 인터랙션 에이전트 기술 보고서</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#3 · Daily Papers 2026-09-10</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 110</span>
+    </div>
+    <h1 class="article-title">Omni Interaction Agent Technical Report</h1>
+    <p class="article-title-ko">옴니 인터랙션 에이전트 기술 보고서</p>
+    <p class="article-sub">영상·음성·텍스트를 실시간 스트리밍으로 받아들이며 사용자가 언제든 끼어들거나 되물을 수 있는 완전 양방향(full-duplex) 대화와, 코드 작성 같은 복잡한 에이전트 작업 수행을 하나의 모델 프레임워크로 통합한 "간더(Gander)"를 제안한 기술 보고서이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.08977" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.08977" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Omni Interaction Agent Technical Report</li>
+<li><strong>저자</strong>: Orantqing, Shengpeng Ji 등 Tencent Hunyuan Speech Team 소속 연구진을 중심으로 저장대학교(Zhejiang University), 상하이교통대학교, 홍콩중문대학교, 난양기술대학교 연구자들이 공동 참여</li>
+<li><strong>출처</strong>: arXiv:2609.08977v1 [eess.AS] (2026-09-08)</li>
+<li><strong>프로젝트 페이지</strong>: https://Omni-Interaction-Gander.github.io/Omni-Interaction-Agent (코드: https://github.com/Omni-Interaction-Gander/Omni-Interaction-Agent)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.08977">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>영상·음성·텍스트를 실시간 스트리밍으로 받아들이며 사용자가 언제든 끼어들거나 되물을 수 있는 완전 양방향(full-duplex) 대화와, 코드 작성 같은 복잡한 에이전트 작업 수행을 하나의 모델 프레임워크로 통합한 "간더(Gander)"를 제안한 기술 보고서이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>기존 LLM 기반 에이전트는 도구 사용과 멀티스텝 계획 능력이 크게 발전했지만, 인간-AI 상호작용 자체는 여전히 텍스트 기반의 턴제(turn-by-turn) 방식에 머물러 있다. 이는 인간 간 대화처럼 동시에 듣고 말하거나, 상황에 따라 끼어들고 방향을 바꾸는 유연한 소통과는 거리가 멀다. 저자들은 진짜 자연스러운 인간-AI 협업을 위해서는 1) 음성·시각·텍스트를 아우르는 멀티모달 인지, 2) 저지연 양방향 실시간 상호작용, 3) 맥락적 추론과 자율적 계획·도구 사용을 포함한 강력한 에이전트 능력이 함께 필요하다고 본다. 이때 핵심 질문은 (a) 상호작용성이 VAD(음성활동감지)·ASR 같은 외부 모듈의 조합으로 달성 가능한지, 아니면 모델 자체의 내재적 능력이어야 하는지, (b) 하나의 모델이 실시간 응답성과 장기 추론을 동시에 만족시킬 수 있는지이다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>옴니 인지, 실시간 상호작용, 장기 에이전트 추론을 하나의 프레임워크에서 원어민 수준으로 통합한 종단간(end-to-end) 모델 간더를 제안했다.</li>
+<li>"소뇌(Cerebellum)-대뇌(Brain)" 협업 구조와 청크(chunk) 단위 스트리밍 학습 방식을 도입해, 대화·끼어들기·선제적 상호작용·잡음 내구성·다자간 백채널 대응·추론·에이전트 실행 능력을 두루 확보했다.</li>
+<li>모델 가중치와 코드를 공개하여 옴니 인터랙션 에이전트 분야의 후속 연구를 지원한다.</li>
+</ol>
+<h2>방법론</h2>
+<p>간더는 세 구성요소로 이루어진다.
+- <strong>프론트 소뇌(Front Cerebellum)</strong>: 씽커-토커(Thinker-Talker) 구조 기반의 실시간 완전 양방향 멀티모달 모델로, 스트리밍 음성·영상·화면 입력을 지속적으로 지각하고 발화·경청·간단한 피드백·끼어들기·도구 호출 여부를 청크마다 스스로 결정한다.
+- <strong>에이전트 오케스트레이션 런타임</strong>: 소뇌와 대뇌 사이의 조정 계층으로, 실시간 멀티모달 추론과 백그라운드 작업 오케스트레이션을 함께 관리한다. task_start·task_send·task_resolve 세 가지 도구 호출로 작업 생성, 추가 지시 반영(주작업 갱신 또는 읽기 전용 조회), 취소·승인·거부 등의 작업 생명주기를 구조화한다. Project·Task·Run·WorkerEvent·Delivery의 5가지 영속 엔티티를 게이트웨이가 관리하며, "lean"(경량 직접 실행) 모드와 "coordinator"(추론 강도·권한 정책 등을 별도로 산출하는) 모드를 지원한다.
+- <strong>백 대뇌(Back Brain)</strong>: 별도 학습이 필요 없는(training-free) 범용 작업 실행 에이전트로, Codex나 Claude Code 같은 기존 에이전트 하네스를 그대로 활용해 정보 검색, 코드/파일 조작, 문서 처리 등 장기 작업을 수행한다. context_fetch, memory_search, share라는 세 가지 런타임 인터페이스로 소뇌와 정보를 교환한다.</p>
+<p>프론트 소뇌 내부는 스트리밍 씽커-토커 구조로, 오디오·비디오를 1초 단위 청크로 나눠 인코딩하고, 각 청크마다 경청(listen)/발화(speak)/중단(interrupt) 중 하나의 제어 토큰을 먼저 예측한 뒤 필요한 텍스트를 생성한다. 시각 입력은 SigLIP 인코더와 쿼리 기반 리샘플러로 압축하고(원본 대비 약 16배 축소), 음성은 스트리밍 인코더 후 5배 다운샘플링해 초당 약 10토큰 수준으로 줄인다. 컨텍스트는 128개 청크(약 2분) 슬라이딩 윈도우로 관리한다. 생성된 텍스트 은닉 상태는 별도의 소형 자기회귀 음성 토큰 디코더와, 이어지는 스트리밍 플로우 매칭 디코더를 거쳐 실시간 음성 파형으로 합성된다(제로샷 화자 톤 제어 포함).</p>
+<p>학습 데이터는 총 약 270만 건 규모로, 1) 음성 상호작용 데이터(약 37%, 끼어들기·백채널 등을 명시적으로 합성한 InteractionSpeech 포함), 2) 오디오-비주얼 상호작용 데이터(약 41%, 스트리밍 비디오 QA·내레이션·선제적 시각 응답), 3) 에이전트 상호작용 데이터(음성/옴니 에이전트 및 도구 보조 추론), 4) 강건성·부정 데이터(관련 없는 영상 무시, 무명령 상황에서의 침묵, 잡음 및 다자간 간섭 대응)로 구성된다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Full-Duplex-Bench v3(100개 시나리오)에서 간더(9B)는 턴 테이킹 정확도(Take-turn) 100%, 조기 개입률(Interrupt) 8.0%로 GPT-Realtime, Gemini Live 3.1/2.5, Grok, Ultravox, 캐스케이드(Whisper→GPT-4o→TTS) 등 6개 상용/오픈 시스템 대비 최고 수준의 타이밍 성능을 보였다. 다만 도구 선택 F1(ToolSel 0.759)·인수 정확도(ArgAcc 0.503)·Pass@1(0.400) 등 과업 정확도 지표는 비교 시스템 중 하위권이다. 백 대뇌만 텍스트 전사로 직접 구동했을 때는 ToolSel 0.934로 표 전체 최고치를 기록해, 실행 계층 자체의 역량은 충분함을 시사하며 정확도 저하는 소뇌의 위임 판단과 음성 인식/합성 오차에서 기인함을 보였다.</p>
+<p>SpokenQA(Llama Questions·Web Questions)와 VoiceBench(AlpacaEval·SD-QA) 평가에서 간더는 완전 양방향 모델군 내에서 지식 기반 질의(SpokenQA)는 1위(75.60/59.30), 개방형 응답 품질(AlpacaEval)·억양 강건성(SD-QA)은 2위를 기록했다. 전체 9개 턴제 모델까지 포함해도 SpokenQA는 상위권을 유지했다. 옴니 이해 평가(WorldSense, Daily-Omni)에서는 기반 모델인 MiniCPM-o 4.5 대비 Daily-Omni는 1.67점 차로 근접했으나 WorldSense는 6.08점 하락했으며, 저자들은 이를 세부 시각 속성 판별(WorldSense) 대비 시간축 정합 추론(Daily-Omni) 능력이 상호작용 학습으로 더 잘 보존된 결과로 해석한다. 모달리티 결합 실험에서는 오디오+비디오 결합 조건이 단일 모달리티 대비 WorldSense +5.01점, Daily-Omni +19.13점의 융합 이득을 보여, 모델이 실제로 두 모달리티를 함께 활용함을 확인했다.</p>
+<h2>한계점</h2>
+<p>논문이 스스로 밝힌 향후 과제는 다음과 같다. 1) 복잡한 옴니 시나리오에서 에이전트 호출과 대화 행동이 학습 데이터 분포에 민감해 데이터·모델 스케일업이 필요하다. 2) 온폴리시 증류(OPD)나 강화학습(RL) 기반의 안정적인 사후 학습이 아직 충분히 이루어지지 않았다. 3) 현재 소뇌-대뇌 간 통신이 주로 ASR 기반 텍스트 전사에 의존해 더 풍부한 양방향 정보 교환 구조가 필요하다. 4) 장기 멀티모달 이력과 도구 호출을 포함한 메모리·장기 컨텍스트 관리가 미흡하다. 5) 옴니 이해·양방향 상호작용·에이전트 실행을 통합적으로 평가하는 표준 벤치마크가 부재하다. 이 외에도 실제 지표상 도구 선택·인수 정확도 등 과업 정확도가 경쟁 모델 대비 낮고, 발화 유지 중 필러(대기 발언) 비율이 51.6%로 높다는 점도 한계로 드러난다.</p>
+<h2>시사점</h2>
+<p>간더는 실시간 대화형 인터랙션과 장시간 에이전트적 작업 수행을 별도 시스템이 아니라 하나의 유기적 프레임워크(소뇌-대뇌 협업) 안에서 다루는 구체적 설계를 제시함으로써, VAD 같은 외부 모듈 없이도 모델 스스로 듣기/말하기/끼어들기를 판단하는 것이 가능함을 보였다. 또한 별도 학습 없이 Codex·Claude Code 같은 기존 에이전트 하네스를 "플러그 앤 플레이"로 결합하는 구조는, 추론 모델의 발전이 별도 재학습 없이 상호작용 에이전트 전체 성능 향상으로 이어질 수 있는 확장 가능한 경로를 제안한다는 점에서 실무적 시사점이 크다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.08977" target="_blank" rel="noopener">huggingface.co/papers/2609.08977</a> · 2026-09-10</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

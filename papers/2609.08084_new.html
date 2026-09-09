@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>메리골드 V2</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#8 · Daily Papers 2026-09-10</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 44</span>
+    </div>
+    <h1 class="article-title">Marigold V2: Revisiting Diffusion Transformers for Monocular Depth Estimation</h1>
+    <p class="article-title-ko">메리골드 V2: 단안 깊이 추정을 위한 디퓨전 트랜스포머 재조명</p>
+    <p class="article-sub">공개된 이미지 편집용 디퓨전 트랜스포머(Qwen-Image-Edit)를 QLoRA와 새로운 정렬·매칭 손실로 저비용 파인튜닝해, 단일 32GB GPU·1주 이내 학습만으로 털·나뭇잎 등 미세 디테일까지 살리는 최고 수준의 단안 깊이 추정 모델을 만든 연구다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.08084" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.08084" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Marigold V2: Revisiting Diffusion Transformers for Monocular Depth Estimation</li>
+<li><strong>저자</strong>: Igor Pavlovic, Thiemo Wandel, Anton Obukhov (HUAWEI Bayer Lab, EPFL) 외 Luca Bartolomei, Andrey Davydov, Fabio Tosi, Matteo Poggi, Sabine Süsstrunk, Dengxin Dai (University of Bologna, HUAWEI Bayer Lab, EPFL 공동 연구)</li>
+<li><strong>출처</strong>: arXiv:2609.08084v1 [cs.CV] (2026년 9월 8일), ACM Transactions on Graphics 게재본</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://hf.co/spaces/huawei-bayerlab/marigold-v2-web">Marigold V2 웹 데모</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.08084">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>공개된 이미지 편집용 디퓨전 트랜스포머(Qwen-Image-Edit)를 QLoRA와 새로운 정렬·매칭 손실로 저비용 파인튜닝해, 단일 32GB GPU·1주 이내 학습만으로 털·나뭇잎 등 미세 디테일까지 살리는 최고 수준의 단안 깊이 추정 모델을 만든 연구다.</p>
+<h2>배경 및 문제의식</h2>
+<p>단안 깊이 추정은 근본적으로 불충분 정보(ill-posed) 문제이며, 판별적(discriminative) 모델들은 대규모 라벨 데이터에 의존해 학습 분포를 벗어난 입력(비램버시안 표면, 악조건 날씨 등)에서 성능이 크게 떨어진다. 반면 생성형 디퓨전 모델은 훨씬 큰 규모의 데이터에서 기하학적으로 일관된 세계 표현을 학습해 이를 깊이 추정에 재활용하는 흐름(Marigold 계열 등)이 등장했지만, 기존 디퓨전 기반 깊이 모델들은 세밀한 경계·디테일을 잃고 경계 부근에서 이른바 '플라잉 픽셀(flying pixel)' 아티팩트가 발생하는 문제를 안고 있었다. 또한 최신 디퓨전 트랜스포머(DiT) 기반 생성 모델은 U-Net보다 구조가 복잡해 재활용(파인튜닝) 비용이 급격히 커진 상황이었다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li><strong>Marigold V2 학습 프로토콜</strong>: 이미지 편집용 DiT(Qwen-Image-Edit)를 단일 소비자급 GPU, 적은 양의 데이터, 며칠의 학습만으로 깊이(또는 다른 조밀 회귀 태스크) 추정기로 변환하는 경량 파인튜닝 절차. 4비트 양자화 기반 QLoRA를 활용해 메모리 부담을 크게 줄였다.</li>
+<li><strong>iREPA-depth</strong>: 기존 표현 정렬(REPA/iREPA) 기법을 변형해, RGB가 아닌 정답(ground-truth) 깊이 맵에서 뽑은 시맨틱 특징(DINOv3)에 모델 내부 표현을 정렬시킴으로써 수렴을 앞당기고 시각적 품질을 높였다.</li>
+<li><strong>SinkLoss</strong>: 영역을 K×K 블록으로 나누고 예측 깊이와 정답 깊이 사이에 Sinkhorn-Knopp 최적수송 기반의 소프트 매칭을 적용하는 새로운 손실 함수. 픽셀 단위로 엄격하게 정렬을 강제하지 않고 블록 내에서 값 집합이 일치하도록 함으로써, 투명하거나 매우 얇은 물체 주변의 노이즈성 정답 라벨에 덜 민감하면서도 경계를 선명하게 만든다.</li>
+</ol>
+<h2>방법론</h2>
+<p>먼저 metric 깊이를 로그 스케일로 변환하고 2%~98% 분위수로 클리핑해 [-1,1] 범위의 affine-invariant 로그 깊이 표현으로 정규화한 뒤, 이를 그레이스케일 RGB 형태로 인코딩해 이미지 편집 백본이 다룰 수 있게 만든다. 학습은 2단계로 진행된다. Stage 1에서는 Qwen-Image-Edit-2509의 DiT 가중치를 4비트로 양자화하고 rank-128 QLoRA 어댑터만 학습하며, 고정된 타임스텝(t=0.5)에서 RGB 잠재값과 깊이 잠재값의 차이(속도)를 직접 회귀하는 rectified-flow 방식을 사용한다. 여기에 잠재공간 손실(L1) 외에 픽셀공간 재구성 손실, 그래디언트(경계) 손실, 그리고 iREPA-depth 정렬 손실을 함께 적용해 국소 재구성 품질과 세부 묘사를 개선한다. Stage 2에서는 VAE 디코더를 함께 풀어(unfreeze) 추가 파인튜닝하면서 SinkLoss를 도입해, 얇거나 투명한 구조물 주변의 애매하고 잡음이 섞인 정답 라벨로 인한 과도한 픽셀 단위 정렬 요구를 완화하고 경계 선명도와 디테일 보존을 동시에 끌어올린다. 추론 시에는 VAE와 DiT를 각각 한 번씩만 통과하는 단일 순전파로 깊이를 얻는다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>HyperSim과 vKITTI를 9:1 비율로 섞은 비교적 작은 데이터셋으로, 단일 32GB GPU에서 학습(최종 Stage 1은 약 5일, Stage 2 SinkLoss 파인튜닝은 약 1일 추가)했다. NYUv2, KITTI, ETH3D, ScanNet, DIODE에서 제로샷 affine-invariant 깊이 추정을 평가한 결과, 유사한 학습 데이터 규모의 방법들 중 전 항목에서 최고 성능을 기록했으며, 특히 ETH3D에서 AbsRel 2.8로 종전 최고 대비 크게 개선됐다(비교 방법으로 최고 AbsRel 3.8). HyperSim 기반 경계 정밀도 지표(Soft Edge Error, SEE)에서도 Pixel-Perfect Depth, InfiniDepth 등 디테일 특화 모델들을 능가했다. Ablation 결과 iREPA-depth와 로그 깊이 표현이 정확도와 시각적 품질을 함께 개선했고, SinkLoss는 표준 정확도 지표(AbsRel, δ1)를 유지하면서 SEE를 크게 낮춰 경계 아티팩트를 줄였다. 이 손실들은 Qwen 백본뿐 아니라 Stable Diffusion V1.5, FLUX.2에도 전이되어 일반성을 보였다. 지연시간·메모리 측면에서는 최고속은 아니지만 2048×2048 해상도까지 단일 32GB GPU에서 동작 가능해(경쟁 디퓨전 모델들은 OOM 발생), 해상도 확장성이 우수함을 보였다. 또한 동일한 레시피를 깊이 완성(depth completion), 투과 표면 뒤 깊이 추정(see-through depth), 표면 법선 추정, 알베도(intrinsic decomposition) 추정에도 적용해 각 태스크에서 최고 수준 성능을 달성함을 보였다.</p>
+<h2>한계점</h2>
+<p>논문에서 직접 언급한 한계로는, 대형 이미지 편집 백본을 사용하기 때문에 실시간(real-time) 활용에는 부적합하다는 점, 그리고 반사, 움직임, 아웃포커스 블러가 있는 영역에서는 예측이 여전히 모호하다는 점을 들었다. 저자들은 이를 해결하기 위해 불확실성 인식(uncertainty-aware) 또는 다층(multi-layer) 방식으로의 확장이 필요하다고 언급했다.</p>
+<h2>시사점</h2>
+<p>이 연구는 대규모 사전학습된 오픈소스 생성 모델(이미지 편집 DiT)을 소규모 팀이나 개인 연구자도 감당할 수 있는 비용(단일 GPU, 수일)으로 재활용해 최첨단 인식 성능을 얻을 수 있음을 보여준다. 특히 노이즈가 있는 정답 라벨을 픽셀 단위가 아닌 집합 매칭(최적수송) 관점에서 다루는 SinkLoss의 아이디어는 깊이 추정 이외의 다른 조밀 예측(dense prediction) 태스크에도 폭넓게 적용될 수 있는 일반적인 학습 기법으로서 의미가 크다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.08084" target="_blank" rel="noopener">huggingface.co/papers/2609.08084</a> · 2026-09-10</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

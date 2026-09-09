@@ -1,0 +1,123 @@
+<meta charset="UTF-8">
+<title>GE-Act 2.0</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#7 · Daily Papers 2026-09-10</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 46</span>
+    </div>
+    <h1 class="article-title">GE-Act 2.0: Pretraining and Scaling a World-Action Model for Robotic Manipulation</h1>
+    <p class="article-title-ko">GE-Act 2.0: 로봇 조작을 위한 월드-액션 모델의 사전학습과 스케일링</p>
+    <p class="article-sub">로봇 조작을 위한 월드-액션 모델(world-action model)의 모든 학습 가능 구성요소를 처음부터(from scratch) 학습시켜, 데이터 규모를 300시간에서 3만 시간까지 늘렸을 때 제로샷(zero-shot) 성능이 어떻게 체계적으로 향상되는지를 실증적으로 보여준 연구다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.05588" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.05588" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: GE-Act 2.0: Pretraining and Scaling a World-Action Model for Robotic Manipulation</li>
+<li><strong>저자</strong>: AgiBot Research Team</li>
+<li><strong>출처</strong>: arXiv:2609.05588v1 [cs.RO] (2026-09-04)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://ge-act-v2.github.io/">ge-act-v2.github.io</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.05588">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>로봇 조작을 위한 월드-액션 모델(world-action model)의 모든 학습 가능 구성요소를 처음부터(from scratch) 학습시켜, 데이터 규모를 300시간에서 3만 시간까지 늘렸을 때 제로샷(zero-shot) 성능이 어떻게 체계적으로 향상되는지를 실증적으로 보여준 연구다.</p>
+<h2>배경 및 문제의식</h2>
+<p>비전-언어-액션(VLA) 정책은 관측과 지시를 곧바로 모터 명령으로 매핑하지만, 물리적 동역학을 명시적으로 모델링하지 않는다. 이에 대한 대안으로 "월드-액션 모델(WAM)"이 떠오르고 있는데, 이는 미래 장면을 먼저 예측한 뒤 그 예측을 바탕으로 행동을 생성하는 방식이다. 이 접근은 액션 라벨이 없는 영상(사람 시연, 실패 사례 등)까지 학습에 활용할 수 있다는 장점이 있다. 그러나 기존 WAM 연구들은 대부분 사전학습된 비디오 생성기를 그대로 가져와 액션 모델과 결합하는 데에만 공을 들였을 뿐, WAM 자체를 처음부터 사전학습하고 스케일링하는 방법은 충분히 탐구되지 않았다. 저자들은 (1) 어떤 잠재 표현 공간을 구성해야 하는지, (2) 그 공간에서 미래의 "행동 가능한" 시각 상태를 어떻게 예측할지, (3) 예측된 미래를 기록된 행동 라벨과 어떻게 정합시킬지라는 세 가지 설계 문제를 제기한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>GE-Act 2.0</strong>: 조작 데이터로부터 처음부터 사전학습되도록 설계된 월드-액션 모델을 제안. 제어 지향 오토인코더(CoAE)로 압축된 표현을 만들고, 단일 스텝 비주얼 플래너(SVP)를 통해 비주얼 플래닝과 역동역학(inverse dynamics) 모델을 서로 다른 데이터로 별도 사전학습한 뒤 종단간(end-to-end) 공동학습으로 연결한다.</li>
+<li><strong>유효성 격차(validity gap)</strong> 개념 규명: 생성된 미래 상태와 실제 기록된 행동이 서로 다른 "결과 모드(outcome mode)"를 나타낼 수 있음을 지적하고, 이를 완화하는 KASO(지식 정합 선택적 최적화, Knowledge-Aligned Selective Optimization) 기법을 제안.</li>
+<li>100개 실제 로봇 과제, 20개 스킬 그룹, 2개의 로봇 형태(embodiment)에 대해 파인튜닝 없이(zero-shot) 사전학습된 체크포인트를 직접 평가하여, 데이터 규모 확장에 따른 성능 향상을 체계적으로 입증.</li>
+</ul>
+<h2>방법론</h2>
+<p>GE-Act 2.0은 세 가지 구성요소로 이루어진다.
+1. <strong>CoAE(제어 지향 오토인코더)</strong>: 표준 비디오 오토인코더보다 훨씬 공격적인 64배 공간 압축을 적용해, 프레임당 24개의 토큰만으로 표현한다. 픽셀 재구성 손실 외에도 SigLIP 2, V-JEPA 2.1, DINOv3라는 세 개의 고정된(frozen) 비전 교사 모델의 특징에 정렬하는 손실을 추가해, 언어 정렬 의미, 시공간 구조, 조밀한 시각 특징을 압축된 표현에 함께 담는다.
+2. <strong>SVP(단일 스텝 비주얼 플래너)</strong>: 조건부 MeanFlow를 활용해 노이즈로부터 완전한 미래 시각 상태(다중 시점, dense/sparse 두 스케일)를 한 번의 순전파(single forward pass)로 생성한다. 이 "한 번에 완전히 디노이즈"하는 구조 덕분에 SVP와 IDM을 서로 다른 데이터(액션 라벨 없는 영상 vs. 지시 라벨 없는 궤적)로 독립적으로 사전학습한 뒤, 미분 가능한 방식으로 연결해 공동학습할 수 있다. 지시문은 고정된 비전-언어모델(Qwen3.5 기반)을 통해 현재 장면에 근거하여 해석된다.
+3. <strong>IDM(역동역학 모델)</strong>: CoAE로 인코딩된 현재 관측과 SVP가 예측한 미래 시각 상태, 그리고 고유수용감각(proprioception) 정보를 결합해 조밀한 제어용 행동 청크와 장기 목표를 위한 희소 행동 시퀀스를 함께 예측한다.</p>
+<p>공동학습 단계에서는 생성된 미래 상태와 기록된 행동이 서로 다른 결과 모드를 나타낼 수 있는 "유효성 격차" 문제가 발생한다. 이를 해결하기 위해 <strong>KASO</strong>는 SVP가 여러 개의 후보 미래를 샘플링하게 하고, 현재 IDM이 각 후보에 대해 예측한 행동과 실제 기록된 미래에 대해 예측한 행동 사이의 차이(에너지)를 계산해, 가장 행동적으로 양립 가능한 후보(top-k, 구현에서는 k=1)만 선택해 그 경로로만 그래디언트를 흘려보낸다. 이 과정에서 SVP와 IDM의 원래 사전학습 손실도 함께 유지된다.</p>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li>학습 데이터는 G1-OP, G2-OP, G2-90D(서로 다른 로봇 형태), 시뮬레이션, 오픈소스 로봇 데이터셋, 1인칭/사람 조작 영상, 실패·배포 롤아웃 등으로 구성되며, SVP 사전학습 3만9천 시간, IDM 사전학습 3만2천 시간, 공동학습(co-training) 3만 시간 규모다.</li>
+<li>100개 과제·20개 스킬 그룹에 대해 파인튜닝 없이 제로샷 OOD(미학습 장면·조명·배경·물체) 평가를 수행한 결과, 공동학습 데이터를 300시간에서 3만 시간으로 늘리자 G1-OP에서 성공률이 17.1%→44.1%로, G2-90D(전체 데이터의 2% 미만)에서도 13.4%→31.1%로 상승했다. 향상은 각각 20개 중 19개, 18개 스킬 그룹에서 관찰되었으며, 스킬별 데이터 커버리지와 제로샷 성공률 사이에는 강한 상관관계(Pearson r=0.80, Spearman ρ=0.85)가 나타났다.</li>
+<li>통제된 실제 로봇 비교 실험에서 KASO는 동일한 사전학습 구성요소와 정렬 데이터를 사용했을 때, 4개 물체 피킹 과제의 평균 pick success를 E2E+PT의 22.5%에서 37.5%로, 단일 물체 과제에서는 12%에서 40%로 끌어올렸다. 간단한 장난감(toy) 실험에서도 KASO만이 다중 모드 비디오 분포와 이중 모드 행동 분포를 동시에 보존함을 확인했다.</li>
+<li>물체·색상·모양·위치를 지시하는 세밀한 그라운딩 평가에서 모델은 90% 이상의 정확도를 보였고, 이미 시작된 행동과 충돌하는 지시(목표물 변경 등)나 관습적인 장면 연상과 충돌하는 지시(신발 상자에 컵 넣기 등)에서도 명시적 지시를 우선적으로 따르는 사례를 정성적으로 제시했다.</li>
+<li>RoboTwin, GenieSim-Instruction, LIBERO-Plus 등 표준 시뮬레이션 벤치마크에서도 최소한의 인도메인 적응만으로 다른 비교 모델들과 경쟁력 있는 성능을 보였다.</li>
+</ul>
+<h2>한계점</h2>
+<p>저자들이 직접 언급한 한계는 다음과 같다.
+- 1인칭(에고센트릭) 조작 영상을 학습에 활용할 수 있는 구조이지만, 현재 연구에서는 이 데이터를 그 가용 규모만큼 충분히 활용하지 못했다. 이 데이터의 양·다양성·구성이 성능에 미치는 영향을 규명하는 것이 향후 과제로 남아 있다.
+- GE-Act 2.0은 현재 관측과 언어 지시를 즉각적인 저수준 조작 행동으로 매핑하는 "System-1" 방식의 즉각 반응형 제어에 초점을 맞추고 있으며, 장기 계획, 과업 분해, 기억, 자기수정 등 명시적 숙고가 필요한 "System-2" 능력은 다루지 않는다.</p>
+<h2>시사점</h2>
+<p>이 연구는 월드-액션 모델을 기존 비디오 생성기에 얹어 미세조정하는 방식이 아니라, 모든 생성·행동 구성요소를 조작 데이터로 처음부터 사전학습·스케일링할 수 있음을 보여준다. 특히 데이터가 극히 적은(2% 미만) 로봇 형태에서도 더 큰 전체 데이터로부터 유의미한 전이 효과가 나타난다는 점은, 서로 다른 로봇/embodiment 간 공동 학습 데이터를 늘리는 것이 데이터가 부족한 새로운 로봇 플랫폼의 성능 향상에도 실질적으로 기여할 수 있음을 시사한다. 또한 KASO가 제시한 "생성된 미래와 기록된 행동 간의 유효성 격차" 개념과 그 해결책은, 향후 세계모델 기반 정책을 강화학습 등으로 후속 학습시킬 때 행동 다양성을 보존하는 데에도 유용할 수 있는 일반적인 통찰을 제공한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.05588" target="_blank" rel="noopener">huggingface.co/papers/2609.05588</a> · 2026-09-10</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

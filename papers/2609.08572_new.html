@@ -1,0 +1,120 @@
+<meta charset="UTF-8">
+<title>에이전트그라드</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#2 · Daily Papers 2026-09-11</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 73</span>
+    </div>
+    <h1 class="article-title">AgentGrad: Intervention-guided Prompt Optimization for Multi Agent Systems</h1>
+    <p class="article-title-ko">에이전트그라드: 다중 에이전트 시스템을 위한 개입 기반 프롬프트 최적화</p>
+    <p class="article-sub">AgentGrad는 다중 에이전트 시스템(MAS)의 프롬프트 최적화에서 기존 텍스트 그래디언트 기법이 지닌 '어떤 에이전트를 고쳐야 하는지 모른 채 시스템 수준 피드백만 사용하는' 문제와 '서로 다른 실패 유형이 뒤섞인 채 무작위로 집계되는' 문제를, 순차적 개입(sequential intervention)을 통한 타깃 에이전트 식별과 의미 기반 텍스트 그래디언트 군집화·추상화로 해결하여 다섯 개 MAS 벤치마크에서 최고 성능과 평균 2.5배의 최적화 시간 단축을 동시에 달성한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.08572" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.08572" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: AgentGrad: Intervention-guided Prompt Optimization for Multi Agent Systems</li>
+<li><strong>저자</strong>: Jaewon Chu (Korea University), Jinwoo Seo, Jaewon Cho, Jeehye Na, Hyunwoo J. Kim (교신저자, KAIST), Yunyang Xiong (Meta AI), Youngdae Kim (UNIST)</li>
+<li><strong>출처</strong>: arXiv:2609.08572v1 [cs.AI] (2026년 9월 8일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.08572">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>AgentGrad는 다중 에이전트 시스템(MAS)의 프롬프트 최적화에서 기존 텍스트 그래디언트 기법이 지닌 '어떤 에이전트를 고쳐야 하는지 모른 채 시스템 수준 피드백만 사용하는' 문제와 '서로 다른 실패 유형이 뒤섞인 채 무작위로 집계되는' 문제를, 순차적 개입(sequential intervention)을 통한 타깃 에이전트 식별과 의미 기반 텍스트 그래디언트 군집화·추상화로 해결하여 다섯 개 MAS 벤치마크에서 최고 성능과 평균 2.5배의 최적화 시간 단축을 동시에 달성한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>대규모 언어모델(LLM) 기반 다중 에이전트 시스템은 여러 특화된 에이전트가 협력하여 복잡한 과제를 해결하지만, 시스템 전체 성능은 각 에이전트의 프롬프트 설계에 크게 좌우된다. 자연어 피드백으로 프롬프트를 반복 개선하는 "텍스트 그래디언트" 기법(TextGrad, GEPA 등)이 MAS 프롬프트 자동 최적화의 주요 패러다임으로 부상했지만, 저자들은 기존 방법들이 두 단계에서 근본적 한계를 지닌다고 지적한다. 그래디언트 추출 단계에서는 (1) 특정 프롬프트를 수정해야 실패가 실제로 해결되는지 검증하지 않고 대상 프롬프트를 선택하며(모든 프롬프트를 동시에 업데이트하거나 라운드로빈 방식으로 무작정 선택), (2) 해당 에이전트의 중간 출력에 대한 에이전트 수준 지도(supervision) 없이 그래디언트를 도출한다. 그래디언트 집계 단계에서는 개별 그래디언트들이 무작위로 그룹화·연결되어 서로 무관한 실패 유형이 뒤섞이고, 일반화되지 않는 프롬프트가 생성되는 문제가 있다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>순차적 개입(sequential intervention)과 의미 기반 텍스트 그래디언트 추상화에 기반한 MAS 프롬프트 최적화 프레임워크 AgentGrad 제안</li>
+<li>순차적 개입: 각 실패에 대해 에이전트를 역실행 순서로 하나씩 개입(힌트 주입)하여 어떤 에이전트를 수정해야 실패가 해결되는지 타깃 에이전트를 식별하고, 그 개입-보정 출력을 에이전트 수준 의사 라벨(pseudo-label)로 삼아 세밀한 그래디언트를 추출하는 메커니즘 도입</li>
+<li>의미 기반 텍스트 그래디언트 추상화: 유사한 교정 패턴을 공유하는 샘플 수준 그래디언트들을 의미 클러스터로 묶고, 각 클러스터를 공유된 교정 방향을 담은 하나의 일반화된 그래디언트로 추상화하는 기법 도입</li>
+<li>HotpotQA, HoVer, IFBench, PUPA, MATH 등 5개 MAS 벤치마크에서 최고 성능(SOTA)을 달성하면서 차선책 대비 평균 2.5배 빠른 wall-clock 최적화 시간 달성</li>
+</ul>
+<h2>방법론</h2>
+<p>AgentGrad는 N개 에이전트로 구성된 MAS Π의 프롬프트 집합 P를 반복적으로 개선한다. 먼저 훈련셋에서 현재 프롬프트로 실패한 샘플 집합 F를 구성한 뒤, 역실행 순서(마지막 에이전트부터)로 각 에이전트 π_n의 프롬프트에 힌트 H(정답 또는 제약조건 기반)를 주입하는 개입을 순차적으로 수행한다. 이 개입으로 해결되는 실패 부분집합 T^n을 찾아 π_n을 해당 실패들의 타깃 에이전트로 지정하고, 해결되지 않은 나머지는 다음 단계로 넘긴다(후반 에이전트에서 실패가 더 자주 발생한다는 관찰에 기반해 역순 탐색으로 개입 횟수를 줄임). 각 타깃 에이전트에 대해, 원래(실패) 출력 ŷ와 개입 후(교정) 출력 ỹ의 차이를 LLM 기반 그래디언트 추출기에 입력하여 샘플 수준 텍스트 그래디언트 δ를 얻는데, 이는 명시적 손실 없이 개입 전후 출력의 대비만으로 에이전트 수준 지도 신호를 제공한다는 점이 기존 방법과 다르다. 이어서 집계 단계에서는 LLM 기반 애그리게이터가 각 에이전트의 샘플 수준 그래디언트 집합을 의미적으로 유사한 것들끼리 클러스터링하고, 각 클러스터를 하나의 일반화된 그래디언트로 추상화한다. 클러스터 크기의 하한을 주기적 스케줄(예: 5→3→1→5…)로 제시하여 거친 공통 패턴과 세밀한 개별 교정 사이를 번갈아 탐색하도록 유도한다. 마지막으로 클러스터 크기(영향력)가 큰 순서로 생성된 일반화 그래디언트를 이용해 프롬프트 최적화 LLM이 후보 프롬프트를 생성하고, 해당 미니배치 및 검증셋에서 모두 성능이 개선될 때만 갱신을 수용한다.</p>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li>GPT-5-mini와 Qwen3-8B 두 백본, HotpotQA(다중 홉 QA), HoVer(주장 검증), IFBench(지시 따르기), PUPA(프라이버시 위임), MATH(수학 추론) 5개 벤치마크에서 MIPROv2, TextGrad, GEPA와 비교</li>
+<li>GPT-5-mini 기준 무최적화 대비 평균 +11.76점 향상(HotpotQA 73.89 vs GEPA 68.33, PUPA 95.17 vs GEPA 91.87), Qwen3-8B 기준 평균 +9.67점으로 모든 베이스라인을 상회</li>
+<li>소거 실험(HotpotQA, PUPA): 타깃 식별(TI)만으로 +1.44/+3.84점, 에이전트 수준 지도(AS) 추가로 추가 개선, 의미적 추상화(STGA) 추가로 추가 개선하며 완전체 모델이 최고 성능</li>
+<li>최적화 궤적: HotpotQA에서 AgentGrad는 약 1,000 롤아웃 만에 약 70%에 도달한 반면 GEPA는 6,000 롤아웃 이상 필요</li>
+<li>wall-clock 시간: 5개 벤치마크 평균 136분으로 차선책 GEPA(337분) 대비 2.5배, TextGrad(647분) 대비 4.7배 빠름</li>
+<li>미니배치/검증 개선 비율 분석: AgentGrad의 미니배치 개선 비율 0.72(TextGrad 0.44, GEPA 0.28), 검증 개선 비율도 최고(0.27)로 속도와 품질이 동시에 개선됨을 확인</li>
+<li>전이성 실험: 소스 벤치마크에서 최적화된 프롬프트를 추가 최적화 없이 동일 도메인의 미지 벤치마크(2WikiMultiHopQA, EX-FEVER, PUPA-TNB, IFEval, OlympiadBench)에 적용해도 모든 경우 최고 성능 유지</li>
+</ul>
+<h2>한계점</h2>
+<p>논문에 명시된 바로는, 힌트 H 구성에는 정답(ground truth)이나 최종 출력이 만족해야 할 제약조건이 필요하므로 훈련 시점에는 정답 정보에 대한 접근이 전제된다(다만 추론 시점에는 힌트 주입 없이 최적화된 프롬프트만 사용). 또한 각 라운드마다 실패 집합에 대해 에이전트별 순차 개입을 반복 수행해야 하므로 여전히 별도의 롤아웃 비용이 요구되며, 힌트로도 해결되지 않는 "어려운 사례"는 해당 라운드에서 제외되고 이후 라운드에서 재시도된다. 그 밖의 명시적 한계나 실패 사례에 대한 별도 논의는 본문에 제공되지 않는다.</p>
+<h2>시사점</h2>
+<p>이 연구는 다중 에이전트 시스템의 프롬프트 최적화에서 "어떤 에이전트를 고쳐야 하는가"라는 신뢰 할당(credit assignment) 문제를 개입 기반으로 직접 검증함으로써 해결할 수 있음을 보여주며, 개입-보정 출력의 대비를 활용한 에이전트 수준 의사 라벨링이 별도의 세밀한 인간 주석 없이도 효과적인 지도 신호가 될 수 있음을 시사한다. 또한 의미적으로 유사한 실패들을 클러스터링한 뒤 추상화하는 접근은 무작위 집계로 인한 신호 희석 문제를 줄여, 최적화 품질과 효율성이 상충하지 않고 동시에 개선될 수 있음을 실증적으로 보여준다. 이는 향후 MAS뿐 아니라 다단계 LLM 파이프라인 전반의 자동 프롬프트 최적화 설계에 참고할 수 있는 일반적 원칙을 제공한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.08572" target="_blank" rel="noopener">huggingface.co/papers/2609.08572</a> · 2026-09-11</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

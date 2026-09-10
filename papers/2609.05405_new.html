@@ -1,0 +1,119 @@
+<meta charset="UTF-8">
+<title>웨어러블QA</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#4 · Daily Papers 2026-09-11</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 28</span>
+    </div>
+    <h1 class="article-title">WearableQA: A Benchmark for Health Reasoning over Real-World Wearable Data</h1>
+    <p class="article-title-ko">웨어러블QA: 실세계 웨어러블 데이터 기반 건강 추론 벤치마크</p>
+    <p class="article-sub">WearableQA는 실제 사용자 200명의 최대 500일치 웨어러블 시계열, 혈액 바이오마커, 인구통계 데이터를 기반으로 4,084개의 10지선다형 문항을 구성한 벤치마크로, LLM이 실사용자의 장기적인 건강 데이터를 얼마나 잘 추론할 수 있는지를 평가하며 최고 성능 모델조차 72.9%에 그쳐 아직 해결되지 않은 과제임을 보여준다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.05405" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.05405" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: WearableQA: A Benchmark for Health Reasoning over Real-World Wearable Data</li>
+<li><strong>저자</strong>: Ji Soo Lee, Xilun Chen 외 (Meta, KAIST, Korea University 공동 연구)</li>
+<li><strong>출처</strong>: arXiv:2609.05405v1 [cs.CL] (2026년 9월 4일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/facebookresearch/WearableQA">GitHub</a>, <a href="https://huggingface.co/datasets/facebook/WearableQA">Hugging Face</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.05405">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>WearableQA는 실제 사용자 200명의 최대 500일치 웨어러블 시계열, 혈액 바이오마커, 인구통계 데이터를 기반으로 4,084개의 10지선다형 문항을 구성한 벤치마크로, LLM이 실사용자의 장기적인 건강 데이터를 얼마나 잘 추론할 수 있는지를 평가하며 최고 성능 모델조차 72.9%에 그쳐 아직 해결되지 않은 과제임을 보여준다.</p>
+<h2>배경 및 문제의식</h2>
+<p>웨어러블 센서 기술의 발전으로 심박수, 수면, 활동량 등 생리·행동 신호를 지속적으로 모니터링할 수 있게 되었고, LLM을 활용한 개인 건강 이해 및 라이프스타일 평가에 대한 수요가 커지고 있다. 그러나 기존 건강 관련 벤치마크(MedQA, PubMedQA 등)는 정적인 텍스트 기반 지식 평가에 그치고, 기존 시계열 추론 벤치마크는 합성·시뮬레이션 신호에 의존해 실제 사용자의 노이즈와 개인차를 반영하지 못한다. 따라서 LLM이 실제 장기 웨어러블 기록을 바탕으로 사용자 건강 상태를 추론할 수 있는지는 검증되지 않은 채로 남아있었다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>200명의 실사용자로부터 수집한 장기 웨어러블 기록, 혈액 바이오마커, 인구통계 정보를 기반으로 한 4,084개 객관식 문항의 벤치마크 WearableQA 공개</li>
+<li>문헌 기반 생리학적 지식과 통계적으로 검증된 인구집단 기반 패턴을 결합한 "이중 근거(dual-grounding)" 문항 생성 프레임워크 제안</li>
+<li>데이터 추론 vs. 건강 추론, 단일 신호 vs. 교차 신호라는 두 축으로 구성된 16가지 문항 유형의 진단적 분류체계 도입</li>
+<li>14개의 상용·오픈소스 LLM에 대한 종합 평가를 통해 벤치마크의 변별력과 진단적 유용성 입증</li>
+</ul>
+<h2>방법론</h2>
+<p>데이터는 심혈관·활동·수면 관련 16개 일일 웨어러블 지표, 17개 혈액 바이오마커, 인구통계 속성으로 구성되며, 각 문항은 최대 500일의 기록과 함께 제공된다. 문항 생성은 "발견 후 라벨링(discover-then-label)" 방식을 따른다. 우선 문헌에서 검증된 생리학적 관계(11편의 동료심사 논문, PubMed/PMC로 교차검증) 또는 대규모 코호트에서 통계적으로 유의미한 패턴(효과크기, 재현성, 교차사용자 귀무검정을 통과)을 발견한 뒤, 재사용 가능한 계산 프리미티브(예: 지연상관관계, 기울기, 이동평균)로 구성된 결정론적 프로그램을 실행해 개별 사용자 데이터에서 정답을 도출한다. 오답 선택지 역시 실제 계산이나 그럴듯한 대안 해석을 바탕으로 구성되며, 중복 제거·선택지 균형·지름길 방지를 위한 품질관리 및 3개 모델(GPT-5.4, Gemini-3.1-Pro, Claude-Opus-4.6)과 사람 검증을 거친다.</p>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li>GPT-4o, GPT-5.4, Gemini-2.5-Pro, Gemini-3.1-Pro, Claude-Sonnet-4, Claude-Opus-4.6 등 상용 모델과 Llama, Gemma, Mistral 계열 오픈소스 모델 총 14종을 CoT(사고 사슬) 및 직접 답변 방식으로 평가</li>
+<li>전체 정확도는 10% 확률 기준선 대비 19.6%(Llama-3.2-3B)~72.9%(Gemini-3.1-Pro)로 모델 간 큰 편차를 보임, 대부분의 모델이 60% 미만</li>
+<li>대부분 모델에서 건강 추론이 데이터 추론보다 쉬우며(Gemini-3.1-Pro만 예외), 교차 신호 추론은 단일 신호 추론보다 특히 강한 모델에서 더 어려움</li>
+<li>CoT는 상용 모델에서 큰 성능 향상(최대 +27점)을 가져오지만 오픈소스 모델은 개선폭이 작음</li>
+<li>Python 도구 접근이 가능한 에이전트 방식 평가에서는 정확도가 20점 이상 향상(51.2%→71.3%), 반면 입력 표현 방식(행/열/마크다운/CSV/이미지) 변경은 미미한 영향만 줌</li>
+<li>장기 이력 정보를 제거하면 이력 의존 문항의 정확도가 크게 하락해, 벤치마크가 실제로 웨어러블 측정값에 근거한 추론을 요구함을 확인</li>
+</ul>
+<h2>한계점</h2>
+<p>논문에 명시된 한계는 뚜렷이 기술되어 있지 않으나, 저자들은 정의적(definitional) 신호쌍과 경험적(empirical) 신호쌍 간 성능 차이 분석을 통해 다수 모델이 실제 데이터를 관찰하기보다 사전 지식에 의존하는 경향이 있음을 지적하며, 이는 벤치마크가 완전히 해결되지 않았고(대부분 모델 60% 미만) 교차 신호 추론이 모델 규모와 무관하게 지속적인 난제로 남아 있음을 시사한다.</p>
+<h2>시사점</h2>
+<p>WearableQA는 실제 사용자 데이터의 노이즈와 개인차를 보존함으로써, LLM 기반 건강 어시스턴트가 실제 임상 및 웰니스 맥락에서 신뢰할 수 있는 추론을 제공하는지 평가할 수 있는 현실적이고 진단적인 도구를 제공한다. 특히 데이터 추론 능력과 교차 신호 통합 능력의 부족은 향후 개인화된 건강 AI 시스템 개발 시 우선적으로 보완해야 할 영역임을 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.05405" target="_blank" rel="noopener">huggingface.co/papers/2609.05405</a> · 2026-09-11</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

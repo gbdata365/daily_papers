@@ -1,0 +1,118 @@
+<meta charset="UTF-8">
+<title>싱크월드</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#9 · Daily Papers 2026-09-11</span>
+      <span class="cat-tag">생성모델</span>
+      <span class="upvote-tag">▲ 11</span>
+    </div>
+    <h1 class="article-title">SyncWorld: Visual Calibration Enables World Models as Zero-Shot Simulators</h1>
+    <p class="article-title-ko">싱크월드: 시각적 보정을 통한 세계 모델의 제로샷 시뮬레이터화</p>
+    <p class="article-sub">SyncWorld는 짧은 '시각 보정(visual calibration)' 에피소드를 문맥(in-context)으로 제공함으로써, 추가 학습 없이도 처음 보는 카메라 시점과 로봇 embodiment에서 행동-시각 매핑을 추론해 정확한 미래 영상을 생성하는 제로샷 로봇 세계 모델이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.09155" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.09155" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: SyncWorld: Visual Calibration Enables World Models as Zero-Shot Simulators</li>
+<li><strong>저자</strong>: Yuncong Yang, Zhengtao Han, Furkan Ozyurt, Zeyuan Yang, Han Yang, Junyi Cao, Haoyu Zhen, Yilun Du, Chuang Gan (UMass Amherst, UC Berkeley, NYU, Harvard)</li>
+<li><strong>출처</strong>: arXiv:2609.09155v1 [cs.CV] (2026년 9월 8일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://umass-embodied-agi.github.io/SyncWorld/">https://umass-embodied-agi.github.io/SyncWorld/</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.09155">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>SyncWorld는 짧은 '시각 보정(visual calibration)' 에피소드를 문맥(in-context)으로 제공함으로써, 추가 학습 없이도 처음 보는 카메라 시점과 로봇 embodiment에서 행동-시각 매핑을 추론해 정확한 미래 영상을 생성하는 제로샷 로봇 세계 모델이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>행동 조건부 세계 모델은 정책 평가와 계획을 위한 '상상 환경(imagination environment)'으로 널리 쓰이지만, 동일한 수치적 행동 값이라도 카메라 배치, 로봇 베이스 위치, embodiment(로봇 종류)에 따라 픽셀 공간에서 전혀 다른 시각적 결과로 나타난다는 근본적 문제가 있다. 이 때문에 여러 설정(setup)의 데이터를 혼합해 학습하면 하나의 모델이 서로 모순되는 행동-시각 매핑을 동시에 맞춰야 하는 '충돌하는 지도학습(conflicting supervision)' 문제가 생기고, 새로운 환경에 배포할 때는 추가 학습 없이는 행동-시각 매핑이 깨지는 '비적응적 테스트 시점 매핑' 문제가 발생한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>행동-시각 매핑(Action-Visual Mapping)을 시각 도메인에서 문맥 내(in-context) 보정 가능한 잠재적 관계로 취급하여, 짧은 보정 상호작용 에피소드(6개 자유도 각각의 방향성 동작을 담은 페어링된 프레임·행동 시퀀스)를 조건으로 제공하는 SyncWorld 프레임워크 제안</li>
+<li>학습 중 다양한 소스의 궤적에 보정 문맥을 체계적으로 주입하여, 명시적 보정이 없을 때도 상호작용 히스토리만으로 설정별 매핑을 근사하도록 하는 '보정 증류(calibration distillation)' 기법</li>
+<li>GPC-Rank 테스트 시점 스케일링 프레임워크와 결합하여, 세계 모델의 상상된 롤아웃으로 후보 행동을 평가·선택함으로써 추가 학습 없이 새로운 환경에서 정책 성능을 개선</li>
+</ul>
+<h2>방법론</h2>
+<p>SyncWorld는 Diffusion Transformer(DiT, Wan2.2-TI2V-5B 백본 기반) 구조 위에 자세(pose) 조건화 모듈을 추가한 행동 조건부 세계 모델이다. 각 설정 s마다 고정 카메라로 촬영한 보정 에피소드 Es를 수집하며, 각 자유도(x, y, z 이동과 yaw, pitch, roll 회전)에 대해 +/− 방향 동작을 수행한 뒤 원위치로 복귀하는 과정에서 12개의 짧은 보정 세그먼트(Cs)를 추출해 고정된 표준 순서로 문맥 접두사로 연결한다. 학습 시에는 (1) 행동 좌표 증강(부호 반전, 축 순열, 스케일 변화)을 적용하여 모델이 고정된 좌표 관례에 의존하지 않고 Cs로부터 실제 의미를 추론하도록 강제하고, (2) 보정을 포함한 '교사' 입력과 보정을 제외한 '학생' 입력을 함께 학습시켜 학생이 히스토리만으로도 교사의 예측을 근사하도록 하는 보정 증류를 수행한다. 테스트 시점에서는 GPC-Rank 방식으로 정책이 생성한 여러 후보 행동 청크(chunk) 각각에 대해 SyncWorld로 미래 영상을 상상한 뒤, VLM(GPT-5)이 각 상상 결과를 지시문 기준으로 채점하여 최고 점수의 행동을 실행한다.</p>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li>RLBench, RoboCasa, RoboMimic 시뮬레이션 데이터와 실세계 DROID 데이터로 학습, 4×8 H100 GPU에서 2~3일간 학습</li>
+<li>평가는 학습 시 보지 못한 ManiSkill, LIBERO(동일 Franka Panda embodiment이나 새로운 환경/시점)와 처음 보는 로봇팔(xArm)을 사용한 실세계 롤아웃으로 수행</li>
+<li>영상 품질 비교(PSNR, SSIM, LPIPS, FID)에서 IRASim, WorldGym, Ctrl-World 등 기존 베이스라인 대비 SyncWorld가 모든 도메인·지표에서 큰 격차로 우수했으며, 보정 없이도(SyncWorld w/o Calib) 베이스라인을 능가</li>
+<li>다중 시점 3D 일관성 지표(Met3r)에서도 SyncWorld가 최고 성능을 보였고 실제 정답(oracle) 성능에 근접</li>
+<li>LIBERO 하위 과제에서 GPC-Rank와 결합한 제로샷 정책 개선 실험 결과, SyncWorld 기반 순위화가 직접 정책 대비 성공률을 높였고(예: Orange Juice 과제 0.56→0.72) 오라클 시뮬레이터 상한에 근접</li>
+<li>소거 실험에서 보정 제거 시 전 도메인에서 성능이 크게 저하되었고, 증류 제거 시 특히 보정이 없는 테스트 시점에서 성능이 크게 하락하여 두 설계 요소의 상호보완적 역할을 확인</li>
+</ul>
+<h2>한계점</h2>
+<p>논문 본문에는 별도의 명시적 '한계점' 절은 없으나, 실험 결과에서 SyncWorld의 성능이 실제 오라클(ground-truth 시뮬레이터) 상한에는 근접하되 완전히 도달하지는 못함을 확인할 수 있다. 또한 정책 개선 실험은 오라클 순위화가 유의미한 향상 여력(headroom)을 보이는 진단적 과제 부분집합에 국한되어 있으며, VLM 기반 채점(GPC-Rank)의 순위화 성능 자체에 병목이 있을 수 있음을 언급한다. 학습 데이터는 대부분 시뮬레이션에서 생성되며, 실세계 DROID 데이터는 보정 에피소드를 제공하지 않아 보정 지도학습의 주요 원천은 시뮬레이션에 한정된다.</p>
+<h2>시사점</h2>
+<p>SyncWorld는 이질적인 로봇 데이터(서로 다른 카메라·embodiment·컨트롤러 규약)를 하나의 세계 모델로 통합 학습할 수 있는 실용적 경로를 제시하며, 시각적 문맥 내 보정이라는 아이디어는 별도의 외부 파라미터(카메라 외부 변수 등) 추정이나 파인튜닝 없이도 새로운 로봇 설정에 신속히 적응할 수 있음을 보여준다. 이는 세계 모델을 실제 정책 개선을 위한 제로샷 시뮬레이터로 활용할 수 있는 가능성을 제시하며, 향후 이질적 로봇 데이터의 대규모 확장 학습과 배포 시 적응 전략에 중요한 실마리를 제공한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.09155" target="_blank" rel="noopener">huggingface.co/papers/2609.09155</a> · 2026-09-11</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

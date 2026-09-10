@@ -1,0 +1,119 @@
+<meta charset="UTF-8">
+<title>퍼펫티어</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#7 · Daily Papers 2026-09-11</span>
+      <span class="cat-tag">생성모델</span>
+      <span class="upvote-tag">▲ 16</span>
+    </div>
+    <h1 class="article-title">PUPPETEER: Object-Grounded Posture-Aware Co-Speech Gesture Generation</h1>
+    <p class="article-title-ko">퍼펫티어: 객체 기반 자세 인식 공동발화 제스처 생성</p>
+    <p class="article-sub">PUPPETEER는 인과적(causal) 잠재 공간에서 동작하는 디퓨전 모델로, 발화(음성·텍스트)와 자세(앉기/서기), 주변 사물(테이블·의자 등)의 기하학적 정보를 동시에 반영하여 물리적으로 자연스럽고 발화와 동기화된 co-speech 제스처를 생성한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.00369" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.00369" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: PUPPETEER: Object-Grounded Posture-Aware Co-Speech Gesture Generation</li>
+<li><strong>저자</strong>: Vida Adeli, Soroush Mehraban, Jacob Rommann, Harrison Sanborn, Cole Clifford, Babak Taati (Pickford AI, University of Toronto, Vector Institute)</li>
+<li><strong>출처</strong>: arXiv:2609.00369v1 [cs.CV] (2026년 8월 31일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://puppeteer.pickford.ai/">https://puppeteer.pickford.ai/</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.00369">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>PUPPETEER는 인과적(causal) 잠재 공간에서 동작하는 디퓨전 모델로, 발화(음성·텍스트)와 자세(앉기/서기), 주변 사물(테이블·의자 등)의 기하학적 정보를 동시에 반영하여 물리적으로 자연스럽고 발화와 동기화된 co-speech 제스처를 생성한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>기존의 음성 기반 제스처 생성 모델들은 오디오·텍스트 간 정렬에 집중할 뿐, 화자의 자세나 주변 사물과의 물리적 상호작용은 고려하지 않는다. 사람은 대화 중 테이블에 손을 올리거나 팔걸이에 기대는 등 신체 자세와 주변 환경에 따라 제스처를 달리하는데, 기존 데이터셋(BEAT2 등)은 대부분 서 있는 상태의 스튜디오 환경만을 다루어 이러한 자세·객체 의존성을 학습할 수 없었다. 또한 이산적 VQ-VAE 토큰화는 양자화 오류를, 고차원 모션 공간에서의 디퓨전은 높은 연산 비용을, 양방향(bidirectional) 잠재 표현은 시간적 정렬 제어력 부족이라는 각각의 한계를 지닌다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>제스처, 자세, 주변 사물 간의 내재적 결합을 명시적으로 모델링한 최초의 객체 기반(object-grounded) co-speech 제스처 생성 연구</li>
+<li>오디오/텍스트 단위의 정밀한 정렬을 위한 시간 제어형 교차 어텐션 마스킹 기법(오디오 윈도우 제약, 텍스트 스팬 제약)</li>
+<li>다양한 자세(Embody3D 데이터셋 활용)를 반영한 자세 인식 학습 방식</li>
+<li>최초의 객체 기반 co-speech 제스처 합성용 합성 3D 데이터셋 SCENEGES와 새로운 평가 지표(다양성 Div, 자세 정확도 LL1, 충돌 침투도 MeanPen/MaxPen 등) 도입</li>
+</ul>
+<h2>방법론</h2>
+<p>PUPPETEER는 3단계로 구성된다. (1) 인과적 VAE(CausalVAE)가 긴 제스처 시퀀스를 고정 길이의 프리미티브로 분해하여, 1D 인과 컨볼루션으로 시간적으로 정렬된 압축 잠재 토큰으로 인코딩한다. (2) 이 잠재 공간에서 자기회귀적(autoregressive) 디퓨전을 수행하며, 오디오·텍스트·모션 히스토리·초기 자세 참조를 조건으로 잡음을 제거한다. 이때 오디오 윈도우 어텐션과 텍스트 스팬 어텐션이라는 두 가지 적응형 마스킹으로 리듬 및 의미 정렬을 강화한다. (3) Stage 2를 고정한 채 Basis Point Set(BPS) 기반의 게이트형 객체 융합(Gated Object Fusion) 모듈을 추가하여, 사람과 주변 사물(의자·테이블) 사이의 기하학적 관계를 반영하고 충돌 손실(Lcollision)로 신체-사물 침투를 억제한다. SCENEGES 데이터셋은 106개 의자와 47개 테이블 자산에 대해 Gemini로 대화 시나리오 및 제스처 스크립트를 생성하고 Veo 3로 영상을 합성한 뒤 SAM 3D Body로 3D 모션을 복원·정제하여 구축되었다.</p>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li>BEAT2(25명, 서 있는 자세)와 Embody3D(280명, 앉기/서기 혼합) 데이터셋으로 학습 및 평가, SCENEGES로 객체 인식 능력 검증</li>
+<li>BEAT2(Speaker2) 벤치마크에서 FGD 3.436, BC 7.693, Div 14.131로 기존 방법(EMAGE, SynTalker, GestureLSM 등) 대비 사실성·동기화·다양성에서 최고 성능 달성</li>
+<li>CausalVAE는 표준 VAE 대비 재구성 오류(FGD, MPJPE, ACCL)와 생성 품질 모두에서 우수했으며, 특히 크로스 데이터셋 일반화에서 강점을 보임</li>
+<li>자세 참조를 교차 어텐션으로 조건화했을 때 단순 이진 임베딩보다 자세 정확도(LL1)가 크게 개선됨</li>
+<li>객체 인식 모듈을 추가하면 신체-사물 침투 지표(MeanPen, MaxPen)가 크게 감소했고, 충돌 손실을 포함할 때 추가로 개선됨</li>
+<li>오디오 윈도우(ξ=1)와 텍스트 스팬 마스킹을 결합했을 때 FGD, ΔBC, 다양성 모두에서 최상의 균형을 보임</li>
+</ul>
+<h2>한계점</h2>
+<p>논문에서는 별도의 한계점 절을 명시적으로 두지 않았으나, 본문 내용을 통해 다음과 같은 제약을 유추할 수 있다. SCENEGES는 26개 시나리오, 총 28분 분량의 비교적 소규모 합성 데이터셋이며, 실제 물리 환경이 아닌 합성 파이프라인(비디오 생성 및 3D 모션 복원)에 의존한다. 또한 평가 시 기존 방법 중 객체 인식 co-speech 제스처를 직접 지원하는 베이스라인이 없어 LOM을 프록시로 대체 비교했다는 점에서 직접적 비교의 한계가 있다.</p>
+<h2>시사점</h2>
+<p>자세와 주변 환경을 함께 고려한 제스처 생성은 로봇·가상 아바타·체화된 에이전트(embodied agent)가 실제 물리 공간에서 보다 자연스럽고 신뢰감 있는 비언어적 커뮤니케이션을 수행하는 데 기여할 수 있다. 인과적 잠재 공간 설계는 향후 실시간 스트리밍 제스처 생성이나 제스처 인베트위닝·완성과 같은 응용으로 확장될 가능성을 시사하며, SCENEGES와 같은 객체 기반 데이터셋은 관련 연구 커뮤니티의 후속 연구를 촉진할 수 있는 기반 자원이 될 것으로 기대된다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.00369" target="_blank" rel="noopener">huggingface.co/papers/2609.00369</a> · 2026-09-11</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

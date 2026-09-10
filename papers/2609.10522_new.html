@@ -1,0 +1,122 @@
+<meta charset="UTF-8">
+<title>쇼-하네스</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#1 · Daily Papers 2026-09-11</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 108</span>
+    </div>
+    <h1 class="article-title">Show-Harness: Just a VLM Agent Can Play Robots</h1>
+    <p class="article-title-ko">쇼-하네스: VLM 에이전트만으로 로봇을 조작하다</p>
+    <p class="article-sub">Show-Harness는 파운데이션 비전-언어 모델(VLM)이 이산적인 의미 단위(semantic action unit)의 행동 공간을 통해 직접 로봇을 조작하도록 만드는 "Embodied Harness"로, 별도의 대규모 사전학습 없이도 프론티어 VLM의 제로샷 로봇 제어와 소형 오픈소스 VLM의 저비용 파인튜닝을 모두 가능하게 하며 다양한 과제·환경·로봇 종류에서 기존 에이전트·VLA 방식을 능가한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.10522" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.10522" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Show-Harness: Just a VLM Agent Can Play Robots</li>
+<li><strong>저자</strong>: Yanzhe Chen, Zechen Bai, Zhijun Cao, Wenzheng Zeng 외 (공동 1저자), Kevin Qinghong Lin, Yiqi Lin, Guoqiang Liang, Kevin Yuchen Ma, Qiming Huang, Mike Zheng Shou (교신저자) — Show Lab, National University of Singapore</li>
+<li><strong>출처</strong>: arXiv:2609.10522v1 [cs.RO] (2026년 9월 9일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://showlab.github.io/Show-Harness">Show-Harness</a> (코드·모델·데이터셋 공개)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.10522">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>Show-Harness는 파운데이션 비전-언어 모델(VLM)이 이산적인 의미 단위(semantic action unit)의 행동 공간을 통해 직접 로봇을 조작하도록 만드는 "Embodied Harness"로, 별도의 대규모 사전학습 없이도 프론티어 VLM의 제로샷 로봇 제어와 소형 오픈소스 VLM의 저비용 파인튜닝을 모두 가능하게 하며 다양한 과제·환경·로봇 종류에서 기존 에이전트·VLA 방식을 능가한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>파운데이션 VLM은 사물 인식, 공간 관계 이해, 장기 목표 분해 등 로봇 조작에 필요한 폭넓은 지식을 이미 가지고 있지만, 이를 실제 로봇 행동으로 옮기기는 쉽지 않다. 기존의 비전-언어-행동(VLA) 모델은 VLM을 연속적인 로봇별 저수준 제어 신호로 파인튜닝함으로써 VLM의 의미론적 지식을 불투명한 픽셀-구동 매핑으로 축소시키고, 과제·환경·로봇이 바뀔 때마다 재적응이 필요하다는 한계가 있다. 반대로 계층적·프로그래밍적 시스템은 VLM이 하위 목표나 API 호출과 같은 중간 추상화를 생성하지만, 실제 물리적 실행은 별도의 다운스트림 컨트롤러가 담당하여 VLM의 의미적 의도와 물리적 실행 사이의 직접적 연결이 약해진다. 저자들은 VLM에게 의미적으로 이해 가능하면서도 물리적 제어에 충분히 세밀한 "인터페이스"가 필요하다고 주장한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>Show-Harness: VLM이 이산적 의미 행동 단위(예: 전후좌우상하 이동, 회전, 그립/릴리즈, 완료)를 통해 로봇을 직접 "조작"할 수 있게 하는 모델-비종속적 Embodied Harness를 제안</li>
+<li>동일한 인터페이스로 (1) 클로즈드소스 프론티어 VLM의 파인튜닝 없는 제로샷 로봇 제어, (2) 소형 오픈소스 VLM(2B급)의 단 몇 GPU-시간 파인튜닝을 통한 저비용 배포라는 두 가지 모드를 모두 구현</li>
+<li>다양한 과제·로봇 종류·환경에서 대표적인 에이전트 및 VLA 방식보다 우수한 일반화 성능을 보여주고, 물리적/의미적 적응성에 대한 심층 분석 제공</li>
+<li>GUMI(GUI Manipulation Interface): 별도의 특수 원격조작 장비 없이 인간과 에이전트가 동일한 의미 행동 공간에서 로봇 시연 데이터를 수집할 수 있는 GUI 기반 인터페이스 도입</li>
+</ul>
+<h2>방법론</h2>
+<p>Show-Harness는 지각-추론-행동(perceive-reason-act) 루프로 구성된다. 매 스텝마다 다중 시점 관측과 자기수용감각(proprioception)을 포함한 관측값과 상호작용 이력을 지각·추론 플러그인(멀티뷰 가이던스, 서브태스크 계획, 상황적 계획, 액션 청킹, 적응적 스텝 크기, 시각적 프롬프트 등)을 통해 정제된 맥락으로 변환한다. VLM은 이 맥락을 바탕으로 컴팩트한 의미 행동 집합(MV_FWD/BACK/UP/DOWN/LEFT/RIGHT, ROTATE_CW/CCW, GRASP/RELEASE, DONE) 중 하나를 선택하며, 각 단위는 관찰 가능한 뷰를 기준으로 한 점진적·해석 가능한 물리적 변화에 대응한다. 이 의미 행동은 로봇 종류별 인터프리터에 의해 결정론적으로 6자유도 데카르트 좌표 setpoint 갱신(또는 그리퍼 명령)으로 변환되며, 작업공간·안전 한계는 인터프리터 단에서 강제된다. 제로샷(ZS) 모드는 프론티어 VLM을 추가 학습 없이 그대로 사용하고, 파인튜닝(FT) 모드는 소형 VLM(Qwen3.5-2B)에 LoRA(rank-64)를 적용하여 전체 파라미터의 약 3%만 갱신, 별도의 액션 헤드나 특수 토큰 없이 VLM의 자연어 어휘로 직접 행동을 예측하도록 학습한다. GUMI는 동일한 의미 행동 공간을 키보드/GUI로 노출하여 사람과 에이전트가 관측-행동 쌍(o_t, a_t) 형태의 시연 데이터를 로봇 종류에 상관없이 재사용 가능하게 수집한다.</p>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li>하드웨어: 7자유도 Franka Research 3(단일팔)와 양팔 AgileX(6자유도×2) 두 로봇 플랫폼, 다중 카메라 구성</li>
+<li>10개의 물체-용기 조합 과제(블록, 바나나, 테니스공, 테디베어, 체스말 × 접시/그릇), 파인튜닝 데이터에는 테디베어·체스말이 없어 OOD 평가로 활용</li>
+<li>비교 대상: VLA 베이스라인(π0.5, GR00T), VLA 중심 에이전트(Harness VLA, Goal-VLA), 코드-as-정책 에이전트(CaP-X, RATS)</li>
+<li>과제 간 일반화: ZS(Gemini-3.1 Pro) 평균 89%, FT(Qwen3.5-2B) 평균 86%로 최고 베이스라인(RATS 57%)을 크게 상회</li>
+<li>환경 간 일반화(배경, 조명, 시점, 방해물, 시뮬레이션-실제 전이): ZS 100%, FT 88%이며 FT는 시뮬레이션 시연만으로 실제 로봇 전이(13/20)에 성공한 반면 학습 가능한 VLA 베이스라인은 전부 실패(0/20)</li>
+<li>로봇 종류 간 일반화(Franka↔AgileX): ZS 93%, FT 87%로 동일 인터페이스가 로봇 종류를 넘어 효과적으로 전이됨을 확인</li>
+<li>물리적 적응성: 인터프리터의 스텝 크기만 2cm→1cm로 줄여도 재학습 없이 정밀 작업(블록 쌓기, 펙 삽입) 성능이 향상되었고, 회전 단위 조합을 통한 미학습 각도(90도) 외삽, 양팔 조인트 제어를 통한 협응 등에서도 강건함을 보임</li>
+<li>의미적 적응성: 상황적 계획을 통한 추론 집약적 과제(숨은 블록 찾기, 글자 배열)에서 ZS 85% 대 FT/π0.5 10%/0%, 비디오 시연 기반 인컨텍스트 학습에서 ZS 20/20 성공</li>
+<li>프론티어 VLM/사고 강도 비교에서 강한 백본일수록 성능이 개선되지만 사고 강도 증가는 주로 스텝 수 감소에 기여하며 실패는 주로 미세 파지·배치 단계에서 발생</li>
+</ul>
+<h2>한계점</h2>
+<p>논문에 명시된 바로는, 오류가 주로 미세한 파지 및 배치 단계에서 집중되며(계획 자체는 병목이 아님), 초소형(1B급 이하) 파인튜닝 모델은 목표 근처에서 과도한 미세 조정으로 인해 에피소드 길이가 늘어나는 경향이 있다. 또한 사고 강도(thinking effort)를 높이면 wall-clock 비용이 최대 3.4배까지 증가하는 트레이드오프가 존재한다. 그 외 구체적인 실패 유형이나 일반적 한계에 대한 별도 논의는 본문에서 상세히 제공되지 않는다.</p>
+<h2>시사점</h2>
+<p>이 연구는 로봇 제어를 위한 "적절한 인터페이스"가 있다면 추가적인 모델 용량 확장이나 값비싼 로봇별 사전학습 없이도 파운데이션 VLM의 임베디드 능력을 상당 부분 끌어낼 수 있음을 보여준다. 의미적으로 해석 가능하면서도 물리적으로 세밀한 행동 공간을 매개로 삼음으로써, 프론티어 모델의 발전을 그대로 상속하면서도 소형·저비용 모델로 확장 가능한 실용적 경로를 제시하며, GUMI와 같은 GUI 기반 인터페이스는 전용 원격조작 장비 없는 데이터 수집과 인간-에이전트 협업을 가능케 한다는 점에서 로봇 학습 데이터 확보의 병목을 완화할 잠재력이 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.10522" target="_blank" rel="noopener">huggingface.co/papers/2609.10522</a> · 2026-09-11</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

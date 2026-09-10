@@ -1,0 +1,119 @@
+<meta charset="UTF-8">
+<title>SAE사이언티스트벤치</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#6 · Daily Papers 2026-09-11</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 16</span>
+    </div>
+    <h1 class="article-title">SAEScientist-Bench: Can AI Agents Conduct Autonomous SAE Interpretability Research?</h1>
+    <p class="article-title-ko">SAE사이언티스트벤치: AI 에이전트는 자율적인 SAE 해석연구를 수행할 수 있는가?</p>
+    <p class="article-sub">SAEScientist-Bench는 AI 에이전트가 희소 오토인코더(SAE)를 활용해 모델 내부의 해석 가능한 특징(feature)을 자율적으로 발견하고 인과적으로 검증할 수 있는지를 평가하는 벤치마크로, 프런티어 에이전트들은 개념 선택성 측면에서는 전문가 수준에 근접했지만 생성 결과를 인과적으로 조종(steering)하는 능력에서는 여전히 크게 뒤처진다는 것을 보였다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.09113" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.09113" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: SAEScientist-Bench: Can AI Agents Conduct Autonomous SAE Interpretability Research?</li>
+<li><strong>저자</strong>: Yuqiao Tan, Shizhu He, Jun Zhao, Kang Liu (중국과학원 자동화연구소 인지지능 핵심연구실, 중국과학원대학교 인공지능학부)</li>
+<li><strong>출처</strong>: arXiv:2609.09113v1 [cs.AI] (2026년 9월 8일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/Trae1ounG/SAEScientist">GitHub</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.09113">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>SAEScientist-Bench는 AI 에이전트가 희소 오토인코더(SAE)를 활용해 모델 내부의 해석 가능한 특징(feature)을 자율적으로 발견하고 인과적으로 검증할 수 있는지를 평가하는 벤치마크로, 프런티어 에이전트들은 개념 선택성 측면에서는 전문가 수준에 근접했지만 생성 결과를 인과적으로 조종(steering)하는 능력에서는 여전히 크게 뒤처진다는 것을 보였다.</p>
+<h2>배경 및 문제의식</h2>
+<p>재귀적 자기개선(RSI) 연구는 지금까지 주로 모델 학습 파이프라인 자동화에 집중해왔고, 진화하는 모델을 외부 성능 지표로만 평가하는 블랙박스로 취급해왔다. 그러나 모델이 커지고 복잡해질수록 내부 메커니즘은 더욱 불투명해지며, 외부 지표만으로 최적화할 경우 리워드 해킹, 스펙 게이밍, 기만적 정렬(deceptive alignment) 등의 위험에 취약해진다. 따라서 모델이 실제로 무엇을 학습했는지 사후적으로 감사(auditing)할 수 있는 화이트박스 해석 도구가 신뢰 가능한 자율 AI 개발의 핵심 축으로 요구되지만, 이러한 메커니즘 해석 능력을 AI 에이전트 스스로 수행할 수 있는지를 엄밀히 평가하는 표준화된 벤치마크는 부재했다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>Gemma-2-9B-IT의 Gemma Scope SAE 사전(13만 개 이상의 특징)을 대상으로, 다국어 이해·전문 문서 형식·안전 관련 주제 등 다양한 개념 영역에 걸친 20개 발견 과제로 구성된 SAEScientist-Bench 제안</li>
+<li>Neuronpedia 기반의 전문가 참조 특징(Expert feature)을 기준으로 활성화 순위(Rank), 활성화 선택성(Activation), 인과적 조종(Steering) 세 차원을 종합하는 표준화된 평가 프레임워크 수립</li>
+<li>10개 프런티어 에이전트 구성에 대해 각 3회 독립 실행으로 평가하고, 탐침(probe) 설계·후보 비교·조종 결과에 대한 체계적 행동 분석 제공</li>
+</ul>
+<h2>방법론</h2>
+<p>각 과제는 목표 개념과 Gemma-2-9B-IT의 특정 레이어(9층 또는 20층)의 SAE 사전을 짝지으며, 에이전트는 probe_sae 인터페이스를 통해 최대 64개의 자체 작성 텍스트로 후보 특징을 조회하거나 활성화를 측정하고, 최종적으로 하나의 특징 ID를 제출한다. 평가는 (1) 양성 텍스트에서의 활성화 순위를 전문가 기준과 비교하는 Activation Rank, (2) 양성 텍스트와 대조 텍스트(hard-negative·중립) 간 AUROC 기반의 Activation Selectivity, (3) 특징 방향을 은닉 상태에 더하는 개입(h←h+αdf) 후 목표 개념 표현이 얼마나 유도되는지를 LLM 판정자가 평가하는 Causal Steering으로 구성되며, 세 지표의 단순 평균을 Overall 점수로 산출한다. 평가 과정에서는 탐침 텍스트 개수, 후보 특징 테스트 수, 검색 재시도 비율 등 탐색 행동도 함께 기록해 각 에이전트의 과학적 탐구 전략을 분석했다.</p>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li>Kimi K3, Claude Opus 5/Sonnet 5/Opus 4.8, Grok 4.6, Gemini 3.8 Flash, GLM-5.2, GPT-5.6 Sol/Luna, GPT-5.5 등 10개 프런티어 에이전트 구성을 Cursor 또는 Codex 하네스에서 평가(외부 네트워크 접근 차단)</li>
+<li>Overall 점수는 Kimi K3가 65.82로 최고를 기록했고 Claude Opus 5(65.41), Claude Sonnet 5(65.04)가 근소하게 뒤이었으나, 전문가 기준선(85.56)에는 모두 미치지 못함</li>
+<li>Activation Selectivity에서는 상위 에이전트(Kimi K3, 92.91)가 전문가(98.92)에 근접했지만, Causal Steering에서는 최고 점수(Grok 4.6, 31.47)조차 전문가(57.75)에 크게 못 미침</li>
+<li>모델별로 강점이 분화됨: Claude Opus 5는 활성화 순위, Kimi K3는 활성화 선택성, Grok 4.6은 인과적 조종에서 각각 1위</li>
+<li>포르투갈어 개념 사례 분석 결과, 에이전트들이 대조군 탐침을 잘 설계해 표면적 지름길(문자열 매칭 등)은 배제할 수 있었지만, 실험 결과 해석에서는 오류를 자주 범함(예: Claude Opus 5가 영어 대조군에 더 강하게 반응하는 특징을 잘못 선택)</li>
+<li>탐색 전략도 에이전트별로 상이함: GPT-5.6 Sol은 텍스트 다양성 위주, Claude Opus 5는 폭넓은 후보 스크리닝, Kimi K3는 소수의 정밀한 가설 검증에 집중</li>
+<li>일반 지능 지표(Artificial Analysis Intelligence Index v4.2)와 본 벤치마크 점수 간에는 강한 순위 상관관계(ρ=0.800)가 관찰됨</li>
+</ul>
+<h2>한계점</h2>
+<p>본 벤치마크는 Gemma-2-9B-IT의 두 레이어에 한정된 개념 기반 단일 특징 발견 과제에 초점을 맞추고 있어, 더 다양한 모델군·사전 폭·다중 특징 회로 발견·개방형 가설 생성으로의 확장이 필요하다. 또한 후보 평가가 고정된 텍스트 세트, 동결된 전문가 기준선, 자동화된 LLM 판정자에 의존하고 있어 사람 검증이나 다중 판정자 앙상블을 통한 평가 잡음 완화가 요구된다. 마지막으로 발견된 특징을 실제 모델 편집·언러닝·지속적 정렬 루프에 통합하는 완전한 폐쇄루프 자기개선까지는 다루지 않는다.</p>
+<h2>시사점</h2>
+<p>이 연구는 실험적 모델 이해(experimental model understanding)를 폐쇄루프 자율 AI 연구개발의 측정 가능한 역량으로 자리매김시키며, 에이전트가 상관관계 기반의 선택적 특징은 잘 찾아내지만 이를 실제 인과적 개입 수단으로 전환하는 데는 근본적인 어려움이 있음을 보여준다. 이는 향후 화이트박스 기반의 자율 모델 감사 및 정렬 파이프라인 설계 시 인과적 검증 능력이 핵심 병목이 될 것임을 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.09113" target="_blank" rel="noopener">huggingface.co/papers/2609.09113</a> · 2026-09-11</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

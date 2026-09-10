@@ -1,0 +1,110 @@
+{
+  "2609.10522": {
+    "base": "2609_쇼하네스_VLM-에이전트로-로봇-조작하기",
+    "rank": "#1",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "108",
+    "en_title": "Show-Harness: Just a VLM Agent Can Play Robots",
+    "ko_title": "쇼-하네스: VLM 에이전트만으로 로봇을 조작하다"
+  },
+  "2609.08572": {
+    "base": "2609_에이전트그라드_개입기반-프롬프트-최적화",
+    "rank": "#2",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "73",
+    "en_title": "AgentGrad: Intervention-guided Prompt Optimization for Multi Agent Systems",
+    "ko_title": "에이전트그라드: 다중 에이전트 시스템을 위한 개입 기반 프롬프트 최적화"
+  },
+  "2609.10540": {
+    "base": "2609_프로그래머블월드모델_프로그램가능한-세계모델",
+    "rank": "#3",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "71",
+    "en_title": "Programmable World Model",
+    "ko_title": "프로그램 가능한 세계 모델"
+  },
+  "2609.05405": {
+    "base": "2609_웨어러블QA_웨어러블-건강데이터-추론-벤치마크",
+    "rank": "#4",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "28",
+    "en_title": "WearableQA: A Benchmark for Health Reasoning over Real-World Wearable Data",
+    "ko_title": "웨어러블QA: 실세계 웨어러블 데이터 기반 건강 추론 벤치마크"
+  },
+  "2609.08149": {
+    "base": "2609_SWE벤치프로_신뢰가능한-SW엔지니어링-에이전트-벤치마크",
+    "rank": "#5",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "19",
+    "en_title": "SWE-Bench Pro Verified: A Reliable Benchmark for Software Engineering Agents",
+    "ko_title": "SWE-벤치 프로 검증판: 신뢰 가능한 소프트웨어 엔지니어링 에이전트 벤치마크"
+  },
+  "2609.09113": {
+    "base": "2609_SAE사이언티스트벤치_자율-SAE-해석연구-평가",
+    "rank": "#6",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "16",
+    "en_title": "SAEScientist-Bench: Can AI Agents Conduct Autonomous SAE Interpretability Research?",
+    "ko_title": "SAE사이언티스트벤치: AI 에이전트는 자율적인 SAE 해석연구를 수행할 수 있는가?"
+  },
+  "2609.00369": {
+    "base": "2609_퍼펫티어_객체인식-공동발화-제스처생성",
+    "rank": "#7",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "16",
+    "en_title": "PUPPETEER: Object-Grounded Posture-Aware Co-Speech Gesture Generation",
+    "ko_title": "퍼펫티어: 객체 기반 자세 인식 공동발화 제스처 생성"
+  },
+  "2609.09219": {
+    "base": "2609_디스커버리인증_AI연구에이전트-발견검증-프로토콜",
+    "rank": "#8",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "15",
+    "en_title": "Scores Alone Do Not Prove Discovery: The Discovery Certification Protocol for Auditing AI Research Agents",
+    "ko_title": "점수만으로는 발견을 증명할 수 없다: AI 연구 에이전트 감사를 위한 발견 인증 프로토콜"
+  },
+  "2609.09155": {
+    "base": "2609_싱크월드_시각보정-제로샷-세계모델-시뮬레이터",
+    "rank": "#9",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "11",
+    "en_title": "SyncWorld: Visual Calibration Enables World Models as Zero-Shot Simulators",
+    "ko_title": "싱크월드: 시각적 보정을 통한 세계 모델의 제로샷 시뮬레이터화"
+  },
+  "2609.06703": {
+    "base": "2609_디엔시반응DB_대규모-유기반응-데이터플랫폼",
+    "rank": "#10",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "9",
+    "en_title": "DianShi-RxnDB: A Large-Scale, Fine-Grained Organic Reaction Data Platform Built via a Fully Automated Pipeline for Researchers and AI Agents",
+    "ko_title": "디엔시반응DB: 연구자와 AI 에이전트를 위한 완전 자동화 파이프라인 기반 대규모 정밀 유기반응 데이터 플랫폼"
+  },
+  "2609.10226": {
+    "base": "2609_파이벤치_LLM의-인프라-엔지니어링-역량평가",
+    "rank": "#11",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "8",
+    "en_title": "Φ-Bench: Can Large Language Models Engineer the Infrastructure That Powers Them?",
+    "ko_title": "파이벤치: 대규모 언어모델은 자신을 구동하는 인프라를 엔지니어링할 수 있는가?"
+  },
+  "2609.07103": {
+    "base": "2609_완전추론트레이스_포스트트레이닝-재고찰",
+    "rank": "#12",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "8",
+    "en_title": "Revisiting Complete Reasoning Traces for Post-Training",
+    "ko_title": "포스트트레이닝을 위한 완전 추론 트레이스 재고찰"
+  }
+}

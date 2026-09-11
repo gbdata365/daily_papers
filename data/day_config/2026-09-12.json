@@ -1,0 +1,110 @@
+{
+  "2609.10715": {
+    "base": "2609_ncp아치프리뷰_다음개념예측-잠재공간-언어모델",
+    "rank": "#1",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "170",
+    "en_title": "NCP-ArchPreview Technical Report: Moving towards Latent Space Language Models through Next Concept Prediction",
+    "ko_title": "NCP-ArchPreview 기술 보고서: 다음 개념 예측을 통한 잠재공간 언어모델로의 전환"
+  },
+  "2609.11929": {
+    "base": "2609_센스노바_네이티브-통합-시각지능",
+    "rank": "#2",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "134",
+    "en_title": "SenseNova-U1.5: Towards Native Unified Visual Intelligence",
+    "ko_title": "센스노바-U1.5: 네이티브 통합 시각 지능을 향하여"
+  },
+  "2609.07064": {
+    "base": "2609_스페이셜블록_블록쌓기-공간지능-벤치마크",
+    "rank": "#3",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "62",
+    "en_title": "SpatialBlock: Enhancing Spatial Intelligence in LVLMs via Synthetic Block-Stacking Problem",
+    "ko_title": "스페이셜블록: 합성 블록 쌓기 문제를 통한 LVLM의 공간 지능 향상"
+  },
+  "2609.05903": {
+    "base": "2609_에보세이프하니스_모델도메인별-진화형-보안-하니스",
+    "rank": "#4",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "36",
+    "en_title": "EvoSafeHarness: Evolving Model- and Domain-Specific Harnesses for Securing Agents",
+    "ko_title": "에보세이프하니스: 에이전트 보안을 위한 모델·도메인별 진화형 하니스"
+  },
+  "2609.11317": {
+    "base": "2609_미리플_반복편집-이미지-복원",
+    "rank": "#5",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "20",
+    "en_title": "Mi-Ripple: Restoring Images Degraded by Iterative AI Editing",
+    "ko_title": "미리플: 반복적인 AI 편집으로 손상된 이미지 복원하기"
+  },
+  "2609.11412": {
+    "base": "2609_엑스아우트_음성LLM-오디오인코더-점진적-압축-교차스케일-증류",
+    "rank": "#6",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "13",
+    "en_title": "X-AuT: Progressive Audio-Encoder Compression for Speech LLMs with Cross-Scale Distillation",
+    "ko_title": "X-AuT: 교차 스케일 증류를 통한 음성 LLM 오디오 인코더의 점진적 압축"
+  },
+  "2609.11561": {
+    "base": "2609_맵왐_메모리기반-계획-월드액션모델링",
+    "rank": "#7",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "9",
+    "en_title": "Memory as Plans: World-Action Modeling with Memory-Grounded Planning",
+    "ko_title": "계획으로서의 기억: 기억 기반 계획을 활용한 월드-액션 모델링"
+  },
+  "2609.11499": {
+    "base": "2609_재귀코드월드모델_재귀적-장면-프로그램-복잡세계-구축",
+    "rank": "#8",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "7",
+    "en_title": "Recursive Code World Models: Building Complex Worlds through Recursive Scene Programs",
+    "ko_title": "재귀 코드 월드 모델: 재귀적 장면 프로그램을 통한 복잡한 세계 구축"
+  },
+  "2609.01515": {
+    "base": "2609_템프클로즈_영상-중간장면-누락탐지-벤치마크",
+    "rank": "#9",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "6",
+    "en_title": "TempCloze: Can Video-LLMs Identify the Missing Middle?",
+    "ko_title": "템프클로즈: 비디오-LLM은 빠진 중간 구간을 찾아낼 수 있는가?"
+  },
+  "2609.11486": {
+    "base": "2609_프리플로우_편향없는-계층적-트랜스포머-옵티컬플로우-추정",
+    "rank": "#10",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "5",
+    "en_title": "FreeFlow: A Bias-free Hierarchical Transformer for Optical Flow Estimation",
+    "ko_title": "FreeFlow: 옵티컬 플로우 추정을 위한 편향 없는 계층적 트랜스포머"
+  },
+  "2609.11548": {
+    "base": "2609_월드인월드_월드모델로-비디오-속-세계-탐험",
+    "rank": "#11",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "5",
+    "en_title": "World in World: Explore the World with World Models",
+    "ko_title": "월드 인 월드: 월드 모델로 세계 탐험하기"
+  },
+  "2609.10712": {
+    "base": "2609_네모트론아이엠오_올림피아드-수학-금메달-레시피",
+    "rank": "#12",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "5",
+    "en_title": "An Open Recipe for IMO Gold: Training Nemotron for Olympiad Mathematics",
+    "ko_title": "IMO 금메달을 위한 오픈 레시피: 올림피아드 수학을 위한 네모트론 훈련"
+  }
+}

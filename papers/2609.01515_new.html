@@ -1,0 +1,122 @@
+<meta charset="UTF-8">
+<title>템프클로즈</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#9 · Daily Papers 2026-09-12</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 6</span>
+    </div>
+    <h1 class="article-title">TempCloze: Can Video-LLMs Identify the Missing Middle?</h1>
+    <p class="article-title-ko">템프클로즈: 비디오-LLM은 빠진 중간 구간을 찾아낼 수 있는가?</p>
+    <p class="article-sub">영상의 시작과 끝 구간만 보여주고 네 개의 후보 중에서 진짜 '빠진 중간 구간'을 고르게 하는 비디오 클로즈(cloze) 방식의 벤치마크 TempCloze를 제안하여, 언어적 지름길 없이 Video-LLM의 순수한 시각적 시간 추론 능력을 측정하고, 31개 모델을 평가한 결과 '시간적 정렬(Alignment)' 능력이 공통된 병목임을 밝힌 연구.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.01515" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.01515" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: TempCloze: Can Video-LLMs Identify the Missing Middle?</li>
+<li><strong>저자</strong>: Wenqi Pei, Henry Hengyuan Zhao, Yilai Liu (공동 1저자), Jiahao Meng, Han Chen, Ziyu Wang, Hongyang Du (교신저자) — 홍콩대학교(HKU), 싱가포르국립대학교(NUS), 베이징대학교(PKU)</li>
+<li><strong>출처</strong>: arXiv:2609.01515v1 [cs.CV] (2026년 9월 1일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/CedricPei/Temporal-Cloze">GitHub 저장소</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.01515">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>영상의 시작과 끝 구간만 보여주고 네 개의 후보 중에서 진짜 '빠진 중간 구간'을 고르게 하는 비디오 클로즈(cloze) 방식의 벤치마크 TempCloze를 제안하여, 언어적 지름길 없이 Video-LLM의 순수한 시각적 시간 추론 능력을 측정하고, 31개 모델을 평가한 결과 '시간적 정렬(Alignment)' 능력이 공통된 병목임을 밝힌 연구.</p>
+<h2>배경 및 문제의식</h2>
+<p>기존 Video-LLM의 시간 추론 벤치마크(TempCompass, TVBench 등)는 대부분 텍스트 선택지에 답하거나 자막을 생성하는 방식으로 평가가 이루어진다. 이러한 언어 매개적 평가 방식은 선택지 문구, 정답 간 상관관계, 언어 사전 지식(language prior) 등을 악용하는 '언어적 지름길'을 허용한다는 한계가 있다. 실제로 선행 연구에서는 순수 텍스트 언어모델만으로도 멀티모달 맥락 없이 무작위 추측보다 25%p 이상 높은 정답률을 낼 수 있음이 보고된 바 있다. 저자들은 이러한 편향을 줄이기 위해, 텍스트 설명이 아니라 영상 구간 자체를 비교하도록 요구하는 더 직접적인 시각적 시간 추론 평가가 필요하다고 보았다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>영상의 시작(B)과 끝(E) 구간만 제시하고 진짜 빠진 중간 구간(M)을 네 후보 중에서 고르게 하는 '비디오 클로즈' 과제 TempCloze를 제안했다. 1,521개의 엄선된 영상(주로 롱테이크·1인칭 시점 영상)으로 구성된다.</li>
+<li>같은 원본 영상에서 파생된 방해 후보(distractor)를 Semantic(무슨 일이 일어나야 하는가), Alignment(언제 일어나야 하는가), Progression(어떻게 전개되어야 하는가)의 세 차원으로 설계하여, 장면·객체가 동일하므로 외형적 단서만으로는 풀 수 없고 순수하게 시간적 추론이 필요하도록 만들었다.</li>
+<li>독점 모델 10종과 오픈소스 모델 21종, 총 31개 Video-LLM을 평가하고, 오류 패턴 분석과 행동 민감도 분석을 통해 Alignment(시간적 정렬)가 공통적인 성능 병목임을 규명했다.</li>
+</ol>
+<h2>방법론</h2>
+<p><strong>과제 정의</strong>: 영상 V를 시작 구간 B=C(0,s), 중간 구간 M=C(s,e), 끝 구간 E=C(e,T)로 나눈다. 모델은 B와 E만 보고, 정답 M과 세 개의 방해 후보로 구성된 후보 집합 중에서 정답을 골라야 한다.</p>
+<p><strong>데이터 구축</strong>: CaReBench, Daily-Omni, EgoLife, FAVOR-Bench, LVD-2M, MiraData, Video Thinking Test 등 7개 공개 소스에서 12~90초 길이의 영상을 수집했다. GPT-o3를 활용해 자막의 시간적 일관성과 클로즈 형식 적합성을 판별해 부적합한 영상을 제거하고, 비트레이트·선명도 기준으로 저품질 영상을 걸러냈다. 이후 영상 중앙 50% 구간에서 전체 길이의 20~40%에 해당하는 빈칸(gap)을 샘플링하되, Farnebäck 광학 흐름(optical flow)으로 평균 움직임 크기가 일정 수준 이상인지 확인해 정적인(static) 영상을 제외했다. 이 파이프라인을 거쳐 최종 1,521개 영상이 남았다.</p>
+<p><strong>방해 후보 설계(3차원)</strong>: (1) Semantic — 정답 구간과 겹치지 않는 동일 길이의 다른 구간을 후보로 제시해 '어떤 사건이 일어나야 하는가'를 테스트한다. (2) Alignment — 정답 구간을 앞뒤로 옮기거나(Advanced/Deferred) 양쪽으로 확장한(Expanded) 인접 구간을 제시해 '정확히 언제 일어나야 하는가'에 대한 민감도를 테스트한다. (3) Progression — 정답 구간을 역재생(Reversed)하거나, 하위 사건 순서를 뒤섞거나(Reordered), 일부를 반복(Repeated)시켜 '사건이 어떻게 전개되는가'에 대한 이해를 테스트한다. 각 영상마다 각 차원별로 정답 1개 + 방해 후보 3개, 총 4지선다 문항이 만들어진다.</p>
+<p><strong>평가 구성</strong>: 기본적으로 클립당 16프레임을 균일 샘플링하며(차원당 여섯 클립, 총 96프레임), 심층 분석을 위해 Gemini2.5-Pro, Seed1.6, Qwen3.5-397B-A17B, Qwen3VL-8B-I를 대표 모델로 선정했다. 또한 차원을 섞은 TempCloze-Mixed(300개), 오답률이 가장 높은 TempCloze-Hard(150개)의 두 보조 서브셋을 구성해 추가 분석에 활용했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>10개 독점 모델과 21개 오픈소스 모델을 평가한 결과는 다음과 같다.
+- <strong>차원별 정확도</strong>: Semantic에서는 독점 모델 평균 70.73%(최고 Seed1.8 96.25%), Progression에서는 평균 67.72%였으나, Alignment에서는 평균 48.13%로 크게 하락했다(최고 성능도 76.92%에 그침). 오픈소스 모델도 같은 경향을 보이며 Alignment 평균은 26.54%에 불과했다. 인간 기준선(Human Baseline)은 Alignment에서도 98.00%를 기록해, Alignment가 현재 Video-LLM의 핵심 병목임이 확인되었다.
+- <strong>누적 정확도</strong>: 세 차원을 모두 맞혀야 하는 3/3(완전 이해) 기준에서 독점 모델 평균은 33.24%, 최고 모델도 70.81%에 그쳐 인간 기준선(92.00%)에 크게 못 미쳤다. 오픈소스 모델은 최고 성능도 35.77%에 불과해 아직 '충분한 이해' 수준에도 도달하지 못했다.
+- <strong>오류 패턴 분석</strong>: Alignment 오류의 상당수는 Expanded(양쪽으로 확장된 구간)를 정답으로 잘못 고르는 경우였고, Progression 오류는 Reversed(역재생)를 고르는 경우가 지배적이었다. 이는 모델이 시각적으로 그럴듯한 내용에 이끌려 정확한 시간 경계나 방향을 놓친다는 것을 시사한다. TempCloze-Mixed에서도 Alignment 방해 후보가 가장 혼동을 유발하는 것으로 나타났다.
+- <strong>행동 민감도 분석</strong>: 후보 순서를 바꾸면 평균 정확도는 크게 변하지 않았지만(변동폭 4점 이내), 동일 문항에 대한 선택 자체는 최대 60.7%까지 바뀌는 등(Clip Flip Rate) 불안정성이 컸다. 맥락 방향 측면에서는 끝 구간(ending)만 주어졌을 때가 가장 취약했고, 시작 구간(beginning)만으로도 양쪽을 모두 준 경우에 근접하는 성능을 보여, 모델이 순방향 단서에 더 의존함을 시사했다. 가시 구간을 넓히거나 샘플링 프레임 수를 늘려도 Alignment 성능은 오히려 하락했으며, 테스트 시점 스케일링(pass@k)으로 전반적 정확도는 올라가지만 차원 간 상대적 난이도 순서(Alignment가 가장 어려움)는 바뀌지 않았다.</p>
+<h2>한계점</h2>
+<ul>
+<li>TempCloze는 시작·끝 구간 사이의 시각적 시간 적합성만을 측정하는 통제된 진단용 벤치마크로, 개방형 생성, 대화 기반 서사 이해, 오디오 기반 추론, 자유로운 미래 예측 등 전반적인 영상 이해 능력을 다루지는 않는다.</li>
+<li>모든 후보가 동일 원본 영상에서 추출되므로 과제가 매우 엄격하며, 특히 Alignment 방해 후보는 내용상 관련이 있으면서도 정확한 구간과는 일치하지 않도록 의도적으로 설계되어, 일반적인 사건 타당성 판단과는 다른 엄격한 시간 정합성을 요구한다.</li>
+<li>평가에 사용된 API 모델의 동작이나 성능은 시간이 지나면서 변할 수 있어 결과는 현재 시점의 스냅샷으로 해석해야 하며, 데이터 소스가 롱테이크·1인칭·정밀 동작 영상 위주여서 모든 영상 도메인이나 촬영 스타일을 포괄하지는 못한다.</li>
+</ul>
+<h2>시사점</h2>
+<p>이 연구는 텍스트 매개 평가가 갖는 언어적 지름길 문제를 우회하여 Video-LLM의 '진짜' 시각적 시간 추론 능력을 드러내는 벤치마크를 제시했다는 점에서 의미가 크다. 특히 현재 최상위 모델들조차 사건의 내용(Semantic)이나 대략적인 전개(Progression)는 비교적 잘 파악하지만, 정확히 '언제' 사건이 일어나야 하는지(Alignment)를 판단하는 데는 크게 취약하다는 점은, 향후 Video-LLM이 시간 방향성을 양방향으로 통합하고 핵심 증거 프레임을 선별하며 시간 구조를 명시적으로 표현하는 '영상 네이티브' 메커니즘을 갖춰야 함을 시사한다. 또한 프레임 수나 가시 구간을 단순히 늘리는 것이 오히려 성능을 해칠 수 있다는 발견은, 장기 영상 이해를 위한 벤치마크 설계와 모델 아키텍처 모두에 시사점을 준다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.01515" target="_blank" rel="noopener">huggingface.co/papers/2609.01515</a> · 2026-09-12</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

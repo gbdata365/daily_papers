@@ -1,0 +1,126 @@
+<meta charset="UTF-8">
+<title>월드 인 월드</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#11 · Daily Papers 2026-09-12</span>
+      <span class="cat-tag">생성모델</span>
+      <span class="upvote-tag">▲ 5</span>
+    </div>
+    <h1 class="article-title">World in World: Explore the World with World Models</h1>
+    <p class="article-title-ko">월드 인 월드: 월드 모델로 세계 탐험하기</p>
+    <p class="article-sub">사전학습된 causal 비디오 월드 모델을 전혀 재학습하지 않고, 카메라·시간 정보가 붙은 "클린 비주얼 상태"로 변환한 다양한 시각적 증거(소스 영상, 타깃 뷰 투영, 렌더링된 기하, 과거 생성 이력)를 모델의 native self-attention에 그대로 읽히게 함으로써, 하나의 고정된 백본만으로 카메라 제어 재렌더링, 장기 재방문, 모션 전이 등 다양한 제어를 가능케 하는 학습 불필요(training-free) 인터페이스 "World in World(WiW)"를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.11548" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.11548" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: World in World: Explore the World with World Models</li>
+<li><strong>저자</strong>: Chenxi Song, Yanming Yang (공동 1저자), Chi Zhang (교신저자) — Westlake University AGI Lab</li>
+<li><strong>출처</strong>: arXiv:2609.11548v1 [cs.CV] (2026년 9월 10일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://chenxi-song.github.io/worldinworld">https://chenxi-song.github.io/worldinworld</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.11548">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>사전학습된 causal 비디오 월드 모델을 전혀 재학습하지 않고, 카메라·시간 정보가 붙은 "클린 비주얼 상태"로 변환한 다양한 시각적 증거(소스 영상, 타깃 뷰 투영, 렌더링된 기하, 과거 생성 이력)를 모델의 native self-attention에 그대로 읽히게 함으로써, 하나의 고정된 백본만으로 카메라 제어 재렌더링, 장기 재방문, 모션 전이 등 다양한 제어를 가능케 하는 학습 불필요(training-free) 인터페이스 "World in World(WiW)"를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>오토리그레시브 비디오 월드 모델은 카메라 위치나 시점을 바꿔가며 긴 시간에 걸쳐 상호작용적으로 세계를 탐험할 수 있게 해주지만, 유연한 제어(다른 시점에서 소스 영상을 다시 관찰하는 것 등)는 여전히 어렵다. 소스 영상을 새로운 시점에서 탐험하려면 (1) 생성 결과가 기록된 이벤트의 진행과 동기화되어야 하고, (2) 관측된 내용이 요청된 뷰의 올바른 위치에 배치되어야 하며, (3) 새로 노출된 영역을 그럴듯하게 채워야 하고, (4) 이전에 방문했던 곳을 다시 찾아갔을 때 이전에 생성했던 모습을 복원해야 한다. 기존 방법들은 이런 요구사항들을 과제별 전용 모듈이나 추가 학습으로 해결해왔기 때문에, 새로운 제어 방식이나 조합이 필요할 때마다 재설계나 추가 학습이 필요하다는 한계가 있었다. 저자들은 causal 비디오 월드 모델이 "클린 상태 캐시"를 가진 native self-attention이라는 공통된 정보 입력 통로를 이미 갖고 있다는 점에 주목하고, 이 통로를 그대로 활용해 외부 제어 정보를 모델이 이미 이해하는 형태(카메라 포즈·이벤트 시간·공간 유효성 정보가 붙은 클린 비주얼 상태)로 표현하면, 모델 적응 문제가 아니라 "시각적 증거 구성 및 오케스트레이션" 문제로 전환할 수 있다고 보았다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>WiW</strong>: 고정된(frozen) causal 비디오 월드 모델의 제어 능력을 학습 없이 확장하는 시각적 증거 기반 인터페이스를 제안.</li>
+<li><strong>다양한 상보적 시각 증거 구성</strong>: 이벤트와 동기화되고, 공간적으로 정렬되며, 장기적으로 일관된 탐험을 가능하게 하는 여러 형태의 시각 증거(소스 관측, 타깃 뷰 투영, 렌더링 기하, 생성 이력)를 설계.</li>
+<li><strong>Correspondence-Guided Attention Routing (CGAR)</strong> 및 <strong>Evidence-wise Attention CFG (EWA)</strong>: native self-attention 내에서 이질적인 시각 증거를 정확한 위치에서(localize) 적절한 강도로(regulate) 읽도록 하는 두 가지 메커니즘 도입.</li>
+<li>동일한 고정 백본 하나로 다양한 카메라 궤적에 따른 탐험과 여러 다운스트림 응용(불릿타임, 안정화, 편집, 모션 전이 등)을 시연.</li>
+</ul>
+<h2>방법론</h2>
+<p>WiW는 사전학습된 causal 비디오 백본(공개된 LingBot-World 2.0의 causal-fast 체크포인트, 파라미터 전부 동결)을 기반으로, 소스 영상·기하·생성 이력 등 다양한 원시 증거(raw evidence)를 공통 표현으로 변환하는 컨버터 Ψ를 정의한다. 각 증거 채널은 (시각 콘텐츠, 카메라/시간 정보, 토큰별 공간 지지 가중치 ω, 디노이징 단계별 활성화 플래그 γ)의 튜플로 표현되며, 디노이징 타임스텝을 t=0으로 설정한 채 프로즌 백본에 한 번 forward pass 시켜 얻은 K/V를 "클린 K/V"로 캐시한다. 이 K/V는 백본의 native 블록(소스 앵커·최근 히스토리·현재 청크 슬롯) 또는 청크 단위로 붙였다 떼는 임시 보조 attention 블록을 통해 현재 디노이징 쿼리들이 읽을 수 있다.</p>
+<p>구체적인 증거 구성은 다음과 같다.
+1. <strong>타깃 뷰 장면 증거</strong>: DepthCrafter로 추정한 깊이를 이용해 소스 RGB를 3D로 역투영한 뒤 타깃 카메라로 재투영, 관측된 외형을 요청된 시점에 배치하는 공간 레이아웃 참조를 제공(가시성·기하 신뢰도 기반 지지 가중치 부여).
+2. <strong>렌더링 기하 증거</strong>: 소스 영상에 없던 새로운 피사체 표면(예: 인물 신체)을 완성하기 위해, LHM++로 복원한 아바타와 SMPL-X 파라미터를 이용해 타깃 시점에서 신체를 렌더링, 형태·외형 제안과 깊이(occlusion 해소용)를 제공.
+3. <strong>검색된 생성 이력 증거</strong>: 롤링 캐시에서 밀려난(evicted) 과거 생성 상태의 K/V를 이벤트 전체에 걸친 히스토리 뱅크에 보관하고, 카메라가 이전 위치로 돌아왔을 때 타깃 뷰 표면 커버리지와 시야 방향 적합도를 기준으로 다양성 있는 상위 K개를 선별해 재사용.</p>
+<p>이렇게 모인 증거들을 올바른 위치에서, 올바른 세기로 읽도록 하기 위해 두 가지 메커니즘을 추가한다.
+- <strong>CGAR</strong>: 소스 영상에서 지속적인 포인트 아이덴티티(포인트 트래킹)를 추적하고 깊이·카메라 정보를 결합해 현재 쿼리와 소스 영상 토큰 간 기하학적 대응 관계를 구성, 매칭되는 쿼리-키 쌍의 attention 점수에 log-대응 가중치를 더해 라우팅을 유도.
+- <strong>EWA</strong>: CFG/NAG에서 착안해, 증거를 포함한 attention 응답(oe)과 native 응답(o0)의 차이 중 native 방향에 겹치는 성분을 제거하고, 두 응답 간 코사인 유사도로 조절한 나머지(보완적) 성분만을 증폭시켜 각 증거 채널의 기여도를 독립적으로 조절. 같은 디노이징 forward pass의 attention 응답을 재사용하므로 추가적인 네트워크 순전파(NFE)가 들지 않는다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>DAVIS와 OpenVid-1M 데이터셋에서 카메라 제어 비디오 재렌더링 과제로 평가했으며, ReCamMaster·TrajectoryCrafter·WorldForge·InSpatio-World·UniWorld-View·CameraAnything과 비교했다. 평가지표는 VBench의 7개 차원(Aesthetic Quality, Imaging Quality, Temporal Flickering, Motion Smoothness, Subject/Background Consistency, Dynamic Degree)의 평균(Overall), 카메라 궤적 오차(TransError, RotError — Depth Anything 3와 ViPE로 추정), 이미지 충실도(PSNR, SSIM, LPIPS)이다.</p>
+<p>WiW는 VBench Overall 85.192로 비교 대상 중 가장 높았고, RotError(2.83°)와 TransError(0.0686)에서도 최저(최고) 성능을 보였으며, PSNR(23.15)·LPIPS(0.1217)에서도 최상위권을 기록했다(SSIM은 UniWorld-View가 근소하게 앞섬). 정성적 비교에서도 다양한 카메라 모션(반시계 궤도, 우회전, 우측 이동, 전진, 아래로 회전 등)에서 피사체·배경 일관성과 새로 노출된 영역의 자연스러운 완성을 보여주었다.</p>
+<p>절제 실험(ablation)에서는 타깃 뷰 워핑을 제거하면 회전 오차가 약 3.4배, 이동 오차가 약 10.9배로 급증해 가장 큰 성능 저하를 보였고, 소스 카메라 Plücker 조건화를 제거해도 카메라 오차가 커졌다. CGAR와 EWA를 제거하면 피사체 외형·배경 구조 보존력이 떨어졌으며, 렌더링된 신체 기하와 이력 검색을 각각 제거한 정성적 비교에서는 새로 노출된 피사체 영역의 완성과 과거 방문 지역의 외형 복원에 각각 기여함을 확인했다.</p>
+<p>또한 논문은 같은 인터페이스를 활용한 추가 응용으로 불릿타임(시간 정지) 렌더링, 비디오 안정화, 비디오 편집, 동일 프로즌 모델의 두 인스턴스 간 K/V 공유(모델 간 통신), 인간 모션 전이(사람 동작을 다른 소스 영상에 이식) 등을 시연했다.</p>
+<h2>한계점</h2>
+<p>논문 본문에 별도의 "한계점" 절은 없으나, 방법론과 실험 설계에서 다음과 같은 제약을 유추할 수 있다.
+- 신체 기하 증거 등은 DepthCrafter, LHM++, SMPL-X, 포인트 트래커, Depth Anything 3, ViPE 등 다수의 외부 3D/비전 모델에 의존하므로, 이 보조 모델들의 오차(깊이 추정, 아바타 복원, 포즈 추정 등)가 최종 결과 품질에 영향을 줄 수 있다.
+- 타깃 뷰 투영과 기하 렌더링, 이력 검색 등을 준비하는 파이프라인이 추가되어 추론 시 계산/구성 비용이 늘어날 수 있으며, 이는 순수 end-to-end 학습 기반 방법 대비 시스템 복잡도가 높다.
+- 방법 전체가 특정 사전학습 causal 비디오 백본(LingBot-World 2.0)의 native self-attention 구조(소스 앵커/히스토리/현재 청크 슬롯 구성)에 맞춰 설계되어 있어, 다른 구조의 월드 모델로의 일반화 가능성은 본문에 명시되지 않음.
+- 대규모 카메라 이동이나 복잡한 동적 장면에서 기하학적 대응(CGAR)이 실패할 경우의 견고성에 대한 정량적 분석은 논문에 명시되지 않음.</p>
+<h2>시사점</h2>
+<p>이 연구는 새로운 제어를 추가할 때마다 모델을 재학습하거나 전용 모듈을 붙이는 대신, "제어 정보를 모델이 이미 이해하는 표현(클린 비주얼 상태)으로 변환해 기존 attention 경로로 흘려보낸다"는 관점의 전환을 보여준다. 이는 대형 사전학습 월드 모델의 파라미터를 건드리지 않고도 카메라 제어, 장기 기억, 인간 모션 전이, 심지어 서로 다른 모델 인스턴스 간 정보 공유까지 하나의 통일된 인터페이스로 확장할 수 있음을 시사하며, 향후 다양한 파운데이션 비디오/월드 모델에 대해 훈련 없이 제어성을 확장하는 범용적 설계 원칙(증거 구성 → 위치 라우팅 → 강도 조절)으로 응용될 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.11548" target="_blank" rel="noopener">huggingface.co/papers/2609.11548</a> · 2026-09-12</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

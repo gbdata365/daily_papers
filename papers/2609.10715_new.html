@@ -1,0 +1,126 @@
+<meta charset="UTF-8">
+<title>NCP-ArchPreview 기술 보고서</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#1 · Daily Papers 2026-09-12</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 170</span>
+    </div>
+    <h1 class="article-title">NCP-ArchPreview Technical Report: Moving towards Latent Space Language Models through Next Concept Prediction</h1>
+    <p class="article-title-ko">NCP-ArchPreview 기술 보고서: 다음 개념 예측을 통한 잠재공간 언어모델로의 전환</p>
+    <p class="article-sub">토큰 단위 예측(Next Token Prediction)에 더해 여러 토큰을 아우르는 이산 "개념(concept)"을 예측하는 목표(Next Concept Prediction)를 함께 학습함으로써, 89억 파라미터·5.73조 토큰 규모에서 잠재공간(latent space) 언어모델의 실효성과 확장성을 최초로 대규모 입증한 기술 보고서.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.10715" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.10715" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: NCP-ArchPreview Technical Report: Moving towards Latent Space Language Models through Next Concept Prediction</li>
+<li><strong>저자</strong>: The Intern-NCP Team (Shanghai AI Lab; LUMIA Lab, Shanghai Jiao Tong University)</li>
+<li><strong>출처</strong>: arXiv:2609.10715v1 [cs.CL] (2026-09-09)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://huggingface.co/collections/ArchSpace-Collection/ncp-archpreview">Hugging Face 체크포인트 모음</a>, <a href="https://github.com/InternLM/lmdeploy">GitHub (lmdeploy)</a>, <a href="https://github.com/LUMIA-Group/ncp_olmo_eval">GitHub (ncp_olmo_eval)</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.10715">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>토큰 단위 예측(Next Token Prediction)에 더해 여러 토큰을 아우르는 이산 "개념(concept)"을 예측하는 목표(Next Concept Prediction)를 함께 학습함으로써, 89억 파라미터·5.73조 토큰 규모에서 잠재공간(latent space) 언어모델의 실효성과 확장성을 최초로 대규모 입증한 기술 보고서.</p>
+<h2>배경 및 문제의식</h2>
+<p>기존 언어모델은 Next Token Prediction(NTP) 방식으로 학습되며, 모델 내부에 의미 있는 개념적 추상화가 형성되더라도 이는 어디까지나 토큰 단위 학습의 부산물일 뿐, 여러 토큰에 걸친 의미 구조가 어떻게 전개되어야 하는지를 직접 지도하는 학습 목표는 존재하지 않았다. 이미지 생성 분야에서 latent diffusion이 픽셀이 아닌 압축된 연속 표현 공간에서 생성함으로써 효율성과 확장성을 크게 높였던 것처럼, 저자들은 언어모델에도 명시적인 잠재공간 예측 목표를 도입하고자 한다. Hourglass Transformer, BLT(Byte Latent Transformer), Large Concept Model, ConceptLM 등 선행 연구들이 계층적/동적 latent 구조나 새로운 예측 타깃을 탐구했지만, 대부분 소규모에 머물렀거나 개념 수준 목표를 완전한 end-to-end 사전학습 파이프라인으로 트릴리언 토큰 규모까지 확장한 사례는 없었다는 문제의식에서 출발한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>NCP(Next Concept Prediction) 아키텍처 제안</strong>: Token Encoder – Concept Module – Token Decoder의 3단 구조를 통해, 토큰 수준 생성을 유지하면서도 여러 토큰을 압축한 이산 개념(concept)을 예측하는 보조 목표를 추가.</li>
+<li><strong>대규모 실증</strong>: OLMo-3-7B 백본 위에 89억 파라미터 모델을 구축하고 Dolma-3 데이터셋 5.73조 토큰으로 학습, latent-space 언어모델 중 최대 규모의 사전학습 사례를 제시.</li>
+<li><strong>효율성 입증</strong>: 동일한 최종 학습 손실(loss)에 도달하는 데 필요한 토큰 수가 OLMo-3-7B 대비 51.3%에 불과(1.95배 빠른 수렴), 계산량 기준으로도 85%만 사용해 파라미터가 정렬된(parameter-aligned) 베이스라인 성능에 근접.</li>
+<li><strong>계층적 잔차 연결(Hierarchical Residual Connections)</strong> 설계: MUDDFormer에서 착안한 Intra-Module(IRC) 및 Cross-Module(CRC) Residual Connection을 도입해 모듈 간·계층 간 정보 흐름을 개선.</li>
+<li><strong>응용 가능성 검증</strong>: 사전학습 이후에도 학습된 개념 공간(latent concept space)이 유용함을 보임 — VQ 모듈(1,700만 파라미터)만 미세조정해 경량 도메인 적응 인터페이스로 활용 가능하며, 개념 표현을 DFlash2 투기적 디코딩(speculative decoding) 드래프터에 주입해 평균 수락 길이(mean accepted length)를 4.17% 개선.</li>
+</ul>
+<h2>방법론</h2>
+<p>모델은 세 모듈로 구성된다. Token Encoder는 입력 토큰을 은닉 표현 h로 변환하고, 이를 k개(구현에서는 4개) 단위로 평균 풀링(mean pooling)하여 연속적인 개념 표현 c를 생성한다. 이 연속 개념은 Product Quantization(제품 양자화) 기반 Vector Quantization(VQ)을 통해 이산 코드북(각각 32개 코드북 × 128개 엔트리)으로 매핑되어 "개념 어휘집(concept vocabulary)"을 형성한다. Concept Module(8개 Transformer 레이어)은 과거 개념 이력으로부터 다음 개념을 예측하는데, 코드북 엔트리에 대한 확률분포를 산출한 뒤 이를 가중합하여 미분 가능한 예측 표현을 만든다(argmax나 샘플링이 아닌 기대값 방식). 예측된 개념은 인과성을 보존하도록 시프트(shift)된 후 토큰 해상도로 복제되어 Token Decoder(16개 레이어)의 은닉 상태에 잔차로 더해지고, Token Decoder는 이를 바탕으로 다음 토큰을 예측한다.</p>
+<p>학습은 세 손실의 합으로 구성된다: (1) VQ 손실 — 코드북이 연속 개념 분포를 따라가도록 함(stop-gradient로 Token Encoder에는 영향 없음), (2) NCP 손실 — 예측된 개념과 실제(정지-그래디언트된) 개념 간 평균제곱오차(MSE), (3) 표준 NTP 손실. 세 손실은 코드북·Token Encoder·Concept Module·Token Decoder를 공동으로(end-to-end) 업데이트한다. 여기에 더해 Intra-Module Residual Connection(같은 모듈 내 여러 깊이의 표현을 학습된 가중치로 결합)과 Cross-Module Residual Connection(Token Encoder→Concept Module, Token Encoder→Token Decoder, Concept Module→Token Decoder 간 정보 전달)으로 구성된 계층적 잔차 연결을 추가해 정보 흐름을 개선한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>OLMo-3-7B를 백본으로 사용하고 OLMo-3의 2단계(Stage-1: Dolma 3 Mix, Stage-2: Dolma 3 Dolmino) 학습 커리큘럼을 그대로 따랐다. 평가는 OLMo-Core 프로토콜(MMLU, GSM8K, MATH-500, HumanEval, MBPP, ARC, HellaSwag 등 약 30개 벤치마크 계열)을 사용했다. 최종 모델은 약 89.4억 파라미터, 컨텍스트 길이 8,192 토큰이다.</p>
+<p>주요 결과는 다음과 같다.
+- <strong>학습 손실</strong>: Stage-1에서 NCP-ArchPreview는 동일 데이터로 학습된 OLMo-3-7B보다 최종 손실이 0.091 낮았고, OLMo-3-7B의 최종 손실에 도달하는 데 필요한 토큰 수는 51.3%(1.95배 수렴 가속)에 불과했다. Stage-2에서도 0.027 낮은 손실과 1.51배 가속을 보였다.
+- <strong>다운스트림 성능</strong>: Stage-1 이후 전체 평균이 OLMo-3-7B 대비 +2.45점 향상(GSM8K +5.99점, MATH 계열 평균 +3.75점 등)했다. Stage-2 이후에는 +0.59점으로 향상 폭이 줄었는데, 이는 Stage-2 데이터에 코드 데이터 비중이 낮아 코드 벤치마크에서는 오히려 소폭 하락했기 때문으로 분석된다.
+- <strong>파라미터/계산량 정렬 비교</strong>: Concept Module은 표준 Transformer 블록과 비슷한 파라미터 수를 가지면서 계산량은 약 1/4에 불과함을 이용해, 크기 정렬(size-aligned, 40블록) 및 계산량 정렬(computation-aligned, 34블록) 베이스라인과 비교한 결과, NCP-ArchPreview는 계산량 정렬 베이스라인을 뚜렷이 능가했고 계산량을 85%만 쓰고도 크기 정렬 베이스라인에 근접했다.
+- <strong>모듈 소거 실험(ablation)</strong>: Vanilla → +Concept Module → +잔차 연결 → +NCP 손실 순으로 점진적으로 손실이 감소하여, 각 구성요소가 독립적으로 기여함을 확인했다.
+- <strong>계층적 잔차 연결 비교</strong>: IRC+CRC 조합이 잔차 연결이 없는 기준 대비 손실을 0.0323 감소시켜(추가 FLOPs는 0.051%에 불과) 가장 효과적이었으며, Block AttnRes 등 비교 대상 방식보다 우수했다.
+- <strong>스케일링 법칙</strong>: 여러 계산 예산에서 컴퓨트-최적(compute-optimal) 실험을 수행한 결과, OLMo-3 대비 1.74배의 계산 효율성 향상을 보였다.
+- <strong>응용</strong>: VQ 모듈(1,700만 파라미터)만 별도 도메인(코드/수학/지식) 데이터로 미세조정해 경량 도메인 적응이 가능함을 확인했고, 개념 표현을 DFlash2 투기적 디코딩 드래프터에 주입해 GSM8K·MATH·HumanEval·MBPP 평균 수락 길이(MAL)가 5.933에서 6.180으로 4.17% 향상(파라미터 증가는 0.04M에 불과)했다.</p>
+<h2>한계점</h2>
+<ul>
+<li>이번 보고서는 표준 컨텍스트 길이에서 5.73조 토큰 사전학습과 1,000억 토큰 미드트레이닝까지만 다루며, 장문 컨텍스트(long-context) 학습은 포함하지 않았다 — 저자들은 개념 경로가 압축된 시퀀스에서 동작하므로 장문 맥락에서 특히 유리할 것으로 기대하며 향후 과제로 남김.</li>
+<li>언어모델링 손실(loss) 개선과 다운스트림 성능 향상 간의 관계가 일관되지 않는다 — Stage-1에서는 손실 감소와 다운스트림 성능 향상이 뚜렷이 비례했지만, Stage-2(미드트레이닝)에서는 개선 폭이 줄고 벤치마크별로 들쭉날쭉했다. 이는 학습 데이터 분포와 평가 도메인 간 불일치에 기인한 것으로 추정되며, 손실만으로 다운스트림 역량을 항상 예측할 수는 없음을 시사한다.</li>
+<li>계층적 잔차 연결의 분석적 FLOPs 계산은 소스 상태 materialization, 메모리 트래픽, reduction 연산, 커널 실행 오버헤드 등을 반영하지 않아 실제 런타임/메모리 비용은 더 클 수 있다.</li>
+</ul>
+<h2>시사점</h2>
+<p>이 연구는 언어모델 내부에서 자연스럽게 형성되는 잠재적 개념 표현을 부산물이 아닌 1급 학습 목표(first-class prediction target)로 승격시킬 수 있으며, 이것이 트릴리언 토큰 규모에서도 실질적인 학습 효율과 다운스트림 성능 향상으로 이어짐을 실증했다는 데 의의가 있다. 특히 토큰 수준 생성과 개념 수준 예측을 공동으로 end-to-end 학습하면서도 표준 자기회귀 디코딩 방식을 그대로 유지한다는 점에서, 기존 인프라와의 호환성을 유지하면서 latent-space 모델링을 실전에 도입할 수 있는 실용적 청사진을 제시한다. 또한 사전학습이 끝난 뒤에도 학습된 개념 공간이 경량 도메인 적응, 투기적 디코딩 가속 등 다양한 다운스트림 활용처를 가진다는 점은, latent concept space가 단순한 보조 손실을 넘어 차세대 파운데이션 모델 아키텍처의 핵심 구성요소가 될 수 있음을 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.10715" target="_blank" rel="noopener">huggingface.co/papers/2609.10715</a> · 2026-09-12</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

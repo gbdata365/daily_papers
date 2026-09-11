@@ -1,0 +1,123 @@
+<meta charset="UTF-8">
+<title>센스노바-U1.5</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#2 · Daily Papers 2026-09-12</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 134</span>
+    </div>
+    <h1 class="article-title">SenseNova-U1.5: Towards Native Unified Visual Intelligence</h1>
+    <p class="article-title-ko">센스노바-U1.5: 네이티브 통합 시각 지능을 향하여</p>
+    <p class="article-sub">인코더·VAE 없이 픽셀과 텍스트를 직접 다루는 80억(8B) 파라미터 네이티브 통합 멀티모달 모델 SenseNova-U1.5를 제안하여, 공간적으로 정합된 패치 재구성과 '전문가 특화 후 통합(specialize-then-unify)' 강화학습 전략으로 이미지 이해·생성·편집·인터리브 생성 전반에서 오픈소스 최고 수준의 성능을 달성했다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.11929" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.11929" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: SenseNova-U1.5: Towards Native Unified Visual Intelligence</li>
+<li><strong>저자</strong>: Dahua Lin(프로젝트 스폰서 및 어드바이저), Lei Yang·Lewei Lu·Quan Wang·Ruihao Gong·Wenxiu Sun·Ziwei Liu(시니어 프로젝트 리드), Haiwen Diao·Jiahao Wang(프로젝트 리드) 외 다수. SenseTime 산하 SenseNova 팀이 주도한 대규모 공동 연구</li>
+<li><strong>출처</strong>: arXiv:2609.11929v1 [cs.CV] (2026년 9월 10일)</li>
+<li><strong>프로젝트 페이지</strong>: 공식 데모 https://unify.light-ai.top/ , 코드 https://github.com/OpenSenseNova/SenseNova-U1 , 모델 https://huggingface.co/collections/sensenova/sensenova-u15</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.11929">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>인코더·VAE 없이 픽셀과 텍스트를 직접 다루는 80억(8B) 파라미터 네이티브 통합 멀티모달 모델 SenseNova-U1.5를 제안하여, 공간적으로 정합된 패치 재구성과 '전문가 특화 후 통합(specialize-then-unify)' 강화학습 전략으로 이미지 이해·생성·편집·인터리브 생성 전반에서 오픈소스 최고 수준의 성능을 달성했다.</p>
+<h2>배경 및 문제의식</h2>
+<p>기존 멀티모달 시스템 대부분은 이미지를 '이해'할 때는 사전학습된 비전 인코더(VE)를, '생성'할 때는 VAE(변분 오토인코더)를 사용한다. 즉 이해는 의미 추상화에 최적화된 표현 공간에서, 생성은 픽셀 충실도에 최적화된 표현 공간에서 각각 이루어져 두 표현 공간이 분리되어 있다. 이 분리는 지각·추론·생성을 하나의 시각적 프레임워크 안에서 매끄럽게 연동시키는 데 근본적인 한계로 작용한다.</p>
+<p>전작인 SenseNova-U1은 NEO-unify라는 인코더-프리(encoder-free)·VAE-프리(VAE-free) 아키텍처로 이해·추론·픽셀공간 생성을 하나의 모델에 통합하는 가능성을 입증했다. 다만 각 시각 토큰을 독립적인 RGB 패치로 복원하는 경량 구조를 채택했기 때문에, 인접 패치 간 정보 교환이 이루어지지 않아 고해상도에서 이음매(seam), 텍스처 불연속, 기하학적 왜곡이 두드러지는 문제가 있었다. SenseNova-U1.5는 이 문제를 해결하고 네이티브 통합 모델링을 4K 해상도 및 더 폭넓은 생성·편집 과업으로 확장하고자 한다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li><strong>공간적으로 결합된 재구성(spatially joint reconstruction)</strong>: 각 시각 토큰을 독립적으로 픽셀에 매핑하던 기존 방식 대신, 토큰을 2차원 특징 필드에 투영한 뒤 공간 합성곱과 Pixel Shuffle 업샘플링으로 점진적으로 이미지를 복원함으로써 인접 영역 간 정보 교환을 가능하게 하고 색상·텍스처·기하 구조를 함께 해결하도록 했다. 이를 통해 압축된 32×32 토큰 표현의 효율성을 유지하면서도 최대 4K 네이티브 해상도 생성을 지원한다.</li>
+<li><strong>'전문가 특화 후 통합' 강화학습 전략</strong>: 미학적 품질, 이중언어(중/영) 텍스트 렌더링, 인포그래픽 생성, 이미지 편집이라는 서로 다른 시각 창작 과업을 하나의 정책으로 한꺼번에 최적화하면 목표가 뒤섞여 과업별 성능이 희석된다는 문제를 인식하고, 과업별로 특화된 데이터·보상·샘플링·정규화로 개별 RL 전문가를 먼저 학습시킨 뒤, 학생 모델 자신의 생성 궤적을 따라가는 온-폴리시 증류(on-policy distillation)로 각 전문가의 강점을 하나의 통합 정책에 결합했다.</li>
+<li><strong>네이티브 통합 모델링의 일반화 가능성 입증</strong>: 생성 학습 데이터에 구조화된 형식(인포그래픽 등)에 대한 노출이 제한적이었음에도, 길고 복잡하며 구조화된 시각적 지시를 성공적으로 처리하는 것을 확인하여, 멀티모달 이해를 통해 습득한 구조적 지식과 계획 능력이 시각적 생성으로 전이될 수 있음을 보여주었다.</li>
+</ol>
+<h2>방법론</h2>
+<p><strong>아키텍처</strong>: SenseNova-U1.5는 NEO 계열에서 이어받은 '거의 무손실(near-lossless)' 시각 인터페이스를 사용한다. 두 개의 합성곱 투영(+GELU)으로 입력을 각각 16배, 2배 다운샘플링하여 32×32 이미지 영역당 하나의 시각 토큰을 생성하고, 2D 사인파 위치 임베딩으로 공간 좌표를 보존한다. 생성 시에는 해상도별로 노이즈 스케일이 달라지는 점을 반영해 해상도 인지 노이즈-스케일 임베딩을 확장(최대 4096×4096 기준)했으며, 기존의 패치 단위 MLP 디코딩 헤드를 Pixel Shuffle과 3×3 합성곱 기반의 경량 공간 디코더로 교체해 패치 경계에서의 이음매·격자 아티팩트를 크게 줄였다. 백본은 네이티브 Mixture-of-Transformers(MoT) 구조로, 이해와 생성이 어텐션 프로젝션·정규화·피드포워드는 분리하되 셀프 어텐션을 공유해 상호작용하며, 텍스트 토큰은 인과적(causal), 이미지 블록 내부는 양방향(bidirectional) 어텐션을 사용하는 비대칭 마스킹 구조를 채택했다.</p>
+<p><strong>학습 목표</strong>: 오토리그레시브 언어모델링 손실(LAR), 픽셀공간 플로우 매칭 손실(LFlow, x-prediction 기반), LPIPS 기반 지각 손실(LPerc)을 가중합(λAR·LAR + λFlow·LFlow + λPerc·LPerc)하여 하나의 통합 목적함수로 학습한다.</p>
+<p><strong>학습 절차(5단계)</strong>: (1) 생성 사전학습 — 이해 브랜치를 고정한 채 생성 브랜치를 텍스트-투-이미지 데이터로 저해상도부터 4K까지, 이후 편집·인터리브 데이터까지 단계적으로 확장 학습; (2) 통합 중간학습 — 이해·생성 데이터를 혼합(텍스트 30%, T2I 40%, 편집 20%, 인터리브 10%)해 두 브랜치를 공동 최적화; (3) 통합 지도 미세조정(SFT); (4) 멀티 전문가 강화학습 — 미학(HPSv3++ 보상), OCR/텍스트 렌더링(PaddleOCR 기반 다중집합 IoU 보상), 편집(5개 차원의 최솟값 집계 보상), 인포그래픽(OCR·미학 보상 라우팅) 전문가를 각각 CPS(coefficients-preserving sampling) 또는 Precise 샘플링, GRPO/DPO 등으로 학습; (5) 멀티 전문가 온-폴리시 증류 — 학생이 자체 생성한 궤적 위에서 해당 과업의 고정된 전문가 교사와 속도장(velocity field)을 정합시켜 네 전문가의 능력을 단일 모델로 통합.</p>
+<p><strong>데이터</strong>: SenseNova-U1 대비 약 5,900만 개의 추가 텍스트-이미지 쌍(78개 소스)을 도입했고, 유효 학습량의 88.2%가 1024² 초과, 64.4%가 2048² 초과 해상도이다. 이미지 편집 코퍼스는 약 3,800만 예제(일반 편집 43%, 공간제어형 인포그래픽 편집 42%, 참조 기반 편집 15%, 참조 이미지 최대 10장까지 지원)로 구성되며, 인터리브 데이터는 생활형 트래젝토리(44%), 인포그래픽(29%), 비디오 파생 시퀀스(19%), 추론 중심 예제(8%)로 이루어진다.</p>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li><strong>멀티모달·언어 이해</strong>: MMMU, MathVista, MMBench, OCRBench, HallusionBench, IFEval, MMLU-Pro 등 다수 벤치마크에서 SenseNova-U1보다 대부분 유지·개선된 성능을 보였고, Qwen3-VL(모듈형) 및 인코더-프리 모델 Gemma4-12B와도 경쟁력 있는 결과를 나타냈다(IFEval 93.35, MMLU-Pro 86.67 등). 즉 생성·편집 능력 확장이 이해 성능 저하로 이어지지 않았다.</li>
+<li><strong>텍스트-투-이미지 생성</strong>: Qwen-Image-Bench(영문/중문), GenEval, GenEval2, DPG-Bench, OneIG-Bench 등에서 오픈소스 모델 중 최고 수준을 기록했다. 특히 GenEval에서 전체 0.92로 오픈소스 최고 성능(Qwen-Image 등 더 큰 모델 상회), GenEval2에서 프롬프트 강화(PE) 적용 시 오픈소스 모델 중 최고 점수를 달성했다.</li>
+<li><strong>텍스트 중심/인포그래픽 생성</strong>: CVTG-2K에서 평균 0.948로 전체 모델 중 최고 점수, LongText-Bench에서도 오픈소스 선두. IGenBench·BizGenEval(복잡 인포그래픽·상업 콘텐츠 생성)에서도 오픈소스 최고 성능을 보였으나 최상위 폐쇄형(proprietary) 시스템과는 여전히 격차가 있다고 명시했다.</li>
+<li><strong>추론 중심 생성</strong>: WISE 벤치마크에서 CoT(사고 사슬)를 사용할 경우 오픈소스 최고 성능(0.81)을 기록, 특히 문화지식·생물·화학 등 지식집약 영역에서 개선이 두드러졌다.</li>
+<li><strong>이미지 편집</strong>: ImgEdit, GEdit-Bench, WeEdit, OmniRef-Bench에서 SenseNova-U1보다 크게 향상되었고 오픈소스 최고 수준을 달성했으며 일부 지표에서 폐쇄형 모델과도 경쟁력을 보였다. 다만 WeEdit에서 번역 및 추론 집약적 편집은 상대적으로 취약함이 확인됐다.</li>
+<li><strong>추론 기반 편집</strong>: RISEBench에서 CoT 적용 시 오픈소스 최고(전체 38.6) 성능을 보였으며, 인과·논리·시간적 편집에서 개선이 컸지만 공간적 편집에서는 CoT의 이득이 일관되지 않았다.</li>
+<li><strong>인터리브 생성 및 통합 추론</strong>: OpenING, VBVR-Pro-Bench에서 오픈소스 최고 성능이자 일부 지표에서는 Nano-Banana-Pro, GPT-Image-2 등 폐쇄형 모델을 능가했다. Uni-MMMU-GaU, RealUnify-GEU 평가에서도 생성이 단순 출력이 아니라 멀티모달 추론을 보조하는 중간 표현으로 기능함을 확인했다.</li>
+</ul>
+<h2>한계점</h2>
+<p>논문에 별도의 '한계점' 절은 없으나, 실험 결과 서술에서 다음과 같은 한계가 언급된다. 인포그래픽·상업 콘텐츠 생성(IGenBench, BizGenEval)에서 오픈소스 최고 성능에도 불구하고 최상위 폐쇄형(proprietary) 시스템과의 격차는 여전히 존재한다. 이미지 편집 벤치마크(WeEdit)에서 번역이 필요한 편집이나 깊은 언어적·맥락적 이해를 요구하는 추론 집약적 편집은 상대적으로 도전적인 과제로 남아 있다. 추론 기반 편집(RISEBench)에서는 공간적 편집이 시간적·인과적·논리적 편집에 비해 CoT의 이득을 덜 일관되게 받는다. 이 밖에 8B 규모 모델이라는 점, 대규모 특화 데이터 구축과 다단계(5단계) 학습 파이프라인의 복잡성에 따른 재현·확장의 부담도 실질적 한계로 볼 수 있다.</p>
+<h2>시사점</h2>
+<p>이 논문은 '이해는 인코더, 생성은 VAE'라는 이원화된 멀티모달 설계 관행에서 벗어나, 픽셀과 언어를 하나의 표현 공간에서 직접 다루는 네이티브 통합 모델이 대규모로 확장 가능함을 실증적으로 보여준다. 특히 서로 다른 시각 창작 능력(미학, 텍스트 렌더링, 편집, 인포그래픽)을 먼저 개별 RL 전문가로 특화시킨 뒤 온-폴리시 증류로 통합하는 '특화 후 통합' 전략은, 여러 이질적 보상 신호를 하나의 정책에 억지로 합칠 때 발생하는 목표 희석 문제를 완화하는 실용적인 후속학습 레시피로서 다른 멀티태스크 생성 모델에도 참고할 만하다. 더 근본적으로, 저자들은 멀티모달 통합의 핵심 가치가 단순한 아키텍처 단순화가 아니라 '능력 간 상호작용'에 있다고 주장한다. 즉 추론이 시각적 창작을 개선하고, 생성 자체가 모델 내부의 문제 해결 과정의 일부가 될 수 있다는 점에서, 지각과 창작의 경계를 허무는 통합 시각 지능으로 가는 방향성을 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.11929" target="_blank" rel="noopener">huggingface.co/papers/2609.11929</a> · 2026-09-12</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

@@ -1,0 +1,134 @@
+<meta charset="UTF-8">
+<title>에보세이프하니스</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#4 · Daily Papers 2026-09-12</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 36</span>
+    </div>
+    <h1 class="article-title">EvoSafeHarness: Evolving Model- and Domain-Specific Harnesses for Securing Agents</h1>
+    <p class="article-title-ko">에보세이프하니스: 에이전트 보안을 위한 모델·도메인별 진화형 하니스</p>
+    <p class="article-sub">고정된(fixed) 전문가 설계 방어 체계 하나를 모든 모델과 도메인에 동일하게 적용하는 대신, 특정 LLM 에이전트와 특정 배포 도메인(파일시스템, 금융, 통신 등)에 맞춰 자연어 정책과 실행 코드 로직을 함께 진화시켜 보안-유용성 트레이드오프를 최적화하는 자동 하니스(harness) 탐색 프레임워크 EvoSafeHarness를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.05903" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.05903" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: EvoSafeHarness: Evolving Model- and Domain-Specific Harnesses for Securing Agents</li>
+<li><strong>저자</strong>: Nanxi Li, Yingzi Ma, Yulong Cao, Edward Suh, Bo Li, Dawn Song, Chaowei Xiao (Johns Hopkins University, University of Wisconsin–Madison, NVIDIA, University of Illinois Urbana–Champaign, UC Berkeley 공동 연구)</li>
+<li><strong>출처</strong>: arXiv:2609.05903v1 [cs.CR] (2026년 9월 5일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/SaFo-Lab/EvoSafeHarness">github.com/SaFo-Lab/EvoSafeHarness</a>, <a href="https://andylinx.github.io/EvoSafeHarness">andylinx.github.io/EvoSafeHarness</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.05903">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>고정된(fixed) 전문가 설계 방어 체계 하나를 모든 모델과 도메인에 동일하게 적용하는 대신, 특정 LLM 에이전트와 특정 배포 도메인(파일시스템, 금융, 통신 등)에 맞춰 자연어 정책과 실행 코드 로직을 함께 진화시켜 보안-유용성 트레이드오프를 최적화하는 자동 하니스(harness) 탐색 프레임워크 EvoSafeHarness를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>LLM 에이전트는 이메일·웹페이지·문서 등 외부 콘텐츠에 숨겨진 지시를 따르게 되는 간접 프롬프트 인젝션과, 사용자가 직접 유해한 행동(예: 한도를 초과한 송금, 운영 데이터 삭제, 자격 증명 유출)을 요청하는 직접 공격이라는 두 가지 경로로 위험에 노출된다. 모델 자체의 안전학습만으로는 시스템 차원의 강제 경계를 제공하지 못하기 때문에, 도구 호출을 가로채고 검증하는 "하니스"(에이전트 실행 루프를 감싸는 미들웨어) 계층에서 프로버넌스 마킹, 인젝션 탐지, 궤적 검증, 능력(capability) 제한 등을 적용하는 시스템 차원 방어가 함께 연구되어 왔다.</p>
+<p>그러나 기존 하니스들(CaMeL, DRIFT, Progent 등)은 전문가가 한 번 설계한 고정 정책과 제어 흐름을 모든 모델·도메인에 동일하게 적용한다. 논문은 이것이 근본적으로 한계가 있다고 지적한다. 모델마다 이미 갖춘 안전성 수준이 달라 필요한 외부 통제의 강도가 다르고(예: 안전학습이 잘 된 모델에 과도하게 엄격한 방어를 적용하면 유용성만 크게 떨어짐), 도메인마다 지켜야 할 안전 관계·상태·행동 순서가 근본적으로 다르다(파일시스템 도메인은 명령 효과·경로·비밀정보 유출을 봐야 하고, 금융 도메인은 거래와 자금 유출을 구분하고 거래 이력을 추적해야 함). 즉 한 모델에 강한 방어가 다른 모델에는 과잉 차단이 되고, 여러 도메인에 두루 통하는 일반적 정책은 특정 애플리케이션의 안전 관계를 놓치게 된다는 것이 핵심 문제의식이다.</p>
+<p>또한 단순히 공격 성공률(ASR)만을 보상으로 삼아 하니스를 자동 탐색하면 (1) 모든 것을 거부해 안전한 것처럼 보이지만 유용성이 붕괴하는 "전부 거부" 편법, (2) 평가 세트의 특정 파일명·경로·문구 등 표면적 특징에 과적합해 이름만 바꿔도 무력화되는 규칙, (3) 검사 로직 자체의 결함으로 인한 미검증 취약 경로 생성이라는 세 가지 위험한 지름길이 생길 수 있다는 점도 지적한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>모델·도메인별 하니스 탐색</strong>: 고정된 하나의 방어 대신, 특정 모델 M과 특정 도메인 D의 조합마다 별도로 최적화된 배포 전용 하니스 H=(P, C) (자연어 정책 P + 실행 코드 로직 C)를 자동으로 합성하는 프레임워크를 제시한다.</li>
+<li><strong>안전 특화 탐색 루프</strong>: Designer(정책·코드 제안), Criticizer(신선한 맥락에서 벤치마크 특유의 편법을 걸러내는 적대적 검토자), Cascade Test Environment(저비용→고비용 단계적 평가), Analyzer(실패 궤적을 재사용 가능한 경험으로 정제)로 구성된 폐루프 최적화를 설계했다.</li>
+<li><strong>일반화 검증 메커니즘</strong>: 각 후보 규칙에 대해 "공격자가 경로/이름을 바꾸거나 문구를 바꿔 표현해도 여전히 작동하는가"를 묻는 일반화 요건과, 독립적인 신선한 컨텍스트의 Criticizer 검토를 결합해 벤치마크 특정 트릭에 대한 과적합을 방지한다.</li>
+<li><strong>광범위한 실증 검증</strong>: DecodingTrust-Agent, Agent-SafetyBench, AgentDojo→AgentDyn(전이), AgentCanary(적응형 공격) 등 네 가지 벤치마크 계열 전반에서 기존 고정 방어들(CaMeL, DRIFT, Progent, SafeHarness) 대비 안전-유용성 프런티어를 일관되게 개선했다.</li>
+<li><strong>하니스 구조에 대한 분석</strong>: 탐색된 하니스들을 분석해, 도메인이 "무엇을 보호해야 하는가"(안전 관계·상태)를 결정하고, 모델·런타임 행동이 "어떻게·어디서 강제해야 하는가"(결정론적 필터 vs 의미론적 판단, 캐싱 여부, 실행 전/후 시점)를 결정한다는 설계 원리를 도출했다.</li>
+</ul>
+<h2>방법론</h2>
+<p>EvoSafeHarness는 프로즌(동결된) 모델 M과 타깃 도메인 D를 입력으로 받아 하니스 H*_{M,D}를 탐색하는 문제로 정식화된다. 목적함수는 score = 100·(유용성 U − 공격성공률 ASR)로 정의되어, 모든 것을 거부하거나(유용성 0) 모든 공격을 허용하는(ASR = 유용성) 하니스는 0점을 받도록 설계함으로써 "전부 거부" 편법을 원천 차단한다.</p>
+<p>탐색 루프는 다음 구성요소로 이루어진다.
+1. <strong>도메인 명세(Domain Specification)</strong>: 대상 모델·백엔드·도구·판정 기준, 직접/간접 위협의 의미, 학습에만 쓰이는 평가 절차, 일반화 요건, 그리고 방어가 개입할 수 있는 어댑터(예: DTAP에서는 system_prompt_transform, on_pre_tool_call, on_post_tool_call 형태의 Python Defense 객체)를 규정한다. 이는 어떤 방어 아키텍처를 만들어야 하는지 지정하지 않고, 무엇이 불변으로 유지돼야 하고 어떻게 평가될지만 규정한다.
+2. <strong>워밍업(Warm-start)</strong>: CaMeL, DRIFT 등 성숙한 기존 방어에서 추출한 8가지 보안 설계 경험(예: "도구 출력은 절대 지시로 취급되어서는 안 되는 신뢰되지 않은 데이터다")을 초기 후보와 재사용 가능한 지침으로 제공하되, 이는 템플릿이 아니라 참고 지침으로만 기능한다.
+3. <strong>Designer</strong>: 이전 후보들의 소스코드·점수·실패 궤적이 담긴 아카이브를 읽고, 정책 P나 코드 로직 C를 자유롭게 수정(궤적 상태 추가, 판정기 추가/제거, 제어 흐름 변경 등)해 새 후보를 제안한다.
+4. <strong>Criticizer</strong>: 매 평가 전에 독립적인 신선한 컨텍스트에서 "공격자가 같은 의도를 유지한 채 가장 싸게 우회할 방법은?" "이 규칙이 벤치마크의 특정 문자열이나 도구 이름에 의존하는가?" 등을 검토해 표면적 트릭을 걸러낸다.
+5. <strong>Cascade Test Environment</strong>: 정적 검사 → 소규모 스모크 테스트 → 통계적 신뢰구간 기반 조기 중단(confidence gate) → 전체 탐색 샘플 평가의 4단계로, 열등한 후보를 저비용 단계에서 조기에 걸러내면서도 평가 궤적을 단계 간 재사용해 자원을 절약한다.
+6. <strong>Analyzer</strong>: 실패 궤적을 분해해 다음 반복에 쓸 설계 경험으로 정제하며, 벤치마크 최종 held-out(보류) 세트는 Designer와 Criticizer 모두에게 노출되지 않는다.</p>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li><strong>DecodingTrust-Agent(DTAP, 주요 벤치마크)</strong>: 5개 피해 모델(Sonnet 4.6, GLM-5, Kimi-K2.5, Qwen3.7-plus, DeepSeek-V4-Flash) × 3개 도메인(OS-파일시스템, 금융, 통신)의 15개 셀에서 독립적으로 탐색한 결과, 평균 ASR을 45.6%에서 10.0%로 낮추면서 유용성 손실은 3.3점에 불과했고, 15개 셀 중 14개에서 최고 점수를 기록했다. 직접 공격 ASR은 50.9%→12.6%, 간접 공격 ASR은 40.4%→7.4%로 감소했다. 반면 고정 기준선인 CaMeL, DRIFT는 ASR을 37~42% 수준까지만 낮췄고, 가장 안전한 기준선인 Progent는 ASR을 10.5%까지 낮췄지만 유용성이 56.4%까지 떨어져 EvoSafeHarness(79.8%)에 크게 못 미쳤다.</li>
+<li><strong>Agent-SafetyBench</strong>: 프롬프트 인젝션 외에도 사용자의 직접적인 유해 요청이나 최종 답변에 유해 정보가 그대로 노출되는 등 도구 호출 차단만으로는 막을 수 없는 위험을 포함하는 벤치마크에서, EvoSafeHarness가 모든 피해 모델에서 가장 낮은 위험행동률(UBR)과 최고 점수를 기록했으며, 공격 하 유용성도 함께 개선한 유일한 방법이었다.</li>
+<li><strong>AgentDojo → AgentDyn(전이 테스트)</strong>: AgentDojo에서 한 번 탐색한 하니스를 재탐색 없이 그대로 미지의 AgentDyn(쇼핑, GitHub, 일상 업무 등) 스위트에 적용했다. AgentDojo에서 유용성 82.8%·ASR 0.0%(동일 ASR 0% 지점에서 CaMeL 대비 유용성 2배)를 기록했고, 이 하니스가 AgentDyn에서도 유용성 75.0%·ASR 0.0%로 전이되어, 특정 도구 어휘에 과적합하지 않은 일반화 가능한 안전 관계를 학습했음을 보였다.</li>
+<li><strong>적응형 공격(AgentCanary, PAIR 스타일)</strong>: 탐색을 마치고 고정한 하니스에 대해, 방어된 에이전트의 응답을 피드백 삼아 공격 프롬프트를 반복적으로 재작성하는 PAIR 방식 공격자를 세 종류 투입한 결과, 정제 예산(refinement budget) 16회까지도 평균 ASR이 약 19.5%로 무방어 상태보다 낮게 유지되었다. 이는 하니스가 특정 문구가 아니라 프로버넌스(출처)와 작업 범위(task scope)라는 불변 속성을 강제하기 때문으로 분석된다.</li>
+<li><strong>분석(7절)</strong>: 탐색된 하니스들을 들여다본 결과, 예를 들어 안전학습이 잘 된 모델은 가벼운 의미 판정 두 개만으로 held-out ASR을 0%까지 낮췄지만, 상대적으로 취약한 모델에는 결정론적 필터·프로버넌스 상태 추적·판정 캐싱 등 더 깊은 계층 구조가 필요했다. 같은 모델이라도 파일시스템 도메인은 명령 효과·경로·데이터 흐름 중심 규칙이, 금융 도메인은 거래 대 자금유출 구분과 거래 이력(원장) 유지가 필요해 전혀 다른 안전 관계가 탐색되었다. Criticizer를 제거하면 탐색 점수 자체는 유지되거나 오히려 오르지만, held-out 점수는 도메인에 따라 최대 31점까지 하락해, 벤치마크 특유의 트릭에 과적합했음이 확인되었다. 또한 중첩 캐스케이드 평가는 15개 하니스 전부에서 완전 평가와 동일한 최종 하니스를 선택하면서도 평가 토큰의 43.6%, 비용의 상당 부분을 절감했다.</li>
+</ul>
+<h2>한계점</h2>
+<ul>
+<li>잔여 위험은 특정 위험 유형에 집중되어 있다. OS 무단 접근, 최소권한 위반, 동의 위반, 무단 자동화, 금융 사기성 권유 등 다섯 가지 유형이 전체 잔여 성공 공격의 절반 이상을 차지했으며, 저자들은 직접적 파일시스템 인가(authorization) 판단과 금융 분야의 대외 콘텐츠 근거 검증(evidence-grounding) 강화가 다음 개선 과제라고 명시한다.</li>
+<li>관찰 가능한 "안전 관계"로 정식화하기 어려운 위험 유형(예: 내용 자체는 범위 내 작업이지만 조언이 허위이거나 오도성인 경우)에서는 탐색이 거의 개선을 만들어내지 못했다. 논문은 시스템 프롬프트·사전/사후 도구 호출 훅만으로는 도구 호출이 없는 최종 응답의 진실성 문제를 다루기 어렵다는 인터페이스상의 한계를 스스로 지적한다.</li>
+<li>탐색 점수는 결국 학습용 테스트 케이스의 대표성에 좌우되며, 소규모 고정 테스트 세트가 후보를 잘못 평가(mis-rank)하는 사례가 실제로 관찰되었다(예: 동시성 문제로 인해 작은 표본에서는 우수해 보였으나 넓은 확인 평가에서는 열등한 후보). 아카이브 기반 다중 충실도(multi-fidelity) 승격이 안전장치 역할을 하지만 근본적 해결책은 아니다.</li>
+<li>탐색은 모델·도메인 조합마다 별도로 수행해야 하므로 배포마다 비용이 발생한다(외부 탐색용 에이전틱 코딩 모델의 토큰 소비, 내부 평가용 피해 모델 에피소드 실행 비용 등 2단계 자원 소모). 논문 자체가 전체 검색·평가에 상당한 토큰과 비용(예: 5개 피해 모델 대상 평가에서 수억 개의 토큰과 수백 달러 규모)이 들었음을 상세히 보고한다.</li>
+<li>평가는 시뮬레이션된 벤치마크 환경과 특정 공격 계열(간접 인젝션, 직접 유해 요청, PAIR 스타일 적응 공격)에 한정되어 있으며, 실제 프로덕션 배포에서 발생할 수 있는 더 다양하거나 새로운 공격 벡터에 대한 일반화는 향후 검증이 필요하다.</li>
+</ul>
+<h2>시사점</h2>
+<p>이 연구는 에이전트 보안을 "하나의 범용 가드레일을 선택하는 문제"가 아니라 "배포 상황(모델×도메인)에 맞춰 방어를 생성하고 검증하는 최적화 문제"로 재정의해야 한다는 관점을 제시한다. 실무적으로는 동일한 방어 코드를 모든 모델과 애플리케이션에 재사용하는 관행이 특정 모델에서는 과잉 차단으로 유용성을 해치고 다른 모델에서는 위험을 방치할 수 있음을 정량적으로 보여준다. 또한 안전 특화 자동 탐색에서 나타나는 "보상 해킹"(전부 거부, 벤치마크 아티팩트 과적합, 미검증 취약 경로)을 방지하기 위해 별도의 유용성 평가, 일반화 요건, 독립적 적대적 검토(Criticizer), 단계적 캐스케이드 평가라는 네 가지 안전장치를 결합한 설계 패턴은, LLM 에이전트뿐 아니라 다른 안전-critical 자동 최적화 시스템 설계에도 참고할 수 있는 일반적인 방법론적 교훈을 제공한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.05903" target="_blank" rel="noopener">huggingface.co/papers/2609.05903</a> · 2026-09-12</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

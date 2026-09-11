@@ -1,0 +1,122 @@
+<meta charset="UTF-8">
+<title>계획으로서의 기억</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#7 · Daily Papers 2026-09-12</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 9</span>
+    </div>
+    <h1 class="article-title">Memory as Plans: World-Action Modeling with Memory-Grounded Planning</h1>
+    <p class="article-title-ko">계획으로서의 기억: 기억 기반 계획을 활용한 월드-액션 모델링</p>
+    <p class="article-sub">로봇 조작에서 장기 기억이 필요한 비-마르코프적 과제를 다루기 위해, 과거 전체 관측을 매번 실행 모델에 입력하는 대신 기억을 "계획(plan)"으로 압축해 실행기에 전달함으로써, 실행 시점의 연산 비용을 일정하게 유지하면서도 장기 시각 기억을 정교하게 반영하는 MaP-WAM 프레임워크를 제안한 연구.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.11561" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.11561" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Memory as Plans: World-Action Modeling with Memory-Grounded Planning</li>
+<li><strong>저자</strong>: Sizhe Zhao, Haozhe Xie, Weiyu Zhao, Chenchu Zhang, Huan Wang, Chenyang Wang, Qinglin Liu, Shengping Zhang(교신저자) — Harbin Institute of Technology, Nanyang Technological University, Shandong University 등 (중국·싱가포르)</li>
+<li><strong>출처</strong>: arXiv:2609.11561v1 [cs.RO] (2026년 9월 10일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://sizhezhao.github.io/projects/MaP-WAM/">MaP-WAM 프로젝트 페이지</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.11561">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>로봇 조작에서 장기 기억이 필요한 비-마르코프적 과제를 다루기 위해, 과거 전체 관측을 매번 실행 모델에 입력하는 대신 기억을 "계획(plan)"으로 압축해 실행기에 전달함으로써, 실행 시점의 연산 비용을 일정하게 유지하면서도 장기 시각 기억을 정교하게 반영하는 MaP-WAM 프레임워크를 제안한 연구.</p>
+<h2>배경 및 문제의식</h2>
+<p>대부분의 로봇 정책(VLA, world-action model 등)은 현재 관측 또는 짧은 과거 윈도우만으로 다음 행동을 결정하는 마르코프적 가정을 따른다. 그러나 실세계의 많은 조작 과제는 비-마르코프적이다. 예를 들어 이전에 본 물체의 위치나 색상을 한참 뒤에 다시 활용해야 하는 경우처럼, 의사결정에 필요한 정보가 더 이상 현재 관측에 남아있지 않을 수 있다. 기존의 기억 메커니즘은 크게 두 갈래로 나뉜다. (1) 언어 요약 기반 방식은 과거를 압축된 텍스트로 요약해 전달하지만 세밀한 시각적 증거(정확한 위치, 색상 등)를 잃기 쉽다. (2) 관측 윈도우를 계속 늘려가는 방식(growing window)은 시각 정보를 온전히 보존하지만, 이력이 길어질수록 실행기에 입력되는 컨텍스트가 커져 추론 지연과 GPU 메모리 사용량이 급격히 증가한다. 즉 "이력 커버리지 대 실행 효율성"이라는 트레이드오프가 존재한다. 저자들은 장기 시각 이력이 매 제어 스텝마다 실행 모델에 직접 입력될 필요는 없으며, 오히려 다음 구간(segment)의 계획을 세우는 데만 필요하고 실제 행동 실행은 그 계획을 따르기만 하면 된다는 통찰에서 출발한다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li><strong>Memory-as-Plans 프레임워크</strong>: 장기 에피소드 증거를 계획(plan)으로 변환해, 실행기의 컨텍스트 길이를 고정한 채로도 시각적 기억을 유지할 수 있는 MaP-WAM을 제안했다.</li>
+<li><strong>기억 기반 계획(Memory-Grounded Planning)</strong>: 장기 시각 컨텍스트와 예측된 구간 수준 언어 계획을 결합해 세밀한 실행 가이드가 되는 "시각 계획(visual plan)"을 생성하는 인과적 월드 모델(causal world model)을 도입했다.</li>
+<li><strong>진행도 인지 실행(Progress-Aware Execution)</strong>: 시각 역학, 행동 청크(action chunk), 실행 진행도(progress)를 함께 예측하는 WAP(World-Action-Progress) 모델을 제시하고, MoT 기반 진행도 예측과 계획-관측 정합(plan-observation alignment)을 결합해 가변 길이 실행과 적응적 구간 전환을 가능하게 했다.</li>
+<li>RMBench에서 83.3%, 실제 로봇 과제에서 78.0%의 성공률을 달성하면서도, 과제 이력이 길어져도 실행기 추론 지연이 거의 일정하게 유지됨을 실험으로 입증했다.</li>
+</ol>
+<h2>방법론</h2>
+<p><strong>문제 정의</strong>: 언어 지시 l, 현재 고유수용감각 상태 st, 관측 시퀀스 f≤t가 주어졌을 때, 일반적인 기억 의존 정책은 π(at+1:t+h | f≤t, st, l) 형태로 행동 청크를 모델링한다. 핵심 난점은 행동 생성에 필요한 정보가 먼 과거 관측 f&lt;t에 있을 수 있다는 점이다.</p>
+<p><strong>구조화된 멀티모달 에피소드 컨텍스트</strong>: MaP-WAM은 매 프레임을 누적하는 대신, 완료된 각 구간(segment) i를 언어 지시 li와 해당 구간에서 균일하게 샘플링한 소수의 프레임(희소 시각 컨텍스트) Gi로 이루어진 레코드 Ci = {li, Gi}로 저장한다. 초기 관측은 G0 = f0으로 별도 저장된다. 이 구조화된 이력 C&lt;k가 다음 계획 수립의 근거가 된다.</p>
+<p><strong>기억 기반 언어-시각 계획</strong>: 계획 수립은 두 단계로 나뉜다. 먼저 VLM 기반 언어 플래너가 전역 지시, 완료된 구간 지시들, 핵심 프레임(초기 프레임과 각 완료 구간의 마지막 프레임)을 바탕으로 다음 구간의 언어 계획 lk를 예측한다(Qwen3.5-4B를 파인튜닝). 이어서 인과적 월드 모델(CWM, WAN-2.2-5B 기반, 블록-인과적 어텐션 마스크 사용)이 장기 시각 컨텍스트 G&lt;k와 언어 계획 lk, 전역 지시 l을 조건으로 플로우 매칭(flow matching) 목적함수를 통해 시각 계획 Gk를 생성한다. 완료된 구간의 증거는 정적이고 캐시 가능한 프리픽스로 취급되어 추론 효율을 높인다.</p>
+<p><strong>World-Action-Progress(WAP) 모델</strong>: 계획을 실제로 실행하는 데 필요한 스텝 수는 사전에 알 수 없다. 이를 위해 각 학습 구간에 정규화된 진행도 pt = (t−i)/(j−i)를 부여하고, 사전학습된 비디오 DiT에 행동(action) 및 진행도(progress) 전문가(expert)를 추가한 Mixture-of-Transformers(MoT) 구조의 WAP 모델을 구성한다. WAP은 시각 계획을 고정된 클린 프리픽스로, 현재 관측을 클린 상태 토큰으로 인코딩하고, 미래 시각 잠재값·행동·진행도에 대해 노이즈 예측 타깃을 추가한다. 구조화된 어텐션 마스크로 계획 프리픽스는 동적 토큰과 독립적으로 유지되어 구간 실행 내내 캐시할 수 있다. 학습은 시각·행동·진행도 세 갈래에 대한 플로우 매칭 손실의 가중합으로 이루어진다.</p>
+<p><strong>계획-관측 정합을 통한 진행도 보정</strong>: 배포 시에는 실제 진행도를 알 수 없으므로 WAP이 예측한 진행도를 재귀적으로 사용하는데, 이는 긴 실행 구간에서 오차가 누적되는 문제를 낳는다. 이를 보완하기 위해, 현재 진행도 추정치 근방의 시각 계획 프레임들을 검색해 실행 후 관측과 가장 유사한 프레임을 찾고, 그 프레임의 진행도 인덱스로 현재 진행도를 보정한다.</p>
+<p><strong>진행도 기반 구간 전환</strong>: 최근 행동들에 대한 평균 예측 진행도가 임계값(τ=0.95)을 넘으면 현재 구간이 완료되었다고 판단해 실행을 종료하고, 실제 실행 관측을 희소하게 재샘플링해 에피소드 컨텍스트에 추가한 뒤 다음 구간에 대한 계획 수립을 다시 호출한다(생성된 시각 계획이 아닌 실제 관측으로 컨텍스트를 갱신함으로써 기억이 실제 경험에 그라운딩되도록 유지).</p>
+<h2>실험 설정 및 결과</h2>
+<p><strong>시뮬레이션(RMBench)</strong>: 장기 기억 의존 조작을 요구하는 벤치마크인 RMBench에서, 하나의 과거 관측만 필요한 M(1) 과제 5개와 여러 과거 관측이 필요한 M(n) 과제 4개를 대상으로 과제당 50개의 전문가 시연으로 학습하고 100회 평가를 수행했다. MaP-WAM은 DP, π0.5, X-VLA, Mem-0, WLA-0, LingBot-VA 등 대표 베이스라인 대비 전체 평균 83.3%의 성공률로 최고 성능을 기록했다(예: 기존 최고 baseline 대비 Battery Try 41%→82%, Observe and Pick Up 9%→19%). 특히 정밀한 초기 물체 위치 기억이 필요한 Swap T와 시각적으로 유사하지만 의미적으로 다른 상태를 구별해야 하는 Press Button에서 96%의 성공률을 보였다.</p>
+<p><strong>실제 로봇 실험</strong>: 7자유도 Franka Research 3 로봇으로 Find Button(가려진 버튼 중 이전에 관찰한 색의 버튼을 찾는 과제)과 Press Buttons(화면에 표시된 두 숫자만큼 좌우 버튼을 누른 뒤 확인 버튼을 누르는 과제)를 수행했으며, 각 과제당 50회 시연으로 학습해 각각 88%, 68%의 성공률(50회 시행 기준)을 달성했다. 비교 대상인 π0.5, FastWAM 계열 베이스라인은 Find Button에서는 무작위 선택 수준의 성공률만 보였고 더 어려운 Press Buttons에서는 실패했다.</p>
+<p><strong>분석</strong>: (1) 시각 계획을 없애거나(w/o visual plan) 장기 기억 대신 현재 관측만으로 조건화한(w/o visual memory) 변형과 비교한 결과, 두 변형 모두 Observe and Pick Up과 Swap T에서 성능이 크게 떨어져(예: Swap T 96%→14%/13%) 장기 시각 기억에 근거한 계획 생성의 중요성을 확인했다. (2) 진행도 모델링에 대한 절제 실험에서는 이진 완료 분류로 대체한 경우, 진행도 조건을 제거한 경우, 진행도 보정을 비활성화한 경우 모두 성능이 하락했으며 특히 시각적으로 유사한 상태가 반복되는 Press Button 과제와 실행이 긴 Blocks Ranking Try 과제에서 각각 진행도 조건과 보정의 효과가 두드러졌다. (3) 추론 효율성 측면에서, 완전한 프레임 이력을 조건으로 쓰는 Full Context 실행기는 이력이 늘어날수록(1,500프레임에서 제로-이력 대비 약 4배, 1,700프레임에서는 80GB 이상의 GPU 메모리로 OOM) 지연이 급증한 반면, MaP-WAM의 WAP 실행기는 동일 범위에서 약 827ms로 거의 일정한 지연을 유지했다.</p>
+<h2>한계점</h2>
+<ul>
+<li>현재 방법은 기존 벤치마크에 이미 존재하는 구간(segment) 구조에 의존해 기억과 진행도를 조직화하므로, 구간이 나뉘어 있지 않은 시연 데이터에 대해서는 자동 구간 분할(segment discovery) 메커니즘이 추가로 필요하다.</li>
+<li>계획-관측 정합(plan-observation alignment)은 가볍고 학습이 필요 없는 매칭 지표를 사용하는데, 시각적으로 복잡한 장면에서는 학습된 유사도 척도가 보정 강건성을 더 높일 수 있다고 저자들은 지적한다.</li>
+</ul>
+<h2>시사점</h2>
+<p>이 연구는 로봇 조작에서 "기억"을 매 스텝 반복적으로 참조해야 하는 원시 데이터가 아니라, 계획 수립 시점에서 한 번 활용하고 나면 압축된 형태로 실행기에 전달할 수 있는 자원으로 재정의함으로써, 장기 기억 활용과 실행 효율성 사이의 근본적인 트레이드오프를 구조적으로 해소할 수 있음을 보여준다. 특히 진행도를 사후 검증 신호가 아니라 행동과 함께 생성되는 1급 모달리티로 다룸으로써, 계획의 실행 기간이 가변적인 실세계 과제에서도 닫힌 루프의 적응적 전환이 가능함을 입증했다. 이러한 "계획으로서의 기억" 접근은 로봇 조작뿐 아니라, 장기 컨텍스트를 다뤄야 하는 다른 구현체(embodied) 에이전트 설계 전반에도 적용 가능한 일반적 아키텍처 원칙을 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.11561" target="_blank" rel="noopener">huggingface.co/papers/2609.11561</a> · 2026-09-12</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

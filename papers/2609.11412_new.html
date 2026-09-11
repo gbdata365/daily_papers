@@ -1,0 +1,135 @@
+<meta charset="UTF-8">
+<title>X-AuT</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#6 · Daily Papers 2026-09-12</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 13</span>
+    </div>
+    <h1 class="article-title">X-AuT: Progressive Audio-Encoder Compression for Speech LLMs with Cross-Scale Distillation</h1>
+    <p class="article-title-ko">X-AuT: 교차 스케일 증류를 통한 음성 LLM 오디오 인코더의 점진적 압축</p>
+    <p class="article-sub">음성 LLM(Qwen3-ASR)의 오디오 인코더 레이어를 단계적으로 제거하면서, 더 큰 교사 모델의 교차 스케일(cross-scale) 지식 증류와 3단계 복구 학습으로 성능 손실을 최소화하는 후처리(post-training) 압축 프레임워크를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.11412" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.11412" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: X-AuT: Progressive Audio-Encoder Compression for Speech LLMs with Cross-Scale Distillation</li>
+<li><strong>저자</strong>: Haojun Zhang, Yi Zou(교신저자), Min Chen, Qize Yu, Lianrui Fan, Xini Ding, Hao Li, Shuchang Zhou, Xianming Liu, Shiyu Huang(프로젝트 리더) 등 (XPeng Inc.)</li>
+<li><strong>출처</strong>: arXiv:2609.11412v1 [cs.SD] (2026년 9월 10일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://xpeng-ai.github.io/x-aut">https://xpeng-ai.github.io/x-aut</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.11412">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>음성 LLM(Qwen3-ASR)의 오디오 인코더 레이어를 단계적으로 제거하면서, 더 큰 교사 모델의 교차 스케일(cross-scale) 지식 증류와 3단계 복구 학습으로 성능 손실을 최소화하는 후처리(post-training) 압축 프레임워크를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>최신 음성 LLM은 깊은 오디오 인코더, 브리지(bridge) 모듈, 그리고 자기회귀 텍스트 디코더로 구성되는데, 오디오 인코더는 모든 입력 프레임을 처리해야 하므로 스트리밍·모바일·차량 탑재 환경에서 첫 토큰 지연시간(latency)에 큰 영향을 준다. 인코더의 깊이(레이어 수)를 줄이는 것은 구조를 규칙적으로 유지하면서 연산량을 줄일 수 있는 방법이지만, 사전학습된 오디오 인코더에서 완전한 트랜스포머 블록을 통째로 제거하면 디코더에 입력되는 오디오 임베딩이 크게 흔들려 조기 종료(premature EOS) 및 삭제(deletion) 오류가 발생하기 쉽다. 또한 어떤 레이어 조합을 제거해야 복구가 용이한지, 그리고 복구 과정에서 은닉 상태 불일치와 학생 모델 자신의 디코딩 이력에서 비롯되는 오류를 어떻게 함께 다뤄야 하는지가 기존 연구에서 충분히 다뤄지지 않았다는 문제의식에서 출발한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>행동 기반 후보 스크리닝(짧은 프로브), 교차 스케일 은닉 상태·로짓 지도, 스케줄링된 학생-정책(student-policy) 학습, LoRA 파인튜닝을 결합한 점진적 복구 프레임워크(X-AuT)를 제안했다.</li>
+<li>동일한 학습 레시피 하에서 자기증류(self-distillation, 0.6B 자기 자신을 교사로 사용) 대비 1.7B 교사를 사용한 교차 스케일 증류가 평균 오류율을 8.45%에서 5.55%로 크게 낮춘다는 것을 실험적으로 보였다.</li>
+<li>레이어 쌍(pair) 단위 프로브를 통해 개별적으로 가장 좋은 두 레이어({6,8})를 함께 제거하는 것이 반드시 최선이 아니며, {5,6} 조합이 {6,8} 조합보다 복구 후 0.85%p 더 우수함을 확인해 레이어 간 비가산적(non-additive) 상호작용을 드러냈다.</li>
+<li>18→14 레이어로 압축한 최종 모델이 기준 모델(5.61%) 대비 5.75%의 매크로 오류율을 달성하면서 오디오 타워 파라미터를 20.7% 줄였고, 차량용 가속기에서 인코더 지연시간을 21.4%, H800 GPU에서 11.4% 단축했다.</li>
+</ul>
+<h2>방법론</h2>
+<p>X-AuT는 Qwen3-ASR-0.6B(18층 오디오 트랜스포머)를 학생 모델로, Qwen3-ASR-1.7B(24층, 은닉 차원 2048)를 교사 모델로 사용한다. 전체 파이프라인은 다음 단계로 구성된다.</p>
+<ol>
+<li><strong>전사(transcript) 일관성 필터링</strong>: 정답 전사와 두 개의 외부 ASR 시스템이 만든 가설을 비교해 최대 쌍별 편집률(emax)과 일치도에 따라 9단계 등급(Tier)을 부여한다. 실험에서는 가장 신뢰도가 높은 Tier 1 데이터만 증류에 사용하고, 3단계(Stage 2)에서는 동일한 Tier를 유지하되 목표 도메인(차량 내 음성 등) 비중을 재조정한다.</li>
+<li><strong>행동 기반 점진적 프루닝</strong>: 18→16→14층으로 2회에 걸쳐 레이어를 제거한다. 매 단계마다 단일 레이어 제거 후보와 인접/비인접 레이어 쌍 후보를 동일한 0.3 에폭 LoRA 워밍업 조건에서 짧게 학습시켜, 5개 검증 벤치마크의 집계 텍스트 오류율(TER)이 가장 낮은 조합을 선택한다. 1차 홉은 {1,18}층을 제거하고, 2차 홉은 프로브 결과에 따라 {5,6}층을 제거한다.</li>
+<li><strong>3단계 복구 학습</strong>: 각 프루닝 홉마다 동일한 절차를 적용한다.</li>
+<li>Stage 0(표현 정렬, 전체의 5%): 중간층·브리지·로짓·전사(CE) 손실을 결합해 학습한다. 교사의 레이어를 학생 레이어 수만큼 균등하게 그룹화해 대응시키고, 2048→1024 차원 차이를 학습 가능한 2계층 MLP(병목 256차원)로 투영한다.</li>
+<li>Stage 1(교차 스케일 증류, 나머지 95%): 기본적으로 정답 전사 기반(teacher-forced) 로짓 증류를 사용하되, 학습이 20% 진행된 이후부터는 5스텝마다 학생이 직접 생성한 프리픽스에 대해 교사와 학생의 상위-k(k=512) 분포를 비교하는 학생-정책(student-policy) 지도를 스케줄링한다. 퇴화된 롤아웃(너무 짧거나 반복적인 생성)은 필터링해 교사 강제 학습으로 되돌린다.</li>
+<li>Stage 2(LoRA 파인튜닝, 1 에폭): 목표 도메인 비중을 높인 데이터로 정답 전사 교차 엔트로피만을 사용해 오디오 인코더·브리지·디코더 LoRA를 미세조정하며, 이때 출력 임베딩(tied lm_head)은 동결한다.</li>
+</ol>
+<p>언어모델 디코더 본체는 항상 동결하고, q/k/v/o 어텐션에 부착한 rank-32 LoRA와 (일부 단계에서) 토큰 임베딩과 공유되는 출력 투영층만 학습 가능하게 둔다. 또한 조기 종료(EOS) 문제를 막기 위해 (1) 출력 임베딩을 학습 가능하게 두고, (2) 학생 생성 시 최소 3토큰 이상 생성하도록 강제하며, (3) 예산 초과·과도하게 길거나 반복적인 롤아웃을 걸러내는 3중 안전장치를 둔다.</p>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li><strong>데이터</strong>: AISHELL-1/4/5, CommonVoice, Emilia, GigaSpeech, KeSpeech, LibriSpeech, WenetSpeech, 차량 내 음성 등 공개·자체 데이터를 합쳐 필터링 전 28만 시간 이상 규모의 데이터 풀을 사용했다.</li>
+<li><strong>평가</strong>: AISHELL-1, Fleurs(zh/en), LibriSpeech(test-clean/other), THCHS-30, Tedlium, CommonVoice v15(zh/en), WenetSpeech-meeting 등 10개 공개 중국어·영어 벤치마크에서 CER/WER의 단순 평균(매크로 평균)으로 성능을 비교했다.</li>
+<li><strong>주요 결과</strong>: 16층 모델은 매크로 평균 오류율을 5.61%(기준 18층)에서 5.27%로 낮췄고(상대 개선 6.1%), 특히 CommonVoice zh/en과 WenetSpeech-meeting에서 큰 개선을 보였다. 14층 모델은 오디오 타워 파라미터를 186.4M에서 147.8M로 20.7% 줄이면서도 매크로 오류율 5.75%(기준 대비 +0.14%p)를 유지했다.</li>
+<li><strong>교사 스케일 비교</strong>: 동일한 학습 레시피에서 1.7B 교사를 사용한 경우 평균 오류율 5.55%로, 압축 전 0.6B 자기 자신을 교사로 쓴 자기증류(8.45%, 기준 대비 오히려 50.6% 악화)보다 모든 벤치마크에서 우수했다.</li>
+<li><strong>레이어 선택 프로브</strong>: 단일 레이어 제거 실험에서 L6(6.29%)·L5(6.42%)·L8(6.52%)이 가장 우수했으나, 이 중 가장 좋은 두 레이어를 묶은 {6,8} 쌍(7.78%)은 선택된 {5,6} 쌍(6.93%)보다 오히려 성능이 떨어져, 레이어 간 상호작용이 단순 가산적이지 않음을 보였다.</li>
+<li><strong>점진적 프루닝 대 직접 프루닝</strong>: 동일 레이어({1,18,5,6})를 제거하되 한 번에 18→14로 압축한 경우 매크로 오류율이 6.73%로, 단계적으로 압축한 경우(5.75%)보다 모든 벤치마크에서 열등했다.</li>
+<li><strong>효율성</strong>: 14층 모델은 차량용 가속기(PPU)에서 인코더 처리 시간을 21.4%, H800 GPU에서 11.4% 단축했다. 다만 디코더의 자기회귀 특성상 종단 간(end-to-end) 지연시간 개선폭은 각각 4.7%, 2.6%로 상대적으로 작았다.</li>
+</ul>
+<h2>한계점</h2>
+<ul>
+<li>모든 주요 결과가 시드 42의 단일 실행(single run)이며, 반복 시드나 발화 단위 신뢰구간, 유의성 검정을 수행하지 않았다. 14층 모델과 기준 모델 간 0.14%p 차이처럼 작은 차이는 통계적으로 해석하기 어렵다.</li>
+<li>체크포인트 선택에 발화 25개로 제한된 고정 검증 세트를 사용해 선택 잡음(selection noise)이 존재할 수 있다.</li>
+<li>Qwen3-ASR라는 하나의 모델 계열, 제한된 레이어 조합만을 다뤘으며, Whisper나 Qwen2-Audio 등 다른 음성-언어모델 구조에서도 동일한 경향이 나타날지는 검증되지 않았다.</li>
+<li>데이터 파이프라인은 9단계 일관성 등급을 지원하지만 실험에서는 Tier 1만 사용했고 Stage 2에서 소스 가중치만 바꿨을 뿐, 다른 등급 조합에 대한 체계적 실험은 없다.</li>
+<li>오디오 인코더만 압축했기 때문에 자기회귀 디코더가 종단 간 지연시간 개선을 제한하며, 하드웨어 측정도 반복 실행 없이 평균값만 보고했다.</li>
+</ul>
+<h2>시사점</h2>
+<p>사전학습된 음성 LLM의 오디오 인코더를 처음부터 다시 설계하지 않고도, 짧은 행동 기반 프로브로 "복구 가능한" 레이어 조합을 먼저 찾은 뒤 점진적으로 압축·복구하는 전략이 정적인 레이어 중요도 점수보다 실질적으로 더 안정적인 압축 경로를 제공함을 보여준다. 특히 더 큰 스케일의 교사 모델을 활용한 교차 스케일 증류가 동일 크기 자기증류보다 확연히 우수하다는 결과는, 온디바이스·차량 탑재형 음성 인식 시스템처럼 지연시간에 민감한 환경에서 대형 교사 모델의 지식을 경량 모델로 효율적으로 옮기는 실용적 레시피로 활용될 수 있음을 시사한다. 다만 저자들 스스로 밝히듯 단일 모델 계열·단일 시드 결과이므로, 이 접근을 다른 아키텍처나 더 큰 압축 폭에 일반화하려면 추가 검증이 필요하다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.11412" target="_blank" rel="noopener">huggingface.co/papers/2609.11412</a> · 2026-09-12</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

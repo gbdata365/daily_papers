@@ -1,0 +1,120 @@
+<meta charset="UTF-8">
+<title>IMO 금메달을 위한 오픈 레시피</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#12 · Daily Papers 2026-09-12</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 5</span>
+    </div>
+    <h1 class="article-title">An Open Recipe for IMO Gold: Training Nemotron for Olympiad Mathematics</h1>
+    <p class="article-title-ko">IMO 금메달을 위한 오픈 레시피: 올림피아드 수학을 위한 네모트론 훈련</p>
+    <p class="article-sub">NVIDIA 연구진은 오픈모델인 Nemotron 3 Ultra를 지도 미세조정(SFT)과 강화학습(RL)으로 후처리하고, 여러 체크포인트를 앙상블한 자연어 기반 생성-검증-수정(generate-verify-refine) 테스트타임 추론 파이프라인을 구축해, 형식 증명기나 외부 도구 없이 2026년 국제수학올림피아드(IMO)에서 42점 만점에 30점(금메달 컷 29점)을 달성했다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.10712" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.10712" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: An Open Recipe for IMO Gold: Training Nemotron for Olympiad Mathematics</li>
+<li><strong>저자</strong>: Ivan Moshkov, Stephen Ge, George Armstrong, Wei Du, Sadegh Mahdavi, Igor Gitman (NVIDIA)</li>
+<li><strong>출처</strong>: arXiv:2609.10712v1 [cs.AI] (2026년 9월 9일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음 (다만 Hugging Face 컬렉션 <code>nvidia/nemotron-labs-imo-2026</code> 및 GitHub 저장소 <code>NVIDIA-NeMo/Skills</code>, <code>NVIDIA-NeMo/RL</code>로 코드·데이터·체크포인트가 공개됨)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.10712">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>NVIDIA 연구진은 오픈모델인 Nemotron 3 Ultra를 지도 미세조정(SFT)과 강화학습(RL)으로 후처리하고, 여러 체크포인트를 앙상블한 자연어 기반 생성-검증-수정(generate-verify-refine) 테스트타임 추론 파이프라인을 구축해, 형식 증명기나 외부 도구 없이 2026년 국제수학올림피아드(IMO)에서 42점 만점에 30점(금메달 컷 29점)을 달성했다.</p>
+<h2>배경 및 문제의식</h2>
+<p>IMO는 AI의 수학 문제 해결 능력을 가늠하는 상징적인 무대로 자리잡았다. 2024년에는 AlphaProof·AlphaGeometry 2와 같은 신경-기호(neuro-symbolic) 결합 시스템이 은메달 수준에 도달했고, 2025년에는 Gemini Deep Think와 OpenAI의 실험적 모델이 형식 증명기 없이 자연어만으로 금메달 수준을 달성했다. 그러나 이러한 최상위 성과들은 대부분 비공개(closed) 모델과 비공개 파이프라인으로 이루어져 재현이 어려웠다. 이 논문은 후처리(post-training)와 테스트타임 추론 설계 선택이 자연어 증명 생성 성능에 어떤 영향을 미치는지 체계적으로 연구하고, 그 결과물을 가중치·데이터·코드까지 전부 공개해 재현 가능한 오픈 레시피를 제공하는 것을 목표로 한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>Nemotron 3 Ultra를 기반으로 SFT와 RL 두 가지 전문화된 체크포인트를 학습하고, 체크포인트 선택·검증·수정 전략이 증명 성능에 미치는 영향을 실험적으로 분석.</li>
+<li>두 후처리 체크포인트, 학습 데이터, 학습/추론 코드, IMO 2026 제출 증명을 모두 공개.</li>
+<li>200개의 새로운(미공개) 올림피아드 수준 문제로 구성된 벤치마크 Nemotron-IMO-Bench와 30문제 개발셋을 공개.</li>
+<li>IMO 2026 대회 실행에 소요된 GPU 시간·토큰 수 등 컴퓨팅 자원 사용량을 상세히 보고.</li>
+<li>형식 증명기나 외부 도구 없이 순수 자연어만으로 작동하는 시스템으로 IMO 2026에서 30/42점(금메달)을 공식 획득.</li>
+</ul>
+<h2>방법론</h2>
+<p><strong>후처리(Post-training).</strong> 먼저 DeepSeek-V4-Pro(최대 40만 토큰 생성)로 증명·수정·검증·메타검증 궤적을 대규모로 생성하고 품질 필터링해 약 41만 건(고유 문제 약 1만 5,800개)의 SFT 코퍼스를 구축했다. 이 데이터로 512개의 GB200 GPU를 사용해 Nemotron-3-Ultra-SFT를 학습했으며, IMO-ProofBench 등에서의 평가 성능을 기준으로 체크포인트를 선정했다. 별도로 Nemotron-3-Ultra-GA에서 시작해, DeepSeekMath-V2 스타일의 보상 설계(자기분석 보상은 제거)와 PipelineRL 유사 비동기 RL 알고리즘을 이용해 Nemotron-3-Ultra-RL을 학습했다(9,597개 문제, 128프롬프트×16궤적의 배치).</p>
+<p><strong>제출 파이프라인.</strong> DeepSeekMath-V2에서 영감을 받은 반복적 생성-검증-수정 절차를 사용한다. 1단계 고연산 탐색에서는 GA·RL·SFT 세 체크포인트가 앙상블로 후보 증명을 생성(1라운드에 384개 시도, 서로 다른 풀이 전략을 유도하는 8가지 프롬프트 사용)하고, RL과 SFT 체크포인트가 각각 8회씩 총 16회의 독립 판정을 내려 모든 판정이 만점(1점)일 때만 증명을 "수용"한다. 수용된 증명이 없으면 상위 후보들을 검증자 피드백과 함께 다시 수정(refine)하는 라운드를 최대 8회 반복한다. 2단계에서는 최종 후보들에 대해 훨씬 큰 판정 예산(Nemotron 패널 48회 판정)을 투입해 최종 제출 증명을 선정한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>개발셋(30문제, Nemotron-IMO-Bench 20문제 + 최신 대회 10문제)에서 단일 체크포인트 파이프라인을 비교한 결과, SFT와 RL 두 후처리 체크포인트가 기본 GA 모델보다 우수했으며 SFT는 초반 라운드에서, RL은 전체적으로 가장 좋은 성능을 보였다. 검증자 성능 분석에서는 GA가 관대해 오탐(false accept)이 많고, SFT가 가장 엄격해 정밀하지만 누락(false reject)이 많았으며, 실제 채택된 "RL+SFT 16/16 만장일치" 규칙이 오탐률을 가장 낮게 유지했다. 라운드1 예산을 한 체크포인트에 몰아주기보다 여러 체크포인트에 분산할 때(RL+SFT 조합) 더 많은 문제를 해결했다. 전체 앙상블 파이프라인은 모든 단일 체크포인트 파이프라인보다 우수했다.</p>
+<p>실제 IMO 2026 대회에서는 문제 1·2·4·5에서 만점(7/7), 문제 3·6에서 각 1점을 받아 총 30/42점(금메달 기준 29점)을 획득했다. 제출된 6개 증명은 약 7억 700만 토큰, 1,464 GPU시간 만에 모두 확보되었으며, 진행 중이던 탐색까지 마치면 총 약 23억 1,000만 토큰, 4,800 GPU시간이 소요됐다. 대회 종료 후 추가로 탐색을 이어간 결과, 문제 6에 대해 더 나은 증명(비공식 채점 4/7점)을 8시간 25분 만에 찾아 총점이 33점까지 오를 수 있음을 보였다(비공식 결과). 교차-증명 맥락 공유, 영점 우선 순위화, 다중 증명 통합 수정, 트리아지(triage) 기반 라우팅 등 여러 대안 기법도 시도했으나 최종 성능 향상으로 이어지지 않아 채택하지 않았다.</p>
+<h2>한계점</h2>
+<ul>
+<li>검증자(자체 모델 기반 평가자)가 공식 채점과 다른 판단을 내리는 "공유된 맹점"이 존재한다. 예컨대 내부 검증자와 독립 모델 배심원 모두 문제 3·6에 대해 실제보다 높은 점수를 줬는데, 이는 공식 인간 채점자와 어긋났다.</li>
+<li>대회 규모 시스템 실행 비용이 매우 커서(수천 GPU시간) 전체 파이프라인 재현·반복 실험이 어렵고, 대부분의 모델 개선 실험은 30문제 소규모 개발셋에서만 검증됨.</li>
+<li>트리아지 라우팅처럼 검증 비용을 줄이는 시도는 실제로 정답으로 이어질 수 있었던 후보를 조기에 폐기하는 부작용을 보였다.</li>
+<li>검증자 오류(위양성)가 발생하면 이후 단계에서 되돌릴 방법이 없어, 검증 실패가 곧 해당 문제의 최종 실패로 직결되는 구조적 취약점이 있다.</li>
+</ul>
+<h2>시사점</h2>
+<p>단순히 증명 생성 규모(샘플 수)를 키우는 것만으로는 충분하지 않으며, 서로 다른 방식으로 후처리된 상호보완적 체크포인트를 앙상블하고, 검증 기반으로 유망한 후보를 라운드 간에 보존하며, 최종 선정 단계에 충분한 연산을 투입하는 것이 실질적 성능 향상의 핵심 요인임을 보여준다. 또한 형식 증명기나 외부 도구 없이 오픈 가중치 모델만으로 IMO 금메달 수준을 달성할 수 있음을 입증했으며, 체크포인트·데이터·코드·벤치마크를 전면 공개함으로써 향후 자연어 수학 추론 연구의 재현 가능한 기준점을 제공한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.10712" target="_blank" rel="noopener">huggingface.co/papers/2609.10712</a> · 2026-09-12</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

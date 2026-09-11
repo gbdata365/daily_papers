@@ -1,0 +1,127 @@
+<meta charset="UTF-8">
+<title>FreeFlow</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#10 · Daily Papers 2026-09-12</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 5</span>
+    </div>
+    <h1 class="article-title">FreeFlow: A Bias-free Hierarchical Transformer for Optical Flow Estimation</h1>
+    <p class="article-title-ko">FreeFlow: 옵티컬 플로우 추정을 위한 편향 없는 계층적 트랜스포머</p>
+    <p class="article-sub">상관 볼륨, 워핑, 반복적 정제 같은 옵티컬 플로우 전용 설계 요소를 전혀 사용하지 않고, 단일 피드포워드 인코더-디코더 트랜스포머만으로 Sintel·KITTI-2015·Spring 벤치마크에서 최고 성능을 달성한 "편향 없는(bias-free)" 계층적 트랜스포머 FreeFlow를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.11486" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.11486" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: FreeFlow: A Bias-free Hierarchical Transformer for Optical Flow Estimation</li>
+<li><strong>저자</strong>: Vladislav Bargatin, Alexander Yakovenko, Khaled Abud, Dmitriy Vatolin (모스크바 국립대학교(Lomonosov MSU) AI Center / MSU Institute for Artificial Intelligence)</li>
+<li><strong>출처</strong>: arXiv:2609.11486v1 [cs.CV] (2026-09-10)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/msu-video-group/freeflow">GitHub</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.11486">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>상관 볼륨, 워핑, 반복적 정제 같은 옵티컬 플로우 전용 설계 요소를 전혀 사용하지 않고, 단일 피드포워드 인코더-디코더 트랜스포머만으로 Sintel·KITTI-2015·Spring 벤치마크에서 최고 성능을 달성한 "편향 없는(bias-free)" 계층적 트랜스포머 FreeFlow를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>옵티컬 플로우(두 프레임 간 픽셀 단위 모션 추정)는 초기에는 변분 최적화 기반으로 다뤄졌고, 딥러닝이 도입되면서 FlowNet처럼 단순한 피드포워드 회귀로 단순화되는 듯했다. 그러나 이후 PWC-Net의 피라미드·워핑·지역 상관 볼륨, RAFT의 전역 상관 볼륨 기반 반복 정제와 convex upsampling 등 옵티컬 플로우 특화 귀납적 편향(inductive bias)들이 다시 도입되면서, 정확도는 높아졌지만 파이프라인이 복잡해지고 다른 태스크로의 확장이나 수정이 어려워졌다.</p>
+<p>한편 비전 트랜스포머는 검출, 분할, 깊이 추정, 3D 태스크 등에서 특수 목적 파이프라인을 대체하며 일반화된 피드포워드 모델이 스케일과 supervision만으로 필요한 구조를 학습할 수 있음을 보여주고 있다. 저자들은 이러한 흐름을 옵티컬 플로우에도 적용해 "플로우 특화 구성요소 없이도 최고 수준의 성능을 낼 수 있는가?"라는 질문을 던진다. CroCo, WAFT, GeoViT 등 기존의 트랜스포머 기반 시도들도 여전히 워핑, 반복 처리, 저해상도 학습, 고해상도 처리 시 타일링 등 일부 편향이나 실용적 한계를 갖고 있었다는 점이 이 논문의 출발점이다.</p>
+<h2>핵심 기여</h2>
+<p>논문이 제시하는 기여는 세 가지로 요약된다.
+1. <strong>편향 없는 옵티컬 플로우 트랜스포머</strong>: 명시적 상관/코스트 볼륨, 워핑 기반 업데이트, 특수 업샘플링 등을 전혀 사용하지 않는, 엔드투엔드로 학습되는 단일 아키텍처 FreeFlow를 제안.
+2. <strong>고해상도 처리를 위한 계층적 지역-전역 특징 상호작용</strong>: 지역 처리와 장거리 정보 흐름을 반복적으로 결합하는 타일 기반 트랜스포머 설계로, 고해상도에서도 세밀한 구조와 큰 변위를 동시에 잘 잡아낸다.
+3. <strong>벤치마크 전반의 최고 성능</strong>: Sintel, KITTI-2015, Spring에서 state-of-the-art를 달성하면서도 메모리 효율적이고 모델 크기 축소에도 잘 견디는 확장성을 보인다.</p>
+<h2>방법론</h2>
+<p>FreeFlow는 CroCo/DUSt3R/MASt3R 계열의 시아미즈(Siamese) ViT 인코더-디코더 구조를 기반으로 한다. 두 입력 이미지를 각각 8×8 패치로 토큰화한 뒤, 가중치를 공유하는 인코더로 특징 F1, F2를 추출하고, 디코더에서 자기-어텐션과 두 뷰 간 교차-어텐션을 반복해 "플로우 토큰"을 생성한 뒤 경량 예측 헤드로 조밀한 플로우 필드를 출력한다.</p>
+<p>핵심은 세 가지 어텐션 블록을 고정된 순서(Window → Shifted-Window → Global)로 반복 적용하는 계층적 어텐션 설계이다.
+- <strong>Window Attention</strong>: 토큰 맵을 4×4 격자(16개 겹치지 않는 윈도우)로 나눠 윈도우 내부에서만 지역적으로 어텐션을 계산.
+- <strong>Shifted-Window Attention</strong>: 윈도우를 절반만큼 이동시켜 재분할함으로써 윈도우(타일) 경계 간 정보 교환을 가능하게 함(Swin Transformer 아이디어 차용).
+- <strong>Global Attention</strong>: 2배 다운샘플링 후 축소된 해상도에서 전역 어텐션을 수행하고 다시 업샘플링해 계산 비용을 억제하면서도 장거리 문맥을 반영.</p>
+<p>기존의 "타일별 예측 후 평균(no feature fusion)"이나 DepthPro류의 "늦은 특징 융합(late feature fusion)" 방식과 달리, FreeFlow는 네트워크 전체에 걸쳐 타일 간 정보 교환을 반복함으로써(dense feature fusion) 타일 경계 아티팩트와 장거리 정보 손실 문제를 동시에 해결한다. 또한 해상도 적응형 어텐션 스케일링(로그 스케일 팩터)을 적용해 학습 시보다 높은 해상도에서 추론할 때의 일반화를 개선했으며, 토큰 위치 정보에는 RoPE(Rotary Positional Embedding)를 사용한다.</p>
+<p>예측 헤드는 반복적 정제나 convex upsampling, DPT류의 다층 특징 집계 없이, 단순한 3층 합성곱(3×3 conv → 1×1 conv → transposed conv)만으로 최종 디코더 특징에서 곧바로 플로우와 불확실도(5채널: 플로우 2채널 + SEA-RAFT 방식의 Mixture-of-Laplace 손실용 불확실도 파라미터 3채널)를 예측한다.</p>
+<p>학습은 CroCo 스타일의 cross-view completion 사전학습(ARKitScenes, MegaDepth, 3DStreetView 약 370만 쌍, 마스킹 비율 0.95) 후, MEMFOF에서 영감을 받은 2배 업샘플링과 TartanAir/Things/Sintel/KITTI/HD1K 혼합 데이터셋(TaTSKH)으로 파인튜닝하는 2단계 구조를 따른다. 가변 해상도(고정 토큰 예산) 크롭을 사용해 다양한 모션 범위를 학습시키며, 벤치마크 제출 시에는 각 데이터셋에 추가 파인튜닝을 수행한다. 최대 모델 기준 사전학습에 4~5일, 파인튜닝에 약 3일(32 GPU)이 소요된다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>S/M/L 세 가지 크기의 FreeFlow 변형을 학습해 Spring, Sintel, KITTI-2015 벤치마크에서 평가했다.
+- <strong>Spring</strong>: FreeFlow-L이 1px(3.192), EPE(0.278) 등에서 최고 성능을 기록했고, WAFT-DAv2-a2 대비 EPE 9%, Fl-all 14% 개선. 동시에 1080p 추론에서 타일링 없이도 낮은 메모리 사용량(약 2.58GB)을 유지해 정확도-메모리 트레이드오프에서 우수함을 보였다.
+- <strong>Sintel</strong>: FreeFlow-L이 Clean 0.68 / Final 1.48 EPE로 1위를 기록, 기존 최고인 GeoViT(Clean 0.79) 대비 14%, VideoFlow-MOF(Final 1.65) 대비 10% 개선. FreeFlow-M도 매우 경쟁력 있는 성능을 보였다.
+- <strong>KITTI-2015</strong>: FreeFlow-L이 Fl-all 3.23으로 대부분의 2-프레임 방법을 능가(멀티프레임 방법 일부는 여전히 근소하게 앞섬).
+- <strong>Ablation</strong>: 어텐션 서브블록 조합과 사전학습 마스킹 비율의 상호작용을 분석한 결과, Shifted-Window 어텐션은 일관되게 성능에 기여했고, Global 어텐션은 높은 마스킹 비율(0.95)에서 특히 중요했다(정량 지표 변화는 작아도 정성적으로는 모션 일관성에 뚜렷한 영향). 모델 스케일링 실험에서는 파라미터 수를 늘릴수록 예측 가능한 방식으로 정확도가 꾸준히 향상되었으며, 작은 모델(S)도 강건한 성능을 유지했다.
+- <strong>Zero-shot 전이</strong>: TartanAir+Things만으로 파인튜닝한 뒤 Sintel/KITTI에 제로샷 평가한 결과, 모델 크기가 커진다고 항상 단조롭게 성능이 좋아지지는 않았으며, 이는 편향 없는 모델이 학습 데이터의 모션·외형 다양성에 더 민감하기 때문으로 해석된다(대규모 비디오 데이터로 사전학습한 GeoViT가 제로샷에서는 더 강함).</p>
+<h2>한계점</h2>
+<p>논문에 별도의 "Limitations" 절은 없으나 본문에서 다음과 같은 한계가 논의된다.
+- 제로샷(도메인 외) 전이 성능이 모델 크기에 비례해 단조롭게 향상되지 않으며, 편향이 없는 만큼 학습 데이터의 모션·외형 다양성에 크게 의존한다.
+- 대형 비디오 데이터셋(Kinetics-400 등)으로 사전학습한 GeoViT 대비 제로샷 일반화에서는 열세를 보인다.
+- Late Feature Fusion(DepthPro류) 방식과 비교 실험(CroCo-Pro)에서 확인했듯, 특징 융합이 늦게 이뤄지는 아키텍처는 전역 일관성이 떨어지는데, 이는 FreeFlow의 설계가 해결한 문제이지만 동시에 계층 전반의 반복적 특징 교환이 필요하다는 것은 곧 아키텍처 유연성이 이 교환 구조에 강하게 결부되어 있다는 뜻이기도 하다.
+- 학습에 대규모 데이터(사전학습 약 370만 쌍)와 다단계 파인튜닝(최대 모델 기준 GPU-day 규모의 계산 자원)이 필요하다.</p>
+<h2>시사점</h2>
+<p>이 연구는 옵티컬 플로우처럼 오랫동안 상관 볼륨, 워핑, 반복적 정제 같은 태스크 특화 귀납적 편향이 필수로 여겨졌던 분야에서도, 충분한 스케일과 지도학습 신호가 주어지면 일반적인 계층적 트랜스포머만으로 최고 수준의 정확도를 달성할 수 있음을 보여준다. 이는 비전 트랜스포머가 검출·분할·깊이 추정 등 다른 밀집 예측(dense prediction) 태스크에서 특수 파이프라인을 대체해 온 흐름이 모션 추정에도 확장될 수 있음을 시사하며, 향후 스테레오 매칭, 장면 흐름(scene flow) 등 관련 대응(correspondence) 문제에도 더 단순하고 범용적인 아키텍처를 적용하는 연구를 촉진할 잠재력이 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.11486" target="_blank" rel="noopener">huggingface.co/papers/2609.11486</a> · 2026-09-12</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

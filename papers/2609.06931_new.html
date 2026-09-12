@@ -1,0 +1,107 @@
+<meta charset="UTF-8">
+<title>CARDEA</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#9 · Daily Papers 2026-09-13</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 13</span>
+    </div>
+    <h1 class="article-title">CARDEA: Auditable Reasoning Grounded in Spatial Evidence for End-to-End Coronary Angiography Interpretation</h1>
+    <p class="article-title-ko">CARDEA: 종단간 관상동맥조영술 판독을 위한 공간적 근거 기반 감사가능 추론</p>
+    <p class="article-sub">관상동맥조영술(CAG) 판독을 위한 통합 대형 시각언어모델 CARDEA를 개발해, 진단 결론을 이미지 내 구체적 위치(바운딩박스)와 연결하는 "체인-오브-박스(CoB)" 추론으로 임상의가 판단 근거를 검증할 수 있게 했으며, 검증 가능 보상 강화학습(RLVR)이 지도학습으로는 얻지 못한 개방형 보고서 생성 능력을 이끌어냈다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.06931" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.06931" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: CARDEA: Auditable Reasoning Grounded in Spatial Evidence for End-to-End Coronary Angiography Interpretation</li>
+<li><strong>저자</strong>: Jia-Jen Lee, Shih-Yen Hou, Kee Koon Ng, Wei-Chun Wang, Shih-Sheng Chang (중국의약대학병원, 대만)</li>
+<li><strong>출처</strong>: arXiv:2609.06931v1 [cs.CV] (2026-09-07)</li>
+<li><strong>프로젝트 페이지</strong>: 모델 https://huggingface.co/benbayibaurba/cardea-v0 / 코드 https://github.com/benbayibaurba/cardea</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.06931">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>관상동맥조영술(CAG) 판독을 위한 통합 대형 시각언어모델 CARDEA를 개발해, 진단 결론을 이미지 내 구체적 위치(바운딩박스)와 연결하는 "체인-오브-박스(CoB)" 추론으로 임상의가 판단 근거를 검증할 수 있게 했으며, 검증 가능 보상 강화학습(RLVR)이 지도학습으로는 얻지 못한 개방형 보고서 생성 능력을 이끌어냈다.</p>
+<h2>배경 및 문제의식</h2>
+<p>침습적 관상동맥조영술은 관상동맥질환 진단의 표준 검사이지만, 3차원 혈관 구조를 2차원으로 투영하는 과정에서 왜곡이 발생하고 판독자 간 일치도도 낮다(세 명의 전문의 간 77.4% 일치). 기존 AI 시스템은 일관성을 높일 수 있지만, 판별적(폐쇄형) 결과만 출력하거나, 개방형 소견을 생성하더라도 그 근거를 이미지 내 위치와 연결하지 못해 임상의가 결론의 타당성을 검증하기 어렵다는 근본적 공백이 있었다.</p>
+<h2>핵심 기여</h2>
+<p>1) 원본 다중뷰 조영 영상부터 키프레임 선택, 연구(study) 수준 진단까지 전체 파이프라인을 하나의 통합 시각언어모델로 처리하면서, 각 결론을 이미지 내 근거(바운딩박스)와 연결하는 감사 가능한 추론(CoB)을 구현했다. 2) 공개 데이터셋과 폐쇄형(closed-ended) 과제만으로 시각 특징 정렬, 자기증류 기반 CoB 콜드스타트, 검증 가능 보상 강화학습(RLVR) 3단계 학습을 설계했다. 3) 보고서 생성처럼 훈련에서 완전히 배제된 개방형 과제가 RLVR 단계를 거친 후에야 향상된다는 것을 발견해, 정책 최적화가 지도 모방으로는 드러나지 않는 능력을 표면화할 수 있음을 보였다.</p>
+<h2>방법론</h2>
+<p>CARDEA는 Qwen3-VL-30B-A3B-Thinking을 기반으로 2단계 지도미세조정(SFT)과 RLVR을 거친다. 1단계는 ARCADE 데이터셋으로 혈관·협착 탐지 등 단일 뷰 과제에 대한 바운딩박스 예측을 학습해 CAG 도메인에 정렬시킨다. 2단계는 미조정 기반 모델을 교사로 삼아, 1단계 모델이 생성한 박스와 텍스트로 된 우세성 판단 가이드를 조합해 CoB 추론 흔적을 자기증류로 합성하고(정답과 일치하는 궤적만 유지), 이를 생성적 미세조정에 사용한다. 3단계 RLVR은 연구 수준 과제(우세성 분류, 복잡도 평가)에서 정답이 맞을 때만 CoB 사용에 추가 보상을 부여하는 조건부 보상을 적용한다. 보고서 생성처럼 규칙 기반 검증기가 없는 개방형 과제는 보상 해킹 위험 때문에 RLVR에서 의도적으로 제외했다. 추론 시에는 1차 패스(키프레임 선택+뷰 분류)로 비진단적 프레임을 걸러내고, 2차 패스에서 선별된 다중뷰 키프레임에 대해 CoB 추론을 수행해 최종 진단을 내리는 2단계 파이프라인으로 동작한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>학습된 폐쇄형 과제에서 CARDEA는 전용 모델들과 경쟁력 있는 성능을 보였다: 협착 탐지 F1@IoU≥0.5 0.37(DCA-YOLOv8 0.36), 혈관 탐지 0.50(DeepCoro 알고리즘4 0.47), 뷰 분류 MacroF1 0.99. 연구 수준에서는 우세성 분류가 분포 내(Real Distribution)에서는 전용 분류기(정확도 0.97)에 못 미쳤지만(0.94), 도메인 시프트(다른 장비) 조건에서는 대등했다(0.91 vs 0.89). 복잡도 평가에서는 두 명의 인터벤션 심장전문의(정확도 0.90, 0.88)와 대등한 정확도(0.90)를 보였다. 완전히 별도로 보유된 외부 코호트 AngioCAD에서의 제로샷 평가에서는 RCA 협착 분류에서 기존 기준선(F1 0.81)을 능가했다(0.85). 가장 주목할 발견은 보고서 생성 성능의 단계별 변화다: 미조정 기반 모델의 혈관-중증도 매크로F1(VS-F1)은 0.513이었으나, 두 지도학습 단계를 거치며 오히려 하락했고(1단계 0.452, 2단계 0.373), RLVR만이 이를 반전시켜 0.686까지 끌어올려(사고모드 비활성 시 0.644) 기반 모델과 항상-정상 기준선(0.312)을 모두 크게 앞질렀다. 어블레이션 결과 콜드스타트를 제거하면 CoB 채택은 느려지지만(약130 스텝 vs 30 스텝) 정확도에는 큰 영향이 없었고, 실제로는 박스 크기의 정교함(콜드스타트 없으면 프레임 면적의 76% vs 있으면 1%)에 결정적 영향을 미쳤다. CoB 보상을 제거하면 그라운딩 사용률이 약 5%로 붕괴했지만 정확도는 유지되어, CoB 자체는 정확도를 견인하지 않되 보상이 그라운딩을 지속시키는 역할을 한다는 것을 확인했다.</p>
+<h2>한계점</h2>
+<p>CARDEA는 아직 임상 환경에서 검증되지 않았으며, 의사가 작성한 보고서와의 맹검 비교가 이루어지지 않아 전향적 검증이 임상 사용의 전제조건이다. 학습 단계 간 비교는 단계별 단일 실행에 기반했고, 학습 데이터가 주로 혈관·협착에 집중되어 다른 소견은 충분히 학습되지 못했을 수 있다. 연구 수준 학습은 조영제 흐름의 시간적 역동성 없이 연구당 최대 10개의 정지 키프레임만 사용했다. CoB 평가도 박스의 진실성(faithfulness)이 아니라 빈도·면적·최종 정답 정확도로만 이루어졌고, 일부 테스트셋(복잡도 평가 n=60, 키프레임 선택 5명 환자 48영상)은 규모가 작아 검정력이 부족할 수 있다.</p>
+<h2>시사점</h2>
+<p>검증 가능한 폐쇄형 과제에 대한 강화학습이, 학습에서 완전히 배제된 개방형 임상 보고서 생성 능력까지 향상시킬 수 있다는 것은 DeepSeek-R1류의 발견이 의료 영상 도메인에서도 재현될 수 있음을 시사한다. 특히 진단 결론을 구체적 이미지 근거와 연결하는 감사 가능한 추론 설계는, 임상 신뢰와 채택을 가로막아온 "블랙박스" 문제에 대한 실용적 해법을 제시하며, 향후 의료 AI 시스템 설계에서 검증 가능성과 해석 가능성을 동시에 고려하는 학습 전략의 중요성을 보여준다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.06931" target="_blank" rel="noopener">huggingface.co/papers/2609.06931</a> · 2026-09-13</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

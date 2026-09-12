@@ -1,0 +1,110 @@
+{
+  "2609.10016": {
+    "base": "2609_메트로엘엘엠벤치_교통키오스크-정책-엘엘엠-벤치마크",
+    "rank": "#1",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "19",
+    "en_title": "MetroLLM-Bench: Evaluating Language Models as Transit Kiosk Runtimes",
+    "ko_title": "메트로LLM벤치: 교통 키오스크 런타임으로서의 언어모델 평가"
+  },
+  "2609.09143": {
+    "base": "2609_비주얼토크나이저_통합-멀티모달-모델의-시각언어-분석",
+    "rank": "#2",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "19",
+    "en_title": "Studying Image Tokenizers as Visual Languages in Unified Multimodal Models",
+    "ko_title": "통합 멀티모달 모델에서 시각 언어로서의 이미지 토크나이저 연구"
+  },
+  "2609.11699": {
+    "base": "2609_네거티브셀프디스틸_결함회피-학습-추론모델-훈련",
+    "rank": "#3",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "17",
+    "en_title": "Negative Self-Distillation: Learning to Reason by Avoiding Flaws",
+    "ko_title": "네거티브 셀프-디스틸레이션: 결함을 피함으로써 추론을 학습하기"
+  },
+  "2608.27875": {
+    "base": "2608_하이퀀트_어텐션-하이브리드정밀도-양자화",
+    "rank": "#4",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "17",
+    "en_title": "HyQuant: Hybrid-Precision Quantization for LLM Attention",
+    "ko_title": "하이퀀트: LLM 어텐션을 위한 하이브리드 정밀도 양자화"
+  },
+  "2609.10445": {
+    "base": "2609_타이니아야엘투씽커_다국어-추론-데이터믹싱",
+    "rank": "#5",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "16",
+    "en_title": "Building Multilingual Bridges: Data Mixing as the Pillar of Generalization for In-Language Reasoning",
+    "ko_title": "다국어 다리 놓기: 자국어 추론 일반화를 위한 데이터 믹싱"
+  },
+  "2609.11085": {
+    "base": "2609_젠브이_오토포멀라이제이션-생성형-보상모델",
+    "rank": "#6",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "15",
+    "en_title": "Beyond Solver Verdicts: Generative Reward Models for Autoformalization",
+    "ko_title": "솔버 판정을 넘어서: 오토포멀라이제이션을 위한 생성형 보상 모델"
+  },
+  "2609.11808": {
+    "base": "2609_지엘아이이_시각문서-생성형-압축-검색",
+    "rank": "#7",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "14",
+    "en_title": "Generative Late-Interaction Embeddings For Visual Document Retrieval",
+    "ko_title": "시각 문서 검색을 위한 생성형 후기상호작용 임베딩"
+  },
+  "2609.11156": {
+    "base": "2609_유니에이치쓰리_의료영상-통합-복원모델",
+    "rank": "#8",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "14",
+    "en_title": "UniH3: Unifying Hierarchical Homogeneity and Heterogeneity for All-in-One Medical Image Restoration",
+    "ko_title": "UniH3: 올인원 의료영상 복원을 위한 계층적 동질성·이질성 통합"
+  },
+  "2609.06931": {
+    "base": "2609_카르데아_관상동맥조영술-근거기반-감사가능-추론",
+    "rank": "#9",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "13",
+    "en_title": "CARDEA: Auditable Reasoning Grounded in Spatial Evidence for End-to-End Coronary Angiography Interpretation",
+    "ko_title": "CARDEA: 종단간 관상동맥조영술 판독을 위한 공간적 근거 기반 감사가능 추론"
+  },
+  "2609.11155": {
+    "base": "2609_디알지매포_계층적-역할그래프-공중전-다중에이전트강화학습",
+    "rank": "#10",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "12",
+    "en_title": "DRG-MAPPO: Hierarchical Dynamic Role-Graph Multi-Agent Reinforcement Learning for Cooperative Air Combat",
+    "ko_title": "DRG-MAPPO: 협동 공중전을 위한 계층적 동적 역할-그래프 다중 에이전트 강화학습"
+  },
+  "2609.10745": {
+    "base": "2609_멀린레어_다국어-개체연결-희귀성-추론-검색",
+    "rank": "#11",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "12",
+    "en_title": "Think Before You Link: Rarity, Reasoning, and Retrieval in Multilingual Entity Linking",
+    "ko_title": "연결하기 전에 생각하라: 다국어 개체 연결에서의 희귀성, 추론, 검색"
+  },
+  "2609.10539": {
+    "base": "2609_아이디어앰빅_연구아이디어-구현-critical-gap-벤치마크",
+    "rank": "#12",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "12",
+    "en_title": "IdeaAMBIG: Benchmarking Implementation-Critical Gaps in Research-Idea Specifications",
+    "ko_title": "IdeaAMBIG: 연구 아이디어 명세의 구현 핵심 결함 벤치마킹"
+  }
+}

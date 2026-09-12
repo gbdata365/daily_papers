@@ -1,0 +1,107 @@
+<meta charset="UTF-8">
+<title>연결하기 전에 생각하라</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#11 · Daily Papers 2026-09-13</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 12</span>
+    </div>
+    <h1 class="article-title">Think Before You Link: Rarity, Reasoning, and Retrieval in Multilingual Entity Linking</h1>
+    <p class="article-title-ko">연결하기 전에 생각하라: 다국어 개체 연결에서의 희귀성, 추론, 검색</p>
+    <p class="article-sub">다국어·다중모달 개체 연결(entity linking)에서 "희귀 개체"를 기존의 인기도(조회수) 기준이 아니라 지식그래프 구조 지표로 재정의해 기존 최고 모델이 놓치던 실패 유형을 드러내고, 추론 능력을 갖춘 시각언어모델이 위키피디아를 반복 검색·추론하는 훈련 불필요 프레임워크로 최대 23.3%의 성능 향상을 달성했다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.10745" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.10745" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Think Before You Link: Rarity, Reasoning, and Retrieval in Multilingual Entity Linking</li>
+<li><strong>저자</strong>: Parinthapat Pengpun, Simran Khanuja, Graham Neubig (카네기멜론대학교)</li>
+<li><strong>출처</strong>: arXiv:2609.10745v1 [cs.CL] (2026-09-09)</li>
+<li><strong>프로젝트 페이지</strong>: https://neulab.github.io/think-before-you-link/</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.10745">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>다국어·다중모달 개체 연결(entity linking)에서 "희귀 개체"를 기존의 인기도(조회수) 기준이 아니라 지식그래프 구조 지표로 재정의해 기존 최고 모델이 놓치던 실패 유형을 드러내고, 추론 능력을 갖춘 시각언어모델이 위키피디아를 반복 검색·추론하는 훈련 불필요 프레임워크로 최대 23.3%의 성능 향상을 달성했다.</p>
+<h2>배경 및 문제의식</h2>
+<p>개체 연결은 텍스트나 이미지 속 개체 언급을 지식베이스 항목에 연결하는 과제로, 흔한 개체에서는 잘 작동하지만 희귀 개체에서는 성능이 급격히 떨어진다. 기존 연구는 희귀성을 위키피디아 조회수 같은 인기도 지표로만 측정해왔는데, 이는 "인기 없음"과 "문화적으로 특수함(자국 커뮤니티에서는 잘 알려졌지만 교차언어 지식베이스에는 희소하게 반영됨)"을 구분하지 못한다. 예를 들어 어떤 개체는 대중의 관심은 받지만 구조화된 정보가 부족할 수 있고, 반대로 특정 언어권에서는 인기 있지만 교차언어·그래프 커버리지가 희박할 수 있다.</p>
+<h2>핵심 기여</h2>
+<p>1) 위키피디아 편집 지표(조회수, 백링크, 문서 크기 등)와 위키데이터 구조 지표(수신/발신 링크, 언어판 수, 서술문 수, 한정어 수 등)를 결합한 다차원 희귀성 정의를 제시하고, 서로 다른 지표의 하위 5% 개체 집합이 평균 37%만 겹친다는 것을 보여 인기도 기반 평가가 놓치는 실패 유형을 드러냈다. 2) 추론 능력을 갖춘 시각언어모델이 위키피디아를 반복적으로 검색·추론하는 단순한 훈련-불필요 프레임워크를 제안해, MERLIN 벤치마크(힌디어, 인도네시아어, 일본어, 타밀어, 베트남어)에서 기존 최고 성능 대비 평균 +6.9%, 최악의 희귀 슬라이스에서 최대 +23.3%의 향상을 달성했다. 3) 추론과 검색이 상호보완적임을 밝혔다: 추론만으로는 희귀 개체 성능이 유의하게 개선되지 않고, 검색만으로는 희귀 개체는 돕지만 전체 정확도를 해칠 수 있으며, 둘의 결합이 최고 성능을 낸다.</p>
+<h2>방법론</h2>
+<p>Qwen3-VL 계열(Thinking/Instruct, 2B/4B/8B)을 사용해 이미지, 텍스트, 표시된 개체 언급이 주어지면 모델이 최대 20회까지 반복적으로 검색 쿼리를 생성하고 위키피디아 스니펫을 추론에 통합하는 2단계 파이프라인을 구성했다(1단계: 반복 추론+검색, 2단계: 최종 위키피디아 제목만 추출하도록 재프롬프트). 검색은 BM25(어휘 기반)와 다국어 임베딩(intfloat/multilingual-e5-large-instruct+FAISS, 의미 기반) 두 방식을 비교했다. 모델 크기(2B/4B/8B)×추론 여부(Think/Instruct)×검색 방식(No RAG/BM25/Embedding) 총 18개 조합으로 통제된 요인 설계 실험을 수행해 모델 규모, 추론, 검색 각각의 기여를 분리했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>현재 최고 성능 모델 Cultural Pangea(전체 평균 81.1%)는 15개 희귀 슬라이스에서 15.4%~39.9%까지 정확도가 하락했으며, 조회수 기준 하락(-37.7%)과 위키데이터 서술문 수 기준 하락(-37.0%)이 비슷한 규모임에도 서로 다른 개체 집합을 포착했다. 최고 성능 시스템(8B-Think+Embed)은 전체 데이터셋에서 87.9%를 기록해 Pangea 대비 +6.9% 향상됐고, 힌디어·인도네시아어에서는 +10.0%에 달했다. 희귀 개체 슬라이스에서는 이 우위가 더욱 커져, 한정어(qualifiers) 기준 +23.3%, 서술문 기준 +22.1%, 위키데이터 발신링크 기준 +21.7%를 기록했다(15개 슬라이스 중 14개가 전체 데이터셋 이득보다 큼). 핵심 분석에서 추론 단독 효과(Think vs Instruct, 검색 없음)는 모든 희귀 슬라이스에서 통계적으로 유의하지 않았던(p&gt;0.5) 반면, 검색 효과(RAG 유무)는 언어판 수 기준 슬라이스에서 전체 데이터셋(+3.8%) 대비 5배인 +18.8%로 커졌다. 흥미로운 발견으로 Instruct 모델에서는 BM25 검색이 전체 데이터셋에서는 오히려 -4.9% 성능을 해쳤지만 구조적 희귀 슬라이스에서는 +8.1%~+12.6% 도움이 되었는데, 이는 Instruct 모델이 숙고 없이 3.2~3.7회 검색을 남발해 흔한 개체에서는 노이즈로 작용하지만 희귀 개체에서는 어떤 검색 신호든 도움이 되기 때문이었다. 반면 Thinking 모델은 검색 횟수가 적고(1.0~2.2회) 검색 사이 1,454~1,534 토큰의 숙고를 거쳐, 검색어의 56~58%가 이전 쿼리에 명확화 맥락을 추가하는 정교한 개선이었다(Instruct는 35~40%). 4B-Think+Embed는 8B-Instruct와 전체 성능은 거의 동일(+0.3%)하면서도 희귀 개체에서는 +5~7% 앞서, 추론+검색이 순수한 모델 크기 확장의 대안이 될 수 있음을 보였다. 오류 분석에서는 잔여 오류의 72%가 검색 실패(정답 개체가 아예 검색되지 않음)에 기인했고, 특히 비-라틴 문자(힌디어, 타밀어, 일본어) 입력에서 검색 실패 비중이 더 컸다.</p>
+<h2>한계점</h2>
+<p>통제 실험은 Qwen3-VL 계열에 한정되었으며, GLM 계열에 대한 부가 검증에서도 사고모드에서는 검색 이득이 재현됐지만 비-사고모드는 검색 루프를 유지하지 못해 완전한 교차 모델군 일반화는 확인되지 않았다. 평가는 영어 위키피디아를 지식베이스로 하는 5개 언어에 한정되어, 영어 문서가 아예 없는 개체나 더욱 희소한 언어(예: 아프리카 언어)로의 일반화는 확인되지 않았다. 잔여 오류의 72%가 검색 실패이므로, 교차언어 검색 개선이 가장 유망한 향후 방향으로 남아있다.</p>
+<h2>시사점</h2>
+<p>"희귀성"을 단순 인기도가 아닌 지식그래프 구조 관점에서 재정의하면, 문화적으로 특수하지만 접근 빈도가 높은 개체들의 실패를 발견할 수 있다는 것은 다국어 AI 평가 전반에 중요한 방법론적 시사점을 준다. 또한 추론과 검색이 서로 다른 역할(검색은 정보 제공, 추론은 정보의 효과적 활용)을 하며 결합해야 시너지가 난다는 발견은, 단순히 모델을 키우기보다 추론+검색 조합을 설계하는 것이 자원 효율적인 대안이 될 수 있음을 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.10745" target="_blank" rel="noopener">huggingface.co/papers/2609.10745</a> · 2026-09-13</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

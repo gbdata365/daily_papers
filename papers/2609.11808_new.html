@@ -1,0 +1,107 @@
+<meta charset="UTF-8">
+<title>시각 문서 검색을 위한 생성형 후기상호작용 임베딩</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#7 · Daily Papers 2026-09-13</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 14</span>
+    </div>
+    <h1 class="article-title">Generative Late-Interaction Embeddings For Visual Document Retrieval</h1>
+    <p class="article-title-ko">시각 문서 검색을 위한 생성형 후기상호작용 임베딩</p>
+    <p class="article-sub">페이지당 약 1,000개 벡터를 저장하는 후기상호작용(late-interaction) 시각 문서 검색에서, 페이지 임베딩이 초구(unit sphere) 위의 저차원(약 5~6차원) 다양체에 몰려있다는 기하학적 관찰을 활용해, 소수의 벡터만 저장하고 필요할 때 전체를 재생성하는 GLIE를 제안해 4개 벡터만으로 압축되지 않은 시스템 품질의 약 80%를 유지했다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.11808" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.11808" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Generative Late-Interaction Embeddings For Visual Document Retrieval</li>
+<li><strong>저자</strong>: Mohamed Eltahir, Talal Aloushan, Rose Khairoalsendi 외 (KAUST, Edge Hill University)</li>
+<li><strong>출처</strong>: arXiv:2609.11808v1 [cs.IR] (2026-09-10)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 코드 공개 언급(구체 URL 미기재)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.11808">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>페이지당 약 1,000개 벡터를 저장하는 후기상호작용(late-interaction) 시각 문서 검색에서, 페이지 임베딩이 초구(unit sphere) 위의 저차원(약 5~6차원) 다양체에 몰려있다는 기하학적 관찰을 활용해, 소수의 벡터만 저장하고 필요할 때 전체를 재생성하는 GLIE를 제안해 4개 벡터만으로 압축되지 않은 시스템 품질의 약 80%를 유지했다.</p>
+<h2>배경 및 문제의식</h2>
+<p>ColPali 같은 후기상호작용 검색 모델은 페이지당 약 1,031개의 패치 벡터(128차원)를 저장해 MaxSim 연산으로 정밀한 검색을 수행하지만, 저장 비용이 막대하다(백만 페이지당 약 258GB). 기존 압축법(풀링, 프루닝, 병합, 양자화)은 모두 인코더 벡터의 부분집합이나 국소 평균을 저장하는 방식이며, 페이지당 16개 벡터 미만으로 내려가면 급격히 품질이 떨어진다. 더 작은 예산을 지원하려면 인코더 자체를 재학습해야 해서 기존 공개 체크포인트와 캐시된 임베딩을 모두 버려야 한다는 근본적 한계가 있었다.</p>
+<h2>핵심 기여</h2>
+<p>1) ColPali, ColQwen2, Nemotron v2 등 세 개 인코더에서 페이지 토큰 벡터들이 정확히 단위 초구 위에 놓이며 내재 차원이 약 5~6에 불과함을 실측했다(TwoNN 추정기 사용). 2) 표준 k-means 중심점이 구 안쪽에 위치해 MaxSim 점수를 체계적으로 과소평가한다는 것을 증명하고, 중심점을 구 표면에 재투영("구면 앵커링")하는 것만으로 최대 +0.093 nDCG@5의 무료 개선을 얻었다. 3) 저차원 다양체라는 특성을 이용해, 소수(k≪N)의 벡터로부터 전체 N개 벡터를 재생성할 수 있는 코덱 GLIE를 설계해, 검색은 저장된 k개 벡터로 수행하고 상위 후보만 디코더로 전체 복원해 정밀 재점수화하는 2단계 파이프라인을 구현했다.</p>
+<h2>방법론</h2>
+<p>페이지별로 k-means 중심점을 구해 단위 구에 재투영한 것을 초기값(U)으로 삼고, 공유 크로스 어텐션 리파이너가 전체 토큰 집합(X)을 읽으며 이를 미세 조정한다(출력 투영은 0으로 초기화되어 있어 학습 시작점이 정확히 "정규화된 클러스터링"과 같음). 학습된 코드 C는 저장·1차 검색에 사용되고, 공유 디코더는 클러스터 크기에 비례하는 슬롯 수, 정확한 앵커(각 클러스터의 대표 벡터를 그대로 출력에 포함해 MaxSim이 절대 코드보다 낮아지지 않음을 구조적으로 보장), 제한된 이동 범위(구 표면을 따라 최대 약 37도까지만 이동) 세 가지 설계 원칙으로 N개 벡터를 재생성한다. 학습에는 쿼리 토큰별 MaxSim 매칭 손실, 리스트와이즈 KL, 거짓양성 억제(one-sided penalty), 챔퍼 거리, 서포트 함수 매칭 등 5가지 손실을 결합했으며, 재구성 오차(reconstruction loss)는 의도적으로 배제해 극값 정보가 뭉개지는 것을 방지했다. 전체 리파이너+디코더는 41.5만 파라미터에 불과해 3B 백본 대비 매우 작고, 1,000개 학습 페이지로 3 GPU-분 이내에 학습이 끝난다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>ViDoRe v1(10개 서브셋), ViDoRe v2(4개 서브셋), 그리고 두 번째 인코더 ColQwen2에서 평가한 결과, GLIE는 페이지당 4개 벡터(1.0KB)로 압축되지 않은 시스템의 79%(v1) 성능을, 32개 벡터로는 91~95%를 유지했으며 모든 예산에서 기존 최상의 훈련-불필요 기준선(원시 k-means, 토큰 풀링, 클러스터 병합)을 능가했다(예: v1, k=4에서 GLIE 0.657 vs 최고 기준선 0.584). 같은 데이터·GPU 예산으로 인코더 자체를 LoRA 파인튜닝한 Light-ColPali 재현 실험은 무료인 정규화된 k-means에도 미치지 못했다(모든 예산에서 GLIE가 +0.074~+0.132 우위). ColQwen2에서도 k=4에서 압축되지 않은 품질의 82%를 유지했다. 구성요소 분해 결과 구면 앵커링이 가장 큰 단일 기여(k=4에서 +0.093)를 했고, 학습된 코드가 추가로 개선하며(k≤16까지), 생성형 리드아웃은 공격적 예산(v1의 k=4에서 +0.016)에서 특히 유효했다. 디코더 용량을 184K~13M 파라미터로 70배 변화시켜도 성능 차이는 0.009 이내로, 결과가 특정 하이퍼파라미터 튜닝에 의존하지 않음을 확인했다. 남은 성능 격차 분석(오라클 대비)에서는 디코딩 충실도가 병목이며(예: k=4에서 GLIE 0.657 vs 오라클 0.782), 상위 후보 목록(shortlist) 크기 확대는 이미 L=20에서 수확 체감에 도달함을 보였다.</p>
+<h2>한계점</h2>
+<p>소수 앵커(k=2)로는 페이지의 내재 차원보다 적어 재생성이 가장 조악해지고 개선 효과가 거의 없었다(v1에서 0, v2에서 +0.011). 남은 성능 격차의 상당 부분(예: k=4에서 v1의 0.782→0.836)은 디코더 개선이 아니라 상위 후보 재현율(shortlist recall)에 기인하며, 이는 더 큰 L로만 회복 가능하다. 실험은 세 인코더와 정지 이미지 문서 검색에 한정되었으며, 비디오처럼 토큰 집합이 더 크고 중복이 많은 영역으로의 확장은 향후 과제로 남겼다.</p>
+<h2>시사점</h2>
+<p>검색 시스템에서 저장 압축 문제를 "부분집합 선택"이 아니라 "데이터의 저차원 기하 구조를 활용한 재생성"이라는 새로운 축으로 접근할 수 있음을 보여준다. 프리트레인 인코더를 그대로 유지한 채(재인코딩 없이) 사후적으로 매우 저렴한 비용의 코덱을 학습해 극단적인 저장 절감(최대 258배)과 성능 유지를 동시에 달성할 수 있다는 점은, 실제 대규모 시각 문서 검색 시스템 배포에 즉각 적용 가능한 실용적 해법이다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.11808" target="_blank" rel="noopener">huggingface.co/papers/2609.11808</a> · 2026-09-13</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

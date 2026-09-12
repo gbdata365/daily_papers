@@ -1,0 +1,107 @@
+<meta charset="UTF-8">
+<title>메트로LLM벤치</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#1 · Daily Papers 2026-09-13</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 19</span>
+    </div>
+    <h1 class="article-title">MetroLLM-Bench: Evaluating Language Models as Transit Kiosk Runtimes</h1>
+    <p class="article-title-ko">메트로LLM벤치: 교통 키오스크 런타임으로서의 언어모델 평가</p>
+    <p class="article-sub">지하철 등 대중교통 키오스크의 정책 로직을 언어모델로 대체할 수 있는지 평가하는 955개 사례 벤치마크로, 4B 크기의 경량 파인튜닝 모델이 GPT-5.6 등 대형 상용 모델과 동등하거나 더 나은 성능을 보인다는 것을 확인했다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.10016" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.10016" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: MetroLLM-Bench: Evaluating Language Models as Transit Kiosk Runtimes</li>
+<li><strong>저자</strong>: Remco Hendriks (Continker)</li>
+<li><strong>출처</strong>: arXiv:2609.10016v1 [cs.LG] (2026-09-09)</li>
+<li><strong>프로젝트 페이지</strong>: https://github.com/continker/metrollm-bench</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.10016">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>지하철 등 대중교통 키오스크의 정책 로직을 언어모델로 대체할 수 있는지 평가하는 955개 사례 벤치마크로, 4B 크기의 경량 파인튜닝 모델이 GPT-5.6 등 대형 상용 모델과 동등하거나 더 나은 성능을 보인다는 것을 확인했다.</p>
+<h2>배경 및 문제의식</h2>
+<p>지하철 키오스크는 요금 규정, 노선 구조, 장애 대응 등을 코드화된 상태 기계로 구현하는데, 규정이 바뀔 때마다 개발-패치-테스트-배포의 무거운 소프트웨어 릴리스 절차를 거쳐야 한다. 저자들은 이를 대신해 언어모델이 자연어로 된 시스템 설명(프레임북)을 읽고 구조화된 도구를 호출해 키오스크가 바로 표시할 수 있는 상태를 생성하는 방식이 가능한지 검증한다. 기존의 GTFS 이해 벤치마크나 범용 에이전트 벤치마크(τ-bench, GAIA)는 실제 운영 의사결정 능력, 특히 장애·다중턴·적대적 입력 상황에서의 대응력을 다루지 않는다는 공백이 있었다.</p>
+<h2>핵심 기여</h2>
+<p>1) MARTA, 도하 메트로, BART, 타이베이 MRT, CTA, 베이징 지하철 등 6개 실제 교통 시스템, 11개 카테고리(경로, 요금, 장애, 접근성, 적대적 입력 등)에 걸친 955개 사례로 구성된 벤치마크를 공개했다. 2) 결정론적 채점(Tier 1, 14개 항목)과 언어모델 심사 기반 의미 품질 채점(Tier 2, 8개 항목)을 분리해, Tier 1은 파인튜닝 보상 신호로도 재사용 가능하게 설계했다. 3) 26개 모델(6개 벤더)에 대한 리더보드와, Qwen 3.5 계열 2B~27B 4개 크기에 대한 QLoRA 파인튜닝 스윕(시드 2~3회)을 수행했다.</p>
+<h2>방법론</h2>
+<p>각 사례는 프레임북과 시나리오 이벤트를 프롬프트로 조립한 뒤, 모델이 ReAct 방식으로 최대 20라운드 동안 6개 도구(경로 계획, 요금 계산, 역 정보, 노선 정보, 장애 피드, 지식베이스)를 호출하고 최종적으로 렌더링 가능한 상태를 제출하는 구조다. 제출된 상태는 Pydantic으로 구조 검증되며, 오류 시 HTTP 422 응답을 받아 모델이 스스로 수정할 수 있다. 955개 사례 중 717개는 훈련 데이터 생성용, 238개는 홀드아웃 평가용으로 사전에 시스템별 층화 분할(seed=42)했다. Tier 2의 6개 항목은 Claude Haiku 4.5를 심사자로 사용했으며, 심사자-저자 간 일치도(가중 Cohen's κ=0.53)가 두 사람 평가자 간 일치도(κ=0.25)보다 높음을 확인해 심사 신뢰성을 검증했다. 파인튜닝은 27B/35B 교사 모델이 생성한 궤적 중 Tier 1 점수 90% 이상인 600개를 추려 QLoRA(rank 16, 3 epoch)로 2B·4B·9B·27B 학생 모델을 훈련했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>홀드아웃 파티션(238개 사례) 기준으로 Muse Glimmer 30B가 종합 1위(92.03)를 차지했고, 상위 11개 모델이 3.18점 이내에 몰려 뚜렷한 격차가 없었다. 특히 2.6GB 크기(Q4_K_M 양자화)의 Qwen3.5-4B PEFT 학생 모델이 Tier 1에서 91.3점을 기록해 GPT-5.6 두 등급(90.6, 90.0)을 넘어섰고 GPT-5.4 full(xhigh 추론 강도, 91.4)과 사실상 동률을 이뤘다. 흥미롭게도 파인튜닝 이득은 기반 모델 크기가 커질수록 줄어들어, 2B에서는 +7.03점이었지만 27B에서는 오히려 -0.91점으로 역전됐다(모든 시드에서 방향 일관). 규칙 기반 스크립트 에이전트는 Tier 1 84.6점을 기록했으며, 언어모델의 우위는 시간 추론·정책 변경·접근성·복합 시나리오처럼 판단이 필요한 영역에 집중됐다. 서빙 설정(출력 토큰 예산, 디코딩 방식)만으로도 Qwen3.8 계열 모델 점수가 최대 2.7점 변동해, 단일 서빙 설정을 모든 모델에 적용하면 설정 차이가 모델 성능 차이처럼 보일 수 있음을 보였다.</p>
+<h2>한계점</h2>
+<p>이 작업은 6개의 제한된 도구와 짧은 상호작용으로 이루어진 범위가 좁은 과제이며, 넓은 행동 공간이나 긴 호라이즌, 덜 제약된 출력을 요구하는 과제로 일반화하기는 어렵다. 비-PEFT 모델 대부분이 단일 실행 결과이며, 홀드아웃 파티션의 부트스트랩 신뢰구간 반폭이 약 2점에 달해 1점 미만의 차이는 유의미하다고 보기 어렵다. Tier 2 심사자 교차 검증(비-Anthropic 모델과의 비교)은 향후 과제로 남겨두었다.</p>
+<h2>시사점</h2>
+<p>특정 범위가 명확한 실무 과제에서는 소형 오픈 웨이트 모델을 적절히 파인튜닝하면 독점 프론티어 API 없이도 동등한 성능을 달성할 수 있음을 보여준다. 이는 온프레미스·엣지 배포가 필요한 산업 현장(교통, 키오스크 등)에서 비용과 통제권을 모두 확보하면서 성능을 유지할 수 있는 실용적 경로를 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.10016" target="_blank" rel="noopener">huggingface.co/papers/2609.10016</a> · 2026-09-13</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

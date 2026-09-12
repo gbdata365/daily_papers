@@ -1,0 +1,107 @@
+<meta charset="UTF-8">
+<title>하이퀀트</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#4 · Daily Papers 2026-09-13</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 17</span>
+    </div>
+    <h1 class="article-title">HyQuant: Hybrid-Precision Quantization for LLM Attention</h1>
+    <p class="article-title-ko">하이퀀트: LLM 어텐션을 위한 하이브리드 정밀도 양자화</p>
+    <p class="article-sub">LLM 어텐션에서 소수의 "수직선(vertical-line)" 토큰과 최근 로컬 윈도우만 고정밀도로 유지하고 나머지 대부분을 저비트로 양자화하는 하이브리드 정밀도 기법 HyQuant를 제안해, 저비트 양자화의 정확도 손실을 최소화하면서 최대 3.58배의 디코딩 커널 속도 향상을 달성했다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.27875" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.27875" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: HyQuant: Hybrid-Precision Quantization for LLM Attention</li>
+<li><strong>저자</strong>: Jiatong Ding, Bingxin Xing 외 (상하이자오퉁대학교, 시안자오퉁대학교, 텐센트 펑라이랩, 샤먼대학교)</li>
+<li><strong>출처</strong>: arXiv:2608.27875v1 [cs.AI] (2026-08-28)</li>
+<li><strong>프로젝트 페이지</strong>: https://github.com/jerrysfls/HyQuant</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.27875">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>LLM 어텐션에서 소수의 "수직선(vertical-line)" 토큰과 최근 로컬 윈도우만 고정밀도로 유지하고 나머지 대부분을 저비트로 양자화하는 하이브리드 정밀도 기법 HyQuant를 제안해, 저비트 양자화의 정확도 손실을 최소화하면서 최대 3.58배의 디코딩 커널 속도 향상을 달성했다.</p>
+<h2>배경 및 문제의식</h2>
+<p>긴 추론 체인(Chain-of-Thought)을 사용하는 최신 LLM에서는 프리필 단계가 연산량에, 디코드 단계가 메모리 대역폭에 병목이 걸린다. 양자화는 이를 완화하는 대표적 방법이지만, 어텐션 분포가 매우 불균형해 일부 소수 위치가 전체 어텐션 질량의 대부분을 차지하기 때문에, 모든 토큰을 균일하게 저비트로 압축하면 소수의 중요한 토큰에서 오차가 크게 증폭되어 성능이 저하된다. 기존 스무딩 기법이나 희소화(스파스 어텐션, KV 캐시 축출) 방식은 토큰을 동질적으로 취급해 이 문제를 근본적으로 해결하지 못했다.</p>
+<h2>핵심 기여</h2>
+<p>1) 여러 모델 계열(Qwen3, Gemma4, Llama3)의 어텐션 히트맵에서 반복적으로 관찰되는 "수직선" 패턴(&lt;5% 토큰이 어텐션 질량 대부분을 차지)을 근거로, 이 위치와 로컬 윈도우만 고정밀도로 유지하는 하이브리드 정밀도 프레임워크 HyQuant를 제안했다. 2) 열(column) 단위 누적 어텐션 질량을 이용해 경량으로 수직선 위치를 식별하는 알고리즘을 설계했다. 3) 프리필 단계용 하이브리드 정밀도 양자화 어텐션 연산자와, 디코드 단계용 KV 캐시 압축+역양자화 융합 커널을 각각 구현해 두 단계 모두 최적화했다.</p>
+<h2>방법론</h2>
+<p>각 레이어/헤드의 키 위치를 로컬 윈도우(K_Win), 수직선 위치(K_VL), 나머지 저비트 양자화 대상(K_Q) 세 집합으로 분리한다. 수직선 위치는 비-윈도우 구간에서 쿼리별 어텐션 확률의 누적 합(열 질량 점수)을 계산해 상위 ρ 비율(기본 5%)을 선택하며, 이 과정은 64토큰마다 한 번의 행렬곱만 필요해 오버헤드가 3~5%에 불과하다. 프리필 단계에서는 양자화된 키/값과 고정밀도 키/값(수직선+윈도우)에 대한 어텐션 스코어를 FlashAttention 스타일의 온라인 소프트맥스로 하나의 커널에서 융합 계산한다. 디코드 단계에서는 KV 캐시를 하이브리드 정밀도(대부분 INT4, 수직선/윈도우는 FP16/BF16)로 저장하고, 양자화된 블록을 스캔하면서 즉시 역양자화해 어텐션 계산에 바로 적용하는 방식으로 별도의 고정밀도 캐시를 물리적으로 생성하지 않는다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Qwen3-8B/32B, Llama-3.1-8B-Instruct, GLM-4-9B에서 LongBench v1, GSM8K, MATH500으로 평가했다. HyQuant(K4V4, 상위 5% 유지)는 대부분의 설정에서 FlashAttention-2(FP)와 거의 동등한 정확도를 유지하며 KIVI, KVTuner, SageAttention 등 엄격한 저비트 기준선을 능가했다(예: Qwen3-8B LongBench 평균 45.04, FA2 44.59, KIVI 37.68). 프리필 단계에서는 SageAttention 대비 층별 어텐션 출력 MSE를 크게 줄였고, 디코드 단계에서는 프리픽스 길이 32K에서 FA2 대비 커널 수준 3.58배, 종단 간(end-to-end) 1.17배의 속도 향상을 보였다. 배치 크기를 늘린 고병렬 설정에서는 HyQuant만이 배치 32에서 OOM 없이 동작해 KV 캐시 압축과 융합 커널의 메모리 효율 이점을 확인했다. 어블레이션에서는 로컬 윈도우와 수직선 인식 두 요소 모두 오차 감소에 기여했으며, 수직선 비율(k)을 늘릴수록 정확도는 개선되지만 고정밀도 예산이 커지는 트레이드오프를 확인해 5%를 실용적 절충점으로 채택했다.</p>
+<h2>한계점</h2>
+<p>수직선 토큰 보존의 효과는 장문 컨텍스트 과제에서 가장 뚜렷하며, 짧은 컨텍스트 과제에서는 개선 폭이 제한적이다(다만 FP 기준선 대비 경쟁력은 유지). 실험은 NVIDIA H100에 한정되었고, GPU 메모리 제약으로 Qwen3-32B를 넘어서는 대형 모델(예: Qwen3-80B)은 평가하지 못했다. 에이전트나 코딩 관련 작업에서도 효과가 유지되는지는 검증되지 않았다.</p>
+<h2>시사점</h2>
+<p>어텐션의 구조적 불균형(수직선 패턴)을 활용한 토큰 단위 혼합 정밀도 설계가, 균일 양자화나 단순 스무딩보다 정확도-효율 트레이드오프를 크게 개선할 수 있음을 보여준다. 프리필과 디코드 양쪽을 통합적으로 최적화하는 접근은 장문 추론이 일상화된 최신 LLM 서빙 환경에서 실용적인 배포 전략이 될 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.27875" target="_blank" rel="noopener">huggingface.co/papers/2608.27875</a> · 2026-09-13</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

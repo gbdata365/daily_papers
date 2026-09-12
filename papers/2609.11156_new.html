@@ -1,0 +1,107 @@
+<meta charset="UTF-8">
+<title>UniH3</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#8 · Daily Papers 2026-09-13</span>
+      <span class="cat-tag">생성모델</span>
+      <span class="upvote-tag">▲ 14</span>
+    </div>
+    <h1 class="article-title">UniH3: Unifying Hierarchical Homogeneity and Heterogeneity for All-in-One Medical Image Restoration</h1>
+    <p class="article-title-ko">UniH3: 올인원 의료영상 복원을 위한 계층적 동질성·이질성 통합</p>
+    <p class="article-sub">PET, CT, MRI 등 여러 의료 영상 모달리티와 손상 유형을 하나의 모델로 복원하는 All-in-One 의료영상 복원(MedIR)에서, 기존 연구가 간과했던 의료 영상 간의 "동질성"(공유된 해부학적 구조)과 세분화된 "이질성"(과제 내부 변동)을 계층적으로 함께 모델링하는 UniH³를 제안해 최고 성능을 달성했다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.11156" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.11156" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: UniH3: Unifying Hierarchical Homogeneity and Heterogeneity for All-in-One Medical Image Restoration</li>
+<li><strong>저자</strong>: Zhiwen Yang, Jiayin Li, Chengyu Liu, Hui Zhang, Bingzheng Wei, Yan Xu (베이항대학교, 칭화대학교)</li>
+<li><strong>출처</strong>: arXiv:2609.11156v1 [cs.CV] (2026-09-10)</li>
+<li><strong>프로젝트 페이지</strong>: https://github.com/Yaziwel/UniH3</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.11156">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>PET, CT, MRI 등 여러 의료 영상 모달리티와 손상 유형을 하나의 모델로 복원하는 All-in-One 의료영상 복원(MedIR)에서, 기존 연구가 간과했던 의료 영상 간의 "동질성"(공유된 해부학적 구조)과 세분화된 "이질성"(과제 내부 변동)을 계층적으로 함께 모델링하는 UniH³를 제안해 최고 성능을 달성했다.</p>
+<h2>배경 및 문제의식</h2>
+<p>기존 All-in-One 의료영상 복원 연구는 주로 과제 간 차이(모달리티, 손상 유형 등)를 구분해 처리하는 "이질성" 모델링에 집중해왔다(대조학습, 손상 분류, 시각 프롬프트, MoE 등). 그러나 이 접근은 두 가지를 간과한다: 첫째, 서로 다른 모달리티·환자 간에도 폭넓게 공유되는 해부학적 구조("동질성")를 무시해 과제 수가 늘어날수록 학습이 어려워진다는 점, 둘째, 과제 간 차이(모달리티 차이)만 다루고 스캐너·기관·환자군에 따른 과제 내부 변동("과제 내 이질성")은 무시해 세밀한 최적화 충돌을 해소하지 못한다는 점이다.</p>
+<h2>핵심 기여</h2>
+<p>1) 계층적 동질성과 이질성을 함께 모델링하는 새로운 프레임워크 UniH³를 제안했다. 2) 학습 중 고품질(HQ) 영상으로부터 과제 내·과제 간 동질성 사전 지식을 점진적으로 증류하고, 추론 시 입력에 맞는 가장 관련성 높은 사전 지식을 적응적으로 검색하는 계층적 동질성 메모리(H2M) 모듈과, 이를 복원 파이프라인에 주입하는 효율적인 동질성-유도 어텐션(HGA) 메커니즘을 제안했다. 3) 과제 간 및 과제 내 최적화 충돌을 동시에 완화하는 계층적 이질성 균형기(H2B)를 설계했다. 4) 7개 2D 과제(50.9만 쌍)와 3개 3D 과제(3,522쌍)로 구성된 대규모 벤치마크 MedIR-2D-500K, MedIR-3D-3K를 구축했다.</p>
+<h2>방법론</h2>
+<p>U자형 복원 백본은 4단계 인코더-디코더로 구성되며, 각 단계의 동질성-유도 트랜스포머 블록(HGATB)이 전역 상호작용(HGA 기반)과 지역 상호작용(합성곱+SE)을 번갈아 처리한다. H2M은 메모리 뱅크 M과 학습 가능한 프로토타입 행렬 P를 과제-공유 슬롯 1개와 과제-특화 슬롯 T개로 구성하고, 학습 중에는 크로스 어텐션으로 HQ 영상에서 대표적인 특징을 추출해 지수이동평균(EMA)으로 메모리에 점진적으로 축적한다(증류 단계, 학습시에만 수행). 추론 시에는 LQ 입력 특징을 쿼리로 삼아 메모리에서 관련 동질성 사전 지식(V_H)을 검색한다(검색 단계, 학습·테스트 공통). HGA는 기존 방식처럼 LQ 특징을 기준으로 삼는 대신, 채널별 학습 가능 가중치(λ1, λ2)로 어텐션을 고품질 사전 지식(V_H) 쪽으로 편향시켜 V_H+V 혼합값과 V_H-V 선호 편향항을 함께 반영한다. H2B는 기존의 과제 단위 불확실성 손실 가중(단일 스칼라 σ_t)을 확장해, 샘플별 경량 불확실성 추정 블록(UEB)이 예측하는 보정항 Δσ_s를 더해 σ_t,s = σ_t + Δσ_s로 세분화된 불확실성을 모델링함으로써 과제 간·과제 내 이질성을 함께 완화한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>MedIR-2D-500K(PET, CT, MRI, X-ray, OCT, 초음파, 병리) All-in-One 설정에서 UniH³는 평균 PSNR 36.77dB로 2위 AdaIR(36.56dB)를 0.21dB 앞섰고, 모든 7개 과제에서 최고 성능을 기록했다. MedIR-3D-3K 3D All-in-One 설정에서는 평균 PSNR 44.50dB로 2위 Restore-RWKV-3D(43.95dB) 대비 0.55dB 향상을, 단일 과제(Single-Task) 3D 설정에서는 무려 1.48dB의 향상(2위 Spach Transformer 대비)을 보였다. 구성요소 분석 결과 H2M과 H2B는 각각 독립적으로 성능을 개선했고(기준선 36.52→H2M만 36.66→H2B만 36.64→둘 다 36.77), Uformer, Restormer, PromptIR, AdaIR 등 다른 백본에도 H2M+H2B를 적용하니 모두 유의미한 성능 향상이 확인됐다(계산량 증가는 미미). H2M 내부에서 과제-공유/과제-특화 동질성 사전 지식을 각각 제거하는 어블레이션에서 두 요소 모두 독립적으로 기여함을 확인했고, 검색 어텐션 맵 시각화에서 PET·CT 토큰이 각자의 모달리티 슬롯과 공유 슬롯을 주로 참조하며 해부학적으로 유사한 토큰끼리 유사한 검색 패턴을 보였다.</p>
+<h2>한계점</h2>
+<p>논문에 명시된 정량적 실패 사례나 계산 비용 상세 분석은 제한적으로만 제시되어 있으며, 벤치마크가 공개 데이터와 사설 데이터를 혼합해 구성되어 완전한 재현성에는 제약이 있을 수 있다. 또한 실험은 논문에 제시된 7개 2D 과제, 3개 3D 과제로 한정되어, 더 희귀한 모달리티나 손상 유형으로의 일반화는 추가 검증이 필요하다(논문에 명시되지 않음).</p>
+<h2>시사점</h2>
+<p>의료 영상 복원처럼 서로 다른 모달리티 간에도 공유되는 강한 구조적 사전 지식(해부학적 구조)이 존재하는 도메인에서는, 과제 간 차이만 구분하는 기존 이질성 중심 설계보다 동질성과 이질성을 계층적으로 함께 모델링하는 것이 일반화 성능과 학습 효율을 모두 높일 수 있음을 보여준다. 이 접근은 자연 영상 복원을 넘어 도메인 특유의 공유 구조가 존재하는 다른 다중 과제 학습 문제에도 적용 가능한 설계 원칙을 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.11156" target="_blank" rel="noopener">huggingface.co/papers/2609.11156</a> · 2026-09-13</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

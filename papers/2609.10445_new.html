@@ -1,0 +1,107 @@
+<meta charset="UTF-8">
+<title>다국어 다리 놓기</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#5 · Daily Papers 2026-09-13</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 16</span>
+    </div>
+    <h1 class="article-title">Building Multilingual Bridges: Data Mixing as the Pillar of Generalization for In-Language Reasoning</h1>
+    <p class="article-title-ko">다국어 다리 놓기: 자국어 추론 일반화를 위한 데이터 믹싱</p>
+    <p class="article-sub">추론 언어모델이 프롬프트 언어와 무관하게 영어로만 추론하는 문제를 해결하기 위해, 데이터 구성과 학습 스케줄링(데이터 믹싱)만으로 3.35B 소형 모델이 60개 언어에서 93% 이상의 자국어(L2) 추론율을 성능 저하 없이 달성할 수 있음을 보였다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.10445" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.10445" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Building Multilingual Bridges: Data Mixing as the Pillar of Generalization for In-Language Reasoning</li>
+<li><strong>저자</strong>: Mehrnaz Mofakhami, Ananya Sahu, Alejandro R. Salamanca 외 (Cohere Labs, Cohere)</li>
+<li><strong>출처</strong>: arXiv:2609.10445v1 [cs.CL] (2026-09-09)</li>
+<li><strong>프로젝트 페이지</strong>: https://huggingface.co/datasets/CohereLabs/tiny-aya-l2-thinker-multilingual-reasoning (모델: tiny-aya-l2-thinker 등)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.10445">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>추론 언어모델이 프롬프트 언어와 무관하게 영어로만 추론하는 문제를 해결하기 위해, 데이터 구성과 학습 스케줄링(데이터 믹싱)만으로 3.35B 소형 모델이 60개 언어에서 93% 이상의 자국어(L2) 추론율을 성능 저하 없이 달성할 수 있음을 보였다.</p>
+<h2>배경 및 문제의식</h2>
+<p>추론 언어모델은 어떤 언어로 질문을 받든 내부적으로는 주로 영어로 추론하는 경향이 있다. 이는 비영어권 사용자에게 접근성이 떨어질 뿐 아니라, 내부 번역 과정에서 질문의 의도나 뉘앙스가 손실되고("lost in translation"), 특정 지역·문화에 특화된 지식은 오히려 해당 언어로 더 잘 표현되는 경우가 많다는 문제가 있다. 기존에는 L2(사용자 프롬프트 언어) 추론을 달성하려면 성능을 희생해야 한다는("다국어 세금") 통념이 있었고, 실제로 이를 지원하는 오픈모델도 극소수였다. 저자들은 이 통념에 도전하며 데이터 중심 접근으로 이 문제를 해결하고자 한다.</p>
+<h2>핵심 기여</h2>
+<p>1) Tiny Aya(3.35B) 기반 모델을 확장해 45개 언어에서 L2 추론이 가능한 Tiny Aya L2-Thinker를 구축했으며, 오픈소스 L2 추론 최적화 모델 중 가장 넓은 언어 커버리지를 달성했다. 2) 더 많은 언어로 감독을 확장해도 성능 간섭이 발생하지 않으며, 학습에 포함되지 않은 언어로도 L2 추론이 전이된다는 것을 입증했다(다국어의 저주가 추론에는 적용되지 않음). 3) 비-추론 다국어 지시문 데이터가 저비용으로 교차언어 전이를 촉진하는 반면, 영어 추론 데이터는 특히 어려운 수학 과제에서 여전히 필수적인 백본 역할을 한다는 것을 확인했다. 4) 데이터 믹싱이 순차적 적응이나 가중치 병합보다 정확도-L2 추론율 트레이드오프에서 더 우수함을 보였다.</p>
+<h2>방법론</h2>
+<p>SFT 단계에서 세 가지 데이터 소스를 결합했다: (1) 영어 추론(ER) 데이터 - AM-Thinking 프롬프트에 gpt-oss-120b로 생성한 추론 흔적(약 170만 건), (2) 다국어 추론(MR) 데이터 - 영어 추론 흔적을 command-a-translate와 DeepSeek-V3로 44개 언어에 번역(언어당 5천 건 이하로 제한, "번역-학습" 방식), (3) 다국어 비-추론(NR) 데이터 - Tiny Aya가 지원하는 67개 언어 전반의 지시문 데이터(약 490만 건, 빈 사고 블록으로 표시). 이 세 소스를 배치 내에서 함께 학습하는 듀얼 모드(추론/비추론) 조인트 트레이닝을 적용했다. 번역 품질 관리를 위해 코드스위칭 문서, 번역을 직접 언급하는 문서, 정확한 글자 수 등 번역 후 보존이 어려운 제약이 있는 프롬프트를 필터링했다. 평가에는 MGSM, PolyMath(수학), GlobalPIQA, Macaron-MCQ(문화적 추론), Marco-Bench-MIF(지역화된 지시 따르기), MIST-OEG(개방형 생성) 등 6개 벤치마크, 60개 언어를 사용했으며, 과제 정확도·L2 추론율(FastText/GlotLID 언어 식별기 기반)·4-그램 반복률(둠루핑 지표)을 측정했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Tiny Aya L2-Thinker는 모든 벤치마크에서 영어 외 언어 평균 93% 이상의 L2 추론율을 달성했으며, 편차도 매우 낮았다. 반면 언어 강제(language forcing) 방식을 적용한 Qwen3.5-4B(추론 접두어 방식)는 최고 성능에서도 L2 추론율이 이보다 낮았고, 프롬프트 강제는 정확도를 오히려 최대 12점 가까이 떨어뜨렸다(PolyMath, MIST-OEG). Tiny Aya L2-Thinker는 같은 백본의 영어 전용 추론 모델 대비 대부분의 과제에서 정확도가 2~3% 이내로만 하락했고(PolyMath만 예외, 18.6%→11.1%), 영어 프롬프트 성능도 그대로 유지했다. 7B 규모의 M-Thinker-7B(5개 언어 특화 RL)는 수학에서는 앞섰지만 개방형 생성 과제(MIST-OEG 30점, Marco-Bench-MIF 28.2점)에서 크게 무너져, 특정 과제에 편중된 최적화의 한계를 보였다. 24B Magistral-Small-24B 대비해서도 모든 과제에서 Tiny Aya L2-Thinker가 크게 앞섰다. 4-그램 반복률 분석 결과 긴 추론 흔적일수록 반복이 늘어나는 경향(둠루핑)이 확인됐는데, Qwen3.5-4B(추론 접두어)가 가장 길고 반복이 많았던 반면 Tiny Aya L2-Thinker는 쉬운 과제에서는 짧고 반복이 적은 추론을 하면서도 어려운 PolyMath에서는 필요한 만큼 토큰을 사용했다.</p>
+<h2>한계점</h2>
+<p>경쟁 수준 수학(PolyMath)에서는 강화학습(RL) 단계가 없어 Qwen3.5-4B에 뒤처졌으며, 이는 RL이 번역 아티팩트를 다듬는 효과도 있기 때문으로 분석된다. 번역 기반 다국어 추론 데이터는 언어당 5천 건 이하로 제한된 소규모 시드 세트이며, 저자원 언어일수록 번역 비용과 품질 저하 위험이 더 크다. 60개 벤치마크 언어로 평가를 확장했지만 Tiny Aya가 지원하지 않는 언어는 범위에서 제외됐다.</p>
+<h2>시사점</h2>
+<p>추론은 상당 부분 언어 비의존적(language-agnostic)인 행동이며, 모든 목표 언어에 대해 별도의 추론 감독 데이터를 만들지 않아도 신중한 데이터 구성만으로 다양한 유형학적 언어 간에 전이될 수 있음을 보여준다. 특히 저비용의 비-추론 다국어 데이터가 교차언어 전이의 효율적인 지렛대가 될 수 있다는 점은, 데이터가 희소한 언어에서도 다국어 추론 모델을 구축할 수 있는 실용적 경로를 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.10445" target="_blank" rel="noopener">huggingface.co/papers/2609.10445</a> · 2026-09-13</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

@@ -1,0 +1,107 @@
+<meta charset="UTF-8">
+<title>IdeaAMBIG</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#12 · Daily Papers 2026-09-13</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 12</span>
+    </div>
+    <h1 class="article-title">IdeaAMBIG: Benchmarking Implementation-Critical Gaps in Research-Idea Specifications</h1>
+    <p class="article-title-ko">IdeaAMBIG: 연구 아이디어 명세의 구현 핵심 결함 벤치마킹</p>
+    <p class="article-sub">연구 아이디어가 참신하더라도 그 방법론 명세가 구현 가능할 만큼 충분히 구체적인지("코드화 준비도")를 평가하기 위해, 실제 재현성 보고서·깃허브 이슈에서 얻은 163개와 통제된 합성 497개, 총 660개의 근거 기반 결함 사례로 구성된 벤치마크 IdeaAMBIG를 제안했고, 13개 LLM 모두 결함이 무엇인지 스스로 찾아내는 데는 매우 취약하지만(9.6%) 결함을 알려주면 해결책을 잘 제시함을(80.6%) 발견했다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.10539" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.10539" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: IdeaAMBIG: Benchmarking Implementation-Critical Gaps in Research-Idea Specifications</li>
+<li><strong>저자</strong>: Yiling Ma, Yilun Zhao, Sihong Wu, Manasi Patwardhan, Arman Cohan (예일대학교, TCS Research)</li>
+<li><strong>출처</strong>: arXiv:2609.10539v1 [cs.CL] (2026-09-09)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 코드 링크(IdeaAMBIG) 언급, 구체 URL 미기재</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.10539">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>연구 아이디어가 참신하더라도 그 방법론 명세가 구현 가능할 만큼 충분히 구체적인지("코드화 준비도")를 평가하기 위해, 실제 재현성 보고서·깃허브 이슈에서 얻은 163개와 통제된 합성 497개, 총 660개의 근거 기반 결함 사례로 구성된 벤치마크 IdeaAMBIG를 제안했고, 13개 LLM 모두 결함이 무엇인지 스스로 찾아내는 데는 매우 취약하지만(9.6%) 결함을 알려주면 해결책을 잘 제시함을(80.6%) 발견했다.</p>
+<h2>배경 및 문제의식</h2>
+<p>LLM이 연구 아이디어 생성부터 코드 구현까지 과학 워크플로우 전반을 지원하기 시작하면서, 생성된 아이디어가 충실히 구현될 수 있을 만큼 방법론을 충분히 명시하고 있다는 전제가 필요해졌다. 방법을 규정하는 핵심 선택이 누락·모호·모순되면, 다운스트림 에이전트는 명확화를 요청하거나 근거 없는 가정을 조용히 도입해 다른 방법을 구현하는 위험에 빠진다. 기존 평가는 주로 아이디어 자체의 참신성이나 다운스트림 산출물의 품질을 다뤘을 뿐, 아이디어와 실행을 잇는 "명세(specification)" 자체가 충분한지는 다루지 않았다.</p>
+<h2>핵심 기여</h2>
+<p>1) 방법론적 명세가 유능한 구현자가 근거 없는 가정 없이 충실한 구현을 만들 수 있을 만큼 충분한지를 뜻하는 "코드화 준비도(codification readiness)"라는 개념을 정식화하고, 준비도 평가·결함 위치 파악·명확화 행동 생성이라는 3가지 평가 과제를 정의했다. 2) 실제 재현성 보고서와 깃허브 이슈에서 얻은 163개의 실세계 결함과, 성공적으로 재현된 코드화-준비 완료 참조 명세에 정확히 하나의 세부사항만 제거·모호화한 497개의 통제된 합성 결함, 총 660개의 근거 기반 단일-결함 사례를 구축했다. 3) 13개 LLM을 평가해, 결함 위치 파악이 병목이며(최고 모델도 실세계에서 Macro DRR 9.6%) 결함을 알고 나면 명확화 행동 생성은 상대적으로 잘한다는(80.6%) 것을 발견했다.</p>
+<h2>방법론</h2>
+<p>데이터는 세 경로로 구축했다: (1) ML 재현성 챌린지·ECIR·TMLR의 396개 재현성 보고서를 DeepSeek-V4-Pro로 분류해 해결된 실제 결함 후보를 추출하고 사람 검증을 거쳐 42개 실세계 사례를 확보, (2) 2017~2025년 논문 연계 저장소의 4,106개 종료된 깃허브 이슈에서 방법론 핵심 결함을 식별·검증해 121개 실세계 사례 확보, (3) 성공 재현이 확인된 참조 명세(재현성 보고서 기반 358개, AI-Researcher 실행 연구의 43개 프로젝트 기반 139개)에서 구현에 핵심적인 세부사항 하나만 삭제·모호화해 497개 통제 합성 사례 생성. 각 사례는 3가지 Level-1 결함 유형(모호성, 불완전성, 불일치)과 10가지 Level-2 세부 범주로 라벨링되며, 이중 검증 프로토콜(1차 심사 + 2차 독립 재검토)을 거쳐 사전-조정 라벨 일치도가 준비도 판단 92~96%(Cohen's κ=0.84~0.92)에 달했다. 평가는 3단계로 이뤄진다: 과제1(준비도 평가, 명세만 보고 READY/NOT_READY 판단), 과제2(결함 위치 파악, 결함 힌트 없이 Level-1/Level-2 라벨과 자연어 설명 생성), 과제3(명확화 행동 생성, 주석된 결함이 주어진 상태에서 명확화 질문 또는 근거 탐색 행동 생성).</p>
+<h2>실험 설정 및 결과</h2>
+<p>GPT-5.6-Sol, Claude Sonnet 5, Gemini 3.1 Pro 등 13개 최신 LLM을 평가한 결과, 준비도 평가(과제1)에서 최고 모델(GPT-5.6-Sol)이 실세계 사례 Macro-F1 67.5(합성 86.4)를 기록했지만, 근거 접지 점수(Reason Grounding Score)는 실세계에서 0.36에 불과해 정답 라벨이라도 그 근거가 명세를 충실히 반영하지 못하는 경우가 많았다. 가장 어려운 과제는 결함 위치 파악(과제2)으로, 같은 최고 모델이 Level-1 정확도 60.1%, Level-2 정확도 25.2%를 기록했음에도 실제 결함을 정확히 짚어낸 비율(Loc-Acc)은 16.0%, 종합 지표(Macro DRR)는 9.6%에 그쳤다. 반면 정답 결함을 알려준 상태에서의 명확화 행동 생성(과제3)에서는 같은 모델이 실세계 80.6%, 합성 96.2%의 높은 성공률을 보였다. 동일 모델·설정으로 결함 힌트 유무만 다르게 비교한 통제 실험에서는 힌트가 있을 때 Macro-CAS가 13.6%에서 80.6%로 급등해(충분성 지표는 8.6%→80.4%), 병목이 "결함 발견" 자체에 있음을 명확히 확인했다. 오라클 연구에서는 정답 해결책을 제공하면 다운스트림 코드화-준비 비율이 14%에서 98%로 상승했고, 실행 가능성 검증에서도 모든 사전 정의 테스트를 통과하는 구현 비율이 45%에서 85%로, 목표 방법을 충실히 구현하는 비율이 30%에서 90%로 향상됐다(단, 코드가 테스트는 통과하되 의도와 다른 방법을 구현할 수 있음을 시사).</p>
+<h2>한계점</h2>
+<p>데이터는 주로 AI·NLP·머신러닝 분야에 집중되어 있어, 다른 계산과학 분야나 자연발생적인 초기 단계 아이디어로의 일반화는 검증되지 않았다. 다중-결함 명세에 대한 탐색적 어블레이션(50개 통제 합성 쌍)은 결함 병합이 위치 파악을 더 어렵게 만든다는 증거를 찾지 못했지만 응답 예산 비대칭이 있어 결정적이지 않다. 명확화는 단일 행동으로만 평가되어, 다중턴 명확화나 사람에게 물을지 산출물을 조사할지 선택하는 것, 상충하는 근거를 조정하는 것은 다루지 않았다. 또한 코드화 준비도는 실행 전 단계에서만 평가되어, 모든 명세를 실제로 구현해 검증하지는 않았다.</p>
+<h2>시사점</h2>
+<p>연구 자동화 에이전트가 신뢰할 수 있으려면 코드화 이전에 명세의 준비도를 게이트로 검사하고, 병목이 되는 위치를 스스로 찾아내며, 근거 있는 명확화를 요청하는 능력이 필수적임을 보여준다. 현재 LLM들은 결함이 무엇인지 "알려주면" 잘 대응하지만 "스스로 찾는" 데는 취약하므로, 향후 연구 에이전트 설계에서는 결함 탐지 능력 자체를 별도로 강화하는 것이 코드화 신뢰성을 높이는 핵심 과제가 될 것이다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.10539" target="_blank" rel="noopener">huggingface.co/papers/2609.10539</a> · 2026-09-13</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

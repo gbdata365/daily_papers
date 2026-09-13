@@ -1,0 +1,116 @@
+<meta charset="UTF-8">
+<title>액트리뷰</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#2 · Daily Papers 2026-09-14</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 23</span>
+    </div>
+    <h1 class="article-title">ACTREVIEW: Rebuttal-Guided Training Data and Rubric Rewards for Actionable Peer Review Generation</h1>
+    <p class="article-title-ko">액트리뷰: 실행 가능한 동료평가 생성을 위한 반박 기반 학습 데이터 및 루브릭 보상</p>
+    <p class="article-sub">저자의 리뷰 반박(rebuttal)을 "잠재적 지도 신호(latent supervision)"로 활용해, 문제를 지적만 하는 기존 LLM 동료평가 생성기와 달리 "무엇을·어디를·어떻게" 수정할지까지 알려주는 실행 가능한(actionable) 리뷰 피드백 생성 모델 ActReview를 제안한 연구.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.09076" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.09076" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: ACTREVIEW: Rebuttal-Guided Training Data and Rubric Rewards for Actionable Peer Review Generation</li>
+<li><strong>저자</strong>: Yiling Ma, Yilun Zhao, Sihong Wu, Ziyu Chen, Manasi Patwardhan, Arman Cohan (Yale University, University of Chicago, TCS Research)</li>
+<li><strong>출처</strong>: arXiv:2609.09076v1 [cs.CL] (2026-09-08)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://arxiv.org/abs/2609.09076">ActReview 코드 및 ActReview-40K 데이터셋</a> (Data: ActReview-40K, Code: ActReview)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.09076">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>저자의 리뷰 반박(rebuttal)을 "잠재적 지도 신호(latent supervision)"로 활용해, 문제를 지적만 하는 기존 LLM 동료평가 생성기와 달리 "무엇을·어디를·어떻게" 수정할지까지 알려주는 실행 가능한(actionable) 리뷰 피드백 생성 모델 ActReview를 제안한 연구.</p>
+<h2>배경 및 문제의식</h2>
+<p>LLM이 논문 사전 검토(pre-submission review)에 점점 많이 쓰이지만, 기존 시스템들은 문제점을 서술적으로만 지적할 뿐(descriptive) 저자가 실제로 무엇을 어떻게 고쳐야 하는지 처방적(prescriptive) 지침을 주지 못한다는 한계가 있다. 또한 기존 연구들은 리뷰 생성을 단일 태스크로 취급해 "문제 진단"과 "수정 방향 제시"를 분리하지 않았고, 리뷰어가 지적한 약점과 구체적 수정 방안을 명시적으로 연결하는 참조 신호를 제공하는 데이터셋도 드물었다. 이 논문은 실제 저자 반박문(rebuttal)이 리뷰어의 우려를 어떻게 해결할 수 있는지를 암시하는 유용한 정보를 담고 있다는 점에 착안해, 이를 학습 신호로 활용하는 방법을 제시한다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>"실행 가능한 동료평가 생성(Actionable Peer-review Generation)"을 진단적 주장 생성(diagnostic claim generation)과 수정 제안 생성(actionable suggestion generation)의 이중 과제(dual-task)로 정식화하고, 사람이 큐레이션한 벤치마크 ActReview-Bench를 구축.</li>
+<li>리뷰-반박 쌍을 정렬해 구조화된 초기 리뷰 스타일 피드백으로 변환한 대규모 학습 데이터셋 ActReview-40K 구축(ICLR·NeurIPS·EMNLP에서 15,819편 논문, 약 4만 개 약점-응답 인스턴스).</li>
+<li>Qwen3-8B-Base에 다중 과제 지도미세조정(SFT) 후, 후보-인지형(candidate-aware) 약점별 루브릭 보상을 사용한 GRPO 강화학습을 적용한 ActReview 프레임워크 제안.</li>
+</ol>
+<h2>방법론</h2>
+<p>전체 파이프라인은 4단계로 구성된다: (1) 리뷰를 원자적 약점 단위로 분해하고 2단계(7개 대분류·17개 소분류) 약점 분류체계에 라벨링, (2) 각 약점을 이를 실질적으로 해결하는 저자 반박 구간과 정렬(구조·어휘적 후보 검색 후 LLM 기반 의미 정렬), (3) GPT-5.4를 이용해 반박 구간을 "초기 리뷰어 관점"의 진단 주장(diagnostic claim)과 What/Where/How/기대효과로 구성된 수정 제안으로 재작성(반박·저자응답·수정본 언급은 자동 필터로 제거), (4) 약점 유형에 특화된 지역화된 문서 조각(chunk)을 검색해 전체 논문 대신 제공. 학습은 2단계로 진행되는데, 먼저 두 과제를 통합 지시문 형식으로 지도미세조정한 뒤, RL 단계에서는 SFT가 생성한 다양한 후보 출력과 참조 답변을 GPT-5.4에 제공해 인스턴스별 "후보-인지형 루브릭"(하드 제약 + 가중 소프트 요건)을 오프라인으로 동결 생성하고, GRPO(K=8 샘플)로 이 루브릭 점수를 보상으로 정책을 최적화한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>ActReview-Bench(1,000개 인스턴스, 사람평가는 200개 부분집합)에서 GPT-5.1·Gemini-3.1-Pro 등 프롬프트 기반 강력한 LLM 및 DeepReviewer-14B·OpenReviewer-8B·RbtAct-8B·Qwen3-32B 등 특화 리뷰 생성 모델과 비교했다. GPT-5.4 및 사람 평가 모두에서 ActReview-RL은 기존 특화 리뷰 생성 모델들을 뚜렷이 능가했고, 특히 태스크2(실행 가능성)와 종합 품질에서 우위를 보였다(GPT-5.1·Gemini 대비 근사한 백중세). 자동 지표(ROUGE-L, BLEU, 의미 유사도 등)에서도 ActReview-RL이 SFT 대비 개선을 보였으며, 생성 주장 개수가 참조 평균(1.37개)에 근접한 1.24개로 과잉생성이 줄었다. 후보-인지형 루브릭이 직접 판정 보상이나 고정 태스크 수준 루브릭보다 우수했고(T2 실행가능성 77.6 vs 72.4 vs 64.1), 진단과 수정을 분리한 이중 과제 형식이 종단간(end-to-end) 형식보다 우수했다. 175개 신규(2025-2026) 논문에 대한 독립 평가에서도 해결충분성·리뷰어유용성 점수가 크게 향상되었고(1.23→1.70, 1.34→1.68), 심각한 기술 오류율은 가장 낮았다(6.29%). 비지원(non-supported) 약점 라벨 360개에 대한 기권(abstention) 평가에서는 ActReview-RL이 78.3%의 정확한 기권률을 보여, GPT-5.1(31.4%)이나 DeepReviewer-14B(12.2%)보다 훨씬 신중하게 답변했다.</p>
+<h2>한계점</h2>
+<ul>
+<li>ActReview-Bench는 "반박으로 해결 가능한" 약점에 초점을 맞춰 근본적 참신성 논쟁이나 해결 불가능한 방법론적 결함 등은 다루지 못함.</li>
+<li>실행 가능성·근거성은 개선되었지만, 기술적 정확성(Technical Accuracy) 측면에서 강력한 상용 LLM을 일관되게 능가하지는 못함.</li>
+<li>데이터 증강, 루브릭 구성, 보상 채점, 확장형 평가 모두에 GPT-5.4를 사용해 "판정자-모델 결합(judge-model coupling)" 편향 위험이 존재(Claude를 이용한 교차 검증으로 일부 완화).</li>
+<li>21.7%의 비지원 사례에서는 여전히 근거 없는 주장을 생성하는 과잉생성 오류가 남아있음.</li>
+</ul>
+<h2>시사점</h2>
+<p>저자-리뷰어 간 반박 상호작용이 실행 가능한 리뷰 피드백 생성을 위한 유용하지만 그동안 활용되지 않은 지도 신호원이 될 수 있음을 보여준다. 문제 진단과 수정 계획 수립을 구조적으로 분리하는 것이 이를 하나의 과제로 뭉뚱그리는 것보다 더 구체적이고 실행 가능한 피드백을 만든다는 점에서, 향후 LLM 기반 동료평가·저술 지원 도구 설계에 실질적인 지침을 제공한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.09076" target="_blank" rel="noopener">huggingface.co/papers/2609.09076</a> · 2026-09-14</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

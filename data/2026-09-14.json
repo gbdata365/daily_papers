@@ -1,0 +1,31 @@
+{
+  "date": "2026-09-14",
+  "papers": [
+    {
+      "arxiv_id": "2608.15380",
+      "rank": "#1",
+      "category": "method",
+      "category_label": "모델·기법",
+      "upvote": 23,
+      "en_title": "Adaptive Bridge: A Proxy-Based Decoupling Layer for Mitigating DDS Backpressure in ROS 2",
+      "ko_title": "어댑티브 브리지: ROS 2의 DDS 백프레셔 완화를 위한 프록시 기반 디커플링 계층",
+      "one_liner": "ROS 2의 DDS(Data Distribution Service) 미들웨어에서 느린 구독자 하나가 전체 시스템에 지연을 유발하는 \"백프레셔(backpressure)\" 문제를, 프록시 기반의 토픽 분리 계층으로 해결해 임계(critical) 구독자의 p95 지연을 최대 15초에서 1.55ms로 줄인 연구.",
+      "hf_url": "https://huggingface.co/papers/2608.15380",
+      "arxiv_url": "https://arxiv.org/abs/2608.15380",
+      "detail_url": "papers/2608.15380_new.html"
+    },
+    {
+      "arxiv_id": "2609.09076",
+      "rank": "#2",
+      "category": "method",
+      "category_label": "모델·기법",
+      "upvote": 23,
+      "en_title": "ACTREVIEW: Rebuttal-Guided Training Data and Rubric Rewards for Actionable Peer Review Generation",
+      "ko_title": "액트리뷰: 실행 가능한 동료평가 생성을 위한 반박 기반 학습 데이터 및 루브릭 보상",
+      "one_liner": "저자의 리뷰 반박(rebuttal)을 \"잠재적 지도 신호(latent supervision)\"로 활용해, 문제를 지적만 하는 기존 LLM 동료평가 생성기와 달리 \"무엇을·어디를·어떻게\" 수정할지까지 알려주는 실행 가능한(actionable) 리뷰 피드백 생성 모델 ActReview를 제안한 연구.",
+      "hf_url": "https://huggingface.co/papers/2609.09076",
+      "arxiv_url": "https://arxiv.org/abs/2609.09076",
+      "detail_url": "papers/2609.09076_new.html"
+    }
+  ]
+}

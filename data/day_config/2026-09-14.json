@@ -1,0 +1,20 @@
+{
+  "2608.15380": {
+    "base": "2608_어댑티브브리지_DDS-백프레셔-완화-프록시-계층",
+    "rank": "#1",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "23",
+    "en_title": "Adaptive Bridge: A Proxy-Based Decoupling Layer for Mitigating DDS Backpressure in ROS 2",
+    "ko_title": "어댑티브 브리지: ROS 2의 DDS 백프레셔 완화를 위한 프록시 기반 디커플링 계층"
+  },
+  "2609.09076": {
+    "base": "2609_액트리뷰_저자반박-기반-실행가능한-동료평가-생성",
+    "rank": "#2",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "23",
+    "en_title": "ACTREVIEW: Rebuttal-Guided Training Data and Rubric Rewards for Actionable Peer Review Generation",
+    "ko_title": "액트리뷰: 실행 가능한 동료평가 생성을 위한 반박 기반 학습 데이터 및 루브릭 보상"
+  }
+}

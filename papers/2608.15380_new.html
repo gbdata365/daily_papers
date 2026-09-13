@@ -1,0 +1,118 @@
+<meta charset="UTF-8">
+<title>어댑티브 브리지</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#1 · Daily Papers 2026-09-14</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 23</span>
+    </div>
+    <h1 class="article-title">Adaptive Bridge: A Proxy-Based Decoupling Layer for Mitigating DDS Backpressure in ROS 2</h1>
+    <p class="article-title-ko">어댑티브 브리지: ROS 2의 DDS 백프레셔 완화를 위한 프록시 기반 디커플링 계층</p>
+    <p class="article-sub">ROS 2의 DDS(Data Distribution Service) 미들웨어에서 느린 구독자 하나가 전체 시스템에 지연을 유발하는 "백프레셔(backpressure)" 문제를, 프록시 기반의 토픽 분리 계층으로 해결해 임계(critical) 구독자의 p95 지연을 최대 15초에서 1.55ms로 줄인 연구.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2608.15380" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2608.15380" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Adaptive Bridge: A Proxy-Based Decoupling Layer for Mitigating DDS Backpressure in ROS 2</li>
+<li><strong>저자</strong>: Kaushalraj Puwar, B. Thangaraju (International Institute of Information Technology Bangalore)</li>
+<li><strong>출처</strong>: arXiv:2608.15380v2 [cs.NI] (2026-09-06)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/KaushalrajPuwar/adaptive-bridge">GitHub - adaptive-bridge</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2608.15380">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>ROS 2의 DDS(Data Distribution Service) 미들웨어에서 느린 구독자 하나가 전체 시스템에 지연을 유발하는 "백프레셔(backpressure)" 문제를, 프록시 기반의 토픽 분리 계층으로 해결해 임계(critical) 구독자의 p95 지연을 최대 15초에서 1.55ms로 줄인 연구.</p>
+<h2>배경 및 문제의식</h2>
+<p>ROS 2 기반 로봇 시스템은 DDS 미들웨어의 RELIABLE QoS(서비스 품질) 정책을 사용하는 경우가 많은데, 이 방식은 모든 구독자가 메시지를 수신 확인(ACK)할 때까지 발행자(publisher)의 기록 큐(writer history)에 메시지를 보관한다. 만약 무선 네트워크 손상이나 CPU 과부하로 인해 특정 구독자(예: 원격 시각화 노드)가 메시지를 확인하지 못하면 큐가 가득 차 발행자 자체가 새로운 메시지를 쓸 수 없게 되고, 이로 인해 충돌 회피처럼 안전이 중요한 다른 구독자들까지 지연 피해를 입는다. 기존에는 QoS를 BEST_EFFORT로 낮추거나(신뢰성 포기), DiffServ 같은 패킷 수준 트래픽 우선순위 조정을 쓰는 정도였고, DDS 의미론과 구독자 중요도를 반영해 애플리케이션 계층에서 이 결합을 구조적으로 끊는 방법은 없었다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>독립된 두 개의 DDS writer(임계용 RELIABLE, 비임계용 BEST_EFFORT)로 토픽을 분리해 구독자를 구조적으로 디커플링하는 프록시 아키텍처.</li>
+<li>히스테리시스를 적용한 능동 프로브(active-probe) 기반 분류기로 비임계 경로의 전송률을 실시간 조정.</li>
+<li>Gilbert-Elliott 버스트 손실 모델과 Docker 기반 재현 가능한 평가 방법론.</li>
+<li>임계 구독자 p95 지연을 최대 15초에서 1.55ms로, 발행 처리량은 29~36% 붕괴 대신 30Hz로 유지하는 정량적 성능 개선 입증.</li>
+</ol>
+<h2>방법론</h2>
+<p>Adaptive Bridge는 프록시 노드, 분류기(Classifier) 노드, 정책 엔진(Policy Engine), 설정 관리자로 구성된다. 프록시는 원본 토픽(예: /scan)을 구독한 뒤 이를 두 개의 독립적인 DDS writer로 재발행한다 — 임계 경로는 RELIABLE·KEEP_LAST(depth 10), 비임계 경로는 BEST_EFFORT·KEEP_LAST(depth 5)를 사용해 각자 별도의 이력 큐와 확인 스케줄을 가지므로 느린 구독자가 임계 writer에 백프레셔를 유발할 수 없다. 분류기는 5Hz로 전용 프로브 메시지를 보내 왕복시간(RTT)과 손실률을 50샘플(10초) 슬라이딩 윈도우로 측정하고, 3회 연속 임계값 초과 시에만 상태를 전환하는 히스테리시스 상태 머신(UNKNOWN→CRITICAL/NONCRITICAL)으로 진동을 방지한다. 정책 엔진은 CRITICAL 구독자에게 전체 속도로 전달하고, NONCRITICAL로 분류되면 토큰 버킷 기반 속도 제한(10Hz→3Hz)과 오래된 메시지 폐기(stale-drop) 등을 적용하며, 임계 경로 전달은 항상 최우선으로 보장한다. 별도의 안전 감독기(Safety Supervisor)가 큐 점유율과 오류를 감시해 과부하 시 비임계 전달을 중단하거나 전체를 정지시킨다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>4개의 Docker 컨테이너로 구성된 브리지 네트워크에서 30Hz LaserScan 발행자와 임계/비임계 구독자를 두고, Linux tc netem으로 Gilbert-Elliott 2상태 버스트 손실 모델(Clean/Mild/Moderate/Strong 4단계, 평균 손실률 0~9.2%)을 비임계 경로에만 적용했다. 베이스라인(브리지 미적용)에서는 손상 조건에서 처리량이 19.2~21.4Hz로 붕괴(29~36% 감소)하고 임계 p95 지연이 최대 15,043ms까지 치솟았다. Adaptive Bridge 적용 시 모든 손상 수준에서 처리량이 30.0Hz로 유지되고 임계 p95 지연은 1.51~1.57ms에 불과했다(강한 손상에서 약 9,700배 개선). 분류기를 비활성화한 애블레이션에서는 임계 지연 성능이 거의 동일하게 유지되어, 임계 경로 보호의 핵심은 토픽 분리 자체이며 분류기는 비임계 대역폭 절감(10Hz→3Hz, 약 70% 절감)에만 기여함을 확인했다. Fast DDS와 Cyclone DDS 두 RMW 구현 모두에서 임계 p99 지연이 2ms 미만으로 유지되어 특정 DDS 구현에 의존하지 않는 이식성도 검증했다.</p>
+<h2>한계점</h2>
+<ul>
+<li>프록시 자체가 약 0.4ms의 지연 오버헤드를 추가하며, 고대역폭 환경에서는 병목이 될 수 있음(CPU/메모리 오버헤드는 별도로 측정하지 않음).</li>
+<li>분류기는 약 20초의 슬라이딩 윈도우로 지속적 손상만 감지하므로, 그보다 짧은 간헐적 손상은 놓칠 수 있음(예측적 분류는 향후 과제).</li>
+<li>평가는 Fast DDS와 Cyclone DDS, LaserScan류 메시지에 국한되었고, RTI Connext나 PointCloud2 같은 대용량 메시지 타입은 미평가.</li>
+<li>Gilbert-Elliott 손실 파라미터는 통제된 시뮬레이션이며 특정 실제 Wi-Fi 환경을 재현한다고 주장하지 않음.</li>
+<li>프록시 프로세스 자체가 단일 장애점(SPOF)이며, 안전 감독기가 있으나 외부 워치독이나 이중화 구성은 아직 없음.</li>
+</ul>
+<h2>시사점</h2>
+<p>DDS 기반 다중 임계도(mixed-criticality) 로봇 시스템에서 미들웨어 내부를 수정하지 않고도 애플리케이션 계층의 프록시만으로 백프레셔 결합을 근본적으로 차단할 수 있음을 실증했다. 이는 안전이 중요한 로봇 애플리케이션(자율주행, 산업 자동화 등)에서 원격/불안정 구독자를 배제하지 않으면서도 로컬 안전 경로의 실시간성을 보장하는 실용적 배포 패턴을 제시하며, ROS Index에 실제 패키지로 공개되어 재현 및 실사용이 가능하다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2608.15380" target="_blank" rel="noopener">huggingface.co/papers/2608.15380</a> · 2026-09-14</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

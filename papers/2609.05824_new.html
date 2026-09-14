@@ -1,0 +1,128 @@
+<meta charset="UTF-8">
+<title>Top-k를 넘어서</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#9 · Daily Papers 2026-09-15</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 5</span>
+    </div>
+    <h1 class="article-title">Beyond Top-k Skill Retrieval: Diversity-Aware Skill Routing for LLM Agents</h1>
+    <p class="article-title-ko">Top-k를 넘어서: LLM 에이전트를 위한 다양성 인식 스킬 라우팅</p>
+    <p class="article-sub">대규모 스킬 레지스트리에서 LLM 에이전트에게 필요한 스킬을 골라줄 때, 단순히 관련성 높은 top-k를 뽑는 대신 Determinantal Point Process(DPP) 기반의 query-residual 다양성 커널로 중복 스킬을 걸러내고 상호 보완적인 스킬 집합을 선택하는 DSR(Diverse Skill Routing) 프레임워크를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.05824" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.05824" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Beyond Top-k Skill Retrieval: Diversity-Aware Skill Routing for LLM Agents</li>
+<li><strong>저자</strong>: Wang Wei, Tiankai Yang, Samyadeep Basu, Hongjie Chen, Yue Zhao, Zhengzhong Tu, Xiyang Hu, Franck Dernoncourt, Ryan A. Rossi, Hoda Eldardiry (Virginia Tech, University of Southern California, Adobe Research, Dolby Labs, Texas A&amp;M University, Arizona State University 공동 연구)</li>
+<li><strong>출처</strong>: arXiv:2609.05824v1 [cs.AI] (2026년 9월 5일)</li>
+<li><strong>프로젝트 페이지</strong>: 없음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.05824">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>대규모 스킬 레지스트리에서 LLM 에이전트에게 필요한 스킬을 골라줄 때, 단순히 관련성 높은 top-k를 뽑는 대신 Determinantal Point Process(DPP) 기반의 query-residual 다양성 커널로 중복 스킬을 걸러내고 상호 보완적인 스킬 집합을 선택하는 DSR(Diverse Skill Routing) 프레임워크를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>LLM 에이전트는 문서 파싱, 정보 추출, 시각화 등 외부 스킬(재사용 가능한 절차적 지식 모듈)을 불러와 작업을 수행하는데, 스킬 라이브러리가 수만 개 규모로 커지면 모든 스킬을 컨텍스트에 노출할 수 없어 관련성 높은 일부만 골라 전달하는 "스킬 라우팅"이 필요해진다. 기존 라우터(예: SkillRouter)는 각 후보 스킬을 쿼리와의 관련성만으로 독립적으로 채점해 top-k를 반환하는 pointwise 방식인데, 단일 스킬 작업에는 적합하지만 여러 스킬이 복합적으로 필요한 작업에서는 문제가 된다. 서로 설명이나 구현이 비슷한 스킬들이 모두 높은 점수를 받아 상위권을 독차지하면, 정작 필요한 서로 다른 기능의 스킬들이 밀려나 제한된 컨텍스트 예산이 중복 스킬에 낭비되고 작업에 필요한 스킬 커버리지가 떨어진다. 저자들은 대규모 스킬 라우팅을 단순 관련성 랭킹이 아니라 "상호 보완적인 집합 선택(complementary set selection)" 문제로 봐야 한다고 주장한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>대규모 스킬 라우팅을 다양성 인식 부분집합 선택 문제로 재정식화: 대형 스킬 레지스트리의 중복성과 멀티스킬 작업의 조합적 구조에서 동기를 얻음.</li>
+<li>DPP 기반 재랭킹 프레임워크 DSR 제안: 쿼리 의존적 관련성과 스킬 간 비중복성을 함께 반영해 부분집합을 선택.</li>
+<li>Query-residual 다양성 커널 도입: 쿼리와 공유되는 방향 때문에 생기는 유사성과 진짜 "중복"으로 인한 유사성을 구분.</li>
+<li>SkillRouter 벤치마크에서 DSR이 강력한 pointwise 베이스라인 대비 recall과 full coverage를 개선하며, 특히 멀티스킬 쿼리에서 더 큰 이득을 보임을 실증.</li>
+</ul>
+<h2>방법론</h2>
+<p>DSR은 retrieve-and-rerank 파이프라인 위에 다양성 인식 선택 단계를 추가한 구조다.
+1. <strong>후보 검색</strong>: 쿼리와 각 스킬을 인코더로 임베딩(L2 정규화)한 뒤 코사인 유사도로 상위 M개(논문 실험에서는 50개) 후보를 검색.
+2. <strong>품질 점수</strong>: 학습된 pointwise reranker(SR-Rank-0.6B)가 각 쿼리-스킬 쌍의 관련성 로짓을 산출하고 시그모이드를 취해 비음수 품질 점수 q_i(x)로 사용.
+3. <strong>Query-residual 다양성 커널</strong>: 각 스킬 임베딩에서 쿼리 방향으로 정렬된 성분을 제거한 잔차(residual) r_i = e_i − (e_i·e_x)e_x를 구하고, 이를 원본 임베딩과 λ(=0.85) 비율로 섞어 정규화한 z_i를 만든다. 두 스킬 간 다양성은 이 z_i들의 코사인 유사도를 [0,1]로 매핑한 φ_x(s_i, s_j)로 정의된다. 이렇게 하면 "같은 쿼리와 관련 있어서 비슷해 보이는" 성분은 제외하고 진짜 기능적 중복만 벌점을 준다.
+4. <strong>DPP 커널 구성 및 greedy MAP 선택</strong>: L_ij = q_i(x)·φ_x(s_i,s_j)·q_j(x)로 DPP 커널을 만들고, det(L_A)를 최대화하는 부분집합을 greedy하게(Cholesky 증분 업데이트로 효율화) k개까지 선택한다. 첫 번째 선택은 품질 점수가 가장 높은 스킬과 동일하며, 이후 단계는 이미 선택된 집합과 상호보완적인 후보를 우선한다. 최종적으로 선택된 스킬은 품질 점수 순으로 정렬되어 출력된다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>SkillRouter 벤치마크(Claude Skill Registry 기반, 약 8만 개 후보 스킬, 55개 도메인·8개 상위 카테고리에 걸친 전문가 검증 쿼리 75개, 단일 스킬 24개 + 멀티스킬(2~5개 타깃) 51개)의 EASY(78,361개 후보)와 HARD(79,141개, LLM 생성 방해 스킬 780개 포함) 두 난이도 티어에서 평가했다. 비교 대상은 동일한 SR-Emb-0.6B 검색기와 SR-Rank-0.6B 리랭커를 쓰는 SkillRouter의 전체 pointwise 파이프라인이다.</p>
+<ul>
+<li>전체 쿼리 기준 Recall@20은 0.754→0.768, Full Coverage@20은 0.560→0.573으로 개선. cutoff 50에서는 Recall이 0.754→0.808, Full Coverage가 0.560→0.633까지 향상.</li>
+<li>멀티스킬 쿼리에서 이득이 더 큼: Recall@20 0.704→0.739, Full Coverage@20 0.458→0.492; cutoff 50에서는 Recall 0.704→0.773, Full Coverage 0.458→0.551.</li>
+<li>MRR(초기 정밀도 지표)은 SkillRouter와 거의 동일(all query MRR@10 0.788 vs 0.784)해, DSR이 순위 상단의 정확도를 크게 해치지 않으면서 커버리지를 높인다는 것을 보임.</li>
+<li>Ablation: 표준 코사인 커널로 다양성을 계산하면 오히려 멀티스킬 Full Coverage@10이 낮아짐(0.254, reranker 품질 사용 시)에 비해 query-residual 커널을 쓰면 0.441로 크게 개선 — 다양성 계산 방식 자체가 핵심 요인임을 확인. 품질 신호도 중요해서, 임베딩 유사도 대신 학습된 reranker 점수를 쓰면 Recall@10이 0.618→0.711로 향상.</li>
+<li>다른 랭킹 전략(순수 top-k 임베딩 검색, Qwen3-8B 기반 zero-shot LLM reranker, SkillRouter, DSR) 비교에서, 단일 스킬 쿼리는 모든 방법이 비슷한 성능을 보이지만 멀티스킬 쿼리에서는 DSR이 가장 우수(Recall@10 0.668, Full Coverage@10 0.432)했고, zero-shot LLM reranker는 오히려 SkillRouter보다 낮은 성능을 보여 프롬프트 기반 재랭킹만으로는 미세한 스킬 구분이 부족함을 시사.</li>
+</ul>
+<h2>한계점</h2>
+<ul>
+<li>평가가 SkillRouter 벤치마크(전문가 검증 쿼리 75개)에 한정되어 있어 쿼리 수가 제한적이며, 더 다양한 도메인·복잡한 워크플로·스킬 유형에 대한 검증이 필요.</li>
+<li>DSR은 초기 검색(retrieval) 이후 단계에서만 작동하므로, 후보 집합에 필요한 스킬이 애초에 포함되지 않으면 DPP 선택 단계가 이를 복구할 수 없다. 즉 강력한 후보 검색·관련성 모델링과의 결합이 향후 과제로 남는다.</li>
+<li>Recall/Full Coverage 같은 검색 기반 지표만 사용했고, 실제 에이전트의 다운스트림 작업 성공률(엔드투엔드 실행 성능)은 측정하지 않았다. 필요한 스킬을 모두 검색해도 잘못된 툴 사용, 부실한 계획, 스킬 지시문 간 충돌 등으로 에이전트가 실패할 수 있다.</li>
+<li>DPP 기반 선택은 검색된 상위 후보에만 적용되어 오버헤드를 관리 가능한 수준으로 유지하지만, 지연시간에 민감한 배포 환경이나 훨씬 큰 후보 집합에서는 비용이 여전히 문제될 수 있다.</li>
+</ul>
+<h2>시사점</h2>
+<p>스킬 레지스트리가 계속 커지는 추세 속에서, 효과적인 에이전트 라우팅 시스템은 개별 스킬의 관련성뿐 아니라 선택된 스킬 집합 내의 중복성과 상호보완성까지 함께 고려해야 한다는 점을 실증적으로 보여준다. 특히 쿼리와 공유되는 관련성 방향을 제거한 뒤 다양성을 측정하는 query-residual 방식은, 단순 코사인 유사도 기반 다양성 페널티가 오히려 필요한 보완 스킬을 걸러내는 부작용을 방지하는 실용적 해법으로, 향후 RAG, 툴 선택, 멀티에이전트 오케스트레이션 등 "여러 개를 동시에 골라야 하는" 검색 문제 전반에 적용 가능한 아이디어를 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.05824" target="_blank" rel="noopener">huggingface.co/papers/2609.05824</a> · 2026-09-15</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

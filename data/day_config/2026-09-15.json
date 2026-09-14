@@ -1,0 +1,92 @@
+{
+  "2609.06107": {
+    "base": "2609_데이터플렉스RL_RLVR-데이터정책-평가플랫폼",
+    "rank": "#1",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "96",
+    "en_title": "DataFlex-RL: An Evaluation Platform for RLVR Data Policies",
+    "ko_title": "DataFlex-RL: RLVR 데이터 정책을 위한 평가 플랫폼"
+  },
+  "2609.11115": {
+    "base": "2609_벤치마크레이더_AI벤치마크-실시간-DB-검색엔진",
+    "rank": "#2",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "75",
+    "en_title": "Benchmark Radar: A Living Database and Search Engine for AI Benchmarks and Evaluation",
+    "ko_title": "AI 벤치마크와 평가를 위한 살아있는 데이터베이스 겸 검색엔진, Benchmark Radar"
+  },
+  "2609.08418": {
+    "base": "2609_페요스페이스_7인팀이-훈련한-프론티어-사이버모델",
+    "rank": "#3",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "75",
+    "en_title": "Feyospace-v1: How the Cyber Mercury Seven Trained Frontier Cyber Models",
+    "ko_title": "Feyospace-v1: 사이버 머큐리 세븐(7인 팀)이 프론티어 사이버 모델을 훈련한 방법"
+  },
+  "2609.12641": {
+    "base": "2609_잠재인터페이스_시각-행동-지름길-차단",
+    "rank": "#4",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "63",
+    "en_title": "Breaking the Vision-Action Shortcut: Latent Interface Training for Generalizable Robotics Foundation Models",
+    "ko_title": "비전-액션 숏컷 극복: 일반화 가능한 로보틱스 파운데이션 모델을 위한 잠재 인터페이스 학습"
+  },
+  "2609.13141": {
+    "base": "2609_사스_엔드투엔드-컨텍스트-랭킹-기반-어텐션-희소화",
+    "rank": "#5",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "50",
+    "en_title": "SAS: Simple Attention Sparsification via End-to-End Optimization of Context Ranking",
+    "ko_title": "SAS: 컨텍스트 랭킹의 엔드투엔드 최적화를 통한 단순 어텐션 희소화"
+  },
+  "2609.11682": {
+    "base": "2609_코브라스킬즈_밴딧기반-에이전트-스킬-진화",
+    "rank": "#6",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "29",
+    "en_title": "COBRA-Skills: Contextual Bandit-Guided Evolution for Agent Skill Optimization",
+    "ko_title": "코브라-스킬즈: 맥락적 밴딧 기반 에이전트 스킬 진화 최적화"
+  },
+  "2609.12945": {
+    "base": "2609_스텝오디오3젠_통합-오디오-생성-모델",
+    "rank": "#7",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "28",
+    "en_title": "StepAudio 3 Gen Technical Report",
+    "ko_title": "StepAudio 3 Gen 기술 보고서 (통합 오디오 생성 모델)"
+  },
+  "2608.30597": {
+    "base": "2608_피엘씨디피오_노이즈-모호한-선호도-사후라벨보정",
+    "rank": "#8",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "23",
+    "en_title": "PLC-DPO: Posterior Label Correction in Noisy and Ambiguous Preference Optimization",
+    "ko_title": "노이즈와 모호성이 섞인 선호도 최적화에서의 사후 라벨 보정 (PLC-DPO)"
+  },
+  "2609.05824": {
+    "base": "2609_DSR_다양성인식-스킬라우팅",
+    "rank": "#9",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "5",
+    "en_title": "Beyond Top-k Skill Retrieval: Diversity-Aware Skill Routing for LLM Agents",
+    "ko_title": "Top-k를 넘어서: LLM 에이전트를 위한 다양성 인식 스킬 라우팅"
+  },
+  "2609.05820": {
+    "base": "2609_라우팅밴딧_제한된-피드백-LLM-전문가-온라인-학습",
+    "rank": "#10",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "5",
+    "en_title": "Online Learning with LLM Experts from Limited Feedback",
+    "ko_title": "제한된 피드백으로 배우는 LLM 전문가 온라인 학습"
+  }
+}

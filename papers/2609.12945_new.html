@@ -1,0 +1,110 @@
+<meta charset="UTF-8">
+<title>StepAudio 3 Gen 기술 보고서 (통합 오디오 생성 모델)</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#7 · Daily Papers 2026-09-15</span>
+      <span class="cat-tag">생성모델</span>
+      <span class="upvote-tag">▲ 28</span>
+    </div>
+    <h1 class="article-title">StepAudio 3 Gen Technical Report</h1>
+    <p class="article-title-ko">StepAudio 3 Gen 기술 보고서 (통합 오디오 생성 모델)</p>
+    <p class="article-sub">StepAudio 3 Gen은 음성, 보컬, 음악, 효과음을 하나의 이산(discrete) 오토리그레시브 LLM 프레임워크로 통합 생성하면서도, 사전학습된 텍스트 LLM의 언어 능력을 훼손하지 않도록 설계된 범용 오디오 생성 모델이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.12945" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.12945" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: StepAudio 3 Gen Technical Report</li>
+<li><strong>저자</strong>: StepFun-Audio Team (중국 StepFun 소속 오디오 연구팀, 다수 공동 저자)</li>
+<li><strong>출처</strong>: arXiv:2609.12945v1 [cs.SD] (2026년 9월 11일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://stepaudiollm.github.io/step-audio-3-gen/">https://stepaudiollm.github.io/step-audio-3-gen/</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.12945">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>StepAudio 3 Gen은 음성, 보컬, 음악, 효과음을 하나의 이산(discrete) 오토리그레시브 LLM 프레임워크로 통합 생성하면서도, 사전학습된 텍스트 LLM의 언어 능력을 훼손하지 않도록 설계된 범용 오디오 생성 모델이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>기존 오디오 생성은 TTS(음성합성), 텍스트-오디오(효과음), 텍스트-음악/노래 합성 등 영역별로 별도 모델을 사용해 왔다. 최근에는 디퓨전이나 플로우 매칭 기반으로 여러 오디오 도메인을 하나의 연속(continuous) 잠재공간에서 생성하려는 통합 모델들이 등장했지만, 저자들은 대신 이산 토큰 기반 접근을 택했다. 문제는 RVQ(residual vector quantization)처럼 프레임당 다중 코드북을 갖는 고품질 오디오 표현을 언어모델(LLM)에 그대로 결합하기가 까다롭다는 점이다. 코드북을 시간축으로 모두 펼치면 시퀀스가 지나치게 길어지고, 거친 의미 토큰만 쓰면 음향적 디테일을 잃는다. 또한 새로 추가되는 다량의 오디오 임베딩과 잔차 코드북 손실이 사전학습된 LLM의 텍스트 능력을 망가뜨리는 "간섭(interference)" 문제도 존재한다.</p>
+<h2>핵심 기여</h2>
+<p>논문은 세 가지 핵심 기여를 제시한다.
+1. <strong>간섭 인지형 점진적 사전학습(interference-aware progressive pretraining)</strong>: 오디오 정렬 → 오디오 이해 → (그래디언트 분리된) 생성 → 장문맥 공동 쿨다운의 4단계 커리큘럼으로, 텍스트 능력을 보존하면서 오디오 능력을 점진적으로 습득시킨다.
+2. <strong>RVQ Adaptor</strong>: 0으로 초기화된 토큰 단위 잔차 어댑터로, 다중 코드북 오디오 임베딩을 사전학습된 토큰 임베딩 공간에 맞게 변환해 별도의 시퀀스 인코더 없이도 LLM이 완전한 음향 표현을 받아들이게 한다.
+3. <strong>범용 오디오에 대한 이산 오토리그레시브 모델링</strong>: 음성·노래·음악·효과음을 아우르는 단일 12.5Hz, 16코드북 RVQ 표현을 기반으로, 시간축은 LLM이, 코드북(깊이)축은 경량 causal Transformer가 나눠 맡는 time-depth 구조로 디퓨전/플로우 기반 렌더러 없이 오디오를 생성한다.</p>
+<h2>방법론</h2>
+<p>StepAudio 3 Gen은 두 구성요소로 이뤄진다. (1) <strong>StepAudio Tokenizer</strong>는 SSL(자기지도학습) 인코더의 의미 특징과 컨볼루션 기반 음향 인코더의 파형 특징을 융합 후 12.5Hz로 다운샘플링하고, 16×2048 RVQ로 양자화한다. 양자화 드롭아웃(0.5)과 SSL 특징 증류를 통해 앞쪽 코드북에 의미 정보가, 뒤쪽 코드북에 음향 디테일이 집중되도록 유도한다. 디코더는 Vocos 스타일의 causal Transformer(RoPE, 25프레임 슬라이딩 윈도우)와 ISTFT 헤드로 24kHz 파형을 스트리밍 방식으로 복원한다. (2) <strong>LLM 백본</strong>은 기존 텍스트 디코더 전용 Transformer를 그대로 유지하되, 첫 번째 코드북(c0)을 2048개의 오디오 토큰으로 메인 어휘에 편입시켜 텍스트와 오디오가 하나의 LM head와 softmax를 공유하게 한다. 입력 측에서는 16개 코드북 임베딩의 합을 RVQ Adaptor(사전정규화+SwiGLU 잔차 블록 스택, 0 초기화)에 통과시켜 오디오 위치에서만 토큰 임베딩에 더한다. 출력 측에서는 LM head가 c0만 예측하고, 나머지 15개 코드북은 백본 은닉상태와 c0를 조건으로 받는 별도의 경량 causal Transformer("RVQ Code Predictor")가 코드북 축을 따라 순차적으로 예측한다. 학습은 텍스트+c0에 대한 토큰 손실과 15개 잔차 코드북 손실의 가중합(λ)으로 이뤄지며, 4단계 사전학습(모달리티 정렬 → 오디오 이해 → 그래디언트 분리된 생성 → 장문맥 공동 쿨다운, 총 약 2.7T 토큰) 동안 predictor에 대한 stop-gradient 토글과 텍스트 리플레이(50%)로 텍스트 능력의 손실(forgetting)을 억제한다. 이후 약 5,000시간 분량의 SFT(음악·효과음·보이스 디자인·노래·음성)와 GRPO(Group Relative Policy Optimization) 기반 강화학습으로 지시 추종 능력을 추가로 향상시킨다. 보상은 오디오 이해 모델이 생성한 캡션과 원 지시문 간의 일관성 점수, 그리고 (음성이 포함된 경우) ASR 기반 오류율을 결합해 산출한다. 사용자 지시는 ROLE(화자 정체성/특성), DIRECTOR(음향 장면과 생성 의도), SCRIPT(발화·효과음·음악을 시간순으로 배치)로 구성된 통일 포맷으로 제어된다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>평가는 크게 세 부분이다. 첫째, RVQ Adaptor 유무를 비교한 결과 ASR(AISHELL-1, LibriSpeech), 오디오 이해(MMAU), 번역(CoVoST), 지식 QA(SpeechMMLU) 전 지표에서 Adaptor 적용 모델이 일관되게 우수했다(예: SpeechMMLU 정확도 12.13% → 58.76%). 둘째, 간섭 인지형 점진적 사전학습을 RVQ Adaptor 없는 3단계 베이스라인과 비교했을 때 FinEval, C-Eval, MMLU, CMMLU, MATH, GSM8K, BBH, HumanEval 등 텍스트 벤치마크 전반에서 더 높은 성능을 유지해 텍스트 능력 보존 효과를 입증했다. 셋째, 핵심 생성 능력 평가에서 TTS는 중국어 인간유사성(human-likeness) Arena 평가에서 Qwen-Audio-3.0-TTS-Plus, Doubao, MiniMax-Speech-2.8-HD, Inworld-TTS-2, StepAudio 2.5 TTS 등 5개 상용 시스템 대비 Elo 1755.3으로 1위, 헤드투헤드 평균 승률 82.0%(73~90%)를 기록했다. Voice Design은 InstructTTSEval 벤치마크(Gemini 3.1 Pro 심사)에서 영어 평균 77.7%, 중국어 평균 85.2%로 Qwen3-TTS-VoiceDesign, MOSS-VoiceGenerator, Ming-omni-tts, VoiceSculptor를 능가했으며, 블라인드 인간 선호 평가에서도 Elo 1668.5로 1위, 헤드투헤드 평균 승률 75.5%를 얻었다. 이 외에 보컬 생성(음성-투-보컬 변환 포함), 60초 이상의 장형 음악 생성, 복합 음향 장면(효과음 배치·화자 다중 대화 포함) 등 확장 기능도 시연되었다.</p>
+<h2>한계점</h2>
+<p>논문에 명시적인 한계점 섹션은 없다. 다만 본문 서술로 미루어 볼 때, 오디오 생성은 여전히 의미 코드북(c0)을 LLM이 자기회귀적으로 예측하고 나머지 15개 잔차 코드북은 별도의 소형 예측기가 담당하는 인수분해(factorization) 구조를 쓰므로, 잔차 예측기의 출력이 백본으로 역전파되지 않는 구조적 근사가 존재한다(4단계 공동 쿨다운에서만 부분적으로 완화). 또한 텍스트 능력 보존이 완전하지는 않아, 벤치마크에 따라 여전히 베이스라인 대비 개선의 여지가 있다(예: 제안 기법도 원래 순수 텍스트 LLM 수준까지 완전히 복원했는지는 별도로 보고되지 않음). 평가도 주로 중국어/영어 중심이며 TTS 인간유사성 평가는 중국어 세트로만 수행되었다.</p>
+<h2>시사점</h2>
+<p>이 연구는 디퓨전·플로우 매칭 기반이 대세이던 통합 오디오 생성 분야에서, 순수 이산 오토리그레시브 방식만으로도 최신(SOTA) 수준의 TTS 및 보이스 디자인 성능을 달성할 수 있음을 보여준다. 특히 RVQ Adaptor와 단계적 학습 커리큘럼은 새로운 모달리티를 기존 LLM에 이식할 때 발생하는 "능력 간섭" 문제를 완화하는 일반적인 설계 원칙으로, 오디오뿐 아니라 다른 멀티모달 확장에도 참고할 수 있는 실용적 지침을 제공한다. 또한 별도의 음향 렌더러(보코더 diffusion) 없이 전체 파이프라인을 이산 토큰 공간에서 끝내는 구조는 추론 지연시간과 시스템 복잡도 측면에서 실서비스 적용에 유리할 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.12945" target="_blank" rel="noopener">huggingface.co/papers/2609.12945</a> · 2026-09-15</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

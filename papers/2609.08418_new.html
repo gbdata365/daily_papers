@@ -1,0 +1,134 @@
+<meta charset="UTF-8">
+<title>Feyospace-v1</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#3 · Daily Papers 2026-09-15</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 75</span>
+    </div>
+    <h1 class="article-title">Feyospace-v1: How the Cyber Mercury Seven Trained Frontier Cyber Models</h1>
+    <p class="article-title-ko">Feyospace-v1: 사이버 머큐리 세븐(7인 팀)이 프론티어 사이버 모델을 훈련한 방법</p>
+    <p class="article-sub">Vera Praxis Lab의 7인 독립 연구팀이 실행 검증 기반의 데이터 구축 파이프라인과 다섯 가지 보완적 지도학습 기법을 결합해 오픈 가중치 모델을 후속학습(SFT)시킴으로써, 대규모 조직 없이도 사이버 보안 에이전트 벤치마크에서 동급 최고 수준의 성능을 달성했다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.08418" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.08418" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Feyospace-v1: How the Cyber Mercury Seven Trained Frontier Cyber Models</li>
+<li><strong>저자</strong>: Zongjie Li, Alan Z. W, John Nicolas J, Walter H. F, Scott Donald L, Gordon Y. P, Deke X Jr. (Vera Praxis Lab, 7인 독립 연구팀)</li>
+<li><strong>출처</strong>: arXiv:2609.08418v1 [cs.AI] (2026년 9월 8일)</li>
+<li><strong>프로젝트 페이지</strong>: 없음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.08418">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>Vera Praxis Lab의 7인 독립 연구팀이 실행 검증 기반의 데이터 구축 파이프라인과 다섯 가지 보완적 지도학습 기법을 결합해 오픈 가중치 모델을 후속학습(SFT)시킴으로써, 대규모 조직 없이도 사이버 보안 에이전트 벤치마크에서 동급 최고 수준의 성능을 달성했다.</p>
+<h2>배경 및 문제의식</h2>
+<p>사이버보안은 최근 프론티어 AI 기업들이 별도의 접근 통제·검증 체계를 두는 핵심 역량 영역으로 부상했다. 그러나 처음부터 프론티어 모델을 학습시키는 데 필요한 컴퓨팅·데이터·인력은 대다수 독립 연구팀이 감당하기 어렵다. 이 논문은 기존 오픈 가중치 모델을 후속학습으로 개선하는 실용적 경로를 택하고, 그 성패를 좌우하는 두 요인—① 학습 과제가 충분히 신뢰할 수 있고 검증 가능한 실행 환경에 기반하는지, ② 각 과제가 학생 모델이 습득해야 할 역량을 드러내는 고품질 지도(supervision)와 짝지어져 있는지—를 다룬다. 저자들은 이를 위해 다섯 가지 상호 보완적인 병목(추론의 충실성, 데이터 확보 비용, 폐쇄형 교사 모델 활용, 모델 병합으로 약화된 오픈 모델 역량 회복, 사람 전문가 개입의 학습 가능한 형태로의 전환)을 정의하고 각각에 대응하는 기법을 제시한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>교사 모델 확보, 궤적 구성, 필터링, 손실 설계, 장문 컨텍스트 패킹, 분산 학습에 이르는 에이전틱 SFT 전 과정에 대한 체계적인 엔지니어링 설명을 제공했다고 주장한다.</li>
+<li>저장소 수준 코딩, 실제 취약점(CVE) 재현, CTF(Capture The Flag) 문제, 리눅스 커널 히스토리 마이닝, 익스플로잇 재구성, 펌웨어·물리 장치 환경까지 아우르는 대규모 사이버 데이터 구축 파이프라인을 공개했다.</li>
+<li>재현성과 커뮤니티 연구를 지원하기 위해 학습에 사용한 궤적 데이터를 공개할 예정이라고 밝혔다.</li>
+<li>7인 규모의 독립 팀이 데이터 구축부터 학습, 평가까지 전 과정을 end-to-end로 수행해 경쟁력 있는 결과를 낼 수 있음을 처음으로 보였다고 주장한다.</li>
+</ul>
+<h2>방법론</h2>
+<p>연구팀은 다섯 가지 "지도·역량 확보 기법"을 제안했으나, 실제로 최종 학습 데이터에 기여한 것은 이 중 일부이며, 윤리적·품질 기준을 충족하지 못한 접근은 최종 파이프라인에서 제외했다고 명시한다.</p>
+<ul>
+<li><strong>Choulea</strong>: 상용 모델 응답에 남아 있는 모델별 특징적 추론 패턴("인지 방언")을 분석해, 사고 과정의 충실도와 구성을 연구하는 관찰적 기법이다. 다만 데이터 오염·품질 위험을 이유로 그 결과를 실제 SFT 학습 타깃으로는 사용하지 않고, 패턴 분석용 증거로만 활용했다.</li>
+<li><strong>SkyReal</strong>: 폐쇄형 교사 모델 호출 비용을 낮추기 위한 접근을 탐색했으나, 내부적으로 정한 신뢰성·컴플라이언스 기준을 충족하지 못해 최종 학습 파이프라인에는 사용하지 않았다.</li>
+<li><strong>Hongzwang</strong>: 폐쇄형 교사 모델의 제약을 우회해 응답을 얻는 접근을 실험적으로 검토했으나, 윤리 성명에서 밝힌 대로 내부 컴플라이언스 요건을 충족하지 못해 최종 학습 데이터 구축에서 배제했다.</li>
+<li><strong>PSBreakup</strong>: 여러 전문가 모델을 하나로 합치는 모델 병합(merge) 과정에서 약화되어 잠재화된 특정 도메인(사이버) 역량을 되살리는 화이트박스 증류 기법이다. 행동 간섭 프로브로 병합 후에도 남아 있는 도메인 구조를 찾아내고, 해당 도메인에 대해서만 역-KL 증류를 적용해 목표 역량을 복원하면서 다른 역량은 그대로 보존한다.</li>
+<li><strong>Kreator</strong>: 교사 모델조차 스스로 풀지 못하는 고난도 익스플로잇 작성 과제에서, 막힌 지점마다 사람 전문가가 최소한의 힌트를 제공하고, 이 개입을 교사 모델이 자기 자신의 자연스러운 1인칭 추론으로 다시 서술하도록 하여 외부 개입 흔적이 남지 않는 학습 가능한 궤적으로 변환하는 기법이다. 실행으로 검증된 결과에 도달한 궤적만 학습 데이터로 채택한다.</li>
+</ul>
+<p>이렇게 확보한 과제들은 저장소 수준 코딩(공개 저장소 3,751개에서 3,078개 저장소·76,376개 후보 인스턴스 추출, 79% 검증), 실제 취약점 재현(CVE 레코드 34만여 건 중 69,854개 실행 가능 환경 구축), CTF 환경(9,312개), 커널 히스토리 마이닝 기반 환경(428,000개 커밋 중 12,993개 검증), 상위 환경을 재구성한 익스플로잇 개발 과제(1,601개), 펌웨어·물리 장치 환경(1,377개)으로 구성된다. 모든 후보 궤적은 실행 검증과 4단계 증거 감사(evidence audit)를 거친 뒤에야 학습 데이터로 채택되며, 최종적으로 164,269개의 감사된 궤적(기본 코딩 28,177개, 보안·하드웨어 136,092개)이 만들어졌다. 이 데이터로 Qwen3.6-35B-A3B(MoE), Qwen3.8-27B(Dense), Qwen3.5-122B-A10B(MoE) 세 개의 오픈 가중치 체크포인트를 3에포크 SFT하여 각각 Feyospace-s0/s1/s2를 만들었다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>평가는 실제 취약점 재현 능력을 측정하는 CyberGym(1,507개 과제 전체 스위트)과, CyBench·XBOW Validation·NYU CTF Bench를 합친 인터랙티브 CTF 스위트, 그리고 완전한 익스플로잇 작성 능력을 진단하는 ExploitBench/ExploitGym으로 구성된다.</p>
+<ul>
+<li><strong>CyberGym</strong>: 세 체크포인트 모두 시작 모델 대비 검증된 성공률이 크게 향상되었다(Qwen3.6-35B-A3B 9.75%→51.29%, Qwen3.8-27B 54.51%→63.24%, Qwen3.5-122B-A10B 29.07%→50.07%; 평균 +23.76%p). 2026년 9월 1일 기준 Feyospace-s1은 63.24%로 공식 리더보드 10위에 올랐고, 세 체크포인트 모두 동급 파라미터 규모 모델 중 1위를 기록했다. 다만 폐쇄형 최상위 모델(GPT-5.5 Cyber 85.6%, Claude Mythos Preview 83.1%, 개발사 공개 수치)에는 여전히 미치지 못했으며, 다른 오픈 모델(DeepSeek-V4 Flash 70.74%, GLM-5.3 80.6%, Kimi K3 82.9%) 대비로도 아직 낮은 수준이다.</li>
+<li><strong>인터랙티브 CTF</strong>: 풀링된 CTF 성공률이 Feyospace-s0/s1/s2에서 각각 46.23%/52.21%/40.09%로 시작 모델 대비 평균 +10.49%p 향상되었다. 다만 같은 시작 체크포인트에서 다른 후속학습 레시피로 만든 모델 간 CTF 성능 편차가 매우 커서(예: 동일 기반 모델에서 파생된 두 모델이 각각 4.79%와 23.40%), 코딩 중심 후속학습이 CTF형 문제 해결로 일관되게 전이되지는 않는다는 점을 확인했다.</li>
+<li><strong>익스플로잇 개발(EXP) 진단</strong>: 세 체크포인트 모두 ExploitBench의 상위 역량 등급(범용 프리미티브·완전 제어 단계)에는 도달하지 못했다. 별도로 더 큰 모델에 익스플로잇 중심 데이터만으로 추가 SFT를 수행한 실험에서는 역량 경계가 다소 상향되었으나(취약점 재현 단계에서 목표 프리미티브 단계 일부 사례로), 여전히 완전 제어 단계에는 이르지 못했다.</li>
+<li><strong>안전성/오용 저항성</strong>: Meta의 안전성 평가 방법론을 따라 재구성한 사이버 오용 평가 서브셋에서, 후속학습된 체크포인트들은 대부분의 비교에서 폐쇄형 모델보다 공격 성공률이 높았고, 특히 다중 턴(multi-turn) 적응형 공격 상황에서는 공격 성공률이 크게 증가했다. 저자들은 이번 연구가 유용성과 사이버 역량 향상에 초점을 맞췄을 뿐 별도의 안전 정합성(alignment) 단계를 포함하지 않았다는 점을 명시하며, 이를 향후 필수 과제로 제시했다.</li>
+<li>부가 분석에서는 후속학습 후 모델들이 교사 궤적보다 짧고 효율적인 추론을 생성했으며(추론 토큰 13~18% 감소), 학습 초기에 일시적으로 나타났던 몇 가지 이상 추론 패턴(반복 루프, 추론-행동 단절 등)이 학습이 진행되며 대부분 사라졌다고 보고한다.</li>
+</ul>
+<h2>한계점</h2>
+<ul>
+<li>후속학습된 모델들의 공격/오용 관련 안전성이 기반 모델보다 오히려 취약해지는 경향이 있으며, 별도의 안전 정합성 단계가 아직 적용되지 않았다.</li>
+<li>완전한 익스플로잇 개발(범용 프리미티브, 완전 제어 수준)에는 세 체크포인트 모두 도달하지 못해, 취약점 재현과 실질적 공격 능력 사이에는 여전히 격차가 있다.</li>
+<li>CTF형 문제 해결 능력은 후속학습 레시피에 따라 편차가 커서, 코딩·취약점 재현 중심 데이터가 CTF 역량으로 안정적으로 전이된다고 보장할 수 없다.</li>
+<li>폐쇄형 최상위 모델과 비교하면 CyberGym 성능에서 아직 격차가 존재한다.</li>
+<li>제안한 다섯 가지 기법 중 일부(교사 모델 활용 비용 절감, 폐쇄형 모델 제약 우회 관련 접근)는 내부 컴플라이언스 기준을 충족하지 못해 실제로는 최종 학습 데이터 구축에 기여하지 못했다.</li>
+<li>7인 규모의 소규모 팀이 제한된 예산으로 수행한 연구로, 일부 분석(예: 특정 추론 흔적의 대규모 정제·정화)은 자원 제약으로 충분히 수행되지 못했다고 저자들이 밝히고 있다.</li>
+</ul>
+<h2>시사점</h2>
+<p>이 연구는 막대한 컴퓨팅과 인력을 가진 대형 조직이 아니어도, 실행 검증에 기반한 신뢰할 수 있는 데이터 구축 파이프라인과 목적에 맞게 설계된 지도학습 기법을 결합하면 오픈 가중치 모델의 에이전틱 사이버 보안 역량을 상당히 끌어올릴 수 있음을 보여준다. 동시에, 사이버 역량 향상과 오용 저항성 약화가 함께 나타난 결과는 오픈소스 생태계에서 사이버 보안 관련 AI 역량을 발전시킬 때 역량 향상과 안전 정합성을 분리해서 다룰 수 없다는 점을 시사하며, 향후 이러한 후속학습 파이프라인에 안전성 단계를 어떻게 통합할 것인지가 중요한 과제로 남는다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.08418" target="_blank" rel="noopener">huggingface.co/papers/2609.08418</a> · 2026-09-15</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

@@ -1,0 +1,126 @@
+<meta charset="UTF-8">
+<title>SAS</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#5 · Daily Papers 2026-09-15</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 50</span>
+    </div>
+    <h1 class="article-title">SAS: Simple Attention Sparsification via End-to-End Optimization of Context Ranking</h1>
+    <p class="article-title-ko">SAS: 컨텍스트 랭킹의 엔드투엔드 최적화를 통한 단순 어텐션 희소화</p>
+    <p class="article-sub">학습 가능한 어텐션 스파스화(sparse attention)에서 선택기(selector)의 점수를 어텐션 소프트맥스 내부에 로그 게이트로 직접 주입해 언어모델링 손실로 엔드투엔드 학습함으로써, 기존의 증류(distillation) 기반 선택기보다 더 적은 컨텍스트 예산으로도 더 정확한 컨텍스트 랭킹을 학습하는 SAS를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.13141" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.13141" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: SAS: Simple Attention Sparsification via End-to-End Optimization of Context Ranking</li>
+<li><strong>저자</strong>: Zhiwei Li, Lei Zhu, Hao Gu, Xiang Hu, Yan Wang, Haitao Mi, Sirui Han, Leowei Liang, Zhijiang Guo (Tencent HY LLM Frontier, Hong Kong University of Science and Technology(Guangzhou), Hong Kong University of Science and Technology 소속)</li>
+<li><strong>출처</strong>: arXiv:2609.13141v1 [cs.CL] (2026년 9월 11일)</li>
+<li><strong>프로젝트 페이지</strong>: 없음 (코드 저장소: https://github.com/Tencent-Hunyuan/Simple-Attention-Sparsification)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.13141">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>학습 가능한 어텐션 스파스화(sparse attention)에서 선택기(selector)의 점수를 어텐션 소프트맥스 내부에 로그 게이트로 직접 주입해 언어모델링 손실로 엔드투엔드 학습함으로써, 기존의 증류(distillation) 기반 선택기보다 더 적은 컨텍스트 예산으로도 더 정확한 컨텍스트 랭킹을 학습하는 SAS를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>긴 문맥을 다루는 LLM의 자기회귀 생성은 매 스텝마다 이전의 모든 토큰에 대해 어텐션을 계산해야 하므로 누적 비용이 시퀀스 길이에 대해 제곱으로 증가한다. 이를 해결하기 위한 사후(post-training) 어텐션 스파스화는 사전학습된 모델의 구조를 바꾸지 않고, 매 쿼리마다 소수의 컨텍스트 유닛(토큰 또는 블록)만 선택해 어텐션을 계산한다. 규칙 기반(training-free) 방법은 적응력이 부족하고, SeerAttention-R 같은 학습형(trainable) 방법은 경량 선택기가 컨텍스트 유닛에 점수를 매긴 뒤 Top-K로 하드 선택을 수행한다. 그러나 하드 Top-K는 미분 불가능하므로 언어모델링 손실의 그래디언트가 선택기까지 전달되지 못하고, 이를 우회하기 위해 원본 모델의 레이어별 조밀(dense) 어텐션 분포를 선택기가 모사하도록 지도하는 증류 방식을 쓴다. 저자들은 이 방식이 "랭킹 불일치" 문제를 낳는다고 지적한다: 선택기가 원본 모델이 어디에 주목하는지를 따라가도록 학습되지만, 이는 제한된 어텐션 예산 하에서 실제로 최종 예측에 얼마나 기여하는지와는 다르며, 레이어 간 상호보완성이나 V(값) 행렬의 영향을 무시한다는 것이다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>선택기의 연속적인 점수를 어텐션 로짓에 직접(로그 공간 게이트로) 주입하여, 별도의 증류나 교사 어텐션 없이 언어모델링 손실만으로 컨텍스트 선택기를 엔드투엔드 학습하는 SAS 패러다임 제안.</li>
+<li>이 단순한 게이팅 완화(relaxation)를 실제로 잘 작동하게 만드는 4가지 설계 선택(게이트 위치, 게이트 활성화, 랭킹 정보 보존, 학습 범위)을 체계적인 절제 실험으로 규명.</li>
+<li>FlashAttention 스타일 연산에 게이트 덧셈을 타일 단위로 융합한 메모리 효율적 Triton 커널을 구현해, 전체 어텐션 행렬을 material화하지 않고도 긴 시퀀스 학습을 실용적으로 만듦.</li>
+<li>추론(reasoning), 장문 이해(long-context understanding), 에이전틱(agentic) 과제 전반에서 SAS가 기존 학습형 스파스 어텐션 기준선(특히 SeerAttention-R)을 일관되게 능가함을 실험으로 입증, 특히 낮은 어텐션 예산에서 격차가 큼.</li>
+</ul>
+<h2>방법론</h2>
+<p>표준 블록 스파스 어텐션은 시퀀스를 크기 b의 블록 C개로 나누고, 경량 선택기가 각 블록에 관련성 점수를 매긴 뒤 Top-K개 블록만 선택해 어텐션을 계산한다(계산량 O(n)→O(K)). 문제는 이 Top-K 선택이 점수에 대해 구간적으로 상수(piecewise constant)라서 그래디언트가 흐르지 않는다는 점이다.</p>
+<p>SAS는 현재 블록(B0)은 항상 유지하고 나머지 후보(historical) 블록들의 선택기 점수 s를 소프트맥스로 정규화한 양의 게이트 g = softmax(s)로 변환한 뒤, 이를 로그값(log g)으로 어텐션 로짓 qKᵀ에 더해 소프트맥스 안에서 작동하게 한다: o = softmax(qKᵀ_S + log g_S) V_S. 이렇게 하면 Top-K로 골라진 블록들에 대해서도 게이트 값이 연속적으로 어텐션 확률을 재분배하므로, 언어모델링 손실의 그래디언트가 소프트맥스를 거쳐 선택기까지 역전파된다.</p>
+<p>저자들은 이 설계가 잘 작동하기 위한 4가지 핵심 선택지를 분석한다.
+1) <strong>게이트 위치</strong>: 소프트맥스 내부(inner, 로그 공간에서 덧셈)에 넣을지, 소프트맥스 외부(outer, 출력값에 곱셈)에 넣을지 — 내부 배치가 어텐션 확률 재정규화 자체에 관여하므로 더 효과적.
+2) <strong>게이트 활성화</strong>: softmax(정규화), sigmoid(독립), 혹은 비정규화 로짓 그대로 주입 — softmax만이 경쟁적(competitive) 정규화를 제공해 현재 블록과 과거 블록 간 상대적 중요도를 안정적으로 보정함. sigmoid는 점차 1로 포화되고 raw logit은 0으로 수렴해 둘 다 판별력을 잃음(Figure 3에서 실증).
+3) <strong>랭킹 정보 보존</strong>: 연속적인 소프트 게이트를 유지할지, STE(straight-through estimator)로 이진 Top-K 마스크로 붕괴시킬지 — 소프트 게이트가 학습 안정성과 최종 성능 모두에서 우수.
+4) <strong>학습 범위(training scope)</strong>: 전체 컨텍스트 블록에 대해 그래디언트를 계산할지(full scope), 선택된 블록에 대해서만 계산할지(sparse scope) — sparse scope는 초반엔 느리지만 점차 full scope와 비슷한 성능에 도달하며 계산비용은 훨씬 저렴하므로 최종적으로 채택.</p>
+<p>이 네 가지를 종합해 SAS는 (i) 내부 소프트맥스 게이트 주입, (ii) softmax 활성화, (iii) 연속 소프트 게이트, (iv) sparse 학습 범위를 채택한다. 실제 구현에서는 FlashAttention 스타일의 타일 단위 qKᵀ 계산에 정규화된 로그 게이트를 융합하는 커스텀 Triton 커널을 사용해 전체 어텐션 행렬을 메모리에 올리지 않고도 학습이 가능하도록 했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>SeerAttention-R과 동일한 AttnGate 선택기 구조(블록 크기 64, Top-K 32)를 사용하되, 백본 LLM(Qwen3 4B/8B/14B)은 고정한 채 선택기만 OpenR1-Math-220K 데이터(최대 시퀀스 길이 32,768)로 1 에폭 학습한다. 평가는 추론(MATH500, GPQA-Diamond, AIME24, AIME25), 장문 이해(LongBench, YaRN으로 65,536까지 확장), 에이전틱 과제(BFCL 멀티턴, VitaBench)로 구성되며, 비교 대상은 Full Attention, Sliding Window, StreamingLLM, Quest(학습이 필요 없는 방법들)와 SeerAttention-R(증류 기반 학습형 방법)이다.</p>
+<ul>
+<li><strong>추론 과제</strong>: 1024 토큰 예산에서 SAS는 SeerAttention-R 대비 MATH500 6.0~7.7점, GPQA-Diamond 10.6~15.5점 향상. 4096 예산에서는 일부 지표(예: Qwen3-4B AIME24)에서 Full Attention과 대등하거나 이를 능가.</li>
+<li><strong>장문 이해(LongBench)</strong>: 수학 데이터로만 학습된 선택기임에도 모든 예산·백본에서 SeerAttention-R을 앞서며, 특히 8K+ 구간처럼 긴 입력일수록 격차가 커짐(Qwen3-4B, 예산 2048에서 +3.2).</li>
+<li><strong>에이전틱 과제</strong>: BFCL 멀티턴에서 모든 백본·예산에서 SeerAttention-R을 능가(Qwen3-4B, 예산 2048에서 +3.5), VitaBench에서도 대부분 지표에서 우세하며 예산 4096에서 Full Attention에 근접.</li>
+<li><strong>지속 사전학습 확장</strong>: OLMo3-7B 체크포인트에서 백본과 선택기를 함께 학습하는 설정(HiLS-Attention 후속 실험)에서도 SAS-RoPE가 일반 지식·수학·코드 다운스트림 평균과 LongBench 평균에서 경쟁 기준선(OLMo3-512SWA, HiLS-Attn-RoPE)과 대등하거나 우수함을 보여, 사후 스파스화뿐 아니라 지속 사전학습에도 방법이 확장 가능함을 시사.</li>
+<li><strong>분석</strong>: SAS가 선택한 블록은 레이어별로 보면 원본 조밀 어텐션이 커버하는 어텐션 질량(mass)이 오히려 증류 방법보다 작지만, 여러 레이어에 걸친 선택의 합집합은 Full Attention이 실제로 주목하는 블록에 대한 recall이 더 높다(레이어 간 상호보완성이 큼). 또한 SAS는 더 짧은 추론 생성 길이와 낮은 truncation 비율을 보여 더 효율적인 컨텍스트 선택이 토큰 효율로 이어짐을 시사. SGLang 서빙 환경에서 단일 GPU 기준 배치 1일 때 최대 5.6배(512K 문맥), 배치 8일 때 최대 약 13배(64K 문맥)의 디코딩 속도 향상을 보고.</li>
+</ul>
+<h2>한계점</h2>
+<p>논문에 별도의 "한계점" 절은 없으나 본문에서 확인되는 제약은 다음과 같다. (1) 실험은 SeerAttention-R과 동일한 AttnGate 선택기 구조 및 블록 스파스 방식에 한정되어 있어, 다른 선택기 구조나 토큰 단위 스파스화로의 일반화는 검증되지 않음. (2) 방법은 디코딩 시점의 어텐션만 희소화하며 prefill 단계는 조밀 어텐션을 그대로 사용. (3) 매우 긴 문맥(예: 512K)에서는 Top-K 블록 선택 자체의 연산 비용이 전체 디코딩 스텝 시간의 최대 90%까지 차지하게 되어, 어텐션 계산 절감 효과와 별개로 선택 단계가 새로운 병목이 됨. (4) 주요 실험은 Qwen3 계열 백본에 한정되어 있으며, 지속 사전학습 실험은 OLMo3-7B 한 가지 모델로만 검증됨.</p>
+<h2>시사점</h2>
+<p>증류 기반 대리 지도(surrogate supervision) 없이도 선택기 점수를 어텐션 계산 경로에 직접 미분 가능하게 결합하기만 하면, 다운스트림 과제 성능과 더 잘 정렬된 컨텍스트 랭킹을 학습할 수 있음을 보여준다. 특히 게이트를 소프트맥스 내부에 로그 공간으로, 정규화된 형태로, 연속값을 유지한 채 주입한다는 단순한 설계 원칙이 성능에 결정적이라는 점은 향후 학습형 스파스 어텐션이나 KV 캐시 압축 연구에 일반적으로 적용 가능한 가이드라인을 제공한다. 또한 저비용의 sparse-scope 학습과 전용 Triton 커널을 결합해 실제 장문 학습에서도 실용적임을 보여, 사후 스파스화뿐 아니라 지속 사전학습 단계에도 같은 원리를 적용할 수 있는 여지를 열었다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.13141" target="_blank" rel="noopener">huggingface.co/papers/2609.13141</a> · 2026-09-15</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

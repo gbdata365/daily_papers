@@ -1,0 +1,120 @@
+<meta charset="UTF-8">
+<title>제한된 피드백으로 배우는 LLM 전문가 온라인 학습</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#10 · Daily Papers 2026-09-15</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 5</span>
+    </div>
+    <h1 class="article-title">Online Learning with LLM Experts from Limited Feedback</h1>
+    <p class="article-title-ko">제한된 피드백으로 배우는 LLM 전문가 온라인 학습</p>
+    <p class="article-sub">사용자 질의(prompt)를 여러 LLM 전문가(expert) 중 가장 응답 품질이 좋을 것으로 기대되는 모델로 라우팅하는 문제를, 보상 평가(피드백)를 극히 제한된 횟수만 사용할 수 있는 온라인 컨텍스추얼 밴딧으로 정식화하고, 정보 이득이 가장 큰 과거 프롬프트를 선택적으로 관측함으로써 낮은 후회(regret)를 보장하는 두 알고리즘(LimFullFeed, LimBanFeed)을 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.05820" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.05820" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Online Learning with LLM Experts from Limited Feedback</li>
+<li><strong>저자</strong>: Wang Wei (Virginia Tech), Soumyabrata Pal, Koyel Mukherjee, Franck Dernoncourt, Ryan A. Rossi, Branislav Kveton, Hoda Eldardiry (Adobe Research 및 Virginia Tech; 교신저자 Hoda Eldardiry)</li>
+<li><strong>출처</strong>: arXiv:2609.05820v1 [cs.LG] (2026년 9월 5일)</li>
+<li><strong>프로젝트 페이지</strong>: 없음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.05820">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>사용자 질의(prompt)를 여러 LLM 전문가(expert) 중 가장 응답 품질이 좋을 것으로 기대되는 모델로 라우팅하는 문제를, 보상 평가(피드백)를 극히 제한된 횟수만 사용할 수 있는 온라인 컨텍스추얼 밴딧으로 정식화하고, 정보 이득이 가장 큰 과거 프롬프트를 선택적으로 관측함으로써 낮은 후회(regret)를 보장하는 두 알고리즘(LimFullFeed, LimBanFeed)을 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>GPT, LLaMA, Mistral 등 다양한 LLM은 비용과 성능이 서로 크게 다르며, 어떤 모델도 모든 질의에서 항상 우수하지는 않다(Nectar 데이터셋 기준 여러 모델의 승률이 7~32%로 들쭉날쭉함을 예시로 제시). 따라서 프롬프트마다 가장 적합한 LLM으로 라우팅하는 것이 유리하지만, 실제 서비스에서는 각 응답의 품질을 사람이나 LLM 심판(judge)으로 평가하는 데 시간과 비용이 크게 들어 모든 라운드(T번)에 대해 피드백을 받을 수 없고, 예산 m(≪T)번만 관측이 가능하다. 또한 라우팅은 온라인으로, 즉 프롬프트가 실시간으로 도착하는 순서대로 즉시 결정되어야 하므로 오프라인 학습으로는 해결할 수 없다. 이 논문은 "언제, 어떤 과거 라운드에 대해 피드백을 요청할지"까지 알고리즘이 능동적으로 선택할 수 있다는 점에서 기존의 부분 관측/지연 피드백 밴딧 연구들과 차별화된다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>프롬프트 임베딩을 컨텍스트로, LLM 전문가를 팔(arm)로 하는 선형 컨텍스추얼 밴딧으로 문제를 정식화하고, 피드백 예산 m 제약 하의 online expert routing 문제를 새롭게 제시.</li>
+<li><strong>전체 정보(full-information) 설정</strong>: 피드백을 받을 때 모든 전문가의 보상을 동시에 관측할 수 있는 경우의 알고리즘 LimFullFeed 제안. 계산 효율적이며 후회 상한 Õ(dT/√m)을 증명(하한은 Õ(√d) 차이 내에서 근접).</li>
+<li><strong>밴딧(bandit) 설정</strong>: 실제로 응답을 생성한 전문가 하나의 보상만 관측 가능한 더 어려운 경우의 알고리즘 LimBanFeed 제안. 후회 상한 Õ(dT√(K/m))을 증명(피드백이 전문가별로 분산되어 K배 열악해짐을 반영).</li>
+<li>전문가마다 평가 비용이 다른(비균일 비용) 상황으로 확장한 알고리즘도 부록에서 제시.</li>
+<li>RouterBench, Nectar 두 개의 실제 LLM 라우팅 벤치마크로 실험하여 제안 알고리즘이 GPT-3.5/4, LLaMA, Mistral 등 실제 모델 조합에서도 고품질 라우팅 정책을 제한된 피드백만으로 학습함을 실증.</li>
+</ol>
+<h2>방법론</h2>
+<p>문제는 K개의 LLM 전문가 각각에 알려지지 않은 선형 보상 파라미터 θ_a(고정된 사전학습 임베딩 위의 선형 헤드)를 부여하는 선형 밴딧으로 모델링된다. 각 라운드 t에 프롬프트 임베딩 x_t가 도착하면 현재까지의 최소제곱(OLS) 추정치를 바탕으로 기대 보상이 가장 높은 전문가를 선택해 응답을 생성시키고, 그 보상(품질 점수)은 즉시 관측되지 않으며 알고리즘이 "행동 이후에" 관측 여부를 스스로 결정할 수 있다.</p>
+<p>핵심 아이디어는 피드백을 규칙적인 간격(대략 T/m 라운드마다)으로 요청하되, 그 시점에 관측할 "과거 프롬프트"를 무작위나 최신순이 아니라 공분산 행렬의 행렬식(determinant)을 가장 많이 증가시키는, 즉 정보 이득이 가장 큰 프롬프트로 선택한다는 점이다(식 (4), (7)). 이는 실험적 설계(optimal experimental design)의 G-optimal design과 유사한 발상으로, 모든 방향에서 추정 불확실성을 고르게 줄여준다.</p>
+<ul>
+<li><strong>LimFullFeed</strong> (전체 정보): 모든 전문가가 같은 공분산 행렬을 공유하므로 한 번의 관측으로 전체 K개 전문가의 파라미터를 동시에 갱신할 수 있다. Sherman-Morrison 공식과 행렬식 보조정리를 이용해 라운드당 O(d²) 시간에 갱신 가능.</li>
+<li><strong>LimBanFeed</strong> (밴딧): 전문가마다 실제로 선택된 횟수만큼만 데이터가 쌓이므로 전문가별로 별도의 신뢰 타원(confidence ellipsoid)과 공분산 행렬을 유지한다. 각 전문가가 z=⌈T/m⌉번 선택될 때마다 그 전문가에 대해 정보 이득이 최대인 과거 프롬프트를 관측하여 피드백 예산을 자동으로 만족시킨다. 행동 선택은 UCB(상한 신뢰 구간) 방식으로, 추정 보상에 β·‖x_t‖_{V⁻¹} 형태의 탐색 보너스를 더해 가장 높은 값을 갖는 전문가를 고른다(식 (6)).</li>
+</ul>
+<p>두 방법 모두 사전에 모든 프롬프트를 알 필요 없이 실시간으로 동작하며, 피드백 예산 m을 알고리즘 설계상 항상 만족한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>RouterBench와 Nectar 두 공개 LLM 라우팅 벤치마크(다수의 LLM에 대한 프롬프트별 품질 평가 포함)를 이용해 온라인 라우팅 상황을 시뮬레이션했다. 비교 대상은 (1) NoLookBack: 과거를 보지 않고 현재 라운드에서만 피드백을 요청하는 단순 전략, (2) AllFeedback: 모든 라운드에서 피드백을 받는 상한선 성능. Nectar 실험은 K=6개 전문가, d=40 특성, T=60,000 라운드로 5회 반복 평균을 보고했다.</p>
+<p>결과적으로 LimFullFeed와 LimBanFeed는 모든 피드백 예산(m=1,000~20,000)에서 NoLookBack보다 누적 후회가 낮았으며, 특히 라운드 수가 늘어날수록(T=60,000에 근접할수록) 그 격차가 뚜렷하게 벌어졌다. 예를 들어 Nectar에서 m=1,000일 때 LimFullFeed의 후회는 약 673으로 NoLookBack(632)과 비슷했지만, m=20,000에서는 LimBanFeed(1567.9)가 NoLookBack(2090.7)보다 뚜렷이 낮았다. AllFeedback은 예상대로 가장 낮은 후회와 가장 작은 분산을 보였다(더 많은 데이터를 사용하므로). 런타임 측면에서는 두 알고리즘 모두 T에 거의 선형으로 비례해 확장되며, LimBanFeed는 K에 비례해 커지는 반면 LimFullFeed는 공분산 구조를 공유하므로 K에 거의 무관하게 확장된다.</p>
+<h2>한계점</h2>
+<p>저자들이 명시한 한계는 다음과 같다: (1) 과거 프롬프트에 대한 피드백을 사후적으로(retrospectively) 얻을 수 있다고 가정하는데, 이는 모델 출력의 저장과 사람/LLM 기반 평가를 필요로 한다. (2) 실험이 정적(static) 벤치마크 데이터로 온라인 라우팅을 시뮬레이션한 것이어서, 실제 배포 환경의 비정상적(non-stationary) 사용자 행동이나 운영 제약을 완전히 반영하지 못할 수 있다. 또한 이론적으로도 밴딧 설정에서 상한과 하한 사이에 √(d/K) 규모의 격차가 남아 있어 완전히 최적(tight)인 규명은 아니다.</p>
+<h2>시사점</h2>
+<p>이 논문은 다중 LLM을 서비스에서 함께 운영할 때 흔히 발생하는 "평가 비용이 비싸 모든 응답 품질을 확인할 수 없다"는 현실적 제약을 정면으로 다룬다는 점에서, 실제 LLM 게이트웨이/라우터 시스템 설계에 바로 적용 가능한 이론적 근거를 제공한다. 특히 "무엇을, 언제 관측할지"를 능동적으로 선택하는 정보 이득 기반 전략이 단순한 최신 피드백 사용보다 훨씬 효율적임을 이론과 실험 양쪽에서 보여줌으로써, 향후 비용 제약 하의 LLM 앙상블/라우팅 시스템, 그리고 사람 피드백이 제한된 다른 온라인 학습 응용(RLHF 등)에도 유사한 설계 원칙이 활용될 수 있음을 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.05820" target="_blank" rel="noopener">huggingface.co/papers/2609.05820</a> · 2026-09-15</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

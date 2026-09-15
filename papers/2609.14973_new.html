@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>피즈브레인 1.5</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#5 · Daily Papers 2026-09-16</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 169</span>
+    </div>
+    <h1 class="article-title">PhysBrain 1.5: From Vision-Language Models to Physical Foundation Models</h1>
+    <p class="article-title-ko">피즈브레인 1.5: 시각-언어 모델에서 물리 파운데이션 모델로</p>
+    <p class="article-sub">PhysBrain 1.5는 시각-언어 모델(VLM)을 확장해 "환경 이해 → 행동 생성 → 미래 상태 예측"을 하나의 자기회귀 트랜스포머와 통합 어휘로 처리하는 8B 규모의 물리 파운데이션 모델로, 오픈소스 최고 수준의 임바디드(embodied) 이해 성능을 달성했다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.14973" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.14973" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: PhysBrain 1.5: From Vision-Language Models to Physical Foundation Models</li>
+<li><strong>저자</strong>: DeepCybo Team (팀 단위 저자 표기, 개별 기여자 명단은 부록 A에 별도 수록)</li>
+<li><strong>출처</strong>: arXiv:2609.14973v1 [cs.CV] (2026년 9월 14일 제출)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://deepcybo-physai.github.io/PhysBrain-1.5">PhysBrain-1.5 프로젝트 페이지</a> (HuggingFace: https://huggingface.co/collections/DeepCybo/physbrain-15, 평가 코드: https://github.com/DeepCybo-PhysAI/PhysBrainEvalKit)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.14973">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>PhysBrain 1.5는 시각-언어 모델(VLM)을 확장해 "환경 이해 → 행동 생성 → 미래 상태 예측"을 하나의 자기회귀 트랜스포머와 통합 어휘로 처리하는 8B 규모의 물리 파운데이션 모델로, 오픈소스 최고 수준의 임바디드(embodied) 이해 성능을 달성했다.</p>
+<h2>배경 및 문제의식</h2>
+<p>저자들은 물리 지능의 핵심을 "물리 루프(physical loop)"로 규정한다. 에이전트가 주변을 관찰하고, 공간 관계와 과제 목표를 해석하고, 행동 결과를 예측하고, 실제로 환경에 개입하면 그 결과로 변화한 세계가 다시 새로운 관찰을 제공하는 순환 구조다. 기존에는 일반 VLM(시각 이해), 공간 추론·그라운딩에 특화된 모델, VLA(Vision-Language-Action) 계열, 그리고 SayCan·Code as Policies·VoxPoser 같은 시스템 레벨 접근이 각각 이 루프의 일부만 담당해왔다. 최근 HY-Embodied, RynnBrain, MiMo-Embodied, UniVLA, Cosmos 3 등이 여러 능력을 통합하려는 시도를 했지만, 저자들은 폭넓은 임바디드 이해와 말단장치(end-effector) 행동 생성, 다중 모달 미래 상태 예측을 함께 학습하는 것이 여전히 도전 과제라고 지적한다. 특히 이해·행동·상태예측 과제는 지도 신호의 형태(언어, 좌표, 시간구조화된 모션, 밀집 시각 출력)와 데이터의 신체(embodiment)·좌표계·시간 해상도가 서로 크게 달라 통합 학습이 어렵다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>언어, 행동(말단장치 궤적), 시각 상태(미래 RGB/깊이/로봇 마스크)를 모두 이산 토큰으로 표현하고, 하나의 백본·임베딩·출력 헤드를 공유하는 통합 어휘(V = Vlang ∪ Vact ∪ Vvis)와 마스킹된 다음 토큰 예측 목적함수로 세 과제를 동시에 학습한다.</li>
+<li>사람의 1인칭 상호작용 영상만으로 물리 인지, 행동, 미래 상태 지도 신호를 모두 추출하는 대규모 사전학습 파이프라인(약 3만 시간 분량의 영상, 8천만 개 이상 학습 샘플)을 제안한다.</li>
+<li>서로 다른 로봇/데이터 소스의 좌표계를 강제로 통일하지 않고, 직전 행동 이력을 "지역적 모션 맥락"으로 제공해 모델이 각 소스의 고유한 좌표 관례를 암묵적으로 추론하며 궤적을 이어가도록 하는 "동종 행동 연속(homogeneous action continuation)" 기법을 제시한다.</li>
+<li>8B 파라미터 규모로 28개 임바디드 이해 벤치마크에서 평균 72.5점을 기록, 오픈소스 신기록을 세우면서 GPT-6-Astra·Gemini 3.6 Flash 등 최상위 폐쇄형 모델에 근접하고 Claude Opus 5를 능가했다.</li>
+</ol>
+<h2>방법론</h2>
+<p>PhysBrain 1.5는 Qwen3-VL-Instruct(8B)를 기반으로 언어 어휘에 행동 토큰과 시각 토큰을 추가해 확장한다. (1) 임바디드 이해는 별도의 헤드 없이 기존 VLM의 이미지/비디오 이해 인터페이스를 그대로 사용하되, 물리·공간 지도 데이터로 강화한다. (2) 행동 생성은 Human-as-Humanoid 파이프라인으로 사람 동작을 로봇 유사 손목 궤적으로 변환하고, ActionPiece 토크나이저(512개 토큰 어휘, 16스텝 궤적을 32개 토큰으로 이산화)로 좌우 손목의 상대 이동·회전(6D 표현)·그리퍼 개폐를 인코딩한다. 서로 다른 로봇의 좌표계를 통일하는 대신 직전 행동 청크를 조건으로 주어 궤적을 자연스럽게 이어가게 한다. (3) 미래 상태 예측은 RGB, 깊이, 로봇/사람 마스크 세 모달리티를 하나의 VQ-VAE(128×128 해상도, 코드북 크기 16,384)로 이산화한 뒤, 같은 공간 위치의 세 모달리티 토큰을 RGB-깊이-마스크 순으로 교차 배치(interleave)하여 하나의 시퀀스(770 토큰)로 자기회귀 생성한다. 학습은 물리 인지 사전학습 → 임바디드 지도 미세조정(SFT)의 2단계로 진행되며, 각 단계에서 과제별 손실 마스크로 어떤 토큰을 지도할지 지정한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>사전학습 데이터는 Ego4D, Ego-Exo4D, EgoDex 등 공개 데이터셋과 자체 구축한 PhysBrain-Human, PhysBrain-Ego360(파노라마 영상) 등 사람 1인칭 상호작용 영상에서 전량 추출했으며, 물리 인지(2430만), 사람 행동(3120만), 미래 상태(2680만), 일반 지시 데이터(1490만) 등 총 약 9700만 샘플 규모다. SFT 단계는 여기에 17개 실로봇/시뮬레이션 소스(약 2,620시간)와 고품질 사람 모션(500시간)을 추가로 결합했다. 28개 임바디드 벤치마크(시각-공간 지각, 공간·다시점 이해, 임바디드 인지·계획, 그라운딩·어포던스, 궤적 추론) 평가에서 PhysBrain 1.5(8B)는 평균 72.5점으로 오픈소스 모델 중 1위(14개 벤치마크 1위, 24개 벤치마크 상위 2위 이내)를 차지했고, 최강 오픈소스 경쟁 모델 Hy-Embodied-VLM-1.0(66.0점)을 6.5점 앞섰다. 폐쇄형 최상위 모델인 GPT-6-Astra(73.3), Gemini 3.6 Flash(73.0)에는 근소하게 못 미쳤지만 Claude Opus 5(67.9)는 앞섰다. 또한 12개 일반 멀티모달 벤치마크(MME, MMStar, VideoMME, ChartQA 등)에서 기반 모델인 Qwen3-VL-Instruct(8B)와 대체로 대등한 성능을 유지해, 임바디드 특화 학습이 범용 능력을 크게 훼손하지 않았음을 보였다. 정성 평가에서는 미지 에피소드에 대한 손목 궤적 예측과, 로봇을 미포함한 OOD 데이터(RoboDojo)에서도 대체적인 모션 경향을 재현하는 미래 RGB/깊이/로봇마스크 예측 결과를 제시했다.</p>
+<h2>한계점</h2>
+<p>논문은 명시적 한계 섹션을 따로 두지 않지만 본문 곳곳에서 제약을 인정한다. 행동 궤적 예측 결과는 오프라인 조건부 궤적 예측에 국한되며, 실제 로봇의 폐루프 실행이나 과제 성공률 검증은 수행되지 않았다. OOD(RoboDojo) 사례에서는 전반적 모션 경향은 재현하지만 위치 오차가 눈에 띄게 남아있다고 보고한다. 좌표계를 전역적으로 통일하지 않고 각 데이터 소스의 고유 좌표축을 그대로 유지하는 설계는 확장성을 높이지만, 서로 다른 소스 간 직접적인 좌표 비교나 완전한 일관성은 보장하지 못한다. 또한 사전학습 지도 신호가 전량 사람 영상에서 유사 라벨(pseudo-label) 형태로 생성되므로 라벨링 파이프라인의 오류가 누적될 가능성이 있으며, 결론부에서 저자들도 데이터 규모 확장과 모달리티 확장, 더 풍부한 상호작용 경험 반영이 향후 과제임을 언급한다.</p>
+<h2>시사점</h2>
+<p>이 연구는 로봇 실측 데이터가 상대적으로 희소한 상황에서, 대규모 사람 1인칭 영상을 통해 이해·행동·미래예측 지도 신호를 동시에 뽑아내는 방식이 물리 파운데이션 모델 구축의 실용적 경로가 될 수 있음을 보여준다. 언어·행동·시각을 하나의 이산 토큰 어휘와 자기회귀 목적함수로 통합하는 설계는 향후 VLA 및 월드모델 계열 연구에서 모달리티 간 지식 전이를 단순화하는 참고 아키텍처가 될 수 있다. 또한 좌표계를 강제로 정규화하지 않고 "직전 행동 맥락"만으로 이종 로봇 플랫폼 간 학습을 가능하게 한 접근은, 이종 로봇 데이터 통합 학습에서 값비싼 전역 캘리브레이션 없이도 확장 가능한 대안을 제시한다는 점에서 실무적 시사점이 크다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.14973" target="_blank" rel="noopener">huggingface.co/papers/2609.14973</a> · 2026-09-16</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

@@ -1,0 +1,110 @@
+{
+  "2609.11638": {
+    "base": "2609_비두에스투_실시간-인터랙티브-공간-영상-생성",
+    "rank": "#1",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "501",
+    "en_title": "Vidu S2: Real-Time Interactive, Editable, and Spatial Video Generation",
+    "ko_title": "비두 S2: 실시간 인터랙티브, 편집 가능한 공간 영상 생성"
+  },
+  "2609.15818": {
+    "base": "2609_아트리아던_에이전틱-초지능의-새벽",
+    "rank": "#2",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "369",
+    "en_title": "Atria Dawn: The Dawn of Agentic Superintelligence",
+    "ko_title": "아트리아 던: 에이전틱 초지능의 새벽"
+  },
+  "2609.13356": {
+    "base": "2609_제트지씨엠원_수학과-에이전틱-검색-오픈-파운데이션모델",
+    "rank": "#3",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "291",
+    "en_title": "ZGCM-1: A Fully Open and Extremely Efficient Foundation Model for Math and Agentic Search",
+    "ko_title": "ZGCM-1: 수학과 에이전틱 검색을 위한 완전 오픈 소스이자 극도로 효율적인 파운데이션 모델"
+  },
+  "2609.14858": {
+    "base": "2609_드림알에스아이_진화하는-세계를-통한-재귀적-자기개선",
+    "rank": "#4",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "260",
+    "en_title": "Dream-RSI: Recursive Self-Improvement through Evolving Worlds",
+    "ko_title": "드림알에스아이: 진화하는 세계를 통한 재귀적 자기개선"
+  },
+  "2609.14973": {
+    "base": "2609_피즈브레인_시각언어모델에서-물리파운데이션모델로",
+    "rank": "#5",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "169",
+    "en_title": "PhysBrain 1.5: From Vision-Language Models to Physical Foundation Models",
+    "ko_title": "피즈브레인 1.5: 시각-언어 모델에서 물리 파운데이션 모델로"
+  },
+  "2609.13285": {
+    "base": "2609_지브이에이_온디맨드-키-재구성-효율적-KV캐싱",
+    "rank": "#6",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "58",
+    "en_title": "Grouped Value Attention: Efficient KV Caching via On-Demand Key Reconstruction",
+    "ko_title": "그룹화 값 어텐션: 온디맨드 키 재구성을 통한 효율적 KV 캐싱"
+  },
+  "2609.15863": {
+    "base": "2609_린리얼옴니_에이전틱-비주얼워크플로우-네이티브-영상생성",
+    "rank": "#7",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "44",
+    "en_title": "LynnReal-Omni: Native multi-modal Video Generation for Agentic Visual Workflows",
+    "ko_title": "린리얼-옴니: 에이전틱 비주얼 워크플로우를 위한 네이티브 멀티모달 영상 생성"
+  },
+  "2609.15364": {
+    "base": "2609_알에스아이에이전트_새환경-자기개선-자율탐색",
+    "rank": "#8",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "41",
+    "en_title": "RSIAgent: Autonomous Exploration for Recursive Self-improvement in New Environments",
+    "ko_title": "RSIAgent: 새로운 환경에서의 재귀적 자기개선을 위한 자율 탐색"
+  },
+  "2609.15504": {
+    "base": "2609_오르트루스_무손실-추측디코딩의-수치정밀도-영향",
+    "rank": "#9",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "26",
+    "en_title": "How Lossless Is Lossless Speculative Decoding? The Role of Numerical Precision in Orthrus",
+    "ko_title": "무손실 추측 디코딩은 정말 무손실인가? 오르트루스에서 수치 정밀도의 역할"
+  },
+  "2609.15973": {
+    "base": "2609_디에프엠_열린형-발견지능을-향해",
+    "rank": "#10",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "24",
+    "en_title": "Discovery Foundation Models: Toward Open-Ended Discovery Intelligence",
+    "ko_title": "디스커버리 파운데이션 모델: 열린형 발견 지능을 향해"
+  },
+  "2609.15478": {
+    "base": "2609_비브이비_블렌더-프로그램적-재구성-에이전틱-영상이해-벤치마크",
+    "rank": "#11",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "22",
+    "en_title": "BVB: Benchmarking Agentic Video Understanding via Programmatic Reconstruction in Blender",
+    "ko_title": "BVB: 블렌더 프로그램적 재구성 기반 에이전틱 영상 이해 벤치마크"
+  },
+  "2609.14462": {
+    "base": "2609_알라야비스타_파노라마-상태에서-시점영상으로-스트리밍-월드모델링",
+    "rank": "#12",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "20",
+    "en_title": "AlayaVista: Streaming World Modeling from Panoramic States to Perspective Video",
+    "ko_title": "알라야비스타: 파노라마 상태에서 시점 영상으로의 스트리밍 월드 모델링"
+  }
+}

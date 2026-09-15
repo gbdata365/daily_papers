@@ -1,0 +1,107 @@
+<meta charset="UTF-8">
+<title>ZGCM-1</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#3 · Daily Papers 2026-09-16</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 291</span>
+    </div>
+    <h1 class="article-title">ZGCM-1: A Fully Open and Extremely Efficient Foundation Model for Math and Agentic Search</h1>
+    <p class="article-title-ko">ZGCM-1: 수학과 에이전틱 검색을 위한 완전 오픈 소스이자 극도로 효율적인 파운데이션 모델</p>
+    <p class="article-sub">ZGCM-1은 처음부터 학습된 73.9억(7.39B) 파라미터 완전 오픈소스 밀집(dense) 모델로, 하이브리드 어텐션과 FP8 학습, MDP 기반 미드트레이닝을 결합해 학계 수준의 컴퓨팅 자원으로도 수백억 파라미터급 프런티어 모델에 필적하는 수학 추론·에이전틱 검색 성능을 달성했다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.13356" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.13356" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: ZGCM-1: A Fully Open and Extremely Efficient Foundation Model for Math and Agentic Search</li>
+<li><strong>저자</strong>: ZGCM Team (Zhongguancun Academy, Zhongguancun Institute of Artificial Intelligence) — 프로젝트 리드 Jiyan He, 핵심 기여자 Guang Liang 외 7인, 그 외 기여자 13인</li>
+<li><strong>출처</strong>: arXiv:2609.13356v1 [cs.AI] (2026년 9월 11일)</li>
+<li><strong>프로젝트 페이지</strong>: 코드 <a href="https://github.com/zgcagi/ZGCM-1">GitHub</a>, 모델 <a href="https://huggingface.co/zgcagi/ZGCM-1-7B">HuggingFace</a>, 데이터 <a href="https://huggingface.co/datasets/zgcagi/ZGCM-1-Data">HuggingFace Datasets</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.13356">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>ZGCM-1은 처음부터 학습된 73.9억(7.39B) 파라미터 완전 오픈소스 밀집(dense) 모델로, 하이브리드 어텐션과 FP8 학습, MDP 기반 미드트레이닝을 결합해 학계 수준의 컴퓨팅 자원으로도 수백억 파라미터급 프런티어 모델에 필적하는 수학 추론·에이전틱 검색 성능을 달성했다.</p>
+<h2>배경 및 문제의식</h2>
+<p>저자들은 최신 파운데이션 모델의 발전이 두 가지 장벽 때문에 학계에 잘 전파되지 않는다고 지적한다. 첫째는 "규모 장벽"으로, 프런티어급 추론과 에이전틱 능력이 수백억 파라미터 모델의 전유물처럼 여겨진다는 점이다. 둘째는 "불투명성 장벽"으로, 경쟁력 있는 모델 대부분이 가중치만 공개된 오픈웨이트(open-weight)이며 데이터 필터링 방식, 미드트레이닝 커리큘럼, 장문맥 확장 스케줄, 에이전트 트레이스 등은 비공개로 남아 있어 학습 역학에 대한 체계적 연구를 어렵게 만든다는 것이다. 이에 저자들은 소형 모델도 정적 파라미터 용량의 한계를 내재적 사고(deliberate thinking)와 능동적 외부 도구 사용(tool use)의 결합으로 극복할 수 있다는 핵심 테제를 세우고 이를 검증한다.</p>
+<h2>핵심 기여</h2>
+<p>논문은 크게 네 가지 축의 기여를 제시한다. (1) 게이트형 슬라이딩 윈도우 어텐션과 글로벌 어텐션을 5:1로 결합한 아키텍처·시스템 공동설계, (2) Muon 옵티마이저와 FP8 혼합정밀도, TWEO 이상치 억제 기법을 결합해 사전학습 효율을 크게 높인 안정적 FP8 학습법, (3) 16K→64K→256K로 문맥을 단계적으로 확장하면서 상호작용 트레이스를 마르코프 결정 과정(MDP) 형태로 재구성하는 커리큘럼 미드트레이닝, (4) 데이터 큐레이션부터 클러스터 운영, 진단 평가까지 연구자가 에이전트 군집(agent swarm)을 지휘하는 AI-네이티브 연구개발(R&amp;D) 워크플로우다. 또한 사전학습·미드트레이닝·후처리 단계의 모델 가중치, 중간 체크포인트, 학습 코드, 단계별 데이터 레시피, W&amp;B 로그를 모두 공개하여 완전한 재현성을 지향한다.</p>
+<h2>방법론</h2>
+<p>ZGCM-1은 GQA, RMSNorm, SwiGLU, RoPE를 사용하는 디코더 전용 트랜스포머로, 32개 레이어 중 27개는 128토큰 창의 게이트형 슬라이딩 윈도우 어텐션(SWA)을, 5개는 전역(global) 어텐션을 사용해 최대 256K 토큰까지 처리한다. 이 5:1 하이브리드 구성은 256K 문맥에서 완전 어텐션 대비 3.94배의 처리량 향상과 6.4배의 KV 캐시 절감을 제공한다. 사전학습은 일반(General) 사전학습 2단계(0.99T, 3.20T 토큰)와 미드트레이닝 3단계(16K/64K/256K, 총 약 600B 토큰)로 구성되며, 미드트레이닝에서는 상호작용 트레이스를 상태-행동(state-action) 전이로 재구성해 조밀한 단계별 지도(supervision)를 제공한다. 최적화에는 Muon 옵티마이저와 FP8(E4M3/E5M2) 혼합정밀도, TWEO 이상치 정규화를 결합해 약 4.2배의 16K 사전학습 시간 대비 손실 개선을 달성했다고 보고한다. 후처리는 지도 미세조정(SFT)과 혼합 강화학습(GRPO 기반)으로 이어지며, SFT 단계에서는 일반 데이터와 에이전틱(딥리서치·소프트웨어 엔지니어링·터미널) 데이터를 함께 학습하고 think/no-think 두 응답 모드를 통합 지도한다. 데이터 품질을 위해 후보 SFT 데이터의 약 절반을 정교하게 걸러내는 계층적 필터링과 8-그램 기반 벤치마크 오염 제거도 적용했다. 또한 연구자가 데이터 처리, 클러스터 관리, 자동 실험, 평가, 배포 등 전 개발 주기에 걸쳐 AI 에이전트를 지휘하는 "AI-네이티브 R&amp;D" 체계를 구축하고, 183개 세부 능력을 2,503개 문항으로 빠르게 진단하는 Atomic Capability Evaluation(ACE)을 개발했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>20개 벤치마크(수학·추론, 코드, 지식, 지시 따르기)에서 7B~8B급 경쟁 모델과 비교한 결과, ZGCM-1-7B는 해당 규모에서 평균 순위 1위를 기록했으며 AIME 2026 75.0%, MATH-500 97.1%, HMMT 2025 70.4%를 달성했다. 에이전틱 평가에서는 WebWalkerQA 63.1%, BrowseComp 19.4%, GAIA(텍스트 전용) 42.5%를 기록해 Claude 4 Sonnet, Kimi-K2, GLM-5.1 등 훨씬 큰 프런티어 모델들과 견줄 만한 성능을 보였다. 논문이 새로 제안한 "Binary Function Search"(스트립된 ELF 바이너리에서 설명만으로 특정 함수를 Ghidra 인터페이스로 찾아내는 과제)에서는 62% 정확도로 동급 모델(Qwen3-8B 12%)을 크게 앞섰고 GLM-5.1(66%)에 근접했다. 아키텍처 소거 실험에서는 SWA 5:1이 완전 어텐션과 비슷한 손실을 유지하면서 최고 처리량을 보였으며, 이러한 시스템·알고리즘 공동설계 전체가 결합해 약 4.2배의 사전학습 효율 개선(≈1.4×SWA × 1.5×FP8 × 1.8×Muon × 1.1×Pre-LN)으로 이어졌다고 분석한다. 이 밖에도 논문은 커리큘럼 정렬, FP8 안정화, SFT 데이터 가지치기, 장문맥 일반화, 에이전틱 공동학습, AI 자율성 수준 등 8가지 실증적 발견(Finding)을 정리했다.</p>
+<h2>한계점</h2>
+<p>저자들은 다음과 같은 한계를 명시한다. (1) 7.39B 밀집 모델의 정적 파라미터 용량 한계로 인해 검색 없이 순수 암기에 의존하는 closed-book 지식 과제에서는 초대형 프런티어 모델에 뒤처진다. (2) 강한 추론(long-CoT) 지도 데이터 비중이 커지면 IFEval 등 엄격한 지시 따르기 성능이 다소 저하되는 트레이드오프가 있다. (3) 웹 딥리서치나 바이너리 분석 같은 구조화된 에이전틱 환경에서는 강하지만, SWE-bench Verified 같은 저장소 수준 소프트웨어 엔지니어링이나 Terminal-Bench 2.0 같은 비구조화 터미널 작업에서는 완료율이 낮은 편이다. (4) 에이전틱 실행이 엄격한 스키마 정합성과 안정적인 환경 피드백에 크게 의존하므로, 관측 노이즈나 도구 호출 형식 오류, 외부 검색 API 지연 등에 취약하다.</p>
+<h2>시사점</h2>
+<p>이 연구는 초대형 파라미터 없이도 아키텍처·시스템·데이터·강화학습을 세심하게 공동설계하면 학계 수준의 컴퓨팅 자원으로도 프런티어급 추론·에이전틱 성능에 근접할 수 있음을 보여준다. 특히 가중치뿐 아니라 학습 전 단계의 데이터, 코드, 로그를 모두 공개함으로써 폐쇄적인 최신 모델 개발 관행과 대비되는 완전한 오픈사이언스 모델을 제시했다는 점에서, 향후 소형·중형 모델 연구자들이 학습 역학과 데이터 레시피를 직접 검증하고 확장할 수 있는 참고 자료로서의 가치가 크다. 또한 연구개발 전 과정을 AI 에이전트가 보조하는 AI-네이티브 워크플로우 사례와 그 자율성 수준에 대한 실증 평가는, 아키텍처·알고리즘 설계처럼 여전히 인간 판단이 중요한 영역과 실험·배포처럼 자동화가 가능한 영역을 구분하는 데 실질적인 시사점을 제공한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.13356" target="_blank" rel="noopener">huggingface.co/papers/2609.13356</a> · 2026-09-16</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

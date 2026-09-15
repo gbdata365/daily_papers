@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>디스커버리 파운데이션 모델</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#10 · Daily Papers 2026-09-16</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 24</span>
+    </div>
+    <h1 class="article-title">Discovery Foundation Models: Toward Open-Ended Discovery Intelligence</h1>
+    <p class="article-title-ko">디스커버리 파운데이션 모델: 열린형 발견 지능을 향해</p>
+    <p class="article-sub">이 논문은 파운데이션 모델이 사람이 미리 정해준 문제를 푸는 단계를 넘어, 무엇이 연구할 가치가 있는 미지의 대상인지 스스로 찾아내고 문제 정의·표현·가설·개입·검증 구조 자체를 구성하고 수정하는 "발견 지능(Discovery Intelligence)"을 갖추도록 하는 Discovery Foundation Models(DFM) 개념 틀을 제안하고, 이를 구현한 시스템 Zetema와 실제 신약 후보 발굴 사례 GALILEO로 뒷받침한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.15973" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.15973" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Discovery Foundation Models: Toward Open-Ended Discovery Intelligence</li>
+<li><strong>저자</strong>: Ling Yang, Zhenfei Yin, Yingcheng Wu (DFM Scientist Collaboration Program, phai-labs.com)</li>
+<li><strong>출처</strong>: arXiv:2609.15973v1 [cs.CL] (2026년 9월 14일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/Gen-Verse/DFM-Plans">github.com/Gen-Verse/DFM-Plans</a> (협업 문의: phai-labs.com/collaborate)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.15973">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>이 논문은 파운데이션 모델이 사람이 미리 정해준 문제를 푸는 단계를 넘어, 무엇이 연구할 가치가 있는 미지의 대상인지 스스로 찾아내고 문제 정의·표현·가설·개입·검증 구조 자체를 구성하고 수정하는 "발견 지능(Discovery Intelligence)"을 갖추도록 하는 Discovery Foundation Models(DFM) 개념 틀을 제안하고, 이를 구현한 시스템 Zetema와 실제 신약 후보 발굴 사례 GALILEO로 뒷받침한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>현재의 파운데이션 모델과 과학 에이전트는 대부분 문제, 표현, 목표, 도구, 평가자가 이미 고정된 구조(Q = (P, R, G, T, V)) 안에서 탐색과 최적화만 수행한다. 그러나 실제 과학 연구에서는 두 가설이 관측상 구분 불가능하거나, 벤치마크가 프록시를 보상하거나, 반복된 실패가 최적화 문제가 아니라 누락된 변수 때문일 수 있다. 이런 상황에서 필요한 것은 과제 내부의 또 다른 답이 아니라 연구 구조 자체의 변경이며, 저자들은 이 공백을 프레이밍(Framing), 모델링(Modeling), 근거화 및 수정(Grounding and revision)이라는 세 가지 "빠진 전환"으로 규정한다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>DFM을 특정 아키텍처가 아닌 능력(capability) 기반으로 정의하고, 문제 발견(C_find)·문제 정형화(C_form)·표현 구성(C_repr)·가설 형성(C_hyp)·개입 설계(C_int)·근거 기반 수정(C_rev)·과제 간 지속 개선(C_cont)의 7가지 결합 능력으로 분해했다.</li>
+<li>연구 상태(research state)의 revision 과정으로서 Discovery Process를 정의하고, 이를 구현한 시스템 Zetema를 제시했다. Zetema는 명시적 연구 상태 관리, 검증·실험 게이팅, Dry-Lab/Wet-Lab 근거화, 검증된 Discovery Skill의 과제 간 전이를 결합한다.</li>
+<li>학습(capability formation)과 프로세스 중심 평가(process-centered evaluation) 방법론을 통합적으로 정식화하여, 최종 정답이 아니라 연구 상태의 중간 의사결정을 학습·측정 대상으로 삼았다.</li>
+<li>실제 치료용 펩타이드 발굴 시스템 GALILEO를 통해 Dry-Lab/Wet-Lab 폐루프가 실제로 작동함을 경험적으로 보였다.</li>
+</ol>
+<h2>방법론</h2>
+<p>논문은 통상적 과제를 Q = (P, R, G, T, V)로, 발견(discovery) 에피소드를 Φ_disc: (W, K₀, B) → (ΔK, Ξ)로 형식화한다. 여기서 ΔK는 외부 검증을 거친 지식 진전, Ξ는 문제·표현·가설·개입이 바뀐 경로 전체다. 문제는 P=(O,Ω,ℓ,C,Y,Q), 표현은 R=(O,V,R,A,L), 개별 가설은 Hᵢ=(μᵢ,Aᵢ,Dᵢ,Ŷᵢ,Fᵢ)로 정의되며, 개입은 기대 불확실성 감소량 E[ΔI]를 최대화하는 x*를 선택하는 형태로 표현된다. Zetema는 연구 상태 Sₜ=(Pₜ,Rₜ,Hₜ,Eₜ,Xₜ,Bₜ,Mₜ)를 상태전이 Sₜ₊₁=F(Sₜ,aₜ,oₜ)로 관리하며, Research World Model이 행동의 결과·비용·위험을 예측해 값비싸거나 위험한 행동을 실행 전 게이팅한다. 검증된 경험은 트리거·행동·기대효과·검증근거로 구성된 Discovery Skill mᵢ=(cᵢ,oᵢ,eᵢ,vᵢ)로 응축되어 다른 과제로 전이된다. 학습 목표는 상태조건부 행동 모방, 상태전이 예측, 선호 최적화(preference), 검증기(verifier) 학습, 월드모델 학습, 과학적 피드백 기반 강화학습, 스킬 대조학습을 결합한 복합 손실 L_DFM으로 정식화되고, 이를 단계별로 최적화하는 참조 학습 알고리즘(Algorithm 1)이 제시된다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>이 논문은 벤치마크 수치 비교표를 제시하는 실증 논문이 아니라, 개념 틀과 시스템 설계 및 하나의 실제 사례로 뒷받침되는 프레임워크/포지션 논문에 가깝다. 핵심 실증 근거는 GALILEO 사례로, 로봇 합성·품질관리·이미징·플레이트 기반 표현형 분석을 결합한 물리적 실험 루프에서 두 개의 검증된 발견 분기를 보여준다. LRRC8C 표적 분기(GALILEO-LRC)는 전세포 전기생리 실험으로 선택적 LRRC8A/LRRC8C 전류 차단을 확인했고, 환자 유래 오가노이드에서 IC50 18.922 μM을 얻었다. SLC25A1 표적 분기(GALILEO-SLC)는 미토콘드리아 국소화를 보이며 오가노이드 IC50 0.736 μM, 구연산 수송 의존적 대사붕괴 기전으로 설명이 정교화되었다. 5회의 최적화 라운드에 걸쳐 약한 모티프 조합은 제거되고 이전에 폐기된 조합이 재검토·재통합되는 과정을 거쳐 재사용 가능한 설계 규칙인 Amphiphilic Balance Grammar(ABG)로 응축되었으며, 이는 외부 펩타이드 설계 워크플로에도 전이 적용되었다. 이 밖에 논문은 지식 진전(ΔK_val)과 미래 발견 능력 개선(ΔC_future)을 축으로 하는 프로세스 중심 평가 프로토콜과 자원 대응 효율 지표(η_disc)를 제안하지만, 이에 대한 실제 벤치마크 수치 결과는 제시하지 않는다.</p>
+<h2>한계점</h2>
+<p>저자들은 GALILEO 사례가 범용 DFM 문제가 이미 해결되었음을 의미하지 않는다고 명시한다. 대상 도메인, 분자 modality, 실험 인터페이스가 여전히 상당 부분 구조화되어 있으며, 도메인 간 발견 전이는 여전히 미해결 문제로 남아 있다. 또한 프레임워크 전체가 정성적 정의와 개념적 수식 위주로 구성되어 있어 정량적 baseline 비교나 대규모 벤치마크 검증이 부족하다. 재귀적 자기개선(recursive discovery) 부분에서는 스킬·평가자·시뮬레이터·메모리 정책의 잘못된 업데이트가 이후 연구 방향과 증거 획득 자체를 왜곡시킬 위험이 있으며, 이를 통제하기 위한 버전관리·샌드박싱·롤백·독립 감사 등 거버넌스 장치가 반드시 필요함을 스스로 강조한다.</p>
+<h2>시사점</h2>
+<p>이 논문은 지능 스케일링의 다음 단계를 "기존 지식 학습 → 행동 결과로부터의 학습 → 지식 생산 과정 자체에의 참여"로 재구성하며, AI-for-Science 시스템 설계에 구체적인 지침을 제공한다. 명시적이고 되돌릴 수 있는 연구 상태, 실행 전 검증·게이팅, Dry-Lab/Wet-Lab 결합, 검증 게이트를 통과한 스킬만 전이하는 메모리 구조는 향후 자율 연구 에이전트나 자기 개선 과학 시스템을 설계할 때 참고할 수 있는 아키텍처 원칙이 된다. 아울러 최종 정답이 아니라 프로세스 궤적을 평가 대상으로 삼자는 제안은 향후 과학 AI 벤치마크 설계 방향에도 영향을 줄 수 있으며, 자율성이 커질수록 인간 감독과 독립 검증이 필수적이라는 거버넌스 논의는 실제 자율 실험실 및 재귀적 자기개선 시스템의 안전한 배치를 위한 실무적 시사점을 제공한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.15973" target="_blank" rel="noopener">huggingface.co/papers/2609.15973</a> · 2026-09-16</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

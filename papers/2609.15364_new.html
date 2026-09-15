@@ -1,0 +1,107 @@
+<meta charset="UTF-8">
+<title>RSIAgent</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#8 · Daily Papers 2026-09-16</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 41</span>
+    </div>
+    <h1 class="article-title">RSIAgent: Autonomous Exploration for Recursive Self-improvement in New Environments</h1>
+    <p class="article-title-ko">RSIAgent: 새로운 환경에서의 재귀적 자기개선을 위한 자율 탐색</p>
+    <p class="article-sub">RSIAgent는 모델 파라미터를 전혀 업데이트하지 않고, 커리큘럼·행위자·검증자 세 에이전트가 새로운 환경을 스스로 탐색해 재사용 가능한 인과적 지식을 메모리로 축적함으로써, 오픈소스 모델(Kimi-K3, GLM-5.3)이 GPT-6 등 최상위 폐쇄형 모델을 능가하도록 만드는 학습 불필요(training-free) 다중 에이전트 프레임워크이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.15364" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.15364" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: RSIAgent: Autonomous Exploration for Recursive Self-improvement in New Environments</li>
+<li><strong>저자</strong>: Sibo Zhu, Shicheng Fan, Xinyue Wang, Wenyi Wu, Biwei Huang, Kun Zhou (교신저자) 외 (Aether AI, UC San Diego, University of Illinois Chicago 소속)</li>
+<li><strong>출처</strong>: arXiv:2609.15364v1 [cs.AI] (2026년 9월 14일 제출)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://aetherlabsai.github.io/RSIAgent/">aetherlabsai.github.io/RSIAgent</a> (코드: github.com/AetherLabsAI/RSIAgent)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.15364">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>RSIAgent는 모델 파라미터를 전혀 업데이트하지 않고, 커리큘럼·행위자·검증자 세 에이전트가 새로운 환경을 스스로 탐색해 재사용 가능한 인과적 지식을 메모리로 축적함으로써, 오픈소스 모델(Kimi-K3, GLM-5.3)이 GPT-6 등 최상위 폐쇄형 모델을 능가하도록 만드는 학습 불필요(training-free) 다중 에이전트 프레임워크이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>디지털 에이전트는 실제 환경에서 사전학습 시 접하지 못한 새로운 인터페이스, 도구, 실패 패턴을 마주치는 경우가 많다. 기존 적응 방법은 추가 상호작용 데이터를 모아 재학습하는 방식이 주류였으나 비용이 크고 프라이빗하거나 계속 변화하는 환경에는 적용하기 어렵다. 반면 컨텍스트 내 메모리를 잘 조직하는 학습 불필요 적응 방식이 대안으로 떠오르고 있지만, 단순히 성공 궤적을 기억하는 것을 넘어 행동-조건-결과 사이의 안정적 인과관계를 스스로 발견해 재사용 가능한 구조로 정리할 수 있는가라는 질문이 핵심 문제의식이다. 저자들은 인간이 새 소프트웨어를 배울 때 "학습 대상 파악 → 상호작용으로 경험 수집 → 결과에서 지식 증류"를 반복하는 인과적 학습 과정을 모방해 이 문제에 접근한다.</p>
+<h2>핵심 기여</h2>
+<p>1) 모델 파라미터 업데이트 없이 새로운 환경에서 지식을 자율적으로 획득·검증·재사용하는 범용 다중 에이전트 프레임워크 RSIAgent를 제안했다. 2) 환경을 폭넓게 이해하는 Broad Recursive Self-exploration(BRS)과 어려운 사례·숨겨진 제약·경계조건을 정교화하는 Deep Recursive Self-exploration(DRS)로 구성된 "넓게 먼저, 그다음 깊게" 2단계 탐색 전략을 설계했다. 3) OSWorld-v2와 Agent's Last Exam(ALE)에서 RSIAgent가 오픈소스 모델을 재귀적으로 개선시켜 Claude Opus 5, GPT-6 Astra 등 폐쇄형 프론티어 모델을 능가함을 실증했다.</p>
+<h2>방법론</h2>
+<p>RSIAgent는 세 역할의 에이전트로 구성된다. 행위자(actor) 에이전트는 실행 가능한 코드(code-as-policy)로 환경과 상호작용하며, 검증 결과에 따라 지속적 메모리를 갱신·정제한다. 검증자(verifier) 에이전트는 행위자의 사고 과정과 분리된 채 환경 피드백(실행 결과, 인터페이스 상태 등)만으로 성공/실패를 독립적으로 판정해 상관된 오류를 줄인다. 커리큘럼(curriculum) 에이전트는 누적 메모리와 이전 결과를 바탕으로 다음에 탐색할 과제를 설계하는 상위 조정자 역할을 한다. 탐색은 2단계로 진행된다: BRS 단계에서는 여러 방향의 과제를 병렬로 생성·실행·검증하며 환경에 대한 폭넓은 이해와 다양한 절차·실패 패턴을 축적하고, DRS 단계에서는 순차적으로 난이도를 높여가며 코너 케이스와 숨은 제약을 집중적으로 파고든다. 탐색이 끝나면 메모리는 동결(freeze)되어 커리큘럼 에이전트 없이 행위자-검증자 루프만으로 테스트 시점 과제를 수행하는 데 재사용된다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>GLM-5.3을 기본 행위자, Kimi-K3를 검증자 겸 커리큘럼 에이전트로 사용해 OSWorld 2.0(0808 offline, 82개 과제)과 Agent's Last Exam Near-term(67개 과제)에서 평가했다. RSI 적용 후 OSWorld의 부분 점수는 71.97%에서 78.98%로, 이진 정확도는 37.80%에서 42.68%로 상승했으며, ALE에서도 부분 점수 83.75%→84.82%, 이진 정확도 49.25%→50.75%로 개선되었다. RSIAgent는 두 벤치마크 모두에서 GPT-6 Astra(OSWorld 72.60%, ALE 82.26%)와 Claude Opus 5를 부분 점수 기준으로 상회했다. 대표 과제 3건(T044, T049, T065)의 라운드별 추이를 보면 탐색이 누적되다가 임계 지식이 채워지는 시점에 점수가 급격히 상승하는 양상을 보였다. 소거 실험에서는 BRS+DRS를 모두 사용한 Full RSI가 평균 74.54%로 BRS만(65.52%), DRS만(56.50%) 사용한 경우보다 우수했으며, DRS 단독은 일부 과제에서 베이스라인보다 낮은 성능을 보여 두 단계의 결합이 필요함을 시사했다. 또한 GameCraft-Bench의 40개 게임 개발 과제에서도 RSIAgent가 Play2Code 대비 약하거나 강한 베이스 게임 모두에서 일관되게 품질을 개선했다.</p>
+<h2>한계점</h2>
+<p>논문은 실패 모드로 (1) 특정 취약점을 겨냥하지 못하는 불충분한 탐색, (2) 모든 요구사항 충족 여부를 완전히 확인하지 못하는 불완전한 검증, (3) 검증되지 않은 판단이 재사용 규칙으로 굳어지는 불안정한 메모리 통합을 지적했다. 그 외에도 테스트 시점 탐색에 상당한 연산 비용이 들고, 탐색 예산·중단 정책·메모리 품질에 성능이 민감하며, 모델 기반 검증자의 오판이 이후 탐색과 메모리에 전파될 수 있고, 환경마다 필요한 도구·검증 신호·전략이 달라 각 구성요소의 기여도를 완전히 분리해 검증하지 못했다는 한계를 명시했다. 윤리적으로도 자율적 프로그램 실행 및 메모리 축적 과정에서 의도치 않은 동작, 무단 접근, 개인정보 유출 위험이 있음을 언급하며, 실험은 통제된 환경과 허용된 도구·데이터 범위 내에서 수행했다고 밝혔다.</p>
+<h2>시사점</h2>
+<p>이 연구는 모델 파라미터를 건드리지 않고도 자율 탐색과 인과 지식 기반 메모리만으로 오픈소스 모델이 폐쇄형 프론티어 모델과의 격차를 크게 좁히거나 역전시킬 수 있음을 보여준다. 이는 모델 자체의 스케일업 경쟁뿐 아니라 "에이전트 수준의 자기개선(agent-level self-improvement)"이 실용적 성능 향상 경로가 될 수 있음을 시사하며, 사전학습-사후학습 패러다임을 연상시키는 넓고-깊은 탐색 전략은 향후 AI for Science, 게임 개발 등 다른 장기 상호작용 도메인으로 확장될 잠재력을 지닌다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.15364" target="_blank" rel="noopener">huggingface.co/papers/2609.15364</a> · 2026-09-16</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

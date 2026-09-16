@@ -1,0 +1,123 @@
+<meta charset="UTF-8">
+<title>스텝오디오 3 뮤직 기술 보고서</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#4 · Daily Papers 2026-09-17</span>
+      <span class="cat-tag">생성모델</span>
+      <span class="upvote-tag">▲ 69</span>
+    </div>
+    <h1 class="article-title">StepAudio 3 Music Technical Report</h1>
+    <p class="article-title-ko">스텝오디오 3 뮤직 기술 보고서</p>
+    <p class="article-sub">StepAudio 3 Music은 ABC 표기법으로 곡의 구조를 먼저 계획(ABC-CoT)한 뒤 단일 코드북 기반의 음악 토큰과 flow-matching 디퓨전 트랜스포머(DiT)로 최대 5분 30초 길이의 고품질 음악을 생성하는 대규모 장문(長文) 음악 생성 모델이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.16034" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.16034" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: StepAudio 3 Music Technical Report</li>
+<li><strong>저자</strong>: Chengli Feng, Zhiyue Wu, Jiahao Song, Zheqi Dai, Boyang Wang, Ruibin Yuan, Junming Gong, Wenxiao Zhao, Jing Guo, Gang Yu, Xiangyu Zhang, Xuerui Yang, Chao Yan (StepFun, ACE Studio, 홍콩중문대학교, UC 샌디에이고)</li>
+<li><strong>출처</strong>: arXiv:2609.16034v1 [eess.AS] (2026-09-11)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://stepaudiollm.github.io/step-audio-3-music">데모 페이지</a> (논문에 명시된 오디오 데모 링크)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.16034">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>StepAudio 3 Music은 ABC 표기법으로 곡의 구조를 먼저 계획(ABC-CoT)한 뒤 단일 코드북 기반의 음악 토큰과 flow-matching 디퓨전 트랜스포머(DiT)로 최대 5분 30초 길이의 고품질 음악을 생성하는 대규모 장문(長文) 음악 생성 모델이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>최근 디퓨전/플로우매칭 기반 음악 생성 모델(Stable Audio, DiffRhythm, ACE-Step 등)은 오디오 품질과 곡 전체 길이 면에서 큰 발전을 이루었지만, 멜로디 전개, 섹션 전환, 장기 구조 같은 상위 수준의 음악적 결정을 다루기에는 한계가 있었다. 이를 보완하기 위해 언어모델과 디퓨전/플로우매칭 렌더러를 결합한 계층적 구조(Seed-Music, InspireMusic, Qwen-Music, ACE-Step 1.5 등)가 등장했고, 일부 연구는 음악 사고사슬(Music Chain-of-Thought)을 도입해 오디오 생성 전에 중간 음악적 계획을 명시적으로 만들었다. 그러나 이러한 계획이 창작자가 이해하고 수정할 수 있는 형태(예: 코드 진행, 조성, 마디 구조)로 노출되는 경우는 드물었다. 저자들은 "모델이 스스로 세운 계획을 창작자가 검토·수정할 수 있는 형태로 어떻게 노출할 것인가"라는 질문에서 출발해, 텍스트 호환적인 ABC 표기법을 음악 계획의 인터페이스로 채택했다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>생성 지향적 음악 표현과 렌더러</strong>: 25Hz에서 단일 코드북 VQ, Semantic RVQ(다중 코드북), Acoustic RVQ를 통제된 조건에서 비교한 결과를 바탕으로, 65536개 항목을 갖는 단일 코드북 50Hz "StepAudio Music Tokenizer"를 설계했다. 의미 정보를 반영한 자기지도·멀티태스크 학습으로 음악 구조와 재구성 관련 정보를 함께 보존하며, flow-matching DiT와 StepAudio VAE가 48kHz 오디오를 렌더링한다.</li>
+<li><strong>명시적 음악 계획을 포함한 텍스트 제어 생성</strong>: Mixture-of-Experts(MoE) 자기회귀 모델이 오픈도메인 텍스트 조건과 과제별 참조(보컬, 커버곡 등)를 지원한다. ABC-CoT라는 중간 편곡 계획(코드, 리듬, 멜로디, 곡 구조를 ABC 표기법으로 표현)을 먼저 생성한 뒤 이를 맥락에 포함해 음악 토큰을 예측하는 2단계(two-pass) 방식을 제안했다.</li>
+</ul>
+<h2>방법론</h2>
+<p>전체 시스템은 (1) StepAudio Music Codec, (2) MoE 자기회귀 언어모델, (3) flow-matching DiT 렌더러로 구성된다.</p>
+<ul>
+<li><strong>코덱 설계</strong>: 25Hz 기준으로 단일 코드북 VQ, Semantic RVQ, Acoustic RVQ 세 가지 이산 병목 구조를 비교했다. 다중 코드북 RVQ는 정답 토큰으로부터의 재구성 충실도는 더 높지만, 예측된 토큰으로 생성할 때는 코드북 간 오류가 누적되어 음악성이 떨어지는 경향이 확인되었다. 반대로 단일 코드북 VQ는 재구성 충실도는 다소 낮아도 자기회귀 예측이 안정적이고 음악성이 우수해, 최종적으로 단일 코드북 방식을 채택했다. 이후 25Hz와 50Hz를 비교한 결과, 오디오 충실도 차이는 크지 않지만 50Hz가 더 조밀한 토큰 단위 지도(supervision)를 제공해 음악성을 향상시켰다.</li>
+<li><strong>StepAudio Music Tokenizer</strong>: 24kHz 오디오를 100Hz Mel로 변환 후 50Hz로 다운샘플링하고, 약 0.6B 파라미터의 24층 양방향 Conformer(하위 12층 + 상위 12층)로 처리한다. 하위-상위 스택 사이에 65536개 항목의 단일 VQ 병목을 두며, CTC(가사), Mel 재구성, Chroma 재구성, VQ 목적함수를 결합한 3단계 학습(BEST-RQ 자기지도 사전학습 → 멀티태스크 표현학습 → 이산 토큰화)을 거친다. 초당 800bit의 낮은 명목 비트레이트를 가진다.</li>
+<li><strong>Flow-Matching DiT 디토크나이저</strong>: 50Hz 음악 토큰을 조건으로 StepAudio VAE의 연속 잠재값(64채널, 50Hz)을 예측하며, 고정된 VAE 디코더가 이를 48kHz 파형으로 변환한다. 장문 생성은 30초 단위 청크로 이루어지며, 각 청크는 직전 청크의 마지막 2초 잠재 컨텍스트를 이어받아 경계 간 일관성을 유지한다.</li>
+<li><strong>MoE 자기회귀 모델과 ABC-CoT</strong>: 가사, 텍스트 프롬프트, 선택적 참조(보컬/스피치/음악)를 조건으로, 먼저 ABC-CoT(템포·박자·조성·코드·마디·멜로디를 포함한 편곡 계획)를 생성한 뒤 이를 맥락에 추가해 50Hz 음악 토큰 시퀀스를 예측하는 2단계 확률적 분해를 사용한다.</li>
+<li><strong>데이터 파이프라인</strong>: 대역폭 분석과 오디오 이벤트 검출(FireRedVAD)로 저품질 샘플을 걸러내고, Demucs로 보컬/반주를 분리한 뒤 MMS-LID로 언어를 식별해 FireRedASR(중국어/영어) 또는 WhisperX(기타 언어)로 가사를 전사하며, SongFormer로 곡 구조(인트로, 벌스, 코러스, 브리지, 아웃트로 등)를 분석해 구조화된 학습 레코드를 만든다.</li>
+<li><strong>학습 절차</strong>: 1000억 곡 이상, 500만 시간 이상의 오디오, 약 1조 토큰 규모의 사전학습 코퍼스를 사용해 (1) 대규모 사전학습(600B 토큰), (2) 멀티태스크 중간학습(500B 토큰, ABC-CoT 도입), (3) 고품질 어닐링(80B 토큰) 3단계로 LLM을 학습한다. 이후 지도 미세조정(SFT, 약 20B 토큰)과 전문가의 쌍대 선호 데이터를 이용한 직접 선호 최적화(DPO, 약 2,000개 선호 쌍)로 후처리 정렬을 수행한다.</li>
+</ul>
+<h2>실험 설정 및 결과</h2>
+<p>평가는 SongBench(1~10점, 7개 차원), AudioBox-Aesthetics(Content Enjoyment/Usefulness/Production Quality/Complexity), MuQ-MuLan(텍스트-음악 유사도), 그리고 외부 블라인드 벤치마크인 Artificial Analysis Music Arena Vocals 리더보드를 사용했다. 비교 대상은 Suno V5.5, Suno V5, Mureka V9, MiniMax Music 3 등 상용 시스템이다.</p>
+<ul>
+<li><strong>객관 평가</strong>: StepAudio 3 Music은 AudioBox-Aesthetics에서 Content Enjoyment(7.7086), Content Usefulness(8.0052), Production Quality(8.3868) 모두 최고 점수를 기록했고, MuQ-MuLan 유사도(0.4465)도 가장 높았다. 반면 SongBench에서는 Mureka V9이 여러 세부 차원에서 앞서는 등, 평가 지표별로 순위가 다르게 나타나 "음악적 구성"과 "음향적 렌더링 품질"이 서로 다른 목표임을 시사했다.</li>
+<li><strong>주관 평가</strong>: Artificial Analysis Music Arena Vocals 리더보드(블라인드 쌍대비교)에서 Quality Elo 1105를 기록해 Suno V5.5(1170), Mureka V9(1159), Mureka V8(1140)에 이어 4위를 차지했으며, Suno V5·MiniMax 계열 모델들보다는 높은 순위였다.</li>
+<li><strong>어블레이션</strong>: (1) 디토크나이저 스케일링 실험에서는 DiT 파라미터를 0.9B에서 4B/8B로 키워도 일관된 성능 향상이 없어, 이산 표현 자체가 성능 한계(ceiling)로 작용함을 확인했다. (2) DPO는 SFT 대비 SongBench 평균(6.5445→6.6438), Content Enjoyment(7.6259→7.7086), Production Quality(8.2700→8.3868), MuQ-MuLan(0.4157→0.4465) 등 모든 지표를 개선했다. (3) 추론 시 ABC-CoT 계획을 적용하면 직접 생성(Direct) 대비 SongBench 평균이 소폭 향상되었고(6.6438→6.6713), 여기에 LLM 기반으로 계획을 한 차례 편집(ABC-CoT + LLM Editing)하면 평균이 6.7220까지 더 향상되었으며 특히 Mixing, Arrangement, Melody 차원에서 개선폭이 컸다.</li>
+</ul>
+<h2>한계점</h2>
+<p>논문은 스스로 다음과 같은 평가 한계를 명시했다: SongBench가 SFT 데이터 필터링에도 사용되어 평가 점수가 데이터 선택과 완전히 독립적이지 않다는 점, DPO가 자동 지표로 필터링·평가되는 동일한 선호 데이터에 학습된다는 점, 외부 아레나 벤치마크는 프롬프트·출력·평가자가 내부 평가와 달라 직접적인 교차검증 근거가 되지 못한다는 점, 주요 비교가 보컬·가사 조건 생성에 집중되어 있어 악기 단독 생성·커버곡 생성·vocal-to-mix 성능을 대표하지 못한다는 점, 그리고 캡션 유사도나 전체 음악 품질 지표가 ABC 표기법의 음표·마디 단위 정밀 준수 여부를 보장하지 않는다는 점이다. 또한 결론부에서는 복잡한 편곡, 매우 긴 시간적 의존성 처리, 보컬의 자연스러움, 고주파 대역 재구성 품질이 향후 개선이 필요한 영역으로 언급되었다.</p>
+<h2>시사점</h2>
+<p>이 연구는 장문 음악 생성에서 (1) 재구성 충실도가 높은 토크나이저가 반드시 자기회귀 생성에 유리한 것은 아니라는 점, (2) 단일 코드북 같은 예측하기 쉬운 이산 표현이 다중 코드북 RVQ보다 생성 안정성 면에서 더 유리할 수 있다는 점, (3) ABC 표기법과 같이 사람이 읽고 수정할 수 있는 중간 표현을 생성 파이프라인에 도입하면 창작자가 편곡 결정을 검토·개입할 수 있는 인터페이스를 제공하면서 동시에 텍스트 LLM을 이용한 후처리 편집으로 음악 품질을 추가로 끌어올릴 수 있다는 점을 보여준다. 이는 음악 생성뿐 아니라 다른 장문 시퀀스 생성 도메인에서도 "생성 지향적 표현 설계"와 "검토 가능한 중간 계획"이 가지는 가치를 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.16034" target="_blank" rel="noopener">huggingface.co/papers/2609.16034</a> · 2026-09-17</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

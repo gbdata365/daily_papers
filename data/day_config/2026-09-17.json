@@ -1,0 +1,92 @@
+{
+  "2609.06986": {
+    "base": "2609_컴포즈CL_장기기억을-위한-연속학습-메커니즘-조합",
+    "rank": "#1",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "287",
+    "en_title": "Continual Learning Mechanisms Compose for Long-Horizon Memorization",
+    "ko_title": "장기 수평 기억화를 위한 연속학습 메커니즘 조합"
+  },
+  "2609.16679": {
+    "base": "2609_게임AI_파운데이션모델-시대의-게임AI-6대역할",
+    "rank": "#2",
+    "category": "survey",
+    "category_label": "서베이",
+    "upvote": "106",
+    "en_title": "AI for Games in the Foundation Model Era",
+    "ko_title": "파운데이션 모델 시대의 게임 AI"
+  },
+  "2609.14005": {
+    "base": "2609_스텝오디오3_실시간-음성대화-파운데이션모델",
+    "rank": "#3",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "89",
+    "en_title": "StepAudio 3 Realtime Technical Report",
+    "ko_title": "스텝오디오 3 리얼타임 기술 보고서"
+  },
+  "2609.16034": {
+    "base": "2609_스텝오디오3뮤직_ABC-노테이션-기반-장문-음악생성",
+    "rank": "#4",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "69",
+    "en_title": "StepAudio 3 Music Technical Report",
+    "ko_title": "스텝오디오 3 뮤직 기술 보고서"
+  },
+  "2609.17523": {
+    "base": "2609_사이언스버디_재귀속재귀-자기개선-과학에이전트",
+    "rank": "#5",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "17",
+    "en_title": "ScienceBuddy: Recursive-in-Recursive Self-Improvement for Interactive Scientific Agents",
+    "ko_title": "사이언스버디: 대화형 과학 에이전트를 위한 재귀 속 재귀 자기개선"
+  },
+  "2609.15195": {
+    "base": "2609_하니스VLN_에이전트-하니스-기반-통합-내비게이션",
+    "rank": "#6",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "14",
+    "en_title": "HarnessVLN: Unifying Training-Free Embodied Navigation through an Agent Harness",
+    "ko_title": "하니스VLN: 에이전트 하니스를 통한 학습 불필요 임바디드 내비게이션 통합"
+  },
+  "2609.16591": {
+    "base": "2609_플랫_이미지-텍스트-1D-토큰-리샘플링",
+    "rank": "#7",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "12",
+    "en_title": "FLAT: Resampling Image and Text into 1D Flexible-Length Aligned Transmodal Tokens for Retrieval and Generation",
+    "ko_title": "FLAT: 검색과 생성을 위한 1D 가변 길이 정렬 트랜스모달 토큰으로의 이미지·텍스트 리샘플링"
+  },
+  "2609.11873": {
+    "base": "2609_RSI_인간이-만든-마지막-AI",
+    "rank": "#8",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "9",
+    "en_title": "The Last AI Built by Humans: Toward Genuine Recursive Self-Improvement",
+    "ko_title": "인간이 만든 마지막 AI: 진정한 재귀적 자기개선을 향해"
+  },
+  "2609.14803": {
+    "base": "2609_블루프린트_아이처럼-질문하면-드러나는-AI-설계도",
+    "rank": "#9",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "6",
+    "en_title": "Another Blueprint In The Wall: How to Ask Frontier AI Like a Kid?",
+    "ko_title": "벽 속의 또 다른 청사진: 프론티어 AI에게 아이처럼 묻는 방법은?"
+  },
+  "2609.14857": {
+    "base": "2609_모듈러RSI_모듈형-재귀적-하네스-자기개선",
+    "rank": "#10",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "5",
+    "en_title": "ModularRSI: Modular and Generalizable Recursive Harness Self-Improvement",
+    "ko_title": "모듈러RSI: 모듈형이며 일반화 가능한 재귀적 하네스 자기개선"
+  }
+}

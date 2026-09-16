@@ -1,0 +1,135 @@
+<meta charset="UTF-8">
+<title>장기 수평 기억화를 위한 연속학습 메커니즘 조합</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#1 · Daily Papers 2026-09-17</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 287</span>
+    </div>
+    <h1 class="article-title">Continual Learning Mechanisms Compose for Long-Horizon Memorization</h1>
+    <p class="article-title-ko">장기 수평 기억화를 위한 연속학습 메커니즘 조합</p>
+    <p class="article-sub">언어 모델이 100개의 과제를 순차적으로 학습하면서도 이전 지식을 잊지 않도록, 서로 다른 종류의 망각 방지 메커니즘(anchor)들을 저랭크(LoRA) 갱신 방식과 조합하면 단일 기법보다 훨씬 뛰어난 장기 기억 성능을 낼 수 있음을 보인 연구다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.06986" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.06986" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Continual Learning Mechanisms Compose for Long-Horizon Memorization</li>
+<li><strong>저자</strong>: Zheyuan Zhang, Alvin Zhang (공동 1저자), Daniel Khashabi, Tianmin Shu (공동 지도) — Johns Hopkins University</li>
+<li><strong>출처</strong>: arXiv:2609.06986v1 [cs.LG] (2026년 9월 7일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://compose-cl.github.io">compose-cl.github.io</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.06986">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>언어 모델이 100개의 과제를 순차적으로 학습하면서도 이전 지식을 잊지 않도록, 서로 다른 종류의 망각 방지 메커니즘(anchor)들을 저랭크(LoRA) 갱신 방식과 조합하면 단일 기법보다 훨씬 뛰어난 장기 기억 성능을 낼 수 있음을 보인 연구다.</p>
+<h2>배경 및 문제의식</h2>
+<p>언어 모델이 시간이 지남에 따라 들어오는 새로운 정보를 파라미터 안에 내재화하고, 이후 많은 추가 업데이트를 거친 뒤에도 그 정보를 유지할 수 있어야 하는 상황을 저자들은 "장기 수평 기억화(long-horizon memorization)"라고 정의한다. 프롬프트나 검색(RAG) 기반 방법은 정보를 모델 파라미터 바깥에 두기 때문에 매번 다시 제공해야 하는 한계가 있어, 이 논문은 반복적인 파인튜닝 업데이트만으로 모델 내부에 지식을 쌓고 보존할 수 있는지를 탐구한다.</p>
+<p>구체적으로는 도메인 증분(domain-incremental) 설정에서의 연속 지도 파인튜닝(continual SFT)을 다룬다. 모델은 100개의 과제를 순서대로 학습하며, 이전 과제의 원본 학습 예시를 다시 볼 수 없고 추론 시 과제 식별자(task ID)도 주어지지 않는다. 이런 조건에서 새로운 과제를 위한 업데이트가 이전에 저장된 지식을 덮어써버리는 "치명적 망각(catastrophic forgetting)"이 발생한다. 기존 연속학습 벤치마크는 대부분 이질적인 다운스트림 과제 간 전이나 성능을 측정하며, 순차적 모델 편집 벤치마크는 SFT가 아닌 표적 편집을 다루기 때문에, 장기 수평 기억화를 제대로 평가할 벤치마크가 없었다는 점도 문제의식으로 제시된다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>언어 모델을 위한 독립적인 연속학습 문제로서 "장기 수평 연속 기억화"를 정식화했다.</li>
+<li>망각 방지 메커니즘 조합의 설계 공간을 앵커(anchor, 무엇을 보존할지)와 저랭크 할당 규칙(어디에 보존할지)이라는 두 축으로 체계화했다.</li>
+<li>100개 과제로 구성된 세 가지 기억화 데이터셋(Symbol-QA, LLM-QA, Real-QA)과, 조합 후보를 효율적으로 탐색하는 과제 단위 연속 반감법(task-level successive halving), 개별·상호작용 효과를 측정하는 요인 실험(factorial experiment)을 도입했다.</li>
+<li>데이터·함수·가중치 세 앵커 전부와 병합 LoRA(merged LoRA)를 결합한 최적 방법이 나이브 순차 파인튜닝 대비 평균 최종 유지율을 1.2%에서 34.9%로, 약 28배 끌어올리는 것을 보였다.</li>
+</ol>
+<h2>방법론</h2>
+<p>모델은 자기회귀 언어모델 pΘ이며, 과제 t가 도착할 때마다 현재 과제 손실(SFT loss)에 더해 세 종류의 "앵커" 정규화 항(R_D, R_F, R_W)을 추가해 최적화한다.</p>
+<ul>
+<li><strong>데이터 앵커(Data anchor)</strong>: 이전 모델(고정된 복사본)을 이용해 생성적 재현(generative replay) 방식으로 의사(pseudo) 시퀀스를 생성하고, 이를 현재 과제 미니배치와 함께 재현 학습에 사용한다. 매 과제마다 300개의 시퀀스를 생성하며, 재현 손실 가중치와 생성 온도를 하이퍼파라미터로 탐색한다.</li>
+<li><strong>함수 앵커(Function anchor)</strong>: Learning without Forgetting 방식처럼 이전 모델의 출력을 참조 분포로 삼아, 현재 과제 입력에 대해 자기 증류(self-distillation) 손실을 적용한다.</li>
+<li><strong>가중치 앵커(Weight anchor)</strong>: EWC, Online EWC, SI 계열의 중요도 기반 정규화로, 이전 과제에 중요했던 파라미터의 변화를 억제한다.</li>
+</ul>
+<p>여기에 두 가지 저랭크 할당 규칙을 결합한다. <strong>공유 LoRA(shared LoRA)</strong>는 모든 과제에서 동일한 LoRA 행렬 A, B를 계속 최적화하는 방식이고, <strong>병합 LoRA(merged LoRA)</strong>는 ReLoRA의 병합·재초기화 방식을 연속학습에 적용해, 각 과제 학습 후 LoRA 업데이트를 밀집 가중치에 합치고 다음 과제를 위해 새로운 LoRA 행렬 쌍을 초기화한다. 두 방식 모두 과제 수가 늘어도 저장 상태 크기가 일정하게 유지된다는 공통점이 있다.</p>
+<p>탐색 효율화를 위해 저자들은 <strong>과제 단위 연속 반감법(TSH)</strong>을 제안한다. 총 90가지 조합(가중치 앵커 3종 × 함수 앵커 3종 × 데이터 앵커 5종 × LoRA 방식 2종)에서 시작해, 10개 과제 학습 후 상위 45개, 20개 과제 후 상위 23개, 50개 과제 후 상위 10개만 남겨 100개 과제까지 계속 평가하는 방식으로 탐색 비용을 줄인다. 이후 세 앵커와 병합/공유 LoRA를 완전 교차한 2^4 요인 실험을 통해 각 메커니즘의 주효과와 상호작용 효과를 통계적으로 측정한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>평가는 도메인 증분 설정을 따르며, 각 과제 학습 후 이전 모든 과제에 대한 정확도를 담은 시간적 정확도 행렬을 구성해 <strong>최종 유지율(Final)</strong>, <strong>직후 습득률(Diag)</strong>, <strong>망각량(Forget)</strong> 세 지표를 계산한다.</p>
+<p>세 데이터셋은 사실성이 점차 높아지는 구조다. Symbol-QA는 10,000개의 임의 키-값 연상, LLM-QA는 LLM이 생성한 100개 가상 주제에 대한 10,000개 질의응답, Real-QA는 공개 QA 데이터셋에서 필터링한 5,000개의 자연스러운 질의응답으로 구성된다.</p>
+<ul>
+<li>TSH 결과, 단일 메커니즘만으로는 50개 과제 단계까지 살아남지 못했으며, 100개 과제까지 도달한 모든 방법이 데이터 앵커와 병합 LoRA를 함께 사용했다.</li>
+<li>요인 실험 결과, 최고 단일 메커니즘의 최종 유지율은 Symbol-QA 4.2%, LLM-QA 7.5%, Real-QA 12.5%에 불과했지만, 최상의 조합은 각각 23.2%, 41.8%, 54.8%까지 상승했다.</li>
+<li>세 앵커(데이터·함수·가중치)와 병합 LoRA를 모두 결합한 방법이 세 데이터셋 모두에서 상위 3위 안에 드는 유일한 조합이었으며, 평균 최종 유지율 34.9%로 나이브 파인튜닝(1.2%) 대비 약 28배 향상됐다.</li>
+<li>요인분석에서 재현(replay)과 병합 LoRA가 가장 큰 주효과를 보였고(각각 9.5~19.3%p, 5.9~20.5%p), 둘의 상호작용은 세 데이터셋 모두에서 유의미하게 초가산적(super-additive)이었다. 즉 두 메커니즘을 각각 적용했을 때 이득의 합보다 함께 적용했을 때의 이득이 훨씬 컸다.</li>
+<li>기억 반감기(memory half-life, 유지율이 절반으로 떨어지기까지 걸리는 과제 수) 측면에서도, 나이브 파인튜닝은 1~2개 과제 만에 반감했지만 최상의 조합은 19~44개 과제까지 반감기를 늘렸다.</li>
+<li>상태 크기가 과제 수에 비례해 커지는 O-LoRA, 순차적 OSRM으로 병합 LoRA를 대체해도 유지율은 일관되게 개선되지 않았다(자연어 데이터셋에서 소폭 개선 또는 Symbol-QA에서 저하).</li>
+<li>GSM8K, MATH, MGSM, MMLU-Redux 등 범용 능력 벤치마크에서는 모든 방법이 치명적 망각을 겪었으며, O-LoRA가 병합 LoRA보다 범용 능력을 더 잘 보존하는 경향이 있었다(유지율 향상 폭은 작았지만).</li>
+</ul>
+<h2>한계점</h2>
+<ul>
+<li>평가가 학습 시 사용한 질의 자체에 대한 회상(recall)만을 측정하므로, 모델이 연상을 실제로 유지하더라도 바꿔 말한(paraphrased) 질의에는 답하지 못할 수 있어, 일반화 능력까지 입증하는 것은 아니다.</li>
+<li>기억화 성능이 향상되어도 범용 능력(수학 추론, 지식 벤치마크 등) 보존은 보장되지 않으며, 논문에서 평가한 모든 방법이 100개 과제 학습 후 범용 능력에서 상당한 손실을 겪었다.</li>
+<li>조합을 통해 망각의 "시간축"을 늦출 뿐, 모든 방법에서 기억 나이가 늘어남에 따라 유지율은 결국 계속 감소한다(완전한 망각 방지는 아님).</li>
+<li>최상의 조합이 데이터셋마다 달라(예: Symbol-QA는 SD+재현+병합 LoRA, LLM-QA는 전체 스택, Real-QA는 SI+재현+병합 LoRA), 보편적으로 최적인 단일 조합은 존재하지 않는다.</li>
+</ul>
+<h2>시사점</h2>
+<p>이 연구는 단일 연속학습 메커니즘을 개선하기보다, 서로 다른 종류의 망각 원인(데이터·함수·가중치 수준)을 겨냥한 메커니즘들을 "무엇을 보존할지"와 "어디에 보존할지"라는 두 설계 축을 따라 체계적으로 조합하는 것이 장기 수평 기억화에 훨씬 효과적임을 실증적으로 보여준다. 특히 재현(replay)과 병합 LoRA의 초가산적 시너지는, 데이터 수준의 지식 재현과 파라미터 공간을 주기적으로 재설정하는 방식이 상호 보완적임을 시사하며, 향후 지속적으로 학습하는 언어 모델 및 에이전트 시스템에서 파라미터 자체를 장기 기억 저장소로 활용하려는 연구에 실질적인 설계 지침을 제공한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.06986" target="_blank" rel="noopener">huggingface.co/papers/2609.06986</a> · 2026-09-17</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

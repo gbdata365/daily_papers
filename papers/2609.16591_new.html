@@ -1,0 +1,123 @@
+<meta charset="UTF-8">
+<title>FLAT</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#7 · Daily Papers 2026-09-17</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 12</span>
+    </div>
+    <h1 class="article-title">FLAT: Resampling Image and Text into 1D Flexible-Length Aligned Transmodal Tokens for Retrieval and Generation</h1>
+    <p class="article-title-ko">FLAT: 검색과 생성을 위한 1D 가변 길이 정렬 트랜스모달 토큰으로의 이미지·텍스트 리샘플링</p>
+    <p class="article-sub">FLAT은 이미지와 텍스트를 공유 인코더를 통해 하나의 연속적인 1D 가변 길이 토큰 시퀀스로 리샘플링하고, 이를 대조 정렬(contrastive alignment)과 양방향 생성(text-to-image, image-to-text) 손실로 동시에 학습시켜, 하나의 표현만으로 검색과 생성을 모두 최고 수준으로 수행하는 표현 사전학습 프레임워크다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.16591" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.16591" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: FLAT: Resampling Image and Text into 1D Flexible-Length Aligned Transmodal Tokens for Retrieval and Generation</li>
+<li><strong>저자</strong>: Guangyu Sun, Shlok Kumar Mishra, Wentao Bao, Robert Zhenheng Yang, Xiao Wang, Xiyuan Wang, Yujunrong Ma, Chen Yuan, Max Xiangjun Fan, Jun Xiao, Jianpeng Cheng (Meta AI)</li>
+<li><strong>출처</strong>: arXiv:2609.16591v1 [cs.CV] (2026년 9월 15일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://guangyusun.com/flat-website">https://guangyusun.com/flat-website</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.16591">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>FLAT은 이미지와 텍스트를 공유 인코더를 통해 하나의 연속적인 1D 가변 길이 토큰 시퀀스로 리샘플링하고, 이를 대조 정렬(contrastive alignment)과 양방향 생성(text-to-image, image-to-text) 손실로 동시에 학습시켜, 하나의 표현만으로 검색과 생성을 모두 최고 수준으로 수행하는 표현 사전학습 프레임워크다.</p>
+<h2>배경 및 문제의식</h2>
+<p>기존 멀티모달 파이프라인은 대체로 두 단계로 나뉜다. 먼저 CLIP류의 대조학습이나 DINO/JEPA 같은 자기지도학습으로 시각 인코더를 학습시키고, 그다음 이 인코더를 고정(freeze)한 채 별도의 생성 모델(T2I 확산 모델이나 I2T 캡셔닝 모델)을 그 위에 얹는 방식이다. 이렇게 표현 학습과 생성 모델링이 분리되면, 생성 성능이 고정된 임베딩의 표현력에 의해 병목되고, 생성 모델을 학습할 때마다 표현 공간과의 재정렬이 필요해진다. 또한 CLIP, SigLIP2 같은 이중 인코더 모델들은 이미지와 텍스트 임베딩 사이에 뚜렷한 "모달리티 갭(modality gap)"이 존재해, 두 모달리티가 검색 성능은 좋아도 잠재공간 상에서는 서로 떨어져 있는 문제가 있다. 저자들은 검색(판별적 과제)과 생성(생성적 과제)이 상호 보완적이라는 가설 아래, 하나의 표현이 두 역할을 동시에 잘 수행하도록 인코더와 디코더를 처음부터 함께 학습시키는 방향을 제안한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>이미지와 텍스트를 동일한 인코더와 프로젝션으로 매핑해 공유된 연속 1D 토큰 시퀀스(표현)를 만들고, 이를 대조 정렬 손실과 T2I(rectified flow), I2T(autoregressive) 생성 손실로 동시에 학습하는 FLAT 프레임워크를 제안했다.</li>
+<li>Nested dropout(중첩 드롭아웃)을 표현 시퀀스에 적용해, 학습 중 매 스텝마다 기하수열 사다리(prefix-K 후보: 1, 4, 16, 64, 256)에서 접두 길이 K를 무작위로 샘플링함으로써, 추론 시 하나의 모델로 원하는 만큼(1개~256개 토큰)의 표현 길이를 선택할 수 있게 했다.</li>
+<li>단일 사전학습 단계만으로 다양한 prefix 길이에서 크로스모달 검색과 생성을 모두 수행할 수 있음을 보였고, 이후 과제별 경량 파인튜닝으로 각 벤치마크에서 SOTA급 성능을 달성했다.</li>
+<li>FLAT의 표현 공간이 선형 보간(linear interpolation), 잠재공간 산술(latent arithmetic), 제로샷 합성 검색(composed retrieval) 등 CLIP류 모델에서는 자연스럽지 않았던 연산들을 기본적으로 지원함을 정성적으로 입증했다.</li>
+</ul>
+<h2>방법론</h2>
+<p>FLAT은 사전학습된 Vision-Language Model(Qwen3.5-2B 백본, LoRA 어댑터)을 공유 인코더로 사용한다. 이미지나 텍스트 입력에 N개의 학습 가능한 레지스터 토큰을 덧붙여 인코더에 통과시키고, 레지스터 위치의 은닉 상태를 선형 투영해 표현 z(N×d 크기의 연속 벡터 시퀀스)를 얻는다. 두 모달리티는 동일한 레지스터와 동일한 투영 행렬을 공유한다.</p>
+<p>여기에 nested dropout을 적용해, 매 학습 배치마다 기하수열 사다리 {1, 4, 16, 64, 256} 중 하나를 유지 길이 K로 샘플링하고, 표현의 앞쪽 K개 토큰(prefix)만 대조 손실과 다운스트림 디코더에 전달한다. FlexTok처럼 학습된 널 임베딩으로 패딩해 길이를 고정하는 방식 대신, 접두 시퀀스를 그대로 잘라내는 방식이 FLAT 설정에서 더 나은 성능을 보였다고 밝힌다.</p>
+<p>잘린 표현 z_{:K}는 두 디코더의 조건으로 쓰인다. 이미지 표현은 MLP와 RMSNorm을 거쳐 I2T 디코더(표준 오토리그레시브 언어모델)에 소프트 토큰으로 입력되어 캡션을 생성하고, 텍스트 표현은 T2I 디코더(rectified flow 기반 트랜스포머, SANA-1.6B 초기화)에 크로스 어텐션으로 주입되어 VAE 잠재를 디노이즈해 이미지를 합성한다.</p>
+<p>학습 손실은 세 가지다. (1) 대조 손실: 이미지-텍스트 쌍의 레지스터 위치별 코사인 유사도를 K개 위치에 대해 평균 낸 late-interaction 스코어를 이용한 InfoNCE 형태의 양방향(i2t, t2i) 손실. (2) I2T 생성 손실: 캡션에 대한 다음 토큰 교차 엔트로피. (3) T2I 생성 손실: conditional flow matching(rectified flow) 목적함수. 세 손실은 가중합되어 표현 사전학습 단계에서 동시에 최적화되며, 파인튜닝 단계에서는 과제별로 개별 최적화할 수 있다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Qwen3.5-2B를 인코더/텍스트 디코더 백본으로, SANA-1.6B를 이미지 디코더 초기화로 사용했다. 평가는 GenEval(T2I, 프롬프트 재작성 없이), MS-COCO Karpathy 테스트 스플릿(I2T 캡셔닝, 크로스모달 검색), Flickr30k Karpathy 스플릿(검색), MMEB CIRR 테스트 스플릿(합성 검색)에서 수행했다.</p>
+<ul>
+<li>T2I 생성: 사전학습 체크포인트에서 이미지 디코더만 8k 스텝 추가 학습해 GenEval 0.83(no-rewrite 프로토콜 기준)을 달성, 동일 조건의 MetaQuery-L(0.78)을 상회했다. K=1은 단일 객체/색상 같은 기본 의미만 포착하고, 두 객체·위치·색상 결합 같은 복합 과제는 K=4~16으로 커지면서 급격히 개선된다(예: color binding이 K=1에서 0.03에서 K=16에서 0.67로 상승).</li>
+<li>I2T 캡셔닝: MS-COCO Karpathy에서 K=256일 때 BLEU-4 40.5, CIDEr 138.6, METEOR 31.2, ROUGE-L 60.8, SPICE 24.4로, CrossFlow, SCD-Net, Florence-2-L, CoCa, BLIP-2 등 기존 특화 모델을 능가했다. K=1만으로도 서형성 있고 일관된 캡션을 생성하며, K가 커질수록 어휘 정밀도와 세부 묘사가 개선된다.</li>
+<li>크로스모달 검색: MS-COCO에서 Recall@5 86.8(I2T)/75.8(T2I), Flickr30k에서 98.3(I2T)/93.6(T2I)을 기록. 특히 검색 성능은 K에 거의 무관하게 안정적이어서, 단일 토큰(K=1)만으로도 256개 토큰(16,384차원) 대비 어떤 지표도 1%포인트 내외 차이에 그친다. MRL, SAE, CSR 등 가변 차원 베이스라인은 차원이 줄면 성능이 급격히 저하되는 것과 대비된다.</li>
+<li>선형 프로빙/클러스터링: ImageNet-1K에서 K=1 토큰만으로 73.3% top-1, K=16에서 81.2%, K=64/256에서 81.8%를 기록해 DREAM 등 기존 생성적 잠재공간 모델을 능가했다. 파라미터 헤드 없이 k-means 클러스터링만으로도 ImageNet 클래스와 정합되는 군집이 형성됨을 보였다.</li>
+<li>기하 구조 분석: PCA 시각화에서 CLIP ViT-L/14, SigLIP2-so400m 대비 FLAT의 이미지-텍스트 중심 거리가 현저히 작음을 확인(단일 토큰만으로 절반, 256 토큰으로 4분의 1 수준). 이 정렬된 기하 구조 덕분에 선형 보간, 잠재공간 산술(예: "일출" 빼고 "보름달" 더하기), 제로샷 합성 검색이 별도 지도 없이 가능함을 정성적으로 보였다.</li>
+<li>Ablation: 대조/캡셔닝/생성 손실 조합 7가지를 비교한 결과, 세 손실을 모두 사용하는 완전한 목적함수가 검색, 캡셔닝, 생성 전 지표에서 가장 고르게 우수했으며, Shapley 값 분해를 통해 각 과제가 주로 자신과 매칭되는 손실에 의해 주도되지만 다른 목적함수들도 상호 보완적 신호를 제공함을 확인했다.</li>
+</ul>
+<h2>한계점</h2>
+<p>논문에 별도의 "한계" 절은 없으나, 본문에서 확인되는 제약은 다음과 같다. 작은 prefix 길이(K=1)에서는 복합적인 공간 관계, 다중 객체 배치, 속성-객체 결합 같은 세부 정보를 포착하지 못하며 이를 위해서는 더 큰 K가 필요하다. 또한 GenEval 평가에서 프롬프트 재작성을 사용하지 않는 조건에서만 비교가 이루어졌고, 두 개의 7B급 프롬프트 재작성 베이스라인 대비 우위를 주장하고 있어 모델 규모(2B 인코더) 대비 공정성 논의가 제한적이다. 인코더와 두 디코더를 함께 학습시키는 구조이므로 사전학습 단계의 계산 비용이 단일 목적함수 학습보다 클 수 있다는 점도 암묵적인 트레이드오프로 보인다.</p>
+<h2>시사점</h2>
+<p>FLAT은 "표현 학습과 생성 모델링을 분리하지 않고 함께 최적화한다"는 아이디어를 하나의 통합된 1D 연속 토큰 공간으로 구현해, 검색과 생성이 서로 상충하지 않고 상호 보강될 수 있음을 실증적으로 보여준다. Nested dropout을 통한 가변 길이 표현은 추론 시점에 정확도-효율성 트레이드오프를 자유롭게 조절할 수 있게 하며, 특히 검색 성능이 표현 길이에 거의 영향받지 않는다는 결과는 압축된 임베딩으로도 검색 품질을 유지할 수 있음을 시사한다. 또한 CLIP류 모델들이 겪는 모달리티 갭을 크게 줄여 잠재공간 산술이나 제로샷 합성 검색 같은 새로운 응용을 가능케 한 점은, 향후 통합 멀티모달 표현 설계에서 대조학습과 생성학습을 결합하는 방향이 유망함을 뒷받침한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.16591" target="_blank" rel="noopener">huggingface.co/papers/2609.16591</a> · 2026-09-17</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

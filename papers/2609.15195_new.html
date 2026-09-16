@@ -1,0 +1,136 @@
+<meta charset="UTF-8">
+<title>하니스VLN</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#6 · Daily Papers 2026-09-17</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 14</span>
+    </div>
+    <h1 class="article-title">HarnessVLN: Unifying Training-Free Embodied Navigation through an Agent Harness</h1>
+    <p class="article-title-ko">하니스VLN: 에이전트 하니스를 통한 학습 불필요 임바디드 내비게이션 통합</p>
+    <p class="article-sub">사전 학습된 멀티모달 대형언어모델(MLLM)을 플래너로 쓰되, "Agent Harness(에이전트 하니스)"라는 통합 실행·검증 계층이 인지·검색·그라운딩·내비게이션·복구·종료를 조율함으로써, 별도의 내비게이션 학습 없이도 경로 지시 추종(instruction-following)과 목표 물체 탐색(object-goal navigation)을 하나의 프레임워크로 동시에 잘 해내는 학습 불필요(zero-shot, training-free) 임바디드 내비게이션 시스템이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.15195" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.15195" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: HarnessVLN: Unifying Training-Free Embodied Navigation through an Agent Harness</li>
+<li><strong>저자</strong>: Yang Chen, Lirong Che, Zhenyu Huang, Wenbo Fu, Chuang Wang, Xu Cao, Daqi Liu, Yuze Yang, Jian Su, Lan-Zhe Guo (난징대학교, AGIBOT, 칭화대학교)</li>
+<li><strong>출처</strong>: arXiv:2609.15195v1 [cs.RO] (2026년 9월 14일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://agibot-harnessvln.netlify.app/">https://agibot-harnessvln.netlify.app/</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.15195">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>사전 학습된 멀티모달 대형언어모델(MLLM)을 플래너로 쓰되, "Agent Harness(에이전트 하니스)"라는 통합 실행·검증 계층이 인지·검색·그라운딩·내비게이션·복구·종료를 조율함으로써, 별도의 내비게이션 학습 없이도 경로 지시 추종(instruction-following)과 목표 물체 탐색(object-goal navigation)을 하나의 프레임워크로 동시에 잘 해내는 학습 불필요(zero-shot, training-free) 임바디드 내비게이션 시스템이다.</p>
+<h2>배경 및 문제의식</h2>
+<ul>
+<li>임바디드 내비게이션은 에이전트가 시각 관측을 해석하고, 공간 지식을 누적하며, 지시를 따르거나 목표 물체를 찾기 위한 행동을 실행해야 하는 과제이다.</li>
+<li>학습 기반(training-based) 방법은 특정 과제의 시연 데이터나 대규모 궤적 데이터로 학습되어 효과적이지만, 새로운 과제나 환경으로 확장하려면 추가 데이터와 재학습이 필요해 일반화에 한계가 있다.</li>
+<li>MLLM을 활용한 학습 불필요(training-free) 방법들은 별도 학습 없이 의미론적 추론 능력을 활용할 수 있지만, 대부분 MLLM을 특정 과제 파이프라인 속의 "플래너" 역할로만 사용한다. 이 경우 플래너가 제안한 행동이 실제 공간적 증거, 과제 진행 상황, 실행 실패와 어떻게 맞물리는지를 관리하는 메커니즘이 부족하다.</li>
+<li>그 결과 오래된 관측, 도달 불가능한 목표, 실행 실패 등이 누적되면 플래닝이 실제 상태와 어긋나고, 반복 시도나 잘못된 종료(termination)로 이어지는 문제가 발생한다.</li>
+</ul>
+<h2>핵심 기여</h2>
+<ol>
+<li><strong>HarnessVLN 제안</strong>: 공유된 Agent Harness를 통해 도구(tool), 플래너 제안 검증, 실행 피드백을 조율하며, instruction-following과 object-goal navigation 두 과제 계열을 하나의 프로토콜로 지원하는 학습 불필요 내비게이션 프레임워크.</li>
+<li><strong>계층적 이벤트 메모리(Hierarchical Event Memory)와 영속적 시공간 그래프(Spatiotemporal Graph, ST Graph)의 통합</strong>: 제안 검증과 피드백 기반 상태 갱신을 지원하여, 증거에 기반한 실행, 실패 복구, 과제 완료 판정을 가능하게 함.</li>
+<li><strong>네 가지 벤치마크에서 기존 학습 불필요 방법 대비 성능 향상</strong>을 입증하고, 휴머노이드 로봇에 프레임워크를 배포하여 실세계 내비게이션 적용 가능성을 시연.</li>
+</ol>
+<h2>방법론</h2>
+<ul>
+<li><strong>Agent Harness 구조</strong>: 매 의사결정 시점 t마다 상태 S_t = (과제 명세 x, 현재 RGB-D 관측 및 지역 지도 ω_t, 에이전트 자세 p_t, 과제 진행 상황 z_t, 계층적 이벤트 메모리 M_t, ST 그래프 G_t)를 유지한다. instruction-following에서는 z_t가 현재 경로 구간, 충족된 이동 제약, 관측된 랜드마크를 기록하고, object-goal navigation에서는 탐색된 영역, 후보 목표 가설, 검증 상태를 추적한다.</li>
+<li><strong>통합 도구 인터페이스</strong>: observe(관측), observe_panorama(파노라마 관측), retrieve_memory(메모리·그래프 검색), ground_target(서브골을 후보 지점으로 그라운딩), query_depth(깊이 추정), navigate_to(검증된 목표로 이동 실행), backtrack(이전 방문 지점으로 복귀), request_stop(종료 검증) 등 8개 핵심 도구를 표준화된 입출력 규약으로 노출한다. Harness는 도구 호출 전에 근거(evidence)의 출처와 최신성, 목표의 기하학적 실현 가능성, 활성 서브골과의 일관성을 검증한다.</li>
+<li><strong>계층적 이벤트 메모리</strong>: (1) 작업 메모리(working memory) - 현재 관측, 제한된 파노라마 이력, 활성 목표 가설, 최근 도구 피드백을 담아 단기 맥락만 유지; (2) 진행 메모리(progress memory) - 서브골을 pending/active/completed/blocked 네 상태로 관리하며 완료는 반드시 관측이나 도구 성공 결과로 뒷받침되어야 함; (3) 반성 메모리(reflection memory) - 도달 불가 목표, 그라운딩 불일치, 충돌, 진행 정체, 백트래킹 실패, 정지 요청 거부 등 완전한 실행 이벤트 기록을 저장.</li>
+<li><strong>ST 그래프</strong>: 장소(place) 노드와 개체(entity) 노드, 유형화된 공간 관계, 타임스탬프 및 실패 주석으로 구성된 영속적 그래프. 매 결정 전에 의미적 관련성 R, 최신성 C, 공간 현저성 A, 실패 패널티 P를 결합한 점수 함수(s(v_i|g_t) = R + λ_rec·C + λ_sal·A - λ_fail·P)로 장소 노드 순위를 매겨 검색 집합을 압축, 궤적이 길어져도 MLLM 컨텍스트 크기가 늘지 않도록 함.</li>
+<li><strong>그라운딩된 실행과 증거 기반 종료</strong>: MLLM이 제안한 의미론적 명령(command)을 Harness가 현재 관측과 ST 그래프로부터 목표를 그라운딩하고, 교체 가능한 Navigation Executor(경로계획·저수준 제어 담당, FMM 플래너와 계단 등에서는 NavDP 사용)가 실제 이동을 수행한다. 정지(stop) 요청은 의미적(F_semantic)·기하학적(F_geometric)·진행(F_progress) 세 조건을 모두 충족해야 승인되며, 거부된 요청은 이벤트 메모리에 기록되어 추가 관측·목표 정교화·백트래킹을 유발한다.</li>
+<li>플래너로는 GPT-5.5(instruction-following) 및 GPT-5.6-luna(object-goal navigation)를 사용했고, 개방어휘 인지에는 GroundingDINO와 SAM을 활용했다.</li>
+</ul>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li><strong>평가 벤치마크</strong>: instruction-following은 MP3D 기반 VLN-CE R2R, RxR(NE, OSR, SR, SPL, nDTW 등 지표 사용), object-goal navigation은 HM3D-Semantics v0.2 기반 HM3D-v2(고정 물체 범주, 1,000 에피소드)와 HM3D-OVON(개방어휘 목표, 3,000 에피소드).</li>
+<li><strong>주요 결과</strong>: HarnessVLN은 R2R 60.8% SR, RxR 53.9% SR, HM3D-v2 76.0% SR, HM3D-OVON 59.3% SR을 달성하여 기존 학습 불필요 최고 성능 대비 각각 5.8, 12.1, 1.6, 9.1 퍼센트포인트 향상되었다. 일부 지표에서는 학습 기반(supervised) 최신 방법들과도 견줄 만한 수준을 보였다.</li>
+<li><strong>소거 실험(ablation)</strong>: 이벤트 메모리, ST 그래프, 정지 검증(stop validation)을 순차적으로 추가하며 R2R과 HM3D-OVON 100개 에피소드 부분집합에서 평가한 결과, 세 구성요소를 모두 사용했을 때 기본 에이전트 대비 SR이 각각 18.0, 10.0 퍼센트포인트 향상되었고, 최종 성공률(SR)과 오라클 성공률(OSR) 간 격차도 크게 줄어들어 각 구성요소의 기여가 확인되었다.</li>
+<li><strong>실세계 배포</strong>: AgiBot A3U 휴머노이드 로봇(신장 1.74m, 3D LiDAR·RGB-D·어안 카메라 장착, NVIDIA Thor 기반)에 Qwen-3.8-27B를 플래너로 사용해 배포하였고, 순차 지시 추종, 개방어휘 물체 탐색, 경로 추종과 물체 탐색이 결합된 복합 과제 세 가지 실세계 시나리오에서 동일한 Harness 프로토콜로 성공적으로 작동함을 시연했다.</li>
+</ul>
+<h2>한계점</h2>
+<ul>
+<li>논문은 현재 Harness가 사전 정의된 오케스트레이션과 검증 규칙에 의존한다는 점을 명시적 한계로 언급하며, 향후에는 개방 환경에서의 상호작용을 통해 스스로 진화(self-evolving)하는 메커니즘을 탐구할 계획이라고 밝혔다.</li>
+<li>HM3D-v2에서는 SPL(경로 효율성 지표)이 최고 성능은 아니었으며(37.9%), 일부 학습 기반 방법에 비해 경로 효율성 면에서는 열세를 보였다.</li>
+<li>정지 검증 강화가 HM3D-OVON에서는 OSR-SR 격차를 오히려 소폭 늘리고 SPL을 떨어뜨리는 등, 완료 판정 개선이 모든 과제·지표에서 균일하게 효율성이나 종료 행동을 향상시키지는 않았다고 저자들이 밝혔다.</li>
+</ul>
+<h2>시사점</h2>
+<ul>
+<li>MLLM을 단순 플래너로 쓰는 것을 넘어, 공간적 증거와 실행 이력을 명시적으로 검증·갱신하는 실행 계층(Harness)을 두는 것이 학습 없는 내비게이션 시스템의 신뢰성과 범용성을 크게 높일 수 있음을 보여준다.</li>
+<li>동일한 프로토콜로 instruction-following과 object-goal navigation처럼 서로 다른 과제 정의를 통합할 수 있다는 점은, 향후 범용 임바디드 에이전트 설계에서 과제별 전용 파이프라인 대신 공유 가능한 조율 계층을 채택하는 방향을 시사한다.</li>
+<li>시뮬레이션 벤치마크뿐 아니라 실제 휴머노이드 로봇에서도 동작이 검증되어, 학습 불필요 접근법이 실세계 로봇 배포에 실질적으로 적용 가능하다는 근거를 제공한다.</li>
+</ul>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.15195" target="_blank" rel="noopener">huggingface.co/papers/2609.15195</a> · 2026-09-17</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

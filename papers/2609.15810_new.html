@@ -1,0 +1,108 @@
+<meta charset="UTF-8">
+<title>VC-어텐션</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#8 · Daily Papers 2026-09-18</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 35</span>
+    </div>
+    <h1 class="article-title">VC-Attention: Value Smoothing and Softmax Casting for Low-bit Attention</h1>
+    <p class="article-title-ko">VC-어텐션: 저비트 어텐션을 위한 값 평활화와 소프트맥스 캐스팅</p>
+    <p class="article-sub">비디오 디퓨전 트랜스포머의 저비트(low-bit) 어텐션에서 정확도를 갉아먹는 값(Value) 텐서의 이상치(outlier)를 온라인 군집화로 재배열해 블록 평균을 빼는 방식으로 제거하고(V-Smooth), 소프트맥스의 느린 지수 연산과 형식 변환을 하나의 곱셈-덧셈 연산으로 대체하여(ExpCast-FP8) 속도까지 함께 끌어올린 학습이 필요 없는(training-free) 저비트 어텐션 커널을 제안한 논문이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.15810" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.15810" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: VC-Attention: Value Smoothing and Softmax Casting for Low-bit Attention</li>
+<li><strong>저자</strong>: Xingyang Li, Dongyun Zou, Shining Zhang(공동 1저자), Jiacheng Chen, Haocheng Xi, Lvmin Zhang, Jun-Yan Zhu, Song Han, Zhekai Zhang, Yujun Lin, Muyang Li (NunchuxAI, MIT, CMU, UC버클리, 스탠퍼드, NVIDIA 소속 공동 연구팀)</li>
+<li><strong>출처</strong>: arXiv:2609.15810v1 [cs.CV] (2026-09-14)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.15810">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>비디오 디퓨전 트랜스포머의 저비트(low-bit) 어텐션에서 정확도를 갉아먹는 값(Value) 텐서의 이상치(outlier)를 온라인 군집화로 재배열해 블록 평균을 빼는 방식으로 제거하고(V-Smooth), 소프트맥스의 느린 지수 연산과 형식 변환을 하나의 곱셈-덧셈 연산으로 대체하여(ExpCast-FP8) 속도까지 함께 끌어올린 학습이 필요 없는(training-free) 저비트 어텐션 커널을 제안한 논문이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>비디오 디퓨전 트랜스포머(DiT)는 매우 긴 시공간 토큰 시퀀스에 전체 셀프 어텐션을 적용하기 때문에, 어텐션 연산이 전체 추론 시간의 상당 부분(예: Wan2.2-14B 720p에서 RTX 5090 기준 64% 이상)을 차지한다. FP8/FP4 같은 저비트 텐서 코어를 사용하면 이론적으로 큰 속도 향상이 가능하지만, 실제로는 두 가지 장애물이 있다. 첫째는 정확도 문제로, 블록 단위 양자화는 블록 내 소수의 이상치가 전체 스케일을 정해버려 나머지 값들의 유효 비트수를 떨어뜨리는데, 기존 SageAttention 계열 연구는 주로 쿼리·키(Q, K)의 이상치만 다루었고 값(Value) 텐서의 이상치는 고정된 채널이나 시공간 패턴 없이 나타나 여전히 출력 오차의 지배적 원인으로 남아 있었다(논문 실험에서 Wan2.2 기준 출력 오차의 82%). 둘째는 속도 문제로, 두 행렬곱(QK, PV) 사이에 위치한 고정밀 소프트맥스(행 최댓값, 지수 연산, FP32→FP8 형식 변환)가 CUDA 코어와 특수함수 유닛(MUFU)에서 실행되어, 텐서 코어가 저비트로 빨라져도 소프트맥스 단계가 파이프라인의 병목이 된다.</p>
+<h2>핵심 기여</h2>
+<p>논문은 값 이상치 문제와 소프트맥스 병목 문제를 동시에 해결하는 두 가지 기법을 제안한다. 첫째, V-Smooth는 경량 온라인 k-평균 군집화로 값 토큰을 재정렬하여 하드웨어 블록 안에 비슷한 값들이 모이게 하고, 블록 평균을 뺀 잔차만 양자화한 뒤, 이미 온라인 소프트맥스가 유지하는 행 합계(row sum)를 이용해 그 평균을 복원함으로써 추가 연산 없이 이상치의 영향을 줄인다. 둘째, ExpCast-FP8은 로그 영역의 점수를 하나의 곱셈-덧셈(FMA) 연산만으로 E4M3 확률 코드로 직접 매핑하여, FP32 지수 연산과 FP32→FP8 형식 변환을 모두 제거한다. 이 두 기법을 B200, B300, H200, RTX PRO 6000, RTX 5090에 대해 융합된 CuTe/CUDA 커널로 직접 구현하고 4개의 오픈 웨이트 비디오 DiT에서 검증했다.</p>
+<h2>방법론</h2>
+<p>V-Smooth는 각 배치·헤드마다 값 토큰에 대해 온라인 k-평균으로 클러스터 레이블을 부여하고, 이 레이블 기준 정렬 순열을 키(K)와 값(V)에 동일하게 적용한다(쿼리는 순서를 유지). 이 순열은 PV 곱의 결과를 바꾸지 않으면서 값 텐서만 재배열하는 효과를 낸다. 이후 정렬된 값을 하드웨어 블록(128행) 단위로 나누어 블록별 평균을 빼고 잔차만 양자화하는데, 저자들은 프로베니우스 노름 분해를 통해 평균 벡터가 블록 에너지 중 제거할 수 있는 최대량임을 보이고, 실제로 순서대로 배치했을 때 8%였던 평균 제거 비율이 정렬 후 36%까지 올라감을 실험으로 확인했다. 평균은 온라인 소프트맥스의 누적 과정에서 행 합계와의 외적(outer product) 형태로 정확히 복원되므로 추가 패스나 버퍼가 필요 없다. 군집화는 계산 비용이 크므로 전체 디노이징 스텝 중 앞쪽 25%에서만 수행하고 이후 스텝은 그 순열을 재사용하는 상각(amortized) 스케줄을 적용한다.</p>
+<p>ExpCast-FP8은 E4M3 부동소수점 바이트 자체가 이미 값의 로그를 근사적으로 인코딩한다는 사실에 착안한다. 로그 영역 점수에 상수 배율과 편향(바이어스 보정 상수 β = −0.35로 반올림 오차를 중앙 정렬)을 더하는 하나의 FMA 연산으로 E4M3 코드값을 직접 산출하여, 지수 연산과 별도의 형식 변환 없이 텐서 코어가 바로 소비할 수 있는 바이트를 만든다. 이 방식의 행 단위 오차는 총변동거리 기준 3.64% 이내로 이론적으로 상한이 증명되었다(부록 명제 3.1).</p>
+<h2>실험 설정 및 결과</h2>
+<p>Wan2.2-T2V-A14B(720p), LongCat-Video(480p), HunyuanVideo-1.5(720p), MiniMax-H3(1344×768, 8-step 가속 LoRA 적용) 등 4개 비디오 DiT에서 MovieGenBench 프롬프트 100개로 평가했다. 8비트 데이터센터 GPU(B200, H200)에서 V-Smooth는 모든 모델·모든 지표에서 SageAttention2 대비 최고 충실도를 보였으며, PSNR을 Wan2.2에서 2.3dB, HunyuanVideo-1.5에서 2.8dB 개선했다. ExpCast-FP8을 함께 사용한 결합 커널은 PSNR을 일부 희생하지만(0.7~2.1dB) 여전히 SageAttention2를 앞서면서 B200에서 BF16 FlashAttention-4 대비 1.59배, SageAttention2 대비 6.02배 빠른 어텐션 속도를 달성했다(H200에서는 각각 1.46배, 1.16배). 4비트 워크스테이션 GPU(RTX PRO 6000, RTX 5090)에서는 ExpCast-FP8이 적용되지 않는 대신 V-Smooth만으로 SageAttention3 대비 PSNR을 Wan2.2에서 2.9dB, LongCat-Video에서 3.6dB 개선했으며, 어텐션 속도는 RTX PRO 6000에서 2.27배, RTX 5090에서 3.58배 향상되었다. 엔드투엔드 클립 생성 속도는 B200에서 1.19배, H200에서 1.13배, RTX PRO 6000에서 1.36배, RTX 5090에서 1.70배 빨라졌다. 학습 기반 경쟁 기법인 Attn-QAT는 재학습 없이 실행할 경우 SageAttention2보다 3.4~6.7dB 낮은 PSNR을 보여, 학습 없이도 우수한 성능을 내는 VC-Attention과 대조되었다. 소거 실험에서는 군집화를 디노이징 초반 25%에 집중하는 스케줄이 균일 분산 배치보다 우수했고, 전처리 체인 전체를 커널에 융합했을 때 8.74배의 누적 속도 향상을 얻었다.</p>
+<h2>한계점</h2>
+<p>논문은 4비트 데이터센터 환경(FP4 P 연산)은 온라인 스케일 계산이 소프트맥스 임계 경로에 남아 ExpCast-FP8이 이를 제거하지 못하므로 평가 대상에서 제외했다고 명시한다. 또한 새로운 GPU(B300)에서는 INT8 QK 행렬곱이 지원되지 않아 QK와 PV 모두 FP8로 유지해야 하는 제약이 있으며, 군집화 연산 자체가 어텐션 시간의 최대 84.5%(균형 k-평균 사용 시)에 이르는 오버헤드를 가질 수 있어 상각 스케줄에 의존해야 한다는 점도 확인된다. 그 외 세부 한계는 논문에 명시되지 않음.</p>
+<h2>시사점</h2>
+<p>이 연구는 저비트 어텐션 연구가 그동안 주로 쿼리·키의 이상치 처리에 집중해 온 것과 달리, 값(Value) 텐서의 이상치가 실제 출력 오차의 주된 원인임을 실증적으로 보여주고, 이를 채널이 아닌 토큰 수준의 재배열로 해결할 수 있음을 제시한다. 또한 텐서 코어 속도가 빨라질수록 소프트맥스 같은 비-행렬곱 연산이 새로운 병목이 된다는 점을 지적하며, 부동소수점 형식의 로그 근사 특성을 활용해 지수 연산 자체를 우회하는 아이디어는 향후 다른 저비트 커널 설계에도 일반화될 수 있는 시사점을 제공한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.15810" target="_blank" rel="noopener">huggingface.co/papers/2609.15810</a> · 2026-09-18</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

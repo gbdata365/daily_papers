@@ -1,0 +1,110 @@
+{
+  "2609.17488": {
+    "base": "2609_리미엑스2_정형데이터-인과지능-모델",
+    "rank": "#1",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "88",
+    "en_title": "LimiX-2: A Contextual Mechanism Network Towards General Structured-Data Intelligence",
+    "ko_title": "LimiX-2: 범용 정형데이터 지능을 향한 맥락적 메커니즘 네트워크"
+  },
+  "2609.19134": {
+    "base": "2609_사이언스아이디_과학코드-에이전트-학습환경",
+    "rank": "#2",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "70",
+    "en_title": "ScienceIDE: Turning World's Scientific Codebase into Agent Learnable Environments",
+    "ko_title": "ScienceIDE: 세계의 과학 코드베이스를 에이전트 학습 환경으로 전환하기"
+  },
+  "2609.18708": {
+    "base": "2609_SP3O_PPO크리틱-가치평탄화-완화",
+    "rank": "#3",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "60",
+    "en_title": "Rethinking Critic Learning in PPO: Understanding and Mitigating Value Flattening",
+    "ko_title": "PPO 크리틱 학습 재고: 가치 평탄화의 이해와 완화"
+  },
+  "2609.17708": {
+    "base": "2609_엑스콘프_경험기반-신뢰도추정",
+    "rank": "#4",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "48",
+    "en_title": "Confidence Comes from Experience: Experiential Confidence Estimation from Reasoning to Agents",
+    "ko_title": "경험에서 오는 신뢰도: 추론에서 에이전트까지의 경험 기반 신뢰도 추정"
+  },
+  "2609.18805": {
+    "base": "2609_프로그램디스틸_웹앱기반-SWE벤치마크",
+    "rank": "#5",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "44",
+    "en_title": "ProgramDistill: From Interactive Web Apps to Verifiable Reference-Guided SWE Tasks",
+    "ko_title": "프로그램디스틸: 인터랙티브 웹 앱에서 검증 가능한 참조 기반 SWE 과제로"
+  },
+  "2609.18094": {
+    "base": "2609_아고라_깃기반-집단자율연구",
+    "rank": "#6",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "39",
+    "en_title": "Agora: Git as Shared Memory for Collective AutoResearch",
+    "ko_title": "아고라: 집단 자율연구를 위한 공유 메모리로서의 Git"
+  },
+  "2609.18487": {
+    "base": "2609_액션피스_행동토큰화-물리순서보존-VLA",
+    "rank": "#7",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "36",
+    "en_title": "ActionPiece: Rethinking Action Tokenization for Autoregressive Vision-Language-Action Models",
+    "ko_title": "액션피스: 자기회귀 비전-언어-행동 모델을 위한 행동 토큰화 재고"
+  },
+  "2609.15810": {
+    "base": "2609_브이씨어텐션_저비트어텐션-값평활화-소프트맥스캐스팅",
+    "rank": "#8",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "35",
+    "en_title": "VC-Attention: Value Smoothing and Softmax Casting for Low-bit Attention",
+    "ko_title": "VC-어텐션: 저비트 어텐션을 위한 값 평활화와 소프트맥스 캐스팅"
+  },
+  "2609.17632": {
+    "base": "2609_이볼브트레이드_자기진화-LLM-트레이딩-에이전트",
+    "rank": "#9",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "30",
+    "en_title": "EvolveTrade: Experience-Driven Policy Refinement for Self-Evolving LLM Trading Agents",
+    "ko_title": "이볼브트레이드: 자기진화형 LLM 트레이딩 에이전트를 위한 경험 기반 정책 개선"
+  },
+  "2609.17909": {
+    "base": "2609_징월드_실시간-조작-텍스트-제어-플레이어블-월드모델",
+    "rank": "#10",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "25",
+    "en_title": "Zing-0.5: Toward Playable Worlds with Real-Time Joint Action and Text Control",
+    "ko_title": "징-0.5: 실시간 조작·텍스트 제어를 통한 플레이어블 월드 구현"
+  },
+  "2609.15938": {
+    "base": "2609_하이포에볼브_유전알고리즘-기반-다중에이전트-가설발견",
+    "rank": "#11",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "24",
+    "en_title": "HypoEvolve: Genetic Algorithms Enable Multi-Agent LLMs to Discover Scientific Hypotheses",
+    "ko_title": "하이포에볼브: 유전 알고리즘 기반 다중 에이전트 LLM의 과학적 가설 발견"
+  },
+  "2609.14320": {
+    "base": "2609_스펙트럴시프트_게이트드델타넷-컨텍스트-확장-스펙트럼-재매개변수화",
+    "rank": "#12",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "23",
+    "en_title": "SpectralShift: Effective Context Window Extension of Gated DeltaNet via Spectral Reparameterization",
+    "ko_title": "스펙트럴시프트: 스펙트럼 재매개변수화를 통한 Gated DeltaNet의 효과적인 컨텍스트 윈도우 확장"
+  }
+}

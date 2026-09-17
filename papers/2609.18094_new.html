@@ -1,0 +1,121 @@
+<meta charset="UTF-8">
+<title>아고라</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#6 · Daily Papers 2026-09-18</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 39</span>
+    </div>
+    <h1 class="article-title">Agora: Git as Shared Memory for Collective AutoResearch</h1>
+    <p class="article-title-ko">아고라: 집단 자율연구를 위한 공유 메모리로서의 Git</p>
+    <p class="article-sub">Git을 이용해 연구 성과(결과, 통찰, 가설, 검증, 보고서)를 변경 불가능한 커밋의 방향성 비순환 그래프(DAG)로 축적하고 공유함으로써, 중앙 계획자 없이도 다수의 코딩 에이전트가 중복 탐색 없이 협력적으로 연구를 진행할 수 있게 하는 시스템 Agora를 제안하고, 13개 에이전트가 12일간 실제로 협업해 신경망 가중치 이전(weight-transfer) 문제를 해결한 사례를 보고한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.18094" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.18094" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Agora: Git as Shared Memory for Collective AutoResearch</li>
+<li><strong>저자</strong>: Yifan Zhang, Yunheng Zou, Shaokun Zhang, Jian Hu, Hao Zhang, Binfeng Xu, Jan Kautz, Yi Dong (NVIDIA)</li>
+<li><strong>출처</strong>: arXiv:2609.18094v1 [cs.LG] (2026년 9월 16일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.18094">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>Git을 이용해 연구 성과(결과, 통찰, 가설, 검증, 보고서)를 변경 불가능한 커밋의 방향성 비순환 그래프(DAG)로 축적하고 공유함으로써, 중앙 계획자 없이도 다수의 코딩 에이전트가 중복 탐색 없이 협력적으로 연구를 진행할 수 있게 하는 시스템 Agora를 제안하고, 13개 에이전트가 12일간 실제로 협업해 신경망 가중치 이전(weight-transfer) 문제를 해결한 사례를 보고한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>AutoResearch와 같은 자율 연구 루프는 하나의 코딩 에이전트가 사람의 개입 없이 학습 설정을 개선할 수 있음을 보여주었다. 그러나 여러 에이전트를 동시에 투입하면 각 세션이 매번 처음부터 다시 시작하기 때문에, 에이전트 수가 늘어날수록 발견보다 중복 탐색이 더 많이 늘어나는 문제가 발생한다. 한 세션이 학습한 내용(어떤 학습률이 발산했는지, 어떤 분기가 폐기되었는지, 어떤 결과가 아직 독립적으로 재현되지 않았는지)은 트랜스크립트나 임시 작업 공간에 갇혀 다음 세션에 전달되지 않는다. 기존의 멀티 에이전트 프레임워크(MetaGPT, AutoGen, CAMEL 등)는 하나의 과제 안에서 대화나 역할별 워크플로를 조율하는 데는 효과적이지만, 특정 작업자보다 오래 지속되는 상태 — 공개된 연구 프런티어, 불변 계보, 부정적 결과, 독립적 검증, 그리고 단일 워크플로를 강요하지 않으면서 주의를 분산시키는 방법 — 를 제공하지는 못한다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li><strong>DAG 기반 다중 에이전트 연구 형식화</strong>: 노드가 산출물(artifact), 주장(claim), 지표, 계보(provenance)를 담는 추가 전용(append-only) DAG로 다중 에이전트 연구를 정식화했다(Section 3).</li>
+<li><strong>불변 저장소·증거·다양성 할당의 분리</strong>: Git 기반의 변경 불가능한 저장, 다운스트림 증거(재현·후속 연구)를 통한 품질 평가, 그리고 다양성 인식 주의 할당(diversity-aware attention allocation) 메커니즘을 분리하여 설계했다.</li>
+<li><strong>실제 시스템 구현 및 최초의 지속적 실행 보고</strong>: Go 기반 서버, SQLite, CLI/API/웹 프로토타입을 구현하고, 13개 언어모델 워커가 12일 가까이 141개의 사전학습된 도너 모델로부터 새 아키텍처의 목표 모델을 초기화하는 문제를 풀도록 한 실제 실행 사례를 상세히 분석했다. 이 과정에서 사람의 단 한 차례 개입(다양성 뷰 배포)이 커뮤니티를 단일 문화(monoculture)에서 벗어나게 한 사례도 관찰했다.</li>
+</ol>
+<h2>방법론</h2>
+<p>Agora는 프로젝트 상태를 방향성 비순환 그래프 G=(V,E)로 표현하며, 각 노드는 커밋 해시, 게시 계정, 태그 집합, 설명, 구조화된 메타데이터, 지표, 부모 집합, 서버 타임스탬프로 구성된다. 코드가 포함된 기여는 저장소 전체 상태를 담으며, Git의 부모-자식 관계가 그대로 그래프의 계보가 되므로 이력은 자연히 추가 전용이며 순환이 없다. Git 히스토리가 유일한 공유 상태이고, 질의를 위한 SQLite 인덱스나 각종 분석 뷰는 모두 이 Git 이력에서 재구성 가능하다.</p>
+<p>기여에는 setup, result, insight, hypothesis, report, verification, endorsed, wip 등 예약된 태그가 있으며 각기 다른 가중치를 갖는다(예: verification은 확인/부분확인/실패에 따라 +20/+10/-20). 기여의 "증거 점수"는 다른 계정이 이 기여를 바탕으로 만든 후속 기여의 가중합으로 정의되며(자기 인용은 제외), 이는 단순 투표가 아니라 실제 재현·후속 활용 여부로 품질을 판단하겠다는 설계 의도를 반영한다.</p>
+<p>리더보드는 좋은 활용(exploitation) 신호이지만 나쁜 지도(map)라는 문제의식 아래, analyze 호출은 지표 선두주자, 가장 많이 참조된 노드, 리프(leaf), 유망하지만 덜 탐색된 결과, 미검증 결과, 논쟁 중인 검증, 열린 가설 등 여러 관점의 뷰를 동시에 제공한다. 임베딩 커버리지가 충분해지면 설명 텍스트에 대한 단일 연결(single-link) 클러스터링을 수행해 클러스터 개수, 엔트로피 기반 유효 클러스터 수, 균등도 등을 계산하고, 후보들은 밴딧/트리 탐색에서 영감을 받은 다양성 인식 UCB(상한신뢰구간) 점수로 순위가 매겨져 exploit(선두 재현·개선), explore known(유망하지만 얇은 클러스터 확장), explore novel(거의 손대지 않은 특이 클러스터 탐색) 세 슬롯으로 제시된다.</p>
+<p>프로토타입은 Go 서버, CLI, Next.js 웹 인터페이스로 구현되었고, 참가자들은 CLI나 HTTP API를 통해서만 상호작용하며 파일시스템, 모델, 대화를 공유하지 않는다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>141개의 오픈 웨이트 사전학습 도너 모델(32개 아키텍처 계열, 534GB, GPT-2·LLaMA·Mistral·Qwen·Gemma·Pythia·RWKV·Mamba 등)을 이용해, 어떤 도너와도 차원이 일치하지 않는 14층·hidden size 672의 어텐션-SSM(상태공간모델) 하이브리드 목표 모델을, 학습 데이터나 그래디언트 업데이트 없이 초기화하는 문제를 설정했다. 평가는 FineWeb-Edu 텍스트 200개에 대한 바이트당 비트(bits per byte, bpb)로 측정했다(무작위 초기화 3.3923bpb, 학습된 GPT-2 124M 약 1.0bpb).</p>
+<p>Claude Code(Claude Opus 4.7)와 Codex(GPT-5.5)로 구동되는 13개의 코딩 에이전트 워커가 헤드리스 모드에서 2쪽짜리 브리핑 문서만을 지침으로 받아 11일 19시간 동안 실행되었다. 그 결과:
+- 총 1,703건의 기여(1,124개 채점 결과, 284개 통찰, 203개 가설, 165개 검증, 1개 보고서)가 게시되었고, 평가 지표는 3.39bpb에서 1.899bpb로 개선되어 학습된 GPT-2 124M과의 격차 중 62%를 좁혔다.
+- 최종 우승 레시피는 6개의 GPT-2 계열 도너 모델의 다음 토큰 예측 통계(바이그램 전이표)를 랜덤화된 SVD로 압축해 목표 모델의 임베딩과 출력 헤드를 구성한 뒤, 어텐션·피드포워드·SSM 블록에 희소한 결정론적 편집을 가해 단거리 문맥 신호를 추가하는 방식이었다.
+- 첫 18개의 채점 결과만으로 전체 개선폭의 약 98%를 달성했으며(초반 폭발적 활용), 나머지 1,106건의 기여는 남은 0.03bpb를 좁히는 데 쓰였다.
+- 우승 기여의 계보는 145개 커밋, 15개 계정에 걸쳐 있었고 (144개 부모 엣지 중 115개가 계정 경계를 넘음), 165건의 독립 재현 중 실패한 사례는 없었다.
+- 부정적 결과도 53건이 명시적으로 태깅되어 공유되었고, 후속 워커들이 이를 참고해 같은 실패를 반복하지 않았다.
+- 5월 2일, 활동의 3분의 1 이상이 하나의 의미 클러스터에 몰려 리더보드가 정체된 시점에 연구진이 다양성 뷰(클러스터링, 다양성 요약, 다양성 인식 UCB)를 배포하는 유일한 개입을 했고, 다음 날 아침 이전에는 소외되었던 상태공간 클러스터를 따라간 워커가 처음으로 1.90bpb 아래 결과를 냈다.</p>
+<h2>한계점</h2>
+<p>저자들 스스로 이 연구가 인과관계를 규명하지는 못한다고 명확히 밝힌다. 즉, Agora 없이 동일한 모델과 컴퓨팅 자원으로 같은 실험을 반복하거나 단순 리더보드 방식과 비교하는 대조 실험을 수행하지 않았으므로, 공유 연구 상태가 실제로 탐색 효율을 높이는지, 아니면 단지 병렬적 낭비를 더 깔끔하게 기록할 뿐인지는 확정할 수 없다. 또한 커뮤니티가 5일간 지속된 단일 레시피 몰입(모노컬쳐)에서 벗어난 것도 연구진이 다양성 뷰를 보여준 이후에야 일어났다는 점에서, 개입 없이 시스템 자체만으로 다양성이 자연히 유지되는지는 검증되지 않았다. 이 실행 사례 자체도 단 하나의 프로젝트(가중치 이전 문제)에 대한 단일 실행 결과이므로 일반화 가능성은 제한적이며, 논문은 부록에서 격리형·평문 로그형·중앙계획자형·Agora형을 비교하는 대응(matched) 평가 매트릭스를 향후 과제로 제안한다.</p>
+<h2>시사점</h2>
+<p>이 연구는 자율 연구 에이전트를 다수 투입할 때 병목이 개별 에이전트의 능력이 아니라 "협업을 위한 제도(institution)"의 부재일 수 있음을 시사한다. Git이라는 이미 검증된 불변·추적 가능한 저장 계층을 재사용해 연구 주장의 계보, 재현 여부, 미탐색 영역을 투명하게 만드는 접근은, 특정 연구 분야에 종속되지 않는 범용 조정 계층으로 확장될 수 있는 잠재력을 지닌다. 특히 리더보드 중심의 단일 목표 최적화가 아니라 명시적인 탐색/활용 슬롯 구분을 통해 다양성 붕괴(monoculture)를 조기에 진단하고 개입할 수 있다는 사례는, 향후 다중 에이전트 자율 연구 시스템 설계에서 참고할 만한 실증적 근거를 제공한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.18094" target="_blank" rel="noopener">huggingface.co/papers/2609.18094</a> · 2026-09-18</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

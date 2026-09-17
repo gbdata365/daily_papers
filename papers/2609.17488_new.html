@@ -1,0 +1,117 @@
+<meta charset="UTF-8">
+<title>LimiX-2</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#1 · Daily Papers 2026-09-18</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 88</span>
+    </div>
+    <h1 class="article-title">LimiX-2: A Contextual Mechanism Network Towards General Structured-Data Intelligence</h1>
+    <p class="article-title-ko">LimiX-2: 범용 정형데이터 지능을 향한 맥락적 메커니즘 네트워크</p>
+    <p class="article-sub">정형(표) 데이터를 위한 새로운 파운데이션 모델 LimiX-2를 제안하며, 정답 예측에만 집중하던 기존 방식 대신 데이터 전체의 결합분포를 학습하는 "맥락적 메커니즘 네트워크(Contextual Mechanism Network, CMN)" 패러다임으로 분류·회귀·결측치 보간·인과구조 추론을 하나의 사전학습 모델에서 모두 수행한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.17488" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.17488" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: LimiX-2: A Contextual Mechanism Network Towards General Structured-Data Intelligence</li>
+<li><strong>저자</strong>: LimiX Team (Stable AI &amp; Tsinghua University). 프로젝트 리드는 Xingxuan Zhang, Peng Cui이며, 다수의 핵심 기여자와 일반 기여자가 참여함</li>
+<li><strong>출처</strong>: arXiv:2609.17488v1 [cs.AI] (2026-09-15)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/limix-ldm/LimiX/">GitHub</a>, <a href="https://huggingface.co/stableai-org/">Hugging Face</a>, <a href="https://modelscope.cn/organization/stable-ai/">ModelScope</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.17488">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>정형(표) 데이터를 위한 새로운 파운데이션 모델 LimiX-2를 제안하며, 정답 예측에만 집중하던 기존 방식 대신 데이터 전체의 결합분포를 학습하는 "맥락적 메커니즘 네트워크(Contextual Mechanism Network, CMN)" 패러다임으로 분류·회귀·결측치 보간·인과구조 추론을 하나의 사전학습 모델에서 모두 수행한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>언어(LLM), 물리 세계(임베디드 에이전트·월드 모델)에 비해 정형 데이터에 대한 범용 지능은 상대적으로 덜 발전된 영역이다. 그래디언트 부스팅 트리, 딥러닝, AutoML 파이프라인 등 기존 표 데이터 방법들은 데이터셋마다 별도로 학습·모델 선택을 해야 하며 과제 간 지식 재사용이 어렵다. 이런 한계를 극복하기 위해 대규모 합성 데이터로 사전학습한 후 새로운 예측 과제에 파라미터 갱신 없이 적응하는 "대규모 정형데이터 모델(Large Structured-data Models, LDM)" 개념이 제시된다. 기존 Prior-Data Fitted Networks(PFN) 계열(TabPFN, TabICL, TabFM, Mitra 등)은 라벨 y를 맥락 데이터 조건부로 예측하는 p(y|x, D_context)만을 학습 목표로 삼아, 단일 타깃 컬럼 예측에만 직접적인 지도신호가 주어지고 변수들 간의 전체 의존 구조를 명시적으로 학습하지 못한다는 한계가 있다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>타깃 중심 예측에서 벗어나, 변수 간 의존 구조 전체(p(x, y | D_context))를 학습하는 새로운 패러다임인 Contextual Mechanism Networks(CMN)을 제안</li>
+<li>CMN을 구현한 LimiX-2 모델을 공개하고, Context-Conditional Masked Modeling(CCMM)이라는 사전학습 방식으로 지도학습·특징 재구성을 통합</li>
+<li>구조적 인과 모델(SCM) 기반의 대규모 합성 데이터 생성 엔진을 확장하여 더 다양한 그래프 구조·함수적 메커니즘·관측 과정을 포괄</li>
+<li>TabArena, TALENT, BCCO 세 벤치마크에서 기존 표 데이터 파운데이션 모델과 데이터셋별 전용 모델을 모두 능가함을 실증</li>
+<li>예측 성능뿐 아니라 특징-축 어텐션이 실제 인과 관계를 인코딩하여 인과 골격(causal skeleton) 복원에도 활용 가능함을 보임</li>
+</ul>
+<h2>방법론</h2>
+<p>LimiX-2는 이전 버전 LimiX의 셀(cell) 단위 표현 방식을 계승해, 행 전체를 하나의 벡터로 압축하지 않고 각 셀을 독립적으로 임베딩(d=256)한다. 결측 셀은 공유되는 학습형 임베딩으로 처리하고, 컬럼(열) 정체성은 저랭크(low-rank) 판별적 특징 인코딩(Discriminative Feature Encoding, DFE)으로 별도 부여한다. 타깃은 K=4개의 임베딩 슬롯으로 분리해 인코딩한다.</p>
+<p>모델 백본은 특징-축(feature-axis)과 샘플-축(sample-axis)의 이중축 트랜스포머 구조를 유지하되, 이전 버전과 달리 특징 표현과 타깃(과제) 표현이 서로 다른 어텐션·SwiGLU 경로를 갖는 비대칭 구조로 확장되었다(총 24개 블록). 분류 헤드는 최종 레이어의 타깃 표현에서, 마스킹된 특징 재구성 헤드는 더 얕은 레이어의 특징 표현에서 디코딩되며, 회귀는 평균제곱오차 대신 5000개 구간으로 이산화한 분포 예측 방식을 사용한다.</p>
+<p>사전학습은 Context-Conditional Masked Modeling(CCMM)을 통해 이루어진다. 각 학습 에피소드는 테이블을 맥락(context) 행과 질의(query) 행으로 나누고, 질의 행의 일부 특징 컬럼을 마스킹한 뒤 맥락 정보와 관측된 나머지 특징으로부터 마스킹된 값과 타깃을 함께 예측하도록 학습한다. 개별 셀, 특정 컬럼, 블록 단위 등 세 가지 마스킹 방식을 혼합하여 다양한 조건부 추론 과제에 노출시킨다.</p>
+<p>사전학습 데이터는 구조적 인과 모델(SCM)을 기반으로 5단계(하이퍼파라미터 샘플링 → 방향성 비순환 그래프(DAG) 생성 → SCM 전파 → 특징/타깃 샘플링 → 과제 적응)로 생성된다. 인과 모티프(체인, 교란, 충돌 구조 등)를 재귀적으로 조합해 DAG를 만들고, MLP·트리·CNN 외에 선형·커널·주기 함수 등 다양한 함수적 메커니즘을 추가하여 통계적 다양성을 확장했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>TabArena(실용적 예측 성능, 51개 데이터셋), TALENT(다양한 과제 유형에 대한 일반화, 288개 데이터셋), BCCO(결측·불완전 데이터에 대한 강건성, 156개 데이터셋)의 세 벤치마크에서 XGBoost·LightGBM·CatBoost·Random Forest 등 트리 기반 모델, AutoGluon, FT-Transformer·TabR 등 신경망 모델, 그리고 TabFM·TabPFN-3·TabICLv2·Mitra-v2·LimiX-16M 등 표 데이터 파운데이션 모델과 비교했다.</p>
+<p>LimiX-2는 세 벤치마크 모두에서 Elo 점수 기준 1위를 기록했다(TabArena 1935, TALENT 1506, BCCO 1432). TabArena에서는 2위 모델인 TabFM+보다 Elo가 약 117점 높았고, 평균 순위(5.5 vs 9.0)와 집계 승수(18.9 vs 5.3)에서도 크게 앞섰다. 특히 LimiX-2는 TabFM 대비 파라미터 수가 4배 작음에도 더 우수한 성능을 보였다. 추가로 수행한 인과 골격 복원 평가에서는 LimiX-2의 특징-축 어텐션이 다른 표 데이터 파운데이션 모델, 트리 기반 특징 중요도 기법, 전용 인과 발견 기법보다 우수한 결과를 보여, 모델이 실제 인과 구조 정보를 학습했음을 시사한다. 파라미터 스케일링 실험에서는 406.2M 파라미터까지 성능 포화 조짐이 관찰되지 않아, 향후 10억 파라미터 규모로의 확장 가능성을 시사했다.</p>
+<h2>한계점</h2>
+<p>논문에 별도의 명시적 한계점 절은 없으나, 결론부에서 사전학습이 전적으로 합성(SCM 기반) 데이터에만 의존한다는 점과, 현재 실험 규모(최대 406.2M 파라미터)에서의 스케일링 경향만을 확인했다는 점이 향후 과제로 언급된다. 즉 실제 데이터에 대한 직접 사전학습이나 더 큰 파라미터 규모에서의 검증은 아직 이루어지지 않았다.</p>
+<h2>시사점</h2>
+<p>CMN과 CCMM은 표 데이터 파운데이션 모델의 학습 목표를 "단일 타깃 예측"에서 "변수 간 결합 분포 학습"으로 확장함으로써, 분류·회귀뿐 아니라 결측치 보간과 인과 추론까지 하나의 모델로 통합할 수 있음을 보여준다. 이는 특정 과제에 특화된 모델을 매번 새로 학습해야 했던 기존 표 데이터 머신러닝의 패러다임을 파운데이션 모델 기반의 범용 추론 체계로 전환할 수 있는 가능성을 제시하며, 특히 의료·금융·과학 연구 등 구조화된 데이터가 중심이 되는 영역에서 인과 관계 파악까지 포함하는 통합적 분석 도구로 활용될 잠재력을 지닌다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.17488" target="_blank" rel="noopener">huggingface.co/papers/2609.17488</a> · 2026-09-18</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

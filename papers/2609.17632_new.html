@@ -1,0 +1,107 @@
+<meta charset="UTF-8">
+<title>이볼브트레이드</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#9 · Daily Papers 2026-09-18</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 30</span>
+    </div>
+    <h1 class="article-title">EvolveTrade: Experience-Driven Policy Refinement for Self-Evolving LLM Trading Agents</h1>
+    <p class="article-title-ko">이볼브트레이드: 자기진화형 LLM 트레이딩 에이전트를 위한 경험 기반 정책 개선</p>
+    <p class="article-sub">도구를 사용하는 LLM 트레이딩 에이전트의 시스템 프롬프트를 "텍스트로 매개변수화된 정책"으로 취급하여, 실제 거래 후 실현된 성과와 의사결정 기록을 바탕으로 별도의 Policy Agent가 이 정책을 주기적으로 스스로 개정하게 만드는 자기진화(self-evolving) 프레임워크 EvolveTrade를 제안한 논문이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.17632" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.17632" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: EvolveTrade: Experience-Driven Policy Refinement for Self-Evolving LLM Trading Agents</li>
+<li><strong>저자</strong>: Sehee Kim, Yumin Choi(공동 1저자), Minki Kang, Sung Ju Hwang (KAIST, DeepAuto.ai)</li>
+<li><strong>출처</strong>: arXiv:2609.17632v1 [cs.AI] (2026-09-15)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.17632">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>도구를 사용하는 LLM 트레이딩 에이전트의 시스템 프롬프트를 "텍스트로 매개변수화된 정책"으로 취급하여, 실제 거래 후 실현된 성과와 의사결정 기록을 바탕으로 별도의 Policy Agent가 이 정책을 주기적으로 스스로 개정하게 만드는 자기진화(self-evolving) 프레임워크 EvolveTrade를 제안한 논문이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>LLM을 활용한 트레이딩 에이전트는 시장 데이터, 뉴스, 실행 가능한 분석 도구를 결합할 수 있지만, 대부분의 기존 시스템은 배포 시점에 고정된 손으로 작성한 도구 사용 정책(시스템 프롬프트)에 따라 동작한다. 저자들은 GPT-5-mini 기반 고정 정책 에이전트를 사이드웨이·급락·상승추세의 세 가지 시장 국면에서 관찰한 결과, 코드 인터프리터가 호출하는 분석 지표(샤프비율, 20일/60일 수익률, 연율화 변동성, 낙폭 등 5개)가 국면과 무관하게 거의 매일 동일하게 사용되는 반면, RSI·EMA·VaR·신호 정규화 같은 국면별로 유용할 수 있는 지표는 세 국면 모두에서 전혀 호출되지 않음을 발견했다. 이는 초기 프롬프트가 시장 데이터를 관찰하기도 전에 분석 범위를 고정해버리고, 이후 실현된 거래 경험으로부터 개선될 수단이 전혀 없다는 근본적 한계를 시사한다.</p>
+<h2>핵심 기여</h2>
+<p>논문의 기여는 다음과 같다. 첫째, 도구를 사용하는 트레이딩 에이전트의 시스템 프롬프트(정책)를 실현된 거래 경험으로부터 온라인으로 개정 가능한 텍스트 변수로 재정의하는 EvolveTrade 프레임워크를 제안했다. 둘째, 두 개의 LLM 백본(GPT-5-mini, Gemini-2.5-Flash)과 여섯 개의 사후 지식 컷오프 시장 국면에 걸쳐, 정책 자기진화가 고정 정책 기반 LLM 에이전트 대비 샤프비율과 누적수익률을 다수 설정에서 개선함을 실증했다. 셋째, 자기진화된 정책이 코드 기반 분석을 늘리고 국면에 맞는 새로운 계산(예: VaR, 추세추종 지표)을 활성화한다는 행동 분석과, 특정 사례(2025년 1월 NVDA 급락)에서 정책 변화가 실제 수익률 차이로 이어지는 과정을 추적하는 사례 수준 귀속 분석을 제공했다.</p>
+<h2>방법론</h2>
+<p>EvolveTrade는 거래일을 일정 길이(N일, 실험에서는 5일)의 배치로 나누고, 배치 내에서는 정책 π_t를 고정한 채 Trading Agent가 가격 조회 도구, 뉴스 검색 도구, 파이썬 코드 인터프리터를 이용해 매일 포트폴리오 배분을 결정한다. 각 거래일의 결정 기록(배분 결과와 자산별 근거 서술)과 사후 실현된 포트폴리오 피드백(일일 수익률, 자산별 수익률 등)을 결합해 하나의 정제 레코드로 저장한다. 배치가 끝나면 별도의 Policy Agent가 해당 배치의 모든 레코드를 입력받아, 어떤 프롬프트 요소가 좋은/나쁜 성과에 기여했는지 분석하고 정책 텍스트 전체를 구체적 관찰에 근거해 재작성한다. 예를 들어 에이전트가 가격 확인 없이 뉴스만으로 반복적으로 행동했다면, 다음 정책은 노출 확대 전 교차검증을 요구하는 규칙을 추가할 수 있다. 이 과정을 반복하면 배치 k+1에서 사용되는 정책은 배치 1부터 k까지의 실제 거래 경험에 의해 형성된 자기진화 정책이 된다. 이때 백본 LLM 파라미터와 도구 인터페이스는 전혀 수정하지 않고, 오직 정책 텍스트만 학습 대상으로 삼는다는 점이 핵심이다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>LiveTradeBench 프레임워크 기반의 일별 종가 시뮬레이션 환경에서 15개 미국 우량주와 현금으로 구성된 투자 유니버스를 대상으로 평가했다. 비교 대상은 SPY, Buy&amp;Hold, MACD, KDJ&amp;RSI, ZMR, SMA 등 규칙 기반 베이스라인과, 도구·정책 진화 여부를 분리한 다섯 LLM 기반 설정(StaticBaseAgent, StaticTCAgent, EvolveBase, EvolveStrategy, EvolveTrade)이다. GPT-5-mini는 2025년 1월(사이드웨이)·4월(급락-회복)·9월(상승추세)에, Gemini-2.5-Flash는 2025년 11월·2026년 2월·4월(각각 약세·횡보·강세장)에 평가되었다. 결과적으로 EvolveTrade는 LLM 기반 방법 중 다섯 개 모델-국면 조합 중 세 개(1월·9월 GPT-5-mini, 11월 Gemini)에서 최고 샤프비율과 누적수익률을 기록했으며, 일부 국면에서는 규칙 기반 베이스라인까지 능가했다(예: GPT-5-mini 9월 누적수익률 6.84%로 최강 규칙 기반 베이스라인 초과). 행동 분석에서는 EvolveTrade가 정적 도구 호출 에이전트가 전혀 사용하지 않던 VaR, 신호 정규화(급락 국면), SMA·EMA·RSI(상승추세 국면) 등을 활성화했고, 코드 실행 도구 호출 빈도가 하루 약 1회에서 2.6~4.5회로 증가한 반면 뉴스 검색 빈도는 크게 늘지 않아, 정책 개정이 외부 정보 수집보다 실행 가능한 분석 쪽으로 도구 사용을 재배치함을 보였다. 2025년 1월 NVDA 급락 사례에서는 정적 에이전트가 NVDA 비중 10.7%를 유지한 반면 EvolveTrade는 장기 위험조정 근거를 우선하는 개정된 정책 아래 2.9%로 낮춰, 다음날 NVDA가 17% 급락했을 때 손실을 크게 줄였다(-0.03% 대 -1.11%). 50거래일에 걸친 장기 평가에서도 EvolveTrade는 모든 베이스라인을 능가했고, 정책 길이는 새로운 지침이 반영되며 늘어나다가 중복 지침이 정리되며 주기적으로 줄어드는 비단조적 패턴을 보였다. 정책 개정 주기에 대한 민감도 분석에서는 5일 간격이 1일·3일·7일 간격보다 우수해, 지나치게 잦은 개정은 단기 잡음에 과적합될 수 있음을 시사했다.</p>
+<h2>한계점</h2>
+<p>논문은 스스로 몇 가지 한계를 명시한다. 정책 개정 주기가 실험 전체에서 고정되어 있어, 시장 변화에 반응해 동적으로 개정 주기를 조정하는 것은 향후 과제로 남겨두었다. 또한 부록에서 비례 거래비용을 고려한 포트폴리오 회전율과 성과를 평가했지만, 이 추정치는 슬리피지, 시장 충격, 유동성 제약을 반영하지 못하며, 더 현실적인 체결 모델을 통한 평가가 향후 필요하다고 밝혔다.</p>
+<h2>시사점</h2>
+<p>이 연구는 LLM 트레이딩 에이전트의 성능 병목이 반드시 모델 자체의 추론 능력 부족이 아니라, 배포 시점에 고정된 "도구 사용 절차" 자체에 있을 수 있음을 보여준다. 모델 파라미터를 재학습하지 않고도 시스템 프롬프트를 실현된 거래 경험 기반으로 지속적으로 재작성하는 방식은 프롬프트 최적화 연구와 자기진화 에이전트 연구를 금융 거래라는 지연되고 잡음이 많은 피드백 환경에 접목한 사례로, 향후 다른 순차적 의사결정 도메인에서도 유사한 "정책으로서의 프롬프트" 관점이 적용될 수 있음을 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.17632" target="_blank" rel="noopener">huggingface.co/papers/2609.17632</a> · 2026-09-18</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

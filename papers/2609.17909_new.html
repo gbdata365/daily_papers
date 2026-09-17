@@ -1,0 +1,113 @@
+<meta charset="UTF-8">
+<title>징-0.5</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#10 · Daily Papers 2026-09-18</span>
+      <span class="cat-tag">생성모델</span>
+      <span class="upvote-tag">▲ 25</span>
+    </div>
+    <h1 class="article-title">Zing-0.5: Toward Playable Worlds with Real-Time Joint Action and Text Control</h1>
+    <p class="article-title-ko">징-0.5: 실시간 조작·텍스트 제어를 통한 플레이어블 월드 구현</p>
+    <p class="article-sub">Zing-0.5는 키보드 조작과 실시간 텍스트 지시를 하나의 연속된 생성 스트림 안에서 동시에 받아들여, 사용자가 세계를 탐험하면서 동시에 사건과 캐릭터 행동을 언어로 개입할 수 있게 하는 5B 규모의 자기회귀(autoregressive) 월드 모델이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.17909" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.17909" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Zing-0.5: Toward Playable Worlds with Real-Time Joint Action and Text Control</li>
+<li><strong>저자</strong>: Zing Team (SeedLeap.ai) — Mingyang Chen, Shengdong Chen, Xiaoxiao Fu, Bosheng Gong, Haoyuan Guo 외 다수 (저자 순서는 성 알파벳순)</li>
+<li><strong>출처</strong>: arXiv:2609.17909v1 [cs.CV] (2026년 9월 15일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://zing.loopit.me/">Zing 프로젝트</a>, <a href="https://github.com/seedleap/zing-world-model">코드</a>, <a href="https://huggingface.co/seedleap/zing-0.5">모델</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.17909">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>Zing-0.5는 키보드 조작과 실시간 텍스트 지시를 하나의 연속된 생성 스트림 안에서 동시에 받아들여, 사용자가 세계를 탐험하면서 동시에 사건과 캐릭터 행동을 언어로 개입할 수 있게 하는 5B 규모의 자기회귀(autoregressive) 월드 모델이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>기존의 상호작용형 월드 모델(Interactive World Model)들은 크게 두 갈래로 발전해 왔다. 하나는 키보드나 카메라 입력으로 이동과 시점을 제어하는 계열(Matrix-Game, WorldPlay 등)이고, 다른 하나는 텍스트로 장면의 사건이나 캐릭터 행동을 바꾸는 계열(GameGen-X, GameCraft-2 등)이다. 그러나 두 제어 방식은 대개 분리되어 있어, 사용자가 탐험을 계속하면서 동시에 언어로 사건에 개입하는 것이 어려웠다. 저자들은 "플레이어블(playable)"한 생성 세계를 만들기 위해서는 탐험(exploration)-개입(intervention)-피드백(feedback)이 하나의 세션 안에서 끊김 없이 이어져야 한다고 보고, 이를 위한 통합 조작·텍스트 제어 프레임워크를 제안한다. 또한 이러한 상호작용을 실시간으로, 낮은 비용으로 제공하는 것 역시 실용적으로 중요한 과제로 삼는다.</p>
+<h2>핵심 기여</h2>
+<p>논문은 세 가지 기여를 제시한다.
+1. <strong>통합 액션·텍스트 조건화</strong>: 연속적인 크기(magnitude)를 가진 키보드 입력과, 시간적으로 정렬된 텍스트 지시, 그리고 이 둘을 함께 주석 처리한 비디오 데이터를 이용해 하나의 시퀀스 안에서 내비게이션과 이벤트 제어를 동시에 학습한다.
+2. <strong>점진적 생성을 위한 이벤트 단위 지도학습</strong>: 여러 프롬프트가 연결된 비디오로 학습된 세그먼트 수준(segment-level) 교사 모델이, 분포매칭 증류(distribution-matching distillation)를 통해 블록 단위(block-level)의 인과적 학생 모델을 지도함으로써, 여러 생성 블록에 걸친 사건을 일관되게 학습할 수 있게 한다.
+3. <strong>저비용 실시간 상호작용</strong>: 4단계(4-step) 생성과 컨텍스트를 보존하는 스트리밍 런타임을 결합해 832×480 해상도에서 24FPS 추론을 스트림당 분당 약 0.009달러의 서버 비용으로 지원한다.</p>
+<h2>방법론</h2>
+<p>Zing-0.5는 Wan2.2-TI2V-5B를 기반으로 한다. 기존의 비디오 오토인코더와 확산 트랜스포머(diffusion Transformer)를 유지하면서, 경량 액션 인코더(3.68M 파라미터, 전체의 약 0.074%)를 추가해 W/A/S/D(이동)와 I/J/K/L(시점 변경) 8개 채널의 연속적 크기 정보를 시각 토큰에 주입한다. 카메라 포즈를 매개로 하지 않고 키보드 입력을 직접 조건으로 사용함으로써, 생성된 관찰과 카메라 궤적 간의 불일치가 누적되는 문제를 피한다.</p>
+<p>텍스트 조건화는 프롬프트 구간별로 이루어진다. 각 시간 구간의 시각 토큰은 해당 구간에 할당된 캡션에만 교차 어텐션(cross-attention)으로 주의를 기울이며, 프롬프트가 바뀌면 텍스트 K/V 캐시만 갱신하고 시각 K/V 캐시는 그대로 유지해 장면의 연속성을 보존한다.</p>
+<p>학습은 4단계 파이프라인으로 구성된다: (1) 양방향(bidirectional) 모델에 액션 조건화를 도입하는 적응 단계, (2) 세그먼트 수준 교사와 블록 수준 생성기를 자기회귀적으로 학습하는 단계(첫 프레임을 별도로 다루는 T2I→I2V 분리 방식 포함), (3) ODE 초기화와 로컬 일관성 증류(consistency distillation)로 소수 스텝 샘플링을 준비하는 단계, (4) 학생 모델이 자기 자신의 롤아웃(rollout)에 대해 분포매칭 증류(DMD)로 학습하는 단계. 이 과정에서 Self Gradient Forcing 방식의 2단계 절차(그래디언트 없는 롤아웃 후 패킹된 재현 학습)를 채택해 긴 시퀀스 학습의 메모리 부담을 줄인다.</p>
+<p>추론 시스템은 RTX 5090 8장으로 구성된 서버에서 GPU당 하나의 완전한 복제본(DiT, KV 캐시, TAEHV 디코더)을 운용해 스트림 간 지연 전송을 없앤다. 컨텍스트는 고정 프리픽스 싱크(sink)와 슬라이딩 윈도우, 그리고 프롬프트 전환 시 활성화되는 핀(pin)을 조합해 KV 캐시 용량을 일정하게 유지한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>158개 사례로 구성된 WBench Navigation 벤치마크에서 이미지 조건 내비게이션을 평가한 결과, Zing-0.5는 전체 점수 81.0, 일관성(Consistency) 점수 88.5를 기록했다. 이는 5B라는 비교적 작은 모델 규모에도 불구하고 JoyAI-Echo-1.5(81.6/81.0), HiDream-O1-World(80.9), Alaya-EVOKE(80.8) 등과 경쟁 가능한 수준이다. 정성적으로는 사용자가 썰매를 조작하며 동시에 "환호하라", "우산을 펼쳐라" 같은 텍스트 지시를 내리는 세션, 나무에 불을 붙이자 금빛 불꽃이 튀는 장면, 사탕 집이 녹는 장면, 캐릭터가 하늘을 나는 장면 등 조작과 텍스트 지시가 결합된 다양한 세션을 시연으로 제시한다.</p>
+<h2>한계점</h2>
+<p>저자들은 논문의 논의(Discussion) 절에서 스스로 명확한 한계를 지적한다. 첫째, 현재 시스템은 시각적 컨텍스트와 텍스트·액션 조건으로부터 매 순간의 연속만 생성할 뿐, 개별 개체(entity)의 상태나 규칙을 명시적으로 추적하지 않는다. 즉, 화면 밖으로 나간 물체가 계속 존재하는지, 이전 사건의 결과가 나중 상호작용에도 유지되는지를 보장하는 메커니즘이 없다. 둘째, 제한된 KV 캐시로 인해 오래된 시각적 증거에 대한 접근이 제한되며, 자기회귀적 생성 특성상 한 번의 오류가 이후 컨텍스트에 누적될 위험이 있다. 셋째, 흐름 매칭(flow-matching) 및 증류 목적함수 자체가 상태 전이나 상호작용 규칙을 명시적으로 강제하지 않으므로, 즉각적인 시각적 문맥에서는 그럴듯하지만 이전 사건과 모순되는 생성이 나올 수 있다.</p>
+<h2>시사점</h2>
+<p>이 논문은 "플레이어블한 월드 모델"이라는 개념을 조작(action)과 언어(text)를 하나의 연속 스트림에서 결합하는 구체적 아키텍처로 구현했다는 점에서 의의가 있다. 특히 세그먼트 수준 교사와 블록 수준 학생을 분리해 이벤트 규모의 지도학습과 점진적(incremental) 생성을 조화시킨 증류 전략, 그리고 상용 GPU에서 저비용 실시간 스트리밍을 가능케 한 엔지니어링은 실용적 배포 관점에서 참고할 만하다. 저자들은 결론적으로, 진정으로 지속 가능한 상호작용을 위해서는 사용자의 행동이 만든 결과가 시점이나 지시가 바뀌어도 일관되게 유지되는 "지속적 세계 상태(persistent world state)"를 명시적으로 다루는 미래 아키텍처가 필요하다고 강조한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.17909" target="_blank" rel="noopener">huggingface.co/papers/2609.17909</a> · 2026-09-18</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

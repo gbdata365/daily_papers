@@ -1,0 +1,108 @@
+<meta charset="UTF-8">
+<title>액션피스</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#7 · Daily Papers 2026-09-18</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 36</span>
+    </div>
+    <h1 class="article-title">ActionPiece: Rethinking Action Tokenization for Autoregressive Vision-Language-Action Models</h1>
+    <p class="article-title-ko">액션피스: 자기회귀 비전-언어-행동 모델을 위한 행동 토큰화 재고</p>
+    <p class="article-sub">로봇 행동을 이산 토큰으로 압축할 때 개별 복원 오차(MSE)뿐 아니라 서로 다른 시연 간 "물리적 거리 순위"가 얼마나 보존되는지를 새 지표(PRC)로 측정하고, 이를 직접 학습 목표로 반영한 행동 토크나이저 ActionPiece를 제안한 논문이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.18487" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.18487" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: ActionPiece: Rethinking Action Tokenization for Autoregressive Vision-Language-Action Models</li>
+<li><strong>저자</strong>: Shijie Lian, Bin Yu, Zhaolong Shen, Xiaopeng Lin, Yichao Du, Zhirui Zhang, Laurence T. Yang, Kai Chen (화중과기대, 중관춘 아카데미, DeepCybo, 하얼빈공업대, 베이항대, 홍콩과기대(광저우), 정저우대, 중관춘 인공지능연구원 소속 공동 연구팀)</li>
+<li><strong>출처</strong>: arXiv:2609.18487v1 [cs.RO] (2026-09-16)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://deepcybo-physai.github.io/ActionPiece/">ActionPiece 프로젝트 페이지</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.18487">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>로봇 행동을 이산 토큰으로 압축할 때 개별 복원 오차(MSE)뿐 아니라 서로 다른 시연 간 "물리적 거리 순위"가 얼마나 보존되는지를 새 지표(PRC)로 측정하고, 이를 직접 학습 목표로 반영한 행동 토크나이저 ActionPiece를 제안한 논문이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>자기회귀(autoregressive) 방식의 Vision-Language-Action(VLA) 모델은 로봇 동작을 이산 토큰 시퀀스로 예측하고, 이를 다시 실행 가능한 명령으로 복원하는 행동 토크나이저에 의존한다. 기존 방법들은 좌표 이산화, 주파수 영역 압축, 학습된 벡터 양자화 등으로 토크나이저를 설계했지만, 대체로 평균제곱오차(MSE) 같은 포인트 단위 복원 정확도만을 기준으로 품질을 평가해왔다. 그러나 저자들은 개별 오차가 작더라도, 압축 과정에서 서로 다른 맥락에 대응하기 위한 "미세한 동작 차이"가 뭉개지거나 왜곡되거나 심지어 역전될 수 있음을 지적한다. 즉, 정책이 올바른 토큰 시퀀스를 예측하더라도 디코더가 복원한 동작 자체가 왜곡되어 있으면 정밀한 정렬, 파지, 접촉이 필요한 작업에서 실패로 이어질 수 있다는 문제의식이다.</p>
+<h2>핵심 기여</h2>
+<p>논문은 크게 세 가지를 기여한다. 첫째, 원본 행동 공간에서의 최근접 이웃 관계가 복원 후에도 얼마나 유지되는지를 스피어만 상관계수로 측정하는 물리적 순위 일관성(Physical Rank Consistency, PRC) 지표를 제안하여, 토큰 어휘나 디코더 구조가 달라도 공통된 기준으로 토크나이저를 비교할 수 있게 했다. 둘째, 이 물리적 관계를 표현 학습과 코드워드 할당 두 단계 모두에서 동시에 지도(supervise)하는 ActionPiece 토크나이저를 개발했다. 셋째, 4개 벤치마크(LIBERO, LIBERO-Plus, SimplerEnv, VLA-Arena)에서 통제된 비교와 소거 실험을 통해 물리적 관계 지도의 효과를 검증했다.</p>
+<h2>방법론</h2>
+<p>ActionPiece는 잔차 벡터 양자화(RVQ)를 사용하는 얕은 트랜스포머 인코더-디코더 구조를 기반으로 한다. 먼저 두 동작 사이의 물리적 거리를 이동(translation), SO(3) 상의 최단 측지선 회전, 그리퍼 상태 차이를 결합해 정의한다. 이 거리를 기준으로 배치 내에서 각 앵커(anchor) 동작에 대해 가까운(near) 동작과 먼(far) 동작을 선정한다.</p>
+<p>핵심 학습 목표는 두 가지다. 첫째, 물리적 순위 보존(Physical Rank Preservation, PRP)은 인코더 특징 거리와 양자화된 특징 거리의 가중 합이 원본의 근-원 순서를 따르도록 마진 기반 순위 손실(softplus 힌지 손실)을 적용한다. 둘째, 양자화 정규화(Quantization Regularization, QR)는 코드워드 할당 확률 분포 사이의 Jensen-Shannon 발산에도 동일한 근-원 순서를 강제하여, 표현 공간뿐 아니라 실제 이산 코드 선택 과정에도 물리적 순서 정보를 전달한다. 두 목표는 표준 MSE 복원 손실 및 코드북 커밋먼트 손실과 함께 가중합으로 결합되어 학습된다. 학습이 끝나면 인코더와 양자화기는 동결되어 정책 학습의 이산 타깃을 제공하고, 디코더 역시 동결되어 예측된 토큰을 실행 가능한 동작 청크로 복원하는 역할만 수행한다. 정책 자체는 Qwen3-VL-4B 백본 위에서 표준 다음 토큰 예측 방식으로 학습된다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Qwen3-VL-4B 정책을 동일한 학습 설정(백본, 데이터, 프롬프트, 배치 크기, 학습 예산)으로 고정한 채 ActionCodec, OAT, FASTerVQ, FAST, 표준 RVQ 등과 비교했다. LIBERO에서 ActionPiece는 94.8%로 가장 강한 베이스라인인 ActionCodec(93.7%)을 앞섰고, 학습 분포 밖인 LIBERO-Plus에서는 68.8%로 최강 베이스라인(64.3%) 대비 4.5%p 더 큰 격차로 우위를 보였다(7개 변화 유형 중 6개에서 최고 성능). 실제 로봇 데이터로 학습한 SimplerEnv(WidowX)에서는 71.9%의 평균 성공률로 1위를 기록했으며, 특히 정밀한 배치가 필요한 블록 쌓기 과제에서 58.3%로 가장 우수했다. 더 어려운 VLA-Arena(L0~L2, 33개 셀 평균)에서는 51.5%로 최고 평균을 기록했고, L0에서만 학습했음에도 L1/L2에서 각각 7.0%p, 5.0%p 앞섰다. 요소별 소거 실험에서는 표준 RVQ(LIBERO 90.9%, LIBERO-Plus 60.4%, PRC 0.902) 대비 PRP만 추가 시 93.8%/65.4%/0.947, QR만 추가 시 92.9%/62.4%/0.916으로 상승했고, 둘을 함께 적용한 ActionPiece가 94.8%/68.8%/0.953으로 가장 높은 성능과 물리적 순위 일관성을 동시에 달성했다. 55개의 토크나이저-벤치마크 조합에 대한 상관 분석에서도 PRC(스피어만 상관 0.681)가 복원 정확도(0.544)보다 정책 성공률과 더 강한 상관관계를 보였다.</p>
+<h2>한계점</h2>
+<p>논문에 명시된 한계는 별도 절로 제시되지 않았다. 다만 본문 내용을 통해 유추할 수 있는 제약으로는, 물리적 거리 정의(이동·회전·그리퍼 가중치)가 로봇 임베디먼트별로 고정되어야 한다는 점, 그리고 4개 벤치마크·특정 정책 백본(Qwen3-VL-4B) 조합에 한정된 검증이라는 점을 들 수 있다. 이 외 세부 한계는 논문에 명시되지 않음.</p>
+<h2>시사점</h2>
+<p>이 연구는 행동 토크나이저 설계에서 "개별 동작을 얼마나 정확히 복원하는가"뿐 아니라 "서로 다른 시연 간 상대적 차이를 얼마나 보존하는가"라는 관계적 충실도(relational fidelity)가 정책 성공률과 더 밀접하게 연관된다는 관점을 제시한다. PRC라는 평가 지표와 PRP·QR이라는 구체적 학습 기법은 향후 VLA 행동 표현 설계에서 재구성 손실 외에 순서·관계 정보를 명시적으로 반영하는 방향을 시사하며, 특히 훈련 분포 밖 일반화(LIBERO-Plus, VLA-Arena L1/L2)에서 이러한 관계 보존이 강건성 향상에 기여할 수 있음을 보여준다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.18487" target="_blank" rel="noopener">huggingface.co/papers/2609.18487</a> · 2026-09-18</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

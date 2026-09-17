@@ -1,0 +1,118 @@
+<meta charset="UTF-8">
+<title>ScienceIDE</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#2 · Daily Papers 2026-09-18</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 70</span>
+    </div>
+    <h1 class="article-title">ScienceIDE: Turning World's Scientific Codebase into Agent Learnable Environments</h1>
+    <p class="article-title-ko">ScienceIDE: 세계의 과학 코드베이스를 에이전트 학습 환경으로 전환하기</p>
+    <p class="article-sub">세계 각지의 과학 시뮬레이션 코드 저장소(천체물리, 해양·기후, 플라즈마 등)를 전문가 정의 기준에 따라 실행 가능한 "에이전트 학습 환경"으로 자동 변환하는 인프라 ScienceIDE를 제안하고, 이를 통해 생성된 과제로 에이전트를 평가·SFT·RL 학습시켜 과학 코드 수리 능력과 범용 능력이 함께 향상됨을 보인다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.19134" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.19134" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: ScienceIDE: Turning World's Scientific Codebase into Agent Learnable Environments</li>
+<li><strong>저자</strong>: Hejia Geng, Zesen Huang 외 다수 (AItonomy Foundation, PhAI-Labs 등 다기관 공동 저자, 교신저자 Zhenfei Yin, Yingcheng Wu, Ling Yang)</li>
+<li><strong>출처</strong>: arXiv:2609.19134v1 [cs.CL] (2026-09-16)</li>
+<li><strong>프로젝트 페이지</strong>: 논문 표지에 Project/GitHub/Model 아이콘 링크가 표기되어 있으나 본문 텍스트에서 구체적 URL은 확인되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.19134">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>세계 각지의 과학 시뮬레이션 코드 저장소(천체물리, 해양·기후, 플라즈마 등)를 전문가 정의 기준에 따라 실행 가능한 "에이전트 학습 환경"으로 자동 변환하는 인프라 ScienceIDE를 제안하고, 이를 통해 생성된 과제로 에이전트를 평가·SFT·RL 학습시켜 과학 코드 수리 능력과 범용 능력이 함께 향상됨을 보인다.</p>
+<h2>배경 및 문제의식</h2>
+<p>텍스트는 인간 지식을, 코드 저장소·컴파일러·테스트는 행동과 결과를 관찰 가능하게 만들어 LLM 학습에 활용되어 왔지만, 과학 지능(scientific intelligence)은 아직 충분히 개발되지 않았다. 과학 연구는 문제와 목표, 채점 기준이 이미 정해진 일반 코딩 과제와 달리, 에이전트가 스스로 유의미한 질문을 찾고 가설을 검증해야 하는 탐구적 성격이 강하다. 저자들은 이를 "과학적 경험 병목(scientific experience bottleneck)"이라 부르는데, 이질적인 툴체인과 설정, 물리량·수치 허용오차·암묵적 관행에 의존하는 검증 방식, 그리고 실행 가능한 코드를 의미 있는 과제·피드백·기록으로 전환해야 하는 어려움 때문에 논문·저장소·데이터셋이 자동으로 학습 가능한 환경이 되지는 못한다는 문제의식에서 출발한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>전문가가 정의한 과학적 책임 범위와 채점 기준을 실행 가능한 코드 검증(체크)으로 변환하는 파이프라인을 제시하여, 과학 저장소를 반복 재사용 가능한 학습 환경으로 전환</li>
+<li>결함 주입 수리(Repair), 기능 구현(Implementation), 가속(Acceleration) 등 7가지 과제 유형의 자동 생성 및 실행 기반 검증(taxonomy) 체계를 설계</li>
+<li>27개 과학 코드베이스에서 64개 환경, 2,812개 과제(수리 2,515·구현 295·가속 2개)와 1,076개의 실행 가능 체크를 구축하고, 이 중 85개 고난도 과제로 구성된 ScienceIDE-Hard 평가셋을 공개</li>
+<li>8개 공급자의 15개 모델(코덱스·클로드 코드·제미니 CLI 하네스 경유)을 동일 조건에서 비교 평가</li>
+<li>검증된 상호작용 궤적으로 지도학습(SFT) 및 검증기 보상 기반 강화학습(RL)을 수행해 과학 코드 수리 성능과 일반 벤치마크(코드·추론·지식) 성능이 함께 향상됨을 실증</li>
+<li>장기 호라이즌 과학 RL에서 발생하는 "예산 소진을 실패로 오인하는" 문제를 발견하고, 예산 초과 궤적을 정책 학습(loss)에서는 제외하되 그룹 베이스라인 계산에는 포함시키는 방법으로 완화</li>
+</ul>
+<h2>방법론</h2>
+<p>ScienceIDE의 구축 단위는 버전이 고정된(pinned) 코드베이스 내의 "과학 모듈"이다. 에이전트가 먼저 소스, 의존성, 라이선스, 빌드 조건을 조사하고 공식 테스트를 실행한 뒤, 하나의 일관된 과학적 책임과 실행 커버리지를 갖는 모듈 경계를 제안하면 도메인 전문가가 이를 검토·승인한다.</p>
+<p>승인된 모듈에 대해 공식 유닛 테스트와 예제를 "체크(check)"로 전환하는데, 각 체크는 고정 입력과 채점 가능한 출력, 그리고 통과 정책(pass policy)으로 구성된다. 통과 정책은 점 단위 오차 허용 기준(|c-r| ≤ a+ρ|r|)을 사용하는 pointwise 방식과, 모멘트·분포·보존량 등 총체적 지표를 비교하는 invariants 방식 두 가지로 나뉘며, 저장소 순서·난수·고유벡터 위상 등 비관측 요소는 채점 대상에서 제외한다. 명목(nominal) 입력과 변형(variant) 입력을 함께 실행해 수치 민감도를 측정하고, 가능한 경우 다른 빌드 환경에서의 교차 검증(altbuild)으로 오차 허용 범위의 근거를 마련한다.</p>
+<p>환경별 "팩토리(factory)"는 공통 절차(가역적 편집, 실행, 산출물 수집)와 환경별 규칙(활성 경로, 사례, 빌드 레시피)을 결합해 과제 후보를 생성한다. 결함 주입 수리와 기능 구현은 결정론적 변이·삭제로 자동 후보를 만들 수 있는 반면, 발견·재현·통합·보정 등 나머지 유형은 전문가가 목표를 직접 지정한다. 생성된 후보는 실제 채점 환경에서 실행되어 관측 가능성·해결 가능성·신뢰성이 검증된 경우에만 정식 과제로 등록된다(예: 결함 주입 수리의 경우, 정답 패치는 통과하고 결함 상태는 실패해야 하며 그 차이가 해당 체크에서 나타나야 함).</p>
+<p>검증된 과제는 공통 에피소드 인터페이스(작업공간 → 코드/데이터 조사 → 수정 → 실행 → 비공개 검증기 채점)를 통해 평가·SFT·RL에 재사용된다. RL 실험에서는 그룹 상대 이점(GRPO 계열, 표준편차 나눗셈은 생략)을 사용하되, 비대칭 클리핑 범위(ε_low=0.2, ε_high=0.3)를 적용하고, 예산 초과로 조기 종료된 긴 궤적이 잘못된 페널티를 받아 정책이 "짧게 답해서 페널티를 피하는" 방향으로 붕괴하는 현상을 관찰한 뒤, 이러한 궤적을 그룹 평균(베이스라인) 계산에는 포함하되 손실 함수에서는 마스킹하는 방식으로 문제를 해결했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>ScienceIDE-Hard(PLUTO, Athena++, MITgcm, LAPS, PHANTOM 등 5개 코드베이스, 18개 환경, 85개 과제)에서 1시간 실행 예산 하에 15개 모델-하네스 조합을 비교한 결과, Fable 5.1이 67.1%로 가장 높은 성공률을 기록했고 Opus 5(64.6%), GPT-6 Astra(63.1%)가 뒤를 이었으며, 나머지 11개 모델은 40% 미만에 그쳤다. 예산-성능 곡선 분석에서는 Astra가 초반(10분)에는 앞서다가 약 31분 시점에 Fable에 역전당하는 등, 최종 성공률이 비슷해도 소요 시간과 비용 구조가 크게 다를 수 있음을 보였다(비용 대비 성공률 상관 -0.22, 출력량 대비 성공률 상관 0.01 수준으로 서로 다른 축임을 시사).</p>
+<p>SFT 실험에서는 GPT-5.6-sol이 생성한 검증된 시연 데이터(학습 4,567개, 검증 544개 세그먼트)로 Qwen3.5-4B/9B, Qwen2.5-72B-Instruct를 LoRA 파인튜닝한 결과, held-out 과학 코드 수리 보상이 상승했을 뿐 아니라(예: PLUTO-Particles-Dust 0.0→0.33), HumanEvalFix, QuixBugs, BBH, GSM8K 등 다양한 공개 벤치마크에서도 최대 30점 이상의 개선이 관찰되어 과학적 경험이 일반 능력으로 전이될 수 있음을 시사했다. RL 실험(LAPS, MITgcm-biogeo 환경, Qwen3.5-4B)에서는 예산 초과 마스킹을 적용한 결과 held-out 보상이 각각 0.357→0.857, 0.286→0.571로 상승했고, 동시에 예산 소진 비율도 크게 감소했다.</p>
+<h2>한계점</h2>
+<p>논문은 명시적인 한계 절에서 다음을 밝힌다: (1) 현재 증거는 주로 계산물리·지구과학 분야의 결함 수리·구현 과제에 국한되며, 개방형(open-ended) 과학 발견에는 아직 적용되지 않았다. (2) 팩토리가 생성한 변형 과제들이 코드 경로를 공유할 수 있어 과제 수가 곧 독립적인 과학적 커버리지를 의미하지는 않는다. (3) 검증은 선택된 관측량과 허용 오차에 대한 합의일 뿐이며, 그 범위 밖의 정답성은 보장하지 않고, 독립적 외부 감사나 보상 해킹에 대한 적대적 평가는 아직 이루어지지 않았다. (4) 사전학습 데이터에 공개 소스코드가 포함되었을 가능성을 완전히 배제하지 못해 오염 여부를 확정할 수 없다. (5) SFT 성능 향상은 선택된 공개 벤치마크에, RL 성능 향상은 힌트가 주어진 held-out 과제에 한정되며, 완전히 새로운 코드베이스로의 전이는 검증되지 않았다.</p>
+<h2>시사점</h2>
+<p>ScienceIDE는 과학 코드 저장소에 내재된 전문가 지식(테스트, 허용오차, 관행)을 재사용 가능한 실행 계약으로 명시화함으로써, 과학 소프트웨어를 에이전트 학습을 위한 대규모 데이터 소스로 전환할 수 있음을 보여준다. 특히 예산 소진을 실패로 잘못 벌점화하는 문제를 식별하고 완화한 부분은 장기 호라이즌 과학 RL 전반에 적용 가능한 실용적 시사점을 제공하며, 과학적 경험이 코드 수리 역량뿐 아니라 추론·지식 등 범용 능력 향상에도 기여할 수 있다는 결과는 "과학을 위한 AI(AI for Science)"와 "AI를 위한 과학(Science for AI)"이 상호 보완적으로 발전할 수 있는 구체적 인프라 사례를 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.19134" target="_blank" rel="noopener">huggingface.co/papers/2609.19134</a> · 2026-09-18</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

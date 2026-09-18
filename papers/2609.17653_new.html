@@ -1,0 +1,151 @@
+<meta charset="UTF-8">
+<title>반성</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#9 · Daily Papers 2026-09-19</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 11</span>
+    </div>
+    <h1 class="article-title">Reflect, Revise, Reuse: Training-Free Skill Evolution for GUI Agents</h1>
+    <p class="article-title-ko">반성, 수정, 재사용: GUI 에이전트를 위한 훈련 없는 스킬 진화</p>
+    <p class="article-sub">GUI 에이전트가 배포된 상태에서 추가 학습 없이 자신의 실행 실패를 스스로 반성(reflect)하고, 구조화된 스킬 패키지를 직접 수정(revise)하며, 검증된 스킬을 이후 유사 작업에 재사용(reuse)하도록 만드는 프레임워크 EvoSkill-GUI를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.17653" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.17653" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Reflect, Revise, Reuse: Training-Free Skill Evolution for GUI Agents</li>
+<li><strong>저자</strong>: Bofan Chen, Boxuan Zhang(공동 1저자) 외, Zhejiang University·UESTC 소속 연구진 (교신저자: Yongliang Shen)</li>
+<li><strong>출처</strong>: arXiv:2609.17653v1 [cs.LG] (2026-09-15)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/ZJU-REAL/EvoSkill-GUI">GitHub - ZJU-REAL/EvoSkill-GUI</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.17653">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>GUI 에이전트가 배포된 상태에서 추가 학습 없이 자신의 실행 실패를 스스로 반성(reflect)하고, 구조화된 스킬 패키지를 직접 수정(revise)하며, 검증된 스킬을 이후 유사 작업에 재사용(reuse)하도록 만드는 프레임워크 EvoSkill-GUI를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>GUI 에이전트는 팝업 발생, 로딩 지연, 위젯 위치 변경 등 실행 중에 화면 상태가 계속 바뀌는 비정상적(non-stationary) 환경에서 장기 과업(long-horizon task)을 수행해야 한다. 최근 등장한 "에이전트 스킬(agent-skill)" 방식은 재사용 가능한 절차적 지식을 캡슐화해 이런 문제를 완화하려 했지만, 기존 스킬 설계는 GUI 실행 환경의 동적 특성을 충분히 고려하지 않고 스킬을 배포 전에 만들어지는 정적인 산출물로만 취급한다는 한계가 있다.</p>
+<p>저자들은 기존 방식의 네 가지 근본적 한계를 지적한다.
+1. 스킬이 하나의 긴 문서(단일 파일)로 저장되어 계획, 위치 파악(localization), 복구 규칙이 뒤섞여 있어 표적화된(targeted) 수정이 어렵다.
+2. 인터페이스가 계속 변하기 때문에 특정 시점에는 유효했던 스킬이 팝업, 위젯 이동, 오래된 접근성 트리(accessibility tree) 등으로 인해 실패하며, 이런 반복적 실패 루프가 실제 배포 환경에서 타임아웃의 상당 부분을 차지한다.
+3. 외부의 별도 반성(reflection) 모델을 사용하면 추가 비용과 지연이 발생하고, 반성과 스킬 수정 사이의 결합이 느슨해져 완전한 자기진화(self-evolution)라 보기 어렵다.
+4. 잘못된 선택자(selector), 누락된 예외 처리, 필요한 되돌리기(backtrack) 등에 관한 교훈이 개별 실행 궤적(trajectory) 안에 갇혀 다른 과업에 재사용되지 못하고 축적되지 않는다.</p>
+<p>이에 저자들은 "GUI 에이전트에게 필요한 것은 더 나은 정적 스킬이 아니라, 배포 시점에 실행 피드백으로부터 추가 학습 없이 수정될 수 있는 스킬"이라는 문제의식을 제시한다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li><strong>훈련 없는(Training-free) 자기진화 프레임워크 EvoSkill-GUI</strong>: 정보 격리(information isolation)된 반성과 도구 제약(tool-restricted) 편집을 통해, GUI 에이전트가 추론(inference) 단계에서 스스로 스킬 패키지를 구성·검색·실행·수정하도록 한다.</li>
+<li><strong>GUI 특화 구조화된 다중 파일 스킬 패키지</strong>: 검색용 메타데이터, 실행 계획, 백업 위치 파악, 복구 규칙, 접근성 유틸리티, 실패 사례를 각각 분리된 파일로 저장하여 배포 시점에 재사용과 수정이 모두 가능하도록 설계했다.</li>
+<li><strong>세 벤치마크 전반의 일관된 성능 향상</strong>: MobileWorld, AndroidWorld, OSWorld에서 여러 백본 모델에 대해 각각 최대 +16.2%, +6.0%, +10.5%의 성공률 향상을 달성했다.</li>
+</ol>
+<h2>방법론</h2>
+<p>문제는 부분 관측 마르코프 결정 과정(POMDP)으로 정식화되며, 에이전트 정책은 화면 관측(스크린샷+접근성 트리)과 이력뿐 아니라 스킬 패키지 S를 조건으로 행동을 선택한다. 목표는 여러 관련 과업에 대한 기대 성공률을 최대화하는 재사용 가능한 스킬 패키지 S*를 얻는 것이다.</p>
+<p><strong>스킬 패키지 구조</strong>: 각 스킬은 하나의 프롬프트가 아니라 (D, A, P, B, C, F)로 이루어진 구조화된 패키지다.
+- D: 검색용 메타데이터 (의도, 앱, 플랫폼, 키워드, 인자, 사용 이력, 검증 상태)
+- A: 접근성 트리 관련 유틸리티
+- P (plan.md): 실행 계획
+- B (backup.md): 백업 위치 파악·인식 전략
+- C (recover.md): 실패 복구 규칙
+- F (failure_examples/): 실패 사례 모음</p>
+<p>에이전트는 read/write/append/list/search/create_failure로 구성된 제한된 도구 인터페이스를 통해서만 이 파일들을 조회·수정할 수 있어, 스킬 스키마를 벗어난 임의 수정을 방지한다. 읽기 전용 접근성 도구는 관찰만 보강하고 스킬은 변경하지 않아, 인터페이스 이해와 스킬 수정을 도구 수준에서 분리한다.</p>
+<p><strong>반성-수정(Reflect-Revise) 루프</strong>는 세 단계를 반복한다.
+1. <em>롤아웃과 즉시 수정(in-rollout revision)</em>: 실행기(executor)가 현재 스킬로 환경에서 롤아웃을 수행하며, 피드백이 현재 계획과 모순되면 도구를 호출해 즉시 국소적으로 수정한다(예: 위젯 위치 변경이나 예상치 못한 팝업 대응).
+2. <em>격리된 반성(reflection)</em>: 롤아웃이 끝나면 동일한 백본 모델이 별도 세션에서 "격리된 비평가(isolated critic)" 역할을 수행해 실패 지점, 직접 원인, 실행 가능한 수정 제안을 담은 구조화된 피드백을 생성한다. 비평가의 정보 접근 범위는 실제 실행된 궤적(지시문, 관측, 행동)으로만 엄격히 제한되며, 스킬 원본이나 실행기의 사고 과정(CoT), 정답(ground truth)에는 접근할 수 없다(정보 격리). 이는 비평가가 배포된 에이전트가 가질 수 없는 특권 정보에 의존하지 못하게 막기 위함이다.
+3. <em>수정(revision)</em>: 실행기가 비평가 피드백과 롤아웃 스냅샷을 바탕으로 스킬 파일을 갱신한다. 실패 시에는 create_failure 도구로 실패 사례를 F에 추가한다. 루프는 과업 성공 또는 최대 수정 횟수(2회) 도달 시 종료된다.</p>
+<p><strong>스킬 검색 및 재사용</strong>: 새로운 과업이 들어오면 스킬의 전체 본문이 아니라 구조화된 메타데이터로 후보를 채점한다. 어휘 중복도(lexical overlap)와 자카드 유사도를 결합한 기본 점수에 앱·키워드 일치 보너스를 더하고 개념 불일치 페널티를 뺀 최종 점수를 산출한다. 최고 점수가 임계값(θr=0.6)을 넘으면 해당 스킬을 재사용하고, 그렇지 않으면 새 스킬을 처음부터 생성한다. 새로 생성된 스킬은 성공적으로 실행되거나 자기진화 루프를 거쳐 검증된 뒤에야 라이브러리에 등록된다.</p>
+<h2>실험 설정 및 결과</h2>
+<p><strong>벤치마크</strong>: 모바일·데스크톱을 아우르는 AndroidWorld(116개 과업, 20개 실제 앱), MobileWorld(GUI-only 설정으로 평가한 더 어려운 장기·크로스앱 워크플로 벤치마크), OSWorld(Ubuntu/Windows/macOS를 아우르는 실제 컴퓨터 환경) 세 가지를 사용했다.</p>
+<p><strong>모델</strong>: 범용 모델(Claude-Sonnet-4.6, Qwen3.6-Plus, Qwen3.6-35B-A3B)과 GUI 특화 모델(GUI-Owl-1.5-8B, MAI-UI-8B)을 모두 백본으로 사용해 범용성을 검증했다. 각 과업은 최대 50스텝, 실패 후 최대 2라운드의 스킬 수정이 허용됐다.</p>
+<p><strong>주요 결과</strong>:
+- MobileWorld(GUI-only)에서 Claude-Sonnet-4.6은 57.1%→67.6%, Qwen3.6-Plus는 53.3%→69.5%, Qwen3.6-35B-A3B는 32.4%→44.8%, MAI-UI-8B는 29.5%→37.1%로 모든 백본에서 일관된 향상을 보였다.
+- AndroidWorld에서는 seed 30 기준 +2.6%, seed 42 기준 +6.0% 향상됐다.
+- OSWorld에서는 GUI-Owl-1.5-8B가 46.7%→54.8%(+8.1, Thunderbird +20.0, VLC +42.7 등), Qwen3-VL-8B-Instruct가 23.8%→34.3%(+10.5)로 데스크톱 환경에서도 효과가 확인됐다.</p>
+<p><strong>분석/소거 실험(ablation)</strong>:
+- 단일 파일 스킬(66.67%) 대비 구조화된 다중 파일 패키지(69.52%)가 더 우수했다(+2.85).
+- 즉시(in-rollout) 수정을 제거하면 69.52%→62.86%(-6.66)로 하락해, 실행 도중의 국소 수정이 실패 연쇄를 막는 데 중요함을 보였다.
+- 정보 격리를 제거하면 69.52%→60.95%(-8.57)로 하락해, 비평가의 특권 정보 접근 차단이 반성 품질에 중요함을 확인했다.
+- 메타데이터 기반 검색은 전문 검색(full-text) 대비 12개 재사용 사례 전부(12/12)에서 올바른 스킬을 찾아낸 반면, 전문 검색은 1/12에 그쳤다(평균 점수 0.88 대 0.41).
+- 검색 임계값은 0.6이 최적이었으며(0.4에서는 과도한 재사용으로 55.2%, 0.8에서는 과도하게 보수적이라 66.7%로 하락).
+- 실패 유형별 수정 효과 분석에서는 계획 오류(plan.md 수정)가 69.6%(16/23)로 가장 잘 복구되었고, 위치 파악 오류(backup.md)는 50.0%(6/12), 예외 상황 누락(recover.md)은 25.0%(1/4)로 복구가 더 어려웠다.
+- AndroidWorld의 116+116 과업 스트림 실험에서는 스킬 라이브러리가 9개→98개로 성장하며 재사용 비율이 56.1%까지 높아졌고, 재사용된 스킬도 89건의 초기 실패 중 27건(재사용 스킬만으로는 65건 중 19건)을 성공으로 회복시켰다 — 즉 진화된 스킬 라이브러리는 매번 처음부터 재구축되는 것이 아니라 계속 누적·재사용된다.
+- 동일한 토큰 예산 하에서 3회 반복 샘플링(pass@3, 62.8%, 103.00M 토큰)보다 3라운드 EvoSkill-GUI(69.5%, 94.75M 토큰)가 더 적은 비용으로 더 높은 성능을 냈다.
+- 성능 향상은 대략 3라운드에서 포화되는 경향을 보였다(Qwen3.6-Plus 기준 5라운드까지 확장 시 처음 3라운드에서 +12.4점, 이후 2라운드에서는 +0.9점에 그침).</p>
+<h2>한계점</h2>
+<ul>
+<li>스킬 진단과 수정 품질이 전적으로 백본 모델의 지각(perception) 및 궤적 진단 능력에 의존하므로, 백본이 화면이나 궤적을 잘못 해석하면 수정이 실패 원인을 제대로 포착하지 못하고 오히려 이미 검증된 스킬 패키지에 퇴행(regression)을 유발할 수 있다.</li>
+<li>도구 제약 인터페이스와 정보 격리 비평가가 이 위험을 줄이지만, 유해한 스킬 수정을 거부하는 공식적인 검증기(verifier)는 아직 없다.</li>
+<li>평가가 세 가지 대표 GUI 벤치마크에 한정되어 있어, 실제 배포 환경에서 더 빈번한 인터페이스 변경, 개인화된 설정, 네트워크 지연, 프라이버시 민감 상태 등은 충분히 반영하지 못했다.</li>
+<li>AndroidWorld에서 관찰된 재사용률은 동일 과업 계열의 매개변수화된 변형(variant)들 사이에서 측정된 것으로, 완전히 새로운 앱 범주로의 전이 성능은 이보다 낮을 수 있다.</li>
+<li>실패한 롤아웃마다 비평가 호출 1회와 수정 호출 1회의 추가 추론 비용이 발생하며, 이는 재학습·미세조정 대비 미미하지만 지연시간에 민감한 배포 환경에서는 재사용을 통해 상쇄되어야 한다.</li>
+</ul>
+<h2>시사점</h2>
+<p>이 논문은 GUI 에이전트의 "스킬"을 배포 전에 고정되는 정적 산출물이 아니라, 실행 중 피드백을 받아 스스로 개선되는 살아있는 절차적 지식으로 재정의한다. 이러한 구조화·모듈화된 스킬 표현(계획/위치/복구/실패사례 분리)과 정보 격리된 자기비평 방식은 추가 학습이나 파라미터 갱신 없이도 상용 API 기반 모델(Claude, Qwen 등)과 오픈 웨이트 GUI 특화 모델 모두에 적용 가능하다는 점에서 실용적 가치가 크며, 코드형 에이전트나 웹 에이전트 등 다른 장기 과업 도메인의 스킬 진화 설계에도 참고할 만한 일반적인 패턴(구조화 패키지 + 반성-수정-재사용 루프 + 메타데이터 검색)을 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.17653" target="_blank" rel="noopener">huggingface.co/papers/2609.17653</a> · 2026-09-19</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

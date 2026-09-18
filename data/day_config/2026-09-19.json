@@ -1,0 +1,110 @@
+{
+  "2609.19969": {
+    "base": "2609_딥시크플래시_KV캐시-압축의-한계-돌파",
+    "rank": "#1",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "56",
+    "en_title": "DeepSeek-V4.1-Flash: Pushing the Limits of KV Cache Compression",
+    "ko_title": "DeepSeek-V4.1-Flash: KV 캐시 압축의 한계를 넘어서"
+  },
+  "2609.20519": {
+    "base": "2609_솔파이_리서치루프-스케일링-효율적-에이전트-하네스",
+    "rank": "#2",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "45",
+    "en_title": "SoL-Pi: Recursively Scaling Auto-Research Loops for Efficient Agent Harness",
+    "ko_title": "SoL-Pi: 효율적인 에이전트 하네스를 위한 자동 연구 루프의 재귀적 스케일링"
+  },
+  "2609.20804": {
+    "base": "2609_하네스해부_코딩에이전트-하네스-설계-실증연구",
+    "rank": "#3",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "37",
+    "en_title": "An Empirical Study of Harness Design for Coding Agents",
+    "ko_title": "코딩 에이전트를 위한 하네스(harness) 설계에 대한 실증적 연구"
+  },
+  "2609.20511": {
+    "base": "2609_이오에스불일치_EOS토큰-불일치와-길이-인플레이션",
+    "rank": "#4",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "28",
+    "en_title": "When EOS Tokens Disagree: Understanding Length Inflation in On-Policy Distillation",
+    "ko_title": "EOS 토큰이 어긋날 때: On-Policy Distillation에서의 길이 인플레이션 이해하기"
+  },
+  "2609.20800": {
+    "base": "2609_제파애니띵_다양한-세계를-아우르는-예측모델-학습",
+    "rank": "#5",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "23",
+    "en_title": "JEPA-Anything: Learning Predictive Models across Different Worlds",
+    "ko_title": "JEPA-Anything: 서로 다른 세계를 아우르는 예측 모델 학습"
+  },
+  "2609.16900": {
+    "base": "2609_리스크체인벤치_난독화-메시지-복원-웹조사-벤치마크",
+    "rank": "#6",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "16",
+    "en_title": "RiskChainBench: A Benchmark for Obfuscated Platform Message Restoration and Evidence-Grounded Web Investigation",
+    "ko_title": "RiskChainBench: 난독화된 플랫폼 메시지 복원과 증거 기반 웹 조사를 위한 벤치마크"
+  },
+  "2609.20784": {
+    "base": "2609_셀프은퇴_스스로-은퇴하는-온폴리시-증류",
+    "rank": "#7",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "15",
+    "en_title": "RetireOPD: Self-Retiring On-Policy Distillation for Agentic Reinforcement Learning",
+    "ko_title": "RetireOPD: 에이전트 강화학습을 위한 자가 은퇴형 온폴리시 증류(Self-Retiring On-Policy Distillation)"
+  },
+  "2609.17496": {
+    "base": "2609_소셜추론검증_LLM-어시스턴트-사회적추론-검증-프레임워크",
+    "rank": "#8",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "13",
+    "en_title": "Verifiable Social Reasoning for LLM Assistants",
+    "ko_title": "LLM 어시스턴트를 위한 검증 가능한 사회적 추론"
+  },
+  "2609.17653": {
+    "base": "2609_에보스킬_훈련없이-진화하는-GUI-에이전트-스킬",
+    "rank": "#9",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "11",
+    "en_title": "Reflect, Revise, Reuse: Training-Free Skill Evolution for GUI Agents",
+    "ko_title": "반성, 수정, 재사용: GUI 에이전트를 위한 훈련 없는 스킬 진화"
+  },
+  "2609.20423": {
+    "base": "2609_위비스닥_문서파싱-포괄성에서-역량으로",
+    "rank": "#10",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "8",
+    "en_title": "WeVisDoc: From Coverage to Capability for Robust End-to-End Document Parsing",
+    "ko_title": "WeVisDoc: 강건한 End-to-End 문서 파싱을 위한 커버리지에서 역량으로의 전환"
+  },
+  "2609.19656": {
+    "base": "2609_셀프인덱스_자가진화-검색-인덱스",
+    "rank": "#11",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "7",
+    "en_title": "Self-Evolving Search Index",
+    "ko_title": "자가 진화형 검색 인덱스"
+  },
+  "2609.19554": {
+    "base": "2609_VA벤치_체화-공간지능-능동관측-벤치마크",
+    "rank": "#12",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "7",
+    "en_title": "VABench: Measuring Embodied Spatial Intelligence through Visual Demonstrations, Active Perception, and Metric Control",
+    "ko_title": "VABench: 시각적 시연, 능동적 지각, 정밀 제어를 통한 체화 공간지능 측정"
+  }
+}

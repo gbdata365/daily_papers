@@ -1,0 +1,123 @@
+<meta charset="UTF-8">
+<title>RetireOPD</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#7 · Daily Papers 2026-09-19</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 15</span>
+    </div>
+    <h1 class="article-title">RetireOPD: Self-Retiring On-Policy Distillation for Agentic Reinforcement Learning</h1>
+    <p class="article-title-ko">RetireOPD: 에이전트 강화학습을 위한 자가 은퇴형 온폴리시 증류(Self-Retiring On-Policy Distillation)</p>
+    <p class="article-sub">멀티턴 에이전트 강화학습에서, 특권 정보를 가진 "교사" 모델을 먼저 환경 보상으로 제대로 학습시킨 뒤, 학생 모델이 GRPO와 온폴리시 증류(OPD)를 함께 학습하다가 교사-학생 격차가 더 이상 줄지 않고 학생 성능이 교사 대비 충분히 올라오면 교사를 스스로 "은퇴"시켜 순수 RL로 전환하는 RetireOPD를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.20784" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.20784" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: RetireOPD: Self-Retiring On-Policy Distillation for Agentic Reinforcement Learning</li>
+<li><strong>저자</strong>: Yan Yu, Zhengxi Lu, Yizhou Liu, Yichen Pan, Aozhe Wang, Qipeng Chen, Wenqi Zhang, Weiming Lu, Yongliang Shen(교신저자) (Zhejiang University), Hua Yang, Qianglong Chen (Alibaba Group)</li>
+<li><strong>출처</strong>: arXiv:2609.20784v1 [cs.CL] (2026-09-17)</li>
+<li><strong>프로젝트 페이지</strong>: 코드 저장소 <a href="https://github.com/ZJU-REAL/SDAR">github.com/ZJU-REAL/SDAR</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.20784">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>멀티턴 에이전트 강화학습에서, 특권 정보를 가진 "교사" 모델을 먼저 환경 보상으로 제대로 학습시킨 뒤, 학생 모델이 GRPO와 온폴리시 증류(OPD)를 함께 학습하다가 교사-학생 격차가 더 이상 줄지 않고 학생 성능이 교사 대비 충분히 올라오면 교사를 스스로 "은퇴"시켜 순수 RL로 전환하는 RetireOPD를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>멀티턴 에이전트 강화학습(RLVR)은 하나의 긴 상호작용 궤적 전체에 스칼라 보상 하나만 주어지기 때문에 중간 결정 단계에 대한 학습 신호가 부족하다. 이를 보완하기 위해 온폴리시 증류(OPD)는 학생이 직접 생성한 궤적 위에서, 검색된 스킬 등 특권 정보를 가진 "교사"가 토큰 단위의 조밀한 지도 신호를 제공하고, 학생은 이를 내재화해 추론 시에는 특권 정보 없이도 동작하도록 학습된다.</p>
+<p>이 접근은 두 가지 암묵적 가정에 의존한다. 첫째, 특권 정보를 가진 교사는 항상 학생보다 낫다는 가정, 둘째, 교사 지도는 학습 기간 내내 유용하다는 가정이다. 저자들은 ALFWorld와 WebShop 실험을 통해 두 가정이 모두 성립하지 않음을 보인다. 우선, 교사와 학생이 하나의 정책을 공유하는 기존 방식(GRPO+OPSD)에서는 스킬-조건부 브랜치가 학생보다 꾸준히 우세하지 않았다. 공유 파라미터가 주로 스킬 없는 학생의 목적함수로 최적화되기 때문인데, 모델 크기를 키워도 마찬가지여서 7B 모델조차 스킬을 프롬프트로만 주면 ALFWorld에서 23.4%의 낮은 성공률에 그쳤다. 즉 교사는 특권 정보를 실제로 유용한 행동으로 바꾸도록 별도로 학습되어야 한다.</p>
+<p>또한 GRPO와 OPD를 함께 쓰면 학습 초반에는 교사-학생 격차가 줄어들지만, 학생이 스킬이 유도하는 행동을 충분히 내재화한 이후에는 격차가 다시 벌어진다. 이는 보상 최적화 방향과 교사 모방 방향이 국소적으로 서로 상충하는 국면에 들어섰음을 뜻하며, 이 시점 이후에도 계속 교사를 따라가게 하면 학생 성능이 교사 수준에 묶이는 "천장 효과"가 나타난다. 기존 연구들은 이 전환 시점을 distillation 가중치를 사전에 정한 스케줄로 감쇠시키거나 정해진 스텝에서 distillation을 RL로 전환하는 방식으로 처리했지만, 실제 최적 전환 시점은 모델·과제에 따라 스텝 50~90까지 크게 달라져 고정 스케줄은 항상 너무 이르거나 늦게 작동한다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>특권 정보 기반 증류의 두 가지 실패 모드를 규명했다. (a) 최적화되지 않은 스킬-조건부 교사는 신뢰할 수 없고, (b) 학생이 교사의 지식을 내재화한 이후에는 교사 모방이 보상 최적화와 상충한다.</li>
+<li>RetireOPD를 제안했다. 동일 용량의 스킬-조건부 교사를 환경 보상으로 별도 학습시키고, 교사-학생 로그확률 격차가 더 이상 줄지 않으면서 학생 성공률이 교사 대비 일정 비율(임계값)에 도달하는 시점을 학습 신호로부터 온라인으로 판단해 교사를 은퇴시키는 "Adaptive Retirement" 메커니즘을 도입했다.</li>
+<li>Qwen2.5 1.5B/3B/7B, ALFWorld·WebShop 두 벤치마크에 걸쳐 RL·증류·하이브리드 베이스라인을 모두 능가하고, 자기 자신의 스킬-조건부 교사 성능까지 뛰어넘음을 실험적으로 검증했다.</li>
+</ol>
+<h2>방법론</h2>
+<p>RetireOPD는 세 단계로 구성된다.</p>
+<p><strong>1) 특권 교사 구성</strong>: 학생과 동일한 아키텍처·초기화를 가진 교사 정책을 스킬 컨텍스트(c+) 조건 하에서 GRPO로 학습시켜 "숙련된 교사(skilled teacher)"를 만든다. 학습 후 이 교사는 고정(freeze)되어 이후 학생에게 지도 신호만 제공한다.</p>
+<p><strong>2) 결합 GRPO-OPD 학습</strong>: 스킬 정보가 없는 학생은 자신이 생성한 궤적 위에서 (i) 그룹 상대 이점(advantage)에 기반한 GRPO 손실과 (ii) 학생-교사 분포 간 역-KL divergence를 줄이는 OPD 손실을 동시에 학습한다(전체 손실 = L_GRPO + λ·L_OPD). 전체 어휘에 대한 KL 계산 비용을 피하기 위해, 학생이 실제로 샘플링한 토큰에 대해 교사와 학생의 로그확률 차이(Δt = log π_교사 − log π_학생)를 계산하는 몬테카를로 근사를 사용한다.</p>
+<p><strong>3) 적응적 교사 은퇴</strong>: 학습을 일정 크기(W 스텝)의 모니터링 윈도우로 나누고, 윈도우마다 두 가지 지표를 계산한다. 하나는 앞서 정의한 로그확률 격차의 평균(K̄m)이 이전 윈도우 대비 얼마나 변했는지를 나타내는 "정렬 진행도 변화율" ρm이고, 다른 하나는 학생 성공률이 교사 성공률 대비 어느 정도인지를 나타내는 "상대적 역량" ηm이다. ρm이 임계값 δ 이상(격차 감소가 정체되거나 역전)이 되고 동시에 ηm이 임계값 γ 이상(학생이 교사 대비 충분한 성능에 도달)이 되는 첫 시점에서 OPD 손실을 제거하고, 이후에는 GRPO만으로 학습을 계속한다. 부록의 1차 근사 분석은 격차가 정체되는 현상이 곧 GRPO 그래디언트와 OPD 그래디언트가 국소적으로 상충함을 뜻함을 이론적으로 뒷받침한다.</p>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li><strong>벤치마크</strong>: 가정용 로봇 과제를 다루는 텍스트 기반 환경 ALFWorld(Pick/Look/Clean/Heat/Cool/Pick2 등 하위 과제 포함)와 온라인 쇼핑 시뮬레이션 WebShop.</li>
+<li><strong>모델 및 설정</strong>: Qwen2.5-1.5B/3B/7B-Instruct. 학생과 교사는 동일 아키텍처에서 출발하며, 스킬 정보는 SkillRL의 SkillBank를 키워드 매칭으로 검색해 사용. 은퇴 판단은 5스텝마다 수행, 경쟁력 임계값 γ=0.9, 격차 정체 임계값 δ=0, distillation 계수 λ=0.01, 총 학습 스텝 150.</li>
+<li><strong>비교 대상</strong>: 학습이 없는 방법(Vanilla, Skill-Prompt), RL 계열(GRPO, GiGPO, PPO, RLOO, Skill-GRPO), 순수 증류(OPD, OPSD), 하이브리드(GRPO+OPD, GRPO+OPSD).</li>
+<li><strong>주요 결과</strong>: RetireOPD는 세 모델 규모 모두에서 최고 성능을 달성했다. ALFWorld 성공률은 GRPO 대비 +14.1~+18.8%p 향상(예: 3B 모델 75.0%→93.8%), WebShop 정확도는 GRPO 대비 +11.8~+19.0%p 향상(예: 1.5B 모델 56.8%→75.8%)했다. 또한 세 모델 규모 모두에서 자신의 스킬-조건부 교사 성능을 능가했다(예: 3B에서 교사 79.7% vs. RetireOPD 93.8%).</li>
+<li><strong>학습 동역학 분석</strong>: GRPO+OPD를 계속 유지하면 성능이 정체되고 교사-학생 격차는 계속 벌어졌다. 은퇴 시점 이후에도 OPD로 계속 맞추면 성능이 오히려 정체되거나 저하된 반면, 그 시점에서 GRPO만으로 전환하면 성공률이 76.6%에서 93.8%까지 꾸준히 향상되었다.</li>
+<li><strong>절제 연구</strong>: 교사를 환경 보상으로 사전 최적화하지 않고 단순 프롬프트만 사용하면 성능이 크게 낮아졌다(3B 28.9%, 7B 23.4%). 은퇴 판단에 쓰이는 두 신호(정렬 정체 ρ, 상대적 역량 η) 중 하나만 사용하면 89.0%에 그쳤고, 둘을 결합해야 92.2%로 최고 성능을 냈다. 임계값 γ, δ를 넓은 범위에서 바꿔도 성공률은 89.1~92.2%로 비교적 안정적이어서 임계값에 민감하지 않은 강건성을 보였다. 사전에 정해둔 선형 어닐링 방식(ATOD)과 비교했을 때, 적응적 은퇴는 초반 이득을 유지하면서도 후반까지 지속적으로 성능이 향상되는 반면 선형 어닐링은 초반 이후 정체되었다.</li>
+</ul>
+<h2>한계점</h2>
+<p>논문에 명시되지 않음. 다만 본문 내용으로 미루어 볼 때, 검증 환경이 ALFWorld·WebShop 두 종류에 한정되어 있는 점, 스킬 뱅크와 키워드 매칭 기반의 특권 정보 추출 방식에 의존한다는 점, 그리고 은퇴 임계값 γ·δ를 여전히 사전에 설정해야 한다는 점(민감도는 낮지만 완전히 자동화되지는 않음) 등이 확장성 측면의 잠재적 한계로 보인다.</p>
+<h2>시사점</h2>
+<p>교사-학생 구조의 증류 기법에서 "교사를 얼마나 오래, 언제까지 신뢰할 것인가"를 사전에 정한 스케줄이 아니라 학습 신호(교사-학생 격차의 정체 여부, 학생의 상대적 역량) 자체로부터 온라인으로 판단할 수 있음을 보여준 사례로, 에이전트형 RL뿐 아니라 다른 온폴리시 증류·하이브리드 RL-증류 파이프라인 설계에도 일반화될 수 있는 원칙을 제시한다. 또한 특권 정보를 가진 교사라 하더라도 그 정보를 실제 행동으로 전환하도록 별도로 최적화하지 않으면 신뢰할 수 없다는 발견은, 향후 self-distillation 계열 연구에서 교사 신뢰성 검증의 중요성을 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.20784" target="_blank" rel="noopener">huggingface.co/papers/2609.20784</a> · 2026-09-19</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

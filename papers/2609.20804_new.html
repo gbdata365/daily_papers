@@ -1,0 +1,129 @@
+<meta charset="UTF-8">
+<title>코딩 에이전트를 위한 하네스(harness) 설계에 대한 실증적 연구</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#3 · Daily Papers 2026-09-19</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 37</span>
+    </div>
+    <h1 class="article-title">An Empirical Study of Harness Design for Coding Agents</h1>
+    <p class="article-title-ko">코딩 에이전트를 위한 하네스(harness) 설계에 대한 실증적 연구</p>
+    <p class="article-sub">코딩 에이전트를 감싸는 "하네스(harness)"의 세 가지 핵심 구성요소(플래닝, 액션 공간, 컨텍스트 관리)를 독립적으로 떼어내 176가지 조합으로 실증 비교한 결과, 각 구성요소의 효과가 고정된 정답이 아니라 모델 역량·컨텍스트 예산·작업 유형에 따라 달라지는 "조건부 효과"임을 보였다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.20804" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.20804" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: An Empirical Study of Harness Design for Coding Agents</li>
+<li><strong>저자</strong>: Run-Ze Fan (UMass Amherst), Zihao Zhang (Emory University), Simin Ma, Yebowen Hu, Kaiqiang Song, Xiaoyang Wang, Shouju Wang (UNC Charlotte), Fei Liu (Emory University), Hamed Zamani (UMass Amherst) 등 — Zoom Video Communications 인턴십 기간 수행된 연구</li>
+<li><strong>출처</strong>: arXiv:2609.20804v1 [cs.AI] (2026년 9월 17일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.20804">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>코딩 에이전트를 감싸는 "하네스(harness)"의 세 가지 핵심 구성요소(플래닝, 액션 공간, 컨텍스트 관리)를 독립적으로 떼어내 176가지 조합으로 실증 비교한 결과, 각 구성요소의 효과가 고정된 정답이 아니라 모델 역량·컨텍스트 예산·작업 유형에 따라 달라지는 "조건부 효과"임을 보였다.</p>
+<h2>배경 및 문제의식</h2>
+<p>LLM이 GitHub 이슈 해결이나 터미널 작업 수행 같은 실제 소프트웨어 엔지니어링 작업을 자율적으로 수행할 때, 모델은 단독으로 동작하지 않고 "코딩 하네스"라는 소프트웨어 계층 위에서 동작한다. 하네스는 (1) 작업 진행 상황을 유지하는 플래닝 스캐폴드, (2) 모델의 의도를 실행 가능한 명령으로 바꾸는 액션 인터페이스, (3) 유한한 컨텍스트 창 안에서 어떤 대화 이력을 남길지 정하는 컨텍스트 관리 정책으로 구성된다. 기존 연구들은 SWE-Agent, OpenHands 같은 하네스를 통째로 비교해왔는데, 이런 시스템 단위 비교는 여러 메커니즘이 뒤섞여 있어 성능 차이가 플래닝 때문인지, 툴 설계 때문인지, 컨텍스트 관리 때문인지, 혹은 특정 모델과의 상호작용 때문인지 구분할 수 없다는 한계가 있다. 저자들은 "하네스 구성요소가 범용적으로 유용한가, 아니면 모델 역량·작업 유형·자원 예산에 따라 효과가 달라지는가"라는 질문을 던진다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>실행 루프(ReAct 방식)는 고정한 채 플래닝, 액션 공간, 컨텍스트 관리 세 요소만 독립적으로 조절할 수 있는 경량 모듈형 하네스를 처음부터 직접 구축했다.</li>
+<li>4개 모델(Nemotron-3 30B/120B/550B, Mistral-Medium-3.5-128B) × 2개 벤치마크(SWE-Bench Verified, Terminal-Bench 2.1) × 176개 세부 실험 설정이라는 대규모 통제 비교를 수행했다.</li>
+<li>컨텍스트 관리, 플래닝, 액션 공간 각각에 대해 "언제, 어떤 모델에서, 왜" 효과가 나타나거나 사라지는지를 궤적(trajectory) 단위 행동 분석으로 규명했다.</li>
+<li>향후 하네스 구성요소를 평가할 수 있는 모듈형 실험 프레임워크를 제공했다.</li>
+</ul>
+<h2>방법론</h2>
+<p>하네스는 매 턴마다 추론(reasoning)-행동(action)-관찰(observation)을 반복하는 ReAct 루프를 따르며, 워크스페이스 가드·수정 전 읽기 검사·후속 편집 진단(ruff/pyflakes)·반복 행동 감지 같은 부가 장치는 모든 조건에서 동일하게 고정했다.
+- <strong>플래닝</strong>: 활성화 시 모델이 <code>update_plan</code> 툴로 작업 계획을 유지·갱신하며, 이 계획은 대화 이력에 누적 저장되지 않고 매 턴 입력에 주입된다. 비활성화 시 관련 지시문·툴을 모두 제거한다.
+- <strong>액션 공간</strong>: 기본 설정은 <code>read_file</code>, <code>write_file</code>, <code>edit_file</code>, <code>list_files</code>, <code>glob_files</code>, <code>grep_text</code>, <code>web_fetch</code>, <code>bash</code> 등 타입이 명시된 8종의 사전 정의 툴을 제공한다. 대조군인 "bash-only" 설정은 파일/검색/웹 전용 툴을 모두 제거하고 <code>bash</code>만 남긴다.
+- <strong>컨텍스트 관리</strong>: elision(오래된 툴 출력을 짧은 스텁으로 대체, M1), recall(제거된 내용을 외부 저장소에 보관해 <code>recall_event</code>로 복구 가능하게 함, M2), summarization(오래된 이력을 LLM으로 요약, M3) 세 메커니즘을 조합해 T0(관리 없음)부터 T4(연성 임계값에서 elision, 경성 임계값에서 summarization을 순차 적용하는 완전판)까지 5단계 정책을 정의했다.</p>
+<p>실험은 32k/64k/96k/128k 네 가지 컨텍스트 창 예산에서 T0~T4를 비교(모델·벤치마크당 20개 설정)하고, T4/128k 기준에서 플래닝 on/off, 툴셋 all/bash-only를 각각 추가 비교(2개 설정)해 총 22개 설정 × 4모델 × 2벤치마크 = 176개 설정을 구성했다. 성공률은 페어링된 McNemar 검정과 Benjamini-Hochberg 보정(q&lt;0.05)으로 통계적 유의성을 판단했으며, 궤적은 LLM judge가 Localize/Reproduce/Fix/Verify 등 단계로 라벨링해 행동 패턴을 분석했다.</p>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li><strong>컨텍스트 관리의 가치는 예산이 빠듯할수록 커진다</strong>: 관리(T1~T4)와 무관리(T0)의 성공률 격차는 컨텍스트 창이 32k→128k로 늘어남에 따라 SWE-Bench에서 35.7%p→2.7%p로, Terminal-Bench에서 9.5%p→2.8%p로 급격히 줄었다. T0의 컨텍스트 오버플로 실패율도 78.7%→8.7%(SWE-Bench), 61.0%→12.1%(Terminal-Bench)로 감소해, 컨텍스트 관리의 효용 대부분이 "창 초과로 인한 조기 종료 방지"에서 나온다는 점을 보였다.</li>
+<li><strong>T4(elision 선행 + 요약 후행)가 가장 효율적</strong>: T4는 T1~T3와 비슷한 성공률을 유지하면서 8개 모델-벤치마크 조합 중 7개에서 가장 낮은 비용을 기록했다. Elision을 먼저 적용해 비용이 큰 LLM 요약 호출 빈도를 줄인 것이 원인으로 분석됐다.</li>
+<li><strong>Recall(M2)은 거의 쓰이지 않는다</strong>: T2(elision+recall) 설정 중 56.3%가 <code>recall_event</code>를 한 번도 호출하지 않았고, T1(elision만) 대비 정확도 개선도 없었다(평균 차이 -0.36%p). 되돌릴 수 있게 만드는 장치가 실제로는 잘 활용되지 않는다는 뜻이다.</li>
+<li><strong>플래닝은 약한 모델에는 정확도 보조, 강한 모델에는 비용 절감 수단</strong>: 가장 작은 Nemotron-3 30B는 플래닝으로 SWE-Bench 성공률이 11.6%p 상승(비용 증가 동반)했지만, Nemotron-3 550B와 Mistral-Medium-3.5는 플래닝이 사후 검증(verification) 반복을 줄여 비용을 각각 약 30%, 32% 절감하면서 성공률은 소폭(2.0%p, 0.4%p) 하락했다. 궤적 분석 결과, 플래닝은 약한 모델의 경우 편집 시도 전 조기 종료를 막아 실행을 지속시키고, 강한 모델의 경우 불필요한 재검증 턴을 줄이는 방식으로 작동했다.</li>
+<li><strong>사전 정의 툴 vs bash-only</strong>: bash 활용도가 낮은 Nemotron-3 30B는 사전 정의 툴셋에서 성공률이 크게 상승(SWE-Bench +15.0%p)한 반면, bash 구사력이 좋은 Nemotron-3 550B는 bash-only가 성공률을 높이면서 비용을 최대 53% 절감했다. Mistral-Medium-3.5는 작업 유형에 따라 엇갈려, 셸 중심적인 Terminal-Bench에서는 bash-only가 유리했지만 SWE-Bench에서는 전체 툴셋이 더 나았다.</li>
+<li><strong>궤적 분석</strong>: 컨텍스트 관리는 행동 패턴 자체를 바꾸지 않고 실행 궤적 길이만 늘리며(중앙값 20~30턴→50~180턴), 플래닝은 궤적이 "어디서 멈추는지"를 바꾸고, 액션 공간은 코드 작성의 세밀도(한 번에 처리하는 편집 단위)를 바꾼다는 점을 확인했다.</li>
+</ul>
+<h2>한계점</h2>
+<ul>
+<li>플래닝은 단일 프롬프트/갱신 방식으로, 컨텍스트 관리는 고정된 임계값 기반 정책 하나로만 구현되어 있어 "보편적으로 최적인 하네스"를 규명한 것은 아니다.</li>
+<li>액션 공간 개입은 툴 가용성, 인터페이스별 프롬프트, 파일 상태 추적, 자동 진단이 한꺼번에 바뀌는 결합된 변경이라 툴 개수나 행동 세분도만의 순수 효과는 분리하지 못했다.</li>
+<li>계산 자원 제약으로 플래닝·액션 공간은 T4/128k라는 단일 조합에서만 소거 실험을 진행했으며, 전체 요인 조합(full factorial)은 다루지 않았다.</li>
+<li>각 설정은 태스크당 1회만 실행했고 Terminal-Bench는 89개 태스크로 표본이 작아, 많은 대비가 통계적으로 유의하지 않고 방향성 일관성에 의존한다.</li>
+<li>평가 모델은 Nemotron-3 계열 3종과 Mistral-Medium-3.5로 한정되며, SWE-Bench Verified는 Python 전용이라 다른 모델군·언어·작업 유형으로의 일반화는 검증이 더 필요하다.</li>
+</ul>
+<h2>시사점</h2>
+<p>하네스 설계는 "한 번 정하면 끝"이 아니라 대상 모델의 역량, 사용 가능한 컨텍스트 예산, 작업이 얼마나 셸 중심적인지에 따라 구성요소를 선택해야 하는 조건부 시스템 설계 문제임을 시사한다. 실무적으로는 컨텍스트가 빠듯한 배포 환경일수록 elision 우선 압축 전략(T4류)을 쓰는 것이 비용 대비 효율적이고, 약한 모델에는 플래닝과 구조화된 툴을 붙여 스캐폴딩하되, 강한 모델에는 오히려 플래닝/툴 인터페이스가 불필요한 오버헤드가 될 수 있으므로 모델이 강해질수록 더 단순하고 유연한 하네스(예: bash-only)로 전환하는 편이 나을 수 있다는 실용적 지침을 제공한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.20804" target="_blank" rel="noopener">huggingface.co/papers/2609.20804</a> · 2026-09-19</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

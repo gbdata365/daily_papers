@@ -1,0 +1,127 @@
+<meta charset="UTF-8">
+<title>WeVisDoc</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#10 · Daily Papers 2026-09-19</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 8</span>
+    </div>
+    <h1 class="article-title">WeVisDoc: From Coverage to Capability for Robust End-to-End Document Parsing</h1>
+    <p class="article-title-ko">WeVisDoc: 강건한 End-to-End 문서 파싱을 위한 커버리지에서 역량으로의 전환</p>
+    <p class="article-sub">텐센트 WeChat Vision 팀이 제안한 WeVisDoc은, 문서 파싱(문서 이미지를 구조화된 텍스트로 변환) 모델을 "일단 데이터 범위를 넓히고" 끝내는 대신, 1단계에서 폭넓은 커버리지를 구축한 뒤 2단계에서 모델이 실제로 어디서 틀리는지 진단해 그 약점에 맞춰 데이터와 학습 노출을 다시 배분하는 2단계 데이터 중심 프레임워크로, Qwen3-VL 기반 2B/4B 모델을 통해 OmniDocBench v1.6과 PureDocBench에서 동급 End-to-End 파서 중 최고 성능을 달성했다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.20423" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.20423" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: WeVisDoc: From Coverage to Capability for Robust End-to-End Document Parsing</li>
+<li><strong>저자</strong>: Hao Yu, Kang Liu, Linnan Zhao, Jiabo Zhan 외 (WeChat Vision, Tencent Inc.) — 4인 공동 1저자, 프로젝트 리더 및 교신저자 별도 표기</li>
+<li><strong>출처</strong>: arXiv:2609.20423v1 [cs.CV] (2026년 9월 17일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://tencent.github.io/WeVisDoc">WeVisDoc</a> / <a href="https://github.com/Tencent/WeVisDoc">GitHub</a> / <a href="https://huggingface.co/Tencent/WeVisDoc-4B">HuggingFace-4B</a> / <a href="https://huggingface.co/Tencent/WeVisDoc-2B">HuggingFace-2B</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.20423">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>텐센트 WeChat Vision 팀이 제안한 WeVisDoc은, 문서 파싱(문서 이미지를 구조화된 텍스트로 변환) 모델을 "일단 데이터 범위를 넓히고" 끝내는 대신, 1단계에서 폭넓은 커버리지를 구축한 뒤 2단계에서 모델이 실제로 어디서 틀리는지 진단해 그 약점에 맞춰 데이터와 학습 노출을 다시 배분하는 2단계 데이터 중심 프레임워크로, Qwen3-VL 기반 2B/4B 모델을 통해 OmniDocBench v1.6과 PureDocBench에서 동급 End-to-End 파서 중 최고 성능을 달성했다.</p>
+<h2>배경 및 문제의식</h2>
+<p>문서 파싱은 문서 이미지를 다양한 레이아웃과 촬영 조건에서도 안정적으로 구조화된 텍스트(마크다운, 표, 수식 등)로 바꿔야 하는 과제다. 그러나 기존 학습 데이터는 흔한 문서 유형과 깨끗한 디지털 페이지에 편중되어 있고, 최근 연구들은 대체로 "데이터 커버리지(범위)를 넓히는 것"에 집중해왔다. 문제는 커버리지를 넓힌다고 해서 모델에 남아있는 구체적 약점을 어떻게 고쳐야 하는지는 알려주지 않는다는 점이다.</p>
+<p>저자들은 두 가지 개입을 구분한다: (1) 새 데이터를 수집·합성해 "경험적 지지(support)"를 넓히는 것과 (2) 기존 데이터에 대한 노출(재사용·재가중치)을 늘리는 것. 또한 모델이 특정 유형에서 틀린다고 해서 그것이 곧 "학습 데이터가 부족해서"라는 뜻은 아니며, 라벨 자체의 오류, 이미지 관찰 가능성 부족(가려짐·저해상도 등), 디코딩 실패, 혹은 데이터를 더 넣어도 해결되지 않는 모델 한계일 수도 있다. 따라서 데이터를 효과적으로 배분하려면 "관련 학습 지지가 정말 부재한지"를 명시적으로 검증해야 한다는 문제의식에서 출발한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>문서 데이터 스케일링을 "커버리지 구축(1단계)"과 "역량 인식 정제(2단계)"의 두 단계로 명확히 구분하는 프레임워크(WeVisDoc)를 제안했다.</li>
+<li>1단계에서는 약 4천만 건 규모의 이질적 데이터(수집 데이터 + 실행 가능한 페이지 프로그램 합성 + 구조 보존형 열화 증강)로 의미론적·구조적·외관적 커버리지를 넓히되, 소스별 토큰 균형화로 대형 소스의 편중을 방지했다.</li>
+<li>2단계에서는 학습에 쓰이지 않는 별도의 held-out 진단 프로브(probe)를 이용해, 시각-구조적으로 군집화된 클러스터별 잔여 오류(residual error)를 측정하고, 이를 근거로 (a) 어려운 예시(hard example) 채굴 및 검증, (b) 부족한 패턴에 대한 표적 데이터 합성, (c) 클러스터별 잔여 오류에 기반한 목표 토큰 예산 재배분을 수행한다.</li>
+<li>이 과정을 통해 약 500만 건 규모의 정제 풀을 구성하고, 고정된 2단계 토큰 예산 하에서 클러스터별 노출량을 조정하는 KL-발산 기반 재배분 공식을 설계했다.</li>
+<li>Qwen3-VL-Instruct 2B/4B를 백본으로 그대로 사용(별도 OCR 엔진·검출기·표 파서 없이)하면서, OmniDocBench v1.6과 PureDocBench(클린/디지털 열화/실제 열화 3개 트랙)에서 비교 대상 End-to-End 파서 중 4개 설정 모두 1위를 달성했다.</li>
+</ul>
+<h2>방법론</h2>
+<p>문서 파싱을 이미지 xᵢ를 목표 시퀀스 yᵢ(텍스트는 마크다운, 표는 HTML, 수식은 LaTeX)로 변환하는 오토리그레시브 문제로 통일하여 정의한다. 학습 목적함수는 레코드 수가 아니라 "손실에 기여하는 목표 토큰 수"로 정규화되며(레코드마다 목표 길이가 크게 다르기 때문), 이는 이후 데이터 배분 전 과정에서 핵심 단위로 쓰인다.</p>
+<p><strong>1단계(Broad-Coverage 구축)</strong>: 공개 데이터셋, 자체 수집, 크롤링, 합성 데이터를 결합해 약 4천만 레코드 풀을 만든다. 세 개의 전문가 파서(MinerU2.5-Pro, PaddleOCR-VL-1.6, dots.mocr)의 출력 간 정규화 편집 거리(NED)로 합의도를 측정해 라벨 신뢰도를 판정하고(3자 합의/2자 합의+검수/전원 불일치 시 보류), 난이도(Easy/Medium/Hard)를 계층화한다. 부족한 조합은 시맨틱 HTML/CSS를 실행 가능한 "페이지 프로그램"으로 컴파일해 이미지와 정확한 정답을 동시에 생성하는 방식으로 보완한다. 종이 질감, 인쇄/스캔, 원근 왜곡, 화면 재촬영(moiré) 등 물리적 열화도 소스별 경로에 맞춰 체계적으로 증강하되, 목표 내용이 여전히 읽을 수 있는 변형만 채택한다.</p>
+<p><strong>2단계(역량 진단 및 표적 정제)</strong>: 1단계 체크포인트 θ₁을 SigLIP2 임베딩(PCA) + 구조 메타데이터로 만든 시각-구조적 특징 공간에서 클러스터링하고, 학습에 쓰이지 않은 별도 프로브 세트에서 클러스터별 텍스트/표(TEDS)/수식(CDM) 오류를 측정한다. 소규모 클러스터의 추정치는 전체 평균 쪽으로 축소(shrinkage)해 안정화한다. 잔여 오류가 크고 실제 데이터 지지가 부족한 것으로 확인된 클러스터에는 표적 합성(페이지 프로그램)이나 실데이터를 추가하고, 훈련 풀 마이닝으로 얻은 고오류 사례는 사람+상위 모델 검수를 거쳐 "검증된 어려운 예시"로만 채택한다(주석 오류·디코딩 실패·관찰 불가 사례는 제외). 최종적으로 클러스터별 토큰 점유율과 표준화된 잔여 오류를 결합한 제안 분포를 만들고, 이를 원래 자연 분포에서 너무 벗어나지 않도록 KL-발산 최소화로 제약해 최종 학습 토큰 배분을 결정한다.</p>
+<p>두 단계 모두 Qwen3-VL-Instruct 2B/4B의 동적 해상도 ViT와 LLM 백본을 그대로 사용하며, 1단계는 ViT+LLM 전체를, 2단계는 ViT를 고정한 채 LLM만 미세조정한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>평가는 OmniDocBench v1.6(1,651페이지, 다양한 문서 유형·언어·레이아웃)과 PureDocBench(1,475개 HTML/CSS 원본에서 파생된 Clean/Digital Degraded/Real Degraded 3개 트랙, 소스 기반 정확 정답 제공)에서 이루어졌으며, 지표는 TextEdit, FormulaCDM, TableTEDS, ROEdit와 이들의 종합인 Overall 점수다.</p>
+<ul>
+<li>OmniDocBench v1.6: WeVisDoc-4B가 Overall 95.38로 비교 End-to-End 특화 모델 중 1위(기존 최고 대비 +0.64점), WeVisDoc-2B도 95.06으로 최상위권을 기록했다.</li>
+<li>PureDocBench: WeVisDoc-4B가 평균(Avg3) 75.54로 최고 기록이며, 특히 Real Degraded 트랙에서 69.08점으로 기존 End-to-End 최고 기록 대비 +1.44점 향상되었다. 2B 모델도 Avg3 73.86으로 상위권.</li>
+<li>2단계 정제 효과(Stage I → Stage II) 비교: 2B 모델은 OmniDocBench +1.56점, PureDocBench Avg3 +1.74점 향상; 4B 모델은 각각 +1.16점, +2.35점 향상. 특히 Digital Degraded(+2.38~2.55점)와 Real Degraded(+2.37~4.03점)에서 개선폭이 크고, Clean 트랙에서는 개선폭이 작아(+0.46~0.49점) 2단계가 열화·꼬리 분포 대응에 특히 효과적임을 보여준다. 다만 저자들은 2단계가 여러 개입(어려운 예시, 표적 합성, 재배분, 리플레이)을 동시에 포함하므로 이 비교가 개별 요소의 기여를 분리하지는 못한다고 명시한다.</li>
+</ul>
+<h2>한계점</h2>
+<p>논문이 스스로 명시한 한계는 다음과 같다.
+- 필기체 문서, 역사 자료 스캔본, 심하게 손상된 문서, 그 밖의 폭넓은 촬영 조건에 대한 평가가 아직 충분하지 않다.
+- 합성 열화(degradation)의 현실 충실도에 한계가 있으며, 벤치마크 커버리지 자체도 제한적이다.
+- 잔여 기반 재배분(residual rebalancing)은 프로브 세트 구성, 표현 모델(SigLIP2), 클러스터링 선택, 평가자(evaluator)에 의존하며 추가 연산 비용이 든다.
+- 2단계 실험은 여러 개입을 동시에 적용한 "전체 프로토콜" 비교이므로, 잔여 기반 배분만의 개별 효과를 분리해서 검증하지는 못했다.
+- 향후 과제로 더 폭넓은 실제 촬영 데이터 확보, 더 안정적이고 해석 가능한 역량 추정 방법, 더 저비용의 혼합 업데이트 방식, 추가 언어·문서 도메인에 대한 평가를 제시했으며, 고위험 배포 시에는 출처 관리(provenance control)와 사람 검수를 함께 병행해야 한다고 권고한다.</p>
+<h2>시사점</h2>
+<p>이 연구는 "데이터를 얼마나 많이, 다양하게 모았는가"라는 정적인 관점을 넘어, 학습 데이터 구성을 모델 역량과 측정 가능하게 연결되는 인터페이스로 다루자는 관점을 제시한다. 즉 단순히 커버리지를 넓히는 스케일링에서 그치지 않고, 학습되지 않은 별도 진단 세트로 모델의 잔여 약점을 정량적으로 측정한 뒤 이를 근거로 데이터 추가 여부와 학습 노출량을 조정하는 폐루프(diagnosis → targeted data → reallocation) 방식이, 특히 실제 촬영·스캔처럼 열화된 조건에서의 강건성 확보에 효과적임을 실증했다. 이는 문서 파싱뿐 아니라 다른 비전-언어 모델의 데이터 큐레이션 전략에도 참고할 만한 일반적 패턴(커버리지 우선 확보 → 모델 인식 기반 정제)을 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.20423" target="_blank" rel="noopener">huggingface.co/papers/2609.20423</a> · 2026-09-19</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

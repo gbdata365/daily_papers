@@ -1,0 +1,132 @@
+<meta charset="UTF-8">
+<title>LLM 어시스턴트를 위한 검증 가능한 사회적 추론</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#8 · Daily Papers 2026-09-19</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 13</span>
+    </div>
+    <h1 class="article-title">Verifiable Social Reasoning for LLM Assistants</h1>
+    <p class="article-title-ko">LLM 어시스턴트를 위한 검증 가능한 사회적 추론</p>
+    <p class="article-sub">사용자가 자신의 주관적인 시각으로 사회적 사건을 전달(user-mediated)했을 때, LLM 어시스턴트가 그 이면의 숨겨진 의도(motive)를 얼마나 정확히 추론하는지를, 정답이 시뮬레이션 설계 단계에서부터 확정되는(verifiable ground truth) 방식으로 평가하는 멀티에이전트 시뮬레이션 프레임워크 Fuse를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.17496" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.17496" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Verifiable Social Reasoning for LLM Assistants</li>
+<li><strong>저자</strong>: Amir Taubenfeld, Zorik Gekhman 등 (Google Research, Hebrew University, University of Cambridge 소속 공동 연구팀)</li>
+<li><strong>출처</strong>: arXiv:2609.17496v1 [cs.AI] (2026년 9월 15일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/google-research/google-research/tree/master/user_mediated_social_reasoning">GitHub - google-research/google-research (user_mediated_social_reasoning)</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.17496">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>사용자가 자신의 주관적인 시각으로 사회적 사건을 전달(user-mediated)했을 때, LLM 어시스턴트가 그 이면의 숨겨진 의도(motive)를 얼마나 정확히 추론하는지를, 정답이 시뮬레이션 설계 단계에서부터 확정되는(verifiable ground truth) 방식으로 평가하는 멀티에이전트 시뮬레이션 프레임워크 Fuse를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>많은 사람들이 일상적인 인간관계 고민을 LLM 어시스턴트에게 상담하면서 조언을 구하지만, 실제 배포 환경에서 어시스턴트는 사건을 직접 관찰하는 것이 아니라 항상 사용자의 주관적 서술을 통해서만 간접적으로 전달받는다. 사용자는 무의식적으로든 의도적으로든 맥락을 생략하거나 자신의 편향과 감정을 투영해 이야기를 재구성할 수 있고, 최근 LLM들이 사용자의 프레이밍에 민감하게 반응하는 경향이 있다는 점까지 겹쳐 이 문제는 더 어려워진다.</p>
+<p>기존 사회적 추론 평가 연구들은 모델에게 상황 전체를 완전한 형태로 제시하고 질문하는 방식이라 실제 상담 상황과 다르며, 최근 나온 실제 배포 환경에 가까운 평가들도 주로 명백히 망상적인 발언과 같은 안전성(safety) 중심 시나리오에 국한되어 있다. 반면 "동료가 진심으로 응원하는 것인지, 아니면 몰래 나를 깎아내리려는 것인지"와 같은 일상적 사회적 상황은 진짜 의도를 아는 사람이 당사자뿐이라 사후에 사람이 정답 라벨을 매기기 어렵다는 근본적인 난제가 있다. 저자들은 이 문제를 시나리오와 정답 라벨을 동시에 생성하는 합성 데이터 접근으로 풀고자 한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>Fuse(Framework for User-mediated Social Evaluation)</strong>: 목표 인물(target)이 숨겨진 동기(motive)를 갖고 다른 에이전트들과 상호작용하는 멀티에이전트 시뮬레이션을 만들고, 사용자 역할의 에이전트가 그 사건을 평가 대상 어시스턴트에게 전달(디브리프)하도록 설계하여, 정답이 시뮬레이션 설계 시점에 이미 확정되는 검증 가능한 벤치마크를 구성했다.</li>
+<li>300개 시뮬레이션·2,100개 예시에 대해 총 2만 4천 건의 인간 평가를 수행하여 시뮬레이션이 의도된 행동 패턴을 실제로 충실히 구현하는지, 그리고 첫 메시지만으로 과제가 얼마나 풀리는지를 검증했다.</li>
+<li>12개 LLM에 대해 사용자 매개(user mediation), 사용자 편향(bias), 서술 상세도(detail level), 대화 턴 수라는 네 가지 통제 가능한 축을 체계적으로 조작하여 모델 행동의 실패 패턴을 분리해서 분석할 수 있음을 보였다.</li>
+<li>2만 1천 개 예시로 구성된 데이터셋과 프레임워크 코드를 오픈소스로 공개했다.</li>
+</ul>
+<h2>방법론</h2>
+<p>Fuse는 5단계로 구성된다.
+1. <strong>범주 설정</strong>: 심리 이론(Theory of Mind) 관련 ATOMS 분류 체계에서 desire(욕구), intention(의도), belief(믿음), emotion(감정), knowledge(지식) 5개 범주를 채택한다.
+2. <strong>시나리오 템플릿 생성</strong>: 각 범주별로 사용자 페르소나, 목표 인물(target), 보조 인물들, 에피소드(장면) 순서, 그리고 목표 인물이 취할 수 있는 대비되는 후보 동기 집합(예: "로맨틱" vs "플라토닉")을 정의한다.
+3. <strong>사회적 상황 시뮬레이션</strong>: Concordia 멀티에이전트 시뮬레이션 프레임워크를 이용해, 지정된 동기에 따라 에이전트들이 여러 장면(에피소드)을 거치며 실제로 상호작용하는 구체적인 사건 전개를 생성한다.
+4. <strong>디브리프(사용자 상담) 시뮬레이션</strong>: 시뮬레이션이 끝나면 사용자 에이전트가 그 사건을 평가 대상 어시스턴트에게 이야기한다. 이때 사용자의 보고 편향(예: 반대 방향으로 유도하는 미묘한 프레이밍)과 서술 상세도(저/중/고)를 독립적으로 조절할 수 있다. 어시스턴트는 원본 사건이 아니라 오직 이 사용자의 발화만을 근거로 판단해야 한다.
+5. <strong>평가</strong>: 어시스턴트는 후보 동기 중 하나를 예측하고, 별도의 LLM 심판(judge)이 정답과 비교해 정답(Correct)/오답(Incorrect)/미확답(Not Attempted, 즉 기권)으로 분류한다. 기권에 부분 점수를 주는 Mediated Social Reasoning(MSR) 지표(d=0.75로 설정)를 종합 성능 지표로 사용한다.</p>
+<p>실험에서는 30개 시나리오 템플릿(범주당 6개), 시나리오당 20회의 시뮬레이션 실현, 각 실현마다 편향×상세도 조합별로 3개의 디브리프를 생성해 총 21,600개의 사용자 메시지를 만들었다. 첫 메시지만으로 평가하는 정적 벤치마크에 우선 초점을 맞췄으며, 별도로 8턴까지 확장한 멀티턴 분석도 진행했다.</p>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li><strong>평가 모델</strong>: Gemma 4(12B/31B), Mistral Small 4/Medium 3.5, GPT-OSS(20B/120B), GPT 5.6(Luna/Terra), Claude 5(Sonnet/Opus), Gemini 3.7 Flash, Grok 4.5 등 7개 계열 12개 모델. 시뮬레이션 구동 및 심판 역할은 Gemini 3.1 Flash-Lite가 담당했다.</li>
+<li><strong>인간 기준선</strong>: 원본 사건만 보고 판단하는 경우 다수결 정답률 97%, 사용자의 첫 메시지만 보고 판단하는 경우 다수결 정답률 88%(MSR 89.8)로, 첫 메시지에도 충분한 단서가 담겨 있음을 확인했다.</li>
+<li><strong>전체 성능</strong>: 어떤 모델도 MSR 83.7(Gemini 3.7 Flash)을 넘지 못했고 인간 기준선(89.8)에 미치지 못했다. 여러 모델이 20% 이상의 오답률을 보여, 잘못된 조언으로 이어질 위험이 크다는 점이 지적됐다. Gemma·Claude 계열 일부 모델은 기권율이 30%를 넘는 대신 상대적으로 오답률은 낮은, 신중하지만 유용성이 떨어지는 경향을 보였다.</li>
+<li><strong>사용자 매개 효과(Observer vs Assistant)</strong>: 실제 사건을 직접 관찰하는 Observer 설정에 비해, 사용자의 주관적 서술만 받는 Assistant 설정에서는 모든 모델의 정확도가 하락하고 오답률과 기권율이 함께 상승했다. 특히 Claude Opus 5는 Observer 설정에서는 거의 완벽했지만 Assistant 설정에서는 기권율이 크게 치솟는 대조적 패턴을 보였다.</li>
+<li><strong>사용자 편향 효과</strong>: 사용자가 은근히 반대 방향으로 프레이밍하는 조건에서 평균 모델 성능이 7.7점(MSR) 하락한 반면, 인간 기준선은 3.6점만 하락해, 모델들이 사용자의 주관적 프레이밍에 인간보다 훨씬 취약함을 보였다.</li>
+<li><strong>서술 상세도 효과</strong>: 상세도가 높아질수록 모델과 인간 모두 성능이 향상되지만, 모델의 향상폭(+5.9)이 인간(+2.8)보다 커서 인간과의 격차가 22% 줄어들었다. 이는 모델이 정보가 이미 충분한데도 근거 없는 디폴트 해석을 고수하다가 추가 정보가 주어져야 판단을 바꾸는 경향이 있음을 시사한다.</li>
+<li><strong>멀티턴 분석</strong>: 대화가 2턴에서 4턴으로 늘어날 때 성능이 크게 개선되지만, 그 이후로는 정체되거나 오히려 하락했다. 8턴이 지나도 2턴 기준 인간 성능에 도달하는 모델은 없었다. 초기 예측에 대한 입장 고수(position persistence) 경향이 강해(81%), 정답→오답으로 바뀌는 사례는 주로 사용자가 편향된 프레이밍을 누적적으로 강화할 때 발생했고, 오답→정답으로 바뀌는 사례는 사용자가 명확히 반박되는 새로운 증거를 제시할 때 발생했다.</li>
+</ul>
+<h2>한계점</h2>
+<ul>
+<li>사용자 역할 자체가 시뮬레이션된 에이전트이기 때문에, 관찰된 Assistant-Observer 성능 격차 중 일부는 사용자 매개의 본질적 어려움이 아니라 시뮬레이터 특유의 인공물(artifact)에서 비롯됐을 가능성이 있으며, 두 요인을 실험적으로 명확히 분리하지는 못했다.</li>
+<li>첫 메시지 중심 분석에 주로 초점을 맞췄고, 멀티턴 상호작용에 대한 분석은 초기 단계에 머물러 있다. 검증되고 안정적인 사용자 시뮬레이터를 정적 벤치마크로 공개하는 것은 향후 과제로 남아있다.</li>
+<li>연구진은 명확한 단일 동기가 지배적인 "clear-cut" 시나리오만을 의도적으로 구성했기 때문에, 여러 동기가 혼재된 더 모호한 실제 상황에 대한 일반화는 확인되지 않았다.</li>
+<li>이 평가는 사회적 추론(social reasoning) 능력 자체에 초점을 맞춘 것으로, 실제 행동적 정렬(behavioral alignment)이나 조언의 적절성 자체를 직접 측정하지는 않는다.</li>
+</ul>
+<h2>시사점</h2>
+<p>이 연구는 LLM 어시스턴트가 실제 서비스 환경에서 마주치는 "사용자가 걸러서 전달하는 정보"라는 현실적 제약 속에서 사회적 추론을 평가할 수 있는 확장 가능한 방법론을 제시했다는 점에서 의미가 크다. 특히 모델이 사용자의 편향된 프레이밍에 쉽게 동조(사이코펀시, sycophancy)하고, 대화가 길어질수록 사용자의 프레이밍을 오히려 강화해 정답에서 멀어질 수 있다는 결과는, 정서적 지지나 인간관계 상담 목적으로 LLM을 사용하는 것이 확산되는 상황에서 중요한 안전 신호로 해석될 수 있다. 저자들은 이러한 취약점이 기존의 사실관계 기반 사이코펀시 연구를 불확실성 하의 추론(reasoning under uncertainty) 영역으로 확장할 수 있는 새로운 연구 방향이 될 수 있다고 제안한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.17496" target="_blank" rel="noopener">huggingface.co/papers/2609.17496</a> · 2026-09-19</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

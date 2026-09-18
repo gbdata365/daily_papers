@@ -1,0 +1,130 @@
+<meta charset="UTF-8">
+<title>자가 진화형 검색 인덱스</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#11 · Daily Papers 2026-09-19</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 7</span>
+    </div>
+    <h1 class="article-title">Self-Evolving Search Index</h1>
+    <p class="article-title-ko">자가 진화형 검색 인덱스</p>
+    <p class="article-sub">검색 인덱스가 사람의 개입 없이 스스로 검색 실패를 진단하고, 문제가 되는 인덱스 키를 선택적으로 고쳐 쓰고, 그 수정을 검증까지 하면서 점진적으로 진화하는 프레임워크 SELF-INDEX를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.19656" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.19656" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Self-Evolving Search Index</li>
+<li><strong>저자</strong>: Sangam Lee, Wonjae Lee 등 (Yonsei University, Samsung Research, UC Irvine, Korea University 공동 연구, 교신저자 Dongha Lee)</li>
+<li><strong>출처</strong>: arXiv:2609.19656v1 [cs.IR] (2026-09-17)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음 (코드 공개 예정 표시만 있음)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.19656">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>검색 인덱스가 사람의 개입 없이 스스로 검색 실패를 진단하고, 문제가 되는 인덱스 키를 선택적으로 고쳐 쓰고, 그 수정을 검증까지 하면서 점진적으로 진화하는 프레임워크 SELF-INDEX를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>검색 시스템은 각 문서를 "인덱스 키"(문서를 표현하는 텍스트 조각, 예: 원문 그대로, 요약, 가상의 질의 등)로 표현하고, 이 키와 사용자의 질의를 비교하여 문서를 찾는다. 따라서 인덱스 키가 문서의 정보를 얼마나 잘 드러내는지가 검색 품질을 좌우한다. 문제는 자연어, 코드, 수식, 표 등 말뭉치(corpus) 종류와 사용하는 검색기(희소 검색 BM25, 밀집 임베딩 검색 등)에 따라 어떤 인덱스 표현이 효과적인지가 달라진다는 점이다. 그 결과 하나의 고정된 인덱스 최적화 전략은 모든 환경에서 일관되게 잘 작동하지 못한다. 지금까지는 이런 불일치를 해결하려면 사람이 직접 어떤 키가 검색 실패를 일으키는지 진단하고, 최적화 전략을 수정하거나 새로운 학습 데이터를 모아 재학습시키고, 인덱스 전체를 다시 처리해야 했다. 이는 상당한 인적 노력과 계산 비용을 요구하는 병목이었다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>인덱스가 사람의 개입 없이 스스로 진화하도록 만드는 최초 수준의 프레임워크 SELF-INDEX를 제안함</li>
+<li>다양한 검색기와 말뭉치(자연어, 코드, 수학, 표)에서 기존 인덱스 최적화 기법들을 일관되게 능가함을 실험으로 보임</li>
+<li>이러한 검색 품질 향상이 실제 응용, 즉 검색 에이전트의 정답률·비용 효율 개선과 에이전트 메모리 시스템의 정보 검색 개선으로 이어짐을 입증함</li>
+</ul>
+<h2>방법론</h2>
+<p>SELF-INDEX는 크게 두 구성 요소로 이루어진다.</p>
+<ol>
+<li><strong>Optimizer(옵티마이저)</strong>: 주어진 질의 집합에 대해 세 단계 루프를 반복 수행한다.</li>
+<li><strong>Self-Diagnosis(자가 진단)</strong>: 현재 인덱스로 질의들을 검색해 본 뒤, 어떤 키가 다른 문서의 어떤 키들과 함께 자주 검색되는지를 나타내는 "공동 검색 프로필(co-retrieval profile)"을 만든다. 이를 바탕으로 특정 키가 자신의 문서를 다른 문서와 충분히 구별해주지 못하는지 등 인덱스의 약점을 스스로 진단한다.</li>
+<li><strong>Self-Revision(자가 수정)</strong>: 문제로 진단된 키들을 개별적으로 고치지 않고, 같은 문서에 속한 키 집합 전체를 한 번에 함께 고려해 다시 작성한다. 이는 개별 수정 시 발생할 수 있는 중복 표현을 막기 위함이다.</li>
+<li>
+<p><strong>Self-Validation(자가 검증)</strong>: 새로 제안된 키가 (1) 원문에 충실한지(faithfulness), (2) 그 문서에 특화된 정보를 담고 있는지(specificity), (3) 다른 경쟁 키들과 잘 구별되는지(separation) 세 기준으로 검사한다. 세 기준을 모두 통과한 키만 인덱스에 반영되고, 원문 자체 키는 항상 유지된다.</p>
+</li>
+<li>
+<p><strong>Query Simulator(질의 시뮬레이터)</strong>: Optimizer는 주어진 질의에만 반응하는 수동적 방식이라는 한계가 있다. 이를 보완하기 위해 Query Simulator가 <strong>Self-Exploration(자가 탐색)</strong>을 수행한다. 말뭉치에서 문서를 샘플링해 그에 맞는 그럴듯한 질의를 생성하고, 기존에 이미 쓰인 질의들과 겹치는 정도를 자카드 유사도(Jaccard similarity) 기반의 "비유사성 필터"로 걸러낸 뒤, 남은 새로운 질의를 Optimizer에 공급한다. 이 과정을 반복하면서 인덱스가 관측된 질의를 넘어서 더 폭넓은 검색 수요에 맞춰 능동적으로 진화한다.</p>
+</li>
+</ol>
+<p>Optimizer와 Query Simulator는 모두 Qwen3.6-35B-A3B 모델을 백본으로 사용한다.</p>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li><strong>평가 대상</strong>: 자연어·코드·수학 말뭉치를 포함한 BRIGHT 벤치마크, 표 검색 데이터셋(Spider 2.0, FIBEN, BEAVER), 검색 에이전트 평가용 BrowseComp-Plus, 에이전트 메모리 평가용 LongMemEval-V2. 평가 지표는 nDCG@10 위주.</li>
+<li><strong>비교 대상</strong>: Doc2Query, SPIKE, RL-Index, (표 검색에서는) EnrichIndex 등 기존 인덱스 최적화 기법. BM25(희소), BGE-Large·Qwen3-Embedding-8B(밀집) 세 종류의 검색기에서 실험.</li>
+<li><strong>검색 성능</strong>: SELF-INDEX는 BRIGHT와 표 검색 벤치마크의 모든 검색기·말뭉치 조합에서 평균 nDCG@10 1위를 기록했다. 예를 들어 BM25 기준 BRIGHT 전체 평균은 기존 최고 대비 약 +40%, BGE 기준 약 +57% 향상되었다. 반면 기존 기법들은 특정 환경(예: 코드 말뭉치)에서는 오히려 성능이 하락하는 등 일관성이 떨어졌다.</li>
+<li><strong>검색 에이전트 성능(BrowseComp-Plus)</strong>: GPT-OSS-120B, GPT-5.4-nano, Gemini-3.7-Flash, Kimi-K2.5 등 네 가지 백본 모두에서 SELF-INDEX 적용 시 정답 정확도와 근거 재현율이 가장 높았고, 검색 호출 수와 온라인 비용(캘리브레이션 오류 포함)도 대체로 줄었다. 말뭉치 규모를 10만~40만 문서로 확장해도 정확도와 비용 효율이 안정적으로 유지되어, 색인 없이 원문에 직접 접근하는 방식(DCI)보다 규모 확장에 강건했다.</li>
+<li><strong>에이전트 메모리(LongMemEval-V2)</strong>: 원시 트래젝토리 슬라이스만 저장하는 방식, 요약 노트를 추가한 방식, 전용 메모리 시스템(AgentRunbook-R) 등 서로 다른 메모리 설계 모두에서 SELF-INDEX 적용 시 정확도가 9~14% 개선되었다.</li>
+<li><strong>분석(Ablation)</strong>: 공동 검색 프로필 제거, 세 검증 기준(충실성·특이성·구별성) 각각 제거, 비유사성 필터 제거 시 모두 성능이 하락했으며, 특히 검증 단계 전체를 없애면 원본 인덱스보다도 성능이 떨어져 자가 검증의 중요성을 확인했다. 반복(iteration)이 진행될수록 인덱스가 점진적으로 개선되는 양상도 사례 분석으로 제시되었다.</li>
+</ul>
+<h2>한계점</h2>
+<p>논문에 명시되지 않음 (별도의 "한계점" 절은 없으나, 실험상 Query Simulator 없이 다른 출처의 질의(ReasonIR)만 사용할 경우 성능 향상 폭이 더 작다는 점, 그리고 일부 능력(gotchas)은 인덱스보다 메모리 구성 방식에 더 좌우되어 개선폭이 제한적이었다는 점이 언급됨).</p>
+<h2>시사점</h2>
+<p>인덱스 최적화를 사람이 정한 고정 전략이 아니라 검색 결과 자체를 피드백으로 활용해 스스로 진단·수정·검증하는 폐루프(loop)로 전환할 수 있음을 보여준다. 이는 다양한 도메인(자연어, 코드, 수학, 표)과 검색기 종류에 범용적으로 적용 가능한 인덱스 자동화 방법론을 제시하며, 검색 품질 향상이 곧바로 검색 에이전트의 비용 효율과 에이전트 메모리 시스템의 실용성 개선으로 이어진다는 점에서, LLM 에이전트 인프라 전반에 적용될 잠재력을 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.19656" target="_blank" rel="noopener">huggingface.co/papers/2609.19656</a> · 2026-09-19</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

@@ -1,0 +1,130 @@
+<meta charset="UTF-8">
+<title>EOS 토큰이 어긋날 때</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#4 · Daily Papers 2026-09-19</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 28</span>
+    </div>
+    <h1 class="article-title">When EOS Tokens Disagree: Understanding Length Inflation in On-Policy Distillation</h1>
+    <p class="article-title-ko">EOS 토큰이 어긋날 때: On-Policy Distillation에서의 길이 인플레이션 이해하기</p>
+    <p class="article-sub">On-Policy Distillation(OPD)에서 학생 모델(base)과 교사 모델(post-trained)이 "멈춰야 한다"는 같은 의미를 서로 다른 EOS(문장 종료) 토큰으로 표현하기 때문에 학생의 종료 능력이 학습 중 억제되고, 이것이 응답 길이가 계속 늘어나는 "길이 인플레이션(length inflation)" 현상의 핵심 원인 중 하나임을 밝힌 연구.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.20511" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.20511" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: When EOS Tokens Disagree: Understanding Length Inflation in On-Policy Distillation</li>
+<li><strong>저자</strong>: Yuxiao Yang, Tianrun Yu, Shangzhe Li, Kaixiang Zhao (공동 1저자) 외, Xuchao Zhang, Chetan Bansal, Huaxiu Yao, Taylor W. Killian, Weitong Zhang (University of North Carolina at Chapel Hill, Brigham Young University, Microsoft)</li>
+<li><strong>출처</strong>: arXiv:2609.20511v1 [cs.LG] (2026-09-17)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://uncsciml.github.io/opd-eos-website">uncsciml.github.io/opd-eos-website</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.20511">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>On-Policy Distillation(OPD)에서 학생 모델(base)과 교사 모델(post-trained)이 "멈춰야 한다"는 같은 의미를 서로 다른 EOS(문장 종료) 토큰으로 표현하기 때문에 학생의 종료 능력이 학습 중 억제되고, 이것이 응답 길이가 계속 늘어나는 "길이 인플레이션(length inflation)" 현상의 핵심 원인 중 하나임을 밝힌 연구.</p>
+<h2>배경 및 문제의식</h2>
+<p>OPD는 학생 모델이 스스로 생성한 롤아웃(rollout)에 대해 교사 모델이 토큰 단위로 점수를 매겨 지도하는 증류 방식으로, 강한 후처리(post-trained) 모델의 능력을 더 작거나 약한 모델로 옮기는 실용적인 방법으로 주목받고 있다. 그런데 최근 여러 연구에서 OPD로 학습한 학생 모델의 응답 길이가 학습이 진행될수록 비정상적으로 길어지고, 심한 경우 생성 토큰 예산을 전부 소진해버리는 현상이 보고되었다. 이런 응답은 정답을 이미 초반에 맞혔음에도 이후 반복적이거나 불필요한 텍스트를 계속 이어 붙이는 형태로 나타나는데, 이는 실제 추론 능력 향상이 아니라 "멈추지 못하는 실패"에 가깝다. 기존 연구들은 이 현상을 reverse-KL 목적함수의 부작용, 롤아웃 품질 저하, 학습 불안정성 등 다양한 원인으로 설명해왔지만, 저자들은 더 근본적이고 진단하기 쉬운 원인, 즉 학생과 교사 사이의 "종료 토큰 불일치(termination-token mismatch)"를 지목한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>Qwen3, Llama, Gemma 세 모델 계열 전반에서, base 학생 모델과 post-trained 교사 모델이 선언된 EOS 토큰 집합(stopping set)이 동일하더라도 실제로 학습된 종료 확률을 서로 다른 토큰에 두는 현상을 관찰하고 이를 길이 인플레이션의 주요 메커니즘으로 규명함.</li>
+<li>디코딩 단계에서 정지 토큰 집합만 맞추는 것(decoding stopping set alignment)은 문제를 해결하지 못함을 실험적으로 보이고, 네 가지 종료 처리 보정법(decoding 정합, teacher-side EOS 매핑, semantic EOS 클래스, canonical single-EOS 행동 공간)을 체계적으로 비교하여 "확률 수준"에서 종료 신호를 정합해야 함을 규명함.</li>
+<li>K2-Horizon의 여러 학습 단계(사전학습, 중간학습, SFT, 최종 post-training) 체크포인트를 활용해 학습 진행에 따라 종료 선호가 어떻게 변하는지 분석하고, EOS 정합 이후에도 학습 후반부에 별도의 재-인플레이션 현상이 남아있음을 발견함.</li>
+<li>프롬프트 템플릿과 채점 방식(grader)에 따라 관측되는 응답 길이·성능이 달라질 수 있음을 보여, OPD 평가 시 추가로 고려해야 할 변인을 제시함.</li>
+<li>제안한 종료 처리 보정 방법과 평가 프로토콜을 포함한 구현을 공개함.</li>
+</ul>
+<h2>방법론</h2>
+<p>OPD는 학생 정책 πθ가 자신의 롤아웃에서 샘플링한 토큰 y_t에 대해, 교사 πE와 학생의 로그확률 차이 A_t = log πE(y_t) − log πθ(y_t)를 이용해 스코어 함수 방식으로 업데이트하는 "sampled-token OPD"로 정의된다. 저자들은 EOS 토큰 집합 E_EOS(하나의 모델 쌍에서 기능적으로 동등한 종료 토큰들)와, 학생이 기본적으로 선호하는 종료 토큰 e<em>를 정의하고, 이를 기준으로 네 가지 보정을 비교한다.
+- Fix 1 (Shared-set decoding): 디코딩 시 두 모델의 EOS 토큰을 모두 유효한 정지 토큰으로 등록하되, 목적함수나 확률 분포는 바꾸지 않음.
+- Fix 2 (Teacher-side EOS mapping): 교사가 E_EOS 내 여러 종료 토큰에 분산해 둔 확률 질량을 학생이 원래 지원하는 canonical 토큰 e</em>로 합쳐서 매핑함.
+- Fix 3 (Semantic EOS class): E_EOS에 속하는 모든 토큰을 하나의 의미론적 "stop" 행동으로 취급해, 학생·교사 모두의 총 종료 확률을 비교하는 방식으로 OPD 업데이트를 적용함(특정 surface 토큰을 지정하지 않음).
+- Fix 4 (Canonical single-EOS action space): Fix 2처럼 교사 확률을 e<em>로 매핑하는 동시에, 학생의 샘플링 분포에서도 e</em> 이외의 종료 토큰을 제거하고 재정규화하여 단일 종료 행동 공간을 만듦.</p>
+<p>실험은 Qwen3-1.7B-Base(학생)와 Qwen3-4B(교사, non-thinking 모드) 쌍을 중심으로 진행되었고, Llama-3.2-3B(Base/Instruct), Gemma-3-4B(PT/IT), 그리고 사전학습부터 후처리까지 여러 단계 체크포인트를 제공하는 K2-Horizon-7B를 추가로 사용했다. 모든 모델은 DAPO-Math-17K 데이터셋으로 학습되었으며, TTRL 프롬프트 템플릿(최종 답을 \boxed{}로 감싸도록 요구)을 기본으로 사용하고 DAPO 템플릿, 원문 질문만 제공하는 템플릿과도 비교했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>평가지표는 학습 중 평균 응답 길이와 clipping ratio(생성 예산에 도달해 잘린 응답 비율), 그리고 다운스트림 성능 지표인 Avg@16(AMC23, AIME24, AIME25에서 문제당 16개 응답을 샘플링해 평균 정답률을 낸 뒤 세 벤치마크의 단순평균)이다. 또한 학생 롤아웃의 마지막 위치에서 학생·교사가 종료 토큰들에 부여하는 확률(total stopping mass)도 직접 비교했다.</p>
+<ul>
+<li>Qwen3에서 vanilla OPD는 학습이 진행될수록 응답 길이와 clipping 비율이 계속 증가했고, 응답 다수가 정답을 일찍 맞히고도 반복·자기수정 루프 등으로 예산을 소진했다. Qwen3 base는 <code>&lt;|endoftext|&gt;</code>, post-trained는 <code>&lt;|im_end|&gt;</code>를 주로 종료 토큰으로 선호했다.</li>
+<li>Fix 1(디코딩 정지 집합만 확장)은 vanilla OPD와 거의 동일한 궤적을 보여 문제를 해결하지 못했다. 반면 Fix 2, 3, 4는 모두 비슷하게 동작하며 응답 길이와 clipping을 교사 수준에 근접하게 회복시켰고, 학생의 native 종료 확률 붕괴도 막아냈다.</li>
+<li>Gemma 3는 PT/IT 모델이 선언된 EOS 집합(<code>&lt;eos&gt;</code>, <code>&lt;end_of_turn&gt;</code>)이 완전히 동일함에도, 학생은 <code>&lt;eos&gt;</code>를, 교사는 <code>&lt;end_of_turn&gt;</code>을 선호하는 학습된 확률 차이가 존재했다. 이는 불일치가 "선언된 집합의 차이"뿐 아니라 "같은 집합 내 학습된 선호 차이"로도 발생할 수 있음을 보여준다. semantic EOS 보정은 surface 토큰을 일치시키지 않고도 종료 능력을 회복시켰다.</li>
+<li>Qwen3, Llama 3.2, Gemma 3 세 계열 모두에서 semantic EOS 보정이 vanilla OPD 대비 길이·clipping을 크게 줄였으나, 회복 속도와 잔여 격차는 계열마다 달랐다(Qwen3·Gemma 3는 교사 수준에 가깝게 회복, Llama 3.2는 잔여 격차가 큼).</li>
+<li>K2-Horizon 단계별 분석에서는 사전학습 체크포인트가 <code>&lt;|ifm|endoftext|&gt;</code>를 선호하다가 중간학습 단계에서 이미 교사 선호 토큰(<code>&lt;|ifm|im_end|&gt;</code>)으로 상당 부분 이동함을 확인했다. Pretrain-to-Final 실험에서는 초반에 학생이 이미 어느 정도 확률을 갖고 있던 교사 선호 토큰을 샘플링해 직접 지도를 받을 수 있었기 때문에 종료 형태 전이가 일어났지만, 이후 학습 후반부(Phase 3)에서 종료 확률이 다시 붕괴하고 응답 길이가 재차 증가하는 현상이 나타났으며, 이는 semantic EOS 보정을 적용해도 사라지지 않았다. 즉 EOS 불일치만으로는 설명되지 않는 추가적인 길이 역학이 존재함을 보였다.</li>
+<li>프롬프트 템플릿과 채점 방식에 따라 관측되는 응답 길이와 정확도가 달라질 수 있으며(예: DAPO로 학습 후 TTRL로 평가하면 길이가 줄어드는 등), 길이 인플레이션이 있어도 추론 능력 자체의 손실을 반드시 의미하지는 않는다는 점도 확인했다.</li>
+</ul>
+<h2>한계점</h2>
+<p>저자들이 명시한 한계는 다음과 같다.
+- 종료 토큰 불일치는 길이 인플레이션의 "중요한 원인이지만 완전한 설명은 아니다." K2-Horizon 후반부에서 관찰된 재-인플레이션처럼 EOS 정합만으로 설명되지 않는 잔여 메커니즘이 존재하며, 그 원인은 향후 연구 과제로 남겨둠.
+- 실험은 단일 턴(single-turn) 수학 추론 과제에 한정되어 있다. 멀티턴이나 에이전트형(agentic) 상호작용에서는 메시지 종료, 턴 종료, 문서 종료, 도구 호출로의 전환 등 서로 다른 의미를 갖는 특수 토큰들이 존재할 수 있어, 이들을 단순히 하나의 종료 행동으로 묶는 접근이 통제 흐름 자체를 바꿔버릴 위험이 있다.
+- base 모델은 대부분 도구 사용·멀티턴 능력이 없어, base-to-post-trained 비교 설계 자체가 그런 설정으로 확장되기 어려움.
+- 프롬프트 템플릿·채점 방식 분석은 Qwen3, 세 가지 템플릿, 두 가지 채점기로 범위가 한정되어 있어, 이 효과가 Llama나 Gemma 등 다른 계열에도 일반화되는지는 추가 검증이 필요함.</p>
+<h2>시사점</h2>
+<p>이 연구는 OPD의 길이 인플레이션을 논할 때, reverse-KL 목적함수 자체의 결함이나 롤아웃 품질 저하 같은 상위 수준의 알고리즘적 원인을 찾기 전에 먼저 학생과 교사의 "종료 의미"가 실제로 정합되어 있는지부터 점검해야 한다는 실용적 진단 기준을 제시한다. 즉 종료 토큰 불일치는 다른 메커니즘들과 배타적이지 않지만, 이것이 존재하는 상황에서는 다른 원인을 분석하기 전에 먼저 제거해야 할 선행 조건(precondition)에 해당한다는 것이다. 또한 단순히 디코딩 단계에서 정지 토큰 집합을 넓히는 손쉬운 수정만으로는 부족하며, 증류 신호(objective) 자체에서 종료를 하나의 의미론적 행동으로 취급해야 한다는 점은 다른 지식 증류·정렬 파이프라인 설계에도 참고할 만한 통찰이다. 다만 멀티턴·에이전트 환경으로 확장할 때는 종료 토큰들이 서로 다른 제어 흐름 의미를 가질 수 있으므로, 무분별하게 "종료는 다 같다"고 취급하기보다 맥락에 맞는 종료 클래스 정의가 필요하다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.20511" target="_blank" rel="noopener">huggingface.co/papers/2609.20511</a> · 2026-09-19</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

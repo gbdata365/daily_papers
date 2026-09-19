@@ -1,0 +1,110 @@
+{
+  "2609.18323": {
+    "base": "2609_미니맥스H3_옴니모달-물리세계-추론-평가",
+    "rank": "#1",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "77",
+    "en_title": "Can MiniMax-H3 Reason About the Physical World? An Evaluation of Omni-Modal Generative Model",
+    "ko_title": "MiniMax-H3는 물리 세계를 추론할 수 있는가? 옴니모달 생성 모델 평가"
+  },
+  "2609.20744": {
+    "base": "2609_비디오델타넷_라이브스트림-영상생성용-하이브리드-어텐션",
+    "rank": "#2",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "23",
+    "en_title": "Video DeltaNet: A Video-Native Hybrid Attention for Livestream Video Generation",
+    "ko_title": "비디오 델타넷: 라이브스트림 비디오 생성을 위한 비디오 네이티브 하이브리드 어텐션"
+  },
+  "2609.19671": {
+    "base": "2609_웬투씽크_난이도-인식-길이-제어-하이브리드-추론",
+    "rank": "#3",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "18",
+    "en_title": "When2Think: Learning Difficulty-Aware Length Control for Efficient Hybrid Reasoning Models",
+    "ko_title": "When2Think: 효율적인 하이브리드 추론 모델을 위한 난이도 인식 길이 제어 학습"
+  },
+  "2609.20817": {
+    "base": "2609_페이모스_희소-관측-기반-3D-관절체-복원",
+    "rank": "#4",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "17",
+    "en_title": "FAMOS: Feed-Forward 3D Articulation Modeling from Sparse Observations",
+    "ko_title": "FAMOS: 희소 관측으로부터의 피드포워드 3D 관절 모델링"
+  },
+  "2609.20612": {
+    "base": "2609_특권정보_온폴리시-자기증류-기여도-분석",
+    "rank": "#5",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "17",
+    "en_title": "What Does Privileged Information Add to On-Policy Self-Distillation?",
+    "ko_title": "온폴리시 자기증류에서 특권 정보는 무엇을 더해주는가?"
+  },
+  "2609.19499": {
+    "base": "2609_생성스케줄_샘플수보다-중요한-후보생성-전략",
+    "rank": "#6",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "16",
+    "en_title": "Sample Count Is Not Enough: Candidate-Generation Strategy Shapes the Energy and Performance of LLM Test-Time Scaling",
+    "ko_title": "샘플 개수만으로는 부족하다: 후보 생성 전략이 LLM 테스트타임 스케일링의 에너지와 성능을 좌우한다"
+  },
+  "2609.20715": {
+    "base": "2609_액트옵스_환경관찰-마스킹-대신-예측하는-RL-에이전트",
+    "rank": "#7",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "16",
+    "en_title": "Don't Mask the Environment: Observation Supervision Changes How Agents Explore Under RL",
+    "ko_title": "환경을 마스킹하지 마라: 관찰 지도학습이 RL에서 에이전트의 탐험 방식을 바꾼다"
+  },
+  "2609.12397": {
+    "base": "2609_유에프오_옴니조건-정렬-연쇄평가",
+    "rank": "#8",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "16",
+    "en_title": "UFO: Chain-of-Evaluation for Omni-Condition Alignment in Multi-Modal Image Generation",
+    "ko_title": "UFO: 멀티모달 이미지 생성을 위한 옴니-조건 정렬 연쇄 평가"
+  },
+  "2609.19745": {
+    "base": "2609_비전알제곱_세밀지각-영역단위-정책최적화",
+    "rank": "#9",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "16",
+    "en_title": "Region-Level Policy Optimization for Fine-grained MLLM Perception",
+    "ko_title": "세밀한 MLLM 지각을 위한 영역 단위 정책 최적화"
+  },
+  "2609.05661": {
+    "base": "2609_스리지카_인도-9종-문자-폰트-리스타일링",
+    "rank": "#10",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "14",
+    "en_title": "Srijika: OpenType-Layout-Reusing Font Restyling for Nine Indic Scripts",
+    "ko_title": "스리지카: 아홉 개 인도 문자를 위한 오픈타입 레이아웃 재사용 폰트 리스타일링"
+  },
+  "2609.18605": {
+    "base": "2609_팩트_압박-상황-기업AI-신뢰성-평가",
+    "rank": "#11",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "14",
+    "en_title": "PACT: Can Enterprise AI Assistants Be Trusted Under Pressure?",
+    "ko_title": "PACT: 기업용 AI 어시스턴트는 압박 속에서도 신뢰할 수 있는가?"
+  },
+  "2609.19879": {
+    "base": "2609_바크QA_텔루구어-음성-질의응답-벤치마크",
+    "rank": "#12",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "12",
+    "en_title": "VākQA: A Benchmark and Evaluation Study for Telugu Spoken Factoid Question Answering",
+    "ko_title": "VākQA: 텔루구어 음성 사실형 질의응답을 위한 벤치마크 및 평가 연구"
+  }
+}

@@ -1,0 +1,143 @@
+<meta charset="UTF-8">
+<title>스리지카</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#10 · Daily Papers 2026-09-20</span>
+      <span class="cat-tag">생성모델</span>
+      <span class="upvote-tag">▲ 14</span>
+    </div>
+    <h1 class="article-title">Srijika: OpenType-Layout-Reusing Font Restyling for Nine Indic Scripts</h1>
+    <p class="article-title-ko">스리지카: 아홉 개 인도 문자를 위한 오픈타입 레이아웃 재사용 폰트 리스타일링</p>
+    <p class="article-sub">데바나가리·타밀·벵골 등 9개 브라흐미(인도) 문자에 대해, 글자를 처음부터 생성하지 않고 완성된 템플릿 폰트의 글리프 외곽선만 참조 조건부 디퓨전 모델로 다시 그려 넣음으로써, OpenType 레이아웃(GSUB/GPOS) 구조를 그대로 재사용하는 66개의 설치 가능한 TTF 폰트를 만들어내는 시스템 Srijika를 제안하고, 동시에 "템플릿 그대로 복사"가 대부분의 경우 생성 결과보다 낫다는 부정적 결과를 솔직하게 보고한 연구.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.05661" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.05661" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Srijika: OpenType-Layout-Reusing Font Restyling for Nine Indic Scripts</li>
+<li><strong>저자</strong>: Anil Pai (Loopdesk Technologies LLP, 단독 저자)</li>
+<li><strong>출처</strong>: arXiv:2609.05661v1 [cs.CV] (2026년 9월 4일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음 (다만 Lipika 인식/검색 코드와 가중치는 GitHub(Loopdesk-AI/lipika) 및 HuggingFace(loopdesk-ai/lipika)에 공개되어 있으며, Srijika 생성기·서빙 파이프라인 자체는 이번 버전에는 미포함되고 추후 공개 예정이라고 밝힘)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.05661">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>데바나가리·타밀·벵골 등 9개 브라흐미(인도) 문자에 대해, 글자를 처음부터 생성하지 않고 완성된 템플릿 폰트의 글리프 외곽선만 참조 조건부 디퓨전 모델로 다시 그려 넣음으로써, OpenType 레이아웃(GSUB/GPOS) 구조를 그대로 재사용하는 66개의 설치 가능한 TTF 폰트를 만들어내는 시스템 Srijika를 제안하고, 동시에 "템플릿 그대로 복사"가 대부분의 경우 생성 결과보다 낫다는 부정적 결과를 솔직하게 보고한 연구.</p>
+<h2>배경 및 문제의식</h2>
+<ul>
+<li>8억 명 이상이 브라흐미 계열 문자를 사용하지만, 타이포그래피 생태계는 라틴 문자에 비해 매우 빈약하다(Google Fonts 기준 라틴 문자 폰트 패밀리는 1,800개 이상이지만 오디아 문자는 6개뿐).</li>
+<li>그 이유는 구조적이다: 인도 문자용 폰트는 단순한 글자 이미지 집합이 아니라 "셰이핑 엔진 계약"이다. 수백~수천 개의 합자(conjunct), 반자형(half form), 모음 기호(matra) 변형이 OpenType의 GSUB 치환을 통해 서로 일관되게 존재해야 하며, 기존의 래스터 글리프 생성 모델들은 이 결과물(설치 가능한 폰트)에 도달하지 못하고 이미지 생성에서 멈춘다.</li>
+<li>저자는 "글자 이미지 생성"과 "폰트 제작"을 구분하며, 이미지를 만드는 것과 실제로 쓸 수 있는 폰트를 만드는 것은 다른 문제라고 지적한다.</li>
+</ul>
+<h2>핵심 기여</h2>
+<ol>
+<li><strong>템플릿 레이아웃 재사용 리스타일링</strong>: 전문적으로 제작된 오픈라이선스 템플릿 폰트의 cmap과 GSUB 치환 구조는 그대로 유지하고, GPOS(포지셔닝) 구조는 문서화된 메트릭/앵커 변환 정책 하에 재사용한다. 즉 레이아웃 로직은 학습하지 않고 재사용하며, 스타일 변형 품질과 레이아웃 정합성을 분리한다.</li>
+<li><strong>Lipika: 검색 기반 스타일 지정</strong>: 인도 문자용 스타일-속성 데이터셋이 없다는 문제를 해결하기 위해, 약 650개 오픈라이선스 폰트 패밀리에 대한 (패밀리, 문자) 단위 CLIP 스타일 임베딩 검색 인덱스를 구축하여, 자연어 프롬프트를 실제 존재하는 "도너(donor)" 폰트의 참조 글리프로 연결한다.</li>
+<li><strong>하나의 백본으로 9개 문자를 확장하는 그래프트(graft) 학습법</strong>: 기존에 학습이 끝난 체크포인트에서 이어받아(warm-start) 새 문자의 데이터를 균등 결합해 약 2~4.8만 스텝만 추가 학습하면 새로운 문자를 추가할 수 있다. 다만 이 과정에서 기존에 이미 서비스 중인 문자의 품질이 저하되는 "희석(dilution)" 현상을 관찰했고, 재가중 샘플링으로도 이 손실은 없어지지 않고 다른 문자로 옮겨갈 뿐(제로섬)임을 확인했다. 이에 대한 대응으로 문자별로 가장 먼저 기준을 통과한 체크포인트를 그대로 서빙하는 "문자별 라우팅"을 채택했다.</li>
+<li><strong>생성형 인도 문자 폰트를 위한 평가 프로토콜</strong>: 패밀리 단위로 완전히 분리한 제로샷(zero-shot) 평가, 장르(genre)를 맞춘 학습/테스트 분할, 콘텐츠 프로브, 셰이핑된 글자 군집(cluster) 검증기, 그리고 ID(분포 내)/OOD(분포 밖 스타일) 두 계층으로 구성된 고정 벤치마크(benchmark_v1)를 제시했다.</li>
+<li><strong>부정적 결과 카탈로그</strong>: 콘텐츠 충실도를 높이려 시도했으나 실패한 6가지 조건화/목적함수 기법, 학습 목적함수 오염(contamination)에 대한 포렌식 조사, 그리고 참조 기반 리스타일링이 실패하는 지점을 규명하는 "데이터 헐(data hull, 데이터 분포 경계)" 분석을 제공한다.</li>
+</ol>
+<h2>방법론</h2>
+<ul>
+<li><strong>템플릿 글리프 교체</strong>: 템플릿 T의 문자별 글리프 폐집합 G(T)을 대상으로, 도너 폰트에서 뽑은 6장의 참조 타일 R을 조건으로 하는 생성 모델 f_θ(g_i, R)이 각 글리프를 다시 그린 뒤 이를 이진화·벡터화하여 템플릿의 glyf 테이블 위치에 재삽입한다. 폭(advance width)은 리스타일된 외곽선이 더 두꺼울 때만 넓어지도록(좁아지지 않도록) 조정되고, 잉크가 템플릿의 사이드베어링 기준선보다 왼쪽으로 넘치면 오른쪽으로 이동시키며 GPOS 앵커도 같은 벡터만큼 평행 이동시킨다. 이 정책은 위치 데이터의 일관성만 보장할 뿐, 새로 그려진 획에 앵커가 시각적으로 항상 적절한지는 보장하지 않는다.</li>
+<li><strong>Lipika</strong>: (1) ConvNeXt-V2-tiny 기반 서브센터 ArcFace 인식기로 폰트 패밀리를 식별하며, 이 모델의 마지막 특징이 생성기의 스타일 인코더, 서빙 단계의 비평가(critic), 폐쇄집합 평가 지표에 모두 재사용된다. (2) LoRA로 미세조정한 CLIP-L 텍스트/이미지 타워로 (패밀리, 문자) 단위 임베딩을 만들어 자연어 설명("따뜻하고 둥글둥글한 느낌" 등)을 실제 존재하는 도너 폰트에 연결한다.</li>
+<li><strong>참조 조건부 글리프 디퓨전</strong>: 128×128 타일 단위로 동작하는 1억 3,400만 파라미터급 latent diffusion UNet. 템플릿 글리프 래스터가 콘텐츠 채널로 입력되고, 6장의 참조 타일 임베딩이 크로스 어텐션으로 스타일을 주입하며, classifier-free guidance(가이던스 스케일 3~4.5, 50스텝)를 사용한다. 학습 시에는 1.2M 파라미터의 프로젝션 계층만 학습된다.</li>
+<li><strong>결함 허용 서빙 파이프라인</strong>: (1) 콘텐츠 게이트 + 재시도 사다리, (2) 획 두께 조화(harmonization) 및 상한(coherence cap), (3) 래스터 공간에서의 베이스라인 스냅(수직 지터 제거), (4) HarfBuzz로 셰이핑한 글자 군집 검증 및 복구. 각 단계는 문제가 있는 글리프를 개별적으로 템플릿 원본 외곽선으로 되돌릴 수 있어, 최종 폰트의 모든 글리프는 "검증을 통과했거나 템플릿 그대로"인 상태가 된다.</li>
+<li><strong>파라메트릭 후처리 축</strong>: 폰트 출력 후에도 굵기(weight), 속공간(counter), em-fill 세 가지 외곽선 기반 파라미터 축을 제공해 재샘플링 없이 스타일을 미세 조정할 수 있다.</li>
+</ul>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li>데이터: Google Fonts, SMC, 커뮤니티 폰드리에서 수집한 약 650개 오픈라이선스 패밀리(문자별 7~250개, 예: 데바나가리 250개, 오디아 7개). 학습은 각 패밀리 내 (콘텐츠, 스타일) 타일 쌍으로 이루어지며, 패밀리를 통째로 테스트셋으로 분리하는 제로샷 프로토콜을 사용한다.</li>
+<li>비교 대상은 모두 "학습이 필요 없는(no-learning)" 베이스라인뿐이다: 템플릿 그대로 복사, 목표 잉크 밀도에 맞춘 형태학적(morphology) 변형(target-oracle 진단용), 참조 6장만으로 추정한 전역 기하 변환(geometric baseline).</li>
+<li><strong>핵심 결과 1</strong>: SSIM 기준으로 템플릿 복사가 56개 테스트 폰트 중 50개에서 생성 결과보다 높은 점수를 기록했다(스크립트별로 0.003~0.069 차이). 즉 순수 재구성 품질(SSIM) 지표에서는 "아무것도 안 하는 것"이 생성 모델을 이긴다.</li>
+<li><strong>핵심 결과 2</strong>: 모델 자체의 스타일 임베딩(Lipika)으로 측정한 "스타일 이동" 정도는 미미하다. 템플릿-목표 간 유사도 격차를 얼마나 좁혔는지(gap closure)의 중앙값은 0.047에 불과했고, 대부분의 패밀리는 거의 움직이지 않았다. 다만 아웃오브디스트리뷰션(OOD) 장식체 계열 중 "Alkatra"라는 패밀리는 0.85~0.94까지 격차를 좁히는 예외적 성공을 보였으나, 나머지 7개 OOD 장식체 패밀리는 중앙값 0.040 정도로 거의 움직이지 않아, 스타일 전이 성공 여부가 패밀리별로 매우 편차가 크다는 것이 이 논문의 핵심 발견이다.</li>
+<li><strong>구조적 검증</strong>: 66개 전체 폰트가 OpenType Sanitizer(ots)를 통과했고, HarfBuzz와 CoreText 양쪽에서 합자·모음기호가 많은 프로브 문자열에 대해 템플릿과 동일한 글리프 ID 시퀀스를 재현했다. 전체 폐집합 감사(80,915개 글리프, 54,812개 앵커)에서 템플릿 대체 글리프(50,066개)는 메트릭 변화가 전혀 없었고, 생성되어 채택된 글리프(30,849개)의 폭 변화는 중앙값 0.045em, 95백분위 0.358em 수준이었다.</li>
+<li><strong>부정적 결과(negative results)</strong>: 콘텐츠 충실도를 높이려 시도한 6가지 기법(학습 시 콘텐츠 분류 손실 추가, 스켈레톤 조건화, 다중 스케일 어댑터, 굵기 도메인 증강, 대조 학습 스타일 손실, 가중 샘플링) 모두 초고밀도(ultra-heavy) 도너 폰트에 대한 실패율(54% 수준)을 개선하지 못했으며, 그중 일부는 오히려 기존 기준(bar) 점수를 깨뜨렸다. 원인 분석 결과, 학습 데이터의 "잉크 밀도 범위(data hull)"를 벗어나는 도너(예: 초극태 라틴 서체 AlfaSlab, 밀도 0.757)는 학습 목표 폰트들의 최대 밀도(0.732)를 넘어서기 때문에 근본적으로 재현이 어렵다는 가설을 제시했다.</li>
+<li>또한 학습 중 우연히 섞여 들어간 학습-시점 콘텐츠 손실 항이 4번의 학습 실행을 연쇄적으로 오염시켰던 사례를 포렌식 방식으로 추적해, 실험 설정을 기록·비교하는 것의 중요성을 강조했다.</li>
+</ul>
+<h2>한계점</h2>
+<ul>
+<li>학습 데이터의 잉크 밀도 범위를 벗어나는 초고밀도 도너 폰트는 대부분 템플릿으로 되돌아가는 결과를 낳는다(데이터 헐 한계).</li>
+<li>스타일 전이는 "글리프 국소적"이다: 확장체(expanded), 연결형 필기체, 베이스라인이 출렁이는 스타일처럼 레이아웃 전체 수준에서 나타나는 특징은 6장의 참조 타일만으로는 포착되지 않아 전이 품질이 떨어진다.</li>
+<li>문자별 라우팅은 메모리 사용량이 큰 대신 회귀(regression)를 막는 방편일 뿐이며, 희석 현상 없이 하나의 통합 모델로 9개 문자를 서비스하는 문제는 미해결 상태다.</li>
+<li>생성된 폰트는 커닝·마크 부착 데이터를 재사용하지만 힌팅(hinting)은 되어 있지 않고, 파라메트릭 축도 진짜 가변폰트(variable font) 델타가 아닌 외곽선 단위 조작이다.</li>
+<li>평가는 오라클 참조(실제 보유한 목표 폰트)를 이용한 재구성 충실도만 측정할 뿐, 오픈보캐뷸러리 프롬프트 품질 자체는 검증하지 못했다(검색 인터페이스의 속성-텍스트 스피어만 상관계수는 0.50 수준). 학습 기반 few-shot 생성기(FontDiffuser 등)와의 비교나 사람 평가(human study)도 수행되지 않았다.</li>
+<li>벤치마크에 사용된 OOD/ID 패밀리들이 사실은 Lipika 인코더·검색 인덱스의 학습 데이터에 이미 포함되어 있어, 스타일 유사도 지표 자체가 "같은 모델"에 의한 측정이라는 한계(same-model measurement)가 있다고 저자 스스로 명시했다.</li>
+</ul>
+<h2>시사점</h2>
+<ul>
+<li>"폰트 생성"이라는 어려운 문제를 처음부터 새로 만드는 대신 "이미 완성된 폰트의 레이아웃 구조를 재사용하고 글리프 외곽선만 다시 그린다"는 문제 재정의는, 복잡한 셰이핑 엔진 계약을 충족시켜야 하는 인도 문자와 같은 저자원 스크립트에서 실용적인 절충안이 될 수 있음을 보여준다.</li>
+<li>동시에 이 논문은 SSIM 등 재구성 지표만으로는 "스타일이 움직였는가"를 제대로 평가할 수 없으며, 오히려 아무것도 하지 않는 템플릿 복사가 재구성 지표에서 이기는 역설적 상황을 통해, 생성형 타이포그래피 평가에는 스타일 이동을 별도로 측정하는 지표와 벤치마크가 필요함을 시사한다.</li>
+<li>실패한 6가지 기법과 학습 오염 사례를 투명하게 공개한 점은, 유사한 참조 조건부 이미지 생성 연구에서 "조건화를 더 정교하게 만드는 것"이 항상 답이 아니며, 문제가 데이터 분포 범위(data hull) 자체에 있을 수 있다는 방법론적 교훈을 제공한다.</li>
+<li>저(低)자원 문자 체계의 타이포그래피 생태계 확장이라는 사회적 문제의식과, 오픈라이선스 폰트만을 사용해 생성물의 라이선스를 추적 가능하게 설계한 점은 실무적으로도 참고할 만하다.</li>
+</ul>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.05661" target="_blank" rel="noopener">huggingface.co/papers/2609.05661</a> · 2026-09-20</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

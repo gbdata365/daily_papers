@@ -1,0 +1,122 @@
+<meta charset="UTF-8">
+<title>비디오 델타넷</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#2 · Daily Papers 2026-09-20</span>
+      <span class="cat-tag">생성모델</span>
+      <span class="upvote-tag">▲ 23</span>
+    </div>
+    <h1 class="article-title">Video DeltaNet: A Video-Native Hybrid Attention for Livestream Video Generation</h1>
+    <p class="article-title-ko">비디오 델타넷: 라이브스트림 비디오 생성을 위한 비디오 네이티브 하이브리드 어텐션</p>
+    <p class="article-sub">로컬 구간에는 정밀한 Softmax 어텐션을, 먼 구간에는 프레임 단위로 갱신되는 양방향 선형 메모리(Video Delta Attention)를 결합한 하이브리드 어텐션 구조 Video DeltaNet(VDN)을 제안해, 대형 비디오 디퓨전 모델 MiniMax H3에 적용함으로써 화질 저하 없이 디노이징 속도를 10배 이상 높인 연구.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.20744" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.20744" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Video DeltaNet: A Video-Native Hybrid Attention for Livestream Video Generation</li>
+<li><strong>저자</strong>: Haocheng Xi, Yiming Xie, Hexu Zhao, Yiwen Zhang, Michael Liu, Thomas Creavin, Kurt Keutzer, Xiuyu Li, Zhaoyang Lv, Chenfeng Xu, Haiwen Feng (UC Berkeley, Impossible Inc., UT Austin 공동 연구)</li>
+<li><strong>출처</strong>: arXiv:2609.20744v1 [cs.LG] (2026-09-17)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/OpenVDN/vdn-minimax-h3">GitHub</a> · <a href="https://huggingface.co/OpenVDN/vdn-minimax-h3">Weights</a> · <a href="https://openvdn.github.io/">Blog</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.20744">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>로컬 구간에는 정밀한 Softmax 어텐션을, 먼 구간에는 프레임 단위로 갱신되는 양방향 선형 메모리(Video Delta Attention)를 결합한 하이브리드 어텐션 구조 Video DeltaNet(VDN)을 제안해, 대형 비디오 디퓨전 모델 MiniMax H3에 적용함으로써 화질 저하 없이 디노이징 속도를 10배 이상 높인 연구.</p>
+<h2>배경 및 문제의식</h2>
+<p>비디오 디퓨전 모델은 디노이징 과정에서 매우 긴 시공간 토큰 시퀀스를 반복 처리해야 하며, 저자들이 프로파일링한 MiniMax H3 워크로드에서는 Softmax 어텐션이 전체 디노이저 실행 시간의 85% 이상을 차지할 정도로 핵심 병목이다. 시퀀스 길이에 대해 이차적으로 증가하는 Dense Softmax의 계산량을 줄이기 위해 언어 모델에서 널리 쓰이는 선형 어텐션(고정 크기 상태로 먼 문맥을 압축)을 그대로 가져오면, 압축된 상태가 Softmax가 보존하던 세밀한 상호작용을 담지 못해 생성 품질이 크게 저하된다.</p>
+<p>저자들은 이 품질 격차의 원인을 세 가지 불일치로 정리한다.
+1. 고정 크기 상태가 피사체 정체성, 장면 배치, 장거리 모션 같은 전역 속성을 시퀀스 길이와 무관하게 유지해야 하는 반면, Softmax는 키/값 집합이 계속 확장된다.
+2. 기존 델타 규칙 선형 어텐션은 언어 모델의 자기회귀 디코딩처럼 토큰을 하나씩 순차적으로 갱신하지만, 비디오 디퓨전은 한 프레임의 모든 공간 토큰을 동시에 처리하므로 임의의 패치 순서를 강제하거나 상관된 갱신을 독립적으로 처리하면 상호 간섭이 생긴다.
+3. 무작위로 초기화된 선형 경로를 Softmax 기반 사전학습 모델에 추가하면 정보 흐름과 잔차 스트림의 활성화 통계가 바뀌어, 신중한 적응 없이는 사전학습된 능력을 훼손할 수 있다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>지역 Softmax 어텐션과 전역 경계 앵커(anchor), 양방향 선형 메모리를 결합하고 브랜치별 정규화·게이트·출력 프로젝션을 갖춘 하이브리드 비디오 어텐션 구조.</li>
+<li>프레임의 모든 공간 토큰을 함께 반영하는 프레임 단위 델타 연산자(Video Delta Attention)와, 이 갱신이 안정적임을 보이는 이론적 분석(비확장적 상태 전이), 그리고 효율적인 배치 구현.</li>
+<li>사전학습된 백본을 처음부터 다시 학습하지 않고, 단계적 교사 정합(teacher alignment), 저랭크(LoRA) 정제, 소수 스텝 증류, 최적화된 추론까지 아우르는 완결된 적응 파이프라인.</li>
+</ol>
+<h2>방법론</h2>
+<p><strong>하이브리드 어텐션 구조</strong>: 인접 프레임 간에는 명시적인 토큰-토큰 Softmax 어텐션을 양방향 슬라이딩 윈도우로 유지해 텍스처·경계·단기 모션 같은 지역적 상관관계를 보존한다. 윈도우 크기는 VAE가 5개의 연속 잠재 프레임을 하나의 시간 청크로 디코딩하는 구조를 따라, 경계가 토크나이저의 자연스러운 시간 단위를 가로지르지 않도록 설계했다(경계 부근을 제외하면 15프레임 윈도우). 여기에 클립의 첫/마지막 잠재 프레임을 전역 참조점으로 삼는 "경계 앵커(boundary anchor)"를 추가해, 모든 프레임이 이 두 앵커에 사방향으로 접근할 수 있게 한다. 이는 특히 이미지-투-비디오나 첫-마지막 프레임 조건부 생성에서 유용하다.</p>
+<p>먼 구간의 문맥은 양방향 선형 어텐션이 담당한다. 순방향 상태(윈도우 이전 프레임 요약)와 역방향 상태(윈도우 이후 프레임 요약)를 각각 유지하고, 두 상태에 대한 쿼리 결과를 더해 먼 문맥 출력을 얻는다(겹치지 않는 영역이므로 중복 계산이 없다). 텍스트 토큰도 별도 상태로 요약해 두 방향 스캔의 초기값에 절반씩 나눠 넣음으로써 텍스트 조건이 한 번만 반영되도록 한다.</p>
+<p>두 브랜치는 서로 다른 출력 스케일을 가지므로, Softmax 출력에는 콘텐츠 의존적 시그모이드 게이트를, 선형 출력에는 RMS 정규화 후 별도의 시그모이드 게이트를 적용하고, 각 브랜치를 독립적인 출력 프로젝션으로 투영한 뒤 합산해 사전학습된 잔차 스트림에 더한다.</p>
+<p><strong>Video Delta Attention (VDA)</strong>: 기존 델타 규칙은 토큰 하나마다 상태를 갱신하지만, VDA는 한 프레임의 모든 공간 토큰이 함께 상태를 결정하도록 확장한다. 개별 패치가 독립적으로 상태를 보정하면(기존 배치 델타 규칙, 예: SANA-WM 방식) 겹치는 키 방향을 가진 패치들의 보정이 서로 충돌하거나 중첩될 수 있는데, VDA는 프레임 갱신을 "감쇠된 이전 상태에 가깝게 유지하면서 해당 프레임의 모든 키-값 쌍을 동시에 최소자승 적합시키는" 하나의 최적화 문제로 정식화한다. 이를 미분하면 정규방정식과 닫힌 형태의 해(선형 시스템의 역행렬 형태)가 나오며, 이 경우 모든 잔차가 공유된 갱신 후 상태를 기준으로 계산되므로 겹치는 키들의 내적이 서로의 보정에 영향을 미치도록 결합된다. 저자들은 고정된 준비 특징과 게이트 하에서 이 상태 전이가 비확장적(non-expansive, 연산자 노름이 1 이하)임을 증명해, 프레임 갱신이 이전 상태로부터 물려받은 기여를 증폭시키지 않음을 보장한다.</p>
+<p><strong>단계적 적응 파이프라인</strong>: (A1) 각 선형 브랜치를 사전학습 활성화에 맞춰 200스텝 동안 개별적으로 정렬(백본과 Softmax 게이트는 고정), (A2) 정렬된 브랜치들을 함께 설치해 500스텝 동안 종단 간 최적화(사전학습 가중치·게이트는 여전히 고정), (B) Q/K/V/출력 프로젝션에 LoRA 어댑터를 추가해 선형 경로·Softmax 게이트와 함께 2,000스텝 동안 공동 적응. 이후 GAN 항을 제외한 DMD2 스타일 목적함수로 50스텝 VDN-H3를 8스텝 학생 모델로 증류한다(커뮤니티 MiniMax-H3-Turbo-LoRA에서 초기화, generator/real-score/fake-score 역할이 하나의 FSDP 백본을 어댑터로 공유).</p>
+<p><strong>추론 최적화</strong>: VDA 데이터 준비·읽기를 4개의 융합 Triton 커널(VDA-Prep, VDA-Stats, VDA-Gather, VDA-Epilogue)로 구성하고, 청크 단위 스캔으로 VAE 청크 경계에서만 메모리를 읽도록 하며, 작은 행렬 역산(I+A)⁻¹을 블록 가우스-조던 소거를 이용한 단일 CUDA 커널로 처리한다. SGLang 서빙 스택에서는 FlashAttention의 varlen API로 윈도우 Softmax를 패킹하고, Ulysses 방식으로 VDA를 어텐션 헤드 단위로 샤딩하며, MXFP8 저정밀도 GEMM을 활용한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p><strong>설정</strong>: 1344×768 해상도, 24fps, 345프레임(14.375초) 비디오 클립 10,015개를 사전 인코딩(비디오/오디오 잠재, Qwen3-VL 텍스트 임베딩)해 학습에 사용했고, 평가는 고정된 제3자 프롬프트 세트 103개로 진행했다. 베이스라인은 50-NFE Dense H3(완전 어텐션)와 4-NFE FastH3(빠른 모델)이며, 품질 지표로 EvalCrafter VQA, Q-Align, FAST-VQA, DOVER++, RAFT 모션, FIRM-Video(지시 따르기·지각 품질·세계 일관성), FL2VA(첫-마지막 프레임 조건 충실도의 PSNR/SSIM/LPIPS)를 사용했다.</p>
+<p><strong>품질</strong>: 8스텝 VDN-H3는 5개의 무기준 품질 지표 전반에서 50스텝 Dense H3와 동등하거나 소폭 우수했고(차이 +0.06~+1.00), FastH3는 2.70~12.74점 낮았다. RAFT 모션 크기도 Dense H3와 유사하게 유지했다(11.71 대 11.55픽셀, FastH3는 9.19로 하락). FIRM-Video와 FL2VA(PSNR 28.67 대 28.85, SSIM 0.826 대 0.833, LPIPS 0.1156 대 0.1044) 지표에서도 VDN-H3는 Dense H3에 근접했다.</p>
+<p><strong>효율성</strong>: 14.3초·768p 워크로드에서 시스템 최적화된 VDN-H3 백본은 H200에서 35.35초→11.16초(3.2배), B200에서 16.0초→6.2초(2.6배)로 단축했다. 잠재 프레임 수를 42→102로 늘릴수록 Softmax 어텐션 밀도는 42.1%→20.0%로 감소하고 백본 속도 향상은 최대 3.2배(H200)/2.6배(B200)에 이른다. 8스텝 증류와 8-GPU 헤드 샤딩 분산 추론을 결합하면 B200 8장에서 최종 디노이징이 6.70초(50스텝 Dense H3 대비 14.5~119.3배 가속, 조건에 따라 다름), H200 8장에서 12.5초까지 단축됐다. 커널 단위 어블레이션에서는 VDA-Prep(H200 18.0→1.6ms), VDA-Gather(7.2~7.5배), 작은 행렬 역산(4.6~5.0배), 청크 스캔(헤드 샤딩 시 유효) 등 각 최적화의 개별 기여를 확인했다.</p>
+<h2>한계점</h2>
+<p>논문 본문에 별도의 "한계점" 절은 없으나, 본문 내용에서 다음과 같은 제약을 유추할 수 있다. VDN은 비디오-비디오 상호작용에만 하이브리드 어텐션을 적용하고 텍스트·오디오 관련 상호작용에는 여전히 Softmax를 사용하므로, 개선 범위가 비디오 토큰 간 상호작용으로 제한된다. 또한 단계적 적응(A1/A2/B) 및 소수 스텝 증류 파이프라인은 상당한 추가 학습 비용과 정교한 스케줄링을 요구하며, 특정 사전학습 백본(MiniMax H3)과 그 토크나이저(5프레임 VAE 청크) 구조에 맞춰 설계되어 다른 아키텍처로의 일반화 가능성은 명시적으로 검증되지 않았다. 평가도 고정된 제3자 프롬프트 103개와 특정 지표 세트에 한정되어 있다.</p>
+<h2>시사점</h2>
+<p>Video DeltaNet은 "선형 어텐션을 언어 모델에서 비디오로 그대로 옮기면 품질이 떨어진다"는 문제를 비디오 데이터의 구조(프레임 단위 병렬 토큰, 양방향 문맥, 경계 조건 중요성)에 맞춰 재설계함으로써 해결한 사례로, 대형 사전학습 비디오 디퓨전 모델을 처음부터 다시 학습하지 않고도 하이브리드 어텐션·저랭크 적응·소수 스텝 증류·커널 최적화를 결합해 실전 배포 가능한 수준(초 단위 지연)의 라이브스트림형 비디오 생성을 가능하게 했다는 점에서, 향후 실시간/대화형 비디오 생성 시스템 설계에 참고할 만한 실용적 로드맵을 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.20744" target="_blank" rel="noopener">huggingface.co/papers/2609.20744</a> · 2026-09-20</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

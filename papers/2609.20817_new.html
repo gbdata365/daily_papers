@@ -1,0 +1,130 @@
+<meta charset="UTF-8">
+<title>FAMOS</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#4 · Daily Papers 2026-09-20</span>
+      <span class="cat-tag">생성모델</span>
+      <span class="upvote-tag">▲ 17</span>
+    </div>
+    <h1 class="article-title">FAMOS: Feed-Forward 3D Articulation Modeling from Sparse Observations</h1>
+    <p class="article-title-ko">FAMOS: 희소 관측으로부터의 피드포워드 3D 관절 모델링</p>
+    <p class="article-sub">FAMOS는 카메라 시점과 관절 상태가 제각각인 소수의 부분 포인트 클라우드 관측만으로, 움직이는 부품의 분할과 관절 파라미터(축, 원점, 관절 종류)를 한 번의 순전파(feed-forward)로 동시에 예측하는 모델이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.20817" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.20817" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: FAMOS: Feed-Forward 3D Articulation Modeling from Sparse Observations</li>
+<li><strong>저자</strong>: Kevin Qu, Tao Sun, Massimiliano Viola, Liyuan Zhu, Zhizhuo Zhou, Sayan Deb Sarkar, Konrad Schindler, Iro Armeni (Stanford University, ETH Zürich)</li>
+<li><strong>출처</strong>: arXiv:2609.20817v1 [cs.CV] (2026년 9월 17일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://kevinqu7.github.io/famos">https://kevinqu7.github.io/famos</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.20817">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>FAMOS는 카메라 시점과 관절 상태가 제각각인 소수의 부분 포인트 클라우드 관측만으로, 움직이는 부품의 분할과 관절 파라미터(축, 원점, 관절 종류)를 한 번의 순전파(feed-forward)로 동시에 예측하는 모델이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>서랍장 문을 열거나 가위를 사용하는 등 일상 사물과의 상호작용을 이해하려면 물체의 어떤 부분이 어떻게 움직이는지(관절 구조)를 파악해야 하며, 이는 로보틱스, AR/VR, 임바디드 AI 등에서 중요하다. 그러나 기존 접근법은 입력 조건이 지나치게 까다롭다.</p>
+<ul>
+<li>테스트 시점 최적화 기반 방법들은 각 관절 상태마다 밀집된 다중 시점 관측을 요구하고, 움직이는 부품의 개수를 미리 알아야 하는 경우가 많으며, 물체마다 최적화를 새로 수행해야 해 확장성이 떨어진다.</li>
+<li>비디오 기반 방법들은 사람-물체 상호작용 영상에서 포인트를 추적하는 방식이라 가림(occlusion)이나 여러 부품이 동시에 움직이는 상황에서 오류가 누적되기 쉽다.</li>
+<li>최근의 feed-forward 방법들은 3D 메시나 포인트 클라우드 한 장으로부터 직접 관절 속성을 예측해 유망하지만, 단일 관측만으로는 물체가 실제로 움직이는 모습을 본 적이 없기 때문에 학습된 카테고리 수준의 형태 사전지식(shape prior)에 크게 의존하게 되고, 이는 보지 못한 형태나 부분적인 입력에 대한 일반화 성능 저하로 이어진다. 또한 여러 상태의 관측이 주어져도 각 관측을 독립적으로 처리할 뿐 상태 간의 움직임 단서를 활용하지 못한다.</li>
+</ul>
+<h2>핵심 기여</h2>
+<p>논문이 제시하는 기여는 다음과 같다.
+1. <strong>FAMOS 모델</strong>: 순서 없는(unordered) 가변 개수의 부분 포인트 클라우드 집합(단일 관측 포함)을 입력받아, 학습된 형태 사전지식뿐 아니라 실제 관측된 움직임에 근거해 관절을 예측하는 feed-forward 방법.
+2. <strong>Multi-state Articulation Transformer</strong>: 상태별(state-wise) 어텐션과 전역(global) 어텐션을 번갈아 적용하는 구조로, 여러 관측 사이의 관절 단서를 효과적으로 통합한다.
+3. <strong>관측된 관절 가동범위(observed articulation span) 손실</strong>: 입력 관측들 사이에서 각 부품이 실제로 보여준 움직임의 범위를 지도학습 목표로 삼아, 모델이 전체 관측 집합을 적극적으로 활용하도록 유도하는 새로운 학습 목표.
+4. <strong>절차적 데이터 생성기</strong>: 기존 관절 물체 데이터셋의 규모·다양성 한계를 보완하기 위해, 학습 중 실시간으로 자체 주석(annotation)이 달린 물체를 합성하는 파이프라인.
+5. PartNet-Mobility, ACD, ArtiCraft-10K 세 벤치마크에서 feed-forward 및 최적화 기반 베이스라인 대비 일관된 성능 향상을 보이고, 합성 데이터로만 학습했음에도 실제 캐주얼 촬영 물체에 일반화됨을 입증.</p>
+<h2>방법론</h2>
+<p><strong>문제 정의</strong>: 물체를 서로 다른 시점·관절 상태에서 촬영한 S개(순서 없음, S=1도 가능)의 부분 포인트 클라우드 집합을 입력으로 받아, (i) 정적 베이스와 P−1개의 움직이는 부품으로 이루어진 부품 개수 P, (ii) 모든 입력 상태에 대한 포인트별 분할, (iii) 부품별 관절 파라미터(1자유도 회전 관절은 축과 원점, 슬라이딩 관절은 방향 벡터)를 예측한다.</p>
+<p><strong>Multi-state Articulation Transformer</strong>: 각 관측은 고정된(frozen) PartField 백본과 기하학적(위치·법선) 임베딩을 통해 포인트 토큰으로 인코딩된다. 관측 순서를 나타내는 상태 인덱스 임베딩은 의도적으로 넣지 않아, 다양한 개수의 입력을 유연하게 처리할 수 있게 한다. K개의 학습 가능한 부품 쿼리(part query)는 특정 부품을 대표하는 후보 역할을 한다. 트랜스포머 레이어는 (1) 각 관측 내부에서만 포인트가 서로 주의를 기울이는 상태별 어텐션과, (2) 모든 관측의 포인트 토큰과 쿼리를 하나의 시퀀스로 합쳐 함께 처리하는 전역 어텐션을 번갈아 수행한다. 전역 어텐션에서는 쿼리가 모든 포인트로부터 정보를 모으고, 포인트끼리도 직접 상호작용할 수 있어, 시점·가림·관절 상태에 따라 부분적으로만 겹치는 순서 없는 관측들 사이의 대응 관계를 직접 형성할 수 있다. 최종적으로 포인트별 분할 헤드와 쿼리별 헤드(관절 종류, 축/원점 또는 방향)가 결과를 디코딩한다.</p>
+<p><strong>관측된 관절 가동범위(observed articulation span)</strong>: 관절 축·원점·종류는 원리상 단일 관측만으로도 추론 가능한 물체 고유 속성이므로, 이것만 지도학습하면 모델이 하나의 관측에만 의존하고 나머지를 무시하는 지름길(shortcut)을 학습하게 된다. 이를 막기 위해 저자들은 특정 부품이 입력 관측들 사이에서 보인 관절 값(각도 또는 이동량)의 최대-최소 차이를 "관측된 가동범위"로 정의하고 이를 보조 목표로 지도학습한다. 이 값을 예측하려면 모델이 모든 관측에서 같은 부품을 일관되게 위치시키고 상대적 구성을 추론해야 하므로, 자연히 전체 관측 집합을 종합적으로 활용하게 된다. 정준(canonical) 정지 상태가 관측에 없어도 가동범위는 그 기준 선택에 불변이라는 장점이 있다.</p>
+<p><strong>학습 목표</strong>: 쿼리는 고정된 정체성이 없으므로 헝가리안(Hungarian) 매칭으로 예측을 실제 부품에 배정한 뒤, 분할 교차엔트로피 손실, 관절 종류 교차엔트로피 손실, 회전 관절의 플뤼커(Plücker) 좌표 L1 손실, 슬라이딩 관절 방향 L1 손실, 관측된 가동범위 L1 손실을 모두 더해 전체 손실을 구성한다.</p>
+<p><strong>절차적 데이터 생성</strong>: 상자, 원기둥, 속이 빈 원기둥, 반토러스, 구, 구멍 뚫린 패널 등 6가지 기본 도형을 조합해 캐비닛, 서랍장, 문, 탁자, 상자, 노트북, 오븐, 세탁기, 선풍기 등 15개의 물체 종류(패밀리)를 만든다. 치수, 부품 수, 관절 위치를 인스턴스마다 무작위화하여 물체당 1~8개의 움직이는 부품을 생성하며, 부품과 관절이 해석적으로 배치되므로 정확한 분할·관절 파라미터가 자동으로 함께 생성된다. 학습 중에는 결정론적 시드를 사용해 메모리 내에서 즉석으로 무한히 새로운 물체 스트림을 합성한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p><strong>학습 데이터</strong>: PartNet-Mobility(25개 클래스, 1,020개 물체)와 GRScenes(15개 클래스, 968개 물체)에서 뚜렷하고 외부에서 보이는 관절만 남기도록 필터링한 데이터에, 절차적으로 생성된 무한한 합성 자산을 결합해 사용한다. 학습은 절차적 자산만으로 5만 스텝을 사전학습한 뒤, 절차적 자산과 큐레이션된 데이터셋을 1:1 비율로 섞어 8만 스텝을 추가 학습하는 2단계 전략을 따른다. 학습 시 입력 상태 수는 1~4개 사이에서 확률적으로 샘플링된다(주로 2~4개).</p>
+<p><strong>아키텍처</strong>: 부품 쿼리 K=16, 트랜스포머 레이어 L=6, 은닉 차원 D=768, 어텐션 헤드 12개.</p>
+<p><strong>평가 벤치마크 및 지표</strong>: PartNet-Mobility(분포 내 성능), ACD(형태 다양성과 복잡한 관절 구조를 가진 교차 데이터셋), ArtiCraft-10K(LLM 에이전트가 생성한 물체) 세 곳에서 평가하며, IoU 0.5 기준의 분할 precision/recall/F1과, 관절 종류(M)·축 오차 5도 이내(MA)·원점 오차 0.05 이내(MAO) 기준의 단계적 F1 점수를 사용한다. 비교 대상은 feed-forward 베이스라인 Particulate(자체 데이터로 재학습, 다중 상태 지원하도록 확장)와 최적화 기반 베이스라인 ReArt, ArtGS이다.</p>
+<p><strong>주요 결과</strong>: FAMOS는 세 벤치마크 모두에서 모든 베이스라인을 능가했다. 분포 내 PartNet-Mobility에서는 분할 F1 98.4(Particulate 93.6 대비), 교차 데이터셋인 ACD와 ArtiCraft에서는 각각 71.9와 92.5로, Particulate 대비 큰 격차(각 28.2, 15.9 F1 포인트)를 보였다. 최적화 기반 방법들은 더 조밀한 입력을 받고도 세 데이터셋 모두에서 60 F1 미만에 머물렀다. 가장 엄격한 관절 추정 지표(MAO)에서 FAMOS는 PartNet-Mobility 98.4, ACD 64.5, ArtiCraft 90.0을 기록해 Particulate 대비 최대 75.7%의 상대적 개선을 보였으며, 더 많은 부품을 매칭하면서도 더 낮은 오차를 냈다. 단일 관측(S=1) 환경에서도 FAMOS는 재학습된 Particulate보다 우수했다. 추론 속도는 물체당 0.1초로 Particulate와 동일한 수준이며, ReArt(182초), ArtGS(297초) 대비 약 3,000배 빠르다.</p>
+<p><strong>소거 실험(ablation)</strong>: 전역 어텐션을 레지스터(register) 방식 어텐션으로 대체하면 성능이 크게 저하되어 전역 어텐션(포인트 간 직접 상호작용)의 중요성이 확인되었다. 관측된 가동범위 손실을 제거해도 관절 추정 정확도가 하락했다. 절차적 사전학습을 추가하면 성능이 크게 향상되고, 두 번째 단계에서 절차적 데이터와 큐레이션된 데이터를 1:1로 섞는 것이 최적임을 확인했다(그 비율에서 ACD 성능이 정점). 입력 관측 수를 늘릴수록 성능이 향상되며, 특히 두 번째 관측이 추가될 때(움직임 증거가 처음 드러날 때) 가장 큰 향상 폭을 보였고, 학습에 사용한 최대 4개를 넘는 관측 수(최대 12개까지 테스트)에서도 성능 저하 없이 잘 작동했다.</p>
+<p><strong>실제 환경 일반화</strong>: SAM2로 물체 마스크를 얻고 VGGT-Ω로 포인트 클라우드를 복원한 실제 캐주얼 촬영 이미지에 대해, 합성 데이터로만 학습했음에도 FAMOS는 부품 분할과 관절 축을 정확히 예측했다.</p>
+<h2>한계점</h2>
+<p>논문이 명시한 한계는 다음과 같다.
+- 학습 분포와 크게 다른 형태나 관절 구조를 가진 물체 클래스에서는 성능이 저하된다. 절차적 생성기가 학습 데이터 규모를 크게 늘렸지만, 다른 도메인의 대규모 데이터셋에 비하면 물체 클래스 수가 여전히 훨씬 적다.
+- 물체 전체 크기에 비해 매우 작은 움직이는 부품은 여전히 어렵다. 관측이 희소하고 부품 간 가림이 존재하면 신뢰할 수 있는 부품 분리가 어려워진다.
+- 각 움직이는 부품이 정적 베이스에 직접 연결된, 깊이가 1인(depth-one) 관절 트리 구조의 물체에 초점을 맞추고 있어, 더 깊은 계층 구조를 가진 물체는 다루지 않는다.
+- 업스트림 3D 복원 모델(예: VGGT-Ω)의 결과가 매우 노이즈가 많거나 손상된 경우 실패할 수 있다.</p>
+<h2>시사점</h2>
+<p>FAMOS는 단일 관측의 근본적 모호성(같은 형태를 설명하는 여러 관절 모델이 존재할 수 있음)을 학습된 형태 사전지식이 아니라 실제 관측된 움직임 증거로 해소하려는 시도로서, 캐주얼하게 촬영한 소수의 사진만으로도 로봇 조작, AR/VR 디지털 트윈, 임바디드 AI 시뮬레이션 등에 필요한 관절 구조를 빠르고 정확하게 얻을 수 있는 가능성을 보여준다. 특히 순서와 개수에 구애받지 않는 유연한 입력 처리 방식과, 관측된 가동범위라는 새로운 지도학습 신호는 여러 상태를 활용하는 다른 3D 인식 과제에도 응용될 수 있는 아이디어이며, 저비용 절차적 데이터 생성 전략은 관절 물체처럼 주석 확보가 어려운 3D 인식 분야 전반에 참고할 만한 방향을 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.20817" target="_blank" rel="noopener">huggingface.co/papers/2609.20817</a> · 2026-09-20</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

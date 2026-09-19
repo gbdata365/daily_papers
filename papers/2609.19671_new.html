@@ -1,0 +1,124 @@
+<meta charset="UTF-8">
+<title>When2Think</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#3 · Daily Papers 2026-09-20</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 18</span>
+    </div>
+    <h1 class="article-title">When2Think: Learning Difficulty-Aware Length Control for Efficient Hybrid Reasoning Models</h1>
+    <p class="article-title-ko">When2Think: 효율적인 하이브리드 추론 모델을 위한 난이도 인식 길이 제어 학습</p>
+    <p class="article-sub">When2Think은 문제 난이도에 따라 "생각 없이 바로 답하기(NOTHINK)"와 "깊게 추론하기(THINK)"를 인스턴스 단위로 자동 조절하는 후처리(post-training) 강화학습 프레임워크로, 쉬운 문제는 짧게 답하고 어려운 문제는 충분히 추론하도록 만들어 정확도와 효율성을 동시에 개선한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.19671" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.19671" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: When2Think: Learning Difficulty-Aware Length Control for Efficient Hybrid Reasoning Models</li>
+<li><strong>저자</strong>: Jaejun Shim, HyunJin Kim, JinYeong Bak (성균관대학교), Young Jin Kim (Microsoft)</li>
+<li><strong>출처</strong>: arXiv:2609.19671v1 [cs.AI] (2026년 9월 17일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.19671">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>When2Think은 문제 난이도에 따라 "생각 없이 바로 답하기(NOTHINK)"와 "깊게 추론하기(THINK)"를 인스턴스 단위로 자동 조절하는 후처리(post-training) 강화학습 프레임워크로, 쉬운 문제는 짧게 답하고 어려운 문제는 충분히 추론하도록 만들어 정확도와 효율성을 동시에 개선한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>대형 추론 모델(LRM)은 어려운 문제에서 뛰어난 성능을 보이지만, 쉬운 문제에서도 불필요하게 긴 추론을 생성하는 "과잉 사고(overthinking)"와 어려운 문제에서 추론을 너무 일찍 끝내버리는 "과소 사고(underthinking)"를 동시에 겪는다. 기존의 길이 압축이나 고정된 라우팅 기반 효율화 기법들은 균일한 길이 페널티나 경직된 규칙을 사용하기 때문에, 쉬운 문제의 토큰 사용을 줄이는 대신 어려운 문제의 정확도를 희생하는 "효율성 세금(efficiency tax)"이 발생한다. 저자들은 이 문제를 전역적인 길이 압축 문제가 아니라, 문제별로 계산량을 다르게 배분해야 하는 "인스턴스 적응형 계산 배분(instance-adaptive computation allocation)" 문제로 재정의한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>효율성 세금에 대한 통합적 분석: 토큰 감소가 쉬운 문제의 과잉 사고는 줄이지만 어려운 문제에서는 과소 사고를 유발한다는 점을 실험적으로 규명.</li>
+<li>추론을 인스턴스 단위의 적응형 제어 문제로 재구성: 단순 토큰 절감이 아니라 난이도에 따른 계산 배분으로 관점을 전환.</li>
+<li>When2Think 제안: Instance-level Difficulty-Aware Control(IDAC) 기반 보상 성형(reward shaping)을 통해 "생각할지 여부"와 "얼마나 깊게 생각할지"를 하나의 하이브리드 추론 정책 안에서 함께 학습.</li>
+</ul>
+<h2>방법론</h2>
+<p>When2Think은 크게 두 단계로 구성된다.</p>
+<ol>
+<li><strong>참조 통계 사전 계산(Reference Statistics)</strong>: 학습 전에 참조 정책(reference policy)으로 각 문제마다 K개의 궤적을 샘플링하여, 정답률 기반의 난이도 지표 α(문제가 쉬울수록 큰 값)와 평균 응답 길이인 토큰 예산 τ를 미리 계산해 캐시에 저장한다. 이 통계는 학습 중 온라인으로 참조 모델을 다시 호출할 필요 없이 재사용된다.</li>
+<li><strong>Instance-level Difficulty-Aware Control (IDAC)</strong>: 정책이 생성한 궤적의 길이 T(o)와 참조 통계 α, τ를 이용해 λ = exp(-T(o)·α/τ) 형태의 감쇠 계수를 계산한다. THINK 모드에서는 이 값이 그대로 적용되고, NOTHINK 모드에서는 λ=1로 고정된다. 이 계수는 참조 길이보다 훨씬 길게 추론하는 궤적에는 강한 페널티를, 반대로 어려운 문제에서 필요한 긴 추론에는 약한 페널티를 부여함으로써 "과잉 사고는 억제하되 필요한 심층 추론은 보존"한다.</li>
+<li><strong>보상 함수</strong>: 정답 여부(검증기 기반 이진 신호)와 IDAC 계수, 그리고 인스턴스별 기준선 α를 결합해 r = V(x,o)(1+λδ) − α 형태로 보상을 구성한다. 여기서 δ는 효율성 보너스의 크기를 조절하는 하이퍼파라미터다.</li>
+<li><strong>배치 단위 표준화 어드밴티지(Batch-Wise Standardized advantage, BWS)</strong>: 학습된 크리틱(critic) 없이도 안정적인 정책 업데이트가 가능하도록, 같은 미니배치 내 다른 문제들의 보상 평균·표준편차로 어드밴티지를 표준화한다. 이는 문제별 난이도 차이로 인한 보상 스케일 차이를 정규화하면서도, 어려운 문제에서 성공한 긴 궤적이 여전히 양(+)의 신호를 받도록 난이도 구조를 보존한다.</li>
+<li><strong>중요도 샘플링(Importance Sampling)</strong>: AdaptThink의 방식을 차용해 학습 초반 THINK 모드로의 조기 수렴을 막기 위해, 궤적의 첫 모드 토큰(THINK/NOTHINK)을 균등하게 샘플링하는 탐색 정책 πIS를 사용하고, 실제 정책 πθ와의 중요도 비율로 편향 없는 그래디언트를 추정한다. PPO 스타일의 클리핑된 대체 목적함수로 최종 정책을 업데이트한다.</li>
+</ol>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li><strong>기반 모델 및 데이터</strong>: DeepSeek-R1에서 증류된 R1-Distill-Qwen-1.5B(Qwen2.5-Math-1.5B 기반)를 기본 모델로 사용했고, 약 4만 개의 경시대회 수준 수학 문제로 구성된 DeepScaleR 데이터셋으로 학습했다(7B 모델로도 일반화 실험 수행).</li>
+<li><strong>평가 벤치마크</strong>: GSM-Plus, MATH-500(난이도 1~5단계), OlympiadBench-Math, Minerva, AIME 2024/2025 등 난이도가 다양한 수학 추론 벤치마크에서 Pass@k 정확도와 평균 토큰 사용량을 함께 측정했으며, Math-Verify와 MARIO Eval을 결합한 이중 검증기로 정답을 채점했다.</li>
+<li><strong>비교 대상</strong>: 기본 LLM(Qwen2.5-Math-Instruct), LRM 계열(R1-Distill-Qwen, DeepScaleR-Preview), 길이 압축 기법(LC-R1, ThinkPrune, LASER), 하이브리드 라우팅 기법(AdaptThink, ThinkLess) 등과 동일한 조건에서 비교.</li>
+<li><strong>주요 결과</strong>: AIME24에서 R1-Distill-Qwen 대비 Pass@3 정확도가 10.0%p 상승(46.0%→56.0%)하면서 토큰 사용량은 27.9% 감소(약 3,959토큰 절감)했다. AIME25에서는 Pass@3 40.0%를 달성해 압축 기반·라우팅 전용 베이스라인들을 모두 능가했다. MATH-500을 난이도별로 나눠 보면, When2Think는 쉬운 문제(Level 1)에서 THINK 비율이 약 0.2에 불과하지만 어려운 문제(Level 5)로 갈수록 THINK 비율이 0.7 이상으로 단조 증가해, 난이도에 따라 계산량을 정교하게 조절함을 보였다. 반면 AdaptThink는 어려운 문제에서 과소 배분하고, ThinkLess는 거의 일정한 계산량을 사용하며, DeepScaleR은 쉬운 문제에서도 과잉 사고하는 경향을 보였다.</li>
+<li><strong>메커니즘 분석</strong>: IDAC을 제거(IS+BWS만 유지)하면 특히 어려운 AIME24에서 정확도가 크게 하락해, "언제 생각할지"뿐 아니라 "얼마나 깊게 생각할지"를 정하는 IDAC이 필수적임을 확인했다. BWS는 학습 안정성에 기여해 THINK 비율을 약 0.9 수준으로 안정적으로 유지시킨 반면(BWS 미적용 시 약 0.6), IS는 정확도 자체보다는 NOTHINK를 효과적으로 활용해 더 효율적인 지점으로 정책을 이동시키는 역할을 했다.</li>
+</ul>
+<h2>한계점</h2>
+<p>논문이 명시한 한계는 다음과 같다. (1) 이 방법은 검증 가능한 보상(verifiable reward)에 의존하므로 수학 추론처럼 정답이 명확히 검증되는 영역에 가장 적합하며, 개방형(open-ended) 과제로 확장하려면 별도의 보상 모델링이나 사람 평가가 필요하다. (2) 난이도 추정을 위해 오프라인 참조 통계에 의존하기 때문에, 문제의 난이도가 모호한 경우에는 신뢰도가 떨어질 수 있다. 또한 논문은 작은 모델(1.5B)에서 효율성 세금 현상이 가장 뚜렷하게 나타나며, 모델 규모가 커질수록(예: 7B, Olmo-3 32B) 그 효과가 상대적으로 덜 두드러진다는 점도 함께 논의한다.</p>
+<h2>시사점</h2>
+<p>이 연구는 추론 모델의 비효율성을 "얼마나 압축할 것인가"의 문제가 아니라 "계산을 어디에 배분할 것인가"의 문제로 재해석해야 한다는 관점을 제시한다. 인스턴스 수준의 난이도 신호(참조 정확도·참조 길이)를 활용한 연속적인 보상 성형과, 학습된 크리틱 없이도 안정적인 최적화를 가능케 하는 배치 단위 표준화는 향후 효율적인 하이브리드 추론 시스템 설계에 일반적으로 적용 가능한 원칙을 제공한다. 다만 검증 가능한 보상에 의존하는 구조이므로, 수학 외의 개방형 도메인으로 확장하기 위해서는 추가적인 보상 설계와 안전장치(예: 사람의 개입, 도메인별 검증)가 필요할 것으로 보인다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.19671" target="_blank" rel="noopener">huggingface.co/papers/2609.19671</a> · 2026-09-20</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

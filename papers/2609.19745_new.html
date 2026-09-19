@@ -1,0 +1,127 @@
+<meta charset="UTF-8">
+<title>세밀한 MLLM 지각을 위한 영역 단위 정책 최적화</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#9 · Daily Papers 2026-09-20</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 16</span>
+    </div>
+    <h1 class="article-title">Region-Level Policy Optimization for Fine-grained MLLM Perception</h1>
+    <p class="article-title-ko">세밀한 MLLM 지각을 위한 영역 단위 정책 최적화</p>
+    <p class="article-sub">멀티모달 대형언어모델(MLLM)이 세밀한 시각 정보를 정확히 인식하려면 고해상도가 필요하지만, 정작 "어디를 볼지" 찾는 위치 파악(localization)은 훨씬 낮은 해상도로도 충분하다는 점에 착안해, 정답 우도 변화만으로 후보 영역을 강화학습으로 훈련시켜 적은 시각 토큰으로도 기존 대비 더 높은 정확도를 달성하는 영역 제안 기법을 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.19745" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.19745" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Region-Level Policy Optimization for Fine-grained MLLM Perception</li>
+<li><strong>저자</strong>: Yuheng Shi, Xiaohuan Pei, Minjing Dong, Chang Xu (시드니 대학교, 홍콩 시티 대학교)</li>
+<li><strong>출처</strong>: arXiv:2609.19745v1 [cs.CV] (2026년 9월 17일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음 (코드: https://github.com/YuHengsss/VisionRL2)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.19745">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>멀티모달 대형언어모델(MLLM)이 세밀한 시각 정보를 정확히 인식하려면 고해상도가 필요하지만, 정작 "어디를 볼지" 찾는 위치 파악(localization)은 훨씬 낮은 해상도로도 충분하다는 점에 착안해, 정답 우도 변화만으로 후보 영역을 강화학습으로 훈련시켜 적은 시각 토큰으로도 기존 대비 더 높은 정확도를 달성하는 영역 제안 기법을 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>MLLM은 작은 글씨, 멀리 있는 물체, 복잡한 고해상도 장면에서 여전히 취약하며, 이를 해결하는 일반적 방법은 입력 해상도를 높이는 것이다. 그러나 해상도를 높이면 시각 토큰 수가 늘어나 비전 인코딩과 언어모델의 프리필링(prefilling) 비용이 함께 증가한다. 세밀한 시각 질의응답은 크게 (1) 정답과 관련된 영역을 찾는 위치 파악과 (2) 그 영역의 내용을 인식하는 두 단계로 나눌 수 있는데, 기존 MLLM이나 관련 연구들은 이 두 단계를 분리하지 않고 모델 전체에서 한 번에 처리한다.</p>
+<p>저자들은 Qwen3.5-4B와 ZoomBench 벤치마크로 통제된 진단 실험을 수행하여, 동일한 정답 유지율(survival) 기준으로 위치 파악은 인식보다 약 3~4배 더 강한 토큰 압축을 견딘다는 것을 정량적으로 확인했다. 즉 대략적인(coarse) 장면만 보고도 위치는 잘 찾아낼 수 있지만, 실제 내용을 읽어내려면 훨씬 높은 해상도가 필요하다는 것이다. 이는 "거친 화면에서 위치를 찾고, 선택된 증거 영역에만 고해상도를 집중"하는 해상도 분리(resolution-decoupled) 추론 전략의 근거가 된다.</p>
+<p>기존의 두 단계 시스템은 어텐션 기반 탐색이나 좌표를 직접 디코딩하는 방식으로 이 문제를 다루지만, 전체 모델을 여러 번 통과시키거나 다중 상호작용 라운드, 명시적 좌표 생성 시퀀스가 필요해 비용이 크다. 선행 연구인 SD-RPN(Self-Distilled Region Proposal Network)은 모델의 응답-이미지 어텐션을 자기 증류(self-distillation)하여 가볍고 빠른 관심영역(RoI) 예측기를 학습시키지만, 이 어텐션 기반 의사 라벨(pseudo-label)은 국소적인 대체 신호에 불과해 정답과 실제로 관련 있는지 검증되지 않은 잡음이 섞이거나 필요한 증거를 놓칠 수 있다는 한계가 있다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>통제된 압축 개입 실험을 통해 위치 파악과 인식을 분리하고, 두 작업이 서로 다른 압축 내성을 가진다는 것을 정량적으로 규명했다.</li>
+<li>영역 단위(region-level) 강화학습을 제안하여, 밀집(dense) RoI 지도 위에서 동작하며 별도의 영역 정답 주석 없이 고정된(frozen) MLLM 판독기의 정답 우도 신호만으로 좌표 디코딩이 필요 없는 예측기를 학습시켰다.</li>
+<li>학습된 예측기와 결합한 희소 시각 인코딩(sparse visual encoding) 기법으로, 여러 모델과 벤치마크에서 정확도와 효율성을 동시에 향상시켰다.</li>
+</ol>
+<h2>방법론</h2>
+<p><strong>기반 구조(SD-RPN)</strong>: MLLM의 앞쪽 B개 층을 고정된 백본으로 재사용하고, 그 위에 소수의 학습 가능한 블록을 붙여 마지막 프리필링 토큰으로부터 조밀한 RoI 로짓 지도 Zθ를 예측한다. 이는 응답-이미지 어텐션 지도를 자기 증류하여 사전 학습된다.</p>
+<p><strong>영역, 마스크, 기능적 기여도</strong>: 개별 격자 셀 단위가 아니라 "연결된 시각 영역(coherent region)"을 행동의 기본 단위로 삼는다. RoI 지도를 평활화·임계값 처리·연결요소 분석을 거쳐 후보 영역을 추출한다. 특정 영역을 마스크에서 제거했을 때, 고정된 MLLM 판독기(reader)가 정답 토큰에 부여하는 로그우도(log-odds, hφ)가 얼마나 변하는지를 측정해 그 영역의 "기능적 기여도(functional contribution)"로 정의한다. 이 값은 정답 샘플링이나 추론 과정(reasoning trajectory) 없이 계산 가능하며, n개 영역에 대해 n+1번의 판독기 평가만 필요하다.</p>
+<p><strong>두 가지 정책(행동군)</strong>:
+- <em>차감(subtractive) 정책</em>: 현재 정책이 예측한 영역들 중 일부를 제거했을 때 기여도가 작으면(노이즈 수준 이하) 그 영역의 신뢰도를 낮추고, 기여도가 크면(제거 시 손해가 크면) 신뢰도를 높인다. 노이즈 수준은 예측 영역과 무관한 배경에서 뽑은 "대조 영역(control region)"으로 샘플별로 보정한다.
+- <em>추가(additive) 정책</em>: 현재 예측이 놓친 영역을 응답-이미지 어텐션(훈련 시에만 사용)에서 후보로 추출해, 그 기여도가 양수이면 해당 영역을 포함하도록 유도한다.</p>
+<p>두 손실은 KL 앵커 손실(초기 SD-RPN에서 크게 벗어나지 않도록 함)과 결합되어 전체 목적함수를 구성하며, 학습은 RPN(제안 네트워크)의 파라미터만 갱신하고 MLLM 본체는 고정한다.</p>
+<p><strong>희소 시각 인코딩</strong>: 추론 시 예측된 RoI의 경계상자(bounding box)를 잘라내되, 그 안에서도 전경(foreground)에 해당하는 토큰만 남기고 배경 토큰은 인코딩하지 않음으로써, 동일한 토큰 예산으로 증거 영역을 더 세밀한 해상도로 볼 수 있게 한다. 원본 이미지의 키/값(KV) 캐시는 재사용되어 추가 연산이 최소화된다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Qwen3.5(4B, 9B), Qwen2.5-VL-7B, 인코더 없는 구조의 Gemma-4-12B 등 4개 백본에서 검증했으며, VisualCoT 학습 코퍼스(InfographicVQA, TextVQA, DocVQA 일부)에서 뽑은 약 7천 개의 질의응답 쌍으로 1 에폭만 학습했다. 평가는 V* Bench, ZoomBench, HR-Bench 4K/8K, MME-RealWorld(EN/CN) 등 세밀 지각 벤치마크에서 이루어졌다.</p>
+<ul>
+<li>16,384 토큰 제한 하에서 Vision-RL² 9B 모델은 Gemini-3.1-Pro, Vision-OPD-9B 등 대형/최신 모델을 능가하는 평균 점수를 기록했으며, 전체 MLLM을 파인튜닝하는 기존 최고 성능 기법들보다 훨씬 적은 파라미터(부착된 소형 예측기만 학습)로 이를 달성했다.</li>
+<li>학습에 사용한 576 토큰 제한만으로도 기존 모델이 4,096 토큰을 사용했을 때보다 세 점 이상 높은 정확도를 보이며, 약 4분의 1의 토큰만 사용했다.</li>
+<li>SD-RPN과 비교해 4B 모델은 약 4.2배, 9B 모델은 약 2.5배 적은 시각 토큰으로 동등한 정확도에 도달했다.</li>
+<li>지연시간(latency) 측면에서도 어텐션 기반 탐색이나 좌표 디코딩 방식 대비 최대 약 30배 빠른 라우팅 오버헤드를 보이며 정확도-지연시간 평면에서 우세했다.</li>
+<li>절제 실험(ablation)에서 영역 단위 RL만으로 SD-RPN 대비 평균 +3.0점, 희소 인코딩을 추가하면 +1.5점이 더해져 상호 보완적임을 확인했다. 보상을 "기능적 점수" 대신 단순 생성 정확도로 바꾸면 -2.3점, 원시 로그확률을 쓰면 -1.5점 하락했으며, 셀 단위 무작위 마스크 대신 연결된 영역을 사용하는 것이 더 낫다는 것도 확인됐다.</li>
+<li>시각 토큰 프루닝 기법(VisionZip, DART)과 비교했을 때, 고해상도 벤치마크에서는 이 논문의 방법이 기준 모델의 정확도를 오히려 상회했고, 텍스트가 밀집된 문서 벤치마크에서도 프루닝 기법 대비 훨씬 적은 성능 저하를 보였다(단, 전체 레이아웃이 중요한 ChartQA의 저예산 구간에서는 프루닝이 더 나은 경우도 있었다).</li>
+</ul>
+<h2>한계점</h2>
+<p>논문이 명시한 한계는 다음과 같다. 판독기(reader)를 의도적으로 고정하기 때문에, 전체 모델을 파인튜닝하면 고칠 수 있는 인식 실패(특히 MME-RealWorld의 가장 작은 규모 모델에서 나타남)는 복구하지 못한다. 또한 위치 파악과 인식의 압축 비대칭성에 대한 진단 실험은 하나의 백본과 하나의 벤치마크에 대한 것으로, 일반적인 법칙이라기보다는 특정 설정에서의 관찰에 가깝다. 아울러 학습에는 영역 주석은 필요 없지만 질문-정답 쌍은 반드시 필요하다.</p>
+<h2>시사점</h2>
+<p>이 연구는 "위치 파악"과 "인식"이라는 서로 다른 해상도 요구를 가진 하위 작업을 명시적으로 분리하고, 정답에 대한 실제 기여도(기능적 신호)를 영역 단위로 측정해 예측기를 훈련시키는 방식이 값비싼 전체 모델 파인튜닝이나 다중 라운드 상호작용 없이도 효율성과 정확도를 동시에 개선할 수 있음을 보여준다. 저자들은 이 "고정된 판독기로 제안을 평가하고 그 결과로 보상하는" 방식이 어디에 연산을 투입할지 결정하는 다른 인터페이스(예: 다른 형태의 조건부 연산 라우팅)로도 확장될 수 있을 것으로 기대한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.19745" target="_blank" rel="noopener">huggingface.co/papers/2609.19745</a> · 2026-09-20</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

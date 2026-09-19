@@ -1,0 +1,122 @@
+<meta charset="UTF-8">
+<title>MiniMax-H3는 물리 세계를 추론할 수 있는가? 옴니모달 생성 모델 평가</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#1 · Daily Papers 2026-09-20</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 77</span>
+    </div>
+    <h1 class="article-title">Can MiniMax-H3 Reason About the Physical World? An Evaluation of Omni-Modal Generative Model</h1>
+    <p class="article-title-ko">MiniMax-H3는 물리 세계를 추론할 수 있는가? 옴니모달 생성 모델 평가</p>
+    <p class="article-sub">텍스트·이미지·오디오·비디오를 동시에 다루는 옴니모달 생성 모델 MiniMax-H3가 여러 모달리티에 분산된 단서를 실제로 "종합 추론"해 물리적 사건을 올바르게 완성할 수 있는지를, 정답을 프롬프트에 명시하지 않는 517개의 암묵적(implicit) 평가 인스턴스로 검증한 결과, 전체 성공률은 41.97%에 그쳐 다중 모달 입력 지원과 실제 추론 능력 사이에 뚜렷한 격차가 있음을 보였다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.18323" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.18323" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Can MiniMax-H3 Reason About the Physical World? An Evaluation of Omni-Modal Generative Model</li>
+<li><strong>저자</strong>: Haoyu Zhao, Zihao Zhao, Tianyu Deng, Ziqin Xu, Zihao Zhang, Xudong Wang, Jinxiang Guo, Chen Gao, Ziyi Ye, Yeying Jin, Jiaxi Gu, Zuxuan Wu, Shuicheng Yan (싱가포르국립대학교, 푸단대학교, 텐센트)</li>
+<li><strong>출처</strong>: arXiv:2609.18323v1 [cs.CV] (2026년 9월 16일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/gulucaptain/MiniMax-H3-Reason">GitHub</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.18323">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>텍스트·이미지·오디오·비디오를 동시에 다루는 옴니모달 생성 모델 MiniMax-H3가 여러 모달리티에 분산된 단서를 실제로 "종합 추론"해 물리적 사건을 올바르게 완성할 수 있는지를, 정답을 프롬프트에 명시하지 않는 517개의 암묵적(implicit) 평가 인스턴스로 검증한 결과, 전체 성공률은 41.97%에 그쳐 다중 모달 입력 지원과 실제 추론 능력 사이에 뚜렷한 격차가 있음을 보였다.</p>
+<h2>배경 및 문제의식</h2>
+<p>MiniMax-H3와 같은 옴니모달 생성 모델(Omni-Model)은 텍스트, 이미지, 비디오, 오디오를 하나의 통합 아키텍처에서 받아들여 오디오-비주얼 콘텐츠를 함께 생성할 수 있다. 그러나 저자들은 "여러 모달리티를 입력으로 받을 수 있다는 것"과 "그 모달리티들을 실제로 종합해 추론한다는 것"은 다르다고 지적한다. VBench, TC-Bench, VideoPhy, WorldModelBench 같은 기존 벤치마크는 프롬프트가 목표 영상 내용을 명시적으로 설명하고 나머지 모달리티는 보조적·중복적 조건으로만 쓰이기 때문에, 모델이 입력 간 관계를 실제로 파악하지 못해도 그럴듯한 결과를 낼 수 있다. 즉 기존 평가는 "모델이 지시받은 것을 만들어낼 수 있는가"를 묻는 반면, 이 논문은 "모델이 무엇을 만들어야 하는지를 스스로 판단할 수 있는가"를 묻는다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>암묵적(implicit) 옴니모달 생성에 기반한 물리세계 추론 평가 프레임워크 제안: 텍스트 프롬프트에는 사건의 핵심 정보를 의도적으로 생략하고, 그 정보를 여러 입력 모달리티(이미지, 비디오, 오디오)에 분산 배치하여 모델이 이를 정렬·통합해 추론하도록 요구.</li>
+<li>4가지 추론 시나리오와 29개 하위 범주, 총 517개의 전문가 검증 평가 인스턴스로 구성된 데이터셋 구축(Multi-view Spatial Reasoning 200개, Video-based Decision Reasoning 100개, Audio-based Disambiguation Reasoning 146개, Audiovisual Integrated Reasoning 71개).</li>
+<li>MiniMax-H3에 대한 정량·정성 평가를 통해, 다중 모달 입력을 지원하는 것과 그것을 안정적으로 과제 완수로 연결하는 것 사이의 간극을 실증적으로 드러냄(전체 성공률 41.97%, 시나리오별 27.40%~56.00%).</li>
+</ul>
+<h2>방법론</h2>
+<p>평가는 4가지 상호 보완적인 물리세계 추론 시나리오로 구성된다.
+1. <strong>다중 시점 공간 추론(Multi-view Spatial Reasoning, MSR)</strong>: 서로 다른 시점에서 촬영된 여러 이미지를 입력으로 주고, 개별 시점만으로는 알 수 없는 공간적 관계(occlusion, 시점 변화 등)를 시점 간 대응을 통해 추론해 영상으로 완성하게 한다.
+2. <strong>오디오 기반 모호성 해소 추론(Audio-based Disambiguation Reasoning, ADR)</strong>: 여러 해석이 가능한 정적 이미지(예: 재질이 다른 컵 세 개 중 하나가 떨어짐)에 판별적 정보를 담은 오디오를 함께 제공해, 오디오 단서로 실제 사건을 특정하고 그에 맞는 영상을 생성하게 한다.
+3. <strong>비디오 기반 의사결정 추론(Video-based Decision Reasoning, VDR)</strong>: 사건의 전개를 담은 프리픽스(prefix) 비디오를 보고, 명시적 행동 지시 없이 그럴듯한 결과(예: 공이 도로로 굴러가면 차가 멈춰야 함)를 추론해 이어지는 영상을 생성하게 한다.
+4. <strong>오디오-비주얼 통합 추론(Audiovisual Integrated Reasoning, AVIR)</strong>: 비디오(프리픽스 또는 전체)와 시간적으로 반드시 정렬되지 않은 오디오(음향 또는 발화 제약)를 함께 제공해, 두 모달리티를 결합한 후속 사건 추론이나 영상 내 모순 구간 편집을 요구한다.</p>
+<p>평가 데이터는 출처 수집(실제/합성 이미지·비디오·오디오, ChatGPT Voice·Seedance 2.0 등 생성 모델 활용), 과제별 인스턴스 구성(입력·목표·프롬프트 설계), 암묵적 프롬프트 작성(ChatGPT·Qwen3로 후보 생성 후 전문가 검수)의 3단계로 구축되며, 마지막으로 장면 복잡도·추론 풍부성·조건 정합성·프롬프트 암묵성의 4개 기준에 따라 10회 반복(iterative) 전문가 검토를 거쳐 확정된다. 평가는 3명의 전문가가 독립적으로 생성 영상을 시청한 뒤 교차 검토하여 과제별 성공 기준(단일 정답 매칭이 아닌 의미적 요구 충족 여부)에 따라 이진 성공/실패로 판정하며, 성공률(SR)을 주요 지표로 사용한다.</p>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li><strong>평가 대상 및 데이터 출처</strong>: MiniMax-H3를 테스트베드로 사용. 다중 시점 데이터는 HiFi-UMI-2K, VISTA-UMI-5K, HuMI-Unsheathe, Hy-Embodied-0.5-VLA-Data, 10Kh-RealOmin-OpenData 등에서, 비디오는 LLaVA-Video-178K에서, 음향은 FSD50K·ESC-50에서 수집했다.</li>
+<li><strong>전체 성능</strong>: 517개 인스턴스 전체에서 성공률 41.97%. 시나리오별로는 VDR 56.00%(가장 높음), AVIR 47.89%, MSR 43.50%, ADR 27.40%(가장 낮음)로, VDR과 ADR 간 격차가 28.60%p에 달했다.</li>
+<li><strong>하위 범주 경향</strong>: MSR에서는 threading(75.00%), pouring(58.30%)이 상대적으로 높은 반면 cleaning·articulation·transport는 33~35% 수준에 머물렀다. VDR은 사람·동물·교통 관련 동역학은 비교적 잘 처리했지만 cartoons(20.00%)와 puzzles(16.67%)에서 급격히 낮아졌다. ADR은 자연음(nature) 관련 범주가 상대적으로 나았으나 기계음·충돌음·경보음 범주에서 특히 취약했다. AVIR은 activities·making 범주가 animation·animal 범주보다 우수했다.</li>
+<li><strong>정성 분석 및 실패 유형</strong>: 모델은 시각적으로 그럴듯한 영상을 생성하고 지배적 단서는 곧잘 따라가지만(예: 캐비닛 여는 소리에 캐비닛을 여는 영상 생성), 다음과 같은 반복적 실패 패턴이 관찰되었다: (1) 부정확한 증거 결합(관련 증거를 엉뚱한 개체·행동에 연결), (2) 불완전한 사건 실현(관련 객체는 등장하지만 요구된 상호작용이 구현되지 않음), (3) 물리·구성적 위반(접촉 역학, 물체 기하, 상태 전이 규칙 위반), (4) 시간적 상태 불일치(이전에 확립된 객체 상태나 장면 내용이 이어지는 영상에서 유지되지 않음).</li>
+<li><strong>논의</strong>: 저자들은 세 가지를 강조한다. 1) 시각적 그럴듯함이 물리적 일관성을 보장하지 않는다. 2) 다중 모달 입력을 지원한다고 해서 효과적인 다중 모달 추론으로 이어지는 것은 아니다. 3) 생성 기반 평가는 입력 이해·모달리티 간 통합·영상 생성이라는 전체 과정을 함께 반영하므로, 개별 모달리티를 제거하거나 대체하는 통제 실험이 추가로 필요하다.</li>
+</ul>
+<h2>한계점</h2>
+<p>논문에 명시된 한계로는, 성공/실패 판정이 정답 영상과의 직접 비교가 아니라 전문가의 의미적 기준 충족 여부에 의존하는 인간 평가 방식이라는 점, 그리고 실패 사례 분석 결과 하나의 실패가 입력 이해 오류·모달리티 간 통합 실패·영상 생성 자체의 오류 중 무엇에서 비롯되었는지 명확히 분리하기 어렵다는 점(이를 밝히려면 모달리티를 하나씩 제거·대체하는 추가 통제 실험이 필요하다고 저자들이 언급)이 있다. 또한 평가가 MiniMax-H3라는 단일 모델을 테스트베드로 삼고 있어, 다른 옴니모달 모델로의 일반화 여부는 논문에 명시되지 않음.</p>
+<h2>시사점</h2>
+<p>이 연구는 옴니모달 생성 모델 평가의 초점을 "지시받은 내용을 얼마나 충실히 렌더링하는가"에서 "여러 모달리티에 분산된 불완전한 증거로부터 스스로 사건을 추론해낼 수 있는가"로 옮겨야 한다는 점을 보여준다. 다중 모달 입력을 받아들이는 능력과 그것을 신뢰성 있는 과제 수행으로 전환하는 능력 사이에 큰 간극이 있다는 결과는, 향후 옴니모달 모델 개발이 단순히 더 많은 모달리티를 지원하는 방향을 넘어 모달리티 간 정렬·통합 메커니즘 자체를 강화해야 함을 시사한다. 저자들은 이를 "Chain-of-Frames"(영상 생성 과정에서 드러나는 중간 추론)의 관점에서 향후 자동화된 평가 프레임워크로 확장할 계획을 밝히고 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.18323" target="_blank" rel="noopener">huggingface.co/papers/2609.18323</a> · 2026-09-20</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

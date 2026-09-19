@@ -1,0 +1,125 @@
+<meta charset="UTF-8">
+<title>온폴리시 자기증류에서 특권 정보는 무엇을 더해주는가?</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#5 · Daily Papers 2026-09-20</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 17</span>
+    </div>
+    <h1 class="article-title">What Does Privileged Information Add to On-Policy Self-Distillation?</h1>
+    <p class="article-title-ko">온폴리시 자기증류에서 특권 정보는 무엇을 더해주는가?</p>
+    <p class="article-sub">온폴리시 자기증류(On-Policy Self-Distillation, OPSD)에서 교사 모델에게 주어지는 "특권 정보(privileged information, PI)"인 참조 solution이 실제로 학생 모델 학습에 얼마나 기여하는지를, 정답은 고정하고 추론 표현 방식만 다른 6가지 버전의 문제 세트(AMPLE-Math)를 이용해 체계적으로 분리·검증한 연구이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.20612" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.20612" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: What Does Privileged Information Add to On-Policy Self-Distillation?</li>
+<li><strong>저자</strong>: XiuYu Zhang, Wei Chow, Junfeng Fang, Zhenkai Liang, Tat-Seng Chua (싱가포르국립대학교, National University of Singapore)</li>
+<li><strong>출처</strong>: arXiv:2609.20612v1 [cs.CL] (2026년 9월 17일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음 (GitHub 코드 저장소와 Hugging Face의 AMPLE-Math 데이터셋 링크가 논문 첫 페이지에 언급되어 있으나 구체적 URL은 본문에서 확인되지 않음)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.20612">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>온폴리시 자기증류(On-Policy Self-Distillation, OPSD)에서 교사 모델에게 주어지는 "특권 정보(privileged information, PI)"인 참조 solution이 실제로 학생 모델 학습에 얼마나 기여하는지를, 정답은 고정하고 추론 표현 방식만 다른 6가지 버전의 문제 세트(AMPLE-Math)를 이용해 체계적으로 분리·검증한 연구이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>OPSD는 학생 모델이 스스로 생성한 응답을, solution(정답 풀이)을 열람할 수 있는 동결된 자기 자신의 복사본(교사)이 채점하여 지식을 증류하는 방법이다. 이는 "특권 정보를 이용한 학습(learning with privileged information)" 개념과 연결되며, 별도의 더 큰 교사 모델 없이도 성능을 끌어올릴 수 있다는 장점이 있다. 그러나 얼마나 상세한 참조 정보를 제공해야 학생에게 실질적으로 도움이 되는지는 불분명했다. 특히 최근 연구들은 참조 정보가 없거나 다른 문제의 참조를 주어도 성능이 개선되는 경우가 있고, 구조화된 안내가 완전한 풀이보다 더 나은 경우도 보고되어, "증류 자체의 효과"와 "참조 정보가 추가로 주는 효과"를 구분할 필요성이 제기되었다. 또한 OPSD의 기본 설정에서는 사고(thinking) 모드가 켜진 교사가 사고 모드 없이 직접 답하는(direct-response) 학생의 응답을 채점하는데, 이 자체가 참조 정보 유무와 무관하게 이미 교사-학생 간 비대칭성을 만들어낸다는 점도 문제의식의 핵심이다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li><strong>AMPLE-Math 데이터셋 구축</strong>: OpenThoughts-114k에서 가져온 5,319개의 수학 문제 각각에 대해, 동일한 정답을 공유하면서 추론 표현의 밀도만 다른 6가지 뷰(view) — ANSWER ONLY(정답만), GIST(핵심 요지), KEY POINTS(단계별 핵심 포인트), CLEAN SOLUTION(정제된 풀이), SUMMARY(서술형 요약), FULL TRACE(원본 전체 추론 과정) — 를 구성하고, 이를 무참조(reference-free) 대조군과 비교할 수 있는 재사용 가능한 벤치마크를 제공한다.</li>
+<li><strong>모델 계열 간 통제된 비교</strong>: Qwen3-1.7B와 SmolLM3-3B 두 모델 계열에서, 참조 정보가 주는 추가적 이득과 증류 자체의 이득을 분리하고, 학생의 학습 궤적(direct-response vs. thinking-enabled rollout)을 바꾸는 것만으로 이득이 손실로 뒤집힐 수 있음을 보인다.</li>
+<li><strong>교사 프로파일링과 개입 실험</strong>: 교사의 토큰 단위 점수가 학생 응답의 어떤 특성에 반응하는지 분석하고(정답 정합성, 재고 마커에 대한 억제 압력, KL 분포), 이를 바탕으로 손실 함수를 수정하는 개입 실험을 통해 어떤 변경이 실제로 학생 행동을 바꾸는지 검증한다.</li>
+</ol>
+<h2>방법론</h2>
+<p>학생 모델 π_θ는 문제만 보고 direct-response 방식으로 응답 y를 생성하고, 동결된 교사 π_θ̄는 (문제, 선택된 뷰의 참조 정보, 학생이 생성한 접두어)를 조건으로 같은 접두어에 대한 확률 분포를 계산한다. OPSD 손실은 지도(supervised) 위치에서 교사→학생 방향의 forward KL을 어휘 항목별로 상한 0.05로 클리핑한 뒤 평균한 값이다(generalized KL, DgKL). 참조 정보가 없는 무참조 대조군은 PI 섹션만 제거하고 나머지 설정(사고 모드가 켜진 교사가 direct-response 학생 접두어를 채점하는 구조)은 그대로 유지한다.</p>
+<p>AMPLE-Math는 각 문제에 대해 6개 뷰 모두가 동일한 정답으로 끝나도록 구성되며, GIST·KEY POINTS·SUMMARY는 원본 추론 과정을 Qwen3.6-35B-A3B 모델로 압축·검증하여 생성했고, ANSWER ONLY는 결정론적으로, CLEAN SOLUTION과 FULL TRACE는 원본에서 직접 가져왔다. 문제 난이도는 세 개의 평가 모델과 이항 라쉬(Rasch) 모델로 추정했으며, 실험 분할(train/dev/test)은 기저 모델의 direct-response 정답률(0/4, 1~2/4, 3~4/4)에 따른 밴드를 균등 배분하여 구성했다.</p>
+<p>훈련은 Qwen3-1.7B에 LoRA(r=64, α=128)를 적용해 100 스텝 동안 진행하며, 평가는 주로 사고 모드를 켠 상태(thinking-enabled)에서 이루어진다. 교사 프로파일링에서는 사전 훈련된 학생의 고정 응답에 대해 교사와 학생의 토큰별 로그확률 차이(Δv)를 측정하여, 정답/오답 응답 간 차이인 "정답 정합성(correctness alignment, Cv)", wait·but·check 등 재고 마커 위치에서의 압력(Fv), 그리고 KL 발산이 응답의 어느 구간에 집중되는지를 정량화한다.</p>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li><strong>참조 없이도 상당한 개선</strong>: Qwen에서는 참조가 전혀 없는 학생도 in-domain 및 외부 벤치마크(AIME 2024/2025, HMMT 2025)에서 뚜렷이 개선되며, 심지어 오답으로 조작한 참조(wrong-answer control)를 사용해도 개선이 나타났다. 더 많은 추론 정보를 제공한다고 해서 일관되게 더 큰 이득으로 이어지지는 않았다.</li>
+<li><strong>참조의 추가 기여는 제한적</strong>: CLEAN SOLUTION은 100 스텝 시점에서 무참조 대비 약 1.3점의 개선을 보였으나, 6개 뷰에 대한 다중비교 보정(Holm correction)을 적용하면 유의성이 사라진다. 즉 특정 뷰에서의 작은 효과는 있으나 "더 완전한 풀이일수록 좋다"는 일반적 패턴은 확인되지 않았다.</li>
+<li><strong>SmolLM3에서는 더 뚜렷한 참조 효과</strong>: SmolLM3-3B에서는 FULL TRACE가 50 스텝 시점에 무참조 대비 약 2점의 이득을 보였으나, 100 스텝에서는 세 설정 모두 기저 모델보다 낮아졌다(다만 FULL TRACE의 하락 폭이 가장 작았다).</li>
+<li><strong>학습 궤적을 바꾸면 이득이 손실로 반전</strong>: 동일한 참조와 교사를 유지한 채, direct-response rollout 대신 thinking-enabled rollout으로 학습시키면 두 모델 계열 모두에서 50 스텝 시점 이득이 손실로 뒤바뀐다. 즉 참조 내용 자체보다 학생이 생성하는 응답(및 그에 따라 교사가 채점하는 대상)이 전이 효과를 좌우한다.</li>
+<li><strong>가장 큰 이득은 "잠재 능력이 있는" 문제에서 발생</strong>: 기저 모델이 direct-response로는 전혀 못 풀지만 사고 모드에서는 상당 비율(약 62%) 풀 수 있는 문제 그룹에서 이득이 가장 컸다. 이는 OPSD가 새로운 지식을 주입한다기보다 direct-response와 thinking 모드가 공유하는 파라미터를 통해 기존에 잠재된 추론 능력에 대한 접근성을 높인다는 해석을 뒷받침한다.</li>
+<li><strong>개입 실험</strong>: 참조를 다른 문제의 길이만 맞춘 내용으로 바꾸면 성능이 하락해 참조 내용 자체가 무의미하지 않음을 보였다. 반면 FULL TRACE를 짧게 잘라 다른 뷰 길이에 맞추는 것은 사고 모드 평가에서 뚜렷한 이득을 주지 못했다. 재고 마커 위치의 손실을 완화하거나 제외해도 마커 사용 패턴은 거의 변하지 않았고, 긴 thinking rollout에 대한 손실 적용 범위를 넓히는 개입이 보인 것처럼 보인 이득도, 체크포인트를 동일 스텝으로 맞추고 보면 대부분 "더 이른 시점에 멈춘 효과"였을 뿐 실제 손실 범위 확장의 효과는 아니었다.</li>
+</ul>
+<h2>한계점</h2>
+<ul>
+<li>실험은 수학 문제 영역, 두 모델 계열(Qwen3-1.7B, SmolLM3-3B), LoRA를 이용한 단기간(최대 100 스텝) 훈련으로 한정되어 있어, 다른 도메인이나 전체 파인튜닝, 더 긴 훈련 스케줄로 일반화되는지는 확인되지 않았다.</li>
+<li>CLEAN SOLUTION의 참조 이득은 다중비교 보정을 통과하지 못해 통계적으로 확고한 결론이라기보다는 제한적·뷰 특이적 증거에 해당한다.</li>
+<li>AMPLE-Math의 GIST·KEY POINTS·SUMMARY 뷰는 생성과 사실성 검증에 동일한 모델(Qwen3.6-35B-A3B)을 사용하여, 검증 과정이 생성 모델의 편향을 그대로 공유할 가능성이 있다.</li>
+<li>AMPLE-Math의 시험 문제 중 상당수(약 절반)가 기존 공개된 OPSD 학습 데이터와 출처가 겹쳐, 원본 데이터로 검증하는 별도 실험에서는 겹치지 않는 외부 벤치마크만을 사용해 평가를 제한했다.</li>
+</ul>
+<h2>시사점</h2>
+<p>이 연구는 "증류 자체가 만드는 개선"과 "참조(특권 정보)가 추가로 주는 개선"이 서로 다른 질문임을 명확히 구분해야 한다는 점을 보여준다. 참조 정보의 가치는 그것이 얼마나 상세한 풀이를 드러내는지가 아니라, 학생이 실제로 생성하는 응답 분포와 결합했을 때 교차 모드(direct-response ↔ thinking) 전이에 무엇을 더해주는지로 판단해야 한다는 것이 저자들의 핵심 주장이다. 이는 향후 OPSD 연구에서 참조 콘텐츠 설계와 학생의 학습 궤적(어떤 rollout으로 학습시킬지)을 별개가 아닌 하나의 결합된 문제로 다뤄야 하며, 학생의 진화하는 응답에 적응하는 참조 설계가 고정된 참조보다 더 유리할 수 있음을 시사한다. AMPLE-Math는 이러한 후속 연구를 위한 재사용 가능한 실험 환경으로 제공된다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.20612" target="_blank" rel="noopener">huggingface.co/papers/2609.20612</a> · 2026-09-20</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

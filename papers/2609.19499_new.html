@@ -1,0 +1,129 @@
+<meta charset="UTF-8">
+<title>샘플 개수만으로는 부족하다</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#6 · Daily Papers 2026-09-20</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 16</span>
+    </div>
+    <h1 class="article-title">Sample Count Is Not Enough: Candidate-Generation Strategy Shapes the Energy and Performance of LLM Test-Time Scaling</h1>
+    <p class="article-title-ko">샘플 개수만으로는 부족하다: 후보 생성 전략이 LLM 테스트타임 스케일링의 에너지와 성능을 좌우한다</p>
+    <p class="article-sub">동일한 개수(N)의 후보 응답을 생성하더라도, 이를 한 번의 배치 호출로 만들지 여러 번의 순차 호출로 나눠 만들지에 따라 LLM 테스트타임 스케일링의 GPU 에너지 소비와 지연시간이 최대 5~6배까지 차이 날 수 있음을 실측으로 보인 연구다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.19499" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.19499" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Sample Count Is Not Enough: Candidate-Generation Strategy Shapes the Energy and Performance of LLM Test-Time Scaling</li>
+<li><strong>저자</strong>: Mobina Kashaniyan, Ali Jannesari (미국 Iowa State University, Department of Computer Science)</li>
+<li><strong>출처</strong>: arXiv:2609.19499v1 [cs.LG] (2026년 9월 16일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.19499">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>동일한 개수(N)의 후보 응답을 생성하더라도, 이를 한 번의 배치 호출로 만들지 여러 번의 순차 호출로 나눠 만들지에 따라 LLM 테스트타임 스케일링의 GPU 에너지 소비와 지연시간이 최대 5~6배까지 차이 날 수 있음을 실측으로 보인 연구다.</p>
+<h2>배경 및 문제의식</h2>
+<p>Self-consistency, best-of-N 등 여러 후보 응답을 생성해 결합하는 테스트타임 스케일링 기법들은 통상 추론 예산을 "후보 개수 N"만으로 요약해 보고한다. 그러나 저자들은 N이 몇 개의 후보를 생성하는지는 알려주지만, 그 후보들이 하드웨어에서 실제로 어떻게 실행되는지(한 번의 큰 배치 호출인지, 여러 번의 작은 순차 호출로 나뉘는지)는 알려주지 않는다는 점을 지적한다. 논문은 대표적인 self-consistency류 연구들(Self-Consistency, Adaptive-Consistency, Universal Self-Consistency, Large Language Monkeys, Scaling Test-Time Compute, Difficulty-Adaptive SC 등)을 조사한 표를 통해, 이들 대부분이 후보 개수는 보고하지만 호출당 후보 수, 쿼리당 호출 횟수, 사용 하드웨어, 측정 에너지는 거의 보고하지 않는다는 재현성 공백을 드러낸다. 특히 연속 서빙(continuous serving)이 아닌 유한 배치 작업으로 LLM 추론을 돌리는 HPC 환경에서는 로깅, 결정론적 시딩, 제어 로직, 중간 분석 등의 이유로 후보 생성이 여러 호출로 나뉘는 경우가 흔해 이 문제가 더욱 중요하다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>실행 스케줄과 보고 공백 지적</strong>: 후보 생성 스케줄을 S = (b₁, ..., b_C) (호출별 후보 수의 합이 N)로 정식화하고, N만으로는 다중 후보 추론 워크로드를 완전히 설명할 수 없음을 보였다. 대표적 테스트타임 스케일링 연구들에서 호출당 후보 수, 쿼리당 호출 횟수 등이 흔히 누락되어 있음을 확인했다.</li>
+<li><strong>고정 예산(N=8) 시스템 특성화</strong>: N=8을 고정한 채 1×8, 2×4, 4×2, 8×1 네 가지 스케줄(a×b는 a번의 생성 호출, 호출당 b개 후보)의 지연시간, 처리량, GPU-시간, 사용률, GPU 소자 총에너지(gross GPU-device energy)를 측정했다. A100 GPU에서 완전 순차 실행(8×1)은 한 번의 배치 호출(1×8) 대비 4.64~4.86배의 에너지와 5.77~6.12배의 P95 지연시간을 소모했다.</li>
+<li><strong>강건성 확인 및 실무 지침 제시</strong>: 서로 다른 A100 노드, 두 개의 모델, 짧은 출력 워크로드(SciQ/V100)에서도 동일한 경향을 재확인하고, "후보들이 서로 독립적이고 메모리가 허용한다면 적은 수의 큰 배치 호출이 더 효율적"이라는 실무 지침과 함께 다중 후보 추론 실험의 최소 보고 항목을 제안했다.</li>
+</ul>
+<h2>방법론</h2>
+<p>실험은 Phi-3-mini-4k-instruct와 Qwen2.5-1.5B-Instruct 두 모델을 GSM8K(수학 문제) 및 SciQ(과학 객관식) 데이터셋에 적용해 진행됐다. 온도 1.0, top-p 0.95의 샘플링을 사용했다.</p>
+<p>1) <strong>정확도 스케일링 실험</strong>: 500개 GSM8K 프롬프트에 대해 각 모델이 8개의 후보를 생성한 뒤, 동일한 후보 풀에서 앞의 N개(N∈{1,2,3,4,8})만 사용해 정확도를 계산함으로써 프롬프트 단위로 짝지어진(paired) 비교를 수행했다.</p>
+<p>2) <strong>스케줄 스윕 실험</strong>: N=8을 고정하고 1×8, 2×4, 4×2, 8×1 네 가지 생성 스케줄을 같은 A100 작업 안에서 실행했다. 순서 효과와 열적 편향을 줄이기 위해 세 번의 반복 중 한 번은 스케줄 순서를 뒤집어 실행했다.</p>
+<p>3) <strong>측정 경계 및 에너지 정의</strong>: 각 쿼리 측정은 GPU 동기화와 NVML 누적 에너지 판독으로 시작해, 프롬프트 처리·프리필·디코딩·모든 생성 호출·답 추출·다수결 투표를 포함하고 다시 GPU 동기화 후 종료된다. Gross GPU-device energy = E_NVML,end − E_NVML,start로 정의되며, 유휴(idle) 에너지는 빼지 않는다. 즉 보고되는 값은 순수 연산 에너지가 아니라 측정 구간 전체의 총 GPU 소자 에너지다. 평균 전력은 총에너지를 쿼리 지연시간으로 나눠 계산했다.</p>
+<p>4) <strong>토큰 회계</strong>: 스케줄 간 차이가 생성 길이 차이 때문이 아님을 확인하기 위해, 논리적 입력 토큰량(NP_q)과 생성 토큰량을 별도로 추적했다. N=8 고정 실험에서는 스케줄 간 토큰량 차이가 Phi-3 0.8%, Qwen 1.0% 수준으로 거의 동일했다.</p>
+<p>5) <strong>답 추출 및 투표</strong>: GSM8K는 최종 답 구분자, boxed 표현, 명시적 답변 문장, 마지막 숫자 표현 등을 확인해 숫자 답을 추출했고, SciQ는 A~D 선택지를 대소문자 구분 없이 추출했다. 동일 득표 시 먼저 생성된 후보를 선택하는 규칙(earliest-candidate tie-break)을 사용했으며, 이로 인해 N=1과 N=2의 정확도가 같아지는 현상이 나타나 무작위 동점 처리 등 민감도 분석도 함께 수행했다.</p>
+<p>6) <strong>하드웨어</strong>: 주요 스케줄 스윕과 교차 노드 실험은 A100-SXM4 80GB(500W 전력 제한, 1275MHz 고정 클럭)에서, SciQ 짧은 출력 검증은 V100 PCIe 32GB(250W 전력 제한, 1230MHz 고정 클럭)에서 수행됐다. 통계는 3회 반복의 평균±표준편차, P95 지연시간, 10,000회 부트스트랩(정확도) 및 계층적 짝지음 부트스트랩(스케줄 비교)으로 산출됐다.</p>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li><strong>정확도(N 증가 효과)</strong>: GSM8K에서 N을 1에서 8로 늘리면 Phi-3-mini는 81.4%→89.8%(+8.4pp, 95% CI [5.8, 11.2]pp), Qwen2.5-1.5B는 51.4%→69.8%(+18.4pp, [14.8, 22.0]pp)로 향상됐다. 동점 처리 규칙 때문에 N=1과 N=2의 정확도가 동일하게 나타났고, N=3부터 실질적 다수결이 가능해지며 증가하기 시작했다.</li>
+<li><strong>배치 크기(N) 증가에 따른 시스템 비용</strong>: N이 1→8로 커질수록 쿼리당 에너지는 증가(Phi-3: 631→1286 J, Qwen: 596→975 J)하지만, 토큰당 에너지는 오히려 감소(Phi-3: 2.634→0.655 J, Qwen: 2.222→0.459 J)했다. 즉 배치가 클수록 토큰당 효율은 좋아지지만, 쿼리 전체 비용은 커진다.</li>
+<li><strong>고정 N=8에서의 스케줄 효과(핵심 결과)</strong>: 같은 8개 후보를 몇 번의 호출로 나누는지가 결정적이었다. 1×8 대비 8×1(완전 순차)은 A100에서 Phi-3 4.64배, Qwen 4.86배의 에너지, Phi-3 5.77배, Qwen 6.12배의 P95 지연시간을 기록했고 처리량은 배치 대비 16.7~17.9%로 떨어졌다. 2×4, 4×2 등 중간 스케줄에서도 호출 수가 늘수록 비용이 점진적으로 증가하는 일관된 경향이 나타났다. 1,000쿼리 기준 GPU 시간은 Phi-3 2.09→12.49시간, Qwen 2.13→11.76시간으로 증가했다. 평균 전력은 오히려 낮아졌음에도(Phi-3 177.8W→139.8W) 지연시간이 5.97배 늘어 총에너지는 더 커졌다.</li>
+<li><strong>교차 노드 및 길이별 강건성</strong>: 세 개의 독립적인 A100 작업에서도 8×1/1×8 에너지 비율이 Phi-3 4.43~4.64배, Qwen 4.85~4.88배 범위로 안정적이었다. 응답 길이를 4개 구간으로 나눠도 에너지 비율(약 4.4~5.1배)과 지연시간 비율(약 5.2~6.2배)이 특정 길이대에만 국한되지 않고 전 구간에서 나타났다.</li>
+<li><strong>짧은 출력(SciQ/V100) 검증</strong>: 평균 응답 길이가 훨씬 짧은 SciQ에서도 동일한 방향의 효과가 재현됐다. 1×8 대비 8×1은 Phi-3 에너지 2.57배·지연 2.88배, Qwen 에너지 3.34배·지연 4.42배였으며 처리량은 각각 36%, 23%로 감소했다. GPU 세대(A100 vs V100)와 출력 길이가 함께 다르므로 비율 크기 차이의 원인을 단정하지는 않지만, 스케줄링 효과 자체는 두 환경 모두에서 확인됐다.</li>
+<li><strong>규모 환산 예시</strong>: 논문은 100만 쿼리 기준으로 1×8→8×1 전환 시 Phi-3에서 약 1.37MWh, Qwen에서 약 1.00MWh의 추가 GPU 소자 에너지와 각각 약 10,401시간, 9,631 GPU-시간의 추가 소요가 발생할 것으로 선형 환산했다(이는 실측 구성의 단순 환산치이며 다른 배포 환경에 대한 예측은 아니라고 명시).</li>
+</ul>
+<h2>한계점</h2>
+<ul>
+<li>실험은 두 개의 상대적으로 작은 모델(Phi-3-mini, Qwen2.5-1.5B), 두 종류의 GPU 아키텍처(A100, V100), Hugging Face 배치 생성 방식에 국한되어 있어, 더 큰 모델, 다른 GPU 세대, 연속 배치(continuous batching) 서빙 시스템, 멀티 GPU 추론에 그대로 적용된다고 가정할 수 없다.</li>
+<li>고정 N 스케줄들은 후보를 독립적으로 샘플링하며, 후보 개수와 논리적 생성 토큰량은 거의 동일하지만, 반복 호출 오버헤드·프롬프트 재처리·동기화·배칭 효과 등 개별 메커니즘의 기여도를 분리해내지는 못했다. 즉 결과는 각 생성 스케줄의 종단간(end-to-end) 비용으로 해석해야 한다.</li>
+<li>에너지 측정은 GPU 소자 단위의 총(gross) 에너지이며, 전체 노드 에너지를 포함하지 않고 유휴 전력도 차감하지 않았다.</li>
+<li>SciQ(V100)와 GSM8K(A100) 실험은 GPU 종류와 출력 길이가 동시에 다르므로, 비율 크기 차이가 순수하게 출력 길이 때문이라고 주장하지는 않는다.</li>
+</ul>
+<h2>시사점</h2>
+<p>후보 개수 N만으로 다중 후보 테스트타임 스케일링의 시스템 비용을 온전히 설명할 수 없으며, 동일한 모델·데이터셋·디코딩 설정·후보 개수를 사용한 두 실험이라도 후보 생성 스케줄(호출 수와 호출당 후보 수)이 다르면 에너지·지연시간이 크게 달라질 수 있다. 따라서 향후 테스트타임 스케일링 관련 평가에서는 정확도와 후보 개수뿐 아니라 생성 호출 수, 호출당 후보 수, 배칭 방식, 지연시간·처리량·GPU-시간·에너지 측정 경계까지 함께 보고해야 재현성과 비교 가능성이 확보된다. 실무적으로는 후보들이 서로 독립적이고 GPU 메모리가 허용하는 한, 가능한 한 적은 수의 생성 호출에 큰 배치 크기를 사용하는 것이 에너지·지연시간 측면에서 유리하다는 간단한 휴리스틱(b = min(N, b_max), C = ⌈N/b⌉)을 제안한다. 다만 후보 간 의존성이 있거나 연속 서빙 환경에 통합해야 하는 경우 등에는 이 휴리스틱이 그대로 적용되지 않을 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.19499" target="_blank" rel="noopener">huggingface.co/papers/2609.19499</a> · 2026-09-20</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

@@ -1,0 +1,119 @@
+<meta charset="UTF-8">
+<title>VākQA</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#12 · Daily Papers 2026-09-20</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 12</span>
+    </div>
+    <h1 class="article-title">VākQA: A Benchmark and Evaluation Study for Telugu Spoken Factoid Question Answering</h1>
+    <p class="article-title-ko">VākQA: 텔루구어 음성 사실형 질의응답을 위한 벤치마크 및 평가 연구</p>
+    <p class="article-sub">텔루구어(Telugu) 음성 기반 사실형(factoid) 질의응답을 위한 최초의 벤치마크 데이터셋 VākQA를 구축하고, 저자원 언어에서 LLM-as-a-judge 평가 방식의 신뢰성을 정량적으로 검증한 연구이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.19879" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.19879" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: VākQA: A Benchmark and Evaluation Study for Telugu Spoken Factoid Question Answering</li>
+<li><strong>저자</strong>: Bhavana Akkiraju, Ravi Sastry Kolluru, Charan Devarakonda, Srihari Bandarupalli (이상 IIIT Hyderabad, 인도), Santosh Kesiraju (Brno University of Technology, 체코), Anil Kumar Vuppala (IIIT Hyderabad)</li>
+<li><strong>출처</strong>: arXiv:2609.19879v1 [cs.CL] (2026년 9월 17일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시된 데이터셋 공개처 - https://hf.co/datasets/Bhavanaakkiraju/VakQA</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.19879">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>텔루구어(Telugu) 음성 기반 사실형(factoid) 질의응답을 위한 최초의 벤치마크 데이터셋 VākQA를 구축하고, 저자원 언어에서 LLM-as-a-judge 평가 방식의 신뢰성을 정량적으로 검증한 연구이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>질의응답(QA) 연구는 SQuAD, Natural Questions 등 영어 중심 벤치마크를 필두로 XQuAD, MLQA, MKQA 같은 다국어 벤치마크로 확장되어 왔으나, 대부분 영어 자료를 번역하는 방식에 의존한다. TyDi QA처럼 원어민이 직접 작성한 질문으로 구성된 벤치마크도 있지만, 텔루구어의 경우 텍스트 기반 QA 데이터셋(TeQuAD)은 존재해도 음성 변이(speech variability)를 포함한 자료는 없었다. 기존의 음성 QA(SQA) 연구들(Spoken SQuAD, ODSQA, SD-QA, SpokenNativQA, ViSQA)도 TTS로 합성된 음성을 사용하거나 특정 언어·방언에 국한되어 있어, 실제 구어 상호작용에서 자연스럽게 발화된 텔루구어 음성 QA 자원은 공백으로 남아 있었다. 또한 저자원 언어 QA 평가에서는 Exact Match(EM)와 F1 같은 어휘 일치 기반 지표가 표현이 다른 정답을 부당하게 틀렸다고 판단하는 문제가 있으며, LLM-as-a-judge의 신뢰성이 텔루구어와 같은 언어에서 검증된 바가 없다는 점도 문제의식으로 제시된다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>텔루구어 음성 사실형 QA를 위한 최초의 벤치마크 VākQA를 구축해 공개함. 6개 도메인에 걸친 2,001개의 질문-답변 쌍, 2.53시간 분량의 음성, 이중언어(텔루구어-영어) 전사문을 포함.</li>
+<li>텔루구어 QA에서 LLM-as-a-judge 평가 방식의 신뢰도를 사람 평가와 비교해 정량적으로 분석하고, 판정에 사용하는 모델 선택에 따라 신뢰도가 크게 달라짐을 보임(Gemini가 가장 우수하지만 균일하지 않은 엄격성을 보임).</li>
+<li>입력 언어(텔루구어/영어), 입력 양식(음성/텍스트), 모델 규모, 모델 유형(독점형/공개 가중치)을 체계적으로 변화시켜 QA 성능을 비교하고, 음성인식(ASR)→기계번역(MT) 파이프라인에서 오류가 누적되는 양상과 도메인별 성능 차이를 분석함.</li>
+</ul>
+<h2>방법론</h2>
+<p>데이터셋은 3단계 반자동 파이프라인으로 구축되었다. (1) 데이터 수집 및 오디오 추출: 퀴즈·객관식 형식의 텔루구어 유튜브 영상을 일반상식, 과학, 지리, 역사, 정치, 문화의 6개 도메인에서 수집. (2) QA 쌍 추출: Pyannote VAD로 비침묵 구간을 검출해 7초 단위(2초 중첩)로 분할하고, 약 900시간 분량(IndicVoices, Kathbath, Google FLEURS, SyspIn TTS, IndicTTS)으로 파인튜닝된 Seamless-large-v2 기반 텔루구어 ASR 모델로 전사한 뒤, Gemini를 이용해 QA 쌍을 원문 그대로 추출. Whisper-timestamped와 IndicWhisper로 단어 단위 타임스탬프를 계산하고, Levenshtein 유사도 85% 이상 기준의 퍼지 매칭으로 오디오-텍스트를 정밀 정렬. (3) 사람 검증 및 번역: 5명의 주석자가 추출된 QA 쌍과 오디오의 일치 여부를 검증하고 모든 텔루구어 QA를 영어로 수동 번역해 이중언어 쌍을 완성.</p>
+<p>평가 방법 검증을 위해 100개 질문에 대해 4개 QA 모델(Gemini, Gemma-3 4B/12B/27B)의 답변 400개를 5명의 텔루구어 원어민이 1~5점 루브릭으로 채점(Krippendorff's α=0.836으로 이상치 제외 후 높은 합치도 확인)하여 이를 정답 기준으로 삼았다. 이 사람 평가를 Gemini 및 Gemma-3 계열을 판정자로 쓰는 LLM-as-a-judge, EM, 토큰 단위 F1, 임베딩 기반 지표 BLASER-2.0과 비교했다. 이후 QA 모델 벤치마킹에서는 Gemini-2.5-Flash(독점형, 음성/텍스트 입력 가능)와 Gemma-3(4B/12B/27B), Llama-3.1, Hex-1, Sarvam-m, Qwen-3-4B(공개 가중치, 텍스트 전용)을 대상으로, 원본 텍스트(오라클), ASR 전사 텍스트, ASR→MT 캐스케이드 영어 텍스트, 직접 음성 입력 등 다양한 입력 조건에서 성능을 비교했다.</p>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li><strong>평가 지표 신뢰도</strong>: 사람 평가와의 상관관계에서 Gemini-as-a-judge가 가장 높았고(Spearman ρ=0.86, Kendall τ=0.77), Gemma-3 27B(ρ=0.80)와 12B(ρ=0.81)가 뒤를 이었으며 4B(ρ=0.57)는 가장 낮았다. 반면 EM(ρ=0.37), F1(ρ=0.49), BLASER-2.0(ρ=0.36)은 모두 0.5 미만으로 낮은 상관관계를 보여, 어휘·임베딩 기반 지표가 표현이 다르지만 의미상 맞는 답을 과도하게 낮게 평가함을 확인했다. Gemini는 저품질 답변에는 관대하고 고품질 답변에는 더 엄격한 비균일적 편향을 보였다(평균오차 ME=-0.28). 판정 모델을 Gemini에서 Gemma-12B로 바꾸면 46.23%의 답변이 더 낮은 점수를 받아, 공개 가중치 판정자가 표면형이 다른 정답 텔루구어 답변을 체계적으로 저평가하는 문제가 드러났다.</li>
+<li><strong>모델 유형별 성능</strong>: 오라클 텔루구어 텍스트 입력 시 Gemini는 평균 3.63점(5점 만점)을 기록한 반면, 최고 공개 가중치 모델인 Gemma-27B는 2.55점에 그쳐 독점형 모델과의 뚜렷한 성능 격차를 보였다.</li>
+<li><strong>입력 언어 효과</strong>: 동일 질문을 텔루구어(3.63점) 대신 영어로 입력하면 3.52점으로 소폭 하락했으며, 이는 번역 과정에서 텔루구어 소유격 대명사("우리")가 지칭하는 대상(인도)이 모호해지는 등 문맥·문화적 특수성이 소실되기 때문으로 분석되었다.</li>
+<li><strong>입력 양식 효과</strong>: 텍스트(3.63점) 대신 음성을 직접 입력하면 3.28점으로 하락했으며, 이는 발음이 비슷한 단어 간 혼동(예: '과일'과 '축제'를 뜻하는 텔루구어 단어의 음성적 유사성) 때문에 질문의 의미 자체가 왜곡되는 사례로 설명되었다.</li>
+<li><strong>ASR→MT 캐스케이드 오류</strong>: ASR 전사만 사용해도 성능이 하락하고(예: Gemini 3.40~3.09점), 여기에 기계번역까지 추가된 완전한 ASR+MT 캐스케이드에서는 2.44~2.80점까지 떨어져, 오류가 단계를 거치며 누적됨을 확인했다(예: WER 30.25 수준의 중간 정도 ASR 오류만으로도 질문의 의미가 완전히 달라져 오답을 유발한 사례 제시).</li>
+<li><strong>도메인별 성능</strong>: 오라클 텔루구어 텍스트에서는 문화 도메인이 가장 높은 점수(3.76점)를 보였으나, 영어로 번역된 입력에서는 문화 도메인 점수가 가장 크게 하락(2.42점)해 번역에 가장 취약한 도메인으로 나타났다. 반대로 지리, 과학 도메인은 고유명사·전문용어 중심이라 언어 간 전이가 비교적 안정적이었다.</li>
+</ul>
+<h2>한계점</h2>
+<p>논문은 세 가지 한계를 명시한다. 첫째, 유튜브 기반 음성은 원문에 충실한 전사·번역이 필요한데, 이 과정에서 텔루구어 소유격 대명사처럼 원문에서는 명확하던 지시 대상이 영어 번역 시 모호해지는 문제가 발생한다. 둘째, Gemini-as-a-judge조차 비균일적 엄격성을 보여 세밀한 모델 간 비교에는 한계가 있다. 셋째, 일부 과학·지리 분야 정답에는 영어 음역어가 포함되어 있는데, 판정 모델이 이를 원어 텔루구어 표현과 일관되게 평가하는지는 검증하지 못했다.</p>
+<h2>시사점</h2>
+<p>이 연구는 저자원 언어의 음성 QA 벤치마크가 단순히 텍스트에 오디오를 추가하는 것이 아니라, 오디오 수집 방식·전사 처리·평가 지표 선택 전반을 함께 설계해야 함을 보여준다. 특히 LLM-as-a-judge를 저자원 언어 평가에 사용할 때는 판정 모델의 선택이 결과에 크게 영향을 미치므로, EM/F1 같은 전통적 지표에 의존해 온 기존 인도어(Indic) QA 데이터셋들의 평가 관행을 재검토할 필요성을 제기한다. 또한 음성 입력에서의 음운적 혼동, 번역 과정에서의 문화적 특수성 손실, ASR-MT 캐스케이드의 오류 누적이라는 세 가지 실패 양상은 향후 저자원 언어 음성 QA 시스템 및 평가 체계 설계에 중요한 참고점을 제공한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.19879" target="_blank" rel="noopener">huggingface.co/papers/2609.19879</a> · 2026-09-20</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

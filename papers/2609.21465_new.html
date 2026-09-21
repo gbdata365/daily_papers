@@ -1,0 +1,119 @@
+<meta charset="UTF-8">
+<title>OmniVChat</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#6 · Daily Papers 2026-09-22</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 30</span>
+    </div>
+    <h1 class="article-title">OmniVChat: Synthesizing, Benchmarking, and Training for Native Audio-Visual Dialogue</h1>
+    <p class="article-title-ko">OmniVChat: 네이티브 음성-영상 대화를 위한 데이터 합성, 벤치마크, 그리고 학습</p>
+    <p class="article-sub">사람과 옴니(omni) 모델이 텍스트 질의 없이 오디오·영상을 그대로 주고받는 "네이티브 오디오-비주얼 대화(OmniVChat)"를 위해, 멀티에이전트 데이터 합성 엔진과 벤치마크, 강화학습 보상 설계를 하나의 파이프라인으로 묶어 제시한 연구이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.21465" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.21465" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: OmniVChat: Synthesizing, Benchmarking, and Training for Native Audio-Visual Dialogue</li>
+<li><strong>저자</strong>: Haolin He, Yunfei Chu, Qi Chen (공동 1저자 3인) 외 15명, 총 18명. The Chinese University of Hong Kong, Alibaba Token Hub(Alibaba Group), Shanghai Jiao Tong University, Shanghai Innovation Institute, Zhejiang University 소속. 교신저자는 Jin Xu, Qiuqiang Kong.</li>
+<li><strong>출처</strong>: arXiv:2609.21465v1 [eess.AS] (2026년 9월 18일 제출)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음 (OmniVChat-Bench와 OmniVChat-RL 학습 코드를 공개할 예정이라고만 언급되어 있으며 별도 URL은 제시되지 않음)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.21465">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>사람과 옴니(omni) 모델이 텍스트 질의 없이 오디오·영상을 그대로 주고받는 "네이티브 오디오-비주얼 대화(OmniVChat)"를 위해, 멀티에이전트 데이터 합성 엔진과 벤치마크, 강화학습 보상 설계를 하나의 파이프라인으로 묶어 제시한 연구이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>저자들은 옴니 모델이 사용자의 음성·영상을 별도의 텍스트 질문이나 음성인식(ASR) 변환 없이 직접 입력받아 응답하는 것을 "네이티브 오디오-비주얼 대화"로 정의한다. 이 과제를 다루기 어려운 이유는 두 가지인데, 첫째로 실제 사용자가 자신의 기기로 촬영한 오디오-비주얼 대화 녹화 데이터가 매우 드물고 잡음, 카메라 흔들림, 기기 자세 등 조건이 다양해 확보가 어렵다는 점, 둘째로 좋은 응답인지 판단하려면 주변 환경, 표정, 근처 사물 등 풍부한 멀티모달 맥락을 반영해야 하는데 이런 응답은 표현 방식이 매우 다양해 키워드 매칭 같은 규칙 기반 평가로는 신뢰하기 어렵다는 점이다. 기존 시스템들은 실용성 때문에 ASR 캐스케이드 방식에 의존하는 경우가 많은데, 이는 운율·음성 정서 같은 미묘한 신호를 놓치고 지연 시간과 연산량을 늘리며 전사 오류 가능성도 더한다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li><strong>OmniVChat-Studio</strong>: 텍스트 코퍼스를 입력받아 대규모로 네이티브 오디오-비주얼 대화 데이터(렌더링된 클립, 참조 응답, 채점용 루브릭 포함)를 합성하는 제어 가능하고 확장 가능한 멀티에이전트 데이터 엔진. 단일 턴과 다중 턴 두 서브시스템으로 구성된다.</li>
+<li><strong>OmniVChat-Bench</strong>: 옴니 모델의 기본적인 대화 능력을 5개 능력 범주, 17개 하위범주, 22개 시나리오 도메인에 걸쳐 평가하는 벤치마크(총 2,800개 인스턴스, 단일 턴 2,550개 + 다중 턴 250개).</li>
+<li><strong>OmniVChat-RL</strong>: 응답의 정확성, 효율성, 스타일을 동시에 겨냥하는 강화학습 보상 설계로, 평가에 쓰이는 동일한 루브릭 채점 방식을 훈련 보상으로 재사용하고 효율성·스타일 항을 추가한다.</li>
+<li>합성 데이터로 학습한 정책이 합성 벤치마크뿐 아니라 사람이 실제로 녹화한 OmniVChat-Bench-Human에서도 성능이 개선됨을 보여, 합성-실측 분포가 정렬되어 있음을 간접적으로 검증했다.</li>
+</ol>
+<h2>방법론</h2>
+<p>OmniVChat-Studio는 네 개의 에이전트(Director, Renderer, Reviewer, 결정론적 Validator)로 구성된다. Director는 텍스트 기반 입력·출력을 총괄하고, Renderer는 승인된 프롬프트와 미디어 참조를 동기화된 오디오-비주얼 클립으로 변환하며, Reviewer는 렌더링된 오디오·영상을 검사해 캡션과 품질 리포트를 작성하고 필요시 추가 질의응답으로 근거를 보강한다. Validator는 스크립트나 대화 기록을 설정된 규칙과 대조해 통과/위반 목록을 반환한다. 단일 턴 서브시스템은 설명(Description)→계획·검토→스크립트 생성→검증→영상 생성→응답 생성·검토까지 이어지는 14단계 모듈 체인을 거치며, 다중 턴 서브시스템은 전체 턴을 아우르는 조인트 플랜을 먼저 세우고 이전 턴의 클립·오디오·최종 프레임을 참조해 이후 턴을 합성한다. 각 인스턴스는 여러 개의 계층적 채점 기준(tier)으로 구성된 루브릭을 가지며, Tier 0(언어 확인)을 통과하지 못하면 점수가 0이 되고, 상위 Tier는 하위 Tier의 모든 기준이 충족되어야만 점수를 인정받는 구조다.</p>
+<p>OmniVChat-RL은 Qwen3-Omni-30B-A3B-Instruct의 Thinker(텍스트 디코더 포함 비디오·오디오 인코더 모델)를 정책으로 삼아 GSPO(group sequence policy optimization)와 LoRA(rank-64) 어댑터로 학습한다. 각 학습 입력에 대해 여러 응답을 샘플링하고, GRPO 방식의 그룹 평균 보상을 베이스라인으로 삼아 어드밴티지를 계산한다. 총 보상은 (1) 앞서 정의한 루브릭 기반 정확성 점수, (2) 형식(비어있지 않고 태그가 없는 응답) 보상, (3) 같은 루브릭 점수 대비 응답 길이가 짧을수록 높은 효율성 보상, (4) 자연스러운 구어체·간결함·역할극과 사실의 구분 등을 LLM 심판(qwen3.7-max)이 7개 기준으로 채점하는 스타일 보상을 가중합한 것이다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>학습에는 OmniVChat-Studio로 합성한 5,600개 대화로 구성된 OmniVChat-Bench-Train(개발용 분할 560개 별도 보유)을 사용했고, 평가는 2,800개 인스턴스의 OmniVChat-Bench(합성, 학습에 쓰인 영상과 겹치지 않음)와 360개 인스턴스의 사람 녹화 기반 OmniVChat-Bench-Human으로 이루어졌다. 1,000회 반복 학습 동안 개발셋 기준 Subcategory Mean이 0.507에서 0.707까지 상승했고, 선택된 체크포인트(940 스텝) 기준으로 OmniVChat-Bench의 Subcategory Mean은 0.465→0.652, OmniVChat-Bench-Human은 0.402→0.632로 향상되었다. 응답 효율성(RE, 천 단어당 루브릭 점수)은 5.75→18.38로, 스타일 점수는 0.710→0.992로 크게 개선되었고, 평균 응답 길이는 약 79단어에서 36단어로 줄었다.</p>
+<p>Gemini-3.5/3.6/3.7-Flash, Gemini-3.1-Pro, Qwen3.5-Omni-Plus, Doubao Seed 2.0 Lite 등 폐쇄형 모델과 Qwen3-Omni-Instruct, JoyAI-VL-Interaction, Qwen3-Omni-Thinking, Qwen2.5-Omni-7B/3B, MiniCPM-o-4.5 등 공개형 모델을 포함한 12개 배포 시스템과 비교했을 때, OmniVChat-RL은 RE와 Style 지표에서 모든 비교 모델을 앞섰고 루브릭 Mean 점수(0.652)도 상위권을 유지했다(가장 높은 Gemini-3.5-Flash의 0.667에는 못 미침). 보상 소거 실험에서 효율성 항을 제거하면 Mean은 소폭 오르지만 응답 길이가 36단어에서 99단어로 늘고 RE는 18.38에서 7.12로 급락했으며, 스타일 항을 제거하면 Style 점수가 0.992에서 0.788로 크게 떨어졌다.</p>
+<h2>한계점</h2>
+<ul>
+<li>학습·평가 데이터의 상당 부분이 LLM 에이전트 파이프라인으로 합성된 것이며, 사람이 직접 녹화한 실제 데이터는 OmniVChat-Bench-Human(360개, 평가 전용)에 국한되어 있어 합성-실측 간 완전한 분포 일치는 보장되지 않는다(저자들도 "간접적으로 시사"한다는 수준으로 표현).</li>
+<li>채점은 LLM 심판(qwen3.7-max)의 루브릭 판정에 의존하므로 심판 모델 자체의 편향이나 일관성 문제가 결과에 영향을 줄 수 있다(논문은 부록에서 심판 간 합치도를 별도로 분석함).</li>
+<li>벤치마크는 실시간 끼어들기(interruption)나 풀듀플렉스 상호작용은 다루지 않으며, 녹화 기반 프로브는 단일 턴 하위범주만 포함한다.</li>
+<li>비교 대상 중 ASR 캐스케이드 방식(JoyAI-VL-Interaction + Qwen3-ASR)은 한 사례만 포함되어 네이티브 방식과 캐스케이드 방식의 전반적 우열을 폭넓게 검증하지는 않았다.</li>
+</ul>
+<h2>시사점</h2>
+<p>이 논문은 "이해를 위한 생성(generation for comprehension)"이라는 접근이 실현 가능함을 보여준다. 즉, 실제 녹화 데이터가 부족한 영역에서도 에이전트 기반으로 합성한 오디오-비주얼 대화와 루브릭을 학습·평가 모두에 활용할 수 있다는 것이다. 또한 정확성·형식·효율성·스타일을 함께 최적화하는 다항 보상 설계가 응답 품질을 유지하면서 불필요하게 장황한 답변을 줄이는 데 효과적임을 실증했으며, 합성 벤치마크에서의 개선이 실제 녹화 대화(OmniVChat-Bench-Human)로도 전이된다는 점은 향후 다른 옴니모달 상호작용 벤치마크·학습 파이프라인을 설계할 때 참고할 수 있는 방법론적 청사진을 제공한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.21465" target="_blank" rel="noopener">huggingface.co/papers/2609.21465</a> · 2026-09-22</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

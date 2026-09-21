@@ -1,0 +1,107 @@
+<meta charset="UTF-8">
+<title>OmniVBench</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#9 · Daily Papers 2026-09-22</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 19</span>
+    </div>
+    <h1 class="article-title">OmniVBench: A Benchmark and Large-Scale Dataset for Omni Reference-to-Video Generation</h1>
+    <p class="article-title-ko">OmniVBench: 옴니 레퍼런스-투-비디오 생성을 위한 벤치마크와 대규모 데이터셋</p>
+    <p class="article-sub">레퍼런스 기반 영상 생성(R2V) 모델이 콘텐츠·모션·스타일·구조·서사 등 다양한 참조 유형과 그 조합을 얼마나 충실하게 반영하는지 세밀하게 진단하는 벤치마크 OmniVBench와, 이를 학습시키기 위한 34만 건 규모의 전문 영상 기반 학습 데이터셋 Omni-R2V를 함께 공개한 연구이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.22069" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.22069" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: OmniVBench: A Benchmark and Large-Scale Dataset for Omni Reference-to-Video Generation</li>
+<li><strong>저자</strong>: Wenxue Li 외 16명 (Tencent Online Video BU, 홍콩과기대(광저우) 공동 연구; 교신저자 Eric Liu, Xi Chen, Lei Zhu)</li>
+<li><strong>출처</strong>: arXiv:2609.22069v1 [cs.CV] (2026년 9월 18일 제출)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://wxliii.github.io/OmniVBench/">https://wxliii.github.io/OmniVBench/</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.22069">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>레퍼런스 기반 영상 생성(R2V) 모델이 콘텐츠·모션·스타일·구조·서사 등 다양한 참조 유형과 그 조합을 얼마나 충실하게 반영하는지 세밀하게 진단하는 벤치마크 OmniVBench와, 이를 학습시키기 위한 34만 건 규모의 전문 영상 기반 학습 데이터셋 Omni-R2V를 함께 공개한 연구이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>최근 영상 생성 모델과 멀티모달 대형 언어모델의 발전으로 텍스트만으로는 표현하기 어려운 제어를 이미지·영상 등의 "레퍼런스"로 대신 지정하는 R2V(Reference-to-Video) 생성이 각광받고 있다. 초기에는 인물이나 객체 같은 단일 콘텐츠 참조가 중심이었지만, 실제 창작 워크플로우에서는 모션, 카메라 움직임, 스타일, 스토리보드, 서사 등 훨씬 다양한 참조 요소가 복합적으로 요구되는 "옴니 R2V" 패러다임으로 확장되고 있다. 그러나 기존 벤치마크들은 (1) 평가 범위가 콘텐츠 참조 위주로 제한되어 모션·스타일·구조·서사·다중 참조 등 실제로 중요한 설정을 충분히 다루지 못하고, (2) 평가 방식도 전체적인 참조 유사도나 프롬프트 정합성 같은 총체적 지표에 그쳐, 모델이 의도된 참조 요소를 제대로 분리하고 올바른 대상에 결합했는지를 요소 단위로 짚어내지 못한다는 한계가 있다. 또한 옴니 R2V 학습에 적합한 데이터는 구축 비용이 커 공개 자원이 매우 부족한 상황이었다.</p>
+<h2>핵심 기여</h2>
+<p>저자들은 크게 세 가지를 제시한다. 첫째, 콘텐츠·모션·스타일·구조·서사의 5개 단일 참조 카테고리와 다중 콘텐츠·교차 측면(cross-aspect) 참조를 포함한 다중 참조 설정까지, 총 7개 태스크 패밀리와 18개 세부 태스크로 구성된 R2V 평가 체계 OmniVBench를 구축했다. 둘째, 각 평가 케이스를 참조 요소별로 분해한 12,172개의 케이스별 체크리스트 항목을 도입해, 참조 정보가 보존되고 올바르게 분리(disentangle)되며 의도된 대상에 정확히 결합(routing)되었는지를 세밀하게 진단하는 "요소 기반(factor-grounded)" 평가 프로토콜을 제안했다. 셋째, 전문 영상 코퍼스를 바탕으로 태스크별 파이프라인을 통해 구성한 약 34만 건 규모의 참조-타겟 쌍 학습 데이터셋 Omni-R2V를 공개해, 다양한 참조 유형과 다중 참조 조합을 아우르는 실전형 학습 자원을 제공했다.</p>
+<h2>방법론</h2>
+<p>OmniVBench의 태스크 분류는 크게 단일 참조와 다중 참조로 나뉜다. 단일 참조에는 (1) 객체·인물·장면의 정체성을 보존하거나 속성만 바꾸는 콘텐츠 참조, (2) 참조 영상에서 동작이나 카메라 움직임만 추출해 다른 주체에 전이하는 모션 참조, (3) 이미지의 화풍만 새로운 콘텐츠에 입히는 스타일 참조, (4) 그레이박스·라인아트·러프 스토리보드 등 불완전한 외형 정보로부터 구조를 복원하는 구조 참조, (5) 멀티패널 스토리보드·기존 영상·직전 샷으로부터 서사 흐름을 추출·계승·확장하는 서사 참조가 포함된다. 다중 참조는 여러 개체를 각각의 역할로 합성하는 멀티콘텐츠 참조와, 콘텐츠+모션·콘텐츠+스타일처럼 서로 다른 참조가 결과물의 상이한 측면을 동시에 통제하는 교차 측면 참조로 나뉜다. 평가는 참조 충실도(Reference Fidelity), 지시 실현도(Instruction Realization), 영상 품질(Video Quality) 세 축으로 이루어지며, 특히 지시 실현도는 참조 요소가 원 소스에서 올바르게 분리되어 의도된 대상에 결합됐는지를 보는 분리·라우팅과, 지시 사항이 실제로 구현됐는지를 보는 목표 준수 두 하위 차원으로 나뉜다. 각 케이스는 관련된 세부 기준만 활성화되어 체크리스트 질문으로 인스턴스화되며, VLM 심판이 참조 충실도는 1~5점, 지시 실현도는 1~3점 척도로 채점하고 계층적으로 100점 척도로 집계한다. Omni-R2V 데이터셋은 대규모 자체 영상 컬렉션을 세그먼트 단위로 분할한 뒤, 교차 세그먼트 매칭(동일 인물·스타일의 다른 클립 검색)과 역구성(대상 영상에서 정보를 추출·수정해 참조 생성) 두 전략을 조합해 참조-타겟 쌍을 만들고, 대형 비전-언어 모델로 각 참조와 타겟을 캡셔닝한 뒤 이를 다시 학습용 지시문으로 변환하는 파이프라인으로 구축되었다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>연구진은 Kling 3.0 Omni, Seedance 2.0/2.5, Gemini Omni, Happy Horse 1.0, Vidu-Q2-Pro 등의 폐쇄형 모델과 UniVideo, OmniWeaving, LoomVideo, Bernini, MiniMax H3 등의 오픈소스 모델을 OmniVBench 상에서 평가했다. 전반적으로 오픈소스와 폐쇄형 모델 간 성능 격차는 크게 좁혀졌으며, 최상위 오픈소스 모델이 선두 폐쇄형 모델과 유사한 수준에 도달했지만, 모든 태스크 패밀리에서 일관되게 우수한 단일 모델은 존재하지 않았다. 콘텐츠 참조에서는 대체로 높은 점수를 보이는 반면 모션·스타일·구조·서사·다중 참조에서는 모델 간 편차가 훨씬 크게 나타나, 한 참조 조건에서의 성능 향상이 다른 조건으로 자동 이전되지 않음을 보여주었다. 지시 실현도를 분리(disentanglement/routing)와 목표 준수(target compliance) 두 하위 요소로 나눠본 결과, 여러 모델이 목표 준수 점수는 상대적으로 높으면서도 분리·라우팅 점수는 특히 다중 콘텐츠·교차 측면 태스크에서 뚜렷이 낮게 나타나, 모델이 지시를 따르는 것처럼 보여도 실제로는 참조에서 불필요한 정보까지 함께 복사하거나 요소를 잘못된 대상에 적용하는 문제가 있음을 확인했다. 100개 벤치마크 케이스, 965개 모델 출력에 대해 3명의 인간 평가자가 참조 충실도·지시 실현도·영상 품질을 채점해 비교한 결과, 제안한 자동 평가는 인간 평가와 높은 상관관계(Pearson 0.78~0.86)를 보였으며, 요소 기반 체크리스트 방식이 총체적 평가 방식보다 인간 판단과의 상관도가 일관되게 더 높음을 확인해 세밀한 체크리스트 설계의 효용을 검증했다.</p>
+<h2>한계점</h2>
+<p>논문 본문에서 명시적으로 한계점을 별도 절로 다루지는 않았다. 다만 실험 결과에서 드러나듯, 현재 평가된 모든 R2V 모델은 콘텐츠 참조 이외의 모션·스타일·구조·서사·다중 참조 태스크, 특히 여러 참조 요소를 서로 분리하고 올바른 대상에 결합(disentanglement and routing)하는 능력에서 뚜렷한 한계를 보였다. 또한 본 벤치마크와 데이터셋은 주로 내부(in-house) 전문 영상 코퍼스를 기반으로 구축되어, 데이터 출처의 다양성이나 완전한 재현 가능성 측면에서는 공개 데이터셋 대비 제약이 있을 수 있다.</p>
+<h2>시사점</h2>
+<p>이 연구는 R2V 생성 평가가 더 이상 "참조와 얼마나 비슷한가"라는 총체적 유사도만으로는 충분하지 않으며, 참조 요소가 무엇을 보존해야 하고 무엇을 버려야 하며 어디에 결합돼야 하는지를 요소 단위로 명시적으로 검증해야 한다는 방향을 제시한다. 이러한 요소 기반 진단 체계는 향후 R2V 모델 개발 시 어떤 참조 조건과 어떤 능력(분리·라우팅 vs 목표 준수)이 부족한지를 구체적으로 짚어내는 나침반 역할을 할 수 있으며, 함께 공개된 대규모 학습 데이터셋과 데이터 구축 파이프라인은 옴니 R2V 모델 학습을 위한 실용적 청사진으로 활용될 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.22069" target="_blank" rel="noopener">huggingface.co/papers/2609.22069</a> · 2026-09-22</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

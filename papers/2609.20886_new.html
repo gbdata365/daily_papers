@@ -1,0 +1,115 @@
+<meta charset="UTF-8">
+<title>BI-Agent와 BI-Bench</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#10 · Daily Papers 2026-09-22</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 12</span>
+    </div>
+    <h1 class="article-title">BI-Agent and BI-Bench: Towards Automating End-to-End Business Intelligence</h1>
+    <p class="article-title-ko">BI-Agent와 BI-Bench: 엔드투엔드 비즈니스 인텔리전스 자동화를 향하여</p>
+    <p class="article-sub">도구 증강 에이전트 BI-Agent와 실제 대시보드 기반 벤치마크 BI-Bench를 통해, LLM이 원시 데이터 탐색부터 변환·조인·분석까지 사람의 개입 없이 엔드투엔드로 비즈니스 인텔리전스(BI) 질문에 답하도록 만드는 연구.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.20886" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.20886" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: BI-Agent and BI-Bench: Towards Automating End-to-End Business Intelligence</li>
+<li><strong>저자</strong>: Chuxuan Hu, Yeye He, Penny Zhou, Wee Hyong Tok, Daniel Kang, Surajit Chaudhuri (총 6명, UIUC 및 Microsoft Research/Microsoft 공동 연구)</li>
+<li><strong>출처</strong>: arXiv:2609.20886v1 [cs.LG] (2026년 9월 16일 제출)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/Hu-Chuxuan/bi-agent">GitHub 코드/데이터 저장소</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.20886">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>도구 증강 에이전트 BI-Agent와 실제 대시보드 기반 벤치마크 BI-Bench를 통해, LLM이 원시 데이터 탐색부터 변환·조인·분석까지 사람의 개입 없이 엔드투엔드로 비즈니스 인텔리전스(BI) 질문에 답하도록 만드는 연구.</p>
+<h2>배경 및 문제의식</h2>
+<p>Power BI, Tableau 같은 주요 BI 소프트웨어는 원시 데이터로부터 대시보드를 완성하기까지 (1) 관련 테이블 탐색, (2) 데이터 변환(피벗/언피벗 등 테이블 재구조화 포함), (3) 테이블 간 조인 관계 설정, (4) 최종 분석의 네 단계를 거쳐야 하며, 이는 비전문 사용자에게 큰 진입장벽이다. 기존 NL2SQL 벤치마크(BIRD, Spider 등)는 이미 정제되고 관계형으로 구조화된 테이블을 전제로 마지막 분석 단계만 다루기 때문에, 실제 BI 워크플로우에서 겪는 지저분한 원시 데이터·복잡한 스키마·테이블 재구조화 문제를 반영하지 못한다. 저자들은 LLM이 이러한 준비 단계까지 포함해 자연어 질의에서 정답 테이블까지 전체 파이프라인을 자동화할 수 있는지를 "end-to-end BI" 문제로 정의하고 탐구한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>BI-Bench</strong>: 공개적으로 접근 가능한 3천여 개의 실제 Power BI 프로젝트(.pbix)를 크롤링하고, 사용자가 만든 대시보드 시각화의 제목/맥락에서 자연어 질의를 수작업으로 추출·검증하여, 질의-정답 테이블 쌍 100개로 구성한 최초의 엔드투엔드 BI 벤치마크를 구축했다.</li>
+<li><strong>BI-Agent</strong>: LLM 오케스트레이터가 탐색(search), 변환(transform), 조인(join), 코드실행(code)이라는 네 가지 전문화된 "에이전틱 도구"를 추론-도구호출 루프 안에서 활용하도록 설계한 에이전트 프레임워크를 제안했다.</li>
+<li>실제 BI 프로젝트로부터 학습 궤적을 자동 합성하는 post-training(지도 미세조정 SFT + 강화학습 RL) 프레임워크를 개발하여, Qwen3-8B와 같은 오픈소스 모델을 BI 도메인에 특화되게 추가 학습시켰다.</li>
+<li>24개의 모델/시스템(프론티어 LLM, 오픈소스 LLM, SOTA NL2SQL 기법, 데이터 분석 에이전트)에 대한 광범위한 비교 실험을 수행하고 결과를 공개했다.</li>
+</ul>
+<h2>방법론</h2>
+<p>BI-Bench 구축 과정에서는 웹 검색으로 수집한 다수의 pbix 프로젝트 중 의미가 명확한 시각화를 골라 그 제목과 맥락을 자연어 질의로 바꾸고, 해당 시각화의 "Export data" 기능으로 정답 결과 테이블을 직접 추출했다. 이후 두 개의 독립된 프론티어 LLM을 이용한 보조 검증과 사람에 의한 재검토를 거쳐 질의-정답 쌍의 정확성을 확인했으며, 의미적으로 유효한 대안 정답 테이블도 함께 보강했다.</p>
+<p>BI-Agent 아키텍처는 LLM 오케스트레이터(바닐라 또는 post-training된 모델)가 네 가지 도구를 반복적으로 호출하는 구조다. transform 도구는 기존 데이터 관리 알고리즘을 활용해 피벗·언피벗·전치 등 필요한 테이블 재구조화를 예측·수행하고, search 도구는 질의와 관련된 테이블 후보를 압축해 제시하며, join 도구는 스노우플레이크형 스키마에 최적화된 조인 예측 알고리즘으로 조인 관계를 계산하고, code 도구는 LLM이 생성한 Python/SQL 코드를 실행해 결과를 피드백한다.</p>
+<p>Post-training은 실제 BI 프로젝트의 조인 그래프에서 연결된 하위 스키마를 샘플링해 하나의 넓은 조인 테이블을 만들고, 이를 바탕으로 자연어 질의와 이를 푸는 코드를 자동 합성한 뒤 실행 결과가 일치하는 경우만 학습 태스크로 채택하는 방식으로 이루어진다. SFT는 GPT-4o를 교사 모델로 삼아 정답과 정확히 일치하는 성공 궤적만을 학습 데이터로 사용하며, RL은 GRPO 알고리즘 기반의 검증 가능한 보상(정답 테이블 일치 시 양의 보상, 구문 오류 횟수에 비례한 패널티, 형식은 맞지만 오답인 경우 부분 점수)을 사용해 학생 모델이 스스로 궤적을 탐색하도록 한다. 프로젝트·질의·변환 수준에서 학습-평가 데이터 간 중복을 배제해 데이터 유출을 방지했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>GPT-5.5, GPT-5.2, o4-mini, GPT-4o, Llama-4-Maverick, GPT-OSS-120B, DeepSeek-V4-Pro, Mistral-Large-3, Kimi-K2.6, Qwen3-8B 등 대형/오픈소스 LLM과 SOTA NL2SQL 기법(Kwai-AutoSQL, Infly-RL-SQL, XiYanSQL-QwenCoder 등), 데이터 분석 에이전트(ktx, Databao Agent) 등 총 24개 모델/시스템을 SQL·Python 두 실행 환경에서 비교했다.</p>
+<p>BI-Bench는 매우 도전적이어서 가장 성능이 좋은 모델(o4-mini)조차 SQL 기준 정확도 48.2%에 그쳤다. BI-Agent의 도구를 사용하면 평균적으로 SQL은 약 14%p, Python은 약 11%p 정확도가 향상되었고(비교한 20개 조건 중 19개에서 통계적으로 유의), 특히 도구 활용에 약한 모델일수록 개선폭이 컸다. Post-training을 거친 Qwen3-8B-RL-Tool 모델은 SQL 기준 기존 대비 최대 29.8%p 정확도가 향상되어 GPT-4o 및 여러 대형 오픈소스 모델과 대등하거나 이를 능가했으며, 추론 비용은 대형 모델 대비 약 54배 저렴했다(쿼리당 약 $0.19 vs $10 이상). 반면 기존 SOTA NL2SQL 기법과 데이터 분석 에이전트들은 자신들의 원 벤치마크에서는 70% 이상의 정확도를 보이지만 BI-Bench에서는 대체로 10% 안팎으로 급격히 저조해, BI-Bench가 순수 NL2SQL 과제를 넘어서는 데이터 준비 난제를 담고 있음을 보였다. 오류 분석에서는 도구 사용이 테이블 선택·변환 오류를 크게 줄이고, post-training은 추가로 테이블 선택·조인 오류를 줄이지만, 필요한 정보 누락(missing information) 오류는 여전히 가장 흔한 오류 유형으로 남았다. 도메인 외 벤치마크인 Spider 2.0에서도 도구와 post-training을 결합한 모델이 기저 모델 대비 최대 20.5배의 정확도 향상을 보여 일반화 가능성을 입증했다.</p>
+<h2>한계점</h2>
+<p>저자들은 BI-Agent에 탑재된 도구 집합이 모든 경우를 포괄하지는 않으며 추가 도구로 얼마든지 확장 가능한 설계임을 명시한다. 또한 이 연구가 다루는 문제는 이미 정제되고 큐레이션된 데이터 모델을 전제하는 전통적인 엔터프라이즈 BI(ETL 기반)를 대체하려는 것이 아니라, 신규·외부 원시 테이블에 대한 저비용·일회성 분석이라는 보완적 영역을 겨냥한 것이라고 스스로 한정한다. 실험 결과에서도 "필요 정보 누락" 오류가 도구와 post-training을 모두 적용한 이후에도 가장 흔한 잔존 오류 유형으로 남아 향후 개선 과제로 제시된다. 벤치마크 규모는 수작업 검증에 소요되는 높은 비용(1건당 약 4인시 이상) 때문에 100개 테스트 케이스로 비교적 작으며, 논문은 이를 유사한 에이전트형 데이터 분석 벤치마크들과 비슷한 규모라고 설명한다.</p>
+<h2>시사점</h2>
+<p>이 연구는 도구 증강 추론과 도메인 특화 post-training을 결합하면 상대적으로 작은 오픈소스 모델(Qwen3-8B)도 훨씬 큰 프론티어 모델과 동등하거나 이를 능가하는 성능을 대폭 낮은 비용으로 달성할 수 있음을 보여준다. 이는 BI를 포함한 실제 기업 데이터 워크플로우에서 LLM 에이전트가 데이터 탐색·변환·조인·분석의 전체 파이프라인을 자동화할 잠재력이 있음을 시사하며, 전통적 데이터 관리 커뮤니티에서 발전해 온 조인 예측·테이블 재구조화 알고리즘을 LLM 에이전트의 전문화된 도구로 통합하는 접근이 효과적임을 실증적으로 뒷받침한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.20886" target="_blank" rel="noopener">huggingface.co/papers/2609.20886</a> · 2026-09-22</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

@@ -1,0 +1,114 @@
+<meta charset="UTF-8">
+<title>MintAct</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#11 · Daily Papers 2026-09-22</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 12</span>
+    </div>
+    <h1 class="article-title">MintAct: A Unified Visual Agent for Digital Environments</h1>
+    <p class="article-title-ko">MintAct: 디지털 환경을 위한 통합 비주얼 에이전트</p>
+    <p class="article-sub">MintAct는 UI 그라운딩, 모바일·데스크톱·웹을 아우르는 다단계 내비게이션, 시각적 도구 사용(visual tool use)이라는 세 가지 능력을 하나의 가중치로 통합하면서도 각 도메인 전문 모델과 동등하거나 더 나은 성능을 내는 2B/4B/8B 규모의 비전-언어 에이전트 계열이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.22083" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.22083" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: MintAct: A Unified Visual Agent for Digital Environments</li>
+<li><strong>저자</strong>: Mingfei Gao(1저자 겸 프로젝트 리드) 외 13명 (Apple 소속, Rui Tian, Haiming Gang, Bohan Zhai, Le Zhang, Yuanzheng Gong, Di Feng, Ege Özsoy, Kaixin Ma, Vishwesh Kirthivasan, Oğuzhan Fatih Kar, Roman Bachmann, Anders Boesen Lindbo Larsen, Afshin Dehghan 포함)</li>
+<li><strong>출처</strong>: arXiv:2609.22083v1 [cs.CV] (2026년 9월 18일 제출)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.22083">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>MintAct는 UI 그라운딩, 모바일·데스크톱·웹을 아우르는 다단계 내비게이션, 시각적 도구 사용(visual tool use)이라는 세 가지 능력을 하나의 가중치로 통합하면서도 각 도메인 전문 모델과 동등하거나 더 나은 성능을 내는 2B/4B/8B 규모의 비전-언어 에이전트 계열이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>화면을 직접 픽셀 단위로 보고 조작하는 시각 에이전트는 범용 디지털 비서로 가는 유망한 경로로 꼽히지만, 현재까지는 UI 그라운딩, 모바일 내비게이션, 데스크톱 제어, 웹 내비게이션, 도구 호출 등의 능력이 각각 별도의 전문 모델로 개발·학습·평가되어 왔다. 이렇게 도메인별로 모델을 따로 서빙하는 방식은 특히 온디바이스처럼 경량 모델이 필요한 환경에서 비용과 확장성 면에서 비효율적이다. 저자들은 "하나의 모델이 도메인별 성능 저하 없이 이 모든 능력을 통합할 수 있는가"라는 질문을 던진다. 문제는 단순한 모델링 이슈가 아니라, 도메인마다 관찰·행동 공간과 상호작용 방식, 데이터 소스, 실행 환경이 크게 다르다는 점에서 비롯된다. 행동 집합을 단순히 합치거나 데이터를 섞으면 도메인 간 간섭으로 성능이 떨어지고, 신뢰할 수 있는 상호작용 행동을 학습하려면 결국 이질적인 환경 백엔드를 상대로 한 온라인 강화학습(RL)이 필요한데, 이는 느리고 불안정하며 긴 멀티모달 궤적을 다뤄야 하는 데다, 도메인을 섞어 비동기 실행하면 실제 학습 분포가 가장 빠른 도메인 쪽으로 쏠리는 문제까지 발생한다. 즉 통합은 모델링뿐 아니라 데이터·환경·학습 인프라 전반의 문제라는 것이 이 논문의 출발점이다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>2B, 4B, 8B 세 가지 규모에서 UI 그라운딩, 모바일·데스크톱·웹 내비게이션, 시각적 도구 사용을 하나로 통합한 MintAct 모델 계열을 학습했다.</li>
+<li>이 능력들과 도메인들을 함께 학습시켜도 성능이 저하되지 않음을 보였다. 즉 단일 MintAct 모델이 각 개별 도메인에서만 학습한 동급 크기의 전문 모델과 대등하거나 더 나은 성능을 낸다.</li>
+<li>통합 시각 에이전트에 특화된 비동기 RL 프레임워크를 구축했다. 불안정하고 이질적인 환경 상호작용과 긴 멀티모달 궤적 문제를 다루며, 여러 도메인에 걸쳐 수백 개의 동시 인스턴스를 지원하는 확장 가능한 환경 인프라 위에서 동작하고, 같은 인프라가 온라인 RL 롤아웃과 오프라인 지도학습(SFT) 궤적 수집을 동시에 높은 처리량으로 지원한다.</li>
+</ul>
+<h2>방법론</h2>
+<p>MintAct는 시스템 프롬프트, 지시문, 과거 관찰·행동 이력을 조건으로 다음 행동을 생성하는 정책으로 형식화되며, 그라운딩(단일 스텝으로 화면 좌표를 예측), 내비게이션(다단계로 화면을 조작), 시각적 도구 사용(다단계로 외부 도구를 호출)이 모두 같은 정책 형식의 인스턴스로 다뤄진다. 통합을 가능하게 하는 세 가지 설계 선택은 (1) 모든 도메인에서 DOM이나 접근성 트리, 플랫폼별 API 없이 순수 스크린샷만 보고 정규화된 픽셀 좌표로 그라운딩하는 공유된 관찰·그라운딩 공간, (2) 행동 집합을 억지로 하나로 합치는 대신 도메인별 시스템 프롬프트로 해당 도메인의 행동 집합을 활성화하는 프롬프트 조건부 행동 집합, (3) 학습 전 과정에서 도메인 간 비율을 균형 있게 유지하는 크로스 도메인 혼합이다.</p>
+<p>학습은 여러 단계로 이루어진다. 먼저 고해상도 단일 스텝 SFT로 그라운딩 능력을 다지고, 이어 저해상도 다단계 SFT로 내비게이션과 도구 사용 능력을 기른다. 이후 도메인별 RL 전문 모델을 각각 학습시킨 뒤, 거부 샘플링(rejection sampling) 기반 RFT 단계로 이 전문 모델들의 지식을 다시 하나의 모델로 증류한다. 마지막으로 에이전트형 비동기 RL로 모델이 여러 환경과 직접 상호작용하며 자신의 행동 결과로부터 학습하도록 공동 최적화한다. 환경 파이프라인은 데스크톱(OSWorld 기반), 모바일(AndroidWorld 기반), 웹(Weblica의 실브라우징 캐시와 합성 웹사이트), 시각적 도구 사용(MM-ToolSandBox, 500개 이상의 도구를 대상, 필요한 도구를 동적으로 검색하는 search_tool과 코드 실행용 coding_tool 포함)의 네 도메인을 아우른다.</p>
+<p>비동기 RL 인프라는 환경 매니저, 롤아웃 생성기(Rollouter), 메시지 큐, 트레이너, 파라미터 동기화기로 구성된 폐루프 구조다. 느린 환경 상호작용으로 인한 GPU 유휴 문제를 비동기 처리로 해소하고, 대용량 멀티모달 궤적은 이미지를 디스크에 오프로딩하는 방식으로 메모리 부담을 줄이며, 혼합 학습 시 특정 도메인이 처리 속도만으로 학습 분포를 지배하지 않도록 도메인별 쿼터와 쿼터 정규화된 백프레셔(backpressure)로 구성 비율을 통제한다. 또한 학습·추론 간 정책 불일치(staleness gap, engine gap)를 다루기 위해 비대칭적으로 클리핑된 이중 클립 서로게이트 목적함수와 절단된 중요도가중치(truncated importance sampling weight)를 사용하며, 그룹 상대 정책 최적화(GRPO) 방식으로 어드밴티지를 계산한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>그라운딩은 MMBench-GUI, ScreenSpot-v2, UI-Vision, OSWorld-G로, 모바일 내비게이션은 AndroidControl과 AndroidWorld로, 데스크톱 내비게이션은 OSWorld-Verified로, 웹 내비게이션은 Weblica와 Online-Mind2Web으로, 시각적 도구 사용은 MM-ToolSandBox로 평가했다. 세 규모 전체에서 MintAct는 초기화 모델인 Qwen3-VL-Instruct 대비 모든 도메인에서 큰 폭으로 개선되었으며, 동급 크기의 도메인 전문 모델과 대등하거나 이를 능가한다. 8B 모델 기준으로 AndroidWorld는 47.6에서 67.0으로, OSWorld-Verified는 33.9에서 48.9로, Weblica는 55.5에서 74.7로, MM-ToolSandBox는 3.1에서 24.5로 향상되었다. 동급 크기 공개 모델과 비교해도 MintAct-8B는 OSWorld-Verified(48.9), Weblica(74.7), UI-Vision(56.6), OSWorld-G(64.5)에서 최고 성능을, AndroidWorld(67.0) 등에서는 경쟁력 있는 성능을 보였다.</p>
+<p>절제 실험에서는 단일 스텝 고해상도 SFT는 그라운딩에는 강하지만 단독으로는 다단계 상호작용(내비게이션)에 약하고, 반대로 다단계 저해상도 SFT는 내비게이션·도구 사용을 강화하지만 단독으로는 그라운딩 성능을 떨어뜨려, 두 단계가 상호 보완적임을 확인했다. RFT(거부 샘플링 증류) 단계는 도메인별 RL 전문 모델의 성능을 하나의 모델에 유지·전이하는 데 효과적이었고, 특히 모바일 도메인에서는 증류된 모델이 원래의 RL 전문 모델을 능가하기도 했다. 모바일·데스크톱을 함께 학습하는 공동 RL은 각각 단독 RL 전문 모델보다 평균적으로 더 나은 성능을 냈고, 웹 데이터 없이도 Weblica·Om2W 성능이 함께 개선되는 도메인 간 전이 효과가 관찰되었다. 다만 시각적 도구 사용처럼 상대적으로 거리가 먼 도메인은 이번 공동 RL 대상에 포함되지 않아 SFT 수준에 머물렀다. 별도로 합성 환경만으로 학습해도 실제 벤치마크(AndroidWorld, OSWorld-Verified 등)로 전이되는 이득이 있었으나, 실제 도메인 데이터가 충분한 경우에는 그 이점이 상대적으로 줄어들었다.</p>
+<h2>한계점</h2>
+<p>저자들이 직접 밝힌 한계는 다음과 같다. 첫째, 공동 RL은 현재 모바일·데스크톱 두 도메인에만 적용되었고, 웹과 시각적 도구 사용까지 포함한 전 도메인 공동 RL 확장은 이질적인 환경을 대규모로 동시에 유지해야 하는 자원 소모 문제로 향후 과제로 남겨졌다. 둘째, 학습 시 매 스텝마다 들어오는 스크린샷을 컨텍스트에 계속 누적하는 방식이라 궤적이 길어질수록 컨텍스트와 메모리 사용량이 급격히 커지는데, 오래된 관찰을 요약·정리하는 등의 정교한 컨텍스트 관리가 아직 마련되지 않았다. 셋째, 현재는 내비게이션(픽셀 단위 UI 조작)과 도구 사용을 사실상 별개의 능력으로 다루고 있어, 모델이 상황에 맞게 두 방식 중 하나를 자동으로 선택해 전환하는 원활한 통합은 향후 과제다. 넷째, 도구 정의를 프롬프트에 미리 제공하는 표준 함수 호출 방식을 따르다 보니, 동적으로 새 도구가 발견될 때 궤적을 세그먼트로 분할해 처리하는 방식이 학습 안정성은 확보하지만 원래의 종단 간(end-to-end) 상호작용에 대한 근사적이고 거친 크레딧 할당에 그친다는 한계가 있다.</p>
+<h2>시사점</h2>
+<p>이 연구는 UI 그라운딩·내비게이션·도구 사용처럼 서로 다른 관찰·행동 공간과 실행 환경을 요구하는 능력들을, 공유된 픽셀 기반 관찰 공간과 프롬프트 조건부 행동 집합, 균형 잡힌 크로스 도메인 데이터 혼합이라는 비교적 단순한 설계 원칙만으로도 성능 저하 없이 하나의 경량 모델에 통합할 수 있음을 보여준다는 점에서 의미가 있다. 특히 온디바이스에 적합한 2B~8B 규모에서도 이러한 통합이 가능하다는 결과는, 여러 전문 모델을 따로 서빙해야 했던 기존 방식 대비 실제 배포 비용과 복잡성을 크게 낮출 잠재력을 시사한다. 또한 이질적 환경·도메인을 다루는 비동기 RL 인프라(도메인별 쿼터, 백프레셔, 이중 클립 서로게이트, 절단된 중요도가중치 등)는 향후 다른 멀티도메인 에이전트 학습 연구에도 참고할 만한 실무적 템플릿을 제공한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.22083" target="_blank" rel="noopener">huggingface.co/papers/2609.22083</a> · 2026-09-22</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

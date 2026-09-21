@@ -1,0 +1,115 @@
+<meta charset="UTF-8">
+<title>IntBMoE</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#5 · Daily Papers 2026-09-22</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 33</span>
+    </div>
+    <h1 class="article-title">IntBMoE: Integrating Block-Level Conditioning into Expert Composition for Full-Participation Mixture-of-Experts</h1>
+    <p class="article-title-ko">IntBMoE: 완전 참여형 Mixture-of-Experts를 위한 블록 단위 조건부 전문가 구성</p>
+    <p class="article-sub">IntBMoE는 학습된 코드북과 하이퍼네트워크로 전문가 풀 전체를 미리 소수의 "블록"으로 합성해 두고, 토큰마다 그중 일부만 희소하게 선택·실행함으로써 MoE의 참여도·연산량·메모리 사용량을 동시에 원하는 수준으로 분리해 설계할 수 있게 한 아키텍처다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.21346" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.21346" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: IntBMoE: Integrating Block-Level Conditioning into Expert Composition for Full-Participation Mixture-of-Experts</li>
+<li><strong>저자</strong>: Ran Cheng, Longfei Xu, Zheng Liu, Kaikui Liu, Xiangxiang Chu (DreamX, Alibaba Group)</li>
+<li><strong>출처</strong>: arXiv:2609.21346v1 [cs.LG] (2026년 9월 18일 제출)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 별도의 프로젝트 페이지는 명시되어 있지 않으며, 코드 저장소만 공개됨: https://github.com/AMAP-ML/DreamX-Rec/</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.21346">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>IntBMoE는 학습된 코드북과 하이퍼네트워크로 전문가 풀 전체를 미리 소수의 "블록"으로 합성해 두고, 토큰마다 그중 일부만 희소하게 선택·실행함으로써 MoE의 참여도·연산량·메모리 사용량을 동시에 원하는 수준으로 분리해 설계할 수 있게 한 아키텍처다.</p>
+<h2>배경 및 문제의식</h2>
+<p>저자들은 Mixture-of-Experts 설계를 세 가지 독립적인 축으로 분석한다. 참여도(participation, 한 토큰의 출력에 지식을 기여하는 전문가 수), 실행량(execution, 실제로 연산되는 전문가 수, 즉 연산 비용), 재료화(materialization, 런타임에 만들어 저장해야 하는 전문가 크기의 파라미터 집합 수, 즉 메모리 비용)이다. 기존 세 가지 접근법은 이 세 축을 독립적으로 조절하지 못한다. 희소 라우팅(sparse routing) 방식은 연산과 메모리는 낮게 유지하지만 토큰마다 소수의 전문가만 기여하므로 참여도가 낮다. 밀집 출력 혼합(dense output mixing) 방식은 모든 전문가를 완전히 참여시키지만 전문가 수만큼 연산량이 커진다. 파라미터 병합(parameter-merging) 방식은 실행은 합성된 전문가 하나로 고정할 수 있지만, 라우팅 단위마다 별도의 합성 파라미터 집합을 새로 만들어야 하므로 메모리 사용량이 라우팅 결정 수에 비례해 커진다. 이에 저자들은 "토큰이 밀집 실행이나 무한정 커지는 파라미터 재료화 없이도 전문가 풀 전체의 이점을 누릴 수 있는가?"라는 질문을 던진다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>참여도, 실행량, 재료화를 서로 독립적으로 설정할 수 있는 IntBMoE 아키텍처를 제안했다. 학습된 코드북 임베딩과 공유 하이퍼네트워크가 레이어별 전문가 베이스들을 합성해 소수의 재사용 가능한 블록을 만들고, 라우터는 토큰마다 이 블록 중 일부만 선택해 실행한다.</li>
+<li>Dual-Path Residual Gating(DPRG)이라는 기법을 제안했다. 각 블록의 전문가 베이스를 값(value) 경로와 게이트(gate) 경로로 각각 독립적으로 합성한 뒤, 두 경로의 곱을 잔차 방식으로 결합해 비선형적 표현력을 추가하면서도 전문가 풀 크기를 늘리지 않는다.</li>
+<li>이미지 분류(ImageNet-1K)에서 대표적인 희소·밀집 MoE 기법 대비 일관된 성능 향상을 보였고, 언어 모델링과 순차 추천 과제에서도 동일 아키텍처가 유효함을 확인했다. 또한 AMap의 실제 생성형 추천 시스템에 완전히 배포되어 대규모 온라인 A/B 테스트에서 상대적 UVCTR 2.4% 향상을 달성했다.</li>
+</ul>
+<h2>방법론</h2>
+<p>IntBMoE 모듈은 Transformer 백본의 FFN 서브레이어를 대체하며 크게 두 단계로 동작한다.</p>
+<p>첫째, 블록 수준 파라미터 합성 단계에서는 K개의 학습된 코드북 임베딩(블록마다 하나씩)을 입력으로 하는 공유 하이퍼네트워크가, 각 내부 레이어의 전문가 베이스 풀(E개)을 조합해 값 경로와 게이트 경로의 합성 계수를 각각 생성한다. 이 계수는 softmax나 sigmoid로 정규화하지 않고 부호가 있는 실수 값을 허용하여 전문가 베이스들의 선형 생성(span) 전체를 활용하며, 전문가 풀 크기가 커져도 합성 파라미터의 스케일이 안정되도록 1/√E 분산 보존 계수를 곱한다. 이 과정을 L개의 내부 레이어에 반복 적용해 하나의 다층 블록을 구성하며, 하이퍼네트워크는 토큰 표현에 의존하지 않으므로 K개의 블록은 추론 전에 미리 계산해 캐시할 수 있다.</p>
+<p>둘째, 토큰 수준 라우팅과 희소 블록 실행 단계에서는 각 토큰마다 별도의 블록 라우터가 K개 블록에 대한 점수를 매기고 Top-k개만 선택한다. 선택된 각 블록에 들어가기 전에는 코드북 임베딩을 이용한 블록 조건부 특징 필터링(sigmoid 게이트 기반 소프트 마스크)이 적용되어, 같은 토큰이라도 블록마다 다른 입력 뷰를 받는다. 이후 DPRG를 통해 값 경로와 게이트 경로가 RMSNorm·SiLU와 학습 가능한 잔차 스케일 λ로 곱해져 비선형적으로 결합되고, 선택된 블록들의 출력은 라우팅 확률로 가중 합산된 뒤 항상 활성화되는 공유 SwiGLU 전문가의 출력과 더해져 최종 출력이 된다. 연산 복잡도 분석에 따르면, 캐싱을 사용할 경우 요청 시점의 연산 비용은 O(TkD)로, 전문가 풀 크기 E가 커져도 증가하지 않는다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>주 실험은 ImageNet-1K에서 DeiT-Tiny 스타일 8층 백본을 사용해 처음부터 학습하는 방식으로 진행되었으며, Switch Transformer, DeepSeek-V3 MoE, ReMoE, V-MoE, Expert Choice, DynMoE, MASS(희소 라우팅 계열)와 Soft MoE, SMEAR, Lory, μMoE(밀집 참여 계열) 등 다양한 기존 기법과 비교했다. IntBMoE는 Top-1 정확도 73.76%, Top-5 정확도 91.48%를 기록해 밀집 백본 대비 각각 7.36%p, 3.79%p 향상되었고, 가장 강력한 경쟁 기법인 SMEAR보다도 Top-1에서 1.98%p, Top-5에서 1.15%p 더 높은 성능을 보였다. 활성화 파라미터는 23.111M으로 전문가 풀 전체가 블록 합성에 참여하지만, 캐싱을 적용하면 이미지당 FLOPs는 3.457 GFLOPs로 유지된다.</p>
+<p>구성요소 제거(ablation) 실험에서는 게이트 경로를 제거했을 때 성능 하락 폭이 가장 컸고, 공유 전문가와 특징 필터링 제거는 상대적으로 작지만 일관된 성능 저하를 가져왔다. 하이퍼파라미터 민감도 분석에서는 코드북 크기 K, 전문가 풀 크기 E, 선택 블록 수 k, 블록 깊이 L을 각각 조정했을 때 기본 설정(K=8, E=16, k=2, L=2) 근처에서 성능이 포화됨을 확인했다. 또한 개별 전문가 베이스를 하나씩 제거하는 실험을 통해 모든 전문가 베이스가 실제로 성능에 기여함을 보였고, 클래스별·레이어별로 서로 다른 블록 라우팅 패턴과 블록별로 상이한 합성 계수가 학습됨을 시각화로 확인했다. 캐싱 유무에 따른 추론 메모리와 FLOPs를 비교한 결과, 캐싱은 전문가 풀 크기가 커질수록(특히 16개 이상) 메모리와 연산 측면에서 더 유리했다.</p>
+<p>추가로 언어 모델링(MiniPile)과 순차 추천(IntTravel) 과제에서도 같은 아키텍처가 밀집 백본 및 다른 MoE 기법들을 능가했다(MiniPile PPL 14.5878로 최고 성능, IntTravel에서 HR@1·HR@5·NDCG@5 모두 최고). 마지막으로 AMap의 생성형 추천 시스템에 캐싱된 IntBMoE를 배포해 초당 약 5,000건의 요청을 처리하는 일주일간의 온라인 A/B 테스트를 수행했으며, 60ms 지연 예산 내에서 평균 지연 19ms, P99 지연 38ms를 유지하면서 상대적 UVCTR 2.4% 향상을 달성했다고 보고했다.</p>
+<h2>한계점</h2>
+<p>논문 본문에는 별도의 "한계점" 절이 명시되어 있지 않다. 다만 실험 결과와 서술로부터 다음과 같은 제약을 유추할 수 있다. 코드북 크기 K, 전문가 풀 크기 E 등을 늘려도 성능 향상 폭이 곧 포화되는 경향이 관찰되어 확장성에 한계가 있을 수 있다. 또한 캐싱을 통한 효율화는 코드북이 토큰 입력에 의존하지 않는 구조적 특성에 의존하므로, 입력 조건부 라우팅 자체의 적응성은 블록 선택(Top-k 라우팅)과 특징 필터링 수준으로 제한된다. 실험은 상대적으로 소규모 백본(8~18층)과 특정 데이터셋(ImageNet-1K, MiniPile, IntTravel)에 국한되어 있어, 초대형 언어모델급 규모에서의 검증은 논문에 명시되지 않음.</p>
+<h2>시사점</h2>
+<p>IntBMoE는 MoE 설계에서 오랫동안 서로 얽혀 있던 참여도·실행량·메모리 재료화라는 세 가지 비용 축을 명시적으로 분리해 사고할 수 있는 틀을 제시했다는 점에서 의미가 있다. 특히 하이퍼네트워크 기반 블록 합성을 입력 독립적으로 설계해 사전 계산·캐싱이 가능하도록 한 점은, 지연 시간 제약이 엄격한 실서비스 환경(초당 수천 건의 요청, 수억 명 규모 사용자)에서도 전문가 풀 전체의 표현력을 활용할 수 있음을 실제 산업 배포 사례로 입증했다는 데 실용적 가치가 있다. 이는 비전, 언어, 추천이라는 서로 다른 모달리티와 태스크에 동일한 아키텍처가 통한다는 점에서 MoE 설계의 범용적 구성 요소로 확장될 가능성을 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.21346" target="_blank" rel="noopener">huggingface.co/papers/2609.21346</a> · 2026-09-22</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

@@ -1,0 +1,108 @@
+<meta charset="UTF-8">
+<title>EvoOntology</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#3 · Daily Papers 2026-09-22</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 68</span>
+    </div>
+    <h1 class="article-title">EvoOntology: A Self-Evolving Ontology Layer for Data Agents</h1>
+    <p class="article-title-ko">EvoOntology: 데이터 에이전트를 위한 자가진화형 온톨로지 레이어</p>
+    <p class="article-sub">데이터 에이전트가 테이블, 파일, 데이터베이스 등 이질적인 데이터를 다룰 때 겪는 "에이전트-데이터 간극"을 해소하기 위해, 워크로드로부터 자동으로 구축되고 에이전트의 실행 이력을 통해 스스로 진화하는 온톨로지 레이어 EvoOntology를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.15779" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.15779" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: EvoOntology: A Self-Evolving Ontology Layer for Data Agents</li>
+<li><strong>저자</strong>: Meiduo Chong 외 3명 (Shaolei Zhang, Ju Fan, Xiaoyong Du, Renmin University of China 소속)</li>
+<li><strong>출처</strong>: arXiv:2609.15779v1 [cs.AI] (2026년 9월 14일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음 (코드 저장소: https://github.com/ruc-datalab/EvoOntology)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.15779">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>데이터 에이전트가 테이블, 파일, 데이터베이스 등 이질적인 데이터를 다룰 때 겪는 "에이전트-데이터 간극"을 해소하기 위해, 워크로드로부터 자동으로 구축되고 에이전트의 실행 이력을 통해 스스로 진화하는 온톨로지 레이어 EvoOntology를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>데이터 에이전트는 자연어 지시를 테이블, 파일, 데이터베이스 등 서로 다른 형태의 데이터에 대해 수행해야 하는데, 실제 배포 환경에서는 데이터가 에이전트 외부에 존재하고 에이전트는 컬럼명이나 파일 경로 같은 일반적인 도구를 통해서만 데이터에 접근할 수 있다. 그 결과 에이전트는 데이터의 구조와 의미를 사전에 알지 못한 채 반복적으로 질의를 던지며 맹목적으로 탐색해야 하고, 이는 비효율적이고 취약한 상호작용으로 이어진다. 기존 접근법은 크게 두 갈래로 나뉜다. 원시 질의(raw querying) 방식은 에이전트가 스키마를 직접 조사하고 탐색적 질의를 던지게 하지만, 데이터가 크고 이질적일수록 탐색이 반복적이고 비효율적으로 변한다. 시맨틱 레이어(semantic-layer) 방식은 스키마, 엔티티, 메트릭 등의 메타데이터를 제공해 에이전트를 안내하지만, 전체 시맨틱 레이어를 프롬프트에 모두 주입하는 것은 데이터 규모가 커지면 비현실적이며, 무엇보다 이런 레이어는 대개 수작업으로 정의·유지되어 새로운 데이터 소스나 과업, 에이전트 행동에 맞춰 확장하기 어렵다는 근본적 한계를 가진다.</p>
+<h2>핵심 기여</h2>
+<p>논문은 세 가지를 주요 기여로 제시한다. 첫째, 데이터 에이전트를 위한 최초의 상호작용형(interactive) 온톨로지 레이어를 제안하고 이를 MCP(Model Context Protocol) 서버로 캡슐화하여 에이전트가 도구를 통해 온톨로지를 능동적으로 질의·조작할 수 있게 한다. 둘째, 자율적으로 초기 온톨로지를 구축하는 빌더 에이전트와, 과거 상호작용 궤적을 근거로 온톨로지를 지속적으로 개선하는 자가진화 프레임워크를 도입한다. 셋째, 서로 다른 성격을 가진 세 가지 데이터 에이전트 벤치마크와 6개의 LLM 백본에 대한 광범위한 실험을 통해 EvoOntology가 기존의 강력한 베이스라인 및 시맨틱 레이어 방식들을 일관되게 능가함을 보인다.</p>
+<h2>방법론</h2>
+<p>EvoOntology는 온톨로지 상태를 콘텐츠 레이어(Content Layer), 스키마 레이어(Schema Layer), 도구 레이어(Tool Layer) 세 요소로 구성된 버전 관리 구조로 표현한다. 콘텐츠 레이어는 Terms(도메인 개념), Mappings(개념을 실제 필드·경로에 연결), Constraints(유효성 규칙), Evidence(근거 데이터) 네 종류의 노드와, 개념 간 의미적 관계(Semantic Relation) 및 구조적 참조(Structural Reference) 두 종류의 엣지로 이루어진 타입 그래프이다. 스키마 레이어는 이 노드·엣지 패밀리들이 취할 수 있는 필드와 허용 패턴을 정의하고, 도구 레이어는 두 개의 MCP 도구(browse: 질의에 대한 상위 후보 개념 검색, resolve: 특정 항목과 연결된 객체들의 상세 정보 조회)를 통해 에이전트에게 온톨로지를 노출한다.</p>
+<p>초기 구축 단계에서는 빌더 에이전트가 학습 워크로드로부터 후보 개념을 추출하고, 이 후보들에 대해 실제 데이터 소스에 프로브 질의를 실행해 필드 타입·값·의미적 일관성을 검증한 뒤, 검증을 통과한 후보만 초기 콘텐츠 레이어에 반영한다(증거 기반 커밋). 이후 자가진화 루프는 과거 실행 궤적을 분석해 반복되는 실패 패턴(시그니처)을 추출하고, 이를 콘텐츠·도구·스키마 중 어느 레벨의 문제인지 귀속(attribution)한 다음, 해당 레벨에서만 국소적인 수정을 제안한다. 제안된 후보 온톨로지는 부모(기존) 온톨로지와 동일한 검증셋·평가 조건 하에서 짝지어 비교되며, 성능 개선폭이 일정 마진을 넘을 때만 채택되는 "백본 조건부 짝 검증" 게이트를 통과해야 실제로 반영된다. 이 과정은 반복적으로 수행되어 온톨로지가 데이터와 에이전트 행동 양쪽에 점진적으로 적응하도록 한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>DDR-Bench(다중 소스 데이터 리서치), InsightBench(비즈니스 인사이트 발굴), BIRD(텍스트-투-SQL) 세 벤치마크에서 GPT-5.5, GPT-5.6-sol, Claude-Sonnet-5, Claude-Opus-4.8, DeepSeek-V4-Flash, Qwen3.5-Flash 등 6개 백본을 대상으로 평가했다. 비교 대상은 온톨로지 레이어가 없는 ReAct 베이스라인과, 빌더가 만든 시맨틱 레이어를 정적 프롬프트로 주입하는 Baseline+SL이다. DDR-Bench에서 EvoOntology는 Trajectory-Wise 정확도를 평균 +17.8점(최대 +26.7점) 끌어올렸으며, 정적 프롬프트 방식인 Baseline+SL은 일부 백본에서 오히려 성능이 하락(최대 -15.0점)했다. 메모리 기반 궤적 재사용 방식(ReAct+Memory)과 비교해도 EvoOntology가 13.7점 더 높았다. InsightBench에서는 평균 1.9점, BIRD에서는 EX·VES 모두에서 평균 각각 7.4점, 8.6점의 개선을 보였다. 온톨로지 레이어 자체(초기 구축)와 자가진화의 기여를 분리한 분석에서는, 초기 구축만으로도 상당한 성능 향상이 있었고 이후 자가진화가 추가적인 개선을 가져왔다. 진화 루프의 네 단계(진단·귀속·패치·게이트) 및 세 가지 수정 레벨(콘텐츠·도구·스키마)에 대한 제거 실험(ablation)에서는 게이트와 귀속 단계가 가장 중요했고, 도구 레벨 수정이 단일 레벨 중 가장 큰 성능 기여를 보였다. 또한 온톨로지 레이어 도입으로 인한 토큰 비용 증가는 제한적이었으며, 진화가 진행될수록 오히려 작업당 총 턴 수와 토큰 비용이 감소하는 효율성 향상도 관찰되었다.</p>
+<h2>한계점</h2>
+<p>논문 본문에서 명시적으로 별도의 "한계점" 절을 두지는 않았으나, 분석 내용에서 다음과 같은 제약이 드러난다. 백본마다 채택되는 온톨로지 항목(예: Term 식별자)의 중복도가 낮아(최대 Jaccard 0.62) 서로 다른 백본이 서로 다른 온톨로지로 수렴하며, 한 백본에서 진화한 온톨로지를 다른 백본에 그대로 적용하면 성능이 저하되는 것으로 나타나 백본 특화적 진화가 필요함을 시사한다. 또한 InsightBench처럼 정답이 짧은 참조 형태인 벤치마크에서는 개선폭이 상대적으로 작고 조기에 포화되는 경향을 보였다. 온톨로지 진화가 반복될수록 콘텐츠 성장은 초기 라운드에 집중되고 이후 안정화되는데, 이는 곧 새로운 유형의 데이터나 과업이 추가되면 다시 상당한 재적응 과정이 필요할 수 있음을 시사한다.</p>
+<h2>시사점</h2>
+<p>EvoOntology는 수작업으로 시맨틱 레이어를 구축·유지하던 기존 방식에서 벗어나, 데이터 에이전트가 실제로 겪는 실패 사례로부터 온톨로지를 스스로 진단하고 검증된 형태로만 개선해 나가는 "에이전트 우선(agent-first)" 설계를 제시한다. 정적 프롬프트 주입 대신 MCP 도구를 통한 선택적·능동적 접근 방식을 취함으로써 대규모·이질적 데이터 환경에서도 확장 가능하다는 점, 그리고 콘텐츠·도구·스키마라는 세 층위를 분리해 각기 다른 성격의 개선을 독립적으로 반영할 수 있다는 점은 향후 데이터 에이전트나 엔터프라이즈 지식 계층 설계에 참고할 만한 구조적 아이디어를 제공한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.15779" target="_blank" rel="noopener">huggingface.co/papers/2609.15779</a> · 2026-09-22</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>그라운디드 액션 모델</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#9 · Daily Papers 2026-09-23</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 19</span>
+    </div>
+    <h1 class="article-title">Grounded Action Model: 3D Grounding as a Foundation for Robotics</h1>
+    <p class="article-title-ko">그라운디드 액션 모델: 로보틱스를 위한 파운데이션으로서의 3D 그라운딩</p>
+    <p class="article-sub">언어·비전 생성 기반의 사전학습 대신, 프롬프트 가능한 3D 객체 탐지(grounding) 모델을 로봇 파운데이션 모델의 백본으로 삼아 물체 중심의 시각·기하 정보를 행동 예측에 직접 연결함으로써, 장면이 변해도 흔들리지 않는 조작(manipulation) 정책을 만드는 프레임워크를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.23863" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.23863" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Grounded Action Model: 3D Grounding as a Foundation for Robotics</li>
+<li><strong>저자</strong>: Gehao Zhang, Weikai Huang, Shailesh Shailesh, Yiyan Peng, Jiafei Duan, Ranjay Krishna (Northwestern University, University of Washington, National University of Singapore, Microsoft)</li>
+<li><strong>출처</strong>: arXiv:2609.23863v1 [cs.RO] (2026-09-20)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://grounded-action-model.github.io/">https://grounded-action-model.github.io/</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.23863">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>언어·비전 생성 기반의 사전학습 대신, 프롬프트 가능한 3D 객체 탐지(grounding) 모델을 로봇 파운데이션 모델의 백본으로 삼아 물체 중심의 시각·기하 정보를 행동 예측에 직접 연결함으로써, 장면이 변해도 흔들리지 않는 조작(manipulation) 정책을 만드는 프레임워크를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>기존 로봇 파운데이션 모델은 비전-언어-행동 모델(VLA)이든 비디오 생성 기반 월드-액션 모델(WAM)이든, 사전학습 목적함수 자체가 물체의 정밀한 3D 위치·크기를 명시적으로 요구하지 않는다. 그 결과 "어떤 물체가 중요한지, 그것이 어디에 있는지"에 대한 연결은 로봇 시연 데이터로부터 암묵적으로 학습되며, 시연이 제한된 환경·배치만 다루면 학습된 연결이 배경 변화나 물체 이동, 목표 물체 교체 시 쉽게 깨진다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>3D grounding을 로봇 행동 학습의 파운데이션으로 삼는 새로운 패러다임인 Grounded Action Model(GAM)을 제안했다.</li>
+<li>언어·2D 포인트·2D 박스라는 서로 다른 프롬프트 방식을 하나의 물체 중심 표현으로 통합하는 인터페이스를 구현해, 사람이나 상위 플래너(VLM)가 직접 목표 물체를 지정할 수 있게 했다.</li>
+<li>이미지 토큰(외형)과 검출 토큰(정확한 3D 형상·위치·자세)을 분리해 표현함으로써 배경·주의 산만 요소를 걸러내면서도 기하 정보를 보존하는 관측 구성 방식을 설계했다.</li>
+</ol>
+<h2>방법론</h2>
+<p>GAM은 동결된(frozen) 프롬프트 가능 3D grounding 백본(WildDet3D)에 행동 헤드를 결합한 구조다. 주어진 RGB 이미지와 언어/포인트/박스 프롬프트로부터 백본이 대상 물체의 2D 박스, 3D 박스, 깊이 맵을 산출하면, 이를 바탕으로 (1) 대상 물체와 로봇 팔 영역만 남기고 나머지를 제거한 이미지 토큰과 (2) 물체별 포인트 클라우드·중심좌표·크기·회전을 인코딩한 검출 토큰을 만든다. 이 두 토큰과 로봇 상태 이력 토큰을 멀티스트림 트랜스포머(MM-DiT)에 입력하고, 플로우 매칭(flow matching) 방식으로 절대 관절 위치 목표의 행동 청크를 예측한다. 학습 시에는 grounding 백본을 고정한 채 행동 헤드만 최적화한다. 배포 시에는 CoTracker3로 물체 프롬프트를 프레임 간 추적하며, 장기 과제에서는 VLM 플래너(Molmo2)가 포인트를 통해 목표를 갱신할 수 있다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>RoboTwin 2.0(50개 양팔 조작 과제)에서 GAM은 평균 성공률 55.3%를 기록해 최강 VLA 기준선(π0.5, 45.0%)을 약 10%p 앞섰고, 특히 학습에 전혀 등장하지 않은 무작위 배치(Hard) 설정에서 47.6%로 두 번째로 좋은 기준선(30.4%)을 크게 상회했다. LIBERO-PRO의 16가지 테스트-타임 변형 설정에서는 평균 0.61로 최고 성능(π0.5는 0.53)을 보였으며, 목표 물체가 재배치되거나 새로 지정되는 가장 어려운 조건에서 격차가 가장 컸다. 실제 로봇 실험에서는 양팔 YAM에서 시각 변화 조건 하 20회 중 17회 성공(π0.5는 4회)했고, Franka에서 Molmo2 플래너와 결합했을 때 장기·기억 의존 과제에서 분포 내 64.7%, 분포 밖 49.8%의 스텝 완료율을 기록했다. 관측 구성에 대한 절제 실험은 이미지 마스킹과 포인트 크로핑을 모두 제거하면 성공률이 46.8%에서 10.3%로 급락함을 보여, 물체 중심 필터링이 강건성의 핵심임을 확인했다.</p>
+<h2>한계점</h2>
+<p>GAM의 성능은 grounding 관측의 품질과 완전성에 의존하므로, 탐지 오류가 발생하면 별도의 복구 절차 없이 그대로 행동으로 전파된다. 또한 물체 중심 필터링 과정에서 선택되지 않은 장애물 등 과제에 관련된 다른 맥락 정보가 누락될 수 있다. 여기서 사용한 3D 바운딩 박스는 grounding의 한 형태일 뿐이며, 더 세밀한 기하 정보를 제공하는 조밀한 3D 인스턴스 분할 등 대안이 존재한다.</p>
+<h2>시사점</h2>
+<p>이 논문은 언어·비디오 생성 기반 사전학습이 로봇 조작에 꼭 필요한 metric 3D grounding을 자동으로 제공하지 않는다는 점을 지적하며, 3D grounding 자체를 로봇 파운데이션 모델의 사전학습 목표로 삼는 새로운 방향을 제시한다. 이는 향후 로봇 정책 설계에서 "무엇을 사전학습해야 행동 일반화에 유리한가"라는 질문에 대한 하나의 답을 제공하며, 다양한 grounding 백본과 결합될 수 있는 확장 가능한 패러다임으로 제안된다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.23863" target="_blank" rel="noopener">huggingface.co/papers/2609.23863</a> · 2026-09-23</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

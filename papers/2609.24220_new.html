@@ -1,0 +1,113 @@
+<meta charset="UTF-8">
+<title>디랙(D-RAC)</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#6 · Daily Papers 2026-09-23</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 48</span>
+    </div>
+    <h1 class="article-title">Document Retrieval-Aware Chunking (D-RAC): Universal Retrieval-Aware Ingestion of Enterprise Documents via PDF Normalization and Multimodal Markdown Conversion</h1>
+    <p class="article-title-ko">디랙(D-RAC): PDF 정규화와 멀티모달 마크다운 변환을 통한 기업 문서의 범용 검색 인지형 인제스천</p>
+    <p class="article-sub">DOCX·PPTX·XLSX·스캔 이미지 등 어떤 문서 형식이든 PDF로 정규화한 뒤 멀티모달 LLM을 단 한 번만 호출해 검색 최적화된 마크다운으로 변환하고, 이후 청킹은 텍스트가 아닌 ID 기반 계획으로 처리함으로써 기업 문서 RAG 파이프라인의 비용과 환각 위험을 대폭 줄이는 D-RAC 프레임워크를 제시한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.24220" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.24220" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Document Retrieval-Aware Chunking (D-RAC): Universal Retrieval-Aware Ingestion of Enterprise Documents via PDF Normalization and Multimodal Markdown Conversion</li>
+<li><strong>저자</strong>: Uday Allu, Abhivanth Sivaprakash, Pratik Singh, Aman Manocha (Yellow.ai AI Research Team)</li>
+<li><strong>출처</strong>: arXiv:2609.24220v1 [cs.CV] (2026년 8월 12일 작성, 9월 21일 제출)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/udayallu/RAG-Multi-Corpus">GitHub - RAG-Multi-Corpus 벤치마크</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.24220">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>DOCX·PPTX·XLSX·스캔 이미지 등 어떤 문서 형식이든 PDF로 정규화한 뒤 멀티모달 LLM을 단 한 번만 호출해 검색 최적화된 마크다운으로 변환하고, 이후 청킹은 텍스트가 아닌 ID 기반 계획으로 처리함으로써 기업 문서 RAG 파이프라인의 비용과 환각 위험을 대폭 줄이는 D-RAC 프레임워크를 제시한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>기업 지식베이스는 대부분 PDF 형식이며, PDF는 의미론적 구조가 아닌 시각적 배치 정보만 담고 있어 규칙 기반 텍스트 추출은 읽기 순서 붕괴, 표 셀 분해, 제목 계층 손실 등의 문제를 겪는다. 반면 추출된 텍스트 전체에 LLM을 적용하는 에이전틱 청킹(agentic chunking)은 문서 전체를 다시 생성해야 하므로 출력 토큰 비용과 환각 위험이 크다. 저자들의 이전 연구인 W-RAC(Web Retrieval-Aware Chunking)는 HTML처럼 구조를 결정론적으로 파싱할 수 있는 입력에서는 효과적이지만, 구조가 불명확한 PDF에는 그대로 적용할 수 없다는 한계가 있었다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>임의의 문서를 PDF로 정규화한 뒤 단일 멀티모달 변환 패스를 거쳐 W-RAC 파이프라인을 그대로 적용하는 형식 불가지론적(format-agnostic) 프레임워크 D-RAC 제안.</li>
+<li>표의 각 행을 열 제목을 포함한 독립적인 문장으로 변환하는 검색 인지형 표 정규화 전략 고안(행 병합 금지 원칙 포함).</li>
+<li>500페이지 이상의 대형 문서에서도 헤더 경계 기준으로 재귀적으로 섹션을 분할하고 상위 헤더 맥락을 전달하는 확장 가능한 섹셔닝 알고리즘 설계.</li>
+<li>5개 기업 도메인, 236개 문서(795페이지)로 구성된 RAG-Multi-Corpus PDF 서브셋에서의 실증 평가.</li>
+<li>GPT-4.1·Gemini 2.5 Pro 기준 에이전틱 청킹 대비 출력 토큰 95.7% 감소, 비용 77.8~85.6% 절감, 처리 시간 75% 단축이라는 정량적 비용 분석 제공.</li>
+</ol>
+<h2>방법론</h2>
+<p>D-RAC는 4단계로 구성된다. (1) PDF 정규화·페이지 렌더링: 비PDF 문서는 LibreOffice 등 결정론적 도구로 PDF 변환 후 200 DPI PNG로 렌더링. (2) 멀티모달 마크다운 변환: 5페이지씩 배치로 묶어 Gemma-3 27B/12B에 전달, 모든 텍스트를 보존하고 표는 행 단위 산문 문장으로, 헤더는 마크다운 계층(#, ##, ###)으로, 이미지는 완전히 무시하도록 프롬프트로 강제. (3) 결정론적 파싱·섹셔닝: 변환된 마크다운을 ID 주소가 가능한 헤더(h1, h2...)와 콘텐츠 블록(p1, p2...)으로 파싱하고, 60개 요소 예산을 넘는 문서는 헤더 경계에서 재귀적으로 분할. (4) LLM 청크 계획 및 재구성: LLM은 텍스트가 아닌 ID 배열만 반환하며(예: [["h1","h2","p1","p2"], ...]), 원문은 로컬에서 ID 매핑으로 복원되어 텍스트 재생성 없이 손실 없는 커버리지를 보장한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>자동차·학계·클라우드·기업기술·은행 5개 도메인, 236개 문서(795페이지)로 구성된 RAG-Multi-Corpus PDF 서브셋과 503페이지 재무 설명서(스케일 테스트용)에서 평가했다. 전체 코퍼스 변환에 62.6분(청킹 계획 포함 71.7분)이 소요되었고 236개 문서 전체에서 변환 오류가 0건이었다. 762개 질의(4개 조직, 7개 질의 유형)에 대한 검색 성능 평가에서 D-RAC는 Recall@6 0.798, MRR 0.690, NDCG@6 0.801을 기록하여 규칙 기반 추출 고정 크기 청킹(Recall@6 0.717) 대비 우수했고, 에이전틱 청킹(Recall@6 0.795)과 동등하거나 이를 상회했다. 특히 시간 순서·비교·분석형 질의에서 가장 큰 개선을 보였다. 비용 측면에서는 청킹 단계 출력 토큰이 270,454개에서 11,714개로 95.7% 감소했고, GPT-4.1 기준 총비용이 77.8%, Gemini 2.5 Pro 기준 85.6% 절감되었으며, 503페이지 문서도 선형적으로 확장 가능함을 확인했다.</p>
+<h2>한계점</h2>
+<p>논문에 명시된 한계점은 별도로 정리되어 있지 않으나, boolean(예/아니오) 질의 범주에서는 에이전틱 청킹이 여전히 우위를 유지한다는 점이 결과에서 나타난다. 또한 변환 품질이 사용하는 멀티모달 LLM(Gemma-3)의 문서 이해 능력에 의존하며, 표 병합 금지 등 프롬프트 규칙이 완벽히 지켜지지 않을 경우를 대비한 규칙 기반 후처리 폴백에 의존하고 있다.</p>
+<h2>시사점</h2>
+<p>문서를 한 번만 멀티모달 LLM으로 이해하고 이후에는 결정론적 ID 기반 청킹 재계획만 반복하는 구조는, 검색 전략이 바뀔 때마다(청크 크기, 엔티티 인식 그룹핑 등) 전체 문서를 재변환할 필요 없이 저비용으로 재청킹할 수 있게 하여 기업용 RAG 파이프라인의 반복적 인덱스 갱신 비용을 크게 낮출 수 있음을 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.24220" target="_blank" rel="noopener">huggingface.co/papers/2609.24220</a> · 2026-09-23</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

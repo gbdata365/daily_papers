@@ -1,0 +1,107 @@
+<meta charset="UTF-8">
+<title>RRSI</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#1 · Daily Papers 2026-09-23</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 151</span>
+    </div>
+    <h1 class="article-title">RRSI: Regularized Recursive Self-Improvement of Agent Harnesses</h1>
+    <p class="article-title-ko">RRSI: 에이전트 하네스의 정규화된 재귀적 자기개선</p>
+    <p class="article-sub">LLM 에이전트를 감싸는 "하네스"(프롬프트, 제어 흐름, 도구, 메모리 등)를 반복적으로 자동 개선하는 재귀적 자기개선(RSI) 과정에, 머신러닝의 정규화 원리를 적용해 평가셋 과적합을 막고 미학습 벤치마크로의 전이 성능을 크게 높인 프레임워크 RRSI를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.24972" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.24972" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: RRSI: Regularized Recursive Self-Improvement of Agent Harnesses</li>
+<li><strong>저자</strong>: Peng Xia, Rujun Han, Zifeng Wang, Chen-Yu Lee 외 (Google Cloud AI Research, UNC-Chapel Hill, Stanford University, Washington University in St. Louis 공동 연구)</li>
+<li><strong>출처</strong>: arXiv:2609.24972v1 [cs.LG] (21 Sep 2026)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/google-research/rrsi">github.com/google-research/rrsi</a>, <a href="https://regularized-rsi.com">regularized-rsi.com</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.24972">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>LLM 에이전트를 감싸는 "하네스"(프롬프트, 제어 흐름, 도구, 메모리 등)를 반복적으로 자동 개선하는 재귀적 자기개선(RSI) 과정에, 머신러닝의 정규화 원리를 적용해 평가셋 과적합을 막고 미학습 벤치마크로의 전이 성능을 크게 높인 프레임워크 RRSI를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>최근 에이전트 성능 향상은 모델 가중치보다 하네스(프롬프트, 제어 흐름, 도구 인터페이스, 메모리, 컨텍스트 관리) 공학에서 주로 나온다. 이를 LLM이 스스로 제안·선택하며 반복 개선하는 방식이 일종의 에이전트 시스템 수준 RSI로 자리잡고 있는데, 문제는 유한한 "진화 세트"를 라운드마다 반복적으로 재사용해 적응적으로 최적화하다 보니 진화 세트 자체에는 과적합되지만 미학습(OOD) 벤치마크에서는 성능 향상이 사라지거나 오히려 하락하는 현상이 관찰된다.</p>
+<h2>핵심 기여</h2>
+<p>(1) 하네스 기반 RSI에서 과적합이 핵심 도전 과제임을 규명했다. (2) 후보 제안과 선택 양쪽 모두를 정규화하면서도 하네스의 모든 구성요소를 계속 수정 가능하게 유지하는 RRSI를 제안했다. (3) 코딩·에이전틱 워크스페이스·엔지니어링 설계 등 3개 도메인, 8개 벤치마크에서 전이 성능과 효율성을 동시에 개선함을 입증했다.</p>
+<h2>방법론</h2>
+<p>RRSI는 제안(proposal) 측과 선택(selection) 측 양쪽에 규제를 건다. 제안 측에서는 (A) 라운드가 진행될수록 한 후보에 포함 가능한 독립적 편집 개수를 코사인 스케줄로 점차 줄이는 "어닐링된 업데이트 희소성"(L0 스타일), (B) 과거 라운드에서 이미 기각되거나 채택된 편집 이력을 근거로 삼는 "증거 기반 크레딧 할당", (C) 탐색이 정체되면 아직 건드리지 않은 하네스 구성요소로 탐색 용량을 일부 돌리는 "구조화된 탐색"을 적용한다. 선택 측에서는 (D) 벤치마크 특정 로직이나 답을 암묵적으로 인코딩한 후보를 평가 전에 걸러내는 "누출 심사", (E) 노이즈 폭 대비 점수 하락을 허용하지 않는 "잡음 보정 성능 하한", (F) 추가 비용이 측정된 성능 향상에 비례해서만 허용되는 "복잡도 인지 수용"(Ridge/L2 유사), (G) 최근 기여가 없는 구성요소를 삭제 대상으로 지목하는 "구조적 가지치기"(Lasso/L1 유사)를 적용한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Claude Opus 4.8을 백본 정책 및 제안자로 고정하고, 코딩(Terminal-Bench 2.1→SWE-bench Verified), 에이전틱 워크스페이스(Harvey LAB→JobBench/GDPval/APEX-Agents), 엔지니어링 설계(EngDesign→Frontier-Eng) 3개 도메인에서 평가했다. RRSI는 진화 세트에서 최대 14.1점, OOD held-out에서 최대 4.7점(7.2~13.1%) 향상을 보였으며, 모든 held-out 스플릿에서 퇴보가 없었다. Meta-Harness·AHE·TTHE·HarnessX 등 4개 기존 방법과 비교했을 때, 이들은 진화 세트에서는 잘 작동하지만 OOD 평균은 개선이 미미하거나(HarnessX) 오히려 악화(AHE, TTHE −1.7점)된 반면, RRSI는 OOD 평균을 39.7→43.6으로 끌어올리면서도 언규제 버전 대비 정책 토큰을 약 30% 절감했다. Gemini 3.5 Flash로 진화시킨 하네스를 더 약한 Gemini 3.1 Flash Lite에 그대로 적용해도 성능이 향상되어, 정책 모델에 종속되지 않는 재사용 가능한 메커니즘임을 확인했다.</p>
+<h2>한계점</h2>
+<p>프로즌 백본 모델을 전제로 하네스만 진화시키는 설정에 국한되어 모델 가중치 갱신 상황은 다루지 않는다. 유한한 진화 세트와 여러 정규화 하이퍼파라미터에 의존하므로 피드백 신호 품질과 탐색 예산 설정에 성능이 좌우될 수 있다. 다양한 도메인·벤치마크·정책 모델에서 검증했지만, 훨씬 다른 에이전트 아키텍처, 도구 생태계, 더 장기적인 자기개선 과정으로의 일반화는 추가 검증이 필요하다.</p>
+<h2>시사점</h2>
+<p>에이전트 시스템을 재귀적 자기개선으로 발전시키려면 "무엇을 바꿀 수 있는가"뿐 아니라 "반복되는 피드백을 어떻게 영구적 변화로 전환할 것인가"도 함께 통제해야 함을 보여준다. 머신러닝의 고전적 정규화(L0/L1/L2) 개념을 이산적인 하네스 편집 탐색에 유비적으로 적용할 수 있다는 아이디어는, 향후 코드·프롬프트·도구 구성을 스스로 개선하는 에이전트 설계 전반에 일반적으로 적용될 수 있는 설계 원칙을 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.24972" target="_blank" rel="noopener">huggingface.co/papers/2609.24972</a> · 2026-09-23</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

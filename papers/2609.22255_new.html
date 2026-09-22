@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>딥 페르소나</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#11 · Daily Papers 2026-09-23</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 12</span>
+    </div>
+    <h1 class="article-title">Deep Persona: A Psychologically Grounded Architecture and Evaluation Framework for Role-Playing Agents and Simulations</h1>
+    <p class="article-title-ko">딥 페르소나: 롤플레잉 에이전트와 시뮬레이션을 위한 심리학 기반 아키텍처 및 평가 프레임워크</p>
+    <p class="article-sub">얕은 특성 설명에 의존하는 기존 LLM 페르소나 프롬프팅의 한계를 극복하기 위해, 심리학 이론에 기반해 외적 표현·잠재적 신념·핵심 동기를 3개 층으로 구조화한 Deep Persona 아키텍처와, 임상 진단 도구(ADOS)에서 영감을 받은 참조 없는(reference-free) 자연스러움 평가 프레임워크를 함께 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.22255" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.22255" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Deep Persona: A Psychologically Grounded Architecture and Evaluation Framework for Role-Playing Agents and Simulations</li>
+<li><strong>저자</strong>: Rotem Dror, Zohar Elyoseph, Yuval Haber, Elad Refoua, Oshrat Ayalon, Adir Solomon (University of Haifa, Bar-Ilan University)</li>
+<li><strong>출처</strong>: arXiv:2609.22255v1 [cs.CL] (2026-09-06)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음 (Cesura.ai 플랫폼을 활용한 사례 연구 포함)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.22255">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>얕은 특성 설명에 의존하는 기존 LLM 페르소나 프롬프팅의 한계를 극복하기 위해, 심리학 이론에 기반해 외적 표현·잠재적 신념·핵심 동기를 3개 층으로 구조화한 Deep Persona 아키텍처와, 임상 진단 도구(ADOS)에서 영감을 받은 참조 없는(reference-free) 자연스러움 평가 프레임워크를 함께 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>기존 페르소나 구축 방식은 대부분 성격 특성이나 역할을 서술하는 짧은 프롬프트에 의존해, 짧은 상호작용에서는 그럴듯해 보이지만 긴 대화가 이어질수록 일관성이 무너지고 환각·역할 이탈·점진적 캐릭터 붕괴가 발생하기 쉽다. 특히 정신건강 훈련 등 시뮬레이션 환자 역할이 중요한 응용에서는 심리적으로 일관되고 신뢰할 수 있는 페르소나 유지가 여전히 난제로 남아 있다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>페르소나를 외적(의식적) 층, 중간(전의식적) 층, 내적(무의식적) 층의 3계층 구조로 모델링하는 방법론(Deep Persona)을 제안하고, 모델을 "각본화된 결정론(scripted determinism)"과 "제한된 행위성(bounded agency)"이라는 두 원칙에 따라 반응형 엔진으로 제한한다.</li>
+<li>임상 도구 ADOS(자폐증 진단 관찰 스케줄)에서 착안한 지표들—화용적 유창성/반향언어, 공동주의, 정서적 합치도, 정서 표현 다양성—과 이를 종합한 통계량인 대화 자연스러움 점수(Dialogue Naturalness Score, DNS)를 제안해, 모델 생성 대화 분포를 인간 대화 분포와 마할라노비스 거리로 비교하는 가설검정 기반 평가 체계를 구축했다.</li>
+<li>두 개의 임상 훈련 시나리오(자살 위험 평가, 부모의 정신화 훈련)에서 Deep Persona를 구현한 사례 연구를 수행하고, 몸짓 등 비언어 표현을 포함한 전체 평가 프레임워크를 실제 적용해 구조화된 페르소나가 기존 인간-LLM 데이터셋보다 더 인간 대화에 가까운 DNS 점수를 얻음을 보였다.</li>
+</ol>
+<h2>방법론</h2>
+<p>페르소나 구축은 (1) 도메인 전문가와의 구조화된 인터뷰를 통해 인물의 배경, 초기 상황, 의사소통 패턴, 의식적/반의식적/무의식적 정보, 저항 패턴, 변화 궤적 등을 수집하고, (2) 이를 프롬프트의 기능적 모듈—짧은 도입부, 상호작용 구조(초기화·본 대화·종료 단계), 서사적 배경과 동기, 3계층 성격 모듈, 통제·논리 모듈, 선택적 체화 표현 모듈—로 번역하는 두 단계로 이루어진다. 외적 층은 명시적 행동 규칙으로, 중간 층은 신뢰 형성 등 조건이 충족될 때만 드러나는 조건부 규칙으로, 내적 층은 절대 직접 언급되지 않지만 모든 응답에 영향을 미치는 지속적 동기 제약으로 인코딩된다. 평가 프레임워크는 두 축으로 구성된다: (a) ADOS에서 착안한 참조 없는 심리 지표(반향언어율, 공동주의, 정서적 합치도, 정서 표현 다양성·강도)를 계산해 스코어링 프로파일을 만들고 인간 기준선의 평균·공분산과 마할라노비스 거리로 비교해 DNS를 산출하며, (b) 가짜 공유 기억 주입, 역할 밖 요청, 공격적/비속어 자극 등 세 가지 공격 벡터로 구성된 "스트레스 테스트"를 통해 캐릭터 붕괴 여부를 점검한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>DailyDialog, CounselChat(인간-인간) 두 인간 대화 데이터셋과 Role-Play, ABC-Eval, CounselChat(인간-LLM) 세 인간-LLM 데이터셋에 평가 지표를 적용한 결과, LLM 생성 대화는 화용적 유창성(0.88~0.97)은 높았지만 공동주의는 데이터셋마다 크게 갈렸고(개방형 대화에서 특히 낮음), 정서 표현의 다양성·강도에서 인간 대화와의 격차가 가장 컸다. 이어 Gemini 2.5 Pro로 구현한 두 개의 Deep Persona(자살 위험 평가 훈련용 17세 캐릭터, 부모 정신화 훈련용 10대 캐릭터)에 전체 프레임워크(체화 표현 포함)를 적용한 사례 연구에서, 두 페르소나는 결합 기준선(DailyDialog+CounselChat) 대비 통계적으로 인간과 구분되지 않는(p&gt;0.05) DNS 점수를 모든 대화에서 달성했으며, 이는 평가된 모든 인간-LLM 데이터셋의 DNS를 상회하는 결과였다. 스트레스 테스트에서도 두 페르소나 모두 정형화된 안전 문구로 도피하지 않고 각자의 심리적 프로파일에 맞는 방식으로 반응하며 캐릭터를 유지했다.</p>
+<h2>한계점</h2>
+<p>평가 프레임워크는 주로 Deep Persona 방식으로 생성되지 않은 기존 인간-LLM 데이터셋에 적용되었고, 사례 연구는 각각 단일 세션·단일 평가자로 제한적이며 플랫(flat) 프롬프트와의 직접 비교 기준선이 없다. 정서적 합치도 지표는 비언어 단서가 있는 데이터에만 적용 가능해 검증 범위가 부분적이며, 여러 지표가 감정 분류기·어휘 사전에 의존해 언어·도메인 간 일반화가 제한적일 수 있다. 또한 의도적인 언어-비언어 불일치(예: 감정을 숨기는 환자 역할)가 실제로는 자연스러운 특성일 수 있음에도, 현재 지표는 이를 부정적 신호로만 처리한다는 한계도 있다.</p>
+<h2>시사점</h2>
+<p>이 연구는 페르소나의 신뢰성이 표면적 스타일 일관성이 아니라 내면화된 동기·신념 구조에서 나온다는 점을 실증하며, 심리학적으로 깊이 있게 설계된 페르소나가 얕은 프롬프트 기반 페르소나보다 훨씬 인간에 가까운 대화 행동을 만들어낼 수 있음을 보여준다. 다만 저자들은 역할 유지의 견고함이 안전 요구사항(유해 콘텐츠 회피 등)과 충돌할 수 있음을 명확히 지적하며, 정신건강 등 민감한 영역에 적용할 때는 시스템 수준의 안전장치와 전문가 감독이 필수적이라고 강조한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.22255" target="_blank" rel="noopener">huggingface.co/papers/2609.22255</a> · 2026-09-23</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>하네스-제로</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#12 · Daily Papers 2026-09-23</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 12</span>
+    </div>
+    <h1 class="article-title">Harness-Zero: Harness Distillation via Agent-as-Harness</h1>
+    <p class="article-title-ko">하네스-제로: 에이전트-as-하네스를 통한 하네스 증류</p>
+    <p class="article-sub">도메인별로 최적화된 에이전트 하네스(harness)의 성능 향상이 배포 시 그 특수 하네스에 종속된다는 문제를 해결하기 위해, "에이전트를 하네스로 사용"하는 방식으로 최적화된 하네스의 가이드를 목표 하네스의 행동 공간에 맞는 학습 시연으로 변환한 뒤 모델 파라미터에 증류하는 Harness-Zero를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.24974" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.24974" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Harness-Zero: Harness Distillation via Agent-as-Harness</li>
+<li><strong>저자</strong>: Haoran Ye, Yuxing Lu, Haonan Dong, Zhaochen Su, Guojie Song (Peking University, Google, HKUST)</li>
+<li><strong>출처</strong>: arXiv:2609.24974v1 [cs.AI] (2026-09-21)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/metaevo-ai/harness-zero">GitHub 저장소</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.24974">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>도메인별로 최적화된 에이전트 하네스(harness)의 성능 향상이 배포 시 그 특수 하네스에 종속된다는 문제를 해결하기 위해, "에이전트를 하네스로 사용"하는 방식으로 최적화된 하네스의 가이드를 목표 하네스의 행동 공간에 맞는 학습 시연으로 변환한 뒤 모델 파라미터에 증류하는 Harness-Zero를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>코딩 에이전트나 리서치 에이전트의 성능은 모델 자체뿐 아니라 도구 사용, 컨텍스트 관리, 상호작용 제어를 담당하는 외부 시스템인 하네스에 크게 좌우된다. 그런데 최적의 하네스는 도메인·과제·모델마다 달라서, 범용 에이전트는 성능이 떨어지는 공유 하네스 하나를 쓰거나 계속 늘어나는 특화 하네스 집합 사이를 라우팅해야 하는 딜레마에 놓인다. 어느 쪽이든 하네스 최적화로 얻은 개선은 모델 자체의 능력으로 옮겨가지 않는다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>에이전트 하네스 증류(agent harness distillation)라는 문제를 정식화하고, 최적화된 하네스가 유도한 행동을 고정된 목표 하네스 하에서도 재현하도록 모델 파라미터에 전이시키는 Harness-Zero 프레임워크를 제안했다.</li>
+<li>학생 에이전트의 응답 경계에서 별도의 "하네스 에이전트(harnessing agent)"가 개입해, 최적화된 소스 하네스의 가이드를 목표 하네스의 행동 공간에서 실행 가능한 보정으로 번역하는 agent-as-harness 기법을 도입했다.</li>
+<li>지식 작업, 도구 사용, 과학 추론 세 도메인 실험을 통해 (a) 프론티어 LLM에서 agent-as-harness가 code-as-harness보다 우수하고, (b) 특화 하네스를 제거한 상태에서도 증류된 모델이 하네스를 장착한 베이스 모델보다 높은 성능을 내며, (c) 28개 하네스 유발 행동 패턴 중 평균 82.3%를 회복함을 보였다.</li>
+</ol>
+<h2>방법론</h2>
+<p>전체 과정은 세 단계다. (1) 진화 및 적응: 훈련 과제에 대해 학생 측 하네스 h<em>를 진화시키고(스킬 기반 진화 루프로 실패 패턴을 분석해 도구·미들웨어·스킬·메모리를 갱신), 이를 목표 하네스 h에 맞춰 "개인 참조 하네스" K로 적응시킨다(예: h</em>의 위험 행동 차단 미들웨어는 K에서 검토 시점 경고로 바뀐다). (2) 궤적 수집: 학생 에이전트가 h 하에서 응답을 제안하면, 별도의 하네스 에이전트가 K를 참고해 이를 검토하고 필요할 때만 최소한의 일관된 수정을 가해 목표 하네스의 행동 공간에서 실행 가능한 완전한 응답으로 대체한다(PASS 또는 REPLACE). 채택된 응답만 실행되어 학생이 관측 가능한 궤적에 포함되고, 검토 과정 자체는 비공개로 남는다. (3) 학습 및 배포: 채택된 궤적에 지도 미세조정(SFT)을 적용해 하네스가 유도한 행동을 모델에 내재화하며, 검토자 관점의 추론이 실수로 포함된 부분은 손실 계산에서 마스킹한다. 배포 시에는 h*, K, 하네스 에이전트를 모두 제거하고 증류된 모델만 목표 하네스 h 하에서 동작한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>SpreadsheetBench Verified, AppWorld, USPTO Retrosynthesis 세 도메인에서, 목표 하네스 h는 Bash 실행 도구 하나만 가진 최소한의 mini-SWE-agent로 고정했다. 훈련 없이 프론티어 모델(GPT-5.6 Sol, DeepSeek-V4-Pro)에 적용했을 때, K를 사용한 agent-as-harness는 평균 81.1%로 code-as-harness(meta-harness, 78.1%)를 능가했다. Qwen3.5-9B에 대한 증류 실험에서는, 하네스를 제거한 채로도 Harness-Zero가 매크로 평균 성공률을 23.3%에서 44.3%로 끌어올려, 특화 하네스를 장착한 베이스 모델의 41.7%보다도 높았다. 대안적 증류 신호와의 비교 실험에서는 더 강한 모델의 궤적을 직접 모방하거나(12%), 정답을 알려주며 검토하는 방식(15%)보다, 정답 없이 절차적 가이드만 제공하는 K를 통한 검토(30%)가 훨씬 효과적인 지도 신호임을 확인했다. 또한 28개의 하네스 전용 행동 패턴(메모리·스킬·도구·미들웨어에서 유래)에 대해 증류된 모델은 평균 82.3%를 회복했다.</p>
+<h2>한계점</h2>
+<p>이 방법은 충분히 유능한 하네스 에이전트 모델에 의존하며, 모델이 약할 경우 검토가 오히려 해로워지고 agent-as-harness의 이점이 사라진다. 매 스텝마다 추가 모델 호출이 필요해 수집 비용이 늘어나고(USPTO 기준 평균 지연 2.4배), 이는 궤적 수집 단계에만 해당하며 증류 이후에는 사라진다. SFT는 h*가 인코딩한 깊은 도메인 지식(예: USPTO의 반응 사전 지식)을 완전히 내재화하지 못할 수 있으며, 컨텍스트 관리처럼 학생의 단일 응답으로 표현하기 어려운 일부 하네스 메커니즘도 남아 있다.</p>
+<h2>시사점</h2>
+<p>이 연구는 하네스 엔지니어링으로 얻은 개선이 배포 환경의 하네스에 묶여 있던 기존 한계를 넘어, 그 개선을 모델 파라미터 자체로 옮길 수 있는 실용적 경로를 제시한다. 저자들은 이를 통해 여러 도메인·과제별 하네스에서 축적된 행동과 지식이 외부 스캐폴드에 파편화되지 않고 공유 모델에 누적되는 "재귀적 자기개선" 패러다임의 가능성을 제안하며, 더 나은 모델이 더 나은 하네스를 만들고 그 하네스가 다시 가중치로 되돌아가는 선순환을 미래 방향으로 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.24974" target="_blank" rel="noopener">huggingface.co/papers/2609.24974</a> · 2026-09-23</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

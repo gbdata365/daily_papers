@@ -1,0 +1,110 @@
+{
+  "2609.24972": {
+    "base": "2609_알알에스아이_에이전트-하네스-정규화된-재귀적-자기개선",
+    "rank": "#1",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "151",
+    "en_title": "RRSI: Regularized Recursive Self-Improvement of Agent Harnesses",
+    "ko_title": "RRSI: 에이전트 하네스의 정규화된 재귀적 자기개선"
+  },
+  "2609.24984": {
+    "base": "2609_월드크래프터_암묵적-3D-메모리-기반-일관된-비디오-월드모델",
+    "rank": "#2",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "112",
+    "en_title": "WorldCrafter: Consistent Video World Model with Implicit 3D-aware Memory",
+    "ko_title": "WorldCrafter: 암묵적 3D 인지 메모리를 갖춘 일관된 비디오 월드 모델"
+  },
+  "2609.25001": {
+    "base": "2609_게임호라이즌_게임플레이-다중호라이즌-데이터-평가-스위트",
+    "rank": "#3",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "110",
+    "en_title": "GameHorizon Suite: Multi-Horizon Data and Evaluation in Gameplay",
+    "ko_title": "GameHorizon Suite: 게임플레이를 위한 다중 호라이즌 데이터 및 평가"
+  },
+  "2609.22966": {
+    "base": "2609_로보던_VLM-지능을-로봇제어로-전이",
+    "rank": "#4",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "101",
+    "en_title": "Transferring the Intelligence of VLMs to Robotic Control",
+    "ko_title": "VLM의 지능을 로봇 제어로 전이하기"
+  },
+  "2609.23088": {
+    "base": "2609_옴니에듀_K-12-학습교육용-오픈-파운데이션-모델",
+    "rank": "#5",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "66",
+    "en_title": "OmniEdu: Open Foundation Models for Learning and Teaching",
+    "ko_title": "옴니에듀: 학습과 교육을 위한 오픈 파운데이션 모델"
+  },
+  "2609.24220": {
+    "base": "2609_디랙_PDF문서용-검색인지-청킹",
+    "rank": "#6",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "48",
+    "en_title": "Document Retrieval-Aware Chunking (D-RAC): Universal Retrieval-Aware Ingestion of Enterprise Documents via PDF Normalization and Multimodal Markdown Conversion",
+    "ko_title": "디랙(D-RAC): PDF 정규화와 멀티모달 마크다운 변환을 통한 기업 문서의 범용 검색 인지형 인제스천"
+  },
+  "2609.24997": {
+    "base": "2609_비디오젠에이전트_영상생성-에이전트-강화학습",
+    "rank": "#7",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "35",
+    "en_title": "VideoGen-Agent: Reinforcing Video Generation Agents",
+    "ko_title": "비디오젠에이전트: 영상 생성 에이전트를 강화학습으로 훈련하기"
+  },
+  "2609.24983": {
+    "base": "2609_온판다_토큰단위-교정-정렬데이터-주석도구",
+    "rank": "#8",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "27",
+    "en_title": "onPanda: Efficient Annotation of On-Policy Alignment Data for LLMs and Agents via Token-Level Correction",
+    "ko_title": "온판다: 토큰 단위 교정을 통한 LLM·에이전트용 온-폴리시 정렬 데이터의 효율적 주석 도구"
+  },
+  "2609.23863": {
+    "base": "2609_그라운디드액션_3D-그라운딩-로봇-파운데이션-모델",
+    "rank": "#9",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "19",
+    "en_title": "Grounded Action Model: 3D Grounding as a Foundation for Robotics",
+    "ko_title": "그라운디드 액션 모델: 로보틱스를 위한 파운데이션으로서의 3D 그라운딩"
+  },
+  "2609.23377": {
+    "base": "2609_카테고리전문가훈련_SWE-에이전트-카테고리인식-반복전문가훈련",
+    "rank": "#10",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "16",
+    "en_title": "One to More, More to One: Category-Aware Iterative Expert Training for Software Engineering Agents",
+    "ko_title": "하나에서 여럿으로, 여럿에서 하나로: 소프트웨어 엔지니어링 에이전트를 위한 카테고리 인식 반복적 전문가 훈련"
+  },
+  "2609.22255": {
+    "base": "2609_딥페르소나_심리학-기반-롤플레잉-에이전트-아키텍처와-평가",
+    "rank": "#11",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "12",
+    "en_title": "Deep Persona: A Psychologically Grounded Architecture and Evaluation Framework for Role-Playing Agents and Simulations",
+    "ko_title": "딥 페르소나: 롤플레잉 에이전트와 시뮬레이션을 위한 심리학 기반 아키텍처 및 평가 프레임워크"
+  },
+  "2609.24974": {
+    "base": "2609_하네스제로_에이전트-as-하네스-기반-하네스-증류",
+    "rank": "#12",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "12",
+    "en_title": "Harness-Zero: Harness Distillation via Agent-as-Harness",
+    "ko_title": "하네스-제로: 에이전트-as-하네스를 통한 하네스 증류"
+  }
+}

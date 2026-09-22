@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>옴니에듀</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#5 · Daily Papers 2026-09-23</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 66</span>
+    </div>
+    <h1 class="article-title">OmniEdu: Open Foundation Models for Learning and Teaching</h1>
+    <p class="article-title-ko">옴니에듀: 학습과 교육을 위한 오픈 파운데이션 모델</p>
+    <p class="article-sub">K-12(초중고) 학습·교육을 위해 과목 역량, 커리큘럼 이해, 진단적 추론, 교수법적 개입이라는 4가지 능력을 균형 있게 학습시키는 데이터 구축 파이프라인을 통해 4B·9B·27B 규모의 오픈 교육용 파운데이션 모델 OmniEdu를 훈련하고, 커리큘럼 이해·문제풀이·튜터링 전 영역에서 일관된 성능 향상을 보였다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.23088" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.23088" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: OmniEdu: Open Foundation Models for Learning and Teaching</li>
+<li><strong>저자</strong>: Hao Liang, Qihan Lin 외 (Peking University, University of Chinese Academy of Sciences, Zhongguancun Academy 공동 연구, Wentao Zhang 교신저자)</li>
+<li><strong>출처</strong>: arXiv:2609.23088v1 [cs.CL] (2026년 9월 19일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/haolpku/Omni-Edu">GitHub - haolpku/Omni-Edu</a> (모델·데이터셋 Hugging Face 공개)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.23088">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>K-12(초중고) 학습·교육을 위해 과목 역량, 커리큘럼 이해, 진단적 추론, 교수법적 개입이라는 4가지 능력을 균형 있게 학습시키는 데이터 구축 파이프라인을 통해 4B·9B·27B 규모의 오픈 교육용 파운데이션 모델 OmniEdu를 훈련하고, 커리큘럼 이해·문제풀이·튜터링 전 영역에서 일관된 성능 향상을 보였다.</p>
+<h2>배경 및 문제의식</h2>
+<p>기존 교육용 언어모델들은 정답을 맞히는 능력(과목 문제풀이)이나 튜터링(소크라테스식 질문, 스캐폴딩) 중 한쪽에 특화되어 있고, 훈련 데이터도 출처나 과목별로만 구성되어 두 능력을 명시적으로 균형 있게 다루지 못한다. 좋은 교육용 모델은 단순히 정답을 내는 것을 넘어 문제가 커리큘럼 상 어디에 위치하는지 파악하고, 학습자가 왜 틀렸는지 진단하며, 적절한 교수적 개입(힌트, 질문, 선수 개념 복습, 직접 설명 등)을 선택할 수 있어야 한다는 문제의식에서 출발한다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>과목 역량, 커리큘럼 그라운딩, 진단적 추론, 교수법적 행동·스캐폴딩의 4개 능력 축으로 구성된 K-12 교육용 모델 패밀리 제시.</li>
+<li>의미 기반 감사·재작성, 과제별 품질 채점, 토큰 예산 기반 다양성 선택, 교수법적 지시문 부여 등 6단계의 재현 가능한 데이터 구축 파이프라인 개발.</li>
+<li>4B/9B/27B 세 규모에서 커리큘럼 이해, K-12 문제풀이, 교수법적 튜터링 전반에 걸친 교차 능력 평가로 일관된 성능 향상 입증.</li>
+<li>프로젝트 저장소와 Hugging Face 데이터셋 페이지를 통한 재현 가능성 제공.</li>
+</ol>
+<h2>방법론</h2>
+<p>약 100개 이상의 교육 자료·데이터셋에서 수집한 약 134만 개의 후보 예시를 6단계 파이프라인으로 정제한다. (1) 능력 분류 체계 정의 및 소스 수집, (2) 결정론적 정제 및 평가 오염 제거, (3) LLM(Qwen3.5-122B) 기반 의미 감사 및 재작성(0-100점 채점 후 유지/재작성/제거 판정), (4) BGE-M3 임베딩 기반 k-center greedy로 과다 표집된 소스 축소 및 GPT 기반 세부 품질 채점, (5) 세부 과제 버킷별 토큰 예산에 따른 다양성 선택, (6) 20가지 과제별 교수법적 시스템 지시문 부여. 최종적으로 교육 특화 60,951개(약 1,200만 응답 토큰)와 범용 지시 데이터 9,048개를 합쳐 총 69,999개 예시, 1,596만 응답 토큰의 학습 혼합 데이터를 구성했다. 이 데이터로 Qwen3.5-4B-Base, Qwen3.5-9B-Base, Qwen3.8-27B를 LlamaFactory로 전체 파라미터 지도 미세조정(SFT)했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>커리큘럼 그라운딩(K12-Bench, MathFish, EDUMATH), K-12 문제풀이(GAOKAO-Bench, EXAMS-V, MDK12-Bench), 교수법적 튜터링(MathTutorBench, TutorBench, LongTutor) 세 영역과 일반 능력 유지(IFEval, GPQA, MMMU-Pro)를 평가했다. OmniEdu-27B는 K12-Bench에서 EM 63.12%/F1 76.69%, MathFish 85.89%, EDUMATH 86.95%를 기록해 평가 대상 중 최고 성능을 보였고, MathTutorBench Scaffold 승률 78.74%, LongTutor Teaching 평균 3.02로 최고를 달성했다. GAOKAO-Bench는 91.55%→94.87%, MDK12-Bench는 46.04%→57.76%로 개선되었으며, Confucius3-Math·MuduoLLM·EduChat 등 기존 오픈 교육용 모델을 큰 폭으로 능가했다. 동시에 GPQA·MMMU-Pro 등 일반 능력도 기저 모델 대비 개선되어, 교육 특화 튜닝이 일반 성능 저하 없이 이루어졌음을 보였다.</p>
+<h2>한계점</h2>
+<p>논문은 별도의 "한계점" 절을 명시하지 않았으나, LongTutor에서의 지식 상태 진단 정확도(54.04%/53.55%)가 여전히 낮다는 점, 그리고 GPT-5.6-Sol, Claude-Opus-5, Kimi-K3 등 일부 프론티어 독점 모델에는 특정 시험형 벤치마크(GAOKAO-Bench Full Rate 등)에서 여전히 뒤처진다는 점이 결과에서 드러난다.</p>
+<h2>시사점</h2>
+<p>과목별·출처별로 데이터를 단순 혼합하는 대신 명시적인 능력 분류 체계에 따라 감독 신호를 설계하고 큐레이션하는 것이 교육용 파운데이션 모델의 성능을 좌우하는 핵심 요인임을 보여준다. 이는 데이터 구성과 교수법적 행동 설계가 오픈 교육 모델 개발의 중요한 축이라는 점을 시사하며, 향후 커리큘럼 구조 이해와 실질적 교수 지원을 결합한 AI 튜터 시스템 개발에 기여할 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.23088" target="_blank" rel="noopener">huggingface.co/papers/2609.23088</a> · 2026-09-23</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

@@ -1,0 +1,107 @@
+<meta charset="UTF-8">
+<title>GameHorizon Suite</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#3 · Daily Papers 2026-09-23</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 110</span>
+    </div>
+    <h1 class="article-title">GameHorizon Suite: Multi-Horizon Data and Evaluation in Gameplay</h1>
+    <p class="article-title-ko">GameHorizon Suite: 게임플레이를 위한 다중 호라이즌 데이터 및 평가</p>
+    <p class="article-sub">21개 AAA급 게임에서 100명의 숙련된 인간 플레이어가 플레이한 5,000시간 분량의 영상·행동·다중 호라이즌(단기/중기/장기) 자연어 지침을 자동으로 정렬해주는 주석 파이프라인, 대규모 데이터셋, 그리고 재현 가능한 오프라인·스텝별 온라인 평가 벤치마크로 구성된 통합 게임플레이 평가 스위트를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.25001" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.25001" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: GameHorizon Suite: Multi-Horizon Data and Evaluation in Gameplay</li>
+<li><strong>저자</strong>: Yiran Wang, Xingyilang Yin, Junfu Pu, Guangzhi Wang 외 (Tencent ARC Lab, GVC Lab@Great Bay University, National University of Singapore, Huazhong University of Science and Technology, CUHK MMLab, University of Macau 공동 연구)</li>
+<li><strong>출처</strong>: arXiv:2609.25001v1 [cs.CV] (21 Sep 2026)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://gamehorizon-suite.github.io">gamehorizon-suite.github.io</a> / <a href="https://github.com/TencentARC/GameHorizon">github.com/TencentARC/GameHorizon</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.25001">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>21개 AAA급 게임에서 100명의 숙련된 인간 플레이어가 플레이한 5,000시간 분량의 영상·행동·다중 호라이즌(단기/중기/장기) 자연어 지침을 자동으로 정렬해주는 주석 파이프라인, 대규모 데이터셋, 그리고 재현 가능한 오프라인·스텝별 온라인 평가 벤치마크로 구성된 통합 게임플레이 평가 스위트를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>비디오 게임은 시각 이해, 지침 분해, 목표 계획, 여러 시간 규모에 걸친 정밀한 행동 제어 능력을 함께 요구하는 측정 가능한 테스트베드다. 그러나 기존 게임 데이터셋·벤치마크는 (1) 게임 종류가 좁거나(단일 게임 또는 마인크래프트 국한), (2) 언어 지침 주석이 없거나 희소하며, (3) 소수의 온라인 롤아웃(3~20회)에 의존해 고분산·저신뢰 비교로 이어지고 실패 모드도 하나의 스칼라(성공률)로 뭉뚱그려진다는 한계가 있다. 전문 게임 에이전트는 행동 실행에 최적화되어 계획 능력이 부족하고, 범용 VLM/에이전트는 계획에는 강하지만 실제 행동 실행에 대해서는 체계적으로 측정된 적이 없어, 두 계열을 함께 비교할 표준 잣대가 부재했다.</p>
+<h2>핵심 기여</h2>
+<p>(1) 여러 시간 규모와 다양한 모델 계열을 아우르는 통합 데이터·평가 스위트 GameHorizon을 제안했다. (2) 스케일러블한 자동 다중 호라이즌 지침 주석 파이프라인 GameHorizon-Annotator를 개발했다. (3) 21개 게임, 100명의 인간 플레이어, 5,000시간 분량의 영상·행동·지침 삼중항으로 구성된 GameHorizon-Data를 구축했다(기존 데이터셋 대비 규모·밀도 모두 우월). (4) 재현 가능한 오프라인 평가와 스텝별 온라인 평가를 결합한 GameHorizon-Bench를 제시했다.</p>
+<h2>방법론</h2>
+<p>GameHorizon-Annotator는 상향식(bottom-up)으로 작동한다. 먼저 키보드·마우스 이벤트를 게임별 행동 의미로 매핑하는 행동 인지 세그멘테이션으로 영상을 단기 조작(L1, 1~5초) 클립으로 분할하고, VLM이 각 클립에 행동 기반 지침을 부여한다. 이후 인접한 L1 클립들을 동적 계획법으로 병합해 중기 목표(L2, 1~2분)를, 다시 L2를 병합해 장기 전략(L3, 5~8분)을 생성하는 방식으로 3단계 지침 피라미드를 자동 구축한다. GameHorizon-Bench의 오프라인 트랙은 표준화된 4지선다 문제(MCQ)로 구성되며, 단일 호라이즌 행동(T1), 다중 호라이즌 분해(T2), 교차 호라이즌 일관성(T3) 3개 주요 과제와 현재/미래 행동 인식, 상향식/하향식 추상화 등을 비교하는 10개 변형 과제(T*)로 세분화된다. 온라인 트랙은 마인크래프트에서 순서 의존적 인과 과제와 순서 무관 주제 과제를 하위 과제 단위로 검증하며, 실패 시 해당 성공 상태로 환경을 리셋해 실패 지점을 단계별로 국소화한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>GPT-6-Astra, Gemini 3.8/3.7/3.6/3.5 Flash 등 35개 범용 VLM, 4개 통합 멀티모달 모델(UMM), 2개 GUI 에이전트, 3개 코딩 에이전트, 3개 전문 게임 에이전트 등 총 47개 모델을 100만 회 이상 호출해 평가했다. 오프라인 전체 평균 정확도는 64.7%(T1 57.3%, T2 65.1%, T3 71.6%)로, 무작위 기준(25%)보다 훨씬 높으면서도 모델 간 뚜렷한 위계(44.6%~80.2%)를 보여 벤치마크의 변별력을 입증했다. GPT-6-Astra가 1위(80.2%)를 차지했고, 개방형 가중치 모델 중에서는 Kimi-K3가 유일하게 Tier 1(74.5%)에 진입했다. 전문 게임 에이전트(NitroGen, Open-P2P, JARVIS-VLA)는 미학습 AAA 게임에서 무작위 수준에 가까운 성능을 보여 일반화의 한계를 드러냈고, 시각 입력만 줄 때보다 단기 지침을 추가하면 평균 정확도가 14.1%p, 다중 호라이즌 지침까지 주면 미래 행동 계획이 7.0%p 추가 향상되어 다중 호라이즌 지침 피라미드의 효과를 확인했다. 온라인 트랙에서는 GPT-6-Astra가 장기 과제 성공률 45.0%로 최고였으나, 12개 모델 중 10개가 10.0% 이하에 그쳐 장기 게임 계획이 여전히 큰 난제임을 보여줬다. 오프라인-온라인 순위는 명확한 양의 상관관계를 보여, 오프라인 점수가 실제 게임플레이 능력의 유효한 대리 지표임을 뒷받침했다.</p>
+<h2>한계점</h2>
+<p>온라인 트랙은 평가 비용 문제로 마인크래프트에 국한해 구현되었으며(AAA 게임의 내부 상태 접근 불가로 인해), 47개 모델 전체가 아닌 오프라인 성능 티어별 상위 12개 모델만 온라인으로 검증했다. 또한 교차 호라이즌 일관성 과제(T3)에서 하향식 목표 분해는 정보 부족으로 정답이 여러 개 존재할 수 있어 평가 난도가 상대적으로 높다는 점이 논문 내에서 지적된다.</p>
+<h2>시사점</h2>
+<p>행동 실행에 특화된 전문 게임 에이전트와 계획에 강한 범용 VLM을 같은 잣대로 비교할 수 있는 표준화된 다중 호라이즌 평가 체계를 제공함으로써, 향후 게임 에이전트 연구가 "현재 행동을 얼마나 잘 인식하는가"뿐 아니라 "장기 목표를 얼마나 잘 분해·계획하는가"까지 함께 개선하도록 유도하는 기반을 마련한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.25001" target="_blank" rel="noopener">huggingface.co/papers/2609.25001</a> · 2026-09-23</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

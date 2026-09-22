@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>온판다</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#8 · Daily Papers 2026-09-23</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 27</span>
+    </div>
+    <h1 class="article-title">onPanda: Efficient Annotation of On-Policy Alignment Data for LLMs and Agents via Token-Level Correction</h1>
+    <p class="article-title-ko">온판다: 토큰 단위 교정을 통한 LLM·에이전트용 온-폴리시 정렬 데이터의 효율적 주석 도구</p>
+    <p class="article-sub">모델 응답을 읽다가 처음 부적절한 토큰을 발견하면 후보 토큰 중 하나를 고르거나 직접 텍스트를 입력해 수정한 뒤 그 지점부터 모델이 이어 생성하게 하는 "위치 파악-교정-이어쓰기" 루프를 핵심으로 하는 주석 도구 onPanda를 제안하여, 수동 후편집 대비 주석 시간을 52% 단축하면서도 모델의 원래 샘플링 분포에 가까운 온-폴리시 정렬 데이터를 효율적으로 생성한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.24983" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.24983" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: onPanda: Efficient Annotation of On-Policy Alignment Data for LLMs and Agents via Token-Level Correction</li>
+<li><strong>저자</strong>: Lei Yang, Mengyin Liu 외 (StepFun, Xiamen University 공동 연구)</li>
+<li><strong>출처</strong>: arXiv:2609.24983v1 [cs.CL] (2026년 9월 21일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://on-panda.github.io/research">on-panda.github.io/research</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.24983">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>모델 응답을 읽다가 처음 부적절한 토큰을 발견하면 후보 토큰 중 하나를 고르거나 직접 텍스트를 입력해 수정한 뒤 그 지점부터 모델이 이어 생성하게 하는 "위치 파악-교정-이어쓰기" 루프를 핵심으로 하는 주석 도구 onPanda를 제안하여, 수동 후편집 대비 주석 시간을 52% 단축하면서도 모델의 원래 샘플링 분포에 가까운 온-폴리시 정렬 데이터를 효율적으로 생성한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>LLM 정렬 및 에이전트 학습을 위한 고품질 데이터 확보는 여전히 병목이다. 처음부터 응답을 직접 작성하거나 수동으로 후편집하는 방식은 비용이 높고 결과물이 모델 자신의 분포에서 벗어난 오프-폴리시 데이터가 되며, 선호도(preference) 순위 매김 방식은 비용은 낮지만 응답 단위의 거친 감독만 제공하고 모델이 애초에 좋은 응답을 샘플링하지 못하는 경우에는 교정 신호를 주기 어렵다. 에이전트 궤적 주석은 더 까다로운데, 다단계 환경 상호작용이 포함되어 교정 후에는 실제로 도구를 재실행하고 피드백을 받아야 하기 때문이다. 기존 도구들은 실시간 관찰·개입은 가능하지만, 범용 툴콜 형식을 지원하면서 실시간으로 추론과 도구 호출을 모두 교정하고 실행할 수 있는 도구는 부재했다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>토큰 단위 교정을 핵심 상호작용으로 삼아 LLM 정렬 데이터와 에이전트 궤적을 효율적으로 주석할 수 있는 도구 onPanda 제안.</li>
+<li>통제된 실험을 통해 onPanda의 주석 효율성과 생성 데이터의 온-폴리시 충실도를 검증하고, 멀티모달·에이전트 궤적 주석 지원을 실증.</li>
+<li>onPanda로 주석한 중국어 비전-언어 데이터셋 Panda-CVL과 토큰 단위 교정 능력을 평가하는 벤치마크를 공개.</li>
+</ol>
+<h2>방법론</h2>
+<p>생성 요청은 logprobs와 함께 스트리밍되며, onPanda는 각 토큰의 샘플링 확률과 상위 k(기본 20개) 후보를 기록해 토큰 아래에 확률을 색상으로 표시한다(녹색일수록 높은 확률). 주석자가 첫 부적절한 토큰을 찾아 후보 중 하나를 클릭하거나 더블클릭으로 자유롭게 텍스트를 입력하면, 시스템은 해당 지점 이후를 잘라내고 교정된 접두사(prefix)에서 모델이 자연스럽게 이어 생성하도록 요청한다(vLLM의 continue_final_message 활용). 주석 세션은 각 교정이 새로운 노드를 만드는 트리 구조로 저장되며, 모든 중간 버전이 자동 보존되고 각 노드는 조작 로그와 품질 판정(is_good)을 가진다. 같은 프롬프트 하의 긍정/부정 노드 쌍은 응답 단위 선호도 데이터로, 교정 지점의 토큰 쌍은 위치가 정밀하게 짝지어진 토큰 단위 학습 삼중항(부정 샘플, 거부된 토큰과 위치, 선택된 토큰)으로 자동 변환된다. 추론모델·에이전트의 구조화된 메시지(reasoning, content, tool_calls)는 "응답 템플릿" 메커니즘을 통해 모델의 특수 토큰이 포함된 원시 토큰열로 렌더링해 교정 가능하게 하고, 교정 후 다시 구조화된 메시지로 파싱한다. 외부 도구는 MCP를 통해 연결되며 harness_to_mcp 어댑터로 Claude Code, Codex, OpenClaw 등 기존 하네스를 감싸 사용한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>21개 이미지 설명 프롬프트에 대해 3명의 주석자가 라틴 방격 설계로 onPanda, 수동 후편집(POTATO), 선호도 순위(Argilla, 4개 롤아웃 중 순위 매김)를 비교했다. onPanda의 중위 주석 시간은 330초로 POTATO(681초) 대비 51.5% 단축되었고 Argilla(336초)와 비슷했으며, 평균 시간도 POTATO·Argilla 대비 각각 27.5%, 24.7% 낮았다. GPT-5.5 기반 쌍대비교 승률에서도 onPanda가 66.7%로 가장 높았고, 인간 평가에서도 POTATO 대비 54.8%의 선호를 받았다. 온-폴리시 충실도(PPL 기준)에서는 onPanda(1.181, 기준 대비 +0.86%)와 Argilla(1.161, -0.83%)가 재표집 노이즈(약 ±2.8%) 범위 내였던 반면 POTATO는 +36.31%로 크게 벗어났다. onPanda는 SFT 커버리지 100%를 달성하면서 프롬프트당 평균 7.43개의 선호도 쌍을 도출해 Argilla(6.00)와 POTATO(0.95)를 능가했다. NASA-TLX 작업 부하 평가에서도 onPanda(3.1)가 Argilla(5.4), POTATO(6.8)보다 낮았다. 실제 프로덕션 배포에서는 비전·오디오·에이전트 3개 영역에서 총 13만 건 이상의 주석 세션을 통해 약 38.8만 건의 토큰 단위 교정을 생성했으며, 이 중 97.0%가 모델 생성 토큰, 2.1%가 후보 선택, 단 0.9%만 수동 입력으로 확인되어 인간 개입이 희소함을 실증했다. 별도 공개한 Panda-CVL 벤치마크에서 GPT-5.5, GPT-6, Kimi-K2.6 등 최신 모델들을 토큰 단위 교정 과제로 평가한 결과 최고 F1은 17.09%에 불과해, 이 과제가 현재 모델들에게 여전히 어렵다는 점도 확인했다.</p>
+<h2>한계점</h2>
+<p>onPanda는 어시스턴트 메시지 접두사에서 이어 생성하는 기능과 top-k 후보 logprobs 반환 기능을 모두 지원하는 추론 API에 의존하는데, 일부 독점 API는 이를 지원하지 않아 해당 모델에는 적용이 어렵다. 또한 효율성과 온-폴리시 이점은 모델 오류가 희소하다는 전제에 기반하므로, 모델이 목표 과제에서 크게 벗어나 교정이 밀집될 경우 이점이 줄어든다. 온-폴리시 특성도 주석 시점의 롤아웃 모델에 상대적이라 다른 모델을 학습시키거나 가중치가 계속 갱신되면 그 이점이 약화된다. 통제 실험 규모도 3명의 주석자와 21개 프롬프트, 단일 롤아웃 모델로 제한적이며, 품질 평가는 주로 LLM 심판에 의존했고, 에이전트 설정에 대한 통제된 실험은 수행되지 않았다. 무엇보다 토큰 단위 교정 데이터의 실제 다운스트림 학습 효과는 아직 학습 실험으로 검증되지 않았다.</p>
+<h2>시사점</h2>
+<p>토큰 단위 교정은 위치가 정밀하고 긍정-부정 쌍이 자연스럽게 짝지어지는 세밀한 감독 신호를 제공하면서도 인간 개입을 최소화해 모델의 원래 샘플링 분포를 보존한다는 점에서, SFT·선호도 학습·PRM 학습을 위한 새로운 형태의 효율적인 데이터 수집 방법론으로 자리잡을 잠재력을 지닌다. 저자들은 이를 기반으로 토큰 단위 교정 모델(보상 모델의 토큰 단위 대응물)과 토큰 단위 교정 최적화(DPO의 토큰 단위 대응물) 등 후속 학습 기법 개발과, 주석-학습이 서로를 가속하는 선순환 구조로의 확장을 향후 과제로 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.24983" target="_blank" rel="noopener">huggingface.co/papers/2609.24983</a> · 2026-09-23</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

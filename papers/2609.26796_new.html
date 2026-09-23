@@ -1,0 +1,113 @@
+<meta charset="UTF-8">
+<title>플래시디엘엘엠</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#11 · Daily Papers 2026-09-24</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 13</span>
+    </div>
+    <h1 class="article-title">Flash-dLLM: IO-Aware KV Caching and Parallel Decoding for Fast, Memory-Efficient Diffusion LLMs</h1>
+    <p class="article-title-ko">플래시디엘엘엠: 빠르고 메모리 효율적인 확산 LLM을 위한 IO 인지 KV 캐싱과 병렬 디코딩</p>
+    <p class="article-sub">확산 언어모델(dLLM)의 추론 속도를 저해하는 KV 캐시의 메모리 IO 병목과 비효율적인 병렬 디코딩 문제를, 학습 없이(training-free) IO 인지 융합 커널과 자기검증 기반 draft-and-verify 디코딩으로 해결하여 GSM8K에서 최대 81배, HumanEval에서 최대 148배의 처리량 향상을 달성한 연구.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.26796" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.26796" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Flash-dLLM: IO-Aware KV Caching and Parallel Decoding for Fast, Memory-Efficient Diffusion LLMs</li>
+<li><strong>저자</strong>: Quan Nguyen-Tri, Mukul Ranjan, Zhiqiang Shen (VILA Lab, MBZUAI, 아부다비 UAE)</li>
+<li><strong>출처</strong>: arXiv:2609.26796v1 [cs.CL] (2026년 9월 22일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/VILA-Lab/Flash-dLLM">GitHub - VILA-Lab/Flash-dLLM</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.26796">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>확산 언어모델(dLLM)의 추론 속도를 저해하는 KV 캐시의 메모리 IO 병목과 비효율적인 병렬 디코딩 문제를, 학습 없이(training-free) IO 인지 융합 커널과 자기검증 기반 draft-and-verify 디코딩으로 해결하여 GSM8K에서 최대 81배, HumanEval에서 최대 148배의 처리량 향상을 달성한 연구.</p>
+<h2>배경 및 문제의식</h2>
+<p>확산 대형 언어모델(Diffusion LLM, dLLM)은 좌우 순차 생성 대신 마스킹된 시퀀스를 반복적으로 디노이징하여 텍스트를 생성하는 비자기회귀적 방식으로, 유연한 생성 스케줄과 병렬성 측면에서 자기회귀 LLM의 대안으로 주목받고 있다. 그러나 실제 배포 시 추론 효율이 자기회귀 LLM에 크게 뒤처지는데, 이는 (1) dLLM에서는 매 디노이징 단계마다 갱신되는 토큰 집합이 달라져 KV 캐시의 읽기·쓰기·갱신이 빈번히 발생하며, 이 GPU 메모리 접근 오버헤드가 부동소수점 연산량 감소로 얻는 이득을 상쇄해버리기 때문이다. 또한 (2) 매 단계 전체 시퀀스를 처리하지만 실제로 현재 예측에 유의미하게 영향을 미치는 토큰은 일부에 불과한 토큰 수준의 희소성이 존재함에도 기존 방법들은 모든 캐시 토큰을 균등하게 취급하며, (3) 많은 토큰이 이미 의미적으로 거의 확정되었음에도 보수적인 confidence threshold 때문에 조기 확정되지 못하고 불필요한 추가 디노이징 단계를 거치는 문제가 있다. 기존 가속 기법들은 KV 캐싱과 병렬 디코딩을 각각 독립적으로 연구해왔을 뿐, 두 기법을 동시에 적용했을 때 발생하는 IO 병목은 간과해왔다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>KV 캐시가 활성화된 dLLM 추론에서 중복된 GPU 메모리 읽기/쓰기가 핵심 병목임을 규명하고, 이를 줄이는 IO 인지 융합 KV 캐시 커널(Flash-Cache)을 제안. 또한 중간 레이어에서 상위 32개 어텐션 토큰이 전체 어텐션의 약 50%를 차지한다는 관찰에 기반해, 소수의 중요 토큰만 선택적으로 캐시 갱신·검증하는 기법을 결합.</li>
+<li>외부 드래프트 모델이나 추가 학습 없이 dLLM 자신이 드래프터(drafter)이자 검증자(verifier) 역할을 모두 수행하는 학습 없는(training-free) 병렬 디코딩 기법(Flash-Verify)을 제안. 캐시된 상태를 활용해 후보 토큰의 신뢰도(confidence)를 높여 초기 단계에 더 많은 토큰을 정확히 디코딩함으로써 디노이징 단계 수를 줄임.</li>
+<li>수학 추론(GSM8K, MATH) 및 코드 생성(HumanEval, MBPP) 벤치마크에서 기존 최강 baseline인 Elastic-Cache 대비 GSM8K에서 5.1배, HumanEval에서 11.0배의 속도 향상을 포함해 전반적으로 속도·메모리 효율·확장성에서 우위를 입증.</li>
+</ul>
+<h2>방법론</h2>
+<p><strong>Flash-Cache (IO 인지 KV 캐싱)</strong>: 기존 KV 캐시 구현은 매 트랜스포머 레이어마다 QKV 프로젝션, RoPE(회전 위치 임베딩), 캐시 쓰기, 어텐션 계산을 위해 별도의 CUDA 커널을 순차 실행하며, 각 단계마다 중간 텐서를 GPU HBM에 썼다가 다시 읽어들여 메모리 대역폭 병목(memory-bound)이 발생한다. Flash-dLLM은 FlashAttention에서 영감을 받아 QKV 프로젝션·RoPE·캐시 쓰기를 하나의 Triton 융합 커널로 결합해 SRAM 내에서 처리하고 결과만 HBM의 KV 캐시에 직접 기록함으로써 중간 텐서 materialization을 제거한다(단일 GPU 기준 1.37배 속도 향상). 또한 배치 내 시퀀스 길이가 샘플마다 크게 달라지는 문제를 해결하기 위해 FlashAttention을 확장한 "Scheduled Flash Attention"을 도입, 블록 테이블(block table)로 쿼리·키/값 블록을 정렬해 패딩이나 동기화 오버헤드 없이 가변 길이 배치를 병렬 처리한다. 마지막으로, 마스크된 토큰들이 보내는 어텐션 점수를 기준으로 상위 k개의 가장 많이 참조된("most-attended") 디코딩된 토큰만 추적 집합(tracking set)으로 유지·갱신하는 Selective Cache Update를 적용해 매 스텝 계산량을 고정된 tracking budget(β_t)과 sliding window 크기(β_m)로 제한한다.</p>
+<p><strong>Flash-Verify (KV 캐시 기반 draft-and-verify 병렬 디코딩)</strong>: 기존 confidence-aware 디코딩은 confidence가 임계값 ϵ을 넘는 토큰만 채택하고 나머지는 정답이더라도 폐기해 처리량 한계를 만든다. Flash-Verify는 우선 draft pass로 마스크된 위치를 confidence 기준 확정 집합(D_t)과 재검토가 필요한 탐색 집합(S_t)으로 나눈다. 이어 verify pass에서 탐색 집합 위치를 두 가지 view로 복제해 쿼리를 구성한다: 하나는 draft 예측값을 채운 "draft view", 다른 하나는 [MASK]를 채운 "mask view"이며, 두 view는 동일한 위치 임베딩을 공유하되 causal attention mask로 서로를 참조하지 못하도록 격리해 독립적인 예측을 생성한다. 두 view의 예측이 일치하고 mask view의 confidence가 임계값 γ 이상인 경우에만(디코딩 순서상 첫 불일치 지점까지) 해당 토큰을 채택한다. 이는 speculative decoding 관례를 따르되, 외부 드래프트 모델 없이 dLLM 자신이 자기 예측의 일관성을 검증하는 방식이며, 검증 단계 비용은 전체 시퀀스가 아니라 2β_m에 비례해 추가 오버헤드가 작다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>단일 NVIDIA A100 80GB GPU에서 LLaDA-1.5 모델을 사용해 GSM8K, MATH, HumanEval, MBPP 벤치마크로 평가했으며, 융합 KV 캐시 커널은 Triton 2.0으로 구현했다. 기본 하이퍼파라미터는 ϵ=0.9, γ=0.8, 블록 크기 β=16, tracking budget β_t=80, sliding window β_m=64, 생성 길이 512이다. 비교 대상은 No Cache(캐싱 없음), Fast-dLLM(prefix caching + confidence-aware decoding), Elastic-Cache(어텐션 패턴 기반 적응형 캐싱) 등이다.</p>
+<p>주요 결과: greedy 디코딩에서 Flash-Cache만으로 8.0~58.5배, confidence-aware 디코딩과 결합 시 17.0~102.2배, Flash-Verify까지 결합하면 22.3~148.2배의 처리량 향상을 얻었으며 148.0~210.6 tokens/s의 최고 처리량을 기록했다. GSM8K-512에서는 Flash-Verify+Flash-Cache 조합이 최고 정확도(83.02%)와 최고 처리량(210.6 tokens/s, 81.0배 속도향상)을 동시에 달성했다. 정확도는 과제에 따라 트레이드오프가 있어, 수학 추론에서는 최고 정확도 대비 1.78%p 이내였지만 256 토큰 길이의 코드 생성에서는 최대 3.66%p(HumanEval)의 격차가 발생했다. 배치 크기 확장 실험에서는 Flash-dLLM이 배치 32까지 선형에 가깝게 확장되는 반면 Fast-dLLM은 배치 24에서 OOM(메모리 부족)이 발생했고, 배치 16에서 Flash-dLLM은 약 26GB, Fast-dLLM은 약 50GB를 사용해 메모리 사용량을 약 48% 절감했다. Flash-Verify는 confidence-aware 디코딩 대비 단계당 더 많은 토큰(예: 7.2 vs 5.6 tokens/iteration)을 디코딩하면서도 최대 1.33배 높은 처리량과 최대 3.5% 높은 정확도를 보였다.</p>
+<h2>한계점</h2>
+<p>논문에 별도의 "한계점" 절은 명시되지 않음. 다만 본문에서 확인되는 트레이드오프로는, 처리량이 가장 높은 설정(Flash-Verify+Flash-Cache)이 모든 과제·길이에서 항상 최고 정확도를 내지는 못하며 특히 짧은 길이(256토큰)의 코드 생성 과제(HumanEval, MBPP)에서 최대 3.6%p의 정확도 손실이 발생한다는 점, 그리고 track budget β_t와 verify threshold γ 사이에 정확도-처리량 반비례 트레이드오프가 존재해 하이퍼파라미터 튜닝이 필요하다는 점이 있다. 또한 실험이 단일 A100 80GB GPU와 단일 모델(LLaDA-1.5)에 한정되어 다른 dLLM 아키텍처나 하드웨어에서의 일반화 가능성은 논문에 명시되지 않음.</p>
+<h2>시사점</h2>
+<p>Flash-dLLM은 dLLM 추론 가속을 시스템 수준(메모리 IO)과 알고리즘 수준(병렬 디코딩)에서 분리해 다루던 기존 연구와 달리 두 요소를 통합적으로 설계함으로써, 확산 언어모델이 갖는 이론적 병렬성을 실제 wall-clock 가속으로 전환할 수 있음을 보여준다. 특히 외부 드래프트 모델이나 추가 학습 없이 dLLM 자신을 검증자로 활용하는 Flash-Verify 방식은 자기회귀 LLM의 speculative decoding과는 다른, 확산 모델 고유의 양방향 어텐션 구조를 활용한 새로운 검증 패러다임을 제시하며, 향후 dLLM의 실용적 서빙 시스템 설계에 참고가 될 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.26796" target="_blank" rel="noopener">huggingface.co/papers/2609.26796</a> · 2026-09-24</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

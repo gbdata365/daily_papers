@@ -1,0 +1,130 @@
+<meta charset="UTF-8">
+<title>테이스트풀 에이전트</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#1 · Daily Papers 2026-09-24</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 111</span>
+    </div>
+    <h1 class="article-title">The Tasteful Agent: Measuring and Improving Taste in Long-Horizon Tasks</h1>
+    <p class="article-title-ko">테이스트풀 에이전트: 장기 과제에서의 취향 측정과 개선</p>
+    <p class="article-sub">LLM 에이전트가 장기 과제 중간에 내리는 "어느 방향으로 갈지"에 대한 판단력(=taste, 취향)을 결과를 모르는 시점에서 측정하는 벤치마크 Taste-Bench를 자동으로 구축했더니, 최고 성능 모델도 정답률 59.7%에 그쳤고, 이 판단력은 증류(distillation)로 학습시켜 실제 에이전트의 과제 성공률도 끌어올릴 수 있음을 보였다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.25804" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.25804" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: The Tasteful Agent: Measuring and Improving Taste in Long-Horizon Tasks</li>
+<li><strong>저자</strong>: Wenbo Pan (City University of Hong Kong, Microsoft 인턴십 중 수행), Zhichao Liu (독립 연구자), Shujie Liu, Jingying Zeng, Chin-Yew Lin, Xianfeng Tang, Yan Lu, Qi He (이상 Microsoft), Xiaohua Jia (City University of Hong Kong)</li>
+<li><strong>출처</strong>: arXiv:2609.25804v1 [cs.AI] (2026년 9월 22일)</li>
+<li><strong>프로젝트 페이지</strong>: 코드 https://github.com/wbopan/tastebench, 데이터셋 https://huggingface.co/datasets/wenbopan/taste-bench</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.25804">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>LLM 에이전트가 장기 과제 중간에 내리는 "어느 방향으로 갈지"에 대한 판단력(=taste, 취향)을 결과를 모르는 시점에서 측정하는 벤치마크 Taste-Bench를 자동으로 구축했더니, 최고 성능 모델도 정답률 59.7%에 그쳤고, 이 판단력은 증류(distillation)로 학습시켜 실제 에이전트의 과제 성공률도 끌어올릴 수 있음을 보였다.</p>
+<h2>배경 및 문제의식</h2>
+<p>LLM 에이전트가 수행하는 과제의 길이가 계속 길어지면서, 아이디어 구상부터 논문 작성까지 연구를 수행하거나 대규모 소프트웨어 프로젝트를 여러 릴리스에 걸쳐 발전시키는 등 장기 과제가 늘고 있다. 이런 과제에서 에이전트는 "어떤 가설을 검증할지", "어떤 구현을 기반으로 삼을지" 등 이후 전체 결과를 좌우하는 결정을 수없이 내려야 한다. 문제는 잘못된 결정도 당장은 그럴듯해 보이고, 그 대가는 예산을 상당히 소모한 한참 뒤에야 드러난다는 점이다.</p>
+<p>저자들은 이런 장기적 의사결정 능력을 "taste(취향)"라고 정의한다. 기존 벤치마크(SWE-bench, AgentBench, RE-Bench 등)는 에이전트가 과제를 끝까지 완수했는지(end-to-end 성공)만 측정할 뿐, 중간 결정의 질은 전혀 측정하지 못한다. 그런데 장기 결정의 좋고 나쁨은 당장 눈에 보이지 않아 사람이 직접 라벨링하기도 어렵고 전문성도 많이 요구되어 비용이 크다. 이 논문은 "전문가 라벨링 없이 에이전트의 취향을 자동으로 측정할 수 있는가"라는 질문에서 출발한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>에이전트의 취향을 "여러 방향이 갈리는 지점(decision fork)에서 더 나은 방향을 고르는 능력"으로 정식화하고, 이미 존재하는 궤적(trajectory)의 사후 결과(hindsight)로부터 이를 측정할 수 있음을 보였다.</li>
+<li>소프트웨어 엔지니어링과 머신러닝 연구 과제에서 502개의 취향 질문으로 구성된 Taste-Bench를 구축·공개했으며, 판단이 필요한 시점(time horizon)이 멀수록 문제가 더 어려워짐을 확인했다.</li>
+<li>취향은 학습 가능함을 보였다. 정답을 이미 아는 "교사(teacher)"의 추론 과정을 학생 모델에 증류하면, 미학습 과제에서도 판단력이 향상되고 실제 에이전트 실행 성공률까지 높아진다.</li>
+</ul>
+<h2>방법론</h2>
+<p><strong>핵심 아이디어</strong>: 하나의 과제를 여러 번 시도한 궤적들은 중간의 어느 지점(fork)에서 서로 다른 방향으로 갈라지는 경우가 많다. 분기 이전까지는 조건이 동일하므로, 이후 각 branch가 도달한 실제 결과(테스트 통과 여부, 연구 점수 등)를 비교하면 "어느 방향이 더 나았는지"를 사람 개입 없이 라벨링할 수 있다. 평가 대상 모델에는 분기 지점까지의 궤적만 보여주고, 이후의 정보는 가린 채 두 후보 중 하나를 고르게 한다.</p>
+<p>Fork는 두 가지 방식으로 채굴한다.
+1. <strong>병렬(parallel) 구성</strong>: 같은 과제에 대한 서로 다른 시도들이 동일한 지점에서 갈라지고 한쪽만 성공한 경우. 에이전트 스스로는 잘못을 눈치채지 못한 채 끝까지 실행한 경우를 포착한다.
+2. <strong>탈선(detour) 구성</strong>: 하나의 궤적 안에서 에이전트가 한 방향을 시도했다가 실패를 관찰하고 다른 방향으로 스스로 수정한 경우. 생성 모델이 궤적을 읽고 "포기한 방향 → 관찰된 실패 → 회복된 방향 → 성공 증거"의 네 지점을 순서대로 찾아 fork를 구성한다.</p>
+<p>생성된 후보 fork는 품질 필터를 거친다. (1) 후보 문구만으로 답을 맞힐 수 있으면 "trivial"로 제거, (2) 전체 기록을 봐도 라벨이 명확히 뒷받침되지 않으면 "undecidable"로 제거. 이 두 필터는 생성 모델과 겹치지 않는 4개의 심판(judge) 모델 패널의 만장일치로 판정한다. 최종적으로 4,657개 후보 중 10.8%인 502개 질문이 살아남았다(공학 390개, 연구 112개). 100개 표본에 대한 사람 검토 결과 채굴된 라벨과 98.8% 일치했다(Cohen's κ = 0.973).</p>
+<p>평가 시에는 위치 편향(position bias)을 통제하기 위해 각 질문을 정방향·역방향 두 번 제시하고, 두 번 모두 맞혀야 정답으로 인정한다.</p>
+<p><strong>증류(distillation)</strong>: 정답(지지되는 후보)을 미리 알려주는 "특권적 맥락"을 가진 교사가 생성한 추론 과정을, 그런 정보 없이 질문만 보는 학생 모델에 토큰 단위 forward KL로 정렬시켜 학습한다(SDPO 계열 방식). 단순히 정답 라벨에 파인튜닝하면 근거 없이 답만 암기하므로, 추론 과정 자체를 증류하는 방식을 택했다. 학습된 학생의 판단은 실행 에이전트(executor)에게 fork별 "조언(advice)" 형태로 주입되어 별도의 실행을 안내한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Claude, GPT, Grok, DeepSeek, GLM, MiniMax, Mistral 계열의 최신 모델 14개를 동일한 조건(동일 프롬프트, 동일 토큰 예산)에서 평가했다.</p>
+<ul>
+<li><strong>전반적 성능</strong>: 최고 모델인 GPT-5.6 Sol이 평균 정확도 59.7%, GPT-5.5가 59.5%로 근소한 차이로 뒤를 이었고, 나머지 모델들은 그 아래로 폭넓게 분산되었다. 무작위 추측 정확도는 25%(양방향 모두 맞힐 확률)이므로 최고 모델도 완전히 잘 푸는 수준은 아니다.</li>
+<li><strong>시간 지평(time horizon) 효과</strong>: fork를 "prefix 안에 이미 근거가 있음", "추론으로 도출 가능", "다음 관찰로 확인됨", "더 많은 후속 작업이 필요함"의 4단계로 분류한 결과, 14개 모델 평균 정확도가 62.3%(prefix 안)에서 21.0%(더 많은 작업 필요)까지 떨어졌다. 즉 결정적 증거가 먼 미래에 있을수록 모델은 정확히 예측하지 못한다.</li>
+<li><strong>추론 예산(reasoning budget) 효과</strong>: GPT-5.6 Sol과 GPT-5.6 Luna를 3단계의 추론 노력 설정으로 재평가했으나, 추론을 더 오래 시켜도 정확도는 거의 개선되지 않았다(각각 -0.2점, +2.2점). 모델들은 오히려 가장 어려운("더 많은 작업 필요") 구간에서 가장 많은 추론 토큰을 소모했지만 정확도는 가장 낮았다.</li>
+<li><strong>SWE-bench Verified와의 비교</strong>: Taste-Bench 평균 점수와 SWE-bench Verified 공개 점수의 피어슨 상관은 r=+0.63(설명 분산 39%)에 그쳐, 두 벤치마크가 서로 다른 능력을 측정함을 시사한다. SWE-bench Verified 상위 4개 모델은 그 벤치마크에서는 4.0점 차이밖에 나지 않지만 Taste-Bench에서는 10.7점 차이로 벌어졌다.</li>
+<li><strong>증류 결과</strong>: Qwen3.6-27B를 기반으로 LoRA 증류한 학생 모델은, 학습에 전혀 사용되지 않은 held-out 질문에서 정확도가 기본 모델 30.0%에서 47.9%로(17.9%p) 상승했다. 이 학생의 판단을 조언으로 받은 실행 에이전트는 held-out SWE-bench Pro 과제 41개에서 성공률이 무조언 14.6%에서 33.7%로(19.1%p) 상승했으며, 이는 모든 fork에서 항상 정답 조언을 준 상한선(39.0%)에 근접한 수치다.</li>
+</ul>
+<h2>한계점</h2>
+<ul>
+<li>벤치마크는 GPT-5.4/5.5 에이전트가 SWE-bench Pro에서 생성한 궤적과 METR의 MALT 공개 전사(RE-Bench, HCAST 연구 과제) 두 소스에만 의존하므로, 특정 모델·과제 유형에 편향되어 있을 수 있다.</li>
+<li>SWE-bench Verified와의 상관 분석은 표본 수가 적어(11개 모델) 신뢰구간이 넓고(예: 공학 부분집합은 [-0.30, +0.79]), 두 벤치마크의 추론 노력 설정도 완전히 일치시키지 못했다.</li>
+<li>Fork 라벨은 "궤적의 최종 결과"에 기반하므로, 실행 품질이나 환경 요인이 완전히 통제되지 않은 채 판단 품질로 잘못 귀속될 가능성이 존재한다(논문은 이를 줄이기 위해 다양한 필터를 두었지만 완전히 배제하지는 못함).</li>
+<li>증류 실험은 공학(엔지니어링) 도메인 390개 질문에 국한되어 있으며, 연구(research) 도메인에 대한 증류·전이 효과는 검증되지 않았다.</li>
+</ul>
+<h2>시사점</h2>
+<p>이 연구는 "에이전트가 과제를 끝냈는가"를 넘어 "과정에서 얼마나 좋은 판단을 내렸는가"를 정량화할 새로운 축을 제시한다. 특히 사람의 전문가 라벨링 없이 기존에 쌓인 에이전트 궤적만으로 벤치마크를 자동 확장할 수 있다는 점은, 에이전트 시스템이 실제 배포에서 생성하는 방대한 궤적 데이터를 판단력 학습·평가에 재활용할 수 있는 실용적 경로를 연다. 또한 장기 추론 예산을 늘리는 것만으로는 이 판단력이 개선되지 않는다는 결과는, 단순한 사고 시간 확장보다 결과를 내다보는 판단 능력 자체를 별도로 훈련해야 함을 시사하며, 실제로 소규모 모델을 증류해 조언자(advisor)로 활용함으로써 더 큰 실행 에이전트의 성능을 끌어올릴 수 있음을 실증적으로 보여준다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.25804" target="_blank" rel="noopener">huggingface.co/papers/2609.25804</a> · 2026-09-24</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

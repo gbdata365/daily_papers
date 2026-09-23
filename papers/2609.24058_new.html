@@ -1,0 +1,116 @@
+<meta charset="UTF-8">
+<title>스크립트 인지형 전문가 혼합을 활용한 올인원 다국어 장면 텍스트 인식</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#4 · Daily Papers 2026-09-24</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 35</span>
+    </div>
+    <h1 class="article-title">All-in-One Multilingual Scene Text Recognition with Script-aware Mixture-of-Experts</h1>
+    <p class="article-title-ko">스크립트 인지형 전문가 혼합을 활용한 올인원 다국어 장면 텍스트 인식</p>
+    <p class="article-sub">하나의 공유 비전 인코더와 스크립트(문자 체계)별로 특화된 Mixture-of-Experts 디코더를 결합해, 언어별 전용 모델보다 간단하고 거대 VLM보다 가벼우면서도 더 정확한 "올인원" 다국어 장면 텍스트 인식기 ScriptMoE를 제안한 논문.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.24058" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.24058" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: All-in-One Multilingual Scene Text Recognition with Script-aware Mixture-of-Experts</li>
+<li><strong>저자</strong>: Xingsong Ye, Yongkun Du, Jiaxin Zhang, Zhixian Li, Chong Sun, Chen Li, Jing LYU, Lianwen Jin, Zhineng Chen (Fudan University Institute of Trustworthy Embodied AI, WeChat Vision/Tencent, South China University of Technology 공동 연구)</li>
+<li><strong>출처</strong>: arXiv:2609.24058v1 [cs.CV] (2026-09-21)</li>
+<li><strong>프로젝트 페이지</strong>: 코드 공개 - https://github.com/YesianRohn/ScriptMoE , https://github.com/Topdu/OpenOCR</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.24058">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>하나의 공유 비전 인코더와 스크립트(문자 체계)별로 특화된 Mixture-of-Experts 디코더를 결합해, 언어별 전용 모델보다 간단하고 거대 VLM보다 가벼우면서도 더 정확한 "올인원" 다국어 장면 텍스트 인식기 ScriptMoE를 제안한 논문.</p>
+<h2>배경 및 문제의식</h2>
+<p>장면 텍스트 인식(Scene Text Recognition, STR)은 영어와 중국어 같은 고자원 언어에서는 이미 성능이 포화 상태에 가깝지만, 일본어·한국어·아랍어·힌디어·키릴 문자 등 다른 스크립트로 넘어가면 문제가 전혀 해결되지 않은 상태다. 기존 다국어 OCR 접근법은 크게 두 갈래로 나뉜다. (1) 언어별 전문가 시스템은 언어 판별기로 각 텍스트 영역을 해당 언어 인식기로 라우팅하는데, 언어 판별이 틀리면 이후 어떤 모델도 이를 복구할 수 없는 오류 누적 문제가 있고 배포·유지 비용도 크다. (2) 거대 비전-언어 모델(VLM) 기반 시스템은 다양한 언어를 하나의 범용 모델로 통합하지만 파라미터 수와 추론 비용이 막대해 엣지 디바이스 배포가 어렵고, 여러 스크립트에서 여전히 정확도가 떨어진다. 또한 영어·중국어를 제외한 대부분의 스크립트는 대규모 실제 학습 데이터 자체가 부족하다. 저자들은 이 두 문제(데이터 부족, 용량 배분 딜레마)를 동시에 해결하는 단일 모델을 목표로 삼았다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>TextMuSS-10M</strong>: 10개 스크립트(Latin, Cyrillic, Chinese, Japanese, Korean, Arabic, Hindi, Bangla, Thai, Tibetan), 229개 언어를 아우르는 대규모 합성 장면 텍스트 데이터셋(스크립트당 100만 장, 총 1,000만 장)을 구축해 실제 데이터가 없는 언어에도 균형 잡힌 학습 신호를 제공.</li>
+<li><strong>TextMuSS-Bench</strong>: MLT2019 테스트셋을 확장하고 러시아어·태국어·티베트어를 새로 수집·주석하여 만든 10개 스크립트, 10,899장 규모의 실사 평가 벤치마크.</li>
+<li><strong>ScriptMoE</strong>: 하나의 시각 인코더를 공유하고, 디코더의 dense FFN을 이미지 단위 라우팅을 수행하는 스크립트 인지형 Sparse MoE 블록으로 교체한 구조. 이미지별로 top-2 스크립트 특화 전문가(expert)를 선택하고, 항상 활성화되는 공유 전문가가 스크립트 간 공통 지식을 흡수.</li>
+<li>통일된 학습 프로토콜 하에서 all-in-one 다국어 STR을 체계적으로 평가하여, 경량 모델임에도 강력한 VLM 및 언어별 전문가 시스템과 대등하거나 더 나은 성능을 달성함을 입증.</li>
+</ul>
+<h2>방법론</h2>
+<p>ScriptMoE는 계층적 비전 인코더 SVTRv2로 입력 이미지를 시각 토큰 시퀀스로 인코딩한 뒤, 이를 스크립트 인지형 Transformer 디코더(2개 블록, autoregressive)에 입력한다. 디코더의 FFN을 MoE 블록으로 대체하는데, 핵심은 "하나의 텍스트 이미지는 거의 항상 단일 스크립트만 포함한다"는 관찰(single-image-few-script prior)이다. 이에 따라 라우팅을 토큰 단위가 아닌 이미지(샘플) 단위로 한 번만 수행하여, 한 이미지의 모든 출력 토큰이 동일한 전문가 경로를 공유하게 한다. 이는 라우팅 비용을 줄이고, 토큰 단위 라우팅에서 발생하는 학습 불안정("ping-ponging")을 피하며, 각 전문가를 특정 스크립트 전문가로 명확히 해석 가능하게 만드는 장점이 있다.</p>
+<p>라우터는 평균 풀링된 시각 토큰을 입력받아 소프트맥스 확률로 top-2 전문가를 선택하고, 게이트 값은 재정규화된다. 항상 활성화되는 공유 전문가(shared expert)와 top-2 라우팅 전문가의 출력은 학습 가능한 토큰별 게이트 α_t(시그모이드)로 가중합된다. 전문가는 문자 형태학적 유사성에 따라 4개 그룹(알파벳=Latin+Cyrillic, CJK=중국어/일본어/한국어, 아랍어 계열, 기타=힌디/벵골어/티베트어/태국어)으로 구성된다.</p>
+<p>라우터가 임의의 그룹화를 학습하지 않고 실제 스크립트 경계를 따르도록, 동일한 풀링 표현을 입력받는 보조 4-way 스크립트 분류 헤드를 두고 교차 엔트로피 손실(가중치 λ_scls=0.1)로 약하게 지도한다. 전체 학습 목적함수는 표준 AR 교차 엔트로피 손실과 이 보조 손실의 합이다. 합성 데이터는 UnionST 엔진을 확장하여 스크립트별 어휘 수집, 문구/문장 결합, 무작위 순열 텍스트, 신문 코퍼스(News Crawl) 기반 문장 등 4가지 소스를 혼합(40/20/20/20%)해 생성했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>TextMuSS-Bench(10개 스크립트, 10,899장)에서 ScriptMoE는 평균 단어 정확도 82.06%를 달성해, 가장 강력한 기존 STR 베이스라인(SVTRv2-AR, 80.75%)을 1.31%p 상회했다. 특히 저자원·시각적으로 어려운 스크립트인 아랍어(+2.98%p), 태국어(+2.40%p), 티베트어(+1.96%p)에서 개선폭이 컸다. Qwen3.5-9B, PP-OCRv5 MLT 등 범용/특화 VLM 및 전문가 시스템과 비교하면 이들을 18~70%p 차이로 크게 앞섰으며, 일부 VLM은 아랍어·벵골어·티베트어에서 아예 인식에 실패(0% 근접)했다. ScriptMoE는 전체 45.85M 파라미터 중 이미지당 41.13M만 활성화되어, VLM 대비 한두 자릿수 적은 파라미터로 이를 달성했다.</p>
+<p>CC-OCR end-to-end 다국어 벤치마크에서는 PP-OCRv5의 검출기는 그대로 두고 인식기만 ScriptMoE로 교체했을 때 F1 점수가 65.71%에서 80.89%로 15.18%p 상승했으며, 이는 최고 성능 VLM(Qwen3.5-9B, 80.73%)과 OCR 특화 VLM(Qianfan-OCR, 76.70%)을 근소하게 웃도는 수치로, 파라미터 규모가 100배 이상 작은 모델로 달성한 결과다.</p>
+<p>데이터 어블레이션에서는 합성 데이터만으로도 SynthMLT보다 크게 앞섰고, 실제+합성 데이터를 결합했을 때 MLT2019 평균이 real-only 대비 8.40%p 상승했다. 모델 어블레이션에서는 전문가 수 4개·top-2 라우팅·이미지 단위 라우팅이 최적 조합임을 확인했으며(전문가를 10개로 늘리면 오히려 성능 저하), 공유 전문가 제거 시 저자원 스크립트(아랍어 -3.62%p, 티베트어 -3.65%p)에서 큰 손실이 발생해 공유 전문가의 교차 스크립트 전이 역할이 입증되었다. 스크립트 분류 보조 손실 제거 시에도 평균 0.43%p 하락했다. 중국어(BCTR)와 영어(Union14M) 단일언어 참조 벤치마크에서도 ScriptMoE는 각각 기존 최강 베이스라인 대비 소폭 개선을 보여, 다국어 특화가 주요 언어 성능을 희생시키지 않음을 확인했다.</p>
+<h2>한계점</h2>
+<p>논문이 명시한 한계는 다음과 같다. (1) 합성 데이터인 TextMuSS-10M과 실제 이미지 사이에는 여전히 도메인 갭이 존재한다. (2) Latin-Cyrillic 동형 문자(homoglyph) 혼동 문제가 완화되었지만 완전히 해결되지는 않았다(러시아어 성능이 상대적으로 낮은 주된 원인). (3) End-to-end 파이프라인이 여전히 상류 검출기(PP-OCRv5 detector)에 의존하며, 이 검출기의 다국어 검출 품질이 전체 성능의 상한을 제약할 수 있다. 또한 어블레이션에서 확인된 바와 같이 종합 정확도 최적화가 개별 스크립트별 최고 성능과는 트레이드오프 관계에 있다.</p>
+<h2>시사점</h2>
+<p>전체 언어를 한 모델에 밀어넣는 대신 "이미지당 스크립트는 거의 하나"라는 구조적 사전 지식을 활용해 라우팅 단위를 토큰이 아닌 이미지로 낮춘 설계는, 대규모 MoE-LLM의 아이디어를 경량 인식 모델에 효율적으로 이식한 사례로 볼 수 있다. 특히 저자원 스크립트에서 실제 데이터가 거의 없는 상황에서도 균형 잡힌 대규모 합성 데이터(TextMuSS-10M)만으로 유의미한 성능을 낼 수 있음을 보여줘, 데이터 부족이 심각한 소수 언어 OCR 연구에 실질적인 방법론을 제시한다. 또한 거대 VLM과 동등하거나 그 이상의 정확도를 100배 이상 적은 파라미터로 달성했다는 점은, 엣지/온디바이스 다국어 OCR 배포에 있어 스크립트 인지형 MoE 아키텍처가 실용적 대안이 될 수 있음을 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.24058" target="_blank" rel="noopener">huggingface.co/papers/2609.24058</a> · 2026-09-24</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

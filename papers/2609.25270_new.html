@@ -1,0 +1,140 @@
+<meta charset="UTF-8">
+<title>RULER</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#2 · Daily Papers 2026-09-24</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 59</span>
+    </div>
+    <h1 class="article-title">RULER: Instance-aware Rubric Rewards for SVG Generation</h1>
+    <p class="article-title-ko">RULER: SVG 생성을 위한 인스턴스 인식 루브릭 보상</p>
+    <p class="article-sub">자연어 지시문으로부터 SVG(벡터 그래픽)를 생성하는 개방형(open-ended) 과제에서, 인스턴스별로 맞춤화된 6항목 루브릭을 VLM 심판 모델이 채점하여 강화학습 보상으로 사용함으로써, 기존 스칼라 지표(CLIP, Aesthetic 등) 기반 보상의 리워드 해킹 문제를 해결하고 SVG 생성 품질을 크게 끌어올린 연구이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.25270" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.25270" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: RULER: Instance-aware Rubric Rewards for SVG Generation</li>
+<li><strong>저자</strong>: Hangyu Ran, Yuhao Zheng(이상 공동 1저자), Yingying Zhang, Kevin Qinghong Lin, Han Peng(이상 교신저자) — Ant Group, 홍콩과기대(광저우), 독립 연구자, 옥스퍼드 대학교 공동 연구</li>
+<li><strong>출처</strong>: arXiv:2609.25270v1 [cs.CV] (2026년 9월 21일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://hangyuran.github.io/RULER/">https://hangyuran.github.io/RULER/</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.25270">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>자연어 지시문으로부터 SVG(벡터 그래픽)를 생성하는 개방형(open-ended) 과제에서, 인스턴스별로 맞춤화된 6항목 루브릭을 VLM 심판 모델이 채점하여 강화학습 보상으로 사용함으로써, 기존 스칼라 지표(CLIP, Aesthetic 등) 기반 보상의 리워드 해킹 문제를 해결하고 SVG 생성 품질을 크게 끌어올린 연구이다.</p>
+<h2>배경 및 문제의식</h2>
+<ul>
+<li>SVG 코드 생성은 하나의 지시문에 대해 무수히 많은 시각적으로 타당한 결과물이 존재하는 개방형 과제로, 절대적인 정답(ground truth) 이미지가 없다.</li>
+<li>이 때문에 두 가지 문제가 서로 얽혀 있다.</li>
+<li><strong>평가 지표의 신뢰성 부족</strong>: CLIPScore, 미학 분류기(Aesthetic classifier), Human Preference Score(HPS) 등은 사실적인 자연 이미지에 맞춰 보정된 지표라서, 양식화된 벡터 그래픽에는 잘 전이되지 않는다. 실제로 깨진(broken) SVG에 오히려 더 높은 점수를 주는 등 인간 판단과의 상관관계가 낮다.</li>
+<li><strong>학습 신호의 부정확성</strong>: 지시문-SVG 쌍에 대한 지도미세조정(SFT)은 데이터셋에 특화된 템플릿을 단순 모방(behavioral cloning)하는 데 그쳐 일반화에 실패한다. 강화학습(RL)이 대안이지만, 보상으로 위의 불안정한 지표를 그대로 재사용하면 정책이 "속이기 쉬운" 신호 쪽으로 편향되는 리워드 해킹(reward hacking)이 발생한다.</li>
+<li>저자들은 900개의 사람이 평가한 SVG 샘플을 통해, 다축(multi-axis) 루브릭으로 비전-언어 모델(VLM)을 프롬프팅해 채점하는 방식이 스칼라 지표보다 사람의 평가와 훨씬 더 잘 일치함을 실증적으로 확인했다(Spearman ρ=0.7929, Goodman-Kruskal γ=0.7574, 대비 CLIP은 각각 0.5518/0.5295).</li>
+</ul>
+<h2>핵심 기여</h2>
+<ol>
+<li><strong>루브릭 기반 SVG 평가 방법론 제시</strong>: 표준 스칼라 지표가 도메인 변화(자연 이미지→양식화된 벡터 그래픽)에서 실제 시각 품질에 둔감함을 체계적으로 규명하고, 루브릭 기반 채점이 인간 선호와 훨씬 더 잘 상관됨을 보였다.</li>
+<li><strong>RULER (Instance-aware Rubric Rewards for Reinforcement LEaRning) 제안</strong>: 각 지시문마다 의미적 충실도(Semantic Fidelity), 시각적 품질(Visual Quality), 렌더링 스타일(Rendering Style)의 3개 축에 걸친 6개 항목의 인스턴스별 맞춤 루브릭을 생성하고, 이를 조밀(dense)하고 질의 조건부(query-conditioned)인 RL 보상으로 사용해 모호한 시각적 판단을 명시적으로 검증 가능한 하위 목표로 전환한다.</li>
+<li><strong>최고 수준의 성능 입증</strong>: MMSVG-Illustration 및 MMSVG-Icon 벤치마크에서 전용 SVG 특화 모델들과 표준 RL 베이스라인을 능가하는 최고 루브릭 점수를 달성했다.</li>
+</ol>
+<h2>방법론</h2>
+<ul>
+<li><strong>과제 정식화</strong>: SVG 생성을 토큰 단위 마르코프 결정 과정(MDP)으로 정의한다. 지시문 Q가 주어지면 정책 모델 πθ가 SVG 시퀀스를 자기회귀적으로 생성하고, 렌더링 엔진 E가 이를 이미지로 변환하며, 보상함수 R(·)이 이 이미지에 대해 계산된다. 절대 정답이 없으므로 R(·)의 설계가 핵심 과제로 부각된다.</li>
+<li><strong>인스턴스 인식 루브릭 생성 (§3.3)</strong>: 프론티어 모델(예: Claude-Opus-4.6)이 텍스트 지시문 하나만으로(정답 SVG 없이) 6개 항목·3개 축(의미/시각/스타일)으로 구성된 루브릭 C_Q = {(c_k, w_k)}_{k=1}^6 을 생성한다. 각 항목은 픽셀·경로 수준의 정확한 재현이 아니라 "설계 의도" 수준에서 기술되어 개방형 해 공간을 보존하며, 서로 겹치지 않는 독립적 판단 기준이 되도록 구성된다.</li>
+<li><strong>보상 계산 (§3.4)</strong>: 렌더링된 이미지 I_gen을 심판 VLM(M_judge, 학습 시 Qwen3-VL-8B)이 각 루브릭 항목별로 0~1 사이의 연속적 만족도 s_k로 채점하고, 가중 평균 R(I_gen) = Σw_k·s_k / Σw_k 를 최종 보상으로 사용한다.</li>
+<li><strong>정책 최적화</strong>: Group Relative Policy Optimization(GRPO)을 사용해, 같은 지시문에 대해 G=8개 롤아웃을 샘플링하고 그룹 내 상대 보상으로 정규화된 어드밴티지를 계산해 클리핑된 대리목적함수로 정책을 갱신한다. KL 정규화는 사용하지 않는다.</li>
+<li><strong>학습 데이터</strong>: MMSVG-Icon(약 2만개), MMSVG-Illustration(약 1.1만개) 학습 분할에서 프롬프트를 샘플링해 루브릭을 생성하고, 구조·품질 필터링(이상적 SVG의 자체 채점 점수가 0.9 미만인 루브릭 제외)을 거쳐 총 30,737개의 프롬프트-루브릭 쌍을 구축했다.</li>
+<li>정책 백본은 Qwen3-8B(및 강건성 실험에서 Qwen3-4B), 학습은 VERL 프레임워크와 vLLM 롤아웃 엔진, H800 GPU 8장 1노드에서 수행되었다.</li>
+</ul>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li><strong>벤치마크·지표</strong>: MMSVG-Illustration(삽화형), MMSVG-Icon(아이콘형) 두 벤치마크에서 CLIP Score, Aesthetic Score, HPS와 함께, GPT-5-mini를 독립 심판으로 사용한 범용(universal) Rubric Score를 핵심 지표로 사용.</li>
+<li><strong>주요 결과 (Table 2)</strong>: RULER는 Qwen3-8B 백본 대비 Rubric 점수를 Illustration에서 0.432→0.693, Icon에서 0.395→0.683으로 향상시켰으며, 훨씬 큰 DeepSeek-V3(0.686/0.673)와 대등하거나 이를 상회하고, VectorFusion/SVGDreamer 등 확산 모델 기반 최적화 기법 및 IconShop/OmniSVG/JanusCoder 등 SVG 특화 모델을 모두 능가했다. 토큰 수는 확산 최적화 기법 대비 훨씬 적다(2.0k vs 31.4k~124.3k).</li>
+<li><strong>인간 선호도 평가</strong>: 150개 프롬프트에 대한 블라인드 쌍대비교에서 RULER는 모든 비교 대상(Qwen3-8B, Qwen3-32B, VectorFusion, OmniSVG, JanusCoder) 대비 비무승부 승률 53.3%~96.5%를 기록했다.</li>
+<li><strong>보상 설계 비교(RQ2, Table 4)</strong>: CLIP+Aesthetic+HPS 조합 보상(C+A+H RL)은 미학 점수를 인위적으로 부풀리며(Icon 6.210) 심각한 리워드 해킹을 일으켜 Rubric 점수가 오히려 0.395→0.262로 하락(중복·겹친 획으로 토큰 길이 폭증 6.3k). 범용(query-agnostic) 루브릭 RL은 안정적이나 인스턴스별 맥락을 반영하지 못해 RULER보다 낮은 성능(Icon 0.591 vs 0.683)을 보였다.</li>
+<li><strong>어블레이션(RQ3)</strong>: 6개 항목 중 시각적 품질(Visual Quality) 축 제거 시 가장 큰 하락(0.693→0.580), 렌더링 스타일 축 제거가 그 다음(→0.599), 의미 충실도 축 제거는 상대적으로 영향이 작음(→0.623, Qwen3-8B의 기존 텍스트-이미지 정합 능력 때문으로 추정). 더 엄격하지만 스타일 축이 빠진 대안(Rubric-S)은 오히려 "텍스트 힌트 해킹"(프롬프트 단어를 그대로 이미지에 그려 넣는 편법)을 유발하며 가장 낮은 점수(0.536)를 기록해, 축의 다양성이 채점 엄격성보다 중요함을 보였다.</li>
+<li><strong>강건성(RQ4)</strong>: 정책 백본을 Qwen3-4B로 축소해도(0.372→0.561/0.338→0.559) 향상이 유지되며, 루브릭 생성 모델을 Claude-Opus-4.6에서 GPT-5.5로 바꿔도 비슷한 성능 향상(Icon Rubric 0.662 vs 0.646)을 보여, 특정 모델에 종속되지 않는 견고함을 입증했다.</li>
+<li><strong>비용</strong>: 루브릭 생성은 오프라인 1회성 전처리로, 학습 데이터 전체(30,737건) 생성 비용은 약 $2,013(프롬프트당 약 $0.0655)이며, 정책 학습 중에는 루브릭 생성 모델을 다시 호출하지 않는다.</li>
+</ul>
+<h2>한계점</h2>
+<ul>
+<li>프론티어 모델(루브릭 생성)과 VLM 심판이라는 두 외부 모델에 의존하므로, 보상 품질이 이들의 편향·실패 양상을 그대로 물려받을 수 있으며, 학습 분포 밖 프롬프트에서는 심판이 피상적 단서를 과대평가하거나 미묘한 스타일적 특성을 과소평가할 수 있다.</li>
+<li>매 학습 스텝마다 SVG 렌더링과 VLM 심판 질의가 필요해 CLIP 등 경량 스칼라 보상 대비 계산 비용이 크게 증가하며, 이는 더 큰 모델·긴 롤아웃·넓은 하이퍼파라미터 탐색으로의 확장을 제약할 수 있다.</li>
+<li>인스턴스별 루브릭이라 해도 품질을 의미/시각/스타일 3개 축으로 고정 분해하는 구조 자체는, 모든 예술적 의도나 도메인별 선호를 완전히 포착하지 못할 수 있다. 상호작용적, 사람이 직접 조정 가능한, 또는 도메인 적응형 루브릭 설계는 향후 과제로 남는다.</li>
+</ul>
+<h2>시사점</h2>
+<ul>
+<li>정답이 없는 개방형 생성 과제에서 스칼라 보상 대신 다축·인스턴스별 루브릭을 VLM으로 채점해 RL 보상으로 쓰는 접근은 리워드 해킹을 억제하면서도 조밀한 학습 신호를 제공할 수 있음을 보여준다.</li>
+<li>이 방법론은 SVG에 국한되지 않고, 절대 정답이 존재하지 않는 다른 개방형 시각적 코드 생성(예: 다이어그램, UI 코드) 과제에도 확장 가능한 일반적 패러다임으로 볼 수 있다.</li>
+<li>루브릭 축의 "다양성(complementarity)"이 채점 기준의 "엄격함"보다 리워드 해킹 방지에 더 중요하다는 발견은, 향후 루브릭 기반 보상 설계 시 항목 수를 줄이거나 특정 축을 제거하는 것에 신중해야 함을 시사한다.</li>
+</ul>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.25270" target="_blank" rel="noopener">huggingface.co/papers/2609.25270</a> · 2026-09-24</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

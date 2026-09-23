@@ -1,0 +1,133 @@
+<meta charset="UTF-8">
+<title>벨만 정책 최적화</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#6 · Daily Papers 2026-09-24</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 24</span>
+    </div>
+    <h1 class="article-title">Bellman Policy Optimization</h1>
+    <p class="article-title-ko">벨만 정책 최적화</p>
+    <p class="article-sub">정책 미러 하강(Policy Mirror Descent)을 벨만 방정식으로 재구성해 중간 상태의 가치·이득(advantage)을 전혀 추정하지 않고도 동일한 최적해에 도달하는 크리틱-프리(critic-free) 강화학습 알고리즘 BPO를 제안했으며, 수학 추론 벤치마크에서 GRPO·GSPO·CISPO·DPPO를 모두 앞섰다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.15987" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.15987" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Bellman Policy Optimization</li>
+<li><strong>저자</strong>: Zhuoqing Song (Apodex US / Princeton University), Haotian Xu, Xikun Zhang, Lidong Bing (이상 Apodex US, Inc.)</li>
+<li><strong>출처</strong>: arXiv:2609.15987v1 [cs.LG] (2026년 9월 14일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.15987">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>정책 미러 하강(Policy Mirror Descent)을 벨만 방정식으로 재구성해 중간 상태의 가치·이득(advantage)을 전혀 추정하지 않고도 동일한 최적해에 도달하는 크리틱-프리(critic-free) 강화학습 알고리즘 BPO를 제안했으며, 수학 추론 벤치마크에서 GRPO·GSPO·CISPO·DPPO를 모두 앞섰다.</p>
+<h2>배경 및 문제의식</h2>
+<p>검증 가능한 보상을 이용한 강화학습(RLVR)은 LLM의 추론 능력을 향상시키는 핵심 기법으로 자리잡았고, GRPO(Group-Relative Policy Optimization)와 그 변형들이 널리 쓰인다. GRPO는 그룹 내 보상을 정규화해 이득을 계산하고, 이를 PPO 스타일의 클리핑된 목적함수와 토큰 단위 중요도 샘플링 비율로 학습하는 방식이라 별도의 가치 모델(critic)을 훈련할 필요가 없다는 장점이 있다.</p>
+<p>저자들은 정책 최적화의 이론적 뿌리인 정책 미러 하강(PMD)에서 출발한다. PMD는 행동 가치(action value)와 발산 페널티를 이용해 정책을 갱신하는 원칙적인 방법이지만, 언어 생성에 직접 적용하려면 매 중간 상태(토큰 위치)마다 가치를 추정해야 한다. 이를 위해 별도의 가치 모델을 학습시키면 메모리·연산 비용이 늘어나고, 특히 추론(reasoning) 과제에서는 학습된 가치 추정치가 부정확해지는 문제가 보고되어 있다. 따라서 "가치 모델 없이도 PMD와 동일한 정책 갱신을 재현할 수 있는가"가 이 논문의 핵심 질문이다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>종결 보상(terminal reward)만 있는 자기회귀 생성 설정에서 PMD를 크리틱-프리·궤적 단위(trajectory-level) 목적함수로 재구성하는 이론을 제시하고, 이 재구성된 목적함수가 원래 PMD 목적함수와 롤아웃 정책이 도달 가능한 상태들에서 동일한 유일 최적해를 가짐을 증명했다(Theorem 1).</li>
+<li>이 이론적 목적함수를 그룹 기반 추정과 그래디언트 근사를 통해 실용적인 BPO 손실 함수로 유도했다. 이 손실은 GRPO의 중요도 샘플링 비율 대신, 상보적(complementary) 토큰 확률의 평활화된(smoothed) 비율인 "불일치 보정 가중치(mismatch-correction weight)"를 사용한다.</li>
+<li>Qwen3-30B-A3B-Base 모델과 수학 추론 벤치마크(AIME 2024~2026)에서 BPO가 GRPO-ClipHigher, GSPO, CISPO, DPPO 대비 3.1~11.0%p 높은 평균 정확도(50.5%)를 달성함을 실험으로 확인했다.</li>
+</ul>
+<h2>방법론</h2>
+<p>BPO의 유도는 세 단계로 이루어진다.</p>
+<ol>
+<li>
+<p><strong>출발점 (Advantage 기반 PMD)</strong>: 먼저 PMD의 일반 목적함수에 롤아웃 정책 µ 기준의 이득 함수 Aµ(s, y)를 대입한다. 이 문제의 닫힌 형태 해는 롤아웃 정책에 지수화된 이득을 곱하고 상태별 분배함수(partition function)로 정규화한 형태(exponential-tilting 형태)로 주어진다.</p>
+</li>
+<li>
+<p><strong>크리틱-프리 재구성</strong>: 위 최적해의 조건식(로그 확률비 - 이득 = 0)에서, 벨만 방정식을 이용해 한 응답 안의 토큰별 이득들을 모두 더하면 "종결 보상 - 초기 가치(V^µ(x))"로 정확히 텔레스코핑(telescoping)됨을 보인다. 즉 중간 상태 가치들은 모두 상쇄되어 사라지고, 필요한 것은 검증기가 제공하는 종결 보상과, 프롬프트에 대한 기대 보상인 초기 가치 V^µ(x)뿐이다. V^µ(x)는 같은 프롬프트에 대한 샘플링된 응답들의 평균 보상으로 쉽게 추정할 수 있다. 저자들은 이렇게 얻은 "궤적 단위 잔차(trajectory-level residual) δ"의 기대 제곱을 최소화하는 목적함수(식 18)를 정의하고, 이 목적함수의 유일 최적해가 원래 PMD의 최적해와 (롤아웃 정책이 도달 가능한 상태들에서) 정확히 일치함을 마팅게일(martingale) 논증으로 증명한다(Theorem 1, 필요성 증명은 부록 A.1).</p>
+</li>
+<li>
+<p><strong>실용적 근사 (BPO 손실)</strong>: 이론적 목적함수를 실제 학습에 쓸 수 있도록 네 단계로 근사한다. (i) 제곱 잔차 손실을 π=µ 지점에서 선형화하고, (ii) 초기 가치와 프롬프트별 스케일링 인자(보상 표준편차의 역수)를 그룹 롤아웃에서 추정해 GRPO와 동일한 형태의 그룹 정규화 이득 Â_i를 얻으며, (iii) 계산 비용이 큰 전체 KL 발산 대신 이진(binary) KL 발산으로 근사해 "1-µ(y|s))/(1-π(y|s))" 형태의 배수를 얻고, 이를 수치 안정성을 위해 가법적으로 평활화한 것이 불일치 보정 가중치 ω_i^t(식 15)이다. (iv) 마지막으로 GRPO와 동일한 형태의 클리핑 마스크를 적용하고 ω_i^t를 상수 C로 캡핑한다.</p>
+</li>
+</ol>
+<p>최종 BPO 손실은 GRPO의 토큰별 손실 형태를 그대로 유지하되, 중요도 샘플링 비율 r_i^t를 불일치 보정 가중치 min(sg(ω_i^t), C)로 교체한 형태다. 즉 기존 GRPO 파이프라인에 거의 그대로 이식 가능한 손실 함수다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Qwen3-30B-A3B-Base를 DAPO-Math-17k(영어 부분집합)로 학습시키며, 정책 손실만 바꾸고 나머지 설정(배치 256 프롬프트 × 응답 16개, 최대 응답 길이 16384 토큰, 400 스텝 = 3200회 옵티마이저 업데이트, rollout-router replay 등)은 GRPO-ClipHigher, GSPO, CISPO, DPPO와 동일하게 통제했다. BPO는 ϵ=0.1, C=3.0을 사용했다.</p>
+<ul>
+<li>AIME24/25/26 Avg@32(32회 샘플링 정확도 평균)로 평가한 결과, BPO는 평균 50.5%를 기록해 최강 베이스라인인 CISPO(47.4%)를 3.1%p, GRPO-ClipHigher(39.5%)를 11.0%p 앞섰고 세 벤치마크 모두에서 최고 성능을 보였다.</li>
+<li>400 스텝 종료 시점 정확도도 BPO(49.4%)가 두 번째로 강한 DPPO(45.5%)보다 높았다(Figure 1).</li>
+<li>Qwen3-4B-Base, 1000스텝 설정에서 진행한 소거 실험(Appendix C)에서, 평활화 파라미터 ϵ을 {0.05, 0.1, 0.2, 0.3}으로 바꿔도 정확도는 24.1~25.8% 범위로 안정적이었고, 캡핑 상수 C를 {2.0, 3.0, 4.0}으로 바꿔도 25.3~25.8% 범위로 거의 변화가 없었다. 모든 설정에서 GRPO-ClipHigher(20.5%)보다 크게 우수했다.</li>
+</ul>
+<h2>한계점</h2>
+<ul>
+<li>논문 스스로 명시한 한계는 별도 절로 제시되지 않았다. 다만 본문에서 확인되는 한계로, 실험이 Qwen3 계열(30B-A3B, 4B) 모델과 수학 추론(DAPO-Math-17k, AIME) 과제에만 한정되어 있어, 다른 아키텍처나 코딩·에이전트형 과제 등 비수학 도메인으로의 일반화는 검증되지 않았다.</li>
+<li>이론적 등가성(Theorem 1)은 롤아웃 정책 µ가 도달 가능한 상태(support) 위에서만 보장되며, 실제 학습 중 정책이 롤아웃 분포를 벗어나는 오프-폴리시(off-policy) 정도가 커질 경우의 근사 오차는 논문에 명시되지 않음.</li>
+<li>불일치 보정 가중치는 선형화·이진 KL 근사·가법적 평활화 등 여러 근사를 거쳐 유도되므로, 각 근사 단계가 누적적으로 최종 성능에 미치는 영향(예: 이진 KL 근사 자체의 오차)에 대한 별도의 정량 분석은 제공되지 않는다.</li>
+</ul>
+<h2>시사점</h2>
+<p>BPO는 "가치 모델 없이도 PMD와 동일한 최적해를 보장하는 정책 갱신"이라는 이론적 결과를 실제로 구현 가능한 손실 함수로 완결시킨 사례로, GRPO 계열 알고리즘이 암묵적으로 의존해온 중요도 샘플링 비율을 이론적으로 유도된 대안(불일치 보정 가중치)으로 대체할 수 있음을 보였다. 특히 벨만 방정식을 이용한 텔레스코핑 논증은 크레딧 할당(credit assignment) 문제를 우회하는 일반적인 기법으로, 향후 다른 RLVR 알고리즘 설계에도 적용될 수 있는 이론적 도구를 제공한다. 실험적으로는 하이퍼파라미터(ϵ, C)에 대한 민감도가 낮아 실무 적용 시 튜닝 부담이 적다는 점도 실용적 의의가 크다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.15987" target="_blank" rel="noopener">huggingface.co/papers/2609.15987</a> · 2026-09-24</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

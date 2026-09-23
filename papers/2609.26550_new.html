@@ -1,0 +1,127 @@
+<meta charset="UTF-8">
+<title>JEV-as-a-Judge</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#9 · Daily Papers 2026-09-24</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 17</span>
+    </div>
+    <h1 class="article-title">JEV-as-a-Judge: Accept When Confident, Escalate When Unsure</h1>
+    <p class="article-title-ko">JEV-as-a-Judge: 확신하면 수용하고 불확실하면 에스컬레이션하기</p>
+    <p class="article-sub">자연어 설명(rationale) 없이 결정(verdict)과 라벨 확률만 반환하는 "결정 전용(decision-only)" LLM 심사자 TypeSafe JEV를 열여섯 개의 생성형·보상모델 심사자와 비교한 결과, 저렴한 JEV가 일반 선호·근거 기반 사실성 판단에서는 최상위 LLM 심사자(GPT-6)와 3%p 이내로 근접하면서도 요금은 0.36% 수준에 불과했고, JEV의 신뢰도(확신도)로 애매한 사례만 골라 상위 LLM에 넘기는 캐스케이드를 적용하면 비용을 크게 절감하면서도 GPT-6 정확도의 약 99%(단일 오더 기준)를 유지할 수 있었다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.26550" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.26550" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: JEV-as-a-Judge: Accept When Confident, Escalate When Unsure</li>
+<li><strong>저자</strong>: Yubo Li, Yidi Miao, Ramayya Krishnan, Rema Padman (Carnegie Mellon University)</li>
+<li><strong>출처</strong>: arXiv:2609.26550v1 [cs.AI] (2026년 9월 22일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음 (익명 재현용 부록 ZIP만 언급됨)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.26550">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>자연어 설명(rationale) 없이 결정(verdict)과 라벨 확률만 반환하는 "결정 전용(decision-only)" LLM 심사자 TypeSafe JEV를 열여섯 개의 생성형·보상모델 심사자와 비교한 결과, 저렴한 JEV가 일반 선호·근거 기반 사실성 판단에서는 최상위 LLM 심사자(GPT-6)와 3%p 이내로 근접하면서도 요금은 0.36% 수준에 불과했고, JEV의 신뢰도(확신도)로 애매한 사례만 골라 상위 LLM에 넘기는 캐스케이드를 적용하면 비용을 크게 절감하면서도 GPT-6 정확도의 약 99%(단일 오더 기준)를 유지할 수 있었다.</p>
+<h2>배경 및 문제의식</h2>
+<p>LLM-as-a-judge는 대화, 추론, 코딩 등 다양한 개방형 과제에 대한 평가를 사람 대신 대규모로 수행할 수 있게 해주었지만, 두 가지 실질적 제약이 있다. 첫째, 추론 모델이 사고 과정을 길게 생성할수록 판단 품질은 개선될 수 있지만 토큰 기반 과금 하에서 비용과 지연이 함께 증가하며, 간단한 문제조차 불필요하게 긴 추론을 거치는 경우가 많다. 둘째, LLM이 스스로 보고하는 확신도(confidence)는 종종 과신(overconfidence)되어 있어, 어떤 판단을 믿고 어떤 판단을 재검토해야 할지 구분하는 신뢰할 수 있는 신호가 부족하다. 저자들은 "결정과 확률만 노출하는" 저비용 심사자가 1차 필터 역할을 하면서, 스스로의 확신도를 이용해 상위 모델로 넘겨야 할 사례를 식별할 수 있는지를 핵심 질문으로 삼는다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>자연어 설명 없이 타입이 정해진 결정과 라벨 확률만 반환하는 호스티드 서비스 TypeSafe JEV를, 동일한 "결정+확률" 출력 계약을 사용하는 16개의 생성형 LLM 심사자 및 보상 모델(PairRM, Skywork-Reward-V2 등)과 다중 벤치마크에서 비교하는 대규모 실증 연구를 수행했다.</li>
+<li>벤치마크 라벨만이 아니라, 라벨 불일치 항목 183건에 대해 블라인드 인간 재판정을 별도로 수행하여 벤치마크 라벨 자체의 노이즈와 실제 심사자 품질을 분리했다.</li>
+<li>JEV의 최대 라벨 확률(q)이 정확도와 단조적으로 상관관계를 가짐을 보이고, 이를 근거로 "확신하면 수용, 불확실하면 상위 LLM으로 에스컬레이션"하는 신뢰도 캐스케이드를 설계·평가했다.</li>
+<li>사전에 동결(freeze)된 임계값과 정책, 별도의 검증(selection)/시험(test)/확장(extension) 데이터 분할을 통해 정책이 과적합되지 않았는지 검증하는 엄격한 실험 프로토콜을 제시했다.</li>
+<li>어떤 업무 유형에서 저비용 심사자로 충분하고, 어떤 유형에서 에스컬레이션이 필요한지를 정리한 "운영 범위(operating envelope)" 표를 제공했다.</li>
+</ul>
+<h2>방법론</h2>
+<p>JEV는 자연어 지침과 구조화된 입력을 받아 지정된 출력 타입(Choice, Noul, Score)에 대한 확률 분포를 반환하는 호스티드 서비스이며, 이번 연구에서는 주로 Choice(선택형) 질의 방식을 사용했다. 신뢰도 지표로는 JEV가 제공하는 네이티브 confidence 대신, 라벨 확률 중 최댓값 q = max_k p_k를 일관되게 사용했다(둘의 스피어만 상관은 0.948~0.999로 매우 높음). 비교 대상 생성형 심사자(GPT-4.1/5.x/6, Gemini, Claude Sonnet 5, Qwen, GPT-OSS 등)도 설명 없이 결정과 라벨 확률만 반환하도록 동일한 프롬프트 계약을 적용했다. 평가 과제는 크게 네 갈래로 나뉜다: (1) 선호 쌍 비교(RewardBench), (2) 근거 기반 사실성 판단(HaluEval), (3) 최종 답안 채택 여부 판정(기존 데이터셋), (4) 어려운 정답성 판단(JudgeBench), 그리고 후속으로 RewardBench 2·RM-Bench의 스타일/사지선다 과제가 추가되었다. 데이터는 사전에 동결된 642건의 파일럿(선택용 40%/시험용 60% 분할)과 별도의 670건 확장 세트로 나뉘어, 온도 스케일링과 캐스케이드 임계값은 오직 선택 세트에서만 적합(fit)되고 시험·확장 세트는 순수 평가용으로만 사용되었다. 캐스케이드는 쌍대 비교의 경우 두 순서(정방향/역방향) 모두에 대해 질의한 뒤 정렬된 확률을 평균해 최종 확신도를 산출하고, 이 값이 임계값 τ 이상이면 JEV의 결정을 채택하고 그렇지 않으면 상위 LLM(예: GPT-6)의 결정을 최종 판정으로 사용한다.</p>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li><strong>일반 선호·근거 기반 사실성</strong>: RewardBench에서 JEV 92.2% vs GPT-6 93.5%(차이 -1.3점), HaluEval에서 JEV 87.5% vs GPT-6 86.7%(+0.8점)로 JEV가 3점 이내로 근접했다. 블라인드 인간 재판정 결과 HaluEval의 동률은 상당 부분 라벨 노이즈에 기인했으며(라벨 교정 후 JEV 95.8%, GPT-6 98.3%), RewardBench에서는 사람이 GPT-6를 라벨보다 더 많이 지지했다(교정 차이 -3.0점).</li>
+<li><strong>어려운 정답성 판단(JudgeBench)</strong>: JEV 78.6% vs GPT-6 93.1%로 -14.6점의 큰 격차가 나타났으며, 특히 추론(68.4% vs 95.9%)과 코딩(76.2% vs 97.6%) 영역에서 격차가 컸다. 인간 재판정에서도 이 격차는 -16.0점으로 라벨 노이즈가 아닌 실제 품질 차이로 확인되었다.</li>
+<li><strong>스타일 적대적 사례(RM-Bench)</strong>: 정답 스타일이 평범한 경우 JEV 84.0%였으나, 오답이 더 정교하게 작성된 "어려운" 쌍에서는 74.8%로 하락(-9.2점)했고, 이 조건에서 GPT-6와의 격차는 -19.8점에 달했다.</li>
+<li><strong>비용·지연</strong>: JEV의 중앙 지연시간은 0.152초, 1,000건당 요금은 약 $0.044로, GPT-4.1 mini 대비 약 9배, GPT-6 대비 약 277배 저렴했다.</li>
+<li><strong>신뢰도 캐스케이드</strong>: 확신도로 정렬했을 때 JEV는 q&lt;0.6 구간에서는 정확도 47.7%에 불과했지만 q=1인 항목에서는 99.1%로, 오류가 낮은 확신도 구간에 집중됨을 확인했다(AUROC 0.83, 풀링 기준). 사전 동결된 두 오더(both-order) 정책에서 τ=0.9로 GPT-6를 폴백으로 사용하면 확장 세트(510쌍)의 53.7%만 수용하고도 92.5%(GPT-6 단독 93.1%)를 달성하며 요금은 폴백의 약 56.8%만 사용했다. 사후(post hoc) 단일 오더 캐스케이드에서는 GPT-6 정확도의 99.6%를 47%의 요금으로 유지하는 결과도 보고되었다(초록의 "99%/57% 요금" 수치는 이 사후 분석에 해당).</li>
+<li><strong>한계 노출 영역</strong>: 참조자료 없는 자유 서술문(reference-free prose) 평가에서는 JEV를 포함한 모든 심사자가 거의 무작위 수준(50%대)에 머물렀고, 확신도조차 오류를 구분하지 못했다(AUROC 0.518).</li>
+</ul>
+<h2>한계점</h2>
+<ul>
+<li>단일 버전의 상용(proprietary) JEV를 특정 비교군과만 비교했으며, 학습 데이터 중복 여부나 벤치마크 오염 가능성은 알 수 없다.</li>
+<li>결정 전용 프롬프트는 생성된 설명, 설명의 충실성, 확장된 숙고 과정을 포함하지 않아, 다양한 채점 루브릭을 다루지 못한다.</li>
+<li>온도 스케일링으로 보정한 확률이 벤치마크마다 다른 방향으로 작동하여(RewardBench는 개선, JudgeBench·HaluEval은 악화), 단일 보정 파라미터가 모든 워크로드에 통용되지 않는다.</li>
+<li>인간 재판정은 무작위 감사(random audit)가 아니라 심사자 간 불일치 항목만을 대상으로 했고, 연구팀원 1인이 전체를 담당했으며 재판정자도 저자 중 한 명이라 독립성에 제약이 있다.</li>
+<li>지연시간 측정은 특정 클라이언트 위치·수집 시점·요청 페이싱에 의존하며, 실제 순차적(sequential) 캐스케이드의 지연은 측정되지 않았다.</li>
+<li>사후에 산출된 단일 오더 캐스케이드 임계값은 평가 대상 항목 자체에서 역산된 것이라 과적합 위험이 있으며, 사전 동결된 두 오더 정책만이 엄밀한 검증에 해당한다.</li>
+</ul>
+<h2>시사점</h2>
+<p>이 연구는 "저비용 결정 전용 심사자 + 확신도 기반 에스컬레이션"이라는 실용적인 LLM 평가 파이프라인 설계 패턴을 제시한다. 일반적인 선호 비교나 근거가 주어진 사실성 검증처럼 비교적 정형화된 판단에는 훨씬 저렴한 심사자로 충분하지만, 다단계 추론 검증이나 정교하게 위장된 오답을 가려내는 과제에는 여전히 강력한 LLM 심사자가 필요하다는 점을 실증적으로 보여준다. 또한 확신도가 실제로 오류를 잘 정렬(order)하는 영역과 그렇지 않은 영역(예: 참조 없는 자유 서술)이 다르므로, 캐스케이드 임계값과 온도 보정은 반드시 배포하려는 워크로드별로 로컬 검증을 거쳐야 한다는 실무적 체크리스트를 제공한다. 이는 LLM 평가 비용을 절감하면서도 신뢰도를 관리해야 하는 실제 서비스 운영(모델 개발, A/B 테스트, 데이터 큐레이션 등)에 직접적으로 적용 가능한 시사점을 준다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.26550" target="_blank" rel="noopener">huggingface.co/papers/2609.26550</a> · 2026-09-24</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

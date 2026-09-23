@@ -1,0 +1,110 @@
+{
+  "2609.25804": {
+    "base": "2609_테이스트에이전트_장기과제-취향-측정-개선",
+    "rank": "#1",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "111",
+    "en_title": "The Tasteful Agent: Measuring and Improving Taste in Long-Horizon Tasks",
+    "ko_title": "테이스트풀 에이전트: 장기 과제에서의 취향 측정과 개선"
+  },
+  "2609.25270": {
+    "base": "2609_룰러_SVG생성-인스턴스인식-루브릭보상",
+    "rank": "#2",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "59",
+    "en_title": "RULER: Instance-aware Rubric Rewards for SVG Generation",
+    "ko_title": "RULER: SVG 생성을 위한 인스턴스 인식 루브릭 보상"
+  },
+  "2609.24981": {
+    "base": "2609_지에이이_3D일관-월드생성-기하-잠재공간",
+    "rank": "#3",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "38",
+    "en_title": "GAE: Learning a Geometry-Native Latent Space for 3D-Consistent World Generation",
+    "ko_title": "GAE: 3D 일관적 월드 생성을 위한 기하-네이티브 잠재 공간 학습"
+  },
+  "2609.24058": {
+    "base": "2609_스크립트모이_다국어장면텍스트인식-전문가혼합",
+    "rank": "#4",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "35",
+    "en_title": "All-in-One Multilingual Scene Text Recognition with Script-aware Mixture-of-Experts",
+    "ko_title": "스크립트 인지형 전문가 혼합을 활용한 올인원 다국어 장면 텍스트 인식"
+  },
+  "2609.24657": {
+    "base": "2609_서킷하이퍼넷_양자증강-확산언어모델-회로하이퍼네트워크",
+    "rank": "#5",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "24",
+    "en_title": "Circuit hypernetworks for quantum-augmented diffusion language models",
+    "ko_title": "양자 증강 확산 언어모델을 위한 회로 하이퍼네트워크"
+  },
+  "2609.15987": {
+    "base": "2609_벨만정책최적화_강화학습-새로운-벨만연산자-정책최적화",
+    "rank": "#6",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "24",
+    "en_title": "Bellman Policy Optimization",
+    "ko_title": "벨만 정책 최적화"
+  },
+  "2609.26774": {
+    "base": "2609_스테이블브이큐_벡터양자화-토크나이저-안정적학습가이드",
+    "rank": "#7",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "20",
+    "en_title": "StableVQ: Practical Guidelines for Stable Vector-Quantized Tokenizer Training",
+    "ko_title": "스테이블VQ: 안정적인 벡터 양자화 토크나이저 학습을 위한 실용적 가이드라인"
+  },
+  "2609.25165": {
+    "base": "2609_오비스임베딩_범용옴니모달임베딩-한계확장",
+    "rank": "#8",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "19",
+    "en_title": "Ovis-Embedding: Pushing the Frontiers of Universal Omni-Modal Embeddings",
+    "ko_title": "오비스 임베딩: 범용 옴니모달 임베딩의 한계 확장"
+  },
+  "2609.26550": {
+    "base": "2609_제이이브이저지_확신하면수용-불확실하면에스컬레이션",
+    "rank": "#9",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "17",
+    "en_title": "JEV-as-a-Judge: Accept When Confident, Escalate When Unsure",
+    "ko_title": "JEV-as-a-Judge: 확신하면 수용하고 불확실하면 에스컬레이션하기"
+  },
+  "2609.25186": {
+    "base": "2609_멘탈헬스서베이_정신건강LLM-패턴인식에서동반자로",
+    "rank": "#10",
+    "category": "survey",
+    "category_label": "서베이",
+    "upvote": "15",
+    "en_title": "From Pattern Recognizers to Personalized Companions: A Survey of Large Language Models in Mental Health",
+    "ko_title": "패턴 인식기에서 개인화된 동반자로: 정신건강 분야 거대언어모델 서베이"
+  },
+  "2609.26796": {
+    "base": "2609_플래시디엘엘엠_IO인지KV캐싱-병렬디코딩-고속확산LLM",
+    "rank": "#11",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "13",
+    "en_title": "Flash-dLLM: IO-Aware KV Caching and Parallel Decoding for Fast, Memory-Efficient Diffusion LLMs",
+    "ko_title": "플래시디엘엘엠: 빠르고 메모리 효율적인 확산 LLM을 위한 IO 인지 KV 캐싱과 병렬 디코딩"
+  },
+  "2609.25199": {
+    "base": "2609_린풀_AI관리형식수학아카이브",
+    "rank": "#12",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "11",
+    "en_title": "Lean Pool: An AI-Maintained Archive of Formalized Mathematics",
+    "ko_title": "린 풀: AI가 관리하는 형식화된 수학 아카이브"
+  }
+}

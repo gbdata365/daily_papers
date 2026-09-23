@@ -1,0 +1,129 @@
+<meta charset="UTF-8">
+<title>린 풀</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#12 · Daily Papers 2026-09-24</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 11</span>
+    </div>
+    <h1 class="article-title">Lean Pool: An AI-Maintained Archive of Formalized Mathematics</h1>
+    <p class="article-title-ko">린 풀: AI가 관리하는 형식화된 수학 아카이브</p>
+    <p class="article-sub">Lean Pool은 사람이 아니라 AI 에이전트가 성장시키고, 유지보수하고, 최적화하는 형식화된 수학(Lean/Mathlib 기반) 저장소로, 저자들은 이를 arXiv에 대응하는 "형식 수학의 아카이브"로 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.25199" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.25199" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Lean Pool: An AI-Maintained Archive of Formalized Mathematics</li>
+<li><strong>저자</strong>: Vasily Ilin (University of Washington) 단독 저자 표기. 논문 자체가 "인간이 작성한 부분은 1쪽뿐이며 나머지는 거의 전적으로 AI가 작성했다"고 명시하는 독특한 디스클레이머를 달고 있음. 감사의 글에서 Lean Pool의 공동 창시자로 Justin Asher(초기 탐색 도구와 CI 구축), 증명 골핑 기여자로 Austin Letson을 언급함.</li>
+<li><strong>출처</strong>: arXiv:2609.25199v1 [cs.AI] (2026년 9월 21일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://vilin97.github.io/lean-pool/">Lean Pool Index</a> / <a href="https://vilin97.github.io/lean-pool/exposition/">Exposition(해설) 사이트</a> / <a href="https://leanprover.zulipchat.com/#narrow/channel/619231-Lean-Pool">Zulip 공지 채널</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.25199">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>Lean Pool은 사람이 아니라 AI 에이전트가 성장시키고, 유지보수하고, 최적화하는 형식화된 수학(Lean/Mathlib 기반) 저장소로, 저자들은 이를 arXiv에 대응하는 "형식 수학의 아카이브"로 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>최근 생성형 AI가 수학 연구에서 빠르게 증명을 만들어내면서, 오히려 검증이 병목이 되고 있다. Lean은 사람이 만들었든 AI가 만들었든 수학적 증명을 기계적으로 검증하는 대표 언어로 자리잡았지만, Lean의 표준 라이브러리인 Mathlib은 엄격한 사람 검토 절차 때문에 선형적으로만 성장하며, 연구 수준의 최신 수학을 형식화하는 데 필요한 정의와 정리가 부족하다. 또한 AI가 생성한 형식 증명이 늘어나더라도, 이를 재사용하려면 단순히 소스 코드를 보존하는 것을 넘어 Lean/Mathlib 버전이 바뀔 때마다 호환성을 유지하고, 결과를 쉽게 찾고 이해할 수 있어야 한다는 문제가 있다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>Lean Pool 아카이브 자체</strong>: AI 에이전트가 라이선스(Apache-2.0/MIT)가 있는 완성된 정형화 프로젝트를 발굴해 가져오거나, 사람이 직접 기여한 프로젝트를 받아들여 성장하는 저장소를 구축·공개함.</li>
+<li><strong>운영 기록의 실증 분석</strong>: 자체 아카이브를 대상으로 커뮤니티 기여, Lean/Mathlib 의존성 업그레이드, 채택된 최적화, LLM 기반 수학 리뷰, 탐색·재사용 도구 등 실제 운영 이력을 정량적으로 분석함.</li>
+<li><strong>에이전트 기반 유지보수의 증거</strong>: 의존성 버전이 바뀔 때 에이전트가 컴파일 오류를 자동으로 복구하여 호환성을 되살릴 수 있음을 과거 업그레이드 기록으로 보임.</li>
+<li><strong>라이브러리 전반의 최적화 성과</strong>: 증명 단축(golfing), 라이브러리 압축 등 채택된 변경들이 빌드 시간과 컴파일 비용에 미친 실제 효과를 측정함.</li>
+<li><strong>연구 수준 재사용의 증거</strong>: 별도의 LeanEval 감사 결과를 인용해, Lean Pool이 비교 대상 저장소 중 연구 수준 재정형화(autoformalization)에서 가장 많이 재사용된 외부 저장소임을 보고함.</li>
+<li><strong>다른 생태계와의 비교</strong>: Tau Ceti, Palomar Registry, Mathlib, AFP(Archive of Formal Proofs) 등과 기여·유지보수·승인 기준·문서화 방식을 비교함.</li>
+</ul>
+<h2>방법론</h2>
+<p>Lean Pool은 두 가지 경로로 성장한다. 첫째, AI 에이전트가 허용 라이선스 하의 기존 정형화 프로젝트를 발견해 풀링(pooling)하고, 둘째, 사람 기여자가 직접 프로젝트를 제출한다. 등록 대상은 "이름이 있는 완결된 유명 결과"의 완전한 정형화로 제한되며, sorry/admit 사용 금지, 허용된 공리(Classical.choice, propext, Quot.sound) 외 공리 도입 금지 등 엄격한 승인 규칙을 둔다. 모든 프로젝트는 저자·출처·증명 출처·주요 결과를 명시하는 "프로젝트 카드"를 갖춰야 한다.</p>
+<p>유지보수는 두 축으로 이뤄진다. 첫째, Mathlib 버전이 바뀌면 별도의 의존성 업데이트 워크플로가 새 릴리스를 감지해 실패한 프로젝트를 자동으로 수리 에이전트에 할당하고 패치를 모아 리뷰에 올린다. 둘째, 에이전트가 정기적으로 코드베이스를 간결성·컴파일 속도·메모리 사용량 측면에서 최적화한다. CI는 전체 라이브러리 빌드, Mathlib의 린터, 그리고 Lean Pool 고유의 품질 게이트(카드 검증, 허용 공리 감사, 크기 제한 등)를 결합하며, 여기에 LLM 기반 수학 리뷰 서비스가 결합되어 진술의 충실성·참신성·중요성·출처·코드 품질을 평가한다. 탐색 측면에서는 Octo 시맨틱 검색, Exposition(전시) 사이트, 프로젝트 카드 등을 통해 독자가 질문·주제·논문에서 출발해 최종적으로 소스와 API 문서까지 도달할 수 있도록 설계했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>논문은 신규 실험이라기보다는 살아있는 아카이브에 대한 관측 기반 분석(operational record)에 가깝다. 2026년 9월 21일 기준 관측치로, 아카이브는 211개의 완료 프로젝트, 7,043개의 Lean 소스 파일, 물리적 소스 행 3,228,485줄, 193,862개의 선언 명령, 837개의 등록된 주요 결과, 18명의 커밋 기여자(인간/AI/혼합 프로젝트 비율은 70/102/39)를 포함한다.</p>
+<ul>
+<li><strong>의존성 업그레이드</strong>: 6차례의 Lean 버전 업그레이드 기록을 재현한 결과, 예를 들어 4.34.0-rc1→4.34.0 업그레이드에서는 191개 프로젝트 중 97개가 컴파일 오류를 일으켰으나 95개는 자동 수리 작업이 성공했고, 최종적으로 통합 빌드를 통과했다.</li>
+<li><strong>빌드 자원 비교</strong>: 같은 Azure VM에서 Lean Pool 전체 라이브러리를 클린 빌드하면 약 60.28분, 14.29 CPU시간, 20.03GiB RAM이 소요되며, 이는 대응하는 Mathlib 릴리스(37.44분)나 비교 프로젝트 Tau Ceti(30.89분)보다 무겁다.</li>
+<li><strong>최적화 효과</strong>: 라이브러리 전체 압축(45,217줄 삭제)은 빌드 시간을 약 3.3% 단축했고, 특정 증명 골핑(12,515줄 삭제)은 메모리 사용량은 줄였지만 빌드 시간은 오히려 5.4% 늘어나는 등, 증명 단축이 항상 빌드 시간 단축으로 이어지지는 않음을 보임.</li>
+<li><strong>수학 리뷰 서비스</strong>: 보존된 296건의 구조화된 리뷰 리포트 중 188건이 승인(Approve), 71건이 수정 요청, 37건이 논의로 분류되었고, 리뷰 비용은 API 기준 중앙값 약 0.20달러(총 308.52달러, 285건) 수준으로 보고됨.</li>
+<li><strong>재사용 증거</strong>: 별도의 LeanEval 감사에서 Lean Pool은 비교 대상 저장소들(고전 곡면 분류, 미분기하학, 소수 정리, 리만 사상 정리 등) 중 일치하는 코드가 있는 해(solution) 수가 20건으로 가장 많아, 연구 수준 재정형화에 가장 많이 재사용된 외부 저장소로 나타남.</li>
+</ul>
+<h2>한계점</h2>
+<ul>
+<li>논문 스스로 밝히듯 인간이 직접 작성한 부분은 1쪽에 불과하며 본문 대부분이 AI에 의해 작성되어, 저자의 최종 검수 수준과 독립적 검증의 한계가 존재할 수 있음.</li>
+<li>증명 단축(골핑)이 항상 빌드 시간이나 자원 사용을 줄이지는 않으며(예: 증명 골핑 후 오히려 빌드 시간 증가), 재사용 가능한 인터페이스 추가가 컴파일 비용을 늘리는 트레이드오프도 관찰됨.</li>
+<li>LLM 기반 수학 리뷰 서비스의 정확도는 별도로 독립 검증되지 않았으며(리뷰 정확성 자체는 라벨링되지 않음), 측정된 것은 병합/종료 결정과의 상관관계일 뿐임.</li>
+<li>가격(비용) 추정치는 실제 현금 지불이 아닌 API 환산치이며, 손실되거나 덮어쓰인 실행 기록은 총계에서 누락되어 전체 운영 비용을 정확히 반영하지 못함.</li>
+<li>초기 자동 수리 작업 후에도 안정 버전 마이그레이션 시 추가적인 후속 통합 작업이 필요했던 사례(그래프 기본군, 불완전성 정리 개발 등 2건 실패)가 있어, 자동화가 완전하지 않음을 시사함.</li>
+<li>관측 기간과 측정 범위가 특정 시점(2026년 9월 관측)에 한정되어 있어, 계속 변화하는 아카이브의 스냅샷에 불과함.</li>
+</ul>
+<h2>시사점</h2>
+<p>논문은 생성형 AI가 수학 증명을 빠르게 만들어내는 시대에, 검증뿐 아니라 "유지보수 가능한 형식 지식 저장소"라는 새로운 인프라가 필요함을 보여준다. Lean Pool은 이러한 저장소를 AI 에이전트가 자율적으로 성장시키고 관리할 수 있음을 실제 운영 데이터로 입증하며, 저자들은 향후 새로운 수학 논문이 발표와 동시에 형식화되어 arXiv처럼 즉시 공유·재사용될 수 있는 "형식 수학의 arXiv"라는 비전을 제시한다. 이는 AI 에이전트가 단순히 증명을 생성하는 역할을 넘어, 라이브러리 버전 관리·코드 최적화·품질 검토·문서화 등 소프트웨어 엔지니어링 전반의 유지보수 업무를 수행하는 자율 에이전트로 확장될 수 있음을 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.25199" target="_blank" rel="noopener">huggingface.co/papers/2609.25199</a> · 2026-09-24</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

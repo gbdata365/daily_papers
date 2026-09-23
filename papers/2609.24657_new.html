@@ -1,0 +1,148 @@
+<meta charset="UTF-8">
+<title>양자 증강 확산 언어모델을 위한 회로 하이퍼네트워크</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#5 · Daily Papers 2026-09-24</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 24</span>
+    </div>
+    <h1 class="article-title">Circuit hypernetworks for quantum-augmented diffusion language models</h1>
+    <p class="article-title-ko">양자 증강 확산 언어모델을 위한 회로 하이퍼네트워크</p>
+    <p class="article-sub">동결된 11억 파라미터 마스킹 확산 언어모델(LLaDA)에 토큰별로 좌표(회전각·결합강도·측정축)를 생성하는 경량 "회로 하이퍼네트워크"를 붙여, 16~64 큐비트 양자 회로를 잔차 분기로 학습시켰더니 큐비트 수를 늘릴수록(회로 폭 증가) 6개 벤치마크 평균 점수가 47.65→54.30으로 꾸준히 상승했다는 연구.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.24657" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.24657" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Circuit hypernetworks for quantum-augmented diffusion language models</li>
+<li><strong>저자</strong>: Xiaoqiang Wang, Mengyang Xiong, Jun Dai, Bang Liu (Université de Montréal / Mila – Quebec AI Institute, McGill University)</li>
+<li><strong>출처</strong>: arXiv:2609.24657v1 [quant-ph] (2026년 9월 21일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.24657">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>동결된 11억 파라미터 마스킹 확산 언어모델(LLaDA)에 토큰별로 좌표(회전각·결합강도·측정축)를 생성하는 경량 "회로 하이퍼네트워크"를 붙여, 16~64 큐비트 양자 회로를 잔차 분기로 학습시켰더니 큐비트 수를 늘릴수록(회로 폭 증가) 6개 벤치마크 평균 점수가 47.65→54.30으로 꾸준히 상승했다는 연구.</p>
+<h2>배경 및 문제의식</h2>
+<ul>
+<li>최근 언어모델은 자기회귀 방식과 확산(diffusion) 기반 방식 두 축으로 발전해 왔으며, 확산 언어모델(마스킹 확산, masked-diffusion)도 수십~수백억 파라미터 규모로 성장하고 있다.</li>
+<li>트랜스포머에 파라미터화된 양자 회로(PQC)를 결합하려는 기존 시도들(HyQuT, 양자 셀프어텐션, Cayley 유니터리 어댑터, 양자-저랭크/텐서 어댑터 등)은 대부분 "고정된 폭의 회로"에서 파라미터 효율적 적응만 검증했을 뿐, 큐비트 수(회로 폭)를 늘렸을 때 실제로 언어모델 품질이 향상되는지는 검증하지 않았다.</li>
+<li>회로 폭을 넓히는 실험에는 두 가지 근본적 장애물이 있다: (1) 학습 가능성 문제 — 구조 없는 변분회로는 큐비트 수가 늘수록 그래디언트 분산이 지수적으로 사라지는 "불모 고원(barren plateau)" 현상을 겪을 수 있고, (2) 계산 실용성 문제 — 일반적인 n큐비트 상태의 정확한 시뮬레이션은 2^n 크기의 상태벡터를 요구해, 10억 파라미터급 모델 안에서 토큰마다 회로를 반복 평가하기엔 비용이 과도해진다.</li>
+<li>따라서 이 논문은 "회로 폭을 넓히면 언어모델이 실제로 더 좋아지는가?"라는 질문에 답하기 위해, 학습 가능성과 계산 비용을 모두 다루기 쉬운 회로 계열과 토큰 조건부 방출(emission) 방식을 설계하는 데 초점을 맞춘다.</li>
+</ul>
+<h2>핵심 기여</h2>
+<ol>
+<li><strong>HyperQ 아키텍처</strong>: 동결된 마스킹 확산 백본(LLaDA-1.1B)의 각 트랜스포머 블록에 "양자 잔차 분기"를 추가. 이 분기는 토큰의 은닉 상태를 읽어 해당 토큰 전용 회로 좌표를 방출하고, 회로를 실행한 뒤 측정값을 QKV(쿼리·키·값) 텐서에 잔차로 더해준다. 백본은 완전히 동결되며 새로 추가된 분기(및 저랭크 프로젝션)만 학습된다.</li>
+<li><strong>회로 하이퍼네트워크</strong>: 각 블록마다 하나씩, 저랭크(rank=16) 어댑터 형태의 하이퍼네트워크가 토큰별 단일 큐비트 회전각(α), 2체 결합 강도(ω, 고정된 간선집합 E 위에서), 측정축(ψ)을 연속값으로 방출한다. 이는 이산적인 회로 카탈로그에서 고르는 방식(아키텍처 탐색)과 달리 연속 좌표 공간 전체를 사용한다.</li>
+<li><strong>닫힌 형태의 읽기값과 고정 차수 설계</strong>: 방출되는 회로를 2체(two-body) 생성자만 가진 IQP(instantaneous quantum polynomial) 계열로 제한하여, 기대값 ⟨Zq⟩를 상태벡터 없이 Θ(n) 비용으로 정확히 계산할 수 있게 했다. 또한 간선집합 E(고리+코드 레이어)를 큐비트당 차수 4로 고정해, 큐비트 수가 늘어도 그래디언트 분산(1/48)이 줄지 않도록 이론적으로 보장했다(전결합 회로였다면 64큐비트에서 분산이 4×10^-20으로 붕괴).</li>
+<li>16, 32, 64 큐비트에서 실제로 폭을 늘려가며 성능이 개선됨을 실증하고, 고정 설계 회로 및 이산 모티프 탐색(differentiable architecture search) 대비 우위를 확인했다.</li>
+<li>시뮬레이션에서 학습한 가중치를 그대로 IBM의 156큐비트 초전도 양자 프로세서(ibm_quebec, ibm_brisbane)에서 실측 실행해 성능 저하 폭을 정량화했다(양자 우위를 주장하지는 않음).</li>
+</ol>
+<h2>방법론</h2>
+<ul>
+<li><strong>백본</strong>: LLaDA-1.1B 마스킹 확산 언어모델(22개 트랜스포머 블록, 은닉차원 2048)을 동결하고, 각 블록의 융합 QKV 프로젝션과 병렬로 양자 잔차 분기를 배치.</li>
+<li><strong>회로 구조</strong>: C(α,ω) = H^⊗n · D(α,ω) · H^⊗n 형태의 strict-IQP 블록. 대각 내부 D는 단일 큐비트 Rz 회전(α)과 간선집합 E 위의 2체 Rzz 결합(ω)으로 구성되며, 이후 읽기 회전 U(ψ)가 측정축을 정한다. E는 고리(ring) 레이어와 코드(chord) 레이어로 이루어져 있어 모든 큐비트가 차수 4를 가지며 |E|=2n.</li>
+<li><strong>좌표 방출</strong>: 토큰 은닉상태 h를 랭크-16 저랭크 인코더로 압축한 뒤(b=W_A h), α=π·tanh(b), (ψ,ω)는 별도 헤드가 방출. 방출된 좌표는 좌표 초평면(coordinate hyperplane)으로 표현되므로, 좌표가 0에 가까우면 해당 게이트가 사실상 비활성화되어 토큰마다 다른 서브그래프(활성 회로 구조)를 스스로 선택하는 효과가 난다.</li>
+<li><strong>읽기값의 닫힌 해</strong>: 두 몸 생성자만 사용하는 덕분에 ⟨Zq⟩는 코사인들의 곱으로 표현되는 명시적 함수식(식 (5))으로 계산 가능해, 파라미터-시프트 규칙이나 샘플링 추정 없이 정확한 미분이 가능.</li>
+<li><strong>학습 가능성 이론</strong>: 무작위 초기화 기준으로 회로 좌표에 대한 그래디언트 분산을 해석적으로 유도(식 (6)), 이는 큐비트 총수가 아니라 해당 큐비트의 이웃 수(차수)에만 의존함을 보임. E의 차수가 4로 고정되어 있어 16/32/64큐비트 전 구간에서 분산이 1/48로 일정.</li>
+<li><strong>비교 대상</strong>: (a) 고정(hand-designed) 앤자츠 4종(rx-chain, brickwall, re-upload, iqp-diag), (b) 차별화 가능한 아키텍처 탐색 기반 이산 모티프 선택(3-모티프/6-모티프), (c) 고전 저랭크 어댑터(LoRA)만 붙인 베이스라인.</li>
+<li><strong>학습 설정</strong>: A100 GPU 8장, bf16 혼합정밀도, AdamW(β1=0.9, β2=0.95, weight decay=0), 코사인 스케줄(피크 학습률 2×10^-4), 배치 8×누적 4×GPU 8 = 유효배치 256, 3 에폭, LoRA rank=16, scaling=32, dropout=0.05. 학습 데이터는 LLaDA SFT 설정을 따르되, 고전 베이스라인의 20만 쌍이 아닌 2만 쌍(토큰 수 기준 1/10)만 사용.</li>
+<li><strong>하드웨어 검증</strong>: 시뮬레이션에서 학습을 마친 모델의 가중치를 고정한 채, 평가 시점의 읽기값만 IBM 초전도 프로세서(Qiskit Runtime EstimatorV2, 10,000샷)로 대체해 벤치마크별 256개 항목 부분집합에서 시뮬레이션 대비 손실을 측정.</li>
+</ul>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li><strong>평가</strong>: ARC-e, HellaSwag, PIQA, BoolQ, RACE, GSM8K 6개 제로샷 벤치마크의 평균 점수(A), 추가로 WikiText perplexity와 GLUE 점수도 보고.</li>
+<li><strong>회로 폭 증가 효과</strong>: HyperQ 평균 점수는 16큐비트 47.65 → 32큐비트 52.80 → 64큐비트 54.30으로 상승. 16큐비트에서는 동결 백본(49.59)보다 낮지만, 32큐비트부터 이를 능가하고 64큐비트에서는 +4.71점 앞선다.</li>
+<li><strong>동급 비교</strong>: 64큐비트 HyperQ(54.30)는 동일 백본+LoRA(50.63, +3.67점 차)뿐 아니라, 8배 큰 Qwen3-8B(53.79)와 LLaDA-8B(53.37)도 근소하게 앞선다. 다만 WikiText perplexity에서는 Qwen3-8B(10.61)가 HyperQ(10.95)보다 낮아, 이 지표만은 HyperQ가 1위를 차지하지 못했다.</li>
+<li><strong>데이터 효율성</strong>: HyperQ는 2만 개의 프롬프트-응답 쌍(고전 베이스라인의 1/10)만으로 이 성능을 달성.</li>
+<li><strong>연속 방출 vs 고정/탐색 비교</strong>: 고정 앤자츠(최고 50.62), 이산 모티프 탐색(최고 52.30)보다 연속 방출(54.30)이 64큐비트에서 각각 3.68점, 2.35점 앞선다. 고정 앤자츠는 32큐비트 이후 성능이 정체되는 반면, 연속 방출은 계속 개선된다.</li>
+<li><strong>회로 사용 패턴 분석</strong>: 방출된 회로의 55.8%는 고리+코드 결합을 모두 유지(Ring and chord), 23.2%는 고리만, 6.3%는 코드만, 8.0%는 결합 없이 회전만(Product), 6.7%는 사실상 항등연산(Identity)으로 분류됨. 구두점 토큰의 30.2%가 Identity로 처리되는 등, 토큰의 어휘적 정보량(구두점&lt;기능어&lt;숫자&lt;내용어&lt;희귀 서브워드)에 비례해 더 조밀한 얽힘 구조를 할당하는 경향을 보임.</li>
+<li><strong>하드웨어 실측</strong>: 156큐비트 IBM 프로세서 실행 시 6-벤치마크 평균 점수가 16/32/64큐비트에서 각각 0.34/0.68/1.12점 하락(양자 우위 주장 없음). GSM8K가 가장 큰 손실(64큐비트에서 1.79점), PIQA가 가장 작은 손실(0.74점)을 보여, 짧은 선택형 문제보다 생성이 필요한 추론 문제가 하드웨어 잡음에 더 민감함을 시사.</li>
+<li><strong>디코딩 특성 보존</strong>: HyperQ는 마스킹 확산 백본의 양방향·임의 순서 디코딩 능력(신뢰도 순, 무작위 순 등)과 병렬 토큰 커밋 처리량 이점을 그대로 유지하며, 자기회귀 모델이 취약한 "질문 역순" 및 "텍스트 채우기(infilling)" 과제에서도 우위를 보인다.</li>
+</ul>
+<h2>한계점</h2>
+<ul>
+<li>논문 스스로 명시: 이 결과는 16~64큐비트라는 측정된 범위 내에서의 확장 경향일 뿐, 그 이상으로 이어지는 스케일링 법칙을 확립하지는 않는다.</li>
+<li>회로의 읽기값(⟨Zq⟩)이 고전적으로 효율적으로 시뮬레이션 가능한 닫힌 형태를 가지므로, 이 연구는 "양자 계산이 고전적으로 불가능한 이점을 제공한다"는 계산적 우위(quantum advantage)를 주장하지 않는다. 저자들은 이를 명확히 밝히고 있다.</li>
+<li>그래디언트 분산 결과(식 (6))는 초기화 시점의 회로 좌표 그래디언트에만 적용되며, 동결된 백본이나 전체 최적화 과정 전반의 학습 가능성을 보장하지는 않는다.</li>
+<li>WikiText perplexity 지표에서는 최대 규모 자기회귀 베이스라인(Qwen3-8B)과의 격차를 좁히지 못했다.</li>
+<li>하드웨어 검증은 벤치마크당 256개 항목으로 제한된 "경계 지어진(bounded)" 평가이며, 전체 벤치마크 스윕이나 하드웨어 상에서의 직접 학습(on-device training)은 수행되지 않았다.</li>
+<li>기존 양자-증강 언어모델 연구들(HyQuT, Cayley 어댑터, QTHA, Quantum-PEFT 등)과는 평가 지표와 데이터셋이 서로 달라 직접적인 정량 비교가 어렵다는 점도 논문이 스스로 지적한다.</li>
+</ul>
+<h2>시사점</h2>
+<ul>
+<li>"회로를 하나 고정해서 재사용"하는 대신 "언어모델의 은닉 상태에 조건화해 토큰마다 연속적으로 회로 좌표를 생성"하는 접근이, 양자 회로의 폭(큐비트 수)을 늘릴 때 실제로 성능 향상으로 이어질 수 있음을 보여주는 아키텍처적 증거를 제공한다.</li>
+<li>차수를 고정한(degree-bounded) 회로 스켈레톤과 2체 생성자만 사용하는 IQP 계열 설계가, 학습 가능성(그래디언트 소실 방지)과 계산 실용성(닫힌 형태의 선형 비용 읽기값)이라는 두 마리 토끼를 동시에 잡을 수 있는 실용적인 절충안이 될 수 있음을 시사한다.</li>
+<li>다만 이 결과는 "언어모델 품질을 개선하는 새로운 유형의 계산을 트랜스포머에 추가할 수 있는가"라는 아키텍처적 질문에 대한 답이지, 양자 하드웨어가 고전적으로 불가능한 계산적 이점을 제공한다는 증거는 아니다. 향후 진정한 계산적 우위를 입증하려면 고전적으로 시뮬레이션이 어려운 회로 계열과, 그 위에서 정의된 별도의 과제 및 검증이 필요할 것으로 보인다.
+</content></li>
+</ul>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.24657" target="_blank" rel="noopener">huggingface.co/papers/2609.24657</a> · 2026-09-24</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

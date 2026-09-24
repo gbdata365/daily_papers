@@ -1,0 +1,115 @@
+<meta charset="UTF-8">
+<title>훈위안-A13B 기술 보고서</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#12 · Daily Papers 2026-09-25</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 8</span>
+    </div>
+    <h1 class="article-title">Hunyuan-A13B Technical Report</h1>
+    <p class="article-title-ko">훈위안-A13B 기술 보고서</p>
+    <p class="article-sub">총 800억 개 파라미터 중 130억 개만 추론 시 활성화하는 Mixture-of-Experts(MoE) 구조를 기반으로, 20조 토큰 규모의 고품질 사전학습과 다단계 후처리·강화학습, 그리고 빠른/느린 사고를 선택할 수 있는 듀얼 체인오브소트(dual-CoT) 프레임워크를 결합하여, 훨씬 큰 모델들과 견줄 만한 성능을 훨씬 낮은 추론 비용으로 달성하는 오픈소스 대형언어모델 Hunyuan-A13B를 제시한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.27284" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.27284" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Hunyuan-A13B Technical Report</li>
+<li><strong>저자</strong>: Tencent Hunyuan Team (텐센트 훈위안 팀)</li>
+<li><strong>출처</strong>: arXiv:2609.27284v1 [cs.AI] (2025년 6월 27일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.27284">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>총 800억 개 파라미터 중 130억 개만 추론 시 활성화하는 Mixture-of-Experts(MoE) 구조를 기반으로, 20조 토큰 규모의 고품질 사전학습과 다단계 후처리·강화학습, 그리고 빠른/느린 사고를 선택할 수 있는 듀얼 체인오브소트(dual-CoT) 프레임워크를 결합하여, 훨씬 큰 모델들과 견줄 만한 성능을 훨씬 낮은 추론 비용으로 달성하는 오픈소스 대형언어모델 Hunyuan-A13B를 제시한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>GPT-4o, o1, o3, Gemini 2.5, DeepSeek-R1, Qwen3 등 최신 대형언어모델들은 인공일반지능(AGI)에 근접하는 성능을 보이고 있지만, 이를 구현하기 위해 요구되는 연산 자원과 추론 지연, 하드웨어 비용이 매우 크기 때문에 폭넓은 접근성을 제한한다는 문제가 있다. 특히 기존의 많은 오픈소스 모델들은 밀집(dense) 구조를 채택하여 입력마다 전체 파라미터를 균일하게 활성화하므로 연산 부담이 크다. 저자들은 이러한 배포 비용 문제를 완화하기 위해, 전체 파라미터 규모는 크게 유지하면서도 입력마다 일부 전문가(expert)만 선택적으로 활성화하는 희소(sparse) MoE 구조를 통해 최첨단 모델에 준하는 성능을 훨씬 적은 활성 파라미터로 달성하는 것을 목표로 삼는다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>80B 총 파라미터/13B 활성 파라미터 규모의 세밀한(fine-grained) MoE 아키텍처를 채택하여, 유사하거나 더 큰 활성/총 파라미터를 가진 대표적 MoE 및 Dense 모델 대비 경쟁력 있는 성능과 훨씬 높은 추론 효율을 동시에 달성함.</li>
+<li>STEM 데이터 정제 및 라벨링 체계를 강화한 20조 토큰 규모의 사전학습 코퍼스를 구축하고, 컨텍스트 윈도우를 4096 → 8192 → 32K → 256K로 단계적으로 확장하는 사전학습 파이프라인을 설계함.</li>
+<li>추론 특화 SFT·RL과 범용(all-scenario) SFT·RL로 이어지는 4단계 후처리 프레임워크를 통해 수학·과학·코딩·논리 등 추론 성능과 창작·다국어·에이전트·역할극 등 범용 성능을 함께 강화함.</li>
+<li>응답 지연이 짧은 "빠른 사고(fast-thinking)" 모드와 다단계 추론에 특화된 "느린 사고(slow-thinking)" 모드를 사용자가 제어 태그로 선택할 수 있는 듀얼 체인오브소트 구조를 도입해 연산 자원과 정확도 사이의 균형을 유연하게 조절할 수 있게 함.</li>
+</ul>
+<h2>방법론</h2>
+<p><strong>사전학습</strong>: Hunyuan-TurboS의 데이터 정제 파이프라인(중복 제거, 저품질 필터링, 모델 기반 추출, 후처리 단계)을 재사용하되 STEM 데이터 수집·정제 과정을 강화하여 2,500억 토큰 규모의 고품질 STEM 코퍼스를 확보했다. 모델은 공유 전문가(shared expert) 1개와 세밀한 비공유 전문가 64개로 구성된 MoE 구조이며, 학습 시 공유 전문가는 항상 활성화되고 비공유 전문가는 8개만 동시에 활성화되어 총 130억 개의 활성 파라미터를 사용한다. 활성화 함수는 SwiGLU를 사용하며, Grouped-Query Attention(GQA)으로 KV 캐시 메모리 효율을 높였다. 학습은 (1) 4096 컨텍스트로 20조 토큰을 학습하는 기초 학습 단계, (2) 컨텍스트를 8192로 늘리며 학습률을 빠르게 감쇠시키는 어닐링 단계, (3) NTK-aware 위치 인코딩을 적용해 컨텍스트를 32K, 이어 256K까지 확장하는 장문맥 학습 단계로 구성된다.</p>
+<p><strong>후처리</strong>: 4단계로 진행되며, 먼저 수학·코드·논리·과학 네 영역에 대해 추론 지향 SFT를 수행한 뒤, Group Relative Policy Optimization(GRPO) 기반의 추론 지향 RL을 적용한다. 보상은 정답 일치 여부를 판단하는 경량 언어모델 기반 검증기(outcome reward model)와, 36개 프로그래밍 언어를 지원하는 샌드박스 실행 피드백을 결합해 구성하며, KL 발산 제약을 제거하고 온폴리시 학습·큰 배치·많은 롤아웃 수·낮은 샘플링 온도 등을 적용해 안정성을 높였다. 이어서 창작·번역·멀티턴 대화·복합 지시·역할극·지식 QA·에이전트(도구 호출) 등 다양한 시나리오를 포괄하는 범용 SFT를 수행하고, 마지막으로 정답 정확도와 스타일·일관성·적응성을 함께 평가하는 생성형 보상 모델(GRM)을 활용한 범용 RL을 16개 세부 주제, 30개 이상의 채점 서비스에 걸쳐 적용한다.</p>
+<p><strong>듀얼 체인오브소트</strong>: 빠른 사고와 느린 사고 모드를 하나의 통합 학습 구조로 동시에 최적화하며, 출력 형식은 "<think>" 블록의 내용 유무로 구분된다. 빠른 사고 모드에서는 이 블록이 비어 있고, 느린 사고 모드에서는 단계별 추론 과정이 담긴다. 사용자는 "/no_think" 또는 "/think" 제어 태그로 모드를 선택할 수 있으며, 태그가 없으면 기본적으로 느린 사고 모드가 적용된다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>사전학습 모델은 MMLU, MMLU-Pro, BBH, SuperGPQA 등 일반 과제, EvalPlus·MultiPL-E·MBPP·CRUXEval 등 코딩 과제, MATH·CMATH·GSM8K·GPQA 등 수학/STEM 과제로 평가되었다. Hunyuan-Large-1116, Qwen2.5-72B, Qwen3-A22B와 비교한 결과, Hunyuan-Large 대비 14개 벤치마크 중 12개에서 더 높은 점수를 기록했고(활성 파라미터는 1/4, 총 파라미터는 약 1/5 수준), Qwen2.5-72B 대비 대부분의 벤치마크에서, 3배 큰 총 파라미터를 가진 Qwen3-A22B 대비 12개 중 7개 벤치마크에서 우위를 보였다.</p>
+<p>후처리 모델은 느린 사고 모드 기준 AIME2024(87.3), AIME2025(76.8), MATH(94.3) 등 수학 벤치마크와 ZebraLogic(84.7), BBH(89.1) 등 논리 추론 벤치마크에서 OpenAI o1-1217, DeepSeek-R1, Qwen3-A22B와 비교해 최고 또는 상위권 성능을 기록했다. 에이전트 관련 벤치마크(BFCL v3, τ-Bench, ComplexFuncBench, C³-Bench)에서도 전반적으로 선두 성능을 보였다. 장문맥 평가(PenguinScrolls, LongBench-v2, FRAMES, RULER)에서는 Gemini 2.5 Pro에 이어 대체로 2위권 성능을 보였으며, 특히 RULER QA 과제에서 컨텍스트 길이가 64K~128K로 늘어나도 성능 저하가 상대적으로 완만했다. 추론 처리량 평가에서는 배치 크기 32, 입력 2048/출력 14336 토큰 조건에서 초당 약 1982 토큰의 처리량을 기록해, GQA와 MoE 구조 및 vLLM·SGLang·TensorRT-LLM 등과의 호환성, Weight Only INT8·W8A8·KV Cache FP8 등 양자화 지원을 통한 효율성을 입증했다.</p>
+<h2>한계점</h2>
+<p>논문에 별도의 "한계점" 절은 명시되지 않음. 다만 장문맥 평가에서 FRAMES 벤치마크 결과가 DeepSeek R1 및 Qwen3-A22B보다 낮게 나타나 RAG 특화 장문맥 처리 능력에는 개선의 여지가 있다고 저자들이 직접 언급했으며, 코딩 벤치마크 전반의 성능도 최상위 대형 모델들에는 다소 미치지 못한다고 서술되어 있다.</p>
+<h2>시사점</h2>
+<p>이 연구는 파라미터를 균일하게 활성화하는 밀집 모델 대신 세밀한 MoE 구조와 신중한 데이터 품질 관리, 다단계 후처리를 결합하면 훨씬 적은 활성 파라미터로도 최상위권 모델에 필적하는 추론·에이전트·장문맥 성능을 달성할 수 있음을 보여준다. 특히 사용자가 작업 난이도에 따라 빠른/느린 사고를 전환할 수 있는 듀얼 체인오브소트 방식은 연산 비용과 응답 품질 사이의 실질적 절충안을 제시하며, 이러한 접근을 오픈소스로 공개함으로써 지연 시간과 하드웨어 비용에 민감한 실제 배포 환경에서 효율적인 대형언어모델 활용을 촉진할 수 있는 실용적 방향을 제공한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.27284" target="_blank" rel="noopener">huggingface.co/papers/2609.27284</a> · 2026-09-25</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

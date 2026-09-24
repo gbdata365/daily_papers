@@ -1,0 +1,125 @@
+<meta charset="UTF-8">
+<title>슈뢰딩거의 코드 저장소</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#8 · Daily Papers 2026-09-25</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 14</span>
+    </div>
+    <h1 class="article-title">Schrödinger's Code Repository: Have LLMs Learned SWE-bench or Memorized It?</h1>
+    <p class="article-title-ko">슈뢰딩거의 코드 저장소: LLM은 SWE-bench를 학습했는가, 암기했는가?</p>
+    <p class="article-sub">SWE-bench와 같은 저장소(repository) 수준 코딩 벤치마크에서 LLM 코딩 에이전트의 높은 점수가 실제 코드 이해 능력이 아니라 학습 데이터에 노출된 저장소 표면 단서(네이밍 규칙, 파일 배치 등)에 대한 암기에서 비롯될 수 있음을, 저장소 표현을 평가 시점에 동적으로 변형하는 프레임워크(SchrodingerRepo)로 입증한 연구다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.27891" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.27891" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Schrödinger's Code Repository: Have LLMs Learned SWE-bench or Memorized It?</li>
+<li><strong>저자</strong>: Silin Chen, Yufei Yang (공동 1저자), Xiaodong Gu(교신저자), Yuling Shi, Chengcheng Wan, Haibing Guan (상하이교통대학, 시안교통대학, 화둥사범대학 소속)</li>
+<li><strong>출처</strong>: arXiv:2609.27891v1 [cs.SE] (2026-08-21)</li>
+<li><strong>프로젝트 페이지</strong>: 코드 및 데이터 공개: https://github.com/cslsolow/Schrodinger-Repo</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.27891">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>SWE-bench와 같은 저장소(repository) 수준 코딩 벤치마크에서 LLM 코딩 에이전트의 높은 점수가 실제 코드 이해 능력이 아니라 학습 데이터에 노출된 저장소 표면 단서(네이밍 규칙, 파일 배치 등)에 대한 암기에서 비롯될 수 있음을, 저장소 표현을 평가 시점에 동적으로 변형하는 프레임워크(SchrodingerRepo)로 입증한 연구다.</p>
+<h2>배경 및 문제의식</h2>
+<p>SWE-bench는 실제 GitHub 이슈를 기반으로 한 저장소 수준 코드 수정 벤치마크로 널리 쓰이지만, 널리 알려진 오픈소스 저장소를 반복적으로 사용하기 때문에 학습·개발·평가 전 과정에서 동일한 저장소 표현이 데이터 누출(data leakage)에 노출될 위험이 있다. 저자들은 사전 동기 실험에서, 문제 설명을 세부 단서 단위로 나눠 점진적으로 공개하며 사람이 판정한 결과 평가 대상 LLM의 65% 이상 인스턴스에서 과제-특정 암기 증거가 나타났고, 18% 이상은 패치/테스트 수준까지 구체적으로 기억하고 있음을 확인했다. 이는 "강한 SWE-bench 성능이 견고한 소프트웨어공학적 추론을 반영하는가, 아니면 유출된 저장소 표현에 대한 단순한 친숙함을 반영하는가"라는 근본적 질문을 제기한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>저장소를 고정된 벤치마크 아티팩트가 아니라, 에이전트가 평가 환경에 진입할 때만 구체화되는 "평가 시점의 잠재 변수"로 다루는 새로운 프레임워크 SchrodingerRepo(슈뢰딩거의 저장소)를 제안했다.</li>
+<li>원본과 의미적으로 동등하지만(실행 동작 보존) 네이밍 규칙, 파일 배치, 구현 관용구 등 저장소 측 단서를 제거하는 4단계 변형 체계를 설계했다.</li>
+<li>SWE-bench Verified, 최신(2026년 3월) SWE-rebench 리더보드, SWE-QA 등 다양한 벤치마크와 여러 LLM(GPT-5.1, GPT-5.4-mini, DeepSeek-v4-Flash, Gemini-3.1-Flash-Lite)에 대해 체계적인 실증 연구를 수행했다.</li>
+</ul>
+<h2>방법론</h2>
+<p>SchrodingerRepo는 시드 기반의 가역적(invertible) 매핑을 통해 원본 저장소와 에이전트가 보는 뷰 사이를 변환하며, 4개 레벨로 구성된다.
+1. <strong>Level 1 (문제 설명 재구성)</strong>: LLM 생성기가 문제 설명을 의미 보존하며 재작성하고, 검증기 LLM이 과제 정의 제약이 유지되는지 확인 후 필요 시 보정한다.
+2. <strong>Level 2 (네임스페이스 매핑)</strong>: AST에서 저장소 고유 식별자(클래스명, 함수명, 파일/모듈 경로 등)를 추출해 서브워드 단위로 분해한 뒤, 시드 제어 하에 CamelCase·snake_case 등 명명 관례를 유지하면서 일관된 가상 네임스페이스로 재매핑한다. 실행은 항상 원본 네임스페이스에서 이뤄지도록 양방향 번역기가 관측/행동을 변환한다.
+3. <strong>Level 3 (파일 내 레이아웃 재정렬)</strong>: 정의 간 의존성 그래프를 만들어 위상정렬로 유효한 순서 중 하나를 무작위로 선택, 함수/클래스 정의 등의 상대적 배치 순서만 바꾸고 기능은 그대로 둔다.
+4. <strong>Level 4 (기능 보존 재작성)</strong>: 버그 수정과 직접 관련된 코드 영역을 식별해, 정답 패치를 그대로 재현하지 않으면서 동일한 기능을 유지하는 다른 구현으로 재작성 에이전트가 오프라인에서 다시 작성한다.</p>
+<p>모든 레벨은 검증 절차(사람 검토 100개 샘플 확인, Pass_to_Pass/Fail_to_Pass 테스트 통과 조건 유지)를 거치며, 최종 제출물은 변형된 저장소가 아니라 원본 저장소 좌표계로 역산되어 표준 SWE-bench 채점 방식과 호환된다. 평가 에이전트로는 mini-swe-agent를 사용했다.</p>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li><strong>RQ1 (SWE-bench Verified)</strong>: 4단계를 모두 적용하면 Pass@1이 모델별로 6.0~14.4%p 하락했다(GPT-5.4-mini 46.8%→35.6%, DeepSeek-v4-Flash 72.8%→66.8%, GPT-5.1 44.6%→36.2%, Gemini-3.1-Flash-Lite 56.7%→42.3%, 모두 p&lt;0.05). 레벨별로는 Level 2(네임스페이스 매핑)의 영향이 가장 컸으며(6.0~7.4%p 하락), Level 1은 영향이 미미했다. 동시에 평균 행동 수와 입력 토큰 사용량도 크게 증가(입력 토큰 최대 2.5배 이상)했다.</li>
+<li><strong>RQ2 (행동 분석)</strong>: 늘어난 행동의 81.6~83.6%가 저장소 탐색·위치 파악(navigate, search, read, probe)에 소요되었고, 편집·테스트 관련 행동 비중은 낮았다. 이는 친숙한 단서가 사라지면 에이전트가 빠른 결함 위치 파악 대신 반복 탐색에 의존하게 됨을 시사한다.</li>
+<li><strong>RQ3 (SWE-QA로 전이)</strong>: 저장소 수준 질의응답 벤치마크에서도 동일한 경향이 재현되어, 평균 점수가 최대 4.64점 하락하고 행동 수가 18.15~43.02% 증가했다. 여기서도 Level 2의 영향이 가장 컸다.</li>
+<li><strong>RQ4 (시간적 held-out 인스턴스)</strong>: 평가 대상 모델 출시 이후 생성된 2026년 3월 SWE-rebench 인스턴스에서는 SchrodingerRepo 적용 후에도 Pass@1이 17.27%로 동일하게 유지되었으나, 행동 수(+8.15%)와 입력 토큰(+22.01%)은 증가했다. 이는 저장소 표현 변형이 과제 자체의 난이도를 높이는 것이 아니라 상호작용 비용만 늘린다는 것을 뒷받침한다.</li>
+<li><strong>사례 연구</strong>: Django 저장소의 한 이슈에서, 원본 뷰에서는 에이전트가 익숙한 Django 용어와 경로만으로 37회 행동만에 수정 위치를 찾았지만, 변형된 뷰에서는 217회 행동이 필요했음에도 결국 동일한 패치에 수렴했다.</li>
+</ul>
+<h2>한계점</h2>
+<ul>
+<li>외적 타당성: 평가가 주로 Python 기반 오픈소스 저장소로 구성된 SWE-bench Verified와 SWE-QA에 한정되어, 다른 프로그래밍 언어·생태계로의 일반화 가능성은 검증되지 않았다.</li>
+<li>내적 타당성: 현재 구현은 주로 커맨드라인 기반 저장소 상호작용을 대상으로 하며, IDE API나 언어 서버 질의 등 더 풍부한 저장소 인식 도구를 사용하는 에이전트에는 추가 적응이 필요할 수 있다.</li>
+</ul>
+<h2>시사점</h2>
+<p>저장소 수준 벤치마크에서 단일한 고정 저장소 표현만으로 평가하면 견고한 소프트웨어공학적 추론과 특정 저장소 표현에 대한 단순 친숙함을 구분하기 어렵다. 저자들은 저장소 표현을 평가 시점의 명시적 실험 변수로 다뤄, 특정 익숙한 표현에서의 성능이 아니라 의미적으로 동등한 다양한 저장소 구현 전반에 걸친 견고성을 측정하는 방향으로 평가 패러다임을 전환할 것을 제안한다. 이는 향후 코딩 에이전트 벤치마크 설계와 오염(contamination) 방지 연구에 중요한 방법론적 지침을 제공한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.27891" target="_blank" rel="noopener">huggingface.co/papers/2609.27891</a> · 2026-09-25</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

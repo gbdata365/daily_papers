@@ -1,0 +1,110 @@
+{
+  "2609.26780": {
+    "base": "2609_스피커멤_화자중심-이중트랙-메모리",
+    "rank": "#1",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "77",
+    "en_title": "SpeakerMem-R1: Speaker-Centered Dual-Track Memory for Multi-Party Dialogue",
+    "ko_title": "스피커멤-R1: 화자 중심 이중 트랙 메모리를 활용한 다자간 대화 시스템"
+  },
+  "2609.23038": {
+    "base": "2609_스페이셜인터랙터_물리세계상호작용-공간추론학습",
+    "rank": "#2",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "41",
+    "en_title": "Spatial-Interactor: Learning Spatial Reasoning through Interaction with the Observable Physical World",
+    "ko_title": "스페이셜 인터랙터: 관찰 가능한 물리 세계와의 상호작용을 통한 공간 추론 학습"
+  },
+  "2609.24308": {
+    "base": "2609_해피월드벤치_세계모델신뢰성벤치마크",
+    "rank": "#3",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "39",
+    "en_title": "HappyWorld-Bench",
+    "ko_title": "해피월드벤치 (세계 모델 신뢰성 벤치마크)"
+  },
+  "2609.28466": {
+    "base": "2609_비디오메모리_자기회귀비디오생성-과거프레임메모리",
+    "rank": "#4",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "36",
+    "en_title": "The Past Frames the Future: Memory for Autoregressive Video Generation — A Survey",
+    "ko_title": "과거가 미래를 만든다: 자기회귀 비디오 생성을 위한 메모리 서베이"
+  },
+  "2609.27334": {
+    "base": "2609_저스트인타임메모리_LLM에이전트-과제적응메모리",
+    "rank": "#5",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "33",
+    "en_title": "Just-in-Time Memory: Learning to Curate Task-Adaptive Memory for LLM Agents",
+    "ko_title": "저스트인타임 메모리: LLM 에이전트를 위한 과제 적응형 메모리 큐레이션 학습"
+  },
+  "2609.22947": {
+    "base": "2609_리워드버스_루브릭기반비디오보상모델",
+    "rank": "#6",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "20",
+    "en_title": "RewardVerse: Rubric-Guided Policy Optimization for Video Reward Modeling",
+    "ko_title": "리워드버스: 비디오 보상 모델링을 위한 루브릭 기반 정책 최적화"
+  },
+  "2609.26355": {
+    "base": "2609_팩트_신용할당-크리틱정렬",
+    "rank": "#7",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "14",
+    "en_title": "PACT: From Credit Assignment to Critic Alignment",
+    "ko_title": "PACT: 신용 할당에서 크리틱 정렬로"
+  },
+  "2609.27891": {
+    "base": "2609_슈뢰딩거코드저장소_SWE벤치암기여부분석",
+    "rank": "#8",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "14",
+    "en_title": "Schrödinger's Code Repository: Have LLMs Learned SWE-bench or Memorized It?",
+    "ko_title": "슈뢰딩거의 코드 저장소: LLM은 SWE-bench를 학습했는가, 암기했는가?"
+  },
+  "2609.25963": {
+    "base": "2609_지오페어_기하보존트랜스포머압축",
+    "rank": "#9",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "11",
+    "en_title": "GeoPair: Geometry-Preserving Cross-Layer Factorization for Training-Free Transformer Compression",
+    "ko_title": "지오페어: 기하 보존 크로스-레이어 분해를 통한 학습 없는 트랜스포머 압축"
+  },
+  "2609.23784": {
+    "base": "2609_팩랩_로봇빈패킹MLLM프레임워크",
+    "rank": "#10",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "10",
+    "en_title": "PackLab: A Comprehensive Framework for Developing, Training, and Evaluating MLLMs in Robotic Bin Packing",
+    "ko_title": "PackLab: 로봇 빈 패킹을 위한 MLLM 개발·훈련·평가 종합 프레임워크"
+  },
+  "2609.28256": {
+    "base": "2609_멤바디드_VLA순환연상메모리",
+    "rank": "#11",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "9",
+    "en_title": "MemBodied: Recurrent Associative Memory for Vision-Language-Action Models",
+    "ko_title": "멤바디드: 시각-언어-행동 모델을 위한 순환 연상 메모리"
+  },
+  "2609.27284": {
+    "base": "2609_훈위안A13B_기술보고서",
+    "rank": "#12",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "8",
+    "en_title": "Hunyuan-A13B Technical Report",
+    "ko_title": "훈위안-A13B 기술 보고서"
+  }
+}

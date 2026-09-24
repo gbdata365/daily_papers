@@ -1,0 +1,115 @@
+<meta charset="UTF-8">
+<title>저스트인타임 메모리</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#5 · Daily Papers 2026-09-25</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 33</span>
+    </div>
+    <h1 class="article-title">Just-in-Time Memory: Learning to Curate Task-Adaptive Memory for LLM Agents</h1>
+    <p class="article-title-ko">저스트인타임 메모리: LLM 에이전트를 위한 과제 적응형 메모리 큐레이션 학습</p>
+    <p class="article-sub">과거 경험을 기록 시점(write time)에 미리 요약해두는 기존 에이전트 메모리 방식과 달리, 원본 궤적(raw trajectory)을 그대로 저장해두었다가 새로운 과제가 주어지는 읽기 시점(read time)에 그 과제에 맞춰 압축된 가이드를 즉석에서 합성하는 "Just-in-Time Memory(JITMEM)"를 제안하고, 이를 강화학습(GRPO)으로 학습시켜 여러 에이전트 벤치마크에서 기존 최강 기법 대비 큰 폭의 성능 향상을 달성했다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.27334" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.27334" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Just-in-Time Memory: Learning to Curate Task-Adaptive Memory for LLM Agents</li>
+<li><strong>저자</strong>: Yefan Zhou, Yang Li (공동 1저자), Zeyu Leo Liu, Semih Yavuz, Shafiq Joty (Salesforce AI Research)</li>
+<li><strong>출처</strong>: arXiv:2609.27334v1 [cs.AI] (2026년 9월 23일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.27334">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>과거 경험을 기록 시점(write time)에 미리 요약해두는 기존 에이전트 메모리 방식과 달리, 원본 궤적(raw trajectory)을 그대로 저장해두었다가 새로운 과제가 주어지는 읽기 시점(read time)에 그 과제에 맞춰 압축된 가이드를 즉석에서 합성하는 "Just-in-Time Memory(JITMEM)"를 제안하고, 이를 강화학습(GRPO)으로 학습시켜 여러 에이전트 벤치마크에서 기존 최강 기법 대비 큰 폭의 성능 향상을 달성했다.</p>
+<h2>배경 및 문제의식</h2>
+<p>LLM 에이전트가 여러 과제를 순차적으로 수행할 때, 과거 경험(trajectory)을 재사용하는 "에이전트 메모리" 연구가 활발하다. 그러나 기존 방식들(Reflexion, ReasoningBank, 스킬/워크플로우 추출 등)은 공통적으로 과제가 끝난 직후, 즉 "기록 시점"에 궤적을 반성문·전략·스킬 같은 고정된 형태로 압축해 저장한다. 저자들은 이 방식에 두 가지 근본적 한계가 있다고 지적한다. 첫째, 미래에 어떤 질의가 들어올지 모르는 상태에서 무엇을 남길지 미리 결정해야 하므로 정보가 조기에, 그리고 비가역적으로 손실된다. 둘째, 하나의 궤적에서 얻을 수 있는 교훈은 여러 가지일 수 있는데(예: 같은 가정용 로봇 상호작용이 "온도 변화" 패턴을 가르칠 수도, "물건 배치" 패턴을 가르칠 수도 있음), 기록 시점에는 미래 과제를 모르기 때문에 하나의 고정된 요약만 만들 수밖에 없다. 또한 이런 기록 시점 큐레이터를 학습시키려 해도, 저장 결정의 가치는 나중에 관련 질의가 들어와야 드러나므로 장기 크레딧 할당(credit assignment) 문제가 발생해 학습이 어렵다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>읽기 시점 큐레이션(read-time curation) 개념 제시</strong>: 메모리 큐레이션을 기록 시점이 아니라 새 과제가 들어오는 읽기 시점으로 미룸으로써, 동일한 저장된 궤적이라도 과제에 따라 다른 페이로드(payload)를 만들어낼 수 있게 했다.</li>
+<li><strong>즉각적 크레딧 할당</strong>: 큐레이터가 만든 페이로드가 바로 그 과제 수행에 쓰이므로, 보상(과제 성공 여부)이 즉시 주어져 학습이 단일 스텝 문제로 단순화된다. 이는 SkillOS 같은 기록 시점 학습 기법이 필요로 하는 "관련 과제 묶기(task grouping)" 장치를 없앤다.</li>
+<li><strong>JITMEM 시스템</strong>: 원본 궤적을 손실 없이 저장하는 메모리 뱅크, BM25 기반 검색기, GRPO로 학습되는 큐레이터, 고정된(frozen) 실행 에이전트로 구성된 읽기 시점 메모리 프레임워크를 구현했다.</li>
+<li><strong>실증적 검증</strong>: ALFWorld, WebShop, τ²-bench 세 벤치마크에서 기존 최강 베이스라인 대비 각각 16.2, 16.3, 3.9 포인트(절대 성공률) 향상을 보였으며, 학습되지 않은(prompted) 큐레이터만으로도 이미 경쟁력이 있음을 보였다.</li>
+</ul>
+<h2>방법론</h2>
+<p>JITMEM은 네 가지 요소로 구성된다: (1) 과거 원본 궤적을 저장하는 메모리 뱅크 M, (2) 현재 과제와 관련된 궤적을 검색하는 검색기 R(BM25 기반), (3) 학습 가능한 메모리 큐레이터 π_φ, (4) 학습되지 않는 고정 실행 에이전트 π_L. 각 과제마다 파이프라인은 네 단계로 동작한다: ① 검색 – 현재 과제와 유사한 상위 k개 원본 궤적을 가져온다. ② 큐레이션 – 큐레이터가 현재 과제와 검색된 궤적을 함께 읽고 과제 맞춤형 압축 페이로드를 생성한다. ③ 실행 – 고정된 실행 에이전트가 이 페이로드를 컨텍스트에 넣고 과제를 수행한다. ④ 갱신 – 실행 결과가 성공으로 판정되면(실행 에이전트 자신이 LLM-as-judge 역할을 겸함) 해당 궤적을 메모리 뱅크에 추가한다. 생성된 페이로드 자체는 저장되지 않고 매번 새로 합성된다.</p>
+<p>메모리 뱅크는 요약이나 반성 없이 원본 궤적(과제 설명 + 관찰-행동 시퀀스 전체)을 그대로 저장하며, 성공한 궤적만 필터링해 저장함으로써 검색 시 깨끗한 신호를 유지한다. 큐레이터 학습에는 가치망 없이 그룹 상대적 이점을 사용하는 GRPO를 적용한다: 동일 과제에 대해 큐레이터가 여러 개의 후보 페이로드를 생성하면, 고정된 실행 에이전트가 각각으로 과제를 시도해 실제 성공 보상을 반환하고, 이 보상 차이(그룹 평균 대비)로 큐레이터를 직접 업데이트한다. 학습 시에는 재현성을 위해 기본 실행 에이전트만으로 한 번 실행해 만든 고정된 학습용 뱅크를 사용하며, 실제 배포(테스트) 시에는 메모리 뱅크가 과제를 풀어가며 온라인으로 성장한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>ALFWorld(가정용 텍스트 기반 구현 과제, 테스트 140개), WebShop(웹 쇼핑 과제, 500개), τ²-bench(항공·소매·통신 도메인의 대화형 도구 사용 과제) 세 벤치마크에서 평가했다. 비교 대상은 메모리를 쓰지 않는 기본 에이전트와 세 가지 기록 시점 베이스라인(ReasoningBank, MemP, SkillOS)이다. 실행 에이전트로는 Qwen3-8B, Gemini-2.5-Pro, GPT-5.4를 사용했고, 큐레이터는 Qwen3-8B 기반으로 100 스텝 GRPO 학습(학습률 1e-6, 배치 32, 그룹 크기 8)했다.</p>
+<p>주요 결과로, 학습된 JITMEM은 ALFWorld에서 최강 베이스라인 대비 +16.2, WebShop에서 +16.3, τ²-bench에서 +3.9 포인트(절대 성공률) 향상을 보였다. 흥미롭게도 학습되지 않은 프롬프트 기반 큐레이터(JITMEM-base)조차 기록 시점 베이스라인들과 대등하거나 그보다 우수했는데, 이는 "읽기 시점의 과제 적응적 큐레이션" 자체가 성능 향상의 주요 원천임을 시사한다. 학습된 큐레이터는 Qwen3-8B로 학습했음에도 더 강력한 실행 에이전트(GPT-5.4)에 재학습 없이 전이되어, GPT-5.4로 직접 학습한 큐레이터와 불과 1.4포인트 차이를 보였다. 또한 JITMEM은 기록 시점 방식보다 입력 토큰을 50.3~56.3% 줄이고 실행 스텝을 28.4~31.4% 줄이는 등 더 효율적인 컨텍스트를 만들어냈다.</p>
+<p>절제 연구(ablation)에서는 (1) 현재 과제를 큐레이터 입력에서 제거하면(과제 적응성 제거) 성능이 크게 떨어지고, 특히 RL 학습 후에는 그 격차가 더 커져 RL이 과제 신호를 적극 활용하도록 학습됨을 확인했다. (2) 성공한 궤적만 필터링해 저장하는 것이 모든 궤적을 정답 레이블과 함께 저장하는 것보다 우수했다. (3) 원본 궤적 대신 기록 시점에 미리 압축한 요약만 저장하면 성능이 크게 하락해(WebShop에서 최대 8.2포인트), 압축 시 손실된 정보를 큐레이터가 읽기 시점에 복구할 수 없음을 보였다. (4) 검색 결과를 빈 집합으로 만들면 RL 학습된 큐레이터의 성능이 학습되지 않은 버전 수준 이하로 떨어져, RL이 실제로 검색된 경험을 활용하는 법을 배웠음을 확인했다.</p>
+<h2>한계점</h2>
+<p>저자들이 명시한 한계는 다음과 같다. 검색기로 사용한 BM25는 단순한 방식이라 메모리 뱅크가 크고 다양해질수록 병목이 될 수 있다. 큐레이터가 과제마다 추가적인 LLM 호출을 필요로 한다는 오버헤드가 있다. 페이로드 형식이 벤치마크별로 고정되어 있고 수작업으로 설계되었다. 향후 과제로 페이로드 형식의 공동 최적화, 더 강력한 검색기 탐색, 과제 단위가 아닌 턴/스텝 단위의 큐레이션으로의 확장을 제시했다.</p>
+<h2>시사점</h2>
+<p>이 연구는 에이전트 메모리 설계에서 "무엇을 저장할 것인가"뿐 아니라 "언제, 어떤 과제를 위해 큐레이션할 것인가"가 핵심 변수임을 보여준다. 원본 정보를 손실 없이 보존하고 필요한 순간에 맞춤형으로 가공하는 접근은, 심리학의 재구성적 기억(reconstructive memory) 관점과도 맞닿아 있으며, 향후 장기적으로 상호작용하는 LLM 에이전트 시스템에서 메모리 압축·검색·학습 파이프라인을 설계할 때 참고할 수 있는 방향을 제시한다. 또한 큐레이터와 실행 에이전트를 분리해 학습함으로써 하나의 학습된 큐레이터를 여러 실행 모델에 재사용할 수 있다는 점은 실무적 배포 비용 절감 측면에서도 의미가 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.27334" target="_blank" rel="noopener">huggingface.co/papers/2609.27334</a> · 2026-09-25</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

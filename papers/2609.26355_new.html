@@ -1,0 +1,125 @@
+<meta charset="UTF-8">
+<title>PACT</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#7 · Daily Papers 2026-09-25</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 14</span>
+    </div>
+    <h1 class="article-title">PACT: From Credit Assignment to Critic Alignment</h1>
+    <p class="article-title-ko">PACT: 신용 할당에서 크리틱 정렬로</p>
+    <p class="article-sub">토큰 단위 크레딧(credit)을 수학적으로 유일하게 결정하는 세 가지 조건을 제시하고, 이를 바탕으로 크리틱(critic)을 업데이트된 정책에 맞춰 재정렬하는 액터-앤-크리틱 학습법 PACT를 제안하여 수학 추론과 에이전트형 코딩 벤치마크에서 GRPO·PPO·SAO 대비 큰 폭의 성능 향상을 달성했다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.26355" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.26355" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: PACT: From Credit Assignment to Critic Alignment</li>
+<li><strong>저자</strong>: AllSpark Team (Jiayan Fu, Hang Xu, Yong Zhang, Zhaokai Luo, Yao Hu, Dongyan Zhao, Mu Chuan 등)</li>
+<li><strong>출처</strong>: arXiv:2609.26355v1 [cs.LG] (2026년 9월 22일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음 (GitHub: https://github.com/AllSpark-Research/PACT)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.26355">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>토큰 단위 크레딧(credit)을 수학적으로 유일하게 결정하는 세 가지 조건을 제시하고, 이를 바탕으로 크리틱(critic)을 업데이트된 정책에 맞춰 재정렬하는 액터-앤-크리틱 학습법 PACT를 제안하여 수학 추론과 에이전트형 코딩 벤치마크에서 GRPO·PPO·SAO 대비 큰 폭의 성능 향상을 달성했다.</p>
+<h2>배경 및 문제의식</h2>
+<p>대형 언어모델(LLM)의 강화학습 후처리(post-training)에서는 하나의 궤적(trajectory) 전체에 대해 한 번만 주어지는 스칼라 보상(outcome reward)을, 개별 토큰 단위로 세분화하여 학습 신호로 사용해야 한다. 이때 "최종 보상을 궤적 내 각 토큰에 어떻게 귀속시킬 것인가"라는 크레딧 할당(credit assignment) 문제가 발생하는데, 저자들은 강화학습에서 이 개념이 중심적인 역할을 함에도 불구하고 그동안 알고리즘마다 서로 다른 방식으로 정의되어 왔을 뿐, 일반적으로 합의된 수학적 정의가 없었다고 지적한다. 저자들은 자기회귀적 언어모델의 생성 과정을 토큰 단위 마르코프 결정 과정(MDP)으로 모델링하는 기존 방식만으로는 최종 보상이 생성된 토큰들에 걸쳐 어떻게 분배되어야 하는지를 설명하지 못한다고 보고, 크레딧 할당에는 마르코프 정식화를 넘어서는 별도의 특성화가 필요하다고 주장한다.</p>
+<h2>핵심 기여</h2>
+<p>논문의 기여는 크게 두 갈래다.</p>
+<ol>
+<li>
+<p><strong>토큰 단위 크레딧의 유일 표현 정리</strong>: 완전성(Completeness, 할당된 크레딧의 합이 최종 보상과 초기 예측의 차이를 완전히 설명해야 함), 접두사 일관성(Prefix Consistency, 이미 생성된 접두사에 대한 누적 크레딧은 미래 토큰 실현과 무관하게 고정되어야 함), 중립성(Neutrality, 다음 토큰에 대한 기대 크레딧이 0이어야 함)이라는 세 가지 규칙성 조건을 제시하고, 이 조건을 만족하는 토큰 단위 크레딧 할당이 유일하게 존재하며 그 형태가 조건부 기대 보상(가치함수) 간의 차분(마팅게일 차분열)으로 주어짐을 증명한다. 이 유일 표현을 통해 기존 알고리즘들의 여러 현상을 재해석한다: (a) 이상적인 교사(teacher) 하에서 온폴리시 증류(On-Policy Distillation, OPD)가 유일 크레딧이 유도하는 정책 그래디언트와 기댓값상 동일하며, 교사가 암묵적 크리틱 역할을 한다는 점, (b) RLLOO(REINFORCE Leave-One-Out)의 응답 단위 신호가 비록 토큰 단위 크레딧보다 거칠어도 기댓값상 동일한 정책 그래디언트 기여를 유도한다는 점, (c) 유계(bounded)된 결과 보상 하에서 토큰 크레딧이 근사적으로 희소(sparse)하며, 이로 인해 일반화된 이점 추정(GAE)에서 중간 크리틱 오차가 실제 크레딧 신호와 비슷하거나 이를 압도할 수 있다는 점.</p>
+</li>
+<li>
+<p><strong>정책 정렬 크리틱 학습(Policy Aligned Critic Training, PACT)</strong>: 위 분석에서 얻은 통찰을 바탕으로, 액터를 먼저 업데이트한 뒤 크리틱을 업데이트하는 "액터-앤-크리틱(Actor-then-Critic)" 순서를 채택하고, 크리틱 학습 시 중요도 샘플링(importance sampling) 보정을 적용해 크리틱을 갱신된 정책에 맞춰 재정렬하는 PACT를 제안한다.</p>
+</li>
+</ol>
+<h2>방법론</h2>
+<p>표준 PPO 방식에서는 반복(iteration) k에서 수집한 궤적에 대한 크리틱 예측값이 이전 반복(k-1)의 크리틱 파라미터로 생성되며, 크리틱이 이후 업데이트되더라도 그 값은 현재 액터 업데이트에 재사용되지 않아 액터와 크리틱 사이에 "정책 지연(policy-critic lag)"이 발생한다고 지적한다. PACT는 이를 해결하기 위해 다음과 같은 절차를 사용한다.
+- 각 반복 내에서 현재 크리틱으로 먼저 액터를 업데이트한다.
+- 액터 업데이트가 끝난 뒤, 동일한 롤아웃 배치에 대해 갱신된 액터로 한 번 더 순전파(forward pass)를 수행하여, 업데이트 전후 정책 간의 연속 중요도 비율(continuation importance ratio)을 계산한다.
+- 이 중요도 비율을 보상에 곱한 값을 크리틱 학습의 목표값으로 사용함으로써, 업데이트 이전 정책으로 수집된 궤적을 업데이트된 정책에 대한 크리틱 학습에 활용할 수 있도록 한다(측정 변환/change of measure 논리에 기반).
+- 실제 연속 중요도 비율은 긴 응답에서 분산이 클 수 있으므로, 분리된(detached) 현재 토큰 중요도 비율을 사용하고, 그 비율이 특정 범위를 벗어나는 토큰의 크리틱 손실은 마스킹하여 제외한다.
+- 또한 크리틱을 평균제곱오차(MSE) 대신 이진 교차 엔트로피(BCE)로 학습한다. 보상을 [0,1] 구간으로 정규화하면 크리틱을 시그모이드로 파라미터화한 확률적 값 예측으로 볼 수 있으며, BCE와 MSE는 동일한 최적해(참 가치함수)를 갖지만 BCE 기반 크리틱이 더 빠르게 수렴하고 성공/실패 궤적 간 가치 분리가 더 뚜렷하다는 것을 실험으로 보인다.
+- 추가로 GAE의 λ 파라미터를 1로 설정하면(즉 λ=1), 중간 크리틱 오차 항이 사라지고 접두사 가치 오차만 남는다는 이론적 분석에 따라 PACT는 λ=1을 사용한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>모든 강화학습 실험은 Dressage(에이전트형 RL 프레임워크, slime 기반)로 수행되었다.
+- <strong>수학 추론</strong>: Qwen3.5-4B를 DAPO-Math-17k의 부분집합(3,200문제, OpenCode 에이전트 하네스 사용)으로 학습하고, AIME 2025, AIME 2026, BeyondAIME, HMMT Nov. 2025 네 개 벤치마크에서 Avg@16 정확도로 평가했다. PACT는 평균 72.87%의 정확도를 달성하여 GRPO(64.07%) 대비 8.80%p, PPO(λ=1.0, 59.71%) 대비 13.16%p, SAO(51.14%) 대비 21.73%p 높은 성능을 보였다.
+- <strong>에이전트형 코딩</strong>: Qwen3.6-35B-A3B를 OpenSWE 데이터로 Codex 에이전트(Harbor 프레임워크 경유)를 통해 학습하고 SWE-bench Verified에서 pass@1로 평가했다. PACT는 67.4%의 통과율로 GRPO(65.4%), PPO(65.0%), SAO(63.6%) 대비 각각 2.0, 2.4, 3.8%p 높은 성능을 달성했다.
+- <strong>에이블레이션(ablation)</strong>: (1) 크리틱 목적함수 비교에서, 동일한 온폴리시 롤아웃 데이터로 학습한 BCE 크리틱이 MSE 크리틱보다 낮은 손실과 더 뚜렷한 양성/음성 궤적 간 가치 분리를 보였다. (2) 중요도 샘플링(IS) 보정 유무 비교에서, PACT w/o IS(액터-앤-크리틱 순서와 BCE는 유지하되 크리틱 목표값 보정을 제거)는 평균 정확도 67.74%에 그쳤으나, IS 보정을 추가한 PACT는 72.87%로 5.13%p 향상되었고 학습도 더 안정적이었다.
+- 또한 PPO에서 λ=0.95를 사용할 경우 학습 도중 정책 붕괴(policy collapse)가 관찰되어 λ=1.0보다 성능이 크게 낮았는데, 이는 중간 크리틱 오차에 대한 논문의 이론적 분석과 일치하는 결과로 제시된다.</p>
+<h2>한계점</h2>
+<p>논문 본문에는 별도의 "한계점(Limitations)" 절이 명시되어 있지 않다(논문에 명시되지 않음). 다만 본문 곳곳에서 저자들이 스스로 언급한 실무적 제약은 다음과 같다: 연속 중요도 비율(continuation importance ratio)은 긴 응답(long response)에서 분산이 커질 수 있어, 이를 그대로 사용하지 않고 현재 토큰 단위의 분리된 비율과 클리핑/마스킹 범위를 도입하는 근사적 처리가 필요했다는 점, 그리고 크리틱을 갱신된 정책에 맞추기 위해 매 반복마다 추가적인 순전파(forward pass) 1회가 필요하다는 점(다만 저자들은 이를 "안정적이고 저비용의 대안"이라고 표현한다)이다.</p>
+<h2>시사점</h2>
+<p>이 연구는 크레딧 할당이라는, 강화학습에서 오랫동안 알고리즘 의존적으로만 다뤄져 온 개념에 대해 완전성·접두사 일관성·중립성이라는 세 가지 공리적 조건으로부터 유일한 수학적 표현을 도출함으로써, OPD의 교사 신호, RLOO의 응답 단위 베이스라인, GAE의 λ 파라미터 선택 등 서로 이질적으로 보였던 기존 RL 기법들을 하나의 통일된 틀에서 설명할 수 있음을 보여준다. 이는 단순히 이론적 정리에 그치지 않고, 액터와 크리틱 간의 정책 불일치(policy-critic lag)라는 실제 학습상의 문제를 짚어내고 이를 개선하는 구체적인 알고리즘(PACT)으로 이어져, 수학 추론과 소프트웨어 엔지니어링 에이전트라는 서로 다른 두 영역에서 일관된 성능 향상을 입증했다는 점에서, 크레딧 이론과 실제 액터-크리틱 구현 사이의 간극을 좁히는 사례로 볼 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.26355" target="_blank" rel="noopener">huggingface.co/papers/2609.26355</a> · 2026-09-25</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

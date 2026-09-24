@@ -1,0 +1,122 @@
+<meta charset="UTF-8">
+<title>스피커멤-R1</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#1 · Daily Papers 2026-09-25</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 77</span>
+    </div>
+    <h1 class="article-title">SpeakerMem-R1: Speaker-Centered Dual-Track Memory for Multi-Party Dialogue</h1>
+    <p class="article-title-ko">스피커멤-R1: 화자 중심 이중 트랙 메모리를 활용한 다자간 대화 시스템</p>
+    <p class="article-sub">다자간(multi-party) 대화에서 "누가 무엇을 말했는지"와 "그 정보가 누구에 관한 것인지"를 놓치는 기존 메모리 시스템의 한계를 해결하기 위해, 원문 그대로의 발화 기록과 화자별·그룹별로 구조화된 파생 상태를 동시에 유지하는 이중 트랙(dual-track) 메모리 구조와, 이를 작성하는 소형 모델을 강화학습으로 훈련하는 SpeakerMem-R1을 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.26780" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.26780" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: SpeakerMem-R1: Speaker-Centered Dual-Track Memory for Multi-Party Dialogue</li>
+<li><strong>저자</strong>: Haobo Zheng, Tan Tang(교신저자), Yan Chen, Weijie Wang, Yingcai Wu (Zhejiang University, State Key Lab of CAD&amp;CG)</li>
+<li><strong>출처</strong>: arXiv:2609.26780v1 [cs.CL] (2026년 9월)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://2022hpsk.github.io/SpeakerMemR1">SpeakerMem-R1 프로젝트 페이지</a> / <a href="https://github.com/2022hpsk/SpeakerMemR1">GitHub</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.26780">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>다자간(multi-party) 대화에서 "누가 무엇을 말했는지"와 "그 정보가 누구에 관한 것인지"를 놓치는 기존 메모리 시스템의 한계를 해결하기 위해, 원문 그대로의 발화 기록과 화자별·그룹별로 구조화된 파생 상태를 동시에 유지하는 이중 트랙(dual-track) 메모리 구조와, 이를 작성하는 소형 모델을 강화학습으로 훈련하는 SpeakerMem-R1을 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>기존의 장기 대화 메모리 연구(LoCoMo, LongMemEval 등)는 대부분 1:1 또는 소수 인원 간의 대화를 대상으로 관련성 기반 검색, 압축, 요약에 초점을 맞춰왔다. 그러나 다자간 그룹 채팅에서는 화자 간 관계, 답글 구조, 주제 분기, 상태 변경이 복잡하게 얽혀 있어 단순히 메시지를 시간순으로 압축한 흐름으로 환원할 수 없다. 저자들은 GroupMemBench, SocialMemBench, EverMemBench 등의 최근 벤치마크에서 범용 LLM 메모리 시스템들이 다자간·장기 대화 환경에서 성능이 크게 저하됨을 지적하며, 이를 두 가지 핵심 병목으로 정리한다: (1) 메시지 귀속(attribution) 및 관계 이해 문제 — 누가 말했고 그 내용이 누구에 관한 것인지 구분하는 문제, (2) 상태 재구성(state reconstruction) 문제 — 구성원, 그룹, 시간에 걸쳐 흩어진 단서로부터 현재 혹은 과거 상태를 복원하는 문제이다. 일반적인 요약, 사실 집계, 메모리 그래프 방식은 출처/소유자 구분이나 개인/그룹 범위(scope), 상태 버전 정보를 잃어버리기 쉽다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>원문 그대로의 발화(verbatim)와 출처가 연결된(provenance-linked) 파생 상태를 개인 수준·그룹 수준 뷰로 결합한 이중 트랙 메모리 시스템 SpeakerMem-R1을 설계함.</li>
+<li>세 개의 다자간 벤치마크에서 나타나는 질문 요구사항과 반복적인 오류 패턴을 바탕으로, 구성원 커버리지·정보 귀속·개인/그룹 범위·용어·이벤트 중의성 해소·시간적 업데이트 및 다중 홉(multi-hop) 추론이라는 다섯 가지 분석 축을 제시함.</li>
+<li>로컬 배포가 가능한 Qwen2.5-3B 기반의 "Writer" 모델을, SpeakerLevenshtein이라는 화자 조건부 매칭 지표와 speaker-conditioned GRPO(LoGo-GRPO)로 훈련하여, 305개 문항 통제 평가에서 SFT 대비 정확도를 크게 끌어올리고 대형 LLM Writer 대비 95.4% 수준까지 근접시킴.</li>
+</ul>
+<h2>방법론</h2>
+<p>SpeakerMem-R1은 화자·시간·채널 정보를 포함한 다자간 메시지 스트림을 입력받아, 먼저 추적 가능한 이중 트랙 메모리에 기록한 뒤, 질의별 근거를 재구성하여 고정된(freeze) 답변 생성기에 전달한다.</p>
+<p><strong>다섯 계층 구조</strong>: 시스템 1(System 1)은 유일한 원문 계층으로, 메시지의 텍스트·화자·시간·채널을 그대로 저장하는 append-only(추가 전용) 구조다. 시스템 2(System 2)는 네 가지 파생 계층으로 구성된다 — 개인(PERSON) 범위의 Core(안정적 정체성, 사실, 입장, 반복 행동)와 Profile(한 사람에 대한 관찰 또는 타인에 대한 인지), 그룹(GROUP) 범위의 Interaction(화자 간 이벤트·관계·결정)과 Insight(그룹 규범·합의·예외). 각 파생 레코드는 출처(source)와 소유자(owner)를 분리해 저장하며(예: "A가 B에 대해 말했다"는 src=A, own=B), 원본 메시지로의 근거 포인터(from_ids)를 유지한다. 업데이트는 기존 레코드를 덮어쓰지 않고 새로운 노드를 추가해 사슬(chain)로 연결하는 비파괴적(non-destructive) 방식을 취한다.</p>
+<p><strong>질의 시점 근거 구성</strong>: Project 단계에서 질문을 파싱해 PERSON/GROUP 대상 행, 이슈/이벤트 제약, head(현재 상태)/full(전체 이력) 모드, source-owner 제약을 추출한다. 이후 System 1과 System 2는 각각 독립적인 예산으로 검색을 수행하며, 필요 시 Expand(인접 메시지 확장)와 Sufficiency/ASK(부족 시 추가 검색)를 적용한다. 이 전체 과정을 저자들은 Anchor(출처·소유자·이벤트·시간 보존) → Separate(개인/그룹 행 확장) → Resolve(이슈·병렬 이벤트·버전 구분) → Compose(두 트랙의 근거 결합)로 요약한다. 파생 행이 비어 있으면 해당 인물의 원문 메시지로 대체되며, 근거가 전혀 없으면 명시적인 빈 행을 유지한다.</p>
+<p><strong>Writer 훈련</strong>: 전체 파이프라인에서 검색·답변 모듈은 고정한 채, 로컬 배포 가능한 Qwen2.5-3B 모델이 ADD/UPDATE/NOOP 결정을 내리는 Writer만 강화학습으로 훈련한다. SpeakerLevenshtein은 토큰 수준 F1과 정규화된 시퀀스 매칭률을 결합한 지표로, 소유자별 버킷 내에서 헝가리안 알고리즘 기반 일대일 매칭을 수행해 개인 기록과 그룹 기록이 서로 상쇄되지 않도록 한다. 여기에 업데이트 체인 보상, 행동 유효성/구조 패널티, 그리고 System1+System2 대비 System1만 사용했을 때의 답변 정확도 차이로 정의되는 "터미널 QA 이득"을 결합해 각 쓰기 위치(writing position)의 보상을 산출한다. G=8개의 온-정책 궤적을 샘플링해 동일 위치에서만 그룹 상대 이점(advantage)을 계산하고, 클리핑된 GRPO로 Writer만 업데이트한다(speaker-conditioned LoGo-GRPO).</p>
+<h2>실험 설정 및 결과</h2>
+<p>GroupMemBench(745문항), SocialMemBench(1,031문항), EverMemBench(2,400문항)에서 BM25, 임베딩 검색, Mem0, A-MEM, HippoRAG, 그리고 가능한 경우 전체 컨텍스트(Full context)와 비교했다. LoCoMo(1,986문항)는 2인 장기 대화에 대한 경계 테스트로 별도 사용했다.</p>
+<ul>
+<li>세 벤치마크에서 SpeakerMem-R1은 각각 47.9%, 69.2%, 61.9%의 이진 정확도를 기록했으며, 이는 각 벤치마크 최고 성능 기존 프레임워크 대비 각각 3.3, 12.4, 9.4 퍼센트포인트 높은 수치다.</li>
+<li>EverMind-AI가 공개한 EverMemBench 리더보드(전체 2,400문항, GPT-4.1-mini/Gemini-3-Flash 설정)에서 SpeakerMem-R1은 62.33%로, EverOS(약 60.08%)와 RippleMem(약 54.75%)을 능가하는 최고 성능을 기록했다. 다만 Multi(다중 근거 결합), Skill, Role 항목에서는 상대적으로 낮은 점수를 보여 교차 근거 추론과 역할 귀속에서 병목이 있음을 시사한다.</li>
+<li>LoCoMo 전체 1,986문항에서는 70.85%의 정확도를 기록했으나, Multi-hop(41.13%)과 Open-domain(40.62%) 범주에서는 성능이 크게 떨어졌다.</li>
+<li>경로/계층 제거(ablation) 실험 결과, System 1(원문 트랙) 또는 System 2(파생 트랙) 중 하나를 제거하면 세 벤치마크 모두에서 정확도가 크게 하락했으며, 개인 수준 또는 그룹 수준 계층만 남겨도 성능이 저하되어 두 트랙과 두 수준의 뷰가 상호 보완적임을 확인했다.</li>
+<li>305개 문항으로 구성된 통제 평가(SocialMem 10개 보류 네트워크)에서, SFT(epoch 10)의 평균 정확도 57.38%에서 Writer-R1(30 스텝)은 68.20%로 10.82포인트 상승했으며, 이는 DeepSeek-V4-Flash를 Writer로 사용한 LLM 참조 성능(71.48%)의 95.4% 수준에 해당한다.</li>
+<li>검색 예산(top-k) 민감도 분석에서는 System 1 후보 수를 늘리면 일관되게 성능이 향상되지만 슬롯당 한계 효용은 점차 감소하며, System 2 예산은 적당히 늘리면 도움이 되지만 과도하게 늘리면 중복·산만한 근거로 인해 오히려 성능이 저하되는 경향을 보였다.</li>
+</ul>
+<h2>한계점</h2>
+<p>논문은 시스템이 신뢰할 수 있는 참가자 명단(roster), 출처/소유자 귀속, 시간 식별이 정확하다는 것을 전제로 하며, 별칭(alias) 처리, 구성원 변경, 암묵적 청중, 병렬 이벤트 등은 여전히 어려운 과제로 남아 있다고 명시한다. 또한 강화학습으로 훈련된 소형 Writer의 성능 향상이 폭넓은 도메인 간 일반화의 증거는 아니라고 밝히며, 전체 구성원 커버리지, 교차 근거 추론, 메모리 외부 지식 활용, 구축·검색 비용 절감, 다국어·다도메인 일반화 등을 향후 과제로 제시한다.</p>
+<h2>시사점</h2>
+<p>이 연구는 다자간 대화 메모리 문제를 "관련성 검색"이 아니라 "귀속과 범위가 보존된 근거 재구성" 문제로 재정의하고, 압축이나 그래프 구조에 의존하지 않고도 원문과 구조화된 상태를 분리 보존하는 것만으로 유의미한 성능 향상을 얻을 수 있음을 보여준다. 특히 값비싼 대형 LLM 기반 메모리 작성기를 소형 로컬 모델과 화자 조건부 강화학습으로 대체할 수 있다는 점은, 프라이버시나 비용 제약이 있는 실제 배포 환경에서 다자간 대화형 에이전트의 장기 메모리 시스템을 구축하는 데 실용적인 방향을 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.26780" target="_blank" rel="noopener">huggingface.co/papers/2609.26780</a> · 2026-09-25</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

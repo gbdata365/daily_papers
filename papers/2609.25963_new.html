@@ -1,0 +1,127 @@
+<meta charset="UTF-8">
+<title>지오페어</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#9 · Daily Papers 2026-09-25</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 11</span>
+    </div>
+    <h1 class="article-title">GeoPair: Geometry-Preserving Cross-Layer Factorization for Training-Free Transformer Compression</h1>
+    <p class="article-title-ko">지오페어: 기하 보존 크로스-레이어 분해를 통한 학습 없는 트랜스포머 압축</p>
+    <p class="article-sub">재학습 없이(training-free) 트랜스포머의 레이어 간 가중치 중복성을 활용해, 레이어별로 서로 다른 활성화 기하(geometry)를 훼손하지 않으면서 공유 딕셔너리로 압축하는 최적화 기반 프레임워크 GeoPair를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.25963" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.25963" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: GeoPair: Geometry-Preserving Cross-Layer Factorization for Training-Free Transformer Compression</li>
+<li><strong>저자</strong>: Baher Mohammad, Ammar Ali (MWS AI, ITMO University), Stamatios Lefkimmiatis (MWS AI)</li>
+<li><strong>출처</strong>: arXiv:2609.25963v1 [cs.LG] (2026년 9월 22일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.25963">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>재학습 없이(training-free) 트랜스포머의 레이어 간 가중치 중복성을 활용해, 레이어별로 서로 다른 활성화 기하(geometry)를 훼손하지 않으면서 공유 딕셔너리로 압축하는 최적화 기반 프레임워크 GeoPair를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>트랜스포머 모델은 언어·비전·생성 등 다양한 분야에서 뛰어난 성능을 보이지만 막대한 메모리와 연산 비용 때문에 자원 제약 환경에서의 배포가 어렵다. 후처리(post-training) 행렬 분해 기반 압축은 재학습 없이 파라미터를 줄이는 실용적 방법이지만, 기존 방식 대부분은 각 레이어의 가중치 행렬을 독립적으로 근사하여 깊은 트랜스포머 스택 전반에 걸쳐 존재하는 레이어 간 중복성을 활용하지 못한다.</p>
+<p>공유 딕셔너리 학습으로 이런 중복성을 활용하려는 시도(예: Basis Sharing)도 있었지만, 각 레이어의 활성화 분포가 서로 다르기 때문에 이를 화이트닝(whitening)하는 변환 공간도 서로 호환되지 않는다는 근본적 문제가 있다. 기존 접근은 이를 해결하기 위해 여러 레이어의 공분산을 휴리스틱하게 평균 내어 하나의 전역 화이트닝 변환을 만들고, 인접한 레이어끼리만 짝짓는 고정된 방식을 사용했다. 저자들은 이 방식이 (1) 공분산 평균화로 인해 레이어별 고유한 활성화 기하가 왜곡되어 복원 정확도가 떨어지고, (2) 인접성에만 의존해 비인접 레이어 간의 더 나은 정렬 가능성을 놓친다는 두 가지 한계를 지적한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>서로 다른 화이트닝 공간 하의 공유 딕셔너리 학습</strong>: 일반화된 실베스터(Sylvester) 방정식을 닫힌 형태(closed-form)로 풀어, 공분산을 휴리스틱하게 합치지 않고도 각 레이어의 고유 활성화 기하를 보존하는 딕셔너리 갱신 방법을 제시한다.</li>
+<li><strong>전역 최적 레이어 짝짓기</strong>: 레이어 그룹핑을 가중치 최대 매칭(maximum-weight matching) 문제로 정식화하여, 고정된 인접성 휴리스틱 대신 전체 구조에서 구조적 불일치를 최소화하는 데이터 기반 방식으로 대체한다.</li>
+<li><strong>수렴이 보장되는 희소 계수 최적화</strong>: Hard Thresholding Pursuit(HTP)를 도입해 딕셔너리 학습에 구조적 희소성을 부여함으로써, 높은 압축률에서도 밀집(dense) 저랭크 기법보다 우수한 성능을 낸다.</li>
+<li><strong>광범위한 실증 검증</strong>: 다양한 아키텍처, 규모, 모달리티에 걸쳐 기존의 독립적 분해, 휴리스틱 병합, 딕셔너리 학습 기법들을 일관되게 능가하는 최신 성능을 보인다.</li>
+</ul>
+<h2>방법론</h2>
+<p>GeoPair는 세 단계로 구성된다.</p>
+<ol>
+<li><strong>거리 지표 계산(Stage 1)</strong>: 동일한 입력 차원을 공유하는 두 가중치 행렬 사이의 구조적 유사성을, 각 레이어 고유의 Cholesky 화이트닝 변환이 적용된 공간에서 "화이트닝 공간 프로베니우스 부분행렬 거리"로 정의한다. 1차원 상호상관(cross-correlation)을 이용해 효율적으로 계산한다.</li>
+<li><strong>최적 매칭 그래프(Stage 2)</strong>: 모든 후보 가중치 행렬(어텐션·피드포워드 구분 없이 입력 차원이 같으면 짝지을 수 있음)을 노드로 하는 완전 그래프를 구성하고, 거리 최소화를 가중치 최대화 문제로 바꾼 뒤 Edmonds의 블라섬(Blossom) 알고리즘으로 전역 최적의 짝을 찾는다.</li>
+<li><strong>공유 딕셔너리 학습(Stage 3)</strong>: 짝지어진 두 레이어의 가중치를 공유 딕셔너리 D와 레이어별 계수 행렬 C1, C2로 근사한다. 목적함수는 두 레이어 각각의 보정(calibration) 가중 복원 오차의 합이며, 교대 최소화(alternating minimization)로 푼다. 계수 업데이트는 닫힌 형태의 가중 최소제곱 문제로, 딕셔너리 업데이트는 일반화된 실베스터 방정식으로 귀결되며, 이는 일반화 고유값 분해를 이용한 동시 대각화로 닫힌 형태 해를 구할 수 있다. 이 과정은 목적함수를 단조 감소시키며 BSUM(Block Successive Upper-bound Minimization) 조건 하에서 블록 정지점으로 수렴함이 보장된다.</li>
+</ol>
+<p>추가로, 계수 행렬에 ℓ0 희소성 제약(열마다 비영 원소 개수 제한)을 부여하는 경우 HTP를 이용한다. HTP는 그래디언트 갱신, 상위-k 지지집합 선택, 켤레기울기법(conjugate gradient)을 이용한 제한된 부분공간에서의 재투영을 반복한다. 희소성을 끄면(k=r) 표준 밀집 딕셔너리 갱신으로 자연스럽게 환원된다.</p>
+<p>전체 파이프라인은 SVD 기반 초기화 후 계수·딕셔너리 갱신을 상대적 개선량이 임계값 이하가 되거나 최대 반복 횟수에 도달할 때까지 반복하는 방식으로 요약된다.</p>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li><strong>구성요소 어블레이션(Llama-3 1B/8B)</strong>: 전역 화이트닝(Basis Sharing 방식) 대신 실베스터 기반 갱신, 최적 그룹핑, HTP 희소화를 순차적으로 추가할 때마다 성능이 향상됨을 확인했다. 전체 구성(Sylv+OG+SP)은 압축률 0.2에서 원본 모델 정확도의 90% 이상을 회복했다.</li>
+<li><strong>딕셔너리 학습 계열 비교(Llama3 8B)</strong>: SVDLLM, COSPADI, ROCKET, COMPOT, Basis Sharing 등과 압축률 0.2~0.4에서 비교한 결과, GeoPair가 평균 정확도와 WikiText 로그-퍼플렉시티 모두에서 가장 우수했다.</li>
+<li><strong>가지치기(pruning) 기법 비교(Llama2 7B, 20% 압축)</strong>: LLM-Pruner, LoRAPrune, WANDA, ShortGPT, LoRAShear 등 사후 미세조정을 활용하는 기법들과 비교했을 때도, 재학습이 전혀 없는 GeoPair가 평균 정확도 63.58로 가장 높았다.</li>
+<li><strong>아키텍처 일반화</strong>: Qwen3 8B, Gemma3 12B, Phi-4 14B, Qwen3 32B(1B~32B 규모)에서 압축률 0.2/0.3/0.4 전 구간에서 Basis Sharing 대비 일관되게 높은 정확도와 낮은 퍼플렉시티를 보였다.</li>
+<li><strong>모달리티 일반화</strong>: 영상 생성 모델 Wan2.2 5B에 적용해 20%·40% 압축을 수행하고 X-CLIP 점수로 의미적 정합성을 평가한 결과, 20% 압축에서는 기준선 대비 거의 차이가 없었고(0.2164 vs 0.2165) 40% 압축에서도 상대 저하가 약 2.5%에 그쳤다. (오디오 생성 모델에 대한 결과는 부록에 별도로 수록되어 있다고만 언급된다.)</li>
+<li><strong>어블레이션 연구</strong>: 레이어 그룹핑 지표 비교에서 프로베니우스 노름 기반 그룹핑이 코사인 유사도나 단순 인접 레이어 그리디 방식보다 우수했다. 계수 희소성과 딕셔너리 랭크의 비율(KS ratio)을 조정한 실험에서는 KS=2.5 부근이 가장 좋은 트레이드오프를 보였다.</li>
+</ul>
+<h2>한계점</h2>
+<p>논문의 결론 및 한계(Section 6)에서 명시적으로 언급된 바에 따르면, 현재 프레임워크는 레이어를 "쌍(pair)" 단위로만 그룹핑하는 데 제한되어 있다. 3개 이상의 레이어(m&gt;2)가 딕셔너리를 공유하도록 확장하는 것은 non-trivial한 문제인데, 이는 닫힌 형태의 실베스터 해법이 두 행렬 펜슬(matrix pencil)의 동시 대각화에 의존하며 이 성질이 m-항 시스템으로 해석적으로 일반화되지 않기 때문이다. 다자간(m-way) 레이어 공유로 확장하려면 반복적 수치 근사나 고차 텐서 분해가 필요하며, 이는 추가적인 연산 비용과 수치적 불안정성을 초래할 수 있어 향후 과제로 남겨두었다.</p>
+<h2>시사점</h2>
+<p>GeoPair는 휴리스틱한 공분산 병합이나 고정된 인접성 규칙 대신, 레이어별 화이트닝 기하를 엄밀히 보존하는 닫힌 형태의 최적화 파이프라인으로 크로스-레이어 압축을 재구성했다는 점에서 의미가 있다. 재학습(fine-tuning) 없이도 기존의 가지치기·저랭크 압축 기법들을 능가하며, 언어 모델뿐 아니라 영상 생성 모델에도 적용 가능함을 보여주어, 다양한 모달리티에 걸쳐 확장 가능한 자원 효율적 트랜스포머 배포를 위한 이론적으로 뒷받침된 토대를 제공한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.25963" target="_blank" rel="noopener">huggingface.co/papers/2609.25963</a> · 2026-09-25</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

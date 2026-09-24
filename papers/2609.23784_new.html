@@ -1,0 +1,121 @@
+<meta charset="UTF-8">
+<title>PackLab</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#10 · Daily Papers 2026-09-25</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 10</span>
+    </div>
+    <h1 class="article-title">PackLab: A Comprehensive Framework for Developing, Training, and Evaluating MLLMs in Robotic Bin Packing</h1>
+    <p class="article-title-ko">PackLab: 로봇 빈 패킹을 위한 MLLM 개발·훈련·평가 종합 프레임워크</p>
+    <p class="article-sub">로봇 빈 패킹(bin packing)을 위해 멀티모달 대형언어모델(MLLM)을 개발·훈련·평가할 수 있는 통합 프레임워크 PackLab을 제안하며, 물리 기반 시뮬레이션 플랫폼(PackLab-Suite), 폐루프(closed-loop) 패킹 전용 MLLM 정책(PackLab-VLM), 난이도별 표준 평가 벤치마크(PackLab-Bench)를 하나의 파이프라인으로 결합해 기존 휴리스틱·강화학습·범용 MLLM 대비 우수한 패킹 성능을 달성한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.23784" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.23784" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: PackLab: A Comprehensive Framework for Developing, Training, and Evaluating MLLMs in Robotic Bin Packing</li>
+<li><strong>저자</strong>: Donghao Zhou, Jia-Hui Pan(공동 1저자), Fan Zhang, Xingyuan Bu, Shilong Li, Xiaojie Gao, Yun-Hui Liu, Chi-Wing Fu(교신저자), Pheng-Ann Heng(교신저자) (The Chinese University of Hong Kong, M-A-P)</li>
+<li><strong>출처</strong>: arXiv:2609.23784v1 [cs.RO] (2026년 9월 20일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/Correr-Zhou/PackLab">GitHub - Correr-Zhou/PackLab</a> (코드·모델·데이터셋·벤치마크 공개)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.23784">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>로봇 빈 패킹(bin packing)을 위해 멀티모달 대형언어모델(MLLM)을 개발·훈련·평가할 수 있는 통합 프레임워크 PackLab을 제안하며, 물리 기반 시뮬레이션 플랫폼(PackLab-Suite), 폐루프(closed-loop) 패킹 전용 MLLM 정책(PackLab-VLM), 난이도별 표준 평가 벤치마크(PackLab-Bench)를 하나의 파이프라인으로 결합해 기존 휴리스틱·강화학습·범용 MLLM 대비 우수한 패킹 성능을 달성한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>로봇 빈 패킹은 제한된 컨테이너 공간에 물체를 배치해 공간 활용도를 최대화하는 문제로, 각 배치가 이후 배치 가능 공간에 영향을 미치는 장기적(long-horizon) 순차적 의사결정 문제이기도 하다. 기존 방법은 크게 두 갈래로, 사람이 설계한 기하학적 목적함수로 후보 배치를 점수화하는 휴리스틱(DBLF, HM, MTA, SDF-Pack 등)과, 정해진 물체·컨테이너 분포에서 시행착오로 정책을 학습하는 강화학습(TAP-Net, IR-BPP 등)이 있다. 휴리스틱은 즉각적인 배치 품질만 평가할 뿐 이후 배치에 미치는 영향을 명시적으로 고려하지 못하고, 강화학습은 다양한 물체·컨테이너 구성에 걸쳐 통합된 정책을 학습하기 어렵다는 한계가 있다. 최근 MLLM을 활용한 연구들도 존재하지만, 이들은 주로 물체 속성이나 물리적 관계를 추론하는 데 MLLM을 보조적으로 활용할 뿐 실제 패킹 행동(물체 선택·배치)은 여전히 기존 planner에 맡기고 있어, "MLLM이 다양한 물체·컨테이너 구성에서 직접 폐루프로 물체 선택과 배치를 수행할 수 있는가"라는 질문은 충분히 탐구되지 않았다. 이를 검증하려면 물리 기반 시뮬레이션, 확장 가능한 학습 데이터 생성, 패킹 특화 학습, 표준화된 평가를 아우르는 통합 프레임워크가 필요하지만 기존에는 이런 통합 인프라가 부재했다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>로봇 빈 패킹을 위한 MLLM 기반 정책의 개발·훈련·평가를 아우르는 종합 프레임워크 PackLab을 제안함.</li>
+<li>세 가지 핵심 구성요소를 개발함: 물리 기반 시뮬레이션과 확장 가능한 학습 궤적 생성을 담당하는 PackLab-Suite(및 이를 통해 구축한 2만 개 궤적 규모의 PackData-20K 데이터셋), 폐루프 패킹 결정을 내리는 PackLab-VLM, 표준화된 평가를 제공하는 PackLab-Bench(난이도별 60개 테스트 케이스, 총 905 패킹 스텝).</li>
+<li>다양한 물체 세트와 컨테이너 구성에 걸친 광범위한 실험과 실제 로봇 팔을 이용한 물리 실험을 통해 PackLab-VLM의 효과성과 실세계 적용 가능성을 입증함.</li>
+</ul>
+<h2>방법론</h2>
+<p><strong>문제 정의.</strong> 패킹은 T 스텝의 폐루프 순차 의사결정 과정으로 정의된다. 각 스텝 t에서 장면 상태는 컨테이너의 상단 높이맵(heightmap)과 후보 물체 버퍼로 구성되며, 정책은 선택할 물체, 회전 방향, 평면상 배치 좌표(x, y)로 이루어진 행동을 예측한다. 물체가 놓이는 높이(z)는 중력에 의해 물리적으로 도달 가능한 최저 위치로 결정된다.</p>
+<p><strong>PackLab-Suite(물리 기반 플랫폼).</strong> 중력 동역학(-9.8 m/s²), 강체 충돌, 안정성 피드백을 시뮬레이션하여 물체가 실제로 안착하는 과정을 모사한다. 데이터 생성 엔진은 "레이아웃 우선(layout-first)" 방식을 사용하는데, 물체-배치 조합을 무작위로 순방향 탐색하는 대신 컨테이너 공간을 높이 방향의 층으로 나누고 각 층을 다시 수평 영역으로 분할해 최종 패킹 레이아웃을 먼저 구성한 뒤, 접근 가능한 물체를 역순으로 제거해 나가는 방식으로 순방향 패킹 궤적을 역산한다. 이렇게 얻은 궤적은 물리 시뮬레이션으로 재생·검증되어 유효하지 않은 배치가 포함된 궤적은 폐기되며, 최종적으로 2만 개 궤적 규모의 PackData-20K가 구축된다.</p>
+<p><strong>PackLab-VLM(폐루프 정책 모델).</strong> Qwen3.5-9B를 백본으로 하는 패킹 특화 MLLM으로, 시스템 프롬프트, 과거의 모든 높이맵·후보물체버퍼·실행된 행동 이력, 그리고 현재 관측을 하나의 멀티턴 멀티모달 컨텍스트로 구성해 입력받는다. 텍스트는 토큰 임베딩으로, 높이맵 이미지는 비전 인코더와 비전-언어 병합 모듈을 거쳐 텍스트 프롬프트의 이미지 플레이스홀더 위치에 삽입되며, 모델은 이 통합 시퀀스로부터 구조화된 텍스트 형태의 행동(물체 ID, 회전, x, y)을 자기회귀적으로 생성한다. PackData-20K의 각 궤적에서 스텝별 (컨텍스트, 정답 행동) 쌍을 추출해 표준적인 지도 미세조정(다음 토큰 negative log-likelihood)으로 학습한다.</p>
+<p><strong>PackLab-Bench(표준 평가).</strong> 후보 버퍼 크기, 패킹 층 수, 물체 수, 컨테이너 크기를 함께 조절해 이지(easy)·미디엄(medium)·하드(hard) 세 난이도로 총 60개 테스트 케이스(905 스텝)를 구성하며, 학습 데이터인 PackData-20K와는 겹치지 않도록 독립적으로 샘플링·검증되었다. 평가지표는 성공적으로 패킹된 물체 부피 비율인 Success Ratio, 패킹된 물체 부피 대비 실제 점유 부피(컨테이너 밑면적×최대 높이)의 비율인 Compactness, 그리고 두 값의 곱인 Overall Score이다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Qwen3.5-9B 백본을 8-GPU 클러스터에서 AdamW(학습률 1e-5, 배치 크기 8)로 5 epoch 미세조정했으며, 회전은 0°/90° 두 값으로, 배치 좌표는 2.5cm 해상도로 이산화했다. 비교 대상은 DBLF, HM, MTA, FFP, SDF-Pack 등 5개 휴리스틱과 TAP-Net, IR-BPP 등 2개 강화학습 방법의 공식 체크포인트이다.</p>
+<ul>
+<li>PackLab-VLM은 평균 Overall Score 0.660으로 전체 비교 방법 중 최고 성능을 기록했으며, 가장 강력한 휴리스틱인 SDF-Pack(0.602) 대비 0.059, 가장 강력한 RL 체크포인트인 TAP-Net(0.474) 대비 0.186 높았다. 평균 Success Ratio(0.882)와 Compactness(0.718)에서도 모두 최고치를 보여, 단일 지표가 아니라 더 많은 물체를 더 조밀하게 배치하는 두 측면 모두에서 개선이 있었음을 시사한다.</li>
+<li>난이도별로는 이지 구간에서 거의 완벽한 Success Ratio(0.999)와 압도적인 Overall Score(0.922)를 보였고, 미디엄 구간에서는 Success Ratio가 최고 기준선과 비슷하지만 Compactness가 더 높아 최고 Overall Score를 기록했다. 다만 하드 구간(0.394)에서는 SDF-Pack이나 DBLF 같은 기하 탐색 휴리스틱이 일부 밀집 상황에서 여전히 강점을 보였다.</li>
+<li>동일한 과제 분포와 동일한 시행착오 횟수로 TAP-Net과 IR-BPP를 재학습해 통제 비교한 결과 각각 평균 Overall Score 0.405, 0.345에 그쳐, 이질적인 패킹 구성 전반에 걸쳐 통합된 RL 정책을 학습하는 것이 어렵다는 점을 보여주었다.</li>
+<li>소거 실험(ablation)에서, 학습 전 기본 모델(Qwen3.5-9B) 대비 학습 후 Overall Score가 0.209에서 0.660으로 크게 향상되어 과제 특화 학습이 필수적임을 확인했다. 높이맵을 무의미한 이미지로 교체하면 0.660→0.494로, 이력 정보를 현재 관측만으로 축소하면 0.660→0.533으로 하락해 시각 정보와 순차 이력이 모두 중요함을 보였다. 또한 학습 데이터 양을 25%/50%/100%로 늘릴수록(0.578→0.630→0.660), 난이도를 다양하게 섞은 레시피를 사용할수록(Easy-Only 0.587 &lt; Easy+Medium 0.604 &lt; 혼합 0.660) 성능이 향상되었다. 모델 크기를 2B/4B/9B로 늘리면 Overall Score가 0.617→0.645→0.660으로 꾸준히 향상되었다.</li>
+<li>실물 로봇 실험에서는 AUBO 로봇팔(흡착 그리퍼), RealSense RGB 카메라, Photoneo 깊이 카메라, SAM3 기반 물체 분할을 활용한 물리 플랫폼을 구축해, 동일한 8개 물체 세트에 대해 PackLab-VLM이 모든 물체를 컨테이너 안에 조밀하게 배치한 반면 베이스라인은 3개 물체만 배치하고 공간 대부분을 비워두는 결과를 확인했다(그림 1(b)에서는 Success Ratio 1.00, Compactness 0.72로 보고).</li>
+</ul>
+<h2>한계점</h2>
+<p>논문에 명시된 한계로, 하드 난이도(더 크고 빽빽한 컨테이너·물체 구성)에서는 여전히 기하 탐색 기반 휴리스틱에 뒤처지는 경우가 있다고 밝히고 있다. 또한 저자들은 결론에서 향후 연구 방향으로 더 다양한 물체 형상과 물리적 환경으로의 확장, 그리고 사용자 정의 목적·제약을 통한 더 유연한 패킹 행동 지원을 제시하고 있는데, 이는 현재 프레임워크가 상자형 물체와 제한된 물리 설정, 고정된 목적함수(부피/조밀도)에 초점을 두고 있다는 한계를 시사한다. 계산 자원 제약으로 9B가 실험에 사용한 최대 모델 크기였다는 점도 명시되어 있다.</p>
+<h2>시사점</h2>
+<p>이 연구는 MLLM을 단순히 물체 속성 추론이나 제약 조건 파악에 보조적으로 활용하는 기존 접근과 달리, MLLM이 시각적 상태·물체 속성·행동 이력을 함께 조건으로 삼아 직접 폐루프로 물체 선택과 배치를 수행할 수 있음을 실증적으로 보여준다. 특히 시뮬레이션-훈련-평가를 하나로 묶은 재현 가능한 프레임워크와 공개 데이터셋·벤치마크를 제공함으로써, 이후 연구들이 동일한 표준 위에서 패킹 정책을 비교·개발할 수 있는 기반을 마련했다는 점에서 의의가 크다. 또한 실물 로봇 실험을 통해 시뮬레이션에서 학습한 정책이 실제 물류·창고 자동화 환경으로 이어질 수 있는 가능성을 보여준다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.23784" target="_blank" rel="noopener">huggingface.co/papers/2609.23784</a> · 2026-09-25</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

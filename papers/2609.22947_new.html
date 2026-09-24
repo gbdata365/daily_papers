@@ -1,0 +1,125 @@
+<meta charset="UTF-8">
+<title>리워드버스</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#6 · Daily Papers 2026-09-25</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 20</span>
+    </div>
+    <h1 class="article-title">RewardVerse: Rubric-Guided Policy Optimization for Video Reward Modeling</h1>
+    <p class="article-title-ko">리워드버스: 비디오 보상 모델링을 위한 루브릭 기반 정책 최적화</p>
+    <p class="article-sub">영상 생성 모델의 강화학습(RL) 보상 신호로 쓰이는 비디오 보상 모델이 겪는 "스칼라 드리프트(scalar drift)" 문제를, 평가 기준을 동적으로 생성한 뒤 그 기준에 따라 점수를 매기는 루브릭(rubric) 기반 2단계 학습법(RGPO)으로 해결한 프레임워크.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.22947" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.22947" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: RewardVerse: Rubric-Guided Policy Optimization for Video Reward Modeling</li>
+<li><strong>저자</strong>: Zhenchen Tang, Yang Li, Songlin Yang, Bo Peng, Xiaotong Zhao, Shuai Li, Haotian Fan, Alan Zhao, Jing Dong (중국과학원 자동화연구소 신패턴인식연구실 및 중국과학원대학교, 홍콩과기대, Tencent 소속)</li>
+<li><strong>출처</strong>: arXiv:2609.22947v2 [cs.CV] (2026년 9월 23일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/2kxx/RewardVerse">GitHub - RewardVerse</a> (코드 및 모델 공개)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.22947">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>영상 생성 모델의 강화학습(RL) 보상 신호로 쓰이는 비디오 보상 모델이 겪는 "스칼라 드리프트(scalar drift)" 문제를, 평가 기준을 동적으로 생성한 뒤 그 기준에 따라 점수를 매기는 루브릭(rubric) 기반 2단계 학습법(RGPO)으로 해결한 프레임워크.</p>
+<h2>배경 및 문제의식</h2>
+<p>비디오 생성 모델을 인간의 선호에 맞추기 위해 RL이 널리 쓰이며, 이때 핵심은 신뢰할 수 있는 보상 모델(RM)이다. 그러나 기존 비디오 RM들은 복잡하고 주관적인 비디오 품질을 명시적 평가 기준 없이 곧바로 하나의 스칼라 점수로 매핑하기 때문에, (1) 점수가 좁은 범위에 몰리는 "점수 범위 붕괴(score-range collapse)"와 (2) 프롬프트나 문맥이 바뀌면 점수 스케일 자체가 흔들리는 "문맥 변화에 따른 높은 분산" 현상이 함께 발생한다. 저자들은 이 두 가지를 묶어 "스칼라 드리프트"로 정의하고, 이것이 RL 학습 시 그래디언트를 거의 평탄하게 만들어 보상 신호를 무력화시키는 근본 원인이라고 지적한다. 전문 인간 평가자들이 점수를 바로 매기지 않고 먼저 평가 기준을 명시적으로 분해한 뒤 판단한다는 점에서 착안하여, 이를 비디오 보상 모델링에 도입하고자 한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>비디오 보상 모델에 최초로 "루브릭-as-리워드" 패러다임 도입</strong>: 평가 질의와 채점자 사이에 동적 루브릭(주제·가중치·채점 팁으로 구성)을 중간 표현으로 삽입해 점수의 안정적 의미적 앵커(anchor) 역할을 하게 함.</li>
+<li><strong>데이터 효율적인 공동 정책 최적화 알고리즘 RGPO 제안</strong>: 차원(dimension)당 단 30개의 선호 쌍(전체 480쌍)만으로 루브릭 생성기와 채점기를 함께 학습.</li>
+<li><strong>체계적인 실증 검증</strong>: EvalVerse의 16개 세부 차원 및 외부 벤치마크(VGRB)에서 포인트와이즈·페어와이즈 평가 모두 최고 성능을 달성했고, 다운스트림 영상 생성 RL의 보상으로도 유효함을 입증.</li>
+</ul>
+<h2>방법론</h2>
+<p>RewardVerse는 하나의 정책 모델 π_θ가 두 가지 역할(생성기/채점기)을 겸하는 구조다.
+1. <strong>동적 루브릭 생성기(π^gen)</strong>: 평가 대상 비디오는 보지 않고, 평가 차원 d와 텍스트 프롬프트 p로 구성된 질의 q만을 입력받아 주제(theme), 가중치(합이 1), 채점 팁으로 이루어진 루브릭을 생성한다. 비디오를 보지 않게 함으로써 루브릭이 특정 비디오 품질에 맞춰 편향되는 것을 방지한다.
+2. <strong>소프트-로짓 채점기(π^sco)</strong>: 주어진 루브릭의 각 주제에 대해, "1"~"5" 정수 토큰의 로짓을 소프트맥스로 정규화한 뒤 기댓값을 취하는 방식(soft-logits readout)으로 연속적인 점수를 산출한다. 이는 JSON 파싱 실패나 정수 양자화로 인한 동점(tie) 문제를 근본적으로 없앤다. 최종 점수는 주제별 점수를 가중합하여 얻는다.</p>
+<p><strong>RGPO(Rubric-Guided Policy Optimization) 2단계 학습</strong>:
+- <strong>1단계(채점기 워밍업)</strong>: 프론티어 MLLM(Gemini-3.1-Pro)이 제안(Propose)-검증(Verify)-수정(Revise)을 반복하는 오프라인 루프로 차원별 "시드 루브릭"을 자기진화적으로 구축한다. 이 고정된 시드 루브릭 하에서 선호/비선호 비디오 쌍에 대한 GRPO 방식의 정책 경사 학습(선호 보상 + 포맷 보상)과, 인간이 매긴 점수 차이(margin)에 맞추는 보정 손실(calibration loss)을 결합해 채점기를 먼저 정렬시킨다.
+- <strong>2단계(공동 최적화)</strong>: 루브릭 생성기를 GRPO로 학습시켜 질의에 맞는 동적 루브릭을 생성하도록 하며, 동시에 채점기는 계속 보정 손실로 조정된다. 생성기의 보상은 (a) 선호 비디오와 비선호 비디오를 얼마나 잘 구분하는지, (b) 출력 형식 준수 여부, (c) 시드 루브릭과의 주제 임베딩 유사도로 구성된다. 채점기가 생성기의 상대적 보상으로 직접 학습되면 단순히 점수 격차를 부풀려 보상을 늘리는 편법이 가능하므로, 두 역할에 서로 다른 최적화 신호(비대칭적 최적화)를 사용한 것이 특징이다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Qwen2.5-VL-7B를 백본으로 학습했으며, VideoScore-v1.1, VideoScore2, UnifiedReward, VideoReward, VisionReward, Q-Scorer 등 6개의 기존 비디오 RM과 비교했다.
+- <strong>포인트와이즈 평가(EvalVerse 16개 차원)</strong>: RewardVerse가 16개 차원 중 14개에서 최고 PLCC를 기록했으며, 특히 Logic(논리, PLCC 0.750 vs 차선 0.593), Action(행동, 0.566 vs 0.390) 같은 인지·시간적 추론이 필요한 어려운 차원에서 큰 격차로 우수했다.
+- <strong>페어와이즈 전이(VGRB 벤치마크)</strong>: 훈련 시 본 적 있는 Visual Quality 분할에서 최강 비오라클 베이스라인(VisionReward) 대비 정확도를 7%포인트가량 앞섰고, 훈련 때 접하지 못한 Text Alignment 분할에서도 가장 높은 정확도(0.471/0.623)를 보여 미지 차원으로도 잘 일반화됨을 확인했다.
+- <strong>구성요소 소거 실험</strong>: 1단계(채점기 워밍업)를 빼면 PLCC가 0.099 하락하고, 2단계(공동 최적화)를 빼면 0.074 하락해 두 단계 모두 필수적임을 확인했다. 동일한 480쌍 예산 하에서도 루브릭 없이 직접 학습하는 방식은 zero-shot 대비 소폭 개선에 그쳐, 루브릭이라는 중간 표현 자체가 저데이터 효율성의 핵심임을 보였다.
+- <strong>다운스트림 RL 활용</strong>: RewardVerse를 보상으로 Wan-2.2-A14B를 GRPO 파인튜닝한 결과, Imaging Quality가 0.640→0.653으로 개선되면서도 VBench의 다른 품질·텍스트 정합 지표는 유지되거나 개선됐다. 반면 VideoReward를 보상으로 쓰면 목표 지표는 개선되지만 다른 지표들이 저하되어, RewardVerse가 보상 해킹(reward hacking)에 덜 취약함을 시사한다.
+- 부록의 정밀 분석에서는 루브릭과 소프트-로짓을 결합해야만(즉 루브릭만으로는 부족) 점수 범위 붕괴가 실질적으로 완화되며, RGPO 학습 후에는 기존 모델들이 공통적으로 보이는 점수 과대추정(bias) 편향이 크게 줄어드는 것으로 나타났다.</p>
+<h2>한계점</h2>
+<p>논문의 부록(A.6 Limitations and Future Work)에서 다음을 명시적으로 언급한다.
+- <strong>백본 성능의 한계</strong>: 공정 비교를 위해 표준 크기인 Qwen2.5-VL-7B를 사용했는데, RGPO는 백본이 원래 갖고 있는 평가 능력을 인간 판단에 맞춰 정렬시킬 뿐, 백본이 인식하지 못하는 시각적·시간적 디테일 자체를 복원하지는 못한다.
+- <strong>주제(theme) 수준 보정의 부재</strong>: 현재 보정 손실은 선호/비선호 비디오 간 종합 점수 차이만 정렬할 뿐 개별 루브릭 주제별 점수는 직접 지도학습되지 않아, 최종 점수는 인간 선호와 잘 맞아도 일부 주제 점수는 편향되거나 일관되지 않을 수 있다.
+- <strong>스케일 검증의 한계</strong>: 실험이 7B 보상 백본, 차원당 30개 선호 쌍, 14B 영상 생성 모델 하나로 이루어졌기 때문에, 더 큰 백본·데이터·생성 모델에서도 동일한 이득이 유지되는지는 추가 검증이 필요하다.
+- CoT(사고연쇄) 기반 채점 기법과는 상호 보완적 관계이며 아직 결합되지 않았다는 점도 향후 과제로 언급된다.</p>
+<h2>시사점</h2>
+<p>루브릭을 학습 가능한 중간 표현으로 삼아 "무엇을 평가할지"와 "어떻게 점수를 매길지"를 분리한 설계는, 비디오처럼 다차원적이고 주관적인 생성 콘텐츠 평가에서 적은 인간 선호 데이터로도 안정적이고 해석 가능한 보상 신호를 만들 수 있음을 보여준다. 특히 정수 텍스트 생성 대신 로짓 기댓값(soft-logits)으로 연속 점수를 뽑는 방식은 파싱 실패와 점수 양자화 문제를 동시에 해결해, RL 보상 모델 설계 전반에 적용 가능한 실용적 기법으로 볼 수 있다. 또한 다운스트림 RL 실험에서 보상 해킹에 덜 취약했다는 결과는, 루브릭 기반 보상이 단일 스칼라 보상보다 생성 모델의 전반적 품질을 더 안전하게 최적화할 수 있는 대안이 될 수 있음을 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.22947" target="_blank" rel="noopener">huggingface.co/papers/2609.22947</a> · 2026-09-25</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

@@ -1,0 +1,120 @@
+<meta charset="UTF-8">
+<title>스페이셜 인터랙터</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#2 · Daily Papers 2026-09-25</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 41</span>
+    </div>
+    <h1 class="article-title">Spatial-Interactor: Learning Spatial Reasoning through Interaction with the Observable Physical World</h1>
+    <p class="article-title-ko">스페이셜 인터랙터: 관찰 가능한 물리 세계와의 상호작용을 통한 공간 추론 학습</p>
+    <p class="article-sub">시각-언어 모델(VLM)이 정적인 공간 질의응답만으로는 물체의 움직임이나 시점 변화에 따른 "상태 전이"를 제대로 학습하지 못한다는 점에 착안해, 관찰-행동-관찰로 이어지는 상호작용 궤적을 직접적인 지도 신호로 활용하는 3단계 커리큘럼과 2단계 학습 전략(SFT + On-Policy Distillation)을 제안하여 공간 추론 성능을 크게 끌어올린 프레임워크 Spatial-Interactor를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.23038" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.23038" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Spatial-Interactor: Learning Spatial Reasoning through Interaction with the Observable Physical World</li>
+<li><strong>저자</strong>: Kaixiang Yao(공동 1저자), Xu Wang(공동 1저자), Miao Pan, Hu Xiyue, Weishi Wang, Daniel Dahlmeier, Jintao Chen, Yongliang Shen, Xuhong Zhang, Wenqi Zhang (Zhejiang University, SAP)</li>
+<li><strong>출처</strong>: arXiv:2609.23038v1 [cs.AI] (2026년 9월 19일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://zju-omniai.github.io/Spatial-Interactor/">Spatial-Interactor 프로젝트 페이지</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.23038">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>시각-언어 모델(VLM)이 정적인 공간 질의응답만으로는 물체의 움직임이나 시점 변화에 따른 "상태 전이"를 제대로 학습하지 못한다는 점에 착안해, 관찰-행동-관찰로 이어지는 상호작용 궤적을 직접적인 지도 신호로 활용하는 3단계 커리큘럼과 2단계 학습 전략(SFT + On-Policy Distillation)을 제안하여 공간 추론 성능을 크게 끌어올린 프레임워크 Spatial-Interactor를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>저자들은 VLM이 다중 시점 추론, 3D 경로 이해, 장기 궤적 과제에서 여전히 취약하다는 점을 지적하며, 두 가지 진단 실험으로 원인을 분석한다. 첫째, VSTI-Bench 비디오의 프레임을 무작위로 섞어도 Qwen2.5-VL 계열 모델의 정확도가 1점 안팎으로만 하락하는 것을 확인해, 기존 모델들이 시간 순서에 무관한 시각적 단서에 주로 의존하며 국소적인 상태 전이를 실제로 모델링하지 못함을 보였다. 둘째, 국소적 상호작용 과제(SAT-Real)와 장기 카메라 이동 과제(VSTI-Bench)를 비교했을 때 Qwen2.5-VL-7B는 54.7에서 8.6으로, GPT-5.5는 88.7에서 23.9로 성능이 급락해, 모델이 국소 전이를 인식하더라도 이를 긴 궤적에 걸쳐 통합하는 데 어려움을 겪음을 확인했다. 반면 GPT-5.5에게 국소 전이에 대한 자체 생성 설명을 추가 텍스트 맥락으로 제공하면 점수가 23.9에서 35.5로 상승해, 명시적인 국소 상태-전이 설명이 장기 통합에 도움이 됨을 시사했다. 이는 기존 공간 학습이 물체 속성이나 정적 공간 관계에 대한 질의응답에 치중되어 있어, 상태가 어떻게 변화하고 연속적인 변화가 어떻게 통합되어야 하는지에 대한 지도가 부족하다는 근본적인 문제의식으로 이어진다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>상호작용 궤적을 국소 상태 전이 학습부터 장기 통합까지 직접적인 지도 신호로 사용하는 상호작용 중심 프레임워크 Spatial-Interactor를 제안함.</li>
+<li>시뮬레이션 및 실세계 상호작용 궤적으로부터 자동 합성한 108K개의 검증 가능한 QA 쌍으로 구성된 3단계 커리큘럼 데이터셋 LSI-108K를 구축함 (수동적 세계-상태 전이, 능동적 자기-상태 전이, 장기 상호작용 궤적을 포괄).</li>
+<li>국소 상태-전이 모델링을 위한 지도 미세조정(SFT)과, 특권적(privileged) 프로세스 지도를 통해 장기 궤적 통합을 학습하는 On-Policy Distillation(OPD)을 결합한 2단계 학습 레시피를 제시하여 여러 모델군과 벤치마크에서 일관된 성능 향상을 달성함.</li>
+</ul>
+<h2>방법론</h2>
+<p>논문은 시간 t에서의 관찰 Ot을 세계 상태 Wt와 관찰자 자세 Et의 함수로 정의하고, 상호작용 궤적을 (Ot, at, Ot+1) 형태의 순서 있는 국소 전이 기록 δt들의 나열로 표현한다. 이를 바탕으로 학습을 세 단계 커리큘럼으로 구성한다. L1(수동적 세계-상태 전이)은 카메라 시점이 대략 고정된 상태에서 물체 이동·상태 변화·조작 등 외부 세계 변화를 다루고, L2(능동적 자기-상태 전이)는 환경이 고정된 상태에서 카메라 이동·회전 등 관찰자 자신의 움직임이 유발하는 시각 변화를 다루며, L3(장기 상태-전이 통합)은 완전한 카메라 궤적에 걸쳐 경로 길이·형태·회전 구간·재방문 지점 등을 추론하도록 요구한다. LSI-108K는 ProcTHOR, AI2-THOR, HSSD, Replica 등 시뮬레이션 환경과 ScanNet++, RoomTour3D, ARKitScenes, BridgeData V2 등 실세계 카메라·로봇 궤적으로부터, 상태·자세·궤적 메타데이터를 결정론적 템플릿으로 QA화하고 시각-언어 검증기로 답변 불가능한 샘플을 걸러내는 방식으로 저비용·대규모 자동 구축된다.</p>
+<p>학습은 2단계로 진행된다. 1단계에서는 L1·L2 데이터와 공개 공간 QA 데이터를 함께 사용해 표준 SFT로 국소 전이 표현을 학습한다. 2단계에서는 L3 장기 궤적 데이터에 대해 GRPO 프레임워크 위에 On-Policy Distillation(OPD)을 적용한다. 구체적으로 긴 비디오를 32프레임으로 균등 샘플링해 4개 구간으로 나눈 뒤, 고정된(frozen) 시각-언어 주석기가 질문이나 정답 없이 각 구간의 환경·변화·카메라 이동을 설명하는 특권적 상태-전이 트레이스 z를 생성한다. 학생 정책이 샘플링한 롤아웃에 대해, 학생은 표준 입력(V, q)만 보고 교사는 동일한 학생 생성 접두어에 z를 추가로 조건화하여 평가하며, 교사-학생 간 순방향 KL을 추론(reasoning) 토큰 위치에만 적용해(Lprocess) 학생이 연속적 전이를 통합하도록 유도한다. 여기에 검증 가능한 정답 보상(Lanswer)과 별도의 고정 SFT 기준 정책 대비 정규화 항(LKL-ref)을 결합한 LOPD = Lanswer + βLKL-ref + λtLprocess를 최종 목적함수로 사용하며, 프로세스 가중치 λt는 학습이 진행될수록 점차 감쇠시켜 초반에는 명시적 전이 안내를, 후반에는 정책 자체의 추론과 검증 가능한 결과에 더 의존하도록 설계했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Qwen2.5-VL-3B/7B와 Qwen3-VL-4B/8B를 백본으로 실험했으며, VSI-Bench, VSTI-Bench, MindCube, SPBench-MV를 주요 평가 벤치마크로, MMSI·ViewSpatial·SAT-Real·SAT-Syn을 학습에 포함되지 않은 교차 벤치마크로 사용했다.</p>
+<ul>
+<li>4개 백본 모두에서 Base 모델 대비 전체(Overall) 점수가 16.4~25.0점 향상되었으며, 8B 모델은 65.9점으로 비교 대상 중 최고 Overall 점수를 기록했다. Spatial-Interactor 변형들은 VSI-Bench, MindCube, VSTI-Bench에서 각각 최고 성능을 달성했다 (다만 SPBench-MV에서는 SpatialLadder가 더 우수).</li>
+<li>학습에 사용되지 않은 4개 교차 벤치마크(MMSI, ViewSpatial, SAT-Real, SAT-Syn)에서도 Overall 4.3~10.6점의 일관된 향상을 보였으며, 이 중 대부분은 SFT 단계에서 확보되고 OPD가 추가로 1.0~1.4점을 더했다.</li>
+<li>Ablation 결과, 외부 공개 데이터만으로 SFT한 기준선(Overall 56.0) 대비 LSI-108K의 L1·L2 데이터를 추가하면 58.4로, 이후 표준 GRPO(59.2)보다 OPD(60.1)가 더 높은 성능을 보였으며 특히 Route Planning과 Camera Displacement처럼 장기 통합이 필요한 과제에서 격차가 컸다.</li>
+<li>L1과 L2를 순차적으로 학습(L1→L2)한 모델만이 4개 교차 벤치마크 전체에서 Base 대비 향상을 보여, 두 단계의 순차적 결합이 개별 학습보다 효과적임을 확인했다.</li>
+<li>프레임 셔플 진단에서 Spatial-Interactor-3B/7B는 각각 6.6, 7.0점 하락(Base 모델은 0.9, 0.8점 하락에 그침)해, 학습 이후 모델이 시간 순서 정보를 실제로 더 많이 활용하게 되었음을 보였다. 트레이스 구조 실험에서는 순서가 유지된 4구간 트레이스가 무순서(shuffled) 트레이스보다 높은 점수를 보여, 시간 순서 보존이 통합 추론에 중요함을 확인했다.</li>
+<li>폐루프(closed-loop) 상호작용 평가인 WalkerBench와 ESI-Bench에서도 Spatial-Interactor가 Base 대비 성공률을 높이고(WalkerBench 7.0→14.0, ESI-Bench 평균 26.7→33.3 내외) 필요한 행동/상호작용 라운드 수를 줄여, 실제 행동-관찰 루프가 있는 환경에서도 이점이 이어짐을 보였다.</li>
+</ul>
+<h2>한계점</h2>
+<p>논문에 별도의 "한계점" 절은 없으나, 결론에서 향후 연구 방향으로 적응적(adaptive) 궤적 분할과 더 다양한 실세계 상호작용 데이터 확보를 언급하고 있어, 현재 방법이 고정된 방식의 궤적 분할(4구간 균등 분할)과 상대적으로 제한된 실세계 상호작용 데이터 다양성에 의존하고 있음을 시사한다.</p>
+<h2>시사점</h2>
+<p>이 연구는 정적인 공간 QA를 넘어, 관찰-행동-관찰로 이어지는 상호작용 궤적 자체를 지도 신호로 활용함으로써 VLM의 동적 공간 추론 능력을 향상시킬 수 있음을 보여준다. 특히 국소 전이 학습(SFT)과 장기 통합 학습(OPD)을 분리해 단계적으로 결합하는 전략, 그리고 특권적 텍스트 트레이스를 활용해 정책 자신의 롤아웃에 대해 프로세스 수준의 증류를 적용하는 OPD 기법은 장기 시계열/궤적 추론이 필요한 다른 임베디드 AI, 로보틱스, 비디오 이해 과제에도 폭넓게 응용될 수 있는 일반적인 학습 패러다임으로 볼 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.23038" target="_blank" rel="noopener">huggingface.co/papers/2609.23038</a> · 2026-09-25</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

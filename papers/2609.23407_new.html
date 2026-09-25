@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>옴니에코</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#4 · Daily Papers 2026-09-26</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 20</span>
+    </div>
+    <h1 class="article-title">OmniEcho: Spatial Audio Understanding for Embodied Agents</h1>
+    <p class="article-title-ko">옴니에코: 체화 에이전트를 위한 공간 오디오 이해</p>
+    <p class="article-sub">소리의 방향까지 인식해 시각 정보와 함께 추론할 수 있는 체화 에이전트를 만들기 위해, 공간 오디오 벤치마크 OmniEchoBench와 이를 학습·평가하는 옴니모달 모델 OmniEcho를 함께 제안한 연구.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.23407" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.23407" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: OmniEcho: Audio-Visual Spatial Understanding for Omni-Modal Embodied Agents</li>
+<li><strong>저자</strong>: Ruixun Liu, Yuxuan Wang, Jiacheng Xie 외 (베이징대, Alibaba Token Hub, 칭화대)</li>
+<li><strong>출처</strong>: arXiv:2609.23407v2 [cs.SD] (2026-09-23)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/PKU-VaLuE-Lab/OmniEcho/tree/main">https://github.com/PKU-VaLuE-Lab/OmniEcho</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.23407">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>소리의 방향까지 인식해 시각 정보와 함께 추론할 수 있는 체화 에이전트를 만들기 위해, 공간 오디오 벤치마크 OmniEchoBench와 이를 학습·평가하는 옴니모달 모델 OmniEcho를 함께 제안한 연구.</p>
+<h2>배경 및 문제의식</h2>
+<p>사람은 소리가 나는 방향을 손쉽게 파악해 시야 밖의 사건이나 가려진 물체를 추론하는 데 활용하지만, 체화 에이전트에게 이런 공간 오디오 이해 능력은 아직 충분히 탐구되지 않았다. 특히 공간 오디오-시각 이해 능력을 평가하고 모델링하는 방법 자체가 명확히 정립되어 있지 않다는 문제의식에서 출발한다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>30개 실환경에서 수집한 1차 앰비소닉(FOA) 오디오를 포함해, 197개의 실환경 공간 오디오-시각 장면, 2,972개의 질의응답 쌍, 900개의 내비게이션 샘플로 구성된 통합 벤치마크 OmniEchoBench 공개.</li>
+<li>소리 발생원·시각 관찰·에이전트 궤적 간의 기하학적 일관성을 유지하는 제어 가능한 공간 오디오 렌더링 파이프라인 개발.</li>
+<li>FOA 공간 인코더와 사전학습된 의미론적 오디오 경로를 결합한 공간 인식 옴니모달 모델 OmniEcho 제안.</li>
+</ol>
+<h2>방법론</h2>
+<p>에이전트는 FOA 방식의 공간 오디오와 시각 관찰(및 필요시 언어 지시)을 함께 입력받아 주변 환경에 대한 공간적 질의에 답하거나 소리를 따라 내비게이션을 수행한다. 학습 데이터 확보를 위해 개발한 렌더링 파이프라인은 소리 발생원의 위치, 카메라가 보는 시각 장면, 에이전트의 이동 경로가 기하학적으로 서로 어긋나지 않도록 제어하며 대규모 학습 신호를 생성한다. OmniEcho 모델은 방향 정보를 담는 FOA 인코더를 사전학습된 의미 오디오 경로와 결합해 "무엇이 들리는가"와 "어디서 들리는가"를 동시에 포착하도록 설계되었다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>OmniEchoBench의 여섯 가지 과제(공간 오디오-시각 지각과 오디오-비전-언어 내비게이션)에서 OmniEcho는 공간 오디오-시각 지각 부문 최고 성능을 달성했으며, 소리 유도 내비게이션에서도 기존 시각-언어 내비게이션(VLN) 방식에 근접한 성능을 보였다. 이는 공간 오디오가 체화 장면 추론과 내비게이션에 유의미한 신호로 활용될 수 있음을 뒷받침한다.</p>
+<h2>한계점</h2>
+<p>논문은 결론부에서 세밀한 공간 위치 추정과 거리 추정이 여전히 중요한 미해결 과제로 남아있다고 명시하고 있다. 그 밖의 구체적 한계는 논문에 명시되지 않음.</p>
+<h2>시사점</h2>
+<p>공간 오디오가 시각 정보만으로는 포착하기 어려운 방향·위치 단서를 제공해 체화 에이전트의 장면 이해와 탐색 능력을 보완할 수 있음을 보여주며, "무엇을 지각하는가"뿐 아니라 "그것이 어디서 비롯되는가"까지 함께 추론하는 차세대 체화 AI 연구의 방향을 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.23407" target="_blank" rel="noopener">huggingface.co/papers/2609.23407</a> · 2026-09-26</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>완피이(WanPE)</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#3 · Daily Papers 2026-09-26</span>
+      <span class="cat-tag">생성모델</span>
+      <span class="upvote-tag">▲ 25</span>
+    </div>
+    <h1 class="article-title">WanPE: Towards Cinematic Prompt Enhancement for Modern Text-to-Video Generation</h1>
+    <p class="article-title-ko">완피이(WanPE): 최신 텍스트-투-비디오 생성을 위한 영화적 프롬프트 강화</p>
+    <p class="article-sub">최대 30초 길이의 텍스트-투-비디오 생성이 가능해진 시대에 맞춰, 사용자의 짧은 프롬프트를 카메라 동선·조명·사운드까지 아우르는 "감독급" 다중 샷 시나리오로 변환해주는 3,970억 파라미터 규모의 프롬프트 강화 모델.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.30221" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.30221" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: WanPE: Towards Cinematic Prompt Enhancement for Modern Text-to-Video Generation</li>
+<li><strong>저자</strong>: Yubo Zhu, Yawen Shao, Ziyun Dai 외 다수 (Wan Team, Alibaba Group, 난징대 등)</li>
+<li><strong>출처</strong>: arXiv:2609.30221v1 [cs.CV] (2026-09-24)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://wan-pe.github.io/">https://wan-pe.github.io/</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.30221">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>최대 30초 길이의 텍스트-투-비디오 생성이 가능해진 시대에 맞춰, 사용자의 짧은 프롬프트를 카메라 동선·조명·사운드까지 아우르는 "감독급" 다중 샷 시나리오로 변환해주는 3,970억 파라미터 규모의 프롬프트 강화 모델.</p>
+<h2>배경 및 문제의식</h2>
+<p>Wan3.0, Seedance 2.5 같은 최신 영상 생성 모델은 30초 분량의 영화 수준 영상을 생성할 수 있게 되었지만, 이런 능력을 제대로 끌어내려면 텍스트 프롬프트가 단순한 장면 묘사를 넘어 샷별 액션, 카메라 움직임, 조명, 대사, 사운드가 시간에 따라 어떻게 전개되는지를 지시하는 "연출 대본" 수준이어야 한다. 즉 프롬프트 강화의 역할이 단순 디테일 보강에서 전체 제작을 기획하는 수준으로 바뀌어야 한다는 문제의식에서 출발한다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>105만 개의 실제 영상으로 학습한 3,970억 파라미터 규모의 프롬프트 강화 모델 WanPE 제안.</li>
+<li>영상에서 역으로 샷 단위 연출 계획을 구성하는 "비디오 기반 역구성(video-grounded reverse construction)" 기법 도입.</li>
+<li>여러 샷과 시간에 걸쳐 사용자 요구사항을 충실히 보존하는 "의미 일관성 GRPO(SC-GRPO)" 강화학습 기법 제안.</li>
+<li>5초에서 30초까지 다양한 길이·의도 세분화를 다루는 인간 주석 평가셋 WanPEval(약 1만 1천 건의 쌍대비교) 구축.</li>
+</ol>
+<h2>방법론</h2>
+<p>WanPE는 실제 영상으로부터 역으로 샷 단위 연출 계획을 재구성하는 지도학습(SFT) 방식으로 우선 학습된 뒤, SC-GRPO라는 강화학습 단계를 거쳐 여러 샷과 시간 축에 걸쳐 사용자의 원래 의도가 왜곡되지 않도록 다듬어진다. 이렇게 강화된 프롬프트는 Wan3.0과 같은 비디오 생성기에 입력되어 실제 영상으로 렌더링된다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>WanPEval 벤치마크에서 사람 평가자들의 블라인드 쌍대비교를 통해, WanPE-397B로 강화한 프롬프트는 원본 사용자 프롬프트 대비 5~15초 구간에서 10.66~18.84점, 30초 구간에서는 무려 50.86점의 인간 선호도 향상을 이끌어냈다. 절제 실험(ablation)에서는 역구성 방식이 순방향 재작성 방식보다 뚜렷이 우수했고, SC-GRPO는 모델 규모에 관계없이 의미적 충실도를 견고하게 유지시켰다. 최종적으로 WanPE는 5~15초 구간에서 평가된 모든 상용 서비스를 능가했고, 30초 구간에서도 Seedance 2.5와 경쟁할 수준을 보였다.</p>
+<h2>한계점</h2>
+<p>논문에 명시되지 않음.</p>
+<h2>시사점</h2>
+<p>영상이 길어지고 조건이 복잡해질수록 프롬프트 자체가 단순한 캡션이 아니라 액션·카메라·오디오·내러티브를 아우르는 사전 제작 청사진 역할을 해야 한다는 관점을 제시하며, 실제 영상 데이터를 역으로 활용해 연출 지식을 학습시키는 접근이 향후 프롬프트 강화 기술의 새로운 방향이 될 수 있음을 보여준다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.30221" target="_blank" rel="noopener">huggingface.co/papers/2609.30221</a> · 2026-09-26</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

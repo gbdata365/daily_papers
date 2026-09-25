@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>당신의 트랜스포머는 동시에 두 가지 생각을 할 수 있다</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#2 · Daily Papers 2026-09-26</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 55</span>
+    </div>
+    <h1 class="article-title">Your Transformer Can Hold Two Thoughts at Once: Evidence of Linear Superposition in LLMs</h1>
+    <p class="article-title-ko">당신의 트랜스포머는 동시에 두 가지 생각을 할 수 있다: LLM의 선형 중첩 증거</p>
+    <p class="article-sub">자기어텐션·MLP 같은 비선형 요소로 이루어진 트랜스포머가, 두 개의 서로 다른 텍스트 임베딩을 평균 내어 입력해도 각 텍스트의 다음 토큰 예측을 동시에 유지하는 놀라운 선형적 성질을 갖는다는 것을 실험적으로 보인 연구.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.29845" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.29845" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Your Transformer Can Hold Two Thoughts at Once: Evidence of Linear Superposition in LLMs</li>
+<li><strong>저자</strong>: Pavel Tikhonov, Anton Korznikov, Matvey Mikhalchuk 외 (AIRI 등)</li>
+<li><strong>출처</strong>: arXiv:2609.29845v1 [cs.CL] (2026-09-24)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.29845">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>자기어텐션·MLP 같은 비선형 요소로 이루어진 트랜스포머가, 두 개의 서로 다른 텍스트 임베딩을 평균 내어 입력해도 각 텍스트의 다음 토큰 예측을 동시에 유지하는 놀라운 선형적 성질을 갖는다는 것을 실험적으로 보인 연구.</p>
+<h2>배경 및 문제의식</h2>
+<p>트랜스포머는 어텐션과 비선형 활성화 함수로 구성되어 있어 원칙적으로 매우 비선형적인 시스템으로 여겨진다. 그러나 최근 연구들은 디코더 전용 트랜스포머의 잔차 스트림(residual stream)이 층간에서 아핀 변환으로 잘 근사된다는 선형적 구조를 보고했다. 저자들은 이런 층 간 선형성이 모델의 전체 입출력 동작으로까지 확장되는지, 즉 두 입력의 선형 결합에 대한 모델의 반응이 각 입력에 대한 반응들의 결합과 비슷한지를 질문한다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>"중첩 선형성 가설(Superposition Linearity Hypothesis)"을 제시: 두 문서 임베딩을 토큰 단위로 평균 내어 입력하면 모델의 출력이 두 문서 각각의 다음 토큰 분포의 중첩으로 나타난다.</li>
+<li>이 성질이 학습에 의한 창발적 능력이 아니라 트랜스포머 아키텍처 자체에 내재된 속성이며, 오히려 사전학습이 진행될수록 감소한다는 것을 규명.</li>
+<li>가벼운 파인튜닝만으로 이 선형성을 상당 부분 복원할 수 있음을 실험으로 확인.</li>
+<li>하나의 순전파(forward pass)에서 중첩된 두 출력을 분리해 두 개의 일관된 텍스트를 동시에 생성하는 가이드 디코딩 기법을 제안.</li>
+</ol>
+<h2>방법론</h2>
+<p>서로 다른 두 문서 A, B의 토큰 임베딩을 요소별 평균으로 결합해 혼합 입력을 만들고, 이를 표준 사전학습 모델(Pythia-2.8B, Llama-3.2-3B, Qwen2.5-3B 등)에 통과시켜 얻은 혼합 로짓에서 각 문서의 실제 정답 토큰이 상위 순위 안에 얼마나 남아있는지를 측정했다. 또한 사전학습 진행 단계별 체크포인트를 비교해 중첩 선형성의 변화 추이를 추적하고, 경량 파인튜닝을 통해 이 성질을 복원하는 실험, 그리고 중첩된 두 출력을 다시 풀어내는 디코딩 절차를 설계했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>여러 오픈소스 LLM(Pythia, Llama-3.2, Qwen2.5 등)에 대해 최대 128~512 토큰 길이의 영어 텍스트로 실험을 수행한 결과, 두 스트림 각각의 정답 토큰이 혼합 분포의 상위 10위 안에 자주 포함되는 것으로 나타나 아키텍처 고유의 중첩 성질이 확인되었다. 사전학습이 진행될수록 이 성질은 점차 감소했지만, 경량 파인튜닝을 거치면 예측 분포와 개별 분포 평균 간의 발산이 크게 줄어들어 선형성이 복원되었다. 가이드 디코딩을 적용하면 한 번의 순전파로 두 개의 일관된 문장을 동시에 생성할 수 있어, 이론적으로 추론 처리량을 2배로 늘리고 활성 스트림당 KV 캐시 사용량을 절반으로 줄일 수 있는 가능성을 보였다.</p>
+<h2>한계점</h2>
+<p>평가가 비교적 짧은 문맥(분석 실험은 128 토큰 이하, 확장 실험도 512 토큰까지)과 주로 단일 언어(영어) 코퍼스에 한정되어 있어, 더 긴 문맥이나 다국어 환경으로의 일반화는 검증되지 않았다. 또한 연구가 텍스트 기반 언어모델에만 국한되어 있으며, 텍스트와 이미지 패치처럼 서로 다른 모달리티 임베딩을 혼합했을 때도 이 선형성이 유지되는지는 전혀 탐구되지 않았다.</p>
+<h2>시사점</h2>
+<p>비선형 구성요소로 이루어진 트랜스포머에도 놀라운 선형 구조가 내재되어 있다는 발견은 모델 해석가능성 연구에 새로운 실마리를 제공하며, 이를 활용한 디코딩 기법은 다중 스트림을 압축 처리해 추론 비용과 메모리 사용량을 줄이는 실용적 응용으로 이어질 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.29845" target="_blank" rel="noopener">huggingface.co/papers/2609.29845</a> · 2026-09-26</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

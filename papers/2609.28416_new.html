@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>에이전트 편집 월드 모델</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#5 · Daily Papers 2026-09-26</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 13</span>
+    </div>
+    <h1 class="article-title">Agent-Editing World Model: Rethinking World Modeling for LLM Agents</h1>
+    <p class="article-title-ko">에이전트 편집 월드 모델: LLM 에이전트를 위한 월드 모델링 재고찰</p>
+    <p class="article-sub">환경의 관찰 결과를 그대로 예측하는 기존 월드 모델 대신, 에이전트의 추론과 행동이 향후 과업 진행 상황에 어떤 영향을 미치는지를 모델링하고 잘못된 상태를 직접 고쳐주는 새로운 방식의 월드 모델 AEWM을 제안한 연구.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.28416" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.28416" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Agent-Editing World Model: Rethinking World Modeling for LLM Agents</li>
+<li><strong>저자</strong>: Shuang Sun, Guoxin Chen, Fanzhe Meng 외 (중국 인민대학교 가오링 인공지능대학원)</li>
+<li><strong>출처</strong>: arXiv:2609.28416v1 [cs.CL] (2026-09-23)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.28416">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>환경의 관찰 결과를 그대로 예측하는 기존 월드 모델 대신, 에이전트의 추론과 행동이 향후 과업 진행 상황에 어떤 영향을 미치는지를 모델링하고 잘못된 상태를 직접 고쳐주는 새로운 방식의 월드 모델 AEWM을 제안한 연구.</p>
+<h2>배경 및 문제의식</h2>
+<p>기존의 언어 기반 월드 모델은 주로 환경의 관찰(도구 응답 등)을 예측하도록 설계되지만, 실제 도구 실행 결과를 이미 얻을 수 있는 상황에서는 높은 엔트로피를 가진 도구 응답을 다시 예측하는 것이 큰 가치를 주지 못한다. 동시에 에이전트는 근거 없는 가정이나 낡은 계획이 이력에 남아 이후 의사결정을 왜곡시키는 "과업-상태 오염(task-state contamination)" 문제를 겪는다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>도구 응답을 시뮬레이션하는 대신 추론·행동이 과업 진행에 미치는 영향을 모델링하는 AEWM(Agent-Editing World Model) 제안.</li>
+<li>결정을 CRITICAL·EXPLORATORY·NOISY로 구분하는 액션 판정기(Action Judge)와, 동일한 관찰 이력에서 잡음이 낀 추론-행동 연속체를 고쳐 쓰는 상태 수정(State Revision) 기법 결합.</li>
+<li>이 두 기능을 실제 실행 결과와 통합해 비평만 제시하는 것이 아니라 이후 결정의 근거가 되는 상태 자체를 직접 바꾸는 EditAct 기법 제안.</li>
+<li>검증된 EditAct 궤적으로 거부 샘플링 파인튜닝을 수행하는 AEWM-RFT 제시.</li>
+</ol>
+<h2>방법론</h2>
+<p>연구팀은 검색(Search), 터미널(Terminal), 소프트웨어 엔지니어링(SWE) 세 가지 영역에 걸쳐 중간학습(mid-training)과 지도 파인튜닝(SFT)으로 AEWM을 훈련시켰다. Action Judge는 각 결정이 이후 과업에 결정적인지, 탐색적인지, 잡음에 불과한지를 분류하고, State Revision은 잡음이 낀 추론-행동 이어붙이기를 동일한 관찰 이력을 바탕으로 다시 작성한다. EditAct는 이 두 요소를 실제 실행 피드백과 결합해 에이전트의 이후 의사결정에 사용될 상태를 실질적으로 교정한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Qwen3.5-35B-A3B 등 세 가지 에이전트 백본과 여섯 개 벤치마크에 대한 실험에서, AEWM은 자체 Action Judge 벤치마크에서 70.5%의 매크로-F1을 기록해 가장 강력한 프론티어 베이스라인보다 10.6점 앞섰다. EditAct는 여섯 개 벤치마크 평균에서 최강 베이스라인 대비 3.2~6.7점의 성능 향상을 가져왔으며, 온라인 AEWM 안내 없이도 검증된 궤적만으로 파인튜닝한 AEWM-RFT는 Self-RFT 대비 세 도메인에서 2.2~2.6점 향상을 보였다.</p>
+<h2>한계점</h2>
+<p>논문에 명시되지 않음.</p>
+<h2>시사점</h2>
+<p>월드 모델의 역할을 "환경을 그대로 재현하는 것"에서 "에이전트의 상태를 능동적으로 교정하는 것"으로 전환함으로써, 장기 호라이즌 과업에서 신뢰할 수 있는 추론과 전이 가능한 에이전트 학습을 위한 새로운 설계 방향을 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.28416" target="_blank" rel="noopener">huggingface.co/papers/2609.28416</a> · 2026-09-26</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

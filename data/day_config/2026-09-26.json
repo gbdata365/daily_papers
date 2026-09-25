@@ -1,0 +1,110 @@
+{
+  "2609.28654": {
+    "base": "2609_오브젝트퍼머넌스_비디오-생성모델-물체영속성-학습",
+    "rank": "#1",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "154",
+    "en_title": "Training Object Permanence in World Models",
+    "ko_title": "월드 모델에서 물체 영속성(Object Permanence) 학습하기"
+  },
+  "2609.29845": {
+    "base": "2609_선형중첩_트랜스포머-두-가지-생각-동시-보유",
+    "rank": "#2",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "55",
+    "en_title": "Your Transformer Can Hold Two Thoughts at Once: Evidence of Linear Superposition in LLMs",
+    "ko_title": "당신의 트랜스포머는 동시에 두 가지 생각을 할 수 있다: LLM의 선형 중첩 증거"
+  },
+  "2609.30221": {
+    "base": "2609_완피이_영화적-프롬프트-강화-텍스트비디오-생성",
+    "rank": "#3",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "25",
+    "en_title": "WanPE: Towards Cinematic Prompt Enhancement for Modern Text-to-Video Generation",
+    "ko_title": "완피이(WanPE): 최신 텍스트-투-비디오 생성을 위한 영화적 프롬프트 강화"
+  },
+  "2609.23407": {
+    "base": "2609_옴니에코_체화에이전트-공간오디오-이해",
+    "rank": "#4",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "20",
+    "en_title": "OmniEcho: Spatial Audio Understanding for Embodied Agents",
+    "ko_title": "옴니에코: 체화 에이전트를 위한 공간 오디오 이해"
+  },
+  "2609.28416": {
+    "base": "2609_에이전트편집모델_LLM에이전트-상태편집-월드모델",
+    "rank": "#5",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "13",
+    "en_title": "Agent-Editing World Model: Rethinking World Modeling for LLM Agents",
+    "ko_title": "에이전트 편집 월드 모델: LLM 에이전트를 위한 월드 모델링 재고찰"
+  },
+  "2609.29362": {
+    "base": "2609_품사창발_SAE-잠재공간-품사-범주-분석",
+    "rank": "#6",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "10",
+    "en_title": "Parts-of-Speech as Emergent Categories in SAE Latent Space",
+    "ko_title": "SAE 잠재 공간에서 창발하는 범주로서의 품사"
+  },
+  "2609.29892": {
+    "base": "2609_큐원플래너에이전트_모바일-플래너-에이전트-폐루프-AI",
+    "rank": "#7",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "9",
+    "en_title": "Qwen-Planner-Agent: A Closed-Loop AI-for-AI Framework for Real-World Mobile Planner Agents",
+    "ko_title": "큐원-플래너-에이전트: 실세계 모바일 플래너 에이전트를 위한 폐루프 AI-포-AI 프레임워크"
+  },
+  "2609.29444": {
+    "base": "2609_이터신스_역할분리-반복합성-딥서치-에이전트",
+    "rank": "#8",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "8",
+    "en_title": "IterSynth: Rethinking Deep Search Agents via Role-Decoupled Iterative Synthesis",
+    "ko_title": "이터신스: 역할 분리 반복 합성을 통한 딥서치 에이전트 재고찰"
+  },
+  "2609.30233": {
+    "base": "2609_태스크모션플래닝_코딩에이전트-일반화-태스크동작계획",
+    "rank": "#9",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "6",
+    "en_title": "Coding Agents for Generalized Task and Motion Planning Problems",
+    "ko_title": "일반화된 과제 및 동작 계획 문제를 위한 코딩 에이전트"
+  },
+  "2609.29421": {
+    "base": "2609_루퍼스에어_오픈-LLM-포스트트레이닝-레시피",
+    "rank": "#10",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "6",
+    "en_title": "Rufus-Air: An Open LLM Post-Training Recipe",
+    "ko_title": "루퍼스-에어: 오픈 LLM 포스트트레이닝 레시피"
+  },
+  "2609.23087": {
+    "base": "2609_스펙트럴용량_네트워크명세만으로-아키텍처-설계",
+    "rank": "#11",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "6",
+    "en_title": "Neural Spectral Capacity: Measuring and Designing Architectures from Network Specification Alone",
+    "ko_title": "뉴럴 스펙트럴 용량: 네트워크 명세만으로 아키텍처를 측정하고 설계하기"
+  },
+  "2609.29028": {
+    "base": "2609_알지비디20케이_RGBD-시맨틱-세그멘테이션-벤치마크",
+    "rank": "#12",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "5",
+    "en_title": "RGBD20K: A Large-Scale Benchmark for RGB-D Semantic Segmentation",
+    "ko_title": "RGBD20K: RGB-D 시맨틱 분할을 위한 대규모 벤치마크"
+  }
+}

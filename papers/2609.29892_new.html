@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>큐원-플래너-에이전트</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#7 · Daily Papers 2026-09-26</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 9</span>
+    </div>
+    <h1 class="article-title">Qwen-Planner-Agent: A Closed-Loop AI-for-AI Framework for Real-World Mobile Planner Agents</h1>
+    <p class="article-title-ko">큐원-플래너-에이전트: 실세계 모바일 플래너 에이전트를 위한 폐루프 AI-포-AI 프레임워크</p>
+    <p class="article-sub">AI가 스스로 데이터 생성·학습·배포 과정에 참여하는 "폐루프 AI-포-AI" 프레임워크를 실제 모바일 기기 조작이라는 어려운 과제에 적용해 만든 모바일 플래너 에이전트.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.29892" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.29892" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Qwen-Planner-Agent: A Closed-Loop AI-for-AI Framework for Real-World Mobile Planner Agents</li>
+<li><strong>저자</strong>: MAI Team (Alibaba Token Hub, Alibaba Group)</li>
+<li><strong>출처</strong>: arXiv:2609.29892v1 [cs.AI] (2026-09-24)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://tongyi-mai.github.io/Qwen-Planner-Agent/">https://tongyi-mai.github.io/Qwen-Planner-Agent/</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.29892">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>AI가 스스로 데이터 생성·학습·배포 과정에 참여하는 "폐루프 AI-포-AI" 프레임워크를 실제 모바일 기기 조작이라는 어려운 과제에 적용해 만든 모바일 플래너 에이전트.</p>
+<h2>배경 및 문제의식</h2>
+<p>LLM의 발전은 단순 콘텐츠 생성을 넘어 엔지니어링과 과학적 발견 같은 능동적 워크플로로 확장되고 있다. 저자들은 "AI가 개발의 대상이면서 동시에 차세대 AI 시스템을 만드는 능동적 참여자가 될 수 있는가"라는 질문을 던진다. 모바일 플래닝은 복잡하고 장기적인 과업이 에이전트의 신뢰성을 시험하는 동시에, 실제 기기와의 상호작용 비용이 커서 개발 확장성이 제한된다는 점에서 이 질문을 검증하기에 적합한 영역이다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>데이터 생산·모델 학습·배포를 하나의 행동-피드백-검증 계약으로 연결하는 폐루프 AI-포-AI 프레임워크 제안.</li>
+<li>"AI를 위한 데이터" 단계: 전문화된 에이전트들이 과업을 구성하고 상호작용 궤적을 수집하며, 학습 피드백으로 이후 데이터 생성을 조정하는 인간 검수 기반 에이전트 데이터 플라이휠 구축.</li>
+<li>"AI를 위한 학습" 단계: 지도학습 콜드스타트와 혼합 환경 온라인 강화학습을 결합하고, 추론·도구 사용 비용을 줄이면서 과업 성능은 유지하는 CARE(Competence-Aware Reward-and-Advantage Engineering) 기법 제안.</li>
+<li>실행 근거 기반 루프를 통해 메모리·스킬·도구를 런타임에 조율하고, 구조화된 행동 피드백과 실패 흔적을 모델·하네스 공동 진화에 되먹임하는 메커니즘 구현.</li>
+</ol>
+<h2>방법론</h2>
+<p>프레임워크는 세 축으로 구성된다. AI-포-데이터는 특화된 에이전트가 과업 생성, 궤적 수집, 데이터 정제·균형을 수행하며 학습 결과 피드백을 다시 데이터 생성에 반영한다. AI-포-학습은 지도학습 기반 계획 콜드스타트 이후 혼합 환경(실제 기기+시뮬레이션 등) 온라인 에이전트 강화학습을 적용하며, CARE 기법으로 보상 강조점을 과업 성공도에 따라 동적으로 조정하고 어드밴티지를 보정해 사소한 효율성 차이가 학습을 지배하지 않도록 한다. 세 번째 축은 모델과 에이전트 하네스(메모리·스킬·도구 오케스트레이션)가 실행 피드백을 매개로 번갈아 개선되는 공진화 루프이다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Qwen-Planner-Agent는 자체 구축한 MobilePA-Bench에서 평가된 모든 모델·시스템 중 최고 종합 성능을 달성했으며, 기반 모델 대비 도구 사용, 메모리, 스킬, 하위 에이전트 조율 전 영역에서 향상을 보였다. 모바일 이외의 일반 에이전트 벤치마크에서도 성능 향상을 보이면서 범용 능력은 대체로 유지되었다.</p>
+<h2>한계점</h2>
+<p>논문에 명시되지 않음.</p>
+<h2>시사점</h2>
+<p>AI 시스템이 자기 자신의 학습 데이터 생성과 하네스 설계에 능동적으로 참여하는 폐루프 구조가, 값비싼 실기기 상호작용이 필요한 실세계 에이전트 개발의 확장성 문제를 완화할 수 있는 실용적 방법론이 될 수 있음을 보여준다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.29892" target="_blank" rel="noopener">huggingface.co/papers/2609.29892</a> · 2026-09-26</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>레이오크</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#2 · Daily Papers 2026-09-29</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 43</span>
+    </div>
+    <h1 class="article-title">RayOrch: Programming and Executing Lineage-Controlled Multi-Grain Dataflows for Foundation-Model Data Preparation</h1>
+    <p class="article-title-ko">레이오크: 파운데이션 모델 데이터 준비를 위한 계보 제어 멀티그레인 데이터플로우 프로그래밍과 실행</p>
+    <p class="article-sub">파운데이션 모델용 대규모 데이터 준비 파이프라인에서, 문서·영상이 페이지·클립 등 여러 단위로 반복적으로 쪼개지는 구조(부모-자식 관계)를 실행 내내 유지하면서도 GPU 배치는 여러 부모의 작업을 섞어 처리할 수 있게 하는 프로그래밍 모델 겸 분산 실행 엔진 RayOrch를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.18703" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.18703" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: RayOrch: Programming and Executing Lineage-Controlled Multi-Grain Dataflows for Foundation-Model Data Preparation</li>
+<li><strong>저자</strong>: Xiaochen Ma, Zimo Meng, Junzhu Liang, Youhe Jiang 외 (Peking University, HKUST, University of Cambridge, Tencent Hunyuan 등)</li>
+<li><strong>출처</strong>: arXiv:2609.18703v1 [cs.DC] (2026년 9월 16일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/OpenDCAI/RayOrch">GitHub</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.18703">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>파운데이션 모델용 대규모 데이터 준비 파이프라인에서, 문서·영상이 페이지·클립 등 여러 단위로 반복적으로 쪼개지는 구조(부모-자식 관계)를 실행 내내 유지하면서도 GPU 배치는 여러 부모의 작업을 섞어 처리할 수 있게 하는 프로그래밍 모델 겸 분산 실행 엔진 RayOrch를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>PDF는 페이지→영역→표로, 영상은 클립→프레임→오디오로 반복해서 처리 단위가 바뀌며, 부모당 자식 개수 분포는 매우 편향(long-tailed)되어 있다. 기존 시스템은 두 가지 방식 중 하나를 택할 수밖에 없었다: (1) 문서/영상 전체를 하나의 불투명한 작업으로 다루는 방식은 내부 병렬성을 숨기고, (2) 개별 항목을 평평하게(flat) 노출하는 방식은 병렬성은 살리지만 애플리케이션이 직접 부모-자식 관계, 순서, 완료 시점을 추적하고 전역적으로 재조립해야 한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>유한 비순환 도메인 트리 위에서 순서 있는 가변 카디널리티 확장(parent→children)과 이에 대응하는 부모 단위 수집(gather)을 선언적으로 표현하는 구조적 모델을 정식화.</li>
+<li>구조적 계보(lineage) 상태(구체적 자식 집합, 각 자식의 부모·순번, 종료 상태)를 실행 내내 유지하면서 물리적 배치는 일시적으로 유지하는 엔진 설계.</li>
+<li>부모 단위로 범위가 한정된 타입드 실패(failure) 격리 메커니즘과 세대 고정(generation-fenced) 커밋을 구현.</li>
+</ul>
+<h2>방법론</h2>
+<p>프로그램은 F.expand로 부모→자식 도메인 관계를 선언하고 F.reduce로 이에 대응하는 부모 단위 순서 있는 수집을 선언하며, 컴파일러가 이 둘의 짝을 검증한다. 실행 중에는 Call별 FIFO 준비 큐가 여러 부모의 준비된 작업(Grain)을 묶어 배치를 구성하지만, 불변 순번(ordinal)과 선언된 멤버십을 기준으로 수집이 이루어지므로 배치 경계나 완료 순서가 재구성 순서를 좌우하지 않는다. 완료된 부모는 모든 필요한 자식 결과가 종료되는 즉시 다음 단계로 넘어갈 수 있고, 특정 부모에 대해 타입 지정된 그룹 실패가 발생하면 해당 부모의 미배차 형제 작업들은 억제되지만 무관한 부모들의 처리는 계속된다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Ray 위에 파이썬 레이어로 구현하여 MinerU·Docling 문서 파이프라인과 Qwen2.5-VL-7B 영상 파이프라인에서 평가했다. NVIDIA H20 GPU에서 MinerU를 4→64 GPU로 확장 시 처리시간 15.14배, 영상 파이프라인을 8→64 GPU로 확장 시 7.82배의 속도 향상을 보였다. 종단 간 처리시간은 MinerU 기준 Ray Data 대비 13.1%, Daft 대비 29.0% 단축되었고, Docling에서는 Ray Data 대비 16.0% 단축되었다. FIFO 디스패치만으로 실행 시간이 634.1초에서 579.3초로(8.6%) 줄었으며, 실패 주입 실험에서는 23,514개 형제 계산 중 6,241개가 UDF 진입 전에 차단되어 평균 14.93%의 실행 시간이 단축되었다.</p>
+<h2>한계점</h2>
+<p>RayOrch는 각 소스 마이크로배치 내의 순서 있는 수집만 지원하며, 일반적인 조인, 마이크로배치를 넘나드는 윈도우, 피드백 루프는 지원하지 않는다(논문에 명시).</p>
+<h2>시사점</h2>
+<p>문서·영상 전처리처럼 처리 단위가 계속 바뀌는 대규모 데이터 파이프라인에서, 구조적 계보 정보를 실행 상태로 승격시키는 것이 스케줄링 효율성과 정확한 복원·실패 격리를 동시에 달성하는 핵심 설계 원칙이 될 수 있음을 보여준다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.18703" target="_blank" rel="noopener">huggingface.co/papers/2609.18703</a> · 2026-09-29</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

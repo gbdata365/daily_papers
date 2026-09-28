@@ -1,0 +1,110 @@
+{
+  "2609.31620": {
+    "base": "2609_퓨즈레그_레이어퓨전-정규화-재구성생성-격차완화",
+    "rank": "#1",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "114",
+    "en_title": "FuseReg: Regularizing Layer Fusion Mitigates the Reconstruction-Generation Gap in Representation Autoencoders",
+    "ko_title": "퓨즈레그: 레이어 퓨전 정규화로 표현 오토인코더의 재구성-생성 격차 완화하기"
+  },
+  "2609.18703": {
+    "base": "2609_레이오크_계보제어-멀티그레인-데이터-파이프라인",
+    "rank": "#2",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "43",
+    "en_title": "RayOrch: Programming and Executing Lineage-Controlled Multi-Grain Dataflows for Foundation-Model Data Preparation",
+    "ko_title": "레이오크: 파운데이션 모델 데이터 준비를 위한 계보 제어 멀티그레인 데이터플로우 프로그래밍과 실행"
+  },
+  "2609.26333": {
+    "base": "2609_분리양자화_LLM-프리필-디코드-특화",
+    "rank": "#3",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "41",
+    "en_title": "Disaggregated Quantization: Specializing LLM Prefill and Decode",
+    "ko_title": "분리 양자화: LLM 프리필과 디코드를 특화하기"
+  },
+  "2609.31093": {
+    "base": "2609_피사_로그선형-복잡도-블록-희소-어텐션",
+    "rank": "#4",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "19",
+    "en_title": "Block Sparse Attention with Log-Linear Complexity",
+    "ko_title": "로그선형 복잡도를 갖는 블록 희소 어텐션"
+  },
+  "2609.31394": {
+    "base": "2609_인턴더블유제로델타_월드액션모델-2만시간-오픈데이터",
+    "rank": "#5",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "17",
+    "en_title": "InternW0-Δ: A World Action Model Bridging Predictive Dynamics and Actions with 20K+ Hours of Open Data",
+    "ko_title": "인턴더블유제로델타: 2만 시간 이상의 오픈 데이터로 예측 동역학과 행동을 연결하는 월드 액션 모델"
+  },
+  "2609.24385": {
+    "base": "2609_택타일제파_분산촉각센서-토폴로지인식-자기지도학습",
+    "rank": "#6",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "12",
+    "en_title": "Tactile-JEPA: Topology-Aware Self-Supervised Representation Learning for Distributed Tactile Sensors",
+    "ko_title": "택타일제파: 분산 촉각 센서를 위한 토폴로지 인식 자기지도 표현 학습"
+  },
+  "2609.31199": {
+    "base": "2609_디에스엠확산보정_사진측량-표면모델-확산모델-보정",
+    "rank": "#7",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "10",
+    "en_title": "Enhancing Photogrammetric Digital Surface Models with Pretrained Diffusion Models and Multimodal Conditioning",
+    "ko_title": "사전학습 확산 모델과 멀티모달 조건화를 통한 사진측량 수치표면모델 개선"
+  },
+  "2609.30216": {
+    "base": "2609_제브생태계_결정모델-깃허브-생태계-분석",
+    "rank": "#8",
+    "category": "eco",
+    "category_label": "생태계분석",
+    "upvote": "8",
+    "en_title": "Jev in the Wild: A Data-Driven Analysis of the Jev Model's Functionality, Applications and Ecosystem",
+    "ko_title": "야생의 제브: 제브 모델의 기능, 응용, 생태계에 대한 데이터 기반 분석"
+  },
+  "2609.25716": {
+    "base": "2609_포모_생성궤적-분기시점-지각거리",
+    "rank": "#9",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "7",
+    "en_title": "FoMo: Forking Moment in Generative Trajectory as a Perceptual Distance",
+    "ko_title": "포모: 지각적 거리로서의 생성 궤적 분기 시점"
+  },
+  "2609.30222": {
+    "base": "2609_트랙에브리씽_장기영상-3D-포인트트래킹-중복제거",
+    "rank": "#10",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "7",
+    "en_title": "TrackEverything: Long Horizon Dense Tracking via De-Duplicating 3D Scene Representations",
+    "ko_title": "트랙에브리씽: 중복 제거 3D 장면 표현을 통한 장기 지평선 밀집 추적"
+  },
+  "2609.30192": {
+    "base": "2609_세이지_장기추론편향-토폴로지가이드",
+    "rank": "#11",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "6",
+    "en_title": "SAGE: Mitigating Long-Horizon Reasoning Biases via Topological Guidance",
+    "ko_title": "세이지: 토폴로지 가이던스를 통한 장기 추론 편향 완화"
+  },
+  "2609.31590": {
+    "base": "2609_에이전트월드_멀티에이전트-장기협업-벤치마크",
+    "rank": "#12",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "6",
+    "en_title": "AgentWorld: Benchmarking Long-Horizon Collaboration of Multi-agent LLMs",
+    "ko_title": "에이전트월드: 멀티 에이전트 LLM의 장기 협업 벤치마킹"
+  }
+}

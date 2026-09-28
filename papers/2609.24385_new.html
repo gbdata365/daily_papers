@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>택타일제파</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#6 · Daily Papers 2026-09-29</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 12</span>
+    </div>
+    <h1 class="article-title">Tactile-JEPA: Topology-Aware Self-Supervised Representation Learning for Distributed Tactile Sensors</h1>
+    <p class="article-title-ko">택타일제파: 분산 촉각 센서를 위한 토폴로지 인식 자기지도 표현 학습</p>
+    <p class="article-sub">비전 기반이 아닌 분산형 전자 피부(e-skin) 촉각 센서를 위해, 센서의 공간 배치(택셀 그래프)를 이용한 마스킹으로 국소·전역 두 스케일의 토폴로지 인식 표현을 자기지도 학습하는 Tactile-JEPA를 제안하고, 힘 추정 오차 6.3%, 손안 자세(in-hand orientation) 오차 20.8% 감소를 달성한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.24385" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.24385" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Tactile-JEPA: Topology-Aware Self-Supervised Representation Learning for Distributed Tactile Sensors</li>
+<li><strong>저자</strong>: Elizaveta Kovtun, Matvey Konovalov, Andrey Sakhovskiy, Semen Budennyy (Sber AI, Skoltech, HSE University, AIRI)</li>
+<li><strong>출처</strong>: arXiv:2609.24385v1 [cs.RO] (2026년 9월 21일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/E-Kovtun/tactile">GitHub</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.24385">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>비전 기반이 아닌 분산형 전자 피부(e-skin) 촉각 센서를 위해, 센서의 공간 배치(택셀 그래프)를 이용한 마스킹으로 국소·전역 두 스케일의 토폴로지 인식 표현을 자기지도 학습하는 Tactile-JEPA를 제안하고, 힘 추정 오차 6.3%, 손안 자세(in-hand orientation) 오차 20.8% 감소를 달성한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>로봇 학습 파이프라인에서 비전 인코더는 대규모 사전학습이 표준이지만, 촉각 인코더는 여전히 노이즈가 많은 원시 신호로부터 처음부터 학습되는 경우가 많아 표현력이 제한된다. 기존 자기지도학습(SSL) 연구는 GelSight·Digit 같은 비전 기반 촉각 센서에 집중되어 있고, 센서 소자(택셀)가 표면에 희소·불규칙하게 배치된 분산형 전자 피부는 다루지 않아, 비전 SSL 기법을 그대로 재사용하기 어렵다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>택셀의 공간 연결성 그래프를 이용해 마스킹을 유도하는 자기지도 사전학습 기법 Tactile-JEPA 제안.</li>
+<li>국소 영역을 덮는 마스크와 피부 전체에 흩어진 택셀을 덮는 전역 마스크를 함께 쓰는 이중 스케일 마스킹으로, 접촉의 국소 디테일과 촉각 표면 전체 상태를 동시에 포착.</li>
+<li>자기(magnetic)·압저항(piezoresistive) 센서, 서로 다른 로봇 체화, 단일/짝 센서 구성 등 세 가지 이질적 데이터셋에서 힘 추정, 손안 자세 추정, 물체·행동 분류, 정책 학습 등 다운스트림 과제 전반에 걸친 일관된 성능 향상 검증.</li>
+</ul>
+<h2>방법론</h2>
+<p>I-JEPA를 따라 보이지 않는(마스킹된) 택셀들의 임베딩을 보이는 택셀들로부터 예측하도록 학습하되, 마스크를 픽셀 그리드가 아닌 센서 연결성 그래프(택셀 그래프) 위에서 국소·전역 두 스케일로 샘플링한다는 점이 핵심 차별점이다. 컨텍스트 인코더가 보이는 택셀 임베딩을 만들고, EMA로 갱신되는 타깃 인코더가 전체 택셀 임베딩을 만들며, 예측기(predictor)가 컨텍스트 임베딩과 타깃 위치 임베딩으로부터 타깃 택셀 임베딩을 예측해 MSE 손실로 학습한다. 사전학습이 끝나면 타깃 인코더를 고정해 촉각 인코더로 재사용하고, 그 위에 과제별 헤드를 학습한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>자기·압저항 센서, 다양한 로봇 체화, 단일/짝 센서 구성을 아우르는 세 개의 서로 다른 데이터셋에서, Tactile-JEPA는 이전 최고 성능 대비 힘 추정 오차를 6.3%, 손안 자세 추정 오차를 20.8% 낮췄으며 정책 학습을 포함한 다른 다운스트림 응용에서도 일관된 성능 향상을 보였다. 또한 센서 연결성 그래프 기반 마스크가 이미지 스타일 블록 마스크보다 우수하며, 마스크 스케일(국소/전역)이 어떤 다운스트림 과제에 유리한지를 좌우하고 두 스케일을 혼합하면 폭넓게 전이됨을 실험적으로 보였다.</p>
+<h2>한계점</h2>
+<p>논문에 명시되지 않음(제공된 발췌 범위에서는 구체적 한계 서술이 확인되지 않음).</p>
+<h2>시사점</h2>
+<p>촉각 감지의 실질적 유용성은 센서 자체보다 인코더 사전학습의 품질에 크게 좌우된다는 점을 실증하며, 분산형 전자 피부처럼 비정형 공간 구조를 가진 센서에 대해서도 그래프 기반 마스킹이라는 원칙으로 비전 SSL의 이점을 이식할 수 있음을 보여준다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.24385" target="_blank" rel="noopener">huggingface.co/papers/2609.24385</a> · 2026-09-29</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

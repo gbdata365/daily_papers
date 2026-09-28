@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>분리 양자화</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#3 · Daily Papers 2026-09-29</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 41</span>
+    </div>
+    <h1 class="article-title">Disaggregated Quantization: Specializing LLM Prefill and Decode</h1>
+    <p class="article-title-ko">분리 양자화: LLM 프리필과 디코드를 특화하기</p>
+    <p class="article-sub">LLM 추론의 프리필(연산 병목)과 디코드(메모리 병목) 단계가 서로 다른 하드웨어 특성을 가진다는 점에 착안해, 두 단계에 서로 다른 양자화 포맷·가중치·저장 위치를 적용하는 "분리 양자화(DQ)"를 제안하여 정확도와 속도를 동시에 개선한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.26333" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.26333" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Disaggregated Quantization: Specializing LLM Prefill and Decode</li>
+<li><strong>저자</strong>: Andrei Panferov, Maximilian Kleinegger, Sweta Priyadarshi, Tijmen Blankevoort, Dan Alistarh (NVIDIA, ISTA)</li>
+<li><strong>출처</strong>: arXiv:2609.26333v1 [cs.LG] (2026년 9월 22일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.26333">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>LLM 추론의 프리필(연산 병목)과 디코드(메모리 병목) 단계가 서로 다른 하드웨어 특성을 가진다는 점에 착안해, 두 단계에 서로 다른 양자화 포맷·가중치·저장 위치를 적용하는 "분리 양자화(DQ)"를 제안하여 정확도와 속도를 동시에 개선한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>프리필은 토큰 수가 많아 연산량이 지배적인(compute-bound) 단계이고, 디코드는 배치가 작아 가중치 로딩이 지배적인(memory-bound) 단계다. 그런데도 기존 방법들은 두 단계에 동일한 양자화 포맷과 가중치를 사용해왔다. 압축 가중치는 메모리 트래픽을 줄이지만 반드시 하드웨어 네이티브 연산 포맷일 필요는 없고, 반대로 활성화까지 양자화하는 하드웨어 네이티브 포맷(NVFP4 등)은 연산은 가속하지만 압축률은 제한적이다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>양자화 인식 분리 증류(QADD): 하나의 순전파-역전파 과정에서 공통 응답 목표를 향해 프리필 전용·디코드 전용 경로를 동시에 학습.</li>
+<li>디코드 전용 활성화 양자화 제거: Qwen3·Gemma3에서 디코드 시 활성화 양자화를 없애면 추론 비용 증가 없이 디코드 중심 과제 정확도가 향상됨을 확인.</li>
+<li>오프로드 분리 프리필(ODP): 추가 프리필 체크포인트를 SSD에서 스트리밍하여 프롬프트 길이에 걸쳐 로딩 비용을 분산시킴으로써 단일 기기에서도 별도의 프리필 가중치를 수용.</li>
+</ul>
+<h2>방법론</h2>
+<p>비분리형(포맷·가중치 공유), 포맷만 분리(공통 가중치·단계별 포맷), 완전 분리(단계별 가중치·포맷 모두 다름)까지 단계적으로 분리 정도를 높이는 스킴을 설계했다. 완전 분리에서는 프리필에 NVFP4(4.5비트/가중치), 디코드에 LUT3(3.5비트/가중치)를 사용하는 방식을 예시로 들었다. QADD는 SFT의 어시스턴트 토큰 마스크를 손실 계산뿐 아니라 선형층의 연산 경로 선택에도 사용해, 학생(양자화) 경로와 교사(고정 BF16) 경로 간 KL 발산으로 학습한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>공개된 Qwen3.8-27B GGUF 디코더에 대해 NVFP4 프리필러를 학습시킨 결과, 디코드 체크포인트를 전혀 바꾸지 않고도 1비트급(IQ1_S) 정확도가 MMLU-Pro에서 32.5점, MMMU-Pro에서 35.3점 향상되었다. 같은 27B 모델에서 ODP는 llama.cpp 환경, 8K 프롬프트 길이 기준 가중치 전용(weight-only) 기준선 대비 최초 토큰까지 시간(TTFT)을 1.78배 단축했으며 4K 문맥부터 더 빨라지기 시작했다. vLLM에서의 분리 서빙 정확도 평가와 최대 2.8T 파라미터 모델까지의 학습 후 양자화(PTQ)를 통한 검증도 수행했다.</p>
+<h2>한계점</h2>
+<p>논문에 명시되지 않음(제공된 발췌 범위에서는 결론 부분에 구체적 한계 서술이 확인되지 않음).</p>
+<h2>시사점</h2>
+<p>프리필/디코드를 별도 가속기에서 운영하는 분리 서빙(disaggregated serving) 트렌드에 맞추어, 통신·스케줄링뿐 아니라 양자화 자체도 단계별로 특화할 수 있다는 새로운 설계축을 제시한다. 특히 로컬(온디바이스) 서빙에서 SSD 오프로딩을 활용해 추가 메모리 부담 없이 초저비트 모델의 정확도를 크게 끌어올릴 수 있다는 점이 실용적 의의가 크다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.26333" target="_blank" rel="noopener">huggingface.co/papers/2609.26333</a> · 2026-09-29</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

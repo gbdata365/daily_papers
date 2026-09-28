@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>인턴더블유제로델타</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#5 · Daily Papers 2026-09-29</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 17</span>
+    </div>
+    <h1 class="article-title">InternW0-Δ: A World Action Model Bridging Predictive Dynamics and Actions with 20K+ Hours of Open Data</h1>
+    <p class="article-title-ko">인턴더블유제로델타: 2만 시간 이상의 오픈 데이터로 예측 동역학과 행동을 연결하는 월드 액션 모델</p>
+    <p class="article-sub">영상 예측(미래 시각 역학)과 행동 생성을 결합하는 월드 액션 모델(WAM)에서, 예측된 시각 역학을 미래 영상을 실제로 생성하지 않고도 행동 예측에 바로 쓸 수 있는 표현으로 변환하는 "코절 임프린트(Causal Imprint)"와, 4D 기하·모션 사전지식을 증류로 주입하는 기법을 결합하고, 2만 시간 이상의 이종 로봇·인간 시연 데이터로 사전학습한 모델을 제시한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.31394" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.31394" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: InternW0-Δ: A World Action Model Bridging Predictive Dynamics and Actions with 20K+ Hours of Open Data</li>
+<li><strong>저자</strong>: Physical Intelligence Team, Shanghai AI Laboratory</li>
+<li><strong>출처</strong>: arXiv:2609.31394v1 [cs.RO] (2026년 9월 25일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://internrobotics.github.io/InternW0-Delta/">https://internrobotics.github.io/InternW0-Delta/</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.31394">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>영상 예측(미래 시각 역학)과 행동 생성을 결합하는 월드 액션 모델(WAM)에서, 예측된 시각 역학을 미래 영상을 실제로 생성하지 않고도 행동 예측에 바로 쓸 수 있는 표현으로 변환하는 "코절 임프린트(Causal Imprint)"와, 4D 기하·모션 사전지식을 증류로 주입하는 기법을 결합하고, 2만 시간 이상의 이종 로봇·인간 시연 데이터로 사전학습한 모델을 제시한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>월드 액션 모델은 대규모 영상 사전학습으로 얻은 시각·시간적 지식을 로봇 제어에 활용하려 하지만, 미래를 예측하는 능력이 곧바로 효과적인 로봇 제어로 이어지지는 않는다. 행동 생성에는 과제 관련 변화를 식별하고, 물체의 기하·모션을 이해하며, 이를 현재 지시·장면에 접지(grounding)하는 과정이 추가로 필요하다. 핵심 과제는 온라인 제어 중 미래 영상을 실제로 생성하지 않으면서도 시각 역학 모델링에서 얻은 예측적 지식을 행동 생성에 유용한 표현으로 옮기는 것이다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>Mixture-of-Transformers(MoT) 구조 안에서 사전학습된 영상 전문가와 행동 전문가를 결합하고, 고정된 VLM이 장면 접지된 의미 정보를 행동 전문가에 제공.</li>
+<li>코절 임프린트: 학습 시에만 미래 지도(supervision)를 이용해 미래 관련 장면 변화를 학습하고, 추론 시에는 미래 영상 롤아웃 없이 이 예측적 표현을 행동 전문가가 바로 사용하도록 함.</li>
+<li>Track4World 교사 모델로부터의 학습 전용 4D 인식 증류를 통해 영상 전문가에 기하·모션 사전지식을 주입.</li>
+<li>로봇 시연, UMI 데이터, 1인칭 인간 시연, Ego2Robot 데이터를 정준 80차원 상태-행동 표현으로 통일하고 정제하여 2만 시간 이상(총 23,072시간)의 공개 최대 규모 학습 데이터셋 구축.</li>
+</ul>
+<h2>방법론</h2>
+<p>영상 전문가는 앵커·최근·현재 관측의 경량 희소 메모리를 처리해 에피소드 수준 맥락과 최근 상호작용 이력을 제공하고, 고정된 VLM이 과제 조건부 장면 의미를 행동 전문가에 공급한다. 코절 임프린트와 행동 전문가 모두 미래 관측을 입력으로 받지 않으며, 미래 정보는 오직 학습 지도 신호로만 쓰이는 방향성 있는 정보 흐름을 유지한다. 학습은 시각 역학과 행동 생성을 동시에 배우는 사전학습 단계와, 목표 로봇 체화(embodiment)·과제에 맞춰 적응하는 사후학습(post-training) 단계의 2단계로 진행된다. 비디오 오토인코더 잠재값과 고정 VLM 특징 캐싱, 레이어별 컴파일, 활성화 체크포인팅 등으로 학습·배포 효율도 최적화했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>LIBERO-Plus, RoboTwin 2.0, EBench, RoboDojo 등 다양한 체화·분포 변화 벤치마크에서 평가한 결과, 왜곡되지 않은 시연만으로 사후학습했음에도 LIBERO-Plus에서 92.8%, RoboTwin 2.0 Clean2Random에서 71.9%, Clean2Clean에서 90.0%의 최고 성공률을 기록했다. 모바일 양팔 조작을 다루는 EBench에서는 종합 점수 66.0으로 1위였고, 기억·정밀도·장기 과제를 포함하는 RoboDojo에서는 평균 성공률 23.9%로 이전 최강 WAM의 거의 2배를 달성했다. 그리퍼 기반 2종, 정교한 손(dexterous hand) 기반 2종의 실제 로봇에도 동일한 사전학습 체크포인트를 사후학습으로 적용해 배포했으며, 정교한 손 배포에서는 NVIDIA RTX 5090 GPU 한 대에서 평균 왕복 지연 152.8ms(표준 런타임 대비 5.11배 가속)를 달성했다.</p>
+<h2>한계점</h2>
+<p>논문에 명시되지 않음(제공된 발췌 범위에서는 구체적 한계 서술이 확인되지 않음).</p>
+<h2>시사점</h2>
+<p>"미래를 예측하는 능력"과 "그 예측을 실제 행동으로 옮기는 능력"을 분리해서 설계하고, 추론 시 미래 생성 비용 없이도 예측적 표현을 활용할 수 있게 한 점이 실용적 배포 가능성을 크게 높인다. 또한 이종 데이터(로봇·인간·UMI)를 공통 표현으로 통합해 대규모 공개 데이터셋을 구축한 방식은 embodied AI 데이터 인프라 구축의 참고 사례가 될 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.31394" target="_blank" rel="noopener">huggingface.co/papers/2609.31394</a> · 2026-09-29</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

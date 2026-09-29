@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>인터리브 강화학습을 통한 통합 모델의 네이티브 리플렉션 학습</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#12 · Daily Papers 2026-09-30</span>
+      <span class="cat-tag">생성모델</span>
+      <span class="upvote-tag">▲ 35</span>
+    </div>
+    <h1 class="article-title">Learning Native Reflection in Unified Models with Interleaved Reinforcement Learning</h1>
+    <p class="article-title-ko">인터리브 강화학습을 통한 통합 모델의 네이티브 리플렉션 학습</p>
+    <p class="article-sub">이미지를 보고 생성할 수 있는 통합 멀티모달 모델(unified model)이 자기 자신이 만든 이미지를 진단하고 고쳐나가는 다중 라운드 리플렉션(reflection)을, 텍스트 진단과 이미지 수정을 한 궤적(trajectory) 단위의 보상으로 함께 학습시키는 강화학습 기법 UMM-Reflection을 제안한 연구이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.35767" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.35767" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Learning Native Reflection in Unified Models with Interleaved Reinforcement Learning</li>
+<li><strong>저자</strong>: Yijia Fan, Ziqi Huang 외 6인 (Nanyang Technological University, Shanghai Jiao Tong University, The University of Tokyo)</li>
+<li><strong>출처</strong>: arXiv:2609.35767v1 [cs.CV] (2026년 9월)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://waltstephen.github.io/UMM-Reflection">https://waltstephen.github.io/UMM-Reflection</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.35767">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>이미지를 보고 생성할 수 있는 통합 멀티모달 모델(unified model)이 자기 자신이 만든 이미지를 진단하고 고쳐나가는 다중 라운드 리플렉션(reflection)을, 텍스트 진단과 이미지 수정을 한 궤적(trajectory) 단위의 보상으로 함께 학습시키는 강화학습 기법 UMM-Reflection을 제안한 연구이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>통합 멀티모달 모델은 이해(understanding)와 생성(generation)을 하나의 네트워크에 담고 있어, 원칙적으로는 자신이 만든 이미지의 결함을 스스로 찾아 수정하는 "검사-진단-수정" 루프를 수행할 수 있다. 그러나 기존 연구는 이 문제를 두 방향에서만 다뤄왔다. 한쪽(T2I-R1, ReasonGen-R1, UniRL 등)은 단일 렌더링 결과에만 GRPO 같은 강화학습을 적용해 모델이 자신의 이미지를 다시 수정하지는 못했고, 다른 쪽(Thinking with Generated Images, MINT, Uni-CoT 등)은 중간 이미지를 보고 이어서 진행하는 능력을 다중 라운드 시연 궤적에 대한 지도학습(SFT)으로만 모방했다. SFT는 프로토콜을 따르는 출발점(cold start)은 제공하지만, 어떤 리플렉션이 실제로 이미지를 개선하는지는 보장하지 못한다. 또한 렌더러만 최적화하거나 한쪽 헤드만 최적화하는 단순한 강화학습 적용은 얻을 수 있는 이득의 대부분을 놓친다는 것이 저자들의 문제의식이다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>통합 모델 내에서 완전한 다중 라운드 리플렉션 궤적 전체에 강화학습을 적용하는 방법을 제시했다: 하나의 초기 이미지를 공유하는 형제(sibling) 궤적들 간의 group-relative advantage로 리플렉션 전략을 비교하고, 궤적 단위의 단일 advantage로 텍스트(리플렉션)와 플로우(flow) 기반 이미지 수정을 동시에 업데이트해 라운드별 별도 분기(branching)에 따른 조합 폭발을 피했다.</li>
+<li>SFT는 이미 의미 있는 수정(revision)을 만들어낼 수 있지만 그것을 신뢰성 있게 선택하지는 못하며, 강화학습이 백본이 이미 갖고 있는 성공적 수정 경로를 더 잘 골라내도록 만든다는 점을 실증했다.</li>
+<li>UMM-Reflection은 단 하나의 벤치마크(GenEval)에서 학습했음에도 훈련에 쓰이지 않은 3개 벤치마크(WISE, OneIG-Bench, T2I-CompBench++)로 성능 향상이 전이됨을 보였으며, 생성기 단독 직접 RL이나 Best-of-4 선택으로는 이 결과를 재현할 수 없음을 어블레이션으로 확인했다.</li>
+</ul>
+<h2>방법론</h2>
+<p>각 라운드에서 모델은 요청, 이전 텍스트-이미지 이력, 현재 이미지를 보고 [THINKING]/[ACTION]/[EDIT] 태그로 구성된 구조화된 리플렉션을 생성하며, 편집(edit) 행동을 선택하면 같은 모델이 flow 기반으로 수정된 이미지를 렌더링하고, 종료(done) 행동을 선택하면 루프가 끝난다(주요 실험에서 최대 3라운드). 학습 데이터는 GPT-5.5를 비평자(critic)로 사용해 요청을 검증 가능한 제약으로 바꾸고 각 이미지를 검사해 구조화된 리플렉션과 하나의 원자적 편집 지시 혹은 종료 판정을 생성하며, Qwen-Image로 초기 이미지를, Qwen-Image-Edit으로 편집을 수행해 29,529개 궤적(one-shot, natural-repair, planned-progression)을 구성했다. 먼저 SFT로 리플렉션 텍스트에 대한 자기회귀 손실과 수정 이미지에 대한 flow-matching 손실을 결합해 인터리브 프로토콜을 학습시킨 뒤, 이 체크포인트에서 출발해 전체 궤적 단위 강화학습(whole-trajectory RL)을 수행한다. RL 단계에서는 하나의 초기 이미지를 고정(detach)한 채 K=16개의 형제 궤적을 샘플링하고(shared-root sampling), 최초 생성 라운드는 정책 그래디언트 대상에서 제외한다. 보상 R(τ)은 최종 이미지 품질 qT, 라운드별 개선분에 대한 progress term, 여러 라운드에 걸쳐 꾸준히 개선될 때 추가되는 multi-improvement term(Smulti), 퇴보(damage) 패널티, 조기 종료(premature done) 패널티로 구성되며, 평가 지표는 고정된 외부 검증기(verifier)가 산출한다. 이렇게 얻은 궤적 보상을 그룹 내에서 정규화한 group-relative advantage 하나를 텍스트 채널과 flow 채널 모두의 클리핑된 대리 목적함수에 동일하게 사용함으로써, 한 리플렉션이 더 나은 이미지로 이어지면 그 진단 토큰과 뒤따르는 렌더링 전이 모두의 advantage가 함께 높아지도록 설계했다. 백본으로는 이해와 생성 전문가(expert)가 어텐션을 공유하는 통합 모델 BAGEL을 사용했으며, BAGEL이 단일 순전파에서 인터리브 텍스트-이미지 생성을 지원하지 않아 외부 컨트롤러가 매 라운드의 리플렉션과 이미지를 새로운 턴으로 되먹임하는 방식으로 루프를 구현했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>동일 프로토콜, 해상도, 스코어러로 BAGEL-Base, 리플렉션 SFT, UMM-Reflection을 비교했다. GenEval 전체(553개 공식 프롬프트) 기준 UMM-Reflection은 0.84를 달성해 BAGEL-Base(0.71), SFT(0.72) 대비 SFT보다 12.05점 향상되었으며, 특히 위치(position, +42.00), 색상 결합(color binding, +14.00), 개수 세기(counting, +10.00)에서 큰 개선을 보였다. 훈련에 쓰이지 않은 WISE(+10.97), OneIG-Bench(+3.48), T2I-CompBench++(+4.63)로도 향상이 전이되었다. 처음에 틀린 이미지를 한 궤적이 실제로 고치는 조건부 수리율(conditional repair rate)은 SFT의 20.59%에서 RL 이후 64.94%로 상승했으며, 초기 이미지 단독 정확도는 세 모델 모두 70~73으로 거의 동일해 성능 향상이 리플렉션 라운드 자체에서 나온다는 것을 보여준다. 어블레이션 결과, 렌더러만 직접 RL로 학습(T2I-RL)하면 단일 렌더링 정확도는 71에서 76으로 오르지만 다른 벤치마크로 전이되지 않았고, flow 헤드만 고정한 채 학습하면 SFT 수준(73)에 머무르는 반면 text 헤드만 학습해도 대부분의 이득(78)을 회복해 "무엇을 쓸지"를 배우는 것이 더 큰 비중을 차지함을 시사했으며, 두 헤드를 함께 학습한 경우(84)가 가장 우수했다. 동일한 4장 이미지 예산에서 Best-of-4 선택(80)보다 UMM-Reflection(84)이 더 우수했고, multi-improvement term을 제거하면(β=0) 초기 이미지 정확도가 73에서 63으로 떨어졌다. 추가 분석에서는 학습된 held-out 프로브로 측정한 모델 내부의 정답 여부 판별 능력(AUC 0.80~0.82)이 RL 전후 거의 변하지 않았고, RL은 이미 모델이 만들 수 있는 수정들 가운데 정답 영역에 도달하는 것을 더 많이 선택하도록 만든다는 것을 확인했다(초기 실패 이미지 중 정답 영역 진입 비율이 SFT의 36→42%에서 RL의 34→62%로 상승).</p>
+<h2>한계점</h2>
+<p>논문에 별도의 "한계점" 절은 없으나 본문에서 몇 가지 제약이 드러난다. 주요 실험은 최대 3라운드의 리플렉션으로 제한되어 있으며, 사용한 백본 BAGEL은 단일 순전파에서 인터리브 텍스트-이미지 생성을 원천적으로 지원하지 않아 외부 컨트롤러로 라운드를 이어붙이는 방식으로 구현했다는 점이 구조적 한계로 지적된다. 또한 학습용 궤적 데이터는 GPT-5.5와 Qwen-Image/Qwen-Image-Edit으로 생성되었고 BAGEL 자신은 이 과정에 관여하지 않아, BAGEL 고유의 실패 양상이 초기 SFT 지도 데이터에 반영되지 못했다. 보상 계산에는 학습 중 고정된 외부 검증기가 필요하며(추론 시에는 사용하지 않음), 이 검증기의 품질이 학습 신호의 상한을 결정한다는 점도 잠재적 제약으로 볼 수 있다.</p>
+<h2>시사점</h2>
+<p>이 연구는 통합 멀티모달 모델에서 자기 리플렉션이 SFT만으로는 신뢰할 수 없는 능력으로 남지만, 궤적 전체에 걸친 강화학습을 통해 실질적인 자기 수정 메커니즘으로 전환될 수 있음을 보여준다. 텍스트 진단과 이미지 생성이라는 서로 다른 모달리티의 행동을 하나의 궤적 보상으로 함께 최적화하는 방식은, 별도의 외부 비평자 없이도 추론 시점에 자기 수정이 가능한 생성 모델을 만드는 실용적 경로를 제시하며, 향후 더 많은 라운드, 다른 백본, 더 정교한 보상 설계로 확장될 수 있는 일반적인 프레임워크로서 의미를 가진다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.35767" target="_blank" rel="noopener">huggingface.co/papers/2609.35767</a> · 2026-09-30</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>시각 인코더 제거까지 얼마나 남았나</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#10 · Daily Papers 2026-09-30</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 53</span>
+    </div>
+    <h1 class="article-title">How Far Are We from Removing the Visual Encoder? Scaling Laws for Encoder-Free Multimodal Pretraining</h1>
+    <p class="article-title-ko">시각 인코더 제거까지 얼마나 남았나: 인코더-프리 멀티모달 사전학습을 위한 스케일링 법칙</p>
+    <p class="article-sub">시각 인코더 없이 원본 이미지 패치를 디코더에 직접 입력하는 encoder-free MLLM은 현재 실험 범위 내에서는 encoder-based 모델보다 멀티모달 objective에서 비효율적이지만, 학습 연산량(compute)에 따라 손실이 더 빠르게 감소해 약 10^22 FLOPs 부근에서 실용적인 사전학습 예산 내에 두 방식의 성능이 역전(crossover)될 것으로 예측된다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.35457" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.35457" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: How Far Are We from Removing the Visual Encoder? Scaling Laws for Encoder-Free Multimodal Pretraining</li>
+<li><strong>저자</strong>: Lin Chen 외 8인 (중국과학원자동화연구소(CASIA), 중국과학원대학교(UCAS), Tencent Foundation Model Department)</li>
+<li><strong>출처</strong>: arXiv:2609.35457v1 [cs.CV] (2026년 9월)</li>
+<li><strong>프로젝트 페이지</strong>: [논문에 명시되지 않음]</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.35457">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>시각 인코더 없이 원본 이미지 패치를 디코더에 직접 입력하는 encoder-free MLLM은 현재 실험 범위 내에서는 encoder-based 모델보다 멀티모달 objective에서 비효율적이지만, 학습 연산량(compute)에 따라 손실이 더 빠르게 감소해 약 10^22 FLOPs 부근에서 실용적인 사전학습 예산 내에 두 방식의 성능이 역전(crossover)될 것으로 예측된다.</p>
+<h2>배경 및 문제의식</h2>
+<p>오늘날 대부분의 멀티모달 대규모 언어모델(MLLM)은 CLIP이나 SigLIP과 같이 대규모 이미지-텍스트 데이터로 사전학습된 시각 인코더(visual encoder)를 사용해 언어모델에 의미적으로 풍부한 시각 표현을 강한 사전지식(prior)으로 제공하는 encoder-based 구조를 채택한다. 반면 encoder-free MLLM은 시각 인코더를 제거하고 투영된 이미지 패치를 디코더에 직접 입력해 구조를 단순화하지만, 그 대신 디코더가 원본 픽셀로부터 시각 표현을 스스로 학습해야 한다. 여러 선행 연구가 이러한 방식의 초기 실현 가능성을 보였지만, encoder-free 구조가 모델·데이터 규모에 따라 어떻게 확장(scale)되는지는 체계적으로 규명되지 않았다는 것이 이 논문의 출발점이다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>encoder-free와 encoder-based 두 아키텍처가 동일한 sparse decoder ladder(11개 규모), 데이터 혼합 비율, 최적화 설정, 시각 토큰 단위(granularity)를 공유하는 통제된(controlled) 환경에서 스케일링 법칙을 비교했다.</li>
+<li>text objective와 multimodal objective 각각에 대해 compute-optimal allocation 법칙을 도출: text에서는 두 아키텍처의 모델 할당 지수(a)가 거의 동일(encoder-free 0.427 vs encoder-based 0.422)하지만, multimodal에서는 인코더 제거 시 a가 0.464에서 0.570으로 커져 더 큰 모델을 선호하는 방향으로 최적점이 이동함을 보였다.</li>
+<li>loss-compute frontier를 비교해 multimodal objective에서의 성능 역전(crossover) 지점을 compute-optimal 배분 기준 약 10^22 FLOPs 규모로, 5배 과학습(overtraining) 조건에서는 이보다 다소 높은 예산에서 예측했다.</li>
+<li>디코더가 시각 인코더의 역할을 내부적으로 대체하는 메커니즘을 규명: 시각 토큰 간 양방향(bidirectional) 어텐션의 이득이 학습 규모가 커질수록 증가하고, 시각 표현의 변화가 더 얕은 층에서 조기에 발생하며, MoE 전문가 라우팅이 시각 토큰에 대해 더 집중되는 경향을 확인했다.</li>
+</ul>
+<h2>방법론</h2>
+<p>비교 대상은 총 파라미터 1.1B~44B, 활성 파라미터 71M~2.4B 규모의 sparse MoE 언어모델 11개로 구성된 동일한 ladder이다. encoder-based 모델은 사전학습된 SigLIP 2 ViT(27층, 폭 1152, 패치 16)로 이미지를 인코딩한 뒤 ConvPool adapter와 projector를 거쳐 디코더에 입력하며 모든 토큰에 causal attention을 적용한다. encoder-free 모델은 원본 이미지 패치를 LayerNorm-선형층-LayerNorm과 2D 위치 임베딩, RMSNorm, 선형 투영으로 구성된 patch projection을 통해 디코더에 직접 입력하며, 같은 이미지 내 시각 토큰끼리는 양방향(bidirectional) 어텐션을, 그 외에는 causal attention을 적용한다(비교를 위해 완전 causal 변형도 함께 검증). 두 front end 모두 32×32 픽셀당 하나의 시각 토큰을 생성하도록 맞춰 시각 콘텐츠와 토큰 수를 동일하게 통제했다. Chinchilla 방식의 IsoFLOP profile(고정 예산에서 모델 크기 M을 바꿔가며 손실을 log M에 대한 이차함수로 적합)로 compute-optimal한 Mopt, Dopt를 추정하고, 이를 여러 예산에 대해 반복해 할당 법칙 Mopt∝C^a, Dopt∝C^b와 손실-연산량 프런티어 L*(C)=E+KC^(-γ)를 적합했다. 또한 동일 손실에 도달하는 데 필요한 연산량 비율(compute efficiency gain, EGC)과 해당 시점의 토큰당 FLOPs 비율(model efficiency gain, EGM)을 정의해 두 구조를 정량 비교했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Text objective에서는 두 아키텍처의 loss-compute 곡선이 거의 겹쳤으며(지수 0.0973 vs 0.0979), EGC는 약 0.98, EGM은 약 0.99로 거의 대등해 encoder-free 구조로 인한 불이익이 거의 없었다. Multimodal objective에서는 encoder-free 모델이 측정된 범위 전체에서 동일 손실 도달에 더 많은 연산량을 필요로 했지만(동일 손실에서 EGM≈0.80, 즉 토큰당 FLOPs 약 1.25배), 손실 감소 속도(지수 0.3778 vs encoder-based 0.2998)가 더 빨라 격차가 점차 좁혀졌다. Compute-optimal 배분 기준 crossover 지점은 약 6.1×10^21 FLOPs(80% 구간 4.2×10^21~1.0×10^22)로 추정되었으며, 이는 최근 대형 모델(예: Kimi K2.5, 약 10^25 FLOPs)의 사전학습 연산량보다 세 자릿수 정도 작다. 5배 과학습 조건에서는 crossover가 약 1.2×10^22 FLOPs로 다소 늦춰지고, 최대 측정 예산에서 EGC는 0.62→0.52, EGM은 0.80→0.74로 낮아졌다. 주제별 분석에서는 STEM·차트처럼 언어·기호 의존도가 높은 주제일수록 crossover가 빨리 나타나고, 캡셔닝·GUI·OCR처럼 시각적 지각이 중요한 주제일수록 격차 해소가 훨씬 늦게 나타났다. 메커니즘 분석에서는 encoder-free 모델의 멀티모달 손실이 초반에는 완만히, 이후 급격히 감소하는 양상을 보였는데, 이 급격한 감소 구간 전후로 8B 모델의 12번째 층에서 시각 토큰에 대한 어텐션 비중이 0.217에서 0.645로 증가했다. 양방향 어텐션은 text에서는 causal보다 근소하게 불리했지만(EGC≈1.011로 causal이 약간 유리) multimodal에서는 규모가 커질수록 이득이 커졌다(EGC≈0.990로 causal이 다소 불리). 층별 표현 분석에서는 encoder-free 모델의 시각 토큰이 encoder-based 모델보다 훨씬 얕은 층에서부터 입력 표현과 달라져 얕은 층이 사실상 암묵적 시각 인코더 역할을 하는 반면, 텍스트 토큰의 궤적은 두 구조에서 거의 동일했다. 전문가 라우팅 불균형(MaxVio) 분석에서도 텍스트 토큰은 두 구조가 유사했지만, 가장 큰 4개 모델 규모에서 encoder-free 모델은 시각 토큰에 대해 일관되게 더 높고 변동폭이 큰 불균형을 보여, 일부 전문가가 시각 인코더의 역할을 대신 떠맡는 것과 일치하는 양상을 보였다.</p>
+<h2>한계점</h2>
+<p>본 연구는 디코더 규모를 바꾸는 동안 시각 인코더(ViT) 크기를 약 4억 파라미터 규모로 고정한 상태로 비교했으며, 인코더와 디코더를 함께(jointly) 스케일링하는 경우는 다루지 않았다고 명시한다. 시퀀스 길이는 4,096으로 고정되었고, 텍스트:멀티모달 데이터 비율도 1:1로 고정해 데이터 혼합 비율 자체의 영향은 연구 변수로 다루지 않았다. 또한 crossover 지점 추정치는 측정된 예산 범위를 넘어선 외삽(extrapolation)에 기반하며, 적합된 스케일링 법칙이 그 범위 밖에서도 유지되고 인코더 크기가 고정된다는 가정 하에서만 유효하다는 한계가 있다.</p>
+<h2>시사점</h2>
+<p>이 연구는 시각 인코더가 제공하는 사전지식(prior)의 상대적 이점이 학습 규모가 커질수록 줄어들며, encoder-free 아키텍처가 실용적인 연산 예산 내에서 encoder-based 구조를 따라잡을 수 있는 유망한 방향임을 시사한다. 다만 저자들은 디코더가 시각 인코더 역할을 대신 학습하는 과정에서 양방향 어텐션, 얕은 층의 시각 처리, 집중된 전문가 라우팅 등 언어 전용 구조와는 다른 적응 양상을 보인다는 점에서, 향후에는 언어 모델 설계를 그대로 물려받기보다 원생(native) 시각 표현 학습에 특화된 디코더 아키텍처를 설계하는 것이 유용할 수 있다고 제안한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.35457" target="_blank" rel="noopener">huggingface.co/papers/2609.35457</a> · 2026-09-30</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

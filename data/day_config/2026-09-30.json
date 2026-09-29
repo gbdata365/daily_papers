@@ -1,0 +1,110 @@
+{
+  "2609.29233": {
+    "base": "2609_에이티디_포스트훈련-행동그림자-능력전이",
+    "rank": "#1",
+    "category": "analysis",
+    "category_label": "해석·분석",
+    "upvote": "249",
+    "en_title": "Post-Training Leaves Behavioral Shadows on Unrelated Decisions",
+    "ko_title": "포스트 트레이닝은 무관한 결정에도 행동 그림자를 남긴다"
+  },
+  "2609.33757": {
+    "base": "2609_유이투_기호-오디오-통합-음악생성",
+    "rank": "#2",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "197",
+    "en_title": "YuE2: Unifying Symbolic and Audio Music Generation at Frontier Quality",
+    "ko_title": "유이투: 기호 및 오디오 음악 생성을 프론티어 품질로 통합하기"
+  },
+  "2609.35347": {
+    "base": "2609_디엔몹드_도메인정규화-다중교사-증류-불균형해소",
+    "rank": "#3",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "138",
+    "en_title": "Beyond Teacher Assignment: Domain-Normalized Multi-Teacher On-Policy Distillation",
+    "ko_title": "교사 배정을 넘어서: 도메인 정규화 다중교사 온폴리시 증류"
+  },
+  "2609.35432": {
+    "base": "2609_헥사애니씽_자기진화-코딩에이전트-물리지능",
+    "rank": "#4",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "90",
+    "en_title": "Self-Evolving Coding Agents: From Digital Programs to Physical-World Intelligence",
+    "ko_title": "자기진화 코딩 에이전트: 디지털 프로그램에서 물리 세계 지능으로"
+  },
+  "2609.31948": {
+    "base": "2609_듀플렉스엠피이_풀듀플렉스-다자간대화-참여벤치마크",
+    "rank": "#5",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "81",
+    "en_title": "Duplex-MPE: Benchmarking Multi-Party Interaction in Full-Duplex Dialogue",
+    "ko_title": "듀플렉스엠피이: 풀듀플렉스 대화에서의 다자간 상호작용 벤치마킹"
+  },
+  "2609.32577": {
+    "base": "2609_가가르_코드에이전트-강화학습-그룹채점-어드밴티지재분배",
+    "rank": "#6",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "69",
+    "en_title": "Groupwise Agentic Grading and Advantage Redistribution for Code Agent RL",
+    "ko_title": "코드 에이전트 강화학습을 위한 그룹 단위 에이전틱 채점 및 어드밴티지 재분배"
+  },
+  "2609.32712": {
+    "base": "2609_말라어텐션_어텐션연산-자가배분",
+    "rank": "#7",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "64",
+    "en_title": "MassAlloc Attention: Let Attention Allocate Its Own Compute",
+    "ko_title": "MassAlloc Attention: 어텐션이 스스로 연산량을 배분하게 하다"
+  },
+  "2609.33295": {
+    "base": "2609_트레이스댄스_실배포트레이스-행동벤치마크-자동구축",
+    "rank": "#8",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "60",
+    "en_title": "TraceDance: An Automated System for Building Agent Behavior Benchmarks from Real-World Agent Deployment Traces",
+    "ko_title": "TraceDance: 실제 에이전트 배포 트레이스로부터 에이전트 행동 벤치마크를 자동 구축하는 시스템"
+  },
+  "2609.32704": {
+    "base": "2609_코윈도우_전체인과커버리지-집단속성",
+    "rank": "#9",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "59",
+    "en_title": "CoWindow Attention: Full Causal Coverage Is a Collective Property",
+    "ko_title": "코윈도우 어텐션: 전체 인과 커버리지는 집단적 속성이다"
+  },
+  "2609.35457": {
+    "base": "2609_인코더프리_비주얼인코더-제거-스케일링법칙",
+    "rank": "#10",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "53",
+    "en_title": "How Far Are We from Removing the Visual Encoder? Scaling Laws for Encoder-Free Multimodal Pretraining",
+    "ko_title": "시각 인코더 제거까지 얼마나 남았나: 인코더-프리 멀티모달 사전학습을 위한 스케일링 법칙"
+  },
+  "2609.35748": {
+    "base": "2609_타에이치투_적응형-루프-트랜스포머-테스트시간-확장",
+    "rank": "#11",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "46",
+    "en_title": "Improving Test-Time Scaling with Adaptive Looped Transformers",
+    "ko_title": "적응형 루프 트랜스포머를 통한 테스트-타임 스케일링 개선"
+  },
+  "2609.35767": {
+    "base": "2609_유엠엠리플렉션_통합모델-네이티브-리플렉션-인터리브-강화학습",
+    "rank": "#12",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "35",
+    "en_title": "Learning Native Reflection in Unified Models with Interleaved Reinforcement Learning",
+    "ko_title": "인터리브 강화학습을 통한 통합 모델의 네이티브 리플렉션 학습"
+  }
+}

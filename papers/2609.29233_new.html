@@ -1,0 +1,113 @@
+<meta charset="UTF-8">
+<title>포스트 트레이닝은 무관한 결정에도 행동 그림자를 남긴다</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#1 · Daily Papers 2026-09-30</span>
+      <span class="cat-tag">해석·분석</span>
+      <span class="upvote-tag">▲ 249</span>
+    </div>
+    <h1 class="article-title">Post-Training Leaves Behavioral Shadows on Unrelated Decisions</h1>
+    <p class="article-title-ko">포스트 트레이닝은 무관한 결정에도 행동 그림자를 남긴다</p>
+    <p class="article-sub">언어모델을 특정 과제로 post-training하면 그 과제와 무관한 평범한 단어 선택에도 흔적이 남으며, 이 "행동 그림자(behavioral shadow)"만 학습해도 동일한 조상 모델에서 시작한 학생 모델이 원래 과제 능력의 일부를 회복할 수 있음을 보인 연구이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.29233" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.29233" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Post-Training Leaves Behavioral Shadows on Unrelated Decisions</li>
+<li><strong>저자</strong>: Ziyang Zhang, Yubin Jing, Yuanhao Zeng, Yuyao Li, Haofan Wang, Yichen Gong (Peking University, Georgia Institute of Technology, ShanghaiTech University, Tsinghua University, Lovart AI)</li>
+<li><strong>출처</strong>: arXiv:2609.29233v1 [cs.CL] (2026년 9월)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/myboker/ATD">https://github.com/myboker/ATD</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.29233">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>언어모델을 특정 과제로 post-training하면 그 과제와 무관한 평범한 단어 선택에도 흔적이 남으며, 이 "행동 그림자(behavioral shadow)"만 학습해도 동일한 조상 모델에서 시작한 학생 모델이 원래 과제 능력의 일부를 회복할 수 있음을 보인 연구이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>Post-training(코드, 수학 등 특정 과제에 대한 미세조정)은 보통 해당 과제에서의 성능 변화로만 이해된다. 그러나 최근 subliminal learning 연구는 교사(teacher) 모델이 겉으로는 목표 능력과 무관한 텍스트를 통해서도 행동 특성을 학생 모델에 전달할 수 있음을 보였는데, 이런 연구는 대체로 트레이트(trait)나 선호(preference) 전달에 국한되었고 방대한 양의 교사 출력을 필요로 했다. 이 논문은 두 가지 질문을 제기한다. (1) 업데이트된 파라미터나 목표 과제 응답에 접근하지 않고, 과제와 무관한 개별 결정만으로 비공개 post-training 업데이트를 관측할 수 있는가(observability). (2) 그런 관측을 학습하면 교사의 목표 과제 능력 일부가 실제로 학생에게 전이되는가(capability transfer).</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>Active Taskless Distillation (ATD) 제안: 공개 조상 모델 M0가 두 개의 평범한 단어 사이에서 거의 동률(near-tie)인 프롬프트를 능동적으로 선택하고, 비공개 교사 MT = M0 + δ에게 프롬프트당 단 한 단어만 질의해 얻은 프롬프트-단어 쌍만으로 학생을 학습시킨다.</li>
+<li>Qwen2.5-1.5B 코드 실험에서 5,664개의 단일 단어 교사 응답만으로 HumanEval+ 기준 정교하게 매칭된 통제군 대비 +5.34pp의 성능 향상을 달성했다.</li>
+<li>과학 지식, 상식 추론, 독해 등 6개 객관식 벤치마크와 여러 모델 세대·크기·계열(Qwen3, Llama)에서도 평균적으로 양(+)의 전이 효과를 확인했다.</li>
+<li>전이된 신호가 출처별로 구분되고(source-specific) 서로 조합 가능(composable)하며, 교사 업데이트의 강도에 비례해 강해짐을 분석으로 입증했다.</li>
+<li>목표 과제에서 큰 성능 격차를 보이는 교사라도 항상 전이가 일어나지는 않음을 보여주는 반례(정답을 암기한 교사, 치환 암호를 주입한 교사)를 제시했다.</li>
+</ul>
+<h2>방법론</h2>
+<p>두 후보 단어 ai, bi에 대해 공개 모델 M0가 매긴 확률이 0.5에 가까운(|qi − 0.5| ≤ 0.02) near-tie 프롬프트만 선별하고, 이 프롬프트에서 M0의 최상위(top-1) 토큰이 반드시 두 후보 중 하나이도록 제한한다. 이후 교사 모델에 동일 프롬프트를 단 한 번 질의해 greedy 디코딩으로 반환된 토큰이 두 후보 중 하나이면 (prompt, teacher_word) 쌍으로 채택한다. 학생은 동일한 M0에서 초기화되어 이 쌍들에 대해서만 전체 어휘 cross-entropy로 학습되며, 목표 과제 데이터나 교사의 로짓·파라미터는 전혀 사용하지 않는다. 이론적 근거는 로짓 차이 mi(θ)의 1차 근사(mi(θ0+δ) ≈ mi(θ0) + gi⊤δ)에 있는데, tie에 가까운 지점에서는 작은 업데이트 δ만으로도 선택이 뒤집힐 수 있어 무관한 프롬프트가 업데이트를 노출시킬 수 있다는 것이다. 추가로 경계 인식형 목적함수인 RPM(reference-relative pair-margin)과 다중 토큰(K개) 관측으로의 확장도 탐구했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>주요 실험은 Qwen2.5-1.5B-Instruct를 공개 조상이자 학생 초기화로 사용하고, 코드 DPO LoRA로 학습된 교사를 사용했다. 17,858개의 near-tie 질의 중 5,664개(약 31.7%)가 채택되어 학생 학습에 쓰였다. 학생은 HumanEval+에서 51.22%를 달성해 교사의 집계 코딩 점수에 근접했으며, exact nuisance-matched 통제군(45.88%) 대비 +5.34pp[95% CI 1.22, 9.60], 전역 셔플 통제군 대비 +5.03pp, 교사 프리 공개 라벨 통제군 대비 +4.57pp 우위를 보였다. 5개의 독립 acquisition × 3개 시드에 걸친 강건성 검증에서 평균 +4.80pp이며 15개 신호-통제 쌍 모두 양수였다. LoRA rank 32/64나 풀 파라미터 파인튜닝으로 적응 방식을 바꾸어도 효과가 유지됐다. 7개 과제별 교사-학생 설정 모두에서 통제군 대비 유의한 향상(0.81~5.03pp)을 보였고, Qwen3-1.7B/4B, Llama-3.2-1B로 확장해도 평균적으로 양의 이득이 나타났다. 능동적 근접-경계 선택은 동일 예산의 수동적 기준선보다 우수했으며(+4.27~5.03pp), 코드·과학·수학 세 출처와 세 타겟 간 교차 실험에서는 각 그림자가 자신과 매칭된 타겟에서 가장 큰 효과를 보여 정보가 출처 특이적임을 확인했다. 반면 정답을 암기한 교사나 치환 암호를 주입한 교사처럼 능력이 "학생이 표현 가능한" 형태가 아닌 경우에는 전이가 전혀 일어나지 않았다.</p>
+<h2>한계점</h2>
+<p>ATD는 여전히 능동적으로 구성된 carrier 프롬프트와 공개 조상 모델에 대한 접근을 전제로 하며, 모든 설정에서 신뢰할 만한 전이를 보장하지는 않는다(부록 H). 교사와의 정합성이 항상 다운스트림 성능 향상으로 이어지는 것은 아니며, 선택된 관측이 애초에 충분한 능력 관련 정보를 담고 있는지, 아니면 학습 절차가 그 정보를 충분히 활용하지 못하는지가 아직 명확하지 않다. 또한 본 연구는 조상 모델을 알고 있는(known-ancestor) 세팅에 한정되어 있어, 조상을 전혀 모르는 완전한 블랙박스 상황에는 그대로 적용하기 어렵다.</p>
+<h2>시사점</h2>
+<p>이 연구는 post-training이 목표 과제와 무관한 결정에도 관측 가능한 행동 그림자를 남기며, 그 그림자만으로도 능력의 일부가 전이될 수 있음을 실증적으로 보여준다. 이는 모델 제공자가 비공개로 배포한 post-training 업데이트라도 일부 정보가 새어나갈 수 있음을 시사하며, 모델 핑거프린팅, 지식재산 보호, 안전한 모델 서빙 정책 설계에 함의를 준다. 또한 subliminal learning 연구를 확장해 단 하나의 토큰만으로도 능력 관련 정보가 전달될 수 있음을 보임으로써, 향후 더 정교한 질의 선택과 학습 목적함수 설계를 위한 기반을 제공한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.29233" target="_blank" rel="noopener">huggingface.co/papers/2609.29233</a> · 2026-09-30</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

@@ -1,0 +1,113 @@
+<meta charset="UTF-8">
+<title>자기진화 코딩 에이전트</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#4 · Daily Papers 2026-09-30</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 90</span>
+    </div>
+    <h1 class="article-title">Self-Evolving Coding Agents: From Digital Programs to Physical-World Intelligence</h1>
+    <p class="article-title-ko">자기진화 코딩 에이전트: 디지털 프로그램에서 물리 세계 지능으로</p>
+    <p class="article-sub">로봇 상태와 행동 절차를 모두 실행 가능한 코드(Code as World / Code as Policy)로 표현하는 "Physical Coding" 개념을 제안하고, 이를 구현한 에이전트 HexaAnything이 조작·과학 실험·실제 로봇 작업에서 데이터·모델·툴 수준의 자기진화(self-evolution)를 보임을 실증한 논문이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.35432" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.35432" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Self-Evolving Coding Agents: From Digital Programs to Physical-World Intelligence</li>
+<li><strong>저자</strong>: Hongcheng Gao 외 14인 (hexafuture.ai)</li>
+<li><strong>출처</strong>: arXiv:2609.35432v1 [cs.RO] (2026년 9월)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://hexafuture.ai">hexafuture.ai</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.35432">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>로봇 상태와 행동 절차를 모두 실행 가능한 코드(Code as World / Code as Policy)로 표현하는 "Physical Coding" 개념을 제안하고, 이를 구현한 에이전트 HexaAnything이 조작·과학 실험·실제 로봇 작업에서 데이터·모델·툴 수준의 자기진화(self-evolution)를 보임을 실증한 논문이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>Vision-language-action(VLA)이나 world-action(WAM) 모델은 관측과 지시문을 곧바로 로봇 행동으로 매핑하는데, 저자들은 QwenGR00T 정책이 지시문을 마스킹해도 LIBERO에서 성공률이 96.2%에서 92.3%로 소폭만 떨어짐을 보여, 실제로는 지시문보다 장면(scene)에서 행동을 유추하는 경향이 강함을 지적한다. 이런 구조에서는 남은 하위 목표, 완료 조건, 실패 시 복구 방법 등이 행동 시퀀스 안에 암묵적으로만 존재해 점검하거나 수정할 수 없다. 저자들은 소프트웨어 코딩 에이전트가 코드를 통해 도구를 호출하고 결과를 검증하며 피드백으로 프로그램을 수정하는 방식에서 착안해, 동일한 원리(명시적 상태, 검증 가능한 실행, 수정 가능한 절차)가 물리 세계에서도 일반화와 장기 과제 수행의 핵심이 될 수 있다고 본다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>Physical Coding</strong> 개념 정식화: 물체·관계·제약·진행 상태를 기록하는 <strong>Code as World</strong>와, 계획·도구 호출·검증·복구·실행을 조직하는 <strong>Code as Policy</strong>라는 두 결합된 실행 가능 표현을 제안한다.</li>
+<li><strong>HexaAnything</strong> 에이전트 개발: 지각·계획·제어 도구(VLA/WAM 정책 포함)를 호출하고, 외부 증거(evidence)에 기반해 실행 중 의사결정을 내리는 Harness(실행 환경)를 구축했다.</li>
+<li>RoboCasa365에서 HexaAnything이 고정된 VLA(XR-1)를 도구로 사용하면서도 Composite-Unseen 및 전체 성공률을 개선했고, 이 Harness가 수집한 트레이스로 학습한 HexaModel이 모든 분할(split)에서 기존 베이스 모델을 능가함을 보여, 코드 형태의 실행 경험이 실제로 모델에 내재화될 수 있음을 입증했다.</li>
+<li>PhyBench라는 새로운 시뮬레이션 물리 실험 벤치마크와 실제 이중 팔 AgileX 로봇 실험을 통해, 동일한 Harness가 조작(manipulation)을 넘어 과학 실험 설계·수행과 실제 로봇 태스크에도 적용 가능함을 보였다.</li>
+<li>Harness, 데이터→모델, 툴(tool) 세 수준에서의 자기진화 증거를 제시하고, 가중치 내재화·아키텍처 자율 재설계·태스크 자율 설계 등은 향후 과제로 남겼다.</li>
+</ul>
+<h2>방법론</h2>
+<p>HexaAnything은 타입이 지정된 런타임으로, 시점 t에서 Code-as-World 프로그램 Wt, Code-as-Policy 워크플로 Pt, 그리고 관측 인터페이스·도구 레지스트리·검증기(verifier)·복구 연산자·메모리로 구성된 Harness Ht를 유지한다. 에이전트는 태스크 명세, 현재 세계 프로그램, 관측 이력을 바탕으로 다음 정책 노드를 생성하고 해당 도구를 호출하며(관찰-계획-행동-검증-복구, Observe-Plan-Act-Verify-Recover 루프), 도구 호출 결과로 세계 프로그램을 갱신한 뒤 검증기가 PASS/FAIL/INSUFFICIENT EVIDENCE/BLOCKED/SAFETYSTOP 같은 타입이 있는 판정을 내린다. 이때 모델 스스로의 "완료했다"는 주장이나 저수준 상태 메시지는 성공의 증거로 인정하지 않고, 이미지·깊이·자기수용감각(proprioception)·도구 출력 등 외부 증거만을 근거로 삼는다. 자기진화는 Harness(툴·워크플로·검증기), 데이터/환경, 모델/알고리즘, 임베디먼트/컴퓨팅이라는 네 가지 결합된 진화 대상에 대해 "명세-실행-검증-진단-제안-평가-선택/커밋"의 7단계 루프로 이루어지며, 각 후보 변경은 독립적인 평가자·회귀 테스트·홀드아웃 검증을 통과해야 채택된다. 검증된 트레이스만 학습 데이터로 승격되어 다음 모델(HexaModel)을 학습시키는 데 사용된다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>조작 실험은 RoboCasa365(Atomic-Seen/Composite-Seen/Composite-Unseen 분할)에서 VLA 모델 XR-1을 고정한 채 수행되었다. HexaAnything(GPT-5.6-Sol 기반)은 Composite-Unseen 성공률을 34.3%→38.3%, Composite-Seen을 54.8%→61.5%, 전체를 56.6%→61.1%로 끌어올렸으며, 특정 장기 과제(LoadKebabSandwich 등)에서는 최대 31.0포인트 개선을 보였다. Harness가 수집한 트레이스(에이전트 궤적 1.0K건, RoboCasa365 VQA 9.3K건 등)로 Qwen3.8-27B를 파인튜닝한 HexaModel v0.1은 같은 Harness 안에서 모든 분할에서 베이스 모델보다 성능이 향상되었고(Composite-Unseen 37.3%→39.5% 등), 전체 성공률(61.7%)은 오히려 GPT-5.6-Sol(61.1%)보다도 높았다. RoboDojo 벤치마크에서는 태스크와 평가자는 고정한 채 도구 코드만 두 차례 수정한 결과 Fold cloth/Pour vase/Press by number의 성공률이 각각 0%/40%/0%에서 80%/100%/100%로 향상되었다. 새로 제안한 PhyBench(훅의 법칙, 단진자, 결합 진동자 등 시뮬레이션 물리 실험)에서는 여러 기반 모델(GPT-6-Astra, Opus 5.5, GPT-5.6-Sol)이 평균 상대오차 5% 미만으로 실험을 자율 완수했으나, Qwen3.8-Max는 유효 시행 비율과 정확도가 크게 떨어졌다. 실제 이중 팔 AgileX 로봇에서는 7개의 탁상 작업 중 5개를 3회 시행 모두 성공했고, 동일 모델을 사용한 기존 공개 결과 대비 일부 작업에서 최대 3.5배 빠른 수행 시간을 보였다.</p>
+<h2>한계점</h2>
+<p>저자들은 이 연구의 증거가 예비적(preliminary) 수준임을 명시한다. Harness 효과는 XR-1이라는 단일 액션 모델과 단일 벤치마크(RoboCasa365)에서만 측정되었고, 동일 모델로 구동한 범용 코딩 에이전트(Codex) 대비 전체 우위는 1.6점에 불과하며 Atomic-Seen에서는 오히려 뒤처진다. RoboDojo의 툴 진화 실험은 시드 수가 매우 적고(Fold cloth의 경우 5개), 일부 실험에서는 사람 오퍼레이터가 픽셀을 직접 선택하는 등 완전 자율적이지 않은 요소가 포함되어 있다. PhyBench는 모델·과제당 10회 시행에 그치고, 실제 로봇 실험도 과제당 3회 시행으로 표본이 적으며 비교 대상 공개 결과는 다른 하드웨어에서 얻어진 것이라 직접 비교에 한계가 있다. 또한 모델과 검증기가 서로에 맞춰 편향되는(co-adapt) 문제, 희소한 궤적에서 물리적 인과관계를 학습하는 문제, 프롬프트 인젝션이나 비밀 유출 등 안전성 문제 등이 해결되지 않은 과제로 남아 있다고 밝힌다.</p>
+<h2>시사점</h2>
+<p>이 논문은 소프트웨어 코딩 에이전트의 핵심 원리인 "명시적 상태, 독립적 검증, 수정 가능한 절차"를 물리 세계로 확장할 수 있는 구체적 틀(Physical Coding)을 제시했다는 점에서 의미가 있다. 특히 VLA/WAM 같은 학습된 정책을 대체하는 것이 아니라 하나의 호출 가능한 도구로 편입시키고, 그 위에 검증·복구·태스크 분해를 명시적 코드로 얹는 접근은 기존 액션 모델의 한계(장면 편향, 장기 과제 실패)를 보완하는 실용적 경로가 될 수 있다. 또한 Harness가 생성한 검증된 실행 트레이스가 실제로 다음 모델의 학습 데이터가 되어 성능을 개선한 사례는, 에이전트의 실행 경험이 스캐폴딩(scaffolding)에만 머무르지 않고 모델 가중치로 내재화될 수 있는 가능성을 보여준다. 이는 제조·과학 실험 등 물리적 자동화가 필요한 다양한 산업 응용에서, 자기진화형 에이전트 설계의 참고 프레임워크로 활용될 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.35432" target="_blank" rel="noopener">huggingface.co/papers/2609.35432</a> · 2026-09-30</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

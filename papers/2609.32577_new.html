@@ -1,0 +1,113 @@
+<meta charset="UTF-8">
+<title>코드 에이전트 강화학습을 위한 그룹 단위 에이전틱 채점 및 어드밴티지 재분배</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#6 · Daily Papers 2026-09-30</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 69</span>
+    </div>
+    <h1 class="article-title">Groupwise Agentic Grading and Advantage Redistribution for Code Agent RL</h1>
+    <p class="article-title-ko">코드 에이전트 강화학습을 위한 그룹 단위 에이전틱 채점 및 어드밴티지 재분배</p>
+    <p class="article-sub">코드 에이전트 강화학습(RL)에서 테스트를 통과한 트래젝토리들 사이의 구현 품질 차이를 그룹 단위 에이전틱 채점으로 판별하고, 합(sum)을 보존하는 방식으로 어드밴티지를 재분배하는 프레임워크 Gagar를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.32577" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.32577" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Groupwise Agentic Grading and Advantage Redistribution for Code Agent RL</li>
+<li><strong>저자</strong>: Jinhao Dong 외 9인 (Xiaomi LLM Core, Peking University, Renmin University of China, University of Hong Kong 공동연구)</li>
+<li><strong>출처</strong>: arXiv:2609.32577v1 [cs.CL] (2026년 9월)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.32577">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>코드 에이전트 강화학습(RL)에서 테스트를 통과한 트래젝토리들 사이의 구현 품질 차이를 그룹 단위 에이전틱 채점으로 판별하고, 합(sum)을 보존하는 방식으로 어드밴티지를 재분배하는 프레임워크 Gagar를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>코드 에이전트를 RL로 학습할 때 흔히 쓰이는 GRPO(Group Relative Policy Optimization)는 실행 가능한 테스트로 얻은 이진 보상을 바탕으로 같은 롤아웃 그룹 내 테스트 통과 트래젝토리들에 동일한 어드밴티지를 부여한다. 그러나 같은 테스트를 통과했다고 해서 구현 품질이나 과제 요구사항 충족도가 같은 것은 아니다. 어떤 트래젝토리는 저장소 관례를 따르는 근본적이고 정밀한 수정을 하는 반면, 다른 트래젝토리는 불필요한 복잡성을 더하거나, 검증을 약화시키거나, 요청 범위 밖의 코드를 건드릴 수 있다. 이런 차이는 실제로 패치가 머지되기까지 필요한 리뷰·재작업 부담과 유지보수성에 큰 영향을 주지만, 이진 보상만으로는 이를 전혀 구분하지 못한다는 것이 저자들의 문제의식이다. 또한 단순히 저품질 트래젝토리의 어드밴티지를 낮추기만 하면 그룹의 전체 양(positive)의 어드밴티지 합이 줄어들어, 음의 어드밴티지(실패 트래젝토리)에 비해 성공 신호가 상대적으로 약화되는 부작용이 생긴다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>그룹 단위 에이전틱 채점 프레임워크</strong>: 과제 명세, 저장소, 전체 트래젝토리, 제출된 패치, 실행 결과를 하나의 공유 워크스페이스에 모아, 에이전틱 채점 모델이 코드를 읽고 표적 점검(targeted check)을 수행한 뒤 테스트 통과 후보들을 함께 비교·순위화한다.</li>
+<li><strong>합 보존형(sum-preserving) 어드밴티지 재분배</strong>: 품질 기반으로 낮은 순위 트래젝토리의 어드밴티지를 낮추되, 통과 트래젝토리 전체의 원래 양의 어드밴티지 총합을 비례적으로 복원함으로써 상대적 품질 가중치(순서와 강도)는 유지하면서 실패 트래젝토리 쪽 균형은 흔들지 않는다.</li>
+<li><strong>산업 규모 실증</strong>: MiMo-V2.6-Flash(총 310B, 활성 15B)와 MiMo-V2.6-Pro(총 1.02T, 활성 42B)의 RL 이전 SFT 체크포인트에서 실험하여, 코드 전용 RL과 대규모 혼합 과제 RL 모두에서 성능·효율·학습 안정성 개선을 보였다.</li>
+</ul>
+<h2>방법론</h2>
+<p>각 과제 x에 대해 정책이 여러 트래젝토리를 생성하고, 최종 패치는 실행 테스트로 이진 보상 R_i ∈ {0,1}을 받는다. Dr. GRPO 방식으로 평균 중심화된 어드밴티지 A_i = R_i - R̄을 사용하며, dynamic sampling으로 통과·실패가 섞인 그룹만 남긴다. Gagar의 에이전틱 채점기는 통과한 후보들만 대상으로 (1) 해결 전략의 적합성, (2) 구현의 정밀성, (3) 변경의 최소성, (4) 의도치 않은 부작용 회피, (5) 코드베이스 관례 일관성이라는 5개 기준에 따라 1~5점을 매기고, 가중합 점수로 초기 순위를 만든 뒤 근거 기반으로 순위를 수정할 수 있다. 이 점수와 플래그(외부/유출 답안 사용 확정 시 보상 0 처리, 심각한 프로세스 문제 여부 등)를 바탕으로 후보들은 T1(우수)·T2(중간)·T3(결함) 3개 품질 티어로 분류되고, 티어와 티어 내 순위는 할인 계수 f_i ∈ (0,1]로 매핑된다.</p>
+<p>단순히 f_i·A_i로 할인만 하면 그룹의 양의 어드밴티지 합이 줄어들어 음의 어드밴티지와의 균형이 깨진다(식 1). Gagar는 통과 트래젝토리 전체에 공통 재조정 계수 λ = S+/Σf_j·A_j를 곱해 원래의 양의 어드밴티지 총합 S+를 정확히 복원하면서(식 2, 3), 품질 계수 비율(A<em>_i/A</em>_j = f_i/f_j)은 그대로 유지한다. 초기 채점은 Claude Opus 5로 구현했으나 그룹당 평균 약 2,000초가 걸려, SFT로 학습한 전용 채점기로 대체해 평균 약 600초로 단축했고, 부분 롤아웃 스케줄링과 결합해 채점과 롤아웃 생성을 병렬화했다. 학습 시에는 재조정 계수에 상한(λ_max)을 두고 최종적으로 그룹 평균을 다시 빼는 안전장치를 적용하며, 이 경우 정확한 합 보존 성질은 근사적으로만 유지된다. 또한 이 어드밴티지 공간의 재분배는 평균 중심화 어드밴티지 추정 하에서 동등한 보상 공간 변환으로도 유도할 수 있음을 보인다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>주 실험은 MiMo-V2.6-Flash의 RL 이전 SFT 체크포인트에서 코드 전용 RL로 진행했으며, DeepSWE v1.1과 SWE-bench Pro로 평가했다. 이진 보상 베이스라인은 20스텝에서 58.5%였던 DeepSWE 통과율이 28스텝에서 50.2%로 급락해 학습을 중단했지만, Gagar는 28스텝에서 62.2%(베이스라인 대비 +12.1%p)를 기록했고 44스텝에서 63.4%까지 향상되었다. SWE-bench Pro에서도 베이스라인이 16~28스텝 구간에서 약 59%에 정체된 반면 Gagar는 52스텝에서 62.5%까지 계속 개선되었다. Gagar는 상호작용 턴 수와 토큰 길이도 줄여, 28스텝 기준 DeepSWE 평균 턴 수를 132.3→111.6(-15.6%), 토큰 길이를 191.9k→172.9k(-9.9%)로 감소시켰다.</p>
+<p>Claude Opus 5를 별도 심사자로 사용한 블라인드 루브릭 평가에서, 최종 공유 체크포인트 기준 Gagar의 평균 품질 점수는 4.03(베이스라인 3.70)이었고, 통과 후보 간 평균 승률 69.8%, 그룹 내 1위 비율 65.0%를 기록했으며 최고 품질 티어 T1 비중이 25.4%→34.3%로 늘었다. 재분배 없이 할인만 적용한 ablation에서는 정책 엔트로피가 0.359→0.905로 급등하고 학습 롤아웃 길이가 47.1k→114.1k 토큰으로 폭증했으며 DeepSWE 통과율도 56.5%→48.8%로 급락하는 등 불안정한 양상을 보여, 합 보존 재분배가 학습 안정성에 중요함을 확인했다. 또한 Flash(310B)와 Pro(1.02T) 양쪽에서 혼합 과제 대규모 RL에 Gagar를 적용한 결과, DeepSWE v1.1 avg@3이 각각 67.9%, 71.9%에 도달했고 Pro는 Kimi K3(2.8T)보다 적은 파라미터로 DeepSWE에서 더 높은 성능을, GPT-5.6 Sol보다 SWE-bench Pro에서 더 높은 성능(62.7% vs 60.5%)을 보였다.</p>
+<h2>한계점</h2>
+<p>학습 중 채점 결과가 유효하지 않거나(예: 순위에서 누락된 통과 트래젝토리) 그레이딩이 실패하면 원래의 이진 어드밴티지로 대체(fallback)하는데, 이는 품질 신호가 항상 적용되지는 않음을 의미한다. 재조정 계수에 상한(λ_max)을 두는 구현상의 안전장치가 적용될 경우 정확한 합 보존·순서 보존 성질이 근사적으로만 유지된다. 또한 방법 자체는 중간 상태 정렬 없이 트래젝토리 전체 단위로만 신용을 재분배하므로, 100턴 이상 이어지는 복잡한 코드 에이전트 궤적 내부의 세부 단계별 품질 차이까지는 직접 다루지 않는다.</p>
+<h2>시사점</h2>
+<p>이진 테스트 통과 여부만으로 코드 에이전트 RL의 보상을 설계하면 품질이 낮은 해도 우수한 해와 동일하게 강화되어 학습이 불안정해지고 트래젝토리가 불필요하게 길어질 수 있음을 보여준다. 그룹 단위로 통과 트래젝토리들을 서로 비교하는 에이전틱 채점과, 양의 신용 총합을 보존하는 재분배 방식을 결합하면 테스트 기반 검증의 확장성과 품질 인식형 학습 신호를 동시에 얻을 수 있어, 산업 규모의 코드 에이전트 RL 파이프라인에도 실용적으로 적용 가능하다는 점을 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.32577" target="_blank" rel="noopener">huggingface.co/papers/2609.32577</a> · 2026-09-30</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

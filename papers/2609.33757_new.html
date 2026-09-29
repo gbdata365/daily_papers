@@ -1,0 +1,113 @@
+<meta charset="UTF-8">
+<title>유이투</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#2 · Daily Papers 2026-09-30</span>
+      <span class="cat-tag">생성모델</span>
+      <span class="upvote-tag">▲ 197</span>
+    </div>
+    <h1 class="article-title">YuE2: Unifying Symbolic and Audio Music Generation at Frontier Quality</h1>
+    <p class="article-title-ko">유이투: 기호 및 오디오 음악 생성을 프론티어 품질로 통합하기</p>
+    <p class="article-sub">YuE2는 기호(악보) 작곡을 먼저 생성한 뒤 이를 바탕으로 오디오를 합성하는 단일 AR-NAR Mixture-of-Transformers 모델로, symbolic planning을 통해 프론티어급 완성곡 품질을 달성하고 편집·커버·에이전트 기반 수정까지 지원한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.33757" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.33757" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: YuE2: Unifying Symbolic and Audio Music Generation at Frontier Quality</li>
+<li><strong>저자</strong>: 다수 공동 저자 (전체 저자 목록은 원문 22페이지에 별도 수록; HKUST, HKGAI, M-A-P, Tokenwave.AI, New York University, Stanford University, MBZUAI, ACE Studio 공동 연구)</li>
+<li><strong>출처</strong>: arXiv:2609.33757v1 [eess.AS] (2026년 9월)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://map-yue2.github.io/">https://map-yue2.github.io/</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.33757">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>YuE2는 기호(악보) 작곡을 먼저 생성한 뒤 이를 바탕으로 오디오를 합성하는 단일 AR-NAR Mixture-of-Transformers 모델로, symbolic planning을 통해 프론티어급 완성곡 품질을 달성하고 편집·커버·에이전트 기반 수정까지 지원한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>음악은 텍스트/가사, 기호 악보(멜로디·화성·리듬·형식), 연주 및 오디오 표현이라는 서로 다른 수준의 표현으로 나타낼 수 있다. 기존 기호 모델은 작곡을 읽을 수 있게 만들지만 완성된 녹음까지 만들어내지 못하고, 기존 오디오 모델은 완성곡을 만들지만 작곡 과정을 명시적으로 드러내지 않는다. YuE2는 하나의 모델이 텍스트에서 악보(score), 의미 토큰(semantic token), 음향 잠재변수(acoustic latent)로 이어지는 계층을 순차적으로 통과하며 점진적으로 세부사항을 확정하는 "progressive musical commitment" 개념을 통해 이 두 흐름을 통합하고자 한다. 다만 일반적인 음악 오디오 데이터에는 정렬된 악보·화음·비트 라벨이 없어, 이런 계층적 생성을 학습시킬 지도 신호 자체가 부족하다는 문제도 존재한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>symbolic planning을 통해 기호(악보)와 오디오 생성을 하나의 AR-NAR Mixture-of-Transformers(MoT)로 통합한 YuE2 제안. 동일 체크포인트로 작곡, 편집, 제로샷 커버, 에이전트 기반 편집을 모두 지원한다.</li>
+<li>동일 체크포인트에서 symbolic planning 유무를 직접 비교한 결과, 전문가들은 전체 품질과 음악성 모두에서 계획을 사용한 생성을 더 선호했다(전체 품질 선호 49.3% vs 34.6%).</li>
+<li>멜로디·화음 계획이 동일하게 주어진 조건에서, 통합 MoT 아키텍처가 널리 쓰이는 분리형 언어모델+diffusion Transformer(LM+DiT) 구조보다 여러 평가 기준에서 우세함을 확인했다.</li>
+<li>정렬되지 않은 녹음으로부터 기호·의미 지도 신호를 자동 구축하는 MERT2(음악 표현학습, MARBLE 15개 지표 중 14개에서 최고 성능)와 SheetSage2(전곡 리드시트 전사, 15개 지표-벤치마크 조합 중 12개 선도)를 제안했다.</li>
+<li>WildSongBench에서 SongBench Global Avg 6.73으로 평가된 공개 베이스라인 전체를 능가했고, best-of-8 선택 시 6.96으로 평가된 모든 시스템(비공개 포함) 중 가장 높은 평균을 기록했으며, 전문가 청취에서 Suno v4.5보다 우세하고 Suno v5와는 거의 대등한 선호도를 보였다.</li>
+</ul>
+<h2>방법론</h2>
+<p>YuE2는 텍스트·가사 조건 y로부터 기호 작곡 s(ABC 표기법), 25Hz 의미 토큰 c(MERT2 토크나이저), 48kHz 스테레오 VAE 디코딩에 쓰이는 연속 음향 잠재변수 z를 순차적으로 생성한다. 생성 과정은 pθ(s,c,z|y) = pθ,AR(s,c|y)·pθ,NAR(z|y,s,c)로 분해된다. 하나의 28층 backbone 안에 인과적(causal) AR 전문가(s, c 예측)와 양방향(bidirectional) NAR 전문가(flow matching으로 z의 속도 벡터 예측)가 나란히 배치된 Mixture-of-Transformers 구조를 사용하며, 이산 위치는 인과적 마스크로, 음향 위치는 전체 컨텍스트에 양방향으로 접근하는 하이브리드 어텐션 마스크로 처리한다. 학습 목적함수는 AR 구간의 cross-entropy(LAR)와 조건부 flow matching 손실(LFM)의 가중합(L = 0.25·LAR + LFM)이다. 학습 시 악보·의미토큰·음향잠재변수 중 일부를 생략하는 네 가지 과제를 섞어 학습함으로써, 계획(symbolic planning) 유무 비교나 조건 누락 상황에서도 동일 체크포인트로 대응할 수 있게 했다. 약 346,000시간 분량의 음악으로 학습했으며 모델 크기는 약 3.58B 파라미터다. 지도 신호 구축을 위해, MuQ와 Qwen2-Audio-Instruct 두 인코더의 표현을 융합·양자화한 다중 뷰 타깃으로 MERT2를 4단계 커리큘럼(Foundation Pretraining → Full-Song/Causal Adaptation → 지도학습 미세조정 → Semantic Quantization)으로 학습하고, 이를 바탕으로 SheetSage2가 CRF 기반 구조화 디코딩으로 멜로디·화음·박자·구조를 포함한 리드시트를 생성한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>192개 프롬프트로 구성된 WildSongBench(WSB)에서 SongBench, SongEval, AudioBox 등 9개 자동 지표와, 351명(전문 청취자 62명 포함)이 참여해 얻은 4,439건의 쌍별 전문가 평가로 성능을 측정했다. YuE2는 SongBench Musicality(5.91)·Global Avg(6.73)에서 평가된 공개 시스템 전체를 능가했고, 8개 후보 중 최적을 고르는 best-of-8 설정에서는 Musicality 6.27·Global Avg 6.96으로 평가된 모든 시스템(비공개 포함) 중 최고 평균을 기록했다. AudioBox 생산 품질 지표에서도 평가된 모든 비공개 시스템을 능가했다. 전문가 청취에서는 종합 품질 기준 Suno v4.5 대비 57.3% vs 30.5%로 우세했고, Suno v5 대비로는 40.4% vs 39.9%로 거의 대등했으며, 최신 Suno v6에는 31.6% vs 59.3%로 열세를 보였다. 오디오 품질 측면에서는 6개 비공개 시스템 평균 대비 58.9%의 선호도로 특히 강점을 보였다. symbolic planning 유무 비교 실험(212건 평가)에서는 계획 사용 시 전체 품질(49.3% vs 34.6%, p=0.0070)과 음악성(45.0% vs 29.4%, p=0.0141) 모두 유의하게 선호되었다. 통합 MoT와 분리형 LM+DiT를 파라미터 수·학습량을 맞춰 비교한 실험(209건 평가)에서도 종합 품질(53.4% vs 35.6%, p=0.0084) 등 5개 기준에서 통합 모델이 우세했고 텍스트 정합성만 거의 대등했다. MERT2는 MARBLE 15개 지표 중 14개에서 기존 최고 성능을 경신했고, SheetSage2는 자체 구축한 전사 비교에서 15개 지표-벤치마크 조합 중 12개를 선도했다. 악보-오디오 일치도 실험에서도 생성된 오디오가 원래 악보의 멜로디·화음·박자를 정합 조건(Corresponding) 쪽에서 뒤섞인 조건(Mismatched)이나 악보 없는 생성(Without score)보다 뚜렷하게 높은 일치도로 재현함을 확인했다.</p>
+<h2>한계점</h2>
+<p>논문 본문에 별도의 "한계점" 절이 명시되어 있지는 않지만, 제시된 결과를 보면 최신 비공개 상용 시스템인 Suno v6 대비 종합 선호도에서는 여전히 열세이며, SongEval Musicality/Avg 기준으로는 공개 시스템 중 HeartMuLa에 이어 2위에 머문다. 또한 최고 성능은 8개 후보 중 선택하는 best-of-8 전략에 의존하는 경우가 많아, 단일 후보 생성만으로는 최상위 상용 시스템과의 격차가 남아 있을 수 있다.</p>
+<h2>시사점</h2>
+<p>YuE2는 기호 작곡과 오디오 생성을 하나의 모델로 통합함으로써, 완성곡 품질과 편집 가능성(멜로디·화음 수정, 커버 생성, 에이전트 기반 반복 편집)을 동시에 달성할 수 있음을 보여준다. 이는 음악 생성 모델이 단순히 "듣기 좋은 오디오"를 만드는 데 그치지 않고, 음악가가 실제로 개입하고 수정할 수 있는 작곡 인터페이스를 제공할 수 있음을 시사한다. 또한 MERT2·SheetSage2처럼 정렬되지 않은 오디오로부터 기호·의미 지도 신호를 자동 구축하는 파이프라인은 향후 다른 음악 생성·이해 연구에도 폭넓게 활용될 수 있는 기반 기술로 볼 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.33757" target="_blank" rel="noopener">huggingface.co/papers/2609.33757</a> · 2026-09-30</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

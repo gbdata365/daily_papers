@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>코윈도우 어텐션</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#9 · Daily Papers 2026-09-30</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 59</span>
+    </div>
+    <h1 class="article-title">CoWindow Attention: Full Causal Coverage Is a Collective Property</h1>
+    <p class="article-title-ko">코윈도우 어텐션: 전체 인과 커버리지는 집단적 속성이다</p>
+    <p class="article-sub">CoWindow Attention(CoWA)은 각 KV 헤드가 근접(near)·싱크(sink) 윈도우와 헤드마다 다른 장거리(long-range) 윈도우만 담당하게 하여 개별 헤드는 희소(sparse)하지만 헤드 집합 전체의 합집합은 인과 프리픽스 전체를 커버하도록 하고, 이를 통해 FullAttn과 비슷한 품질을 유지하면서 학습·추론 지연시간과 메모리를 크게 줄인다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.32704" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.32704" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: CoWindow Attention: Full Causal Coverage Is a Collective Property</li>
+<li><strong>저자</strong>: Jingze Shi 외 8인 (홍콩과학기술대학교 광저우(HKUST-GZ), 베이징인공지능아카데미(BAAI), Université Paris Cité)</li>
+<li><strong>출처</strong>: arXiv:2609.32704v1 [cs.AI] (2026년 9월)</li>
+<li><strong>프로젝트 페이지</strong>: [논문에 명시되지 않음 (코드 저장소명 "flash-sparse-attention"만 언급됨)]</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.32704">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>CoWindow Attention(CoWA)은 각 KV 헤드가 근접(near)·싱크(sink) 윈도우와 헤드마다 다른 장거리(long-range) 윈도우만 담당하게 하여 개별 헤드는 희소(sparse)하지만 헤드 집합 전체의 합집합은 인과 프리픽스 전체를 커버하도록 하고, 이를 통해 FullAttn과 비슷한 품질을 유지하면서 학습·추론 지연시간과 메모리를 크게 줄인다.</p>
+<h2>배경 및 문제의식</h2>
+<p>긴 문맥(long-context)을 다루는 언어모델은 문서 이해, 다중턴 추론, 저장소 단위 코드 생성 등을 위해 수만~수십만 토큰 규모로 확장되고 있는데, FlashAttention과 같은 IO 최적화 기법이 있어도 모든 어텐션 헤드가 매번 전체 인과 히스토리(causal history)를 참조하는 FullAttn(Full Attention) 패턴 자체는 그대로 남아 있어 연산량과 메모리 트래픽이 과도하게 중복된다. 저자들은 어텐션 헤드들이 이질적인 역할(국소적 vs 장거리)을 보인다는 기존 관찰에 주목하여, 굳이 모든 헤드가 전체 히스토리를 각각 볼 필요 없이 "헤드들이 협력하여" 모든 위치에 대한 접근을 제공하면 충분하다는 아이디어를 제시한다. 기존의 sliding-window attention은 모든 헤드에 동일한 유한 범위를 적용해 먼 거리 토큰에 대한 직접 접근을 잃고, global token/고정 블록 패턴은 미리 정해진 경로만 유지하며, 동적 선택 방식(라우터·인덱서 기반)은 유연하지만 별도의 선택 문제를 도입하고 규칙적인 윈도우 구조에서 벗어나 연산 비용이 커진다. 이에 저자들은 "KV 헤드 간에 인과 히스토리 접근을 분산시키면서도 모델 품질과 장거리 검색 능력을 유지하고 학습·추론 비용을 낮출 수 있는가"라는 질문을 던진다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>CoWindow Attention(CoWA) 패턴을 제안: 모든 KV 헤드가 공유하는 near-diagonal window와 prefix-sink window, 그리고 헤드별로 서로 겹치지 않는(complementary) long-range window를 결합해, 각 헤드는 먼 거리에 대해 희소하지만 헤드 전체의 합집합은 인과 프리픽스 전체를 커버하는 "collective coverage" 속성을 구현한다.</li>
+<li>학습된 라우터나 인덱서 없이 순수하게 쿼리·키의 위치(position)만으로 정의되는 규칙을 사용하며, 학습(순전파·역전파)과 추론(prefill, 자기회귀 디코딩)에서 동일한 규칙을 일관되게 적용한다.</li>
+<li>KV-head tensor parallelism과 정합하는 global KV-head indexing을 설계해 분산 학습·서빙 환경에서도 텐서 병렬 랭크 간에 상호보완적인 long-range window 배치가 유지되도록 했다.</li>
+<li>윈도우 매칭 ablation, controlled associative recall, 연산자(operator) 지연시간/메모리 벤치마크, 0.6B~14B 스케일링 법칙 실험, 14B/32B 모델 레벨 평가 등 다각도의 실험으로 "collective coverage" 설계 원칙 자체의 효과를 입증한다.</li>
+</ul>
+<h2>방법론</h2>
+<p>쿼리 위치 iq와 키 위치 ik에 대해 bottom-right-aligned causal distance δ(iq, ik) := iq + (Nk − Nq) − ik를 정의하고, 이를 학습·prefill·디코딩에 공통으로 사용한다. Grouped-Query Attention(GQA) 구조에서 각 KV 헤드 hk는 폭 wsink의 prefix-sink window, 폭 wnear의 near-diagonal window, 그리고 나머지 causal distance 구간을 Hk개의 KV 헤드에 균등 분할한 breakpoint bhk 기반의 head-specific long-range window를 갖는다. 이 세 윈도우의 합집합(Ahk)이 각 헤드가 실제로 보는 key 집합이며, Hk개 헤드의 Ahk를 모두 합치면 인과적으로 유효한 모든 key 위치를 커버한다(식 4). CoWA는 FlashAttention 스타일의 타일 기반 블록 순회를 사용하되, 순전파(Algorithm 1)에서는 QO 블록마다 실제로 필요한 KV 블록 집합(Jhk(i))만 방문하고, 역전파(Algorithm 2)에서는 KV 블록마다 대응하는 QO 블록 집합(Ihk(j))만 순회하여 불필요한 블록을 아예 건너뛴다(경계에서만 마스킹 필요). 자기회귀 디코딩은 Nq=1인 순전파의 특수한 경우로 취급되며, 매 스텝마다 현재 key 길이를 기준으로 breakpoint를 갱신해 long-range window의 균등 폭을 유지한다. 텐서 병렬 환경에서는 KV 헤드를 랭크별로 균등 분할하되, 전역(global) KV-head 인덱스를 기준으로 breakpoint를 계산함으로써 각 랭크가 상호보완적인 long-range window를 담당하도록 한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>모든 실험은 동일한 모델 규모·깊이·데이터·최적화 설정 하에서 어텐션 변형만 다르게 비교했으며, 스케일링 법칙·연속 학습 실험은 H100 GPU 128개, 다운스트림 평가·연산자 벤치마크는 H100 GPU 8개(텐서 병렬 TP=8)에서 수행되었다. (1) 윈도우 매칭 ablation: 8개 KV 헤드에 대해 long-range window를 1/2/4/8개로 나누어 중복(duplicate) vs 상호보완(complementary) 배치를 비교한 결과, 8K 시퀀스에서 정확도가 21.32%→32.92%→52.32%→89.73%로 단조 증가했고, 완전한 collective coverage를 갖는 CoWA는 FullAttn의 89.97%에 근접한 반면 근접(near)만 사용하는 SWA는 5.34%에 그쳤다. (2) Controlled associative recall: 256개의 key-value 쌍을 무작위로 결합한 과제에서, 시퀀스 길이 8,192·dmodel=512 기준 CoWA는 89.73%로 FullAttn(89.97%)과 거의 동등했지만, DSA(53.71%), MoBA(50.12%), NSA(25.23%) 등 다른 희소 방법은 성능이 크게 저하되었다. (3) 연산자 지연시간·메모리: 128K 토큰, TP=8 환경에서 CoWA는 FullAttn 대비 학습 순전파·역전파 지연시간을 각각 7.4배·8.6배, 디코딩 지연시간을 3.0배 줄였고, 순전파·역전파 피크 메모리는 FullAttn과 동등하면서 디코딩 피크 메모리는 7.6배 작았다(반면 MoBA는 128K 역전파에서 랭크당 메모리 한도를 초과). (4) 0.6B~14B 스케일링 법칙: CoWA는 전 구간에서 FullAttn과 유사한 perplexity를 유지하면서, 14B 모델 기준 4K 사전학습에서 3.1%, 32K 장문맥 학습에서 28.5%의 총 학습 FLOPs를 절감했다. (5) 모델 레벨 평가: 14B·32B 규모에서 지식·추론·RULER(32K 및 YaRN 확장 128K) 벤치마크 평균 점수가 FullAttn과 대등하거나 일부 지표에서 근소하게 앞섰다(예: 14B 지식 72.70 vs 72.32, 추론 64.87 vs 64.46).</p>
+<h2>한계점</h2>
+<p>논문은 long-range window를 균등 폭(equal-width)으로 배분하는 방식이 디코딩에 적합하다고 설명하지만, 학습에 적합할 수 있는 equal-area 배분 방식은 이번 연구 범위 밖이라고 명시한다. 또한 디코딩 시 각 랭크가 로컬 KV 헤드의 전체 히스토리를 HBM에 유지하는데, 이를 줄이기 위한 window-aware한 오프로딩·프리페칭 기법은 향후 과제로 남겨두었다. 이론적으로 헤드 간 분해(cross-head decomposition)는 KV 헤드 수 Hk&gt;1일 때만 의미가 있으며 Hk=1이면 결국 dense causal attention과 동일해지고, 고정된 Hk에 대해서는 전체 시퀀스 어텐션 비용이 여전히 시퀀스 길이에 대해 이차(quadratic)로 증가한다. 텐서 병렬 랭크 수(TP)가 KV 헤드 수(Hk)보다 커지는 구성에서는 논리적 KV 헤드가 복제되어 랭크당 메모리 절감 효과가 줄어든다는 점도 언급된다.</p>
+<h2>시사점</h2>
+<p>이 연구는 "전체 인과 커버리지(full causal coverage)"가 모든 개별 헤드가 각자 가져야 하는 속성이 아니라 헤드 전체 집합이 협력적으로(collectively) 만족하면 되는 속성일 수 있음을 보여준다. 이는 학습된 라우터나 인덱서 없이도 순수한 위치 기반 규칙만으로 희소 어텐션을 설계할 수 있다는 실용적 시사점을 주며, 특히 KV-head tensor parallelism과 자연스럽게 정합되어 분산 학습·서빙 환경에서 바로 적용 가능하다는 점에서 실무적 가치가 크다. 저자들은 코드를 "flash-sparse-attention"이라는 이름으로 오픈소스로 공개했다고 밝혔다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.32704" target="_blank" rel="noopener">huggingface.co/papers/2609.32704</a> · 2026-09-30</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

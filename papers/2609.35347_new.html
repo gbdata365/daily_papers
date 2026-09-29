@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>교사 배정을 넘어서</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#3 · Daily Papers 2026-09-30</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 138</span>
+    </div>
+    <h1 class="article-title">Beyond Teacher Assignment: Domain-Normalized Multi-Teacher On-Policy Distillation</h1>
+    <p class="article-title-ko">교사 배정을 넘어서: 도메인 정규화 다중교사 온폴리시 증류</p>
+    <p class="article-sub">여러 전문가(teacher) 모델을 하나의 학생 모델로 통합 증류할 때, "어떤 전문가가 가르칠지"를 정하는 라우팅만으로는 부족하며 각 도메인 피드백의 크기(scale)를 배치 통계로 정규화해야 함을 보이고 이를 구현한 DN-MOPD를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.35347" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.35347" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Beyond Teacher Assignment: Domain-Normalized Multi-Teacher On-Policy Distillation</li>
+<li><strong>저자</strong>: Xin Li 외 8인 (Nanyang Technological University, Yale University, University of Manchester)</li>
+<li><strong>출처</strong>: arXiv:2609.35347v1 [cs.LG] (2026년 9월)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://lixin.ai/DN-MOPD">https://lixin.ai/DN-MOPD</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.35347">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>여러 전문가(teacher) 모델을 하나의 학생 모델로 통합 증류할 때, "어떤 전문가가 가르칠지"를 정하는 라우팅만으로는 부족하며 각 도메인 피드백의 크기(scale)를 배치 통계로 정규화해야 함을 보이고 이를 구현한 DN-MOPD를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>대규모 언어모델(LLM)의 사후학습(post-training)에서는 수학, 코드, 지시 따르기(Instruction Following, IF) 등 도메인별로 강화학습(RL)을 독립적으로 수행해 각 분야에 특화된 전문가 모델을 만드는 방식이 널리 쓰인다. 그러나 실제 서비스에는 이 모든 능력을 갖춘 하나의 모델이 필요하다. Multi-teacher on-policy distillation(MOPD)은 학생 모델이 스스로 답을 생성하면 해당 프롬프트의 도메인을 맡은 전문가가 토큰 단위로 피드백을 주는 방식으로 여러 전문가를 하나의 학생에 통합한다. 그러나 저자들은 Qwen3.5 9B/4B/2B 세 크기 모두에서 MOPD로 학습한 학생이 가장 뛰어난 단일 전문가로 학습한 학생보다도 못하며, 특히 수학 전문가의 강점을 거의 전달받지 못한다는 문제를 발견했다. 원인은 도메인별 전문가-학생 로그비율(log-ratio) 피드백의 분산이 서로 크게 다르다는 데 있다: IF 피드백은 수학 피드백보다 2.3~4.4배 더 넓게 퍼져 있어, 학생 파라미터를 공유 업데이트할 때 IF 손실이 초기 4B 모델 기준 결합 그래디언트의 94%를 차지해버린다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>단순히 프롬프트를 올바른 전문가에게 라우팅하는 것만으로는 전문가들의 능력이 학생에게 전이되지 않음을 실증: MOPD(Label 라우팅)는 세 크기 모두에서 최고 성능 단일교사 학생을 능가하지 못하고, 수학 능력 전이는 8K 평가 기준 14~32%에 그치며 16K 기준으로는 전이가 거의 없다.</li>
+<li>도메인 간 피드백 불균형의 원인을 정량적으로 규명: 첫 학습 배치에서 IF 로그비율의 분산이 전체 풀링 분산의 2.3~4.4배, 수학 로그비율은 약 절반 수준이며, 이 때문에 동일 가중치를 적용해도 IF 손실이 그래디언트를 지배함을 보였다.</li>
+<li>DN-MOPD 제안: 라우팅 규칙(어떤 교사가 어떤 프롬프트를 담당하는지)은 그대로 유지하되, 배치마다 각 도메인의 로그비율 표준편차를 측정해 전체 풀링 표준편차와의 비율(클리핑된 범위 [0.25, 4])만큼 해당 도메인의 distillation advantage를 재조정한다. 추가 교사 모델이나 학습된 라우터 없이 기존 MOPD에 연산 하나만 추가한 구조이며, 모든 배율이 1이면 기존 MOPD와 동일하다.</li>
+<li>Qwen3.5 9B/4B/2B 전 크기, 두 평가 예산(8K/16K), 세 개의 랜덤 시드에서 일관되게 MOPD 대비 6개 과제 평균 점수를 개선하고, 손실되었던 수학 능력 전이를 대부분 회복함을 실험으로 확인했다.</li>
+</ul>
+<h2>방법론</h2>
+<p>DN-MOPD는 초기 모델 하나에서 시작해 수학·코드·IF 세 도메인 전문가를 독립적으로 RL 학습시키고, 네 번째 사본인 학생 모델(πu)을 학습시키는 구조를 그대로 따른다. 학생이 프롬프트에 대해 응답을 생성하면(y), 해당 도메인의 교사가 동일 응답에 대한 토큰별 로그확률을 계산하여 학생과의 차이(At = log pTd(yt|ht) − log πu(yt|ht))를 distillation advantage로 사용한다. 기존 MOPD(Label 라우팅)는 이 At를 그대로 사용하지만, DN-MOPD는 배치 내 롤아웃 로그비율(rollout log-ratio)의 표준편차를 도메인별(σd)과 전체 풀링(σall)로 계산한 뒤, wd = clip(σall/σd, 0.25, 4)라는 배율을 구해 도메인별 advantage에 곱한다(Ã = wd·A). 이 배율은 부호를 보존하며 평균은 보정하지 않고 분산만 규모를 맞추는 방식이라, 분산이 작은 도메인(수학)의 피드백은 증폭하고 분산이 큰 도메인(IF)의 피드백은 약화시킨다. 이렇게 얻은 스케일 보정 advantage는 detach(stopgrad) 처리되어 클리핑된 OPD(on-policy distillation) 목적함수에 그대로 대입되며, 응답 마스크와 손실 reduction 방식은 기존과 동일하게 유지된다. 추가 교사 호출이나 별도 학습이 필요 없고, 이미 롤아웃 스코어링 과정에서 얻어지는 로그비율을 재활용하기 때문에 계산 비용이 거의 들지 않는다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Qwen3.5 9B, 4B, 2B 각각에 대해 독립적으로 학습된 전문가 풀을 구성하고, AIME25/AIME26(수학), LiveCodeBench v5/v6(코드), IFEval/IFBench(IF) 등 총 6개 공개 벤치마크에서 8K/16K 두 가지 응답 길이 상한으로 평가했다. DN-MOPD는 모든 크기와 두 평가 예산에서 MOPD(Label 라우팅) 대비 평균 점수가 향상되었으며(16K에서 +1.17~+2.36점, 8K에서 +2.47~+3.08점), 세 개의 학생 시드 전체에서 이 우위가 유지되었다. 가장 큰 개선은 수학에서 나타났는데, Label 라우팅은 16K 기준 어떤 크기에서도 초기 모델 대비 수학 성능이 향상되지 않은 반면 DN-MOPD는 모든 크기에서 개선을 보였다. 또한 DN-MOPD는 모든 크기에서 최고 성능 단일교사 학생도 능가했다(Label은 그러지 못함). 균일 풀링(Uniform pool)이나 동적 라우팅(Dynamic router) 같은 대안적 라우팅 변경은 일관된 개선을 주지 못한 반면, 라우팅은 그대로 두고 피드백 크기만 조정하는 DN-MOPD의 방식이 효과적이었다. 고정 가중치를 이용한 대조 실험에서는 개선의 주된 원인이 수학 피드백 증폭보다는 IF 피드백 억제에 있음을 확인했고, DN-MOPD가 측정한 배율과 유사한 고정 가중치를 사용해도 비슷한 성능을 낼 수 있음을 보였다(다만 2B에서는 배치별 재추정이 추가 이득을 줌). 학습 기간을 늘려도(80→160 업데이트) DN-MOPD의 우위는 유지되었다.</p>
+<h2>한계점</h2>
+<p>저자들은 실험이 하나의 모델 계열(Qwen3.5) 내 크기별 하나의 전문가 풀만을 사용했고, 세 시드는 학생 재학습만 다룰 뿐 전문가 재학습까지 다루지는 않았다고 밝힌다. DN-MOPD의 설계(클리핑 범위 등)는 이전 Qwen3 개발 환경에서 선정되었으며, 다른 설정에서의 Qwen3-4B 실험에서는 명확한 개선이 없었다고 보고되어 있어 teacher-student 구성에 따라 이득이 달라질 수 있음을 시사한다. 스케일 추정치는 도메인 구성과 응답 길이에 의존하며, 클리핑 경계값이 모델 크기별로 별도 튜닝되지 않았다. IF 배율은 대부분의 배치에서 하한(0.25)에 머물러, 이 규칙이 도메인 간 스케일을 완전히 동일화하기보다는 상한·하한으로 제한하는 역할에 가깝다는 점도 한계로 지적된다.</p>
+<h2>시사점</h2>
+<p>이 연구는 여러 RL 전문가를 하나의 모델로 통합하는 과정에서 "누가 가르치는가"(라우팅)와 "얼마나 강하게 가르치는가"(피드백 스케일)가 서로 독립적인 설계 축임을 명확히 보여준다. 서로 다른 RL 파이프라인으로 학습된 전문가들은 피드백의 분산 자체가 다를 수 있으며, 이를 무시하면 특정 도메인(특히 분산이 큰 IF)이 공유 파라미터 업데이트를 사실상 독점해버릴 수 있다. DN-MOPD처럼 배치 통계만으로 간단히 이 불균형을 보정하는 방법은 별도의 학습된 라우터나 추가 모델 없이도 다중교사 증류의 효율을 높일 수 있어, 향후 다양한 도메인·전문가 조합의 모델 통합(capability integration) 파이프라인에 실용적으로 적용될 수 있는 시사점을 제공한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.35347" target="_blank" rel="noopener">huggingface.co/papers/2609.35347</a> · 2026-09-30</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

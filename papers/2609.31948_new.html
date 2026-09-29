@@ -1,0 +1,113 @@
+<meta charset="UTF-8">
+<title>듀플렉스엠피이</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#5 · Daily Papers 2026-09-30</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 81</span>
+    </div>
+    <h1 class="article-title">Duplex-MPE: Benchmarking Multi-Party Interaction in Full-Duplex Dialogue</h1>
+    <p class="article-title-ko">듀플렉스엠피이: 풀듀플렉스 대화에서의 다자간 상호작용 벤치마킹</p>
+    <p class="article-sub">여러 사람이 동시에 대화하는 풀듀플렉스(full-duplex) 환경에서 음성 어시스턴트가 언제 답하고, 언제 침묵하며, 언제 말을 멈춰야 하는지를 4,000개의 대화 스트림으로 평가하는 벤치마크 Duplex-MPE를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.31948" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.31948" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Duplex-MPE: Benchmarking Multi-Party Interaction in Full-Duplex Dialogue</li>
+<li><strong>저자</strong>: Chengqian Ma 외 9인 (Peking University, Renmin University of China, Tsinghua University, Nanyang Technological University, Xiamen University, Fudan University 공동연구)</li>
+<li><strong>출처</strong>: arXiv:2609.31948v1 [cs.SD] (2026년 9월)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.31948">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>여러 사람이 동시에 대화하는 풀듀플렉스(full-duplex) 환경에서 음성 어시스턴트가 언제 답하고, 언제 침묵하며, 언제 말을 멈춰야 하는지를 4,000개의 대화 스트림으로 평가하는 벤치마크 Duplex-MPE를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>실시간 풀듀플렉스 음성 모델은 말하는 동안에도 계속 듣기 때문에, 딱딱한 턴 교대 없이 자연스러운 상호작용을 지원할 수 있다. 그러나 기존 벤치마크들(Full-Duplex-Bench v1.5, HumDial 등)은 대개 한 명의 지정된 사용자와 어시스턴트 간의 인터럽션·턴테이킹·다회차 대화만을 평가하며, 여러 사람이 함께 있는 회의실·거실·차 안 같은 상황에서 어시스턴트가 "이 발화가 나에게 온 요청인지"를 스스로 판단해야 하는 상황은 다루지 않는다. 다자간 대화에서는 다른 참여자의 발화가 어시스턴트에 대한 요청을 해소(resolve)하거나 맥락 정보를 제공할 수 있어, 어시스턴트는 전체 대화를 계속 따라가면서도 자신의 발화 여부를 별도로 판단해야 한다. 저자들은 이러한 "선택적 참여(selective participation)" 능력을 평가할 기존 수단이 없다는 문제의식에서 출발한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>다자간 공유 대화 벤치마크</strong>: 3~4명의 인간 화자와 어시스턴트 Aria가 등장하는 2,000개 시나리오를 구성하고, 동일한 요청을 명시적(Aria를 직접 호명)·암묵적(맥락으로만 유추 가능)으로 짝지은 쌍(pair)을 제공한다.</li>
+<li><strong>참여를 4가지로 분리 측정</strong>: 새로운 응답 개시(fresh-onset response rate), 응답 정확도(conditional answer accuracy), 침묵 유지(silence preservation), 요청 해소 후 말 멈추기(answering-window yield)를 서로 다른 분모 위에서 독립적으로 채점한다.</li>
+<li><strong>자동화된 구축·평가 파이프라인</strong>: Claude Opus 5가 시나리오 스크립트와 명시/암묵 재작성을 생성하고, Qwen3-TTS로 음성을 합성하며, Qwen3-ASR와 Claude Opus 5 기반 채점으로 정답 여부와 침묵 위반 여부를 판정한다. 6명의 인간 검수자가 구축과 평가 결과를 표본 검증했다.</li>
+</ul>
+<h2>방법론</h2>
+<p>각 시나리오의 모든 발화 턴에는 정확히 하나의 라벨이 부여된다. T는 Aria에게 직접적이고 아직 해소되지 않은 요청(시나리오당 정확히 1개), N1은 Aria가 언급만 될 뿐 요청이 없는 턴, N2는 다른 사람·기기에게 향한 발화, N3는 특정 대상이 없는 혼잣말이며, N1~N3는 모두 침묵이 정답이다. N4는 한 인간(asker)이 Aria에게 질문한 뒤(N4Q) 다른 인간(resolver)이 그 질문에 답하거나 "안 답해도 된다"고 말하는(N4R) 사건으로, Aria는 N4Q 종료 후 3초 이내에 답해야 하지만 N4R을 들으면 곧바로 멈춰야 한다.</p>
+<p>시나리오는 Claude Opus 5가 장소·활동·관계·기기 맥락·말투 등 5개 속성 조합으로 대본을 생성하고, Qwen3-TTS가 화자별 음성을 개별 합성한다. 각 시나리오는 T의 호명 방식만 바꾼 명시/암묵 쌍으로 제작되며, 시나리오 과제와 정답은 두 조건에서 동일하게 유지된다. 평가 대상 모델은 대화 전체를 트랜스크립트나 화자 라벨, 턴 경계 없이 연속 오디오로만 입력받으며, 응답 타이밍은 Silero VAD로 측정한다. 참고용으로 화자 태그가 붙은 텍스트 트랜스크립트를 입력받는 Gemini 3.1 Pro도 별도로 평가한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>MiniCPM-o 4.5, Moshi, FLM-Audio, Voila, Freeze-Omni 5개의 오픈웨이트 풀듀플렉스 음성 시스템을 평가했다. MiniCPM-o 4.5가 3개 채점 지표(fresh-onset response rate, silence preservation, answering-window yield)에서 가장 우수했다. 반면 Freeze-Omni는 응답 존재율(response presence)이 0.9955로 가장 높지만 fresh-onset response rate는 0.2525로 가장 낮았고, 침묵 유지율은 20,360개 창 중 5개만 통과(0.0002)할 정도로 거의 항상 말을 이어갔다. FLM-Audio는 응답 존재율이 높은데도 응답 정확도가 0.0011에 불과했다. 즉 "말을 자주 한다"는 것이 "적절히 참여한다"는 것을 의미하지 않음을 보였다.</p>
+<p>트랜스크립트 기반 Gemini 3.1 Pro는 명시적 요청에 94.70%, 암묵적 요청에 30.40% 응답하여 64.3%p 차이를 보였고(McNemar 검정 p &lt; 10^-371), 이는 호명 여부가 트랜스크립트 조건에서는 응답 결정에 큰 영향을 준다는 것을 뜻한다. 반면 5개 음성 시스템은 명시·암묵 조건 간 응답률 차이가 통계적으로 유의하지 않았다(모든 p &gt; 0.05, 최소 0.2365). 저자들은 이것이 맥락으로부터 수신자를 성공적으로 추론한 결과일 수도, 반대로 이름을 단서로 활용하지 못한 결과일 수도 있다고 해석한다.</p>
+<h2>한계점</h2>
+<p>벤치마크의 모든 대화와 음성은 합성된 것으로, 실제 인구 집단이나 방 음향, 사회적 규범을 대표하지 않으며 생성·음성합성 모델의 편향을 물려받을 수 있다. 또한 Gemini 3.1 Pro 평가는 어휘 내용과 화자 정보를 명시적으로 제공받는 텍스트 기반 참고용 비교이지, 음성 모델의 성능 상한을 뜻하지 않는다. 비-풀듀플렉스 모델은 평가자가 임의로 분절·호출 시점을 정해야 하므로 채점 대상에서 제외했다.</p>
+<h2>시사점</h2>
+<p>단일 응답률이나 응답 존재율만으로는 음성 어시스턴트의 다자간 대화 참여 능력을 제대로 평가할 수 없으며, 개시·정확도·침묵·정지라는 서로 다른 능력을 분리해 측정해야 실제 실패 양상(응답 누락, 부실한 답변, 침묵 위반, 끝없는 발화 지속 등)을 구분해낼 수 있다. 이는 다자간 환경에 배치되는 실시간 음성 어시스턴트 설계 시 addressee 추론과 발화 통제를 별도의 학습·평가 대상으로 다뤄야 함을 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.31948" target="_blank" rel="noopener">huggingface.co/papers/2609.31948</a> · 2026-09-30</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

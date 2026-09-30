@@ -1,0 +1,110 @@
+{
+  "2609.33439": {
+    "base": "2609_레이븐_하니스오브하니스-에이전트오케스트레이션",
+    "rank": "#1",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "450",
+    "en_title": "Raven: The Harness of Harnesses for Composable Agentic Intelligence",
+    "ko_title": "레이븐: 조합 가능한 에이전틱 지능을 위한 하니스들의 하니스"
+  },
+  "2609.36012": {
+    "base": "2609_로봇아이씨엘_로봇인컨텍스트러닝-서베이",
+    "rank": "#2",
+    "category": "survey",
+    "category_label": "서베이",
+    "upvote": "269",
+    "en_title": "In-Context Learning for Robots: Methods and Applications",
+    "ko_title": "로봇을 위한 인컨텍스트러닝: 방법론과 응용"
+  },
+  "2609.34309": {
+    "base": "2609_마량하니스_이미지비디오생성-프로그래머블경로",
+    "rank": "#3",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "232",
+    "en_title": "MaLiang-Harness: A Programmable Path to Image and Video Generation",
+    "ko_title": "마량 하니스: 이미지 및 비디오 생성을 위한 프로그래머블 경로"
+  },
+  "2609.32722": {
+    "base": "2609_세임패밀리증류_온폴리시증류-스케일링속성",
+    "rank": "#4",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "162",
+    "en_title": "Scaling properties of same-family on-policy distillation",
+    "ko_title": "동일 계열 온폴리시 증류의 스케일링 속성"
+  },
+  "2609.31847": {
+    "base": "2609_옴니아이오스킬_에이전트옴니네이티브-하니스",
+    "rank": "#5",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "154",
+    "en_title": "Omni-IO Skills: Harnessing Your Agent Omni-Native",
+    "ko_title": "옴니-IO 스킬: 에이전트를 옴니 네이티브로 만들기"
+  },
+  "2609.34759": {
+    "base": "2609_파노브이엘엔_파노라믹비전언어네비게이션",
+    "rank": "#6",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "127",
+    "en_title": "PanoVLN: Towards Effective Panoramic Vision-and-Language Navigation",
+    "ko_title": "파노브이엘엔: 효과적인 파노라믹 비전-언어 내비게이션을 향하여"
+  },
+  "2609.32607": {
+    "base": "2609_복스멤_오디오언어모델-멀티모달메모리벤치마크",
+    "rank": "#7",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "124",
+    "en_title": "VoxMem: Benchmarking Multimodal Memory in Large Audio Language Models",
+    "ko_title": "복스멤: 대규모 오디오 언어 모델의 멀티모달 메모리 벤치마킹"
+  },
+  "2609.36380": {
+    "base": "2609_레고애니씽_3디씬재구성-코딩에이전트",
+    "rank": "#8",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "93",
+    "en_title": "LEGO-Anything: Coding Agents for 3D Scene Reconstruction",
+    "ko_title": "레고애니씽: 3D 장면 재구성을 위한 코딩 에이전트"
+  },
+  "2609.34981": {
+    "base": "2609_월드액션모델_테스트타임퓨처모델링-일반화연구",
+    "rank": "#9",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "77",
+    "en_title": "What Makes World Action Models Generalize? An Empirical Study of Test-Time Future Modeling",
+    "ko_title": "월드 액션 모델의 일반화 요인은 무엇인가? 테스트 타임 미래 모델링에 대한 실증 연구"
+  },
+  "2609.37372": {
+    "base": "2609_씽킹리워드모델_비주얼생성-사고형보상모델",
+    "rank": "#10",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "74",
+    "en_title": "Think Before You Score: Thinking Reward Model for Visual Generation",
+    "ko_title": "먼저 생각하고 점수를 매겨라: 비주얼 생성을 위한 사고형 보상모델"
+  },
+  "2609.36601": {
+    "base": "2609_사키_맥시멀커플링-온폴리시증류지도",
+    "rank": "#11",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "73",
+    "en_title": "SAKI: Maximal-Coupling-Routed Teacher Supervision for On-Policy Distillation",
+    "ko_title": "사키: 최대 결합 기반 교사 지도 라우팅을 통한 온폴리시 증류"
+  },
+  "2609.36322": {
+    "base": "2609_피리오딕위크스팟_청크드케이브이캐시압축-위상민감도",
+    "rank": "#12",
+    "category": "analysis",
+    "category_label": "해석·분석",
+    "upvote": "71",
+    "en_title": "Periodic Weak Spots: Phase Sensitivity from Chunked KV-Cache Compression",
+    "ko_title": "주기적 약점: 청크드 KV-캐시 압축에서 비롯된 위상 민감도"
+  }
+}

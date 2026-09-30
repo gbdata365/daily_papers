@@ -1,0 +1,113 @@
+<meta charset="UTF-8">
+<title>파노브이엘엔</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#6 · Daily Papers 2026-10-01</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 127</span>
+    </div>
+    <h1 class="article-title">PanoVLN: Towards Effective Panoramic Vision-and-Language Navigation</h1>
+    <p class="article-title-ko">파노브이엘엔: 효과적인 파노라믹 비전-언어 내비게이션을 향하여</p>
+    <p class="article-sub">360도 파노라마 관측을 단순히 입력으로 교체하는 것만으로는 성능 향상이 제한적임을 진단하고, 행동 예측(더 긴 지평선과 신뢰도 기반 실행), 학습 지도(분기점 중심 데이터), 시각 표현(기하학 특징 융합)을 파노라마에 맞게 함께 조정한 PanoVLN을 제안하여 R2R-CE와 RxR-CE에서 기존 최고 성능을 큰 폭으로 경신했다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.34759" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.34759" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: PanoVLN: Towards Effective Panoramic Vision-and-Language Navigation</li>
+<li><strong>저자</strong>: 저장대학교(Zhejiang University), 홍콩대학교(The University of Hong Kong) 소속 연구진 (Zhen Wang 외 7인)</li>
+<li><strong>출처</strong>: arXiv:2609.34759v1 [cs.CV] (2026년 9월 28일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://wangzhen-w.github.io/PanoVLN/">PanoVLN 프로젝트 페이지</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.34759">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>360도 파노라마 관측을 단순히 입력으로 교체하는 것만으로는 성능 향상이 제한적임을 진단하고, 행동 예측(더 긴 지평선과 신뢰도 기반 실행), 학습 지도(분기점 중심 데이터), 시각 표현(기하학 특징 융합)을 파노라마에 맞게 함께 조정한 PanoVLN을 제안하여 R2R-CE와 RxR-CE에서 기존 최고 성능을 큰 폭으로 경신했다.</p>
+<h2>배경 및 문제의식</h2>
+<p>비전-언어 내비게이션(VLN)은 에이전트가 자연어 지시를 따라 환경을 이동하는 과제로, 최근 VLM 기반 정책들이 시각 관측과 지시문으로부터 행동을 예측하며 발전해왔다. 그러나 대부분의 기존 연구는 제한된 시야(FoV)를 갖는 원근(perspective) 이미지를 입력으로 사용하는데, 이는 경로가 꺾이는 지점에서 진행 방향 밖의 통로나 분기점을 놓치게 만든다. 저자들은 등장방형(ERP) 파노라마를 그대로 perspective 이미지 대신 넣는 단순한 대체만으로는 성능이 거의 향상되지 않거나 오히려 저하됨을 발견했고, 진단 결과 파노라마의 넓은 시야를 실제로 활용하려면 행동 예측, 학습 지도, 시각 표현 세 가지 모두에 걸친 수정이 필요함을 확인했다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>파노라마 입력을 perspective 이미지 대신 단순 대체하는 베이스라인이 성능 향상을 거의 가져오지 못함을 실증적으로 진단</li>
+<li>더 긴 행동 시퀀스를 예측하도록 학습시키고, 예측 불확실성에 따라 실행할 행동 개수를 동적으로 결정하는 confidence-guided execution(CGE) 전략을 제안</li>
+<li>분기점이 빈번하고 명확한 지시문을 가진 HM3D 기반 98K 궤적 데이터셋을 구축하여 경로 선택에 대한 집중적 지도 신호 제공</li>
+<li>PanoVGGT로 추출한 기하학적 특징을 VLM의 의미 특징과 정렬·융합하여 추가 시각 토큰 없이 공간 관계 이해를 강화</li>
+<li>R2R-CE, RxR-CE Val-Unseen에서 각각 기존 SOTA 대비 11.9%p, 8.7%p 성공률 향상을 달성하고, 사족보행 로봇 실세계 실험에서도 더 빠르고 적은 정지로 내비게이션 가능함을 검증</li>
+</ul>
+<h2>방법론</h2>
+<p>PanoVLN은 Qwen3.5-4B VLM 백본에 RGB-only ERP 파노라마를 입력으로 받는다. 첫째, 행동 시퀀스 지도(action-sequence supervision)는 매 시점 다음 H(=18)개의 전문가 행동을 teacher forcing으로 학습(Lact, 교차엔트로피 형태)시켜 한 번의 관측에서 더 긴 지평선의 계획을 가능케 한다. 둘째, confidence-guided execution(CGE)은 각 예측 행동의 불확실성 u_{t,i} = −log q_{t,i}(â_{t,i})(로짓의 softmax 확률 기반)을 누적한 U_t(k)가 불확실성 예산 B를 넘지 않는 범위까지(단, 최소 E_min개는 실행) 접두 시퀀스를 실행한 뒤 재관측한다. 셋째, decision-centric 데이터 구성은 HM3D 800개 장면에서 적어도 두 개의 가시적·이동 가능한 경로가 있는 분기점을 포함하는 98K 궤적을 수집하고, travel/branching/arrival 세 구간으로 나눠 Qwen3.8-27B로 지시문을 생성한 뒤 motion consistency·choice grounding·stop grounding 세 가지 검증을 통과한 것만 채택한다. 학습 상태는 H=18에 대해 stride-6 그리드로 인접 중복을 줄이고 회전 시작·정지 직전 구간을 추가 샘플링한다. 넷째, 기하학 인식 시각 표현은 동결된 PanoVGGT 인코더로 현재 파노라마의 기하 특징을 추출하고 ERP 좌표계에서 리샘플링·그룹화한 뒤, 학습 가능한 MLP로 투영해 VLM의 병합된 현재 토큰에 잔차 형태로 융합한다(V̄_t = V_t + α·f_ψ(G_t)).</p>
+<h2>실험 설정 및 결과</h2>
+<p>Matterport3D 환경의 Habitat 시뮬레이터에서 R2R-CE, RxR-CE Val-Unseen 스플릿으로 평가했으며, 지표는 NE(내비게이션 오류), OS(oracle success), SR(성공률), SPL(경로 효율 가중 성공률), nDTW(RxR-CE)이다. RGB-only 입력 기준 PanoVLN은 R2R-CE에서 SR 77.3%, SPL 70.6%, RxR-CE에서 SR 78.0%, SPL 65.9%를 기록해 이전 최고 방법(예: AwareVLN SR 65.4%/56.1%)을 각각 11.9%p, 8.7%p 상회했다. 제한된 데이터(R2R-CE·RxR-CE만 사용)로 학습한 PanoVLN†도 파노/오도메트리/깊이를 함께 쓰는 방법들을 포함한 restricted-data 그룹에서 최고 SR·SPL을 기록했다. Ablation 결과: 예측 지평선이 길어질수록(H=4→18) ERP 정책은 perspective 정책을 역전하며 앞섰고, 회전·정지 인식 샘플링이 무작위 샘플링보다 우수했으며(SR 62.8% vs 56.4%), CGE는 고정 길이·무작위 실행 전략을 모두 능가했다(SR 66.6%). PanoVGGT 기하 특징은 다른 기하 인코더(UniK3D, DA2, DAP) 대비 가장 높은 SR을 보였다. 실세계 실험에서는 Unitree Go2 사족보행 로봇에 Insta360 X5 카메라를 장착해 Hallway·Office·Campus 세 환경에서 NaVid, NaVILA, StreamVLN, JanusVLN과 비교했으며, PanoVLN이 가장 짧은 내비게이션 시간(86.4초), 가장 빠른 속도(25.7cm/s), 가장 적은 정지(5.4회)와 정책 호출 횟수(7.4회)를 기록했다.</p>
+<h2>한계점</h2>
+<p>논문에 명시되지 않음 (별도의 한계점 절은 없으나, 실험이 시뮬레이션은 Matterport3D/HM3D 실내 환경, 실세계는 사족보행 로봇 세 장소로 제한되어 있고, RGB 전용 입력과 특정 백본(Qwen3.5-4B)에 기반한 설계라는 점에서 다른 로봇 플랫폼이나 더 다양한 실외 환경으로의 일반화는 추가 검증이 필요해 보인다).</p>
+<h2>시사점</h2>
+<p>이 연구는 파노라마 관측의 넓은 시야를 실제로 활용하려면 입력 형식 교체만으로는 부족하며, 행동 예측 지평선·학습 데이터 구성·시각 표현이라는 세 요소를 함께 재설계해야 한다는 점을 명확히 보여준다. 이는 향후 파노라마 또는 다중 카메라 기반 로봇 내비게이션 연구에서 데이터 구성과 실행 전략 설계의 중요성을 시사하며, confidence-guided execution과 같은 적응적 실행 기법은 다른 장기 지평선 에이전트 과제에도 확장 적용될 수 있는 일반적 아이디어로 볼 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.34759" target="_blank" rel="noopener">huggingface.co/papers/2609.34759</a> · 2026-10-01</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

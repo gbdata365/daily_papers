@@ -1,0 +1,123 @@
+<meta charset="UTF-8">
+<title>마량 하니스</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#3 · Daily Papers 2026-10-01</span>
+      <span class="cat-tag">생성모델</span>
+      <span class="upvote-tag">▲ 232</span>
+    </div>
+    <h1 class="article-title">MaLiang-Harness: A Programmable Path to Image and Video Generation</h1>
+    <p class="article-title-ko">마량 하니스: 이미지 및 비디오 생성을 위한 프로그래머블 경로</p>
+    <p class="article-sub">MaLiang-Harness는 MLLM이 이미지·비디오를 실행 가능한 시각 프로그램(코드)으로 생성하도록 하는 통합 프레임워크로, 프로그램이 문제없이 실행되어도 요구된 구성·외형·모션을 만족하지 못하는 "Program-to-Visual(P2V) 격차"를 정의하고, 상태 보존(PEG)·추적 가능한 생성 과정(TGP)·수정인지 편집/검증(REV)을 통해 구성-검사-수정을 반복하는 지속적 루프로 이 격차를 줄인다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.34309" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.34309" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: MaLiang-Harness: A Programmable Path to Image and Video Generation</li>
+<li><strong>저자</strong>: National University of Singapore, Fudan University, Tencent 소속 연구진</li>
+<li><strong>출처</strong>: arXiv:2609.34309v1 [cs.CV] (28 Sep 2026)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/gulucaptain/MaLiang-Harness">GitHub - gulucaptain/MaLiang-Harness</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.34309">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>MaLiang-Harness는 MLLM이 이미지·비디오를 실행 가능한 시각 프로그램(코드)으로 생성하도록 하는 통합 프레임워크로, 프로그램이 문제없이 실행되어도 요구된 구성·외형·모션을 만족하지 못하는 "Program-to-Visual(P2V) 격차"를 정의하고, 상태 보존(PEG)·추적 가능한 생성 과정(TGP)·수정인지 편집/검증(REV)을 통해 구성-검사-수정을 반복하는 지속적 루프로 이 격차를 줄인다.</p>
+<h2>배경 및 문제의식</h2>
+<p>지난 10년간 이미지·비디오 생성은 GAN, diffusion, flow matching 등 데이터 분포를 학습해 픽셀/잠재표현을 직접 합성하는 패러다임을 따라왔으며, 그 생성 과정은 대체로 암묵적(implicit)이다. 반면 MLLM의 의미 이해·추론·코드 생성 능력이 빠르게 발전하면서, 모델이 창작 의도를 실행 가능한 시각 프로그램으로 표현하고 렌더러가 이를 이미지/비디오로 변환하는 "프로그래머블 경로"가 점점 현실적인 대안이 되고 있다. 그러나 프로그램이 문법적으로 정상 실행되더라도 물체가 엉뚱한 위치에 놓이거나 애니메이션 이벤트가 잘못된 시점에 발생하는 등, 프로그램 수준의 정확성과 실제 시각적 요구 충족 사이에는 괴리가 존재할 수 있다. 저자들은 이를 Program-to-Visual(P2V) Gap으로 정의하고, 이를 해소하려면 모델이 코드의 시각적 결과를 추론하고, 실행 결과를 근거로 프로그램과 계획을 반복 수정하며, 수정이 이전에 만족했던 요구사항을 깨지 않았는지 매번 재검증할 수 있는 상태 유지형(stateful) 하니스가 필요하다고 주장한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>Program-to-Visual(P2V) 격차를 새롭게 정의하고, 구성-검사-수정의 상태 기반(stateful) 시각 프로그램 생성 정식화를 제안</li>
+<li>MaLiang-Harness: 이미지·비디오 생성을 하나의 프레임워크로 통합하며, 핵심 메커니즘으로 Persistent Executable Generation(PEG) 상태, Traceable Generation Process(TGP), Revision-aware Editing and Verification(REV)을 제안</li>
+<li>Canvas, SVG, Scene2d, Three.js 등 여러 렌더링 백엔드에 걸쳐 상태 검사·프로그램/자산 편집·렌더링·요구사항 검토를 지원하는 공유 상호작용 프로토콜 설계</li>
+<li>MaLiang-IBench(텍스트-이미지 50과제), MaLiang-VBench(텍스트-비디오 13과제)를 구축하고, 11개(이미지)/4개(비디오)의 최신 폐쇄형 MLLM을 생성 성공률·시각 품질·연산 비용 기준으로 비교 평가</li>
+<li>일반 벤치마크 점수(Artificial Analysis Intelligence Index)와 실제 시각 생성 성능 간 상당한 불일치를 실증(Spearman ρ=0.65에 불과)</li>
+</ul>
+<h2>방법론</h2>
+<p>MLLM은 프롬프트 p와 출력 명세 ω를 입력받아 외형·공간구성·시간적 동역학을 계획하고, 실행 가능한 표현과 호환되는 렌더링 백엔드 b를 선택해 드로잉/애니메이션 코드를 생성한다. 핵심 개념인 PEG(Persistent Executable Generation) 상태는 리비전 k에서 Sk=(Pk, Ak, Zk, Ck, k)로 정의된다. 여기서 Pk는 프로그램과 백엔드 식별자, Ak는 연관된 자산(이미지 소재), Zk는 공간 구성과 시간적 동역학, Ck는 프롬프트·사용자 요구사항·현재 생성 계획을 담는다. 편집은 Sk+1 = E(Sk, ak) 로 검증 후 커밋되며, 렌더링은 별도 함수 Ib(t) = Rb(Sk, t; ω)로 상태 갱신과 분리되어 평가된다 — 즉 이미지는 특정 시점에서의 평가, 비디오는 동일 표현의 시간적 전개를 샘플링한 결과이다.</p>
+<p>TGP(Traceable Generation Process)는 각 생성 연산을 τj = (oj, xj, yj, k⁻j, k⁺j)로 기록해, 어떤 편집 연산이 어떤 소스/결과 리비전과 연결되는지 추적 가능하게 한다. 이를 통해 특정 시각적 불일치를 유발한 프로그램 변경이나 리비전을 역추적할 수 있다. REV(Revision-aware Editing and Verification)는 각 요구사항 hi에 대해 리뷰 qi=(ki, Ei, vi) (평가된 리비전, 증거, pass/fail/uncertain 판정)를 관리하며, 완료 가능 조건 Ready(Sk)는 "내보내기 검증 통과 ∧ 모든 체크포인트 통과 ∧ 모든 필수 요구사항이 현재 리비전에서 pass"로 엄격히 정의되어, 매 커밋 이후 계획만 바뀌었더라도 현재 리비전을 다시 검토·재승인하도록 강제한다. 과거 리비전으로의 복원(restoration) 역시 새로운 리비전으로 커밋되어 전체 이력이 보존된다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>MaLiang-IBench(이미지 50과제)에서 DeepSeek·Kimi·GPT 계열 11개 모델을, MaLiang-VBench(비디오 13과제)에서 4개 모델을 평가했으며, GPT-6-Sol을 품질 판정자로 사용해 정렬(prompt alignment)·미학(aesthetics)·구성(composition)·(비디오의 경우) 모션 일관성을 5점 척도로 채점했다.
+- GPT-6-Astra는 두 벤치마크 모두에서 생성 성공률 100%를 달성했으며, 이미지 과제의 96.0%, 비디오 과제의 76.9%에서 모든 품질 기준을 충족(같은 조건에서 GPT-5.6-Sol은 각각 86.0%, 38.5%)
+- DeepSeek·Kimi 계열은 생성 성공률이 12~40%에 그쳐 GPT 계열과 큰 격차를 보임
+- 일반 능력 점수(AA Intelligence Index)와 시각 생성 품질 통과율의 상관계수는 ρ=0.65(11개 모델 기준)에 불과했으며, 동일한 AA 점수(37점)를 가진 GPT-5.6-Luna와 GPT-6-Luna의 품질 통과율이 각각 44%, 88%로 최대 44%p 차이를 보여 일반 벤치마크가 시각 생성 능력을 충분히 예측하지 못함을 확인
+- 추가로 path-tracing 렌더링 백엔드를 통합한 포토리얼리즘 시도, 하이퍼리얼리즘에서 영감을 받은 브러시워크 정교화 시도, 6패널 연구용 그림(research figure)의 구성 과정 추적 사례 등을 정성적으로 제시</p>
+<h2>한계점</h2>
+<p>논문이 스스로 언급한 한계는 다음과 같다.
+- 포토리얼리즘 달성에는 한계가 있으며, 정교한 브러시워크만으로는 형태·음영·질감의 조화로운 재현을 완전히 달성하지 못함(일부 영역에서는 오히려 디테일이 손실됨)
+- 추론 정체(reasoning stagnation), 의미적 교착상태(semantic livelock), 무한 에이전틱 루프(infinite agentic loop) 등 정제(refinement)가 멈추거나 진전 없이 반복되는 실패 모드가 존재하며, 하니스 메커니즘 자체가 효과적인 수정을 보장하지는 않음
+- MLLM의 검증 판정은 자가평가(self-assessment)에 불과하며 독립적인 지각 품질 측정이 아님
+- 모델별 비용/시간 측정 방식(배치·재시도·과거 실행 이력 혼합 등)이 상이해 직접적인 효율 비교에 제약이 있음
+- 비디오 품질 평가는 단일 평가자가 수행했으며 공식적으로 블라인드 처리되지 않음</p>
+<h2>시사점</h2>
+<p>diffusion/flow 기반 직접 합성과 구분되는 "프로그래머블" 시각 생성 경로가 MLLM의 코드 생성·추론 능력 발전과 함께 실용적 대안이 될 수 있음을 보이며, 특히 명시적 제어·편집 가능성·생성 과정 추적 가능성이 요구되는 응용(포스터, 인포그래픽, 연구용 그림, 레이아웃 정밀 제어 등)에 강점이 있음을 시사한다. 동시에 일반 벤치마크 점수만으로는 시각 프로그램 생성 능력을 예측할 수 없음을 보여, 향후 MLLM 평가에 시각 생성 전용 벤치마크가 필요함을 제기한다. 더 풍부한 렌더링 백엔드 통합과 진행 인지형(progress-aware) 정제 전략이 향후 과제로 제시된다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.34309" target="_blank" rel="noopener">huggingface.co/papers/2609.34309</a> · 2026-10-01</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

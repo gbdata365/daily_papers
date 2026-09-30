@@ -1,0 +1,118 @@
+<meta charset="UTF-8">
+<title>먼저 생각하고 점수를 매겨라</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#10 · Daily Papers 2026-10-01</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 74</span>
+    </div>
+    <h1 class="article-title">Think Before You Score: Thinking Reward Model for Visual Generation</h1>
+    <p class="article-title-ko">먼저 생각하고 점수를 매겨라: 비주얼 생성을 위한 사고형 보상모델</p>
+    <p class="article-sub">이미지 생성·편집 결과를 평가할 때 "무엇을 평가할지"를 사례별로 먼저 정한 뒤 "얼마나 잘했는지"를 채점하는 "Think Before You Score" 패러다임을 제안하고, 이를 구현한 생성형 보상모델 TRM과 점수 양극화를 막는 강화학습 기법 PD-GRPO를 통해 오픈소스 대비 최고 수준의 보상모델링 성능을 달성했다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.37372" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.37372" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Think Before You Score: Thinking Reward Model for Visual Generation</li>
+<li><strong>저자</strong>: 항저우전자과기대(HDU), 중국과학원 자동화연구소(CASIA), 베이징대(PKU), SenseTime, 푸단대(FDU), 서북공업대(NWPU), 난양이공대(NTU), 칭화대(THU) 소속 연구진</li>
+<li><strong>출처</strong>: arXiv:2609.37372v1 [cs.CV] (2026년 9월 29일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://bxhsort.github.io/Thinking-Reward-Model/">Thinking Reward Model</a> (Huggingface: https://huggingface.co/collections/asdjghh/thinking-reward-model)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.37372">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>이미지 생성·편집 결과를 평가할 때 "무엇을 평가할지"를 사례별로 먼저 정한 뒤 "얼마나 잘했는지"를 채점하는 "Think Before You Score" 패러다임을 제안하고, 이를 구현한 생성형 보상모델 TRM과 점수 양극화를 막는 강화학습 기법 PD-GRPO를 통해 오픈소스 대비 최고 수준의 보상모델링 성능을 달성했다.</p>
+<h2>배경 및 문제의식</h2>
+<p>비주얼 생성 모델을 인간 선호에 맞게 정렬하기 위한 강화학습(RL)에서는 보상모델이 핵심 역할을 한다. 그러나 기존 시각 보상모델들은 과제 조건과 후보 출력을 곧바로 스칼라 점수로 매핑하기 때문에, "이 사례에서 구체적으로 무엇을 평가해야 하는가"가 암묵적으로 남아 있었다. 최근 일부 연구가 점수화 이전에 추론(reasoning)을 추가했지만, 시각 평가는 과제와 사례마다 요구되는 기준과 실패 양상이 다름에도 불구하고 여전히 고정된 평가 기준에 의존하는 한계가 있었다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>Think Before You Score 패러다임 제안</strong>: 사례마다 평가 기준(rubric)을 먼저 결정한 뒤 점수를 매기는 시각 보상모델링 원칙을 제시.</li>
+<li><strong>Thinking Reward Model(TRM) 개발</strong>: 사례 적응형 루브릭 생성 → 루브릭 기반 평가 → 세부 항목 통합 판단 → 최종 포인트와이즈 점수 산출의 구조화된 평가 과정(R→J→H→s)을 학습.</li>
+<li><strong>대규모 통합 데이터셋 구축</strong>: 이미지 생성 약 2만 건, 이미지 편집 약 2.8만 건 규모의 사례를 2단계(인간-AI 협업) 주석 과정을 통해 루브릭·기준별 판단·점수로 라벨링.</li>
+<li><strong>PD-GRPO(Pairwise Dual-Group Relative Policy Optimization) 제안</strong>: 기존 Bradley-Terry식 쌍대 선호 최적화가 초래하는 "점수 양극화(score polarization)" 문제를 분석하고, 그룹 평균 대비 상대적 분리만 요구하는 방식으로 이를 완화.</li>
+<li><strong>광범위한 실험을 통한 검증</strong>: 이미지 생성·편집 보상모델링 벤치마크에서 오픈소스 최고 성능, 나아가 TRM을 보상으로 한 RL이 다양한 생성모델의 품질을 일관되게 향상시킴을 입증.</li>
+</ul>
+<h2>방법론</h2>
+<p>TRM은 x=(c,o) (과제 조건 c와 후보 출력 o)를 입력받아, 평가를 R(사례 적응형 루브릭)→J(루브릭별 Yes/No 판단)→H(차원별 통합 평가)→s(최종 포인트와이즈 보상)의 4단계로 구조화한다. 이미지 생성과 편집 모두 "Prompt Alignment"(지시 이행)와 "Visual Quality"(기술적 품질)를 공유 차원으로 삼고, 세 번째 차원은 과제별로 생성에는 "Aesthetics", 편집에는 "Source Consistency"를 사용한다. 각 차원 내에서 원자적(atomic)이고 사례에 맞는 루브릭을 생성한 뒤 Yes/No로 검증한다.</p>
+<p>학습은 2단계로 이루어진다. 1) Cold-start SFT: 루브릭 생성, 루브릭 기반 채점, 통합 평가라는 세 가지 학습 포맷을 한 번에 학습해 전체 R→J→H→s 과정을 익힌다(모델명 TRM(SFT), Qwen3.5-9B 기반). 2) PD-GRPO: SFT 모델에서 만든 선호 쌍(난이도별로 쉬움/중간/어려움 약 4천 쌍)에 대해, 선호 후보군 G+와 비선호 후보군 G-의 그룹 평균 점수(μ+, μ-)를 기준으로 각 롤아웃이 margin m 이상 분리되면 보상 1, 아니면 0을 주는 방식(dual-group)으로 쌍대 선호를 반영하되, margin을 넘으면 더 이상 추가 보상을 주지 않아 점수 양극화를 방지한다. 정책 최적화는 2N개 응답 전체에 대한 그룹 상대 이점(advantage)으로 수행한다. 두 후보는 보상 계산 시에만 상호작용하며, 추론 시에는 독립적으로 평가되므로 포인트와이즈 인터페이스가 유지된다.</p>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li><strong>보상모델링</strong>: 이미지 생성은 GenAI-T2I, MMRB2-T2I 벤치마크, 이미지 편집은 EditScore-ERB, MMRB2, EditReward-ERB, EditReward-Compass 벤치마크에서 GPT-4.1/Gemini 계열, Qwen 계열, HPSv3/UnifiedReward/RationalRewards/EditScore/FIRM-Reward 등과 비교. TRM(RL, 9B)은 GenAI-T2I/MMRB2-T2I에서 71.2%/67.9%(SFT 대비 +1.1/+2.1pt)를 기록해 GPT-4.1(60.5/65.8)을 능가했고, 편집에서도 EditScore-72B보다 적은 9B 파라미터로 전 지표에서 앞섰다.</li>
+<li><strong>RL 유도 생성 성능</strong>: TRM을 보상으로 FlowGRPO 기반 RL을 수행한 결과, 이미지 생성에서 BAGEL·FLUX.1-dev·SD3.5-M이 GenEval, DPG-Bench, TIIF-Short/Long 전반에서 향상(예: FLUX.1-dev는 TIIF-Short/Long에서 각각 +6.76/+6.56pt). 이미지 편집에서도 Flux2-Klein(4B/9B), BAGEL, Flux-Kontext, SenseNova-U1.5 등 다양한 모델이 ImgEdit, GEdit-Bench(EN/CN)에서 일관되게 개선(BAGEL은 ImgEdit 3.37→3.91).</li>
+<li><strong>어블레이션</strong>: 동일 BAGEL 백본에서 AlphaGRPO 대비 TIIF-Short/Long +2.98/+3.33pt 우위. SenseNova-U1.5에서 EditScore-72B(8배 큰 파라미터) 대비 TRM(9B)이 비슷하거나 소폭 우수한 성능을 보이면서도, 학습 중 그룹 내 보상 분산 감소 폭이 더 작아(300스텝에서 14.9% vs 50.5%) 더 풍부한 학습 신호를 유지함을 확인.</li>
+</ul>
+<h2>한계점</h2>
+<p>논문에 명시되지 않음 (본문에서 별도의 한계 섹션은 제시되지 않았으며, 결론에서는 성과 위주로 서술됨).</p>
+<h2>시사점</h2>
+<p>"무엇을 평가할지"를 명시적으로 정하는 사고 과정을 보상모델에 도입함으로써, 단순 스칼라 회귀나 고정 기준 방식보다 세밀하고 해석 가능한 평가가 가능함을 보여준다. 또한 쌍대 선호 학습에서 발생하기 쉬운 점수 양극화 문제를 다룬 PD-GRPO는 포인트와이즈 보상모델 일반에 적용될 수 있는 방법론적 기여로, 향후 비디오 생성(T2V, TI2V) 등 다른 생성 과제로의 확장 가능성도 시사된다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.37372" target="_blank" rel="noopener">huggingface.co/papers/2609.37372</a> · 2026-10-01</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

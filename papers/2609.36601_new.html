@@ -1,0 +1,114 @@
+<meta charset="UTF-8">
+<title>사키</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#11 · Daily Papers 2026-10-01</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 73</span>
+    </div>
+    <h1 class="article-title">SAKI: Maximal-Coupling-Routed Teacher Supervision for On-Policy Distillation</h1>
+    <p class="article-title-ko">사키: 최대 결합 기반 교사 지도 라우팅을 통한 온폴리시 증류</p>
+    <p class="article-sub">교사(teacher)-학생(student) 온폴리시 증류(on-policy distillation)에서, 최대 결합(maximal coupling)을 통해 실제로 발생한 "수용/교정(accept/correction)" 이벤트를 활용해 토큰 단위 지도(supervision)를 자동으로 라우팅하는 SAKI를 제안하여, 동일 조건의 teacher-guided 베이스라인(TRB) 대비 수학 추론 벤치마크에서 일관된 성능 향상을 달성했다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.36601" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.36601" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: SAKI: Maximal-Coupling-Routed Teacher Supervision for On-Policy Distillation</li>
+<li><strong>저자</strong>: Meituan, KTH 왕립공과대학교(스웨덴) 소속 연구진</li>
+<li><strong>출처</strong>: arXiv:2609.36601v1 [cs.AI] (2026년 9월 29일)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.36601">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>교사(teacher)-학생(student) 온폴리시 증류(on-policy distillation)에서, 최대 결합(maximal coupling)을 통해 실제로 발생한 "수용/교정(accept/correction)" 이벤트를 활용해 토큰 단위 지도(supervision)를 자동으로 라우팅하는 SAKI를 제안하여, 동일 조건의 teacher-guided 베이스라인(TRB) 대비 수학 추론 벤치마크에서 일관된 성능 향상을 달성했다.</p>
+<h2>배경 및 문제의식</h2>
+<p>온폴리시 증류(OPD)는 학생 모델이 스스로 생성한 궤적(trajectory)에 대해 교사의 지도를 받음으로써 학습-추론 시 상태 분포 불일치 문제를 완화한다. 그러나 학생이 교사보다 훨씬 약할 경우, 초기 실수가 누적되어 교사가 거의 생성하지 않을 법한 낮은 확률의 프리픽스(prefix)로 롤아웃이 흘러가고, 교사는 이런 비정상적 상태에서도 억지로 지도 신호를 제공해야 한다. 선행 연구인 Trust-Region Behavior Blending(TRB)은 학생 중심 KL 신뢰영역(trust region) 안에서 교사 쪽으로 이동한 중간 행동 분포를 만들어 롤아웃 위치 문제를 완화했지만, 여전히 모든 위치에 동일한 역-KL(reverse-KL) 목적함수를 적용해 "어디서 지도할지"만 다루고 "어떻게 지도할지"는 그대로 두는 한계가 있었다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>커플링 기반 교사-모드 지도 라우팅</strong>: 최대 결합에서 실제로 발생하는 교정(correction) 이벤트를 내생적(endogenous) 라우터로 재사용하여, 수용된 위치에는 역-KL 지도를, 교정된 위치에는 교사의 최상위(Top-1) 토큰에 대한 직접 지도를 적용.</li>
+<li><strong>최소 개입 교사 유도 롤아웃</strong>: TRB의 행동 정책을 최대 결합으로 실현함으로써, 교정 확률이 정확히 TV(p_t, q_t)(전체 변동 거리)가 되도록 하고 이는 신뢰영역 반경에 의해 √(ϵ/2) 이하로 상한이 설정됨을 이론적으로 보임.</li>
+<li><strong>엔진 상주형(engine-resident) exact-q 롤아웃 구현</strong>: 추측적(speculative) 블록 검증을 통해 정확한 q 분포와 커플링 의미를 유지하면서 매칭 워크로드 기준 4.22배의 롤아웃 처리량 향상을 달성.</li>
+<li><strong>다각도 검증</strong>: 배치(placement) 대조실험(무작위 배치, TV-가중 배치와 비교)과 고정 프리픽스 분석을 통해 커플링 기반 라우팅이 단순 예산(개수) 매칭보다 효과적이고, 학생-교사 불일치가 클수록 이점이 커짐을 실증.</li>
+</ul>
+<h2>방법론</h2>
+<p>SAKI는 프리픽스 h_t에서 학생 분포 p_t와 교사 분포 T_t를 기하 보간(geometric interpolation)하여 q_β,t(v) ∝ p_t(v)^(1-β)·T_t(v)^β 형태의 유도 정책(TRB의 방식을 계승)을 구성하고, 학생 중심 제약 D_KL(q‖p)≤ϵ을 만족하는 가장 큰 β를 선택한다. 이 q_t를 정확히 샘플링하기 위해 최대 결합을 사용한다: 학생이 먼저 z_t~p_t를 제안하고, 확률 min(1, q_t(z_t)/p_t(z_t))로 수용(C_t=0)하거나, 거부 시 잔차 분포 r_t(v)∝[q_t(v)-p_t(v)]+에서 교정 토큰을 추출(C_t=1)한다. 이때 Pr(C_t=1)=TV(p_t,q_t)가 성립함을 증명한다(Proposition 1, 2).</p>
+<p>지도 신호 라우팅: 수용된 위치(C_t=0)에서는 기존 샘플링 토큰 기반 역-KL 손실(L_RKL)을 유지하고, 교정된 위치(C_t=1)에서는 교사의 최고 확률 토큰 v<em>_t=argmax_v T_t(v)에 대한 음의 로그우도(L_TM=-logπ_θ(v</em>_t|h_t))로 전환한다. 즉 잔차 교정 토큰이 다음 프리픽스를 결정하고, 교사 모드(mode)가 파라미터 업데이트를 결정하는 이원적 구조를 취한다. 이 손실을 조합한 전체 목적함수는 L=(1/N_valid)[Σ_t M_t(1-C_t)L_RKL,t + Σ_t M_t C_t L_TM,t]이며, 학습 후반부에는 ϵ를 0으로 어닐링해 최종적으로 순수 학생 롤아웃 RKL 학습으로 수렴하도록 설계했다.</p>
+<p>효율성을 위해, 엔진 내부에서 학생이 K=8개 토큰을 초안(draft)으로 제안하면 교사가 이를 한 번의 배치 검증으로 평가하고, 최초 거부(first rejection) 지점까지 수용된 프리픽스를 커밋한 뒤 그 지점에서 정확한 잔차 교정을 샘플링하고 이후 추측 상태를 폐기한다. 이 방식이 순차적 exact-q 샘플링과 동일한 분포를 보장함을 증명(Proposition 3)했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Qwen3-4B-Base를 GRPO로 학습한 교사(DAPO-Math-17K 데이터)로부터 Qwen3-0.6B-Base와 Qwen3-1.7B-Base 학생을 증류했다. 동일 프로토콜(200스텝, 프롬프트 배치 64×8 응답)하에서 OPD, ExOPD, SKD, TRB와 비교했다. MATH-500, HMMT-Feb26, AIME 2026/2025, AMC 2023, Minerva Math, OlympiadBench 등 7개 수학 벤치마크에서 평가한 결과, SAKI는 두 학생 크기 모두에서 최고의 Mean@8/Pass@8을 기록했다: TRB 대비 1.7B 학생은 27.9/44.6→29.0/47.5(+1.1/+2.9pt), 0.6B 학생은 17.2/33.6→18.4/35.6(+1.2/+2.0pt). SKD 대비로는 더 큰 폭(+4.5~+6.3pt)의 개선을 보였다.</p>
+<p>배치 대조실험에서, 동일 예산의 무작위 배치(Random-TM, 29.0/47.5 대비 28.3/45.5)와 TV-가중 배치(TV-Weighted-TM, 28.24/46.77)보다 SAKI의 실제 커플링 교정 기반 배치가 더 우수했다. 고정 프리픽스 분석에서는 교정 트리거 지도가 교사 Top-1/Top-16 토큰에 대한 학생 확률을 학습 종료 시점(200스텝)까지도 TRB 대비 각각 +4.26pp/+2.94pp 지속적으로 높게 유지시켰으며, 초기 학생-교사 불일치가 클수록(4분위 중 Q4) 이점이 커졌다(Q4-Q1 대비 +1.07~+1.28pp). 엔진 상주형 구현은 외부 루프 방식(776 tok/s) 대비 3,276 tok/s로 4.22배의 처리량을 달성했다.</p>
+<h2>한계점</h2>
+<p>논문에 명시된 한계는 별도 섹션으로 제시되지 않았으나, 방법론적으로는 다음이 언급된다: 교정 지도는 학습 중 ϵ를 0으로 어닐링하여 일시적(transient)으로만 적용되며, 학습 후반에는 순수 역-KL 학습으로 복귀하도록 설계되었다는 점, 그리고 구현이 토큰 단위 정확한 결합을 요구하기 때문에 서로 다른 종료 토큰 규칙을 가진 모델 간(base-to-base가 아닌 조합) 적용에는 제약이 있을 수 있다는 점(논문은 이를 피하기 위해 base-to-base 교사-학생 쌍만 사용).</p>
+<h2>시사점</h2>
+<p>SAKI는 "어디서 교사 지도를 줄 것인가"라는 배치(behavior-side) 문제와 "어떻게 지도할 것인가"라는 목적함수(objective-side) 문제를 최대 결합이라는 단일한 확률적 메커니즘으로 통합해 풀었다는 점에서, 온폴리시 증류 연구에 새로운 설계 축을 제시한다. 실제 발생한 확률적 이벤트(교정)를 지도 라우팅 신호로 재활용하는 아이디어는 다른 distillation·정책 최적화 세팅에도 일반화될 수 있으며, 엔진 상주형 추측적 실행을 통한 효율화는 대규모 온폴리시 증류의 실용성을 높이는 방향을 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.36601" target="_blank" rel="noopener">huggingface.co/papers/2609.36601</a> · 2026-10-01</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

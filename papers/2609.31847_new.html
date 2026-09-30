@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>옴니-IO 스킬</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#5 · Daily Papers 2026-10-01</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 154</span>
+    </div>
+    <h1 class="article-title">Omni-IO Skills: Harnessing Your Agent Omni-Native</h1>
+    <p class="article-title-ko">옴니-IO 스킬: 에이전트를 옴니 네이티브로 만들기</p>
+    <p class="article-sub">기존 범용 에이전트(예: Claude Code, Codex)의 추론 핵심은 그대로 둔 채, 계층적 Skill과 의존성 인식 오케스트레이션, 영속적 Asset Registry를 결합한 플러그앤플레이 하니스 "Omni-IO Skills"를 통해 텍스트·이미지·비디오·오디오·문서·3D·코드 등 7개 모달리티를 아우르는 옴니 네이티브 에이전트로 전환시키는 시스템을 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.31847" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.31847" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Omni-IO Skills: Harnessing Your Agent Omni-Native</li>
+<li><strong>저자</strong>: 싱가포르국립대학교(National University of Singapore), 옥스퍼드대학교(University of Oxford) 소속 연구진 (Yanlin Li 외 5인)</li>
+<li><strong>출처</strong>: arXiv:2609.31847v1 [cs.CL] (2026년 9월 25일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/any2any-mllm/Omni-IO-Skill">GitHub 코드 저장소</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.31847">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>기존 범용 에이전트(예: Claude Code, Codex)의 추론 핵심은 그대로 둔 채, 계층적 Skill과 의존성 인식 오케스트레이션, 영속적 Asset Registry를 결합한 플러그앤플레이 하니스 "Omni-IO Skills"를 통해 텍스트·이미지·비디오·오디오·문서·3D·코드 등 7개 모달리티를 아우르는 옴니 네이티브 에이전트로 전환시키는 시스템을 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>실제 업무는 단일 모달리티에 머물지 않고 텍스트, 이미지, 오디오, 비디오, 문서, 3D 자산, 코드가 뒤섞인 형태로 요청과 산출물이 오간다. 옴니 기반모델을 통합 아키텍처로 확장하는 방법은 새로운 모달리티가 추가될 때마다 비용이 큰 모델 재학습이 필요하다는 한계가 있고, 반대로 전문 모델·도구를 단순히 조합하는 방식은 절차, 의존관계, 중간 산출물, 턴 간 수정 사항을 어떻게 조율할지에 대한 해법이 없었다. Codex, Claude Code 같은 범용 에이전트는 강력한 계획·추론·코드 실행 능력을 갖췄지만 실제 production 범위는 여전히 소프트웨어·지식 작업에 집중되어 있어, 오디오·비디오·3D·전문 문서 등은 외부 역량과 명시적 오케스트레이션에 의존해야 한다. 이 논문은 "호스트 에이전트의 추론 핵심을 바꾸지 않으면서 플러그앤플레이 하니스만으로 옴니 네이티브화할 수 있는가"라는 질문에서 출발한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>호스트 모델 재학습 없이 범용 에이전트를 옴니 네이티브 시스템으로 확장하는 "Omni-modal Agent Harness" 개념을 정식화</li>
+<li>Atomic·Expert·Scenario 3단계 계층적 Skill, 표준화된 멀티모달 실행 인터페이스(MCP Tool Service), 공급자/설정 계층, 영속적 Asset Registry를 하나의 확장 가능한 아키텍처로 통합한 Omni-IO Skills 구현</li>
+<li>이해·생성·추론·검색 4개 역량군, 7개 아티팩트 모달리티, 27개 Skill, 38개 대표 과제를 아우르는 애플리케이션 지향 시스템 구축</li>
+<li>서로 다른 두 호스트 에이전트(GPT-5.6 Sol, Claude Sonnet 5)에서 모달리티 커버리지, 의미 품질, 인터리브 일관성, 구조적 완성도 전반에서 일관된 성능 향상을 실증</li>
+</ul>
+<h2>방법론</h2>
+<p>시스템은 4계층 아키텍처로 구성된다. (1) Skill Entry 계층은 사용자 요청을 해석해 Atomic(단일 실행 가능한 최소 단위, 예: 이미지 생성), Expert(포스터 디자인처럼 하나의 최종 산출물을 위한 완전한 전문 제작 워크플로우), Scenario(소셜미디어 게시물 등 특정 응용 맥락에서 여러 연관 산출물을 조율) 세 등급의 Skill을 선택·재귀적으로 전개한다. 각 Skill은 s = ⟨c_s, I_s, P_s, O_s, H_s⟩(적용조건, 입력, 절차, 출력, 관계) 형태의 선언적 표현을 공유한다. (2) MCP Tool Service 계층은 이해/생성/유틸리티 세 그룹의 외부 도구를 표준 계약으로 매핑하며, 코드·마크다운처럼 외부 서비스가 필요 없는 작업은 호스트 에이전트가 직접 수행한다. (3) Provider and Configuration 계층은 시맨틱 역량(예: '이미지 생성')을 OpenAI, Google Gemini, Alibaba, Tripo3D, ElevenLabs 등 구체적 공급자·모델·자격증명·기본 파라미터·폴백 정책에 바인딩한다. (4) Asset Registry 계층은 모든 산출물을 a = ⟨asset_id, type, subtype, path, description, params, turn_id, source_asset_id⟩로 기록하는 append-only JSON 레지스트리로, 물리적 경로와 독립적인 참조를 제공해 턴을 넘나드는 재사용과 버전 추적을 가능케 한다. 런타임에서는 선택된 Skill들이 전개되어 Declare Execution Graph(DEG)를 구성하고, 구조 검증 후 의존관계가 없는 노드들이 동일 Wave로 묶여 동시 실행되며(wave scheduling), 실패한 노드의 후속 노드만 취소되고 독립 브랜치는 계속 실행된다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>UniM 벤치마크에서 텍스트·이미지·오디오·비디오·문서·코드·3D를 포괄하는 90개 인스턴스를 선별한 UniM-90 벤치마크로 평가했다. GPT-5.6 Sol과 Claude Sonnet 5를 Base Agent(내장 기능만 사용)와 Agent+Omni-IO Skills 두 조건으로 비교했다. 주요 지표는 입력 지원률(τ), Semantic–Quality Coupled Score(SQCS), Interleaved Coherence Score(ICS), Strict/Lenient Structure Score(StS/LeS)이다. 결과: 입력 지원률이 두 에이전트 모두 40.00%, 38.89%에서 100%로 상승했다. 전체 테스트셋 기준 상대 SQCS는 GPT-5.6 Sol에서 26.99→74.94(+47.95점), Claude Sonnet 5에서 27.82→77.78(+49.96점)로 증가했으며, Strict Structure Score는 각각 100.00, 99.78에 도달했다. 지원 가능한 부분집합만 놓고 본 절대 SQCS(Base Agent 67.49/71.53)보다도 Omni-IO Skills 적용 후 전체 셋 기준 절대 SQCS(74.94/77.78)가 더 높아, 모달리티 커버리지 확장과 동시에 품질도 향상됨을 보였다. 아트 튜토리얼 생성, 제품 프로모션(포스터·홍보영상·랜딩페이지 동시 제작) 등 사례 연구를 통해 Skill 간 협업과 아티팩트 일관성 유지를 정성적으로도 검증했다.</p>
+<h2>한계점</h2>
+<p>논문에 명시되지 않음 (본문에서 별도의 "한계점" 절을 찾지 못했으며, 저자들은 대신 현재 구현이 19개 Atomic, 2개 Expert, 6개 Scenario Skill로 구성된 초기 범위임을 밝히고 있어 확장성이 향후 과제로 남아있음을 암시한다).</p>
+<h2>시사점</h2>
+<p>이 연구는 기반모델 자체를 재학습하지 않고도 하니스 계층에서의 역량 조합(harness-level capability composition)만으로 실용적인 옴니 시스템을 구축할 수 있음을 보여준다. 이는 특정 모델·공급자에 종속되지 않고 절차·공급자·자산을 독립적으로 확장 가능하게 유지하면서, 멀티턴 프로덕션 워크플로우에서 이종 미디어를 조율하고 재사용 가능한 산출물을 다루는 에이전트를 위한 응용 지향적 토대를 제공한다. Skill 세트 확장, 더 많은 호스트 에이전트에 대한 적용, 실패 복구·품질 검증 메커니즘의 고도화 등이 자연스러운 후속 연구 방향이 될 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.31847" target="_blank" rel="noopener">huggingface.co/papers/2609.31847</a> · 2026-10-01</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

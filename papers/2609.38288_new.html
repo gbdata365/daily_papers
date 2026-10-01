@@ -1,0 +1,127 @@
+<meta charset="UTF-8">
+<title>AREX-2</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#4 · Daily Papers 2026-10-02</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 115</span>
+    </div>
+    <h1 class="article-title">AREX-2: Advancing Self-Improving Agents through Long-Horizon Reflective Tasks</h1>
+    <p class="article-title-ko">AREX-2: 장기 성찰 과제를 통한 자기개선 에이전트 고도화</p>
+    <p class="article-sub">테스트 시점에 라운드를 거듭할수록 스스로 해법을 개선하는 "자기개선(self-improving)" LLM 에이전트를 만들기 위해, 머신러닝 엔지니어링과 알고리즘 프로그래밍처럼 검증 가능한 도메인에서 장시간(수 시간, 수백 턴) 걸친 "성찰-개선" 궤적 데이터를 합성·학습시킨 AREX-2(Qwen3.8-27B 기반, 27B)가 MLE-bench Lite·Frontier-CS는 물론 딥리서치 벤치마크(BrowseComp, HLE, GAIA, DeepSearchQA)에서도 더 큰 모델들과 대등하거나 더 나은 성능을 보였다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.38288" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.38288" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: AREX-2: Advancing Self-Improving Agents through Long-Horizon Reflective Tasks</li>
+<li><strong>저자</strong>: AREX Team (Beijing Academy of Artificial Intelligence, BAAI) — 핵심 저자 Hongjin Qian, Chaofan Li, Kun Luo, Wenqing Wei, Jianlyu Chen, Zheng Liu(프로젝트 리더) 등</li>
+<li><strong>출처</strong>: arXiv:2609.38288v1 [cs.AI] (2026년 9월 29일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/VectorSpaceLab/AREX-2">GitHub (AREX-2)</a>, <a href="https://huggingface.co/collections/BAAI/arex-2">HuggingFace 모델 모음</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.38288">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>테스트 시점에 라운드를 거듭할수록 스스로 해법을 개선하는 "자기개선(self-improving)" LLM 에이전트를 만들기 위해, 머신러닝 엔지니어링과 알고리즘 프로그래밍처럼 검증 가능한 도메인에서 장시간(수 시간, 수백 턴) 걸친 "성찰-개선" 궤적 데이터를 합성·학습시킨 AREX-2(Qwen3.8-27B 기반, 27B)가 MLE-bench Lite·Frontier-CS는 물론 딥리서치 벤치마크(BrowseComp, HLE, GAIA, DeepSearchQA)에서도 더 큰 모델들과 대등하거나 더 나은 성능을 보였다.</p>
+<h2>배경 및 문제의식</h2>
+<p>어려운 문제는 한 번의 시도로 풀리지 않고, 시도-측정-수정을 반복하는 루프를 통해 해결된다. 그러나 기존 에이전트 시스템들은 이 루프를 모델이 아니라 외부 스캐폴드(언제 재시도할지, 무엇을 남길지를 결정하는 하네스)가 담당하고, 모델은 매번 한 번의 시도만 생성하도록 요청받는다. 저자들은 "자기개선"을 "더 많은 라운드가 주어졌을 때 에이전트가 스스로의 판단으로 더 나은 해를 만들어내는 능력"으로 정의하고, 이를 테스트 시점 스케일링(test-time scaling)의 한 형태로 본다.</p>
+<p>자기개선을 가능하게 하는 두 요소는 (1) 현재 해와 피드백으로부터 더 나은 해를 만드는 "성찰(reflection)"과 (2) 여러 라운드에 걸쳐 유용한 발견을 유지하고 실패에서 회복하며 과정을 지속시키는 "장기 실행(long-horizon execution)"이다. 그러나 현재 에이전트 학습 데이터는 "하나의 과제 → 하나의 해 → 통과/실패 판정"식으로 수집되어, 중간 시도·피드백·수정 과정이 모두 버려진다. 특히 바로 통과하는 쉬운 해가 수집에 유리하기 때문에, 장시간에 걸친 개선 과정을 보여주는 궤적은 학습 데이터에 거의 존재하지 않는다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>자기개선을 "성찰"과 "장기 실행"이라는 두 상보적 능력으로 공식화하고, 기대 개선량을 라운드별 기대 이득의 합으로 수식화하였다(Equation 1-5).</li>
+<li>장기 성찰(long-horizon reflection)이 특정 도메인에 국한되지 않는 메타 스킬이라는 가설을 세우고, 검증 가능한 피드백이 명확하고 장시간 개선 여지가 크며 소스가 풍부한 두 도메인(머신러닝 엔지니어링, 알고리즘 프로그래밍)에서 학습 데이터를 합성하였다.</li>
+<li>개별 라운드가 아니라 궤적 전체 단위로 데이터를 선별(최종 점수가 높고 과정이 요건을 만족하면 채택)함으로써, 실패·회귀·포기한 시도까지 학습 데이터에 남겨 모델이 "실패 후 회복하는 법"을 배우도록 설계하였다.</li>
+<li>이렇게 학습된 AREX-2(27B)가 학습 도메인(MLE, 코딩)뿐 아니라 전혀 새로운 데이터를 추가하지 않은 딥리서치 도메인으로도 능력이 전이됨을 실증하였다.</li>
+</ol>
+<h2>방법론</h2>
+<p><strong>환경 구성</strong>: GitHub 저장소(머신러닝 과제)와 온라인 저지(알고리즘 문제)라는 두 원천에서, 교사 모델(teacher model)이 과제 정의(σ)와 채점 함수(S)로 구성된 실행 가능 환경을 생성한다. GitHub 저장소의 경우 교사 모델이 코드를 읽고 측정 지표를 파악해 과제·채점 스크립트·샌드박스를 작성하며, 저지 문제의 경우 문제 자체가 과제가 되고 히든 테스트 통과율 등 점수화된(binary가 아닌 graded) 점수를 사용한다. 환경은 (1) 참조 해(레퍼런스 모델/정답 제출물)가 실제로 점수를 받는지, (2) 단순 베이스라인이 참조 해보다 충분히 낮은 점수를 받는지(=개선 여지가 있는지) 두 조건을 실행으로 검증해 통과한 것만 채택한다.</p>
+<p><strong>궤적 구성</strong>: 교사 에이전트가 한 과제당 통상적인 한 번의 시도보다 훨씬 큰 예산(수 시간, 수백 번의 툴 호출)을 부여받아 작업하며, 이 예산을 알고 있는 상태에서 베이스라인 확립→측정→수정의 패턴을 보이도록 유도한다. 에이전트는 작업 중 저장소 문서를 읽거나 관련 논문·라이브러리를 검색하고 소규모 실험을 돌리며 "운영 지식(operational knowledge)"을 습득하는데, 이 중 일부는 사전에 준비된 범용 스킬과 과제별 검색으로 만든 스킬 문서 형태로 에이전트 컨텍스트에 제공된다. 각 라운드는 제출→점수/피드백 수신→다음 가설 수립으로 이어지며, 점수가 떨어지는 라운드도 궤적에서 제거하지 않는다.</p>
+<p><strong>학습</strong>: 궤적은 (1) 최종 점수가 기준 이상이고 (2) 포맷·규칙을 준수하는지로 전체 단위 선별되며, 개별 라운드의 성공 여부는 선별 기준이 아니다. 손실(loss)은 궤적 전체를 컨텍스트로 유지한 채, "진전을 만드는 결정"(실패 진단, 복구, 전략 변경, 다음 실험 실행, 개선된 해 제출)에만 적용되고, 진전 없는 반복적 폴링이나 중복 턴, 시스템 메시지·환경 리포트 등에는 손실을 적용하지 않는다. 이렇게 선별된 궤적을 이전 AREX 레시피의 딥리서치 데이터(변경 없이 그대로 사용)와 결합해 Qwen3.8-27B를 파인튜닝하여 AREX-2를 얻는다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>6개 벤치마크(Frontier-CS, MLE-bench Lite, BrowseComp, HLE, GAIA, DeepSearchQA)로 평가하였다.</p>
+<ul>
+<li><strong>학습 도메인 성능</strong>: MLE-bench Lite에서 Any Medal 81.8점으로 비교 대상 중 최고(가장 강한 베이스라인 대비 +8.1, 최강 비공개 모델 대비 +9.1), Frontier-CS에서 70.7점으로 공개 가중치 모델 중 최고(+16.0), 비공개 최강 모델과는 5.7점 차이.</li>
+<li><strong>도메인 전이(딥리서치)</strong>: 새로운 검색 관련 학습 데이터를 전혀 추가하지 않았음에도 BrowseComp 84.0, HLE(텍스트 전용) 52.6, GAIA 92.2, DeepSearchQA 93.8을 기록하며, 40B 이하 소형 모델 중 BrowseComp·HLE·DeepSearchQA에서 선두, GAIA는 XYZ-Aquila-mini 등 일부 모델에만 뒤짐. 이전 레시피로 학습한 AREX(4B), AREX(122B) 대비 4개 벤치마크 전부에서 우위를 보여, 두 학습 도메인에서 익힌 "장기 성찰" 능력이 전혀 다른 도메인으로 전이됨을 시사.</li>
+<li><strong>라운드(예산) 스케일링 — 피드백 있음</strong>: Frontier-CS 188문제에 5시간 예산을 주고 측정한 결과, AREX-2는 1시간 후 54.4점에서 5시간 후 70.7점까지 꾸준히 상승했고, 비교 모델(DeepSeek-V4-Pro, DeepSeek-V4-Flash 등)은 2~3시간 만에 성능이 정체됨.</li>
+<li><strong>라운드 스케일링 — 피드백 없음</strong>: 정답 여부를 전혀 알려주지 않는 BrowseComp에서도, 평균 턴 수를 47→143으로 늘리자 정확도가 64.8→84.0으로 상승(체감 수익 존재). 같은 조건의 이전 모델 AREX(122B)보다 턴당 이득이 약 3배 크고, 파라미터 수는 4분의 1 이하(27B vs 122B).</li>
+<li><strong>단계별 소거 실험(MLE-bench Lite)</strong>: 베이스 모델(스킬 없음) 28.8 → 범용 스킬 추가 41.2 → 과제별 스킬+더 많은 라운드 68.2(이상은 학습 없이 스킬/예산만으로 달성) → 학습된 AREX-2는 동일 스킬·동일 라운드에서 75.8, 더 많은 라운드를 주면 81.8까지 상승. 즉 운영 지식(스킬), 학습(파인튜닝), 큰 예산이 각각 독립적으로 성능에 기여함을 확인.</li>
+</ul>
+<h2>한계점</h2>
+<ul>
+<li>BrowseComp와 HLE의 최상위(비공개) 모델들과는 여전히 격차가 존재한다고 논문이 직접 명시.</li>
+<li>학습 데이터 구성 도메인이 머신러닝 엔지니어링과 알고리즘 프로그래밍 두 가지로 한정되어 있어, 더 넓은 도메인으로 확장될 때의 일반화 가능성은 추가 검증이 필요.</li>
+<li>결론부에서 저자들은 향후 과제로 "학습 도메인 확장, 호라이즌(라운드 수) 연장, 모델이 생성한 궤적을 스스로의 다음 학습 데이터로 삼아 루프를 닫는 것"을 제시하고 있어, 현재 버전은 완전한 폐루프(closed-loop) 자기개선은 아님을 암시.</li>
+<li>환경 구성과 궤적 생성에 교사 모델(teacher model)이 필요하며, 이 교사 모델의 품질·편향이 결과 데이터 품질에 영향을 줄 수 있으나 이에 대한 구체적 분석은 논문에 명시되지 않음.</li>
+</ul>
+<h2>시사점</h2>
+<p>이 연구는 "에이전트의 자기개선 능력"을 스캐폴드(외부 제어 로직)가 아니라 모델 자체의 가중치에 내재화할 수 있음을 보여준다. 핵심은 검증 가능한 피드백이 있는 도메인(머신러닝 실험, 알고리즘 문제)에서 장시간의 "성찰-개선" 궤적을 합성하고, 실패와 회복까지 포함한 궤적 전체를 학습 신호로 사용하는 전략이 특정 도메인을 넘어 전혀 다른 과제(딥리서치)로도 전이된다는 점이다. 이는 향후 에이전트 학습 데이터 구축에서 "정답으로 가는 깨끗한 경로"보다 "실패를 포함한 장기 개선 과정" 자체를 보존하고 학습 대상으로 삼는 방향이 중요할 수 있음을 시사하며, 작은 모델(27B)로도 스킬 제공과 장기 학습을 결합하면 훨씬 큰 모델과 경쟁할 수 있다는 실용적 함의도 제공한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.38288" target="_blank" rel="noopener">huggingface.co/papers/2609.38288</a> · 2026-10-02</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

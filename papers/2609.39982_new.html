@@ -1,0 +1,127 @@
+<meta charset="UTF-8">
+<title>미드하니스</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#5 · Daily Papers 2026-10-02</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 96</span>
+    </div>
+    <h1 class="article-title">Mid-Harness: Scaling Actions Between Model and Harness for Terminal Agents</h1>
+    <p class="article-title-ko">미드하니스: 터미널 에이전트를 위한 모델-하니스 간 행동 스케일링</p>
+    <p class="article-sub">터미널 에이전트가 행동(명령어)을 실행하기 전에 여러 후보를 샘플링하고 검증기로 걸러내는 "Mid-Harness"라는 중간 계층을 도입해, 모델과 실행 하니스를 전혀 바꾸지 않고도 작업 성공률을 크게 끌어올릴 수 있음을 보인 연구.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.39982" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.39982" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Mid-Harness: Scaling Actions Between Model and Harness for Terminal Agents</li>
+<li><strong>저자</strong>: Minki Kang, Ryo Hachiuma, Shaokun Zhang, Subhashree Radhakrishnan, Yonggan Fu, Jindong Jiang, Mingjie Liu, Ehsan Hosseini-Asl, Yi Dong, Yu-Chiang Frank Wang, Byung-Kwan Lee (NVIDIA, KAIST 소속)</li>
+<li><strong>출처</strong>: arXiv:2609.39982v1 [cs.CL] (2026년 9월 30일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음 (본문에 "프로젝트 페이지 있음"이라고만 언급되고 실제 URL은 기재되어 있지 않음)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.39982">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>터미널 에이전트가 행동(명령어)을 실행하기 전에 여러 후보를 샘플링하고 검증기로 걸러내는 "Mid-Harness"라는 중간 계층을 도입해, 모델과 실행 하니스를 전혀 바꾸지 않고도 작업 성공률을 크게 끌어올릴 수 있음을 보인 연구.</p>
+<h2>배경 및 문제의식</h2>
+<p>터미널 에이전트는 소프트웨어 개발, 데이터 과학, 과학적 발견 등에서 긴 호흡의(long-horizon) 명령어 시퀀스를 실행하며 작업을 수행한다. 문제는 각 단계에서 생성되는 행동이 확률적이라는 점이다. 동일한 모델과 하니스로도 어떤 실행에서는 성공하고 어떤 실행에서는 실패할 수 있는데, 이는 한 번의 잘못된 명령(예: 잘못된 패키지 설치, 잘못된 코드 수정)이 환경 상태를 되돌릴 수 없게 바꿔버려서 이후의 모든 진행을 방해하기 때문이다. 설령 모델이 더 나은 대안을 생성할 능력이 있었다 해도, 한 번 잘못된 행동이 실행되고 나면 그 기회는 사라진다. 저자들은 이러한 "행동 신뢰성(action reliability)" 문제를 체계적으로 연구하기 위해, 행동을 실행하기 직전 단계(모델과 하니스의 경계)에 추가 연산을 투입하는 것이 트라젝토리 성공률을 높이는지, 그리고 그 효과를 결정하는 요인이 무엇인지 질문한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>검증이 행동 샘플링의 효과를 좌우한다는 것을 입증</strong>: 같은 생성 모델(TMAX-9B)로 후보 수를 늘려도 검증기가 약하면 성능 향상이 미미하지만, 강력한 검증기(GPT-5.6 Sol)를 쓰면 같은 생성기에서도 훨씬 더 많은 성공적인 트라젝토리를 뽑아낼 수 있음을 보였다.</li>
+<li><strong>검증 메커니즘과 학습(distillation)으로 격차를 일부 회복</strong>: 평가한 listwise/pointwise/pairwise 세 가지 방식 중 pairwise(쌍대 비교) 검증이 가장 우수했고, 강한 검증기(teacher)의 pairwise 응답을 생성 모델 기반 검증기에 distillation하면 생성기를 바꾸지 않고도 성공률이 추가로 향상됨을 보였다.</li>
+<li><strong>Mid-Harness라는 실험 틀 자체를 제시</strong>: 생성기와 하니스를 고정한 채 행동 수준의 연산 확장(후보 폭, 검증 방식, 검증기 능력)을 체계적으로 연구할 수 있는 방법론을 정립하고, 이것이 기존의 트라젝토리 수준 확장(병렬/순차)과 결합 가능함을 보였다.</li>
+</ul>
+<h2>방법론</h2>
+<p>Mid-Harness는 에이전트 루프(model-call wrapper) 안에 후보 샘플링과 검증 단계를 삽입하는 방식으로, 기존 하니스 루프 자체는 전혀 수정하지 않는다. 매 스텝마다 동일한 상호작용 히스토리를 조건으로 생성기 π에서 N개의 후보 행동을 샘플링한 뒤, 검증기 ψ가 그중 하나를 선택해 하니스로 전달하고, 선택되지 않은 후보들은 버려진다. 검증 메커니즘은 세 가지를 비교했다.
+- <strong>Listwise</strong>: 검증기가 전체 후보 집합을 한 번에 보고 하나를 선택 (호출 1회로 저렴하지만 후보가 많아지면 한 번에 비교/정렬하기 어려움).
+- <strong>Pointwise</strong>: 각 후보에 독립적으로 점수를 매겨 최고 점수를 선택 (병렬화 가능하지만 서로 다른 목적의 행동들을 하나의 척도로 비교하기 어려움).
+- <strong>Pairwise</strong>: 두 후보씩 비교하여 승률 기반으로 순위를 매김 (비교 기준이 명확하지만 호출 수가 많아짐; 후보 8개면 28회 비교 필요).
+또한 self-verification(생성기와 검증기가 동일 모델) 설정에서, 강한 교사 검증기(GPT-5.6 Sol)로부터 수집한 11.7만 개의 pairwise 응답(732개 트라젝토리, 244개 난이도 높은 TMAX-15k 과제)을 이용해 LoRA로 검증기만 파인튜닝(distillation)하는 실험도 수행했다. 추론 비용은 병렬 실행을 가정한 출력 토큰 수(POT)와 검증기 전체 출력 토큰 수로 측정했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>주요 실험은 TerminalBench-Lite 벤치마크에서 TMAX-9B 생성기(Qwen3.5-9B를 Vanillux2 하니스 상에서 강화학습한 모델)를 고정하고 진행했으며, Pass@1(3회 실행 평균 성공률)과 Pass@3(3회 중 1회 이상 성공)을 지표로 사용했다.
+- 강한 검증기(GPT-5.6 Sol)를 쓰면 N=8일 때 Pass@1이 기본 에이전트 50.00%에서 68.03%로 상승, 이는 생성기가 이미 유용한 대안을 만들어내고 있음을 시사.
+- Self-verification(동일 모델이 검증)에서는 약한 listwise 검증기로 N을 4→8로 늘려도 Pass@1이 49.32%→51.02%에 그치는 반면, pairwise 검증은 N=8에서 54.76%(Pass@3 71.43%)로 가장 우수.
+- Pairwise 검증기를 교사 응답으로 distillation하면 Pass@1이 54.76%→57.14%, Pass@3이 71.43%→75.51%로 추가 상승.
+- 비용 측면에서 pairwise 검증은 상당한 디코딩 비용을 추가하며(N=8에서 검증기 출력 토큰 약 125.7k), reasoning 없이 A/B 선택만 하는 "decision-only" 방식은 TMAX-9B 규모에서는 비용을 20~24% 줄이면서도 Pass@1이 오히려 향상됨.
+- 오프라인 분석에서 distillation은 교사 검증기와의 pairwise 일치율을 59.01%→74.58%, 최종 후보 선택(top-rank) 일치율을 38.52%→57.79%로 높였으나, "명령어 의미 판단"과 "실행 가능성 판단" 영역에서는 여전히 상당한 불일치가 남아 있음(불일치 사례의 67.4% 차지).
+- 트라젝토리 수준 확장(Best-of-T, Sequential Refine, SR)과 결합 시: Best-of-T(T=3)에 distilled Mid-Harness를 결합하면 Pass@1이 55.10%→66.33%로 11.23%p 상승(환경 실행 횟수는 동일하게 3회). SR(R=1)과 결합 시 55.10%→60.20%로 상승. 또한 distilled Mid-Harness(N=8) 단독으로도 Best-of-T(T=5)와 비슷한 성능을 약 1/3의 추정 토큰 비용으로 달성.
+- 4B~27B 규모 모델, Terminal-Bench 2.1, SWE-bench-Verified, FeatureBench-Mini 등 다양한 벤치마크·모델·하니스(Terminus-2, Vanillux2 등)에서도 일관되게 성능 향상이 재현됨. 특히 FeatureBench-Mini에서는 기본 에이전트 성공률이 1.45%에 불과했는데 distillation된 Mid-Harness 적용 시 7.25%까지 상승.</p>
+<h2>한계점</h2>
+<ul>
+<li>Distillation을 거쳐도 프론티어(교사) 검증기와의 성능 격차가 상당히 남아 있으며, 특히 트라젝토리 후반부(턴이 진행될수록)로 갈수록 검증기 간 일치도가 떨어진다. 이는 강화학습 기반 검증기 학습 등 더 나은 학습 방법이 필요함을 시사한다.</li>
+<li>행동(후보) 수준의 정답 라벨(gold action label)이 없어, 검증의 정확성이나 후보 커버리지를 직접적으로 측정하지 못하고 강한 검증기를 대리 지표로 간접 평가했다.</li>
+<li>Pairwise 검증은 비교 횟수가 후보 수에 따라 조합적으로 증가해 디코딩 비용이 크며, Best-of-T·SR 같은 트라젝토리 수준 방법은 상태 직렬화가 어려운 실제 환경에서는 적용이 까다롭다.</li>
+<li>저자들은 윤리 성명에서, 행동 신뢰성 향상이 명령어 자체의 안전성·보안성을 보장하지 않으므로 권한 제한, 환경 격리, 민감하거나 되돌릴 수 없는 행동에 대한 사람의 승인 등 별도의 안전장치가 여전히 필요하다고 명시했다.</li>
+</ul>
+<h2>시사점</h2>
+<p>이 연구는 테스트타임 연산 확장의 새로운 축으로 "행동(action) 수준 스케일링"을 제시한다. 기존에는 주로 완결된 트라젝토리 전체를 여러 번 생성해 비교하는 방식(Best-of-T, Sequential Refine)이 주목받았지만, 실행 직전 단계에서 후보 행동을 비교·검증하는 것이 더 적은 환경 실행 횟수로도 비슷하거나 더 큰 효과를 낼 수 있고, 두 축을 결합하면 비용 대비 성능이 더욱 개선된다는 점을 보였다. 특히 검증 메커니즘(특히 pairwise)의 설계와 검증기 자체의 능력(강한 교사 모델로부터의 distillation)이 후보 다양성을 실제 성공률로 전환하는 핵심 요인이라는 점은, 향후 에이전트 설계에서 "더 많이 생성하기"보다 "잘 거르기"에 투자하는 것이 효율적일 수 있음을 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.39982" target="_blank" rel="noopener">huggingface.co/papers/2609.39982</a> · 2026-10-02</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

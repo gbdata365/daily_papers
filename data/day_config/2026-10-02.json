@@ -1,0 +1,110 @@
+{
+  "2609.34563": {
+    "base": "2609_리얼브이알_잠재-시각-추론-시각적-증거-접지",
+    "rank": "#1",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "200",
+    "en_title": "Rethinking Latent Visual Reasoning: Grounding Latent Reasoning in Visual Evidence",
+    "ko_title": "잠재 시각 추론 재고: 시각적 증거에 잠재 추론을 접지하기"
+  },
+  "2609.38721": {
+    "base": "2609_유니에보VL_온폴리시-자기증류-멀티모달-자기개선",
+    "rank": "#2",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "187",
+    "en_title": "UniEvo-VL: An On-policy Self-Distillation Training Recipe for Multimodal Model Self-improvement",
+    "ko_title": "유니에보VL: 멀티모달 모델 자기개선을 위한 온폴리시 자기증류 훈련법"
+  },
+  "2609.39102": {
+    "base": "2609_크로스핏_자가진화-검색-에이전트-공모치팅-진단과-완화",
+    "rank": "#3",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "180",
+    "en_title": "False Frontiers: Diagnosing and Mitigating Co-Cheating in Self-Evolving Search Agents",
+    "ko_title": "거짓 프런티어: 자가진화 검색 에이전트의 공모 치팅(Co-Cheating) 진단과 완화"
+  },
+  "2609.38288": {
+    "base": "2609_아렉스2_장기-성찰-과제-기반-자기개선-에이전트",
+    "rank": "#4",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "115",
+    "en_title": "AREX-2: Advancing Self-Improving Agents through Long-Horizon Reflective Tasks",
+    "ko_title": "AREX-2: 장기 성찰 과제를 통한 자기개선 에이전트 고도화"
+  },
+  "2609.39982": {
+    "base": "2609_미드하니스_터미널-에이전트-행동-검증-스케일링",
+    "rank": "#5",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "96",
+    "en_title": "Mid-Harness: Scaling Actions Between Model and Harness for Terminal Agents",
+    "ko_title": "미드하니스: 터미널 에이전트를 위한 모델-하니스 간 행동 스케일링"
+  },
+  "2609.40340": {
+    "base": "2609_에보듀엣_웹검색-과제해결-이중레벨-공진화",
+    "rank": "#6",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "92",
+    "en_title": "EvoDuet: Bilevel Co-Evolution of Web Searching and Task Solving for Scientific Discovery",
+    "ko_title": "웹 검색과 과제 해결의 이중 레벨 공진화를 통한 과학적 발견"
+  },
+  "2609.40325": {
+    "base": "2609_월드오딧벤치_3D-월드-이상-탐지-벤치마크",
+    "rank": "#7",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "90",
+    "en_title": "WorldAuditBench: Interactive 3D World Auditing with Multimodal Agents",
+    "ko_title": "월드오딧벤치: 멀티모달 에이전트를 이용한 인터랙티브 3D 월드 이상 탐지(감사)"
+  },
+  "2609.38143": {
+    "base": "2609_메타스킬_에이전트-하네스-설계-메타스킬-학습",
+    "rank": "#8",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "71",
+    "en_title": "Learning Meta-Skills for Agent Harness Design in Test-Time AI4AI",
+    "ko_title": "테스트타임 AI4AI를 위한 에이전트 하네스 설계 메타스킬 학습"
+  },
+  "2609.38334": {
+    "base": "2609_이보크_세계지식-유도-전이가능한-에이전트-의사결정",
+    "rank": "#9",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "63",
+    "en_title": "EVOKE: Eliciting World Knowledge in Agents for Transferable Decision-Making",
+    "ko_title": "이보크: 전이 가능한 의사결정을 위해 에이전트의 세계 지식을 이끌어내기"
+  },
+  "2609.39578": {
+    "base": "2609_박스투벤치_외부-가이드-선택적-신뢰-평가",
+    "rank": "#10",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "60",
+    "en_title": "Thinking Outside the Box: Can Language Models Rely on External Guidance Selectively?",
+    "ko_title": "박스 바깥에서 생각하기: 언어모델은 외부 가이드를 선택적으로 신뢰할 수 있는가?"
+  },
+  "2609.39045": {
+    "base": "2609_알시게임_재귀적-자기개선-자율-게임-개발-에이전트",
+    "rank": "#11",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "60",
+    "en_title": "RSIGame: Autonomous Agentic Game Development with Recursive Self-improvement",
+    "ko_title": "RSIGame: 재귀적 자기개선을 통한 자율 에이전트형 게임 개발"
+  },
+  "2609.38177": {
+    "base": "2609_이매진3D_답변-전에-3D-장면부터-상상하기",
+    "rank": "#12",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "53",
+    "en_title": "Imagine3D-LLM: Teaching MLLMs to Imagine 3D Scenes Before Answering",
+    "ko_title": "이매진3D-LLM: 답변하기 전에 MLLM이 3D 장면을 상상하도록 가르치기"
+  }
+}

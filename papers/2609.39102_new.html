@@ -1,0 +1,128 @@
+<meta charset="UTF-8">
+<title>거짓 프런티어</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#3 · Daily Papers 2026-10-02</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 180</span>
+    </div>
+    <h1 class="article-title">False Frontiers: Diagnosing and Mitigating Co-Cheating in Self-Evolving Search Agents</h1>
+    <p class="article-title-ko">거짓 프런티어: 자가진화 검색 에이전트의 공모 치팅(Co-Cheating) 진단과 완화</p>
+    <p class="article-sub">질문 생성자(proposer)와 답변자(solver)가 서로 학습 데이터를 주고받으며 스스로 진화하는 검색 에이전트 시스템에서, 둘이 같은 오답에 암묵적으로 "합의"해버리는 공모 치팅(co-cheating) 현상을 정량적으로 진단하고, 피드백을 제공하는 평가자를 출처(source) 단위로 분리 학습시키는 CrossFit 기법으로 이를 크게 줄여 다운스트림 검색 성능을 끌어올린 연구.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.39102" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.39102" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: False Frontiers: Diagnosing and Mitigating Co-Cheating in Self-Evolving Search Agents</li>
+<li><strong>저자</strong>: Meijia Chen, Hao Li, Zheng Lu 등 15인 공동 저자 (Rutgers University, Independent Researcher, UC San Diego, University of Michigan, McGill University, King Fahd University of Petroleum and Minerals 소속; 1~3저자 동등 기여, Tianyu Shi·Alaa Khamis 교신저자)</li>
+<li><strong>출처</strong>: arXiv:2609.39102v1 [cs.CL] (2026년 9월 30일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.39102">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>질문 생성자(proposer)와 답변자(solver)가 서로 학습 데이터를 주고받으며 스스로 진화하는 검색 에이전트 시스템에서, 둘이 같은 오답에 암묵적으로 "합의"해버리는 공모 치팅(co-cheating) 현상을 정량적으로 진단하고, 피드백을 제공하는 평가자를 출처(source) 단위로 분리 학습시키는 CrossFit 기법으로 이를 크게 줄여 다운스트림 검색 성능을 끌어올린 연구.</p>
+<h2>배경 및 문제의식</h2>
+<p>검색 보조 언어모델은 보통 사람이 만든 질문-정답 데이터로 학습되지만, 최근에는 외부 데이터 없이 모델 스스로 소스 문서로부터 질문과 가짜 정답(pseudo-label)을 만들고, 그 질문으로 풀이자(solver)를 학습시키며, 풀이자의 정답률을 거꾸로 질문 생성자(proposer)의 보상으로 사용하는 "자가진화(self-evolving)" 루프가 등장했다(대표적으로 Dr. Zero). 저자들은 이 폐쇄 루프에서 proposer와 solver가 동일한 모델 계열을 공유하기 때문에, 틀린 가짜 정답이 solver를 학습시키고 그 solver가 같은 소스에서 나온 다음 질문에서 다시 같은 오류를 재생산하면, 이 "일치"가 실제로는 틀렸음에도 보상 신호로는 점수가 올라가는 역설이 생길 수 있다고 지적한다. 저자들은 이를 "false agreement"(겉보기 일치율은 오르지만 실제 정답률은 정체되거나 하락하는 현상)로 정의하고, 이 문제가 라운드를 거듭할수록 심해짐을 사후 감사(post-hoc audit)로 확인한다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>Dr. Zero 루프를 학습에는 전혀 관여하지 않는 독립 감사자(gpt-6-astra/high가 원문 근거를 바탕으로 정답을 재구성해 채점)로 추적하여, 학습 라운드가 진행될수록 "in-loop 합의율"은 오르지만 "실제 정답 일치율(false-agreement mass)"도 함께 증가하는 co-cheating 현상을 처음으로 정량 측정·보고함.</li>
+<li>1차 완화책으로 Multi-Sample Verification(MSV)을 제안: 동일 모델에 소스를 보여준 3회 답변과 보여주지 않은 3회 답변을 뽑아 다수결이 서로 일치할 때만 과제를 채택. 이는 라벨 품질은 개선하지만 공모 치팅 자체는 크게 줄이지 못함을 보임.</li>
+<li>주된 방법인 CrossFit을 제안: proposer가 쓰는 소스 문서를 두 그룹(fold A, B)으로 나누고, A에서 만든 질문은 B로만 학습된 보조 solver가 채점하고 반대로 B에서 만든 질문은 A로만 학습된 보조 solver가 채점하게 하여, 피드백을 주는 평가자가 자신이 평가하는 질문의 출처 데이터를 학습한 적이 없도록 구조적으로 차단함(본 학습용 메인 solver는 그대로 모든 채택된 질문으로 학습).</li>
+<li>Qwen3.5-4B/9B에서 전체 자가진화 루프를 재현해 false-agreement mass, 7개 검색 벤치마크 성능, 그리고 고정 리플레이·대조군 실험을 통해 "같은 평가자 구조를 둬도 같은 출처 데이터를 쓰면 효과가 없고, 출처 단위 분리(source-level split)가 핵심"임을 메커니즘 수준에서 입증함.</li>
+</ol>
+<h2>방법론</h2>
+<ul>
+<li><strong>진단(Audit) 프로토콜</strong>: 학습 중 매 스텝마다 소스 문서, 채택된 가짜 정답, proposer 보상에 쓰인 solver의 5개 응답을 저장하고, 학습에는 관여하지 않는 외부 LLM 심사자가 원문 근거 기반 정답을 재구성해 채점. 이를 통해 라벨 정답률(T_P), solver 정답률(T_S), 루프가 관측하는 일치율(A), 같은 오답에 동의한 비율인 false-agreement mass(F), 정답인데도 오답 라벨 때문에 보상을 못 받은 lost-credit mass(L)를 각각 측정.</li>
+<li><strong>MSV</strong>: 소스를 보여준 답변 3개(source-aware)와 보여주지 않은 답변 3개(source-blind)를 같은 모델에서 샘플링해, 각각 다수결로 합의된 답이 나오고 두 합의가 서로 일치할 때만 그 질문-정답 쌍을 학습에 채택. 불일치하면 기각.</li>
+<li><strong>CrossFit</strong>: 소스 문서를 fold 0/1로 한 번 고정 분할(질문 단위가 아니라 문서 단위로 분할해 같은 문서에서 파생된 질문들이 양쪽 fold에 걸치지 않게 함). 각 라운드마다 보조 solver 2개를 각각 한쪽 fold로만 학습시키고, 반대쪽 fold에서 나온 새 질문은 상대 fold로 학습된 보조 solver가 채점해 proposer 보상(원래의 frontier reward 함수 f(k)=(5-k)/4는 그대로 유지)을 산출. 즉 피드백의 "출처(provenance)"만 바꾸고 보상 함수 자체는 바꾸지 않음. 메인 solver는 fold 구분 없이 모든 채택된 질문으로 계속 학습됨.</li>
+<li>MSV와 CrossFit은 서로 다른 지점(라벨 채택 시점 vs. 피드백 평가자 선택 시점)에 작용하므로 결합도 가능.</li>
+</ul>
+<h2>실험 설정 및 결과</h2>
+<p>Qwen3.5-4B, Qwen3.5-9B를 백본으로 Dr. Zero와 동일한 3라운드(라운드당 proposer 18스텝, solver 25스텝) 스케줄로 자가진화를 재실행. 평가는 Natural Questions, TriviaQA, PopQA, HotpotQA, 2WikiMultiHopQA, MuSiQue, Bamboogle 등 7개 벤치마크에서 총 1,325개 고정 질문 세트로 Cover-EM을 측정.</p>
+<ul>
+<li>false-agreement mass: 표준(Dr. Zero) 루프에서 4B 6.1%, 9B 8.8%까지 상승. MSV는 각각 5.7%, 7.2%로 소폭 감소. CrossFit은 3.0%, 3.7%로 큰 폭 감소. 동일 제안(proposal)을 출처 배제 피드백으로 재생(replay)하면 0.4%, 0.1%까지 더 낮아져, "커리큘럼 자체의 변화"가 아니라 "피드백 출처 차단"이 효과의 원인임을 분리 확인.</li>
+<li>다운스트림 평균 Cover-EM: CrossFit은 Dr. Zero 대비 4B에서 +8.8점, 9B에서 +8.4점, Search-R1 대비 각각 +8.7점, +7.8점 향상(4B 48.8%, 9B 51.2%). 특히 멀티홉 질문(HotpotQA, 2WikiMQA, MuSiQue, Bamboogle)에서 개선폭이 더 큼. MSV는 Dr. Zero 대비 0.7~0.8점 개선에 그쳐 단독으로는 효과가 제한적이며, MSV+CrossFit 결합도 CrossFit 단독보다 0.3점 정도만 추가 개선.</li>
+<li>메커니즘 분석(어블레이션): 보조 solver를 두되 같은 출처 데이터로 학습시키거나(같은 소스 보조), 전체 데이터로 학습시키거나, 질문 단위로 무작위 분할하는 대조군들은 false agreement를 거의 줄이지 못함. 오직 "출처 문서 단위 분할(source-ID split)"만이 false agreement를 0.4%대까지 낮추고 고정 리플레이 뱅크에서의 정답률도 크게 끌어올림 — 즉 평가자를 분리한 것 자체가 아니라 "출처 계보(ancestry) 차단"이 핵심 원인.</li>
+<li>비용: MSV는 질문당 6회의 추가 생성이 필요해 Dr. Zero 대비 예산을 약 90% 증가시키고 심사 요청 수는 거의 5배로 늘어남. CrossFit은 보조 solver 업데이트가 추가되어 예산이 약 72~79% 증가(보조 업데이트 수를 절반으로 줄여도 효과는 거의 유지되며 이 경우 증가폭은 36~40%).</li>
+</ul>
+<h2>한계점</h2>
+<ul>
+<li>CrossFit은 "누가 피드백을 주는가"만 바꿀 뿐 "무엇이 참인지"를 보장하는 오라클이 아니며, 사전학습에서 공유된 오류, 서로 겹치는 웹 근거, 의미적으로 연관된 소스들로 인한 상관된 오류까지는 막지 못함.</li>
+<li>false-agreement mass 감소가 단순히 어려운 과제를 더 많이 기각한 결과일 수도 있어, 커버리지·과제 난이도·고정 프로브 성능·다운스트림 성능을 함께 봐야 함.</li>
+<li>연결되거나 서로 연관된 출처 문서들로의 확장, 그리고 end-to-end 비용 효율성 검증은 아직 이루어지지 않음(저자들이 향후 과제로 명시).</li>
+<li>MSV와 CrossFit 모두 추가 연산 비용(생성 횟수, 보조 solver 학습)이 상당히 크며, 외부 감사에 사용된 LLM 심사자(gpt-6-astra/high)의 GPU 사용량은 비용 계산에 포함되지 않음.</li>
+</ul>
+<h2>시사점</h2>
+<p>자기 생성 커리큘럼으로 학습하는 자가진화형 에이전트에서는 "내부 보상이 오르는 것"과 "실제로 맞는 것"이 분리될 수 있다는 점을 체계적으로 보여주며, 이를 막으려면 가짜 라벨의 정확성뿐 아니라 그 라벨을 평가하는 평가자(solver)가 어떤 데이터로 학습되었는지(훈련 이력/출처 계보)까지 함께 감사해야 한다는 설계 원칙을 제시한다. 단순 검증(MSV)보다 피드백 제공자의 데이터 계보를 구조적으로 분리하는 것(CrossFit)이 self-play/self-evolution 기반 RL 시스템 전반에 적용 가능한 더 근본적인 해법이 될 수 있음을 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.39102" target="_blank" rel="noopener">huggingface.co/papers/2609.39102</a> · 2026-10-02</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

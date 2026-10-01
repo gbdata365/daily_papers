@@ -1,0 +1,116 @@
+<meta charset="UTF-8">
+<title>RSIGame</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#11 · Daily Papers 2026-10-02</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 60</span>
+    </div>
+    <h1 class="article-title">RSIGame: Autonomous Agentic Game Development with Recursive Self-improvement</h1>
+    <p class="article-title-ko">RSIGame: 재귀적 자기개선을 통한 자율 에이전트형 게임 개발</p>
+    <p class="article-sub">LLM 에이전트가 게임을 생성한 뒤, 로컬(탐색-진단-개선) 루프와 글로벌(품질 모니터링) 루프를 결합해 재귀적으로 자기개선하고, 그 개발 경험을 생성 모델 자체에 파인튜닝으로 내재화함으로써 작은 오픈소스 모델이 훨씬 강력한 모델과 맞먹거나 능가하는 게임을 만들 수 있게 하는 자율 게임 개발 프레임워크 RSIGame을 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.39045" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.39045" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: RSIGame: Autonomous Agentic Game Development with Recursive Self-improvement</li>
+<li><strong>저자</strong>: Wenyi Wu, Minghao Fu (공동 1저자), Jieyu You, Kun Zhou, Siqi Liu, Aayush Salvi, Yiheng Lin, Ce Zhang, Xiaohan Lan, Jiahui Zhu, Yujie Zhong, Qi She, Biwei Huang (UC San Diego, ByteDance Inc., Carnegie Mellon University; Kun Zhou, Yujie Zhong 교신저자)</li>
+<li><strong>출처</strong>: arXiv:2609.39045v1 [cs.CL] (2026년 9월 30일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://huggingface.co/spaces/RSIGame/rsigame-page">RSIGame 데모 페이지 (Hugging Face Spaces)</a>, 코드: <a href="https://github.com/WenyiWU0111/RSIGame">GitHub</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.39045">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>LLM 에이전트가 게임을 생성한 뒤, 로컬(탐색-진단-개선) 루프와 글로벌(품질 모니터링) 루프를 결합해 재귀적으로 자기개선하고, 그 개발 경험을 생성 모델 자체에 파인튜닝으로 내재화함으로써 작은 오픈소스 모델이 훨씬 강력한 모델과 맞먹거나 능가하는 게임을 만들 수 있게 하는 자율 게임 개발 프레임워크 RSIGame을 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>최근 LLM/VLM의 발전으로 자연어 명세로부터 플레이 가능한 게임을 생성하는 것이 점차 현실화되고 있지만, 생성된 게임을 '일단 작동하는 수준'을 넘어 지속적으로 고품질로 개선하는 일은 여전히 어렵다. 저자들은 단순한 반복적 수정(naive iterative refinement)이 소수의 테스트 케이스에 과적합되어, 버그나 누락된 기능이 남아 있음에도 해당 테스트만 통과하는 '깨지기 쉬운(fragile)' 게임을 만들어내고, 더 넓은 범위의 플레이어 상호작용에는 일반화되지 못한다는 문제를 지적한다. 이는 사람 개발팀에서도 흔히 발생하는 테스트-피드백-수정의 반복 개발 과정을 에이전트 환경에서 재현하되, 단순 반복이 아니라 더 견고한 구조가 필요함을 시사한다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li><strong>로컬 탐색-진단-개선(explore-diagnose-improve) 루프</strong>: 컨트롤러·탐험가(Explorer)가 게임을 폭넓게 탐색해 문제를 찾고, 에디터·검증자(Verifier)가 근거 기반으로 수정하고 검증하는 4개 에이전트 구조. 발견된 이슈와 우선순위를 누적하는 '진화하는 체크리스트(evolving checklist)'를 통해 좁은 테스트 케이스를 넘어서는 개선을 유도한다.</li>
+<li><strong>글로벌 품질 모니터링 및 제어 루프</strong>: 전체 개발 과정에서 품질을 추적하고 가장 좋은 체크포인트를 보존하며, 개선이 정체(saturation)되거나 퇴행(regression)하면 이를 감지한다. 필요 시 사람 또는 더 강한 모델로부터 고수준 가이던스를 받아 새로운 개발 단계를 열 수 있다.</li>
+<li><strong>훈련 기반 경험 내재화</strong>: 테스트타임에 누적된 성공적 개발 경로(생성·계획·개선 궤적)를 지도학습(SFT) 데이터로 변환해 백본 생성 모델(Qwen3.8-27B)에 내재화함으로써, 테스트타임 개선 없이도 더 나은 초기 생성을 가능하게 하고 추후 개선에 필요한 반복 횟수를 줄인다.</li>
+<li>GameCraft-Bench의 140개 과제, 2개 게임 엔진(Godot, Phaser), 5개 생성 모델에 걸친 광범위한 실험으로 효과를 검증했다.</li>
+</ol>
+<h2>방법론</h2>
+<p>RSIGame은 현재 프로젝트 Pt, 게임 명세 x, 체크리스트 Ct, 단계별 가이던스 γs를 입력으로 받아, 컨트롤러가 다음 개발 방향 dt를 정하고 탐험가가 이를 바탕으로 게임과 상호작용해 탐색 궤적 τt를 생성한다. 이어 에디터가 관찰된 증거를 바탕으로 수정안 Δt를 제안해 프로젝트를 Pt+1로 갱신하고, 검증자가 수정이 의도한 문제를 해결했는지(그리고 부작용은 없는지) 평가한다. 이 결과들은 체크리스트를 갱신하는 데 쓰여 다음 라운드 계획에 반영된다.</p>
+<p>글로벌 루프는 일정 라운드 간격(논문 설정 E=3)마다 현재 챔피언 체크포인트와 새 후보를 '같은 데모 집합'으로 리플레이해 비교하는 품질 모니터를 둔다. 벤치마크 평가자의 점수·루브릭과는 완전히 분리된 별도의 대리(proxy) 루브릭을 사용하며, 후보가 현재 단계의 기준에서 일정 폭(0.05) 이상 개선되고 과제 요구사항 기준에서 크게 퇴행하지 않을 때만 챔피언을 교체한다. 연속 K=3회 체크포인트 동안 챔피언 교체가 없으면 '포화'로 간주해 해당 단계를 종료하고, 가이던스가 있으면(사람 또는 Claude Opus 5 같은 상위 모델이 직접 플레이해 작성) 챔피언을 기준으로 새로운 단계를 시작한다. 고수준 가이던스는 구체적 수정 지시가 아니라 "다음 단계가 무엇을 지향해야 하는가"에 대한 전략적 방향성만 제공한다.</p>
+<p>훈련 단계에서는 GPT-5.5의 생성 궤적, 성공적 생성으로부터의 계획 궤적, GLM-5.3-Flash로 RSIGame을 돌려 얻은 검증된 개선 궤적을 수집(최종 2,213개 생성, 2,108개 계획, 2,013개 검증된 개선 라운드를 4,003개 후보에서 선별)하여 Qwen3.8-27B를 지도 미세조정한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>GameCraft-Bench(15개 게임 장르, 140개 과제)를 Godot와 Phaser 두 엔진에 동일하게 구성해 평가했다. 점수는 Mechanics(0.15)·Depth(0.35)·Visuals(0.15)·Art(0.35) 가중합에 플레이 가능 여부(BUILD)를 곱한 값이며, Qwen3.8-27B를 심사자로 삼아 3회 리플레이의 평균을 사용했다. 벤치마크의 숨은 루브릭과 점수는 개발 에이전트에 노출되지 않는다.</p>
+<p>Codex+GPT-5.5, Codex+Kimi-K2.6, Codex+GLM-5.3-Flash, Codex+Qwen3.8-27B(및 SFT 버전), OpenGame+GPT-5.5/Qwen3.8-27B 등 다섯 생성기 조합에서, 동일한 개발 budget(라운드당 최대 26회 툴 호출, 최대 30라운드) 하에 frozen 초기 게임(P0) 및 기존 반복개발 기법 Play2Code와 비교했다. Godot에서 RSIGame은 모든 생성기에서 초기 게임 대비 10.7~20.3점, Play2Code 대비 7.2~13.8점 높은 Overall 점수를 기록했다. 특히 경험 내재화를 적용한 Qwen3.8-27B(SFT)는 Godot에서 61.38점, Phaser에서 58.53점을 달성해 Codex+GPT-5.5의 원샷 점수(각 50.26, 49.44)를 능가하면서도, 원래 Qwen3.8-27B 대비 생성 토큰 사용량을 약 11배 줄였다. Phaser에서도 전 생성기에서 8.8~13.4점의 일관된 개선을 보였다.</p>
+<p>추가 분석에서는 (1) 글로벌 품질 모니터가 없으면 Play2Code처럼 라운드가 늘어나도 성능이 정체·퇴행하지만, 모니터를 두면 개발 budget 전반에 걸쳐 지속적인 개선이 이루어짐(개발 시간 스케일링 안정화), (2) 적응적으로 개발 방향을 바꾸는 방식이 고정된 라운드로빈 방식보다 블라인드 비교에서 59% 대 37%로 선호됨, (3) 에이전트 기반 검증이 사전 검증에서 근거 정밀도를 58.6%→72.3%로 높이고, 사후 검증에서 실패 재현율을 0%(빌드 체크만)에서 76.2%로 끌어올림, (4) 개발 경험 내재화가 원샷 생성 품질을 Mechanics·Depth·Visuals·Art 전 차원에서 향상시켜 Overall +11.1점을 가져옴을 보였다.</p>
+<h2>한계점</h2>
+<p>논문이 명시한 한계는 다음과 같다. 첫째, 고수준 가이던스(사람 또는 상위 모델 개입) 메커니즘은 제한된 수의 멀티스테이지 사례에서만 검증되었으며, 언제·얼마나 가이던스를 투입해야 하는지, 사람과 모델의 가이던스가 어떻게 다른지에 대한 폭넓은 연구는 향후 과제로 남겨두었다. 둘째, 평가는 Mechanics·Depth·Visuals·Art 네 차원에 국한되어 있어, 독창성·서사 품질·장기적 플레이어 몰입도·주관적 재미 같은 상위 수준 속성은 포착하지 못한다. 셋째, 실험은 실용적인 에이전트 budget 내에서 반복 개발이 가능한 비교적 소규모 게임에 집중되어 있으며, 더 큰 규모의 프로젝트·더 긴 개발 호라이즌·더 복잡한 시스템 간 의존성으로의 확장은 다루지 않았다.</p>
+<h2>시사점</h2>
+<p>이 연구는 에이전트 기반 반복 개발에서 성능 향상의 핵심이 '반복 횟수 자체'가 아니라 '개발 과정을 어떻게 구조화하는가'(근거 기반 로컬 개선 + 글로벌 품질 모니터링/정체 감지)에 있음을 실증적으로 보여준다. 또한 테스트타임에서 축적된 자기개선 경험을 파라미터로 내재화(지속적 RSI)함으로써, 작은 오픈소스 모델이 훨씬 비용이 큰 폐쇄형 모델 수준의 품질에 도달하면서도 토큰 효율을 크게 높일 수 있음을 보여, 에이전트형 콘텐츠 생성 전반(게임을 넘어 소프트웨어, 멀티모달 생성 등)에 적용 가능한 재귀적 자기개선 설계 원칙을 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.39045" target="_blank" rel="noopener">huggingface.co/papers/2609.39045</a> · 2026-10-02</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

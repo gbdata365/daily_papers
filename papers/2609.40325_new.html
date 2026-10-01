@@ -1,0 +1,130 @@
+<meta charset="UTF-8">
+<title>월드오딧벤치</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#7 · Daily Papers 2026-10-02</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 90</span>
+    </div>
+    <h1 class="article-title">WorldAuditBench: Interactive 3D World Auditing with Multimodal Agents</h1>
+    <p class="article-title-ko">월드오딧벤치: 멀티모달 에이전트를 이용한 인터랙티브 3D 월드 이상 탐지(감사)</p>
+    <p class="article-sub">떠 있는 물체, 뚫리는 벽, 사라지는 물체 등 인터랙티브 3D 가상 세계 속 결함(anomaly)을 멀티모달 에이전트가 스스로 탐색하고 찾아낼 수 있는지 평가하는 벤치마크 WorldAuditBench를 제안하고, 현재 프론티어 모델들이 사람 대비 크게 뒤처짐을 보인다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.40325" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.40325" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: WorldAuditBench: Interactive 3D World Auditing with Multimodal Agents</li>
+<li><strong>저자</strong>: Ziyan Jiang, Jingbo Yang, Jiabao Ji(공동 1저자), Yujian Liu, Qiucheng Wu, Tommi Jaakkola, Yang Zhang, Shiyu Chang (UC Santa Barbara, MIT CSAIL, MIT-IBM Watson AI Lab)</li>
+<li><strong>출처</strong>: arXiv:2609.40325v1 [cs.AI] (2026년 9월 30일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 "Project Page" 표기만 있고 실제 URL은 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.40325">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>떠 있는 물체, 뚫리는 벽, 사라지는 물체 등 인터랙티브 3D 가상 세계 속 결함(anomaly)을 멀티모달 에이전트가 스스로 탐색하고 찾아낼 수 있는지 평가하는 벤치마크 WorldAuditBench를 제안하고, 현재 프론티어 모델들이 사람 대비 크게 뒤처짐을 보인다.</p>
+<h2>배경 및 문제의식</h2>
+<p>인터랙티브 3D 가상 세계는 임바디드 AI 연구(내비게이션, 조작, 개방형 탐색 등)에서 점점 더 많이 쓰이지만, 겉보기에는 그럴듯해도 물체가 공중에 떠 있거나 벽을 통과할 수 있거나 시야를 벗어났다 돌아오면 사라지는 등의 결함을 품고 있을 수 있다. 이런 결함이 있는 환경에서 에이전트가 과제를 "잘 수행"했다고 해도 그 능력이 실제로 신뢰할 만한지는 불확실하다. 일부 결함은 단순히 한 장면을 보는 것만으로는 드러나지 않고, 물체와 상호작용하거나 시점을 바꾸거나 시간이 지난 뒤 재방문해야만 확인할 수 있다. 저자들은 이를 "월드 감사(world auditing)"라는 과제로 정의하고, 이를 위해서는 환경을 체계적으로 탐색하는 "행동(action)" 능력과 관찰로부터 결함 여부를 판단하는 "시각 추론(visual reasoning)" 능력이 긴밀히 결합되어야 한다고 본다. 기존 벤치마크들은 고정된 영상·이미지에 대한 시각 추론만 평가하거나(Video-MME, GlitchBench 계열) 상호작용형 과제 수행만 평가할 뿐(SimWorld, UnrealZoo, EmbodiedBench 등), 행동과 시각 추론이 서로 맞물려 증거를 수집·해석해야 하는 포괄적인 이상 탐지는 다루지 않았다는 공백이 있다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>Unreal Engine 5와 Three.js로 구축된 13개 환경(27개 세부 장면)에 걸쳐 213개의 단일 이상(anomaly) 탐지 과제로 구성된 WorldAuditBench를 제시. 실내, 도시, 역사, 산업, 자연 등 5개 장르를 포괄.</li>
+<li>정적 물리, 상호작용 물리, 공간 일관성, 시간 일관성, 의미 일관성의 5개 결함 패밀리(세부적으로는 15개 카테고리)로 이루어진 이상 분류 체계를 제안.</li>
+<li>탐색과 분석을 한 에이전트가 동시에 수행하는 "VLM 단독 에이전트" 방식과, VLA 모델이 먼저 탐색하고 VLM이 사후에 궤적을 분석하는 "VLA-VLM 2단계" 방식을 비교하여, 행동과 시각 추론의 결합 방식이 성능에 미치는 영향을 정량적으로 분석.</li>
+<li>시작 위치, 탐색 예산, 과제 힌트(인컨텍스트 예시·이상 유형 힌트) 등을 통제한 추가 실험과, 이상 "노출(exposure)" 여부와 "노출 후 인식" 여부를 분리한 분석을 통해 실패 원인을 세분화.</li>
+</ul>
+<h2>방법론</h2>
+<p>각 과제는 결함이 없는 기본 장면에 저자들이 수작업으로 단 하나의 이상을 주입하여 만들어진다. 장면 수집 → 이상 주입을 통한 과제 구성 → 과제 제작에 참여하지 않은 심사자들의 인간 검증(최소 2명 이상이 'Pass' 판정할 때까지 반복 수정)이라는 3단계로 데이터셋을 구축했다. 각 과제에는 장면 설명, 정답 이상 카테고리, 그리고 정상 상태와 비교한 평가 루브릭이 함께 부여된다(루브릭 자체는 에이전트에게는 공개되지 않음).</p>
+<p>평가 대상 에이전트는 1인칭 RGB 관찰을 입력받아 정해진 행동 예산 안에서 환경을 탐색한 뒤, 발견한 이상과 이를 뒷받침하는 관찰 이미지를 담은 최종 보고서를 제출한다. 두 가지 감사 패러다임을 비교한다.
+1) <strong>VLM 단독 에이전트</strong>: 하나의 멀티모달 LLM이 매 스텝마다 관찰을 바탕으로 추론하여 이동·상호작용·시점 변경 같은 환경 행동을 선택하고, 과거 프레임을 불러오거나 메모를 저장하는 메모리 도구, 이상을 기록·수정하는 보고 도구를 함께 사용한다. 즉 탐색 과정 중에 의심되는 이상을 바탕으로 다음 행동을 조정할 수 있다.
+2) <strong>VLA-VLM 2단계</strong>: 별도의 VLA 모델(Open-P2P 1.2B)이 먼저 정해진 시간(60초) 동안 궤적을 생성하며 탐색을 마치고, 이후 VLM이 고정된 궤적(관찰 모음)만을 보고 사후적으로 이상을 분석·보고한다. 이 경우 분석 결과가 탐색 행동에 피드백될 수 없다는 구조적 차이가 있다.</p>
+<p>두 방식 모두 동일한 VLM 심판(GPT-6 Astra)이 제출된 보고서와 근거를 평가 루브릭에 대조해 성공 여부를 판정하며, 비교를 위해 컴퓨터공학 박사과정 학생 약 10명을 대상으로 한 인간 기준선(과제당 10분)도 함께 측정한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>GPT-6 Astra, Claude Opus 5, Gemini 3.8 Flash, Muse Spark 1.3, Qwen 3.8 Flash 5개 모델을 각각 전용 CLI 하네스(Codex CLI, Claude Code, Gemini CLI, OpenCode, Qwen Code)로 구동하고, MCP(Model Context Protocol) 인터페이스로 탐색·메모리·보고 도구를 노출했다. VLM 단독 에이전트는 40회의 환경 행동 예산을, VLA-VLM은 60초의 탐색 시간(0.5초 간격 관찰)을 기본값으로 사용했다.</p>
+<p>주요 결과는 다음과 같다.
+- VLM 단독 에이전트의 성공률은 8.5%(Qwen)~42.3%(GPT-6 Astra)로, VLA-VLM 2단계(6.6%~17.4%)보다 전반적으로 높았다.
+- 인간 성공률은 83.4%로 모든 모델을 크게 상회했다.
+- 정적 물리·의미 일관성 계열 이상은 한 장면만 봐도 판단 가능해 상대적으로 쉬웠고, 공간·시간 일관성 계열(특히 시간 일관성, 모든 모델에서 12.5% 이하)은 시점·시간에 걸친 비교가 필요해 매우 어려웠다.
+- VLA-VLM은 고정 궤적을 쓰기 때문에 VLM 단독 방식보다 2.7~10.3배 빠르고 비용도 낮지만, 그 대가로 성공률이 크게 떨어지는 trade-off가 관찰됐다.
+- 추가 분석(Gemini 3.8 Flash, Unreal 126개 과제 대상)에서, 시작 위치를 이상에 가깝게 하거나 탐색 예산을 늘리면 성공률이 올라갔고, 과제 힌트 중에서는 인컨텍스트 예시보다 "이상 유형 힌트"를 제거했을 때 성능이 훨씬 크게 떨어졌다(VLM 기준 33.3%→15.9%).
+- 한 장면에 여러 이상을 동시에 넣었을 때, 지정된 "앵커 이상"을 찾는 비율은 유지되었지만, 모든 이상을 다 찾아내는 비율은 2개 이상 조건에서 7.1%, 3개 조건에서 4.8%에 불과해 복수 결함을 동시에 다 포착하는 능력은 매우 제한적이었다.
+- 원인 분석에서 VLM 단독 에이전트는 기하학적 커버리지(91.1% vs 47.4%)와 인간이 평가한 노출률(68.1% vs 34.7%) 모두에서 VLA 탐색자보다 우수했고, 노출이 된 과제에 한정해도 메모리 도구 등을 활용한 인식 성공률 역시 더 높아, 탐색 품질과 증거 활용 능력 양쪽 모두에서 VLM 단독 방식이 유리함을 보였다.</p>
+<h2>한계점</h2>
+<ul>
+<li>VLA 모델이 넓은 3D 환경에서 이상이 위치한 지점까지 충분히 도달하지 못하는 경우가 많아, 2단계 패러다임 전체의 성능을 제약한다.</li>
+<li>VLA-VLM 구조는 고정된 사전 녹화 궤적만 분석하므로, 분석 중 생긴 의심을 바탕으로 재탐색하는 피드백 루프가 원천적으로 불가능하다.</li>
+<li>여러 이상이 동시에 존재하는 상황에서 모든 이상을 빠짐없이 찾아내는 능력은 모든 모델에서 매우 낮았다.</li>
+<li>사용된 3D 환경 일부는 상용 에셋 마켓(Fab 등)에서 가져온 것으로, 라이선스 제약상 원본 프로젝트 파일이 아닌 실행 가능한 벤치마크 패키지 형태로만 공개될 예정이다.</li>
+<li>인간 기준선 평가 인원이 박사과정 학생 약 10명 수준으로 제한적이다.</li>
+</ul>
+<h2>시사점</h2>
+<p>WorldAuditBench는 '월드 감사'라는 과제를 통해 멀티모달 에이전트가 행동(탐색)과 시각 추론(이상 식별)을 얼마나 긴밀히 결합해 작동하는지를 정량적으로 드러내는 테스트베드를 제공한다. 실험 결과는 단순히 더 많이 돌아다니는 것(노출)뿐 아니라, 과거 관찰을 기억하고 비교하는 메모리·도구 활용(인식)이 성능에 핵심적이라는 점을 보여주며, 향후 임바디드 에이전트가 관찰로부터 가설을 세우고 행동으로 이를 검증하며 서로 다른 시점·시간에 걸친 증거를 연결하는 능력을 길러야 함을 시사한다. 또한 가상 환경 자체의 품질 검증(QA) 자동화라는 실용적 응용 가능성도 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.40325" target="_blank" rel="noopener">huggingface.co/papers/2609.40325</a> · 2026-10-02</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>에이전트 사전지식(Prior) 기반 정책 학습</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#5 · Daily Papers 2026-10-03</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 64</span>
+    </div>
+    <h1 class="article-title">Agent Priors-guided Policy Learning</h1>
+    <p class="article-title-ko">에이전트 사전지식(Prior) 기반 정책 학습</p>
+    <p class="article-sub">각 스킬 정책을 학습시킬 때 사용한 "구조적 사전지식(structural prior)"을 그 정책의 런타임 인터페이스로도 함께 노출시켜, 런타임 에이전트가 스킬이 '왜, 어디서' 일반화되는지를 알고 선택·조합할 수 있게 하는 APPL(Agent Priors-guided Policy Learning)을 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.35690" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.35690" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Agent Priors-guided Policy Learning</li>
+<li><strong>저자</strong>: Puming Jiang, Tianrun Hu 등 (싱가포르국립대학교)</li>
+<li><strong>출처</strong>: arXiv:2609.35690v1 [cs.RO] (2026년 9월 28일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.35690">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>각 스킬 정책을 학습시킬 때 사용한 "구조적 사전지식(structural prior)"을 그 정책의 런타임 인터페이스로도 함께 노출시켜, 런타임 에이전트가 스킬이 '왜, 어디서' 일반화되는지를 알고 선택·조합할 수 있게 하는 APPL(Agent Priors-guided Policy Learning)을 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>소수의 시연으로 로봇을 학습시킬 때는 두 가지 일반화가 필요하다. 배운 스킬들을 재조합해 새로운 과제를 푸는 '구성적 일반화'와, 각 스킬의 정책이 물체 위치가 바뀌거나 다른 스킬이 남긴 상태에서도 작동하는 '스킬 일반화'다. 그런데 과제 수준의 의사결정(구성)은 각 스킬이 실제로 '어디서' 작동하는지 모르는 채 이름이나 설명만으로 스킬을 참조하고, 각 스킬은 그런 구조 정보 없이 소수의 시연만으로 학습된다. 즉 구성과 스킬 사이에서 정보가 손실된다. 비전-언어-행동(VLA) 모델은 과제 의미와 저수준 제어를 하나로 결합하지만 일반화 조건이 암묵적이고, 과제·행동 계획(TAMP)은 기호적 전제조건/효과로 레벨을 분리하지만 보통 손수 지정되거나 고정된 추상화 계열(상대 프레임, 동역학계 제어기 등)에 묶여 있다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li><strong>구조적 사전지식의 이중 역할</strong>: 같은 사전지식을 (1) 정책 학습에 반영해 일반화 범위(coverage)를 형성하고, (2) 런타임 인터페이스에 기술해 적용 가능 영역에 대한 가설(selection)을 전달하는 이중 용도로 사용.</li>
+<li><strong>APPL 시스템</strong>: 건설(construction) 에이전트가 완전한 시연을 재사용 가능한 스킬로 분할하고, 스킬별로 여러 사전지식을 제안해 각각 Diffusion Policy를 학습·검증한 뒤, 사전지식 설명·핸드오프 조건·학습 지지(support)·검증 증거를 담은 인터페이스를 기록.</li>
+<li><strong>런타임 조합</strong>: 런타임 에이전트가 이 인터페이스들을 읽어 적절한 (동결된) 정책과 인자, 지속 시간, 정지 조건을 선택해 새로운 과제 목표를 향해 조합.</li>
+</ol>
+<h2>방법론</h2>
+<p>문제는 시스템 S=(C,L)로 정의되며, 라이브러리 L={(π_i, I_i)}는 (정책, 인터페이스) 쌍들을 담고, 컴포저 C는 각 정책을 인터페이스 I_i만을 통해 호출한다. 각 스킬의 성공 영역 W(π_i)(정책이 실제로 성공하는 시작 상태 집합)는 직접 관찰할 수 없으므로, 인터페이스는 적용 가능 영역 A_i를 명시하고 컴포저는 o_tj ∈ A_ij만 확인할 수 있다. 좋은 인터페이스는 '충실(faithful, A_i ⊆ W(π_i))'하고 '정보적(informative, A_i ≈ W(π_i))'이어야 한다. 건설 단계에서는 (1) 완전한 시연을 전환부가 겹치도록(핸드오프 지지 확대) 스킬로 분할하고, (2) 스킬마다 여러 구조적 사전지식(예: 물체-상대 프레임 표현)을 제안해 각각을 보조 손실이 포함된 학습 목표로 구현, 공통 Diffusion Policy 레시피로 학습하며, (3) 시연의 스킬-진입 상태에서 각 정책을 1.5배 길이로 실행해 검증 리포트를 작성하고 피드백 기반 추가 사전지식(4번째)을 설계한다. 각 정책의 인터페이스 I_i=(d_i, h_i, s_i, v_i)는 사전지식 설명, 핸드오프 조건, 학습 지지, 검증 증거를 담는다. 런타임에서는 고정된 에이전트가 목표·상태·인터페이스를 보고 정책과 인자, 지속시간, 정지조건을 선택해 호출한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p><strong>실험1(스킬 일반화, MetaWorld 6과제)</strong>: 에이전트가 설계한 사전지식은 N=2 시연에서 OOD 성공률 89.58%(최종 설계 q4)를 달성한 반면, 바닐라 Diffusion Policy는 28.96%, 고정된 관계형 사전지식(B1)은 37.92%에 그쳤다. 세 후보를 제안하고 개발용 OOD 성공률로 선택하는 것만으로도 10.2~24.0점이 추가되었고, 피드백 라운드가 2.9~12.1점을 더 추가했다. <strong>실험2(장기 호라이즌 구성, ManiSkill 5과제)</strong>: APPL은 물체 위치가 바뀐 상황(motion-OOD)에서 50.0% 성공했는데, 이는 단일 전체 과제 정책(DP, SinglePrior)의 10.0%보다 훨씬 높았다(McNemar p&lt;0.001). 과제 수준 OOD에서는 92.5%, 처음 보는 16개 스킬 조합 중 8개를 해결했다. 인터페이스의 사전지식·핸드오프·지지 정보를 모두 숨기면(검증 점수와 정지조건만 유지) 성공률이 motion-OOD 50.0%→20.0%, task-level 92.5%→65.0%, 조합 8/16→2/16으로 급락했고, 런타임 에이전트를 고정 규칙으로 대체하면 22.5%, 52.5%, 1/16까지 떨어졌다.</p>
+<h2>한계점</h2>
+<p>구조적 사전지식은 "의도된 일반화"를 기술할 뿐 실제 역량을 보장하지 않는다. 정책은 여전히 시연된 지지 영역 밖에서 실패할 수 있고, 현재 라이브러리는 복구 능력을 갖추지 못했다(실패는 주로 물체를 놓치거나, 서랍이 닫히거나, 학습된 진입 조건 밖에서 스킬이 호출될 때 발생). 검증은 시연된 진입 상태에서만 이루어지며, OOD 상태에서의 검증이 없어 때때로 정책의 순위를 잘못 매길 수 있다(예: covered peg assembly 과제에서 검증 결과가 유용한 정책을 억제해 8/8→1/8로 성공률이 급락).</p>
+<h2>시사점</h2>
+<p>이 연구는 정책 학습에 사용된 설계 지식(구조적 사전지식)을 학습이 끝난 뒤 버리지 않고, 다운스트림 에이전트가 "어떻게·왜·어디서" 스킬을 재사용·조합·확장할 수 있는지를 추론하는 데 계속 활용할 수 있음을 보여준다. 이는 로봇 학습 시스템이 "학습 시점의 설계 선택"과 "배포 시점의 의사결정"을 분리하지 않고 연결하는 새로운 설계 패턴을 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.35690" target="_blank" rel="noopener">huggingface.co/papers/2609.35690</a> · 2026-10-03</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

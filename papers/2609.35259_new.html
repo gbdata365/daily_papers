@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>온폴리시인가 오프폴리시인가? 증류 동역학에 대한 체계적 연구</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#3 · Daily Papers 2026-10-03</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 102</span>
+    </div>
+    <h1 class="article-title">On-Policy or Off-Policy Learning? A Systematic Study of Distillation Dynamics</h1>
+    <p class="article-title-ko">온폴리시인가 오프폴리시인가? 증류 동역학에 대한 체계적 연구</p>
+    <p class="article-sub">강-약 증류(distillation) 환경에서 롤아웃 정책(온폴리시 vs 오프폴리시), KL 방향, 학습률을 독립적으로 통제한 결과, "온폴리시가 본질적으로 더 좋다"는 통념과 달리 KL 방향이 과제 성능을, 학습률이 망각(forgetting)과 업데이트 희소성을 더 크게 좌우한다는 것을 보인다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.35259" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.35259" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: On-Policy or Off-Policy Learning? A Systematic Study of Distillation Dynamics</li>
+<li><strong>저자</strong>: Julianna Piskorz, Antonin Berthon, Mihaela van der Schaar (케임브리지대학교)</li>
+<li><strong>출처</strong>: arXiv:2609.35259v1 [cs.LG] (2026년 9월 28일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.35259">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>강-약 증류(distillation) 환경에서 롤아웃 정책(온폴리시 vs 오프폴리시), KL 방향, 학습률을 독립적으로 통제한 결과, "온폴리시가 본질적으로 더 좋다"는 통념과 달리 KL 방향이 과제 성능을, 학습률이 망각(forgetting)과 업데이트 희소성을 더 크게 좌우한다는 것을 보인다.</p>
+<h2>배경 및 문제의식</h2>
+<p>온폴리시 학습(RLVR 등 모델 자신이 생성한 데이터로 학습)은 재앙적 망각을 줄이고, 더 희소한 파라미터 업데이트를 만들며, 일반화를 개선한다는 주장이 널리 받아들여지고 있다. 그러나 이러한 비교는 대부분 SFT와 RLVR을 비교하는 방식으로 이루어졌는데, 이 둘은 롤아웃 정책뿐 아니라 목적함수, 감독 밀도, 최적화 절차 등 여러 요소가 동시에 다르기 때문에 "롤아웃 정책" 자체의 효과를 분리해내기 어렵다. 저자들은 강-약 증류 환경을 통제된 실험대로 사용해, 나머지 학습 파이프라인은 고정한 채 롤아웃 정책만 독립적으로 바꿀 수 있음을 활용한다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>Llama 3·Qwen2.5 모델군, 과학·의학·산술 영역의 추론 과제에서 롤아웃 정책(온폴리시/오프폴리시 증류), 토큰 수준 KL 방향(정방향/역방향), 학습률을 독립적으로 통제한 비교 연구를 수행, 최종 정확도·재앙적 망각·업데이트 희소성에서 온폴리시의 일관된 우위를 발견하지 못함.</li>
+<li>기울기 분석과 학생-교사 스펙트럼 실험을 통해, 정방향 KL은 롤아웃 정책에 매우 둔감하지만 역방향 KL은 훨씬 민감하며 학생 선호 롤아웃에서 더 좋은 성능을 보인다는 것을 규명.</li>
+<li>학습 안정성·출력 커버리지는 KL 방향이, 재앙적 망각·업데이트 희소성은 학습률이 주로 결정한다는 것을 확인하면서도, 더 어려운 과제로의 일반화에는 온폴리시 데이터가 일관되게 도움이 됨(단, 후속 RLVR 이후에는 이 우위가 사라질 수 있음)을 보임.</li>
+</ol>
+<h2>방법론</h2>
+<p>강-약 증류에서는 학생 모델 π_S와 교사 모델 π_T가 있고, 롤아웃 정책 ρ에 따라 생성된 출력 시퀀스에서 토큰별 분포 차이(KL 발산)를 최소화한다. ρ=π_T로 설정하면 오프폴리시 증류(OffPD), ρ=π_S로 설정하면 온폴리시 증류(OnPD)가 된다. 저자들은 전체 어휘(vocabulary)에 대해 KL을 계산해 정방향 KL(교사가 지지하는 토큰에 가중, mode-covering)과 역방향 KL(학생이 선호하는 토큰에 가중, mode-seeking)을 구분한다. 통상 OffPD는 정방향 KL과, OnPD는 역방향 KL과 묶이지만, 이 논문은 이 짝을 깨뜨려 네 가지 조합(OnPD·정방향, OnPD·역방향, OffPD·정방향, OffPD·역방향)을 모두 실험한다. 추가로, 학생-교사 로짓을 보간하는 파라미터 λ를 이용해 완전한 교사-선호(λ=-1, OffPD)부터 완전한 학생-선호(λ=1, OnPD)까지, 그리고 그 바깥(λ&lt;-1 또는 λ&gt;1)까지 연속적인 롤아웃 정책 스펙트럼을 구성해 실험한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>MedReason(의학), Science, Countdown(산술) 세 과제에서 Llama-3.1-8B→Llama-3.2-1B 증류(및 부록에서 Qwen2.5-7B→1.5B 재현)를 수행한 결과, 과제 정확도는 OnPD 72%, OffPD 73%로 거의 동일했으며 KL 방향에 따라 정방향은 71~73%로 안정적이지만 역방향은 35~72%로 학습률에 따라 크게 흔들렸다. 재앙적 망각은 낮은 학습률(1e-5)에서는 최대 1.3%p 변화에 불과했지만 높은 학습률(5e-5)에서는 11.2~14.0%p나 떨어졌고, 그 차이는 롤아웃 정책보다 학습률에서 훨씬 크게 나타났다. 업데이트 희소성도 학습률에 따라 85.3~89.6%(낮은 학습률) 대 51.9~60.0%(높은 학습률)로 나뉘었으며 롤아웃 정책에 따른 차이는 미미했다. 연속 스펙트럼 실험에서는 정방향 KL이 λ 전체 구간에서 80% 이상의 정확도를 유지(변동폭 5.2%p)했지만 역방향 KL은 λ에 따라 큰 변동을 보였다. 반면, 더 어려운 Countdown-4E 과제로의 일반화에서는 양쪽 KL 방향 모두에서 더 온폴리시적인 롤아웃(λ&gt;0)이 10~15%p 더 높은 pass@k를 기록했으나, 이후 RLVR을 추가로 적용하면 역방향 KL·낮은 학습률로 학습한 체크포인트가 초반 정확도가 낮았음에도 가장 견고하게 개선되어, 초기 일반화 우위가 후속 RLVR 성능으로 신뢰성 있게 이어지지는 않았다.</p>
+<h2>한계점</h2>
+<p>저자들은 다음을 명시적으로 밝혔다: (1) 학생 모델은 최대 1.5B 파라미터, 추론 흔적은 최대 2,000 토큰으로 제한된 통제 실험 환경에 국한되어 있어, 더 큰 모델이나 더 긴 롤아웃으로의 확장은 향후 과제로 남아 있다. (2) 교사 모델을 고정한 채 실험했기 때문에, 서로 다른 학생-교사 조합에서 OnPD와 OffPD의 차이가 달라질 수 있는지는 검증되지 않았다.</p>
+<h2>시사점</h2>
+<p>이 연구는 "온폴리시 학습이 본질적으로 더 좋다"는 널리 퍼진 가정에 신중함을 요구하며, SFT와 RL 간 관찰된 차이의 상당 부분이 실제로는 롤아웃 정책이 아니라 KL 방향이나 학습률 같은 다른 설계 선택에서 기인할 수 있음을 보여준다. 실무적으로는, 추가 생성 비용이 드는 온폴리시 증류를 채택하기 전에 더 저렴한 오프폴리시 대안을 기준선으로 포함해 비교할 것을 권고한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.35259" target="_blank" rel="noopener">huggingface.co/papers/2609.35259</a> · 2026-10-03</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

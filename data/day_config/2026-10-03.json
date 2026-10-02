@@ -1,0 +1,110 @@
+{
+  "2610.01762": {
+    "base": "2610_원스트리머_스트리밍-비디오-지각-기억-응답-통합",
+    "rank": "#1",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "145",
+    "en_title": "OneStreamer: Unifying Perception, Memory, and Proactive Response in Streaming Video Interaction",
+    "ko_title": "원스트리머: 스트리밍 비디오 상호작용에서 지각·기억·능동응답의 통합"
+  },
+  "2609.37200": {
+    "base": "2609_적응형보상라우팅_오디오비디오-동시생성-다중보상-최적화",
+    "rank": "#2",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "117",
+    "en_title": "Adaptive Reward Routing: Dynamic Multi-Reward Optimization for Joint Audio-Video Diffusion via Forward-Process RL",
+    "ko_title": "적응형 보상 라우팅: 순방향 프로세스 RL을 통한 오디오-비디오 동시 생성의 동적 다중 보상 최적화"
+  },
+  "2609.35259": {
+    "base": "2609_온폴리시오프폴리시_증류-동역학-체계적-비교연구",
+    "rank": "#3",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "102",
+    "en_title": "On-Policy or Off-Policy Learning? A Systematic Study of Distillation Dynamics",
+    "ko_title": "온폴리시인가 오프폴리시인가? 증류 동역학에 대한 체계적 연구"
+  },
+  "2610.01415": {
+    "base": "2610_포스_장기추론-에이전트-명시적-신념상태",
+    "rank": "#4",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "68",
+    "en_title": "Beyond Memory: Harnessing Long-Horizon Agents with Explicit Belief States",
+    "ko_title": "메모리를 넘어서: 명시적 신념 상태로 장기 추론 에이전트 강화하기"
+  },
+  "2609.35690": {
+    "base": "2609_에이플_에이전트-사전지식-유도-정책학습",
+    "rank": "#5",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "64",
+    "en_title": "Agent Priors-guided Policy Learning",
+    "ko_title": "에이전트 사전지식(Prior) 기반 정책 학습"
+  },
+  "2610.02193": {
+    "base": "2610_계층형연속확산_계층적-연속-확산-언어모델",
+    "rank": "#6",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "63",
+    "en_title": "Hierarchical Continuous Diffusion Language Models",
+    "ko_title": "계층형 연속 확산 언어모델"
+  },
+  "2610.02162": {
+    "base": "2610_월드옵서버_행위자-관찰자-동시생성-지속세계모델링",
+    "rank": "#7",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "60",
+    "en_title": "World Observer: Joint Actor-Observer Generation for Persistent World Modeling",
+    "ko_title": "월드 옵서버: 지속적 세계 모델링을 위한 행위자-관찰자 동시 생성"
+  },
+  "2610.01509": {
+    "base": "2610_샤프닝택스_사후훈련의-선명화-비용",
+    "rank": "#8",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "60",
+    "en_title": "Sharpening Tax in Post-Training",
+    "ko_title": "샤프닝 택스: 사후훈련이 치르는 선명화의 대가"
+  },
+  "2609.39027": {
+    "base": "2609_사이코어_신뢰가능한-AI-심사자를-위한-수사적-견고성",
+    "rank": "#9",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "58",
+    "en_title": "A Missing Piece for Trustworthy AI Reviewers: From Benchmarking Rhetorical Robustness to SciCore Review",
+    "ko_title": "신뢰할 수 있는 AI 심사자를 위한 빠진 조각: 수사적 견고성 벤치마킹에서 사이코어 리뷰까지"
+  },
+  "2610.00906": {
+    "base": "2610_액티브새들러_에이전트-하니스-최적화-자동커리큘럼학습",
+    "rank": "#10",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "50",
+    "en_title": "ActiveSaddler: Automated Curriculum Learning for Agent Harness Optimization",
+    "ko_title": "액티브새들러: 에이전트 하니스 최적화를 위한 자동 커리큘럼 학습"
+  },
+  "2609.37533": {
+    "base": "2609_이모이_비인수분해-확산언어모델을-위한-전문가혼합-강화",
+    "rank": "#11",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "46",
+    "en_title": "E-MoE: Enhanced Mixture-of-Experts for Non-Factorized Diffusion Language Models",
+    "ko_title": "E-MoE: 비인수분해 확산 언어모델을 위한 전문가 혼합 강화"
+  },
+  "2610.02205": {
+    "base": "2610_프로우벤치_비디오모델이-프로그램-명세를-충실히-구현하는가",
+    "rank": "#12",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "46",
+    "en_title": "PROWBench: Do Video Models Render What the Program Specifies?",
+    "ko_title": "프로우벤치: 비디오 모델이 프로그램 명세를 제대로 구현하는가?"
+  }
+}

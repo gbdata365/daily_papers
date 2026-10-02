@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>신뢰할 수 있는 AI 심사자를 위한 빠진 조각</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#9 · Daily Papers 2026-10-03</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 58</span>
+    </div>
+    <h1 class="article-title">A Missing Piece for Trustworthy AI Reviewers: From Benchmarking Rhetorical Robustness to SciCore Review</h1>
+    <p class="article-title-ko">신뢰할 수 있는 AI 심사자를 위한 빠진 조각: 수사적 견고성 벤치마킹에서 사이코어 리뷰까지</p>
+    <p class="article-sub">동일한 과학적 내용을 다른 수사(rhetoric)로 표현해도 AI 심사자의 평가가 흔들리지 않으면서 논문 간 차별성도 유지해야 한다는 '수사적 견고성(Rhetorical Robustness)'을 정의하고, 이를 평가하는 RobustReview 벤치마크와, 전체 원고 평가와 '과학 핵심(science core)' 평가를 평균하는 SciCore 리뷰어를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.39027" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.39027" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: A Missing Piece for Trustworthy AI Reviewers: From Benchmarking Rhetorical Robustness to SciCore Review</li>
+<li><strong>저자</strong>: Chenguang Wang, Ming Li 등 (버지니아텍, 메릴랜드대, MBZUAI 공동 연구)</li>
+<li><strong>출처</strong>: arXiv:2609.39027v1 [cs.CL] (2026년 9월 30일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/c-steve-wang/Robust_Review">RobustReview</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.39027">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>동일한 과학적 내용을 다른 수사(rhetoric)로 표현해도 AI 심사자의 평가가 흔들리지 않으면서 논문 간 차별성도 유지해야 한다는 '수사적 견고성(Rhetorical Robustness)'을 정의하고, 이를 평가하는 RobustReview 벤치마크와, 전체 원고 평가와 '과학 핵심(science core)' 평가를 평균하는 SciCore 리뷰어를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>LLM은 과학 논문 심사를 점점 더 많이 보조하고 있는데, 기존 평가는 주로 "AI 리뷰가 유용한가, 인간 평가와 비슷한가"에 초점을 맞춘다. 그러나 LLM이 저비용으로 원고를 재작성·최적화할 수 있게 되면서, 동일한 과학적 내용이 표현 방식만 바뀌어도 심사 판정이 달라진다면 이는 수사적 최적화를 과학적 개선보다 우대하는 결과를 낳고 AI 심사의 신뢰성을 훼손한다. 기존 연구는 AI 평가 시스템이 노골적 지시나 적대적 문구에 조작될 수 있음을 보였지만, "같은 내용을 보존하는 재작성(rewrite)에 대한 안정성"과 "논문 간 차별성 유지"를 동시 요구사항으로 다룬 평가는 없었다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li><strong>수사적 견고성의 공식화</strong>: '논문 내 안정성(within-paper stability)'과 '논문 간 차별성(between-paper discrimination)'을 함께 요구하는 결합 지표로 정의, 인간 정합성(human alignment)과는 별개의 평가축임을 입증.</li>
+<li><strong>RobustReview 벤치마크</strong>: ICLR 2026 논문 60편을 6개 점수 구간에서 균등 샘플링하고, 10가지 수사적 조건(GPT-5.5·Claude Opus 4.8 각각으로 생성)을 적용해 총 1,260개 전체 원고 버전을 구축, 30개 리뷰어 구성을 평가하며 '거짓 견고성(false robustness, 낮은 변동=점수 붕괴)' 현상을 발견.</li>
+<li><strong>SciCore</strong>: 전체 원고를 평가하는 분기와, 구조화된 '과학 핵심' 기록을 추출해 평가하는 분기를 평균하는 이중-분기 리뷰어로, GPT-5.5 기준 7개 지표 중 ICC·SPR·판별력에서 1위, 인간 정합성(H-MAE)에서도 1위를 달성.</li>
+</ol>
+<h2>방법론</h2>
+<p>논문 i의 원본 x_i0에 10가지 수사적 조건(참신성 입장, 범위 프레이밍, 증거 프레이밍, 공헌 강조, 기술적 어투, 언어적 복잡도의 단일 차원 6개 + 복합·반복 재작성·리뷰어 기반 재작성의 복합 조건 4개)을 적용해 변형 x_ik를 생성하고, 각 리뷰어 구성 m이 y_mik=Review_m(x_ik)를 산출한다. 평가는 두 직접 지표(MAD: 평균절대편차, Drift SD: 표준편차, 낮을수록 좋음)와 세 결합 지표(ICC, SPR, 판별력, 높을수록 좋음; 논문 내 일관성을 논문 간 변동/분리와 연계해 측정)로 이루어진다. SciCore는 Strict 프로토콜로 전체 원고를 평가하는 '원고 분기'와, LLM으로 추출한 구조화된 과학 핵심(연구문제·주장·방법·가정·증거·결과·저자 공헌·재현성·한계)을 '적응형(Adapted)' 프로토콜로 평가하는 '과학 핵심 분기'를 동일 가중(α=0.5)으로 평균한다. 추출기는 3인칭 객관적 언어로, 주관적 평가·감정적 프레이밍 없이 저자 주장에 귀속시켜 기록하도록 지시받으며, 표는 명시적으로 전사하지만 그림은 포함하지 않는다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>30개 리뷰어 구성(범용 LLM 8종×3프로토콜, 특화 리뷰 모델 3종, 에이전틱 리뷰 시스템 3종)을 RobustReview로 평가한 결과, 콘텐츠 중심 프롬프팅 프로토콜(Persistent)은 백본에 따라 효과가 일관되지 않았다(GPT-5.5만 5개 지표 모두 개선). Gemini-3.5-Flash-Lite(Standard)는 MAD가 가장 낮은(0.205) 반면 ICC는 0.199, 판별력은 0.511(거의 무작위 수준)에 불과해 '거짓 견고성'의 대표 사례로 식별되었다. SciCore는 ICC 0.775, SPR 0.652, 판별력 0.726으로 모든 비교 구성 중 1위였고, Human MAE 1.072로 가장 낮았으며 Spearman 상관은 0.488로 2위를 기록했다. 동일 GPT-5.5 백본 내 분해 실험(Table 2)에서는, 과학 핵심을 직접 리뷰하는 것(Core-Standard)이 과학 핵심으로부터 원고를 재구성해 리뷰하는 것(ReconstructReview)보다 7개 지표 모두에서 우수했고, 원고 분기(Manuscript-Strict)와 과학 핵심 분기(Core-Adapted)를 융합하면 MAD가 0.766→0.476, ICC가 0.632→0.775로 개선되었다. 임베딩 유사도 분석에서는 동일 논문의 재작성본에서 추출한 과학 핵심들 간 코사인 유사도가 평균 0.978(GPT-5.5 추출기)인 반면, 다른 논문 간에는 0.616~0.619에 불과해 추출된 과학 핵심이 수사적 변형에는 안정적이면서도 논문별 차이는 보존함을 뒷받침했다.</p>
+<h2>한계점</h2>
+<p>저자들이 명시한 한계는 다음과 같다: RobustReview는 매칭된 arXiv 소스를 가진 ICLR 2026 논문 60편에 한정되어 다른 학회·분야·원고 형식으로의 일반화는 불확실하다. 재작성은 과학적 내용 보존을 목표로 설계되었지만 완전한 등가성을 보장할 수 없으며, 자동화된 충실도 검사에서도 일부 불일치율이 확인되었다. 평균 인간 점수는 제한된 외부 기준일 뿐 심사자 간 불일치를 반영하지 못한다. 최종 SciCore 융합은 GPT-5.5로만 평가되었고, 세부 기준·백본별 분석은 융합된 리뷰어 자체가 아니라 과학 핵심 분기 단독의 특성을 보여준다. 과학 핵심 추출은 과학적 세부사항을 누락하거나 잘못 읽을 수 있고, 동일 가중 융합은 두 분기의 점수가 동일 척도에서 비교 가능하다고 가정한다.</p>
+<h2>시사점</h2>
+<p>이 연구는 AI 심사자의 신뢰성 평가에 "인간 정합성"만으로는 포착되지 않는 새로운 축, 즉 "같은 과학적 내용이 다른 말로 표현되어도 판단이 흔들리지 않는가"를 추가해야 함을 보여준다. 특히 "변동이 적다"는 것이 자동으로 "견고하다"를 의미하지 않으며(거짓 견고성), 콘텐츠 중심 지시만으로는 이 문제가 해결되지 않는다는 점은 AI 심사 시스템 설계자들에게 중요한 경고를 제공한다. 과학 핵심을 명시적으로 추출해 별도로 평가하는 방식은 이러한 수사적 흔들림에 대한 실용적 해결책을 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.39027" target="_blank" rel="noopener">huggingface.co/papers/2609.39027</a> · 2026-10-03</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

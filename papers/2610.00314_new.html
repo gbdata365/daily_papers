@@ -1,0 +1,110 @@
+<meta charset="UTF-8">
+<title>예측 기여도</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#2 · Daily Papers 2026-10-05</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 88</span>
+    </div>
+    <h1 class="article-title">Predictive Credit: Measuring What Scientific Explanations Add to Experimental Forecasts</h1>
+    <p class="article-title-ko">예측 기여도: 과학적 설명이 실험 예측에 더하는 가치 측정</p>
+    <p class="article-sub">동일한 개입(intervention)·예측자·결과에 대해 "설명 없음(description)", "일치하는 설명(matched)", "다른 상태의 설명(donor)"이라는 세 가지 맥락으로 짝지은 예측을 비교함으로써, 과학적 설명이 실험 결과 예측에 실제로 기여하는 정도("예측 기여도")를 정량적으로 측정하는 프로토콜을 제안하고 세 가지 실험 환경에 적용한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.00314" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.00314" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Predictive Credit: Measuring What Scientific Explanations Add to Experimental Forecasts</li>
+<li><strong>저자</strong>: Jingjie Ning, Xueqi Li, Yibo Kong, Dongting Li (Carnegie Mellon University, Tsinghua University)</li>
+<li><strong>출처</strong>: arXiv:2610.00314v1 [cs.AI] (2026년 9월 29일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.00314">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>동일한 개입(intervention)·예측자·결과에 대해 "설명 없음(description)", "일치하는 설명(matched)", "다른 상태의 설명(donor)"이라는 세 가지 맥락으로 짝지은 예측을 비교함으로써, 과학적 설명이 실험 결과 예측에 실제로 기여하는 정도("예측 기여도")를 정량적으로 측정하는 프로토콜을 제안하고 세 가지 실험 환경에 적용한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>자동화된 연구 에이전트는 아이디어 생성, 실행, 측정, 보고를 연결하며, 제안된 변경이 왜 효과가 있을지에 대한 설명(가설·메커니즘)을 함께 산출한다. 그러나 이러한 설명이 실제로 실험 결과를 예측하는 데 얼마나 기여하는지를 평가하는 표준적 방법은 없었다. 기존의 "설명 가능성(simulatability)" 연구는 설명이 모델의 출력을 관찰자가 얼마나 잘 예측하도록 돕는지를 측정했지만, 저자들은 이를 실제로 실행된 실험의 결과를 예측하는 문제로 확장한다. 핵심 질문은, 특정 상태에 대한 설명이 그 상태의 결과를 예측하는 데 (1) 설명이 전혀 없을 때보다 더 나은지, (2) 다른 상태에서 가져온 무관한 설명보다 더 나은지였다.</p>
+<h2>핵심 기여</h2>
+<p>논문은 세 가지를 기여한다. 첫째, 과학적 설명의 예측적 가치와 국소적 정합성(local alignment)을 함께 평가하는 짝지음(paired) 설계를 제시한다. 둘째, 사전 등록(prospective)된 연구들과 구성요소별 통제 실험을 통해 커밋먼트(사전 서약), 반복성, 결과 정보를 분리하여 측정한다. 셋째, 직접 텍스트 기반 예측 실험으로 전달된 설명 내용의 가치를 검증하고, 정확한 신호를 이용한 보정 및 알려진 메커니즘을 활용한 양성 대조군을 통해 예측자의 민감도를 별도로 측정한다.</p>
+<h2>방법론</h2>
+<p>핵심 개념은 "예측 기여도(predictive credit)"로, 동일한 실험 상태에 대해 세 가지 맥락 — 공개 상태 정보만 주어진 기술(description, D), 현재 상태에 맞는 설명이 추가된 일치(matched, M), 다른 상태에서 가져온 설명이 주어진 기증(donor, S) — 로 예측을 받아 그 손실(loss) 차이를 비교한다. 설명 이득(G_description = R_D - R_M)은 설명이 전혀 없을 때 대비 일치 설명의 이득을, 정합 이득(G_alignment = R_S - R_M)은 무관한 설명(기증) 대비 일치 설명의 이득을 나타낸다. 두 값 모두 양수여야 해당 상태에 대한 설명이 실질적인 예측 가치를 가진다고 볼 수 있다.</p>
+<p>평가는 다섯 가지 점검(커밋먼트, 전달, 예측 이득, 정합성, 알려진 신호에 대한 민감도)으로 구성되며, 예측 카드는 목표 방향, 정량적 목표치/구간, 명명된 중간 관찰치, 기대 효과, 반증 기준, 반사실적 조건의 6개 필드로 완결성을 평가받는다. 예측 손실은 점수화(point MAE)와 구간 점수(proper interval score, IS80)로 계산되며, 결과가 공개되기 전에 모든 예측을 동결(freeze)하는 사전 등록 방식을 사용한다.</p>
+<p>세 가지 실험 환경이 사용되었다. (1) 통제된 v5 환경: 합성 학습 과제에서 120개 상태에 대해 서수(ordinary)/유도(elicited) 방식으로 설명을 수집. (2) Tox21 환경: 12개 분자 분석 엔드포인트, 3개 학습-라벨 비율, 2개 시드로 구성된 72개 상태에서 분자적 특성 기반 로지스틱 모델의 ROC AUC 변화를 예측. (3) OpenML v2.1 환경: OpenML-CC18/CTR23에서 선택한 24개 분류/회귀 과제, 3개 학습 예산, 2개 시드로 구성된 144개 상태에서 LightGBM 파이프라인의 성능 변화를 예측. 모든 예측 호출은 DeepSeek V4 계열 모델(주로 deepseek-v4-pro, 후속 호출은 deepseek-v4-flash)을 통해 수행되었다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>336개의 사전 등록 상태에 대한 핵심 결과는 다음과 같다. 통제된 v5 환경의 동결 판정은 "불확정(inconclusive)"이었다. Tox21의 사전 등록된 1차 기준(ROC AUC 구간 점수 해악 검정)은 기준을 충족하지 못했다(D-M = -.0026, 95% 구간 [-.0174, .0104]). OpenML의 결합 형성·점 동등성·반복성 기준 역시 충족되지 않았다(confirmation_no_go). 즉 세 환경 모두 설명이 예측에 기여한다는 사전 등록된 주장을 확정적으로 뒷받침하지 못했다.</p>
+<p>다만 사후(post-hoc)/보조 분석에서는 흥미로운 패턴이 나타났다. 요청된 DeepSeek V4 Pro 모델에서 일치(matched) 및 기증(donor) 카드는 Tox21의 2차 반복 편차(drift)를 각각 64.5%, 59.1% 감소시켰다. DeepSeek V4 Flash를 이용한 결과 공개 후 재현(replay) 실험에서도 일치 카드 기준 점 MAE가 .01823에서 .02020으로 오히려 증가했으나, 반복 편차는 60% 이상 줄어 설명이 반복성에는 기여하지만 정확도 향상으로 직결되지는 않음을 시사했다. OpenML 전체 카드(full-card) 할당은 명목 80% 구간의 폭을 21% 넓혔고(커버리지는 기술 51.4% 대 전체 카드 49.3%), 144개 중 66개 카드에서만 유효한 내용이 전달되었다. 직접 텍스트(direct-text) 방식의 Flash 파이프라인은 144개 노트를 모두 전달했지만 탐지 가능한 점 정확도 이득은 없었다. 연구자가 직접 작성한 "알려진 메커니즘" 양성 대조군에서는 기술 대비 점 MAE가 2.60퍼센트포인트 낮아져, 강한 정보가 실제로 전달될 경우 예측자가 이를 활용할 수 있음을 확인했다.</p>
+<h2>한계점</h2>
+<p>세 개의 사전 등록된 주요 가설(v5, Tox21, OpenML) 모두 설명의 예측 기여도를 확정적으로 입증하지 못했으며("inconclusive" 또는 "confirmation_no_go"), 짝지은 일치/기증 간격 추정치는 영(0)을 포함해 통계적으로 유의하지 않았다. OpenML의 경우 조건에 따라 전달된 내용의 완결성이 낮아(144개 중 유효 추출 87개, 완결 카드 20개) 설명 내용 자체의 품질과 전달 문제를 분리하기 어려웠다. 논문은 "자연어 설명의 기여도는 테스트된 기증 해상도(donor resolution)에서 확정되지 않았다"고 명시적으로 결론 내린다. 또한 결과는 특정 예측자(주로 DeepSeek V4 계열), 특정 손실 함수, 특정 과제 분포에 상대적이어서 일반화에는 신중함이 필요하다.</p>
+<h2>시사점</h2>
+<p>이 논문은 연구 에이전트나 과학적 예측 벤치마크를 평가할 때 "정답을 맞혔는가"뿐 아니라 "그 설명이 예측에 실질적으로 기여했는가"를 분리해서 측정할 수 있는 엄밀한 프로토콜(짝지은 설계, 사전 등록, 반복성·전달·민감도 분리 점검)을 제공한다. 세 환경에서 모두 뚜렷한 긍정적 결론을 얻지 못했다는 결과 자체가, 현재의 자동 생성 설명이 사람이 기대하는 만큼 예측력에 기여하지 못할 수 있음을 시사하며, 향후 연구 에이전트 평가에서는 비용 인식 효용 규칙과 과제별 검증을 함께 요구해야 한다는 점을 보여준다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.00314" target="_blank" rel="noopener">huggingface.co/papers/2610.00314</a> · 2026-10-05</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

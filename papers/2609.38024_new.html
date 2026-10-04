@@ -1,0 +1,128 @@
+<meta charset="UTF-8">
+<title>교차 하니스 적응을 통한 검색증강 스킬 최적화</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#10 · Daily Papers 2026-10-05</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 55</span>
+    </div>
+    <h1 class="article-title">Retrieval-Augmented Skill Optimization via Cross-Harness Adaptation</h1>
+    <p class="article-title-ko">교차 하니스 적응을 통한 검색증강 스킬 최적화</p>
+    <p class="article-sub">LLM 에이전트가 특정 실행 환경(하니스)에서 작업을 수행하도록 안내하는 텍스트 "스킬"을, 수백만 개의 공개된 외부 스킬 저장소를 검색·적응시켜 초기화하고 반복적으로 개선하는 프레임워크 RASO를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.38024" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.38024" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Retrieval-Augmented Skill Optimization via Cross-Harness Adaptation</li>
+<li><strong>저자</strong>: Jaewon Chu 외 10명 (Korea University, KAIST, Meta AI 소속)</li>
+<li><strong>출처</strong>: arXiv:2609.38024v1 [cs.AI] (2026년 9월 29일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.38024">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>LLM 에이전트가 특정 실행 환경(하니스)에서 작업을 수행하도록 안내하는 텍스트 "스킬"을, 수백만 개의 공개된 외부 스킬 저장소를 검색·적응시켜 초기화하고 반복적으로 개선하는 프레임워크 RASO를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>LLM 에이전트는 도구, 파일 접근, 관찰 인터페이스 등을 정의하는 "하니스(harness)" 위에서 동작하며, 이때 에이전트의 성능은 모델 자체의 지식뿐 아니라 작업 수행 절차를 담은 텍스트 형태의 "스킬(skill)"에 크게 좌우된다. 최근 스킬을 자동으로 구성·개선하는 연구가 늘고 있지만, 기존 방법들은 대상 작업에 대한 에이전트 자신의 롤아웃(실행 결과) 피드백에만 의존해 스킬을 반복적으로 다듬는 데 그친다. 반면 GitHub 등에는 이미 다양한 작업·도메인·하니스에 걸쳐 수백만 개의 스킬이 공개되어 있음에도, 이 방대한 외부 지식은 거의 활용되지 않고 있다는 점이 문제의식이다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>외부 스킬 코퍼스를 사전 지식으로 활용해 스킬의 초기화와 갱신 모두를 지원하는 프레임워크 RASO(Retrieval-Augmented Skill Optimization)를 제안.</li>
+<li>검색된 절차적 지식을 대상 도메인·하니스의 어휘와 맥락으로 변환하는 공용 메커니즘인 Cross-Harness Adaptation(교차 하니스 적응)을 도입. 이를 통해 도메인이나 하니스가 다른 스킬 문서에서도 지식을 전이할 수 있게 함.</li>
+<li>4개 에이전트 벤치마크와 2개 LLM에서, 롤아웃 없이도 성능을 높이는 RASI(초기화 단계)와, 실행 피드백에 기반해 부족한 지식을 검색해 스킬을 추가로 개선하는 RASU(갱신 단계)의 효과를 각각 실험으로 검증.</li>
+</ul>
+<h2>방법론</h2>
+<p>RASO는 고정된 LLM과 하니스 하에서 스킬 s를 유일한 최적화 변수로 보고, 검증셋 성능을 최대화하는 스킬을 찾는 문제로 정식화한다. 두 단계로 구성된다.</p>
+<ol>
+<li>
+<p><strong>검색 및 교차 하니스 적응(공용 파이프라인)</strong>: 외부 스킬 문서를 제목 단위 섹션으로 분할한 코퍼스에서, 질의 생성 에이전트가 만든 질의로 BM25를 이용해 관련성 높은 섹션들을 상위 K개 검색한다. 이후 적응 에이전트가 (1) 도메인 특정 명사 제거, (2) 현재 요구사항에만 집중, (3) 하니스에서 검증 가능한 주장만 유지라는 세 가지 원칙에 따라 검색된 내용을 대상 작업·하니스에 맞는 간결하고 실행 가능한 "교훈(lesson)"으로 재작성한다.</p>
+</li>
+<li>
+<p><strong>RASI (Retrieval-Augmented Skill Initialization)</strong>: 롤아웃 없이, 작업/하니스 설명으로부터 (요구사항, 질의) 쌍들을 생성하고, 위 공용 파이프라인으로 교훈들을 얻은 뒤 스킬 초기화 에이전트가 이를 종합해 초기 스킬을 만든다.</p>
+</li>
+<li>
+<p><strong>RASU (Retrieval-Augmented Skill Update)</strong>: 현재 스킬로 소규모 배치의 롤아웃을 실행해 실패 유형을 분석하고, 텍스트 그래디언트와 검색 질의를 함께 생성한다. 검색된 지식을 같은 방식으로 적응시킨 뒤 스킬 갱신 에이전트가 후보 스킬을 생성하며, 검증셋에서 기존 스킬보다 나을 때만 채택하는 과정을 여러 라운드 반복한다.</p>
+</li>
+</ol>
+<h2>실험 설정 및 결과</h2>
+<p>OfficeQA, SpreadsheetBench, ALFWorld, WebShop 등 4개 벤치마크에서 GPT-5.6-Luna와 Qwen-3.5-9B 두 모델로 실험했다. 외부 스킬 코퍼스로는 GitSkills(공개 GitHub 스킬 모음)를 사용했으며, 벤치마크와 겹치는 스킬은 사전에 제외했다.</p>
+<ul>
+<li><strong>초기화 비교</strong>: No-Skill, SkillRouter(단순 검색 재사용), RFSI(검색 없는 LLM 생성)와 비교해 RASI가 모든 벤치마크·모델 조합에서 최고 성능을 보였다(GPT-5.6-Luna 기준 OfficeQA +5.63, Spreadsheet +4.77, ALFWorld +3.24, WebShop +1.17, RFSI 대비).</li>
+<li><strong>갱신 비교</strong>: TextGrad, GEPA, SkillOpt, WikiSkill과 비교해 RASO(RASI+RASU)가 전반적으로 최고 성능을 기록했다(GPT-5.6-Luna에서 OfficeQA 49.03, SpreadsheetBench 63.33 등).</li>
+<li><strong>비용</strong>: 동일한 롤아웃 예산 하에서 RASO는 4개 벤치마크 중 3개에서 가장 낮은 API 비용을 기록했으며, TextGrad 대비 42~75%의 비용 절감 효과를 보였다.</li>
+<li><strong>분석</strong>: 검색 섹션 수 K=5가 적절한 균형점이었고, 외부 코퍼스 크기가 작아도(전체의 1%) 이미 뚜렷한 성능 향상이 있었으며 코퍼스가 커질수록 추가 개선이 관찰되었다. 정성적 사례 분석을 통해, 도메인이 다른 스킬(위성영상 처리)의 절차("빈 그룹은 출력에서 제외")가 교차 하니스 적응을 거쳐 스프레드시트 작업에 올바르게 전이되는 과정을 보였다.</li>
+</ul>
+<h2>한계점</h2>
+<p>논문에 명시된 한계는 상세히 제시되지 않았으나, 제시된 분석에서 유추할 수 있는 지점으로는 (1) 검색 섹션 수를 과도하게 늘리면(K=10) 오히려 성능이 소폭 저하되는 현상이 관찰되었고, (2) 외부 코퍼스가 벤치마크와 유사한 내용을 포함할 가능성을 막기 위해 저장소 단위의 수동적 블랙리스트 처리가 필요했다는 점, (3) 실험이 BM25 기반의 어휘 검색에 의존하고 있어 더 정교한 의미 기반 검색기의 효과는 별도로 다루지 않았다는 점을 들 수 있다.</p>
+<h2>시사점</h2>
+<p>에이전트 스킬 최적화에서 자신의 실행 경험뿐 아니라 이미 축적된 방대한 외부 절차적 지식(공개 스킬 저장소)을 체계적으로 활용할 수 있음을 보여준다. 특히 도메인·하니스가 다른 스킬이라도 "교차 하니스 적응"을 통해 재사용 가능하다는 점은, 향후 에이전트 스킬 생태계가 성장함에 따라 검색 기반 지식 재사용이 비용 효율적이고 확장 가능한 최적화 전략이 될 수 있음을 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.38024" target="_blank" rel="noopener">huggingface.co/papers/2609.38024</a> · 2026-10-05</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

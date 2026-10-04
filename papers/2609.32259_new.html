@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>이종 멀티 에이전트 LLM을 위한 프리필 없는 교차 패밀리 KV 캐시 전송</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#5 · Daily Papers 2026-10-05</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 57</span>
+    </div>
+    <h1 class="article-title">Prefill-Free Cross-Family KV Cache Transfer for Heterogeneous Multi-Agent LLMs</h1>
+    <p class="article-title-ko">이종 멀티 에이전트 LLM을 위한 프리필 없는 교차 패밀리 KV 캐시 전송</p>
+    <p class="article-sub">서로 다른 모델 패밀리(Llama, Qwen, Ministral 등)로 구성된 멀티 에이전트 LLM 시스템에서, 수신 측 모델의 재프리필(prefill) 없이도 송신 측의 KV 캐시를 토큰·레이어 정렬과 통계적 재보정을 통해 직접 재사용할 수 있게 하는 방법인 HeteroFold를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.32259" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.32259" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Prefill-Free Cross-Family KV Cache Transfer for Heterogeneous Multi-Agent LLMs</li>
+<li><strong>저자</strong>: Vincent-Daniel Yun, Woosang Lim (이상 공동 1저자), Haneul Yoo, Sungjoo Yoo, Murali Annavaram, Sai Praneeth Karimireddy (University of Southern California, Seoul National University, New York University)</li>
+<li><strong>출처</strong>: arXiv:2609.32259v2 [cs.AI] (2026년 9월 29일)</li>
+<li><strong>프로젝트 페이지</strong>: 별도 프로젝트 페이지는 논문에 명시되지 않음 (코드 저장소: <a href="https://github.com/daniel-eai/Prefill-Free-Multi-Agent-LLMs">github.com/daniel-eai/Prefill-Free-Multi-Agent-LLMs</a>, 논문 게재 시점 기준 코드는 공개 예정 상태)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.32259">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>서로 다른 모델 패밀리(Llama, Qwen, Ministral 등)로 구성된 멀티 에이전트 LLM 시스템에서, 수신 측 모델의 재프리필(prefill) 없이도 송신 측의 KV 캐시를 토큰·레이어 정렬과 통계적 재보정을 통해 직접 재사용할 수 있게 하는 방법인 HeteroFold를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>최근 멀티 에이전트 LLM 시스템은 서로 다른 모델 패밀리나 규모를 조합해 역할을 분담하는 "이종(heterogeneous) 멀티 에이전트 시스템"으로 발전하고 있다. 문제는 에이전트 간 텍스트 기반 통신이다. 한 에이전트(송신자)가 이미 처리한 공유 맥락을 다른 에이전트(수신자)에게 전달할 때, 수신자는 그 텍스트를 처음부터 다시 프리필하여 자신의 KV 캐시를 재구축해야 한다. 이는 맥락 길이가 길어질수록 중복 연산과 지연(latency)을 크게 늘린다. 같은 모델 패밀리 내에서는 KV 캐시를 직접 전달해 이 재프리필을 생략하는 선행 연구(Dense Latent, KV Ridge 등)가 있었지만, 이들은 토크나이저, 모델 깊이, KV 표현 구조가 모두 동일하다는 전제를 깔고 있어 서로 다른 모델 패밀리 간에는 적용할 수 없었다. 즉, 이종 모델 간에는 토크나이저 불일치, 레이어 수 차이, KV 표현 공간의 차이라는 세 가지 장벽이 "프리필 없는 캐시 재사용"을 가로막고 있었다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>이종 모델 패밀리 간 캐시 전송을 가로막는 핵심 장애물로 토크나이저 불일치를 지목하고, 공유 문자 경계를 기준으로 송수신 토큰을 정렬하는 <strong>토큰 정렬(Token Alignment, TA)</strong> 기법을 제안.</li>
+<li>모델 깊이·KV 구조·특징 분포 차이를 다루기 위해 다층 송신 특징 결합, 교차 헤드 믹싱, 그리고 분포 재정렬(Recolor)을 결합한 <strong>교차 패밀리 K/V 매핑</strong>을 개발.</li>
+<li>단순 캐시 값 재구성만으로는 수신자의 실제 행동(어텐션 패턴·출력)이 보존되지 않음을 보이고, 이를 수신자의 어텐션·출력에 직접 맞추는 <strong>출력 인지 보정(output-aware calibration)</strong>을 도입. 보정 결과는 고정 아핀(affine) 변환으로 접혀(fold) 들어가 추가 추론 모듈 없이 직접 디코딩이 가능.</li>
+<li>Llama-3.1-8B, Qwen3-4B, Ministral-3-14B 세 모델 간 6가지 전송 방향 전부에서 기존 프리필-프리 기법(Dense Latent, KV Ridge) 대비 우수한 성능과, 32K 길이에서 원본 프리필 대비 최대 10.7배의 속도 향상을 실증.</li>
+</ul>
+<h2>방법론</h2>
+<p>HeteroFold는 송신자 모델 S와 수신자 모델 R을 모두 고정(frozen)한 채, 세 단계로 캐시를 변환한다. (1) <strong>토큰 및 레이어 정렬</strong>: 서로 다른 토크나이저가 만든 토큰 경계를 문자 단위 경계로 맞추고(토큰 정렬, TA), 수신자 레이어 하나에 대응하는 정보가 송신자의 여러 레이어에 분산되어 있다는 관찰에 따라 매칭된 레이어 주변의 인접한 송신자 레이어 3개(-4, 0, +4 오프셋)를 결합해 입력 특징을 구성한다(레이어 정렬, LA). (2) <strong>모멘트 매칭 기반 재정렬(Recolor)</strong>: 단순 재구성 손실(토큰별 오차 최소화)만으로는 KV 값은 비슷해도 수신자의 실제 어텐션 분포는 어긋날 수 있다는 점을 실험으로 보이고, 대신 송신자 특징의 평균·공분산을 수신자 고유 통계에 맞춰 화이트닝(whitening) 및 프로크루스테스(Procrustes) 정렬로 일치시키는 방식을 사용한다. (3) <strong>출력 인지 보정</strong>: Recolor까지 거쳐도 남는 어텐션-출력 오차를 줄이기 위해, 전송된 K가 유발하는 어텐션 패턴 변화와 전송된 V가 유발하는 값 변화를 분리하여 각각에 대해 저랭크(rank-ρ) 보정 행렬을 학습한다. K에 대해서는 실제 수신자 쿼리를 이용한 KL발산 기반 손실을, V에 대해서는 고정된 어텐션 가중치 하에서의 출력 오차 손실을 사용해 4 에폭 동안 학습한다. 학습이 끝나면 모든 보정 항은 하나의 고정 아핀 맵으로 "접혀(fold)" 들어가, 추론 시에는 레이어·역할(K/V)별로 하나의 고정 선형 변환만 적용하면 된다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Llama-3.1-8B-Instruct, Qwen3-4B, Ministral-3-14B-Instruct 세 모델 사이의 6가지 전송 방향에 대해, 장문 맥락 QA 벤치마크(Qasper, HotpotQA, LoCoMo, QuALITY)와 단문 맥락 벤치마크(ARC-Challenge, MMLU, WinoGrande, HellaSwag, GSM8K)로 평가했다. HeteroFold는 TA를 적용한 KV Ridge, Dense Latent 등 비교 기법들을 대부분의 설정, 특히 네 가지 장문 맥락 벤치마크 전부에서 능가했다. 멀티 에이전트 상황을 모사한 HiddenBench(숨겨진 개인정보를 교환해 정답을 찾는 과제)에서는, HeteroFold가 수신자 재프리필을 생략하면서도 텍스트 기반 통신(TextMas)과 비슷한 수준의 다수결 정확도(29.2% 대 27.7%)를 달성했으며 무효 응답 비율도 가장 낮았다. 지연시간 측정에서는 32K 토큰 길이의 Llama-3.1-8B→Ministral-3-14B 전송 기준으로 원본 프리필 대비 10.7배, 최신 프리필-프리 기법인 Dense Latent·KV Ridge 대비 1.18~1.47배 빨랐다. 구성요소 제거 실험에서는 토큰 정렬(TA)을 같은 인덱스 단순 매칭으로 바꿀 경우 성능 저하가 가장 컸고, 단일 레이어 매핑이나 헤드별 국소 매핑도 다층·교차 헤드 결합보다 성능이 낮아 각 구성요소의 기여가 확인되었다.</p>
+<h2>한계점</h2>
+<p>논문은 평가 대상을 Llama-3.1-8B, Qwen3-4B, Ministral-3-14B 세 모델과 이들 간 6가지 전송 방향으로 한정하고 있어, 더 다양한 모델 패밀리·규모 조합이나 더 많은 에이전트 수로 일반화되는지는 본문에서 별도로 다루지 않는다. 또한 보정(calibration) 과정에 1,600개의 학습 프롬프트와 400개의 held-out 프롬프트가 필요하며, 모델 쌍이 바뀔 때마다 이 보정을 다시 수행해야 한다는 점, 그리고 텍스트 기반 통신(TextMas)에 비해 멀티 에이전트 벤치마크에서는 근접하지만 완전히 동일한 성능에는 도달하지 못했다는 점이 보고되어 있다.</p>
+<h2>시사점</h2>
+<p>이 연구는 KV 캐시 재사용을 같은 모델 패밀리 내 최적화 기법에서 서로 다른 모델 패밀리 간에도 적용 가능한 기법으로 확장했다는 점에서, 다양한 전문화된 모델들을 역할별로 조합하는 이종 멀티 에이전트 시스템의 통신 효율을 크게 높일 수 있는 실용적 토대를 제공한다. 저자들은 이를 "모델 패밀리 경계를 넘나드는 보다 범용적인 KV 인터페이스"로 가는 한 걸음으로 자리매김하고 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.32259" target="_blank" rel="noopener">huggingface.co/papers/2609.32259</a> · 2026-10-05</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

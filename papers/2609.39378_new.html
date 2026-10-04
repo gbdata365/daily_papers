@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>에고툴즈</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#4 · Daily Papers 2026-10-05</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 57</span>
+    </div>
+    <h1 class="article-title">EgoTools: Towards Tool-Centric Reasoning in Real-World Egocentric Videos</h1>
+    <p class="article-title-ko">에고툴즈: 실제 1인칭 영상에서의 도구 중심 추론을 향하여</p>
+    <p class="article-sub">1인칭(에고센트릭) 영상 속 "도구 사용"에 특화된 대규모 학습 데이터셋과 진단형 벤치마크를 함께 제공하여, 현재의 멀티모달 비디오 모델들이 도구 중심 추론에서 얼마나 취약한지를 드러내고 이를 보완할 학습 신호를 제시한 연구이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.39378" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.39378" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: EgoTools: Towards Tool-Centric Reasoning in Real-World Egocentric Videos</li>
+<li><strong>저자</strong>: Shulin Tian, Junsu Kim, Shuai Liu 외 17명 (Nanyang Technological University S-Lab, A*STAR, KAIST, PKU, FDU 등 소속, 교신저자 Ziwei Liu)</li>
+<li><strong>출처</strong>: arXiv:2609.39378v1 [cs.CV] (2026년 9월 30일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://ropedia.github.io/egotools/">ropedia.github.io/egotools</a> (코드: github.com/Ropedia/EgoTools, 데이터셋·모델: huggingface.co/ropedia-ai)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.39378">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>1인칭(에고센트릭) 영상 속 "도구 사용"에 특화된 대규모 학습 데이터셋과 진단형 벤치마크를 함께 제공하여, 현재의 멀티모달 비디오 모델들이 도구 중심 추론에서 얼마나 취약한지를 드러내고 이를 보완할 학습 신호를 제시한 연구이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>사람의 일상·전문 활동 대부분은 도구를 매개로 이루어지며, 이를 이해하려면 단순한 행동 인식을 넘어 도구의 어포던스(affordance), 손-도구-대상물의 기하학적 관계, 작업의 절차적 진행, 도구 사용이 유발하는 인과적 결과까지 함께 추론해야 한다. 그러나 기존 비디오-언어 모델은 캡션 생성이나 일반적인 비디오 질의응답 같은 지각 중심 과제에서는 강하지만, 이러한 도구 중심 추론에서는 여전히 한계가 있다. 저자들은 그 원인을 두 가지로 지목한다. 첫째, 기존 에고센트릭 데이터셋(EPIC-KITCHENS, Ego4D, Ego-Exo4D, Assembly101, MECCANO, HOI4D 등)은 활동·객체·손-객체 상호작용에 초점을 맞출 뿐 도구 자체를 중심 설명 대상으로 다루지 않는다. 둘째, 기존 벤치마크들은 "계란을 요리한다"처럼 활동 단위로 질문을 구성해 정작 그 활동을 매개하는 도구(프라이팬, 뒤집개 등)는 주석에서 사실상 보이지 않게 된다. 즉 도구 중심 추론을 전용으로 평가·학습시킬 데이터와 진단 벤치마크가 모두 부재했다는 것이 이 논문의 출발점이다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>EgoTools-Data</strong>: 주방·강의실·연구실·수리공방·공예·사무실·가정 등 7개 도구 사용 도메인에서 수집한 약 100시간 분량의 실세계 1인칭 영상 코퍼스로, 동기화된 오디오, 계층적 밀집 캡션, 도구 중심 내레이션, 3D 보조 정보(깊이·카메라 포즈·장기 4D 객체 궤적)를 포함한다.</li>
+<li><strong>EgoTools-Bench</strong>: 어포던스&amp;인과성(Affordance &amp; Causality), 지각&amp;그라운딩(Perception &amp; Grounding), 절차적 동역학(Procedural Dynamics), 공간 추론(Spatial Reasoning) 4개 트랙으로 구성된 1,000문항 8지선다 진단 벤치마크.</li>
+<li>184,679개의 비디오 지시문(instruction-tuning) 예제로 구성된 학습 코퍼스를 함께 구축하여, 데이터가 단순 평가용이 아니라 실제 학습 가능한 지도 신호임을 검증.</li>
+<li>사람 전문가, 독점 모델(Gemini 계열), 다수의 오픈소스 비디오-언어 모델(Qwen3-VL, InternVL, LLaVA, MiMo-VL, GLM 등)을 벤치마크에서 광범위하게 평가하고 비교.</li>
+</ul>
+<h2>방법론</h2>
+<p>영상은 HOMIE라는 4개의 어안 카메라가 달린 경량 헤드마운트 장비로 수집되었으며, 정류(rectify)된 전면-좌측 RGB 스트림을 1024×1024, 20FPS로 정규화해 사용한다. 수집은 사전에 정의된 절차를 따르는 "구조화된 과제 유도" 방식과, 참가자가 자유롭게 수행하는 "개방형 참가자 주도" 방식을 병행해 일관성과 다양성을 동시에 확보했다. 텍스트 주석은 두 갈래로 이루어진다. (1) 밀집 캡션은 Gemini-3-Flash를 이용해 영상을 5분 단위로 나눈 뒤 5초 단위 청크 캡션 → 1분 요약 → 5분 요약으로 계층적으로 집계하는 스트리밍 파이프라인으로 생성한다. (2) 도구 중심 내레이션은 실제 작업 수행자가 도구 선택, 사용 의도, 대상물에 미친 효과를 직접 서술하고 핵심 프레임에 2D 그라운딩 포인트를 남긴다. 3D 주석을 위해서는 3D Gaussian Splatting으로 다시점 일관 장면 기하를 복원하고, SAM2 기반의 "재귀적 VLM 안내 세그멘테이션"으로 장기 객체 추적을 수행한다(추적 오류나 의미 불일치 발생 시 VLM이 이를 감지해 SAM2를 재초기화). 추적된 마스크는 깊이·카메라 포즈와 결합해 3D 바운딩박스와 4D 궤적으로 승격된다. 벤치마크용 소스 영상(40.34시간)과 학습용 소스 영상은 처음부터 분리되어, 어떤 학습 데이터도 벤치마크 영상에서 파생되지 않도록 설계했다. 벤치마크 질문은 수집자와 외부 주석자가 수작업으로 8지선다 형태(정답 1개 + 오답 7개)로 제작한 뒤, 구조적 결함·중복·텍스트만으로 풀리는 지름길 등을 검출·수정하는 품질관리 파이프라인을 거친다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>EgoTools-Bench는 8지선다 형식(무작위 추정 시 12.5%)이며, 사람 전문가는 83.2%의 정확도를 보였다. 반면 오픈소스 모델들은 38.9~50.0%에 머물렀고(최고는 Qwen3-VL-8B-Instruct의 50.0%), 독점 모델 중 가장 강한 Gemini-3.1-Pro도 66.9%에 그쳐 사람과 상당한 격차를 보였다. 특히 지각&amp;그라운딩(PG) 트랙은 모델별로 35.6~45.9%, 최고 성능인 Gemini-3.1-Pro조차 51.7%에 불과해 가장 어려운 트랙으로 확인되었다. EgoTools-Data의 학습 유용성을 검증하기 위해 Qwen3-VL-8B-Instruct의 언어모델 부분만 184,679개 지시문 예제로 지도 미세조정(시각 인코더·정렬기는 동결)한 결과, 전체 정확도가 50.0%에서 60.9%로 10.9%p 상승했다(4개 트랙 중 3개 개선, 다만 공간 추론은 11.0%p 하락). 입력 조건에 대한 제거(ablation) 실험에서는 순서가 유지된 64프레임 입력이 섞인 프레임(49.3%), 중간 프레임 1장(46.9%), 텍스트 전용(42.7%) 입력보다 꾸준히 높은 정확도(51.7%)를 보여, 다중 프레임과 시간적 순서 정보가 모두 성능에 기여함을 확인했다. 또한 질문에서 도구 단서가 명시된 경우(explicit)가 암묵적으로 추론해야 하는 경우(implicit)보다 대체로 더 쉬웠다.</p>
+<h2>한계점</h2>
+<p>공간 추론(Spatial Reasoning) 트랙은 지도 미세조정 이후에도 오히려 성능이 하락해, 현재의 학습 방식으로는 공간적 추론 능력을 안정적으로 끌어올리지 못함을 논문 스스로 한계로 명시하고 있다. 또한 벤치마크의 도메인 분포가 주방 영상에 크게 치우친 롱테일 구조이며, 사람 수준(83.2%) 대비 최고 모델(66.9%) 간에도 여전히 큰 격차가 남아 있다고 밝히고 있다.</p>
+<h2>시사점</h2>
+<p>이 연구는 "활동을 알아보는 능력"과 "도구를 매개로 한 인과·절차·공간 추론 능력"이 서로 다른 차원의 역량임을 실증적으로 보여준다. 기존의 범용 에고센트릭 벤치마크(EgoSchema, EgoPlan, EgoThink)에서 높은 점수를 받는 모델도 EgoTools-Bench에서는 낮은 점수를 보인다는 결과는, 향후 로봇 조작이나 체화된 AI(embodied AI) 시스템이 실세계에서 도구를 다루기 위해서는 EgoTools와 같은 도구 중심 전용 데이터와 평가 체계가 필요함을 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.39378" target="_blank" rel="noopener">huggingface.co/papers/2609.39378</a> · 2026-10-05</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

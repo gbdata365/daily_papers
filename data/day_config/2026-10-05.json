@@ -1,0 +1,110 @@
+{
+  "2609.38923": {
+    "base": "2609_그래프포지_그래프기반-워크스페이스-에이전트-학습",
+    "rank": "#1",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "144",
+    "en_title": "GraphForge: Training Working Agents with Graph-Anchored Workspace Synthesis",
+    "ko_title": "그래프포지: 그래프 기반 워크스페이스 합성을 통한 작업 에이전트 학습"
+  },
+  "2610.00314": {
+    "base": "2610_예측기여도_과학적설명의-실험예측-기여도-측정",
+    "rank": "#2",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "88",
+    "en_title": "Predictive Credit: Measuring What Scientific Explanations Add to Experimental Forecasts",
+    "ko_title": "예측 기여도: 과학적 설명이 실험 예측에 더하는 가치 측정"
+  },
+  "2609.36585": {
+    "base": "2609_타이니로라_트랜스포머-조기사고종료-해법",
+    "rank": "#3",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "68",
+    "en_title": "Transformers Stop Thinking Too Early, and a Tiny LoRA Fixes It",
+    "ko_title": "트랜스포머는 너무 일찍 사고를 멈추고, 작은 LoRA가 이를 고친다"
+  },
+  "2609.39378": {
+    "base": "2609_에고툴즈_실제-1인칭-영상-도구중심-추론",
+    "rank": "#4",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "57",
+    "en_title": "EgoTools: Towards Tool-Centric Reasoning in Real-World Egocentric Videos",
+    "ko_title": "에고툴즈: 실제 1인칭 영상에서의 도구 중심 추론을 향하여"
+  },
+  "2609.32259": {
+    "base": "2609_캐시전송_이종-멀티에이전트-llm-kv캐시-전송",
+    "rank": "#5",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "57",
+    "en_title": "Prefill-Free Cross-Family KV Cache Transfer for Heterogeneous Multi-Agent LLMs",
+    "ko_title": "이종 멀티 에이전트 LLM을 위한 프리필 없는 교차 패밀리 KV 캐시 전송"
+  },
+  "2610.00574": {
+    "base": "2610_밀도보상_다중보상-rl-밀도기반-보상집계",
+    "rank": "#6",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "57",
+    "en_title": "Make Sparse Rewards Count: Density-Aware Reward Aggregation for Multi-Reward RL",
+    "ko_title": "희소 보상을 의미 있게 만들기: 다중 보상 RL을 위한 밀도 인지 보상 집계"
+  },
+  "2609.32993": {
+    "base": "2609_엑스트리_재사용경험토큰화-에이전트일반화",
+    "rank": "#7",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "56",
+    "en_title": "X-Tree: Tokenizing Reusable Experience for Efficient Agent Generalization",
+    "ko_title": "X-Tree: 효율적인 에이전트 일반화를 위한 재사용 가능 경험의 토큰화"
+  },
+  "2610.00812": {
+    "base": "2610_비디오포스트_비디오생성모델-포스트트레이닝-정렬-서베이",
+    "rank": "#8",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "55",
+    "en_title": "Video Generation Models: A Survey of Post-Training and Alignment",
+    "ko_title": "비디오 생성 모델: 포스트트레이닝과 정렬에 대한 서베이"
+  },
+  "2610.02196": {
+    "base": "2610_인터이볼브_휴머노이드-보행조작-보상프로그램-테스트시진화",
+    "rank": "#9",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "55",
+    "en_title": "InterEvolve: Test-Time Evolution of Reward Programs for Humanoid Loco-Manipulation",
+    "ko_title": "InterEvolve: 휴머노이드 보행-조작을 위한 보상 프로그램의 테스트 시점 진화"
+  },
+  "2609.38024": {
+    "base": "2609_라소_검색증강-스킬최적화",
+    "rank": "#10",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "55",
+    "en_title": "Retrieval-Augmented Skill Optimization via Cross-Harness Adaptation",
+    "ko_title": "교차 하니스 적응을 통한 검색증강 스킬 최적화"
+  },
+  "2610.01215": {
+    "base": "2610_오토지유아이월드_이미지생성GUI에이전트-세계모델",
+    "rank": "#11",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "54",
+    "en_title": "AutoGUIWorld: Image Generators as Visual World Models for GUI Agent",
+    "ko_title": "오토지유아이월드: GUI 에이전트를 위한 이미지 생성 모델 기반 시각적 세계 모델"
+  },
+  "2609.32019": {
+    "base": "2609_디엠엠_멀티에이전트-경로탐색-의도디노이징",
+    "rank": "#12",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "51",
+    "en_title": "Decentralized Master-Mind: Joint Action Refinement through Iterative Intent Denoising in Multi-Agent Pathfinding",
+    "ko_title": "분산형 마스터마인드: 다중 에이전트 경로탐색을 위한 반복적 의도 디노이징을 통한 결합 행동 정제"
+  }
+}

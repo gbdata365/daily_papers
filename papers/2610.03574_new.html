@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>웹 브라우징 에이전트를 위한 다국어·다중모달 스트레스 테스트 벤치마크</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#9 · Daily Papers 2026-10-06</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 42</span>
+    </div>
+    <h1 class="article-title">HyperBrowseComp: A Multilingual and Multimodal Stress Test for Web-Browsing Agents</h1>
+    <p class="article-title-ko">웹 브라우징 에이전트를 위한 다국어·다중모달 스트레스 테스트 벤치마크</p>
+    <p class="article-sub">13개 언어, 8개 증거 양식에 걸쳐 423개의 사람이 직접 작성·검증한 극도로 어려운 질문으로 구성된 다국어·다중모달 웹 브라우징 벤치마크로, 최상위 모델조차 31.68% 정확도에 그쳐 현재 웹 에이전트의 한계를 드러낸다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.03574" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.03574" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: HyperBrowseComp: A Multilingual and Multimodal Stress Test for Web-Browsing Agents</li>
+<li><strong>저자</strong>: Alham Fikri Aji 외 (Mohamed bin Zayed University of Artificial Intelligence, Mila–퀘벡 인공지능 연구소, Inception AI, Alibaba Group, AI Singapore 공동 연구진)</li>
+<li><strong>출처</strong>: arXiv:2610.03574v1 [cs.AI] (2026년 10월 2일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://HyperBrowseComp.github.io/">HyperBrowseComp 프로젝트 페이지</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.03574">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>13개 언어, 8개 증거 양식에 걸쳐 423개의 사람이 직접 작성·검증한 극도로 어려운 질문으로 구성된 다국어·다중모달 웹 브라우징 벤치마크로, 최상위 모델조차 31.68% 정확도에 그쳐 현재 웹 에이전트의 한계를 드러낸다.</p>
+<h2>배경 및 문제의식</h2>
+<p>웹을 검색·탐색하며 증거 기반 답변을 생성하는 LLM 에이전트 평가를 위해 GAIA, WebArena, BrowseComp 등이 제안되었지만, 기존 BrowseComp는 영어 중심에 텍스트 위주이며 모델 성능 향상으로 점점 변별력이 떨어지고 있다. BrowseComp-ZH, K-BrowseComp 등 언어별 확장판이나 XBCP 같은 번역 기반 다국어 벤치마크, MMSearch·MM-BrowseComp 같은 다중모달 확장판이 등장했지만, 네이티브로 작성된 다국어 질문과 다중모달 증거(영상, 스캔 문서, 이미지, 지도 등)를 동시에 결합한 개방형 웹 벤치마크는 부재했다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>13개 언어의 원어민/숙련 화자가 직접 작성하고 교차 검증한 423개 질문으로 구성된 HyperBrowseComp를 공개했으며, 번역이 아닌 네이티브 작성 방식을 통해 언어·문화적 맥락을 보존했다.</li>
+<li>질문의 약 64.3%가 동영상, PDF/스캔 문서, 이미지, 오디오, 지도, 표 등 비텍스트 증거를 요구하도록 설계해, 단순 텍스트 검색을 넘어서는 멀티모달 탐색 능력을 평가한다.</li>
+<li>인터넷 접속 없는 7개 모델로 "쉬운" 질문을 걸러내는 난이도 검증 절차와, 모호성을 줄이기 위한 '지문(fingerprint)' 제약 추가 절차를 통해 파라메트릭 지식만으로 풀리지 않는 고난도 질문만 남겼다.</li>
+<li>Gemini, GPT 계열 등 5개 프런티어 모델을 기본 검색·Exa·OWL 등 3가지 브라우징 하네스로 평가하고, 사람 평가와도 비교해 성능·비용·실패 양상을 폭넓게 분석했다.</li>
+</ul>
+<h2>방법론</h2>
+<p>질문은 각 언어의 원어민 또는 그에 준하는 숙련 화자가 작성하며, 공개적으로 검증 가능하지만 찾기 어려운 답을 가진 사실형 질문으로 한정했다. 1차 작성자가 정답, 근거 URL, 정확한 증거 위치(타임스탬프, 페이지 번호 등), 풀이 경로를 함께 제출하면 2차 검증자가 질문의 명확성·정답의 유일성·시간 민감성 등을 검토하고, 필요시 비유도적 '지문' 제약을 추가해 난이도와 특정성을 높였다. 이후 인터넷 접속이 차단된 7개 LLM(Gemini, GLM, GPT-OSS, Kimi K2, MiniMax-M2, DeepSeek-V3.2 등)으로 사전 풀이를 시도해, 2개 이상의 모델이 맞히거나 1개 모델이라도 매우 구체적인 답을 맞힌 질문(총 77개)을 제외함으로써 파라메트릭 지식만으로 풀리는 문항을 걸러냈다. 평가는 기본 제공 검색(built-in search), 표준 검색/가져오기 도구를 제공하는 Exa, 역할 분담형 멀티에이전트 프레임워크 OWL의 세 가지 하네스로 수행했으며, 최대 25단계의 ReAct 루프 또는 OWL의 작업관리자-조정자-연구자-종합자 역할 분담 구조를 사용했다. 정답 판정은 동일 모델을 LLM 심판으로 활용한 이진 채점 방식이다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Gemini 3.7 Flash가 기본 검색 설정에서 31.68%로 가장 높은 정확도를 기록했고, Gemini 3.1 Pro(25.53%), GPT-5.6 계열(11.58~19.15%)이 뒤를 이었다. 검색 하네스를 Exa로 바꾸면 GPT-5.6 Sol은 성능이 오르지만 두 Gemini 모델은 오히려 크게 하락해, 모델이 자사 검색 생태계에 강하게 특화되어 있음을 보여준다. OWL 하네스는 93건의 실행 실패(타임아웃, 호출 예산 초과 등)로 전체 정확도가 17.73%까지 떨어졌다. 인도네시아어·태국어·베트남어 30문항에 대한 사람 평가(30문항 중 15문항 정답)에서는 사람과 최고 성능 모델(Gemini 3.7 Flash)의 전체 정확도가 비슷했지만 정답이 겹치는 문항은 일부에 그쳤으며, 사람은 평균 89.5분이 소요됐다. 전체 423문항 중 244문항(57.68%)은 5개 모델 모두 틀렸고, 그래프/도표/이미지 등 시각적 증거와 독일어·인도네시아어 질문, "게임", "음식" 도메인에서 공통 실패가 두드러졌다.</p>
+<h2>한계점</h2>
+<p>저자들은 벤치마크가 일상적 검색 질의 분포를 대표하지 않는 의도적 스트레스 테스트라는 점, 실시간 웹을 대상으로 하여 검색 순위·페이지 내용·도구 동작이 시간에 따라 변할 수 있다는 점(트레이스 보존으로 일부 완화), 선정된 13개 언어가 전체 언어 공동체를 대표하지 못하며 언어별 온라인 정보량·품질 차이가 크다는 점, 높은 연산 비용으로 인해 5개 모델·2~3개 하네스 조합만 평가해 더 폭넓은 시스템 비교는 수행하지 못했다는 점을 한계로 명시했다.</p>
+<h2>시사점</h2>
+<p>현재 최상위 웹 브라우징 에이전트도 언어·문화적 맥락과 다중모달 증거가 얽힌 고난도 탐색 과제에서 절반 이상의 문항을 풀지 못한다는 사실을 보여주며, 모델 성능이 특정 검색 생태계(하네스)에 크게 좌우된다는 점에서 향후 다국어·다중모달 증거를 통합적으로 처리하고 하네스에 견고한 브라우징 에이전트 연구의 필요성을 제기한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.03574" target="_blank" rel="noopener">huggingface.co/papers/2610.03574</a> · 2026-10-06</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

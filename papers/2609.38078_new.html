@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>MotorMind</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#3 · Daily Papers 2026-10-06</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 85</span>
+    </div>
+    <h1 class="article-title">MotorMind: Scaffolding General Vision Language Models for Zero-Shot Robot Manipulation</h1>
+    <p class="article-title-ko">MotorMind: 제로샷 로봇 조작을 위한 범용 비전-언어 모델 스캐폴딩</p>
+    <p class="article-sub">범용 비전-언어 모델(VLM)을 별도의 학습된 행동 정책이나 코딩 에이전트 없이도, 적절한 중간 수준 행동 표현과 비동기 실행 하네스(harness)만으로 사람 텔레오퍼레이터처럼 로봇 조작을 수행하게 만드는 MotorMind를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.38078" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.38078" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: MotorMind: Scaffolding General Vision Language Models for Zero-Shot Robot Manipulation</li>
+<li><strong>저자</strong>: Bingxuan Li, Siqi Song, Yizhuo Wu (공동 1저자), Jiarui Yao, Tong Zhang, Huan Zhang (일리노이대학교 어바나-샴페인)</li>
+<li><strong>출처</strong>: arXiv:2609.38078v1 [cs.RO] (2026년 9월 29일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://motor-mind.github.io">https://motor-mind.github.io</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.38078">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>범용 비전-언어 모델(VLM)을 별도의 학습된 행동 정책이나 코딩 에이전트 없이도, 적절한 중간 수준 행동 표현과 비동기 실행 하네스(harness)만으로 사람 텔레오퍼레이터처럼 로봇 조작을 수행하게 만드는 MotorMind를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>비전-언어-행동(VLA) 모델은 특화된 로봇 데이터로 학습되기 때문에 새로운 환경·과제로의 제로샷 전이가 제한적이고, 빠르게 발전하는 범용 VLM의 능력을 직접 활용하지 못한다. 한편 기존 '에이전틱 로보틱스' 접근은 VLM을 고수준 추론에만 쓰고 지각·그라운딩·행동 생성은 학습된 행동 전문가, SAM 기반 분할 모델, 모션 플래너 등 많은 외부 모듈에 의존해 복잡도와 비용이 커진다. 저자들은 "VLM이 외부 모델 없이도 직접 관찰에서 추론하고 행동을 내고 실행 피드백에 적응할 수 있는가"라는 질문을 던진다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>로봇 조작에 필요한 세 가지 국소적 판단(다음 행동 선택, 진행 평가, 서브골 완료 판단)에 대해 VLM들을 진단하는 240문항 벤치마크를 구축하고, 행동 선택이 가장 취약한 능력임을 밝힘.</li>
+<li>이 진단에 기반해 <strong>MotorMind</strong>라는 VLM 중심 조작 하네스를 설계: 압축된 중간 수준 행동 표현(이동/회전/그리퍼 등 파라미터화된 명령)과, 백그라운드에서 실행을 모니터링하고 메모리를 비동기적으로 갱신하는 구조.</li>
+<li>외부 그라운딩 도구(SAM3), 코딩 에이전트, 로봇별 미세조정 없이도 LIBERO-PRO 기준 제로샷 방법들 중 최고 성능을 달성.</li>
+<li>실제 xArm6 로봇에 동일 인터페이스를 그대로 적용해 95%의 평균 성공률을 달성, 시뮬레이션-실제 전이성을 입증.</li>
+</ul>
+<h2>방법론</h2>
+<p>MotorMind는 하나의 동결된 범용 VLM(기본값 Qwen3.8-Flash-Next)에 Planner·Executor·Monitor·Verifier·Memory라는 5개의 역할을 부여한다. Planner는 지시문을 서브골 시퀀스로 분해하고 실행 중 필요시 재계획한다. Executor는 현재 관찰과 최근 실행 이력을 바탕으로 이동/회전/그리퍼 동작의 짧은 배치(batch)를 제안하며, 결정론적 Controller가 이를 실제 로봇 좌표계 움직임으로 변환해 실행한다. Monitor는 백그라운드 스레드에서 실행 중 관찰을 계속 점검하다가 목표와 불일치하는 상황(예: 잘못된 물체를 잡음)을 감지하면 다음 행동 경계에서 남은 명령을 취소시킨다(교정 행동을 직접 제안하지는 않음). Verifier는 측정된 로봇 상태와 관찰을 종합해 서브골 성공 여부를 판단하고, 성공/재시도/재계획 중 하나를 결정한다. Memory는 실행 증거와 검증 결과를 비동기적으로 요약해 다음 계획·검증에 활용한다. 이 설계로 순차적 실행 루프를 유지하면서도 모니터링과 메모리 갱신이 로봇 동작을 블로킹하지 않도록 한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>LIBERO-PRO의 Goal/Spatial/Object 스위트에서 MotorMind는 기본(unperturbed) 과제 평균 66.7%, 교란(semantic/object/position/task perturbation) 과제 평균 53.8% 성공률을 달성해, 평가된 제로샷 방법들(CaP-X 등, 각각 최대 13.3%/19.2%) 중 가장 높았다. 특히 교란 조건에서는 미세조정된 OpenVLA-OFT(51.2%)와도 유사한 수준(53.8%)을 보였다. 동적 환경(물체가 이동하는 컨베이어, 장면 변화, 지시문 변경 등) 적응 실험에서도 MotorMind가 모든 네 그룹에서 최고 성능(70~90%)을 기록했다. 실제 xArm6 로봇 배치에서는 직접 지각 과제 97~100%, 인간 개입(교란) 과제 90~93%, 평균 95% 성공률을 보였다. 백본을 더 강한 GPT-6 Sol로 교체하면 LIBERO-PRO 기본 성공률이 66.7%에서 83.3%로 상승했는데, 이는 추론 시간이 길어지는 대가와 함께 나타났다. 컴포넌트 제거 실험에서는 재계획(replanning) 제거 시 -30.0%p, Verifier 제거 시 -6.7%p, Planner 제거 시 -66.7%p(0% 성공)로 하락해 Planner와 재계획의 중요성이 두드러졌다. 실패 분석에서는 시각적 그라운딩 오류와 조기 완료 오판이 주된 실패 원인으로 나타났다.</p>
+<h2>한계점</h2>
+<p>남은 실패의 주요 원인은 부정확한 시각적 그라운딩(잘못된 물체/위치 선택), 구현된(embodied) 추론 오류(과제 완료를 잘못 판단), 그리고 특정 상황에 대한 행동 지식 부족으로 분류된다. 더 강한 백본일수록 추론 지연이 커지는 정확도-지연 간 트레이드오프가 존재하며, 논문은 이러한 오류들이 향후 VLM 성능 향상에 따라 줄어들 것으로 기대하지만 현재 시스템에서는 여전히 한계로 남아있다.</p>
+<h2>시사점</h2>
+<p>범용 VLM에 적절한 수준의 행동 추상화(중간 수준 행동 표현)와 비동기 실행 구조를 결합하면, 전용 로봇 데이터로 학습된 행동 정책 없이도 효과적인 제로샷 조작이 가능함을 보여준다. 이는 VLA 모델을 더 많은 시연 데이터로 스케일링하는 기존 방향과 상호 보완적인, "범용 모델 능력과 제어 표현의 정합"이라는 새로운 제로샷 로봇 제어 패러다임을 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.38078" target="_blank" rel="noopener">huggingface.co/papers/2609.38078</a> · 2026-10-06</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

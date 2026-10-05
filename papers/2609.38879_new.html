@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>단백질 폴딩 학습이 더 넓은 추론으로 전이되는가?</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#2 · Daily Papers 2026-10-06</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 94</span>
+    </div>
+    <h1 class="article-title">Does Learning Protein Folding Generalize to Broader Reasoning?</h1>
+    <p class="article-title-ko">단백질 폴딩 학습이 더 넓은 추론으로 전이되는가?</p>
+    <p class="article-sub">단백질 접힘(folding) 구조를 학습시키면 언어 모델이 단백질과 전혀 무관한 공간·그래프·과학·일반 추론 과제에서도 성능이 향상되는지를 검증하고, 실제로 유의미한 전이가 일어남을 보인 연구다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.38879" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.38879" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Does Learning Protein Folding Generalize to Broader Reasoning?</li>
+<li><strong>저자</strong>: Yong Liu, Zhanpeng Shi, Yizhou Dang, Zhongyue Zhang, Xiaoliang Shi, Zhijian Wei, Shuangjia Zheng (GENTEL Lab, 상하이교통대·푸단대·상하이혁신연구원·동북대학교)</li>
+<li><strong>출처</strong>: arXiv:2609.38879v1 [cs.LG] (2026년 9월 30일)</li>
+<li><strong>프로젝트 페이지</strong>: 코드 공개 https://github.com/GENTEL-lab/Fold2Reason</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.38879">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>단백질 접힘(folding) 구조를 학습시키면 언어 모델이 단백질과 전혀 무관한 공간·그래프·과학·일반 추론 과제에서도 성능이 향상되는지를 검증하고, 실제로 유의미한 전이가 일어남을 보인 연구다.</p>
+<h2>배경 및 문제의식</h2>
+<p>인간이 작성한 텍스트 데이터는 한계가 있고, 표면적 정답만 전달할 뿐 그 뒤의 공간적·구조적 논리를 담지 못하는 경우가 많다. 특정 도메인에 특화된 학습(수학, 코드 등)이 일반적 능력으로 전이되는지는 분분한 결과를 보여왔다. 저자들은 하나의 해결된 단백질 구조에서 수천 개의 정확히 검증 가능한 공간·위상 질문을 자동으로 만들어낼 수 있다는 점에서, 단백질 폴딩이 "구조가 조밀하고 검증 가능한" 이상적인 학습 신호 후보라고 보았다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>FoldingCorpus</strong>: OpenFold 단량체 단백질 컬렉션에 12가지 결정적(deterministic) 구조 연산자를 적용해 만든 질문-답변 데이터셋(핵심 1,200개 단백질, 14,400개 QA, 클러스터 분리된 학습/검증/테스트 분할 포함).</li>
+<li><strong>Fold2Reason</strong>: FoldingCorpus의 이산적 정답(언어모델 헤드로 예측)과 연속적인 3D 좌표/거리맵(동결된 디코더로 예측)이라는 두 신호를 공유 워크스페이스를 통해 동시에 학습시키는 LoRA 기반 사후학습(post-training) 레시피.</li>
+<li>평가 시에는 단백질 입력, 워크스페이스, 좌표 디코더를 모두 제거하고 적응된 언어모델만 사용함으로써, 전이 효과가 모델 파라미터 자체에 남아있는지를 검증하는 설계.</li>
+<li>무작위/합성/셔플된 구조로 만든 매칭 대조군들과 비교해 실제 단백질 구조 기반 학습의 우위를 입증.</li>
+</ul>
+<h2>방법론</h2>
+<p>Qwen3.5-9B를 프로즌 백본으로 하고, LoRA(rank 16)와 256차원 공유 워크스페이스만 학습시킨다. 각 단백질에 대해 접촉 여부, 거리 비교, 분절 방향, 카이랄성 등 12종의 질문을 패킹해 하나의 예시로 만들고, 정답 토큰에 대해서만 교차엔트로피 손실(L_qa)을 적용한다. 동시에 잔기(residue) 표현을 동결된 좌표/거리맵 디코더에 통과시켜 좌표, 접촉, 토션, 회전반경 등을 예측하는 기하 손실(L_geo)을 추가한다. 최종 손실은 L = L_qa + L_geo이며, 디코더 자체는 동결하여 그래디언트가 공유 LoRA·워크스페이스 파라미터로만 흐르게 한다. 평가는 FTB-Core(자체 제작 공간추론 벤치마크), SpatialViz, VSI, GraphQA(Easy/Hard), BBH, ChemBench, ChemBench4K, Lab-Bench, SciBench 등 10개 벤치마크의 매크로 평균(General-10)으로 측정한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>3개의 독립 시드로 학습한 결과, Fold2Reason은 General-10 매크로 평균을 45.09%에서 48.33%로(+3.23%p) 끌어올렸으며 10개 벤치마크 전부에서 양의 향상을 보였다(GraphQA Hard +6.83%p, SpatialViz +6.10%p 등). 무작위 좌표 기반 대조군(Hidden Geometry)은 +0.92%p에 그쳤고, 정답 형식만 모방한 대조군(Format Copy, Fixed Shuffle)은 오히려 소폭 하락해, 실제 단백질 구조 정보가 핵심임을 보였다. 이 효과는 Qwen3.5 2B/4B/9B 전 스케일과 InternVL3.5-8B에서도 재현되었으나 Gemma-4-12B-IT에서는 거의 중립적이었다. 50~4,000개 단백질로 데이터 규모를 조절한 스케일링 실험에서는 2,000개 단백질에서 전이 효과가 최대(+3.70%p)였고, 그 이상에서는 체감했다. 컴포넌트 분해 결과 FoldingCorpus의 질의응답 학습이 전이 효과의 대부분(+2.93%p)을 차지했고, 기하 학습(Geometry)은 주로 3D 중심 과제(FTB-Core, SpatialViz, VSI)에 국한된 추가 효과(+0.30%p)를 보였다. 한편 단백질 폴딩 자체의 성능은 TM-score 16.88, lDDT-Cα 25.32로, 기존 범용 LLM들(2~10 수준)보다는 훨씬 높지만 경쟁력 있는 폴딩 시스템 수준에는 미치지 못했다.</p>
+<h2>한계점</h2>
+<p>1,000개 학습 단백질, rank-16 LoRA, 3개 시드, General-10 벤치마크라는 특정 설정에 기반한 결론이며, 동결된 디코더는 '구조 복원 가능성'만을 측정할 뿐 전역적 구조 복원의 정확도를 보장하지 않는다. FoldBench는 정확 서열 및 5-mer 수준 중복 제거만 수행해 원격 상동성(remote-homology)이나 새로운 폴드에 대한 일반화는 검증되지 않았다. 또한 과제 이질성과 정답 형식의 모호성이 행동적 전이 결과의 해석에 제약을 준다.</p>
+<h2>시사점</h2>
+<p>비언어적이고 구조가 조밀한 과학 데이터(해결된 단백질 구조)가 언어모델의 폭넓은 추론 능력을 체계적으로 향상시킬 수 있음을 보여줌으로써, 이미 풀린 과학적 문제를 사후학습용 데이터 자원으로 재활용할 수 있는 실용적 가능성을 제시한다. 다만 이러한 전이는 모델 아키텍처와 데이터 규모에 따라 달라지는, 균일하지 않은 현상이다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.38879" target="_blank" rel="noopener">huggingface.co/papers/2609.38879</a> · 2026-10-06</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

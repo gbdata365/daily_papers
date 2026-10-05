@@ -1,0 +1,110 @@
+{
+  "2610.01780": {
+    "base": "2610_리얼컴패니언_장기대화-기억-추론-벤치마크",
+    "rank": "#1",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "186",
+    "en_title": "RealCompanion: Benchmarking Human Understanding from Reasoning over Longitudinal Real-World Conversations",
+    "ko_title": "리얼컴패니언: 장기 실제 대화에 대한 추론을 통한 인간 이해 벤치마킹"
+  },
+  "2609.38879": {
+    "base": "2609_폴드투리즌_단백질폴딩-학습-일반추론-전이",
+    "rank": "#2",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "94",
+    "en_title": "Does Learning Protein Folding Generalize to Broader Reasoning?",
+    "ko_title": "단백질 폴딩 학습이 더 넓은 추론으로 전이되는가?"
+  },
+  "2609.38078": {
+    "base": "2609_모터마인드_VLM-기반-제로샷-로봇조작",
+    "rank": "#3",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "85",
+    "en_title": "MotorMind: Scaffolding General Vision Language Models for Zero-Shot Robot Manipulation",
+    "ko_title": "MotorMind: 제로샷 로봇 조작을 위한 범용 비전-언어 모델 스캐폴딩"
+  },
+  "2609.38839": {
+    "base": "2609_프레임모로우_미래지향-프레임선택-장기비디오생성",
+    "rank": "#4",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "85",
+    "en_title": "FrameMorrow: Future-guided Frame Selection with Prospective Tokens for Long-Horizon Video Generation",
+    "ko_title": "FrameMorrow: 장기 영상 생성을 위한 Prospective Token 기반 미래 지향 프레임 선택"
+  },
+  "2610.02826": {
+    "base": "2610_RSR_재귀적-자기재작성-궤적확장",
+    "rank": "#5",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "76",
+    "en_title": "Scaling Trajectories for Complex Tasks through Recursive Self-Rewrite",
+    "ko_title": "재귀적 자기재작성을 통한 복잡 과제 궤적 확장"
+  },
+  "2610.02508": {
+    "base": "2610_프로왐_진행형-시각서브골-월드액션모델",
+    "rank": "#6",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "69",
+    "en_title": "World Action Modeling with Progressive Visual Planning",
+    "ko_title": "진행형 시각 계획을 통한 월드 액션 모델링"
+  },
+  "2609.36659": {
+    "base": "2609_옵스프트_온폴리시-방향제약-SFT-일반화",
+    "rank": "#7",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "69",
+    "en_title": "On-Policy Parameter Update Direction Underlies Generalization in LLM Post-Training",
+    "ko_title": "온-폴리시 파라미터 업데이트 방향이 LLM 포스트트레이닝 일반화의 근간이다"
+  },
+  "2610.03391": {
+    "base": "2610_나바왐_영상-기반-네이티브-액션사전학습-로봇정책",
+    "rank": "#8",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "59",
+    "en_title": "Native Action-Prior Learning from Videos for World Action Models",
+    "ko_title": "영상으로부터 네이티브 행동-사전 학습을 수행하는 월드 액션 모델"
+  },
+  "2610.03574": {
+    "base": "2610_하이퍼브라우즈컴프_다국어-다중모달-웹브라우징-에이전트-벤치마크",
+    "rank": "#9",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "42",
+    "en_title": "HyperBrowseComp: A Multilingual and Multimodal Stress Test for Web-Browsing Agents",
+    "ko_title": "웹 브라우징 에이전트를 위한 다국어·다중모달 스트레스 테스트 벤치마크"
+  },
+  "2609.34715": {
+    "base": "2609_피디이제파_파라메트릭-PDE-잠재-동역학-예측-표현-학습",
+    "rank": "#10",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "34",
+    "en_title": "PDE-JEPA: Predictive Representation Learning of Latent Dynamics Modeling for Parametric PDEs",
+    "ko_title": "파라메트릭 PDE를 위한 잠재 동역학 예측 표현 학습"
+  },
+  "2610.03665": {
+    "base": "2610_피벗에스디_마스크확산언어모델-자기증류",
+    "rank": "#11",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "32",
+    "en_title": "Pivot-SD: Efficient Self-Distillation for Masked Diffusion Language Models",
+    "ko_title": "Pivot-SD: 마스크 확산 언어모델을 위한 효율적 자기증류"
+  },
+  "2610.02381": {
+    "base": "2610_레이턴트모피디_다중교사-온폴리시-증류",
+    "rank": "#12",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "31",
+    "en_title": "Latent-MOPD: Latent Multi-Teacher On-Policy Distillation",
+    "ko_title": "Latent-MOPD: 잠재 표현 기반 다중교사 온폴리시 증류"
+  }
+}

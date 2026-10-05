@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>파라메트릭 PDE를 위한 잠재 동역학 예측 표현 학습</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#10 · Daily Papers 2026-10-06</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 34</span>
+    </div>
+    <h1 class="article-title">PDE-JEPA: Predictive Representation Learning of Latent Dynamics Modeling for Parametric PDEs</h1>
+    <p class="article-title-ko">파라메트릭 PDE를 위한 잠재 동역학 예측 표현 학습</p>
+    <p class="article-sub">복원 기반이 아닌 JEPA 방식의 예측적 표현학습을 파라메트릭 편미분방정식(PDE) 잠재 동역학 모델링에 적용하고, 여기에 기하 정렬과 물리 구조화 예측기를 추가해 분포 내·외 예측 모두에서 기존 최고 성능을 크게 능가하는 PDE-JEPA를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.34715" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.34715" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: PDE-JEPA: Predictive Representation Learning of Latent Dynamics Modeling for Parametric PDEs</li>
+<li><strong>저자</strong>: Zhentao Tan, Jianrong Zhang, Ruijie Quan, Yi Yang (저장대학교)</li>
+<li><strong>출처</strong>: arXiv:2609.34715v1 [cs.AI] (2026년 9월 28일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://tanpig-x.github.io/PDE-JEPA/">PDE-JEPA 프로젝트 페이지</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.34715">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>복원 기반이 아닌 JEPA 방식의 예측적 표현학습을 파라메트릭 편미분방정식(PDE) 잠재 동역학 모델링에 적용하고, 여기에 기하 정렬과 물리 구조화 예측기를 추가해 분포 내·외 예측 모두에서 기존 최고 성능을 크게 능가하는 PDE-JEPA를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>계수·외력항·경계조건이 달라지는 파라메트릭 PDE를 데이터 기반으로 빠르게 풀기 위한 신경망 솔버 연구가 활발하지만, 잠재 동역학 모델의 상태 표현은 주로 관측된 물리장을 복원하는 재구성(reconstruction) 기반 목적함수로 학습되어 왔다. 그러나 재구성 충실도가 높다고 해서 물리적으로 유의미한 정보가 실제로 쉽게 활용 가능한 형태로 인코딩되는지, 또 그 잠재 공간이 시간적 전개(rollout)에 적합한지는 보장되지 않는다. 저자들은 영상 도메인에서 성공을 거둔 JEPA(Joint-Embedding Predictive Architecture) 방식의 예측적 표현학습이 PDE 동역학에 적합한 상태 공간을 만들어낼 수 있는지 탐구한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>재구성 기반 표현과 JEPA 기반 예측 표현을 프로빙·롤아웃 실험으로 비교해, JEPA 표현이 물리 정보(국소 상태·지배 파라미터)를 더 잘 담고 있지만 이 정보성이 곧바로 정확한 자기회귀적 전개로 이어지지는 않는다는 두 가지 핵심 관찰을 제시했다.</li>
+<li>사전학습된 JEPA 잠재 궤적의 기하학을 실제 물리장의 전개 기하와 정렬시키는 경량 잔차 모듈 Physics-Aligned Latent Geometry(PAG)를 제안해, 앵커 손실로 원 표현의 정보성을 보존하면서 전개 정확도를 높였다.</li>
+<li>지배 파라미터가 특정 동역학 성분만을 조절한다는 물리적 구조(예: 점성 계수가 확산항만 조절)를 반영해, 동역학을 파라미터 독립적 진화 항과 파라미터 의존적 응답 항으로 분해하는 Physics-Structured Latent Predictor(PSP)를 제안해 미지 파라미터로의 외삽 성능을 개선했다.</li>
+<li>9개의 널리 쓰이는 PDE 벤치마크에서 분포 내 평균 33.4%, 분포 외(미지 지배조건) 평균 51.4%의 성능 향상을 달성했다.</li>
+</ul>
+<h2>방법론</h2>
+<p>먼저 전체 궤적에 대해 마스킹된 잠재 예측(masked-latent prediction) 방식으로 인코더를 사전학습해 JEPA 기반 잠재 표현 z를 얻고, 이후 단계에서는 이 인코더를 고정한다. PAG 단계에서는 토큰별 잔차 프로젝터(zero-initialized 가중치로 초기에는 항등함수가 되도록 설계)를 적용해 보정된 좌표 q를 만들고, 물리장의 정규화된 시간 방향 벡터와 잠재 궤적의 방향 벡터 간 유사도(turning angle)를 다중 시간 지연(lag 1, 2, 4)에서 맞추는 기하 정렬 손실, 원 표현 보존을 위한 앵커 손실, 보조 예측기를 통한 동역학 예측 손실을 결합해 학습한다. PSP 단계에서는 잠재 상태의 시간 변화율을 공유 진화 성분 C(q)와 지배 파라미터별 응답 성분 r_j(ξ)D_j(q)의 합으로 구조화하고, 이를 4차 Runge-Kutta ODE 솔버로 적분해 다음 시점의 잠재 상태를 예측하며, 예측 오차로 지도학습한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Advection, Burgers, Heat, Wave-B, Combined, Wave-2D, Vorticity, HeterNS, Gray-Scott 등 이송·확산·반응-확산·파동·유체 역학을 아우르는 9개 벤치마크에서 FNO, CAPE, CoDA, GEPS 등 파라메트릭 솔버, Zebra 등 in-context 솔버, UniSolver·Poseidon-T 등 파운데이션 모델, LE-PDE·ENMA 등 잠재 솔버와 비교했다. 분포 내(ID) 설정에서는 9개 중 8개 벤치마크에서 최저 상대 L2 오차를 기록했으며(Advection만 CoDA에 근소하게 뒤짐), Heat(70.6% 개선), Wave-B(68.0%) 등에서 특히 큰 폭의 개선을 보였다. 분포 외(OOD, 미지 지배 파라미터) 설정에서는 평가된 5개 벤치마크 전부에서 최저 오차를 달성했고 Combined(77.9%), Wave-2D(74.2%), Gray-Scott(59.7%) 개선이 두드러졌다. Ablation에서는 PAG 추가만으로 Vorticity ID 오차가 0.086→0.040, Wave-2D ID 오차가 0.363→0.143으로 줄었고, PSP를 더하면 OOD 오차가 추가로 개선되었다(Vorticity 0.397→0.288, Wave-2D 0.321→0.157). 기하 지표(각도 오차, 2차 시간 변화 오차 등) 분석에서도 정렬 후 오차가 최대 84%까지 감소해 PAG가 실제로 궤적 기하를 물리 전개에 가깝게 맞춘다는 것을 확인했다.</p>
+<h2>한계점</h2>
+<p>논문에 명시된 별도의 한계점 절은 없으나, Advection과 같이 구조가 거의 이동(translation)만 하는 선형적 동역학에서는 재구성 중심 방법(CoDA)에 근소하게 뒤처진다고 저자들이 언급했으며, 비선형성이 약한 포화 상태의 문제에서는 제안 기법의 이점이 상대적으로 작아질 수 있음을 시사한다.</p>
+<h2>시사점</h2>
+<p>파라메트릭 PDE의 정확한 전개와 외삽을 위해서는 동역학 모델 자체뿐 아니라, 예측적 학습으로 얻은 잠재 상태 공간의 기하학적 구조와 물리적 인덕티브 바이어스를 명시적으로 설계하는 것이 중요함을 보여주며, 과학 계산·시뮬레이션 대체 모델 설계에 JEPA류 예측적 표현학습을 적용하는 새로운 방향을 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.34715" target="_blank" rel="noopener">huggingface.co/papers/2609.34715</a> · 2026-10-06</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

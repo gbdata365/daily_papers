@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>리얼컴패니언</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#1 · Daily Papers 2026-10-06</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 186</span>
+    </div>
+    <h1 class="article-title">RealCompanion: Benchmarking Human Understanding from Reasoning over Longitudinal Real-World Conversations</h1>
+    <p class="article-title-ko">리얼컴패니언: 장기 실제 대화에 대한 추론을 통한 인간 이해 벤치마킹</p>
+    <p class="article-sub">실제 10명이 AI 컴패니언과 나눈 2만7천여 개의 메시지를 익명화해 공개하고, "언제 과거 기억이 필요한지"와 "그 사람이 누구인지"를 판단하는 능력을 측정하는 벤치마크 RealCompanion을 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.01780" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.01780" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: RealCompanion: Benchmarking Human Understanding from Reasoning over Longitudinal Real-World Conversations</li>
+<li><strong>저자</strong>: Arman Behnam, Sunglyoung Kim (Quis Lab), Liangwei Yang (독립 연구자)</li>
+<li><strong>출처</strong>: arXiv:2610.01780v1 [cs.AI] (2026년 10월 1일)</li>
+<li><strong>프로젝트 페이지</strong>: 데이터 https://osf.io/x25kj/ (익명화 공개), 코드 anonymous.4open.science 저장소</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.01780">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>실제 10명이 AI 컴패니언과 나눈 2만7천여 개의 메시지를 익명화해 공개하고, "언제 과거 기억이 필요한지"와 "그 사람이 누구인지"를 판단하는 능력을 측정하는 벤치마크 RealCompanion을 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>기존 장기 대화 기억 벤치마크(LoCoMo, LongMemEval 등)는 특정 사실을 기억하도록 '만들어진' 대화를 사용하기 때문에 거의 모든 메시지가 과거 참조를 필요로 하도록 설계되어 있다. 이는 실제 사용자와의 대화에서는 과거 기억이 드물게 필요하다는 현실을 반영하지 못하며, "언제 기억을 꺼내야 하는지" 자체를 판단하는 능력을 측정할 수 없다는 문제가 있다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>실제 동의를 받은 10명의 AI 컴패니언 사용자의 최대 120일간 대화(27,218개 메시지)를 익명화하여 공개</li>
+<li>대화로부터 프로필(사실 기록), 페르소나(성향·감정·의사결정 방식), 채팅 정답셋, 질문셋 등 4종의 파생 파일을 구축하고 각 항목에 근거 메시지와 단계별 추론 트레이스(reasoning trace)를 부여</li>
+<li>재구성(persona/profile 복원), 채팅(실제 응답 적절성), 질문(사실 응답) 3개 트랙으로 구성된 평가 체계 제시</li>
+</ul>
+<h2>방법론</h2>
+<p>다섯 단계 파이프라인(지시 대상 파악→근거 검증→유형 분류→정답 응답 작성→검증)을 통해 레이블을 생성하며, 각 단계는 이전 단계의 산출물만 참조하고 결정과 근거를 동시에 기록해 추적 가능하게 만든다. 검증은 단조적(monotone)으로 설계되어 기억 필요 비율을 과대평가하지 않도록 했고, 26개의 기계적 릴리스 게이트와 독립 모델 감사를 거쳤다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>비례 추출 표본에서 실제 메시지 중 과거 기억이 필요한 비율은 3.4%(엄격한 기준으로는 1.3%)에 불과했으며, 필요한 경우 참조해야 할 메시지는 평균 2,157개 이전 메시지였다. 최근 윈도우(Recency) 방식은 풀링된 평가에서는 95.9%의 적중률을 보이지만, 실제 분포상 기억이 필요한 항목에서는 2.2%로 급락해 풀링 평가가 데이터 구성 자체를 측정할 뿐임을 보였다. 또한 평가된 어떤 탐지기도 실제 메시지에서 "기억이 필요한 시점"을 식별하지 못했고(AUROC 0.53 수준), 동일한 메시지라도 '기억'이라는 라벨을 붙이면 사용률이 10~14%p 상승하는 프레이밍 효과가 나타났다. 페르소나 복원에서는 Claude Opus 5.5, Codex GPT-5.6-sol, Antigravity(Gemini 3.8 Flash) 세 에이전트가 처리 토큰량이 31배 차이 나도 비슷한 F1(0.69~0.70)을 보였다.</p>
+<h2>한계점</h2>
+<p>10명, 하나의 컴패니언 앱에 한정된 데이터로 공감이나 미래 행동 예측 같은 측면은 다루지 않으며, 저자들도 스타일로메트리/언어모델 기반 재식별 위험이 남아있음을 명시하고 상업적 사용과 프로파일링을 금지하는 조건으로 공개했다.</p>
+<h2>시사점</h2>
+<p>장기 기억 AI 시스템을 평가할 때, 인위적으로 기억을 필요하게 만든 벤치마크는 실제 분포에서의 성능을 과대/과소평가할 수 있으며, "기억이 필요한 순간을 판단하는 능력" 자체가 아직 해결되지 않은 핵심 과제임을 보여준다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.01780" target="_blank" rel="noopener">huggingface.co/papers/2610.01780</a> · 2026-10-06</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

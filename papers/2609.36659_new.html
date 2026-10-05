@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>온-폴리시 파라미터 업데이트 방향이 LLM 포스트트레이닝 일반화의 근간이다</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#7 · Daily Papers 2026-10-06</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 69</span>
+    </div>
+    <h1 class="article-title">On-Policy Parameter Update Direction Underlies Generalization in LLM Post-Training</h1>
+    <p class="article-title-ko">온-폴리시 파라미터 업데이트 방향이 LLM 포스트트레이닝 일반화의 근간이다</p>
+    <p class="article-sub">온-폴리시(on-policy) 강화학습 기반 포스트트레이닝이 보이는 "파라미터 업데이트 방향의 지속적 조정" 행동을 SFT에 제약으로 부여하는 OPSFT를 제안해, SFT만으로도 온-폴리시 수준의 일반화 성능을 얻을 수 있음을 보인다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.36659" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.36659" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: On-Policy Parameter Update Direction Underlies Generalization in LLM Post-Training</li>
+<li><strong>저자</strong>: Shufan Shen, Zhongni Hou, Junshu Sun, Yufei Zhang, Wei Lin, Guojun Yin, Qingming Huang, Shuhui Wang (중국과학원 계산기술연구소, 중국과학원대학교, Meituan)</li>
+<li><strong>출처</strong>: arXiv:2609.36659v1 [cs.LG] (2026년 9월 29일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/ssfgunner/OPSFT">GitHub 코드 저장소</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.36659">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>온-폴리시(on-policy) 강화학습 기반 포스트트레이닝이 보이는 "파라미터 업데이트 방향의 지속적 조정" 행동을 SFT에 제약으로 부여하는 OPSFT를 제안해, SFT만으로도 온-폴리시 수준의 일반화 성능을 얻을 수 있음을 보인다.</p>
+<h2>배경 및 문제의식</h2>
+<p>온-폴리시 포스트트레이닝(GRPO 등)은 고정된 정답 데이터로 학습하는 SFT보다 훨씬 강한 일반화 성능을 보이는 것으로 알려져 있다. 기존 연구들은 역 KL 발산, 부정 샘플 등 온-폴리시 고유 구성요소나, 업데이트의 스펙트럼·가중치 행렬 수준 통계(예: 업데이트가 소수 서브네트워크에 국한된다는 관찰)를 분석해왔지만, 이런 행동들을 온-폴리시 학습의 "부산물"로만 취급했을 뿐, 이를 SFT 등 다른 패러다임의 일반화를 개선하는 원리로 적극 활용하려는 시도는 부족했다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>이론적·실험적 분석을 통해 SFT는 학습 전반에서 일관된 파라미터 업데이트 방향을 유지하는 반면, 온-폴리시 패러다임은 advantage 분포가 정책과 함께 변화함에 따라 업데이트 방향을 지속적으로 조정한다는 점을 규명했다.</li>
+<li>온-폴리시 학습이 식별한 (누적) 업데이트 방향으로 SFT의 그래디언트를 제약하는 On-Policy direction-constrained SFT(OPSFT)를 제안하여, 단순 SFT 대비 큰 성능 향상과 온-폴리시(GRPO)에 준하는 일반화 성능을 달성했다.</li>
+<li>이 방향 제약을 실용적으로 활용해 (1) 적은 수의 온-폴리시 스텝만으로 방향을 식별한 뒤 SFT로 전환해 학습 효율을 높이고, (2) 온-폴리시로 포스트트레이닝된 모델을 추가 고품질 궤적으로 손상 없이 계속 개선하는 두 가지 응용을 제시했다.</li>
+</ul>
+<h2>방법론</h2>
+<p>각 파라미터의 "업데이트 방향"을 부호 벡터 v=sign(θ_on−θ_base)∈{−1,0,1}^d로 정의하고(θ_base, θ_on은 온-폴리시 학습 전후 파라미터), SFT의 그래디언트 g에서 부호가 v와 일치하는 성분만 남기고 나머지는 0으로 만드는 방식으로 그래디언트를 제약한다(g_s = I(sign(−g)=v) ⊙ g). 이론적으로는 SFT의 그래디언트 투영이 고정 분포에서 샘플링한 궤적 그래디언트 방향을 따르는 반면, 온-폴리시 정책 그래디언트의 투영은 advantage와 궤적 그래디언트의 공분산 방향을 따르며, 정책이 학습 중 계속 변하므로 이 방향도 계속 바뀐다는 것을 보였다(코사인 유사도 측정으로 실증: SFT 누적 업데이트는 유사도≈1.0으로 거의 불변, 온-폴리시는 ≈0.5로 지속 변화). OPSFT는 이렇게 식별된 방향으로 SFT 업데이트를 제약함으로써, 온-폴리시의 일반화 특성을 SFT 훈련 방식(고정 데이터, 효율적 학습)에 이식한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Qwen3-1.7B/4B/8B와 DeepSeek-R1-Distill-Llama-3-8B를 DeepMath, DAPO, Eurus-RL-Code 데이터셋으로 학습하고, 수학·코드 인도메인 벤치마크(AIME24/25, HMMT 등)와 다수의 아웃오브도메인 벤치마크(IFEval, ARC, HaluEval, HellaSwag, Winogrande, PIQA)로 평가했다. OPSFT는 바닐라 SFT를 크게 앞서고 GRPO에 준하거나 일부 벤치마크에서는 이를 상회하는 성능을 보였다. 반면 업데이트 "위치"만 제약한 OPSFT 변형은 바닐라 SFT보다도 성능이 낮아, 위치가 아닌 방향 정보가 핵심임을 보였다. 학습 효율 측면에서는 50스텝 GRPO로 방향을 식별한 뒤 OPSFT를 적용하면, Qwen3-8B 기준 GRPO(19.3시간, 평균 40.31) 대비 절반 이하 시간(8.9시간)으로 더 높은 성능(41.67)을 얻었다. 온-폴리시로 포스트트레이닝된 모델에 새 궤적을 추가 학습시키는 실험에서는, 일반 SFT를 적용하면 성능이 오히려 저하되었으나(Qwen3-4B 기준 38.96→36.25) OPSFT는 38.96→41.36으로 추가 개선되었다. BF16/FP32 정밀도 분석에서는 OPSFT가 SFT보다 훨씬 더 희소한 업데이트(FP32에서 9.45% vs. SFT의 89.3%)로도 더 높은 성능을 보였으며, 추론 행동 분석에서는 OPSFT가 GRPO와 유사하게 케이스 분기·논리 연결어 사용 패턴과 정답 변동성을 보였다.</p>
+<h2>한계점</h2>
+<p>논문 본문에는 한계가 부록(Appendix C.2)에 별도로 수록되어 있다고만 언급되어 있어, 본문 자체에서 구체적 한계 내용은 명시되지 않았다. 다만 실험을 통해 업데이트 방향이 동일 도메인 데이터셋 간에는 재사용 가능하지만, 도메인이 다른 데이터셋(예: 수학 vs. 코드) 간에는 재사용되지 않는다는 한계가 확인되었다.</p>
+<h2>시사점</h2>
+<p>이 연구는 "SFT는 기억하고 RL은 일반화한다"는 통념에 도전하며, 온-폴리시 학습의 일반화 우위가 데이터나 손실함수가 아니라 파라미터 업데이트 방향이라는 비교적 단순한 메커니즘에서 비롯될 수 있음을 보인다. 이는 비용이 큰 지속적 롤아웃 없이도 SFT 기반 포스트트레이닝의 일반화 성능과 효율을 동시에 개선할 수 있는 실용적 방법론을 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.36659" target="_blank" rel="noopener">huggingface.co/papers/2609.36659</a> · 2026-10-06</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

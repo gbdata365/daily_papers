@@ -1,0 +1,128 @@
+<meta charset="UTF-8">
+<title>캐노피</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#11 · Daily Papers 2026-10-07</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 15</span>
+    </div>
+    <h1 class="article-title">CANOPY: Adaptive-Granularity Evidence Compression for Multimodal RAG</h1>
+    <p class="article-title-ko">캐노피: 멀티모달 RAG를 위한 적응적 세밀도 증거 압축</p>
+    <p class="article-sub">텍스트·표·이미지·비디오가 섞인 멀티모달 RAG에서, 검색된 각 항목을 계층 구조로 표현하고 질의-영역 유사도만으로(LLM 호출 없이) 항목별로 다른 세밀도의 증거를 선택해 리더에게 전달하는 CANOPY 프레임워크를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.00923" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.00923" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: CANOPY: Adaptive-Granularity Evidence Compression for Multimodal RAG</li>
+<li><strong>저자</strong>: Hyojeong Yun, Jueun Kim, Wook-Shin Han (POSTECH GSAI / CSE, 교신저자 Wook-Shin Han)</li>
+<li><strong>출처</strong>: arXiv:2610.00923v1 [cs.IR] (2026년 10월 1일 제출)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://canopy-project-page.github.io/">https://canopy-project-page.github.io/</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.00923">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>텍스트·표·이미지·비디오가 섞인 멀티모달 RAG에서, 검색된 각 항목을 계층 구조로 표현하고 질의-영역 유사도만으로(LLM 호출 없이) 항목별로 다른 세밀도의 증거를 선택해 리더에게 전달하는 CANOPY 프레임워크를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>멀티모달 RAG는 질의에 맞는 항목(문서, 표, 이미지, 비디오 등)을 검색하는 데는 발전했지만, 검색된 항목 "전체"를 넘겨줄지 "일부"만 넘겨줄지, 즉 각 항목 안에서 어느 범위(granularity)의 내용을 유지해야 하는지는 별도의 문제로 남아 있다. 항목을 통째로 넘기면 불필요한 내용이 섞여 리더(reader) 성능을 떨어뜨리고, 반대로 지나치게 잘게 쪼개 선택하면 답을 이해하는 데 필요한 주변 문맥이 사라질 수 있다. 또한 같은 항목 안에서도 영역마다 필요한 문맥의 양이 다를 수 있어, 항목 전체에 하나의 고정된 세밀도를 적용하는 기존 방식으로는 이 트레이드오프를 풀 수 없다. 기존 압축 기법들(텍스트 요약/추출, 표 스키마·셀 선택, 비디오 프레임 선택 등)은 모두 모달리티별로 설계되어 있어, 이질적인(heterogeneous) 검색 결과 전반에 적용할 수 있는 공통 절차가 없었다는 것이 이 논문의 문제의식이다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>멀티모달 RAG를 위한 "검색 후 증거 압축(post-retrieval evidence compression)" 문제를 공식화하고, 항목 내에서 유지할 증거의 세밀도를 적응적으로 조정하는 데 초점을 맞춤.</li>
+<li>골드 증거로 파인튜닝한 노드 인코더와, 부모-자식 간 상대 비교(parent-relative refinement)를 결합하여 노드 단위 가지치기에 LLM 호출 없이 여러 세밀도의 영역을 동시에 선택할 수 있는 CANOPY를 제안.</li>
+<li>NQ, HotpotQA, OTT-QA, MultimodalQA, LVBench 5개 QA 벤치마크와 약 3,300만 개 항목의 이질적 코퍼스에서 end-to-end 평가를 수행하고, 추가 검색(iterative retrieval)과 압축 각각의 기여를 분리하는 컴포넌트 단위 ablation을 제시.</li>
+</ul>
+<h2>방법론</h2>
+<p>CANOPY는 세 단계로 구성된다 (Figure 3).
+1. <strong>계층 구성(Project)</strong>: 검색된 각 항목 x_i를 분기 계수(branching factor) B를 갖는 트리 T_i로 표현한다. 루트는 항목 전체, 리프는 최소 단위 조각(fragment)이다. 텍스트는 문장 단위 리프, 표는 행(row) 단위 리프(열 헤더는 모든 레벨에서 유지), 비디오는 10초 간격으로 프레임을 샘플링한 30초 단위 세그먼트로 분할한다. 이미지는 공간적으로 쪼개지 않고 단일 노드로 취급한다. 집계(aggregate)성 질문으로 분류된 표는 통째로 유지한다.
+2. <strong>정제(Refine)</strong>: 동결된 질의 인코더 f_0와, 골드 증거로 파인튜닝한 노드 인코더 f_θ를 사용해 질의-영역 점수 s_θ(q,v)=cos(f_0(q), f_θ(v))를 계산한다. 루트부터 시작해 자식 중 하나라도 부모보다 점수가 높거나 같으면 그 자식들로 내려가며 탐색을 계속하고, 그렇지 않으면 부모 노드를 통째로 보존하고 탐색을 멈춘다. 가지마다 독립적으로 다른 깊이에서 멈출 수 있어, 결과적으로 한 항목 안에서도 서로 다른 세밀도의 영역들이 함께 선택되는 "증거 숲(evidence forest)"이 만들어진다.
+3. <strong>증거 집계 및 충분성 판단(Aggregate + Critic)</strong>: 선택된 영역들을 누적 증거 E에 추가한 뒤, LLM 기반 critic이 원질문 대비 증거가 충분한지 판단한다. 부족하다고 판단되면 누락된 사실을 짚어 후속 질의를 생성해 추가 검색을 수행하고, 새로 검색된 항목 역시 같은 방식으로 압축된 뒤 증거에 합쳐진다. 충분하다고 판단되거나 최대 라운드 R에 도달하면 리더가 최종 답을 생성한다.</p>
+<p>노드 인코더 f_θ는 질의 인코더(Qwen3-VL-Embedding-2B)를 초기화 지점으로 삼아 LoRA로 파인튜닝되며, 골드 증거가 위치한 노드(부모-자식 쌍)를 기준으로 "부모보다 골드와 겹치는 자식이 더 높은 점수를 받아야 한다"는 pairwise ranking loss(식 2, 3)로 학습된다. 이 학습은 5개 벤치마크 공통의 단일 LoRA 어댑터로 수행된다.</p>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li><strong>데이터셋</strong>: NQ(단일 홉 텍스트), HotpotQA(멀티 홉), OTT-QA(표+텍스트), MultimodalQA(텍스트+표+이미지), LVBench(비디오 QA). 약 3,300만 개 항목의 통합 코퍼스에서 검색을 수행.</li>
+<li><strong>베이스라인</strong>: No Retrieval, Vanilla RAG, UniversalRAG, IRCoT, 그리고 RECOMP(추출/생성 요약), LongLLMLingua(프롬프트 압축), S2G-RAG(반복 검색+증거 충분성 판단), 비디오용 AKS 등.</li>
+<li><strong>리더 모델</strong>: Qwen3-VL-8B-Instruct와 InternVL3.5-8B.</li>
+<li><strong>주요 결과</strong>: Qwen3-VL-8B-Instruct 리더 기준, 비디오를 제외한 4개 벤치마크에서 CANOPY가 EM/F1 최고 성능을 기록했고, HotpotQA에서 IRCoT 대비 F1 +0.3점(통계적으로 유의하지 않음)을 보였다. 성능 향상은 주로 여러 라운드 검색이 필요한 멀티 홉 질문(HotpotQA, OTT-QA)에서 두드러졌으며, 이는 증거 토큰을 Vanilla RAG 대비 최대 28%, UniversalRAG 대비 46-88% 적게 쓰면서도 달성되었다. 라우팅은 비디오(LVBench)에서만 도움이 되었다.</li>
+<li><strong>압축 vs 반복 검색 분리(ablation)</strong>: 압축 자체는 리더 입력 토큰을 14.2-27.7% 줄이면서 정확도 변화는 통계적으로 유의하지 않았던 반면(신뢰구간이 0을 포함), 반복 검색 제거 시 HotpotQA·OTT-QA EM이 각각 10.1점, 14.9점 하락했다. 즉 정확도 향상의 주된 동력은 추가 검색이고, 압축은 정확도를 거의 유지한 채 증거 양을 줄이는 역할을 한다.</li>
+<li><strong>다른 압축 전략과의 비교</strong>: 전체 항목(Gold Item) 유지 대비 LVBench 토큰을 40% 절감(정확도는 비슷), 평면적(flat) 선택 방식들보다 모든 벤치마크에서 우위를 보였다.</li>
+<li><strong>인코더 파인튜닝 효과</strong>: 파인튜닝은 골드/비골드 영역 간 점수 분리를 높였고(정확한 부모-자식 정제 결정 비율이 28.3-43.0%에서 34.3-71.9%로 상승), 가지치기 비율을 30.4-39.6%에서 85.2-95.6%로 늘리면서도 정확도는 거의 변화가 없었다(토큰은 6.8-19.1% 추가 절감).</li>
+</ul>
+<h2>한계점</h2>
+<ul>
+<li>Critic의 "증거 충분" 판단은 운영적 기준일 뿐 완전성을 보장하지 않으며, 최대 라운드에 도달해도 증거 완전성이 확보되는 것은 아니다.</li>
+<li>압축은 "검색되지 않은" 증거를 되살릴 수 없으므로, 압축 단독으로는 정보 누락 문제를 해결하지 못하고 반복 검색에 의존해야 한다.</li>
+<li>분기 계수(B)나 검색 항목 수(k)를 늘려도 답변 품질이나 토큰 절감이 일관되게 개선되지는 않았으며(비단조적), 최적 하이퍼파라미터 선택에 추가 튜닝이 필요할 수 있다.</li>
+<li>비디오/비라우팅 환경에서 InternVL3.5-8B 기준 라우팅된 CANOPY가 UniversalRAG보다 더 많은 토큰(31,218 대 27,290)을 쓰고도 정확도(34.0 대 37.2)가 낮게 나오는 경우가 있어, 모달리티 라우팅과의 결합에는 아직 개선 여지가 있다.</li>
+</ul>
+<h2>시사점</h2>
+<p>이 연구는 검색 "항목" 단위의 세밀도 선택과 항목 "내부" 영역 단위의 세밀도 선택을 분리해서 다뤄야 한다는 점을 보여주며, 모달리티별로 설계되던 압축 기법들을 계층 구조와 학습된 상대 점수라는 공통 틀로 통합할 수 있음을 시사한다. 또한 "증거 압축(압축 토큰 절감)"과 "증거 충분성 확보(반복 검색)"는 서로 보완적인 별개의 메커니즘이며, RAG 파이프라인 설계 시 이 둘을 각각 최적화하는 것이 정확도와 효율을 동시에 개선하는 데 효과적임을 실험적으로 뒷받침한다. LLM 호출 없이 임베딩 유사도만으로 노드 단위 가지치기를 수행하는 설계는, 대규모 이질적 코퍼스에서 압축 비용을 낮게 유지하면서 적응적 증거 선택을 적용하려는 후속 연구에 참고가 될 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.00923" target="_blank" rel="noopener">huggingface.co/papers/2610.00923</a> · 2026-10-07</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

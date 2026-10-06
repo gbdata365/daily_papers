@@ -1,0 +1,107 @@
+<meta charset="UTF-8">
+<title>알로디엘엠</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#2 · Daily Papers 2026-10-07</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 53</span>
+    </div>
+    <h1 class="article-title">ALoDLM: Adaptively Looped Diffusion Language Models</h1>
+    <p class="article-title-ko">알로디엘엠: 적응형 루프 확산 언어 모델</p>
+    <p class="article-sub">확산 언어 모델(DLM)이 한 디노이징 스텝 내에서 모든 마스크 토큰에 동일한 연산량을 쏟는 비효율을 해결하기 위해, 토큰별로 난이도에 맞춰 잠재 상태를 반복 정제하는 "적응형 루프" 구조를 도입하여 자기회귀(AR) 모델 수준의 생성 품질과 확산 모델의 병렬 디코딩 속도를 동시에 달성한 모델이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.04198" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.04198" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: ALoDLM: Adaptively Looped Diffusion Language Models</li>
+<li><strong>저자</strong>: Liancheng Fang, Zhuowei Li, Youngeun Kim, Tianchen Zhao, Rajat Koner, Jiaye Wu, Linghan Xu, Xuanbai Chen, Xiang Xu, Zheng Zhang, Jakub Zablocki, Nishant Sankaran, Yifan Xing (University of Illinois Chicago, Amazon AGI, Korea University 공동 연구)</li>
+<li><strong>출처</strong>: arXiv:2610.04198v1 [cs.AI] (2026년 10월 3일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://alo-dlm.github.io">alo-dlm.github.io</a> (코드: amazon-science/ALoDLM, 모델: amazon/ALoDLM-8B, 모두 공개됨)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.04198">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>확산 언어 모델(DLM)이 한 디노이징 스텝 내에서 모든 마스크 토큰에 동일한 연산량을 쏟는 비효율을 해결하기 위해, 토큰별로 난이도에 맞춰 잠재 상태를 반복 정제하는 "적응형 루프" 구조를 도입하여 자기회귀(AR) 모델 수준의 생성 품질과 확산 모델의 병렬 디코딩 속도를 동시에 달성한 모델이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>자기회귀 언어모델은 순차적 토큰 생성으로 인한 지연이 크지만, 확산 언어모델은 여러 위치를 동시에 디노이징하여 빠른 생성이 가능하다. 그러나 DLM은 품질 면에서 동급 AR 모델에 비해 뒤처지는 경향이 있다. 저자들은 이 품질 격차의 근본 원인을 "연산량-난이도 불일치(computation-difficulty mismatch)"로 규정한다. 즉, 한 디노이징 스텝 안에서 마스크된 위치들은 예측 난이도가 서로 다른데도(어떤 토큰은 쉽게 예측되고, 어떤 토큰은 멀티홉 추론이나 다른 미해결 토큰과의 의존성 때문에 훨씬 어려움), 기존 DLM은 모든 위치에 동일한 고정 깊이의 연산을 적용한다는 것이다. confidence 기반 디코딩은 어려운 토큰의 예측을 다음 스텝으로 미루지만, 이전 스텝에서 수행한 잠재 연산 결과가 버려지고 다시 마스크 임베딩에서 계산을 시작해야 한다는 한계가 있다.</p>
+<h2>핵심 기여</h2>
+<p>논문은 크게 세 가지를 기여한다. 첫째, 토큰별로 다른 재귀 깊이(recurrent depth)를 허용하는 루프 구조를 제안한다. 쉬운 토큰은 일찍 확정(commit)되어 이후 스텝에 이산 컨텍스트로 제공되고, 어려운 토큰은 추가적인 재귀 패스를 거치며 잠재 상태를 계속 정제한다. 둘째, 토큰별 종료(exit) 스케줄을 잠재 변수로 공식화하고, 조건부 negative ELBO(NELBO)를 유도하여 토큰 예측과 연산 할당 정책을 엔드투엔드로 공동 최적화하는 훈련 목적함수를 제시한다. 이산 변수인 종료 스케줄에 대한 미분이 불가능한 문제를 해결하기 위해 분산 감소 기법을 갖춘 비편향(unbiased) score-function 기반 그래디언트 추정량을 유도했다. 셋째, 1.7B 및 8B 규모로 모델을 학습시켜, 저자들이 아는 한 가장 큰 규모의 루프형 DLM을 구현했다.</p>
+<h2>방법론</h2>
+<p>ALoDLM은 Transformer 아키텍처(Qwen3 기반)를 Prelude(임베딩 및 선행 블록), Recurrent Core(중간 블록), Coda(후행 블록) 세 부분으로 나눈다. 각 디노이징 스텝(외부 루프) 내에서, 내부 루프가 반복적으로 Recurrent Core를 통과시키며 잠재 상태를 갱신한다. 매 패스마다 LMHead가 예측 확률을, ExitGate라는 별도 헤드가 해당 토큰이 멈출지 여부를 판단하는 halting 확률을 산출한다. 예측 엔트로피가 임계값 τ 이하로 떨어진 토큰은 확정(commit)되어 임베딩으로 대체되고, 누적 halting 확률이 임계값 q에 도달하면 해당 위치의 내부 루프가 종료된다. 학습 시에는 토큰별 종료 깊이를 잠재변수 z로 두고 변분 분포 q_φ(z)를 도입해 NELBO를 유도하며, 이산 변수 문제는 score-function estimator(강화학습식 그래디언트)로 해결한다. 또한 샘플링된 종료 깊이 이전의 중간 예측들도 함께 활용하는 중간 감독(intermediate supervision)과, 1차 패스 비용을 control variate로 빼는 방식으로 그래디언트 분산을 줄였다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Qwen3-1.7B와 Qwen3-8B를 WeDLM의 스트리밍 블록-확산 프레임워크로 변환하여 ALoDLM-1.7B/8B를 만들고, 5B 토큰 규모 코퍼스에서 SFT만으로(계속 사전학습 없이) 학습했다. 최대 재귀 깊이 K=4를 사용했다. 일반 추론(ARC-C/E, MMLU, MMLU-Pro), 수학/과학(GSM8K, MATH-500, GPQA-Diamond), 코드 생성(MBPP, MBPP+, HumanEval, HumanEval+) 등 11개 벤치마크에서 평가한 결과, ALoDLM은 1.7B에서 평균 65.5점, 8B에서 80.3점을 기록하며 모든 비교 DLM(LLaDA, Dream, Fast-dLLM-v2, SDAR, WeDLM)과 동급 AR 베이스라인(Qwen3)을 능가했다. 특히 코드 생성 과제에서 강점을 보였다. 추론 속도 면에서는 GSM8K에서 vLLM으로 서빙한 Qwen3-8B 대비 약 2.7배의 처리량을 동급 또는 더 높은 정확도로 달성했으며, WeDLM-8B 대비 동일 정확도(93.25%) 기준 약 8.5% 높은 처리량과 13.6% 적은 GFLOPs를 보였다. 엔트로피 임계값 τ와 halting 임계값 q를 조절하여 정확도-속도 트레이드오프를 조정할 수 있음을 보였고, 숫자 토큰이 단어/구두점 토큰보다 평균 halting 확률이 낮아(더 많은 재귀 정제를 받음) 명시적 난이도 라벨 없이도 토큰 유형별 적응적 재귀 선호가 학습됨을 확인했다. 재귀 깊이 K=4가 K=2보다 낫고 K=8과 비슷한 성능을 보여 K=4를 최종 선택으로 삼았으며, 중간층에 재귀를 배치하는 것이 마지막층 배치보다 우수했다.</p>
+<h2>한계점</h2>
+<p>저자들은 두 가지 한계를 명시한다. 첫째, ALoDLM은 prefill 단계에서 전체 재귀 깊이만큼 KV 캐시를 구성해야 하므로 동급 AR 모델보다 Time to First Token이 길어질 수 있으며, 이는 짧은 응답이나 지연에 민감한 응용에서 병렬 디코딩의 이점을 줄일 수 있다. 둘째, 생성 속도가 입력에 따라 본질적으로 가변적이다. 재귀 연산량과 동시 확정 토큰 수가 토큰 신뢰도와 적응적 halting 결정에 좌우되므로, 학습 데이터에서 과소 대표된 도메인에서는 모델이 더 많은 재귀 정제를 필요로 하여 병렬 확정이 줄고, 그리디 디코딩 하에서도 AR 베이스라인 대비 속도 우위가 축소되거나 역전될 수 있다.</p>
+<h2>시사점</h2>
+<p>이 연구는 확산 언어모델의 품질 격차 원인을 "연산-난이도 불일치"로 명확히 규정하고, 이를 토큰 단위의 적응적 잠재 재귀로 해결하는 새로운 설계 축을 제시했다는 점에서 의미가 크다. 특히 재귀 깊이를 테스트 타임 스케일링 축으로 활용할 수 있음을 보여, 추론 시점에 정확도와 속도를 유연하게 조절할 수 있는 실용적 가능성을 제시한다. 또한 이산 잠재변수(종료 스케줄)에 대한 비편향 그래디언트 추정과 분산 감소 기법은 향후 적응적 연산 할당을 사용하는 다른 생성 모델 설계에도 참고가 될 수 있는 일반적인 방법론적 기여로 평가된다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.04198" target="_blank" rel="noopener">huggingface.co/papers/2610.04198</a> · 2026-10-07</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

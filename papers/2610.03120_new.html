@@ -1,0 +1,114 @@
+<meta charset="UTF-8">
+<title>테스트 시점에서의 분포 내 강제를 통한 장편 영상 생성</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#3 · Daily Papers 2026-10-07</span>
+      <span class="cat-tag">생성모델</span>
+      <span class="upvote-tag">▲ 27</span>
+    </div>
+    <h1 class="article-title">In-Distribution Forcing for Long Video Generation at Test Time</h1>
+    <p class="article-title-ko">테스트 시점에서의 분포 내 강제를 통한 장편 영상 생성</p>
+    <p class="article-sub">자기회귀(autoregressive) 비디오 확산 모델에서 길게 생성할수록 색상·질감이 변하고 움직임이 둔화되는 "드리프팅(drifting)" 현상을, KV 캐시가 학습 때 보지 못한 상태(OOD)로 구성되는 근본 원인(KV-provenance 문제)을 짚어내고, 학습 시 분포를 그대로 유지하는 Self-Caching 기법으로 해결하여 수초짜리 모델을 학습 없이 분(分) 단위 영상 생성으로 확장하는 테스트 시점(test-time) 프레임워크를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.03120" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.03120" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: In-Distribution Forcing for Long Video Generation at Test Time</li>
+<li><strong>저자</strong>: Jeongwoo Shin, Youngyoon Choi 외 (서울대학교, 고려대학교, 성균관대학교, Georgia Institute of Technology 소속 공동 저자진)</li>
+<li><strong>출처</strong>: arXiv:2610.03120v1 [cs.CV] (2026년 10월 2일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://in-distribution-forcing.github.io/">https://in-distribution-forcing.github.io/</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.03120">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>자기회귀(autoregressive) 비디오 확산 모델에서 길게 생성할수록 색상·질감이 변하고 움직임이 둔화되는 "드리프팅(drifting)" 현상을, KV 캐시가 학습 때 보지 못한 상태(OOD)로 구성되는 근본 원인(KV-provenance 문제)을 짚어내고, 학습 시 분포를 그대로 유지하는 Self-Caching 기법으로 해결하여 수초짜리 모델을 학습 없이 분(分) 단위 영상 생성으로 확장하는 테스트 시점(test-time) 프레임워크를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>최근 비디오 확산 모델은 짧은 클립 생성에서는 뛰어나지만, 월드 모델, 스트리밍 콘텐츠, 장편 스토리텔링 등에는 훨씬 긴 영상이 필요하다. 이를 위해 영상을 청크 단위로 순차 생성하면서 이전 청크들의 key-value(KV) 캐시에 조건을 거는 자기회귀(AR) 방식이 표준이 되었다(Self-Forcing, LongLive 등). 그러나 생성이 길어질수록 색상과 질감이 변하고 움직임이 점점 둔화되는 드리프팅 문제가 나타난다. 기존 연구들은 주로 "KV conditioning"—즉 생성 시 캐시에서 어떤 엔트리를 읽고 어떻게 위치 인코딩을 조정할지—을 다뤄왔지만, 이는 캐시된 KV 엔트리 자체가 항상 분포 내(in-distribution)라는 암묵적 가정에 기반한다. 저자들은 이 가정이 학습 지평(training horizon)을 넘어서면 깨진다는 점—즉 KV 엔트리가 저장되는 과정("KV caching") 자체가 학습 때 없던 문맥(provenance)에서 계산되어 OOD가 되는 "KV-provenance 문제"—을 지적한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>드리프팅의 숨은 원인으로 KV-provenance 문제를 규명하고, KV caching과 KV conditioning 양쪽 모두를 학습 시 구성과 일치시켜야 한다는 점을 보임.</li>
+<li>이를 해결하는 학습이 필요 없는(training-free) 테스트 시점 프레임워크 <strong>In-Distribution Forcing (ID-Forcing)</strong> 제안. 핵심 메커니즘은 <strong>Self-Caching</strong>으로, 각 청크를 이전 KV 엔트리에 전혀 attend하지 않고 캐싱함으로써 롤링 윈도우를 항상 분포 내로 유지.</li>
+<li>분(分) 단위 영상 생성에서 드리프팅을 효과적으로 억제하면서도 시각 품질과 시간적 일관성, 활발한 모션을 유지함을 정량 지표와 사용자 연구로 입증.</li>
+</ul>
+<h2>방법론</h2>
+<p>ID-Forcing은 KV 연산을 두 단계로 나누어 제어한다.
+1. <strong>Level 1 (KV caching, Self-Caching)</strong>: 학습 지평(N) 이후 매 조건 윈도우(길이 L)마다 앞쪽 ℓ개의 KV 엔트리는 아무것도 참조하지 않고(自) 독립적으로 캐싱하고, 나머지 L-ℓ개는 그 뒤로 자기회귀적으로 캐싱한다. 이렇게 하면 모든 KV 엔트리가 학습 때 실제로 등장했던 문맥 구성으로부터만 만들어져, "eviction(퇴출)으로 인한 provenance 손실" 문제를 원천 차단한다.
+2. <strong>Level 2 (KV conditioning)</strong>: 학습 시 모든 생성이 첫 번째 청크(κ₀)를 조건 윈도우에 항상 포함했다는 점에 착안해, 윈도우가 롤링되어도 κ₀를 "싱크(sink)"로 고정 보존한다. 또한 윈도우 길이를 L &lt; N으로 엄격히 제한하고, 윈도우 내 상대적 시간 간격이 학습 때와 일치하도록 나머지 엔트리들을 회전 위치 인코딩(RoPE)으로 재회전(re-rotation)시켜, 모든 청크 간 거리가 학습 분포 내에 있도록 보장한다.</p>
+<p>이 두 규칙(Self-Caching + bounded rolling window with re-rotation)을 결합함으로써, 모든 KV 연산이 학습 때 실제로 실행된 적이 있는 연산이 되도록 만드는 것이 ID-Forcing의 핵심이다. 전체 알고리즘은 "청크 생성 → 윈도우 내 가장 오래된(싱크 제외) 엔트리 제거 및 재회전 → self-caching으로 새 엔트리 저장"을 반복하는 단순한 롤링 윈도우 절차로 요약된다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Wan2.1-T2V-1.3B 아키텍처 위에서 Self-Forcing과 LongLive 두 베이스 모델에 ID-Forcing을 적용해 120초·240초(부록에서는 30초·60초까지 포함) 영상을 생성, VBench-Long 지표와 드리프팅 특화 지표(color drift, motion drift)로 평가했다. 비교 대상은 Deep Forcing, ∞-RoPE, MemRoPE 등 기존 테스트 시점 확장 기법들이다. 결과적으로 ID-Forcing은 두 베이스 모델·모든 길이 구간에서 color drift와 motion drift를 가장 크게 개선했고, Dynamic Degree(움직임 유지 정도)에서도 가장 높은 점수를 기록했다(베이스 모델들은 길이가 늘어날수록 정지 영상처럼 굳어지는 경향을 보임). Aesthetic Quality, Imaging Quality, Subject Consistency에서도 경쟁력 있는 성능을 보였으며, Motion Smoothness(인접 프레임 간 안정성)에서만 다소 낮았는데 이는 이 지표 자체가 움직임이 적은(정지에 가까운) 결과에 유리하게 편향되어 있기 때문이라고 설명한다. 2AFC 방식 사용자 연구(20명, 20개 프롬프트)에서도 Color/Background/Subject Consistency, Dynamic Degree, Temporal Flickering, 전체 선호도 등 모든 항목에서 ID-Forcing이 4개 베이스라인 전부를 일관되게 앞섰다. Ablation 결과, 싱크 유지만으로는 영상 붕괴는 막아도 색상·질감 드리프트와 주기적 장면 리셋이 남고, 재회전을 추가해도 KV caching 자체가 여전히 OOD이기 때문에 드리프트가 지속되며, Self-Caching을 더해야만 색상·질감 드리프트가 크게 개선됨을 확인했다.</p>
+<h2>한계점</h2>
+<p>논문에 명시된 한계는 제한적이다. Motion Smoothness 지표에서는 베이스라인(특히 붕괴된 결과)보다 낮게 나오는데, 저자들은 이를 지표 자체의 편향(정지 영상에 유리) 때문이라고 해명하고 있어 실제 성능 저하로 보기는 어렵다고 서술한다. 그 외에 모델/학습 방식을 바꾸는 것이 아니라 테스트 시점 KV 운용만을 조정하는 방법이므로, 더 긴 학습 지평을 갖춘 백본의 필요성이나 근본적 품질 상한에 대한 논의는 본문에서 자세히 다루지 않으며(두 방향이 "직교적"이라고만 언급), 구체적인 실패 사례나 정량적 한계치는 논문에 명시되지 않음.</p>
+<h2>시사점</h2>
+<p>드리프팅을 "읽기(conditioning)" 문제가 아니라 "쓰기(caching)" 단계에서부터 발생하는 분포 이탈 문제로 재정의한 관점은, 향후 장편 자기회귀 생성 연구에서 캐시 구성 자체를 점검하는 방향을 제시한다. 별도 재학습 없이 기존 5초 수준의 AR 비디오 모델을 분 단위로 확장할 수 있다는 점에서, 월드 모델·스트리밍 콘텐츠·장편 스토리텔링 등 실용적 응용에 즉시 적용 가능한 실용적 가치가 크며, 더 긴 지평으로 학습하는 접근법과 상호 보완적으로 결합될 수 있다는 점도 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.03120" target="_blank" rel="noopener">huggingface.co/papers/2610.03120</a> · 2026-10-07</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

@@ -1,0 +1,119 @@
+<meta charset="UTF-8">
+<title>메모어댑터</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#4 · Daily Papers 2026-10-07</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 26</span>
+    </div>
+    <h1 class="article-title">MemAdapter: Counterfactual Adaptation against Memory-Induced Sycophancy</h1>
+    <p class="article-title-ko">메모어댑터: 기억 유도 아첨에 대한 반사실적 적응</p>
+    <p class="article-sub">검색된 과거 기억이 정확하더라도 현재 과제 맥락과 맞지 않으면 LLM 에이전트가 사용자 과거 견해에 맹목적으로 동조(아첨)하게 되는 문제를, 반사실적 추론으로 기억의 잠재적 위험을 미리 파악하고 현재 맥락에 맞게 기억의 영향력을 재조정하는 MemAdapter 프레임워크로 완화한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.05162" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.05162" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: MemAdapter: Counterfactual Adaptation against Memory-Induced Sycophancy</li>
+<li><strong>저자</strong>: Ruqing Ning, Haibo Meng (공동 1저자), Zhishang Xiang, Zerui Chen, Jinsong Su, Xin Wang, Qinggang Zhang(교신저자) — Jilin University, Xiamen University 소속</li>
+<li><strong>출처</strong>: arXiv:2610.05162v1 [cs.AI] (2026년 10월 4일 제출)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음 (코드 저장소: https://github.com/DEEP-JLU/MemAdapter)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.05162">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>검색된 과거 기억이 정확하더라도 현재 과제 맥락과 맞지 않으면 LLM 에이전트가 사용자 과거 견해에 맹목적으로 동조(아첨)하게 되는 문제를, 반사실적 추론으로 기억의 잠재적 위험을 미리 파악하고 현재 맥락에 맞게 기억의 영향력을 재조정하는 MemAdapter 프레임워크로 완화한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>장기 기억(long-term memory)을 가진 LLM 에이전트는 과거 상호작용 정보를 저장·재사용해 개인화와 장기적 상호작용을 지원하지만, 과거의 신념·선호·판단이 현재 맥락과 맞지 않을 때도 반복적으로 소환되면서 에이전트가 부정확하거나 오래된 정보, 혹은 객관적 근거와 상충하는 사용자의 과거 견해에 과도하게 동조하는 "기억 유도 아첨(memory-induced sycophancy)" 현상이 발생한다. 기존 연구들은 이 문제의 원인이 '편향되거나 부정확한 기억'에 있다고 가정하고, 기억 추출·보존·망각 단계(예: Recalling Too Well, PersistBench)나 검색 단계(예: OP-Bench, MemGate), 조직화 단계(Structured Memory)에서 기억을 필터링·억제·재구성하는 방식으로 개입해 왔다. 그러나 저자들은 예비 실험을 통해 두 가지 한계를 지적한다. (1) 객관적으로 정확하고 과제와 관련 있는 기억조차 특정 하류 조건에서는 편향된 추론을 유발할 수 있어, 기억의 위험은 내용만으로는 관측되지 않는다(정확·관련 기억만 사용해도 세 벤치마크 평균 정확도가 96.0%에서 77.3%로 하락). (2) 동일한 기억이라도 과제에 따라 적절한 영향력이 달라진다(예: 사용자가 심장전문의라는 기억은 설명 난이도 조절에는 유용하지만, 환자별 치료 결정에는 근거가 되어서는 안 됨). 즉 기억의 위험은 기억 자체의 고유 속성이 아니라 추론 맥락과의 상호작용에서 결정되는 '관계적 속성'이라는 것이 핵심 문제의식이다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>기존 기억-사용 개입 방법들의 한계(기억 내용만으로 위험 판단, 맥락 독립적 개입)를 규명하고, 검색된 기억이 추론에 미치는 영향을 적응적으로 조절하는 새로운 프레임워크 MemAdapter를 제안.</li>
+<li>반사실적 추론(counterfactual reasoning)을 이용해 각 기억을 다양한 가상의 과제 조건 하에서 검토함으로써, 기억 내용 자체만으로는 드러나지 않는 잠재적 위험을 사전에 밝혀내는 Counterfactual Induction 모듈을 고안.</li>
+<li>현재 과제 및 근거에 비추어 각 기억의 추론적 영향력을 자기 성찰(self-reflection)로 보정하는 Context-Aware Reflection과, 최종 답변을 적절한 근거에 기반시키면서도 기억의 정당한 영향력은 보존하는 Evidence-Based Reasoning을 설계.</li>
+<li>다섯 가지 이질적인 기억 시스템과 세 가지 벤치마크에 걸친 폭넓은 실험으로 MemAdapter가 기억 사용 신뢰성을 일관되게 향상시킴을 입증.</li>
+</ul>
+<h2>방법론</h2>
+<p>MemAdapter는 기억 구축이나 검색 과정은 그대로 둔 채, 검색 이후(post-retrieval) 단계에서만 작동하는 세 단계 파이프라인이다.
+1. <strong>Counterfactual Induction (반사실적 유도)</strong>: 각 검색된 기억 $m_i$를 고정한 채, 그 기억이 개입할 수 있는 다양한 가상의 과제 유형과 구체적 설정들로 이루어진 "반사실적 과제 공간" $\mathcal{H}<em ij="ij">i$를 구성한다. 각 설정마다 그 기억이 무엇을 뒷받침할 수 있고 무엇을 정당화할 수 없는지(설정별 기여 $v</em>$)를 도출한 뒤, 이들을 비교해 실질적인 차이만 남기고 표면적 차이는 버려서 기억별 "조건부 경계(conditional boundary)" $B_i$ — 즉 그 기억이 어떤 조건에서 편향된 추론을 유발할 수 있는지에 대한 과제-불특정적 특성화 — 를 산출한다.
+2. <strong>Context-Aware Reflection (맥락 인지 자기 성찰)</strong>: 1단계에서 얻은 조건부 경계들을 현재 요청 $q$, 가용 근거 $c$에 비추어 재평가한다. 자기 성찰을 통해 각 기억이 현재 답변의 어떤 부분에 어느 정도까지 영향을 미쳐도 되는지, 그리고 어떤 결론은 뒷받침할 수 없는지를 자연어 지시문 $u_i$로 명시해 작업별 영향력 집합 $\mathcal{U}$를 만든다.
+3. <strong>Evidence-Based Reasoning (근거 기반 추론)</strong>: 질의 $q$, 맥락 $c$, 원본 기억 $\mathcal{M}$, 과제별 영향 지시문 $\mathcal{U}$를 함께 입력받아 최종 답변 $y$와 내부 "근거 추적(support trace)" $\mathcal{L}$을 동시에 생성한다. $\mathcal{L}$은 응답의 각 주요 구간이 어떤 근거(기억 혹은 외부 증거)에 의해 뒷받침되는지, 그리고 해당 기억-영향 지시문의 허용 범위 내에 있는지를 검증하는 데 사용되며, 검증 후에는 최종 답변 $y$만 사용자에게 반환된다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>세 가지 벤치마크(MemSyco-Bench, MemTrapBench, PersistBench)와 다섯 가지 기억 시스템(A-MEM, Mem0, NaiveRAG, MemoryBank, LightMem)에서, 주로 DeepSeek-V4-Flash를 백본으로 사용해 실험했다(추가로 GPT-5.6-sol, Qwen3-8B로 교차 백본 검증). 비교 대상은 기억 미개입 직접생성(Direct Gen.)과 네 가지 기존 기억-사용 개입 기법(Anti-Sycophancy, Self-ReCheck, Dynamic Partition, MemGate)이다.
+- MemSyco-Bench에서 MemAdapter는 다섯 기억 시스템 모두에서 "When to Use Memory"와 "How to Use Memory" 두 지표를 일관되게 향상시켰으며(예: A-MEM 기준 When to Use Memory 91.22%로 경쟁 기법 대비 +0.44%p, How to Use Memory 89.39%로 +2.33%p), 비교 개입 기법들 중 가장 우수했다.
+- MemTrapBench에서는 다섯 시스템 모두에서 reasoning-fixation 및 belief-distortion 점수가 개선되었고, PersistBench에서는 다섯 시스템 중 네 시스템에서 sycophancy 실패율과 cross-domain 실패율이 감소했다(다만 beneficial-memory 실패율은 기억 시스템에 따라 증가하는 등 트레이드오프가 관찰됨).
+- 교차 백본 실험(GPT-5.6-sol, Qwen3-8B)에서도 MemAdapter는 평균 정확도를 일관되게 향상시켜 특정 백본에 종속되지 않는 범용적 사후 개입임을 확인했다. 다만 개선 폭은 기억 시스템·과제 차원·백본에 따라 차이를 보였다(예: Qwen3-8B에서 memory-evidence conflict 처리와 valid memory selection에서 특히 큰 향상).
+- 절제 연구(ablation, DeepSeek-V4-Flash·NaiveRAG/A-MEM 대상)에서 Counterfactual Induction 단독 적용($B$)만으로도 평균 정확도가 NaiveRAG에서 70.25→84.26, A-MEM에서 71.71→84.19로 크게 향상되었고, Context-Aware Reflection 추가($B+R$)와 최종 Evidence-Based Reasoning 단계까지 더하면 각각 89.94, 90.45까지 추가 향상되어 세 구성요소가 상호 보완적임을 보였다.</p>
+<h2>한계점</h2>
+<p>논문에 별도의 "한계점" 섹션은 명시되어 있지 않다. 다만 본문에서 확인되는 한계로는, PersistBench의 beneficial-memory 실패율이 일부 기억 시스템에서는 오히려 증가하는 등 지표 간 트레이드오프가 존재한다는 점, 교차 백본 실험에서 GPT-5.6-sol 기준 일부 기억 시스템의 개선폭이 상대적으로 미미하거나 혼재된 양상을 보인다는 점을 저자들이 직접 언급하고 있다. 또한 Counterfactual Induction·Context-Aware Reflection·Evidence-Based Reasoning 세 단계 모두 추가적인 LLM 추론 호출을 필요로 하므로 추론 비용(지연 시간·연산량) 증가가 수반될 것으로 보이나, 이에 대한 정량적 분석은 논문에 명시되지 않음.</p>
+<h2>시사점</h2>
+<p>이 연구는 기억 유도 아첨 문제를 "무엇을 저장·검색할 것인가"의 문제에서 "검색된 기억이 추론 과정에서 어떤 역할을 해야 하는가"라는 사후 처리(post-retrieval) 문제로 재구성했다는 점에서 의미가 있다. 기억 자체의 정확성과 맥락 적합성을 분리해서 다뤄야 한다는 통찰은 개인화 에이전트, 장기 대화 시스템, RAG 기반 어시스턴트 설계 전반에 적용될 수 있으며, 기존 기억 파이프라인(구축·검색)을 변경하지 않고도 플러그인 형태로 적용 가능하다는 점에서 실용적 확장성이 크다. 다만 추가 LLM 추론 단계로 인한 비용-신뢰성 트레이드오프, 그리고 벤치마크·백본에 따라 달라지는 효과 편차는 실제 배포 시 추가 검증이 필요함을 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.05162" target="_blank" rel="noopener">huggingface.co/papers/2610.05162</a> · 2026-10-07</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

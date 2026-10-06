@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>루프드 모델을 제대로 만들기 2부</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#8 · Daily Papers 2026-10-07</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 16</span>
+    </div>
+    <h1 class="article-title">Towards Looped Models Done Right, Part II: Rethinking at Fixed Points</h1>
+    <p class="article-title-ko">루프드 모델을 제대로 만들기 2부: 고정점에서 다시 생각하기</p>
+    <p class="article-sub">루프드(looped) 언어 모델의 반복 상태가 고정점(fixed point)에 가까워진다는 성질을 체계적으로 활용하여, 학습·디코딩·프리필·강화학습(RL) 전 단계에서 반복 경로 전체를 계산하지 않고 종료 상태(endpoint)만으로 대체함으로써 비용을 크게 줄이는 방법을 제안한 연구이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.06833" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.06833" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Towards Looped Models Done Right, Part II: Rethinking at Fixed Points</li>
+<li><strong>저자</strong>: Benhao Huang, Chufan Shi, Junlin Chen, Shicheng Wen, Zhengzhong Liu, Eric Xing, Xuezhe Ma (Institute of Foundation Models, USC, CMU 소속 연구진)</li>
+<li><strong>출처</strong>: arXiv:2610.06833v1 [cs.LG] (2026년 9월 29일 제출)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/ifm-ai/xllm-loop">GitHub 코드 저장소</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.06833">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>루프드(looped) 언어 모델의 반복 상태가 고정점(fixed point)에 가까워진다는 성질을 체계적으로 활용하여, 학습·디코딩·프리필·강화학습(RL) 전 단계에서 반복 경로 전체를 계산하지 않고 종료 상태(endpoint)만으로 대체함으로써 비용을 크게 줄이는 방법을 제안한 연구이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>루프드 언어 모델은 동일한 블록을 여러 번 반복 적용해 테스트 시점 연산량을 늘리는 구조이지만, 반복마다 학습 시 저장해야 할 활성화, 디코딩 시 키-값(KV) 캐시, 프리필 연산, RL 롤아웃 재생 비용이 함께 증가한다는 문제가 있다. 기존 연구는 고정점을 아예 배제하고 반복 횟수를 작게 고정하는 쪽과, 고정점을 적극적으로 형성하며 깊게 반복하는 쪽으로 나뉘어 왔으나, 고정점이 실제로 이러한 비용 절감에 어떻게 기여하는지는 명확히 규명되지 않았다. 저자들은 고정점 방정식이 경로가 아닌 종료 상태만을 포함한다는 점에 주목하여, 상태가 고정점 근방에 도달하면 전체 반복 경로 대신 종료 상태만으로 충분하다는 가설을 세운다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>고정점이 기존에 쓰이던 두 가지 효율화 기법(절단 역전파, 터미널 KV 공유)의 이론적 근거임을 규명하고, 고정점 개념으로부터 두 가지 새로운 단축 기법(증류 프리필, RL에서의 롤아웃 상태 재사용)을 추가로 제시한다.</li>
+<li>고정점의 형성을 좌우하는 두 요소인 깊이 사전분포(depth prior)와 입력 주입(input injection) 방식을 개선한다. 기존 Huginn의 고정 분포 대신 예측 피드백으로부터 학습되는 깊이 사전분포(learned depth prior)와, 상태의 캐리오버 성분 중 입력 방향 성분을 제거하는 직교 입력 주입(OrthoInj)을 제안한다.</li>
+<li>100M에서 1.6B 파라미터 규모까지 실험하여, 학습된 사전분포와 직교 주입이 모든 규모에서 기존 방식보다 낮은 perplexity와 더 나은 다운스트림 성능을 보임을 확인한다.</li>
+</ul>
+<h2>방법론</h2>
+<p>모델은 Huginn 스타일의 루프드 Llama 트랜스포머로, 비공유 prelude 블록, 공유되는 재귀 코어(recurrent core) 블록, 비공유 coda 블록으로 구성되며 재귀 코어가 입력을 매 반복마다 주입하며 R회 반복된다. 저자들은 먼저 토큰별 상태 변화율로 수렴을 측정해, 시퀀스 내 토큰들이 서로 다른 깊이에서 이질적으로(heterogeneous) 수렴함을 보인다. 이어 고정점 근방에서는 (1) 학습 시 마지막 b개 반복만 역전파하는 절단 BPTT가 전체 경로 역전파를 근사하고, (2) 디코딩 시 각 프리픽스 토큰의 터미널 KV 뱅크만 캐싱해도 손실이 거의 없으며, (3) RL 업데이트 시 저장된 롤아웃 종료 상태에 Neumann 급수 근사를 적용해 전체 경로 재생 없이 그래디언트를 계산할 수 있고, (4) 프리필 단계는 teacher의 반복 종료 상태를 직접 예측하는 경량 학생 네트워크로 증류될 수 있음을 이론(고정점 수렴에 대한 Lemma 1)과 실험으로 뒷받침한다. 이러한 혜택을 극대화하기 위해, 학습된 깊이 사전분포는 범주형 분포를 예측 품질(보상)에 대한 정책 경사 방식으로 학습하되 엔트로피 정규화 항으로 분포가 지나치게 좁아지는 것을 방지하고, 목표 평균 깊이를 유지하는 예산 제약 항을 추가한다. 직교 입력 주입(OrthoInj)은 상태의 캐리오버 성분에서 입력 벡터 방향의 성분을 투영 제거하여, 모든 반복이 동일한 세기로 입력을 받도록 한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Llama 기반 루프드 모델을 S(100M), M(400M), L(1.6B) 세 규모로, 각각 21.5B~343.6B 토큰으로 학습하였고 TxT360 혼합 데이터셋과 Jais64k 토크나이저를 사용했다. 평가는 MixVal 및 WikiText-103 perplexity, LAMBADA/HellaSwag/PIQA/ARC/OpenBookQA/SciQ 등 다운스트림 분류 과제, GSM8K/DROP/MBPP+ 등 생성 과제로 이루어졌다. 주요 결과는 다음과 같다: (1) 고정 깊이 학습은 터미널 KV 공유와 양립하지 못해 GSM8K 정확도가 절반 이하로 떨어지는 반면, 학습된 사전분포는 공유를 유지하면서 Huginn의 고정 Poisson-log-normal 사전분포 대비 모든 규모에서 검증 perplexity를 낮춘다. 1.6B 규모에서는 KV 캐시를 3배 줄이면서도 전체 캐시를 쓰는 고정 깊이 학습과 비슷한 다운스트림 평균 성능을 달성한다. (2) OrthoInj는 DEQ-QKV, Huginn-Linear, Parcae-Decay 등 기존 입력 주입 방식보다 모든 규모에서 낮은 검증/학습 손실과 더 높은 다운스트림 평균을 기록한다. (3) RL(Dr. GRPO, GSM8K/MBPP+)에서 롤아웃 상태 재사용은 전체 역전파 대비 채점·역전파 시간을 약 2배 단축하면서 pass@1 성능은 오차범위 내로 유지된다. (4) 증류된 프리필 학생 모델은 teacher 대비 최대 1.79배 빠른 프리필을 제공하며 다운스트림 평균 점수 하락은 1.0~4.5점 수준에 그친다.</p>
+<h2>한계점</h2>
+<p>저자들은 최대 1.6B 파라미터, 시드 1개 구성까지만 실험했으며 더 큰 규모나 다른 모델 구성에 대해서는 검증하지 못했다고 명시한다. 또한 이러한 기법들이 실제 응용 환경에서 갖는 실용성은 추가 연구가 필요하다고 밝히고 있다.</p>
+<h2>시사점</h2>
+<p>이 연구는 루프드 모델의 설계를 "반복 횟수를 늘리는 것" 자체가 아니라 "고정점을 어떻게 형성하고 활용하는가"의 문제로 재구성한다. 깊이 사전분포와 입력 주입이라는 두 가지 학습 설계 선택이 고정점의 질을 좌우하며, 이를 잘 설계하면 학습·추론·후속 강화학습 전 과정에서 반복 깊이에 비례해 증가하던 비용을 종료 상태 기반 연산으로 대체할 수 있다는 점에서, 더 깊은 루프드 모델을 실용적으로 확장하는 데 중요한 방향을 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.06833" target="_blank" rel="noopener">huggingface.co/papers/2610.06833</a> · 2026-10-07</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

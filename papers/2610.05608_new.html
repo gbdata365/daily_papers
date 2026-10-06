@@ -1,0 +1,115 @@
+<meta charset="UTF-8">
+<title>칸딘스키 6.0 비디오</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#1 · Daily Papers 2026-10-07</span>
+      <span class="cat-tag">생성모델</span>
+      <span class="upvote-tag">▲ 113</span>
+    </div>
+    <h1 class="article-title">Kandinsky 6.0 Video: Foundation Models for Synchronized Video and Audio Generation</h1>
+    <p class="article-title-ko">칸딘스키 6.0 비디오: 동기화된 영상 및 오디오 생성을 위한 파운데이션 모델</p>
+    <p class="article-sub">텍스트/이미지로부터 립싱크를 포함한 5초 분량의 동기화된 영상과 44kHz 오디오를 함께 생성하는 이중 스트림(dual-stream) CrossDiT 기반 파운데이션 모델 패밀리(Lite 3B, Pro 29B)를 제시하고, MIT 라이선스로 공개했다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.05608" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.05608" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Kandinsky 6.0 Video: Foundation Models for Synchronized Video and Audio Generation</li>
+<li><strong>저자</strong>: Kandinsky Lab (러시아 소속 연구팀, 상세 기여자 목록은 논문 말미에 수록됨 — 사전학습, 후속학습, 최적화, 증류, 초해상도, VAE, 캡셔닝, 평가 등 다수의 팀으로 구성)</li>
+<li><strong>출처</strong>: arXiv:2610.05608v1 [cs.CV] (2026년 10월 6일 제출)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://kandinskylab.ai">https://kandinskylab.ai</a> (GitHub: https://github.com/kandinskylab/kandinsky-6, Hugging Face: https://huggingface.co/collections/kandinskylab/kandinsky-60-diffusers)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.05608">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>텍스트/이미지로부터 립싱크를 포함한 5초 분량의 동기화된 영상과 44kHz 오디오를 함께 생성하는 이중 스트림(dual-stream) CrossDiT 기반 파운데이션 모델 패밀리(Lite 3B, Pro 29B)를 제시하고, MIT 라이선스로 공개했다.</p>
+<h2>배경 및 문제의식</h2>
+<p>영상과 오디오를 동시에 생성하는 것은 각 모달리티를 단독으로 생성하는 것보다 의미적·시간적·감정적 일관성을 모두 맞춰야 하므로 훨씬 어렵다. Veo 3.1, Sora 2, Wan 2.6 같은 폐쇄형 상용 시스템은 립싱크와 동적 배경음까지 포함한 통합 오디오-비주얼 합성에서 인상적인 성과를 보였지만 소스 코드가 공개되지 않아 재현과 추가 연구가 어렵다. ALIVE, SyncFlow, JavisDiT, 3MDiT, LTX-2/LTX-2.5, MiniMax-H3, NVIDIA Cosmos 3 등 공개 연구들이 이 문제를 다루고 있지만, 오픈소스 모델은 여전히 클립 길이, 해상도, 동기화 정확도 면에서 폐쇄형 모델에 뒤처져 있다는 문제의식에서 출발한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>두 가지 크기의 모델(칸딘스키 6.0 비디오 Lite 3B, Pro 29B)을 제시하며, 두 모델 모두 5초 분량의 영상과 동기화된 44kHz 오디오(립싱크 포함)를 텍스트-투-오디오-비디오(T2AV) 및 이미지-투-오디오-비디오(I2AV) 모드로 생성한다.</li>
+<li>오디오 스트림을 대규모 오디오 코퍼스로 먼저 사전학습한 뒤, 사전학습된 영상 스트림과 새로 초기화된 양방향 크로스어텐션 레이어로 연결하여 짝지어진 오디오-영상 데이터에서 공동 학습하는 연속적 사전학습(continuous pretraining) 전략을 제안했다.</li>
+<li>도메인별 지도 미세조정(SFT)을 모델 수프(model soup)로 결합하고, OmniNFT에서 적응한 강화학습(RL) 기반 후속학습, 그리고 2단계 증류(π-Flow 이후 적대적 정제)를 결합한 다단계 후속학습 파이프라인을 설계했다.</li>
+<li>VABench 벤치마크와 사람 평가를 통해 공개 모델 LTX 2.5의 대부분 지표를 능가하고, 전작 칸딘스키 5.0 Video Pro를 크게 상회하며, 특히 음성 품질 면에서 폐쇄형 상용 모델들과도 경쟁력을 보였다.</li>
+<li>모델 가중치, 소스 코드, diffusers 라이브러리 통합본을 MIT 라이선스로 공개했다.</li>
+</ul>
+<h2>방법론</h2>
+<p>핵심 아키텍처는 칸딘스키 5.0의 CrossDiT 구조를 영상·오디오 두 모달리티로 확장한 이중 스트림(dual-stream) 구조다. 각 트랜스포머 블록은 영상 스트림과 오디오 스트림이 각각 자기어텐션(self-attention)과 텍스트 크로스어텐션을 수행한 뒤, 블록 단위의 양방향 크로스모달 어텐션(V2A, A2V)으로 서로 정보를 교환하고 피드포워드를 거친다. 위치 정보는 RoPE(Rotary Position Embedding)로 인코딩하며, 영상 토큰은 프레임 번호, 오디오 토큰은 시간 위치 기준의 3D/1D RoPE를 사용한다. 영상 인코딩/디코딩에는 Hunyuan VAE를, 오디오에는 44kHz를 지원하는 MMAudio 오토인코더를, 텍스트 인코딩에는 Qwen2.5-VL-7B-Instruct와 CLIP ViT-L/14를 사용한다.</p>
+<p>학습은 (1) 영상·오디오 스트림을 각각 플로우 매칭(flow matching)으로 분리 사전학습한 뒤, (2) 양방향 크로스어텐션으로 연결해 T2AV 및 I2AV 모드로 공동 학습하는 연속 사전학습, (3) 11개 도메인별로 시각 품질 단계와 동기화/립싱크 단계를 나눈 2단계 지도 미세조정(SFT) 후 모델 수프로 병합, (4) HPSv3, VideoAlign, AudioBox Aesthetics, CLAP, Whisper-ASR, AV-Desync, AV-Align, LatentSync 등 8개 보상 모델을 조합한 멀티목적 보상 기반 GRPO 유사 강화학습, (5) π-Flow를 이용한 궤적 증류(10회 함수 평가로 압축) 후 Sim-LADD라는 자체 개발 적대적 정제 기법으로 지각 품질을 복원하는 2단계 증류의 순서로 진행된다. 별도의 초해상도(SR) 모델은 잠재공간 업스케일러(Latent Upscaler)와 텍스트 없는 SR-DiT로 구성되어, K-VAE 잠재공간에서 2단계 증류를 거쳐 2회 네트워크 평가만으로 출력 해상도를 Full-HD(1920×1080)까지 끌어올린다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>VABench 벤치마크(512×768 해상도)에서 칸딘스키 6.0 Video Pro는 음성 품질, 오디오 미학, 텍스트-영상/오디오-영상 정렬, 립싱크 정확도, 디싱크(desync), 시각적 사실성에서 선두를 보였고, Lite 모델은 텍스트-오디오 정렬과 오디오 품질에서 강점을 보였다. LTX 2.5는 정렬·표현력 점수와 단어 오류율(WER)에서 우위를 유지했다. RL 후속학습은 Pro 모델의 음성 WER을 SFT 대비 0.235에서 0.124로 약 47% 상대적으로 감소시켰다(Harvard 문장 공개 벤치마크에서도 0.251→0.180로 개선, p=0.005).</p>
+<p>사람 평가(side-by-side)에서는 칸딘스키 6.0 Video Pro가 전작 칸딘스키 5.0 Video Pro를 모든 시각·의미 기준에서 명확히 능가했다. 폐쇄형 모델과의 비교는 혼재된 양상을 보였다: LTX 2.5 대비 시각 품질과 작업 해결력에서 우위를 보였고, Kling 2.6·Veo 3.1 Fast와는 기준별로 엇갈린 강점을 보였으며, MiniMax H3와 Seedance 2.0은 시각적 기준에서 더 우수했지만 칸딘스키는 음성 품질과 오디오-영상 동기화에서 경쟁력을 유지했다. 증류된 모델은 비증류 전체 모델과 거의 동등한 품질(평균 선호도 51% vs 49%)을 유지하면서 추론 비용을 크게 줄였다.</p>
+<h2>한계점</h2>
+<p>모델은 최대 5초 길이의 짧은 클립만 생성하며, 기본 생성은 SD 해상도에서 이루어지고 Full-HD는 별도의 초해상도 단계를 거쳐야 얻어진다. 또한 가장 강력한 상용 폐쇄형 시스템 대비 시각 품질과 전체 오디오 품질에서 여전히 격차가 존재한다고 논문은 명시한다. 향후 과제로 더 긴 클립, 더 높은 네이티브 해상도, 추가적인 참조 기반 조건화(예: 음성 클로닝) 지원을 제시했다.</p>
+<h2>시사점</h2>
+<p>이 연구는 영상과 오디오를 하나의 파운데이션 모델에서 양방향 크로스어텐션으로 결합하면서도, 각 모달리티의 단일 모달 품질을 보존하는 연속 사전학습 전략이 실질적으로 효과적임을 보여준다. 특히 RL 기반 후속학습이 음성 명료도를 크게 개선할 수 있다는 점, 그리고 2단계 증류(궤적 압축 + 적대적 정제)로 추론 비용을 크게 낮추면서도 품질 저하를 최소화할 수 있다는 점은 오디오-비디오 동시 생성 모델의 실용적 배포 가능성을 높인다. 모델 전체를 MIT 라이선스로 공개함으로써 폐쇄형 상용 시스템에 뒤처져 있던 오픈소스 오디오-비디오 생성 연구 생태계에 중요한 재현 가능 기준선(baseline)을 제공한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.05608" target="_blank" rel="noopener">huggingface.co/papers/2610.05608</a> · 2026-10-07</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

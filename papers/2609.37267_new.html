@@ -1,0 +1,121 @@
+<meta charset="UTF-8">
+<title>능동형 에이전트의 기반</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#6 · Daily Papers 2026-10-07</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 20</span>
+    </div>
+    <h1 class="article-title">Foundations of Proactive Agents: Principles, Technical Layers, and Proactivity-Gym</h1>
+    <p class="article-title-ko">능동형 에이전트의 기반: 원칙, 기술 계층, 그리고 프로액티비티-짐</p>
+    <p class="article-sub">사용자가 요청하기 전에 먼저 움직이는 "능동형(proactive) LLM 에이전트"를 제대로 설계·평가하려면 작업 수행 능력뿐 아니라 컴퓨팅 자원 배분 시점과 사용자 신뢰까지 함께 고려해야 한다는 것을 보이고, 이를 측정할 수 있는 시뮬레이션 평가 환경 Proactivity-Gym을 제안한 연구이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.37267" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.37267" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Foundations of Proactive Agents: Principles, Technical Layers, and Proactivity-Gym</li>
+<li><strong>저자</strong>: Jio Oh, Seunghyun Do, Young-Jun Lee, Steven Euijong Whang, Dongyeop Kang (KAIST, University of Minnesota 소속)</li>
+<li><strong>출처</strong>: arXiv:2609.37267v1 [cs.AI] (2026년 9월 29일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://harryoh99.github.io/foundations_of_proactive_agents/">https://harryoh99.github.io/foundations_of_proactive_agents/</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.37267">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>사용자가 요청하기 전에 먼저 움직이는 "능동형(proactive) LLM 에이전트"를 제대로 설계·평가하려면 작업 수행 능력뿐 아니라 컴퓨팅 자원 배분 시점과 사용자 신뢰까지 함께 고려해야 한다는 것을 보이고, 이를 측정할 수 있는 시뮬레이션 평가 환경 Proactivity-Gym을 제안한 연구이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>OpenClaw, OpenJarvis 같은 오픈소스 에이전트 프레임워크와 개인용 LLM의 발전으로 사용자 곁에서 항상 대기하는 에이전트가 현실화되고 있다. 이상적으로는 에이전트가 유휴 컴퓨팅 자원을 활용해 사용자가 요청하기 전에 필요한 작업을 미리 처리해줄 수 있어야 한다. 그러나 현재 연구와 배포는 대부분 사용자의 명시적 요청에 반응하는 "리액티브" 방식에 머물러 있고, 작업 완수율만으로 성능을 측정한다. 저자들은 능동적 개입이 항상 이득이 되는 것은 아니며, 관련 없는 제안이나 부적절한 타이밍의 개입, 낮은 품질의 결과물은 사용자가 검토·수정하는 비용을 유발하고 반복되면 신뢰와 의존도를 떨어뜨릴 수 있다고 지적한다. 즉 "더 많이 하는 것"이 "더 잘 돕는 것"과 같지 않다는 문제의식에서 출발한다.</p>
+<h2>핵심 기여</h2>
+<p>논문은 세 가지로 기여를 요약한다. 첫째, 능동형 에이전트를 떠받치는 세 가지 설계 목표인 3T(Task Capability·Temporal Allocation·Trust) 원칙을 제시한다. 둘째, 이 세 목표를 다섯 가지 차원(작업 범위, 예측 시야, 활성화 트리거, 처리 시점, 개입 깊이)으로 이루어진 구체적인 "기술 계층(technical layer)" 설계 공간으로 구체화하고, 이를 구현하는 데 필요한 상황 모델링·시스템 모델링 요소를 정리한다. 셋째, 다중일(multi-day) 시나리오, 상태를 가진 툴 환경, 페르소나 기반 시뮬레이션 사용자를 갖춘 평가 테스트베드 Proactivity-Gym을 공개하고, 23개 모델-하니스 조합과 30명 대상 인간 평가로 그 유용성을 입증한다.</p>
+<h2>방법론</h2>
+<ul>
+<li><strong>3T 정의</strong>: Task Capability(TC)는 사용자의 관련 필요를 예측하고 유용한 작업을 올바르게 수행하는 능력, Temporal Allocation(TA)은 자원 가용성과 결과가 필요한 시점에 맞춰 연산을 배분하는 능력, Trust(TR)는 사용자가 에이전트의 추천·행동·결정을 신뢰하고 의존하려는 정도로 정의된다. TR은 McAllister(1995), Madsen &amp; Gregor(2000)의 다섯 가지 신뢰 구성요소(이해가능성, 기술적 역량, 신뢰성, 개인적 애착, 믿음)에 기반한다.</li>
+<li><strong>상호작용 시간 vs. 수면 시간</strong>: 에이전트가 사용자의 작업과 자원을 두고 경쟁할 수 있는 "상호작용 시간(interaction time)"과, 자원 경쟁 없이 백그라운드 작업이 가능한 "수면 시간(sleep time)"을 구분해 TA 판단의 기준으로 삼는다.</li>
+<li><strong>개입 깊이(intervention depth)</strong>: Kraus et al.(2023b)의 IP 연속체를 변형해 prepare(자료만 준비), suggest(검토를 위해 제시), execute(자동 실행)의 3단계로 나누고, 이를 추정된 신뢰 수준에 맞춰 선택해야 한다고 본다.</li>
+<li><strong>설계 공간(5차원)</strong>: 작업 범위(within-task/out-of-task), 예측 시야(immediate/within-interaction/out-of-interaction), 활성화 트리거(user/event/agent-triggered), 처리 시점(interaction/sleep time), 개입 깊이(prepare/suggest/execute)로 구성되며, 각 차원이 TC·TA·TR 중 어떤 목표와 연결되는지 매핑한다.</li>
+<li><strong>상황·시스템 모델링</strong>: 상황 모델링(situation modeling)은 사용자 목표·선호·신뢰 상태와 환경(작업 진행도, 의존관계, 마감, 자원)을 표현하고, 시스템 모델링(system modeling)은 백본 LLM과 하니스(모델 호출, 도구, 메모리, 권한 오케스트레이션)가 이 표현을 바탕으로 행동을 선택하도록 한다. 논문은 이를 z_t = R(c_t), a_t ~ π_A(·|z_t, c_t), c_{t+1} = U(c_t, a_t, o_{t+1}) 형태의 수식으로 정식화하고, 세 목표를 가중합 max Σλ_k S_k(A)로 결합한 통합 목적식도 제시한다.</li>
+<li><strong>Proactivity-Gym</strong>: 연구, 여행, 생활, 음식, 커리어, 비즈니스, 교육, 재정, 쇼핑, 건강 등 10개 도메인에서 7~10일에 걸친 다중일 시나리오를 수작업으로 구성했고, 시나리오별로 개입 깊이 선호가 다른 3가지 페르소나(Reviewer, Planner, Operator)를 두었다. 시뮬레이션 시계, 상태를 가진 도구 환경(메시지·문서·캘린더 등), 그리고 Qwen 3.8-27B 기반의 페르소나 조건부 사용자 시뮬레이터를 통해 에이전트의 행동이 이후 상호작용에 미치는 영향까지 평가한다.</li>
+</ul>
+<h2>실험 설정 및 결과</h2>
+<p>GPT 5.6(Luna, Sol), Claude(Sonnet 5, Opus 5), Qwen 3.5(2B, 9B, 27B), Gemma 4(12B, 31B) 등 9개 모델을 OpenClaw, Claude Code, Codex 3개 하니스와 조합해 총 23개 모델-하니스 구성을 평가했으며, 시나리오-페르소나 조합마다 3회씩 실행했다. 평가지표는 TC(0~100, 규칙 기반+LLM 심판), TA(명시적 요청을 지연 작업보다 우선 처리했는지의 비율), TR-D(개입 깊이와 사용자 선호의 일치율), TR-J(5가지 신뢰 구성요소에 대한 LLM 심판 평점)이다.</p>
+<ul>
+<li>Claude Opus 5가 평균 TC 65.1로 최고 성능을 기록했지만 TA는 51.7%, TR-D는 52.4%에 그쳤고, 나머지 모델들은 대부분 TA 20% 미만이었다.</li>
+<li>TC는 TA(r=0.31), TR-D(r=0.34)와 약한 상관관계만 보였고, TR-J와는 비교적 강한 상관(r=0.70)을 보여 LLM 심판이 TC와 TR을 혼동하는 경향이 있음을 시사한다.</li>
+<li>하니스를 바꾸면(Claude Code → OpenClaw) 모델에 따라 TC가 최대 -11.1%p까지 하락하는 등 하니스 효과가 모델별로 상이했다.</li>
+<li>추론 노력을 늘려도(GPT 5.6-Sol) TC는 다소 개선되지만 TA·TR은 정체되는 경향을 보였다.</li>
+<li>30명 참가자 인간 연구에서는, 작업 결과가 동일하게 정확해도 참가자들은 개입 깊이가 자신의 선호와 어긋난 에이전트를 88.3% 비율로 선호하지 않았고, 즉시 작업과 경쟁하는 지원은 26.7%만 수용했지만 수면 시간에 제공되는 지원(수정이 필요하더라도)은 97.8% 수용했다. 또한 한 번의 개입 깊이 불일치만으로도 신뢰가 크게(평균 -1.86점) 하락했고, 이후 정렬된 행동이 이어져도 이전 신뢰 수준으로 완전히 회복되지 않았다.</li>
+</ul>
+<h2>한계점</h2>
+<p>저자들은 Proactivity-Gym이 단순화된 자원 제약과 사용자 모델을 사용하는 초기 단계의 동적 테스트베드임을 인정한다. 더 복잡한 실제 자원 경합이나 다양한 사용자 모델, 장기적인 실세계 평가는 다루지 못했으며, 이는 향후 연구 과제로 남겨두었다(부록 H에서 논의). 또한 LLM 심판(LLM-as-a-Judge) 기반 TR 평가가 개입 깊이 불일치에 상대적으로 둔감해 인간 평가와 괴리가 있다는 점도 한계이자 향후 평가 방법 개선이 필요한 지점으로 지적된다.</p>
+<h2>시사점</h2>
+<p>이 연구는 능동형 에이전트 설계·평가에서 "얼마나 많이, 얼마나 정확히 일했는가"만으로는 불충분하며, 언제 그 결과를 제공할지(자원 배분 시점)와 사용자가 그 개입을 어떻게 받아들이는지(신뢰)를 함께 고려해야 한다는 점을 실증적으로 보여준다. 특히 동일한 품질의 결과물이라도 사용자의 선호된 개입 깊이와 어긋나면 신뢰가 급격히, 그리고 비대칭적으로(얻기는 어렵고 잃기는 쉽게) 손상된다는 발견은 향후 개인 비서형 에이전트나 자율 업무 에이전트 설계에서 사용자 선호 추정과 점진적 자율성 확장 전략이 중요함을 시사한다. 또한 LLM 심판 기반 자동 평가가 과제 수행 능력과 신뢰를 혼동할 수 있다는 결과는, 향후 벤치마크 설계 시 신뢰를 과제 성공과 독립적으로 측정하는 체계가 필요함을 보여준다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.37267" target="_blank" rel="noopener">huggingface.co/papers/2609.37267</a> · 2026-10-07</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

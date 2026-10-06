@@ -1,0 +1,125 @@
+<meta charset="UTF-8">
+<title>역증류를 통한 데이터 언러닝</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#9 · Daily Papers 2026-10-07</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 15</span>
+    </div>
+    <h1 class="article-title">Data Unlearning via Inverse Distillation</h1>
+    <p class="article-title-ko">역증류를 통한 데이터 언러닝</p>
+    <p class="article-sub">다단계 매칭 모델(확산/플로우 모델)을 원-스텝 생성기로 증류하는 과정에서, 특정 학습 데이터(forget set)의 생성을 동시에 억제하는 통합 프레임워크 Inverse Distillation Unlearning(IDU)을 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.36099" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.36099" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Data Unlearning via Inverse Distillation</li>
+<li><strong>저자</strong>: Aleksei Leonov, Nikita Kornilov, Zhang Zhenhe, Evgeny Burnaev, Iaroslav Koshelev, Alexander Korotin (AI Foundation Lab, MIRAI, Applied AI Institute, BRAIn Lab, 모스크바 소재 기관 소속)</li>
+<li><strong>출처</strong>: arXiv:2609.36099v1 [cs.LG] (2026년 9월 28일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.36099">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>다단계 매칭 모델(확산/플로우 모델)을 원-스텝 생성기로 증류하는 과정에서, 특정 학습 데이터(forget set)의 생성을 동시에 억제하는 통합 프레임워크 Inverse Distillation Unlearning(IDU)을 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>확산 모델이나 플로우 매칭 모델과 같은 다단계 매칭 모델은 고품질 샘플을 생성하지만 추론 비용이 크고, 대규모 웹 데이터셋으로 학습되는 과정에서 사생활 침해, 저작권, 법적·윤리적 문제가 되는 학습 데이터(특정 얼굴, 저작권 이미지, 유해 콘텐츠 등)를 기억하고 재생산할 위험이 있다. 이를 해결하는 머신 언러닝(machine unlearning)은 크게 "데이터 언러닝"(특정 샘플 단위로 영향 제거, 클래스나 프롬프트로 특정하기 어려움)과 "클래스 언러닝"(조건부 모델에서 특정 클래스/개념 전체 제거)으로 나뉜다. 그런데 기존 데이터 언러닝 연구는 대부분 다단계 매칭 모델을 대상으로 하며, 추론 속도가 빠른 원-스텝 생성기에 대한 효과적이고 범용적인 언러닝 방법은 거의 연구되지 않았다는 공백이 있다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>원-스텝 생성기에 대한 데이터 언러닝 공백을 메우기 위해 새로운 역증류(inverse distillation) 기반 방법 IDU를 제안.</li>
+<li>IDU는 사전학습된 teacher 매칭 모델(확산 또는 플로우 모델)만 있으면, 원-스텝 생성기를 처음부터 학습시키거나 이미 증류된 원-스텝 모델을 추가로 언러닝시킬 수 있음.</li>
+<li>학습에 필요한 데이터는 teacher 모델과 forget set(삭제 대상 데이터)뿐이며, 보존해야 할 remaining 데이터나 별도의 특징 추출기·분류기가 전혀 필요 없음.</li>
+<li>방법론적으로 유일한 하이퍼파라미터는 forget 비율을 조절하는 ρ ∈ [0,1] 하나뿐이며, forgetting 특성을 보장하는 이론(Theorem 1)도 함께 제시.</li>
+<li>MNIST·CIFAR-10에서 플로우 매칭(FM) 및 score 기반(SiD) 두 백본 모두에서 동작하는, 원-스텝/확산-플로우 통합 언러닝·증류 프레임워크로는 최초라고 주장.</li>
+</ul>
+<h2>방법론</h2>
+<p>표준 원-스텝 증류는 teacher 모델 f<em>에서 얻은 데이터 분포 p0</em>를 min-max 역증류(inverse distillation) 식으로 복원한다(trainable fake model f와 generator p0^θ 사이의 min-max 목적). IDU는 여기서 최적화 대상 분포를 p0^mix = ρ·p0^F + (1-ρ)·p0^θ로 재구성한다. 즉 forget 데이터 p0^F와 generator가 만든 분포 p0^θ를 ρ 비율로 섞은 혼합 분포를, teacher의 분포와 비교한다. ρ = π(실제 forget 데이터 비율)로 설정하면, 최적 generator는 forget 성분이 이미 혼합에 포함되어 있으므로 remaining 데이터 p0^R만을 재현하도록 학습된다는 것이 이론적으로 증명된다(Theorem 1).</p>
+<p>학습은 두 단계를 번갈아 수행한다. (1) fake model f를 forget 데이터와 generator 출력 양쪽에 대한 UM(universal matching) 손실로 업데이트(식 7), (2) generator를 Score identity Distillation(SiD) 방식의 손실로 업데이트하여 teacher와 fake model의 차이를 이용, forget 샘플과 유사한 생성을 억제한다. forward noising은 생성 데이터와 forget 데이터 각각에 대해 수행되며 두 branch가 fake model의 파라미터를 공유한다(Figure 1, Algorithm 1 참조). 핵심 직관은 teacher를 "가이드"로 삼아, 혼합 분포(ρ·forget + (1-ρ)·generated)와 teacher 분포 간 차이를 최소화함으로써 생성기가 forget 데이터를 모사하는 출력에서 멀어지도록 유도하는 것이다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>MNIST(숫자 3, 7 클래스 삭제)와 CIFAR-10(automobile/truck, 클래스 1, 9 삭제)에서 FM과 SiD(EDM-VP 기반) 두 백본으로 실험했다. 평가지표는 FID(원본/보존 데이터 기준)와 FGR(Forgotten-class Generation Rate: 분류기로 판별한 생성 이미지 중 forget 클래스 비율)이다.</p>
+<ul>
+<li>주요 결과(Table 1): IDU는 FM 실험에서 모든 설정에서 FGR을 0.56% 이하로, SiD 실험에서는 1.25% 이하로 낮추면서도, retrain-distillation 오라클과 비슷하거나(FM-MNIST에서는 더 나은) 수준의 Retain FID를 달성했다. Pretrain/순수 증류 모델의 FGR(약 8~13%)과 비교해 큰 폭으로 감소.</li>
+<li>단일 클래스 강건성(Table 2): MNIST 전체 10개 클래스, CIFAR-10 전체 10개 클래스 각각에 대해 단독으로 forget 실험을 수행, 평균 Retain FID/FGR은 FM-MNIST 4.54/0.16%, FM-CIFAR-10 7.73/0.84%, SiD-CIFAR-10 3.61/0.75%로 일관된 성능을 보임.</li>
+<li>ρ(forget 혼합 비율) 민감도(Table 3): ρ가 너무 크면(예: FM에서 0.9) 학습이 발산하거나 FID가 크게 악화되고, 너무 작으면 forgetting 효과가 약해짐. FM-CIFAR-10은 ρ=0.6, MNIST는 ρ=0.4, SiD-CIFAR-10은 ρ=0.2가 각각 최적 균형점으로 선택됨.</li>
+<li>비교 대상: UOT-Unlearn(사전학습 원-스텝 모델 대상 비균형 최적수송 기반) 대비 Retain FID와 FGR 모두 우수. 클래스 언러닝 방법인 SFD와도 비슷한 수준의 성능을 보였으나(CIFAR-10 클래스 0 forgetting에서 Retain FID 3.54/FGR 0.58% vs SFD의 약 3.1/0.36%), IDU는 데이터 샘플만으로 동작하고 클래스 레이블/프롬프트가 필요 없다는 점에서 더 유연함.</li>
+</ul>
+<h2>한계점</h2>
+<ul>
+<li>FM 백본에서는 약 20,000 generator 업데이트 이후 억제했던 forget 클래스의 생성 빈도가 다시 상승하는 현상(reversal)이 관찰되었으며, 이는 IDU 목적함수 자체보다는 현재 FM 아키텍처의 안정성 한계로 추정됨(SiD에서는 평가한 학습 구간 내에서 이러한 역전 현상이 관찰되지 않음).</li>
+<li>ρ 값은 이론적으로 forget 비율 π로 설정하는 것이 권장되지만, 실제로는 보존 데이터(retained data)에 대한 직접 접근 없이 적절한 ρ를 선택해야 하므로 데이터셋/백본별 튜닝이 필요함.</li>
+<li>실험이 MNIST와 CIFAR-10이라는 비교적 작은 데이터셋·저해상도 이미지에 국한되어 있으며, 대규모 실세계 데이터셋이나 텍스트-이미지 모델로의 확장성은 논문에 명시되지 않음.</li>
+<li>UOT-Unlearn과의 비교 시 해당 방법의 공식 코드가 공개되지 않아 저자들이 재현한 수치로 비교했다는 한계가 있음.</li>
+</ul>
+<h2>시사점</h2>
+<p>IDU는 원-스텝 생성기의 "증류"와 "언러닝"을 하나의 min-max 목적함수로 통합함으로써, 별도의 forget/remain 손실을 결합하는 기존 방식과 달리 forget-generated 혼합 분포와 teacher 분포 간 비교라는 단일한 원리로 양쪽을 처리한다. retained 데이터나 외부 분류기·특징 추출기가 전혀 필요 없다는 점은, 저작권·개인정보 등의 이유로 원본 보존 데이터에 접근하기 어려운 실무 환경에서 특히 유용할 수 있다. 또한 이 접근이 효율적인 원-스텝 추론 모델에 직접 적용 가능하다는 점에서, 고비용 다단계 샘플링 모델 위주였던 기존 언러닝 연구를 저비용 생성기 영역으로 확장하는 실용적 의의가 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.36099" target="_blank" rel="noopener">huggingface.co/papers/2609.36099</a> · 2026-10-07</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

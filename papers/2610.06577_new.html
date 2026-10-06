@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>최적화기를 최적화하다</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#10 · Daily Papers 2026-10-07</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 15</span>
+    </div>
+    <h1 class="article-title">Optimizing the Optimizer: Language Models Discover Faster Molecular Relaxation</h1>
+    <p class="article-title-ko">최적화기를 최적화하다: 언어모델이 발견한 더 빠른 분자 완화 최적화기</p>
+    <p class="article-sub">LLM 에이전트가 오픈소스 분자 기하구조 최적화기 Sella의 코드를 스스로 수정·검증하는 "오토리서치" 루프를 돌려, 동일한 수렴 품질을 유지하면서 힘(force) 호출 횟수를 큰 폭으로 줄인 최적화기 AutoSella를 발견했다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.06577" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.06577" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Optimizing the Optimizer: Language Models Discover Faster Molecular Relaxation</li>
+<li><strong>저자</strong>: Artem Tsypin, Vladimir Deshchenya 외 5인(Kuzma Khrabrov, Denis Potapov, Maxim Radchenko, Artur Kadurin, Michael G. Medvedev) — AXXX(모스크바), ITMO University(상트페테르부르크), 러시아 과학아카데미 젤린스키 유기화학연구소 소속</li>
+<li><strong>출처</strong>: arXiv:2610.06577v1 [physics.chem-ph] (2026년 10월 5일 제출)</li>
+<li><strong>프로젝트 페이지</strong>: 코드 저장소 공개 — https://github.com/vdeshchenya/autosella</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.06577">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>LLM 에이전트가 오픈소스 분자 기하구조 최적화기 Sella의 코드를 스스로 수정·검증하는 "오토리서치" 루프를 돌려, 동일한 수렴 품질을 유지하면서 힘(force) 호출 횟수를 큰 폭으로 줄인 최적화기 AutoSella를 발견했다.</p>
+<h2>배경 및 문제의식</h2>
+<p>양자화학(특히 DFT) 수준의 분자 기하구조 최적화는 각 스텝마다 힘(force) 계산이 필요하고, 이 계산이 전체 연산 시간의 대부분을 차지한다. 따라서 수렴에 필요한 스텝(힘 호출) 수를 줄이는 것이 곧 비용 절감으로 직결된다. 준-뉴턴법, 내부좌표계, 모델 헤시안, 전처리 기법 등 수십 년간 다양한 최적화 알고리즘이 수작업으로 개발되어 왔으며, 최근에는 LLM을 이용해 프로그램 코드 자체를 진화시키는 "오토리서치"(FunSearch, AlphaEvolve, Karpathy의 autoresearch 등) 접근이 과학적 발견과 알고리즘 설계에 적용되기 시작했다. 이 논문은 이러한 오토리서치 패러다임을 분자 기하구조 최적화기 설계에 처음으로 적용해, LLM이 기존 최고 성능 최적화기(Sella)를 능가하는 새 최적화기를 스스로 작성할 수 있는지를 묻는다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>조기 종료(가짜 수렴)나 훈련 데이터 과적합을 막기 위한 두 개의 "게이트"(유효성 게이트, 일반화 게이트)를 갖춘 <strong>게이트형 오토리서치 루프</strong>(Algorithm 1)를 제안했다.</li>
+<li>이 루프로부터 두 개의 독립적인 LLM 에이전트(Claude Fable 5.1 max, GPT-6 Astra high)가 각각 <strong>AutoSella-F</strong>, <strong>AutoSella-A</strong>라는 두 가지 개선된 최적화기를 발견했다.</li>
+<li>이들 최적화기가 탐색에 사용되지 않은 분자군 및 (GFN2-xTB가 아닌) 전혀 다른 포텐셜(GFN-FF, r2SCAN-3c DFT)에도 일반화됨을 대규모 벤치마크로 검증했다.</li>
+</ul>
+<h2>방법론</h2>
+<p>출발점은 가장 빠른 오픈소스 최적화기인 Sella 2.5.0이며, 이를 단일 파일 코드(algo.py)로 통합해 에이전트가 반복적으로 편집하도록 했다. 매 사이클마다 에이전트는 코드를 한 군데 수정하고, 평가기가 훈련 분할에서 분자당 상대 힘 호출 비용(C_per-mol)과 평균 에너지 회수율(r̄)을 측정한다. 후보는 ① r̄≥1이고 평가 오류가 없어야 통과하는 <strong>유효성 게이트</strong>, ② 검증 분할에서도 같은 조건과 함께 비용이 실제로 줄어야 통과하는 <strong>일반화 게이트</strong>를 모두 통과해야 챔피언으로 채택되고, 그렇지 않으면 즉시 폐기된다. 탐색은 비용이 저렴한 GFN2-xTB 세미경험적 포텐셜로 수행했으며, 훈련·검증용으로 SPICE 2.0.1 및 DES370K에서 추출한 약물형 분자·이량체(469 훈련/465 검증 구조)를 사용했다. 평가는 다섯 가지 기준(에너지·기울기·변위 변화량)을 모두 만족해야 수렴으로 간주하는 geomeTRIC 스타일의 엄격한 기준을 적용했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>held-out 평가는 PubChem(500개, 분자 다양성), Dipeptides(673개, 새로운 화학 영역), 아미노산-리간드 쌍(475개, 비공유 상호작용), Solvated PubChem(100개, 다중 분자 복합계) 네 데이터셋에서 수행했다. GFN2-xTB 상에서 AutoSella-F는 네 데이터셋 모두에서 Sella 대비 분자당 힘 호출이 39.86~73.25%에 불과하면서도 평균 에너지 회수율은 Sella와 같거나 더 높았다(r̄&gt;1). 또한 탐색에 전혀 쓰이지 않은 포텐셜인 GFN-FF와 r2SCAN-3c DFT로 전이 평가한 결과도 경향이 유지되었으며, 특히 r2SCAN-3c에서 Solvated PubChem 데이터셋의 경우 AutoSella-F는 Sella 힘 호출의 40.2%만으로 동등 이상의 에너지 감소를 달성했다(전체적으로 40.2~77.2% 수준). 66시간의 능동 연구 시간 동안 Claude 기반 에이전트는 108개 후보 중 37개를, GPT 기반 에이전트는 672개 후보 중 29개를 채택했으며, ablation 분석 결과 모델 헤시안·좌표계 개선, 분리된 분자 조각(fragment) 처리, 헤시안 업데이트 재사용이 성능 향상에 가장 크게 기여한 것으로 나타났다.</p>
+<h2>한계점</h2>
+<p>탐색은 비용이 저렴한 GFN2-xTB 포텐셜에서만 수행되었고, DFT 수준의 그래디언트는 탐색 과정에서 한 번도 직접 사용되지 않았다(다만 사후 검증에서는 DFT로도 효과가 확인됨). 두 에이전트 중 GPT 기반 AutoSella-A는 AutoSella-F보다 전반적으로 개선 폭이 작고 일관성이 떨어지며, 특히 Solvated PubChem(다중 분자·용매 복합계)에서는 오히려 Sella보다 힘 호출이 늘고 에너지 회수율이 소폭 낮아지는 역전 현상(r̄&lt;1)이 관찰되었다. 또한 본 연구는 약물 유사 분자와 관련 상호작용계에 초점을 맞추고 있어, 이보다 더 넓은 화학 공간이나 다른 유형의 포텐셜 에너지 표면에 대한 일반화는 추가 검증이 필요하다.</p>
+<h2>시사점</h2>
+<p>이 연구는 비용이 저렴한 대리(surrogate) 포텐셜에서의 자동화된 코드 탐색만으로도, 더 비싼 목표 수준(DFT)에서 실질적으로 유용한 최적화 알고리즘 개선을 끌어낼 수 있음을 보여준다. 즉 직접 목표 수준에서 탐색하기엔 비용이 너무 클 때, 저렴한 대리 환경에서 LLM 에이전트가 생성한 알고리즘 개선이 목표 환경으로 전이될 수 있다는 것이다. 이는 향후 다른 계산화학·과학 컴퓨팅 소프트웨어(최적화기, 솔버, 전처리기 등)에도 유사한 게이트형 오토리서치 방법론을 적용할 수 있는 가능성을 시사하며, 실제 연구용 소프트웨어 개발에 LLM 에이전트가 기여할 수 있는 구체적 사례를 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.06577" target="_blank" rel="noopener">huggingface.co/papers/2610.06577</a> · 2026-10-07</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

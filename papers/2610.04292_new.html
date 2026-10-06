@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>LMBuild</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#5 · Daily Papers 2026-10-07</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 22</span>
+    </div>
+    <h1 class="article-title">LMBuild: Evaluating LLM Agents for Generating Buildable and Functional Structures</h1>
+    <p class="article-title-ko">LMBuild: 조립 가능하고 기능적인 구조물 생성을 위한 LLM 에이전트 평가</p>
+    <p class="article-sub">LLM 에이전트가 단순히 보기 좋은 3D 형상이 아니라, 실제로 조립·작동 가능한 기능적 구조물을 만들 수 있는지를 구조 견고성·기능 적합성·설계 품질·물리적 실현 가능성의 네 차원에서 체계적으로 평가하는 벤치마크 LMBuild를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.04292" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.04292" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: LMBuild: Evaluating LLM Agents for Generating Buildable and Functional Structures</li>
+<li><strong>저자</strong>: Jiateng Liu, Rushi Wang, Cheng Qian, Xuejun Zhang, Sun Li, Jiayu Liu, Yifan Shen, Xu Cao, Jiarui Yao, Bingxuan Li, Ruhi Sarikaya, Heng Ji (University of Illinois Urbana-Champaign)</li>
+<li><strong>출처</strong>: arXiv:2610.04292v1 [cs.AI] (2026년 10월 3일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://lumos-jiateng.github.io/LMBuild/">https://lumos-jiateng.github.io/LMBuild/</a> (GitHub: https://github.com/Lumos-Jiateng/LMBuild, 데이터셋: https://huggingface.co/datasets/Lumos-Jiateng/LMBuild)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.04292">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>LLM 에이전트가 단순히 보기 좋은 3D 형상이 아니라, 실제로 조립·작동 가능한 기능적 구조물을 만들 수 있는지를 구조 견고성·기능 적합성·설계 품질·물리적 실현 가능성의 네 차원에서 체계적으로 평가하는 벤치마크 LMBuild를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>기존 3D 생성 평가는 주로 기하학적 품질, 시각적 일관성, 텍스트-형상 정합성 등 "보이는 것"에 초점을 맞춰 왔고, 생성된 구조물이 실제로 조립 가능하고(buildable) 의도된 기능을 수행할 수 있는지(functional)는 간과해 왔다. 그러나 그럴듯해 보이는 기하학이라도 구조적으로 불안정하거나, 관절이 잘못되어 있거나, 물리적으로 조립이 불가능할 수 있다. 저자들은 LLM 에이전트가 방대한 사전지식과 추론 능력을 활용해 실제 세계의 물리적 제약을 만족하는 구조물을 생성할 수 있는지에 대한 체계적 평가 수단이 부재하다는 문제의식에서 출발한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>에이전트가 부품을 검색(retrieve)하거나 새로 생성(create)하고 배치·조정할 수 있는 도구 기반의 상호작용 환경을 설계했다.</li>
+<li>기존 CAD/LEGO/가구/실제 오픈소스 하드웨어 데이터셋(약 36.8만 개 후보 중 선별)을 Wikipedia 기반 실세계 지식으로 보강하여, 2,549개 전체 벤치마크와 200개 핵심(core) 평가셋을 구축했다.</li>
+<li>구조 견고성(Soundness), 기능 적합성(Affordance), 설계 품질(Design), 물리적 실현(Realization) 4개 차원, 12개 세부 지표로 구성된 계층적 평가 프레임워크를 제시했다.</li>
+<li>폐쇄형 API 6종, 오픈소스 LLM 13종, 도메인 특화 모델 11종 등 총 30개 시스템을 베이스라인/검색전용/생성전용/다회차 수정/세밀한 프롬프트 등 다양한 설정에서 평가하고 실패 패턴을 분석했다.</li>
+</ul>
+<h2>방법론</h2>
+<p>LMBuild는 사용자가 목표 카테고리명과 참조 이미지만 제공하면, 에이전트가 하나의 상호작용 라운드 동안 도구 호출(부품 목록 조회, 부품 검사, 부품 생성/배치/이동, 관절·재료·조립 순서 결정 등)을 통해 구조물을 완성하도록 한다. 평가를 위해 LEGO(BrickNet, BrickComposer), 정적 구조(PartNeXt), 기계 구조(Fusion 360/JoinABLe), 일상 물체(Artiverse), 그리고 로보틱스·소비자기기·실험기기·제작도구 등 4개 분야 27개 오픈소스 하드웨어 프로젝트의 제품 수준 CAD를 결합하여 다양한 기하학 유형을 포괄했다. 관절 정보를 제공하지 않는 시스템에는 Particulate라는 외부 도구로 관절·운동학 정보를 추론해 평가에 활용한다. 또한 부품 검색만 허용(retrieval-only), 생성만 허용(creation-only), 베이스라인(둘 다 허용)의 세 가지 설정과, 피드백을 받아 최대 3라운드까지 반복 수정하는 설정, 세부 속성·기능 요구사항을 명시한 프롬프트를 추가하는 설정을 비교했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>핵심 평가셋(200개 객체) 기준으로 GPT-6 Astra, GPT-5.6 Sol, Claude Opus 5, Claude Fable 5.1 등 최상위 폐쇄형 모델들은 구조 견고성(S.1~S.3)과 시각적 정합성(D.3)에서 이미 거의 포화 수준의 성능을 보여, 이 부분이 더 이상 주요 병목이 아님을 확인했다. 반면 기능 적합성 중 관절·운동학 정확성(A.3)과 물리적 조작 가능성(R.3)은 최상위 모델조차 각각 약 50점, 30점대 초반(100점 만점)에 머물러 가장 큰 격차를 보였다. 부품 생성 기능을 함께 제공했을 때, 강한 모델(프론티어 모델)은 직접 부품을 창작함으로써 오히려 성능이 향상된 반면, 약한 오픈소스 모델은 창작 옵션이 추가되면서 의사결정 부담이 커져 성능이 저하되는 경향(검색 전용 대비 창작 전용에서 성능 하락)을 보였다. 반복 수정(최대 3라운드)은 평균 약 2% 수준의 미미한 개선만 가져온 반면, Wikipedia 기반의 구체적 속성·기능 요구사항을 프롬프트에 추가하는 것은 기능적 부품 완전성(+10.3점), 물리적 조작성(+12.0점) 등에서 유의미하게 큰 개선(p&lt;0.001)을 가져왔다. 추가로, 오픈소스 모델은 부품 생성 호출 성공률이 51.7%에 불과(폐쇄형은 95.7%)했고, CAD 커널 규칙 위반이나 잘못된 노드 참조 같은 오류가 흔했으며, 존재하지 않는 부품을 참조하거나 이미 배치된 부품을 중복 추가하는 등 장기간 상호작용에서 장면 상태 추적에 실패하는 경향이 두드러졌다.</p>
+<h2>한계점</h2>
+<p>저자들은 벤치마크가 실험 비용 제약으로 2,549개 전체셋이 아닌 200개 핵심셋에서만 평가를 수행했다고 명시한다. 또한 벤치마크 성능이 실제 제조·물리적 조립·기능 테스트까지 보증하는 것은 아니며, 안전이 중요한 공학·건설 등 실제 응용에 모델을 투입하기에 충분한 증거로 해석되어서는 안 된다고 저자들 스스로 밝히고 있다. 관절 정보가 없는 시스템에는 외부 추론 도구(Particulate)를 거쳐야 하는 간접 평가 방식도 한계로 볼 수 있다.</p>
+<h2>시사점</h2>
+<p>구조적 견고성과 시각적 품질은 더 이상 최상위 모델의 주요 병목이 아니며, 향후 연구는 기능적 어포던스, 역학, 물리적 제약에 대한 더 깊은 추론과 필요시 새로운 부품을 직접 설계·생성하는 능력 확보에 집중해야 한다. 또한 단순히 반복 수정 횟수를 늘리는 것보다, 객체의 기능 요구사항을 명확히 특정(또는 에이전트가 스스로 유추·검색)하도록 돕는 과제 설계가 더 효과적인 개선 전략이 될 수 있음을 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.04292" target="_blank" rel="noopener">huggingface.co/papers/2610.04292</a> · 2026-10-07</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

@@ -1,0 +1,123 @@
+<meta charset="UTF-8">
+<title>화퉈지피티3</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#8 · Daily Papers 2026-10-08</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 21</span>
+    </div>
+    <h1 class="article-title">HuatuoGPT-3: RL-Only Domain Adaptation from Base Models</h1>
+    <p class="article-title-ko">화퉈지피티3: 베이스 모델로부터의 강화학습 전용 도메인 적응</p>
+    <p class="article-sub">SFT(지도 미세조정) 단계 없이, teacher 모델의 출력을 "일시적 가이드"로만 활용하는 강화학습 기법 OnePO를 통해 base 모델을 의료 전문가 모델로 직접 적응시키고, 이를 확장해 오픈소스 의료 LLM 시리즈 HuatuoGPT-3를 구축했다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.05966" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.05966" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: HuatuoGPT-3: RL-Only Domain Adaptation from Base Models</li>
+<li><strong>저자</strong>: Junying Chen, Xinyuan Xie(이상 공동 제1저자), Ziniu Li, Wenyuan Gu, Jianquan Li, Xiang Wan, Guangjun Yu, Ruoyu Sun, Haizhou Li, Benyou Wang(교신저자) — The Chinese University of Hong Kong, Shenzhen 및 Shenzhen Research Institute of Big Data 등 소속</li>
+<li><strong>출처</strong>: arXiv:2610.05966v1 [cs.CL] (2026년 10월 5일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/FreedomIntelligence/HuatuoGPT-3">GitHub - FreedomIntelligence/HuatuoGPT-3</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.05966">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>SFT(지도 미세조정) 단계 없이, teacher 모델의 출력을 "일시적 가이드"로만 활용하는 강화학습 기법 OnePO를 통해 base 모델을 의료 전문가 모델로 직접 적응시키고, 이를 확장해 오픈소스 의료 LLM 시리즈 HuatuoGPT-3를 구축했다.</p>
+<h2>배경 및 문제의식</h2>
+<p>일반 목적 LLM을 특정 도메인 전문가로 바꾸는 "도메인 적응"의 표준 경로는 SFT로 먼저 콜드 스타트를 마련한 뒤 RL로 다듬는 SFT+RL 파이프라인이다. 그러나 저자들은 SFT가 이후 RL의 탐색 다양성을 줄이고, 다단계 파이프라인이 목적함수·데이터 분포 변화로 인한 최적화 복잡성과 기존 능력의 망각(catastrophic forgetting) 위험을 키운다고 지적한다.</p>
+<p>이에 대한 대안으로 SFT 없이 RL만으로 적응하는 방식을 검토했으나, 순수 온폴리시(on-policy) RL(예: DeepSeek-R1-Zero류)은 초기에 정책이 보상을 받을 만한 출력을 거의 만들지 못하는 콜드스타트 문제를 겪는다. 이를 보완하기 위해 더 강한 모델(teacher)의 출력을 온폴리시 롤아웃에 섞는 믹스드-폴리시(mixed-policy) RL이 제안된 바 있지만, 저자들은 이 방식에서 두 가지 실패 모드를 새로 규명했다.
+- <strong>Gradient Starvation(그래디언트 기아)</strong>: teacher 출력 중 가장 유용한 토큰일수록 현재 정책 하에서 확률이 낮은 경우가 많은데, 표준 비율 기반 믹스드-폴리시 목적함수의 그래디언트 크기가 바로 그 확률에 비례해 작아지므로, 정작 가장 배워야 할 토큰에서 학습 신호가 사라진다.
+- <strong>Teacher-Distribution Anchoring(teacher 분포 고착)</strong>: 학습이 진전되어 정책이 teacher보다 나은 출력을 생성할 수 있게 된 이후에도, teacher 출력이 훈련 과정에서 계속 유지되면서 정책을 과거의 teacher 분포 쪽으로 계속 끌어당겨 후반부 성능 향상을 제약한다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>기존 믹스드-폴리시 RL의 두 가지 실패 모드(Gradient Starvation, Teacher-Distribution Anchoring)를 이론적으로 진단하고, 통제된 파일럿 실험으로 이를 검증했다.</li>
+<li>teacher 출력을 영구적 학습 타깃이 아니라 "일시적 가이드"로 취급하는 새로운 RL-only 패러다임 <strong>OnePO(One-stage Policy Optimization)</strong>를 제안했다. OnePO는 Adaptive Objective Evolution과 Teacher Retirement라는 두 메커니즘으로 구성된다.</li>
+<li>의료 도메인에서 OnePO를 검증했다. 20K 규모의 학습 샘플만으로 OnePO는 SFT+RL과 순수 RL을 모두 능가했으며, 이를 데이터·모델 규모 모두에서 확장한 오픈소스 의료 LLM 시리즈 <strong>HuatuoGPT-3</strong>(9B, 27B)를 공개했다.</li>
+</ol>
+<h2>방법론</h2>
+<p><strong>Adaptive Objective Evolution</strong>: 온폴리시 목적함수는 표준 GRPO를 그대로 사용하되, teacher 출력에 대한 목적함수만 두 가지로 보정한다. (1) 확률 하한(probability floor) c를 두어 비율 계산의 분모가 지나치게 작아지는 것을 막고, (2) advantage가 양수이면서 현재 정책 확률이 c보다 낮은 토큰에 한해 그래디언트를 재조정(rescaling)하는 항을 곱해 SFT 수준의 학습 신호를 회복시킨다. 이 두 보정 항은 서로의 상수를 상쇄하도록 설계되어, 결과적으로 낮은 확률의 teacher 토큰에 advantage 가중 로그우도 그래디언트를 선택적으로 부여한다. 정책의 해당 토큰 확률이 c 이상으로 올라가면 보정이 자동으로 꺼지고 표준 GRPO로 매끄럽게 전환되어, 수동 스케줄 없이도 점진적으로 순수 온폴리시 학습으로 복귀한다.</p>
+<p><strong>Teacher Retirement</strong>: 각 프롬프트마다 온폴리시 그룹과 함께 teacher 출력 하나를 샘플링하고, teacher 출력의 보상이 같은 그룹 내 온폴리시 출력들의 최대 보상을 초과할 때만 그 teacher 출력을 그룹에 포함(무작위로 선택된 온폴리시 출력 하나를 대체)시켜 advantage 계산과 정책 업데이트에 반영한다. 현재 정책이 이미 teacher 수준에 도달하거나 능가하면 해당 teacher 출력은 자연스럽게 제외되어, teacher guidance가 "은퇴"하고 훈련이 자율적인 온폴리시 탐색으로 되돌아간다.</p>
+<p><strong>학습 데이터 및 설정</strong>: 의료 도메인 검증에는 20K 샘플(객관식 문제 10K: MedQA/MedMCQA 기반 고난도 문항, 정답 매칭 기반 검증 가능 보상 / 개방형 질의 10K: PMC-OA 케이스 리포트를 바탕으로 GPT-5 Chat이 생성한 개방형 임상 질문과 채점 루브릭, HealthBench 방식의 LLM 판정자 기반 루브릭 보상)를 사용했다. 베이스 모델은 Qwen3-8B-Base이며, GRPO에 DAPO 기법(클리핑 구간 확장 등)을 결합했다. HuatuoGPT-3로 확장할 때는 개방형 데이터를 20K로, RubricHub에서 가져온 의료/범도메인 루브릭 과제 20K를 추가하고 객관식 데이터도 30K로 늘려 Qwen3.5-9B, Qwen3.8-27B를 각각 약 600 RL 스텝으로 학습했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>평가는 개방형 응답 품질 지표인 HealthBench(Total/Hard), 실제 임상의 대화 기반의 HealthBench Professional, 객관식 지식·추론 지표인 Medbullets, MMLU-Pro(의료), MedXpertQA(Text)로 이뤄졌으며, 일반 능력 보존 확인을 위해 IFEval과 GSM8K도 함께 측정했다. 비교 대상에는 GPT-6 Astra, GPT-5.2, GPT-5 Chat, DeepSeek-V4.1-Flash, DeepSeek-V3.2(thinking), Gemini 3.1 Pro, Gemini 3.8 Flash 등 프런티어 모델과 Qwen 계열 베이스라인이 포함됐다.</p>
+<p>주요 결과는 다음과 같다.
+- Qwen3-8B-Base에 DeepSeek-V3.2(thinking)를 teacher로 사용했을 때, OnePO는 HealthBench Total/Hard에서 각각 SFT+RL 대비 약 +2.7/+3.8점, 순수 RL 대비 약 +7.4점 높은 성능을 보였다.
+- HuatuoGPT-3-9B와 27B는 각각 HealthBench Professional 68.3점, 71.4점을 기록했으며, 27B 모델은 프런티어 모델인 GPT-6 Astra(62.5점)를 능가했다.
+- 구성 요소 제거 실험(ablation)에서 확률 하한, 그래디언트 재조정, Teacher Retirement 세 요소를 각각 제거하면 성능이 크게 하락했으며, 특히 Teacher Retirement를 제거하면 순수 RL보다도 낮은 성능으로 떨어져 teacher 분포에 정체되는 현상이 재현됐다.
+- Teacher 품질을 약한 모델로 바꿔도 성능 저하가 크지 않아, Teacher Retirement 메커니즘이 teacher 품질 의존도를 완화함을 확인했다.
+- 작문(writing), 법률(law) 등 의료 외 도메인에서도 OnePO가 SFT+RL보다 우수한 초기 결과를 보여 방법의 일반성을 시사했다.
+- OnePO로 학습한 모델은 IFEval, GSM8K 등 일반 능력 지표에서도 SFT+RL보다 높은 점수를 기록해, 도메인 적응 과정에서 일반 능력이 오히려 잘 보존되거나 향상됨을 보였다.</p>
+<h2>한계점</h2>
+<p>논문은 별도의 "한계" 절을 명시적으로 두지는 않았으나, Impact Statement에서 공개된 모델이 연구용 프로토타입이며 의료 전문가의 엄격한 검증 없이 임상에 실제로 배포되어서는 안 된다고 명시하고 있다. 또한 핵심 검증은 의료 도메인에 집중되어 있고, 작문·법률 등 타 도메인에 대한 결과는 저자들 스스로 "초기 증거(preliminary evidence)" 수준이라고 밝히고 있다. 그 외 구체적인 실패 사례나 정량적 한계는 논문에 명시되지 않음.</p>
+<h2>시사점</h2>
+<p>이 연구는 다단계 SFT+RL 파이프라인 없이도, teacher 출력을 "고정된 모방 대상"이 아닌 "일시적으로만 활용되는 가이드"로 재정의함으로써 RL만으로 효과적인 도메인 적응이 가능함을 실증했다. 이는 다단계 학습이 유발하는 최적화 복잡성과 망각 위험을 줄이는 실용적 대안이 될 수 있으며, 특히 고위험·고전문성 도메인인 의료 영역에서 상대적으로 작은 오픈소스 모델이 적절한 학습 전략만으로 프런티어 상용 모델을 능가할 수 있음을 보여준 사례로서 의의가 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.05966" target="_blank" rel="noopener">huggingface.co/papers/2610.05966</a> · 2026-10-08</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

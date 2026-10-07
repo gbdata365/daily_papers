@@ -1,0 +1,115 @@
+<meta charset="UTF-8">
+<title>크로스 토크나이저 온폴리시 증류 재고찰</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#1 · Daily Papers 2026-10-08</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 153</span>
+    </div>
+    <h1 class="article-title">Rethinking Cross-Tokenizer On-Policy Distillation: From Alignment Coverage to Supervision Reliability</h1>
+    <p class="article-title-ko">크로스 토크나이저 온폴리시 증류 재고찰: 정렬 커버리지에서 지도 신뢰성으로</p>
+    <p class="article-sub">서로 다른 토크나이저를 쓰는 교사-학생 모델 간 온폴리시 증류(On-Policy Distillation)에서, 정렬 커버리지를 넓히는 것보다 정합된 위치에서의 "신뢰할 수 있는" 압축 지도(supervision)가 오히려 더 효과적임을 실증적으로 보인 연구다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.08448" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.08448" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Rethinking Cross-Tokenizer On-Policy Distillation: From Alignment Coverage to Supervision Reliability</li>
+<li><strong>저자</strong>: Bingxi Hou, Guochao Jiang, Guofeng Quan, Weiqing Li, Wenfeng Feng, Guohua Liu, Yuewei Zhang (Alibaba Cloud Computing)</li>
+<li><strong>출처</strong>: arXiv:2610.08448v1 [cs.CL] (2026년 10월 6일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음 (코드: https://anonymous.4open.science/r/Cross-Tokenizer-OPD)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.08448">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>서로 다른 토크나이저를 쓰는 교사-학생 모델 간 온폴리시 증류(On-Policy Distillation)에서, 정렬 커버리지를 넓히는 것보다 정합된 위치에서의 "신뢰할 수 있는" 압축 지도(supervision)가 오히려 더 효과적임을 실증적으로 보인 연구다.</p>
+<h2>배경 및 문제의식</h2>
+<p>On-Policy Distillation(OPD)은 학생 모델이 스스로 생성한 응답에 대해 교사 모델의 피드백을 받아 학습하는 방식이다. 교사와 학생이 서로 다른 토크나이저를 쓰는 "크로스 토크나이저(Cross-Tokenizer)" 상황에서는 동일한 텍스트도 토큰 경계와 어휘 사전(vocabulary)이 달라지기 때문에, 시퀀스 수준과 어휘 수준 모두에서 정렬(alignment) 문제가 발생한다. 기존 연구들은 순위 기반 분포 매칭, 학습된 매핑, 바이트 수준 인터페이스 등으로 교사 신호를 더 많이 회수(recover)하려 시도해 왔다. 그러나 저자들은 "엄격한(strict) 1:1 매칭만으로 이미 커버되는 학생 토큰 비율이 얼마나 되는지", 그리고 "제외된 나머지 타깃을 회수하는 것이 실제로 학습에 도움이 되는지"를 되묻는다. 즉 알려지지 않은 질문은 커버리지 확장 자체의 가치이며, 이를 "정렬 커버리지(alignment coverage)"와 "지도 신뢰성(supervision reliability)"이라는 두 개념으로 구분해 분석한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>수학적 추론과 코드 생성에 대해 서로 다른 세 쌍의 이종(heterogeneous) 교사-학생 모델에서, 정적 어휘 자카드 중첩도(Jaccard overlap)가 39.49~64.87%로 낮음에도 불구하고 학생이 생성한 토큰의 85.57~96.98%가 이미 엄격한 1:1 매칭(strict alignment)으로 커버됨을 보였다.</li>
+<li>증류 전 학생이 생성한 응답에서, 엄격하게 정렬된 위치들의 공유 어휘(shared vocabulary)가 교사와 학생 확률 질량(probability mass)의 거의 전부를 담고 있음을 확인했다.</li>
+<li>학생이 선택한 상위 k개 공유 어휘 부분집합(top-k subset)만으로도 역KL(reverse KL)을 계산해 전체 공유 어휘를 쓴 OPD 대비 성능 저하 없이(k=16일 때 전체 평균 개선분의 최소 96% 보존) 평가된 크로스 토크나이저 베이스라인들을 능가했다.</li>
+<li>불일치 그룹(mismatch group, 다대다 매칭되는 구간)에 대해 평균제곱오차(MSE) 기반 추가 지도를 적용해 구조적으로 100% 커버리지를 달성했지만, 테스트한 18개 양의 가중치 설정 모두에서 오히려 정확도가 하락함을 보였다.</li>
+<li>그래디언트 진단을 통해, 불일치 그룹에 대한 손실(span loss)의 그래디언트가 엄격 손실의 그래디언트와 약하거나 음의 방향 일치도를 보이며, 학습이 진행될수록 상대적 크기(norm ratio)가 커진다는 것을 보여 정확도 하락의 원인을 설명했다.</li>
+</ul>
+<h2>방법론</h2>
+<p>논문은 응답 y를 학생과 교사 두 토크나이저로 각각 토큰화한 뒤, 두 시퀀스가 공유하는 토큰 경계(offset)를 기준으로 응답을 R개의 정렬된 토큰 그룹 쌍으로 분할한다. 그룹은 학생/교사 각각 토큰 1개씩으로 구성된 "엄격한 1:1 그룹(strict 1:1 group)"과, 한쪽 이상이 여러 토큰으로 구성된 "불일치 그룹(mismatch group)"으로 나뉜다. 두 모델 사이의 "공유 어휘(shared vocabulary)"는 특수 토큰과 모호한 매칭을 제외하고 양쪽 토크나이저에 공통으로 존재하는 토큰들로 정의한다.</p>
+<p>기본 손실(Strict Cross-Tokenizer objective)은 엄격한 1:1 위치에서 공유 어휘로 제한·재정규화한 학생·교사 분포 사이의 역KL 합으로 정의된다(식 5). 여기에 더해, 불일치 그룹에 대해서는 해당 구간의 학생/교사 토큰 경로 각각의 로그 확률을 계산하고, 이 로그 확률 간 MSE를 추가 손실(span loss)로 정의해 가중치 λ로 결합한 전체 손실(L_λ = L_1:1 + λ·L_span)을 사용한다. 또한 학생 분포 기준 상위 k개 고확률 공유 어휘 항목만을 지지집합(support)으로 쓰는 "학생 선택 top-k 부분집합" 방식을 제안해, 엄격 손실의 공유 어휘 범위를 압축한다. 마지막으로 두 손실의 그래디언트(g_1:1, g_mis)에 대해 코사인 유사도와 노름 비율(norm ratio)을 측정해 방향 일치도와 상대적 크기를 정량화하는 진단 지표를 설계했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>실험은 Qwen, Llama, Granite(IBM), Phi 네 계열 모델을 사용해 Qwen2.5-7B-Instruct→Llama-3.2-3B-Instruct, Granite-4.1-8B→Phi-4-mini-instruct, Granite-4.1-8B→Qwen2.5-7B-Base 세 쌍의 교사-학생 조합을 구성했다. 학습 프롬프트는 DAPO-Math-17K에서 추출한 수학 1만 개와 CodeForces 기반 코드 1만 개, 총 2만 개를 사용했으며, 평가는 MATH500, GSM8K, AIME-2024/2025/2026, AMC23, Minerva-Math(수학)과 HumanEval, MBPP, LiveCodeBench(코드) 벤치마크에서 각각 mean@32, mean@8로 수행했다.</p>
+<p>주요 결과는 다음과 같다. (1) 엄격 1:1 커버리지는 정적 어휘 중첩도보다 훨씬 높은 85.57~96.98% 수준을 전체 학습 구간에서 안정적으로 유지했다. (2) 불일치 그룹에 span MSE 손실을 추가하면(λ&gt;0) 세 모델 쌍 모두에서 λ=0(엄격 손실만 사용) 대비 전체 평균 정확도가 0.27~1.20%p 낮아졌으며, λ가 커질수록 전반적으로 하락하는 경향을 보였다. (3) 증류 전 학생 생성 응답 기준, 공유 어휘는 평균적으로 교사 확률 질량의 99.69~99.90%, 학생 확률 질량의 98.99~99.81%를 담고 있었고, k=16의 학생 선택 top-k 부분집합만으로도 교사 질량의 93.54% 이상, 학생 질량의 94.55% 이상을 보존했다. (4) ULD, Extended ULD, GOLD, SimCT 등 기존 크로스 토크나이저 베이스라인과 비교했을 때, Strict full과 압축 버전(top-16, top-128) 모두 세 모델 쌍의 수학·코드·전체 평균에서 베이스라인들을 능가했으며, top-16이 전체 평균 기준 가장 강력한 베이스라인 대비 0.51~1.05%p 더 높은 성능을 보였다. 더 큰 235B 교사에서 8B 학생으로의 증류, 그리고 ALFWorld 환경에서도 Strict top-16이 최고 성능을 기록했다. (5) 그래디언트 진단에서는 엄격 손실만으로 학습한 체크포인트들(step 0, 20, 60, 100)에서 불일치-엄격 그래디언트 간 코사인 유사도가 일관되게 낮거나 음수였고, 동일 목적함수 내 위치를 임의로 양분한 대조군(split-half reference)보다 항상 낮았다. 동시에 불일치 손실 대비 엄격 손실의 그래디언트 노름 비율은 학습이 진행될수록 증가(6.6배~28.0배)했다.</p>
+<h2>한계점</h2>
+<p>논문은 수학 추론과 코드 생성이라는 두 도메인, 네 모델 계열에서 파생된 세 쌍의 교사-학생 조합에 한정해 실험을 수행했다. 저자들은 직접적으로 한계를 명시하는 별도 절을 두지 않았으나, 생성형 AI 도구를 언어 교정에만 사용했다고 밝히는 한편 데이터셋이 사회적으로 유해하거나 불쾌한 표현을 포함하지 않는다고 보장할 수는 없다고 명시했다. 또한 제안한 진단(정렬 커버리지, 확률 질량, 그래디언트 코사인/노름 비율)은 상관관계 기반 설명이며, 불일치 지도가 왜 정확도를 낮추는지에 대한 인과적 메커니즘을 완전히 규명한 것은 아니다. 논문에 명시되지 않음: 더 많은 모델 계열/언어/태스크로의 일반화 가능성에 대한 구체적 논의.</p>
+<h2>시사점</h2>
+<p>이 연구는 크로스 토크나이저 증류 연구에서 "더 많은 지도 신호를 어떻게든 회수할 것인가"라는 기존의 커버리지 중심 접근에서 벗어나, "회수된 지도 신호가 학습에 실제로 유익한가"라는 신뢰성 중심 질문으로 관점을 전환할 필요성을 제기한다. 엄격하게 정렬된 소수의 위치와 학생이 선택한 압축된 어휘 부분집합만으로도 증류 이득 대부분을 보존할 수 있다는 결과는, 이종 모델 간 지식 증류 파이프라인을 더 단순하고 연산 효율적으로 설계할 수 있는 실용적 근거를 제공한다. 또한 추가 지도의 가치를 그래디언트 방향 일치도와 상대적 크기로 진단하는 방법론은 향후 다른 증류 목적함수나 멀티태스크 학습 설계에서도 지도 신호의 품질을 사전에 점검하는 도구로 활용될 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.08448" target="_blank" rel="noopener">huggingface.co/papers/2610.08448</a> · 2026-10-08</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

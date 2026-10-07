@@ -1,0 +1,120 @@
+<meta charset="UTF-8">
+<title>로봇 실행 오류 아래 VLA 길들이기</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#7 · Daily Papers 2026-10-08</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 24</span>
+    </div>
+    <h1 class="article-title">Taming VLAs under Robot Execution Errors: Self-Compensation and Stress Testing</h1>
+    <p class="article-title-ko">로봇 실행 오류 아래 VLA 길들이기: 자기보정과 스트레스 테스트</p>
+    <p class="article-sub">VLA(Vision-Language-Action) 정책이 로봇의 마모, 하중 변화 등으로 인해 명령과 다르게 움직이는 "실행 오류"를 겪을 때, 과제 보상이나 라벨 없이 명령-실행 간 잔차만으로 정책을 온라인 적응시키는 self-compensating VLA와, 이를 체계적으로 평가하는 시뮬레이션 벤치마크 RoboStress를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.37334" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.37334" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Taming VLAs under Robot Execution Errors: Self-Compensation and Stress Testing</li>
+<li><strong>저자</strong>: Sohyun Lee, Yoonjae Baek(공동 1저자), Jaesang Won, Jinnyeong Kim, Hyunwoo Kang, Seung-Hwan Baek, Ivan Laptev, Suha Kwak (POSTECH, MBZUAI)</li>
+<li><strong>출처</strong>: arXiv:2609.37334v1 [cs.RO] (2026년 9월 29일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.37334">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>VLA(Vision-Language-Action) 정책이 로봇의 마모, 하중 변화 등으로 인해 명령과 다르게 움직이는 "실행 오류"를 겪을 때, 과제 보상이나 라벨 없이 명령-실행 간 잔차만으로 정책을 온라인 적응시키는 self-compensating VLA와, 이를 체계적으로 평가하는 시뮬레이션 벤치마크 RoboStress를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>VLA 모델은 다양한 로봇 조작 작업에서 범용 성능을 보여주고 있지만, 실제 배포 과정에서는 로봇이 명령받은 동작과 실제로 실행하는 움직임 사이에 괴리가 발생한다. 이러한 실행 오류는 기계적 마모, 하중 변화, 온도 변화 등 로봇의 역학 및 운용 조건에서 비롯되며, 정책의 출력 명령에 인위적으로 노이즈를 주입해 강건성을 평가한 기존 연구들과 달리 실제 배포에서 자연 발생하는 오류이다. 그럼에도 이런 실행 오류에 대한 VLA의 강건성은 충분히 연구되지 않았다. 또한 다양한 마모·하중 조건을 가진 로봇 함대를 물리적으로 구축해 평가하는 것은 비용이 크고 극단적 조건에서는 하드웨어 손상 위험까지 있어, 시뮬레이션을 통한 대안적 평가 체계가 요구된다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li><strong>Self-compensating VLA</strong>: 과제 보상이나 레이블 없이, VLA가 명령한 동작과 로봇이 실제로 수행한 움직임 사이의 잔차(residual)만을 자기지도 신호로 사용해 정책을 배포 시점에 온라인으로 적응시키는 기법을 제안했다. 저수준 컨트롤러는 그대로 둔 채 이후 명령이 실행 오류를 사전에 보정하도록 만든다.</li>
+<li><strong>RoboStress 벤치마크</strong>: 마찰(friction), 중력보상 오류(gravity-compensation error), 백래시(backlash), 컴플라이언스(compliance)라는 검증된 4가지 조인트 수준 로봇 역학 모델을 결합해, 로봇의 상태와 최근 동작 이력에 의존하는 7가지 배포 시나리오로 구성한 제어 가능한 시뮬레이션 스트레스 테스트 환경을 제시했다.</li>
+<li>RoboStress와 서로 다른 사용 이력을 가진 물리 로봇 팔 2대에 대한 폭넓은 실험으로, self-compensating VLA가 기본 정책 및 학습 시점에 강건성을 내재화한 기존 기법들보다 우수함을 입증했다.</li>
+</ol>
+<h2>방법론</h2>
+<p>정책은 action chunk(연속된 델타 포즈 명령 묶음)를 출력하며, 각 실행 스텝마다 proprioception으로 측정한 실제 엔드이펙터 변위와 정책이 명령한 변위 사이의 잔차를 계산한다. 이 잔차로부터 압축 목표치(pseudo-target)를 구성하고, 이후 청크 예측 시 이 목표를 향하도록 정책을 갱신한다. 베이스 정책(π0, π0.5)의 사전학습 가중치는 고정한 채, 액션 익스퍼트에 LoRA 어댑터를 부착해 flow-matching 기반 보정 목적함수로 LoRA 파라미터만 온라인으로 업데이트하며, 앵커 정규화 항을 두어 파라미터가 초기값에서 과도하게 벗어나지 않도록 제한한다.</p>
+<p>RoboStress는 위 4가지 조인트 수준 노이즈 모델을 MuJoCo 시뮬레이터의 오퍼레이셔널 스페이스 컨트롤러 파이프라인에 주입한다. 마찰과 중력보상 오류는 토크 수준에, 백래시와 컴플라이언스는 위치 수준에 더해져 한 조인트의 교란이 팔 전체의 엔드이펙터 오차로 전파된다. Heavy Payload, Thermal Drift-Stribeck/Backlash, Aged Transmission, Aged Joint-Uniform/Shoulder/Elbow 등 7개 배포 시나리오는 각 노이즈 성분의 심각도를 조인트별로 다르게, 또는 에피소드 동안 고정 또는 선형 증가시키는 방식으로 조합해 실제 마모·온도변화·하중 상황을 모사한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>베이스 정책으로 π0와 π0.5를 사용했고, 비교 대상은 도메인 랜덤화(DR)와 적대적 학습 기반 RobustVLA였다. RoboStress 평가는 LIBERO 벤치마크의 4개 태스크 스위트(총 10개 태스크)에 대해 시나리오별 20 에피소드로 수행했다.</p>
+<ul>
+<li>RoboStress 전체 7개 시나리오 평균 성공률을 π0.5 기준 49.1%에서 56.6%로, π0 기준 41.7%에서 44.2%로 끌어올리며 기본 정책, DR, RobustVLA를 모두 상회했다. 반면 DR과 RobustVLA는 π0에서 일관되지 않은 성능을 보이며 오히려 기본 정책보다 낮아지는 경우도 있었다.</li>
+<li>실제 1kg 하중 실험과 RoboStress의 Heavy Payload 시나리오를 비교한 결과, RoboStress가 가우시안 노이즈보다 실제 로봇의 편차 패턴을 훨씬 잘 재현했다(DTW 거리 0.027 대 0.388).</li>
+<li>실제 로봇 실험은 신형 AgileX Piper 팔(Robot A)과 1년간 사용된 구형 팔(Robot B)에서 그릇 집어 옮기기 3개 태스크와 서랍 열기 1개 태스크(태스크당 25 에피소드)로 수행했다. self-compensating VLA는 두 로봇 모두에서 두 베이스 정책 대비 평균 성공률을 30%p 이상 향상시켰다(예: Robot A에서 π0.5 43%→76%, π0 40%→72%; Robot B에서 π0.5 43%→74%, π0 38%→71%).</li>
+<li>외란 관측기(disturbance observer, DOB)와의 비교·결합 실험에서는, DOB 단독이 성공률을 48%에서 56%로 높이는 데 그친 반면 self-compensating VLA 단독은 84%를 기록해 더 우수했다.</li>
+<li>파인튜닝 데이터에 없던 색상·재질이 다른 그릇에 대한 일반화 평가에서도 self-compensating VLA가 64% 성공률로 기본 정책(16%)과 RobustVLA(36%)를 크게 앞섰다.</li>
+<li>Ablation 결과, 잔차를 0으로 둔 변형(온라인 업데이트는 유지)은 성공률이 40.8%로 하락했고, 청크 단위로 고정된 보정만 적용하는 방식은 23.6%에 그쳐, 관측 조건에 따라 적응적으로 보정하는 것이 성능 향상의 핵심임을 보여주었다.</li>
+</ul>
+<h2>한계점</h2>
+<p>논문은 별도의 "한계점" 절을 두지 않았으나, 결론에서 향후 과제로 proprioception 의존도를 낮추기 위해 외부 센서 기반 동작 추정치를 통합하는 방향을 제시하고 있어, 현재 방법이 proprioception 측정치에만 의존한다는 점을 간접적으로 시사한다. 또한 RoboStress는 마찰, 중력보상 오류, 백래시, 컴플라이언스라는 4가지 조인트 수준 오류만을 다루며 센서 노이즈나 통신 지연 등 다른 실행 오류 원인은 다루지 않는다. 실제 로봇 검증도 AgileX Piper 팔 2대와 소수의 태스크(그릇 집기 3종, 서랍 열기 1종)에 국한되어 있어 더 다양한 로봇 플랫폼과 태스크로의 일반화 여부는 추가 검증이 필요하다. DOB와 결합했을 때 성능이 단독 적용보다 소폭 하락하는 현상에 대한 원인 분석도 충분히 제시되지 않았다.</p>
+<h2>시사점</h2>
+<p>실제 배포 환경에서 로봇마다 다른 마모 상태와 하중 조건으로 인해 발생하는 실행 오류는 그동안 간과되어 온 강건성 문제였다. 이 논문은 과제 보상이나 레이블 없이 로봇 자체의 proprioception 신호만으로 정책을 온라인 적응시킬 수 있음을 보여줌으로써 실용적인 배포 시점 적응 기법의 가능성을 제시한다. 또한 물리 로봇으로는 재현하기 어려운 다양한 마모·하중 조건을 체계적으로 시뮬레이션하는 RoboStress와 같은 벤치마크는 향후 VLA 강건성 연구의 표준 평가 도구로 활용될 수 있다. 이 접근법은 외란 관측기와 같은 전통적 제어 기법과도 상호보완적으로 결합할 가능성이 있어, 로봇 조작 정책의 실배치 신뢰성을 높이는 실질적인 방향을 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.37334" target="_blank" rel="noopener">huggingface.co/papers/2609.37334</a> · 2026-10-08</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

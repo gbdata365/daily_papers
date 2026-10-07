@@ -1,0 +1,119 @@
+<meta charset="UTF-8">
+<title>WING</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#9 · Daily Papers 2026-10-08</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 16</span>
+    </div>
+    <h1 class="article-title">WING: World Action Learning via INteraction-Centric Spectral Latent Guidance</h1>
+    <p class="article-title-ko">WING: 상호작용 중심 스펙트럴 잠재 유도를 통한 월드 액션 러닝</p>
+    <p class="article-sub">1인칭(에고센트릭) 인간 영상에서 관찰자(카메라) 움직임과 실제 상호작용 동작을 분리해 '상호작용 중심 잠재 행동'을 학습하고, 이를 주파수 영역에서 저주파 성분만 추출해 로봇 정책 학습의 가이드 신호로 활용함으로써 대규모 인간 경험을 로봇 제어로 효과적으로 전이하는 프레임워크를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.03607" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.03607" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: WING: World Action Learning via INteraction-Centric Spectral Latent Guidance</li>
+<li><strong>저자</strong>: Zhiming Liu, Yikun Miao, Ying Chen 등 (공동 제1저자 3인 포함 총 9인), Song Guo 교신저자 — Hong Kong University of Science and Technology(홍콩과기대) 소속</li>
+<li><strong>출처</strong>: arXiv:2610.03607v1 [cs.RO] (2026년 10월 2일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://mikuz12.github.io/wing/">https://mikuz12.github.io/wing/</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.03607">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>1인칭(에고센트릭) 인간 영상에서 관찰자(카메라) 움직임과 실제 상호작용 동작을 분리해 '상호작용 중심 잠재 행동'을 학습하고, 이를 주파수 영역에서 저주파 성분만 추출해 로봇 정책 학습의 가이드 신호로 활용함으로써 대규모 인간 경험을 로봇 제어로 효과적으로 전이하는 프레임워크를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>범용 로봇 정책을 학습하려면 대규모·다양한 학습 데이터가 필요하지만, 로봇 원격조작(teleoperation)을 통한 데이터 수집은 비용이 크고 확장성이 떨어진다. 반면 에고센트릭 인간 영상은 손-물체 상호작용 경험을 풍부하게 담고 있어 잠재적으로 확장 가능한 대안이 될 수 있다. 문제는 이런 영상에 명시적인 행동 라벨(손 포즈 등)이 없고, 설사 있더라도 인간의 신체·운동학에 강하게 결합되어 있어 로봇에 바로 전이하기 어렵다는 점이다. 기존의 잠재 행동 학습(latent action learning)은 연속 프레임 간 재구성(reconstruction)을 통해 행동 유사 표현을 추론하지만, 이는 상호작용과 무관한 시각적 변화(특히 사람의 머리·몸 움직임에 따른 카메라 모션)까지 함께 포착해버려 전이에 필요한 상호작용 중심 정보가 희석되는 문제가 있다. 또한 인간과 로봇은 동일한 상호작용 의미를 공유하더라도 실행 속도·세밀한 제어 수준 등 시간적 동역학(temporal dynamics)이 크게 달라 직접적인 행동 전이가 어렵다.</p>
+<h2>핵심 기여</h2>
+<p>논문은 크게 세 가지를 기여한다고 밝힌다.
+- 에고센트릭 잠재 행동에서 관찰자 유발 변동(observer-induced variation)이 상호작용 관련 동역학과 뒤섞일 수 있음을 보이고, 저주파 잠재 동역학이 인간-로봇 간 더 강한 대응관계를 가짐을 실증적으로 규명했다.
+- 이러한 분석에 기반해, 상호작용 중심 잠재 행동 학습과 스펙트럴 잠재 가이드(spectral latent guidance)를 결합한 WING 프레임워크를 제안했다.
+- 시뮬레이션과 실제 로봇 환경에서의 표현 분석 및 폐루프(closed-loop) 실험을 통해 WING을 검증했으며, 기존 로봇 정책 및 대안적인 에고센트릭 사전학습 전략 대비 일관되게 더 높은 성능을 보였다.</p>
+<h2>방법론</h2>
+<p>WING은 두 단계로 구성된다.</p>
+<p><strong>1) WING-LAM (상호작용 중심 잠재 행동 모델)</strong>: 에고센트릭 영상의 두 프레임 전이를 전역 관찰자 모션(global observer motion)과 국소 상호작용 모션(local interaction motion)으로 분해한다. 오프라인 포인트 트래커(AllTracker)로 추출한 대응점 중 배경 트랙을 이용해 RANSAC으로 전역 아핀 워프(affine warp)를 추정하고, 이를 보상한 뒤 남는 변위를 '상호작용 모션 타겟'으로 삼는다. 이 분해로부터 특권 정보(point track, 영역 마스크 등)를 활용하는 '교사(teacher)' 모델을 학습해 카메라 잠재(camera latent)와 상호작용 잠재(interaction latent)를 분리 인코딩하고, 카메라 모션에 대한 민감도를 억제하는 일관성·분산·공분산 정규화 항을 추가로 적용한다. 이후 이 교사의 상호작용 표현만을 RGB 영상만 입력받는 경량 '학생(student)' 인코더로 증류(distillation)하여, 실제 배포 시에는 포인트 트래커 등 특권 정보 없이도 상호작용 중심 잠재 행동을 추출할 수 있게 한다.</p>
+<p><strong>2) 스펙트럴 잠재 행동 가이드(Spectral Latent Action Guidance)</strong>: 학습된 잠재 행동 궤적을 이산 코사인 변환(DCT)으로 주파수 영역으로 변환하고, 가장 낮은 K개의 저주파 성분만을 '전이 가능한 잠재 가이드'로 남긴다. 저자들은 인간-로봇 간 의미적으로 매칭된 실행 쌍이 전체 궤적이나 고주파 성분보다 저주파 성분에서 훨씬 더 강한 유사도를 보인다는 점을 실험으로 확인했다. 추론 시에는 미래 관측 없이 현재 관측·언어 지시·고유수용감각(proprioception) 정보만으로 이 저주파 가이드를 예측하는 경량 예측기(guidance predictor)를 학습하고, 예측된 가이드 토큰을 게이트 잔차(gated residual) 형태의 어텐션으로 행동 생성 모델(action model)에 주입해 세밀한 로봇 행동을 생성하도록 조건화한다.</p>
+<p>전체 학습은 (i) 에고센트릭 영상으로 비디오 전문가 모델(Wan2.2 기반)과 가이드 예측기를 사전학습하는 단계, (ii) 사전학습된 시각 백본과 가이드 예측기를 로봇 시연 데이터로 전이해 행동 전문가(action expert)와 함께 미세조정하는 단계로 구성된다. 이때 WING-LAM 인코더는 고정(freeze)된 채로 사용된다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>논문은 네 가지 연구 질문(에고센트릭 잠재 행동의 전이 가능한 구조, 로봇 성능으로의 전이 효과, 각 구성요소의 기여도, 사전학습 전략의 효과)을 중심으로 표현 분석과 정책 성능을 모두 평가했다.</p>
+<ul>
+<li><strong>표현 분석</strong>: WING-LAM은 카메라 모션에 대한 민감도는 낮추면서도 상호작용 동작 정보(모션 가해성, 행동 분류 정확도)는 CD-LAM, DreamDojo, UniVLA, LAPA, VILLA-X 등 비교 대상보다 더 잘 보존함을 확인했다. 또한 의미적으로 매칭된 인간-로봇 쌍이 저주파 성분에서 가장 뚜렷하게 구분됨을 보였다.</li>
+<li><strong>시뮬레이션 정책 성능</strong>: LIBERO에서 평균 성공률 99.20%, RoboTwin 2.0에서 93.80%, RoboCasa-GR1에서 57.7%를 달성해 π0, π0.5, LingBot-VA, LaWAM, Motus, Fast-WAM, GigaWorld-Policy 등 비교 모델 대비 최고 또는 상위권 성능을 보였다.</li>
+<li><strong>실제 로봇 실험</strong>: 4가지 양팔(bimanual) 조작 과제(배터리 삽입, 배터리 조립, 물건 담기, 컵 쌓기)에 대해 표준 설정에서 평균 성공률 75.0%로 FastWAM, GR00T-N1.7을 상회했고, 일반화(generalization) 설정에서도 강건한 성능(진행 점수 기준 π0.5와 대등 혹은 그 이상)을 보였다.</li>
+<li><strong>분해 연구(ablation)</strong>: WING-LAM과 DCT 기반 스펙트럴 가이드를 모두 제거하면 성능이 가장 크게 떨어지며, 두 요소 모두 독립적으로 성능 향상에 기여함을 확인했다. 또한 유지하는 저주파 성분 개수 K에 대한 민감도 분석에서 K=4가 전체 스펙트럼(K=8)이나 지나치게 제한적인 K=2보다 우수한 균형점임을 보였다. 비디오만 사용한 사전학습(Vid-P.), 손 포즈 기반 사전학습(HP-P.), LAPA 방식의 직접 잠재 행동 예측(LA-P.) 등 대안 사전학습 전략과 비교해도 WING의 스펙트럴 가이드 방식이 일관되게 더 우수했다.</li>
+</ul>
+<h2>한계점</h2>
+<p>저자들이 명시한 한계는 다음과 같다. 첫째, WING-LAM 교사 모델 구축에 외부 모션 단서(포인트 트래커 등)와 이미지 공간상의 카메라-상호작용 분해에 의존하는데, 지배적인 관찰자 모션을 단일 전역 아핀 워프로 근사하기 때문에 강한 시차(parallax)나 큰 깊이 변화, 뚜렷한 3D 카메라 모션이 있는 경우 부정확해질 수 있고 이는 상호작용 지도(supervision)에 노이즈를 유발할 수 있다. 둘째, 잠재 행동 사전학습과 스펙트럴 가이드 추가로 인해 학습 비용과 파이프라인 복잡도가 증가한다. 저자들은 향후 연구로 더 독립적(self-contained)이고 깊이를 인지하는(depth-aware) 모션 모델링과 더 효율적인 가이드 메커니즘을 탐구할 것을 제안한다.</p>
+<h2>시사점</h2>
+<p>이 연구는 로봇 학습을 대규모 인간 경험으로 확장하려면 관찰된 모든 동역학을 단순히 모델링하는 것이 아니라, 관찰자와 체화(embodiment)에 걸쳐 일관되게 유지되는 상호작용 구조만을 선별적으로 식별하는 것이 중요하다는 점을 시사한다. 즉 재구성 기반 잠재 행동 학습의 한계(관찰자 모션 혼입)를 명시적인 모션 분해와 증류로 해소하고, 인간-로봇 간 시간적 동역학 차이는 주파수 영역에서의 저역 통과(low-pass) 필터링으로 완화한다는 두 가지 아이디어가, 에고센트릭 영상 기반 월드-액션 모델(WAM) 사전학습의 새로운 설계 축으로 자리잡을 수 있음을 보여준다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.03607" target="_blank" rel="noopener">huggingface.co/papers/2610.03607</a> · 2026-10-08</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

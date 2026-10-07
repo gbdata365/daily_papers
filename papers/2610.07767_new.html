@@ -1,0 +1,129 @@
+<meta charset="UTF-8">
+<title>트레이스</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#3 · Daily Papers 2026-10-08</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 65</span>
+    </div>
+    <h1 class="article-title">TRACE: Rollout-Guided Quantization-Aware Training for FP4 Reinforcement Learning of MoE Language Models</h1>
+    <p class="article-title-ko">트레이스: MoE 언어모델의 FP4 강화학습을 위한 롤아웃 유도 양자화 인식 훈련</p>
+    <p class="article-sub">대규모 MoE 언어모델의 강화학습(RL) 롤아웃을 FP4로 가속하면서도, 훈련 경로와 롤아웃 경로의 양자화 결과가 서로 다른 값으로 반올림되어 생기는 불일치(train-rollout discrepancy)를 롤아웃 쪽 양자화 결과로 훈련 쪽 반올림 방향을 직접 유도함으로써 해소하는 FP4 양자화 인식 훈련(QAT) 프레임워크를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.07767" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.07767" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: TRACE: Rollout-Guided Quantization-Aware Training for FP4 Reinforcement Learning of MoE Language Models</li>
+<li><strong>저자</strong>: Xin Wang, Hao Yu, Zhengyang Zhuge, Bochao Mao, Zheng Li, Junda Feng, Yuyan Luo, Yi Zhang, Yizhong Cao, Mi Zhang, Dayiheng Liu, Jianwei Zhang (Alibaba Token Hub / Alibaba Group, Ohio State University)</li>
+<li><strong>출처</strong>: arXiv:2610.07767v1 [cs.LG] (2026-10-06)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.07767">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>대규모 MoE 언어모델의 강화학습(RL) 롤아웃을 FP4로 가속하면서도, 훈련 경로와 롤아웃 경로의 양자화 결과가 서로 다른 값으로 반올림되어 생기는 불일치(train-rollout discrepancy)를 롤아웃 쪽 양자화 결과로 훈련 쪽 반올림 방향을 직접 유도함으로써 해소하는 FP4 양자화 인식 훈련(QAT) 프레임워크를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>RL을 이용한 LLM 사후훈련은 긴 궤적을 반복 생성하는 롤아웃 단계에서 막대한 연산·메모리 비용이 발생한다. 이를 줄이기 위해 롤아웃을 저정밀도(FP4 등)로 양자화하는 방법들이 제안되어 왔으나, FP4처럼 표현 격자가 거친 양자화는 훈련 시 사용하는 고정밀 활성값과 롤아웃 시 사용하는 저정밀 활성값 사이에 큰 수치 불일치를 일으켜 정책 불일치(policy mismatch)와 RL 훈련 불안정, 심하면 훈련 붕괴로 이어질 수 있다. 특히 MoE 구조는 작은 수치 차이도 라우팅 점수를 바꿔 활성화되는 전문가(expert)를 달리할 수 있어 이 문제가 더욱 증폭된다.</p>
+<p>기존 QUADS, Rollout-ResQ 등의 방법들은 훈련 경로와 롤아웃 경로 각각의 양자화 오차(고정밀 표현 대비 오차)를 독립적으로 줄이는 방식으로 이 문제에 접근해 왔다. 그러나 저자들은 각 경로의 양자화 오차를 개별적으로 줄이는 것이 두 경로 간의 불일치(discrepancy)를 직접 줄이는 것과는 다르다는 점을 지적한다. 논문은 QUADS를 예로 들어, 양쪽 경로의 양자화 오차를 모두 줄여도 두 값이 서로 다른 반올림 경계를 넘어가면 불일치가 오히려 커질 수 있음을 구체적 수치 예시로 보여준다.</p>
+<h2>핵심 기여</h2>
+<p>논문이 제시하는 TRACE(Train-Rollout Quantization Alignment via Compact GuidancE)의 핵심 기여는 다음 두 가지다.</p>
+<ol>
+<li><strong>롤아웃 유도 양자화 인식 훈련(Rollout-Guided QAT)</strong>: 롤아웃 단계에서 생성된 FP4 양자화 결과(코드워드)를 기록해 두었다가, 이후 QAT 단계에서 훈련 쪽 활성값의 FP4 반올림 방향을 롤아웃 쪽 결과에 맞추도록 직접 유도함으로써 두 경로 간 불일치를 국소적으로 줄인다.</li>
+<li><strong>효율적 양자화 정보 캐싱(Efficient Quantization-Information Caching)</strong>: 롤아웃 유도에 필요한 전체 양자화 정보를 그대로 전송하면 저장·통신 오버헤드가 극도로 커지므로(예: 한 RL 스텝당 약 51TB), 모델 후반부 레이어의 가수부(mantissa)와 스케일 정보만 선택적으로 보존·전송하는 압축 캐싱 기법을 도입한다.</li>
+</ol>
+<h2>방법론</h2>
+<p><strong>국소 불일치 정의</strong>: 동일한 궤적·토큰 위치·양자화 지점에 대응하는 훈련 측 활성값과 롤아웃 측 활성값 각각을 FP4로 양자화한 결과의 차이(Frobenius norm)를 train-rollout discrepancy로 정의한다.</p>
+<p><strong>불일치 증폭 현상</strong>: 훈련·롤아웃 활성값이 BF16에서는 작은 차이(예: 0.48)만 나더라도, 동일한 글로벌/블록 스케일을 적용해 정규화한 뒤 서로 다른 반올림 경계(예: 2.51 vs 2.49)를 사이에 두고 각기 다른 FP4 코드워드(3과 2)로 반올림되면, 이 작은 차이가 최종 양자화 값에서는 훨씬 큰 차이(예: 72 대 48)로 증폭된다. 저자들은 레이어별 상대 초과 MSE(relative excess train-rollout MSE)로 이 증폭 효과가 깊은 레이어로 갈수록 커짐을 확인했다.</p>
+<p><strong>핵심 아이디어</strong>: 각 훈련 측 활성값에 대해 표준 반올림(round-to-nearest)으로 정해지는 두 인접 FP4 코드워드 후보 중, 롤아웃 측에서 실제로 선택된 코드워드에 더 가까운 쪽을 선택한다(수식 2). 이 방식은 동일한 후보 집합 내에서 표준 반올림보다 롤아웃과의 거리를 항상 같거나 작게 만든다는 것이 이론적으로 보장된다(수식 3). 다만 이 국소적 보장이 전체 네트워크 수준의 불일치나 정책 수준의 발산을 단조적으로 줄인다는 보장은 아니다.</p>
+<p><strong>정보 캐싱</strong>: 미스매치된 양자화 값의 99% 이상이 FP4 코드북 상에서 바로 인접한 엔트리 차이에 불과하다는 관찰에 기반해, 전체 양자화 값을 전송하는 대신 가수부(mantissa) 정보 일부만 전송해도 충분하다는 것을 보인다. 또한 반올림 보정이 주로 깊은 레이어에서 발생함을 확인하여, 모델 후반부 절반 레이어에서만 가수부·스케일 정보를 캐싱·전송하도록 설계했다. 구현은 VeRL, Megatron, SGLang 기반 비동기 분산 RL 파이프라인 위에서 이루어지며, GRPO와 토큰 단위 중요도 비율, 롤아웃측 라우팅 재현(R3) 등을 함께 사용한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Qwen3.5-35B-A3B, Qwen3.5-122B-A10B, Qwen3.8-Flash-Next(125B 총 파라미터/6B 활성 파라미터), Qwen3.8-2.4T-A95B 등 4개의 대규모 MoE 모델에 대해 추론(LiveCodeBench, AIME 2024/2025, HMMT 2025), 코딩(DeepSWE, Terminal-Bench 2.1), 장기 호라이즌(GDPval) RL 과제를 평가했다. 비교 대상은 vanilla NVFP4 QAT, QaRL, QUADS, Score Centering 등 FP4 롤아웃 기법과 4over6, H-Scale 등 사후(post-hoc) FP4 양자화 기법이다.</p>
+<ul>
+<li>Qwen3.5-35B-A3B의 FP4 W/A + FP4 KV 조건에서 TRACE는 평균 점수를 QAT 대비 59.6→75.3, QUADS 대비 68.8→75.3으로 끌어올려 BF16 롤아웃 성능(74.9)과 비슷한 수준을 달성했다.</li>
+<li>Qwen3.5-122B-A10B, Qwen3.8-Flash-Next, Qwen3.8-2.4T-A95B 등 더 큰 모델에서도 TRACE는 QAT 대비 각각 3.9, 4.2, 1.5점 향상되었고, BF16 성능에 근접하거나(DeepSWE 33.0 vs 33.4, GDPval 90.2 vs 90.3) 이를 상회(Terminal-Bench 70.6 vs 68.8)했다.</li>
+<li>훈련 동역학 분석에서 QAT/QaRL/QUADS는 훈련이 진행될수록 train-rollout 불일치가 커지고 보상·테스트 점수가 급격히 저하되는 반면, TRACE는 BF16에 가까운 안정적 동역학을 유지했다. 또한 TRACE 적용 시 초기에는 FP4로 인한 성능 저하가 있지만 훈련이 진행되며 점차 BF16 성능을 따라잡는 "적응(adaptation)" 현상이 관찰되었다(예: HMMT25에서 약 120스텝 후 BF16 수준에 도달).</li>
+<li>효율성 측면에서, TRACE는 전체 정보를 캐싱하는 방식 대비 처리량 저하를 크게 줄였으며, 128K 출력 길이에서 BF16 롤아웃 대비 최대 5.4배의 디코딩 처리량 향상을 보였다. end-to-end RL 스텝 시간은 vanilla FP4 롤아웃(664) 대비 TRACE(713)가 7.4%의 오버헤드만 추가했고, 이 오버헤드의 86%는 forward pass 자체, 4%/2%는 각각 weight/KV 측 롤아웃 유도, 나머지 8%는 KV 역양자화에서 발생했다.</li>
+<li>MXFP4(W4A8, W4A4) 포맷에서도 TRACE는 QAT 대비 각각 6.1, 6.3점 향상되어 범용성을 보였다.</li>
+<li>가수부 정보 보존 범위에 대한 민감도 분석에서는 1비트 가수부만 40개 레이어 전체에 보존할 때 평균 75.8점으로 가장 좋았고, 후반 20개 레이어만 보존해도(기본 설정) 75.3점으로 큰 손실 없이 유지되었다.</li>
+<li>Score Centering과의 비교에서도 TRACE가 평균 75.3점으로 Score Centering의 74.1점(TIS+SC)을 상회했으며, train-rollout log-probability 차이를 BF16 기준에 훨씬 가깝게 유지했다.</li>
+<li>BF16으로 RL을 마친 뒤 사후 FP4 양자화(vanilla NVFP4, 4over6, H-Scale)를 적용하는 파이프라인(평균 70.4~71.4점)보다, 처음부터 FP4로 RL을 수행하는 TRACE(75.3점)가 더 높은 최종 성능을 보였다.</li>
+</ul>
+<h2>한계점</h2>
+<p>논문에 별도의 한계점 섹션은 없다. 본문 내용을 바탕으로 유추할 수 있는 한계는 다음과 같다.
+- TRACE의 국소적 반올림 정렬 보장(수식 3)은 개별 양자화 지점 단위에서만 성립하며, 비선형 변환을 거친 뒤의 전체 네트워크 수준 불일치나 정책 발산을 단조적으로 줄인다는 보장은 없다고 저자들 스스로 명시한다.
+- 가수부 정보를 전체 레이어가 아닌 후반부 일부 레이어에서만 캐싱하는 근사이므로, 완전한 정보 기반 방식 대비 약간의 성능 손실(예: 1bit-L40 대비 1bit-L20에서 소폭 하락)이 존재한다.
+- TRACE는 여전히 롤아웃과 훈련 정책 간 정책 지연(staleness)으로 인한 근본적 활성값 차이 자체를 제거하지는 못하며, 양자화로 인해 그 차이가 증폭되는 것만을 완화한다.
+- 평가가 Qwen 계열 MoE 모델들에 집중되어 있어, 다른 아키텍처 계열이나 더 다양한 과제에 대한 일반화 가능성은 논문에 명시되지 않음.</p>
+<h2>시사점</h2>
+<p>FP4와 같은 초저정밀도 롤아웃이 RL 훈련을 불안정하게 만드는 근본 원인이 각 경로의 양자화 정확도 자체가 아니라 두 경로 간의 반올림 불일치에 있다는 통찰은, 향후 저정밀도 RL 훈련 기법 설계에서 "정확도 개선"과 "경로 간 정합성"을 구분해 접근해야 함을 시사한다. 또한 양자화 정보 전체가 아니라 반올림 방향 결정에 필요한 최소한의 정보(가수부 일부)만 전송해도 충분하다는 발견은, 대규모 분산 RL 시스템에서 통신·저장 병목을 줄이는 일반적인 설계 원칙으로 확장될 수 있다. 처음부터 저정밀도로 RL을 수행하는 것이 BF16 훈련 후 사후 양자화보다 더 나은 최종 성능을 낼 수 있다는 결과는, 저정밀도 인식 훈련을 RL 파이프라인 설계 초기 단계부터 고려해야 함을 뒷받침한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.07767" target="_blank" rel="noopener">huggingface.co/papers/2610.07767</a> · 2026-10-08</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

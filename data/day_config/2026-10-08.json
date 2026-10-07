@@ -1,0 +1,110 @@
+{
+  "2610.08448": {
+    "base": "2610_크로스토크나이저_온폴리시증류-정합성과신뢰성",
+    "rank": "#1",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "153",
+    "en_title": "Rethinking Cross-Tokenizer On-Policy Distillation: From Alignment Coverage to Supervision Reliability",
+    "ko_title": "크로스 토크나이저 온폴리시 증류 재고찰: 정렬 커버리지에서 지도 신뢰성으로"
+  },
+  "2610.03543": {
+    "base": "2610_듀오매칭_소수단계-영상생성-분포매칭",
+    "rank": "#2",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "68",
+    "en_title": "DuoMatching: Joint-Marginal Distribution Matching for Few-Step Video Generation",
+    "ko_title": "듀오매칭: 소수 스텝 비디오 생성을 위한 결합-주변 분포 매칭"
+  },
+  "2610.07767": {
+    "base": "2610_트레이스_FP4강화학습-양자화훈련",
+    "rank": "#3",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "65",
+    "en_title": "TRACE: Rollout-Guided Quantization-Aware Training for FP4 Reinforcement Learning of MoE Language Models",
+    "ko_title": "트레이스: MoE 언어모델의 FP4 강화학습을 위한 롤아웃 유도 양자화 인식 훈련"
+  },
+  "2610.05030": {
+    "base": "2610_에비스킬_재현가능한-증거기반-스킬진화",
+    "rank": "#4",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "36",
+    "en_title": "EviSkill: Grounding Skill Evolution in Replayable Evidence",
+    "ko_title": "에비스킬: 재현 가능한 증거에 기반한 스킬 진화"
+  },
+  "2610.07753": {
+    "base": "2610_증거행동분석_도구사용에이전트-실패원인",
+    "rank": "#5",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "34",
+    "en_title": "From Evidence to Action: How Tool-Using Agents Fail",
+    "ko_title": "증거에서 행동으로: 도구 사용 에이전트는 왜 실패하는가"
+  },
+  "2610.05140": {
+    "base": "2610_오토사이벤치_과학에이전트-자동벤치마크생성",
+    "rank": "#6",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "26",
+    "en_title": "AutoSciBench: Autonomous Benchmark Generation for Evaluating Scientific Agents",
+    "ko_title": "오토사이벤치: 과학 에이전트 평가를 위한 자율적 벤치마크 생성"
+  },
+  "2609.37334": {
+    "base": "2609_VLA안정화_로봇실행오류-자기보정테스트",
+    "rank": "#7",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "24",
+    "en_title": "Taming VLAs under Robot Execution Errors: Self-Compensation and Stress Testing",
+    "ko_title": "로봇 실행 오류 아래 VLA 길들이기: 자기보정과 스트레스 테스트"
+  },
+  "2610.05966": {
+    "base": "2610_화퉈지피티3_강화학습전용-도메인적응",
+    "rank": "#8",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "21",
+    "en_title": "HuatuoGPT-3: RL-Only Domain Adaptation from Base Models",
+    "ko_title": "화퉈지피티3: 베이스 모델로부터의 강화학습 전용 도메인 적응"
+  },
+  "2610.03607": {
+    "base": "2610_월드액션러닝_상호작용중심-스펙트럴잠재유도",
+    "rank": "#9",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "16",
+    "en_title": "WING: World Action Learning via INteraction-Centric Spectral Latent Guidance",
+    "ko_title": "WING: 상호작용 중심 스펙트럴 잠재 유도를 통한 월드 액션 러닝"
+  },
+  "2610.08463": {
+    "base": "2610_언리얼_검색과장문맥통합모델",
+    "rank": "#10",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "15",
+    "en_title": "UNREAL: Unifying Retrieval and Long-Context with a Single Model",
+    "ko_title": "UNREAL: 단일 모델로 통합하는 검색과 장문맥 추론"
+  },
+  "2610.05912": {
+    "base": "2610_미니코프_AI에이전트기업의마지막단계",
+    "rank": "#11",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "15",
+    "en_title": "MiniCorp: The Last Mile of the AI Agent Firm",
+    "ko_title": "미니코프: AI 에이전트 기업의 마지막 단계"
+  },
+  "2610.01892": {
+    "base": "2610_선택적구조추론_효율적멀티모달검색에이전트",
+    "rank": "#12",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "14",
+    "en_title": "Selection-Based Structured Reasoning: Toward Efficient Multimodal Search Agents",
+    "ko_title": "선택 기반 구조적 추론: 효율적인 멀티모달 검색 에이전트를 향하여"
+  }
+}

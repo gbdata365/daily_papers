@@ -1,0 +1,120 @@
+<meta charset="UTF-8">
+<title>선택 기반 구조적 추론</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#12 · Daily Papers 2026-10-08</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 14</span>
+    </div>
+    <h1 class="article-title">Selection-Based Structured Reasoning: Toward Efficient Multimodal Search Agents</h1>
+    <p class="article-title-ko">선택 기반 구조적 추론: 효율적인 멀티모달 검색 에이전트를 향하여</p>
+    <p class="article-sub">멀티모달 검색 에이전트가 매 턴마다 긴 자유형식 추론 문장을 처음부터 생성하는 대신, 미리 준비된 재사용 가능한 자연어 추론 후보들 중 하나를 "선택"하게 함으로써 성능 저하 없이 추론 지연 시간을 90% 이상 줄이는 프레임워크를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.01892" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.01892" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Selection-Based Structured Reasoning: Toward Efficient Multimodal Search Agents</li>
+<li><strong>저자</strong>: Feiyu Gavin Zhu, Xiaoyu Zhu, Jiqi Yang, Rui Yang, Arnab Kumar Mondal, Yancheng Wang, Xinke Deng, Jean Oh, Reid Simmons, Joerg Liebelt, Xiang Kong, Zhongyu Jiang (Apple, Carnegie Mellon University)</li>
+<li><strong>출처</strong>: arXiv:2610.01892v1 [cs.LG] (2026년 10월 1일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://zfy0314.github.io/ssr-webpage/">https://zfy0314.github.io/ssr-webpage/</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.01892">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>멀티모달 검색 에이전트가 매 턴마다 긴 자유형식 추론 문장을 처음부터 생성하는 대신, 미리 준비된 재사용 가능한 자연어 추론 후보들 중 하나를 "선택"하게 함으로써 성능 저하 없이 추론 지연 시간을 90% 이상 줄이는 프레임워크를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>멀티모달 에이전트는 관찰, 추론, 행동을 반복하며 도구를 사용해 작업을 수행하는데(ReAct 스타일), 매 행동 전에 자유형식(freeform)으로 추론 문장을 토큰 단위로 순차 생성하는 방식은 특히 온디바이스에 적합한 소형 모델에서 상당한 추론 지연을 유발한다. 기존 연구들은 추론을 간결하게 만들거나 더 짧게 생성하도록 유도하는 방식으로 생성량 자체를 줄이려 했지만, 여전히 토큰 간 순차적 의존성(autoregressive decoding)이 남아 지연을 근본적으로 해결하지 못한다. 저자들은 멀티모달 검색에서 질문별 엔티티나 관찰 내용은 다양하지만, "다음에 무엇을 해야 하는가"에 대한 고차원적 추론 패턴 자체는 반복적으로 재사용된다는 점에 주목했다. 즉, 추론이 차지하는 의미 공간이 생각보다 좁다는 관찰에서 출발한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>생성이 아닌 선택으로서의 추론</strong>: Selection-based Structured Reasoning(SSR)을 제안하여, 자유형식 추론을 재사용 가능한 소수의 자연어 추론 후보 중에서 현재 맥락에 맞는 것을 선택하는 문제로 재정의했다.</li>
+<li><strong>병렬 추론 디코딩(Parallel Reasoning Decoding)</strong>: 별도의 분류 헤드나 SFT 웜스타트 없이, 언어모델 자체의 가능도(likelihood)를 이용해 각 추론 후보를 평가한다. 모든 후보 텍스트가 사전에 정해져 있으므로 teacher-forcing으로 후보 내부 토큰 및 후보 간 점수를 공유 KV 캐시 상에서 동시에 병렬 계산할 수 있어, 추론 과정에서 새로운 토큰을 전혀 생성하지 않는다.</li>
+<li><strong>효율성과 성능의 동시 확보</strong>: GRPO, GSPO, SAPO, SFT 등 다양한 학습 방식과 2B/4B 모델 규모 전반에서, 동급 최고 수준의 학습된 검색 에이전트와 대등한 성공률을 유지하면서 턴당 평균 추론 지연을 90% 이상, 질문당 전체 모델 추론 지연을 28~54% 줄였다.</li>
+</ul>
+<h2>방법론</h2>
+<p>에이전트의 상호작용 이력 h_t가 주어졌을 때, 기존 방식은 자유형식 추론 z_t를 p_θ(·|h_t)에서 토큰 단위로 생성한 뒤 행동 a_t를 생성한다. SSR은 미리 정의된 재사용 가능한 추론 라이브러리 R={r_1,...,r_N}(실험에서는 수작업으로 작성한 6개의 후보, 예: 이미지로 식별, 텍스트 검색으로 정보 조회, 이미지 특정 부분 확대, 수집된 증거로 답변, 이미지로 답변, 일반 지식으로 답변)에서 z_t를 선택한다.</p>
+<p>각 후보 r_i에 대해 길이 정규화된 로그가능도 S_θ(r_i|h_t)를 계산하고(식 1), 이를 softmax하여 후보에 대한 선택 정책 q_θ(·|h_t)를 얻는다(식 2). 선택된 추론 텍스트는 그대로 모델 맥락에 삽입되어 행동 생성(검색 쿼리, 크롭 위치, 최종 답변 등)을 유도한다. 모든 후보 텍스트가 사전에 고정되어 있으므로 후보 내부(토큰 레벨)와 후보 간(후보 레벨) 점수 계산을 하나의 배치 순전파로 병렬화할 수 있으며, 이는 계산 복잡도 측면에서 자유형식 추론(O(L log(H+L)))보다 훨씬 얕은 임계 경로(O(log(H+K_max) + log N))를 갖는다(식 3).</p>
+<p>학습 측면에서는 SFT와 강화학습(RL) 모두 지원한다. SFT는 범주형 선택 손실과 토큰 단위 행동 손실의 가중합으로 정의되며(식 4), RL(GRPO 스타일)은 생성된 추론 토큰들에 대한 기존의 토큰별 중요도 비율 대신, 선택된 후보 전체에 대한 단일 범주형 비율(ρ^reason)을 사용하도록 수정한 것이 핵심 차이다(식 5, 6). 이를 통해 SSR은 별도의 SFT 웜업 없이도 RL만으로 직접 학습이 가능하다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>VisualProbe, DeepEyes, FVQA-train 데이터로 2B/4B Qwen3-VL 모델을 학습시키고, MMSearch, HR-MMSearch, FVQA-test, SimpleVQA, LiveVQA, InfoSeek, MAT-Search 등 7개 멀티모달 검색 벤치마크에서 평가했다(동일한 도구 하네스와 LLM 평가자 사용). NVIDIA H100 GPU와 SGLang 추론 엔진으로 지연 시간을 측정했다.</p>
+<ul>
+<li>GRPO로 학습한 4B SSR은 평균 성공률 61.37%를 달성하여, 최고 수준의 4B 학습 에이전트(TAPO+GSPO, 61.25%)와 대등하거나 그 이상이었다. 2B SSR도 51.26%로 제로샷 8B 모델과 비슷한 수준을 보여 작은 백본으로도 일반화가 가능함을 보였다(표 1).</li>
+<li>GRPO, GSPO, SAPO, SFT 네 가지 학습 목적 전반에서 SSR은 자유형식 추론 대비 턴당 추론 지연을 90% 이상, 질문당 전체 모델 지연을 28~54% 줄이면서도 성공률은 대등하거나 소폭 향상(GRPO, SFT) 혹은 근소하게 하락(GSPO, SAPO)했다(표 2). 성능 하락은 다중 경사 업데이트에서 선택기(selector) 경사 근사가 부정확해지기 때문으로 추정된다.</li>
+<li>Chain-of-Draft, Sketch-of-Thought, 효율성 보상 RL, Probe &amp; Prefill 등 네 가지 효율적 추론 기법과 비교했을 때도 SSR은 더 높은 성공률과 더 짧은 지연(약 7배 이상의 추론 속도 향상), 특히 p95 지연에서 더 일관된(예측 가능한) 성능을 보였다(표 3).</li>
+<li>소거 실험에서는 후보의 전체 텍스트가 아닌 인덱스(예: [1])만 선택하게 하면 평균 성공률이 3.9%p 하락해, 추론 후보의 의미 내용 자체가 이후 행동 생성에 실질적으로 기여함을 확인했다(표 4). 또한 SFT 웜스타트 없이 자유형식 자동회귀 생성으로 후보를 흉내 내게 하면 다시 일반 자유형식 수준으로 성능이 저하되어, 선택 메커니즘의 명시적 구조가 필요함을 보였다.</li>
+<li>추론 라이브러리 크기를 1개에서 6개로 늘릴수록 평균 성공률이 37.24%에서 61.37%로 단조 증가했으며(그림 3), 동일 모델이라도 벤치마크 특성에 따라 선택되는 추론 후보의 분포가 달라졌다(그림 4). 99.9%의 턴에서 생성된 행동 유형이 선택된 추론 후보가 예상하는 행동 유형과 일치해, 선택이 실제 행동과 잘 연동됨을 확인했다.</li>
+</ul>
+<h2>한계점</h2>
+<p>논문은 별도의 "한계점" 절을 명시하지 않았으나, 본문에서 확인되는 제약은 다음과 같다. 첫째, GSPO와 SAPO 학습 목적에서는 자유형식 추론 대비 성공률이 소폭(각각 약 1~3%p) 하락했으며, 이는 다중 경사 업데이트 하에서 선택기 경사 근사가 부정확해지기 때문으로 저자들은 추정한다. 둘째, 추론 라이브러리(6개 후보)는 사람이 수작업으로 설계했으며, 라이브러리 크기와 구성 품질이 성능에 직접적인 영향을 미친다는 점에서(그림 3) 새로운 도메인에 적용 시 적절한 후보 설계가 추가로 필요할 수 있다. 셋째, 평가는 2B/4B 규모의 Qwen3-VL 모델과 특정 도구 하네스(텍스트 검색, 이미지 검색, 이미지 크롭)에 한정되어 있어, 더 다양한 행동 공간이나 더 큰 모델 규모로의 일반화는 추가 검증이 필요하다.</p>
+<h2>시사점</h2>
+<p>이 연구는 소형 멀티모달 검색 에이전트가 매 스텝마다 언어 전체 공간에 걸쳐 추론을 생성할 필요가 없으며, 반복되는 고차원 추론 패턴을 압축적이고 재사용 가능한 공간으로 조직화하는 것만으로도 효율성과 성능을 동시에 확보할 수 있음을 보여준다. 이는 온디바이스·저지연 환경에서 동작해야 하는 에이전트형 AI 시스템 설계에 시사하는 바가 크며, 별도의 분류 헤드나 추가 추론 단계 없이 기존 언어모델의 가능도 계산만으로 구조적 추론 선택을 구현할 수 있다는 점에서 구현 복잡도 측면의 이점도 크다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.01892" target="_blank" rel="noopener">huggingface.co/papers/2610.01892</a> · 2026-10-08</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

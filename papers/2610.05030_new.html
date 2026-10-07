@@ -1,0 +1,125 @@
+<meta charset="UTF-8">
+<title>에비스킬</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#4 · Daily Papers 2026-10-08</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 36</span>
+    </div>
+    <h1 class="article-title">EviSkill: Grounding Skill Evolution in Replayable Evidence</h1>
+    <p class="article-title-ko">에비스킬: 재현 가능한 증거에 기반한 스킬 진화</p>
+    <p class="article-sub">LLM 에이전트의 스킬(재사용 가능한 절차적 지식)을 개정할 때, 각 수정이 어떤 실행 증거에 근거했는지를 명시적으로 기록하고 재실행(replay)을 통해 그 효과를 검증함으로써, 모델 파라미터를 바꾸지 않고도 신뢰성 있게 스킬을 지속적으로 진화시키는 프레임워크를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.05030" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.05030" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: EVISKILL: Grounding Skill Evolution in Replayable Evidence</li>
+<li><strong>저자</strong>: Yan Zhou, Yili Wang, Yiwei Dai, Qinggang Zhang, Xin Wang (중국 지린대학교 인공지능대학, Jilin University)</li>
+<li><strong>출처</strong>: arXiv:2610.05030v1 [cs.AI] (2026년 10월 4일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/Zhouyaner/eviskill">GitHub 저장소</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.05030">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>LLM 에이전트의 스킬(재사용 가능한 절차적 지식)을 개정할 때, 각 수정이 어떤 실행 증거에 근거했는지를 명시적으로 기록하고 재실행(replay)을 통해 그 효과를 검증함으로써, 모델 파라미터를 바꾸지 않고도 신뢰성 있게 스킬을 지속적으로 진화시키는 프레임워크를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>LLM 에이전트는 도구 사용, 웹 탐색, 장기 의사결정 등 복잡한 상호작용 과제를 수행하기 위해 재사용 가능한 절차(스킬)를 필요로 한다. 최근 연구들은 에이전트의 실행 궤적(trajectory)에서 교훈을 추출해 스킬을 생성·개정하는 "경험 기반(experience-driven)" 방식을 사용해왔다. 그러나 저자들은 이 방식에 두 가지 근본적 한계가 있다고 지적한다.</p>
+<p>첫째, 실행 궤적에서 도출된 수정(edit)이 실제로 의도한 행동 개선을 만들어낸다는 보장이 없다. 실패 사례에서 유도된 교정은 해당 사례에 과적합될 수 있고, 성공 사례에서 추출된 절차도 우연적 행동을 재현 가능한 규칙처럼 오인할 수 있다. 저자들의 사전 실험(2절)에 따르면, 기존 경험 기반 방법(Trace2Skill)이 생성한 수정안을 원래 궤적에 재적용해 재실행했을 때, 벤치마크별로 15~25%의 수정안이 성능을 개선하지 못하거나 오히려 악화시켰다.</p>
+<p>둘째, 스킬 개정은 보통 전체 개정안 단위로 수용/거부가 결정되는 전역 검증(global validation)을 거치는데, 이 경우 개정안에 포함된 개별 수정들 중 실제로 효과적인 일부도 함께 폐기된다. 저자들은 전역적으로 거부된 개정안에서도 선택적으로 유효한 수정만 남기면 ALFWorld, AppWorld, ScienceWorld에서 각각 4.16, 3.34, 12.50 퍼센트포인트의 성능 향상을 추가로 얻을 수 있음을 보였다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>기존 경험 기반 스킬 진화의 핵심 한계, 즉 (1) 수정을 유발한 실행 증거가 결과 수정안과 명시적으로 연결되어 유지되지 않는다는 점, (2) 한 라운드에서 생성된 진화 정보가 다음 라운드로 이어지지 않는다는 점을 규명했다.</li>
+<li>증거 구축(evidence construction), 행동 검증(behavioral verification), 에포크 간 정제(cross-epoch refinement)의 세 단계로 구성된 증거 기반 스킬 진화 프레임워크 EviSkill을 제안했다.</li>
+<li>ALFWorld, AppWorld, ScienceWorld 세 개의 실제 상호작용 벤치마크와 6개의 LLM 백본(GPT-5.5, GPT-5.4, GPT-5.4-mini, Qwen3.6-35B-A3B, Qwen3.5-9B, Qwen3.5-4B)에 걸쳐 기존 스킬 진화 베이스라인 대비 일관된 성능 향상을 확인했다.</li>
+</ul>
+<h2>방법론</h2>
+<p>EviSkill은 "재현 가능한 증거 카드(Replayable Evidence Card)"를 중심으로 스킬 개정을 조직화하며, 세 단계로 작동한다.</p>
+<p><strong>1) 증거 기반 수정 합성 (Evidence-Grounded Edit Synthesis)</strong>: 각 진화 에포크는 훈련 과제에 대한 상호작용으로 시작된다. 에이전트가 현재 "작업 스킬(Working Skill)"로 과제를 수행해 궤적을 수집하면, LLM 기반 증거 추출기(evidence extractor)가 궤적을 분석해 스킬의 절차, 사전조건, 복구 지침 등에 대한 수정 제안을 생성한다. 각 제안은 이를 뒷받침하는 궤적 구간(trigger range)과 함께 "증거 카드"로 기록되어, 추후 재현과 검증에 사용할 수 있는 명시적 추적 고리(link)를 형성한다. 현재 에포크의 궤적에서 뽑은 카드(Trajectory Evidence Cards)뿐 아니라, 인접 에포크 간 동일 과제의 궤적 쌍을 비교해 기존 수정이 여전히 유효한지 재점검하는 대조 증거 카드(Contrastive Evidence Cards)도 함께 생성된다. 증거 카드들은 의도가 호환되는 것끼리 그룹화(Evidence Window)되어 LLM 편집기가 후보 수정 집합을 합성한다.</p>
+<p><strong>2) 재현 기반 수정 검증 (Replay-Guided Edit Verification)</strong>: 각 후보 수정에 대해, 이를 뒷받침하는 증거 카드가 가리키는 궤적 구간을 재구성하고, 수정이 반영된 스킬로 해당 구간을 다시 실행(replay)한다. LLM 평가기가 재현 결과를 원본 궤적과 비교해 accept(의도한 교정 효과 확인), reflect(국소적 결함이 있어 추가 수정 가능), reject(효과 없음) 중 하나로 판정한다. reflect로 판정된 수정은 편집기가 개정한 뒤 다시 재현·평가를 거쳐 수용 여부가 결정된다. 이를 통해 궤적 기반의 "그럴듯한" 제안과 실제로 행동을 개선하는 "효과적인" 제안을 구분한다.</p>
+<p><strong>3) 에포크 간 증거 전파 (Cross-Epoch Evidence Propagation)</strong>: 검증을 통과한 수정들을 반영한 후보 개정안은 별도의 검증 셋(validation set)에서 전역 검증을 받아, 현재 "검증된 스킬(Validated Skill)"보다 성능이 우수할 때만 채택된다. 전역 검증에서 거부되더라도, 거부된 개정안에 포함된 개별 수정들은 "거부 후 재현(post-rejection replay)"을 통해 재평가되어, 국소적으로 효과가 입증된 수정은 "잠정 수정 원장(Provisional Edit Ledger)"에 보존되고 다음 에포크의 작업 스킬에 계속 반영된다. 이렇게 해결되지 않은 증거 카드와 잠정 수정들은 다음 에포크로 이월되어 추가 합성과 교정의 재료로 재사용된다. 지정된 에포크 수(E)만큼 반복한 뒤, 최종 검증된 스킬을 추론용 스킬로 고정한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p><strong>벤치마크</strong>: 애플리케이션 API를 통한 과제 수행을 다루는 AppWorld, 과학 실험 환경인 ScienceWorld, 텍스트 기반 가정 내 과제 수행 환경인 ALFWorld 세 가지를 사용했으며, 각각 훈련/검증/테스트로 분리된 과제 분할을 적용했다.</p>
+<p><strong>비교 대상</strong>: No Skill(스킬 없음), LLM Skill(고정된 초기 LLM 생성 스킬) 등 비진화 베이스라인과, Trace2Skill, EvoSkill, SkillGrad, SkillOpt 등 기존 스킬 진화 방법들을 비교군으로 삼았다.</p>
+<p><strong>주요 결과</strong>: EviSkill은 18개의 모델-데이터셋 조합 중 14개에서 최고 정확도를 달성했고, 16개 조합에서 상위 2위 안에 들었다. No Skill 대비 평균 17.93 퍼센트포인트의 성능 향상을 보였으며, ScienceWorld에서는 Qwen3.5-9B 기준 최강 베이스라인 대비 15.64점, GPT-5.4 기준 10.43점 높은 성능을 보였다. 일부 기존 진화 베이스라인(Trace2Skill, EvoSkill, SkillGrad)은 특정 설정에서 초기 LLM Skill보다 오히려 성능이 낮아지는 경우가 있었던 반면, EviSkill은 LLM Skill 대비 18개 설정 중 17개에서 개선을 보였다.</p>
+<p><strong>모듈 제거 실험(ablation)</strong>: 재현 기반 검증(Replay-Guided Verification)을 제거하면 ALFWorld, AppWorld, ScienceWorld에서 각각 평균 2.49, 4.56, 2.85 퍼센트포인트 정확도가 하락했다. 에포크 간 증거 전파(Cross-Epoch Propagation)를 제거하면 AppWorld에서 89.68%에서 85.52%로 가장 크게 하락하는 등 세 벤치마크 모두에서 성능이 저하되어, 두 구성요소 모두 효과적인 스킬 진화에 기여함을 확인했다.</p>
+<p><strong>메커니즘 분석</strong>: 72개 에포크, 18회 실행 분량의 로그를 분석한 결과, 후보 수정의 20.7~42.5%가 초기 재현 검증에서 reflect 또는 reject로 판정되어 즉시 통과하지 못했으며, reflect로 분류된 수정 중 상당수(ScienceWorld 91%, AppWorld 81%)가 피드백 기반 재수정을 거쳐 최종적으로 복구(수용)되었다. 또한 전역적으로 거부된 개정안에 속했던 수정 96건 중 72.9%가 이후 에포크에서 결국 검증된 스킬에 통합되었으며, 고유 증거 카드의 23.0%가 둘 이상의 서로 다른 에포크에서 재사용되어, 증거가 단일 에포크를 넘어 지속적으로 수정 합성에 기여함을 보여주었다.</p>
+<h2>한계점</h2>
+<p>논문에 명시된 한계는 제한적이지만, 본문에서 확인 가능한 사항은 다음과 같다.
+- AppWorld 벤치마크에서는 EviSkill의 경쟁 방법 대비 우위가 다른 벤치마크에 비해 덜 일관되게 나타났다.
+- 증거 추출, 수정 합성, 재현 검증 등 전 과정이 LLM 기반 모듈(추출기, 편집기, 평가기)에 의존하므로, 이들 모듈의 판단 오류나 편향이 전체 파이프라인에 영향을 줄 수 있다(논문에서 명시적으로 논의되지는 않음).
+- 재현 기반 검증은 추가적인 실행(replay) 비용을 요구하며, 이에 따른 연산/시간 비용에 대한 구체적 정량 분석은 부록(Efficiency Analysis)에서 다뤄지나 본 분석에서는 상세히 확인하지 못했다.
+- 4개 에포크 예산이 끝난 시점에도 잠정적으로 보유된 수정(27.1%)의 최종 효용은 관찰되지 않은 채로 남는 등, 유한한 진화 라운드 내에서 모든 증거가 완전히 해소되지는 않는다.
+- 논문에 명시되지 않음: 실제 배포 환경이나 더 큰 규모의 장기 운영에서의 안정성, 비용 대비 효용에 대한 분석.</p>
+<h2>시사점</h2>
+<p>EviSkill은 스킬 진화를 "경험을 모아 즉시 반영"하는 방식에서 "제안-재현 검증-조건부 보존-지속적 재검토"의 과학적 절차에 가까운 방식으로 전환했다는 점에서 의미가 있다. 특히 전역 검증에서 거부된 개정안이라도 그 안의 개별 수정은 재현을 통해 선별적으로 살아남을 수 있다는 관찰은, 스킬이나 메모리를 다루는 에이전트 시스템 전반(에이전트 워크플로 메모리, 지속적 자기개선 에이전트 등)에 적용될 수 있는 일반적인 설계 원칙, 즉 "검증 단위를 전체 개정이 아니라 개별 근거-수정 쌍으로 세분화하라"는 교훈을 제공한다. 또한 모델 파라미터 업데이트 없이 텍스트 형태의 재사용 가능한 절차적 지식만으로 에이전트 성능을 지속적으로 개선할 수 있다는 점은, 파인튜닝 비용 없이 에이전트를 배포 후에도 계속 개선하고자 하는 실무적 수요와 맞닿아 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.05030" target="_blank" rel="noopener">huggingface.co/papers/2610.05030</a> · 2026-10-08</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

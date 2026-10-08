@@ -1,0 +1,113 @@
+<meta charset="UTF-8">
+<title>벱에이전트</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#9 · Daily Papers 2026-10-09</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 53</span>
+    </div>
+    <h1 class="article-title">VepAgent: Bridging Causal-Transition via Tool-Augmented Reinforcement Learning for Video Event Prediction</h1>
+    <p class="article-title-ko">벱에이전트: 도구 강화 강화학습으로 인과적 전이를 연결하는 비디오 이벤트 예측</p>
+    <p class="article-sub">멀티모달 LLM이 관찰된 과거를 요약하는 데는 강하지만 관찰되지 않은 미래로의 인과적 전이는 포착하지 못하는 문제를 해결하기 위해, 도구 증강 강화학습(tool-augmented RL)과 인과-전이(causal-transition) 추론, 반언어편향(anti-prior) 보상을 결합한 에이전트 VepAgent를 제안하여 FutureBench와 NEPBench에서 기존 최강 MLLM 대비 각각 14.58%p, 22.70%p의 정확도 향상을 달성했다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.06293" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.06293" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: VepAgent: Bridging Causal-Transition via Tool-Augmented Reinforcement Learning for Video Event Prediction</li>
+<li><strong>저자</strong>: Qiutong Chen, Yuchan Guo, Zhenlong Yuan 외 10인 (Nankai University, Carnegie Mellon University, Xiaohongshu Inc., Columbia University, Santa Clara University, New York University, University of California Santa Cruz 등 소속)</li>
+<li><strong>출처</strong>: arXiv:2610.06293v1 [cs.CV] (2026년 10월 5일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://anonymous.4open.science/r/VepAgent-42F8">Code (anonymous.4open.science)</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.06293">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>멀티모달 LLM이 관찰된 과거를 요약하는 데는 강하지만 관찰되지 않은 미래로의 인과적 전이는 포착하지 못하는 문제를 해결하기 위해, 도구 증강 강화학습(tool-augmented RL)과 인과-전이(causal-transition) 추론, 반언어편향(anti-prior) 보상을 결합한 에이전트 VepAgent를 제안하여 FutureBench와 NEPBench에서 기존 최강 MLLM 대비 각각 14.58%p, 22.70%p의 정확도 향상을 달성했다.</p>
+<h2>배경 및 문제의식</h2>
+<p>비디오 이벤트 예측(Video Event Prediction, VEP)은 부분적으로 관찰된 영상으로부터 앞으로 일어날 가장 타당한 미래 사건을 예측하는 과제로, 로보틱스·자율주행·지능형 감시 등에 핵심적이다. 일반적인 비디오 이해가 이미 관찰된 내용을 서술적으로 요약하는 데 그치는 반면, VEP는 관찰된 현실과 관찰되지 않은 미래 사이의 인과적 간극을 메우는 전향적(forward-looking) 추론을 요구한다. 그러나 기존 MLLM은 다음 세 가지 근본적 한계를 보인다. 첫째, "인과-논리 간극(Causal-Logic Gap)": 과거 사건 체인을 복원하는 능력이 있어도 이것이 미래 궤적을 추정하는 능력으로 자연스럽게 이어지지 않는다. 둘째, "언어적 편향 숏컷(Language-Prior Shortcut)": 모델이 영상 내용보다 질의와 텍스트상 가장 유사한 선택지를 고르는 식으로 표면적 어휘 패턴에 의존한다. 셋째, "시각 증거 누락(Visual-Evidence Omission)": 부분 가림, 빠른 움직임, 균일한 프레임 샘플링으로 인해 상태 확인에 필요한 시공간적 단서가 누락되어도 이를 복원할 메커니즘이 없다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>도구 증강 에이전틱 RL</strong>: 인과-전이 추론과 동적 증거 획득(tool-use)을 통합한 RL 프레임워크를 제안하고, 구조화된 SFT와 "인과 간극 보상(Causal Gap Reward)"을 통해 과거 요약이 아닌 미래지향적 추론으로 VEP를 수행하게 한다.</li>
+<li><strong>복합 반편향(Anti-Prior) 보상</strong>: 언어적 숏컷 행위에 페널티를 주고 시각적 증거에 기반한 추론을 장려하는 Anti-Prior 보상 항을 설계했다.</li>
+<li><strong>시공간 멀티툴 통합</strong>: 상태 추적, 집중 프레임 검색, 영역 확대, 시각적 세부사항 추출 기능을 통합한 진단 도구 라이브러리를 구축해 세밀한 모호성과 핵심 프레임 누락을 해결한다.</li>
+<li><strong>실증적 효과</strong>: FutureBench와 NEPBench에서 VepAgent(4B)가 기존 최강 MLLM 베이스라인 대비 각각 66.86%→81.44%(+14.58%p), 47.50%→70.20%(+22.70%p)의 성능 향상을 보였다.</li>
+</ul>
+<h2>방법론</h2>
+<p>VepAgent는 입력 영상 V, 질의 Q, 후보 미래 사건 집합 O를 받아 2단계 에이전틱 워크플로우로 동작한다. 1단계(관찰 및 도구 선택)에서는 마지막 관찰 상태(Sfinal)와 현재 진행 중인 미지완 행동(Aongoing)을 추정하고 미래 궤적에 대한 인과적 가설을 세운 뒤, 상태 전이가 모호하거나 가려지거나 프레임 샘플링으로 누락된 경우 진단 도구 라이브러리 중 적절한 부분집합을 선택한다. 도구 라이브러리는 ① State Transition Tracker(관찰된 사건 체인과 최종 상태를 명확한 텍스트 시퀀스로 재구성), ② Focused Evidence Retriever(특정 시간 구간에서 조밀한 프레임을 추가 추출해 균일 샘플링으로 누락된 동작을 복원), ③ Region Focus Magnifier(손-물체 접촉 여부 등 세부 공간 영역을 확대), ④ Visual Detail Extractor(최종 프레임의 세부 시각 정보를 텍스트로 명시화)로 구성된다. 2단계에서는 선택된 도구를 1회 실행하여 얻은 증거를 추론 컨텍스트에 통합해 최종 예측을 산출한다.</p>
+<p>학습 데이터는 Qwen3-VL-32B로 부분 관찰 영상마다 8회의 독립 롤아웃을 수행해 다양한 인과 추론 경로를 생성하고, Qwen-VL-Max를 전문가 평가자로 사용해 사실 오류·논리적 비약·언어 편향 숏컷이 있는 체인을 걸러낸 뒤 약 4,000개의 고품질 추론 체인("futurebench-4K")을 구성한다. 나머지 유효 경로는 RL 단계 학습 데이터로 사용된다. 학습은 2단계로 진행되는데, 직접 RL만 적용하면 도구 호출 빈도가 점차 감소하는 현상이 관찰되어, 먼저 SFT로 추론 구조와 도구 사용을 "콜드 스타트"시킨 뒤 GRPO(Group Relative Policy Optimization) 기반 RL로 정책을 최적화한다. 보상은 구조적 형식을 검증하는 게이트형 Format 보상 아래, 정답 정확도 보상(Racc), 인과 간극 브리징의 충실도를 평가하는 Causal Gap 보상(Rcau), 그리고 정답 선택지의 텍스트 유사도 순위가 낮을수록(즉 덜 명백한 정답일수록) 큰 보상을 주는 Anti-Prior 보상(Rant)을 0.65:0.20:0.15 비율로 결합한 복합 보상으로 구성된다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Qwen3-VL-4B-Instruct를 백본으로 하여 futurebench-4K(약 4,000개)로 SFT, 약 5,000개의 검증된 샘플로 GRPO 기반 RL(250 스텝, 샘플당 8회 롤아웃)을 수행했으며, A5000 GPU 8장을 사용했다. FutureBench(1-Hop/2-Hop/3-Hop/보간 예측 평가)에서 VepAgent-4B는 평균 정확도 81.44%를 기록해 기존 최강 베이스라인 Qwen3-VL-30B-A3B(66.86%)보다 14.58%p, 동일 크기 Qwen3-VL-4B(59.09%)보다 22.35%p 높았다. NEPBench(Charades·VidSitu·YouCook2 서브셋)에서는 전체 정확도 70.20%로 Qwen2.5-VL-72B(47.50%)보다 22.70%p 높았고, 서브셋별로도 모두 최고 성능(Charades 83.46%, VidSitu 54.78%, YouCook2 83.57%)을 기록했다. 어블레이션 결과, SFT만 적용 시 59.09%→71.59%, SFT+RL 시 75.09%, 도구까지 포함한 전체 모델은 78.79%(G=4 설정)로 단계적으로 개선되었다. 도구별 기여도 분석에서는 State Transition Tracker 제거 시 정확도가 3.13%p로 가장 크게 하락했고, 나머지 도구들도 각각 0.48~1.80%p의 보완적 기여를 보였다. 보상 항목별로는 정확도 보상만 사용 시 74.62%였으나 Causal Gap, Anti-Prior 보상을 추가하면 각각 76.42%, 76.33%로, 둘을 모두 포함하면 78.79%로 상승했다. 생성 수(RL 롤아웃 수)를 2에서 8로 늘리자 평균 정확도가 78.60%에서 81.44%로 개선되었다.</p>
+<h2>한계점</h2>
+<p>논문은 명시적인 "한계점" 절을 따로 두지 않았다. 다만 결론부에서 현재 평가가 FutureBench와 NEPBench 두 벤치마크에 한정되어 있으며 더 넓은 범위의 비디오 이해 환경에서는 검증되지 않았음을 언급하고, 향후 진단 도구 라이브러리를 확장하고 인과-전이 추론을 다른 환경에도 적용할 계획이라고 밝혔다.</p>
+<h2>시사점</h2>
+<p>VepAgent는 비디오 이벤트 예측을 단순한 패턴 매칭이나 과거 요약의 외삽이 아니라, 능동적으로 증거를 수집하고 인과적 간극을 메우는 과정으로 재정의했다는 점에서 의미가 있다. 특히 Anti-Prior 보상을 통해 모델이 텍스트 유사도에 기반한 "숏컷" 정답 선택을 억제하고 실제 시각적 근거에 기반해 판단하도록 유도한 설계는, 멀티모달 추론 모델 전반에서 언어적 편향을 완화하는 일반적 기법으로 확장될 수 있다. 또한 4B 규모의 비교적 작은 모델이 도구 증강 RL을 통해 수십억 파라미터가 더 큰 모델들을 능가한 결과는, 모델 크기 확장보다 에이전틱 도구 사용과 보상 설계가 비디오 추론 성능 향상에 더 효율적인 경로가 될 수 있음을 시사한다. 로보틱스, 자율주행, 지능형 감시 등 미래 사건 예측이 중요한 실제 응용 분야에도 직접적인 시사점을 제공한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.06293" target="_blank" rel="noopener">huggingface.co/papers/2610.06293</a> · 2026-10-09</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

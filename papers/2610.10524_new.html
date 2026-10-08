@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>그레이스</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#7 · Daily Papers 2026-10-09</span>
+      <span class="cat-tag">생성모델</span>
+      <span class="upvote-tag">▲ 63</span>
+    </div>
+    <h1 class="article-title">GRACE: Generation-Aware Latent Compression for Efficient Video Generation</h1>
+    <p class="article-title-ko">그레이스: 효율적인 비디오 생성을 위한 생성 인지형 잠재 압축</p>
+    <p class="article-sub">사전학습된 비디오 오토인코더와 디퓨전 트랜스포머(DiT)의 정합성을 유지하면서 latent를 추가로 압축하는 "생성 인지(generation-aware)" 압축 기법으로, Wan2.1 대비 토큰 수를 약 8배 줄이고 생성 속도를 최대 15.5배 높이면서도 VBench 품질을 거의 그대로 유지한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.10524" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.10524" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: GRACE: Generation-Aware Latent Compression for Efficient Video Generation</li>
+<li><strong>저자</strong>: Jiyoung Kim, Paul Hyunbin Cho, Jisu Nam, Donghoon Lee, Hyunsung Go, Yeonkyeong Lee, Hansaem Kim, Seungryong Kim (KAIST AI, Kakao Corp.; 1~3번째 저자는 Kakao Corp. 인턴 재직 중 수행)</li>
+<li><strong>출처</strong>: arXiv:2610.10524v1 [cs.CV] (2026년 10월 7일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://cvlab-kaist.github.io/GRACE/">https://cvlab-kaist.github.io/GRACE/</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.10524">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>사전학습된 비디오 오토인코더와 디퓨전 트랜스포머(DiT)의 정합성을 유지하면서 latent를 추가로 압축하는 "생성 인지(generation-aware)" 압축 기법으로, Wan2.1 대비 토큰 수를 약 8배 줄이고 생성 속도를 최대 15.5배 높이면서도 VBench 품질을 거의 그대로 유지한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>비디오 디퓨전 모델의 연산 비용은 DiT가 처리하는 latent 토큰 수에 크게 의존하며, DiT의 어텐션 연산은 시퀀스 길이에 대해 제곱으로 증가한다. 토큰 수는 비디오 오토인코더의 압축률에 의해 결정되므로, 압축률을 높이면 연산량을 줄일 수 있지만 재구성(reconstruction) 품질이 크게 떨어진다. 기존 연구들은 이를 보완하기 위해 토큰당 채널 수를 늘리는 방식을 썼지만, 채널 수가 커질수록 생성 품질이 저하되고 DiT 학습 수렴이 느려지는 트레이드오프가 발생한다. 또한 오토인코더 구조를 바꾸면 보통 처음부터 재학습해야 하므로 사전학습 지식을 활용하기 어렵고, 이미 공개된 고압축 오토인코더를 재사용하면 DiT가 한 번도 보지 못한 새로운 latent 공간에 적응해야 해서(예: 160 GPU로도 완전히 수렴하지 못하는 사례 존재) 막대한 적응 비용이 든다. 사전학습 오토인코더에 경량 압축 블록을 추가하는 절충안도 재구성 손실(L1/LPIPS/KL)만으로 최적화하면 latent 분포가 DiT가 학습한 분포에서 벗어나 생성 품질이 떨어진다는 것을 저자들은 실험적으로 확인했다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>듀얼 latent 표현(dual-latent representation)</strong>: 사전학습 인코더가 만드는 base latent(동결)와, 압축으로 손실된 공간적 디테일·프레임 간 모션을 보완하는 residual latent를 분리해 학습, 사전학습 latent 공간에 "앵커"를 유지</li>
+<li><strong>생성 인지 정렬(generation-aware alignment)</strong>: 재구성 손실 대신(또는 추가로) 동결된 DiT의 중간 특징 공간에서 압축된 latent와 원본 latent를 정렬하는 손실을 도입해 재구성-생성 품질 간 격차를 축소</li>
+<li><strong>비대칭 디노이징(asymmetric denoising)</strong>: base latent를 residual latent보다 먼저(더 적은 노이즈 수준에서) 디노이징하여 추가 샘플링 비용 없이 품질을 높임</li>
+<li><strong>대규모 효율 향상</strong>: 토큰 수 약 8배 감소(공간 16배 × 시간 8배 압축), 480×832×81 해상도에서 11.1배, 736×1280×81에서 15.5배 지연시간 감소, 그러면서도 VBench 생성 품질은 압축 전 Wan2.1-14B 파이프라인과 거의 동일(I2V는 0.02~0.04 이내 차이, T2V는 오히려 더 높음)</li>
+</ul>
+<h2>방법론</h2>
+<p>GRACE는 2단계 프레임워크다. <strong>1단계(오토인코더 학습)</strong>: 사전학습된 Wan2.1 오토인코더의 가중치는 그대로 두고, 입력을 공간적으로 rs배, 시간적으로 rt배 다운샘플링한 저해상도 입력을 동결 인코더 E에 통과시켜 base latent z_base를 얻는다. 동시에 사전학습 가중치로 초기화한 residual encoder E_res가 원본 해상도 입력에서 base가 놓친 디테일·모션 정보를 C'개의 추가 채널(residual latent z_res)로 추출한다. 두 latent를 채널 축으로 concat해 압축 latent z를 구성한다. 여기에 "generation-aware alignment" 손실(L_align)을 추가해, 노이즈를 섞은 압축 latent와 원본 latent를 동결된 DiT의 입력 프로젝션에 통과시켜 얻은 중간 레이어(40개 DiT 블록 중 앞 10개) 특징 간 코사인 유사도를 맞춘다. 재구성 손실(L_recon)과 정렬 손실(L_align)은 Eres 마지막 conv층에 대한 그래디언트 norm 비율로 가중치를 자동 조절해 결합한다. <strong>2단계(DiT 적응)</strong>: DiT의 입력·출력 프로젝션을 C+C' 채널로 확장해 완전 미세조정하고, 트랜스포머 블록에는 LoRA를 적용한다. 핵심 아이디어인 비대칭 디노이징은 학습 시 base-ahead 오프셋 δ를 샘플링해 base latent가 residual latent보다 항상 덜 손상된(노이즈가 적은) 상태로 동시에 한 forward pass 안에서 디노이징되도록 해, 추론 시 추가 비용 없이 residual이 이미 안정된 base 위에서 디테일을 복원하게 한다. 실험에서는 f8t4(기존)→f16t8(압축), C'=16 설정을 사용했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Wan2.1-I2V-14B/T2V-14B를 베이스로 Panda-70M 데이터셋에서 두 단계를 학습(오토인코더 8.5 H200 GPU일 + DiT 30일, 총 38.5 GPU일 예산). 재구성은 PSNR/SSIM/LPIPS/rFVD, 생성 품질은 VBench(-I2V/-T2V)로 평가, 지연시간은 단일 A100 GPU에서 측정. Step-Video-VAE, Video DC-AE, LTX-VAE 등 기존 고압축 오토인코더 및 DC-Gen(동일 Wan2.1 DiT를 다른 방식으로 적응), Open-Sora 2.0, LTX-Video와 비교했다. 480×832×81에서 GRACE는 4.3k 토큰(32.8k 대비 약 8배 감소)으로 VBench-T2V Total 85.81(압축 전 83.93보다 오히려 높음), VBench-I2V Total 87.90(압축 전 87.92와 거의 동일)을 기록했고, 지연시간은 851.5초→75.8초(T2V), 11.1배 단축되었다. 736×1280×81에서는 15.5배 단축(3361.3초→215.6초)되면서 T2V Total 84.74로 비교 모델 중 최고치를 기록했다. 동일 토큰 수를 쓰는 DC-Gen보다 속도와 VBench 점수 모두 우위였으며, 흥미롭게도 재구성 품질(PSNR)이 가장 좋은 모델이 생성 품질에서는 최고가 아니었다(예: single-latent 베이스라인이 GRACE-VAE보다 PSNR은 1.13dB 높지만 VBench-I2V는 1.46점 낮음). Ablation에서는 듀얼 latent, 정렬 손실, 비대칭 디노이징 각각이 VBench T2V Semantic 점수를 순차적으로 향상시켰음을 확인했고, 정렬 대상으로 DiT 특징을 쓰는 것이 V-JEPA 2.1 같은 범용 비전 파운데이션 모델 특징을 쓰는 것보다 더 효과적임을 보였다.</p>
+<h2>한계점</h2>
+<p>latent를 압축하면 프레임당 토큰 수가 줄어 멀리 있는 얼굴, 표지판의 글자, 얇은 구조물 등 작은 객체의 디테일이 손실되거나 깨지는 경향이 있다(전체 장면과 모션은 유지됨). 이 현상은 해상도가 높을수록(736×1280) 프레임당 토큰 수가 많아져 덜 두드러진다. 또한 GRACE-VAE는 재구성보다 생성(DiT 적응 용이성)에 최적화되어 있어 동일 토큰 수의 single-latent 베이스라인 대비 PSNR이 1.13dB 낮은 등 재구성 충실도를 일부 희생한다. residual 채널을 늘리면 디테일을 더 복원할 수 있지만, 사전학습 DiT를 더 고차원 latent에 적응시키는 것 자체가 어려운 문제로 남아 향후 과제로 제시된다. 마지막으로, GRACE를 새로운 사전학습 파이프라인에 적용하려면 해당 파이프라인의 동결 인코더와 DiT에 맞춰 새로운 오토인코더를 처음부터 다시 학습해야 하므로(1단계당 약 8.5 H200 GPU일), 파이프라인마다 추가 학습 비용이 발생한다.</p>
+<h2>시사점</h2>
+<p>이 논문은 "재구성 품질이 좋다고 생성 품질도 좋아지는 것은 아니다"라는 점을 여러 베이스라인 비교로 명확히 보여주며, 압축 latent를 사전학습 DiT가 이미 학습한 표현 공간에 맞춰 정렬하는 것이 압축-생성 품질 간 격차를 줄이는 효과적인 방법임을 제시한다. 오토인코더를 처음부터 재학습하지 않고 기존 사전학습 가중치(인코더·DiT)를 최대한 재사용하면서 경량 미세조정(LoRA 등)만으로 큰 효율 향상을 달성한 점은, 이미 막대한 자원으로 학습된 대형 비디오 생성 모델(Wan2.1 등)을 실제 서비스에 배포할 때 재학습 비용 없이 추론을 가속화하는 실용적인 경로를 제시한다는 점에서 산업적 시사점이 크다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.10524" target="_blank" rel="noopener">huggingface.co/papers/2610.10524</a> · 2026-10-09</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

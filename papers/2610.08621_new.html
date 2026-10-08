@@ -1,0 +1,124 @@
+<meta charset="UTF-8">
+<title>리커시브 게임 크리에이터</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#4 · Daily Papers 2026-10-09</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 78</span>
+    </div>
+    <h1 class="article-title">Recursive Game Creator: An Agentic Product-Level Experience-Oriented Game Harness</h1>
+    <p class="article-title-ko">리커시브 게임 크리에이터: 경험 중심의 제품급 에이전틱 게임 제작 하네스</p>
+    <p class="article-sub">Designer-Builder-Player-Reviewer 네 역할로 구성된 재귀적 멀티 에이전트 하니스를 통해, 실행 가능한 게임 프로토타입을 반복적인 플레이테스트와 경험 중심 피드백으로 "재미있는" 제품 수준 게임으로 발전시키는 프레임워크를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.08621" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.08621" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Recursive Game Creator: An Agentic Product-Level Experience-Oriented Game Harness</li>
+<li><strong>저자</strong>: Jiajun Chen, Haoyu Wu, Mingda Jia, Xihui Liu (공동 1저자 3인 포함) — HKU MMLab, The University of Hong Kong, Shenzhen Loop Area Institute 소속</li>
+<li><strong>출처</strong>: arXiv:2610.08621v1 [cs.AI] (2026년 10월 6일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음 (코드는 "coming soon"으로만 언급됨)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.08621">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>Designer-Builder-Player-Reviewer 네 역할로 구성된 재귀적 멀티 에이전트 하니스를 통해, 실행 가능한 게임 프로토타입을 반복적인 플레이테스트와 경험 중심 피드백으로 "재미있는" 제품 수준 게임으로 발전시키는 프레임워크를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>최근 코딩 에이전트는 실행 가능한 게임을 빠르게 만들어낼 수 있지만, 프로그램이 정상 동작한다는 것과 플레이어가 실제로 즐거움을 느끼는 경험을 제공한다는 것은 다른 문제다. 조작감, 난이도, 연출의 일관성, 피드백의 즉각성 같은 요소들은 단순한 기능 완성도와는 별개로 설계되어야 한다. 기존의 반복적 게임 개발 에이전트들은 플레이테스트를 GUI 에이전트를 통한 스크린샷 기반 상호작용으로 수행하는데, 이는 느리고 상태·이벤트 정보를 충분히 포착하지 못하며 평가에 편향을 유발한다. 저자들은 기능적 프로토타입을 경험 중심(experience-oriented)으로 반복 개선하면서, 동시에 사용자의 취향에 맞춰 커스터마이징까지 지원하는 하니스가 필요하다고 지적한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>제품 수준 재귀 게임 개발 하니스</strong>: Designer, Builder, Player, Reviewer 네 역할을 폐쇠 루프로 연결해 다회차(multi-round) 게임 진화와 사용자 지향 커스터마이징을 지원.</li>
+<li><strong>코딩 네이티브(coding-native) Player와 경험 중심 Reviewer</strong>: Player가 프로그래밍 인터페이스를 통해 재사용 가능한 정책(policy) 코드를 작성·실행하여 다양한 플레이 경로(trajectory)를 효율적으로 수집하고, Reviewer는 범용 지표와 게임별 세부 평가 기준(rubric)을 결합해 선호 기반 피드백을 생성.</li>
+<li><strong>SOTA 수준의 게임 설계 성능</strong>: GameCraft-Bench와 GameASG-Bench에서 비교 대상 중 최고 종합 성능을 달성했고, 사용자 연구를 통해 플레이 선호 기반 커스터마이징 효과도 입증.</li>
+</ul>
+<h2>방법론</h2>
+<p>Recursive Game Creator는 사용자 지시와 리뷰 피드백을 받아 Designer → Builder → Player → Reviewer 순으로 순환하는 폐쇠 루프 구조를 가진다.</p>
+<ul>
+<li><strong>Designer</strong>: 사용자 요구사항 U, 현재 게임 Gt, 이전 피드백 Ht-1을 입력받아 수정 계획 Pt = (ht, Δt, At, Xt)를 생성한다. ht는 의도한 경험적 개선 가설, Δt는 구체적 변경사항, At는 장면·입력·결과 기준의 수용 목표, Xt는 필요한 에셋 요청을 의미한다. 즉 경험 목표를 구현 가능한 의사결정과 검증 가능한 목표로 변환한다.</li>
+<li><strong>Builder</strong>: Designer의 계획을 받아 Draft(초안 구현, 플레이스홀더 사용 가능) → 에셋 생성(Generate) → Integrate(통합)의 단계로 진행하며, 플레이 가능한 후보 게임 Ct를 만든다. 생성된 에셋이 실제 게임 장면 안에서 충돌·애니메이션·상호작용 영역과 잘 결합되는지 자체 점검(targeted self-check)도 수행한다.</li>
+<li><strong>Coding-Native Player</strong>: GUI 기반 플레이 테스트와 달리, Player는 게임의 상태 스키마와 가능한 행동을 읽고 실행 가능한 정책 코드(policy)를 직접 작성해 커맨드라인/프로그래밍 인터페이스로 반복 실행한다. 각 정책 πt,k는 트레젝터리 τt,k를 생성하며, 여러 정책(공격적/탐험적 등 전략이 다른)을 병렬·반복 실행해 상태, 행동, 이벤트, 진행도, 소요 시간, 종료 결과를 기록한 증거 집합 Et를 구성한다. 이는 매 행동마다 모델이 이미지를 해석할 필요를 없애 고빈도·재현 가능한 수집을 가능하게 한다.</li>
+<li><strong>Experience-Oriented Reviewer</strong>: Player가 수집한 다수의 트레젝터리와 샘플링된 스크린샷/녹화를 함께 분석한다. 성공률과 플레이타임 같은 공통 지표 외에, 게임 장르에 맞는 특화된 평가 기준(예: 레이싱 게임은 조작 반응성, 비주얼 노벨은 대화 및 선택의 일관성)을 스스로 도출해 적용한다. 후보 버전과 기존 버전을 익명으로 비교(A/B)해 어느 쪽을 유지할지 판단하고, 추론된 선호 혹은 사용자가 명시한 선호를 구조화된 텍스트 피드백으로 변환해 Designer에게 전달함으로써 다음 라운드 설계를 이끈다.</li>
+</ul>
+<p>이 루프는 정책 실행 → 트레젝터리/시각 증거 분석 → 선호·개선 피드백 → 새로운 설계 계획 → 재구현의 순으로 반복되며, 라운드 수는 설정 가능하다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>논문은 두 가지 벤치마크로 평가했다.</p>
+<ul>
+<li><strong>GameCraft-Bench</strong>: Godot 엔진으로 제작된 완전한 게임을 실제 플레이로 재현하고 게임별 세부 rubric(메커닉, 콘텐츠 깊이, 기능적 비주얼, 아트)으로 채점한다. GameCraft-Bench에서 선정된 45개 과제에 대해 3회의 개선 라운드를 수행한 결과, GPT-6 Astra 기반 베이스라인 71.26점에서 1라운드 72.70점 → 3라운드 77.89점으로 상승(베이스라인 대비 +6.63점, 라운드 간 +5.19점)했으며 Action, Timing, Strategy, Simulation, Adventure 다섯 범주 모두 개선되었다. Action 범주는 67.96 → 77.62로 가장 큰 폭(+9.66)으로 향상되었다.</li>
+<li><strong>GameASG-Bench</strong>: 생성된 브라우저 게임이 소스 코드 요구사항(L1)과 실제 브라우저 실행(L2, P0 시작/테스트 인터페이스·P1 필수 플레이·P2 확장 기능)을 충족하는지 검사한다. Recursive Game Creator는 47개 과제 중 25개(53.2%) 성공률을 달성했는데, 이는 동일 모델(GPT-6-Astra high) 베이스라인 대비 +34.1%p 개선이며, 비교 대상 중 평균 L2(런타임 체크) 통과율 93.4%로 최고치를 기록했다(L1 98.3%, P0 99.0%, P1 92.2%, P2 93.9%).</li>
+<li><strong>탐험 범위 분석</strong>: FPS 테스트 장면에서 코딩 네이티브 Player가 48회의 정책 롤아웃으로 97.1%의 그리드 커버리지(11개 실내 공간 포함)를 달성함을 보여, GUI 기반의 소수 경로 탐험보다 폭넓은 커버리지를 제공함을 정성적으로 제시했다(다만 통제된 속도 비교는 아님).</li>
+<li><strong>사용자 연구</strong>: 전문가 평가(1~10점) 기준 조작감(Controls) 2→8, 플레이어빌리티(Playability) 1→7, 깊이(Depth) 3→6, 아트(Art) 2→8로 라운드 1→3에서 향상되었고, 평균 플레이타임도 1.50분 → 12.41분으로 크게 증가했다.</li>
+</ul>
+<h2>한계점</h2>
+<p>논문에 명시된 한계로는, (1) Coding-Native Player가 사용하는 다양한 정책(policy)은 대리적(proxy) 테스트 행동을 제공할 뿐, 전체 인간 플레이어 집단을 대표한다고 보장할 수 없다는 점, (2) 프록시 플레이타임만으로는 인간의 실제 관심이나 즐거움을 입증하지 못한다는 점, (3) GUI 경로 비교는 예시적(illustrative) 성격이라 엄밀한 속도 비교가 아니며, 공정한 비교를 위해서는 정책 구성·실행·리뷰 비용까지 포함한 동일한 예산 하의 통제 실험이 필요하다는 점, (4) Action 범주처럼 조작·충돌·전투 피드백·진행도가 상호 연관된 영역은 여러 라운드의 플레이테스트-수정 사이클이 필요해 개선이 늦게 나타날 수 있다는 점이 논의되었다. 또한 코드는 논문 발표 시점에 아직 공개되지 않은 상태("Code is coming soon")이다.</p>
+<h2>시사점</h2>
+<p>이 연구는 게임 생성 에이전트의 평가축을 "실행 가능성"에서 "플레이 경험의 질"로 옮기는 구조적 설계를 제시한다. 특히 GUI 기반의 느리고 시각 해석에 의존하는 플레이테스트 대신, 코드로 작성된 재사용 가능한 정책을 통해 상태·이벤트 정보를 직접 활용함으로써 평가 효율과 다양성을 동시에 높인 점이 두드러진다. 또한 게임 장르별로 특화된 평가 기준을 에이전트가 스스로 도출하게 함으로써, 범용 지표만으로는 포착하기 어려운 장르 특이적 품질 요소(레이싱의 조작 반응성, 비주얼 노벨의 서사 일관성 등)를 반영할 수 있음을 보였다. 이러한 "설계-구현-플레이-리뷰"의 재귀적 폐쇠 루프는 게임 개발을 넘어 사용자 경험이 중요한 다른 생성형 에이전트 제품(예: 인터랙티브 콘텐츠, 교육 소프트웨어)에도 적용 가능한 일반적 패턴을 제공할 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.08621" target="_blank" rel="noopener">huggingface.co/papers/2610.08621</a> · 2026-10-09</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

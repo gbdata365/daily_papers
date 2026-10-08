@@ -1,0 +1,114 @@
+<meta charset="UTF-8">
+<title>세미팩추얼 신용증강 정책최적화</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#12 · Daily Papers 2026-10-09</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 36</span>
+    </div>
+    <h1 class="article-title">Semifactual Credit-Augmented Policy Optimization</h1>
+    <p class="article-title-ko">세미팩추얼 신용증강 정책최적화</p>
+    <p class="article-sub">검증 가능한 보상으로 학습된 추론 LLM이 과제와 무관한 프롬프트 표현(패러프레이즈, 오타, 불필요한 맥락 등)에 토큰 단위로 얼마나 민감한지를 "세미팩추얼(semifactual)" 개입으로 측정하고, 이 민감도(안정성) 신호를 GRPO의 토큰별 어드밴티지에 반영해 추론 정확도와 분포 외 일반화를 함께 개선하는 SCAPO를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.40360" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.40360" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Semifactual Credit-Augmented Policy Optimization</li>
+<li><strong>저자</strong>: Junshu Pan, Zhizhang Fu, Shulin Huang, Yiran Ding, Zifan Cheng, Wenqi Shao, Qiaosheng Zhang, Yue Zhang (교신저자) 등. Zhejiang University, Westlake University, Shanghai Innovation Institute, Shanghai AI Laboratory 소속</li>
+<li><strong>출처</strong>: arXiv:2609.40360v1 [cs.LG] (2026년 9월 30일)</li>
+<li><strong>프로젝트 페이지</strong>: 별도 프로젝트 페이지는 논문에 명시되지 않음 (코드 저장소: https://github.com/DtYXs/SCAPO)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.40360">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>검증 가능한 보상으로 학습된 추론 LLM이 과제와 무관한 프롬프트 표현(패러프레이즈, 오타, 불필요한 맥락 등)에 토큰 단위로 얼마나 민감한지를 "세미팩추얼(semifactual)" 개입으로 측정하고, 이 민감도(안정성) 신호를 GRPO의 토큰별 어드밴티지에 반영해 추론 정확도와 분포 외 일반화를 함께 개선하는 SCAPO를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>RLVR(검증 가능한 보상을 이용한 강화학습)은 OpenAI o1, DeepSeek-R1과 같은 LLM의 추론 능력을 크게 끌어올렸고, GRPO(Group Relative Policy Optimization)는 그 대표적 방법이다. RLVR이 허위 상관(spurious correlation) 의존을 줄여준다는 보고도 있지만, 실제로는 입력 교란이나 과제와 무관한 정보에 여전히 민감하다는 로버스트성 평가 결과들이 존재한다(GSM-Symbolic, ThinkBench 등). 저자들은 이 민감도를 "토큰 수준"에서 직접 분석한다. GRPO는 하나의 응답에 속한 모든 토큰에 동일한 결과 기반 어드밴티지(outcome-derived advantage)를 부여하기 때문에, 정답을 맞혔다는 보상이 유용한 추론 토큰뿐 아니라 프롬프트의 허위 특징에 의존하는 토큰까지 함께 강화할 위험이 있다는 것이 핵심 문제의식이다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>수학 문제와 정답은 그대로 유지하면서 패러프레이즈, 오타 잡음, 무관한 시나리오 포장, 무관한 맥락 추가라는 4종의 "세미팩추얼" 프롬프트 개입을 설계하여, 고정된 모델(RL 학습 전)의 토큰별 확률 변화(drift)를 측정함으로써 토큰 수준의 허위 의존성을 진단함.</li>
+<li>반성 표지어(reflection marker), 담화 연결어 등 조직/반성 관련 토큰이 수학 기호·숫자 토큰보다 평균 2~3배 더 높은 민감도를 보인다는 토큰 범주별 이질성을 발견.</li>
+<li>디코딩 시 민감도(drift)가 높은 후보 토큰을 억제(마스킹)하는 것만으로, 가중치 업데이트 없이도 Qwen3-4B-Base의 정확도를 15.8%에서 30.0%로 끌어올림(+14.2%p).</li>
+<li>이 세미팩추얼 안정성 신호를 GRPO의 토큰별 신용 할당에 결합한 SCAPO를 제안하고, 외부 보상 모델이나 과정 감독 없이 음의 보정만 적용하는 방식을 설계함.</li>
+</ul>
+<h2>방법론</h2>
+<p>세미팩추얼 개입은 원본 프롬프트의 수학 문제와 정답을 보존한 채 과제와 무관한 표현만 바꾸는 방식(패러프레이즈, 오타, 무관한 시나리오 포장, 무관한 맥락 삽입)으로 GPT-5.5를 이용해 생성한다. 원본 프롬프트 x(0)와 K개의 교란 프롬프트 x(1)...x(K)에 대해, 동일한 샘플링된 응답(및 그 접두사)을 "teacher-forcing"하여 각 위치의 토큰 확률 p_t^(0), p_t^(k)를 구하고, 이를 bounded-symmetric distance(식 d_t = |p^(0)-p^(k)| / ((p^(0)+p^(k))/2), 범위 [0,2])로 변환해 토큰별 확률 드리프트를 계산한다.</p>
+<p>이후 각 프롬프트 그룹 내에서 드리프트의 음수값을 표준화(z-score)하고 네 가지 교란 유형에 대해 평균·재정규화하여, 토큰별 상대 안정성 점수 u_{i,t}를 얻는다. 안정성이 높다는 것이 정답임을 보장하지 않으므로, 음수 부분만 취한 u⁻<em i_t="i,t">{i,t} = min(u</em>)를 구성한다. 이로써 상대적으로 불안정한 토큰은 어드밴티지가 깎이고(Ã≤A), 반대로 안정적인 토큰에는 추가 보상이 없다. 이 신용 증강은 학습 초반 N0 스텝 동안만 적용(λ=λ0)하고, 이후에는 λ=0으로 두어 표준 GRPO로 전환한다. 나머지 중요도 비율(importance ratio), 클리핑, 손실 reduction 방식은 GRPO와 동일하다.}, 0)만을 보정치로 사용한다. 이 보정치를 스톱그래디언트(stop-gradient) 처리한 뒤 계수 λ를 곱해 GRPO의 기존 어드밴티지 A_i에 더해 최종 토큰별 어드밴티지 Ã_{i,t} = A_i + λ·sg(u⁻_{i,t</p>
+<h2>실험 설정 및 결과</h2>
+<p>DAPO-Math-17K(약 17,000개 경쟁 수준 수학 문제)로 Qwen3-4B-Base(600 스텝) 및 Qwen3-1.7B-Base(1,000 스텝)를 직접 RL 학습했으며, SCAPO는 λ0=0.01, N0=120(4B)/200(1.7B)으로 설정했다. 평가는 AIME 2024-2026, AMC, HMMT, BRUMO, SMT, Omni-Math, Minerva, OlympiadBench(인-디스트리뷰션) 및 NoOp-AIME, ThinkBench-AIME, GPQA-Diamond(분포 외/도메인 전이)로 수행했으며, GRPO, GSPO, SAPO, CF-GRPO, FIPO를 베이스라인으로 비교했다.</p>
+<p>SCAPO는 GRPO 대비 AIME 2024-2026 정확도를 Qwen3-4B-Base에서 +5.63%p(22.08→27.71), Qwen3-1.7B-Base에서 +4.17%p(7.71→11.88) 높였고, HMMT에서도 각각 +4.46/+2.98%p 개선했다. 두 모델 규모 모두에서 8개 수학 벤치마크 전부에서 GRPO를 능가했으며, 4B에서는 8개 중 6개, 1.7B에서는 8개 전부에서 비교 방법들 중 최고 성능을 기록했다. 분포 외 벤치마크(NoOp-AIME, ThinkBench-AIME, GPQA-Diamond)에서도 두 모델 규모 모두에서 전 지표 최고 성능을 보였으며, GPQA-Diamond는 GRPO 대비 4B에서 36.26→42.45%(+6.19%p), 1.7B에서 27.42→31.25%(+3.83%p) 개선되었다. 또한 SCAPO는 GRPO와 동일한 최종 정확도에 절반 이하의 정책최적화 스텝으로 도달했다. 어블레이션 결과, 세미팩추얼 보정을 무작위로 섞거나(random shuffle) 정답을 바꾸는 반사실적(counterfactual) 교란으로 대체하면 성능이 떨어져, 보정이 실제 세미팩추얼 민감도에 정렬되어야 함을 확인했고, 음수 보정만 사용하는 것이 전체 부호 또는 양수만 사용하는 것보다 우수함을 보였다. 계산 비용 측면에서 세미팩추얼 probing 및 신용 구성은 전체 학습 시간의 1.8%에 불과(4B 모델 기준)했다.</p>
+<h2>한계점</h2>
+<p>논문에 별도의 "한계점" 절은 없으나, 결론부에서 향후 연구 방향으로 더 큰 모델, 더 다양한 아키텍처, 수학 추론 이외의 도메인으로의 확장을 언급하고 있어, 현재 실험이 Qwen3 계열의 비교적 작은 모델(1.7B, 4B)과 수학 추론 과제에 한정되어 있다는 점이 암묵적 한계로 제시된다.</p>
+<h2>시사점</h2>
+<p>이 연구는 RLVR로 학습된 추론 모델의 토큰 단위 허위 의존성을 정량적으로 드러내고, 이를 교정하는 저비용(학습 시간의 2% 미만) 신용 할당 기법이 정확도뿐 아니라 분포 외 일반화와 학습 효율(더 적은 스텝)까지 함께 개선할 수 있음을 보여준다. 이는 결과 기반(outcome-based) 보상만으로는 포착하기 어려운 토큰별 민감도 정보를 활용해 RLVR의 신용 할당을 더 세밀하게 설계할 수 있다는 방향성을 제시하며, 향후 더 큰 모델이나 비수학 도메인으로의 확장 가능성을 열어준다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.40360" target="_blank" rel="noopener">huggingface.co/papers/2609.40360</a> · 2026-10-09</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

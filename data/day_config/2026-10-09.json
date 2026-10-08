@@ -1,0 +1,110 @@
+{
+  "2609.38169": {
+    "base": "2609_스텝퀀트_델타룰-상태-양자화-오차분석",
+    "rank": "#1",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "99",
+    "en_title": "STEPQuant: When and Where Errors Matter in Delta-Rule Recurrent State Quantization",
+    "ko_title": "스텝퀀트: 델타룰 재귀 상태 양자화에서 오차가 언제 어디서 중요한가"
+  },
+  "2610.10528": {
+    "base": "2610_롱왐_월드액션모델-컨텍스트-확장",
+    "rank": "#2",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "88",
+    "en_title": "Long-WAM: Scaling the Context of World-Action Models",
+    "ko_title": "롱왐: 월드-액션 모델의 컨텍스트 확장"
+  },
+  "2610.08699": {
+    "base": "2610_나노뮤즈_모든-기기용-오픈소스-개인에이전트",
+    "rank": "#3",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "82",
+    "en_title": "nanoMuse: An Open-Source Personal Agent for Every Device You Own",
+    "ko_title": "나노뮤즈: 모든 기기를 위한 오픈소스 개인 에이전트"
+  },
+  "2610.08621": {
+    "base": "2610_리커시브게임크리에이터_경험중심-에이전틱-게임제작",
+    "rank": "#4",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "78",
+    "en_title": "Recursive Game Creator: An Agentic Product-Level Experience-Oriented Game Harness",
+    "ko_title": "리커시브 게임 크리에이터: 경험 중심의 제품급 에이전틱 게임 제작 하네스"
+  },
+  "2610.07967": {
+    "base": "2610_디셉이벨_LLM에이전트-기만행동-평가벤치마크",
+    "rank": "#5",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "66",
+    "en_title": "DecepEval: A Benchmark for Evaluating Deception in LLM Agents",
+    "ko_title": "디셉이벨: LLM 에이전트의 기만 행동을 평가하는 벤치마크"
+  },
+  "2610.04299": {
+    "base": "2610_질문의재질문_추론모델-자기진화-유지",
+    "rank": "#6",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "64",
+    "en_title": "Questioning the Questions: Sustaining Self-Evolution in Reasoning Models",
+    "ko_title": "질문을 다시 묻다: 추론 모델의 자기진화를 지속시키는 방법"
+  },
+  "2610.10524": {
+    "base": "2610_그레이스_생성인지-잠재압축-효율적비디오생성",
+    "rank": "#7",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "63",
+    "en_title": "GRACE: Generation-Aware Latent Compression for Efficient Video Generation",
+    "ko_title": "그레이스: 효율적인 비디오 생성을 위한 생성 인지형 잠재 압축"
+  },
+  "2610.09823": {
+    "base": "2610_울트라텍스트벤치_이미지생성-텍스트렌더링-평가",
+    "rank": "#8",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "54",
+    "en_title": "UltraTextBench: A Comprehensive Bilingual Benchmark for Evaluating Visual Text Rendering in Image Generation",
+    "ko_title": "울트라텍스트벤치: 이미지 생성의 시각적 텍스트 렌더링을 평가하는 이중언어 벤치마크"
+  },
+  "2610.06293": {
+    "base": "2610_벱에이전트_도구강화-강화학습-비디오이벤트예측",
+    "rank": "#9",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "53",
+    "en_title": "VepAgent: Bridging Causal-Transition via Tool-Augmented Reinforcement Learning for Video Event Prediction",
+    "ko_title": "벱에이전트: 도구 강화 강화학습으로 인과적 전이를 연결하는 비디오 이벤트 예측"
+  },
+  "2610.10429": {
+    "base": "2610_에스지에프플러스_자기회귀비디오생성-그래디언트분리",
+    "rank": "#10",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "51",
+    "en_title": "SGF+: Decoupling Gradient Flows for Autoregressive Video Generation",
+    "ko_title": "SGF+: 자기회귀적 비디오 생성을 위한 그래디언트 흐름 분리"
+  },
+  "2610.02054": {
+    "base": "2610_유니왐_통합-월드액션모델",
+    "rank": "#11",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "47",
+    "en_title": "UniWAM: Unified World-Action Model",
+    "ko_title": "유니왐: 통합 월드-액션 모델"
+  },
+  "2609.40360": {
+    "base": "2609_세미팩추얼_반사실기반-신용할당-정책최적화",
+    "rank": "#12",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "36",
+    "en_title": "Semifactual Credit-Augmented Policy Optimization",
+    "ko_title": "세미팩추얼 신용증강 정책최적화"
+  }
+}

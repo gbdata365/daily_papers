@@ -1,0 +1,115 @@
+<meta charset="UTF-8">
+<title>스텝퀀트</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#1 · Daily Papers 2026-10-09</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 99</span>
+    </div>
+    <h1 class="article-title">STEPQuant: When and Where Errors Matter in Delta-Rule Recurrent State Quantization</h1>
+    <p class="article-title-ko">스텝퀀트: 델타룰 재귀 상태 양자화에서 오차가 언제 어디서 중요한가</p>
+    <p class="article-sub">Delta-rule 기반 선형 어텐션의 재귀 상태(recurrent state)를 양자화할 때 오차가 "언제"(시간적 지속성)와 "어디서"(공간적 위치) 발생하는지를 분석하여, 이에 따라 정밀도를 차등 할당하고 행/열 스케일을 공동 피팅하는 STEPQuant를 제안해 6비트에서 FP32 수준의 정확도를 유지하면서 서빙 메모리를 크게 절감한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.38169" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.38169" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: STEPQuant: When and Where Errors Matter in Delta-Rule Recurrent State Quantization</li>
+<li><strong>저자</strong>: Bingchen Yao, Haobo Xu 외 7인 (Zhejiang University, NLPR &amp; MAIS/Institute of Automation CAS, Tsinghua University, City University of Hong Kong, Harvard University, The Chinese University of Hong Kong 등 소속)</li>
+<li><strong>출처</strong>: arXiv:2609.38169v1 [cs.CL] (2026년 9월 29일)</li>
+<li><strong>프로젝트 페이지</strong>: 코드 공개 - <a href="https://github.com/Dreamer-Toby/STEPQuant">GitHub</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.38169">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>Delta-rule 기반 선형 어텐션의 재귀 상태(recurrent state)를 양자화할 때 오차가 "언제"(시간적 지속성)와 "어디서"(공간적 위치) 발생하는지를 분석하여, 이에 따라 정밀도를 차등 할당하고 행/열 스케일을 공동 피팅하는 STEPQuant를 제안해 6비트에서 FP32 수준의 정확도를 유지하면서 서빙 메모리를 크게 절감한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>소프트맥스 어텐션은 시퀀스 길이에 비례해 커지는 KV 캐시를 사용하지만, 선형 어텐션(linear attention)은 과거 토큰 정보를 고정 크기의 재귀 상태 행렬로 압축해 저장한다. Qwen3.8-27B, Kimi-Linear-48B-A3B-Instruct 같은 최신 하이브리드 모델은 gated Delta-rule 재귀 메모리(GDN, KDA)와 표준 어텐션을 결합해 효율성과 성능을 모두 취하려 한다. 그러나 상태 크기가 시퀀스 길이와 무관하게 고정되어 있어도, 동시 접속 요청마다 별도의 상태를 유지해야 하므로 동시 요청 수가 늘어나면 메모리 사용량이 비례해 커진다. 실제로 SGLang 배포 환경에서 Qwen의 FP32 상태 풀은 동시 요청 70개 수준에서 이미 BF16 모델 가중치 메모리를 초과한다. 이를 줄이기 위해 균등(uniform) 양자화를 그대로 적용하면, 각 Delta 업데이트가 근사된 상태 위에서 수행되고 다시 양자화되므로 오차가 후속 디코딩 단계로 계속 전파되어 4~6비트에서 정확도가 급격히 떨어지는 문제가 있다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>오차 분석</strong>: Delta-rule 업데이트에서 양자화 오차가 시간적으로(상태의 "수명"에 따라 오래 지속)과 공간적으로(키 행(key row)의 위치에 따라 출력에 미치는 영향이 다름) 서로 다른 방식으로 축적됨을 수학적·실험적으로 규명했다.</li>
+<li><strong>양자화 기법 제안</strong>: 시간 차원의 Lifetime-aware Bit Allocation과 공간 차원의 Key-Row-Aware Dual-axis Fitting을 결합한 STEPQuant를 제안, 6비트에서 FP32 상태 정확도에 근접하고 4비트에서도 균등 INT8보다 우수한 성능을 달성했다.</li>
+<li><strong>서빙 구현</strong>: SGLang에 최적화된 GPU 커널과 함께 통합하여, 5배 이상의 재귀 상태 압축과 최대 2.91배 빠른 상태 업데이트를 실현했다.</li>
+</ul>
+<h2>방법론</h2>
+<p>STEPQuant는 두 축으로 구성된다.</p>
+<p>1) <strong>시간적 축 (Lifetime-aware Bit Allocation)</strong>: 저자들은 오차 전파에 대한 명제를 통해, 누적 오차 $E_t$가 전이 행렬 $A_t$를 통해 전달되며, 게이트 유지율(retention)이 1에 가까울수록(즉 "수명"이 길수록) 오차가 오래 보존됨을 증명했다. 실제로 Qwen3.8-27B의 모든 재귀 헤드를 C4 데이터로 INT6 양자화해 확인한 결과, 게이트 반감기가 긴 헤드일수록 누적 오차가 크다는 상관관계(Spearman ρ≈0.80)를 확인했다. 이에 기반해, 각 유닛(Qwen에서는 헤드 단위, KDA에서는 키 행 단위)의 비트별 재구성 왜곡과 평균 로그 유지율을 추정하고, 이를 결합한 "수명 가중치"로 가중된 재구성 왜곡을 고정 비트 예산 하에서 최소화하도록 비트 폭을 선택한다. 양자화가 특히 어려운 소수의 고위험 유닛은 FP16으로 유지되는 "스파스 피벗(pivot)"으로 남겨둔다.</p>
+<p>2) <strong>공간적 축 (Key-Row-Aware Dual-axis Fitting)</strong>: 동일한 크기의 오차라도 어떤 키 행에서 발생했는지에 따라 최종 출력(readout)에 미치는 영향이 다르다는 점을 "행 영향도 점수(row-impact score)"로 정량화했다. 실제로 영향도가 큰 행 그룹을 INT4로만 양자화하면 퍼플렉시티가 더 크게 증가함을 확인했다. 또한 상태 행렬은 키 행과 값 열(value column) 양쪽 모두에서 아웃라이어가 나타나는 이중축 구조를 가지며(최대/중앙값 RMS 비율이 행에서 10.3배, 열에서 19.4배), 단일 축 스케일링으로는 이를 모두 포착할 수 없다. 이에 행 스케일(ri)은 행의 크기와 영향도 점수를 결합(제곱근 스케일링)해 산출하고, 열 스케일(cj)은 영향도로 가중된 재구성 오차를 최소화하도록 피팅한다.</p>
+<p>이 두 요소는 SGLang의 재귀 상태 풀에 통합된 패킹 커널로 구현되며, 비트 할당·피벗 선정은 오프라인 캘리브레이션으로 고정하고, 디코딩 중에는 타일 단위 상태 재구성·Delta 업데이트·readout을 하나의 커널로 융합하며, 스케일 갱신과 압축 저장(writeback)은 별도 CUDA 스트림에서 모델 연산과 오버랩되도록 설계했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Qwen3.8-27B(GDN)와 Kimi-Linear-48B-A3B-Instruct(KDA)를 SGLang과 A800 GPU 4장에서 BF16 및 4비트 AWQ 가중치로 평가했다. 캘리브레이션은 WikiText-2 32개 세그먼트를 사용했다. 장문 생성 추론 과제 7개(LiveCodeBench v6, EvalPlus, AIME 2026, MATH-500, HMMT, GPQA Diamond, IFBench)와 단문 이해 과제 6개(MMLU, ARC-C, OpenBookQA, HellaSwag, WinoGrande, LAMBADA)로 평가했다.</p>
+<p>장문 추론에서 6비트 STEPQuant는 평균 정확도 Qwen 80.59%, Kimi 61.47%를 기록해 FP32(80.60%, 61.52%)에 거의 근접했으나, 균등 INT6는 각각 45.04%, 45.70%로 급락했다. 4비트에서도 STEPQuant는 Qwen 80.51%, Kimi 58.52%를 유지한 반면 균등 INT4는 12.73%, 21.63%로 붕괴했다. 단문 과제에서도 4비트 STEPQuant는 FP32 대비 Qwen에서 0.15점, Kimi에서 0.25점 차이에 불과했다. 4비트 AWQ 가중치 양자화와 결합한 설정에서도 6비트 STEPQuant는 FP32 대비 0.05~0.33점 차이로 견조했다. 컴포넌트 제거 실험에서는 공간/시간 요소 각각보다 결합했을 때 성능이 크게 개선됨을 확인했고(예: 4비트에서 STEPQuant 84.72% vs 공간만 73.95%, 시간만 12.87%), Q-Mamba의 이중축 양자화(DSQ)보다도 우수했다. 효율성 측면에서는 배치 512, W4 가중치 기준으로 전체 서빙 메모리를 419.73GiB에서 131.18GiB로 68.7% 절감했고, 재귀 상태 메모리는 5.03배(80.1% 절감), 상태 업데이트 시간은 2.91배(65.6% 절감) 개선되었다.</p>
+<h2>한계점</h2>
+<p>논문에 명시된 한계는 명확히 서술되어 있지 않다. 다만 저자들은 정량화가 어려운 소수의 "고위험" 유닛을 FP16 피벗으로 남겨두어야 한다는 점, 그리고 Gated DeltaNet·KDA 두 아키텍처에 한정해 평가했다는 점을 암묵적으로 드러내고 있다.</p>
+<h2>시사점</h2>
+<p>선형 어텐션/Delta-rule 기반 하이브리드 모델이 늘어나는 상황에서, 고정 크기 상태라 해도 동시 서빙 환경에서는 심각한 메모리 병목이 될 수 있음을 보이고, 이를 해결하는 실질적 양자화 기법을 제시했다는 점에서 의미가 크다. 특히 "언제"(시간적 지속성)와 "어디서"(공간적 위치) 오차가 영향을 미치는지를 분리해 분석하는 프레임워크는 다른 재귀 상태 기반 아키텍처(예: Mamba 계열)에도 확장 가능한 일반적 통찰을 제공한다. SGLang에 실제 커널로 통합해 68.7%의 전체 메모리 절감과 2.91배의 속도 향상을 보여줌으로써, 산업 현장에서 긴 컨텍스트·고동시성 서빙 비용을 낮추는 데 실용적으로 기여할 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.38169" target="_blank" rel="noopener">huggingface.co/papers/2609.38169</a> · 2026-10-09</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

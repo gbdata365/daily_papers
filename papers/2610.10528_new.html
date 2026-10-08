@@ -1,0 +1,117 @@
+<meta charset="UTF-8">
+<title>롱왐</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#2 · Daily Papers 2026-10-09</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 88</span>
+    </div>
+    <h1 class="article-title">Long-WAM: Scaling the Context of World-Action Models</h1>
+    <p class="article-title-ko">롱왐: 월드-액션 모델의 컨텍스트 확장</p>
+    <p class="article-sub">실시간 로봇 제어에서 긴 시각적 히스토리(최대 19.2초)를 활용하는 것이 실제로 성능 향상으로 이어지려면 비디오 기반 모델이 "자기회귀(AR)" 방식으로 사전학습되어야 한다는 것을 밝히고, 이를 기반으로 모델-시스템 통합 프레임워크인 Long-WAM을 제안하여 긴 컨텍스트와 실시간 응답성을 동시에 달성한 연구.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.10528" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.10528" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Long-WAM: Scaling the Context of World-Action Models</li>
+<li><strong>저자</strong>: Wei Huang, Bohan Zhang 외 다수 (Linxi "Jim" Fan, Xiaojuan Qi, Song Han, Yukang Chen 등 포함), NVIDIA, MIT, HKU(홍콩대), UCSD 공동 연구</li>
+<li><strong>출처</strong>: arXiv:2610.10528v1 [cs.RO] (2026년 10월 7일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음 (텍스트상 "Code"와 "Project Page" 링크 표시만 있으며 실제 URL은 추출되지 않음)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.10528">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>실시간 로봇 제어에서 긴 시각적 히스토리(최대 19.2초)를 활용하는 것이 실제로 성능 향상으로 이어지려면 비디오 기반 모델이 "자기회귀(AR)" 방식으로 사전학습되어야 한다는 것을 밝히고, 이를 기반으로 모델-시스템 통합 프레임워크인 Long-WAM을 제안하여 긴 컨텍스트와 실시간 응답성을 동시에 달성한 연구.</p>
+<h2>배경 및 문제의식</h2>
+<p>로봇이 실시간으로 동작을 제어하려면 현재 장면뿐 아니라 "어떻게 변화해왔는가"에 대한 정보, 즉 시각적 히스토리가 필요하다. 단일 이미지만으로는 물체의 움직임이나 작업 진행 상황이 모호하기 때문이다. World-Action Model(WAM)은 비디오 예측을 폐루프 제어에 결합하여 이 히스토리를 활용하지만, 히스토리를 더 많이 처리할수록 응답(행동 생성)이 지연되는 문제가 발생한다. 또한 기존 연구들은 "히스토리에 접근할 수 있다는 것"과 "히스토리를 실제로 활용해 미래를 예측하는 능력을 학습했는가"를 구분하지 않았다. 저자들은 DreamZero, LingBot-VA 등 기존 WAM들이 양방향(bidirectional) 사전학습된 비디오 생성기를 인과적(causal) 비디오-행동 예측으로 변환하는 방식을 취했지만, 이 경우 긴 히스토리를 주어도 성능 향상이 뚜렷하지 않을 수 있다는 점에 주목했다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>비디오 파운데이션 모델의 사전학습 방식(자기회귀 AR vs. 양방향)에 따라 긴 컨텍스트의 효용이 근본적으로 달라진다는 것을 실증적으로 규명(핵심 발견).</li>
+<li>로봇·에고센트릭 비디오만으로 행동 레이블 없이 인과적 비디오 예측을 먼저 학습(LongLive2.0-Robot)한 뒤, 이 history-to-future 구조를 유지하며 행동(action) 모델로 적응시키는 "causal-to-causal" 2단계 학습 방법론(IDM: Inverse Dynamics Modeling) 제시.</li>
+<li>비동기 실행, 스트리밍 비디오 인코딩(VAE), NVFP4 양자화 및 하드웨어별 커널 최적화를 결합해 미래 예측을 유지하면서도 RTX 5090, DGX Spark, Jetson AGX Thor 등 엣지 기기에서 실시간 추론(액션 청크당 107.4ms)을 달성.</li>
+<li>RoboCasa GR-1, LIBERO-Long, RoboTwin 2.0, DOMINO 등 다수 시뮬레이션 벤치마크와 실제 로봇(Unitree G1, YAM) 실험에서 비교 방법 대비 최고 성능 입증, 상위 플래너(GPT-6 Astra)와 결합 시 더 큰 성능 향상을 보이는 계층적 시스템으로서의 가능성 제시.</li>
+</ul>
+<h2>방법론</h2>
+<p>Long-WAM은 두 단계로 구성된다. 1단계(LongLive2.0-Robot 사전학습)에서는 행동 레이블 없이 로봇 및 에고센트릭 비디오(RoVid-X, AgiBot World, EgoDex, EgoVerse, VITRA 등 5개 데이터셋, 약 10,000 시간 분량, 최대 30초 시퀀스)에 대해 LongLive-2.0의 16초 AR 체크포인트를 이어서 블록-인과적(block-causal) 어텐션과 teacher-forcing, 오류 리사이클링(error recycling)을 적용해 자기회귀적 비디오 예측을 학습한다. 2단계(causal-to-causal 월드-액션 적응)에서는 비디오 전문가(video expert)와 행동 전문가(action expert)를 비대칭 어텐션 구조로 결합한다. 비디오 쿼리는 자신 및 이전 비디오 블록만 참조하고, 행동 쿼리는 관측된 히스토리와 부분적으로 디노이즈된 미래 잠재표현(latent) 및 전체 노이즈가 섞인 행동 청크를 모두 참조할 수 있다(IDM, Inverse Dynamics Modeling). 즉 비디오 전문가가 먼저 미래 잠재표현을 일부 디노이즈(σ*=0.9)해 "상상"하고, 이 캐시(KV)를 행동 전문가가 재사용해 행동을 디노이즈한다. 두 단계는 비디오 flow matching, 행동 flow matching의 2-pass 학습으로 분리되며, 행동 손실은 비디오 캐시를 detach하여 행동 전문가와 proprioceptive 어댑터만 업데이트한다. 컨텍스트 스케일링 실험에서는 각 히스토리 길이(0~38.4초)마다 별도 모델을 학습해 성능을 비교했다. 실시간 배포를 위해 비동기 실행(추론과 로봇 실행을 오버랩), 스트리밍 인과적 VAE(관측이 들어오는 즉시 인코딩), NVFP4(4비트) 양자화, CUDA Graph/컴파일, 디바이스별 GEMM/어텐션 커널 튜닝 등을 결합했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>시뮬레이션 환경은 LIBERO(LIBERO-Long 포함), RoboTwin 2.0, DOMINO, RoboCasa GR-1/RoboCasa365이며, 실제 로봇 실험은 Unitree G1(휴머노이드)과 YAM(양팔 로봇)에서 수행됐다. 주요 수치 결과: RoboCasa GR-1에서 히스토리를 0초에서 19.2초로 늘리자 성공률이 63.3%→78.7%(+15.4pt)로 상승했으나, 양방향 사전학습 초기화에서는 순이익이 거의 없었음. LIBERO-Long에서는 2.4초 히스토리로 94.5%→99.5%로 향상. RoboTwin 2.0 평균 94.4%, DOMINO 34.9%(SR)로 비교 방법 중 최고 성능. 자기회귀 사전학습의 우위는 컨텍스트가 길어질수록 커져(히스토리 0초에서 3.3pt 차이 → 19.2초에서 17.1pt 차이), 38.4초에서는 오히려 성능이 소폭 하락(75.2%)했는데 이는 평균 학습 궤적(12.1초)의 3배 길이라 80.4%가 패딩인 데이터 희소성 때문으로 추정. 효율성 측면에서는 RTX 5090에서 전체 관측 VAE 연산을 포함한 액션 청크당 지연시간이 BF16 eager 대비 3.3배 빠른 107.4ms(DGX Spark 4.1배, Jetson Thor 3.2배)를 달성했다. 실제 로봇 실험에서는 컨베이어 벨트 속도 7.5cm/s에서 컵을 90% 성공률로 집었고, 움직이는 컵 쌓기에서 95% 성공(동일 조건에서 π0.5와 Fast-WAM은 20회 중 0회 성공). YAM에서는 평균 40초 이상 걸리는 장기 작업(색상별 블록 분류, 만두 놓기, 그릇 쌓기)에서 평균 81.7% 성공. RoboCasa365에서 Long-WAM 체크포인트를 GPT-6 Astra 플래너와 결합하면 전체 성공률이 31.4%→54.4%로 상승(플래너 단독 25.2%), π0.5+플래너 조합(+13.6pt)보다 더 큰 향상(+23.0pt)을 보여 강한 실행 능력이 상위 계획의 효과를 증폭시킨다는 결론을 지지했다.</p>
+<h2>한계점</h2>
+<ul>
+<li>각 컨텍스트 길이마다 별도 모델을 학습했기 때문에, 테스트 시점에 윈도우 길이를 동적으로 조절하는 단일 정책은 아직 구현되지 않았으며 이를 향후 과제로 제시함.</li>
+<li>38.4초의 매우 긴 히스토리에서는 성능이 오히려 하락했는데, 이는 현재 데이터셋의 실제 히스토리 밀도가 낮아(패딩 비율 80.4%) 발생한 것으로 추정되며, 더 길고 밀도 높은 로봇 녹화 데이터가 필요하다고 언급함.</li>
+<li>사전학습이 행동 레이블 없는 비디오 전용이라, 특정 임베디먼트(embodiment)에 대한 전이 성능은 별도 평가가 필요하다고 밝힘.</li>
+<li>긴 컨텍스트는 추론 지연시간 증가(8배 긴 히스토리 시 지연시간 3.2배 증가)라는 비용을 수반하므로, 컨텍스트 길이는 작업 및 가용 연산량에 따라 조정해야 하는 trade-off로 남아 있음.</li>
+</ul>
+<h2>시사점</h2>
+<p>이 연구는 "메모리를 가진 정책인가"라는 질문에서 "컨텍스트 길이, 예측 표현, 실행 예산을 함께 어떻게 설계할 것인가"로 설계 관점을 전환시킨다. 로봇 제어 정책 평가 시 단순히 과업 성공률만이 아니라 (1) 무엇을 기억하는지, (2) 얼마나 잘 행동하는지, (3) 새로운 관측을 얼마나 빠르게 반영할 수 있는지를 함께 고려해야 한다는 점을 제안한다. 또한 저수준 제어기는 모든 히스토리를 무한정 담을 필요 없이 최근 동작·상호작용 상태 정도만 기억하면 충분하며, 시간 단위의 장기 목표나 작업 분해는 상위 플래너가 맡는 역할 분담이 효과적임을 보여준다. 이는 향후 로봇 파운데이션 모델 설계에서 "자기회귀 비디오 사전학습 + 인과구조 보존 적응 + 하드웨어 인지형 실시간 추론"이라는 조합이 유망한 방향이 될 수 있음을 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.10528" target="_blank" rel="noopener">huggingface.co/papers/2610.10528</a> · 2026-10-09</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

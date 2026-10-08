@@ -1,0 +1,113 @@
+<meta charset="UTF-8">
+<title>나노뮤즈</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#3 · Daily Papers 2026-10-09</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 82</span>
+    </div>
+    <h1 class="article-title">nanoMuse: An Open-Source Personal Agent for Every Device You Own</h1>
+    <p class="article-title-ko">나노뮤즈: 모든 기기를 위한 오픈소스 개인 에이전트</p>
+    <p class="article-sub">Meta의 폐쇄형 개인 에이전트 "Muse"에 대응해, 사람이 가진 모든 기기(Android, iOS, 데스크톱, 웹)에서 동작하는 GPL-3.0 오픈소스 개인 에이전트 nanoMuse를 제시하고, 그 설계·안전장치(Sentinel)·메모리 구조와 함께 "개인 에이전트란 무엇이어야 하는가"에 대한 질문틀을 제시하는 시스템/포지션 리포트.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.08699" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.08699" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: nanoMuse: An Open-Source Personal Agent for Every Device You Own</li>
+<li><strong>저자</strong>: Guangyi Liu, Yong Liu, Jiangning Zhang (Zhejiang University, 교신저자 Jiangning Zhang)</li>
+<li><strong>출처</strong>: arXiv:2610.08699v1 [cs.AI] (2026년 10월 6일)</li>
+<li><strong>프로젝트 페이지</strong>: 코드 <a href="https://github.com/nano-muse/nanoMuse">github.com/nano-muse/nanoMuse</a>, 프로젝트 <a href="https://nanomuse.cn">nanomuse.cn</a>, 데모 <a href="https://nanomuse.cn/web/">nanomuse.cn/web</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.08699">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>Meta의 폐쇄형 개인 에이전트 "Muse"에 대응해, 사람이 가진 모든 기기(Android, iOS, 데스크톱, 웹)에서 동작하는 GPL-3.0 오픈소스 개인 에이전트 nanoMuse를 제시하고, 그 설계·안전장치(Sentinel)·메모리 구조와 함께 "개인 에이전트란 무엇이어야 하는가"에 대한 질문틀을 제시하는 시스템/포지션 리포트.</p>
+<h2>배경 및 문제의식</h2>
+<p>2026년 9월 Meta가 "Muse"를 출시하며 이름과 얼굴을 가진 하나의 긴 대화, 사람이 읽을 수 있는 메모리, 선제적 메시지, 승인 뒤의 지갑 등을 갖춘 "개인 에이전트"라는 제품 범주를 제시했다. 같은 5주 동안 OpenAI, Manus, Today 등도 유사한 에이전트를 내놓았다. 그러나 이들은 모두 벤더의 클라우드에 있는 사람당 1개의 VM에서 실행되고, Muse는 미국에서만 서비스되며, 10월 2일 공개된 소형 기기용 SDK 외에는 에이전트·서비스·모델이 전혀 오픈소스가 아니다. 저자들은 "한 사람의 삶 전체를 쥐고 있는 에이전트는 그 사람 또는 그가 신뢰하는 누구나 들여다볼 수 있어야 하고, 가능하면 이미 가진 하드웨어에서 돌아야 하며, 기기들이 만나는 지점(relay)만큼은 누구나 읽고 실행할 수 있는 코드여야 한다"는 입장에서, Muse를 대체하려는 것이 아니라 그 오픈소스 대안이 반드시 존재해야 한다는 문제의식으로 nanoMuse를 제안한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>2011년의 비서(Siri 등)부터 2023년 과업형 에이전트, 2026년 9월의 "개인 에이전트" 등장까지 역사를 정리하고, 개인 에이전트를 정의하는 5가지 질문(무엇을 기억하는가, 어디서 행동하는가, 누구에게 책임지는가, 어떻게 학습하는가, 어떻게 비용을 치르고 통제되는가)과 3단계 시간축(2026년 현재/다음 단계/장기)을 제시.</li>
+<li>Meta의 공개 자료 3편과 유출된 Muse 프로덕션 시스템 프롬프트 사본을 근거로, 각 서술에 "공식 문서/프롬프트/관찰/추론" 출처 태그를 달아 Muse의 구조(페르소나, Sentinel 권한 경계, 메모리 2계층, 기기·음성·가젯 SDK)를 재구성.</li>
+<li>GPL-3.0 오픈소스 개인 에이전트 nanoMuse를 Android, iOS(TestFlight), 데스크톱(macOS/Windows/Linux), 웹앱 및 오픈소스 relay(nanoMuse Cloud)로 구현해 공개(첫 릴리스 2026년 9월 25일, 리포트 기준 v0.1.40).</li>
+<li>모델을 벤더에 종속시키지 않고 18개 공급자 중 선택하거나 자체 API 키·ChatGPT 플랜·자체 모델 서버를 쓸 수 있게 설계.</li>
+</ul>
+<h2>방법론</h2>
+<p>nanoMuse의 각 기기는 "전체 에이전트"와 "자체 Sentinel"을 통째로 품는다. Android 앱은 오픈소스 폰 에이전트 OpenMinis를 수정해 샌드박스 Alpine Linux·셸·브라우저·MCP 서버를 포함하며, 데스크톱 앱은 DeepSeek Harness 기반 Electron 셸에 Python 런타임을 넣은 것이고, 같은 런타임이 웹앱도 서빙한다. iOS는 애플 정책상 다른 앱을 조작할 수 없어 "손(Hands)"이 없고 대신 다른 기기에 작업을 요청한다. 기기들은 선택적이고 오픈소스인 relay(한 개의 Python 프로세스 + SQLite)를 통해 "허브 프레임"으로 서로를 도구처럼 호출할 수 있는 피어로 연결되며, 계정당 모델 호출 원장과 동기화된 대화 텍스트만 relay에 보관된다(파일·이미지·도구 결과는 저장하지 않음). 키를 직접 쓰면 기기 하나만으로 서버 없이 동작 가능하다.</p>
+<p>안전장치인 Sentinel은 모든 도구 호출을 가로채는 게이트로, 차단 도구 → 사용자 규칙 → 항상허용/항상확인 목록 → "taint" 규칙(한 번 민감정보를 읽으면 이후 외부 전송 호출은 반드시 확인을 거치며 되돌리지 않음) → 도구 위험도 대 모드 → 마지막으로 어떤 설정으로도 못 넘기는 경고(파괴적 셸 명령, 결제·비밀번호 등) 순으로 판단한다. 승인은 "한 번/이 대화만/항상(특정 수신자·사이트·폴더·기기 한정)" 같은 범위가 있는 승인(scoped grant)이며 모든 결정은 사람이 열어볼 수 있는 로그에 남는다. 화면을 직접 조작하는 "Hands"는 기본값이 꺼져 있으며, 스킬/CLI/MCP 서버 → 로그인된 페이지 요청 → 브라우저 → 화면 스크린샷 조작의 순서(사다리)로 가장 낮은 단계부터 시도한다. 스크린샷 조작 단계에서는 모델이 스크린샷, 목표, 한 문장짜리 이전 단계 기록, (있으면) 접근성 트리를 보고 "생각 + 자연어로 된 행동 설명 + 한 번의 제스처"를 내며, 이 문장에 결제·전송·삭제 등 "확정적" 단어가 있으면 매번 승인을 요구하는 식으로 통제한다. 메모리는 폰에서는 SOUL.md(에이전트 정체성), USER.md(사용자 정보), GLOBAL.md, 일지, HEARTBEAT.md 등 사람이 직접 열어보고 고칠 수 있는 Markdown 파일이며, 데스크톱에서는 변경 로그·되돌리기·임베딩 기반 회상을 지원하는 저장소로 구현된다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>이 논문은 정량적 벤치마크 실험을 수행한 평가 논문이 아니라 시스템/설계 리포트이다. 저자들은 nanoMuse의 크기와 비용을 실측·추정치로 제시한다: Android 앱 다운로드 38MB, 데스크톱 앱 256~498MB(설치 후 약 928MB, 유휴 메모리 약 0.5GB), relay는 유휴 시 약 85MB 메모리를 쓰는 단일 Python 프로세스(1 vCPU·1GB 서버 권장)이며, 자체 relay 운영비는 중국 내 월 ¥30~60 또는 해외 월 US$4~6 수준(모델 사용료 별도)으로 추정된다. Muse 등 경쟁 시스템과의 비교는 "어디서 실행되는가/폰·컴퓨터 화면 조작 가능 여부/오픈소스 여부" 표(Table 1)로 정리했을 뿐, nanoMuse 자체의 과업 성공률이나 사람 개입(take-over) 횟수는 "아직 그런 수치가 존재하지 않는다"며 명시적으로 제시하지 않는다.</p>
+<h2>한계점</h2>
+<p>저자들이 직접 밝힌 한계는 다음과 같다. (1) 단일 기기에서는 Sentinel이 에이전트와 같은 신뢰 영역에서 실행되므로, Muse의 VM처럼 에이전트가 접근할 수 없는 별도 호스트가 실제 자격증명을 쥐고 있는 구조가 아니어서 "정책적 경계일 뿐 권한 경계는 아니다"(기기가 뚫리면 에이전트도 뚫린다). (2) 화면 조작(Hands)은 모델이 생성한 문장으로만 판단되고 아직 성공률·개입 횟수를 측정하지 못했으며, Linux에서는 X11 세션에서만 동작한다. (3) 메모리에는 아직 "누가, 언제, 얼마나 확신하며 썼는지"에 대한 출처(provenance)와 재검증 규칙이 없다. (4) relay는 공유 지점으로서 동기화된 대화 텍스트를 보관하므로 프라이버시 이슈가 있고, 커뮤니티 모델 개선용 데이터 공유가 신규 계정에 기본으로 켜져 있는 점이 저자들도 가장 확신이 적은 선택이라고 인정한다. (5) Muse에 대한 서술은 공개 문서와 출처를 검증할 수 없는 프롬프트 사본에 기반하므로 신뢰도에 한계가 있다.</p>
+<h2>시사점</h2>
+<p>nanoMuse는 벤더 클라우드에 종속된 폐쇄형 개인 에이전트(Muse 등)에 맞서, 모든 개인 기기에서 동작하고 모델 선택이 자유로우며 중계 서버까지 오픈소스인 완전한 대안이 실제로 구현 가능함을 보여준다. 특히 "메모리를 사람이 읽고 고칠 수 있는 파일로 둔다", "모든 행동을 Sentinel이라는 정책 게이트를 통과시킨다", "화면 조작은 자연어 설명으로 거버넌스 가능하게 만든다"는 설계 원칙은 향후 오픈소스 개인 에이전트 생태계의 참조 아키텍처가 될 수 있다. 다만 저자들 스스로 인정하듯 평가 지표 부재, 권한 경계의 취약성, 메모리 출처 관리 미비 등은 커뮤니티 차원의 후속 연구(평가 스위트, 손 조작 전용 오픈 모델, 물리적 기기로의 확장)로 채워야 할 과제로 남아 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.08699" target="_blank" rel="noopener">huggingface.co/papers/2610.08699</a> · 2026-10-09</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

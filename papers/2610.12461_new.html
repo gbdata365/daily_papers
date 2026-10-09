@@ -1,0 +1,121 @@
+<meta charset="UTF-8">
+<title>오우로월드</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#11 · Daily Papers 2026-10-10</span>
+      <span class="cat-tag">생성모델</span>
+      <span class="upvote-tag">▲ 29</span>
+    </div>
+    <h1 class="article-title">OuroWorld: Bringing Any 3D World Alive as Diverse, Endlessly Looping 3D Cinemagraphs</h1>
+    <p class="article-title-ko">오우로월드: 모든 3D 세계를 다채롭고 끝없이 반복되는 3D 시네마그래프로 되살리기</p>
+    <p class="article-sub">OuroWorld는 HY-World 2.0, Marble, Lyra 2.0 같은 3D 월드 모델이 만든 '멈춰 있는' 3D Gaussian Splatting(3DGS) 장면을 사용자 마스크 없이 자동으로 분석해, 어느 시점에서 봐도 매끄럽게 무한 반복되는 '3D 시네마그래프'로 바꿔주는 프레임워크다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.12461" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.12461" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: OuroWorld: Bringing Any 3D World Alive as Diverse, Endlessly Looping 3D Cinemagraphs</li>
+<li><strong>저자</strong>: You-Zhe Xie, Ting-Wei Chou, Yu-Hsuan Li, Kaipeng Zhang, Zhixiang Wang, Yu-Lun Liu (National Yang Ming Chiao Tung University, Alaya Lab; Zhixiang Wang와 Yu-Lun Liu이 교신저자)</li>
+<li><strong>출처</strong>: arXiv:2610.12461v1 [cs.CV] (2026년 10월 8일 제출)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://ouroworld.userwei.com">https://ouroworld.userwei.com</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.12461">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>OuroWorld는 HY-World 2.0, Marble, Lyra 2.0 같은 3D 월드 모델이 만든 '멈춰 있는' 3D Gaussian Splatting(3DGS) 장면을 사용자 마스크 없이 자동으로 분석해, 어느 시점에서 봐도 매끄럽게 무한 반복되는 '3D 시네마그래프'로 바꿔주는 프레임워크다.</p>
+<h2>배경 및 문제의식</h2>
+<p>최근 HY-World 2.0, Marble, Lyra 2.0 등 3D 월드 모델은 사실적이고 자유롭게 둘러볼 수 있는 3D 장면을 생성하지만, 생성된 장면은 시간적으로 완전히 정지되어 있다는 한계가 있다. 나뭇잎이 흔들리지 않고, 안개가 흐르지 않으며, 조명이 깜빡이지 않는다.</p>
+<p>2D 영역에서는 사진에 자연스럽게 반복되는 움직임을 더하는 '시네마그래프(cinemagraph)' 기법이 있지만, 이를 3D로 확장한 기존 연구(3D Cinemagraphy, LoopGaussian, 3D-MOM 등)는 두 가지 근본적 한계를 가진다. 첫째, 멀티플레인/레이어드 깊이 기반 방식은 사실상 '가짜 3D(pseudo-3D)'로 시야각 범위가 매우 좁다. 둘째, 3DGS를 쓰는 LoopGaussian이나 3D-MOM조차 오일러(Eulerian) 흐름장에 의존하기 때문에 물이나 연기 같은 유체류 움직임만 표현할 수 있고, 일반적인 변형·물체 이동·조명 변화는 다루지 못한다. 게다가 이들 방법은 모두 사용자가 직접 지정한 모션 마스크가 필요해, 어디를 어떻게 움직일지 스스로 결정하지 못한다.</p>
+<p>영상 생성 모델은 다양하고 사실적인 동작을 만들어낼 수 있어 이 공백을 메울 잠재력이 있지만, 이를 3D 시네마그래프로 바꾸는 데는 두 가지 과제가 남는다. (1) 생성된 영상은 근사적으로만 주기적(periodic)이라서 그대로 피팅하면 루프 경계에서 눈에 보이는 이음새(seam)가 생긴다. (2) 단일 시점 영상만으로는 4D 장면을 제약할 수 없는데, 여러 시점에서 생성한 영상들은 서로 불일치(inconsistent)하기 때문에 그대로 피팅하면 장면이 흐려지고 움직임이 엉뚱해진다.</p>
+<h2>핵심 기여</h2>
+<p>논문은 세 가지를 기여로 제시한다.
+- 마스크가 전혀 필요 없는 최초의 3D 시네마그래프 프레임워크로, 임의의 정적 3DGS 장면을 오일러 흐름 기반 방법을 넘어서는 일반적인 변형, 물체 운동, 조명 변화까지 포함한 생동감 있는 무한 루프 장면으로 바꾼다.
+- Inconsistency-Robust Periodic 4DGS: Fourier 급수 기반 변형장으로 루프를 수학적으로 보장하고, 새로 제안한 Grounded Drift Field로 생성된 멀티뷰 영상들 사이의 불일치를 학습적으로 흡수한다.
+- 정답(ground truth)이 없는 이 작업을 위해 생동감(vividness), 자연스러움(naturalness), 루프 이음새 일관성(loop seam coherence), 장면 품질(scene quality)을 아우르는 사람 지각과 상관성이 높은 평가 프레임워크를 제안하고, 이 지표와 사용자 평가 모두에서 기존 방법들을 능가함을 보인다.</p>
+<h2>방법론</h2>
+<p>OuroWorld는 3단계 파이프라인으로 구성된다.</p>
+<p><strong>(1) 루핑 비디오 생성(Looping Video Generation).</strong> 입력 3DGS에서 렌더링한 기준 이미지 Iref를 비전-언어 모델(VLM, GPT-5.5)에 입력해 무엇이 어떻게 움직여야 자연스러운지 추론하고, 이를 서술하는 프롬프트를 작성한다. 이 프롬프트로 영상 생성 모델(Seedance 2.0)을 조건화해 Iref를 첫 프레임과 마지막 프레임으로 모두 지정한 10초짜리 기준 영상 Vref를 생성하며, VLM이 부자연스러운 결과를 걸러낸다.</p>
+<p><strong>(2) 멀티뷰 비디오 생성(Multi-view Video Generation).</strong> 단일 시점 영상으로는 4D 장면을 제약할 수 없으므로, 3D 기초 모델인 VGGT-Ω에 기준 영상과 입력 3DGS의 정적 멀티뷰 렌더링을 함께 입력해 프레임별 동적 포인트 클라우드를 추정한다(정적 렌더링은 깊이 추정 정확도를 높이는 용도로만 쓰임). 이 포인트 클라우드를 피벗 주위 수평 ±20° 범위 내 N=20개 시점에서 렌더링하면 가려짐으로 인한 구멍(disocclusion hole)이 있는 불완전한 영상들이 생기는데, 이를 영상 인페인팅 모델 TrajectoryCrafter가 기준 영상에 조건화해 채워 완성된 멀티뷰 영상을 만든다.</p>
+<p><strong>(3) Inconsistency-Robust Periodic 4DGS.</strong> 3D 시네마그래프는 캐노니컬 3DGS G, 주기적 변형장(Periodic Deformation Field) P, Grounded Drift Field Δ로 표현된다.
+- <em>Periodic Deformation Field</em>: 각 Gaussian의 캐노니컬 중심에서 트라이플레인 특징을 뽑아 Fourier 급수 계수(a0, ak, bk)로 분해하고, 주기 T와 주파수 대역 K에 따라 시간에 따른 특징 f(x,t) = a0 + Σ[ak cos(2πkt/T) + bk sin(2πkt/T)]를 계산한 뒤 MLP로 위치·회전·스케일·색상 오프셋을 디코딩한다. 수식 구조상 f(x,t+T)=f(x,t)이므로 결과 장면은 '최적화 결과와 무관하게' 정확히 T 주기로 반복됨이 보장된다.
+- <em>Grounded Drift Field</em>: 생성된 멀티뷰 영상들은 서로 불일치하는데, 이를 그대로 피팅하면 변형장 P가 상충하는 관측을 평균 내 장면이 흐려지고 움직임이 이상해진다. 이를 해결하기 위해 트라이플레인+MLP 구조의 드리프트 필드 Δ를 학습해 시점별·시간별 추가 오프셋을 흡수하되, 추론 시에는 폐기한다. 단, 모든 시점에 드리프트를 적용하면 P와 Δ 둘 다 시간에 의존하므로 드리프트가 동작의 대부분을 설명해버려 결과 장면의 움직임이 줄어드는 모호성이 생긴다. 이를 막기 위해 "기준 시점(reference view)에는 드리프트를 적용하지 않는다"는 식으로 최적화를 기준 시점에 고정(grounding)시켜, P 혼자서 기준 영상의 동작을 재현하도록 강제한다.
+- <em>Scene-View Consistent Optimization</em>: Free4D의 방식을 따라, 신뢰도가 높은 기준 영상 Vref와 t=0 시점의 멀티뷰 렌더링은 L1 픽셀 손실로 직접 감독하고, 나머지 신뢰도가 낮은 생성 프레임들은 Stable Diffusion v1.5로 현재 렌더링에 노이즈를 주고 생성 프레임 쪽으로 디노이징을 유도(SDEdit과 유사한 방식)해 정제한 이미지를 만든 뒤, 이 정제 이미지와의 LPIPS 손실로 감독한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Mip-NeRF 360에서 재구성한 9개 장면과 HY-World 2.0, Marble, Lyra 2.0 각각에서 10개씩 선정한 생성 장면을 합쳐 총 39개 장면으로 평가했다. 비교 대상은 Gaussians-to-Life, 3D Cinemagraphy, LoopGaussian, 3D-MOM 4가지 베이스라인이며, 공정성을 위해 입력 이미지·텍스트 프롬프트·모션 마스크를 모두 OuroWorld 파이프라인에서 파생시켜 동일 조건으로 비교했다.</p>
+<p>평가는 정적 카메라와 궤도(orbit) 카메라 두 트래젝토리로 20초(600프레임, 672×384) 영상을 렌더링해 수행했다. 지표로는 Vividness Degree(광학 흐름·조도 변화·시각적 변화를 결합), KVD(자연 영상 분포와의 거리), Motion-Aware Loop Fidelity(MALF, 실제 움직임이 있으면서도 루프가 되는지), Seam SSIM(루프 이음새의 연속성), VBench 기반 Aesthetic Quality·Overall Consistency를 사용했다.</p>
+<p>결과적으로 OuroWorld는 Vividness, Naturalness(KVD), MALF, Aesthetic Quality에서 두 카메라 설정 모두 최고 성능을 기록했다. LoopGaussian과 3D Cinemagraphy는 Seam SSIM이 근소하게 더 높게 나오지만, 이는 움직임이 거의 없는(near-static) 장면이기 때문이며 Vividness와 MALF가 매우 낮다는 점에서 확인된다. 30명이 참여한 2지선다 사용자 연구에서도 모든 베이스라인·모든 평가 기준(Vividness, Naturalness, Loop Seam Coherence, Visual Quality)에 대해 70.8%~99.0%의 선호도로 OuroWorld가 선택되었으며, Vividness 항목에서 격차가 가장 컸다.</p>
+<p>Ablation 연구에서는 Drift Field를 제거하면 선명도(VoL)와 일관성이 떨어지고 세부 디테일이 시간이 지날수록 사라졌고(예: 구름·은하 번짐), Grounding을 제거하면 드리프트가 동작 대부분을 흡수해 추론 시 폐기되므로 Vividness가 가장 크게 하락했다(0.0423→0.0392). Scene-View Consistent Optimization을 단순 L1 손실로 대체하면 인페인팅 불일치가 장면에 그대로 반영되어 Subject Consistency가 가장 낮고 궤도 카메라 기준 VoL이 22% 감소했다. 또한 Fourier 급수의 주기를 2T로 늘려 비주기적으로 만드는 실험에서는 Seam SSIM이 0.9965→0.9783으로 떨어져 루프 경계에서 눈에 띄는 불연속이 발생함을 확인했다(반면 MALF는 거의 변하지 않아, 저하가 루프 경계에 국한됨을 보였다).</p>
+<h2>한계점</h2>
+<p>논문이 직접 밝힌 한계는 다음과 같다. 생성되는 동작의 품질이 영상 생성 모델(prior)의 한계에 종속되어, 비현실적인 생성 결과가 그대로 최종 장면에 반영될 수 있다(VLM 필터링으로 일부 완화하지만 완전히 해결되지는 않음). 또한 하나의 기준 영상만으로 모든 시점을 완성(inpainting)하기 때문에, 시점 범위가 넓어질수록 가려짐(disocclusion)과 시점 간 불일치가 더 커진다. 저자들은 서로 다른 시점에서 여러 개의 기준 영상을 생성하는 방식을 향후 개선 방향으로 제시한다.</p>
+<h2>시사점</h2>
+<p>OuroWorld는 '정지된 3D 월드 생성'이라는 최근 3D 월드 모델들의 공통적 한계를 지적하고, 이를 사용자 개입(마스크 지정) 없이 자동으로 '살아 움직이는' 장면으로 바꾸는 실용적 후처리 파이프라인을 제시했다는 점에서 의미가 크다. 특히 Fourier 급수 기반 변형장을 통해 "최적화 결과와 무관하게 수학적으로 루프가 보장된다"는 설계는, 기존 방법들이 영상 생성 모델의 근사적 주기성에 의존해 이음새 아티팩트를 감수해야 했던 문제를 구조적으로 해결한다. 또한 생성 모델 기반 멀티뷰 감독의 본질적 불일치 문제를 Grounded Drift Field라는 간단하면서도 효과적인 장치로 흡수한 점은, 생성형 4D 재구성 전반(예: 4D 장면 생성, 비디오-투-3D 파이프라인)에서 재사용 가능한 아이디어로 보인다. 정답 데이터가 없는 태스크에 대해 지각적으로 타당한 평가 프레임워크를 함께 제안한 것도, 후속 연구들이 공정하게 비교할 수 있는 기반을 마련했다는 점에서 실용적 기여로 평가할 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.12461" target="_blank" rel="noopener">huggingface.co/papers/2610.12461</a> · 2026-10-10</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

@@ -1,0 +1,129 @@
+<meta charset="UTF-8">
+<title>런투플레이 벤치</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#4 · Daily Papers 2026-10-10</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 76</span>
+    </div>
+    <h1 class="article-title">Learn2Play Bench: How Well Do LLM Agents Learn from Experience in Unfamiliar Environments?</h1>
+    <p class="article-title-ko">런투플레이 벤치: LLM 에이전트는 낯선 환경에서 경험으로부터 얼마나 잘 학습하는가?</p>
+    <p class="article-sub">사전학습 지식으로는 풀 수 없는, 숨겨진 규칙을 가진 텍스트 기반 게임 20종으로 LLM 에이전트가 "진짜로" 상호작용을 통해 학습하는지를 측정하는 벤치마크 Learn2Play Bench를 제안하고, 백본 모델·자기진화(self-evolving) 기법·에이전트 하니스(harness)·인간 플레이어를 비교해 현재 에이전트의 경험 학습 능력에 뚜렷한 한계가 있음을 보여준다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.08215" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.08215" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Learn2Play Bench: How Well Do LLM Agents Learn from Experience in Unfamiliar Environments?</li>
+<li><strong>저자</strong>: Yibo Li, Jinhang Qiu, Zhi Zheng, Qianyun Guo, Jiaying Wu, Shuo Ji, Bryan Hooi (싱가포르국립대학교, National University of Singapore)</li>
+<li><strong>출처</strong>: arXiv:2610.08215v2 [cs.AI] (2026년 10월 8일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://liushiliushi.github.io/learn2play-bench-website/">https://liushiliushi.github.io/learn2play-bench-website/</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.08215">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>사전학습 지식으로는 풀 수 없는, 숨겨진 규칙을 가진 텍스트 기반 게임 20종으로 LLM 에이전트가 "진짜로" 상호작용을 통해 학습하는지를 측정하는 벤치마크 Learn2Play Bench를 제안하고, 백본 모델·자기진화(self-evolving) 기법·에이전트 하니스(harness)·인간 플레이어를 비교해 현재 에이전트의 경험 학습 능력에 뚜렷한 한계가 있음을 보여준다.</p>
+<h2>배경 및 문제의식</h2>
+<p>LLM 에이전트가 상호작용을 통해 새로운 지식을 습득하고 행동을 개선하는 능력은 범용 인공지능(AGI)으로 가는 핵심 요소로 꼽힌다. 그러나 기존의 "지속 학습/자기진화 에이전트" 벤치마크(StreamBench, LifelongAgentBench, SWE-Bench-CL, J-TTL 등)는 대부분 이미 사전학습 지식에 어느 정도 반영되어 있는 현실 과제(코딩, 웹 작업, 게임 등)를 사용한다. 이 때문에 반복 시도에서 성능이 오르더라도, 그것이 "상호작용을 통한 새로운 학습"인지 "사전학습 지식을 다시 꺼내 쓰는 것"인지 구분하기 어렵다는 근본적인 문제가 있다. 저자들은 이를 "How effectively can LLM agents learn from experience in unfamiliar environments?"라는 질문으로 정리하고, 이를 통제된 조건에서 측정할 수 있는 새로운 벤치마크가 필요하다고 주장한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>Learn2Play Bench 제안</strong>: 새로 설계된 20개의 텍스트 기반 게임 템플릿으로 구성된 벤치마크로, 모두 사전지식에 없는, 때로는 반직관적인(counterintuitive) 숨겨진 규칙을 가진다. 예를 들어 한 게임에서는 열심히 일하는 것이 아니라 동료의 점심을 훔치는 행위가 승진에 도움이 된다는 식이다. 각 게임은 결정론적 피드백과 자동 채점을 제공해 재현 가능한 평가가 가능하다.</li>
+<li><strong>고정(fixed) 게임 vs. 재구성(re-shuffled) 게임 설계</strong>: 10개 게임은 매 에피소드 동일한 인스턴스를 반복하고, 나머지 10개 게임은 핵심 규칙은 유지한 채 등장인물·배치·레이아웃 등 표면적 상황을 바꿔, 에이전트가 학습한 규칙을 새로운 상황에 "전이(transfer)"할 수 있는지를 별도로 측정한다.</li>
+<li><strong>체계적 비교 실험</strong>: 11개 백본 모델, 6종의 자기진화 기법(NAIVE, MEMORY, Reflexion, EvoTest, ReasoningBank, AWM), 3종의 에이전트 하니스(OpenCode, Claude Code, Codex), 그리고 실제 인간 참가자(게임당 21~30명)의 성적과 행동 로그를 같은 조건에서 비교한 최초의 통합 연구.</li>
+<li><strong>다섯 가지 주요 발견</strong>을 통해 "경험 보존", "인간-에이전트 격차", "하니스의 영향", "환경 변화에 대한 적응", "규칙은 알아도 전략을 세우지 못하는 문제" 등 현재 에이전트 학습의 구조적 한계를 규명.</li>
+</ul>
+<h2>방법론</h2>
+<ul>
+<li><strong>게임 설계 원칙</strong>: (1) 규칙 신규성(사전지식에 없거나 반직관적인 숨겨진 규칙), (2) 자동 채점, (3) 재현성(결정론적 결과), (4) 에피소드 간 통제된 변주(핵심 규칙은 고정하되 가시적 상황은 변경).</li>
+<li><strong>플레이 프로토콜</strong>: 에이전트는 블랙박스 명령 인터페이스를 통해 목표와 가능한 행동 목록을 받고, 텍스트로 행동을 선택하며 환경의 피드백을 관찰한다. 게임 소스코드나 정답 솔버에는 접근할 수 없다. "일반(normal)" 게임은 5개 에피소드, 더 어려운 "챌린지(challenge)" 게임(CATNIP, DREAMGARDEN, MOLATEA, REDEYE, ROADSIDEOBSERVATORY)은 10개 에피소드로 평가하며, 게임당 3회의 독립 트라이얼을 수행한다.</li>
+<li><strong>평가 지표(4종)</strong>: 정규화된 점수를 기준으로 Max(최고 성능), Mean(평균 성능), Learning Gain(LG, 초반-후반 에피소드 점수 차), Learning Slope(LS, 선형회귀 기울기)를 정의하고, 챌린지 게임에 3배 가중치를 부여해 전체 20개 게임에 대해 가중 평균한다.</li>
+<li><strong>비교 축</strong>: (1) 백본 모델 비교는 OpenCode라는 코딩용 에이전트 하니스(셸·파일 도구 포함)로 통일해 11개 모델(GPT-6 Astra, Claude Opus 5.5/5, Claude Sonnet 5, Gemini 3.5/3.7 Flash, GPT-5.6-SOL, GPT-5 Mini, DeepSeek V4 Pro, Kimi K3, Qwen 3.8 Max)을 테스트. (2) 자기진화 기법 비교는 백본(Kimi K3, Claude Opus 5, GPT-5 Mini)을 고정한 채 NAIVE/MEMORY/Reflexion/EvoTest/ReasoningBank/AWM을 적용. (3) 하니스 비교는 백본을 고정한 채 OpenCode vs. Claude Code(Opus 5), OpenCode vs. Codex(GPT-5.6-SOL)를 비교. (4) 인간 연구는 대학생 참가자들을 동일한 게임 인터페이스로 모집해 Top-1/3/5 기록을 수집.</li>
+</ul>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li><strong>백본 비교</strong>: Claude Opus 5.5가 Max/Mean에서 가장 높은 성능(Max 80.1)을 보였지만, Learning Gain과 Learning Slope는 Qwen 3.8 Max가 가장 높아(LG +25.2, LS +6.30), "가장 잘하는 모델"과 "가장 잘 배우는 모델"이 다를 수 있음을 보였다. 강한 모델(Opus 5, Qwen 3.8 Max)은 관찰과 기대가 불일치할 때 가설을 갱신하지만, 약한 모델(예: GPT-5 Mini)은 POISONER 게임에서 메뉴상의 위치만 바꿔가며 같은 실수를 반복하는 모습을 보였다.</li>
+<li><strong>자기진화 기법 비교</strong>: 원본 상호작용 기록을 그대로 누적하는 단순한 MEMORY 방식이 Kimi K3 기준 4개 지표 모두에서 Reflexion, EvoTest, ReasoningBank, AWM보다 우수했다. GEMFORGE 게임에서 EvoTest는 한 번의 실패한 조합 시도 후 "다른 조합도 시도하지 말라"는 규칙을 만들어, 실제로는 성공할 수 있었던 조합까지 배제하는 과잉 일반화 사례가 관찰되었다. 즉 경험을 규칙/워크플로로 압축하는 과정에서 원본 증거가 사라져 잘못된 결론을 수정하기 어려워진다.</li>
+<li><strong>하니스 비교</strong>: 동일 백본(Opus 5, GPT-5.6-SOL)에서 OpenCode보다 Claude Code, Codex 같이 모델사가 직접 만든(모델과 함께 훈련·조정된) 하니스가 4개 지표 모두에서 더 우수했다(예: Opus 5 기준 Max 74.5→81.8).</li>
+<li><strong>인간 대 에이전트 비교</strong>: Human Top-1의 Max(84.3)가 모든 에이전트 설정의 Max를 능가했다. 고정 게임에서 연속 행동 시퀀스의 유사도는 인간 0.54, 에이전트 0.66으로 에이전트가 더 반복적인 전략을 고수했으며, 저성적 에피소드 이후 다음 에피소드에서 최고 기록을 갈아치우는 비율도 인간 33% vs 에이전트 22%로 인간이 더 자주 전략을 바꾸고 회복했다. 반면 GEMFORGE, GRAPEVINE처럼 새로운 전략 발견이 중요한 게임은 인간이 강했고, REDEYE, MODELAUDITOR처럼 긴 행동 시퀀스 실행이나 정밀한 계산이 필요한 게임은 에이전트(OpenCode-Opus 5.5)가 더 강했다.</li>
+<li><strong>지식 전이(re-shuffled 게임) 비교</strong>: 같은 규칙이라도 매 에피소드 상황(인스턴스)이 바뀌면 Claude Sonnet 5와 Gemini Flash 계열은 Learning Slope가 크게 떨어졌지만(최대 2.67 하락), Claude Opus 5와 Kimi K3는 하락이 작았다(0.59, 0.88). 이는 "왜 그 행동이 성공했는지"를 이해한 모델일수록 새로운 상황에서도 같은 조건을 찾아 적용할 수 있음을 보여준다.</li>
+<li><strong>비용 대비 성능</strong>: 동일 하니스에서 토큰 단가가 더 높은 Kimi K3가 Claude Sonnet 5보다 적은 전체 토큰(0.56M vs 0.73M)으로 더 낮은 비용·더 높은 성능을 달성했다. 또한 OpenCode는 한 번의 모델 응답에서 여러 행동을 실행하고 반복되는 게임 피드백을 줄여, MEMORY/EvoTest/ReasoningBank 같은 자기진화 기법보다 입력·생성 토큰을 크게 줄이면서도(최대 71% 감소) 더 높은 Max 점수를 달성했다.</li>
+</ul>
+<h2>한계점</h2>
+<p>논문에 별도의 "한계점" 절은 없으나, 토론(Discussion) 섹션에서 다음과 같은 미해결 과제와 암묵적 한계를 제시한다.
+- 평가된 모든 에이전트/기법이 탐색(exploration)과 활용(exploitation)의 균형을 제대로 맞추지 못해, 이미 어느 정도 통하는 전략을 과도하게 반복하는 경향을 보인다 (인간 대비 큰 격차의 원인).
+- 기존 자기진화 기법들은 제한된 증거(예: 단 한 번의 실패)로부터 과도하게 일반화된 규칙을 만들어내는 경향이 있으며, 어떤 규칙이 어떤 원본 경험에서 유래했는지 추적할 방법이 부재하다.
+- 표면적인 환경 변화(레이아웃, 등장인물 등)만으로도 학습 속도(Learning Slope)가 떨어지는데, 실제 배포 환경은 이보다 훨씬 다양하게 변화하므로 "무엇이 불변 규칙이고 무엇이 인스턴스별 세부사항인지"를 구분하는 능력은 여전히 부족하다.
+- 에이전트는 규칙 자체는 발견해도 이를 장기적 계획으로 연결하지 못하는 경우가 있다(예: HAUNTEDINN에서 금기 규칙은 알지만 방 배정을 그리디하게 해 뒷손님이 묵을 곳을 못 찾게 만드는 사례).
+- 비교에 포함된 자기진화 기법과 하니스의 수가 제한적이며(6개 기법, 3개 하니스), 더 다양한 방법론이나 멀티모달 환경으로의 일반화는 다루지 않았다.</p>
+<h2>시사점</h2>
+<p>이 연구는 "성능이 올랐다"는 것만으로 에이전트가 실제로 새로운 것을 배운 것인지 판단할 수 없다는 점을 분명히 보여주며, 숨겨진 규칙을 가진 새로운 환경에서의 평가가 자기진화/지속 학습 에이전트 연구의 신뢰도를 높이는 데 필수적임을 시사한다. 또한 (1) 경험을 규칙·워크플로로 과도하게 압축하기보다 원본 상호작용 증거를 보존하고 재검토 가능하게 하는 메모리 설계, (2) 모델과 함께 설계·조정된 에이전트 하니스의 중요성(같은 모델이라도 하니스에 따라 성능과 비용이 크게 달라짐), (3) 탐색-활용 균형을 명시적으로 다루는 학습 전략, (4) 변화하는 환경에서 불변 규칙과 인스턴스 특이적 세부사항을 구분하는 메커니즘이 향후 에이전트 설계의 중요한 방향이 될 것임을 제안한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.08215" target="_blank" rel="noopener">huggingface.co/papers/2610.08215</a> · 2026-10-10</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

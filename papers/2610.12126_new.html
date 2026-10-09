@@ -1,0 +1,123 @@
+<meta charset="UTF-8">
+<title>슈퍼내비</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#5 · Daily Papers 2026-10-10</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 62</span>
+    </div>
+    <h1 class="article-title">SuperNav: An Agentic Navigation System for Any Task in Any Scene</h1>
+    <p class="article-title-ko">슈퍼내비: 모든 장면에서 모든 과업을 수행하는 에이전트형 내비게이션 시스템</p>
+    <p class="article-sub">SuperNav는 사전학습된 멀티모달 대형 언어모델(MLLM)에 내비게이션 전용 파인튜닝을 전혀 하지 않고, 스킬(Skills)·툴(Tools)·컨텍스트 관리로 구성된 에이전트 하네스(agent harness)만을 결합하여 임의의 과업(task)과 임의의 장면(scene)에서 동작하는 내비게이션 에이전트를 구현한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.12126" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.12126" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: SuperNav: An Agentic Navigation System for Any Task in Any Scene</li>
+<li><strong>저자</strong>: Jinkai Zhang, Jingyi Xu, Yuanhong Yu, Jiarui Guo (Zhejiang University), Ruizhen Hu (Shenzhen University), Hujun Bao, Xiaowei Zhou, Sida Peng (Zhejiang University / Causa Robotics, 교신저자: Sida Peng)</li>
+<li><strong>출처</strong>: arXiv:2610.12126v1 [cs.RO] (2026년 10월 8일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://zju3dv.github.io/SuperNav/">https://zju3dv.github.io/SuperNav/</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.12126">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>SuperNav는 사전학습된 멀티모달 대형 언어모델(MLLM)에 내비게이션 전용 파인튜닝을 전혀 하지 않고, 스킬(Skills)·툴(Tools)·컨텍스트 관리로 구성된 에이전트 하네스(agent harness)만을 결합하여 임의의 과업(task)과 임의의 장면(scene)에서 동작하는 내비게이션 에이전트를 구현한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>범용 서비스 로봇은 특정 물체 찾기, 여러 목표물을 순서대로 방문하기, "쉴 곳을 찾아줘"와 같은 추상적 요구를 해석해 행동하기 등 매우 다양한 요청을 처리해야 한다. 이는 로봇이 "무엇을 찾는가"뿐 아니라 "어떻게 탐색하고, 진행 상황을 어떻게 추적하며, 언제 완료로 판단하는가"까지 과업마다 달라지게 만든다. 즉 범용 내비게이션에는 다양한 요청에 적응하는 <strong>과업 일반성(task generality)</strong>과, 학습 시 보지 못한 환경에서도 동작하는 <strong>장면 일반성(scene generality)</strong>이 모두 필요하다.</p>
+<p>기존 접근은 두 갈래로 나뉜다. (1) modular zero-shot 시스템(SemExp, VLFM, ApexNav 등)은 사전학습된 VLM으로 관측과 목표의 의미적 관련성을 평가해 탐색 점수에 반영하지만, 탐색이 언제 목표 확인으로 전환되고 언제 종료되는지는 여전히 과업별로 고정된 워크플로우가 결정한다. 따라서 요청 유형(카테고리 탐색 → 특정 인스턴스 탐색 → 다중 목표 → 추상적 요구)이 바뀌면 워크플로우 자체를 다시 설계해야 한다. (2) end-to-end 방법(NaVid, UniNaVid 등)은 내비게이션 지시-궤적 쌍으로 VLM을 파인튜닝해 행동을 직접 예측하지만, 그 일반화 성능은 학습 데이터가 다루는 시각적 외관·공간 배치·상호작용 조건의 범위에 종속되며, 논문의 cross-environment 평가에서 실제로 큰 성능 격차가 드러난다.</p>
+<h2>핵심 기여</h2>
+<p>논문은 세 가지로 기여를 정리한다.
+1. <strong>SuperNav 하네스</strong>: 사전학습된 MLLM이 툴 실행, 과업 진행 상황 추적, 컨텍스트 관리를 통해 다양한 요청에 대한 내비게이션을 직접 지휘할 수 있도록 하는 전용 에이전트 하네스를 제안.
+2. <strong>Agent-oriented Tools와 통합 visual-point 모션 인터페이스 + Navigation Skills</strong>: 모델의 결정을 물리적 실행에 연결하고, 탐색·검증·복구를 위한 재사용 가능한 가이드를 제공.
+3. <strong>광범위한 평가</strong>: category-level, instance-level, multi-object, demand-driven 내비게이션 전반과 실제 4족 로봇 배치를 통해 과업·장면 전반에서의 적용 가능성을 검증.</p>
+<h2>방법론</h2>
+<p><strong>에이전트 루프(Agent Loop)</strong>: 시스템 프롬프트, 과업 지시, 상호작용 히스토리로 구성된 컨텍스트를 유지하며, MLLM은 매 단계에서 "관찰(Observe)", "이동(Move)", "목표 상태 갱신", "관련 Skill 읽기" 중 하나를 선택한다. 툴 실행 결과와 불러온 지침은 다음 결정의 컨텍스트로 들어가 실행 피드백이 계획을 바꿀 수 있게 한다. 목표 레코드(pending/found)는 남은 목표와 완료된 목표를 추적하고, 텍스트 기록은 탐색한 영역, 후보 단서, 실패한 시도를 보존한다. 컨텍스트 크기 제어를 위해 이미 처리되어 최신 관측으로 대체된 이미지는 "미디어 페이로드만" 제거하고 텍스트 기록·이미지 경로는 유지하는 미디어 전용 프루닝(media-only pruning)을 적용한다.</p>
+<p><strong>Agent-oriented Tools</strong>: 초기화, 관찰(전/후/좌/우 4방향 RGB 반환), 회전, 시각-포인트 내비게이션, 목표 진행 관리, 종료 등을 포함한다. 핵심은 <code>PointNav(d, [u, v])</code>로, 모델이 4방향 뷰 중 하나(d)와 그 이미지의 정규화 좌표(u, v ∈ [0,1])로 목적지를 직접 이미지 위에 지정하면 툴이 실제 이동을 수행하고 새로운 4방향 이미지·실행 상태·진단 정보를 반환한다. 이 인터페이스는 <strong>두 가지 교체 가능한 모션 백엔드</strong>를 지원한다.
+- <strong>Geo-based Executor</strong>: 깊이, 카메라 캘리브레이션, 포즈를 이용해 선택된 점을 환경 내 실제 위치로 역투영한 뒤 경로를 계획·추종(시뮬레이션은 Recast/Detour PathFinder + GreedyGeodesicFollower, 실로봇은 LiDAR 기반 voxel map + A<em> 플래너 + 추종기 사용).
+- </em><em>Learned Executor</em>*: NoMaD의 목표조건부 생성 정책 설계에서 착안해 목적지 이미지 대신 표시된 포인트를 목표로 사용하며, DINOv2 인코더와 flow 기반 action head로 로컬 변위 증분과 정지 신호를 예측한다(깊이·내비게이션 메시 불필요, RGB만 사용).</p>
+<p><strong>Navigation Skills</strong>: Search(탐색 지역·후보·불확실한 분기 기록), Recheck(후보 재확인), Recover(실패한 이동 후 경로/지점 변경, 막힌 통로 시 우회), Complete(후보 외관·요청 조건·주변 맥락 확인 후 완료 기록) 네 가지로 구성된 Markdown 패키지이며, 필요 시 모델이 능동적으로 로드한다. Skill은 환경 조작 능력을 추가하거나 행동 순서를 강제하지 않고 컨텍스트에 정보로만 들어간다.</p>
+<p><strong>구현</strong>: 에이전트 루프는 Codex CLI로 구현되며 Model Context Protocol(MCP)을 통해 환경 오퍼레이션을 노출한다. 주 평가 모델은 GPT-5.6 Terra(high)이며, ablation에서는 GPT-6 Astra(medium)로도 테스트해 하네스가 다른 의사결정 모델에도 호환됨을 보인다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>자체 제작한 Habitat-GS(InteriorGS 씬) 기반 instance-navigation 벤치마크(단일 목표 150개, 2~5개의 순서형 다중 목표 150개), Demand-Bench(AI2-THOR 기반, 1~8단계의 수요 기반 과업 200개), HM3D-OVON val-unseen(120 episode), HM3Dv2(1,000 episode)에서 평가했으며, 비교 baseline은 NaVid, UniNaVid, StreamVLN, OmniNav(Action Former)이다.</p>
+<ul>
+<li><strong>단일/다중 목표·수요 기반 내비게이션</strong>: SuperNav+Geo-based Executor는 단일 목표 SR 78.00%(최강 baseline UniNaVid 34.00%), 다중 목표 SR 34.00%(최강 baseline 4.00%), 수요 기반 SR 59.50%(최강 baseline OmniNav 37.50%)로 모든 설정에서 baseline을 크게 상회했다. 두 백엔드는 다중 목표 SR이 동일하지만 Geo-based Executor가 경로 효율(SPL)에서 더 우수했다.</li>
+<li><strong>단계별 순서 완료율</strong>: 다중 목표 과업의 모든 단계와 수요 기반 과업의 1~5단계에서 SuperNav가 1위를 차지했으나, 긴 시퀀스(6단계 이상)는 모든 방법에서 어려움을 겪었다.</li>
+<li><strong>카테고리 수준(HM3D)</strong>: OVON 특화 학습이나 적응 없이 HM3D-OVON val-unseen(120 episode)에서 1m 기준 SR 73.33%/SPL 0.4105, 0.25m 기준 SR 68.33%/SPL 0.3837을 달성했다. HM3Dv2(1,000 episode)에서는 0.2m 기준 SR 80.30%/SPL 0.3338, 1m 기준 SR 86.50%/SPL 0.3638로, ApexNav·WMNav·MSGNav 등 기존 발표 결과와 경쟁력 있는 수준을 보였다(단, 평가 프로토콜·서브셋이 서로 달라 직접 비교에는 한계가 있음을 논문이 명시).</li>
+<li><strong>Ablation</strong>: Navigation Skills를 제거하면 특히 엄격한 임계값(0.25m)에서 SR이 크게 하락했고(68.33%→35.00%), 4방향 관측을 전방 단일 관측으로 축소해도(agent-oriented Tool design 제거) 성능이 저하됐다. 포인트 선택을 외부 언어 그라운딩(Grounding Motion Tool)으로 대체해도 모델의 직접 포인트 선택보다 나아지지 않았다. 반면 하네스를 고정한 채 결정 모델을 GPT-6 Astra(medium)로 바꾸자 SR·SPL이 모두 개선되어, 하네스 설계가 다른 모델에도 호환됨을 보였다.</li>
+<li><strong>실제 로봇 배치</strong>: Unitree Go2 4족 로봇에 4방향 RGB와 LiDAR 기반 geometric execution을 적용해, 막힌 통로에서 경로를 재설정하고, 목표물을 검증하며, 여러 목표 사이를 전환하는 동작을 시연했다.</li>
+</ul>
+<h2>한계점</h2>
+<p>논문이 명시한 한계는 다음과 같다. SuperNav는 의미적 판단을 MLLM에 전적으로 위임하므로 그 능력의 한계에 그대로 영향을 받는다. Geometric execution은 지도나 장면 geometry의 가용성에 의존한다. MLLM 추론은 계산 비용과 지연 시간의 변동성이 커서 과업 수행 시간을 예측하기 어렵게 만든다. 또한 수요 기반(demand-driven) 평가는 관련 목표물로의 "순서적 도달"만 측정하며, 그 목표물을 이용한 실제 활동의 완수 여부는 측정하지 않는다. 더 많은 실제 환경 평가와 긴 내비게이션 시퀀스에서의 신뢰성 향상이 향후 과제로 남는다.</p>
+<h2>시사점</h2>
+<p>SuperNav는 내비게이션 전용 파인튜닝 없이도, 범용 MLLM이 이미 보유한 요청 해석·장면 이해·추론 능력을 그대로 활용하고 모션 실행만 툴에 위임하는 "하네스 엔지니어링(harness engineering)" 전략으로 과업 일반성과 장면 일반성을 동시에 달성할 수 있음을 보인다. 이는 SWE-agent, Inner Monologue, Code as Policies 등 범용 에이전트 분야에서 확립된 "콜러블 능력 + 피드백 기반 실행"이라는 설계 철학을 로봇 내비게이션에 적용한 사례로, 임베디드 에이전트 설계에서 모델 자체의 재학습보다 인터페이스·툴·스킬 설계에 투자하는 방향이 효과적일 수 있음을 시사한다. 아울러 geometric executor와 learned executor처럼 서로 다른 모션 백엔드를 동일한 시각-포인트 인터페이스로 교체 가능하게 설계함으로써, 시뮬레이션에서 실제 로봇으로의 전이도 비교적 매끄럽게 이루어질 수 있음을 보여준다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.12126" target="_blank" rel="noopener">huggingface.co/papers/2610.12126</a> · 2026-10-10</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

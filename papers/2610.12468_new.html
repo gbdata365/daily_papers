@@ -1,0 +1,124 @@
+<meta charset="UTF-8">
+<title>드림트루</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#9 · Daily Papers 2026-10-10</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 33</span>
+    </div>
+    <h1 class="article-title">DreamTrue: Action-Faithful Robot World Model with Counterfactual Post-Training</h1>
+    <p class="article-title-ko">드림트루: 반사실적 후속학습을 통한 행동 충실 로봇 월드 모델</p>
+    <p class="article-sub">DreamTrue는 오프라인 기하 보정(offline geometric calibration)으로 행동-영상 조건을 정확히 정렬하고, 반사실적(counterfactual) 행동과 인간 주석 기반 영상 보상 모델로 후속 강화학습을 수행하여, 여러 로봇 embodiment와 데이터셋에 걸쳐 행동 추종 정확도와 물리적으로 그럴듯한 상호작용을 동시에 달성하는 멀티뷰 로봇 월드 모델이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.12468" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.12468" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: DreamTrue: Action-Faithful Robot World Model with Counterfactual Post-Training</li>
+<li><strong>저자</strong>: Junyan Li, Ruizhi Li (공동 1저자), Yu Liu, Xiangshuo Liu, Mingchao Sun, Hongyu Pan, Mu Xu, Lue Fan, Zhaoxiang Zhang (중국과학원 자동화연구소 NLPR, 알리바바 그룹 Amap 소속; Lue Fan와 Zhaoxiang Zhang이 교신저자 역할)</li>
+<li><strong>출처</strong>: arXiv:2610.12468v1 [cs.RO] (2026년 10월 8일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://brave-eai.github.io/DreamTrue">https://brave-eai.github.io/DreamTrue</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.12468">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>DreamTrue는 오프라인 기하 보정(offline geometric calibration)으로 행동-영상 조건을 정확히 정렬하고, 반사실적(counterfactual) 행동과 인간 주석 기반 영상 보상 모델로 후속 강화학습을 수행하여, 여러 로봇 embodiment와 데이터셋에 걸쳐 행동 추종 정확도와 물리적으로 그럴듯한 상호작용을 동시에 달성하는 멀티뷰 로봇 월드 모델이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>로봇 월드 모델은 주어진 행동 시퀀스에 따라 장면이 어떻게 변화할지 예측하여 로봇 학습과 평가를 위한 가상 환경을 제공한다. 이런 모델이 시뮬레이터로서 신뢰받기 위해서는 (1) 지정된 행동을 정확히 따라야 하고 (2) 주변 물체와의 상호작용이 물리적으로 그럴듯해야 한다. 그러나 기존 공개 로봇 데이터셋(Open X-Embodiment, DROID, RoboMIND 등)으로 학습할 때 두 가지 문제가 발생한다.</p>
+<p>첫째, 행동을 이미지 공간으로 렌더링해 조건으로 사용하는 기존 방식(BridgeV2W, Masked Visual Actions 등)은 정확한 카메라 캘리브레이션에 의존하는데, 실제 수집 데이터는 캘리브레이션 오차가 있어 렌더링된 로봇과 실제 영상 속 로봇이 공간적으로 어긋나는 경우가 많다. 이는 행동 조건과 학습 타겟 영상 간 불일치를 초래해 행동 추종 성능을 저해한다.</p>
+<p>둘째, 공개 데이터셋은 대부분 성공적인 시연(demonstration)으로 구성되어 있어 그립 실패, 물체 미끄러짐, 접촉 실패 등 비성공적 상호작용에 대한 데이터가 부족하다. 이로 인해 기존 월드 모델은 행동이 실패로 이어지더라도 성공적인 결과를 예측하는 "할루시네이션" 경향을 보이며(예: 그립이 빗나갔는데도 물체가 그리퍼와 함께 올라가는 것으로 예측), 이는 행동 선택이나 정책 평가를 지나치게 낙관적으로 왜곡시킨다.</p>
+<p>새로운 실제 로봇 데이터를 정밀 캘리브레이션과 함께, 그리고 실패 상호작용까지 폭넓게 수집하는 것은 막대한 비용이 들기 때문에, 저자들은 추가적인 실제 로봇 데이터 수집 없이 기존 데이터의 품질을 개선(캘리브레이션 보정)하고 학습 범위를 확장(반사실적 행동 구성)하는 방향을 택했다.</p>
+<h2>핵심 기여</h2>
+<p>논문은 세 가지 기여를 제시한다.
+1. <strong>DreamTrue</strong>: 추가적인 실제 로봇 데이터 수집 없이 행동 추종과 상호작용 그럴듯함을 모두 개선한 멀티뷰, cross-embodiment 로봇 월드 모델을 제안.
+2. <strong>오프라인 기하 보정(offline geometric calibration)</strong>: 전용 캘리브레이션 시퀀스 없이도 기존 녹화 영상만으로 행동 조건과 영상 간 정렬을 개선하는 방법을 제안하고, AgiBot/DROID/RoboMIND 등 3개 데이터셋에 대해 153,666개 에피소드, 1,660시간 이상 분량의 보정 결과를 공개.
+3. <strong>보상 기반 후속학습(reward-guided post-training)</strong>: 로봇/물체/상호작용 결함에 대한 인간 주석으로 학습한 임바디드 영상 보상 모델을 이용해, 페어링된 미래 영상이 없는 반사실적 행동에도 피드백을 제공하는 방식을 개발하고, 44.9K개 영상(그중 30.4K개 결함 주석)을 공개.</p>
+<h2>방법론</h2>
+<p>DreamTrue는 "오프라인 기하 보정 + 2단계 학습" 구조로 이루어진다.</p>
+<p><strong>오프라인 기하 보정</strong>: 로봇의 URDF 모델과 기록된 로봇 상태를 이용해 초기 카메라 파라미터로 로봇을 렌더링하고, 렌더링된 로봇과 실제 관측 영상 간 픽셀 대응(P_align)을 RoMaV2와 SAM3(로봇 분할용으로 파인튜닝) 기반으로 찾는다. 여기에 시간축 상의 정적 배경 대응(P_time)과 동기화된 카메라 뷰 간 대응(P_view)을 추가해, 카메라 내부/외부 파라미터 Θ와 (해당하는 경우) 로봇 암 장착 오프셋 ξ를 공동으로 최적화한다. P_align은 재투영 오차를 최소화하고, P_time·P_view는 동일 장면 지점을 보는 광선들이 카메라 중심 간 기저선과 동일 평면 위에 있어야 한다는 ray-coplanarity 제약을 사용한다.</p>
+<p><strong>Stage I (지도학습)</strong>: 서로 다른 embodiment의 행동을 공통 이미지 공간 표현으로 변환한다. 보정된 파라미터로 로봇을 렌더링해 RGB, 깊이 맵, amodal 마스크를 생성하고, 그리퍼 개폐 상태는 배경 RGB 강도로, 카메라 움직임은 Plücker 맵으로 인코딩한다. 이 조건들은 VACE(All-in-one video creation and editing) 분기를 통해 Wan2.1-VACE-14B 기반 비디오 DiT에 주입되며, 멀티뷰 영상은 폭(width) 방향으로 타일링되어 함께 처리된다. Flow matching 목적함수로 학습한다.</p>
+<p><strong>Stage II (반사실적 후속학습)</strong>: 기록된 행동의 최종 엔드이펙터 포즈에 SE(3) 교란을 가하고 보간한 뒤 역기구학으로 반사실적 행동 시퀀스를 만든다(초기 관측은 고정). 이렇게 생성된 예측 영상에는 쌍을 이루는 정답 미래 영상이 없지만, 그립 실패 후 물체가 공중에 뜨는 등 관찰 가능한 결함은 직접 판별 가능하다는 점에 착안해, 로봇 임바디먼트(L1)·물체 일관성(L2)·상호작용 그럴듯함(L3) 3개 축의 인간 주석 결함 데이터셋을 구축하고 Qwen 기반 비전-언어 모델을 파인튜닝해 임바디드 영상 보상 모델(q_φ)로 사용한다. 예측 결함 확률의 음수를 보상으로 정의하고, GDPO로 그룹 내 보상을 정규화·결합한 뒤 DiffusionNFT로 생성기를 강화학습 후속학습한다. 기록된 행동에 대한 예측에는 추가로 PSNR 보상을 부여해 충실도를 유지한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>AgiBotWorld-Beta, DROID, RoboMIND 2.0, RoboTwin 2.0 네 개 데이터셋(필터링 후 총 2,232시간, 5종 로봇 암)으로 공동 학습했으며, AgiBot에서는 54개 과업에 대해 160개의 반사실적 평가 조건을 추가 구성했다. 비교 대상은 DreamDojo, GE-Sim 2.0, Genie Envisioner, EnerVerse-AC이며, 평가지표는 nDTW(행동 추종), PSNR/SSIM/LPIPS(영상 충실도), EWMScore-P(WorldArena 기반 종합 품질), 그리고 3인 인간 평가자의 결함율(로봇/물체/상호작용) 등이다.</p>
+<p>주요 결과:
+- AgiBot에서 DreamTrue(전체 모델)가 평가 모델 중 최고 nDTW(기록된 행동 0.8772, 반사실적 행동 0.8831)와 최고 PSNR/SSIM/LPIPS를 달성.
+- 반사실적 행동에 대해 Stage I 대비 Stage II(보상 기반 후속학습)가 물체 결함율을 31.88%→3.12%, 상호작용 결함율을 48.12%→6.25%로 크게 낮추면서도 nDTW는 거의 유지됨.
+- AgiBot World Challenge 2026 월드 모델 트랙에서 참가팀 중 1위(종합 EWMScore 0.829, 행동 추종 0.9651 최고점).
+- DROID에서 Ctrl-World 대비 PSNR 22.00→22.95, LPIPS 0.162→0.073로 개선. 미학습 로봇(WidowX250)과 미학습 실제 장면으로의 전이도 추가 파인튜닝 없이 정성적으로 확인.
+- 정책 결과 평가(RoboTwin 2.0, 4개 VLA 정책 × 쉬움/어려움 난이도, 24개 조건)에서 DreamTrue의 예측 성공률이 실제 성공률과 거의 대각선(y=1.032x−0.009)으로 일치했고, 성공률 MAE를 12.92%p에서 7.08%p로 낮추며 Spearman 상관계수 0.937을 기록. Ctrl-World는 저성공률 구간에서 실패한 그립도 성공으로 과대평가하는 경향(y=0.919x+0.087)을 보임.
+- 기하 보정 효과: 기존 데이터셋 제공 캘리브레이션 대비 평균 IoU를 AgiBot 0.228, DROID 0.212 개선(각각 97.1%, 91.6% 에피소드에서 우위). RGB만 사용함에도 깊이 센서 기반 PointWorld보다 75.5% 에피소드에서 우위. 학습과 추론 모두에 보정을 적용했을 때 AgiBot PSNR +1.28dB, DROID PSNR +1.30dB 개선.
+- 보상 모델 자체 평가: held-out 4,893개 영상 클립에서 평균 정확도 86.33%, macro-F1 74.21% (L1 정확도 96.69%, L2/L3는 각각 79.24%/83.08%).</p>
+<h2>한계점</h2>
+<p>행동 표현, 생성기, VLM 보상 모델이 모두 이미지 공간에서 동작하기 때문에, 가림(occlusion)이나 제한된 뷰 상황에서는 시각적으로는 그럴듯하지만 실제로는 물리적으로 틀린 상호작용을 생성하거나 보상으로 잘못 평가할 수 있다는 점을 논문이 직접 명시하고 있다.</p>
+<h2>시사점</h2>
+<p>이 연구는 추가적인 실제 로봇 데이터 수집 없이도 (1) 기존 데이터의 캘리브레이션 오차를 사후적으로 보정하고 (2) 반사실적 행동 편집과 인간 주석 기반 보상 모델을 결합한 강화학습 후속학습을 통해 월드 모델의 신뢰성(행동 충실성 + 물리적 그럴듯함)을 크게 끌어올릴 수 있음을 보여준다. 특히 정책 평가 실험에서 실제 성공률과 거의 일치하는 예측을 보인 점은, 학습된 월드 모델이 실행 전에 로봇 정책의 성능을 신뢰성 있게 사전 평가(simulation-based evaluation)하는 도구로 쓰일 수 있다는 가능성을 시사한다. 또한 공개된 대규모 캘리브레이션 데이터와 영상 결함 주석 데이터셋은 후속 연구에서 임바디드 월드 모델의 데이터 품질 개선과 보상 모델 학습에 바로 활용될 수 있는 자원이다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.12468" target="_blank" rel="noopener">huggingface.co/papers/2610.12468</a> · 2026-10-10</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

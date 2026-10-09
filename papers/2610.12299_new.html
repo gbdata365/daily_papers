@@ -1,0 +1,125 @@
+<meta charset="UTF-8">
+<title>세밀한 신체적 상호작용을 반영한 멀티에이전트 1인칭 세계 모델</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#7 · Daily Papers 2026-10-10</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 42</span>
+    </div>
+    <h1 class="article-title">Multi-Agent Egocentric World Model with Fine-Grained Embodied Interaction</h1>
+    <p class="article-title-ko">세밀한 신체적 상호작용을 반영한 멀티에이전트 1인칭 세계 모델</p>
+    <p class="article-sub">여러 에이전트가 같은 공간에서 손/몸/시선을 섬세하게 움직이며 상호작용할 때, 각자의 1인칭(ego-centric) 영상을 하나의 공유된 세계에 대한 "서로 일치하는 관찰"로 동시에 생성하는 멀티에이전트 월드 모델 ME-World를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.12299" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.12299" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Multi-Agent Egocentric World Model with Fine-Grained Embodied Interaction</li>
+<li><strong>저자</strong>: Dahyun Chung, Siyoon Jin, Hyunwook Choi, Honggyu An, Junyoung Seo, Hyunsung Kim, Seung Wook Kim(교신저자), Seungryong Kim(교신저자) (KAIST AI)</li>
+<li><strong>출처</strong>: arXiv:2610.12299v1 [cs.CV] (2026년 10월 8일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://cvlab-kaist.github.io/ME-World">https://cvlab-kaist.github.io/ME-World</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.12299">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>여러 에이전트가 같은 공간에서 손/몸/시선을 섬세하게 움직이며 상호작용할 때, 각자의 1인칭(ego-centric) 영상을 하나의 공유된 세계에 대한 "서로 일치하는 관찰"로 동시에 생성하는 멀티에이전트 월드 모델 ME-World를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>비디오 월드 모델(world model)은 행동(action)에 조건화되어 미래 관측을 예측하는 모델로, 자율주행·로보틱스·게임 등에 널리 쓰였고 최근에는 자기중심(egocentric) 시점에서 에이전트 자신의 미래 1인칭 영상을 예측하는 연구로 확장되었다. 그러나 기존의 egocentric world model은 대부분 단일 에이전트만을 가정하며, 실제 환경에서는 여러 에이전트가 동시에 존재하며 서로 그리고 공유 객체와 상호작용하면서 환경·객체·에이전트 상태를 함께 변화시킨다(논문은 이를 "shared world state"라 정의).</p>
+<p>최근 등장한 멀티에이전트 egocentric world model들은 이러한 다중 에이전트 설정을 다루지만, 멀티플레이어 게임의 discrete command, 주행/비디오의 카메라 경로, 로봇 매니퓰레이션 제어처럼 저차원(coarse)의 행동 표현에 의존한다. 이는 사람 수준의 정교한 몸짓·손동작·시선에 의한 시점 변화처럼 "1인칭 제어 신호"이면서 동시에 "다른 에이전트가 관찰 가능한 사건"이기도 한 이중적 역할을 가진 fine-grained embodied action을 포착하지 못한다. 논문은 이러한 세밀한 신체적 상호작용을 다루는 멀티에이전트 egocentric world modeling을 새로운 문제로 formulate하며, 다음 세 가지 요구사항을 제시한다: (1) 에이전트 간 행동 일치(cross-view action consistency), (2) 공유 환경의 일관성(shared-environment consistency), (3) 상호작용으로 인한 상태 변화의 일관된 전파(state update consistency).</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>임바디드 멀티에이전트 월드 모델링 문제 정의</strong>: 여러 에이전트가 각자의 ego stream을 생성하면서도 하나의 공유된 세계와 일관되도록 동기화된(synchronized) ego-stream 생성 문제를 새롭게 제시했다.</li>
+<li><strong>ME-World 아키텍처 제안</strong>: (i) 여러 ego stream을 하나의 토큰 시퀀스로 묶어 함께 디노이징하는 joint multi-agent generation, (ii) 자신의 모션뿐 아니라 다른 에이전트의 모션까지 자신의 시점에 렌더링해 조건으로 주는 shared action conditioning, (iii) 과거 관측을 각 타깃 시점으로 워핑한 정보와 여러 스트림이 공유하는 앵커 이미지를 함께 제공하는 shared environment memory를 결합했다.</li>
+<li><strong>실/합성 데이터 결합 학습</strong>: 실제 멀티에이전트 데이터(Comind 데이터셋 기반)와 합성 멀티에이전트 데이터를 결합해, 기존 egocentric 데이터셋(Ego4D, Ego-Exo4D 등)이 다루지 못한 다중 에이전트·다양한 외형·상호작용 시나리오를 학습에 반영했다.</li>
+<li><strong>shared-world consistency 평가 프로토콜 신설</strong>: 입력 조건만으로 설명되지 않는, 모델이 스스로 만들어내는 일관성을 측정하기 위해 S_env(환경 일관성), S_update(상호작용에 의한 상태 변화 일관성), S_id(합성 벤치마크에서의 정체성 보존)라는 세 가지 지표를 제안했다.</li>
+</ul>
+<h2>방법론</h2>
+<p>ME-World는 사전학습된 비디오 diffusion transformer(Cosmos-Predict2.5, 2B 규모 DiT)를 기반으로 한다. N명의 에이전트에 대해 각 에이전트의 미래 행동 시퀀스(머리/몸 동작), 텍스트 프롬프트, 초기 ego 프레임, 그리고 모든 에이전트의 관측 히스토리를 모아둔 공유 히스토리 풀 E가 전체 조건 C를 구성한다.</p>
+<ol>
+<li><strong>Joint Multi-Agent Generation</strong>: 각 에이전트의 ego stream을 frozen VAE로 인코딩한 뒤, 모든 에이전트의 노이즈 latent를 토큰 차원으로 이어붙여(concatenate) 하나의 시퀀스로 만들고 self-attention으로 함께 디노이징한다. 동일한 RoPE 위치 인코딩을 공통 시공간 좌표계로 사용하면서, 학습 가능한 agent embedding으로 각 토큰이 어느 에이전트에 속하는지 구분한다. 텍스트 조건은 에이전트별로 별도의 cross-attention 경로를 사용해 서로 다른 장면 영역을 각자 참조하도록 한다.</li>
+<li><strong>Shared Action Conditioning</strong>: 각 에이전트의 행동을 몸동작(body motion)과 머리동작(head motion)으로 분리한다. 몸동작은 ego 시점에서 보이는 손·팔 동작을 담은 skeleton map으로, 머리동작은 카메라 궤적을 결정하는 Plücker ray map으로 인코딩한다. 핵심은 각 에이전트의 포즈 조건을 만들 때 자기 자신의 skeleton뿐 아니라 "다른 에이전트의 3D 포즈를 자신의 카메라 좌표로 투영한 결과"까지 함께 렌더링해, 상대방의 동작이 내 시점에서 어떻게 보여야 하는지를 명시적으로 알려준다는 점이다.</li>
+<li><strong>Shared Environment Memory</strong>: 과거 관측 풀 E를 활용하는 두 가지 경로를 둔다. (a) stream-aligned geometric memory는 타깃 시점과 가장 잘 겹치는 과거 히스토리 이미지를 골라 타깃 ray 조건에 맞춰 워핑하고(SAM3로 동적 에이전트 영역은 마스킹), 워핑된 RGB와 가시성 마스크를 노이즈 latent에 채널 결합한다. (b) cross-stream anchor memory는 워핑으로 손실되는 영역/외형 정보를 보완하기 위해, 타깃 뷰 커버리지를 최대화하도록 greedy하게 선택한 K개의 원본(unwarped) 히스토리 이미지를 별도 reference 토큰으로 인코딩해 모든 스트림이 함께 attend하도록 조인트 시퀀스에 추가한다.</li>
+<li><strong>학습 목표</strong>: rectified flow 기반으로 모든 에이전트의 clean latent와 노이즈를 합쳐 하나의 흐름 매칭(flow matching) 손실로 학습하며, V AE·텍스트 인코더는 고정한 채 DiT와 조건화 모듈만 파인튜닝한다(AdamW, lr 3×10⁻⁵, A100 4장, 배치 4).</li>
+</ol>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li><strong>벤치마크</strong>: 실제 멀티에이전트 상호작용 데이터(Comind 기반 real benchmark)와 캐릭터 정체성이 구분되는 합성 benchmark 두 가지에서 평가했다.</li>
+<li><strong>평가지표</strong>: 제안한 shared-world consistency 지표(S_env, S_update, 합성 데이터에서는 S_id 추가) 외에 카메라 제어(Translation/Rotation Error), 자기 행동 제어(Hand-F1, Hand-mIoU), 상대 에이전트 행동 제어(Full-Body-F1, PCK@10), 비디오 품질(PSNR, SSIM, LPIPS, FVD)을 함께 측정했다.</li>
+<li><strong>비교 대상</strong>: (1) 멀티뷰 생성 모델(GEN3C, AnyView-DVS), (2) 단일 에이전트 egocentric world model(EgoSim, JointControlVideo), (3) 범용 월드 모델(DreamX-World, LingBot-World), (4) 동일 백본·데이터·shared action conditioning으로 재적응시킨 멀티에이전트 월드 모델(MultiWorld, Solaris, γ-World, MetaWorld).</li>
+<li><strong>결과</strong>: ME-World는 두 벤치마크 모두에서 S_env·S_update(및 합성 데이터의 S_id)를 포함한 shared-world consistency, 카메라/자기/상대 행동 제어, 비디오 품질 지표에서 전반적으로 최고 성능을 보였다. 멀티뷰 모델은 한 에이전트의 ground-truth 스트림을 참조로 쓰고도 상호작용 재현에 실패하며 블러·고스트 아티팩트를 보였고, 단일 에이전트 모델은 상대 에이전트 조건이 없어 other-agent 제어가 약했으며, 범용 월드 모델은 개별 스트림은 그럴듯하나 두 스트림 간 환경·상호작용 결과가 어긋났다.</li>
+<li><strong>Ablation</strong>: Cosmos-Predict2.5를 그대로 쓰거나 단순 파인튜닝한 baseline은 멀티에이전트 미래를 제대로 생성하지 못했다. joint generation을 빼면 에이전트 외형과 주변 환경이 뷰마다 어긋났고, shared action conditioning을 빼면 뷰 간 행동이 어긋났으며, shared environment memory를 빼면 배경이 스트림마다 달라졌다. 세 요소를 모두 더한 최종 버전(8)이 모든 지표에서 가장 우수했다.</li>
+</ul>
+<h2>한계점</h2>
+<p>논문 본문에서 명시적인 한계점 절은 따로 없으나, 결론부에서 향후 확장 방향으로 다음을 언급한다: (1) 현재는 주어진 행동 시퀀스에 조건화된 생성만 다루므로, 행동과 관측을 함께 모델링해 에이전트가 스스로 행동을 계획하고 그 효과를 예상하는 것은 다루지 않는다. (2) 에이전트 수가 늘어날 때의 효율적인 cross-agent 통신/메모리 구조는 아직 다루지 않았다(두 에이전트 사례 중심으로 실험). (3) 실시간 상호작용 시뮬레이션을 위해서는 추가적인 효율적 비디오 생성 기법이 필요하다고 언급한다.</p>
+<h2>시사점</h2>
+<p>이 연구는 멀티에이전트 월드 모델링에서 "저차원 제어 신호" 수준을 넘어 사람 수준의 세밀한 신체 상호작용(손짓, 몸동작, 시선에 따른 시점 변화)까지 다루는 첫 시도로서, 에이전트 간 상호작용과 공유 환경을 동시에 일관되게 생성해야 하는 멀티에이전트 VR·임바디드 AI 시뮬레이션·다중 로봇 협업 등 다양한 응용에 중요한 기반을 제공한다. 또한 입력 조건만으로는 설명되지 않는 "모델이 스스로 만들어낸 일관성"을 분리해서 측정하는 S_env/S_update/S_id 지표는, 이후 멀티에이전트 월드 모델 연구에서 공유 환경 품질을 보다 엄밀하게 평가하는 표준 도구로 활용될 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.12299" target="_blank" rel="noopener">huggingface.co/papers/2610.12299</a> · 2026-10-10</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

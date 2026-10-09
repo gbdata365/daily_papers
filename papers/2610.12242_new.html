@@ -1,0 +1,133 @@
+<meta charset="UTF-8">
+<title>토큰라우터</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#2 · Daily Papers 2026-10-10</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 102</span>
+    </div>
+    <h1 class="article-title">TokenRouter: Efficient Serving System for Token-Level LLM Routing</h1>
+    <p class="article-title-ko">토큰라우터: 토큰 단위 LLM 라우팅을 위한 효율적인 서빙 시스템</p>
+    <p class="article-sub">토큰 단위로 여러 LLM을 오가며 생성하는 "토큰 레벨 라우팅"을 기존 서빙 시스템(vLLM, SGLang 등)보다 최대 64배 빠르게 처리할 수 있는 전용 서빙 시스템, TokenRouter를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.12242" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.12242" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: TokenRouter: Efficient Serving System for Token-Level LLM Routing</li>
+<li><strong>저자</strong>: Tianyu Fu, Tengxuan Liu (공동 1저자), Ruoxi Wang, Yixin Dong, Yi Ge, Yichen You, Yu Wang (교신저자) — Tsinghua University, Carnegie Mellon University 소속</li>
+<li><strong>출처</strong>: arXiv:2610.12242v1 [cs.CL] (2026년 10월 8일) — NeurIPS 2026 (40th Conference on Neural Information Processing Systems) 게재</li>
+<li><strong>프로젝트 페이지</strong>: 코드 공개 - <a href="https://github.com/thu-nics/TokenRouter">https://github.com/thu-nics/TokenRouter</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.12242">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>토큰 단위로 여러 LLM을 오가며 생성하는 "토큰 레벨 라우팅"을 기존 서빙 시스템(vLLM, SGLang 등)보다 최대 64배 빠르게 처리할 수 있는 전용 서빙 시스템, TokenRouter를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>LLM 라우팅은 비용과 품질의 Pareto frontier를 넓히기 위해 여러 모델에 추론 작업을 분산시키는 기법이다. ChatGPT, Cursor 같은 상용 시스템이나 RouteLLM 같은 연구는 세션 또는 쿼리 단위로 요청 전체를 하나의 모델에 라우팅하는 방식(coarse-grained routing)을 사용한다. 그러나 최근 연구들(R2R, CITER, Co-LLM, R-Stitch, ME 등)은 토큰 단위로 라우팅하면 효율과 품질 모두에서 더 큰 이득을 얻을 수 있음을 보였다. 예를 들어 R2R은 토큰의 5%만 32B 모델로 보내도 쿼리의 40%를 32B로 보내는 것과 동등한 품질을 달성한다.</p>
+<p>문제는 기존 서빙 시스템(SGLang, vLLM 등)이 "단일 LLM이 모든 스텝에서 동기적으로 디코딩한다"는 가정 위에 설계되어 있다는 점이다. 토큰 레벨 라우팅은 매 디코딩 스텝마다 대상 모델이 바뀔 수 있으므로 다음 세 가지 문제가 발생한다.
+1. <strong>스텝 비동기화(step desynchronization)</strong>: 모델별 스텝 지연시간이 크게 다른데, 하나의 배치로 동기화하면 가장 느린 모델을 기다리느라 빠른 모델이 유휴 상태가 된다.
+2. <strong>배치 승인 지연(batch admission delay)</strong>: 라우팅된 요청이 목적 모델에 도착해도 그 모델이 이미 다른 배치를 처리 중이면 다음 배치까지 대기해야 하고, 이로 인해 배치가 파편화된다.
+3. <strong>구현 복잡성</strong>: 기존 서빙 시스템은 스텝 단위 라우팅 결정을 위한 프로그래밍 인터페이스를 제공하지 않아, 연속 배칭(continuous batching)이나 prefix caching 등 기존 기능과 라우팅 로직을 조율하려면 대규모 코드 수정이 필요하다.</p>
+<h2>핵심 기여</h2>
+<p>논문은 "request-centric programming, model-centric execution"이라는 설계 원칙 아래 세 가지 핵심 기여를 제시한다.
+- <strong>요청 중심(request-centric) 프로그래밍 인터페이스</strong>: <code>route</code>-<code>send</code>-<code>receive</code>라는 3개 함수만으로 개발자가 단일 요청이 협력 LLM들 사이를 어떻게 이동하는지 기술하면, 다양한 토큰 레벨 라우팅 알고리즘을 표현할 수 있다.
+- <strong>비동기 실행을 통한 서빙 최적화</strong>: 모델별로 독립적인 subserver를 두고, 스텝 비동기화 문제를 해결하는 분리된 "tri-loop(3중 루프)" 실행 구조와 모델 간 전환을 단순화하는 handoff-resume(인수인계-재개) 메커니즘을 제안한다.
+- <strong>지연 배칭(delayed batching)을 통한 스케줄링 최적화</strong>: 평균 배치 승인 지연을 줄이는 지연 배칭 스케줄러를 제안하고, 처리량 기반 수학적 모델에서 유도한 최적 하이퍼파라미터를 사용한다.</p>
+<p>실험 결과 TokenRouter는 다양한 라우팅 알고리즘·워크로드·모델 조합에서 기존 구현체 대비 디코딩 처리량을 2.01~64.15배 향상시켰다.</p>
+<h2>방법론</h2>
+<p><strong>프로그래밍 인터페이스(route-send-receive)</strong>: 토큰 레벨 라우팅 알고리즘들의 공통 수명주기를 <code>receive → decode → route → send → peer receive → peer decode → ...</code>로 정리하고, 개발자는 다음 세 함수만 구현한다.
+- <code>route(result)</code>: 각 디코딩 스텝 이후 forward-pass 결과(히든 스테이트, 다음 토큰 로짓, 샘플링된 토큰 등)를 바탕으로 각 요청의 목적지(로컬 계속 혹은 다른 모델)를 결정.
+- <code>send(req)</code>: 라우팅이 결정되면 요청 ID, peer가 아직 보지 못한 토큰 suffix, 종료 여부, 위치 anchor(<code>req.loc</code>) 등을 담은 <code>PeerReq</code> 메시지를 생성.
+- <code>receive(peer_req)</code>: 도착한 <code>PeerReq</code>를 로컬 요청 형식으로 변환(기본값은 전달된 토큰을 모두 수용). 알고리즘별로 필요한 경우만 override.</p>
+<p>논문은 R-Stitch(엔트로피 기반 라우팅)를 예시로 이 인터페이스로 코드 몇 줄에 알고리즘을 표현할 수 있음을 보이고, CITER·R2R·R-Stitch·Co-LLM·ME 등 5개 알고리즘의 라우팅 조건을 표로 정리한다.</p>
+<p><strong>시스템 아키텍처(모델 중심 런타임)</strong>: 각 LLM은 독립된 subserver로 호스팅되며, 자체 스케줄러·LLM 러너·KV-cache 풀, 그리고 사용자 정의 route/send/receive 함수를 가진다. 외부에는 단일 서버 인터페이스만 노출되어 기존 vLLM/SGLang과 동일한 클라이언트 프로토콜로 동작하는 drop-in replacement 역할을 한다.</p>
+<p><strong>비동기 실행(tri-loop + handoff-resume)</strong>: 표준 서버의 client-server 루프(요청 수신·응답 스트리밍)와 decoding 루프(스케줄링·모델 실행) 외에, inter-model 루프(모델 간 peer request 송수신)를 추가로 분리한다. 라우팅된 요청이 로컬 배치를 떠나 있는 동안 나머지 로컬 요청들은 자신의 속도로 계속 진행한다. 또한 <code>pending</code>이라는 중간 상태를 도입해, 모델 간 전환 시 prefix matching이나 KV-cache 재할당을 다시 하지 않고 토큰만 append하는 식으로 handoff/resume 비용을 최소화한다.</p>
+<p><strong>지연 배칭(delayed batching)</strong>: 요청이 도착하는 즉시 배치를 실행(eager-async)하면 배치가 자주 파편화된다. 대신 버퍼에 요청을 모아 크기가 임계값 B에 도달할 때 배치를 실행한다. 이때 B가 너무 작으면 승인 지연이 크고, B가 너무 크면 모델이 유휴 상태(starvation)에 빠지는 트레이드오프가 있다. 논문은 이 과정을 이산시간 마르코프 체인(Discrete-Time Markov Chain, DTMC)으로 모델링하여, 동시성 N, 라우팅 확률 P, 모델별 스텝당 지연시간 L을 입력으로 처리량을 B의 함수로 유도하고, 처리량을 최대화하는 최적 임계값 B*를 탐색한다.</p>
+<p>구현은 SGLang을 기반으로 하며, CUDA 그래프 확장 등 라우팅에 특화된 추가 엔지니어링 최적화도 적용했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p><strong>실험 환경</strong>: 8×A100-80GB GPU 서버. CITER, R2R, R-Stitch, Co-LLM은 Qwen3-0.6B/Qwen3-32B 쌍에서 평가하고, ME는 Qwen3-0.6B/8B/32B 3개 모델로 평가. 작은 모델은 1 GPU, 큰 모델은 텐서 병렬 2 GPU에 배치(CUDA MPS로 공유). 비교 대상은 각 알고리즘의 공개 구현(Official Code)과, 저자들이 SGLang 기반으로 공정 비교를 위해 직접 구축한 Std. Serving(모델별 SGLang 서버 + 외부 디스패처) 두 가지.</p>
+<p><strong>워크로드</strong>: (1) Low-effort reasoning(AIME2024, 입출력 짧음, 출력 최대 2,048토큰), (2) High-effort reasoning(AIME2024, 출력 최대 8,192토큰), (3) Agentic(SWE-Smith 트레이스, 입력 약 8,192토큰, 출력 최대 1,024토큰).</p>
+<p><strong>주요 결과</strong>:
+- 15개 알고리즘-워크로드 조합 전체에서 TokenRouter가 더 강한 베이스라인 대비 처리량을 2.01~64.15배, 종단 지연(latency)을 Std. Serving 대비 2.03~63.64배 개선.
+- 원 논문의 기본 설정(original settings)에서도 공식 구현 대비 지연을 2.78~21.61배 줄이고 처리량을 2.73~21.97배 향상.
+- 출력 길이가 길어져도(2,048→8,192 토큰) TokenRouter의 처리량은 거의 유지되는 반면 Std. Serving은 58.1~85.2%의 처리량을 손실.
+- 처리량-속도(Throughput-Speed) 트레이드오프: 동시성을 1→16으로 늘릴 때 TokenRouter는 처리량 8.61배 증가, 사용자당 속도는 51.7% 유지(공식 R2R은 각각 5.14배, 31.3%). 동시성 16의 TokenRouter는 동시성 1의 공식 R2R보다 처리량 18.58배, 속도도 1.13배 높음.
+- Ablation(Fig.1a, 동시성 8): 기본 구현 132.78 token/s → CUDA 그래프 확장 230.79 → 비동기 실행 296.86 → 지연 배칭 372.48 token/s로, 공식 R2R(134.9 token/s) 대비 총 2.76배.
+- 다양한 SLM/LLM 모델 크기 조합(0.6B/8B, 0.6B/32B, 1.7B/8B, 4B/8B)에서도 R2R 공식 구현 대비 1.99~3.21배 처리량 향상.
+- 텐서 병렬 자원은 LLM 쪽에 배정하는 것이 SLM 쪽보다 처리량 향상에 훨씬 유리함(LLM TP 1→2 시 최대 40.6% 개선, 반면 SLM TP 추가는 1% 미만 개선).
+- 처리량-정확도 Pareto 분석(AMC23, Qwen3-0.6B/32B): TokenRouter가 토큰 레벨 라우팅(R2R)을 RouteLLM 기반 쿼리 레벨 라우팅(QR-MF/BERT/LLM/SW)보다 더 유리한 새로운 Pareto frontier로 이동시켜, 동일한 처리량에서도 더 높은 정확도를 달성.</p>
+<h2>한계점</h2>
+<p>논문이 명시한 한계는, 지연 배칭의 처리량 모델이 "두 연속 전송(send) 사이의 토큰 수가 기하분포(geometric distribution)를 따른다"는 가정에 기반한다는 점이다. 이는 대부분의 토큰 레벨 라우팅 알고리즘에는 성립하지만, 이 가정을 벗어나는 예외적인 경우(corner case)에 대한 처리는 향후 과제로 남겨두었다.</p>
+<h2>시사점</h2>
+<p>TokenRouter는 토큰 레벨 LLM 라우팅이라는, 알고리즘적으로는 유망하지만 실제 서빙 시스템에서는 거의 지원되지 않던 영역에 "요청 중심 프로그래밍, 모델 중심 실행"이라는 명확한 추상화를 제시함으로써, 라우팅 알고리즘 개발자가 저수준 배칭/스케줄링을 신경 쓰지 않고도 효율적인 서빙 성능을 얻을 수 있게 한다. 기존 단일 LLM 서빙 시스템과 호환되는 drop-in replacement 인터페이스를 제공하는 점, 그리고 수학적 처리량 모델에 기반해 스케줄링 하이퍼파라미터를 자동으로 도출하는 접근은 향후 다중 모델 협업 추론(speculative decoding, mixture-of-experts 서빙, 모델 앙상블 등) 시스템 설계에도 참고할 수 있는 일반적인 패턴을 제시한다. 처리량-정확도 Pareto frontier를 실제로 개선함으로써, 토큰 레벨 라우팅이 연구 단계를 넘어 production 수준의 비용-품질 최적화 기법으로 자리잡을 수 있는 실용적 기반을 마련했다는 점에서 의미가 크다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.12242" target="_blank" rel="noopener">huggingface.co/papers/2610.12242</a> · 2026-10-10</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

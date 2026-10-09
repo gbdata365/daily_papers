@@ -1,0 +1,110 @@
+{
+  "2610.12374": {
+    "base": "2610_에이전트가든_코드-월드로-진화하는-에이전트",
+    "rank": "#1",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "131",
+    "en_title": "AgentGarten: Code Worlds for Evolving Agents",
+    "ko_title": "에이전트가든: 진화하는 에이전트를 위한 코드 월드"
+  },
+  "2610.12242": {
+    "base": "2610_토큰라우터_토큰단위-LLM-라우팅-서빙시스템",
+    "rank": "#2",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "102",
+    "en_title": "TokenRouter: Efficient Serving System for Token-Level LLM Routing",
+    "ko_title": "토큰라우터: 토큰 단위 LLM 라우팅을 위한 효율적인 서빙 시스템"
+  },
+  "2610.06100": {
+    "base": "2610_트레이스투엔브_흔적에서-에이전틱-월드로",
+    "rank": "#3",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "97",
+    "en_title": "From Traces to Agentic Worlds: Agentic Language World Models for Interactive Environment Simulation",
+    "ko_title": "흔적에서 에이전틱 월드로: 상호작용 환경 시뮬레이션을 위한 에이전틱 언어 월드 모델"
+  },
+  "2610.08215": {
+    "base": "2610_런투플레이벤치_LLM-에이전트-경험학습-벤치마크",
+    "rank": "#4",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "76",
+    "en_title": "Learn2Play Bench: How Well Do LLM Agents Learn from Experience in Unfamiliar Environments?",
+    "ko_title": "런투플레이 벤치: LLM 에이전트는 낯선 환경에서 경험으로부터 얼마나 잘 학습하는가?"
+  },
+  "2610.12126": {
+    "base": "2610_슈퍼내비_모든-과업-모든-장면-에이전트-내비게이션",
+    "rank": "#5",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "62",
+    "en_title": "SuperNav: An Agentic Navigation System for Any Task in Any Scene",
+    "ko_title": "슈퍼내비: 모든 장면에서 모든 과업을 수행하는 에이전트형 내비게이션 시스템"
+  },
+  "2610.11959": {
+    "base": "2610_미모_자기개선-강화학습-스케일링",
+    "rank": "#6",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "55",
+    "en_title": "MiMo-V2.6: Scaling Reinforcement Learning Towards Self-Improvement",
+    "ko_title": "MiMo-V2.6: 자기개선을 향한 강화학습 스케일링"
+  },
+  "2610.12299": {
+    "base": "2610_미월드_다중에이전트-1인칭-상호작용-세계모델",
+    "rank": "#7",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "42",
+    "en_title": "Multi-Agent Egocentric World Model with Fine-Grained Embodied Interaction",
+    "ko_title": "세밀한 신체적 상호작용을 반영한 멀티에이전트 1인칭 세계 모델"
+  },
+  "2609.38173": {
+    "base": "2609_심플ICL_로봇-인컨텍스트-러닝-단순화-레시피",
+    "rank": "#8",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "40",
+    "en_title": "In-context Robot Learning Made Simple: A Democratized Recipe for Manipulation Tasks",
+    "ko_title": "단순화된 로봇 인-컨텍스트 러닝: 조작 작업을 위한 대중화된 레시피"
+  },
+  "2610.12468": {
+    "base": "2610_드림트루_반사실적-후속학습-기반-행동충실-로봇-월드모델",
+    "rank": "#9",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "33",
+    "en_title": "DreamTrue: Action-Faithful Robot World Model with Counterfactual Post-Training",
+    "ko_title": "드림트루: 반사실적 후속학습을 통한 행동 충실 로봇 월드 모델"
+  },
+  "2610.09087": {
+    "base": "2610_U스페이스_언어모델-불확실성-원인-규명",
+    "rank": "#10",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "29",
+    "en_title": "U-Space: Uncovering When and Why Uncertainty Arises in Language Models",
+    "ko_title": "U-Space: 언어 모델에서 불확실성이 언제, 왜 발생하는지 밝히기"
+  },
+  "2610.12461": {
+    "base": "2610_오우로월드_3D-시네마그래프-무한반복-애니메이션",
+    "rank": "#11",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "29",
+    "en_title": "OuroWorld: Bringing Any 3D World Alive as Diverse, Endlessly Looping 3D Cinemagraphs",
+    "ko_title": "오우로월드: 모든 3D 세계를 다채롭고 끝없이 반복되는 3D 시네마그래프로 되살리기"
+  },
+  "2610.12289": {
+    "base": "2610_테스트프리즘_단일-참조를-넘어선-테스트-평가",
+    "rank": "#12",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "28",
+    "en_title": "TestPrism: Rethinking Test Evaluation Beyond a Single Reference",
+    "ko_title": "테스트프리즘: 단일 참조를 넘어선 테스트 평가 재고찰"
+  }
+}

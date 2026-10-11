@@ -1,0 +1,113 @@
+<meta charset="UTF-8">
+<title>거대언어모델의 기초</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#6 · Daily Papers 2026-10-12</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 27</span>
+    </div>
+    <h1 class="article-title">Foundations of Large Language Models</h1>
+    <p class="article-title-ko">거대언어모델의 기초</p>
+    <p class="article-sub">새로운 실험적 발견을 제시하는 연구 논문이 아니라, 사전학습부터 프롬프팅·정렬·추론·추론 능력 향상까지 거대언어모델(LLM)의 핵심 개념과 기법을 체계적으로 정리한 입문용 개론서(교재)이며, 꾸준한 개정을 통해 2026년 10월 기준 최신 기법까지 포괄하도록 갱신되고 있다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2501.09223" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2501.09223" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Foundations of Large Language Models</li>
+<li><strong>저자</strong>: Tong Xiao, Jingbo Zhu (Northeastern University NLP Lab &amp; NiuTrans Research)</li>
+<li><strong>출처</strong>: arXiv:2501.09223v4 [cs.CL] (최초 공개 2025년 1월, v4 개정 2026년 10월 8일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/NiuTrans/NLPBook">NiuTrans/NLPBook (GitHub)</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2501.09223">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>새로운 실험적 발견을 제시하는 연구 논문이 아니라, 사전학습부터 프롬프팅·정렬·추론·추론 능력 향상까지 거대언어모델(LLM)의 핵심 개념과 기법을 체계적으로 정리한 입문용 개론서(교재)이며, 꾸준한 개정을 통해 2026년 10월 기준 최신 기법까지 포괄하도록 갱신되고 있다.</p>
+<h2>배경 및 문제의식</h2>
+<p>거대언어모델은 자연어처리에서 출발했지만 최근 인공지능 분야 전반에서 가장 혁신적인 기술적 진전 중 하나로 자리잡았다. 대규모 언어 모델링 과업을 통해 세계와 언어에 대한 지식을 범용 모델 하나로 획득할 수 있다는 통찰은, 레이블된 데이터로 특화된 시스템을 처음부터 학습시키던 기존 방식에서 대규모 사전학습으로 파운데이션 모델을 얻고 이를 미세조정·정렬·프롬프팅하는 새로운 패러다임으로의 전환을 이끌었다. 저자들은 이러한 급변하는 분야에서 최신 기법을 모두 다루기보다, LLM의 "기초"가 되는 핵심 개념을 체계적으로 정리할 필요가 있다고 보고 이 책을 저술하였다.</p>
+<h2>핵심 기여</h2>
+<p>이 책은 연구 성과가 아니라 교육 자료로서 다음 6개 장으로 구성된 체계적 개론을 제공한다는 점이 기여다:
+- 1장: 사전학습(pre-training)의 기본 개념과 일반적인 사전학습 방법 및 모델 아키텍처.
+- 2장: 오늘날 통상적으로 일컫는 LLM인 생성 모델(generative model)의 구축 과정과 학습 스케일업, 긴 텍스트 처리 방법.
+- 3장: 프롬프팅 기법 - 다양한 프롬프팅 전략과 연쇄적 사고(chain-of-thought) 추론, 자동 프롬프트 설계 등 고급 기법.
+- 4장: 정렬(alignment) 기법 - 지시 미세조정(instruction fine-tuning)과 인간 피드백 기반 정렬.
+- 5장: 추론(inference) 방법 - 다양한 디코딩 알고리즘, 가속 기법, 추론 시점 스케일링(inference-time scaling) 문제.
+- 6장: LLM의 추론(reasoning) 능력 향상 방법 - 학습을 통한 추론력 강화와 추론 시점 추가 연산을 통한 복잡한 문제 해결.</p>
+<h2>방법론</h2>
+<p>이 책은 독창적인 알고리즘이나 실험을 제시하는 논문이 아니라, 머신러닝과 자연어처리, 트랜스포머에 대한 배경지식이 있는 독자뿐 아니라 사전지식이 부족한 독자도 각 장을 독립적으로 이해할 수 있도록 설계된 자기완결적(self-contained) 서술 방식을 채택했다. 더 깊은 배경(시퀀스 모델링, 어텐션 메커니즘 등)이 필요한 독자를 위해 NiuTrans/NLPBook 저장소의 상위 자료를 참조하도록 안내한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>해당 사항 없음 — 이 자료는 새로운 실험이나 벤치마크 결과를 보고하는 연구 논문이 아니라, 기존에 확립된 LLM 관련 개념과 기법을 교육적으로 정리한 개론서이다.</p>
+<h2>한계점</h2>
+<p>저자들이 명시하듯, 이 책은 LLM의 "기초적인" 측면에 초점을 맞추고 있으며 모든 최신(cutting-edge) 기법을 포괄적으로 다루는 것을 목표로 하지 않는다. 즉 최신 연구 동향 전반에 대한 완전한 커버리지보다는 핵심 개념 이해를 우선시하는 책으로, 이 자체가 의도된 범위상의 한계로 명시되어 있다.</p>
+<h2>시사점</h2>
+<p>LLM 분야가 매우 빠르게 발전하는 상황에서, 핵심 원리를 체계적으로 정리한 개론서는 연구자뿐 아니라 실무자와 학생들이 최신 기법을 빠르게 따라잡기 위한 공통의 기반 지식을 제공한다는 점에서 실용적 가치가 크다. HuggingFace 트렌딩 논문 목록에 이런 교재형 자료가 계속 상위권에 오른다는 사실은, 빠르게 변화하는 LLM 생태계에서 기초를 다루는 양질의 학습 자료에 대한 커뮤니티의 수요가 여전히 크다는 점을 보여준다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2501.09223" target="_blank" rel="noopener">huggingface.co/papers/2501.09223</a> · 2026-10-12</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

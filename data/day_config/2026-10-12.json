@@ -1,0 +1,110 @@
+{
+  "2610.11287": {
+    "base": "2610_리모리_컨텍스트-압축-잔차-메모리-학습",
+    "rank": "#1",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "38",
+    "en_title": "REMORY: Learning Residual Memory for Context Compaction",
+    "ko_title": "리모리: 컨텍스트 압축을 위한 잔차 메모리 학습"
+  },
+  "2610.12421": {
+    "base": "2610_프리매칭_일반화된-조밀-대응-매칭-기법",
+    "rank": "#2",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "38",
+    "en_title": "Beyond Spatio-Temporal Priors: A Generalizable Approach for Dense Correspondence Matching",
+    "ko_title": "시공간적 사전 가정을 넘어서: 조밀 대응 매칭을 위한 일반화 가능한 접근법"
+  },
+  "2610.06801": {
+    "base": "2610_MC스파스_확산트랜스포머-조밀희소-어텐션-격차-해소",
+    "rank": "#3",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "38",
+    "en_title": "MC-Sparse: Deconstructing and Closing the Dense-Sparse Attention Gap in Diffusion Transformers",
+    "ko_title": "MC-Sparse: 확산 트랜스포머의 조밀-희소 어텐션 격차 해부 및 해소"
+  },
+  "2610.11794": {
+    "base": "2610_메멘토3_반성적-규칙집-기반-모델-재귀적-자기개선",
+    "rank": "#4",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "35",
+    "en_title": "Memento 3: Model-Based Recursive Self-Improvement through Reflective Rulebooks",
+    "ko_title": "메멘토 3: 반성적 규칙집을 통한 모델 기반 재귀적 자기개선"
+  },
+  "2610.02967": {
+    "base": "2610_아레나보상_선호도-루브릭-보상-결합-T2I-후속학습",
+    "rank": "#5",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "29",
+    "en_title": "Post-Training Frontier Text-to-Image Models by Composing Preference and Rubric Rewards",
+    "ko_title": "선호도와 루브릭 보상을 결합한 최상위 텍스트-이미지 모델 후속학습"
+  },
+  "2501.09223": {
+    "base": "2501_LLM기초_거대언어모델-개론서",
+    "rank": "#6",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "27",
+    "en_title": "Foundations of Large Language Models",
+    "ko_title": "거대언어모델의 기초"
+  },
+  "2610.12327": {
+    "base": "2610_스파스디코딩_디코딩인지-가지치기-LLM-추론가속",
+    "rank": "#7",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "27",
+    "en_title": "SparseDecoding: Decoding-Aware Pruning for Accurate and Efficient LLM Inference",
+    "ko_title": "스파스디코딩: 정확하고 효율적인 LLM 추론을 위한 디코딩 인지형 가지치기"
+  },
+  "2610.12419": {
+    "base": "2610_원서치VL_이미지비디오-통합-멀티모달-딥리서치-에이전트",
+    "rank": "#8",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "24",
+    "en_title": "OneSearch-VL: Unified Multimodal Deep Research Agent for Image and Video",
+    "ko_title": "원서치-VL: 이미지와 비디오를 위한 통합 멀티모달 딥 리서치 에이전트"
+  },
+  "2610.12442": {
+    "base": "2610_레고_재구성없는-3인칭1인칭-비디오생성",
+    "rank": "#9",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "24",
+    "en_title": "LEGO: A Lifting-Free Approach for Exocentric-to-Egocentric Video Generation",
+    "ko_title": "레고: 3인칭-1인칭 비디오 생성을 위한 재구성 없는 접근법"
+  },
+  "2610.12343": {
+    "base": "2610_라이즈벤치플플_추론기반-이미지편집-벤치마크",
+    "rank": "#10",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "21",
+    "en_title": "Reasoning-Informed Visual Editing",
+    "ko_title": "추론 기반 시각적 편집"
+  },
+  "2610.06406": {
+    "base": "2610_EBG_장기수행-에이전트-증거기반-감독",
+    "rank": "#11",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "20",
+    "en_title": "What Did the Agent Actually Do? Evidence-Grounded Oversight for Long-Horizon Agents",
+    "ko_title": "에이전트는 실제로 무엇을 했는가? 장기 수행 에이전트를 위한 증거 기반 감독"
+  },
+  "2610.12369": {
+    "base": "2610_COAP_로봇-재귀적-자기개선-상태기반-코드-정책",
+    "rank": "#12",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "19",
+    "en_title": "Embodied Turing Machines: Stateful Code for Robot Recursive Self-Improvement",
+    "ko_title": "구현된 튜링 머신: 로봇의 재귀적 자기개선을 위한 상태 기반 코드"
+  }
+}

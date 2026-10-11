@@ -1,0 +1,116 @@
+<meta charset="UTF-8">
+<title>MC-Sparse</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#3 · Daily Papers 2026-10-12</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 38</span>
+    </div>
+    <h1 class="article-title">MC-Sparse: Deconstructing and Closing the Dense-Sparse Attention Gap in Diffusion Transformers</h1>
+    <p class="article-title-ko">MC-Sparse: 확산 트랜스포머의 조밀-희소 어텐션 격차 해부 및 해소</p>
+    <p class="article-sub">비디오·3D 생성을 위한 확산 트랜스포머(diffusion transformer)에서 희소 어텐션(sparse attention)이 조밀 어텐션(dense attention) 대비 품질이 저하되는 원인을 세 가지로 분해하고, 이를 해결하는 학습이 필요 없는(training-free) 프레임워크 MC-Sparse를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.06801" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.06801" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: MC-Sparse: Deconstructing and Closing the Dense–Sparse Attention Gap in Diffusion Transformers</li>
+<li><strong>저자</strong>: Jiarui Chen, Zeqiang Lai 등 (Tencent HY, Fudan University, Shanghai Innovation Institute, MMLab CUHK 등 공동 연구)</li>
+<li><strong>출처</strong>: arXiv:2610.06801v1 [cs.CV] (2026년 10월 5일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://dodododddo.github.io/mcsparse-project-page/">mcsparse-project-page</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.06801">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>비디오·3D 생성을 위한 확산 트랜스포머(diffusion transformer)에서 희소 어텐션(sparse attention)이 조밀 어텐션(dense attention) 대비 품질이 저하되는 원인을 세 가지로 분해하고, 이를 해결하는 학습이 필요 없는(training-free) 프레임워크 MC-Sparse를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>확산 트랜스포머는 비디오·고해상도 3D 에셋 생성에서 지배적인 백본이 되었지만, 시퀀스 길이가 길어질수록 어텐션 연산의 2차(quadratic) 비용이 추론의 주요 병목이 된다. 희소 어텐션은 대안이 될 수 있지만, 공격적으로 희소화하면 생성 품질이 저하되는 문제가 지속되어 왔다. 기존 방법들은 대개 블록 단위로 희소성을 부과하는 블록-희소 어텐션(BSA)을 사용하는데, 이는 (1) 근사 점수로 블록을 선택하는 오차와 (2) 거친 블록 구조로 인해 어떤 상호작용을 선택할 수 있는지가 제한되는 오차가 서로 얽혀 있어, 품질 저하의 원인을 명확히 구분하기 어려웠다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>통제된 오라클(oracle) 비교 실험을 통해 희소 어텐션의 품질 저하 원인을 구조적 결합 오차(structural binding error), 선택 오차(selection error), 폐기된 잔여 질량 오차(discarded tail error)의 세 가지로 명확히 분해.</li>
+<li>이 분석에 기반해 개별 키-값(KV) 토큰을 정확하게 선택하면서도 유사한 질의(query)들을 타일 정렬된 그룹으로 묶어 GPU에서 효율적으로 실행 가능한 학습 불필요 프레임워크 Meta-Cached Sparse Attention(MC-Sparse) 제안.</li>
+<li>질의 그룹, 정확한 어텐션 확률로 선택된 KV 인덱스, 조밀-희소 어텐션 출력 간 잔차(residual)를 메타데이터로 캐싱하여 이후 디노이징 스텝에서 재사용하는 방식으로 시간적 중복성(temporal redundancy)을 활용.</li>
+<li>비디오·3D 생성 모델 전반에서 기존 희소 어텐션 기법보다 조밀 어텐션 출력에 더 높은 충실도를 유지하면서 더 큰 속도 향상을 달성(Minimax-H3-Base에서 1.80배, 3D 에셋 생성에서 2.32배 속도 향상, 품질 저하 거의 없음).</li>
+</ul>
+<h2>방법론</h2>
+<p>저자들은 동일한 희소성 수준에서 블록 오라클(쿼리 그룹마다 오라클 KV 블록 선택), 토큰 오라클(쿼리 그룹마다 개별 KV 토큰 선택), 퍼-쿼리 오라클(각 쿼리가 독립적으로 KV 토큰 선택)을 비교하여 세 가지 오차 원인을 분리했다. 이 분석에서 도출된 세 가지 설계 원칙(더 세밀한 선택, 정확한 어텐션 스코어링, 폐기된 기여분 보상)을 실현하기 위해 MC-Sparse는 다음을 결합한다: 앵커 스텝(anchor step)에서 빠른 주성분 분할 분할법(PDDP)으로 유사한 질의들을 동일 크기 타일로 그룹화하고, 각 그룹에 대해 집계된 정확한 어텐션 질량 기준으로 KV 토큰을 선택하며, 조밀-희소 출력 잔차를 기록한다. 이후 스텝들은 이 그룹·인덱스·잔차를 재사용하면서 현재 쿼리·키·값으로 어텐션을 계산한다. 이는 그룹화와 정확한 선택의 비용을 분산시키고, 캐싱된 잔차가 여러 스텝에 걸쳐 폐기된 토큰의 기여분을 보상한다. 이를 효율적으로 구현하기 위해 2단계(two-pass) 정확 선택기와 토큰-희소 어텐션 커널을 개발했다.</p>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li><strong>비디오 생성(Table 1)</strong>: Minimax-H3-Base 768p에서 MC-Sparse는 15% 밀도로 1.80배 속도 향상을 달성했으며, 25% 밀도에서는 1.61배 속도 향상과 더불어 기존 Sol-Attn(32.4% 밀도, 1.59배, PSNR 23.66dB) 대비 더 높은 충실도(PSNR 28.44dB 등)를 보임.</li>
+<li><strong>다양한 비디오 모델(Wan2.1-14B-T2V/I2V 등)</strong>: 조밀 어텐션(Full Attn)과 거의 구별되지 않는 품질을 유지하면서 1.52배~1.82배 속도 향상.</li>
+<li><strong>3D 에셋 생성(Table 2, HY3D-Internal)</strong>: 15% 어텐션 밀도에서 2.32배 디노이징 속도 향상과 함께, 비교된 희소 방법들 중 가장 우수한 기하 충실도(CD, Vol-IoU 등) 달성.</li>
+</ul>
+<h2>한계점</h2>
+<p>논문에 별도의 "한계점" 절은 명시되지 않았다. 다만 방법론 설계상 전제되는 제약으로, 캐싱 및 재사용 방식은 디노이징 스텝 간 조밀-희소 출력 잔차의 변화가 작다는 시간적 중복성 가정에 의존하며, 이 가정이 깨지는 극단적 상황(스텝 간 변화가 급격한 경우)에서의 동작은 논문에 명시되지 않음.</p>
+<h2>시사점</h2>
+<p>비디오·3D 생성 모델의 실제 서비스 적용에서 추론 비용은 핵심 제약이며, MC-Sparse는 별도의 재학습 없이 기존 확산 트랜스포머에 바로 적용 가능한 형태로 설계되어 실용적 가치가 크다. 희소 어텐션의 품질 저하 원인을 체계적으로 분해한 분석 방법론 자체도, 향후 다른 효율화 기법을 설계·진단하는 데 참고할 수 있는 틀을 제공한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.06801" target="_blank" rel="noopener">huggingface.co/papers/2610.06801</a> · 2026-10-12</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

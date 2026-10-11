@@ -1,0 +1,117 @@
+<meta charset="UTF-8">
+<title>추론 기반 시각적 편집</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#10 · Daily Papers 2026-10-12</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 21</span>
+    </div>
+    <h1 class="article-title">Reasoning-Informed Visual Editing</h1>
+    <p class="article-title-ko">추론 기반 시각적 편집</p>
+    <p class="article-sub">텍스트 지시에 따른 추론 기반 이미지 편집(Reasoning-Informed viSual Editing, RISE) 능력을 체계적으로 평가하기 위해 6개 추론 범주·65개 세분화된 과제 유형으로 구성된 벤치마크 RISEBench++를 구축하고, 58개의 편집 모델·방법을 평가한 결과 최상위 모델조차 56.6%의 정확도에 그친다는 것을 보인 뒤, 이를 보완하는 학습 불필요 에이전트 프레임워크 RISE-Agent를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.12343" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.12343" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Reasoning-Informed Visual Editing</li>
+<li><strong>저자</strong>: Xue Yang, Peiyuan Zhang 등 (Shanghai Jiao Tong University, Southeast University, South China University of Technology, Microsoft Research Asia, Fudan University, East China Normal University 공동 연구)</li>
+<li><strong>출처</strong>: arXiv:2610.12343v1 [cs.CV] (2026년 10월 8일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/VisionXLab/RISEBench">GitHub (코드)</a> · <a href="https://huggingface.co/collections/VisionXLab/rise">Hugging Face (데이터셋)</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.12343">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>텍스트 지시에 따른 추론 기반 이미지 편집(Reasoning-Informed viSual Editing, RISE) 능력을 체계적으로 평가하기 위해 6개 추론 범주·65개 세분화된 과제 유형으로 구성된 벤치마크 RISEBench++를 구축하고, 58개의 편집 모델·방법을 평가한 결과 최상위 모델조차 56.6%의 정확도에 그친다는 것을 보인 뒤, 이를 보완하는 학습 불필요 에이전트 프레임워크 RISE-Agent를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>대형 멀티모달 모델(LMM)은 시각적 이해와 생성 모두에서 빠르게 발전했지만, 일반적인 시각 편집(텍스트 지시에 따라 입력 이미지를 변형하는 작업)에서는 (1) 복잡한 편집 지시를 정확히 따르는 것, (2) 원본 이미지의 외형 일관성을 유지하는 것, (3) 단일/다중 이미지 등 유연한 입력 형식을 지원하는 것에서 여전히 한계가 있다. GPT-image 시리즈나 Nano Banana 시리즈 같은 독점 모델들은 맥락 이해와 논리적 추론에 기반해 지능적인 시각적 변형을 수행하는 RISE 능력을 보여주었지만, 이를 체계적으로 평가할 확립된 벤치마크가 없어 정량적 비교와 후속 연구가 어려웠다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>시간적(Temporal), 인과적(Causal), 공간적(Spatial), 논리적(Logical), 반사실적(Counterfactual) 추론과, 다중 턴 편집에서 여러 추론 유형을 결합하는 혼합(Hybrid) 추론까지 6개 범주의 계층적 분류 체계를 갖춘 RISEBench++ 제안, 이를 12개 하위 범주와 65개 세분화된 과제 유형으로 더 세밀하게 분해.</li>
+<li>다중 이미지 조건을 지원하도록 입력 형식을 확장하고, 영어·중국어 양방향으로 공개되는 1,000개의 정교하게 사람이 주석한 테스트 사례로 벤치마크 규모 확장.</li>
+<li>지시 추론(Instruction Reasoning), 외형 일관성(Appearance Consistency), 시각적 타당성(Visual Plausibility)을 인간 평가자와 LMM-as-a-judge 방식으로 함께 평가하는 개선된 평가 프레임워크 구축.</li>
+<li>추론 기반 계획, 도구 증강 실행, 검증자 기반 정제를 결합한 학습 불필요 에이전트 프레임워크 RISE-Agent 제안, 대부분의 기존 강력한 접근법을 능가.</li>
+<li>오픈소스 34개, 폐쇄형 19개, 에이전트 기반 5개를 포함한 총 58개 시각 편집 방법에 대한 대규모 평가 수행, 최상위 모델(GPT-Image-2.5 Sunburst)조차 56.6% 정확도에 그침을 확인.</li>
+</ul>
+<h2>방법론</h2>
+<p>RISEBench++는 6개 주요 추론 범주(시간·인과·공간·논리·반사실·혼합)별로 대표적인 질의 예시를 구성한다(예: "코인을 산화구리 용액에 10분간 담갔다가 뺀 후의 모습을 그려라"는 인과 추론, "두 강아지가 서로 마주보도록 그려라"는 공간 추론). 평가는 세 가지 축(지시 추론, 외형 일관성, 시각적 타당성)으로 이루어지며, 사람 평가자의 판단과 LMM-as-a-judge 방식을 함께 활용해 더 신뢰할 수 있고 잘 보정된 평가를 수행한다. RISE-Agent는 별도의 모델 재학습 없이, 추론 기반으로 편집 계획을 세우고 외부 도구를 활용해 실행한 뒤 검증자(verifier)의 피드백으로 결과를 정제하는 반복적 파이프라인을 통해 복잡한 RISE 과제를 해결한다.</p>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li>58개 시각 편집 방법(오픈소스 34개, 폐쇄형 19개, 에이전트 5개) 평가 결과, 최고 성능 모델인 GPT-Image-2.5 Sunburst도 정확도 56.6%에 그쳐 추론 기반 편집이 여전히 매우 어려운 과제임을 확인.</li>
+<li><strong>정성적 분석</strong>: 비교적 직관적인 경우(예: 10초 후 장면, 고양이가 서로 등을 맞댄 모습)는 강력한 모델들이 잘 처리하지만, 반응물 추가 결과 예측이나 지도에서 현 위치 파악처럼 추론 부담이 큰 사례에서는 모델 간 차이가 뚜렷하게 나타남. 규칙 기반 변환(예: 격자의 특정 칸만 상태를 바꾸는 "조명 스위치" 예제)에서는 다수 모델이 전체 격자를 바꾸거나 잘못된 칸 상태를 생성한 반면 RISE-Agent는 해당 칸에만 정밀하게 연산을 적용.</li>
+<li><strong>혼합(Hybrid) 추론 사례</strong>: 시계를 1시간 전진시키고 전체를 180도 회전한 뒤 분침을 3600도 회전시키는 등 다단계 순차 편집에서, 일부 모델(Qwen-Image-Edit-2509, HunyuanImage-3.0)은 회차가 진행될수록 구조적 완전성과 시각적 충실도가 누적적으로 저하되는 현상이 나타나, 다중 라운드 편집에서는 추론 오류뿐 아니라 다단계 재생성 과정에서도 오류가 누적될 수 있음을 시사.</li>
+</ul>
+<h2>한계점</h2>
+<p>저자들이 명시한 바에 따르면, 암묵적 시각 규칙을 추론하는 것, 추론에 의존하는 변환을 정밀하게 실행하는 것, 연속적인 편집에 걸쳐 일관성을 유지하는 것이 여전히 핵심 병목으로 남아있다. 특히 혼합 추론(다단계 순차 편집) 상황에서는 장기적 일관성(long-horizon consistency)이 개별 편집을 올바르게 수행하는 것과는 별개의 추가적인 난제로 드러났다.</p>
+<h2>시사점</h2>
+<p>RISEBench++는 "생성 품질"과 "추론 기반 편집 능력"이 서로 다른 축임을 체계적으로 드러내며, 향후 시각 편집 모델의 발전이 단순히 더 강력한 생성 능력뿐 아니라 견고한 시각적 지각, 정교한 멀티모달 추론, 정밀한 실행 능력을 모두 요구한다는 점을 시사한다. 또한 RISE-Agent가 보여준 성과는, 모델 자체의 재학습보다 추론-실행-검증을 명시적으로 분리한 에이전트형 접근이 복잡한 추론 기반 편집 과제를 다루는 데 유효한 전략이 될 수 있음을 보여준다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.12343" target="_blank" rel="noopener">huggingface.co/papers/2610.12343</a> · 2026-10-12</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

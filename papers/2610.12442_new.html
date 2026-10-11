@@ -1,0 +1,117 @@
+<meta charset="UTF-8">
+<title>레고</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#9 · Daily Papers 2026-10-12</span>
+      <span class="cat-tag">생성모델</span>
+      <span class="upvote-tag">▲ 24</span>
+    </div>
+    <h1 class="article-title">LEGO: A Lifting-Free Approach for Exocentric-to-Egocentric Video Generation</h1>
+    <p class="article-title-ko">레고: 3인칭-1인칭 비디오 생성을 위한 재구성 없는 접근법</p>
+    <p class="article-sub">3인칭(exocentric) 영상을 1인칭(egocentric) 시점 영상으로 변환할 때, 깊이 추정과 포인트 클라우드 재구성을 거치지 않고 학습된 시점 합성기(view synthesizer)가 직접 렌더링한 결과를 비디오 디퓨전 모델의 조건으로 사용하는 "재구성 없는(lifting-free)" 프레임워크 LEGO를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.12442" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.12442" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: LEGO: A Lifting-Free Approach for Exocentric-to-Egocentric Video Generation</li>
+<li><strong>저자</strong>: Suhwan Cho, Yonwoo Choi, Soongjin Kim, Jicheol Park, Taegyu Lim (GenGenAI)</li>
+<li><strong>출처</strong>: arXiv:2610.12442v1 [cs.CV] (2026년 10월 8일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/suhwan-cho/lego">GitHub</a> · <a href="https://huggingface.co/suhwan-cho/lego">Hugging Face</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.12442">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>3인칭(exocentric) 영상을 1인칭(egocentric) 시점 영상으로 변환할 때, 깊이 추정과 포인트 클라우드 재구성을 거치지 않고 학습된 시점 합성기(view synthesizer)가 직접 렌더링한 결과를 비디오 디퓨전 모델의 조건으로 사용하는 "재구성 없는(lifting-free)" 프레임워크 LEGO를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>단일 3인칭 녹화 영상에서 목표 1인칭 카메라 경로를 따르는 영상을 합성하는 과제는, 두 시점이 거의 겹치지 않아 목표 영상의 대부분을 새로 생성해야 하는 어려운 신규 시점 합성(novel view synthesis) 문제다. 기존 최고 성능(SOTA) 방법은 단안 깊이로 영상을 포인트 클라우드로 "들어올려(lifting)" 1인칭 경로를 따라 재렌더링한 뒤 이를 비디오 디퓨전 모델의 조건으로 사용하는데, 이 결정론적(deterministic) 매핑은 각 픽셀을 단 하나의 재투영 위치에 할당하므로 질감은 보존하지만 깊이 추정 오류가 그대로 내용이 잘못된 위치에 배치되는 오류로 이어지며, 그 오류가 어디서 발생했는지 알려주는 신호가 전혀 없다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>깊이 추정, 포인트 클라우드, 재투영 없이 LVSM 스타일 트랜스포머를 미세조정하여 1인칭 시점을 직접 렌더링하는 학습된 시점 합성기를 제안, 교차 시점 대응관계를 내부적으로 해결.</li>
+<li>포인트 클라우드 렌더링(결정론적, 오류 시 내용이 잘못된 위치에 배치)과 시점 합성기 렌더링(확률론적, 불확실한 대응관계는 평균화되어 블러로 나타남)의 실패 양상을 대조하여, 디퓨전 생성기는 선명도보다 구조적 정합성(alignment)을 우선하는 조건을 받아야 한다는 설계 원칙 제시 - 블러는 디노이징 학습이 복원하도록 설계된 손상이지만, 잘못된 위치의 내용은 복구하기 어렵기 때문.</li>
+<li>대응관계 분포의 집중도를 지역별 신뢰도(confidence)로 활용하여, 낮은 신뢰도 영역은 조건에서 마스킹하고 초기 레이아웃 형성 디노이징 단계에서는 높은 신뢰도 영역으로 생성기를 유도하는 추가 학습이 필요 없는 기법 Adaptive Rendering Consistency(ARC) 제안.</li>
+<li>Ego-Exo4D에서 기존 SOTA 명시적 재구성 파이프라인(EgoX)을 능가하며, 재학습 없이 EgoHumans, Nymeria 데이터셋에도 일반화.</li>
+</ul>
+<h2>방법론</h2>
+<p>LEGO는 EgoX와 동일하게 단일 영상 설정과 디퓨전 백본(Wan 2.1)을 유지하지만, 재구성 파이프라인을 LVSM 스타일 트랜스포머 기반 시점 합성기로 대체한다. 이 고정된(frozen) 합성기는 3인칭 프레임과 목표 카메라 광선(ray)을 입력받아 1인칭 이미지를 직접 매핑하도록 렌더링 목표만으로 학습되며, 교차 시점 대응관계를 내부적으로 학습한다. 합성기의 대응관계 분포가 각 영역에서 얼마나 집중되어 있는지가 신뢰도로 작용하며, 이를 활용해 (1) 조건 입력에서 낮은 신뢰도 영역을 마스킹하고, (2) 추론 시 초기의 고노이즈(레이아웃 결정) 단계에서는 신뢰도가 높은 렌더링 쪽으로, 나머지 단계는 제약 없이 디노이징을 유도하는 ARC를 적용한다. ARC는 추가 학습이 필요 없으며, 매 스텝마다 깨끗한 추정치의 1인칭 부분만 업데이트하므로 연산 비용이 매우 낮다(2.7ms, 기존 깊이 유도 어텐션 바이어스 방식의 252ms 대비).</p>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li><strong>조건 비교</strong>: Ego-Exo4D에서 시점 합성기의 렌더링이 포인트 클라우드 렌더링보다 더 나은 조건으로 작동했으며, 추론 시 ARC만 적용해도 기존 깊이 유도 어텐션 바이어스로 학습한 생성기보다 우수한 성능을 보임.</li>
+<li><strong>전체 시스템 성능</strong>: 관찰된(seen) 장면과 미관찰(unseen) 장면 모두에서 기존 SOTA 명시적 파이프라인(EgoX)을 능가.</li>
+<li><strong>일반화</strong>: 동일한 가중치로 재학습 없이 EgoHumans와 Nymeria 데이터셋에도 적용 가능.</li>
+<li><strong>연산 비용</strong>: H200 GPU 기준, 조건 생성에 LEGO는 클립당 4.7초가 소요되는 반면, 깊이 추정 및 포인트 클라우드 렌더링은 69.2초가 소요되어 LEGO가 전체적으로 EgoX보다 빠르고 메모리도 약간 덜 사용.</li>
+</ul>
+<h2>한계점</h2>
+<p>저자들이 명시한 한계는 다음과 같다: LEGO는 시점 합성기(F)의 한계를 그대로 물려받는다. F는 각 프레임을 단일 3인칭 프레임으로부터 독립적으로 렌더링하므로, 해당 프레임에 담기지 않은 내용은 복원할 수 없고(Figure 8 참조) 대응관계가 불확실한 영역은 블러 처리된다. 낯선 장면에서는 색상이 뭉개지는 현상도 나타난다. 또한 재구성 과정(lifting)은 제거했지만 여전히 두 시점 모두의 카메라 포즈 정보를 필요로 한다. 다만 F가 고정된 채 조건 입력과 신뢰도 지도를 통해서만 개입하므로, 디퓨전 모델이나 ARC를 바꾸지 않고도 더 강력한 피드포워드 시점 합성기로 교체 가능하다는 장점도 함께 언급된다.</p>
+<h2>시사점</h2>
+<p>비디오 디퓨전 모델에 줄 조건을 설계할 때 "선명하지만 위치가 틀린 정보"보다 "흐릿하지만 구조적으로 정확한 정보"가 더 유용하다는 통찰은, 신규 시점 합성뿐 아니라 깊이나 포인트 클라우드 기반 조건화를 사용하는 다른 조건부 생성 과제 전반에 적용 가능한 설계 원칙을 제시한다. 명시적인 3D 재구성 단계를 학습된 종단간(end-to-end) 모듈로 대체함으로써 깊이 추정 오류의 전파를 원천적으로 피할 수 있다는 점도 실용적 시사점이 크다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.12442" target="_blank" rel="noopener">huggingface.co/papers/2610.12442</a> · 2026-10-12</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

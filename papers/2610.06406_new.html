@@ -1,0 +1,116 @@
+<meta charset="UTF-8">
+<title>에이전트는 실제로 무엇을 했는가? 장기 수행 에이전트를 위한 증거 기반 감독</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#11 · Daily Papers 2026-10-12</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 20</span>
+    </div>
+    <h1 class="article-title">What Did the Agent Actually Do? Evidence-Grounded Oversight for Long-Horizon Agents</h1>
+    <p class="article-title-ko">에이전트는 실제로 무엇을 했는가? 장기 수행 에이전트를 위한 증거 기반 감독</p>
+    <p class="article-sub">장기 수행(long-horizon) 에이전트의 방대한 활동 중 사용자 검증이 필요한 "중요한 결정"을 식별하고 그 근거를 찾아주는 감독 벤치마크 AgentMonBench와, 이를 지원하는 학습 불필요 방법 증거-근거 행동 그래프(Evidence-Grounded Behavior Graph, EBG)를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.06406" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.06406" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: What Did the Agent Actually Do? Evidence-Grounded Oversight for Long-Horizon Agents</li>
+<li><strong>저자</strong>: Zhongxiang Sun, Jiahao Yan, Hongkang Zhao 등 (Renmin University of China Gaoling School of AI, Kuaishou Technology)</li>
+<li><strong>출처</strong>: arXiv:2610.06406v1 [cs.AI] (2026년 10월 5일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://zhk-lab.github.io/agentmonbench-ebg/">agentmonbench-ebg</a> · <a href="https://github.com/zhk-lab/EBG">GitHub</a> · <a href="https://huggingface.co/datasets/ZhaoHongKang/AgentMonBench">데이터셋</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.06406">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>장기 수행(long-horizon) 에이전트의 방대한 활동 중 사용자 검증이 필요한 "중요한 결정"을 식별하고 그 근거를 찾아주는 감독 벤치마크 AgentMonBench와, 이를 지원하는 학습 불필요 방법 증거-근거 행동 그래프(Evidence-Grounded Behavior Graph, EBG)를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>코딩 능력의 발전으로 에이전트가 저장소 수정, 연구 복제, 데이터 분석 같은 장기 수행 과업을 맡게 되면서, 사용자의 역할은 개별 결정을 직접 내리는 것에서 에이전트의 실행을 감독하는 것으로 옮겨가고 있다. 그러나 위임해도 책임은 사라지지 않으며, 사용자는 여전히 에이전트의 선택이 자신의 목표에 부합하는지 판단해야 한다. 문제는 에이전트 활동의 양과 복잡성이 사용자가 따라가고 평가할 수 있는 역량을 넘어선다는 점이다. 예를 들어 평가 기준을 바꾸면 연구 결론이 달라지고, 불완전한 레코드를 제외하면 분석 대상 모집단이 바뀔 수 있는데, 이런 선택들은 합리적일 수 있지만 여전히 사용자의 판단이 필요하며 그 근거는 메시지·도구 결과·중간 산출물 전역에 흩어져 있어 식별이 어렵다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>소프트웨어 엔지니어링 영역에서 감독의 두 가지 상호보완적 차원(요구사항-행동 간 정합성, 중요한 자율적 결정에 대한 인지)을 다루는 3개 서브셋으로 구성된 벤치마크 AgentMonBench 제안: SpecGAP(불완전한 요구사항에서 명시되지 않은 중요한 저장소 행동 평가), SilentSwap(기존 테스트가 통과하더라도 문서화된 요구사항과의 의미적 이탈 평가), FeedbackTrace(실제 상호작용에서 사용자 검증이 필요한 자율적 선택을 모니터가 드러낼 수 있는지 평가, 실제 사용자 피드백에서 도출된 정답 레이블 사용).</li>
+<li>출처가 연결된 증거를 행동(behavior)으로 그룹화하고 그 관계를 그래프로 조직하는 학습 불필요 방법 EBG 제안, 과업 지향적 관점에서 모니터가 맥락 속에서 행동을 해석하도록 지원.</li>
+<li>8개 모델에 대한 실험에서 EBG가 원본 컨텍스트에 직접 접근하는 것보다 대부분의 설정에서 결정 식별과 증거 위치 파악을 향상시킴을 입증.</li>
+<li>EBG의 증거 위치 파악 성능 향상이 입력 규모와 하이퍼파라미터 설정 전반에서 지속됨을 확인하고, 실제 연구 과업에 적용한 사례로 실용적 가치를 시연.</li>
+</ul>
+<h2>방법론</h2>
+<p>EBG는 결정론적인 구성과 제시 과정을 가지며, 의미 판단은 모니터(감독 모델)가 수행하도록 설계되었다. 코드 작업공간이나 실행 궤적에서 출처가 연결된 증거를 수집하여 행동·범위(scope)·명시적 관계로 조직하고, 이를 과업 지향적인 "증거 뷰(evidence view)"로 제시함으로써 모니터가 관찰된 행동을 맥락 속에서 평가할 수 있게 한다. 실제 적용 사례로, EBG는 후크(hook)·스킬(skill)·도구로 구성된 리뷰 하네스를 통해 Codex에 통합되었다: 후크가 리뷰를 트리거하고, 스킬이 리뷰 기준을 정의해 중요한 결정으로 Codex의 주의를 유도하며, 도구가 EBG를 이용해 증거를 검색하고 발견 사항을 기록한다. 이 워크플로우는 세 가지 리뷰 유형을 포함한다: (I) 모호성 리뷰 - 계획이나 사용자 프롬프트에 명시되지 않은 채 실행에 큰 영향을 미칠 수 있는 선택을 점검, (II) 조정 리뷰 - 계획된 접근 방식의 변경이 추가 검증·공개·사용자 승인을 필요로 하는지 점검, (III) 결과 리뷰 - 제시된 결론을 가용한 증거가 실제로 지지하는지 점검.</p>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li><strong>8개 모델 대상 전반적 평가</strong>: EBG가 AgentMonBench의 세 구성 요소 전반에서 원본 컨텍스트를 직접 활용하는 베이스라인보다 결정 식별과 증거 위치 파악 성능을 대부분의 설정에서 향상.</li>
+<li><strong>입력 규모별 분석</strong>: 입력 토큰 수가 늘어날수록(Low→Medium→High) 베이스라인 성능은 일관되게 하락했으나(예: FeedbackTrace EHR 0.667→0.422, SilentSwap LS 0.557→0.429), EBG는 모든 입력 규모에서 베이스라인을 능가했으며, High 그룹에서도 SpecGAP LF1 +0.078, SilentSwap LS +0.115, FeedbackTrace EHR +0.108의 절대 성능 향상을 유지.</li>
+<li><strong>Codex 하네스 적용</strong>: 실제 연구 자동화 사례에서 각색한 5개 연구 과업에 하네스를 적용한 결과, EBG 없이는 Codex가 사용자 검증이 필요한 핵심 이슈를 드러내지 않았지만, EBG를 통합하면 해당 이슈들을 식별하고 공개함.</li>
+</ul>
+<h2>한계점</h2>
+<p>논문은 별도의 "한계점" 절을 명시하지 않았다. 다만 평가가 소프트웨어 엔지니어링 영역과 특정 벤치마크 구성(3개 서브셋)에 집중되어 있으며, 실제 사례 연구는 5개 연구 과업으로 제한된 소규모 시연이라는 점이 본문에서 드러나는 범위상의 제약으로 보인다.</p>
+<h2>시사점</h2>
+<p>에이전트에게 과업을 위임하는 것이 보편화되면서, "에이전트가 실제로 무엇을 했는가"를 사람이 효율적으로 검증할 수 있게 하는 감독 도구의 필요성이 커지고 있다. EBG처럼 추가 학습 없이 기존 에이전트 실행 궤적에서 증거를 구조화하는 접근은, 모델 자체를 재학습하지 않고도 다양한 에이전트 하네스(Codex 등)에 플러그인 형태로 통합해 인간 감독의 실효성을 높일 수 있는 실용적인 경로를 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.06406" target="_blank" rel="noopener">huggingface.co/papers/2610.06406</a> · 2026-10-12</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

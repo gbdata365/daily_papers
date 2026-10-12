@@ -1,0 +1,101 @@
+{
+  "2610.12572": {
+    "base": "2610_디퓨전아트_확산모델-강화학습-안정화기법",
+    "rank": "#1",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "228",
+    "en_title": "DiffusionART: Efficient, Stable and Scalable Reinforcement of Diffusion Models",
+    "ko_title": "디퓨전아트: 효율적이고 안정적이며 확장 가능한 확산모델 강화학습"
+  },
+  "2610.13527": {
+    "base": "2610_에스스페이스_멀티모달모델-내부공간표상-분석",
+    "rank": "#2",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "201",
+    "en_title": "S-Space: Exploring Spatial Workspace in Multimodal Language Models",
+    "ko_title": "에스스페이스: 멀티모달 언어모델의 공간적 작업 공간 탐구"
+  },
+  "2610.12772": {
+    "base": "2610_리플렉스_시각기반-반응형-휴머노이드제어",
+    "rank": "#3",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "129",
+    "en_title": "Reflex: Visually Grounded Reactive Humanoid Control",
+    "ko_title": "리플렉스: 시각 기반 반응형 휴머노이드 제어"
+  },
+  "2610.12611": {
+    "base": "2610_소프트웨어짐_컴퓨터사용에이전트-학습환경합성",
+    "rank": "#4",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "83",
+    "en_title": "SoftwareGym: Scaling Computer-Use Agent Training with Diverse Synthesized Software Environments",
+    "ko_title": "소프트웨어짐: 다양한 합성 소프트웨어 환경으로 컴퓨터 사용 에이전트 학습 확장하기"
+  },
+  "2610.13021": {
+    "base": "2610_임바디드씨엘벤치_자기진화형-에이전트-지속학습-평가",
+    "rank": "#5",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "62",
+    "en_title": "EmbodiedCLBench: Evaluating Continual Learning for Self-Evolving Embodied Agents",
+    "ko_title": "임바디드씨엘벤치: 자기진화형 구체화 에이전트의 지속학습 평가"
+  },
+  "2610.07987": {
+    "base": "2610_비전위브_멀티모달모델-탄력적-시각표상",
+    "rank": "#6",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "55",
+    "en_title": "VisionWeave: Weaving Elastic Visual Representations as a Native Capability of MLLMs",
+    "ko_title": "비전위브: MLLM의 내재적 능력으로서 탄력적 시각 표상 엮기"
+  },
+  "2609.38748": {
+    "base": "2609_스테레오바인드_동적공간정합-비디오오디오동시생성",
+    "rank": "#7",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "51",
+    "en_title": "Hear the World in Stereo: Learning Dynamic Spatial Correspondence for Immersive Joint Video-Audio Generation",
+    "ko_title": "스테레오로 세상을 듣다: 몰입형 비디오-오디오 동시 생성을 위한 동적 공간 정합 학습"
+  },
+  "2610.13395": {
+    "base": "2610_프로그램짐_장기호라이즌-프로그램복제-에이전트-학습환경",
+    "rank": "#8",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "47",
+    "en_title": "ProgramGym: Scaling Training Environments for Long-Horizon Program Reproduction Agents",
+    "ko_title": "프로그램짐: 장기 호라이즌 프로그램 재현 에이전트를 위한 학습 환경 확장"
+  },
+  "2610.13113": {
+    "base": "2610_신스셀프_소형모델-지속학습-합성자기증류",
+    "rank": "#9",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "41",
+    "en_title": "Continually Post-training Small Models via Synthetic Self-distillation",
+    "ko_title": "합성 자기증류를 통한 소형 모델의 지속적 사후학습"
+  },
+  "2610.12984": {
+    "base": "2610_워크투스킬_인간GUI경험-재사용가능에이전트스킬",
+    "rank": "#10",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "39",
+    "en_title": "Work2Skill: Capturing Human GUI Experience for Reusable Agent Skill Induction",
+    "ko_title": "워크투스킬: 재사용 가능한 에이전트 스킬 유도를 위한 인간 GUI 경험 포착"
+  },
+  "2610.11361": {
+    "base": "2610_셉젠_멀티스템-오디오비디오-분리및생성",
+    "rank": "#11",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "38",
+    "en_title": "SepGen: Multi-Stem Audio-Video Separation and Generation in a Single Model",
+    "ko_title": "셉젠: 단일 모델에서의 멀티 스템 오디오-비디오 분리 및 생성"
+  }
+}

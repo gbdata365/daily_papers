@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>합성 자기증류를 통한 소형 모델의 지속적 사후학습</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#9 · Daily Papers 2026-10-13</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 41</span>
+    </div>
+    <h1 class="article-title">Continually Post-training Small Models via Synthetic Self-distillation</h1>
+    <p class="article-title-ko">합성 자기증류를 통한 소형 모델의 지속적 사후학습</p>
+    <p class="article-sub">SynthSelf는 소형 언어모델이 문맥 내 학습(ICL) 능력이 부족해 기존 자기증류 미세조정(SDFT)이 통하지 않는 문제를, "같은 계열의 조금 더 큰 모델(aligner)"에게 분포 내(in-distribution) 재작성을 위임함으로써 해결하는 지속적 사후학습(continual post-training) 기법이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.13113" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.13113" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Continually Post-training Small Models via Synthetic Self-distillation</li>
+<li><strong>저자</strong>: Woosung Koh, Hyunsoo Lee, Kyungjae Lee 등 (KAIST AI, LG AI Research)</li>
+<li><strong>출처</strong>: arXiv:2610.13113v1 [cs.LG] (2026년 10월 9일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.13113">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>SynthSelf는 소형 언어모델이 문맥 내 학습(ICL) 능력이 부족해 기존 자기증류 미세조정(SDFT)이 통하지 않는 문제를, "같은 계열의 조금 더 큰 모델(aligner)"에게 분포 내(in-distribution) 재작성을 위임함으로써 해결하는 지속적 사후학습(continual post-training) 기법이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>언어모델을 지속적으로 사후학습할 때는 새 능력을 "습득"하면서도 기존 능력을 "유지"해야 하는 이중 과제가 존재하며, 기존 능력을 잃는 현상을 치명적 망각(catastrophic forgetting)이라 부른다. 최근 자기증류 미세조정(SDFT)은 모델이 스스로 문맥 내 시범(demonstration)을 재작성하게 하여 이 문제를 완화하지만, 이는 모델의 강력한 문맥 내 학습(ICL)과 지시 따르기(IF) 능력에 의존한다. 그 결과 저지연·온디바이스 환경에 핵심적인 소형 모델에서는 SDFT가 제대로 작동하지 않는다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>사후학습 모델의 습득 실패와 망각이 학습 분포의 변화(distribution shift)와 선형적으로 상관됨을 규명하여, 분포 내(in-distribution) 학습의 필요성을 입증.</li>
+<li>SDFT의 분포 내 재작성 효과를 모방하면서, 이를 같은 계열(family)의 최소한으로 더 큰 "aligner" 모델에 아웃소싱하는 Synthetic Self-Distillation(SynthSelf) 제안.</li>
+<li>오프폴리시 감독과 거부 샘플링(rejection sampling)을 결합해, 원래 분포를 깨지 않으면서도 소형 모델에 필요한 고품질 감독 신호를 제공.</li>
+</ol>
+<h2>방법론</h2>
+<p>SDFT는 시범 (x, y)를 문맥에 포함한 프롬프트로 고정된 자기 모델이 재작성한 결과를 온폴리시로 학습 목표로 삼는다. 저자들은 Qwen2.5-3B-Instruct를 대상으로 23개의 수학 데이터셋을 이용해 지속 미세조정을 수행하고 정책 변화(KL divergence)를 측정한 결과, 분포 변화가 클수록 습득 실패와 망각이 심해짐을 확인했다. SynthSelf는 이 통찰을 바탕으로, 학습 대상 모델보다 조금 더 큰 같은 계열의 "aligner" 모델이 각 시범을 자신의 네이티브 분포로 재작성하도록 하고, 이를 그리디 디코딩으로 생성한다. 여러 후보 aligner 중에서는 학생 모델과 분포상 가장 가까운(KL이 가장 낮은) 것을 선택하는 기준을 제시한다(동일 계열의 Qwen2.5-7B/14B/32B 등이 가장 낮은 평균 KL을 보임). 이렇게 생성된 재작성 데이터에 오프폴리시 증류와 거부 샘플링을 결합해 학습한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>4개의 습득(acquisition) 데이터셋(혼합 포함)과 14개의 유지(retention) 벤치마크, 3가지 소형 모델 규모에 대해 평가한 결과, SynthSelf는 오프폴리시/온폴리시 증류를 포함한 6가지 비교 기법을 일관되게 능가했다. 프롬프트 매칭 SDFT와 비교했을 때도 평균적으로 습득 성능 +18.96%p, 유지 성능 +1.68%p 더 높았다. 또한 같은 계열의 aligner를 사용하면 데이터 생성 추론 비용을 62.9~76.9% 절감할 수 있었고, SFT보다 적은 수의 시범으로 학습했음에도 습득 성능이 평균 +4.2%p 향상되어 감독의 질이 양보다 중요함을 보였다. 거부 샘플링을 제거하는 어블레이션에서는 SynthSelf와 오프폴리시 증류 모두 성능이 일관되게 떨어졌다.</p>
+<h2>한계점</h2>
+<p>논문에 명시된 바로는, SynthSelf는 같은 계열의 더 큰 aligner 모델을 필요로 한다는 한계가 있다. 다만 Qwen2.5, Qwen3.5, OLMo 2, Llama 3, Gemma 4 등 대부분의 주요 오픈 웨이트 모델 계열이 다양한 크기의 변형을 제공하므로 이 요구 조건은 대체로 자연스럽게 충족된다. 계열이 다른(out-of-family) aligner를 분포 내 감독에 적응시키는 방법은 향후 연구로 남겨두었다.</p>
+<h2>시사점</h2>
+<p>이 연구는 온디바이스 배포, 드래프트 모델, 검증기 등에 핵심적인 소형 모델도 지속학습이 가능하도록 하는 실용적 경로를 제시하며, "자기 모델이 직접 재작성"하는 대신 "같은 계열의 조금 더 큰 모델에 위임"하는 간단한 설계 전환이 소형 모델의 치명적 망각 문제를 효과적으로 완화할 수 있음을 보여준다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.13113" target="_blank" rel="noopener">huggingface.co/papers/2610.13113</a> · 2026-10-13</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

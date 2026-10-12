@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>에스스페이스</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#2 · Daily Papers 2026-10-13</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 201</span>
+    </div>
+    <h1 class="article-title">S-Space: Exploring Spatial Workspace in Multimodal Language Models</h1>
+    <p class="article-title-ko">에스스페이스: 멀티모달 언어모델의 공간적 작업 공간 탐구</p>
+    <p class="article-sub">멀티모달 언어모델(MLLM) 내부에는 객체의 좌우·상하·원근 좌표를 선형적으로 인코딩하는 3차원 표상 공간인 "S-Space"가 존재하며, 이는 모델의 공간 지각과 추론, 언어 응답을 매개하는 내부 작업 공간처럼 기능한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.13527" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.13527" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: S-Space: Exploring Spatial Workspace in Multimodal Language Models</li>
+<li><strong>저자</strong>: Zhiyuan Shi, Xiang Li, Xingzhuo Guo 등 (MirroS, Tsinghua University, Peking University)</li>
+<li><strong>출처</strong>: arXiv:2610.13527v1 [cs.CV] (2026년 10월 9일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://mirros.ai/blog/s-space">S-Space Project Page</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.13527">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>멀티모달 언어모델(MLLM) 내부에는 객체의 좌우·상하·원근 좌표를 선형적으로 인코딩하는 3차원 표상 공간인 "S-Space"가 존재하며, 이는 모델의 공간 지각과 추론, 언어 응답을 매개하는 내부 작업 공간처럼 기능한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>MLLM은 재구성, 계획, 내비게이션, 조작 등 다양한 물리적 작업에서 공간 지능을 보여주고 있지만, 인간이 쉽게 푸는 과제에서조차 여전히 큰 성능 격차를 보인다. 기존 연구는 겉으로 드러나는 답변이나 행동만으로는 실패 원인을 파악하기 어렵다는 한계를 가지고 있었다. 인간 두뇌에 공간 정보를 유지·조작하는 "정신적 작업 공간(mental workspace)"이 존재한다는 인지과학적 통찰에서 출발해, 저자들은 MLLM 내부에도 이와 유사한 공간 작업 공간이 존재하는지를 탐구한다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>MLLM 내부에 존재하는 공간적 작업 공간을 체계적으로 식별하고 특성을 규명한 최초의 연구(저자 주장).</li>
+<li>그래디언트 기반의 간단한 방법으로 S-Space를 식별해, 고정된 공간 방향을 따라 정확하고 일반화 가능한 연속 좌표를 읽어내는 기법 제안.</li>
+<li>S-Space를 공간 추론 실패를 진단하는 도구로 활용해, 공간 지각과 이후의 연산(computation)을 분리하여 모델이 가진 정보 활용의 한계를 드러냄.</li>
+</ol>
+<h2>방법론</h2>
+<p>모델의 중간 레이어에서, 객체 이름 토큰의 은닉 표상 h 중 3차원 선형 부분공간을 "S-Space"로 정의한다. 좌우/상하/원근을 비교하는 상대적 공간 질문(예: "사과가 컵의 왼쪽에 있는가, 오른쪽에 있는가?")에 대한 모델의 로짓 차이(answer contrast)를 정의하고, 이를 객체 토큰 활성값에 대해 미분하여 그래디언트 방향을 구한다. 질의 객체와 참조 객체에 대한 그래디언트 차이를 역할-반대칭적으로 결합하고 여러 프롬프트 템플릿·객체 순서·예시에 대해 평균을 내어, 수평(x)·수직(y)·거리(z) 세 축의 단위 벡터를 얻는다. 이렇게 식별된 S-Space는 특정 데이터나 프롬프트에 의해 유도된 것이 아니라 모델에 내재한(intrinsic) 성질이며, 공간과 무관한 질문에 답할 때도 읽어낼 수 있다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Molmo2-ER, Qwen3.5-4B, Qwen3.6-27B 등 여러 MLLM에서 S-Space를 통해 객체 좌표를 선형 투영으로 읽어내는 실험을 수행했다. 지각(perception)은 객체 위치를 S-Space에 인코딩하여 정확한 공간 판단을 직접 읽어낼 수 있게 하고, 내부 추론(internal reasoning)은 관점 변화에 따라 이 표상을 변환하며, 언어 응답(verbal response)은 S-Space에 선택적으로 접근함을 인과적 개입(causal intervention) 실험으로 보였다—공간 판단만 바뀌고 비공간적 응답은 대부분 보존되었다. 또한 보이지 않는 개체나 관찰자 자신에게도 위치가 할당되고, 물리적 방향과 추상적 언어 의미가 연결되는 사례를 관찰했다. 관점 변화 문제에서는 S-Space 좌표를 변환하는 오라클을 구성해, 모델이 틀린 답을 낼 때조차 내부에는 정확한 답을 지지하는 정보가 존재함을 보였다.</p>
+<h2>한계점</h2>
+<p>논문에 명시된 바로는, 방향 단어(direction-word) 판독에서 기준 좌표계(cardinal frame)와 이미지 상대 좌표계(image-relative frame) 간의 체계적인 혼선이 발견되었으며, 무엇보다 MLLM은 능력 있는 공간 표상을 형성할 수 있음에도 관점 변화에 걸쳐 신뢰성 있게 추론하는 데 필요한 공간적 변환(computation) 단계에서 핵심적인 병목이 존재한다.</p>
+<h2>시사점</h2>
+<p>이 연구는 공간 추론 실패가 지각 단계가 아니라 지각 이후의 연산(계산) 단계에서 주로 발생함을 시사하며, 향후 시스템이 모든 공간 연산을 하나의 거대 MLLM 내부에서 처리하기보다, 변환·시뮬레이션·기억을 위한 전용 도구와 연계하는 에이전트적 접근이 유효할 수 있음을 제안한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.13527" target="_blank" rel="noopener">huggingface.co/papers/2610.13527</a> · 2026-10-13</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

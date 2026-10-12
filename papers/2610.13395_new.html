@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>프로그램짐</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#8 · Daily Papers 2026-10-13</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 47</span>
+    </div>
+    <h1 class="article-title">ProgramGym: Scaling Training Environments for Long-Horizon Program Reproduction Agents</h1>
+    <p class="article-title-ko">프로그램짐: 장기 호라이즌 프로그램 재현 에이전트를 위한 학습 환경 확장</p>
+    <p class="article-sub">ProgramGym은 코딩 에이전트가 소프트웨어 엔지니어처럼 처음부터 프로그램을 재현(설계+구현)하도록 학습시키기 위해, 검증 가능한 학습 환경(Program-Env)과 장기 호라이즌 작업을 위한 역할 분리형 워크플로(Program-Agent)를 함께 제공하는 프레임워크다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.13395" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.13395" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: ProgramGym: Scaling Training Environments for Long-Horizon Program Reproduction Agents</li>
+<li><strong>저자</strong>: Chengyi Yang, Renxu Bao, Jue Hou 등 (Xiamen University, Washington University in St. Louis, 중국과학원 자동화연구소, Unisound)</li>
+<li><strong>출처</strong>: arXiv:2610.13395v1 [cs.SE] (2026년 10월 9일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://programgym.github.io/">ProgramGym Project Page</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.13395">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>ProgramGym은 코딩 에이전트가 소프트웨어 엔지니어처럼 처음부터 프로그램을 재현(설계+구현)하도록 학습시키기 위해, 검증 가능한 학습 환경(Program-Env)과 장기 호라이즌 작업을 위한 역할 분리형 워크플로(Program-Agent)를 함께 제공하는 프레임워크다.</p>
+<h2>배경 및 문제의식</h2>
+<p>현재 코딩 에이전트들은 저장소 내 이슈를 해결(SWE-bench류)하거나 요구사항 문서로부터 저장소를 생성(NL2Repo-Bench류)하는 과제를 주로 다루는데, 두 경우 모두 에이전트가 이미 주어진 코드베이스나 명시된 기능에서 출발한다. 반면 실제 소프트웨어 엔지니어는 "무엇이 필요한지"와 "어떻게 설계해야 하는지"를 계속 탐색하며 처음부터 프로그램을 만든다. 프로그램 재현(program reproduction) 과제(ProgramBench 등)는 소스코드나 네트워크 접근 없이 사용 문서와 참조 프로그램만으로 그 동작을 재현하도록 요구하지만, 이를 위한 확장 가능하고 검증 가능한 학습 환경은 부족했고, 범용 에이전트 하네스는 탐색과 구현을 장기간 일관되게 유지하지 못했다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>저장소로부터 참조 실행 파일과 런타임 샌드박스를 구축하고 블랙박스 테스트를 생성하는 피드백 기반 파이프라인 Program-Env 제안.</li>
+<li>분석·구현·리뷰의 역할 분리형 워크플로와 컴파일 점검·실패 복구를 위한 리비전 관리 기능을 갖춘 Program-Agent 제안.</li>
+<li>ProgramBench에서 Program-Env와 Program-Agent 각각이 프로그램 재현 성능을 향상시킴을 광범위한 실험으로 입증.</li>
+</ol>
+<h2>방법론</h2>
+<p>Program-Env는 온라인 의존성 준비와 오프라인 컴파일을 분리하고 빌드 진단 정보를 활용해 참조 실행 파일과 런타임 샌드박스를 반복적으로 복구(repair)하며 구축한다. 테스트 생성은 기능 모듈별로 병렬적으로 진행되며, 프로그램 분석을 통해 아직 탐색되지 않은 동작을 표적으로 삼고 검증 피드백을 반영한다. 이 파이프라인으로 C, C++, Go, Rust 전반에 걸쳐 1,648개의 학습 환경을 구축했으며, 각 환경은 참조 실행 파일, 런타임 샌드박스, 사용 문서, 블랙박스 동작 테스트 모음을 제공한다. Program-Agent는 참조 프로그램 탐색에서 얻은 증거를 먼저 기록하고, 구현과 동작 리뷰를 별도의 세션에서 번갈아 수행하는 역할 분리형 반복 워크플로를 사용한다. 지속적인(persistent) 기록이 여러 라운드에 걸쳐 요구사항을 전달하고, 오프라인 빌드 점검과 검증된 체크포인트가 리비전과 실패 복구를 지원한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>ProgramBench에서 Program-Env로 생성한 트라젝토리로 파인튜닝하면 Qwen3.8-27B의 성능이 34.87%에서 42.84%로 향상되었다. Program-Agent를 추가로 적용하면 베이스 모델과 SFT 모델이 각각 55.71%, 56.25%까지 올라가며, 이는 Claude Opus 4.7 등 일부 플래그십 모델을 능가하는 수준이다. 행동 분석에서는 Program-Agent가 Claude Code 하네스에 비해 모델이 "읽기(read)"와 "git" 행동을 더 많이 사용하도록 유도해, 에이전트를 탐색과 리비전 중심으로 재구성함을 보였다.</p>
+<h2>한계점</h2>
+<p>논문 결론부에는 별도의 명시적 한계점 절이 없다. 본문에서 확인되는 범위상의 특징으로는, 학습 환경이 C, C++, Go, Rust 네 언어로 구성된 1,648개 저장소에 한정되어 있다는 점이 있다.</p>
+<h2>시사점</h2>
+<p>이 연구는 코딩 에이전트 훈련의 초점을 "이슈 해결"이나 "문서 기반 생성"에서 "처음부터 요구사항을 발견하고 시스템을 설계하는" 더 근본적인 소프트웨어 엔지니어링 역량으로 확장하며, 검증 가능한 환경 구축과 장기 호라이즌 워크플로 설계가 함께 필요함을 보여준다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.13395" target="_blank" rel="noopener">huggingface.co/papers/2610.13395</a> · 2026-10-13</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

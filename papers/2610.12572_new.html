@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>디퓨전아트</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#1 · Daily Papers 2026-10-13</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 228</span>
+    </div>
+    <h1 class="article-title">DiffusionART: Efficient, Stable and Scalable Reinforcement of Diffusion Models</h1>
+    <p class="article-title-ko">디퓨전아트: 효율적이고 안정적이며 확장 가능한 확산모델 강화학습</p>
+    <p class="article-sub">DiffusionART는 순방향(forward-process) 확산모델 강화학습이 불안정해지는 원인을 이론적으로 규명하고, EMA(지수이동평균) 튜닝 없이도 안정적이면서 효율적으로 확산/비디오 생성 모델을 보상 기반으로 미세조정하는 새로운 RL 알고리즘이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.12572" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.12572" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: DiffusionART: Efficient, Stable and Scalable Reinforcement of Diffusion Models</li>
+<li><strong>저자</strong>: Zhenglin Wan 등 (National University of Singapore HPC-AI Lab, Kling AI, HKUST)</li>
+<li><strong>출처</strong>: arXiv:2610.12572v1 [cs.LG] (2026년 10월 8일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://vanzll.github.io/diffusionart-project/">DiffusionART Project Page</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.12572">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>DiffusionART는 순방향(forward-process) 확산모델 강화학습이 불안정해지는 원인을 이론적으로 규명하고, EMA(지수이동평균) 튜닝 없이도 안정적이면서 효율적으로 확산/비디오 생성 모델을 보상 기반으로 미세조정하는 새로운 RL 알고리즘이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>온라인 확산 강화학습은 블랙박스 보상을 활용해 이미지·비디오 생성모델을 미세조정하는 핵심 기법이다. 그러나 역방향(reverse-process) 방식인 Flow-GRPO 계열은 신용 할당(credit assignment)이 부정확해 학습 효율이 떨어지고, 순방향 방식인 DiffusionNFT는 효율적이지만 태스크마다 세심하게 튜닝된 EMA 없이는 학습이 불안정해진다. 두 계열 모두 "효율적이면서 안정적인" 학습을 동시에 만족시키지 못한다는 것이 문제의식이다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>NFT(forward-process) 방식의 목적함수 안에 숨어있는 "순방향-역방향 일관성 힘(forward-reverse consistency force)"을 진단하고, 긍정/부정 조인트 학습이 이를 부분적으로만 상쇄한다는 것을 규명.</li>
+<li>EMA가 안정성을 주는 메커니즘이 오프폴리시 롤아웃이 아니라 지연된 참조값으로의 "복원(restoration)" 효과임을 규명.</li>
+<li>보상을 프롬프트 단위로 먼저 집약(aggregation-first)하여 역방향 롤아웃 상태에 적용함으로써 일관성 힘을 구조적으로 제거하고, 트러스트 리전 마스킹 기반의 2차 업데이트로 EMA 튜닝 없이 드리프트에 적응하는 복원력을 제공하는 DiffusionART 알고리즘 제안.</li>
+<li>이미지·비디오 생성 전반에서 태스크별 튜닝 없이 효율적이고 안정적인 학습을 달성.</li>
+</ol>
+<h2>방법론</h2>
+<p>각 프롬프트의 롤아웃 샘플과 보상을 보상-엔드포인트 공분산(Cov(R, x0|c))으로 집약해 정규화된 공유 가이던스 방향 G(c)를 계산한다. 이 G(c)를 모든 역방향 롤아웃 상태에 고정된 목표(vθ(0) + G(c))로 적용함으로써, 순방향 속도(forward velocity)를 전혀 참조하지 않아 일관성 힘이 구조적으로 발생하지 않는다. 또한 각 롤아웃 배치를 두 개의 미니배치로 나누어 1차·2차 MSE 업데이트를 수행하는데, 2차 업데이트는 가이던스 G(c)와 함께 1차 업데이트 이후의 드리프트에 비례하는 복원항을 포함해 EMA 스케줄 튜닝 없이 안정성을 확보한다. 추가로 ODE 솔버에 대한 트러스트 리전 마스킹 메커니즘을 적용해 과도한 정책 업데이트를 방지한다. 미분 가능한 보상 모델이 필요 없고, 프롬프트당 적은 샘플 수로도 동작하며, 쌍대(pairwise) 보상 모델(DiffusionART-Pairwise)도 지원한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>SD3.5-M(이미지)과 HunyuanVideo-13B(비디오) 등에서 DiffusionNFT, Flow-GRPO-Fast와 비교 실험을 수행했다. HunyuanVideo-13B에서 시각 품질(VQ)과 모션 품질(MQ)을 동일 가중치로 설정했을 때, DiffusionART는 DiffusionNFT와 Flow-GRPO-Fast의 후반기 평균 보상 수준에 각각 12.02배, 11.72배 더 적은 GPU 시간으로 도달했으며, 평균 학습 보상은 각각 28.8%, 53.0% 더 높았다. 이미지-투-비디오 생성에서도 Flow-GRPO-Fast보다 4.8배 적은 GPU 시간으로 동등한 MQ 수준에 도달했다.</p>
+<h2>한계점</h2>
+<p>논문에 명시된 바로는, 가이던스가 복원항보다 작아지는 경우(즉 드리프트가 가이던스를 압도하는 경우) 학습 속도가 느려질 수 있는 현상이 있으며, 저자들은 이에 대한 상세 분석을 향후 연구로 남겨두었다.</p>
+<h2>시사점</h2>
+<p>이 연구는 확산모델 강화학습의 안정성 문제를 이론적으로 분해하여 "집약 우선(aggregation-first)" 설계 원칙을 제시함으로써, 비디오·이미지 생성모델의 보상 기반 후처리(post-training) 확장성을 크게 높일 수 있는 실용적 방향을 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.12572" target="_blank" rel="noopener">huggingface.co/papers/2610.12572</a> · 2026-10-13</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

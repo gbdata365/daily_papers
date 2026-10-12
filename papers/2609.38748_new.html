@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>스테레오로 세상을 듣다</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#7 · Daily Papers 2026-10-13</span>
+      <span class="cat-tag">생성모델</span>
+      <span class="upvote-tag">▲ 51</span>
+    </div>
+    <h1 class="article-title">Hear the World in Stereo: Learning Dynamic Spatial Correspondence for Immersive Joint Video-Audio Generation</h1>
+    <p class="article-title-ko">스테레오로 세상을 듣다: 몰입형 비디오-오디오 동시 생성을 위한 동적 공간 정합 학습</p>
+    <p class="article-sub">StereoBind는 영상 속 소리 발생원의 움직임 궤적(motion track)을 스테레오 오디오 생성과 결속시켜, 소리의 지각 위치가 화면 속 움직임과 시간에 따라 일관되게 변화하는 "동적 공간 정합(Dynamic Spatial Correspondence)"을 구현하는 비디오-오디오 동시 생성 프레임워크다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.38748" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.38748" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Hear the World in Stereo: Learning Dynamic Spatial Correspondence for Immersive Joint Video-Audio Generation</li>
+<li><strong>저자</strong>: Hanmo Chen, Chengcheng Liu 등 (Xidian University, vivo BlueImage Lab, vivo Mobile Communication Co., Ltd.)</li>
+<li><strong>출처</strong>: arXiv:2609.38748v2 [cs.CV] (2026년 10월 8일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://vivocameraresearch.github.io/Stereo-Bind-Project/">Stereo-Bind Project Page</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.38748">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>StereoBind는 영상 속 소리 발생원의 움직임 궤적(motion track)을 스테레오 오디오 생성과 결속시켜, 소리의 지각 위치가 화면 속 움직임과 시간에 따라 일관되게 변화하는 "동적 공간 정합(Dynamic Spatial Correspondence)"을 구현하는 비디오-오디오 동시 생성 프레임워크다.</p>
+<h2>배경 및 문제의식</h2>
+<p>최근 비디오-오디오 동시 생성 모델들(Seedance, LTX-2, MOVA 등)은 소리가 "무엇인지"(의미적 대응)와 "언제 나는지"(시간 동기화)는 잘 포착하지만, AR/VR이나 인터랙티브 게임처럼 몰입감을 요구하는 응용에서는 소리가 "어디서 나는지"와 소리 발생원의 이동에 따라 지각 위치가 함께 변하는 것까지 요구된다. 기존 모델은 2채널(스테레오) 오디오를 생성할 수는 있지만, 좌우 채널 간 의미 있는 공간적 신호(귀 사이 시간차/강도차 등)를 보장하지는 못한다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>트랙(움직임 궤적) 조건부 스테레오 비디오-오디오 생성을 위한 최초의 프레임워크(저자 주장) StereoBind 제안.</li>
+<li>명시적 공간 감독(spatial supervision)을 포함하는 최초의 대규모 스테레오 비디오-오디오 데이터셋 StereoWorld-29K를 구축하고, 동적 공간 정합을 평가하는 벤치마크 StereoWorldBench 제안.</li>
+<li>소스 결속(VMB), 절대 공간 조건화(STE), 상대적 움직임 모델링(RT-RoPE)의 세 가지 메커니즘으로 구성된 StereoBind 설계.</li>
+</ol>
+<h2>방법론</h2>
+<p>StereoBind는 움직임 궤적(motion track)을 비디오와 스테레오 오디오 생성 모두의 조건으로 사용하며 세 요소로 구성된다. Visual Motion Binding(VMB)은 움직임 궤적과 해당 시각적 개체를 결합해 공간 정보가 담긴 표상으로 변환하고 이를 오디오 스트림에 주입해 시각적 움직임이 생성 오디오의 공간 구조를 직접 안내하게 한다. Spatial Track Encoder(STE)는 움직임 궤적을 공간 트랙 임베딩으로 매핑해 오디오 잠재 표상(latent)을 변조함으로써 절대적 공간 조건을 제공한다. Residual Track RoPE(RT-RoPE)는 궤적의 상대적 변위를 인코딩해 상대적 공간 조건을 제공한다. 학습 데이터는 실제 영상의 소리 발생원 궤적에 맞춰 오디오를 공간화하는 Visual-Audio Spatialization(VAS) 파이프라인과, 트랙이 제어된 다양한 장면을 생성하는 Spatial Data Synthesis(SDS) 파이프라인을 결합해 StereoWorld-29K로 구축했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>StereoWorldBench를 통해 생성된 스테레오 오디오와 소스의 움직임 사이의 공간 정합도를 측정한 결과, StereoBind는 기존 비디오-오디오 생성 모델 대비 공간적 정렬(spatial alignment)을 크게 향상시키면서도 전체적인 오디오-비주얼 품질을 유지했다.</p>
+<h2>한계점</h2>
+<p>논문에 명시된 바로는, 향후 연구에서 동적 공간 정합을 더 복잡한 3D 장면, 다중 소리 발생원, 더 복잡한 소스-청취자 동역학으로 확장하는 것을 과제로 남겨두었다. 즉 현재 프레임워크는 단일 또는 제한된 소리 발생원과 비교적 단순한 3D 장면 설정에서 검증되었다.</p>
+<h2>시사점</h2>
+<p>이 연구는 소리의 "의미"와 "시점"뿐 아니라 "공간적 위치의 변화"까지 영상 생성과 결속시키는 새로운 축을 열어, AR/VR 및 인터랙티브 콘텐츠에서 요구되는 몰입형 오디오-비주얼 경험을 생성형 모델이 직접 구현할 수 있는 토대를 제공한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.38748" target="_blank" rel="noopener">huggingface.co/papers/2609.38748</a> · 2026-10-13</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>소프트웨어짐</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#4 · Daily Papers 2026-10-13</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 83</span>
+    </div>
+    <h1 class="article-title">SoftwareGym: Scaling Computer-Use Agent Training with Diverse Synthesized Software Environments</h1>
+    <p class="article-title-ko">소프트웨어짐: 다양한 합성 소프트웨어 환경으로 컴퓨터 사용 에이전트 학습 확장하기</p>
+    <p class="article-sub">SoftwareGym은 다양한 인터페이스와 실제 동작 가능한 기능을 갖춘 GUI 소프트웨어 환경을 자동으로 합성하는 멀티에이전트 파이프라인으로, 이를 통해 생성한 학습 데이터만으로 컴퓨터 사용 에이전트(CUA)의 OSWorld 벤치마크 성능을 크게 향상시켰다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.12611" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.12611" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: SoftwareGym: Scaling Computer-Use Agent Training with Diverse Synthesized Software Environments</li>
+<li><strong>저자</strong>: Tian Jin, Wenhao Wang, Jing Kang, Haoting Shi, Rui Ye, Yijun Lu, Siheng Chen (Shanghai Jiaotong University, Zhejiang University)</li>
+<li><strong>출처</strong>: arXiv:2610.12611v1 [cs.MA] (2026년 10월 8일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음 (코드: https://github.com/MrKiing-Jin/SoftwareGym)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.12611">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>SoftwareGym은 다양한 인터페이스와 실제 동작 가능한 기능을 갖춘 GUI 소프트웨어 환경을 자동으로 합성하는 멀티에이전트 파이프라인으로, 이를 통해 생성한 학습 데이터만으로 컴퓨터 사용 에이전트(CUA)의 OSWorld 벤치마크 성능을 크게 향상시켰다.</p>
+<h2>배경 및 문제의식</h2>
+<p>컴퓨터 사용 에이전트를 학습시키려면 실행 가능한 소프트웨어 환경에서 나온 상호작용 데이터가 필요하다. 그러나 기존 방식은 실제 데스크톱/모바일 앱을 통합하는 데 막대한 공학적 비용이 들어 애플리케이션 범위가 제한되고 특정 앱에 과적합될 위험이 있으며, 브라우저 기반 환경은 구축이 쉽지만 상호작용 깊이와 워크플로 복잡성이 제한적이다. 즉 기존 방법들은 (1) 다양성, (2) 기능적 신뢰성, (3) 확장성을 동시에 만족시키지 못한다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>다양하고 기능적으로 신뢰할 수 있는 GUI 소프트웨어를 대규모로, 수작업 개발보다 훨씬 적은 시간과 비용으로 합성하는 자동화 파이프라인 SoftwareGym 제안.</li>
+<li>12개 카테고리에 걸친 182개의 실행 가능한 애플리케이션을 공개하고, 동일 카테고리를 다루는 120개 과제 평가 세트 SoftwareGym-Bench를 구축.</li>
+<li>광범위한 평가와 어블레이션을 통해 파이프라인의 핵심 구성요소를 검증하고, SoftwareGym 트라젝토리만으로 학습한 모델이 OSWorld Pass@3를 15.58점 끌어올려 56.97%에 도달함을 입증.</li>
+</ol>
+<h2>방법론</h2>
+<p>SoftwareGym은 세 단계로 구성된다. (1) 설계 단계: 최소한의 인간 입력을 카테고리 수준의 기능 명세, 다양한 UI 블루프린트, 상호작용 스킴으로 확장한다(FunctionDesigner, IconDesigner, StyleDesigner, SubStyleDesigner 등 전담 에이전트 활용). (2) 구현 단계: 각 설계 패키지를 실행 가능한 애플리케이션으로 변환(Coder, DevCoder)하고 소스 수준에서 기능을 검증한다. (3) 평가 단계: 체크포인트 기반 GUI 테스트(EvalTaskGenerateAgent, GUI Agent)를 실행하고, 실패한 경우 실행 흔적과 런타임 증거를 바탕으로 국소적인 반복 수정(iterative repair)을 수행한다. 소스 수준 검증과 GUI 검증을 모두 통과한 애플리케이션만 최종 소프트웨어 라이브러리에 포함된다. 수집된 트라젝토리는 GPT-5.5 기반의 결과(outcome) 판정과 과정(process) 판정을 모두 0.8 이상 받은 경우에만 학습 데이터로 채택된다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>SoftwareGym으로 12개 카테고리에서 182개의 실행 가능한 애플리케이션을 합성했으며 평균 GUI 과제 통과율은 91.5%였다. 이 환경들에서 수집한 트라젝토리로 학습한 모델은, OSWorld의 어떤 애플리케이션·과제·트라젝토리도 학습에 사용하지 않았음에도 완전 범위 외(out-of-domain) 평가인 OSWorld에서 Pass@3를 41.39%에서 56.97%로 끌어올렸다. 또한 자체 구축한 SoftwareGym-Bench(120개 과제)에서 40.0% Pass@3를 기록하며 여러 더 큰 규모의 특화 컴퓨터 사용 에이전트보다 우수한 성능을 보였다.</p>
+<h2>한계점</h2>
+<p>논문에 명시된 별도의 한계점 절은 없다. 다만 합성된 소프트웨어는 12개 카테고리, 182개 애플리케이션 규모로 범위가 정해져 있으며, 트라젝토리의 품질 평가가 LLM 기반 판정자(GPT-5.5)의 판단에 의존한다는 점은 본문에서 확인되는 구조적 특징이다.</p>
+<h2>시사점</h2>
+<p>이 연구는 실제 애플리케이션 통합의 높은 비용 문제를 "합성된 소프트웨어 환경"으로 우회함으로써, 컴퓨터 사용 에이전트 학습 데이터를 확장 가능하고 전이 가능한 방식으로 생산할 수 있음을 보여준다. 이는 실제 앱에 대한 과적합 위험을 줄이면서도 다양한 GUI 상호작용 패턴에 대한 일반화 능력을 높이는 새로운 데이터 확보 경로로서 의미가 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.12611" target="_blank" rel="noopener">huggingface.co/papers/2610.12611</a> · 2026-10-13</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

@@ -1,0 +1,109 @@
+<meta charset="UTF-8">
+<title>멀티스트림 어텐션 잔차</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#7 · Daily Papers 2026-10-14</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 34</span>
+    </div>
+    <h1 class="article-title">Multi-Stream Attention Residuals</h1>
+    <p class="article-title-ko">멀티스트림 어텐션 잔차</p>
+    <p class="article-sub">MSAR은 시퀀스 축의 멀티헤드 어텐션 아이디어를 깊이(depth) 축으로 확장해, 적은 추가 연산만으로 대규모 언어모델 사전학습의 손실-연산 효율을 기존 잔차 설계보다 크게 향상시키는 새로운 잔차 연결 구조이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.13630" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.13630" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Multi-Stream Attention Residuals</li>
+<li><strong>저자</strong>: Xiaohan Qin 등 10명, Shanghai Jiao Tong University·Xiaohongshu Inc. Dots Studio·Peking University 등 다기관 공동 연구 (교신저자: Junchi Yan)</li>
+<li><strong>출처</strong>: arXiv:2610.13630v1 [cs.CL] (2026년 10월 9일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/jianke0604/MSAR">GitHub - jianke0604/MSAR</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.13630">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>MSAR은 시퀀스 축의 멀티헤드 어텐션 아이디어를 깊이(depth) 축으로 확장해, 적은 추가 연산만으로 대규모 언어모델 사전학습의 손실-연산 효율을 기존 잔차 설계보다 크게 향상시키는 새로운 잔차 연결 구조이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>표준 PreNorm Transformer는 각 레이어의 출력을 단일 잔차 스트림에 고정된 가중치로 누적하기 때문에, 깊이가 깊어질수록 초기 레이어에서 형성된 특징이 점점 희석되어 후속 레이어가 이를 다시 꺼내 쓰기 어려워진다. 이 문제를 완화하기 위해 Hyper-Connections(HC)/manifold-constrained HC(mHC)는 잔차 상태를 여러 병렬 스트림으로 확장했고, Attention Residuals(AttnRes)는 고정 누적 대신 깊이 축에 대한 소프트맥스 검색(depth-wise attention)으로 잔차를 재구성했다. 그러나 시퀀스 축 멀티헤드 어텐션의 성공에 착안해 "깊이 축에도 멀티헤드 어텐션을 적용할 수 있는가"라는 질문에 대해, 기존 AttnRes의 단순 채널 분할 시도는 은닉 표현의 일관성을 깨뜨려 성능이 오히려 저하되는 한계가 있었다.</p>
+<h2>핵심 기여</h2>
+<p>1) 단일 잔차 소스로부터 다중 스케일 causal depthwise convolution을 이용해 여러 개의 전체 차원(full-dimensional) 스트림을 생성함으로써, 표현의 일관성을 유지하면서도 헤드 간 다양성을 확보하는 MSAR을 제안했다.
+2) 각 스트림이 독립적으로 깊이 축 소프트맥스 검색을 수행하고, 가벼운 mHC 스타일의 스칼라 믹서로 결과를 합쳐 하나의 레이어 입력을 생성하는 멀티헤드 깊이 어텐션 메커니즘을 설계했다.
+3) 단일 스트림 요약만 저장하고 필요 시 온디맨드로 멀티스트림을 확장하는 방식으로, 파이프라인 통신 및 활성화 저장 비용을 AttnRes와 동일한 O(Nd) 수준으로 유지했다(기존 멀티스트림 방식의 O(mNd) 대비 절감).</p>
+<h2>방법론</h2>
+<p>MSAR은 레이어 출력(또는 블록 단위 요약)에 커널 크기 {4, 8, 12} 등 서로 다른 지역 수용영역을 갖는 causal depthwise convolution을 적용해 m=4개의 스트림을 만든다. 각 스트림은 레이어별 학습된 pseudo-query를 이용해 과거의 모든 소스(임베딩 및 이전 블록 요약)에 대해 RMSNorm 기반 소프트맥스 어텐션을 독립적으로 수행하여 깊이 정보를 검색한다. 검색된 m개의 스트림은 시그모이드 게이팅 기반의 H^pre 믹서로 입력 의존적인 스칼라 가중합을 거쳐 최종 레이어 입력으로 합쳐진다. 대규모 학습의 메모리·통신 부담을 줄이기 위해, 개별 레이어가 아닌 블록 단위 요약(Block MSAR)을 소스로 사용하며, 모든 스트림이 단일 스트림 요약으로부터 결정적으로 계산되므로 중간 스트림을 저장하지 않고 융합 커널(fused kernel)로 즉시 소비할 수 있다. 또한 AttnRes의 두 단계(two-phase) 계산 전략 및 cross-stage 캐싱과도 호환된다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>DeepSeekMoE 스타일 Transformer(SwiGLU FFN)로 18B 및 28B 규모 MoE 모델을 사전학습하고, Vanilla 잔차, mHC, AttnRes와 비교했다. MMLU, ARC-C, BBH 등 일반 지식/추론, HumanEval·GSM8K·MATH 등 코드·수학, CMMLU·C-Eval·C3 등 중국어 이해를 포함한 12개 벤치마크 전부에서 MSAR이 최고 성능을 기록했다. 18B 모델에서 평균 점수 45.7(Vanilla 37.5, mHC 41.7, AttnRes 41.8 대비 개선), 28B 모델에서 52.4(Vanilla 44.6, mHC 47.4, AttnRes 49.4 대비 개선)를 달성했다. 스케일링 법칙 실험에서는 Vanilla 대비 iso-loss 연산 효율이 1.58배로, AttnRes(1.35배)와 mHC(1.30배)를 능가했다. 28B 설정에서 추가 학습 FLOPs는 0.5%, 활성 파라미터는 0.3% 증가에 불과했다. 10B 모델 ablation에서는 convolution 제거 시 손실이 1.847→1.862로 상승해 컨텍스트 다양성의 중요성을, H^pre를 평균 집계로 바꿀 때는 소폭 저하만 발생해 적응적 융합의 기여가 상대적으로 작음을 보였다. 스트림 수는 m=4가 적절한 균형점이었고(m=8은 추가 이득이 미미), 블록 수는 N≈8이 최적이었다.</p>
+<h2>한계점</h2>
+<p>AttnRes 대비 검색된 멀티스트림 출력을 쓰고 집계하는 과정에서 추가적인 메모리 접근 오버헤드가 여전히 존재한다. 또한 검증은 18B·28B MoE 규모에서 이루어졌으며, 트릴리온 파라미터급의 초대형 모델(예: DeepSeek-V4, Kimi K3)에서의 실증은 아직 제시되지 않았다. 설계상 여러 하이퍼파라미터(스트림 수, 커널 크기, 블록 크기)에 대한 추가 튜닝이 필요하다.</p>
+<h2>시사점</h2>
+<p>실험 결과는 멀티스트림 잔차 순환(HC 계열)과 명시적 크로스레이어 접근(AttnRes 계열)이 제공하는 이득이 서로 완전히 겹치지 않는다는 것을 보여준다. 이는 두 접근의 장점을 결합하면서도 효율적인 실행이 가능한 더 정교한 잔차 설계가 추가적인 성능 향상의 여지가 있음을 시사하며, MSAR은 이러한 방향의 실용적인 출발점으로서 대규모 사전학습에서 즉시 적용 가능한 아키텍처로 제안된다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.13630" target="_blank" rel="noopener">huggingface.co/papers/2610.13630</a> · 2026-10-14</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

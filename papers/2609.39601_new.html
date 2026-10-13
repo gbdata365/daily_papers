@@ -1,0 +1,107 @@
+<meta charset="UTF-8">
+<title>그라운딩파이</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#1 · Daily Papers 2026-10-14</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 246</span>
+    </div>
+    <h1 class="article-title">GroundingPI: A Grounding Foundation Model towards Physical Intelligence with Visual Primitives</h1>
+    <p class="article-title-ko">그라운딩파이: 시각 프리미티브를 활용한 물리 지능 지향 그라운딩 파운데이션 모델</p>
+    <p class="article-sub">점(point)과 박스(box) 같은 시각 프리미티브를 공유 어휘로 생성하는 4B 규모의 그라운딩 파운데이션 모델 그라운딩파이(GroundingPI)를 제안하여, 34개 그라운딩 벤치마크에서 44개 베이스라인을 능가하는 동시에 자율주행·로봇 조작 다운스트림 과제에서도 범용 VLM/VLA 백본보다 뛰어난 전이 성능을 보였다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.39601" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.39601" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: GroundingPI: A Grounding Foundation Model towards Physical Intelligence with Visual Primitives</li>
+<li><strong>저자</strong>: 20여 명, XPeng Inc.·Peking University·The University of Hong Kong·UC Berkeley·Princeton University 등 다수 기관 공동 연구 (프로젝트 리드: Qize Yu; 교신저자: Ping Luo, Shiyu Huang)</li>
+<li><strong>출처</strong>: arXiv:2609.39601v1 [cs.CV] (2026년 9월 30일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://groundingpi.github.io/">GroundingPI 프로젝트 페이지</a> (코드: https://github.com/groundingpi/GroundingPI, 모델: https://huggingface.co/GroundingPI/GroundingPI)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.39601">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>점(point)과 박스(box) 같은 시각 프리미티브를 공유 어휘로 생성하는 4B 규모의 그라운딩 파운데이션 모델 그라운딩파이(GroundingPI)를 제안하여, 34개 그라운딩 벤치마크에서 44개 베이스라인을 능가하는 동시에 자율주행·로봇 조작 다운스트림 과제에서도 범용 VLM/VLA 백본보다 뛰어난 전이 성능을 보였다.</p>
+<h2>배경 및 문제의식</h2>
+<p>비전-언어-행동(VLA) 모델과 월드-액션 모델(WAM)은 범용 비전-언어 모델이나 비디오 생성 백본에서 지각 능력을 가져오는데, 이들은 복잡하고 혼잡한 장면, 작은 물체 등에서 정밀한 그라운딩(대상이 무엇이고 어디에 있는지 특정하는 능력)에 약하다. 저자들은 Rex-Omni, LocateAnything 같은 전용 그라운딩 모델조차 밀집 장면과 작은 물체에서 한계를 보이며, GPT-6 Astra 같은 초거대 모델도 개선 여지가 크다는 점을 지적한다. 또한 지각 격차는 결국 한정된 행동 데이터가 지각 학습과 행동 학습을 동시에 책임져야 하는 부담으로 이어지고, 컴퓨팅·지연 제약 때문에 거대 백본을 실시간 제어에 그대로 쓰기도 어렵다. 이에 저자들은 "행동에 앞서 지각을 먼저 네이티브하게 학습하는" 그라운딩 전용 파운데이션 모델이 필요하다고 주장한다.</p>
+<h2>핵심 기여</h2>
+<p>1) 점·박스 등 시각 프리미티브를 양자화된 좌표 토큰으로 표현하는 공유 어휘를 통해 그라운딩, 지칭(referring), 포인팅, OCR, GUI/레이아웃 그라운딩, 비주얼 프롬프팅 등 다양한 지각 과제를 하나의 언어 조건 구조적 생성 문제로 통합한 4B 모델 그라운딩파이를 제시. 2) 34개 벤치마크·11개 지각 능력에 걸쳐 44개 베이스라인과 비교해 평균 73.68%로 GPT-6 Astra(71.54%)보다 높은 state-of-the-art 성능을 달성. 3) 자율주행(nuScenes)과 로봇 조작(RoboTwin 2.0, RoboCasa-GR1) 다운스트림 과제에서 그라운딩파이를 시각 백본으로 쓸 때 기존 백본보다 뚜렷한 성능·데이터 효율 개선을 입증. 4) 사전학습 규모와 데이터 구성(특히 밀집 그라운딩, OCR)이 다운스트림 전이에 미치는 영향을 체계적으로 분석.</p>
+<h2>방법론</h2>
+<p>그라운딩파이는 MoonViT-V2(Kimi K3) 비전 인코더와 Qwen3-4B 언어 디코더를 2×2 패치 병합 및 2계층 MLP 프로젝터로 연결한 자기회귀(autoregressive) 구조다. 출력 어휘는 의미 레이블, 프로토콜 마커, 1,000개의 양자화된 좌표 토큰(&lt;0&gt;~&lt;999&gt;)을 공유하며, 질의한 범주가 이미지에 없으면 "None"을 생성한다. 학습은 3단계로 구성된다. (1) 베이스 VLM 학습: 프로젝터 정렬 후 멀티모달 사전학습과 범용 영상/비디오 이해 학습. (2) 지도 미세조정(SFT): 토큰 단위 교차 엔트로피로 좌표와 출력 프로토콜을 정렬. (3) 강화학습 후처리: GRPO(group relative policy optimization)로 그라운딩 완전성(Rset, IoU 기반 매칭)과 엄격 위치정확도(Rstrict, F1·형식·개수·순서 점수)를 결합한 보상, OCR에는 헝가리안 매칭 기반 텍스트-기하 일치 보상을 사용해 정책을 직접 최적화한다. 학습 데이터는 공개 데이터셋과 자체 구축한 데이터 엔진(다중 교사 앙상블, 필드 수준 융합, 과제별 검증, 반복적 전문가 주석)으로 수집한다. 자율주행에는 전방 카메라 이미지와 과거 상태를 입력으로 받아 미래 궤적(6개 웨이포인트, 0.5초 간격, 3초 구간)을 좌표 토큰으로 생성하는 방식을 적용했고, 로봇 조작에는 π0 스타일 플로우 매칭 정책과 StarVLA의 계층별 연결 방식을 따라 그라운딩파이의 중간 특징을 Action DiT의 교차 어텐션에 주입했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>그라운딩 벤치마크에서는 COCO/LVIS(일반·롱테일 탐지), Dense200/VisDrone(밀집·소형 물체), RefCOCO 계열/HumanRef(지칭), RoboSpatial/RefSpatial(공간 포인팅), ScreenSpot-V2/Pro·OSWorld-G(GUI), HierText/ICDAR2015/TotalText/SROIE(OCR), DocLayNet/M6Doc(레이아웃), FSC147(비주얼 프롬프팅) 등 34개 벤치마크·11개 능력을 사용했으며, 그라운딩파이는 평균 73.68%로 GPT-6 Astra(71.54%)를 포함한 44개 베이스라인을 능가했다(단, COCO IoU 0.95 등 초정밀 경계 추정치는 일부 베이스라인에 못 미침). 전이 실험에서는 Action DiT·행동 데이터·학습 예산을 고정한 통제 비교를 수행했는데, RoboTwin 2.0의 네 가지 분포 외(OOD) 설정 전부에서 가장 강한 베이스라인 대비 최대 24.8% 상대 개선을 보였고(RoboTwin2.0-Clean2Random에서 17.60% vs. 2위 Rex-Omni 14.10%), RoboCasa-GR1에서는 데모의 50%만 학습해도 다른 베이스라인이 75% 학습한 것보다 우수했다. 자율주행 nuScenes에서는 평균 오픈루프 L2 오차 0.296m를 기록했다. 추가 분석에서는 사전학습 규모를 키울수록, 그리고 데이터 구성 중 밀집 그라운딩 비중을 높일수록 다운스트림 조작·주행 성능이 함께 향상되었고, OCR 데이터가 지각 학습의 "촉매" 역할을 할 수 있다는 가설적 상관관계도 관찰되었다.</p>
+<h2>한계점</h2>
+<p>저자들이 명시한 한계는 다음과 같다: 전체 평균 우위가 모든 세부 항목에서의 절대적 우위를 의미하지는 않으며, 작은 박스 위치추정·고IoU 경계 정밀도·TotalText OCR·FSC147 비주얼 프롬프팅·최상위 수준 GUI 그라운딩에서는 여전히 격차가 존재한다. 일부 베이스라인은 프롬프트·파서 호환성 문제로 제대로 평가되지 못했을 수 있다. 로봇 조작 비교는 다운스트림 학습 레시피를 통제했지만 비교 대상 파운데이션 모델들의 규모·구조·사전학습 데이터는 서로 다르다. 자율주행 평가는 오픈루프에 한정되었고, 데이터 효율성 검증은 조작 과제에서만 수행되었다. OCR의 인과적 역할이나 제안된 아키텍처 메커니즘은 아직 엄밀한 개입 실험으로 입증되지 않은 가설 수준이며, "물리적 프롬프팅"이나 프런티어 추론 모델과의 System-1/System-2 결합 역시 현재 실험으로 독립적으로 검증된 능력이 아니라 인터페이스가 암시하는 방향일 뿐이다.</p>
+<h2>시사점</h2>
+<p>이 논문은 범용성보다 "정밀하고 폭넓은 그라운딩"이라는 전용 지각 능력이 물리적 지능(로봇, 자율주행)을 위한 더 나은 파운데이션이 될 수 있음을 실증적으로 뒷받침한다. 이는 거대하고 범용적인 VLM/비디오 생성 백본에 의존하기보다, 소형(4B)이지만 지각에 특화된 모델을 별도로 구축해 행동 학습의 시각 백본으로 쓰는 전략이 성능과 데이터 효율 모두에서 유리할 수 있음을 시사한다. 또한 밀집 그라운딩과 OCR 같은 특정 데이터 구성 요소가 다운스트림 전이에 특히 중요하다는 발견은, 향후 임바디드 파운데이션 모델 설계에서 지각 사전학습의 데이터 레시피를 신중히 설계해야 한다는 실무적 지침을 제공한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.39601" target="_blank" rel="noopener">huggingface.co/papers/2609.39601</a> · 2026-10-14</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

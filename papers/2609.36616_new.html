@@ -1,0 +1,109 @@
+<meta charset="UTF-8">
+<title>CrossTimeEdit</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#9 · Daily Papers 2026-10-14</span>
+      <span class="cat-tag">생성모델</span>
+      <span class="upvote-tag">▲ 20</span>
+    </div>
+    <h1 class="article-title">CrossTimeEdit: A Decade-Spanning Cross-View Dataset and Reward-Guided Editing for Historical Street-View Generation</h1>
+    <p class="article-title-ko">CrossTimeEdit: 10년 간격 크로스뷰 데이터셋과 보상 기반 역사적 거리뷰 생성 편집</p>
+    <p class="article-sub">이 논문은 약 10년 간격의 위성·거리뷰 쌍 43,653건으로 구성된 VIGOR-his 데이터셋을 구축하고, 최근 거리뷰를 시점·배경 제약으로 삼고 위성 영상의 시간적 변화를 편집 근거로 활용해 과거 거리뷰를 복원하는 보상 기반 강화학습 편집 모델 CrossTimeEdit을 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.36616" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.36616" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: CrossTimeEdit: A Decade-Spanning Cross-View Dataset and Reward-Guided Editing for Historical Street-View Generation</li>
+<li><strong>저자</strong>: Hanwen Lu, Jun He 등 7명, Sun Yat-sen University 단일 기관 연구 (교신저자: Xiang Zhang)</li>
+<li><strong>출처</strong>: arXiv:2609.36616v1 [cs.CV] (2026년 9월 29일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://luhanwen67.github.io/CrossTimeEdit-release/">CrossTimeEdit-release</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.36616">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>이 논문은 약 10년 간격의 위성·거리뷰 쌍 43,653건으로 구성된 VIGOR-his 데이터셋을 구축하고, 최근 거리뷰를 시점·배경 제약으로 삼고 위성 영상의 시간적 변화를 편집 근거로 활용해 과거 거리뷰를 복원하는 보상 기반 강화학습 편집 모델 CrossTimeEdit을 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>역사적 거리뷰 영상은 건물 외관이나 도로 구성 등 위성 영상만으로는 포착할 수 없는 도시 변화의 세부 정보를 담고 있지만, 수집이 불균등해 특정 시점·장소의 기록이 누락되는 경우가 많다. Sat2Density, CrossViewDiff 등 기존 위성-거리뷰 생성 모델은 노이즈로부터 전체 거리뷰를 새로 생성하기 때문에, 위성 영상이 건물 질감·가려진 구조를 충분히 제약하지 못해 시간이 지나도 변하지 않은 영역까지 바꿔버리는 문제가 있다. 또한 VIGOR는 과거-최근 쌍이 없고, CityPulse는 대응 위성 영상이 없으며, CVUSA는 시간적 관측이 없는 등, 기존 데이터셋 중 어느 것도 시간 간격을 둔 위성-거리뷰 쌍과 편집 지시를 동시에 제공하지 못했다.</p>
+<h2>핵심 기여</h2>
+<p>1) 11개 도시, 3개 대륙에 걸쳐 약 10년 간격의 거리뷰·위성 영상 쌍을 자동 파이프라인으로 수집·정합·검증한 VIGOR-his 데이터셋(43,653건의 location-level quadruplet, 변화 범주·위성 기반 변화 설명·국소 편집 지시 포함)을 공개했다.
+2) Instruction Alignment(IA), Background Preservation(BP), Quality and Physical Plausibility(QP) 세 기준으로 구성된 VLM 기반 보상·평가 프로토콜을 설계해, 편집 정확성·배경 보존·영상 품질을 동시에 측정했다.
+3) FLUX.2 [Klein] 4B를 기반으로 SFT 이후 GDPO로 정규화된 Flow-GRPO 온라인 강화학습을 적용한 CrossTimeEdit을 개발해, 사전학습 베이스라인 대비 종합 성능을 17.12% 향상시키고 평가된 오픈소스 모델 중 최고 성능을 달성했다.</p>
+<h2>방법론</h2>
+<p>역사적 거리뷰 생성을 "생성"이 아닌 "편집" 문제로 재정의해, 최근 거리뷰 I_c를 시점·고도·불변 외관의 참조로, 위성 영상 간 시간적 차이에서 추출한 국소 편집 지시 c를 변화 근거로 삼아 과거 거리뷰 Î_h를 생성한다. 데이터셋 구축 파이프라인은 (1) 약 10년 간격 위성·거리뷰 수집 및 25m 공간 임계값의 시공간 클러스터링, (2) Gemini 기반 시점 불일치 스크리닝 및 건물/도로 변화 분류, (3) 위성 쌍의 cross-view·시간적 일관성 검증(0~10점, 7점 이상만 채택), (4) 위성 기반 변화 설명 및 4방향(동서남북) 국소 편집 지시 생성, (5) grounding·consistency·preservation 세 기준으로 지시 품질 검증의 5단계로 구성된다. 모델 학습은 FLUX.2 [Klein] 4B의 attention-projection LoRA만 학습하는 2단계 SFT(변화 샘플은 과거 영상을 타깃으로, 무변화 샘플은 모든 방향을 PRESERVE로 지정해 보존 능력도 함께 학습)에 이어, Gemini-3.1-Flash-Lite가 IA/BP/QP 세 축으로 점수를 매기는 Flow-GRPO 온라인 RL을 적용한다. 이때 각 보상 차원이 서로 다른 분산을 가져 하나가 업데이트를 지배하는 문제를 막기 위해, 보상을 집계 전에 차원별로 먼저 정규화하는 GDPO(차원별 정규화, dimension-wise group normalization)를 결합한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>학습 세트는 변화 8,797건·무변화 13,196건(약 4:6 비율)으로 구성되며, 검증 1,095건·테스트 1,094건의 변화 샘플로 평가한다. 일반 이미지 편집 모델(FLUX.2 [Klein] 4B/9B, OmniGen2, LongCat-Image-Edit 및 비공개 Nano Banana 2 Lite, Qwen-Image-3.0-Pro, GPT-Image-2)과 비교한 결과, CrossTimeEdit은 오픈소스 모델 중 IA, QP, Overall 최고 점수를 기록했으며, FLUX.2 [Klein] 4B 베이스라인 대비 IA를 33.39%, Overall을 17.12% 개선했다(단 BP와 Overall은 비공개 모델보다 낮아 배경 보존이 여전히 한계로 남음). 위성-거리뷰 생성 모델(Sat2Density, ControlS2S, ControlNet)과의 cross-view 프로토콜 비교에서는 CV-C, CV-VR, CV-PQ, Overall 모두 크게 앞섰으나, PSNR·SSIM·SD 등 픽셀 단위 지표는 오히려 낮게 나왔다. 사람 선호도 평가를 통해 VLM 기반 점수가 인간 판단과 긍정적으로 상관함을 확인해, 단순 픽셀/구조 유사도 지표만으로는 역사적 거리뷰 생성 품질을 제대로 평가할 수 없음을 보였다. Ablation에서는 SFT만 적용(w/o RL)하면 지시 수행은 개선되지만 배경 보존·품질이 저하되고, RL을 추가하면 두 축 모두 회복·개선되어 균형 잡힌 최종 성능(IA 7.950, BP 8.264, QP 7.631, Overall 7.964)을 달성했으며, GDPO 제거 시 IA는 소폭 높아지지만 BP·QP·Overall이 낮아져 보상 균형의 중요성을 확인했다.</p>
+<h2>한계점</h2>
+<p>위성 영상만으로는 관측되지 않는 역사적 세부 사항(예: 간판 문구, 소형 구조물)은 복원이 어렵고, 두 시점 간 촬영 각도·헤딩 차이가 완전히 제거되지 않는 경우가 남아 있다. 또한 평가가 단일 VLM 평가자(Gemini-3.1-Flash-Lite)에 의존하므로 평가자 특유의 편향이 결과에 반영될 수 있으며, BP(배경 보존) 측면에서는 여전히 비공개 모델들에 못 미친다.</p>
+<h2>시사점</h2>
+<p>저자들은 역사적 거리뷰 생성을 노이즈 기반 생성이 아닌 "최근 영상 + 위성 변화 근거" 기반 국소 편집으로 재구성하는 접근이 실질적인 품질 개선을 가져옴을 보였다. 향후에는 더 풍부한 역사적 증거의 통합, 독립적인 보상·평가 모델의 도입, 양방향·다중 시점 거리뷰 생성으로의 확장이 제안되며, 공개된 데이터셋과 평가 프로토콜은 도시 변화 분석 및 cross-view 생성 연구 전반에 활용될 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.36616" target="_blank" rel="noopener">huggingface.co/papers/2609.36616</a> · 2026-10-14</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

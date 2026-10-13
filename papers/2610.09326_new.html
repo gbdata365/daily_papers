@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>VIS-Ground</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#5 · Daily Papers 2026-10-14</span>
+      <span class="cat-tag">생성모델</span>
+      <span class="upvote-tag">▲ 78</span>
+    </div>
+    <h1 class="article-title">VIS-Ground: Video Interactive Storytelling with Contextual Grounding</h1>
+    <p class="article-title-ko">VIS-Ground: 맥락 그라운딩 기반 비디오 인터랙티브 스토리텔링</p>
+    <p class="article-sub">시청자가 비디오 생성 중간에 새로운 요청을 던질 때, 그 요청이 외부 근거 자료(source)와 지금까지 생성된 비디오 상태 모두에 암묵적으로 의존한다는 점에 주목하여, 이 이질적인 맥락을 구조화된 의존관계 모델로 압축하고 이를 생성 제약 조건으로 변환해 비디오 연속 생성을 계획·검증·수정하는 프레임워크 VIS-Ground와 전용 벤치마크 VIS-Bench를 제안했다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.09326" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.09326" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: VIS-Ground: Video Interactive Storytelling with Contextual Grounding</li>
+<li><strong>저자</strong>: 13명, Google, University of Illinois at Urbana-Champaign, University of California, Los Angeles 공동 연구 (대표 교신저자: Bingxuan Li, Yiwen Song, Yale Song)</li>
+<li><strong>출처</strong>: arXiv:2610.09326v1 [cs.CV] (2026년 10월 7일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://vis-ground.github.io">vis-ground.github.io</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.09326">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>시청자가 비디오 생성 중간에 새로운 요청을 던질 때, 그 요청이 외부 근거 자료(source)와 지금까지 생성된 비디오 상태 모두에 암묵적으로 의존한다는 점에 주목하여, 이 이질적인 맥락을 구조화된 의존관계 모델로 압축하고 이를 생성 제약 조건으로 변환해 비디오 연속 생성을 계획·검증·수정하는 프레임워크 VIS-Ground와 전용 벤치마크 VIS-Bench를 제안했다.</p>
+<h2>배경 및 문제의식</h2>
+<p>비디오 스토리텔링 시스템은 보통 처음에 주어진 각본이나 창작 의도로부터 비디오를 생성하는 데 초점을 맞춰왔고, 상호작용형 비디오 생성 연구는 주로 시청자 지시를 충실히 따르는 데에만 집중해왔다. 그러나 저자들의 예비 연구에 따르면 지식 기반 비디오 스토리텔링에서 상호작용이 있을 때 학습 효과(사전-사후 점수 상승)가 47.9%p로, 상호작용이 없을 때의 32.1%p보다 훨씬 크게 나타났다. 문제는 일단 비디오 일부가 이미 생성되면 그 내용이 구체적인 시각적 상태·사건·정보를 확립하고, 동시에 근거 자료(서사, 논문, 위키 문서 등)가 비디오에 직접 드러나지 않는 추가적 제약을 부과한다는 점이다. 즉 시청자의 새로운 요청은 근거 자료와 이미 렌더링된 비디오 프리픽스에 동시에 의존하는 '잠재적 의존성'을 가지며, 이는 어느 한 입력만 봐서는 드러나지 않고 여러 입력을 함께 고려해야만 드러난다. 기존 시스템들은 이런 의존성을 명시적으로 다루지 않아 양립 불가능한 상태 변화, 이전 정보와의 모순, 근거 자료가 지지하지 않는 방식의 요청 충족 등의 문제가 발생한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>"맥락 그라운딩(contextual grounding)"을 이질적 입력 맥락을 실행 가능한 제약 모델로 변환하는 문제로 공식화하고, Video Interactive Storytelling with Contextual Grounding이라는 새로운 과제를 정의.</li>
+<li>VIS-Ground 프레임워크를 제안: Structured Context Abstraction(근거 상태와 교차 맥락 의존성 복원), Generation Constraints Induction(후보별 제약 조건 투영), Constrained Video Generation(계획-검증-수정-렌더링을 통한 제약 강제)의 3단계 구조.</li>
+<li>전용 벤치마크 VIS-Bench를 구축해 서사(narrative) 및 지식(knowledge) 그라운딩 설정에서 소스 충실도, 스토리 연속성, 상호작용 충족도 등 6개 지표로 평가하는 체계를 마련.</li>
+<li>세 가지 비디오 생성 백본(Omni-1.1-Flash, Veo 3.1, MiniMax-H3) 전반에서 가장 높은 종합 점수를 기록하며, 강력한 베이스라인 대비 평균 10.3점의 절대 개선을 달성.</li>
+</ul>
+<h2>방법론</h2>
+<p>VIS-Ground는 그라운딩 소스 G, 비디오 프리픽스 v_prefix, 시청자 요청 u를 입력으로 받아 연속 영상 v_cont를 생성한다. 먼저 Structured Context Abstraction 단계에서 VLM을 이용해 각 입력을 엔티티·속성·사건·관계·상태 전이를 담은 타입화된 술어(predicate)로 변환하고, 이를 비디오 상태 V(렌더링된 프리픽스에서 시각적으로 확립된 것), 스토리 상태 H(완료된 사건, 활성 목표, 인과적 의존성 등), 소스 상태 S(근거 자료가 지지하는 원자적 주장·사건·관계)로 정리한 뒤 교차 맥락 정렬 A를 추가해 그라운딩된 의존성 모델 M=(V,H,S,A)을 구성한다. 이 모델에서 의존성 집합 R을 도출하며, 많은 의존성은 개별 입력 각각에는 명시되어 있지 않고 입력들을 함께 고려할 때만 드러난다. 두 번째 단계 Generation Constraints Induction에서는 특정 후보 각본 P^(k)가 제안될 때, 그 각본이 어떤 사건·관계·상태 전이를 유발하는지에 따라 관련 의존성만 "후보 조건부(candidate-conditioned)"로 활성화하여 생성 제약 c_j=(s_j, a_j, b_j, e_j)로 구체화하고, 각 제약은 pass/fail/unknown으로 평가된다. 세 번째 단계 Constrained Video Generation에서는 플래너가 그라운딩된 맥락에 조건화해 후보 각본을 제안하고, 제약 위반이 발견되면 해당 위반과 근거를 피드백으로 삼아 각본을 수정하는 반복 과정을 거친다. 각본이 제약을 만족하면 비디오로 렌더링하되, 렌더링된 결과에서도 동일한 의존성이 실제로 구현되었는지(예: 물건 전달이 생략되었는지, 지속 속성이 변했는지)를 다시 추출·검증하여 필요하면 각본을 다시 수정하는 출력 단계 교정까지 수행한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>VIS-Bench는 CoQA 데이터셋 기반으로 MCTest, Gutenberg, RACE, CNN, Wikipedia에서 250개의 소스 지문(서사 132개, 지식 118개)을 샘플링해 장면 기반 스토리로 변환하고, 영화적 사실주의와 컷아웃 애니메이션의 두 가지 시각 스타일로 렌더링해 1,004개의 상호작용 지시(2,008개의 지시-스타일 인스턴스)를 생성했다. 평가는 Source Faithfulness(SF), Story Continuity(SC), Interaction Fulfillment(IF), Joint Constraint Satisfaction(JCS), Visual Consistency(VC), Video Quality(VQ)의 6개 지표로 이루어졌으며, Gemini 3.8 Flash와 Claude Opus 5를 자동 평가자로 사용하고 인간 평가로 보정했다. Direct Generation, MM-StoryAgent, MovieAgent, VideoGen-of-Thought를 베이스라인으로 세 백본(Omni-1.1-Flash, Veo 3.1, MiniMax-H3)에서 비교한 결과, VIS-Ground는 모든 백본에서 최고 종합 점수를 기록했다(Omni 84.2, Veo 84.6, MiniMax 78.8). 베이스라인 대비 그라운딩 관련 지표(SF/SC/IF/JCS)에서 평균 약 10%p 개선되었으며, 특히 Omni·Veo 백본의 지식 그라운딩 설정에서는 JCS가 각각 +13.9, +17.0점 향상되었다. 또한 Direct Generation의 백본 간 성능 변동폭이 30점 이상이었던 데 비해 VIS-Ground는 6점 미만으로, 백본 간 성능 변동을 약 82% 줄였다. Ablation 결과 구조화된 표현을 없앤 "Unstructured State"는 SF/SC/IF 평균을 7.60%p, 제약 유도 없이 한 번에 계획하는 "One-Pass Planning"은 4.36%p 떨어뜨려 두 설계 요소가 각각 상호보완적 역할을 함을 확인했다.</p>
+<h2>한계점</h2>
+<p>VIS-Ground가 모든 개별 지표에서 항상 최고는 아니며, 특히 Interaction Fulfillment(IF), Visual Consistency(VC), Video Quality(VQ)에서 일부 역전이 있다. 시청자 요청이 모호하거나 공격적이거나 기존 맥락과 부분적으로 충돌할 때, 모델은 요청을 문자 그대로 따르기보다 기존 근거와 양립 가능한 연속을 선호하는 경향이 있어, 최신 지시에 더 직접적으로 반응하는 방법들이 오히려 IF에서 높은 점수를 받을 수 있다(단, 이 경우 소스 충실도나 스토리 연속성을 희생함). 또한 비디오 품질(VQ)은 VIS-Ground가 합성 모델 자체를 수정하지 않기 때문에 사용된 비디오 생성 백본의 한계에 크게 좌우된다. 72개 출력 표본에 대한 실패 분석에서도 스토리 연속성과 상호작용 충족에서 완벽한 점수를 받은 사례가 상대적으로 적어, 세부 사건 순서나 요청의 미세한 디테일을 놓치는 경우가 종종 있었다.</p>
+<h2>시사점</h2>
+<p>이 연구는 상호작용형 생성 시스템에서 "무엇을 생성할지"보다 "어떤 맥락 정보가 중요하고 그것이 생성을 어떻게 제약해야 하는지"를 먼저 구조화하는 것이 핵심이라는 점을 보여준다. 이질적 입력(서사/지식 소스, 시각적 역사, 사용자 의도)을 명시적 의존성 모델로 압축하고 후보 조건부로 제약을 활성화하는 접근은 비디오 생성뿐 아니라 대화형 에이전트, 장기 문서 작성, 멀티모달 콘텐츠 편집 등 맥락 간 암묵적 의존성이 존재하는 다른 생성 과제에도 일반화될 수 있는 설계 원칙을 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.09326" target="_blank" rel="noopener">huggingface.co/papers/2610.09326</a> · 2026-10-14</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

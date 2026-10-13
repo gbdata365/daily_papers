@@ -1,0 +1,109 @@
+<meta charset="UTF-8">
+<title>T3lescope</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#11 · Daily Papers 2026-10-14</span>
+      <span class="cat-tag">생성모델</span>
+      <span class="upvote-tag">▲ 10</span>
+    </div>
+    <h1 class="article-title">T3lescope: Arbitrary-Resolution High-Fidelity Generative Surface Reconstruction from Images</h1>
+    <p class="article-title-ko">T3lescope: 이미지로부터의 임의 해상도 고충실도 생성적 표면 재구성</p>
+    <p class="article-sub">T3lescope는 하나의 고정 해상도 3D 생성 모델을 추론 시점에 coarse-to-fine 캐스케이드 방식으로 여러 스케일에 재사용함으로써, 장면 전체에서 사물 단위까지 해상도와 공간 범위를 추론 시점에 자유롭게 조정하면서도 전역적으로 일관된 고충실도 메쉬를 생성하는 방법이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.03308" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.03308" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: T3lescope: Arbitrary-Resolution High-Fidelity Generative Surface Reconstruction from Images</li>
+<li><strong>저자</strong>: 8명, 2개 기관(Preferred Networks, Inc.; 도쿄대) 공동 연구 (대표: Atsuhiro Noguchi, Eiichi Matsumoto)</li>
+<li><strong>출처</strong>: arXiv:2610.03308v1 [cs.CV] (2026년 10월 2일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://pfnet-research.github.io/t3lescope/">T3lescope Project Page</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.03308">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>T3lescope는 하나의 고정 해상도 3D 생성 모델을 추론 시점에 coarse-to-fine 캐스케이드 방식으로 여러 스케일에 재사용함으로써, 장면 전체에서 사물 단위까지 해상도와 공간 범위를 추론 시점에 자유롭게 조정하면서도 전역적으로 일관된 고충실도 메쉬를 생성하는 방법이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>자세(pose)가 주어진 다중 시점 이미지로부터 고충실도 3D 메쉬를 복원하는 문제는 로봇 인지, 시뮬레이션, 디지털 트윈 등에 필수적이다. 기존 접근은 세 갈래로 나뉜다: 장면별 최적화(per-scene optimization) 방법은 조밀한 관측에서는 정확하지만 관측이 희소하거나 표면이 광택/투명할 때 학습된 3D prior가 없어 실패한다. feed-forward 방법은 깊이·포인트맵을 예측하지만 시점 간 융합 과정에서 불일치, 구멍, 중복 표면이 생긴다. 생성적 재구성(generative reconstruction)은 학습된 prior로 완전한 3D 표현을 직접 예측해 두 문제를 모두 해결하지만, 현재 3D 생성기는 고정된 복셀 그리드와 단일 스케일에서만 동작해 공간 커버리지와 세부 디테일이 상충한다. 선행 연구 GenRecon은 겹치는 로컬 셀과 MultiDiffusion으로 범위를 넓혔지만, 멀리 떨어진 영역은 겹치는 부분을 통해서만 간접적으로 상호작용해 전역 기하 일관성을 유지하기 어렵다.</p>
+<h2>핵심 기여</h2>
+<p>1) 하나의 고정 해상도 3D 생성기를 장면 스케일 전반에 재사용하는 추론 시점 coarse-to-fine 캐스케이드 제안 — 커버리지와 해상도를 추론 시점에 결정.
+2) 셀 독립적(cell-independent) 멀티스케일 이미지 조건화 기법 개발 — 이미지 특징을 셀/레벨/샘플링 단계에 걸쳐 재사용하면서도 셀 배치와 스케일을 유연하게 허용.
+3) 실내, 실외, 도시 규모 장면에서 feed-forward 및 생성적 베이스라인을 능가하고 장면별 최적화 방법과 경쟁력 있는 성능을 보임.</p>
+<h2>방법론</h2>
+<p>기본 생성 모델은 sparse-voxel 메쉬 생성기인 TRELLIS.2를 사용하며, sparse structure(SS) 단계와 mesh 단계 두 단계로 구성된다. 장면은 GenRecon처럼 겹치는 셀로 분할되어 MultiDiffusion으로 공유 잠재(latent)를 갱신한다. 핵심인 <strong>추론 시점 coarse-to-fine 캐스케이드</strong>는, 가장 거친 레벨이 전역 구조를 확립하고, 이후 각 레벨은 셀 크기를 절반으로 줄이며 부모 레벨의 기하를 서브디비전(subdivision)으로 상속받아 SDEdit 방식(부모 예측을 시간 t_s=0.8로 노이즈를 섞은 뒤 역방향으로 디노이즈)으로 정제해 세부 표면을 복원한다. 모델은 개별 셀 단위로 여러 스케일에서 학습되고 전 레벨에서 가중치를 공유하므로, 계층 구조(레벨 수, 셀 크기, 배치)는 훈련이 아닌 추론 시점에 결정된다. 이미지 조건화에는 voxel-queried attention(복셀이 질의가 되어 투영된 주변 DINO 토큰들에 어텐션)과 ConvNeXt 기반 세부 특징을 추가하며, 각 입력 이미지를 피라미드 형태의 512×512 타일 뱅크로 미리 인코딩해 셀/레벨/스텝에 걸쳐 재사용함으로써 비용을 줄인다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>ScanNet++(25개 최대 장면), Tanks and Temples(6개 장면), 자체 수집 도시 블록 데이터셋에서 32~256 입력 뷰로 평가했다. ScanNet++에서 최종(가장 세밀한) 레벨은 생성적 베이스라인 GenRecon을 7개 지표 전부에서 능가했고, 2DGS·MILo 등 장면별 최적화 방법 대비 모든 3D 지표에서 우위를 보였다. 도시 블록 데이터셋(스트리트뷰 사진, 깊이가 수 미터~100미터 이상)에서는 모든 베이스라인이 Chamfer distance 약 5m 이상으로 실패했으나 T3lescope는 0.65m를 달성하며 전 지표에서 우월했고, 캐스케이드 레벨이 세밀해질수록 세 지표 모두 개선되었다. Tanks and Temples에서는 조밀한 관측에서 최적화 기반 방법이 F-score는 더 높았지만, T3lescope가 Chamfer distance 기준 최고 또는 경쁄력 있는 성능을 유지했고 투명/반사 표면(트럭의 유리창 등)을 유일하게 닫힌 표면으로 복원했다. 파라미터 t_s=0.8을 기본값으로 쓴 ablation에서, t_s를 낮출수록(부모 정보 비중 증가) ScanNet++ 32뷰 설정에서 Chamfer distance가 80% 감소했다.</p>
+<h2>한계점</h2>
+<p>픽셀 단위로 입력 이미지에 정확히 맞춰 피팅하지 않기 때문에, 관측이 조밀할 때 엄격한 임계값에서의 F-score가 낮아질 수 있다. 셀과 캐스케이드 레벨 수가 늘어날수록 비용이 커져 고해상도 대규모 장면 샘플링은 여전히 느리다(ScanNet++ 대형 장면에서 H200 1장 기준 17~89분/장면). 자세 정보가 있는 이미지(posed images)를 전제로 하며, 경계가 없는(unbounded) 장면의 원거리 객체는 복원하지 못한다.</p>
+<h2>시사점</h2>
+<p>훈련 시 고정된 계층 구조를 가정하지 않고 "동일 가중치를 여러 스케일 셀에 재사용"하는 설계는, 객체 단위부터 도시 블록까지 폭넓은 스케일을 단일 모델로 다루는 범용 3D 생성 재구성의 실용적 경로를 제시한다. 저자들은 향후 flow 모델을 few-step 샘플러로 distillation해 샘플링 비용을 낮추고, unbounded 장면으로 확장할 계획을 밝혔다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.03308" target="_blank" rel="noopener">huggingface.co/papers/2610.03308</a> · 2026-10-14</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

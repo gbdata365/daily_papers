@@ -1,0 +1,110 @@
+{
+  "2609.39601": {
+    "base": "2609_그라운딩파이_물리지능-그라운딩-파운데이션모델",
+    "rank": "#1",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "246",
+    "en_title": "GroundingPI: A Grounding Foundation Model towards Physical Intelligence with Visual Primitives",
+    "ko_title": "그라운딩파이: 시각 프리미티브를 활용한 물리 지능 지향 그라운딩 파운데이션 모델"
+  },
+  "2610.11765": {
+    "base": "2610_사고관성_멈추라해도-계속생각하는-LLM",
+    "rank": "#2",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "215",
+    "en_title": "Thinking Inertia: LLMs Keep Thinking When Told Not To",
+    "ko_title": "사고 관성: 멈추라고 해도 계속 생각하는 LLM"
+  },
+  "2610.13361": {
+    "base": "2610_에이전트스웨_코딩에이전트가-원하는-에이전트-만들기",
+    "rank": "#3",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "201",
+    "en_title": "AgentSWE: Can Coding Agents Build the Agent You Actually Want?",
+    "ko_title": "에이전트스웨: 코딩 에이전트가 당신이 진짜 원하는 에이전트를 만들 수 있는가?"
+  },
+  "2610.13166": {
+    "base": "2610_터미널인텔리전스_장기-터미널-에이전트-데이터-스케일링",
+    "rank": "#4",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "132",
+    "en_title": "Scaling Agentic Data for Long-Horizon Terminal Intelligence",
+    "ko_title": "장기 터미널 인텔리전스를 위한 에이전틱 데이터 스케일링"
+  },
+  "2610.09326": {
+    "base": "2610_비스그라운드_맥락그라운딩-비디오-스토리텔링",
+    "rank": "#5",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "78",
+    "en_title": "VIS-Ground: Video Interactive Storytelling with Contextual Grounding",
+    "ko_title": "VIS-Ground: 맥락 그라운딩 기반 비디오 인터랙티브 스토리텔링"
+  },
+  "2609.39600": {
+    "base": "2609_그라운드애니씽_병렬디코딩-정밀그라운딩-고속화",
+    "rank": "#6",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "71",
+    "en_title": "GroundAnything: Reconciling Parallel Decoding with Precise Visual Grounding at Flash Speed",
+    "ko_title": "GroundAnything: 병렬 디코딩과 정밀 비주얼 그라운딩의 고속 조화"
+  },
+  "2610.13630": {
+    "base": "2610_멀티스트림어텐션_멀티스트림-어텐션-잔차",
+    "rank": "#7",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "34",
+    "en_title": "Multi-Stream Attention Residuals",
+    "ko_title": "멀티스트림 어텐션 잔차"
+  },
+  "2609.33304": {
+    "base": "2609_경험활성화_개인GUI에이전트-경험활성화",
+    "rank": "#8",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "29",
+    "en_title": "Relevance Does Not Imply Applicability: Experience Activation for Personal GUI Agents",
+    "ko_title": "관련성은 적용 가능성을 의미하지 않는다: 개인 GUI 에이전트를 위한 경험 활성화"
+  },
+  "2609.36616": {
+    "base": "2609_크로스타임에딧_역사적-거리뷰-생성-편집",
+    "rank": "#9",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "20",
+    "en_title": "CrossTimeEdit: A Decade-Spanning Cross-View Dataset and Reward-Guided Editing for Historical Street-View Generation",
+    "ko_title": "CrossTimeEdit: 10년 간격 크로스뷰 데이터셋과 보상 기반 역사적 거리뷰 생성 편집"
+  },
+  "2610.13832": {
+    "base": "2610_스페이셜ASM_공간추론-능동적정신화-내재화",
+    "rank": "#10",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "16",
+    "en_title": "SpatialASM: Internalizing Active Mentalization for Spatial Reasoning",
+    "ko_title": "SpatialASM: 공간 추론을 위한 능동적 정신화의 내재화"
+  },
+  "2610.03308": {
+    "base": "2610_텔레스코프_임의해상도-고충실도-표면재구성",
+    "rank": "#11",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "10",
+    "en_title": "T3lescope: Arbitrary-Resolution High-Fidelity Generative Surface Reconstruction from Images",
+    "ko_title": "T3lescope: 이미지로부터의 임의 해상도 고충실도 생성적 표면 재구성"
+  },
+  "2609.35965": {
+    "base": "2609_멀티에이전트VLN_체계적-멀티에이전트-내비게이션",
+    "rank": "#12",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "10",
+    "en_title": "Systematic Multi-Agent Vision-and-Language Navigation: Formulation, Benchmark, and Method",
+    "ko_title": "체계적 멀티에이전트 시각-언어 내비게이션: 형식화, 벤치마크, 방법론"
+  }
+}

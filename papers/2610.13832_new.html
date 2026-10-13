@@ -1,0 +1,114 @@
+<meta charset="UTF-8">
+<title>SpatialASM</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#10 · Daily Papers 2026-10-14</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 16</span>
+    </div>
+    <h1 class="article-title">SpatialASM: Internalizing Active Mentalization for Spatial Reasoning</h1>
+    <p class="article-title-ko">SpatialASM: 공간 추론을 위한 능동적 정신화의 내재화</p>
+    <p class="article-sub">SpatialASM은 사람이 복잡한 공간 문제를 풀 때 다른 시점을 상상하며 장면을 재구성하는 능력(Active Spatial Mentalization)을 훈련 시점의 신규 시점 생성기를 통해 LVLM에 내재화함으로써, 추론 시점에 외부 시뮬레이터 없이도 7개 공간 추론 벤치마크에서 일관된 성능 향상을 달성하는 프레임워크다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.13832" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.13832" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: SpatialASM: Internalizing Active Mentalization for Spatial Reasoning</li>
+<li><strong>저자</strong>: 8명, 5개 기관(홍콩중문대, 상하이 AI 랩, 푸단대, 상하이 혁신연구원, CPII) 공동 연구 (대표: Yuhong Liu, Shenxi Wu 공동 1저자; 교신저자 Jiaqi Wang, Yuhang Zang, Dahua Lin)</li>
+<li><strong>출처</strong>: arXiv:2610.13832v1 [cs.CV] (2026년 10월 9일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/InternLM/SpatialASM">GitHub - InternLM/SpatialASM</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.13832">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>SpatialASM은 사람이 복잡한 공간 문제를 풀 때 다른 시점을 상상하며 장면을 재구성하는 능력(Active Spatial Mentalization)을 훈련 시점의 신규 시점 생성기를 통해 LVLM에 내재화함으로써, 추론 시점에 외부 시뮬레이터 없이도 7개 공간 추론 벤치마크에서 일관된 성능 향상을 달성하는 프레임워크다.</p>
+<h2>배경 및 문제의식</h2>
+<p>LVLM은 시점 변환, 다중 시점 간 대응, 관측되지 않은 영역에 대한 추론이 필요한 복잡한 공간 과제에서 여전히 취약하다. 저자들은 그 핵심 원인을, 사람이 자연스럽게 수행하는 "과제에 유용한 대안 시점을 능동적으로 선택하고 그 시점에서 보일 장면을 마음속으로 구성하는" 능력, 즉 Active Spatial Mentalization(ASM, 시점 계획 view planning + 시점 상상 view imagination)이 현재 LVLM에 결여되어 있다는 점에서 찾는다. 기존 데이터 중심 접근은 3D 주석이나 비디오 기반 대규모 데이터셋을 제공하지만 답만 있는 QA쌍이라 "어떻게 시점을 선택하고 상상하는지"에 대한 Chain-of-Thought(CoT) 감독이 없다. 외부 월드모델/시뮬레이터를 추론 시점에 호출하는 방법들은 유용한 시각적 근거를 제공하지만 추론이 외부 시뮬레이터에 종속되고, 다단계 자기중심적(egocentric) 롤아웃이 필요해 느리다.</p>
+<h2>핵심 기여</h2>
+<p>1) ASM을 "과제 관련 시점을 능동적으로 계획"하고 "해당 시점에서의 관측을 상상"하는 결합 능력으로 정식화하고, 이의 결여가 LVLM 공간 추론의 핵심 병목임을 주장.
+2) 타자중심적(allocentric) 신규 시점 생성기(NVG)와 Geometry Perturbation(GeoP) 기반 필터링을 이용해, 기존 답변-only 공간 QA 데이터를 SFT용 명시적 ASM 추론 궤적과 RL용 관점-전환(perspective-taking) 과제로 변환하는 확장 가능한 프레임워크 SpatialASM 제안.
+3) Qwen3-VL/Qwen3.5 계열 4개 백본에서 7개 공간 벤치마크 평균 정확도를 개선하면서 일반 VQA 성능은 거의 유지.</p>
+<h2>방법론</h2>
+<ul>
+<li><strong>타자중심적 NVG</strong>: 사전학습된 이미지 편집 모델(FLUX.2-klein-9B)을 미세조정해, 앵커 이미지 상의 픽셀 좌표(x,y)와 시선 방향(d)으로 정의된 시점 v=(i,x,y,d)에서의 장면을 한 번에 렌더링한다(자기중심적 모션 명령 시퀀스 불필요). DL3DV의 다중 시점 장면으로 학습 데이터(SpatialASM-edit140k)를 구성.</li>
+<li><strong>GeoP(Geometry Perturbation) 지표</strong>: 렌더링된 뷰를 기존 관측 집합에 추가했을 때 사전학습 3D 재구성 모델이 추정한 포인트클라우드가 얼마나 달라지는지(Chamfer distance)를 측정해 기하적 일관성을 검증하는 모델 기반 proxy 지표.</li>
+<li><strong>ASM 궤적 합성(SFT용)</strong>: LVLM이 질문에 대해 유용한 시점을 계획(r_plan)하고, NVG가 해당 뷰를 렌더링하며, 원본만으로는 틀렸다가 렌더링 뷰를 보고 맞춘 경우만(답 변화 + GeoP 임계값 통과) 채택. 최종적으로 렌더링 이미지는 캡션으로 대체되어, 모델이 원본 이미지만으로 내부적으로 시점을 상상하도록 학습(SpatialASM-66k/128k 구성).</li>
+<li><strong>시점-상상 RL</strong>: GRPO로, 생성된 뷰의 위치를 역으로 맞히는 "생성뷰 위치추정"과 텍스트 목표 자세에 맞는 뷰를 고르는 "자세조건 뷰선택" 두 가지 자동 검증 가능한 객관식 과제로 추가 학습(SpatialASM-RL-58k).</li>
+</ul>
+<h2>실험 설정 및 결과</h2>
+<p>Qwen3-VL(4B/8B/30B-A3B)와 Qwen3.5-9B 네 개 백본에, 7개 공간 추론 벤치마크(MindCube, MMSI, Spatial457-6d, ViewSpatial, 3DSRBench, EmbSpa, ESI-Bench)와 3개 일반 VQA 벤치마크로 평가했다. SpatialASM은 전 백본에서 공간 추론 평균 정확도가 +1.2~+3.5점 향상되었고(예: 8B 모델 평균 46.2→49.1), 세부적으로는 시점 전환이 요구되는 Spatial457-6d에서 +8.7, MindCube에서 +5.2까지 상승했다. 일반 VQA 성능은 모든 백본에서 0.6점 이내로 유지되어 범용 시각 능력 손상이 거의 없었다.</p>
+<h2>한계점</h2>
+<p>GeoP는 사전학습된 3D 재구성 모델에 의존하는 proxy 지표로 절대적 정답(ground truth) 측정치가 아니다. NVG의 렌더링 품질이 전체 파이프라인의 데이터 품질을 좌우하며, 캡션 대체 과정에서 세부 공간 정보가 손실될 가능성이 있다. 또한 논문에서 일반 VQA 성능이 일부 백본(4B, 30B-A3B)에서 소폭(-0.5~-0.6점) 하락하는 경향도 확인된다.</p>
+<h2>시사점</h2>
+<p>답변-only 공간 QA 데이터를 훈련 시점 시뮬레이션으로 보강해 "능동적 상상-추론" CoT를 자동 합성하는 접근은, 비싼 인간 주석 없이도 공간 Chain-of-Thought 데이터 부족 문제를 완화할 스케일러블한 경로를 제시한다. 추론 시점에는 외부 월드모델/시뮬레이터 호출이 전혀 필요 없어, 기존 tool-augmented 방식보다 효율적으로 배포 가능하다는 점도 실용적 의의가 크다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.13832" target="_blank" rel="noopener">huggingface.co/papers/2610.13832</a> · 2026-10-14</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

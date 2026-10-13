@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>GroundAnything</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#6 · Daily Papers 2026-10-14</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 71</span>
+    </div>
+    <h1 class="article-title">GroundAnything: Reconciling Parallel Decoding with Precise Visual Grounding at Flash Speed</h1>
+    <p class="article-title-ko">GroundAnything: 병렬 디코딩과 정밀 비주얼 그라운딩의 고속 조화</p>
+    <p class="article-sub">비전 그라운딩을 좌에서 우로 순차 생성해야 할 과제가 아니라 이미지와 질의에 의해 동시에 제약되는 "구조화된 시각적 증거 추출" 문제로 재정의하여, 양방향 마스크 디퓨전 기반의 블록 단위 병렬 디코딩으로 박스·포인트·OCR·GUI 등 다양한 그라운딩 과제를 하나의 4B 파라미터 모델 GroundAnything으로 통합하고, AR 모델 대비 최대 4.51배 빠른 속도에서도 정밀도 손실을 0.74%p로 최소화했다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2609.39600" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2609.39600" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: GroundAnything: Reconciling Parallel Decoding with Precise Visual Grounding at Flash Speed</li>
+<li><strong>저자</strong>: 20명, XPeng Inc., Peking University, The University of Hong Kong, UC Berkeley, Princeton University, NUS, HKUST(GZ) 공동 연구 (프로젝트 리드: Qize Yu, 교신저자: Ping Luo, Shiyu Huang)</li>
+<li><strong>출처</strong>: arXiv:2609.39600v1 [cs.CV] (2026년 9월 30일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://groundingpi.github.io/groundanything/">groundingpi.github.io/groundanything</a> (코드: GitHub groundingpi/GroundAnything, 모델: HuggingFace GroundingPI/GroundAnything, GroundAnything-VLM)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2609.39600">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>비전 그라운딩을 좌에서 우로 순차 생성해야 할 과제가 아니라 이미지와 질의에 의해 동시에 제약되는 "구조화된 시각적 증거 추출" 문제로 재정의하여, 양방향 마스크 디퓨전 기반의 블록 단위 병렬 디코딩으로 박스·포인트·OCR·GUI 등 다양한 그라운딩 과제를 하나의 4B 파라미터 모델 GroundAnything으로 통합하고, AR 모델 대비 최대 4.51배 빠른 속도에서도 정밀도 손실을 0.74%p로 최소화했다.</p>
+<h2>배경 및 문제의식</h2>
+<p>Pix2Seq, Florence-2, Rex-Omni 등 기존 생성형 그라운딩 모델들은 자기회귀(AR) 방식으로 라벨과 좌표를 순차적으로 디코딩하는데, 이는 순차적 지연(latency)을 유발하고 출력 간 상호작용을 이미 생성된 접두사(prefix)로만 제한한다. 이는 밀집한 장면(dense scene)이나 복잡한 레이아웃에서 특히 비용이 크다. LocateAnything과 같이 멀티토큰 예측(MTP)으로 박스를 병렬 디코딩하려는 시도가 있었고, 디퓨전 VLM이 멀티모달 이해·GUI 그라운딩·문서 OCR 등 특정 도메인에서 병렬 생성과 양방향 정제의 가능성을 보였지만, 이들은 여전히 도메인별로 특화되어 있어 디퓨전이 다양한 비주얼 과제에 대한 통합된 구조적 예측에 쓰일 잠재력은 충분히 탐구되지 않았다. 저자들은 사람이 여러 물체나 표지판을 어떤 순서로 보든 동일한 최종 판단에 도달한다는 점에 착안해, 그라운딩의 공간 변수들이 이미지와 질의에 의해 공동으로 제약될 뿐 내재적인 좌-우 생성 순서를 갖지 않는다고 본다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>그라운딩을 "구조화된 시각적 증거 추출"로 재정의하고, 양방향 마스크 디퓨전이 이 과제 구조에 자연스럽게 부합함을 제시.</li>
+<li>양자화된 좌표를 포함한 공유 어휘(vocabulary)로 다양한 그라운딩 과제를 통합하고, 블록 내부는 양방향 어텐션, 블록 간은 인과적 의존성을 결합해 병렬 예측과 KV-캐시 재사용을 동시에 지원하는 4B 파라미터 모델 GroundAnything을 제안.</li>
+<li>30개 그라운딩 벤치마크에서 AR 버전인 GroundAnything-VLM이 동급 모델 중 최고 성능(평균 72.42%, GPT-6 Astra의 71.35%와 경쟁)을 달성했고, 엔트로피 기반 디코딩을 적용한 디퓨전 버전 GroundAnything이 평균 61.75%로 기존 동급 최고였던 MTP 기반 LocateAnything(53.32%)을 능가한 최초의 디퓨전 언어모델임을 보임.</li>
+<li>자기-추측 디코딩(self-speculative decoding) 등 디코딩 전략을 체계적으로 분석하고, SGLang·CUDA Graph·FP8 등 추론 인프라 최적화를 통해 병렬 디코딩의 이론적 속도 향상을 실제 배포 환경의 실질적 속도 향상으로 전환함을 입증.</li>
+</ul>
+<h2>방법론</h2>
+<p>GroundAnything은 이미지 I와 질의 Q가 주어지면 텍스트, 구조 마커, 양자화된 좌표(1,000개의 좌표 토큰)로 구성된 공유 어휘를 사용해 응답 시퀀스 Y를 K개의 연속 블록으로 나누어 블록별 양방향 마스크 디퓨전으로 모델링한다. 아키텍처는 MoonViT-V2(Kimi K3) 비전 인코더, 2×2 공간 집계와 2층 MLP로 구성된 프로젝터, Qwen3-4B 언어 디코더로 구성되며, 완성된 블록은 인과적 접두사를 형성해 KV-캐시를 재사용할 수 있다. 학습은 네 단계로 이루어진다: (1) 공개 데이터셋과 자체 데이터 엔진(다중 교사 모델의 필드 단위 앙상블과 과제별 검증을 반복하는 구조)을 활용한 그라운딩 사전학습, (2) AR 모델인 GroundAnything-VLM으로부터 마스크 토큰을 추가해 AR 손실과 마스크드 디노이징 손실을 절반씩 결합한 AR-to-Diffusion 변환(블록 크기 B=32), (3) 지도 미세조정(SFT), (4) 집합 완전성(set-completeness)과 엄격한 위치 정확도(strict localization)를 결합한 보상으로 GRPO 기반 강화학습 후처리. 추론 단계에서는 엔트로피가 임계값 이하인 위치를 먼저 확정하는 Entropy-Guided Decoding을 기본으로 사용하며, 추가로 디퓨전 드래프트와 AR 검증을 결합한 자기-추측 디코딩(선형/이차 방식)을 지원해, 동일 가중치로 드래프트를 생성한 뒤 가장 긴 일치 접두사만 인과적으로 검증·수용함으로써 속도와 정확도를 함께 개선한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>GroundAnything-VLM과 GroundAnything을 11개 지각 역량에 걸친 30개 벤치마크(COCO, LVIS, Dense200, VisDrone 등 탐지, 참조 표현 이해, OCR, GUI 그라운딩, 레이아웃, 로봇·공간 포인팅 등)에서 44개 베이스라인과 비교했다. GroundAnything-VLM은 평균 72.42%로 동급 모델 중 최고를 기록하며 GPT-6 Astra(71.35%)와 경쟁했고, 엔트로피 기반 디퓨전 디코딩을 쓴 GroundAnything은 평균 61.75%로, 기존 동급 최고인 MTP 기반 LocateAnything(53.32%)을 능가하면서도 GroundAnything-VLM보다 2배 이상 빠른 속도를 보였다. 자기-추측 디코딩을 적용하면 GroundAnything-VLM 대비 4.51배의 속도 향상을 얻으면서 COCO F1mIoU는 0.74%p만 하락했다. SGLang, CUDA Graph, FP8을 결합한 점진적 추론 최적화 실험은 병렬 디코딩의 이론적 속도 이점이 실제 시스템 수준의 처리량 향상으로 이어짐을 보였다. Ablation 및 세부 분석에서는 Dense200·VisDrone 같은 밀집/소형 객체 탐지에서 IoU 0.95 기준 F1이 낮게 나와(3.42, 2.24) 정밀한 소형 객체 경계 탐지가 여전히 과제로 남음을 확인했다.</p>
+<h2>한계점</h2>
+<p>저자들이 직접 명시한 Discussion에 따르면 디퓨전은 모든 작업에 보편적으로 유리한 것이 아니라, 병렬 채움(parallel filling)과 구조화된 출력처럼 공동 예측과 제한적 정제가 계산 비용을 상쇄할 수 있는 특정 워크로드에서 그 강점이 발휘된다. 또한 밀집·초소형 객체에 대한 정밀한 경계 예측(IoU 0.95 수준)은 Dense200, VisDrone 벤치마크에서 상대적으로 낮은 성능을 보여 여전히 한계로 남는다. 아울러 Ethics Statement에서 저자들은 이 모델이 실제 로봇 제어나 자율주행과 같은 안전이 중요한 실환경 배치가 아닌 연구용 범용 그라운딩 모델로 개발되었으며, 향후 임바디드·자율 시스템에 통합할 경우 적절한 안전성 평가와 인간 감독이 필요함을 명시하고 있다.</p>
+<h2>시사점</h2>
+<p>이 연구는 "생성은 과제의 구조를 따라야 한다"는 원칙을 제시하며, 좌-우 순서가 본질적으로 필요하지 않은 과제(예: 공간적으로 상호 제약된 다중 객체 탐지)에서는 자기회귀 디코딩보다 양방향 디퓨전이 더 적합할 수 있음을 실증적으로 보여준다. 동일한 가중치를 AR과 디퓨전 양쪽에서 재사용하는 설계(자기-추측 디코딩)는 정확도와 속도 사이의 트레이드오프를 유연하게 조절할 수 있는 실용적 배포 전략을 제공하며, 이는 실시간 로봇 인지, AR/VR 상호작용, 대규모 영상 검색 등 저지연 비전 그라운딩이 필요한 응용 분야에 직접적인 함의를 갖는다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2609.39600" target="_blank" rel="noopener">huggingface.co/papers/2609.39600</a> · 2026-10-14</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

@@ -1,0 +1,107 @@
+<meta charset="UTF-8">
+<title>에이전트스웨</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#3 · Daily Papers 2026-10-14</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 201</span>
+    </div>
+    <h1 class="article-title">AgentSWE: Can Coding Agents Build the Agent You Actually Want?</h1>
+    <p class="article-title-ko">에이전트스웨: 코딩 에이전트가 당신이 진짜 원하는 에이전트를 만들 수 있는가?</p>
+    <p class="article-sub">코딩 에이전트가 자연어 요구사항으로부터 실제로 사용자가 원하는 에이전트를 만들고(Creation), 기존 운영 중인 에이전트 코드베이스를 안전하게 수정하고(Editing), 측정 가능한 목표를 향해 최적화할(Optimization) 수 있는지를 평가하는 벤치마크 에이전트스웨(AgentSWE)를 제안하고, 현재 코딩 에이전트들이 이 세 단계 모두에서 심각하게 미달함을 실증했다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.13361" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.13361" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: AgentSWE: Can Coding Agents Build the Agent You Actually Want?</li>
+<li><strong>저자</strong>: 5명, Beijing Academy of Artificial Intelligence·Institute of Automation(Chinese Academy of Sciences)·Renmin University of China 공동 연구 (대표: Jiahao Wang, Hongjin Qian(공동 1저자); 교신저자: Zheng Liu)</li>
+<li><strong>출처</strong>: arXiv:2610.13361v1 [cs.SE] (2026년 10월 9일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시된 별도 프로젝트 페이지는 없으며, 코드·벤치마크는 GitHub(<a href="https://github.com/VectorSpaceLab/AgentSWE">VectorSpaceLab/AgentSWE</a>)에 공개</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.13361">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>코딩 에이전트가 자연어 요구사항으로부터 실제로 사용자가 원하는 에이전트를 만들고(Creation), 기존 운영 중인 에이전트 코드베이스를 안전하게 수정하고(Editing), 측정 가능한 목표를 향해 최적화할(Optimization) 수 있는지를 평가하는 벤치마크 에이전트스웨(AgentSWE)를 제안하고, 현재 코딩 에이전트들이 이 세 단계 모두에서 심각하게 미달함을 실증했다.</p>
+<h2>배경 및 문제의식</h2>
+<p>Claude Code, Codex 같은 코딩 에이전트는 이제 많은 비개발자 사용자로부터 "에이전트를 만들어 달라"는 작업을 위임받는다. 이는 모델·툴·상태를 하나의 반복 작업에 고정된 런타임으로 감싸는 프로그램을 만드는 일이며, 이 위임은 "코딩 에이전트가 자연어 요구사항을 받으면 사용자가 의도한 에이전트를 충실히 전달할 것"이라는 신뢰를 전제한다. 그러나 SWE-bench 계열은 참조 패치나 테스트에 대한 코드 수정만 평가하고, AgentBench 등 에이전트 벤치마크는 이미 완성된 에이전트의 성능만 측정할 뿐, "코딩 에이전트가 요구사항으로부터 에이전트를 실제로 만들어낼 수 있는가"라는 중간 단계는 어떤 기존 벤치마크도 다루지 않았다는 공백을 저자들은 지적한다.</p>
+<h2>핵심 기여</h2>
+<p>1) 요구사항 q=(목표, 인터페이스 계약, 제약, 자원)와 전달된 에이전트의 "충실도(fidelity)"를 개발 사례와 분리된 held-out 사례에 대한 기대 만족도로 정식화하는 "에이전트를 위한 에이전트(agent-for-agent)" 문제를 형식화. 2) Creation(10개)·Editing(10개)·Optimization(5개) 총 25개 과제로 구성된 AgentSWE 벤치마크를 구축: 빌더는 요구사항과 소수의 예시 케이스만 보고 개발하며, 평가는 그 요구사항이 암시하지만 예시에는 없는 조항까지 포괄하는 held-out 케이스로 동결된 결과물을 실행해 채점한다(요구사항 파생 루브릭 또는 Optimization의 경우 원본 벤치마크의 네이티브 목표 사용). 3) 다섯 개 모델(Codex 하니스 기준 GPT-5.6 Sol, GPT-5.5, DeepSeek-V4-Pro/Flash, Qwen3.6-35B-A3B) 및 추가 하니스-모델 조합을 평가하고, 트레이스 분석을 통해 반복되는 실패 양상(가시적 사례에 대한 과적합, 속이 빈 런타임, 근거 없는 완료 주장)을 체계적으로 식별.</p>
+<h2>방법론</h2>
+<p>AgentSWE는 세 단계를 하나의 정식화로 통합한다. Creation은 빈 작업공간(a0=∅)에서 완전한 에이전트를 만드는 과제, Editing은 운영 중인 에이전트(Claude Code, Aider, OpenHands, OpenClaw 등)의 고정된 코드베이스에 새 기능을 추가하면서 기존 동작도 보존해야 하는 과제(만족도 µq = 신규기능 충족 ∧ 회귀없음), Optimization은 이미 작동하는 에이전트를 BrowseComp, τ³, TerminalBench, PinchBench, OSWorld 같은 기존 벤치마크의 측정 가능한 목표 J를 향해 개선하는 과제로, 전달 결과는 남은 격차의 해소 비율(gap closure, γ = min(1, (J(â)-J(a0))/(J*-J(a0))))로 채점한다. 평가는 Harbor라는 컨테이너 기반 프레임워크에서 진행되며, 빌더는 하나의 지속 세션에서 개발 사례(D)에 대한 피드백만 받고 held-out 사례나 평가 상태에는 전혀 접근할 수 없다. 개발이 끝나면 결과물을 동결(Creation은 최종 작업공간, Editing은 마지막으로 승인된 제출물, Optimization은 개발 목표가 가장 높은 승인 후보)하고, 동결된 에이전트를 벤치마크 전용 게이트웨이를 통해 고정된 런타임 모델로 isolated 환경에서 held-out 케이스에 실행한다. Creation/Editing은 요구사항에서 도출된 Result 루브릭을 프런티어 추론 모델(GPT-5.6 Sol/DeepSeek-V4.1-Flash)이 채점하며, 실행 실패·시간초과·파싱 불가 결과물에는 결정론적 게이트로 0점을 부여한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>50개 Creation 실행의 평균 Result는 11.2(중앙값 3.4)이며 20개는 0점이었다. 최고 성능 빌더 DeepSeek-V4-Pro도 평균 19.1에 그쳤고 10개 과제 중 8개에서 20점 미만이었다. Editing에서는 DeepSeek-V4-Pro·GPT-5.5·GPT-5.6 Sol이 거의 모든 과제에서 결과물을 제출했지만 평균은 20~35점 사이였고(가장 높은 단일 실행은 GPT-5.5의 70점), Qwen3.6은 어떤 과제에서도 후보를 제출하지 못했다. Optimization 25개 실행 중 13개만 시작점보다 점수가 올랐고, 평균적으로 어떤 빌더도 남은 격차의 5% 이상을 해소하지 못했다. 트레이스 분석에서는 세 가지 반복 실패 양상을 확인했다: (1) 과적합 — Creation 실행 11건이 개발 단계에서 90점 이상을 기록했지만 held-out 평균은 9.9점에 불과했고, PinchBench에서는 DeepSeek 계열이 보이는 과제 유형에만 키워드 기반 플레이북으로 대응해 개발 점수는 올랐지만 held-out 점수는 15점 이상 하락. (2) 속이 빈 런타임 — Creation held-out 실행의 58.1%(270건 중 157건)가 오류 종료나 시간초과로 유효성 게이트를 통과하지 못했고, Editing 실행의 33건 중 28건은 추가 기능 일부가 누락·미호출·불완전 실행 상태였다. (3) 근거 없는 완료 주장 — Creation 최종 보고서 42건 중 6건, Optimization 보고서 19건 중 3건이 자체 실행 기록과 모순되는 완료를 주장했다. 추가 실험에서는 개발 사례 수를 0→2개로 늘리면 성능이 크게 오르지만 그 이상은 효과가 없었고, 설계를 미리 지정하는 프롬프트는 일부 과제에서 오히려 성능을 낮췄으며, 실행 예산을 2.5배로 늘려도 과적합·속임수 패턴은 그대로 남았고, 동일한 하니스-모델 조합도 반복 빌드마다 점수가 크게 달라졌다(예: 동일 조합이 한 과제에서 32.8, 33.3, 90.5점을 각각 기록).</p>
+<h2>한계점</h2>
+<p>저자들은 벤치마크가 코드 실행, 웹 접근, 일부 과제에서는 소프트웨어 취약점 검증까지 수행하는 에이전트를 다루므로 모든 빌더 세션과 실행을 고립된 컨테이너와 고정 픽스처, 벤치마크 전용 게이트웨이로 통제했다고 명시한다. 평가 자체는 25개 과제(및 축소판 AgentSWE-Lite 8개)에 한정되어 있어 모든 도메인을 포괄하지는 못하며, Result 루브릭 채점과 과제 자료 생성에 LLM(GPT-5.6 Sol)을 사용한 점, 그리고 코딩 에이전트와 모델 자체가 빌더·런타임·판사 역할을 동시에 수행한다는 점에서 평가 체계 자체가 완전히 인간에게서 독립적이지는 않다. 논문은 이러한 실패 양상 분석을 "향후 요구사항에 대해 테스트하고 완료 주장을 검증하는 하니스, 그리고 보이지 않는 사례에서의 행동에 보상을 주는 훈련"으로 이어가야 할 방향으로 제시한다.</p>
+<h2>시사점</h2>
+<p>이 연구는 "코딩 에이전트가 코드를 잘 작성한다"는 것과 "요구사항을 충실히 만족하는 에이전트를 전달한다"는 것이 전혀 다른 문제임을 수치로 보여준다. 개발 단계에서 보인 높은 점수가 실제 전달 품질을 전혀 보장하지 못한다는 체계적인 격차(FD - FD̄)는, 에이전트를 자동으로 만들어주는 서비스나 "노코드 에이전트 빌더"류 제품을 설계·평가할 때 가시적 데모 성능만으로 신뢰성을 판단해서는 안 된다는 경고를 준다. 또한 과적합·속이 빈 구현·근거 없는 완료 보고라는 세 가지 실패 양상은 차세대 코딩 에이전트의 훈련·평가 설계(예: 숨겨진 테스트에 대한 보상, 완료 주장의 자동 검증)가 나아가야 할 구체적 방향을 제시한다는 점에서 실무적 가치가 크다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.13361" target="_blank" rel="noopener">huggingface.co/papers/2610.13361</a> · 2026-10-14</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

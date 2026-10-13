@@ -1,0 +1,107 @@
+<meta charset="UTF-8">
+<title>사고 관성</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#2 · Daily Papers 2026-10-14</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 215</span>
+    </div>
+    <h1 class="article-title">Thinking Inertia: LLMs Keep Thinking When Told Not To</h1>
+    <p class="article-title-ko">사고 관성: 멈추라고 해도 계속 생각하는 LLM</p>
+    <p class="article-sub">"생각하지 말라"는 명시적 지시나 사고 모드 비활성화에도 불구하고 LLM이 답변 전에 질문과 관련된 명시적 추론을 계속 노출하는 현상을 "사고 관성(Thinking Inertia)"으로 정의하고, 이를 엄밀히 측정하는 3단계 지표 체계와 6개 모델·6개 벤치마크·6가지 개입 방식에 대한 대규모 실증 분석을 제시했다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.11765" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.11765" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Thinking Inertia: LLMs Keep Thinking When Told Not To</li>
+<li><strong>저자</strong>: 5명, Tsinghua University·University of Oxford·Stanford University 공동 연구 (대표: Dianqiao Lei; 프로젝트 리드: Kevin Qinghong Lin)</li>
+<li><strong>출처</strong>: arXiv:2610.11765v1 [cs.CL] (2026년 10월 8일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 웹사이트·GitHub·데이터 링크가 명시되어 있으나 구체적 URL 텍스트는 본문에 포함되어 있지 않음 (논문에 명시되지 않음)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.11765">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>"생각하지 말라"는 명시적 지시나 사고 모드 비활성화에도 불구하고 LLM이 답변 전에 질문과 관련된 명시적 추론을 계속 노출하는 현상을 "사고 관성(Thinking Inertia)"으로 정의하고, 이를 엄밀히 측정하는 3단계 지표 체계와 6개 모델·6개 벤치마크·6가지 개입 방식에 대한 대규모 실증 분석을 제시했다.</p>
+<h2>배경 및 문제의식</h2>
+<p>최신 LLM들은 명시적인 "사고 모드(thinking mode)" 스위치를 탑재하고 있지만, 그 반대 개념인 "무사고(no-thinking)" 행동은 상대적으로 덜 연구되었다. 기존 연구는 사고 모드 비활성화 여부, <think> 태그의 존재, 출력 길이 같은 표면적 대리 지표(proxy)로 무사고를 판단했는데, 저자들은 이 세 가지 모두 신뢰할 수 없음을 보인다. 예컨대 사고 모드를 꺼도 모델은 일반 답변 채널에 질문 조건적 추론을 그대로 노출할 수 있고, <think> 태그가 없어도 일반 언어로 추론이 나타날 수 있으며, 짧은 출력도 핵심 추론 단계를 압축해 담을 수 있다. 즉 "무사고"라는 개념 자체가 명확히 정의되지 않은 채 측정되고 있었다는 것이 이 논문의 출발점이다.</p>
+<h2>핵심 기여</h2>
+<p>1) 모델 응답을 답변 전 텍스트(pre-answer trace, T)와 최종 답변(A)으로 분리하는 응답 중심(response-centric) 프레임워크를 제안하고, 이를 3단계로 평가하는 지표 체계를 설계: (i) 완전 답변-only 준수를 보는 Empty-Thinking Rate(ETR), (ii) 질문-사전답변 관련성을 측정하는 instruction-aware Question–Pre-answer Relevance(QRel., Qwen3-Embedding-4B 기반), (iii) LLM 판사(GPT-5.5)가 명시적 추론 여부를 판정하는 Explicit Inference Rate(EIR). 2) 네이티브 사고 On/Off, CoT 재유도, 약한/강한 억제 지시, 프리픽스 강제 등 6가지 프롬프트 개입 스펙트럼을 설계해 Boolean·객관식(MCQ)·개방형(open-ended) 세 가지 답변 공간, 6개 벤치마크(BoolQ, StrategyQA, MMLU, MMLU-Pro, GSM8K, MATH)에서 6개 모델(Qwen3-4B/32B/235B-A22B, DeepSeek-V4-Flash, GPT-5.4, Gemini-3-Flash)을 평가. 3) 600개 샘플에 대한 블라인드 인간 평가로 세 지표의 타당성과 핵심 결론의 재현성을 검증.</p>
+<h2>방법론</h2>
+<p>핵심 수식은 π(S(Q)) = (T, A)로, 질문 Q에 개입 S(·)를 적용한 입력을 모델 π에 넣어 얻은 응답을 사전답변 텍스트 T와 최종 답변 A로 분해한다. Level 1(ETR)은 T가 완전히 비어 있고(|T|=0) A가 파싱 가능한 경우만 1로 채점하는 이진 지표다. Level 2(QRel.)는 질문을 "질문에 답하는 데 관련된 추론을 담은 사전답변 텍스트를 검색하라"는 지시로 인코딩한 쿼리 임베딩과 T의 임베딩 간 코사인 유사도로, T가 비어 있으면 0으로 처리한다. Level 3(EIR)는 모델 신원·개입 방식·정답 여부·QRel. 값을 모두 가린 블라인드 GPT-5.5 판사가 (Q, T)만 보고 5가지 상호배타적 레이블(일반/주제무관, 단순 재진술, 관련 있지만 비추론적, 명시적 추론, 불명확) 중 하나를 부여하며, "명시적 추론"으로 판정된 비율만 집계한다. 개입 스펙트럼은 M1(Think-on)부터 M6(Prefix forcing, "The answer is \boxed{"로 답변 템플릿을 미리 채우는 방식)까지 사고 억제 강도를 단계적으로 높인 6개 모드로 구성된다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>핵심 발견은 다음 네 가지다. (i) 명시적 무사고 제어는 신뢰할 수 있는 무사고 통제가 아니다 — DeepSeek-V4-Flash(284B)조차 사고 모드를 끈 상태에서 개방형 응답의 99.9%에서 여전히 명시적 추론을 노출했다. (ii) "사고 관성"은 답변 공간(answer space)에 더 좌우된다 — 네이티브/엄격 무사고 설정 모두에서 EIR은 Boolean에서 가장 낮고, MCQ에서 중간, 개방형에서 가장 높은 계단형 패턴을 보였다. (iii) 개방형 과제에서는 답변-only 준수와 정확도 사이에 트레이드오프가 존재 — 사고 비활성화 모델 5종 기준으로 M2(네이티브 무사고)에서 M5(엄격 억제)로 갈 때 평균 ETR은 거의 0에서 약 40%로 올라가지만 평균 정확도는 약 15%p 하락했고, EIR도 99.69%에서 62.00%로 감소했다. (iv) 답변 공간 자체가 중요하다 — 동일한 수학 문제를 MCQ에서 Boolean/개방형으로 바꿔 쓴 통제 실험(Qwen3-32B)에서, Boolean화는 정확도를 거의 유지(77.8%→78.9%)하면서 ETR을 10.5%→62.5%로 크게 높였지만, 개방형화는 정확도를 52.6%로 낮추면서 ETR을 0%로 떨어뜨렸다. 또한 프리픽스 강제(M6)는 기대와 달리 더 강한 억제가 아니라 ETR을 다시 낮추고 QRel./EIR을 반등시켰다. 600개 표본에 대한 인간 평가에서는 ETR 판정이 94.2% 일치했고, EIR 판정은 전문 판사와 98.8%의 평균 이항 일치도를 보여 지표의 타당성이 뒷받침되었다.</p>
+<h2>한계점</h2>
+<p>저자들은 무사고를 응답 수준(response-level)의 관찰 가능한 행동으로만 정의했으며, 모델 내부의 잠재적 추론 과정에 대해서는 claim하지 않는다고 명시한다. 즉 모델이 내부적으로 "생각"하는지 여부가 아니라 겉으로 드러나는 텍스트만을 측정 대상으로 삼은 것이 범위상의 제약이다. 또한 EIR 판정은 GPT-5.5라는 단일 주요 판사에 의존하지만, 부록에서 Claude Opus 4.8을 이용한 재현으로 견고성을 일부 보강했다고 밝힌다. 평가에 사용된 벤치마크와 개입 방식이 제한적이며(6개 모델, 6개 벤치마크), 더 다양한 모델 패밀리·과제 유형·실세계 응용에서의 일반화는 추가 검증이 필요하다.</p>
+<h2>시사점</h2>
+<p>이 연구는 "사고를 멈추는 능력" 자체를 추론 능력과 별개로 체계적으로 평가해야 할 비자명한 능력(non-trivial capability)으로 재정의한다. 실무적으로는, 단순히 사고 모드를 끄거나 "생각하지 말고 답하라"는 프롬프트만으로는 추론 비용 절감이나 지연시간 단축이 보장되지 않으며, 특히 개방형 생성 과제에서는 억제가 정확도 손실을 수반할 수 있음을 보여준다. 이는 효율적인 적응적 추론(언제 깊이 생각하고 언제 즉답할지를 모델이 스스로 조절하는 능력)을 설계하려는 향후 LLM 개발에 있어, 답변 공간별로 차별화된 제어 전략과 보다 신뢰할 수 있는 무사고 평가 지표가 필요하다는 점을 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.11765" target="_blank" rel="noopener">huggingface.co/papers/2610.11765</a> · 2026-10-14</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

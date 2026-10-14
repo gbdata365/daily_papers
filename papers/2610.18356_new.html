@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>어벡스</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#4 · Daily Papers 2026-10-15</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 109</span>
+    </div>
+    <h1 class="article-title">Urbex: Agentic Spatial Grounding for City-Scale 3D Scenes</h1>
+    <p class="article-title-ko">어벡스: 도시 규모 3D 장면을 위한 에이전틱 공간 그라운딩</p>
+    <p class="article-sub">도시 규모의 방대한 3D 포인트 클라우드에서 자연어 표현으로 특정 객체를 찾아내는 문제를, 기존의 "후보 목록 채점" 방식 대신 VLM 에이전트가 지도를 직접 탐색하며 위치를 좁혀가는 "능동적 공간 탐색" 문제로 재정의한 에이전틱 프레임워크이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.18356" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.18356" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Urbex: Agentic Spatial Grounding for City-Scale 3D Scenes</li>
+<li><strong>저자</strong>: Yu Wang, Rui Dai, Wei Chen, Yi Wang, Bo Dang, Kaikui Liu, Xiangxiang Chu, Yansheng Li (Wuhan University 및 DreamX Team, Alibaba Group)</li>
+<li><strong>출처</strong>: arXiv:2610.18356v1 [cs.CV] (2026년 10월 13일)</li>
+<li><strong>프로젝트 페이지</strong>: 별도 프로젝트 페이지는 논문에 명시되지 않음 (코드: https://github.com/AMAP-ML/Urbex)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.18356">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>도시 규모의 방대한 3D 포인트 클라우드에서 자연어 표현으로 특정 객체를 찾아내는 문제를, 기존의 "후보 목록 채점" 방식 대신 VLM 에이전트가 지도를 직접 탐색하며 위치를 좁혀가는 "능동적 공간 탐색" 문제로 재정의한 에이전틱 프레임워크이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>3D 장면에서 언어 표현으로 객체를 특정하는 3D grounding(그라운딩) 기술은 실내 환경에서는 많이 연구되었지만, 자율주행·항공 조사 등에 쓰이는 도시 규모(city-scale) 장면에서는 상대적으로 덜 다뤄졌다. 도시 장면은 수백만~수천만 포인트 규모로 실내 스캔보다 훨씬 크고, "West Midlands Police Custody Suite 근처 주황색 차 옆에 주차된 흰 차"처럼 건물명·도로명 등 장거리 공간 단서를 포함한 표현이 많다. 기존 방법들은 (1) 포인트 클라우드를 5만 개 수준으로 다운샘플링해 세부 정보를 잃거나, (2) 사전에 생성된 인스턴스 후보 목록을 모두 점수 매겨 순위화하는 candidate ranking 방식을 쓰는데, 후자는 후보 품질에 의존하고 후보 수가 많아질수록 추론 비용이 커지며, 본질적으로 순차적·탐색적인 위치 추정 문제를 정적인 검색 문제로 단순화하는 한계가 있다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>도시 규모 3D grounding을 사전 후보 전수 채점이 아니라 능동적 공간 탐색(active spatial search)으로 재정식화한 에이전틱 프레임워크 Urbex를 제안.</li>
+<li>랜드마크 질의(landmark query), 로컬 확대(zoom-in), 사선 뷰 렌더링(oblique rendering)의 세 가지 도시 특화 도구로 구성된 인터랙티브 멀티뷰 환경을 설계하고, 이를 강화학습으로 최적화되는 다단계 탐색 정책으로 학습.</li>
+<li>CityRefer 벤치마크에서 최고 수준의 Hit@1 및 IoU를 달성하면서, 온라인 추론 효율을 기존 최강 순위화 기반 방법 대비 크게 개선했고, STPLS3D-Refer에 대한 제로샷 전이에서도 강건함을 입증.</li>
+</ul>
+<h2>방법론</h2>
+<p>Urbex는 장면을 하나의 전역 조감도(BEV) 이미지와, 뷰 좌표계를 월드 좌표계로 일관되게 매핑하는 구조로 표현한다. VLM 정책은 현재 관측과 상호작용 이력(과거 도구 호출·결과)을 입력받아 매 턴마다 사고(thought)와 행동(도구 호출 또는 최종 답)을 생성하는 다단계 의사결정 과정(MDP)으로 동작한다. 세 가지 핵심 도구는 다음과 같다: Landmark Query는 질의에 포함된 건물·도로 등 고유명사를 OpenStreetMap 기반으로 찾아 월드 좌표상의 전역 공간 기준점을 제공하고, Zoom-in은 선택한 영역을 원본 고해상도 BEV에서 다시 크롭하여 작은 객체 등 세부 정보를 복원하며, Oblique Rendering은 지정한 방향에서 사선 뷰를 렌더링해 객체의 형태·높이·배치를 3D적으로 검증하는 보조 증거로 활용된다(최종 좌표 기준 뷰로는 쓰이지 않음). 학습은 Qwen3-VL-4B-Instruct를 초기 모델로 하여 Group Relative Policy Optimization(GRPO) 방식의 강화학습만으로 이루어지며, 별도의 지도학습 궤적 없이 보상 신호만으로 탐색 정책을 학습한다. 보상은 (1) 예측 박스와 정답 박스 간 IoU, (2) 겹침이 없을 때도 학습 신호를 주는 중심거리 기반 완만한 보상, (3) 불필요하게 긴 궤적에 대한 스텝 비용으로 구성된 최종 보상(terminal reward)과, 줌 중심이 타깃에 가까워지는지·사선 렌더링이 타깃 영역과 얼마나 겹치는지에 따라 중간 행동을 유도하는 가벼운 도구 단위 셰이핑 보상(tool-level shaping reward)으로 구성된다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>주요 평가는 도시 규모 벤치마크인 CityRefer에서 이루어졌으며, 학습에 없던 설명(ND)과 학습에 없던 장면의 객체(NO) 두 분할에 대해, 정답 후보 박스를 활용할 수 있는 With-GT 설정과 그렇지 않은 Without-GT(후보 없는 직접 예측) 설정으로 나누어 평가했다. GPT-5.4, Qwen3.6-plus 같은 강력한 범용 VLM에 Urbex 도구 환경만 연결한 베이스라인, 실내용 3D grounding 방법(InstanceRefer, EDA), 도시 규모 순위화 방법(CityRefer, CityAnchor)과 비교한 결과, With-GT 설정에서 Urbex는 두 분할 모두에서 최고 Hit@1·Hit@3, NO 분할에서 최고 Hit@5를 기록했다. Without-GT(후보 없이 직접 예측) 설정에서는 비교 방법들과의 격차가 더 크게 벌어졌다. 추론 속도 면에서도 가장 강력한 순위화 베이스라인인 CityAnchor가 건당 약 32.1초가 걸리는 반면 Urbex는 약 3.2초로 약 10배 빠르다. 학습에 쓰이지 않은 STPLS3D-Refer 데이터셋에 대한 제로샷 평가에서도 Urbex는 모든 주요 지표에서 최고 성능을 보여, 학습된 탐색 전략이 특정 데이터셋에 한정되지 않고 재사용 가능함을 시사했다. 도구·보상에 대한 ablation 실험에서는 Landmark Query 추가가 Hit@3를 가장 크게 끌어올렸고(15.5→28.2), Zoom-in과 Oblique Rendering, 그리고 거리 기반·도구 단위 보상 모두가 각각 독립적으로 성능에 기여함을 확인했다.</p>
+<h2>한계점</h2>
+<p>저자들이 직접 논의한 한계로는, 랜드마크 참조가 부정확하거나 누락될 경우(좌표 노이즈보다 훨씬 더) 성능이 크게 떨어진다는 점, 첫 줌 단계에서 타깃을 놓치거나 비슷한 주변 인스턴스를 잘못 선택하면 이후 사선 뷰 검증으로도 잘 교정되지 않는 탐색 오류 사례가 존재한다는 점, 그리고 예측 박스가 정답 객체보다 크게 주변 맥락까지 포함하는 경향(면적비 중앙값 1.40, 상위 10%는 9.92)이 있어 타깃 식별은 안정적이지만 박스 자체의 세밀한 위치 정확도는 추가 개선 여지가 있다는 점을 들었다. 또한 상호작용 턴 수를 8턴으로 제한한 설정이 최적이며, 턴을 더 늘려도(9턴) 성능이 개선되지 않고 오히려 약간 저하되는 등 탐색 예산에 대한 민감성도 존재한다.</p>
+<h2>시사점</h2>
+<p>이 연구는 대규모 3D 장면에서의 언어 기반 객체 위치 추정을 "모든 후보를 채점하는 정적 검색"에서 "소수의 정보가 풍부한 관측만으로 목표에 도달하는 능동적 탐색"으로 전환할 수 있음을 보여준다. 이는 자율주행, 로봇 내비게이션, 항공/위성 조사와 같이 실시간성과 확장성이 중요한 응용에서 후보 생성·전처리 비용 없이도 실용적인 grounding이 가능함을 시사하며, 도시 환경에 특화된 도구(랜드마크 질의, 확대, 사선 렌더링)를 VLM 에이전트에게 제공하고 이를 강화학습으로 다듬는 접근이 3D 공간 이해 전반에 걸친 에이전틱 비전-언어 시스템 설계에 참고가 될 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.18356" target="_blank" rel="noopener">huggingface.co/papers/2610.18356</a> · 2026-10-15</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

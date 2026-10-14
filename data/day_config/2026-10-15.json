@@ -1,0 +1,110 @@
+{
+  "2610.18773": {
+    "base": "2610_젭사_결정특화-시스템원-모델",
+    "rank": "#1",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "254",
+    "en_title": "Jeva: System One Models from First Principles",
+    "ko_title": "젭사: 원리에서부터 설계한 시스템원 모델"
+  },
+  "2610.17953": {
+    "base": "2610_에이전트리플렉스_반성적-행동을-배우는-언어-에이전트",
+    "rank": "#2",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "192",
+    "en_title": "Agent-Reflex: Teaching Language Agents to Act Reflectively",
+    "ko_title": "에이전트-리플렉스: 반성적으로 행동하는 법을 배우는 언어 에이전트"
+  },
+  "2610.18615": {
+    "base": "2610_비디오젭_영상이해-상호작용-시스템원-모델",
+    "rank": "#3",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "189",
+    "en_title": "VideoJev: System One Model for Video Understanding and Interaction",
+    "ko_title": "비디오젭: 영상 이해와 상호작용을 위한 System One 모델"
+  },
+  "2610.18356": {
+    "base": "2610_어벡스_도시규모-3D-공간-그라운딩-에이전트",
+    "rank": "#4",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "109",
+    "en_title": "Urbex: Agentic Spatial Grounding for City-Scale 3D Scenes",
+    "ko_title": "어벡스: 도시 규모 3D 장면을 위한 에이전틱 공간 그라운딩"
+  },
+  "2610.18774": {
+    "base": "2610_그린왐_로봇-월드파운데이션모델",
+    "rank": "#5",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "82",
+    "en_title": "GreenWAM: A World Foundation Model for Robotics",
+    "ko_title": "그린왐: 로보틱스를 위한 월드 파운데이션 모델"
+  },
+  "2610.18860": {
+    "base": "2610_에스코드_분리형-교차모달-보상-심미적-코드생성",
+    "rank": "#6",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "78",
+    "en_title": "AesCode: Aesthetic Code Generation with Decoupled Cross-Modal Rewards",
+    "ko_title": "에스코드: 분리형 교차모달 보상을 통한 심미적 코드 생성"
+  },
+  "2610.14224": {
+    "base": "2610_하네스제곱_오픈월드-재귀적-에이전트-하네싱",
+    "rank": "#7",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "77",
+    "en_title": "Harness²: Recursive Agent Harnessing for an Open World",
+    "ko_title": "하네스 제곱: 오픈월드를 위한 재귀적 에이전트 하네싱"
+  },
+  "2610.18868": {
+    "base": "2610_테브_장기호라이즌-에이전트-환경-밀집보상-스케일링",
+    "rank": "#8",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "74",
+    "en_title": "Tev: Scaling Long-Horizon Agentic Environments with Dense Progress Rewards",
+    "ko_title": "테브: 조밀한 진행도 보상을 통한 장기호라이즌 에이전트 환경 스케일링"
+  },
+  "2610.16794": {
+    "base": "2610_가치추적PPO_로그오즈-누적-가치함수-추론-강화학습",
+    "rank": "#9",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "71",
+    "en_title": "TPPO: Tracking-Value PPO For Language Model Reasoning",
+    "ko_title": "TPPO: 언어모델 추론을 위한 추적-가치 PPO"
+  },
+  "2610.14709": {
+    "base": "2610_벨라_사용자-행동-기반-LLM-지능-강화",
+    "rank": "#10",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "69",
+    "en_title": "Vela: User Behavior as Supervision Sparks LLM Intelligence",
+    "ko_title": "벨라: 사용자 행동을 지도 신호로 활용한 LLM 지능 향상"
+  },
+  "2610.16811": {
+    "base": "2610_엑스레이전트_근거기반-흉부엑스레이-추론",
+    "rank": "#11",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "66",
+    "en_title": "X-Ragent: Tool-Augmented Reinforcement Learning for Evidence-Grounded Chest X-Ray Reasoning",
+    "ko_title": "X-Ragent: 근거 기반 흉부 X선 추론을 위한 도구 증강 강화학습"
+  },
+  "2610.13990": {
+    "base": "2610_도사_로스리스-희소어텐션-가속",
+    "rank": "#12",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "65",
+    "en_title": "DoSA: Dots Sparse Attention",
+    "ko_title": "DoSA: 닷츠 희소 어텐션 (로스리스 희소 어텐션 인덱서 가속)"
+  }
+}

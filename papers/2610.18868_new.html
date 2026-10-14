@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>테브</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#8 · Daily Papers 2026-10-15</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 74</span>
+    </div>
+    <h1 class="article-title">Tev: Scaling Long-Horizon Agentic Environments with Dense Progress Rewards</h1>
+    <p class="article-title-ko">테브: 조밀한 진행도 보상을 통한 장기호라이즌 에이전트 환경 스케일링</p>
+    <p class="article-sub">수 시간~수일 단위로 자율 수행해야 하는 '장기호라이즌(long-horizon)' 에이전트 작업을, 정답이 보장된 '잠재 세계(latent world)'로부터 역으로 생성하고 매 스텝마다 조밀한 진행도 보상을 부여하는 학습 레시피를 제안해, 오픈소스 모델의 장기 과제 수행 능력을 크게 끌어올린 연구다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.18868" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.18868" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Tev: Scaling Long-Horizon Agentic Environments with Dense Progress Rewards</li>
+<li><strong>저자</strong>: Wenbo Hu, Shraman Pramanick, Krishna Kumar Singh, Nanyun Peng, Kai-Wei Chang, Yong Jae Lee (Adobe Research, UCLA)</li>
+<li><strong>출처</strong>: arXiv:2610.18868v1 [cs.CL] (2026년 10월 13일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://tev-agent.github.io">https://tev-agent.github.io</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.18868">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>수 시간~수일 단위로 자율 수행해야 하는 '장기호라이즌(long-horizon)' 에이전트 작업을, 정답이 보장된 '잠재 세계(latent world)'로부터 역으로 생성하고 매 스텝마다 조밀한 진행도 보상을 부여하는 학습 레시피를 제안해, 오픈소스 모델의 장기 과제 수행 능력을 크게 끌어올린 연구다.</p>
+<h2>배경 및 문제의식</h2>
+<p>최근 LLM 에이전트는 수 시간에서 수일간 자율적으로 작업을 수행하는 능력(장기호라이즌 작업)이 중요해지고 있으며, 이는 자동화된 연구 발견이나 재귀적 자기개선(RSI)의 핵심 전제다. 그러나 오픈소스 모델은 이런 장기 작업에서 여전히 취약한데, 그 이유는 (1) 학습 데이터 부족과 (2) 검증된 학습 레시피 부재다. 기존 공개 데이터셋(SWE-Smith, TMAX, Endless Terminals, CLI-Gym, SETA, Terminal-Universe 등)은 대부분 PR 단위 수정이나 짧은 터미널 세션 수준이며, 합/불합(pass/fail)만 알려주는 희소 보상만 제공한다. 반면 진짜 장기호라이즌 벤치마크(ALE, Terminal-Bench 등)는 사람이 직접 만든 소수의 평가셋으로만 존재해 학습에는 쓸 수 없다. 또한 GRPO 같은 그룹 상대 강화학습(RL)에서는 한 그룹의 모든 롤아웃이 실패하면 어드밴티지가 전부 0이 되어 학습 신호 자체가 사라지는 '보상 기아(reward starvation)' 문제가 있으며, 이는 정책이 약한 학습 초반의 장기 과제에서 가장 심각하다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>latent-world-first synthesis</strong>: 정답이 확정된 '잠재 세계'로부터 거꾸로 장기호라이즌 작업을 구성하는 파이프라인을 제안해, 정확한 검증, 난이도 조절, 중간 단계의 진행도 보상을 동시에 확보했다.</li>
+<li><strong>Tev-Gym</strong>: 소프트웨어 공학, 데이터 엔지니어링, AI/CS 연구, 수학, 운영연구, 보안·포렌식, 인프라 관리 등 7개 도메인에 걸쳐 1,170개의 검증된 장기호라이즌 작업 환경으로 구성된, 조밀한 보상을 제공하는 최초의 장기호라이즌 에이전트 학습 데이터셋을 공개했다.</li>
+<li><strong>Tev-27B / Tev-9B</strong>: Tev-Gym과 progress-potential reward shaping(PPRS)으로 학습한 모델이 ALE-CM, Terminal-Bench(TB) 3.0/4.0/2.1 등에서 우수한 성능을 보였고, 동일 레시피를 더 큰 베이스 모델(GLM-5.3-Flash)에 적용한 Tev-320B도 성능 향상을 확인했다.</li>
+</ul>
+<h2>방법론</h2>
+<p>작업 생성은 "Stage 0~6"의 단계로 이뤄진다. 먼저 7개 도메인별로 시드가 되는 과제 사양을 수집/작성한다(Stage 0). Stage 1에서는 시드와 난이도(scale tier)로부터 완전하고 정답이 보장된 '잠재 세계' W(예: 소매 창고의 고객·상품·거래 데이터 전체)를 절차적으로 생성하고 불변 조건을 검증하며, 동시에 어떤 레코드/필드를 나중에 손상시킬지 정의하는 결함 계획(defect plan)도 함께 뽑는다. Stage 2에서는 이 세계의 작업 흐름을 단계 간 의존관계를 가진 방향성 비순환 그래프(DAG)로 컴파일하며, 이 DAG의 critical path가 작업의 '호라이즌(horizon)'과 진행도 전위(potential)의 뼈대를 결정한다. Stage 3은 W를 에이전트가 보게 될 CSV/TSV/JSON/SQLite 등 실제 입력 파일로 렌더링하고, 원본 W로 다시 복원 가능한지 검증한다. Stage 4에서는 Stage 1의 결함 계획을 적용해 스키마 드리프트, 중복/누락 레코드, 범주 드리프트 등 역전 가능한 손상을 주입해 에이전트가 받는 초기 작업공간(s0)을 만든다. 손상이 역전 가능하므로 s0만 보고도 정답이 되는 W를 정확히 역산할 수 있다. Stage 5~6에서는 에이전트가 보는 공개 사양(프롬프트, 입력, 요구되는 산출물, 허용 도구)과, 채점에만 쓰이는 비공개 검증 스위트(의미보존 변환, 그럴듯하지만 틀린 상태에 대한 반사실적 검사 등)를 각각 만든다.</p>
+<p>보상 설계 측면에서는, 각 환경의 산출물을 체크 가능한 노드들의 가중합으로 표현하는 '진행도 계약(progress contract)' Φ를 정의한다. 각 노드는 선행 조건이 모두 만족되어야 점수를 얻는 선행조건-게이트 방식이며, Φ는 검증기가 작업을 승인할 때 정확히 1이 되고, 아무 작업도 안 했을 때 정확히 0이 되도록(익스플로잇 방지), 단조 증가하도록(진행 타당성), 검증기·참조 솔버와 코드가 분리되도록(역할 독립성) 설계된다. 이 Φ의 스텝별 변화량(진행도-전위 보상 형성, PPRS)을 보상에 추가해 R(τ) = 1[합격] + λ·Φ(종료 상태)의 형태로 희소 보상을 보강한다(λ=0.25). 이를 통해 그룹 내 모든 롤아웃이 실패하더라도, 서로 다른 깊이까지 진행한 롤아웃 간에 0이 아닌 어드밴티지가 생겨 GRPO 기반 RL의 보상 기아 문제를 완화한다. 학습은 DPPO로 Qwen3.5-9B와 Qwen3.8-27B에 적용했으며, 27B는 전체 코퍼스, 9B는 unit 난이도 티어의 264개 작업 서브셋을 사용했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>평가는 Agents' Last Exam(ALE)의 computing-and-math 서브셋(ALE-CM)을 주요 인도메인 벤치마크로, Terminal-Bench(TB) 3.0/4.0의 CM 서브셋과 TB 2.1을 제로샷 일반화 벤치마크로 사용했다. ALE-CM에서 Tev-9B는 Qwen3.5-9B 대비 Pass@5를 83% 향상시켰고, Tev-27B는 Qwen3.8-27B 대비 65% 향상되어 GPT-6 Astra, Claude Opus 5와 Pass@5 기준 대등한 수준(0.28)에 도달했다. ALE 전용 데이터로만 학습했음에도 TB 3.0/4.0에서 Pass@1이 각각 56%, 150% 향상되었고 GLM 5.2와 Gemini 3.7 Flash를 능가했다. 또한 제로샷으로 평가한 중간 호라이즌 벤치마크 TB 2.1에서 Tev-9B는 Pass@1을 28% 끌어올렸고, Tev-27B는 Pass@1 0.794로 Claude Opus 4.8 수준의 성능을 보였다. 동일 레시피를 GLM-5.3-Flash에 적용한 Tev-320B는 TB 3.0/4.0 Pass@1을 각각 35%, 28% 향상시켰으며, TB 4.0에서는 Claude Opus 5, Claude Fable 5, GPT-5.6(sol)에만 뒤처지는 최고 수준의 오픈소스 성능을 기록했다. 어블레이션 결과, latent-world 기반 생성과 숨겨진 정답 검증을 제거한 변형(공개 뷰 검증기, 프롬프트 우선 베이스라인)은 베이스 모델 대비 개선이 없었고, PPRS는 터미널 전용 희소 보상이나 단순 가산적 보상보다 더 나은 성능-학습 효율 균형을 보였다.</p>
+<h2>한계점</h2>
+<p>현재 연구는 합성 터미널 환경에 초점을 맞추고 있으며, Tev 모델과 최상위 프런티어 에이전트(예: Claude Opus 5) 사이에는 여전히 상당한 성능 격차가 남아 있다. 새로운 작업 흐름을 지원하려면 추가적인 환경 구성 요소의 작성과 검증이 필요해 확장에 수고가 든다. 저자들은 향후 과제로 더 강력한 오픈소스 모델로 데이터 생성 과정을 단순화하고, 도메인 커버리지를 확장하며, 사람이 만든 단계별 라벨이나 LLM 판정자 없이도 재현 가능한 RL을 가능하게 하는 것을 꼽았다.</p>
+<h2>시사점</h2>
+<p>이 연구는 "정답이 보장된 잠재 세계로부터 역으로 작업을 생성한다"는 아이디어로, 장기호라이즌 에이전트 학습에서 데이터 품질(정확한 검증)과 학습 신호의 조밀함(진행도 보상)을 동시에 해결할 수 있음을 보여준다. 특히 희소한 터미널 보상만으로는 학습 초반 약한 정책에서 그룹 전체가 실패해 그래디언트가 소실되는 문제를, 중간 진행 상태를 측정하는 보상 형성으로 완화할 수 있다는 점은 다른 장기 에이전트 RL 파이프라인에도 폭넓게 적용 가능한 시사점을 준다. 또한 동일 레시피가 서로 다른 크기의 베이스 모델(9B, 27B, 320B급)에 전이되어 일관된 개선을 보인다는 점은 이 방법론의 범용성을 뒷받침한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.18868" target="_blank" rel="noopener">huggingface.co/papers/2610.18868</a> · 2026-10-15</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

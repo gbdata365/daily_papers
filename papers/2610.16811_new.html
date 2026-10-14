@@ -1,0 +1,113 @@
+<meta charset="UTF-8">
+<title>X-Ragent</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#11 · Daily Papers 2026-10-15</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 66</span>
+    </div>
+    <h1 class="article-title">X-Ragent: Tool-Augmented Reinforcement Learning for Evidence-Grounded Chest X-Ray Reasoning</h1>
+    <p class="article-title-ko">X-Ragent: 근거 기반 흉부 X선 추론을 위한 도구 증강 강화학습</p>
+    <p class="article-sub">흉부 X선(CXR) 판독을 위해, 꼭 필요할 때만 보조 도구로 근거를 수집하고 그 측정값이 임상적으로 유효한 경우에만 진단 추론에 반영하도록 학습시킨 도구 증강 강화학습 에이전트 X-Ragent를 제안한 논문이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.16811" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.16811" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: X-Ragent: Tool-Augmented Reinforcement Learning for Evidence-Grounded Chest X-Ray Reasoning</li>
+<li><strong>저자</strong>: Yi Wang, Zhenlong Yuan, Yuchan Guo, Maolei Huang 등 다수 저자 (Institute of Computing Technology/CAS, University of Chinese Academy of Sciences, Carnegie Mellon University, Alibaba Group, National University of Singapore 등 공동 연구)</li>
+<li><strong>출처</strong>: arXiv:2610.16811v1 [cs.CV] (2026년 10월 12일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.16811">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>흉부 X선(CXR) 판독을 위해, 꼭 필요할 때만 보조 도구로 근거를 수집하고 그 측정값이 임상적으로 유효한 경우에만 진단 추론에 반영하도록 학습시킨 도구 증강 강화학습 에이전트 X-Ragent를 제안한 논문이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>흉부 X선 판독은 단순한 영상 인식을 넘어, 국소적이고 정량적인 근거(예: 심흉곽비 등)를 종합해야 하는 작업이다. 그러나 기존의 범용 비전-언어모델은 영상을 전역적으로만 파악해 세부 소견과 진단을 잇는 구조적 사고 과정이 부족하고, 도구를 활용하는 기존의 의료 에이전트들도 외부 도구의 출력을 무시하거나 언어모델이 가진 사전 지식에 의존해 도구 결과와 어긋나는 진단을 내놓는 경우가 많다. 또한 심흉곽비와 같은 정량 측정치는 특정 촬영 조건(예: 정면 자세)에서만 의미가 있는데, 이러한 적용 가능 여부를 확인하지 않고 측정값을 그대로 추론에 사용하면 오히려 진단을 오도할 수 있다. 저자들은 이 세 가지 문제를 각각 시각-진단 격차, 근거-진단 불일치, 부적합한 측정 사용으로 정리한다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>학습된 보조 근거 탐색과, 유효성이 검증된 정량적 측정 획득을 분리한 사후학습(post-training) 프레임워크 X-Ragent를 제안했다.</li>
+<li>보고서 형태의 단일턴 진단 추론과 도구를 사용하는 2턴 구조의 추론 궤적을 결합한 약 7,700개 규모의 Rad-CoT 데이터셋을 구축하고, 이를 바탕으로 에이전트형 지도 미세조정(SFT)과 Group Relative Policy Optimization(GRPO) 기반 강화학습을 단계적으로 적용하는 2단계 학습 체계를 설계했다.</li>
+<li>정답이 맞을 때만 과정 단위의 근거 일관성 및 도구 사용 비용 보상이 적용되도록 게이팅한 복합 보상을 설계해, 올바르지 않은 진단이 그럴듯한 과정만으로 높은 보상을 받는 것을 방지했다.</li>
+<li>세 가지 CXR 벤치마크에서 기존 대비 최고 성능을 달성했으며, 특히 학습에 전혀 사용되지 않은 held-out 벤치마크에서도 큰 폭의 성능 향상을 보여 일반화 가능성을 입증했다.</li>
+</ol>
+<h2>방법론</h2>
+<p>X-Ragent는 Qwen3-VL-8B를 기반 정책 모델로 삼아 2턴(two-turn) 구조로 동작한다. 1턴에서는 영상과 질의를 보고 전역적으로 소견을 파악한 뒤, 필요하다고 판단되면 영역 확대(roi_crop), 해부학적 영역 파싱(region_parse), 조건별 지식 검색(evidence_lookup) 중 일부를 선택적으로 호출한다. 이와 독립적으로, 별도의 유효성 게이트가 촬영 조건(정면 자세 등)이 적절한지 확인한 뒤에만 심흉곽비, 폐야 비대칭, 종격동 편위 같은 정량적 측정치 묶음을 노출한다. 2턴에서는 1턴에서 수집된 관찰 결과와 (조건이 충족된 경우) 정량 측정치를 함께 통합해 최종 추론과 답을 생성한다.</p>
+<p>학습은 2단계로 이루어진다. 먼저 Rad-CoT 데이터로 에이전트형 SFT를 수행해 도구 라우팅과 근거 통합 행동의 기초를 잡는다(이때 외부에서 주입된 관찰 구간은 손실 계산에서 제외한다). 이어서 GRPO로 강화학습을 진행하는데, 보상은 정답 정확도, 출력 형식 준수, 방사선학적 근거 일관성, 도구 사용 비용의 네 요소로 구성되며, 근거 일관성과 도구 비용 항은 정답을 맞힌 궤적에 대해서만 곱셈 형태로 적용되는 정확도 게이트를 거친다. 이를 통해 오답인데도 과정만 그럴듯한 궤적이 높은 보상을 받는 것을 막는다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>ChestAgentBench(완전히 held-out, 7개 판독 능력 평가), CheXbench(Rad-ReStruct, SLAKE, OpenI 기반 하위셋), SLAKE 등 세 벤치마크에서 평가했다. X-Ragent는 세 벤치마크 모두에서 최고 성능을 기록했으며, ChestAgentBench에서 가장 강력한 기존 베이스라인 대비 8.6점, CheXbench 대비 9.2점, SLAKE 대비 2.6점 향상되었다. 특히 완전히 미학습 상태로 평가된 ChestAgentBench에서 기반 모델 대비 16.6점, 7개 판독 능력 전 영역에서 고르게 향상되어 일반화 성능을 보였다. 절제 실험에서는 SFT가 핵심 추론 행동을 확립하는 데 가장 크게 기여하고 RL은 특히 미학습 벤치마크로의 전이 성능을 끌어올리는 역할을 했으며, 정확도 게이팅이 없는 보상 설계는 게이팅이 있는 경우보다 성능이 낮았다. 또한 기반 모델이 틀리기 쉬운 질문일수록 도구 호출 비율이 높아지는 등, 도구가 필요에 따라 선택적으로 사용됨을 확인했다. 유효성 게이트에 대한 사례 분석에서는, 적용 조건을 충족하지 못하는 측정치를 노출했을 때 정답이 오답으로 바뀌는 반면, 게이트가 이를 차단하면 영상 근거에 부합하는 정답을 유지하는 모습을 보였다.</p>
+<h2>한계점</h2>
+<p>논문은 별도의 "한계점" 절을 명시하지 않았으나, 윤리 선언에서 X-Ragent는 연구용 프로토타입이며 실제 임상 의사결정에 사용되어서는 안 된다고 명확히 밝히고 있다. 또한 평가는 특정 CXR 벤치마크 세 가지에 국한되며, 정량 측정 백엔드가 심흉곽비·폐야 비대칭·종격동 편위 등 제한된 항목만 다루고, 지식 검색 도구가 별도로 구동되는 보조 언어모델에 의존한다는 점에서 적용 범위와 실제 배포 환경에서의 비용 및 일반화에는 추가 검증이 필요해 보인다. 데이터 역시 비식별화된 기존 공개 데이터셋(MIMIC-CXR 등)에 기반한 합성 추론 경로로 구성되어, 실제 임상 환경의 다양성을 완전히 반영하지 못할 가능성이 있다.</p>
+<h2>시사점</h2>
+<p>이 연구는 도구 사용 여부와 측정치의 임상적 타당성 검증을 분리해서 다룸으로써, 의료 영상 AI 에이전트가 무분별하게 도구를 호출하거나 부적합한 정량값을 그대로 신뢰하는 문제를 완화할 수 있음을 보여준다. 정답 여부에 따라 과정 보상을 게이팅하는 설계는 단순히 그럴듯한 추론 과정을 만드는 것이 아니라 실제로 진단 정확도에 기여하는 근거 활용을 유도한다는 점에서, 의료뿐 아니라 도구 증강 에이전트 전반의 보상 설계에 참고할 만한 시사점을 제공한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.16811" target="_blank" rel="noopener">huggingface.co/papers/2610.16811</a> · 2026-10-15</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

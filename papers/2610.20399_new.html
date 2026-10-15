@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>코텍스</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#8 · Daily Papers 2026-10-16</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 62</span>
+    </div>
+    <h1 class="article-title">Cortex: Consolidating Context into Parametric Memory</h1>
+    <p class="article-title-ko">코텍스: 컨텍스트를 파라메트릭 메모리로 공고화하기</p>
+    <p class="article-sub">생물학적 기억 공고화(systems consolidation)에서 영감을 받아, 컨텍스트가 제공하는 성능 향상을 컨텍스트 제거 후에도 유지되도록 모델 파라미터(FFN)에 내재화하는 '기억 공고화(Memory Consolidation)' 문제를 정식화하고, 이를 구현하는 Cortex 기법을 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.20399" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.20399" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Cortex: Consolidating Context into Parametric Memory</li>
+<li><strong>저자</strong>: Jintian Zhang, Feng He, Xinnian Liang 등 (Zhejiang University, ByteDance Seed, Tsinghua University)</li>
+<li><strong>출처</strong>: arXiv:2610.20399v1 [cs.CL] (2026년 10월 15일)</li>
+<li><strong>프로젝트 페이지</strong>: 코드: <a href="https://github.com/zjunlp/cortex">github.com/zjunlp/cortex</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.20399">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>생물학적 기억 공고화(systems consolidation)에서 영감을 받아, 컨텍스트가 제공하는 성능 향상을 컨텍스트 제거 후에도 유지되도록 모델 파라미터(FFN)에 내재화하는 '기억 공고화(Memory Consolidation)' 문제를 정식화하고, 이를 구현하는 Cortex 기법을 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>LLM은 컨텍스트로 주어진 새로운 정보를 즉시 활용할 수 있지만, 일반적인 인컨텍스트 추론은 모델 파라미터를 바꾸지 않으므로 그 컨텍스트가 제거되면 성능 향상도 함께 사라진다. 외부 메모리 시스템은 경험을 보존할 수 있지만 추론 시 관련 내용을 검색·제공하는 데 의존하므로 간접적으로 관련된 경험은 누락될 수 있다. 저자들은 인간의 해마-신피질 상호작용에 기반한 complementary learning systems(CLS) 이론에서 영감을 받아, 컨텍스트가 유발한 행동적 이득을 모델에 영속적으로 내재화하면서도 기존 역량을 보존하는 것을 목표로 한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>'기억 공고화(MC)'를 모델 M과 성능을 크게 개선하는 컨텍스트 C가 주어졌을 때, C 없이도 작동하며 목표 질의에서 이득을 회복하고 의도치 않은 영역의 원래 성능을 보존하는 갱신 모델 M'을 찾는 문제로 정식화. 지식 편집, 스킬 학습, 행동 조정(steering), 지식 억제를 하나의 틀로 통합.</li>
+<li>선언적 지식, 절차적 지식, 행동 제어를 포괄하는 5개 과제군(에이전트 경험 공고화, 신규 API 학습, 페르소나 조정, 지식 억제, 사실 편집)과 단일/배치/순차 업데이트를 지원하는 공통 프로토콜로 구성된 테스트베드를 구축하고, 공고화율(Consolidation Rate)과 유지율(Retention Rate)이라는 두 지표로 측정.</li>
+<li>Cortex 기법 제안: (1) 미래의 컨텍스트 활용 상황을 예상하는 '전향적 질의(prospective query)'를 생성해 학습 목표를 만들고, (2) FFN 레이어에 한정해 저랭크(Synaptic) 또는 비선형 채널 추가(Structural) 형태로 병합 가능한 업데이트를 적용하며, (3) 컨텍스트를 아는 교사가 컨텍스트 없는 학생을 KL 발산과 은닉 상태 MSE로 지도하고, 순차 업데이트 시 이전 모델을 고정한 채 새 파라미터만 학습하고 과거 질의를 재생(replay)해 간섭을 제한.</li>
+</ul>
+<h2>방법론</h2>
+<p>Cortex는 세 가지 질문에 답하는 방식으로 설계되었다. 첫째, "컨텍스트에서 무엇을 학습해야 하는가"에 대해, 미래 상황을 상상하는 기억의 역할에서 착안해 컨텍스트가 유용할 상황을 예상하는 전향적 질의와 그에 대한 컨텍스트 조건부 응답을 학습 타깃으로 생성한다(평가용 held-out 데이터에는 접근하지 않음). 둘째, "어디에, 어떤 형태로 업데이트할 것인가"에 대해, 업데이트를 FFN에 한정한다. Synaptic 변형은 기존 프로젝션에 저랭크 업데이트를 추가하고, Structural 변형은 기존 가중치 블록을 보존하면서 비선형 특성 채널을 추가한다. 사전학습된 MoE 모델에는 전문가별 확장이 아니라 공유 확장을 적용해 모든 토큰이 동일한 추가 파라미터를 거치도록 하고 라우터 파라미터는 고정한다. 셋째, "간섭을 제한하며 어떻게 학습할 것인가"에 대해, 컨텍스트를 아는 교사 모델이 컨텍스트 없는 학생 모델을 출력 분포 KL 발산과 은닉 상태 MSE 정렬로 지도한다. 순차적 업데이트에서는 업데이트 이전 모델을 고정하고 새로 추가된 파라미터만 학습하며, 과거 컨텍스트를 저장하지 않고 생성된 질의만 재생하여 업데이트 이전 체크포인트로 타깃을 재생성하는 '질의 재생(query replay)'으로 유지율을 보호한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>4B~120B 규모의 덴스 및 MoE 백본(텍스트 전용·멀티모달 모두 포함)에 걸쳐 평가했으며, Cortex는 대부분의 평가 설정에서 공고화율-유지율의 경험적 파레토 프론티어 상에 위치했다. 14B 모델에서 50회의 순차적 사실 편집을 수행한 뒤, Cortex-Structural은 컨텍스트가 유발한 이득의 88.9%를 회복하면서도 원래 비목표 성능의 99.8%를 유지했다.</p>
+<h2>한계점</h2>
+<p>저자들은 논문 말미의 논의에서, 파라미터를 고정하는 것이 모델의 기능(behavior)까지 고정하는 것은 아니며, 이후 업데이트가 고정된 모듈로 들어가는 입력을 바꿔 그 출력의 영향력을 바꿀 수 있다는 점을 지적했다. 즉 공유 표현은 전이의 기회와 간섭의 경로를 동시에 만든다. 또한 구조적 확장을 표준 FFN에 접어넣는 것이 배포를 단순화하지만 파라미터 수 자체를 줄이는 것은 아니며, 실제 압축을 위해서는 추가적인 가지치기·증류가 필요하다고 밝혔다. 대규모 모델에서는 이런 경량 업데이트를 학습하는 데 필요한 백본을 통한 연산 비용이 여전히 크며, 실용화를 위해서는 신뢰할 수 있는 경험 검증과 사용자별 정보의 보존·공유에 대한 적절한 통제도 필요하다고 명시했다.</p>
+<h2>시사점</h2>
+<p>지식 편집, 스킬 학습, 행동 조정, 지식 억제라는 서로 다르게 연구되던 문제들을 '컨텍스트가 유발한 이득의 내재화'라는 하나의 공고화 문제로 통합한 프레임워크는, 에이전트가 시간에 따라 축적한 경험을 지속적으로 파라미터에 반영하면서도 기존 역량을 해치지 않는 지속학습 시스템 설계에 일반적인 평가 틀과 방법론적 토대를 제공한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.20399" target="_blank" rel="noopener">huggingface.co/papers/2610.20399</a> · 2026-10-16</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

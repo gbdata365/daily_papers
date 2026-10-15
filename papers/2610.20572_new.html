@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>비평 기반 온폴리시 증류를 통한 신뢰 가능한 감독 복원</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#6 · Daily Papers 2026-10-16</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 70</span>
+    </div>
+    <h1 class="article-title">Recovering Reliable Supervision via Critique-Guided On-Policy Distillation</h1>
+    <p class="article-title-ko">비평 기반 온폴리시 증류를 통한 신뢰 가능한 감독 복원</p>
+    <p class="article-sub">온폴리시 증류(OPD)에서 교사가 학생의 오류를 '알아채지만 그대로 따라가는' 역설적 실패(회복가능성 저하)를 교사의 비평(critique)으로 복원하는 CriticOPD를 제안해, 학생이 오류 직후 지점부터 다시 작성하도록 돕는다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.20572" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.20572" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Recovering Reliable Supervision via Critique-Guided On-Policy Distillation</li>
+<li><strong>저자</strong>: Kaixiang Zhao, Tianrun Yu, Shangzhe Li 등 (Brigham Young University, University of North Carolina at Chapel Hill)</li>
+<li><strong>출처</strong>: arXiv:2610.20572v1 [cs.LG] (2026년 10월 14일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음 (코드: <a href="https://github.com/kzhao5/CriticOPD">github.com/kzhao5/CriticOPD</a>)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.20572">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>온폴리시 증류(OPD)에서 교사가 학생의 오류를 '알아채지만 그대로 따라가는' 역설적 실패(회복가능성 저하)를 교사의 비평(critique)으로 복원하는 CriticOPD를 제안해, 학생이 오류 직후 지점부터 다시 작성하도록 돕는다.</p>
+<h2>배경 및 문제의식</h2>
+<p>온폴리시 증류는 학생이 스스로 생성한 롤아웃에 교사가 토큰 단위 감독을 제공하는 방식으로, 오프라인 증류의 '점유율 불일치(occupancy mismatch)' 문제를 줄인다. 그러나 이는 교사가 학생이 작성한 어떤 접두어(prefix)로부터도 정답에 도달할 수 있다는 '회복가능성(recoverability)'을 전제로 한다. 저자들은 학생이 틀린 롤아웃에서는 이 회복가능성이 급격히 떨어진다는 것을 발견했다: 교사조차 풀 수 있는 문제임에도, 틀린 연속(continuation) 중 최대 절반이 학생의 오답으로 끝난다. 즉 교사가 학생의 오류를 '따라가면서도' 동시에 '그 오류를 인식하는 능력'은 온전히 유지하는 비대칭성이 존재한다. 기존 대응법들은 긴 응답의 뒷부분을 자르거나 롤아웃/감독을 일찍 중단하는 방식(감독 축소), 혹은 교사가 일부 구간을 대신 생성하는 방식(시퀀스 교체)을 썼는데, 둘 다 학습-추론 간 점유율 불일치를 오히려 늘리는 대가를 치른다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>모방학습의 '회복가능성' 개념을 온폴리시 증류에 도입해, 학생이 틀린 상태에서 교사 감독이 신뢰할 수 없게 되는 현상을 정량적으로 규명.</li>
+<li>교사가 오류를 인식하는 능력은 유지된다는 비대칭성에 주목해, 교사의 비평(critique)을 활용해 회복가능성을 복원하는 CriticOPD 제안.</li>
+<li>두 개의 Qwen3 학생 모델과 여섯 개의 수학 추론 벤치마크에서 CriticOPD가 기존 OPD를 개선하며, 특히 경시대회 수준 문제에서 가장 큰 향상을 보임을 실험으로 입증.</li>
+</ul>
+<h2>방법론</h2>
+<p>CriticOPD는 학생의 틀린 롤아웃과 정답(reference answer)이 주어지면, 교사가 추론 오류를 식별하고 교정 피드백(critique)을 제공한다. 학생은 이 피드백을 이용해 마지막 오류 지점부터 자신의 풀이를 다시 작성(rewrite)한다. 이후 교사는 이 비평을 컨텍스트로 포함한 상태에서 재작성된 결과를 채점하여 학습 타깃(advantage)을 계산하지만, 학생은 훈련 시 비평 없이 그 재작성 결과만으로 학습한다. 즉 비평은 '교사가 더 신뢰할 수 있는 채점 기준을 갖도록' 컨텍스트만 바꿀 뿐, 학생이 감독받는 모든 토큰은 여전히 학생 자신이 작성하며 추론 시에는 피드백이나 추가 턴이 전혀 필요하지 않다. 이는 샘플된 역-KL(reverse-KL) 목적함수 하에서, 교사와 학생의 로그확률 차이로 정의되는 어드밴티지(advantage)를 더 신뢰 가능하게 만드는 효과를 낸다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>훈련 데이터에 포함되지 않은 OlympiadBench에서 초기 학생의 틀린 롤아웃 150개와 맞은 롤아웃 150개를 추출해, OPD와 CriticOPD로 학습된 두 학생이 빈 접두어 및 각 절단점(cut point)에서 16회씩 이어 쓰게 했다. 빈 접두어와 맞은 접두어에서는 두 학생의 성능 차이가 거의 없었지만(0.015 이하, 평균 0.000), 틀린 접두어에서는 CriticOPD 학생이 평균 0.023(신뢰구간 [0.010, 0.036]) 앞섰고 마지막 두 절단점에서는 약 0.04까지 차이가 벌어졌다. 즉 이득은 정확히 '학생이 오류를 낸 이후' 상태, 다시 말해 기존 OPD의 감독 신뢰성이 무너지는 지점에 집중되어 나타났다. 두 Qwen3 학생 규모와 여섯 개 수학 추론 벤치마크 전반에서 CriticOPD는 OPD를 개선했으며, 경시대회 수준 문제에서 가장 큰 향상을 보였다.</p>
+<h2>한계점</h2>
+<p>저자들은 CriticOPD가 어떤 롤아웃이 비평을 받을지 결정하고 비평 근거(critic)를 세우기 위해 정답(reference answer)을 필요로 하므로, 수학처럼 검증 가능한 정답이 있는 과제에만 바로 적용 가능하다고 명시했다. 검증 가능한 정답이 없는 과제에는 보상 모델이나 스스로 정답성을 판단하는 비평자가 필요하며 이는 향후 연구로 남겨두었다(코드의 경우 유닛 테스트가 정답 역할을 대신할 수 있다고 언급). 또한 실험이 하나의 Qwen3 교사(비-사고 모드)로부터 두 크기의 Qwen3 학생을 증류하는 설정, 그리고 OLMo-3 학생을 포함한 한정된 모델·도메인 범위에서 이루어졌다는 점도 한계로 제시했다.</p>
+<h2>시사점</h2>
+<p>교사가 '오류를 따라가는 것'과 '오류를 인식하는 것'을 분리해, 인식 능력만을 활용해 학습 신호를 복원하는 접근은 온폴리시 증류 전반의 신뢰성 문제에 적용 가능한 일반적 원리를 제시한다. 특히 추론 시 추가 피드백이나 턴이 필요 없다는 점에서, 배포 비용을 늘리지 않고 학습 품질만 개선하는 실용적 방향을 보여준다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.20572" target="_blank" rel="noopener">huggingface.co/papers/2610.20572</a> · 2026-10-16</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

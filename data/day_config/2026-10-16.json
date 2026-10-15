@@ -1,0 +1,101 @@
+{
+  "2610.20571": {
+    "base": "2610_아타스_시공간-인지-에이전틱-영상생성",
+    "rank": "#1",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "322",
+    "en_title": "Any Time, Any Space: A World-State-Centric Framework for Agentic Video Generation",
+    "ko_title": "애니타임, 애니스페이스: 월드 상태 중심의 에이전틱 영상 생성 프레임워크"
+  },
+  "2610.13521": {
+    "base": "2610_로드모프디_교차교사-멀티티처-온폴리시증류",
+    "rank": "#2",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "233",
+    "en_title": "Beyond Domain-Routed Supervision: Cross-Teacher Guarding for Multi-Teacher On-Policy Distillation",
+    "ko_title": "도메인 라우팅 감독을 넘어서: 멀티티처 온폴리시 증류를 위한 교차 교사 가딩"
+  },
+  "2610.20584": {
+    "base": "2610_플레이어원_합성경험-기반-게임제어-에이전트",
+    "rank": "#3",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "219",
+    "en_title": "Player-1: Learning to Play from Synthetic Experience",
+    "ko_title": "플레이어원: 합성 경험으로부터 플레이를 배우다"
+  },
+  "2610.20344": {
+    "base": "2610_닥투하네스_장기호라이즌-하네스엔지니어링-벤치마크",
+    "rank": "#4",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "93",
+    "en_title": "Doc2Harness: Benchmarking LLMs on Long-Horizon Harness Engineering of Coding Agents",
+    "ko_title": "닥투하네스: 코딩 에이전트의 장기호라이즌 하네스 엔지니어링 벤치마크"
+  },
+  "2610.19789": {
+    "base": "2610_리얼리티체크_에이전틱강화학습-자기증류-실증비교",
+    "rank": "#5",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "72",
+    "en_title": "More Methods, Better Agents? A Reality Check on Self-Distillation in Agentic Reinforcement Learning",
+    "ko_title": "더 많은 방법이 더 나은 에이전트를 만드는가? 에이전틱 강화학습 자기증류에 대한 리얼리티 체크"
+  },
+  "2610.20572": {
+    "base": "2610_크리틱오피디_비평기반-온폴리시-증류",
+    "rank": "#6",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "70",
+    "en_title": "Recovering Reliable Supervision via Critique-Guided On-Policy Distillation",
+    "ko_title": "비평 기반 온폴리시 증류를 통한 신뢰 가능한 감독 복원"
+  },
+  "2610.19975": {
+    "base": "2610_레이턴트루프_비대칭연산할당-루프드모이",
+    "rank": "#7",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "64",
+    "en_title": "LatentLoop: Scaling Looped MoE Models with Asymmetric Compute Allocation",
+    "ko_title": "레이턴트루프: 비대칭 연산 할당으로 루프드 MoE 모델 스케일링"
+  },
+  "2610.20399": {
+    "base": "2610_코텍스_컨텍스트의-파라메트릭-메모리-통합",
+    "rank": "#8",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "62",
+    "en_title": "Cortex: Consolidating Context into Parametric Memory",
+    "ko_title": "코텍스: 컨텍스트를 파라메트릭 메모리로 공고화하기"
+  },
+  "2610.19820": {
+    "base": "2610_액션오피디_의사결정단위-에이전트증류",
+    "rank": "#9",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "53",
+    "en_title": "ActionOPD: Distilling Decisions, Not Tokens",
+    "ko_title": "액션오피디: 토큰이 아닌 결정을 증류하다"
+  },
+  "2610.19366": {
+    "base": "2610_씨잉메인테이닝러닝_멀티모달-에이전트-메모리-서베이",
+    "rank": "#10",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "43",
+    "en_title": "Seeing, Maintaining, and Learning: The Evolution of Multimodal Agent Memory",
+    "ko_title": "보고, 유지하고, 배우기: 멀티모달 에이전트 메모리의 진화"
+  },
+  "2610.18072": {
+    "base": "2610_렌즈이레이즈_범용-객체지우기-파운데이션모델",
+    "rank": "#11",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "36",
+    "en_title": "LensErase: A Foundation Model for Erase Anything",
+    "ko_title": "렌즈이레이즈: 무엇이든 지우는 파운데이션 모델"
+  }
+}

@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>액션오피디</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#9 · Daily Papers 2026-10-16</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 53</span>
+    </div>
+    <h1 class="article-title">ActionOPD: Distilling Decisions, Not Tokens</h1>
+    <p class="article-title-ko">액션오피디: 토큰이 아닌 결정을 증류하다</p>
+    <p class="article-sub">토큰이 아닌 '의미적 행동(semantic action)'을 감독 단위로 삼아, 교사의 토큰 확률이나 호환 가능한 토크나이저 없이도 학생 에이전트의 행동을 블랙박스 교사의 결정과 정렬시키는 온폴리시 증류 기법 ActionOPD를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.19820" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.19820" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: ActionOPD: Distilling Decisions, Not Tokens</li>
+<li><strong>저자</strong>: Huining Yuan, Xiangmin Yi, Zelai Xu 등 (Tsinghua University)</li>
+<li><strong>출처</strong>: arXiv:2610.19820v1 [cs.AI] (2026년 10월 14일, Preprint)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 Project Page/Code/Models 링크가 있으나 구체적 URL은 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.19820">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>토큰이 아닌 '의미적 행동(semantic action)'을 감독 단위로 삼아, 교사의 토큰 확률이나 호환 가능한 토크나이저 없이도 학생 에이전트의 행동을 블랙박스 교사의 결정과 정렬시키는 온폴리시 증류 기법 ActionOPD를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>강력하지만 비용이 큰 프런티어 에이전트를 작은 모델로 증류하려면 "어떤 상태에서, 어떤 세밀함으로 행동을 정렬할 것인가"라는 근본적 질문에 답해야 한다. 오프라인 모방학습은 조밀하지만 토큰 단위로 특정된 감독을 제공해 교사-학생 간 상태 분포 불일치 문제를 겪을 수 있다. 토큰 수준 온폴리시 증류(OPD)는 이 불일치를 해소하지만 교사의 토큰 확률과 호환되는 토크나이저를 요구하는 경우가 많아, 서로 다른 모델 패밀리의 교사-학생 조합에는 적용하기 어렵다. 저자들은 에이전트 증류에 자연스러운 감독 단위로 '의미적 행동'을 제안한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>학생이 실제로 마주친 상태에서 기대되는 교사-행동 가능도(expected teacher-action likelihood)를 최대화하는 것에 기반한 행동 수준 온폴리시 증류 ActionOPD를 제안. 각 상태에서 학생과 블랙박스 교사 모두에서 행동을 샘플링하고, 학생 행동이 샘플링된 교사 행동들과 의미적으로 일치하는 정도에 따라 보상을 부여.</li>
+<li>교사의 작성된 추론(reasoning)을 재현하거나 교사의 토큰 확률에 접근할 필요 없이, 정책 최적화를 통해 학생의 행동 수준 행동을 교사의 결정에 정렬.</li>
+<li>Qwen3-4B, Qwen3-8B 학생을 두 교사(서로 다른 모델 패밀리/토크나이저)로 다양한 선별된 도구 사용(tool-use) 과제에서 학습시켜, 4개의 OOD(분포 외) 벤치마크에서 평균 3.3~6.9%p의 성능 향상을 달성했고, 학생 크기와 교사 역량이 커질수록 유리하게 확장됨을 보임.</li>
+</ul>
+<h2>방법론</h2>
+<p>ActionOPD는 각 상태에서 학생 정책과 블랙박스 교사 양쪽에서 여러 개의 후보 행동을 샘플링한다. 학생이 샘플링한 행동은 교사가 샘플링한 행동들과 '의미적으로' 얼마나 일치하는지에 따라 보상을 받으며, 이 보상은 토큰 수준의 정확한 일치가 아니라 행동의 의미(예: 호출한 도구와 그 인자의 의도)에 기반해 계산된다. 이후 정책 최적화(RL)를 통해 학생의 행동 수준 정책을 교사의 결정에 정렬시킨다. 이 방식은 교사의 토큰 확률에 대한 접근이나 토큰화 호환성을 요구하지 않으므로, 교사와 학생이 서로 다른 모델 패밀리에 속해도 적용할 수 있다. 저자들은 동일 모델을 교사로 쓰되 특권적(privileged) 컨텍스트를 제공하는 Self-ActionOPD 변형도 함께 탐구했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Qwen3-4B와 Qwen3-8B를 학생으로, 두 개의 서로 다른 교사(예: DeepSeek-V4-Flash, Qwen3.7-Flash 계열)로 다양한 선별된 도구 사용 과제에 대해 학습시켰다. 네 개의 분포 외(OOD) 벤치마크에서 평균 3.3~6.9%p의 성능 향상을 얻었으며, 더 큰 학생과 더 강한 교사를 사용할수록 성능 향상이 더 커지는 유리한 확장성을 보였다. τ²-bench에서는 오프라인 증류 및 토큰 수준 OPD와 경쟁력 있는 성능을 달성했다. Ablation 결과는 단순한 '유효성(validity)' 기반 보상보다 의미적 일치 기반 보상이 더 효과적임을 지지했으며, 동일 모델 교사와 특권적 컨텍스트를 사용한 Self-ActionOPD는 held-out 성능을 개선해 에이전트 자기개선의 가능성도 보여주었다.</p>
+<h2>한계점</h2>
+<p>저자들은 세 가지 한계를 명시했다. 첫째, 의미적 일치가 정답성을 보장하지 않으므로 교사의 오류나 최적이 아닌 결정이 학습 타깃이 될 수 있다. 둘째, LLM을 이용해 소통적 응답과 도구 인자의 차이를 매칭하는 과정에서 거짓 양성/음성이 발생해 보상이 잘못 할당될 수 있다. 셋째, 교사와 학생의 샘플 집합 크기가 고정되어 있어, 장기 호라이즌 상호작용처럼 그럴듯한 결정들이 넓게 분산된 경우 의미적으로 일치하는 행동이 거의 없을 수 있다. 샘플 수(K, N)를 늘리면 커버리지는 개선될 수 있지만 생성·매칭 비용이 커지며, 이 영역에서의 이득은 아직 검증되지 않았다고 밝혔다.</p>
+<h2>시사점</h2>
+<p>토큰이 아닌 의미적 행동을 감독 단위로 삼는 접근은 서로 다른 모델 패밀리·토크나이저를 가진 교사-학생 조합에도 적용 가능한 유연한 증류 방식을 제공하며, 도구 사용 에이전트처럼 '어떤 행동을 선택했는가'가 '정확히 어떤 토큰을 썼는가'보다 중요한 영역에서 특히 유용할 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.19820" target="_blank" rel="noopener">huggingface.co/papers/2610.19820</a> · 2026-10-16</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

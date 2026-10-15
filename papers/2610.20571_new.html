@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>애니타임</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#1 · Daily Papers 2026-10-16</span>
+      <span class="cat-tag">생성모델</span>
+      <span class="upvote-tag">▲ 322</span>
+    </div>
+    <h1 class="article-title">Any Time, Any Space: A World-State-Centric Framework for Agentic Video Generation</h1>
+    <p class="article-title-ko">애니타임, 애니스페이스: 월드 상태 중심의 에이전틱 영상 생성 프레임워크</p>
+    <p class="article-sub">각본을 여러 샷으로 변환하는 에이전틱 영상 생성에서, 장면(공간)과 사건(시간)을 분리된 영속적 메모리로 관리해 멀리 떨어진 샷 사이에서도 공간·시간 일관성을 유지하는 프레임워크 ATAS를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.20571" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.20571" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Any Time, Any Space: A World-State-Centric Framework for Agentic Video Generation</li>
+<li><strong>저자</strong>: Weijie Wang, Haomin Zhang, Ye Li 등 (Zhejiang University, Monash University, BAIR UC Berkeley, Adelaide University)</li>
+<li><strong>출처</strong>: arXiv:2610.20571v1 [cs.CV] (2026년 10월 14일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="http://lhmd.top/atas">http://lhmd.top/atas</a> / 코드: <a href="https://github.com/ziplab/ATAS">https://github.com/ziplab/ATAS</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.20571">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>각본을 여러 샷으로 변환하는 에이전틱 영상 생성에서, 장면(공간)과 사건(시간)을 분리된 영속적 메모리로 관리해 멀리 떨어진 샷 사이에서도 공간·시간 일관성을 유지하는 프레임워크 ATAS를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>기존 에이전틱 영상 생성 시스템은 최근 프레임, 텍스트 요약, 혹은 검색된 참조 이미지로 샷 간 연속성을 유지한다. 이는 연속적인 샷에는 효과적이지만, 과거 관찰을 공유된 공간·시간 틀 안에 체계적으로 정리하지 못해 '한참 전에 등장한 장면으로 돌아가기'나 '이전 사건을 다른 카메라 각도에서 재현하기' 같은 비연속적 요청을 지원하지 못한다. 영속적인 월드 상태를 유지하려면 과거 관찰이 공간·시간적으로 주소화(addressable)되어야 하며, 생성된 콘텐츠의 시각적·기하학적·시간적 오류가 이후 샷으로 전파되지 않도록 상태 갱신을 신중히 제어해야 한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>각본 기반 영상 생성을 영속적인 장면(scene) 메모리와 사건(event) 메모리 중심으로 조직하여, 이후 샷이 임의의 시공간에서 과거 관찰을 조회할 수 있게 하는 ATAS 프레임워크 제안.</li>
+<li>공간적으로 등록된 장면 메모리와 시간으로 색인된 사건 메모리를 상호보완적으로 설계하고, 영상 결과물의 채택(필름 전달)과 메모리로의 증거 반영(상태 갱신)을 분리하는 검증 기반 갱신 메커니즘 개발.</li>
+<li>4개의 영상 생성기와 5개의 에이전트 베이스라인에 대한 실험으로, 모든 교차-샷 일관성 지표에서 개선을 보이고 공간 재방문·사건 재현·인간 평가에서 최고 성능 달성.</li>
+</ul>
+<h2>방법론</h2>
+<p>ATAS는 고수준 각본을 입력받아, 컴파일러가 이를 장면·공간앵커·카메라·시간구간·사건 식별자로 구성된 '제한된 샷 요청(bounded shot request)'들로 재귀적으로 분해한다. 각 요청에 대해 장면 메모리는 해당 장면의 요청된 카메라 시점에서 정적 포인트클라우드를 렌더링하여 참조를 제공하고, 사건 메모리는 요청된 사건·시간 구간에 해당하는 동적 관찰(RGB-D, 마스크, 동적 포인트클라우드)을 직접 검색해 제공한다. 두 참조는 결합되어 '맥락 의존 프롬프트'를 구성하고, 영상 생성기가 이를 조건으로 짧은 영상 클립을 생성한다. 생성된 클립은 즉시 신뢰되지 않고 '후보 관찰'로 취급되며, 별도의 검증 단계(필름 리뷰와 상태 검증)를 거친다. 필름 리뷰를 통과하면 최종 영상물로 전달되지만, 상태 검증까지 통과해야만 재구성·등록되어 영속적 월드 상태(장면+사건 메모리)에 반영된다. 즉 '영상으로 쓸 수 있는가'와 '메모리에 믿을만한 증거로 추가할 수 있는가'를 별도로 판단하는 것이 핵심 설계다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>4가지 영상 생성 백본에 ATAS를 적용하고, 5개의 에이전트 베이스라인·3D-가이드 방법들과 비교했다. ATAS는 보고된 모든 교차-샷 일관성 지표에서 개선을 보였고 각 백본에서 가장 높은 종합 벤치마크 점수를 받았다. 공간 재방문(target-image spatial revisit)의 세 지표 모두에서 비교 대상 에이전트 및 3D-가이드 기법을 능가했으며, 다섯 개 사건-재현 기준 중 세 개에서 선두였고, 인간 평가 여섯 개 기준 모두에서 가장 높은 평균 점수를 받았다. Ablation에서는 장면 메모리와 사건 메모리를 추가할 때 ViStory 평균 점수가 0.478→0.612로, 재귀적 컴파일을 추가하면 사건 점수가 0.711까지, C-Top10이 0.684까지 상승했다. 전체 메모리(장면+사건+검증)를 모두 적용하면 C-Top10 0.536→0.719, 사건 점수 0.452→0.739, LPIPS 기반 오차는 0.341→0.284로 감소했다. 검증 단계는 재시도 횟수를 줄이지만 처리 오버헤드를 추가해 전체 생성 속도 자체를 높이지는 않는다는 점도 보고되었다.</p>
+<h2>한계점</h2>
+<p>논문에 명시된 한계는 제한적이나, 검증과 상태 갱신으로 인한 추가 연산 비용(재시도 감소와 처리 오버헤드 간의 trade-off)이 언급된다. 또한 메모리는 프레임 수준의 지역적 동적 증거를 유지할 뿐 정체성(identity)이 해소된 모션 모델은 아니라는 설계상의 범위 제한이 있다.</p>
+<h2>시사점</h2>
+<p>장면(공간)과 사건(시간)을 분리해 영속적으로 관리하고, '생성물의 사용 가능성'과 '메모리로의 신뢰 가능성'을 분리해 검증하는 구조는 장편 에피소드 콘텐츠 제작, 인터랙티브 영화 제작, 사전 시각화(previsualization) 등 긴 스토리텔링이 필요한 에이전틱 생성 도구의 기초 설계로 활용될 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.20571" target="_blank" rel="noopener">huggingface.co/papers/2610.20571</a> · 2026-10-16</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

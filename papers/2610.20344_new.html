@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>닥투하네스</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#4 · Daily Papers 2026-10-16</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 93</span>
+    </div>
+    <h1 class="article-title">Doc2Harness: Benchmarking LLMs on Long-Horizon Harness Engineering of Coding Agents</h1>
+    <p class="article-title-ko">닥투하네스: 코딩 에이전트의 장기호라이즌 하네스 엔지니어링 벤치마크</p>
+    <p class="article-sub">코딩 에이전트의 성능을 좌우하는 '하네스(harness)' 자체를 LLM이 얼마나 잘 구축할 수 있는지를, 두 단계(구축→구동) 구조와 결정론적 채점으로 측정하는 최초의 벤치마크 Doc2Harness를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.20344" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.20344" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Doc2Harness: Benchmarking LLMs on Long-Horizon Harness Engineering of Coding Agents</li>
+<li><strong>저자</strong>: Yuyao Ge, Shenghua Liu 등 (Institute of Computing Technology/CAS, Tsinghua University, Peking University, Southeast University)</li>
+<li><strong>출처</strong>: arXiv:2610.20344v1 [cs.SE] (2026년 10월 14일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://geyuyao.com/doc2harness">geyuyao.com/doc2harness</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.20344">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>코딩 에이전트의 성능을 좌우하는 '하네스(harness)' 자체를 LLM이 얼마나 잘 구축할 수 있는지를, 두 단계(구축→구동) 구조와 결정론적 채점으로 측정하는 최초의 벤치마크 Doc2Harness를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>LLM 기반 코딩 에이전트는 상호작용 루프, 도구 실행, 컨텍스트, 권한, 세션 상태, 실패 복구, 결과 검증을 관리하는 '하네스'에 의해 모델 역량이 실제 환경에 얼마나 전달되는지가 크게 좌우된다. 사람이 매 단계를 감독하기 어려워지면서, 에이전트가 과제를 수행하고 결과를 관찰해 자신의 하네스를 수정한 뒤 다음 과제에 적용하는 재귀적 자기개선이 주목받고 있다. 그러나 하네스 구축은 일반 소프트웨어 엔지니어링(SWE) 과제와 다르다: 하네스는 최근 몇 년 사이에만 등장해 훈련 데이터에 덜 노출되어 있고, 고정 인터페이스로 행동을 관찰하는 단위 테스트와 달리 같은 기능이 다양한 방식으로 구현될 수 있으며, 하네스 자체는 모델이 구동해 주어야만 과제를 완수할 수 있다. 기존 SWE 벤치마크(SWE-bench Pro, NL2Repo-Bench, Commit0 등)의 평가 기준은 이런 특성에 맞지 않는다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>하네스 엔지니어링 자체를 직접 평가하는 2단계 벤치마크 Doc2Harness 제안: 1단계에서는 고정된 빌더 하네스 안에서 빌드 모델이 인터페이스만 선언된 계약 스켈레톤과 12개 최신 하네스의 동작을 통합한 개발 문서를 받아 격리된 컨테이너 안에 완전한 후보 하네스를 구축하고, 2단계에서는 구축 환경과 분리된 컨테이너에서 스크립트화된 모의(mock) 모델이 그 하네스를 테스트 케이스별로 end-to-end 구동한다.</li>
+<li>모델에 보내는 요청, 디스크 상의 파일, 프로세스 종료 코드, 커맨드 출력이라는 네 가지 관찰 채널로 각 테스트 케이스를 채점하고, 공허한 통과(vacuous pass)를 배제하는 포지티브 컨트롤을 적용해 결정론적 평가를 달성.</li>
+<li>19개의 최신 프런티어 모델을 각각 3회 독립 빌드, 328개 테스트 케이스로 평가해, 최고 성능인 GPT-6 Astra도 53.05%의 통과율에 그치고 최하위 모델은 27.44%로 약 26퍼센트포인트 격차가 있음을 밝힘.</li>
+</ul>
+<h2>방법론</h2>
+<p>Doc2Harness는 결정론적 평가를 위해 구축과 구동을 분리한다. 1단계(Stage 1)에서는 평가 대상 빌드 모델이 고정된 빌더 하네스 내부에서 작동하며, 인터페이스만 정의된 '계약 스켈레톤(contract skeleton)'과 12개 프런티어 하네스의 동작을 정리한 개발 문서를 입력으로 받아 격리 컨테이너 안에서 완전한 후보 하네스를 구축한다. 2단계(Stage 2)에서는 이 '동결된' 후보 하네스를 구축 환경과는 별도의 컨테이너(테스트 케이스당 하나씩)에서 실행하며, 스크립트로 작성된 모의 모델이 end-to-end로 하네스를 구동한다. 각 테스트 케이스는 (1) 모델에 전송된 요청, (2) 디스크의 파일, (3) 프로세스 종료 코드, (4) 커맨드 출력이라는 네 가지 관찰 가능한 채널로 평가되며, 해당 기능이 실제로 실행되지 않고도 우연히 통과하는 것을 막기 위한 포지티브 컨트롤이 함께 적용된다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>19개 최신 모델을 각각 3개의 독립적인 후보 하네스로 빌드하여 328개 테스트 케이스에 대해 평가했다. 최고 성능 모델(GPT-6 Astra)의 평균 통과율은 53.05%였고 최하위 모델은 27.44%로, 모델 간 약 26퍼센트포인트의 격차가 나타났다. 가장 뛰어난 모델조차 테스트 케이스의 거의 절반을 실패했으며, 실패는 무작위로 분포하지 않고 횡단 관심사(cross-cutting functionality)를 여러 모듈에 어떻게 분할하는지에 집중적으로 몰려 있었다.</p>
+<h2>한계점</h2>
+<p>저자들은 이 프로토콜이 단일 빌드만을 측정하며(최대 3회 제출 허용, 반복적인 빌드-평가-수정 루프가 아님), 계약 검사가 행위가 아닌 형식(form)을 검증하기 때문에 후보 하네스가 받는 수정의 정도가 제출 시점에 따라 달라져 조기 제출자의 통과율은 상한이 아니라 하한으로 해석해야 한다고 명시했다. 또한 동결 이후 행동적 피드백에 기반한 개선은 측정되지 않으며, 동일 기능에서 파생된 여러 테스트 변형들이 서로 상관되어 있어 하나의 결함이 여러 테스트 케이스의 실패를 동시에 유발할 수 있다는 점도 한계로 언급했다.</p>
+<h2>시사점</h2>
+<p>하네스 자체를 구축하는 능력은 일반 SWE 과제와 구별되는 새로운 종류의 일반화 역량이며, 재귀적 자기개선 에이전트의 궁극적 역량을 좌우할 수 있는 요소다. Doc2Harness는 이 능력을 결정론적으로 측정하는 최초의 벤치마크로서, 향후 에이전트 하네스 자동 생성·개선 연구의 평가 기준으로 활용될 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.20344" target="_blank" rel="noopener">huggingface.co/papers/2610.20344</a> · 2026-10-16</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

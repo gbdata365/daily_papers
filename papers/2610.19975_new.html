@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>레이턴트루프</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#7 · Daily Papers 2026-10-16</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 64</span>
+    </div>
+    <h1 class="article-title">LatentLoop: Scaling Looped MoE Models with Asymmetric Compute Allocation</h1>
+    <p class="article-title-ko">레이턴트루프: 비대칭 연산 할당으로 루프드 MoE 모델 스케일링</p>
+    <p class="article-sub">루프드 MoE(Mixture-of-Experts) 모델의 두 번째 통과(visit)가 첫 번째보다 더 큰 잔차(residual) 업데이트를 선호한다는 비대칭성을 발견하고, 이를 활용해 첫 방문에서는 압축된 시퀀스를, 두 번째 방문에서는 전체 해상도를 처리해 절약된 연산을 모델 너비 확장에 재할당하는 LatentLoop를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.19975" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.19975" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: LatentLoop: Scaling Looped MoE Models with Asymmetric Compute Allocation</li>
+<li><strong>저자</strong>: Zefeng He, Yunkai Chai, Xiaoyang Chen 등 (SJTU, Shanghai AI Lab, USTC, CUHK, NTU)</li>
+<li><strong>출처</strong>: arXiv:2610.19975v1 [cs.LG] (2026년 10월 14일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 프로젝트 페이지/코드 링크가 있으나 구체적 URL은 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.19975">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>루프드 MoE(Mixture-of-Experts) 모델의 두 번째 통과(visit)가 첫 번째보다 더 큰 잔차(residual) 업데이트를 선호한다는 비대칭성을 발견하고, 이를 활용해 첫 방문에서는 압축된 시퀀스를, 두 번째 방문에서는 전체 해상도를 처리해 절약된 연산을 모델 너비 확장에 재할당하는 LatentLoop를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>루프드 트랜스포머는 공유된 레이어를 반복 적용해 파라미터를 추가로 저장하지 않고도 유효 깊이를 늘리는 기법이며, 최근에는 MoE와 결합해 저장 파라미터 용량과 활성 연산량을 분리 조정할 수 있게 되었다(SMELT 등). 그러나 고정 파라미터 수에서의 이득이 동일 연산 예산(FLOPs) 하에서도 유지되는지는 자명하지 않다. 저자들은 SMELT의 루프드 MoE 레시피(중간 절반의 레이어를 공유 파라미터로 두 번 적용)에서 출발해, 두 번의 방문이 파라미터를 공유하면서도 서로 다른 역할을 수행할 수 있다는 선행 관찰에 착안해 두 방문의 역할을 직접 분석했다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>각 방문에 학습 가능한 잔차 계수를 부여해 공동 최적화한 결과, 두 모델 크기 모두에서 첫 방문이 훨씬 작은 계수를, 두 번째 방문은 1에 가까운 계수를 학습함을 발견. 고정 계수 실험에서도 첫 방문의 잔차 스케일을 줄이면 성능이 유지되거나 개선되지만 두 번째 방문에 같은 조치를 하면 성능이 악화되는 비대칭성을 확인.</li>
+<li>이 비대칭성에 기반해 첫 방문에서는 시퀀스를 압축해 처리하고 두 번째 방문은 전체 해상도로 처리한 뒤, 절약된 연산을 모델 너비(히든 크기) 확장에 재할당하는 LatentLoop 제안. 학습 가능한 라이트백(writeback) 계수로 잠재 업데이트를 전체 해상도 상태에 인과적으로 정렬해 반영하고, MoE 라우터·전문가는 두 방문 간에 공유하되 어텐션 블록만 분리해, 늘어난 파라미터를 저장 전문가 수를 약간 줄여 상쇄.</li>
+<li>1.3B~7B 파라미터, 최대 10^21 FLOPs를 넘는 15개의 예산-일치 설정 전반에서 LatentLoop가 MoE Base와 루프드 베이스라인보다 일관되게 낮은 검증 NLL을 달성하고, 9개 다운스트림 벤치마크의 0-shot/5-shot 평균 점수에서 모든 크기에서 최고 점수를 기록.</li>
+</ul>
+<h2>방법론</h2>
+<p>먼저 SMELT 스타일의 루프드 MoE에서 두 방문 각각에 학습 가능한 잔차 계수를 도입해, 파라미터와 함께 공동 최적화함으로써 각 방문이 선호하는 업데이트 강도를 관찰했다. 이 비대칭성(첫 방문 약함, 두 번째 방문 강함)에 기반해 LatentLoop는 첫 방문에서 시퀀스를 압축된 잠재 표현으로 처리하고, 두 번째 방문은 전체 해상도에서 처리한다. 절약된 연산 예산은 모델의 히든 크기(너비)를 늘리는 데 재할당된다. 압축된 첫 방문에서 생성된 잠재 업데이트를 전체 해상도 상태로 되돌려 쓸 때는, 평균 집계(mean aggregation)와 학습 가능한 라이트백 계수를 결합해 인과적 정렬 하에 보정한다. 서로 다른 시퀀스 해상도는 어텐션과 MoE 연산에 각기 다른 요구를 부과할 수 있는데, MoE 블록은 모델 파라미터의 대부분을 차지하므로 공유를 유지하고 어텐션 블록만 분리(untie)하며, 늘어난 파라미터는 저장 전문가 수를 소폭 줄여 활성 전문가 수는 그대로 유지한 채 상쇄한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>1.3B, 3B, 7B 세 규모에서 저장 파라미터·KV 캐시·스텝당 FLOPs·총 훈련 FLOPs를 1% 이내로 일치시킨 15개 설정으로 비교했다(최대 훈련 예산 10^21 FLOPs 초과). LatentLoop는 모든 15개 설정에서 MoE Base와 MoE Loop보다 낮은 검증 NLL을 달성했다. 약 1.988의 적합(fitted) NLL 지점에서 스케일링 곡선을 기준으로 추정한 연산 절감량은 MoE Base 대비 19.0%, 루프드 베이스라인 대비 7.9%였다. 각 크기의 최대 토큰 예산에서 9개의 다운스트림 벤치마크를 0-shot/5-shot으로 평가한 결과, 6개의 (크기×shot) 설정 모두에서 LatentLoop가 최고 평균 점수를 기록해 검증 손실 개선이 다운스트림 성능으로도 이어짐을 확인했다. 3B/40B 기준 예산에서의 ablation은 라이트백 스케일 보정과 선택적 파라미터 공유의 효과를 보여주었고, 학습된 라이트백 계수 분석 결과도 1보다 훨씬 작은 업데이트 스케일을 보여 앞선 잔차 스케일링 관찰과 일치했다.</p>
+<h2>한계점</h2>
+<p>저자들은 LatentLoop의 비대칭적 연산 할당이 관찰된 잔차 계수의 비대칭성에서 동기를 얻었지만, 이 학습된 비대칭성의 근본적 메커니즘은 아직 완전히 이해되지 않았다고 명시했다. 특히 3회, 4회 루프 방문에서 관찰된 잔차 계수 패턴에 대한 더 상세한 분석은 향후 연구로 남겨두었으며, 서로 다른 루프 방문의 구체적 역할과 메커니즘을 더 깊이 연구하면 루프드 MoE 모델의 연산 할당을 더 효과적으로 이끌 수 있을 것이라고 밝혔다.</p>
+<h2>시사점</h2>
+<p>모델 내 반복 계산 단계들이 파라미터를 공유하더라도 실제로는 비대칭적인 역할을 수행할 수 있다는 관찰은, 단순히 "레이어를 몇 번 반복할 것인가"를 넘어 "각 반복에 얼마나 많은 연산을 배정할 것인가"라는 새로운 설계축을 제시한다. 이는 향후 루프드 아키텍처 전반의 연산 효율 개선에 일반적으로 적용될 수 있는 방향이다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.19975" target="_blank" rel="noopener">huggingface.co/papers/2610.19975</a> · 2026-10-16</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

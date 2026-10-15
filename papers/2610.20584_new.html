@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>플레이어원</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#3 · Daily Papers 2026-10-16</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 219</span>
+    </div>
+    <h1 class="article-title">Player-1: Learning to Play from Synthetic Experience</h1>
+    <p class="article-title-ko">플레이어원: 합성 경험으로부터 플레이를 배우다</p>
+    <p class="article-sub">컴퓨터 사용(computer-use) 에이전트의 행동 공간을 게임에 필요한 상대 포인터 이동·지속 입력·복합 입력으로 확장하고, 16개의 합성 2D/3D 환경에서 검증 가능한 보상으로 강화학습을 수행해, 시범(demonstration)만으로는 닿지 못한 게임 제어 능력을 얻는 Player-1 프레임워크를 제시한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.20584" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.20584" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Player-1: Learning to Play from Synthetic Experience</li>
+<li><strong>저자</strong>: Mingyu Ouyang, Yiran Wang, Siyuan Hu 등 (National University of Singapore, ARC Lab·Tencent IEG, Nanyang Technological University)</li>
+<li><strong>출처</strong>: arXiv:2610.20584v1 [cs.CV] (2026년 10월 14일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://player-1-project.github.io/">player-1-project.github.io</a> / 코드: <a href="https://github.com/TencentARC/Player-1">github.com/TencentARC/Player-1</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.20584">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>컴퓨터 사용(computer-use) 에이전트의 행동 공간을 게임에 필요한 상대 포인터 이동·지속 입력·복합 입력으로 확장하고, 16개의 합성 2D/3D 환경에서 검증 가능한 보상으로 강화학습을 수행해, 시범(demonstration)만으로는 닿지 못한 게임 제어 능력을 얻는 Player-1 프레임워크를 제시한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>컴퓨터 사용 에이전트는 화면을 해석하고 키보드·마우스 행동을 실행하는 데 강점을 보여왔지만, 시각적으로 복잡하고 다양한 메커니즘을 가진 게임은 정밀하고 지속적이며 동시적인 제어를 요구하는 더 어려운 다음 단계다. 기존 게임 에이전트 학습 파이프라인은 대규모 시범 데이터에 의존하지만, 이는 개방형(open-ended) 과제에서 에이전트가 마주칠 수 있는 동적 상태의 일부만 다루며, 상호작용 학습을 위한 확장 가능한 환경을 구하기도 어렵다. 저자들은 외형과 규칙은 다르지만 많은 게임이 정밀 조준, 지속적 이동, 협응 입력 같은 공통된 제어 요구를 공유한다는 점에 주목했다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>컴퓨터 사용 행동 공간을 상대 포인터 이동(정규화된 Δx, Δy), 여러 제어 스텝에 걸친 지속 입력, 한 스텝에 여러 입력을 결합하는 복합 행동으로 확장.</li>
+<li>6,044개의 선별된 게임플레이 궤적(공개 데이터셋+자체 녹화)을 행동·과제 지시·시각적 추론과 함께 정렬하여 지도학습 초기화(SFT)에 사용.</li>
+<li>조준, 전투, 주행, 내비게이션, UI 상호작용 등 공유된 제어 요구를 중심으로 설계된 16개의 합성 2D/3D 환경 'Player-1-Gym'을 구축하고, 프로그래밍적으로 검증 가능한 보상과 관찰/제어 동역학 무작위화를 통해 다중 환경 PPO 강화학습(RLVR)을 지원.</li>
+<li>Player-1-9B와 Player-1-35B-A3B 모델이 MineDojo-300에서 SFT 정책 대비 각각 27.8%p, 17.7%p의 성공률 향상을 달성했고, 훈련에 사용되지 않은 ViZDoom-10, GameWorld로도 이득이 일반화됨을 입증.</li>
+</ul>
+<h2>방법론</h2>
+<p>전체 파이프라인은 세 단계로 구성된다. 첫째, 서로 다른 입력 규약과 시간 해상도로 녹화된 게임플레이 시범(마인크래프트, GTA V, 사이버펑크 2077 등)을 행동 표준화·시간 정렬·마우스 보정을 거쳐 공유 행동 공간으로 변환하고, 과제 지시 및 시각적 추론 주석을 붙여 SFT로 컴퓨터 사용 모델을 게임 제어용으로 초기화한다. 둘째, Player-1-Gym의 16개 합성 환경(2D 슈팅/플랫포밍/서킷 주행, 3D 조준/도로 주행/추격 등)에서 외형(색상·조명), 카메라(시점·투영), 장면(배치·스폰), 제어(반응 민감도) 등을 무작위화하여 다양한 상태 분포를 생성한다. 셋째, 각 환경에서 프로그래밍적으로 검증 가능한 게임 상태 보상을 정의하고, 정책이 직접 생성한 경험(스크린샷+실행 행동+보상)에 대해 PPO 기반의 다중 환경 강화학습을 수행해 SFT 모델을 추가로 개선한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>평가는 in-suite(16개 환경×128 시드), MineDojo-300(마인크래프트 100개 과제×3회), ViZDoom-10(10개 맵×10 에피소드), GameWorld(170개 과제×1회) 네 가지로 이루어졌다. Player-1-9B는 MineDojo-300에서 SFT 이후 10.54%였던 성공률을 RL 이후 38.33%까지 끌어올려, 평가된 최강 외부 베이스라인(12.63%)을 크게 앞질렀다. ViZDoom-10에서는 scaled return이 SFT 대비 +0.271(35B-A3B 모델 기준 전후 비교), GameWorld에서는 진행률(progress)이 RL 이후 45% 전후까지 상승(+9.2%p, 또 다른 모델 기준 +5.0%p)했다. 추가 분석에서는 더 넓은 합성 환경 커버리지가 전이 성능을 높이며, 강화학습이 진행될수록 여러 키보드·마우스 입력을 한 번에 결합하는 복합 행동의 사용 비율이 늘어나는 경향을 확인했다.</p>
+<h2>한계점</h2>
+<p>논문 본문에 별도의 '한계점' 절은 없으나, 접근법이 16개의 설계된 합성 환경과 그 제어 요구 범위에 기반한다는 점, 그리고 RL이 상용 게임 각각에 대해 온라인으로 직접 이루어지는 것이 아니라 합성 환경에서의 전이에 의존한다는 점이 방법론적 범위로 드러난다. 또한 결과는 주로 소수의 평가 스위트(MineDojo, ViZDoom, GameWorld)에 한정되어 보고되었다.</p>
+<h2>시사점</h2>
+<p>시범 데이터의 한계를 넘어, 공유된 제어 구조를 가진 다양한 합성 환경에서 검증 가능한 보상으로 강화학습을 하는 방식이 실제 상용 게임으로 전이 가능한 범용 게임 제어 능력을 만드는 데 효과적임을 보여준다. 이는 온라인 학습이 어려운 실제 게임 전반에 적용 가능한 저비용 사전훈련 전략으로 활용될 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.20584" target="_blank" rel="noopener">huggingface.co/papers/2610.20584</a> · 2026-10-16</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

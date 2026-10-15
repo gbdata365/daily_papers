@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>더 많은 방법이 더 나은 에이전트를 만드는가? 에이전틱 강화학습 자기증류에 대한 리얼리티 체크</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#5 · Daily Papers 2026-10-16</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 72</span>
+    </div>
+    <h1 class="article-title">More Methods, Better Agents? A Reality Check on Self-Distillation in Agentic Reinforcement Learning</h1>
+    <p class="article-title-ko">더 많은 방법이 더 나은 에이전트를 만드는가? 에이전틱 강화학습 자기증류에 대한 리얼리티 체크</p>
+    <p class="article-sub">에이전틱 강화학습에서 폭발적으로 늘어난 자기증류(self-distillation) 기법 10종을 GRPO와 동일한 조건에서 132회 학습 실험(12,124.4 H800 GPU-시간)으로 직접 비교해, 어떤 기법도 일관되게 우월하지 않다는 사실을 밝혀낸 실증 연구다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.19789" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.19789" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: More Methods, Better Agents? A Reality Check on Self-Distillation in Agentic Reinforcement Learning</li>
+<li><strong>저자</strong>: Linhao Zhong, Bozhen Fang, Xuehao Wang 등 (Zhejiang University/State Lab of CAD&amp;CG, Ant Group)</li>
+<li><strong>출처</strong>: arXiv:2610.19789v1 [cs.CL] (2026년 10월 14일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://aim-uofa.github.io/Self-Distillation-AgentRL">aim-uofa.github.io/Self-Distillation-AgentRL</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.19789">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>에이전틱 강화학습에서 폭발적으로 늘어난 자기증류(self-distillation) 기법 10종을 GRPO와 동일한 조건에서 132회 학습 실험(12,124.4 H800 GPU-시간)으로 직접 비교해, 어떤 기법도 일관되게 우월하지 않다는 사실을 밝혀낸 실증 연구다.</p>
+<h2>배경 및 문제의식</h2>
+<p>온폴리시 자기증류(OPSD)는 훈련 시에만 주어지는 특권 정보(privileged information)를 가진 교사 분기(teacher branch)를 활용해 학생이 생성한 궤적에 더 조밀한 감독을 제공하는 기법으로, 관련 논문이 평균 이틀에 한 편꼴로 쏟아지고 있다. 그러나 기존 평가는 서로 다른 실험 조건에서 발표된 베이스라인 점수를 재사용하고, 동시대 방법들 간의 직접 비교가 드물며, 훈련 안정성과 연산 비용에는 거의 주의를 기울이지 않는다. 이는 보고된 성능 향상의 실제 원인을 가리고, 경쟁 기법들의 실질적 강점과 약점을 모호하게 만든다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>ALFWorld, ScienceWorld, Search-QA, WebShop 네 개 벤치마크와 2B/4B/9B 세 모델 규모에 걸쳐, GRPO 대비 10개의 대표적인 자기증류 기법을 동일한 프로토콜로 비교하는 독립적 벤치마크를 구축(132회 학습 실행, 12,124.4 H800 GPU-시간, 8개 롤아웃 시드에 걸친 반복 평가).</li>
+<li>최종 성능뿐 아니라 훈련 진행 과정, 안정성, 실측 연산 비용까지 체계적으로 분석하는 평가 틀을 제시.</li>
+<li>GRPO 대비 이득이 설정에 따라 제한적이며 일관되게 우월한 기법이 없다는 점, 높은 최종 성능이 불안정한 훈련 과정을 은폐할 수 있다는 점, 추가 훈련 비용이 반드시 더 나은 성능으로 이어지지 않는다는 세 가지 핵심 발견을 제시.</li>
+</ul>
+<h2>방법론</h2>
+<p>저자들은 GRPO를 공통 베이스라인으로 삼고, 교사 가이던스를 보조 손실·어드밴티지 조절·보상 셰이핑 등 다양한 방식으로 통합하는 10개의 대표적 자기증류 기법(GRPO+OPSD, SDAR, Skill-SD 등)을 동일한 환경·평가 절차 하에서 재현했다. 각 방법은 원 논문의 방법별 고유 훈련 설정을 유지한 채, 4개 벤치마크×3개 모델 규모(총 12개 모델-과제 설정)에서 학습되었으며, 2,772회의 훈련 중 검증 스윕과 1,152회의 평가 스윕(사전학습 모델과 학습된 모델 모두에 대해 8개 롤아웃 시드로 반복 평가)을 수행했다. 평가는 최종 점수 비교에 그치지 않고, 훈련 곡선의 진행 양상과 안정성, 그리고 각 방법이 실제로 소비한 연산 비용(GPU-시간)을 함께 측정했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>132회의 학습 실행에 걸쳐 10개 기법과 GRPO를 비교한 결과, (1) GRPO 대비 이득은 특정 설정에서만 나타나며 모든 상황에서 일관되게 앞서는 방법은 없었다. (2) 최종 점수가 높은 방법이라도 학습 곡선을 들여다보면 훈련이 불안정한 경우가 있어, 최종 성능만으로는 방법의 신뢰성을 판단할 수 없었다. (3) 더 많은 연산을 투입한 방법이 반드시 더 나은 성능으로 이어지지는 않아, 비용 대비 효과가 방법 선택의 중요한 기준이 되어야 함을 확인했다.</p>
+<h2>한계점</h2>
+<p>저자들은 한정된 연산 자원과 연구 시간 때문에 빠르게 늘어나는 에이전틱 자기증류 문헌을 전부 평가할 수 없었다고 명시했다. 교사 가이던스를 통합하는 다양한 접근을 대표하는 10개 기법으로 비교를 한정했으며, 이 선택이 모든 관련 방법을 포괄하지는 못하지만 설정 의존적 이득, 훈련 불안정성, 성능-비용 트레이드오프라는 관찰 결과가 포괄적 평가의 필요성을 뒷받침한다고 밝혔다. 더 많은 기법으로 벤치마크를 확장하면 이러한 패턴이 얼마나 일반적인지 확인할 수 있을 것이라고 덧붙였다.</p>
+<h2>시사점</h2>
+<p>새로운 방법을 제안하기보다 독립적인 평가를 우선해야 한다는 저자들의 주장처럼, 이 연구는 에이전트 훈련 연구 커뮤니티가 강력한 베이스라인을 선별하고, 미해결된 훈련 과제를 식별하며, 더 신뢰할 수 있고 비용 효율적인 에이전트 훈련 방법을 추구하도록 돕는 공통 평가 기준을 제공한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.19789" target="_blank" rel="noopener">huggingface.co/papers/2610.19789</a> · 2026-10-16</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

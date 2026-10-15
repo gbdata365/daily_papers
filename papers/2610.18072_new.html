@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>렌즈이레이즈</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#11 · Daily Papers 2026-10-16</span>
+      <span class="cat-tag">생성모델</span>
+      <span class="upvote-tag">▲ 36</span>
+    </div>
+    <h1 class="article-title">LensErase: A Foundation Model for Erase Anything</h1>
+    <p class="article-title-ko">렌즈이레이즈: 무엇이든 지우는 파운데이션 모델</p>
+    <p class="article-sub">1억 장 규모의 데이터셋과 마스크 인식 RoPE, 강화학습 기반 보상, 추론 시 고충실도 복원 기법을 결합해 객체·텍스트·워터마크·다중 객체 등 다양한 실세계 지우기(erase) 시나리오를 범용으로 처리하는 파운데이션 모델 LensErase를 제시한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.18072" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.18072" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: LensErase: A Foundation Model for Erase Anything</li>
+<li><strong>저자</strong>: Yunuo Chen, Xiuyu Wu, Qinhong Yang 등 (Shanghai Jiao Tong University, Nankai University, USTC, University of Sydney, Peking University, Microsoft)</li>
+<li><strong>출처</strong>: arXiv:2610.18072v1 [cs.CV] (2026년 10월 13일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://lensfamily.github.io/LensErase/">lensfamily.github.io/LensErase</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.18072">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>1억 장 규모의 데이터셋과 마스크 인식 RoPE, 강화학습 기반 보상, 추론 시 고충실도 복원 기법을 결합해 객체·텍스트·워터마크·다중 객체 등 다양한 실세계 지우기(erase) 시나리오를 범용으로 처리하는 파운데이션 모델 LensErase를 제시한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>객체 지우기는 사진·콘텐츠 제작·그래픽 디자인 등에 광범위하게 쓰이는 이미지 편집 기능이지만, 실세계의 다양한 요청에 안정적으로 대응하는 단일 모델을 만들기는 어렵다. 이미지의 1% 미만을 차지하는 작은 객체부터 장면의 거의 절반을 덮는 전경 객체까지 폭넓은 공간 스케일을 다뤄야 하고, 텍스트·로고는 섬세한 획을 손상 없이 지워야 하며, 반투명 워터마크는 섞인 픽셀로부터 원래 콘텐츠를 복원해야 한다. 다중 객체 제거는 공간적으로 분리된 여러 편집에서 장면의 일관성을 유지해야 하고, 반사·그림자 같은 연관 시각 효과는 선택 마스크 밖까지 확장될 수 있는 대상 종속적 변화를 인식하고 제거해야 한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>소스 이미지·마스크·타깃 이미지로 구성된 1억 107만 개의 삼중 데이터(LensErase-100M)를 구축: 일반 데이터(7760만), 워터마크 데이터(999만), 대형 마스크 데이터(402만), 시각적 텍스트 데이터(144만), 포스터 데이터(802만)로 구성되며, 기존 대표적 객체 제거 데이터셋보다 2~3자리 수 더 큰 규모.</li>
+<li>텍스트-투-이미지 모델 Lens의 강력한 생성 사전지식(prior)에서 LensErase를 사전학습하고, 별도의 마스크 토큰 시퀀스 없이 마스크 정보를 소스 이미지 토큰에 직접 주입하는 3D 회전 위치 인코딩 'Mask-Aware RoPE'를 제안.</li>
+<li>지도 미세조정과 계약 기반(contract-guided), 영역 인식(region-aware) 보상을 사용한 강화학습(DiffusionNFT)으로 모델을 정제하고, 추론 시점에 유효 편집 영역 밖의 콘텐츠를 선택적으로 복원하는 TraceFusion을 적용해 완전한 제거와 고충실도 보존을 동시에 달성.</li>
+</ul>
+<h2>방법론</h2>
+<p>전체 파이프라인은 데이터-사전학습-정제-추론 네 단계로 구성된다. 데이터 단계에서는 깨끗한 실제 이미지에 장면과 어울리는 객체를 삽입하고 그 쌍을 역방향으로 뒤집어 일반 데이터를 구성하고, 워터마크는 알파 합성, 포스터는 레이어 렌더링, 시각적 텍스트는 검증된 교사 모델의 편집, 대형 객체는 전경 합성 등 도메인별 파이프라인으로 신뢰 가능한 소스-타깃 감독을 확보한다. 사전학습 단계에서는 사전학습된 텍스트-투-이미지 모델 Lens의 이미지 분기(branch)로부터 이미지 분기와 조건 분기를 모두 초기화하고, 조건 분기는 손상되지 않은 소스 이미지를 받아 대상과 그 연관 효과(그림자, 반사 등)를 식별하게 한다. Mask-Aware RoPE는 영역 식별 정보를 별도 토큰 없이 소스 이미지 토큰에 직접 주입하고, 영역 가중 감독(region-weighted supervision)으로 의도된 편집 영역을 강조하여 LensErase-Base를 만든다. 이후 선별된 고품질·고해상도 데이터로 지도 미세조정을 수행하고, 완전한 제거·설득력 있는 재구성·비대상 콘텐츠 보존을 유도하는 영역 인식 보상을 사용한 강화학습(DiffusionNFT)으로 추가 정제한다. 마지막으로 추론 시 TraceFusion이 선택 마스크와 소스-출력 잔차(residual)로부터 유효 편집 영역을 추정하고, 그 영역 밖에서는 소스 이미지를 선택적으로 복원해 충실도를 높인다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>자연 이미지, 포스터, 워터마크, 시각적 텍스트를 포괄하는 500개 제거 사례로 구성된 새 벤치마크 LensErase-Bench를 구축해, 참조 없는(reference-free) 시각 평가로 제거 정확성, 재구성 품질, 콘텐츠 보존, 시각적 깨끗함을 측정했다(복수의 그럴듯한 재구성이 존재할 때 참조 기반 지표를 보완). 6개의 공개 벤치마크와 LensErase-Bench에서 12개의 기존 방법과 비교한 결과, LensErase는 참조 기반 객관적 지표와 참조 없는 VLM 평가 양쪽에서 상당한 개선을 보였으며, 다양한 지우기 시나리오 전반에서 강력하고 일관된 성능을 보였다. Ablation에서는 전체 보상을 사용했을 때 고충실도 제거(HiFi Removal) 성능이 가장 우수했다.</p>
+<h2>한계점</h2>
+<p>저자들은 초고해상도(예: 4K)로의 학습 확장이 여전히 어렵다고 명시했다. 대규모 데이터 구축이 부분적으로 기존 범용 이미지 편집 모델에 의존하는데, 이 모델들이 초고해상도 편집에서는 신뢰도가 떨어져 충분히 크고 일관된 4K급 훈련 데이터를 구성하기 어렵다는 것이다. 향후 연구로 더 신뢰할 수 있는 고해상도 데이터 구축과 더 어려운 지우기 시나리오 탐구를 제안했다.</p>
+<h2>시사점</h2>
+<p>대규모 데이터, 생성 사전지식 적응, 보상 기반 후처리 학습, 고충실도 후처리를 결합하는 접근은 '지우기(erase)'라는 특정 편집 기능을 위한 범용 파운데이션 모델을 만드는 확장 가능한 틀을 제시하며, 향후 다양한 지우기 관련 모델과 시각 편집 시스템의 기반이 될 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.18072" target="_blank" rel="noopener">huggingface.co/papers/2610.18072</a> · 2026-10-16</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

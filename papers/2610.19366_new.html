@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>보고</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#10 · Daily Papers 2026-10-16</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 43</span>
+    </div>
+    <h1 class="article-title">Seeing, Maintaining, and Learning: The Evolution of Multimodal Agent Memory</h1>
+    <p class="article-title-ko">보고, 유지하고, 배우기: 멀티모달 에이전트 메모리의 진화</p>
+    <p class="article-sub">멀티모달 에이전트 메모리를 '형성과 표현(Axis I)'과 '메모리 관리(Axis II)'라는 두 축으로 분석하는 틀을 제시하고, 정적(T1)-동적(T2)-자기진화(T3) 메모리의 3단계 분류를 통해 현재 시스템의 설계 패턴과 한계를 종합하는 대규모 서베이 논문이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.19366" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.19366" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Seeing, Maintaining, and Learning: The Evolution of Multimodal Agent Memory</li>
+<li><strong>저자</strong>: Minghao Guo, Qingyue Jiao, Xiujin Liu 등 (Rutgers, Notre Dame, Fudan 등 다수 기관의 대규모 공동 저자진)</li>
+<li><strong>출처</strong>: arXiv:2610.19366v1 [cs.AI] (2026년 10월 14일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/Seeing-Maintaining-Learning/multimodal-agent-memory-evolution">Seeing-Maintaining-Learning/multimodal-agent-memory-evolution</a> (GitHub 저장소)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.19366">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>멀티모달 에이전트 메모리를 '형성과 표현(Axis I)'과 '메모리 관리(Axis II)'라는 두 축으로 분석하는 틀을 제시하고, 정적(T1)-동적(T2)-자기진화(T3) 메모리의 3단계 분류를 통해 현재 시스템의 설계 패턴과 한계를 종합하는 대규모 서베이 논문이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>멀티모달 모델과 에이전트는 여러 모달리티의 정보를 통합해 세계와 더 인간처럼 상호작용하려 하지만, 장기 호라이즌·평생(lifelong) 과제로 나아갈수록 복잡하고 이질적인 멀티모달 데이터로부터 유용한 정보를 지속적으로 획득하는 것이 큰 난제로 남아있다. 이를 해결하려면 세션 간 연속성을 유지하고, 변화하는 사용자와 환경에 적응하며, 누적된 경험을 통해 메모리 관리 정책 자체를 정교화할 수 있는 효과적인 메모리 메커니즘이 필요하다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>멀티모달 에이전트 메모리를 분석하는 2축 프레임워크 제시: Axis I(형성과 표현)은 어떤 정보가 어떻게 인코딩되는지(모달리티별 임베딩, 텍스트·구조화 기록, 잠재·파라메트릭 표현 등)를 다루고, Axis II(메모리 관리)는 관리 방식의 진화 수준에 따라 T1 정적 메모리(고정 메모리 재사용), T2 동적 메모리(안정적 정책으로 메모리 갱신), T3 자기진화 메모리(진화하는 정책으로 메모리 갱신) 세 단계로 구분.</li>
+<li>이 틀을 바탕으로 반복되는 설계 패턴을 종합하고, 원본 충실도와 추상화의 균형, 시간적 유효성과 출처(provenance) 유지, 복구 가능한 근거에 메모리 사용을 접지(grounding)하는 것, 시간에 따른 메모리 정책 진화라는 네 가지 설계 원칙을 도출.</li>
+<li>멀티모달 에이전트 메모리를 위한 시스템 인프라(저장·이동·압축·인덱싱·일관성), 평가 차원과 벤치마크 지형, 응용 영역을 폭넓게 조사하고, 향후 과제와 전망을 제시.</li>
+</ul>
+<h2>방법론</h2>
+<p>이 논문은 실험적 방법론이 아니라 체계적 분류와 종합을 수행하는 서베이다. 저자들은 먼저 AI·인지과학의 고전적 메모리 이론과 현대 에이전틱 메모리의 기초, 그리고 멀티모달 메모리 생애주기(lifecycle)를 배경으로 정리한다. 이어 Axis I에서는 소스·모달리티별 표현(원본에 가까운 표현), 교차 표현된 명시적 메모리(텍스트·구조화 기록), 내재화된 잠재·파라메트릭 메모리(모델 가중치에 흡수된 형태), 그리고 이들을 혼합한 하이브리드 표현을 체계적으로 구분한다. Axis II에서는 T1(정적)·T2(동적)·T3(자기진화) 세 단계로 메모리 관리 방식을 나누고, 각 단계에서 요구되는 표현 조건을 교차 분석한다(5장). 나아가 6장에서는 물리적 저장·상주, 데이터 이동·압축·재구성, 인덱싱·재사용·스케줄링, 구체화(materialization)와 쓰기 반영, 일관성·조정이라는 시스템 인프라 관점을 다루고, 7장에서는 평가 차원, 모달리티별 벤치마크 지형, 응용 영역과 응용-평가 간 정합성 및 격차를 분석한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>이 논문은 새로운 모델이나 알고리즘을 제안하고 수치로 검증하는 연구가 아니라, 기존 문헌을 2축 프레임워크로 종합·분류하는 서베이이므로 별도의 실험 설정이나 수치 결과는 없다. 대신 방대한 기존 연구들을 Axis I/II의 범주에 따라 체계적으로 정리하고, 교차 분석(5장)을 통해 표현 방식이 메모리의 접근성·수정 가능성·검증 가능성·복구 가능성을 어떻게 제약하는지를 논증의 형태로 제시한다.</p>
+<h2>한계점</h2>
+<p>저자들은 결론에서 현재 시스템이 여전히 고정된 메모리와 안정적 정책을 통한 메모리 갱신(T1/T2)에 치우쳐 있으며, 온라인 정책 진화, 제한된 자원 내의 평생 메모리(bounded lifelong memory), 통제된 망각(governed forgetting), 생애주기를 고려한 평가는 아직 충분히 발전하지 않았다고 명시했다. 시스템 수준에서는 유한한 자원 제약 하에 메모리를 효율적이고 일관되게 저장·복원·재사용하는 통합된 메커니즘이 부족하며, 기존 벤치마크들은 메모리가 전체 생애주기에 걸쳐 유효하고 충분하며 실행 가능한지를 확립하기에는 아직 부족하다고 지적했다.</p>
+<h2>시사점</h2>
+<p>이 서베이는 멀티모달 에이전트 메모리 연구를 관통하는 공통 언어와 분류 체계를 제공함으로써, 서로 흩어져 있던 표현 방식과 관리 정책 연구들을 하나의 지도 위에 놓는다. 향후 연구는 검증·복구 가능한 멀티모달 근거를 제한된 자원 내에서 보존하고, 시간에 따라 진화하면서도 표현 간 일관성을 유지하는 메모리 상태를 다루며, 지속적인 피드백으로 메모리 관리 정책 자체를 개선하는 방향으로 나아가야 한다고 제언한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.19366" target="_blank" rel="noopener">huggingface.co/papers/2610.19366</a> · 2026-10-16</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

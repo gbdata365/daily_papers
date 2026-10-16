@@ -1,0 +1,142 @@
+<meta charset="UTF-8">
+<title>오픈GCUA</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#3 · Daily Papers 2026-10-17</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 266</span>
+    </div>
+    <h1 class="article-title">OpenGCUA: Toward a Fully Open Stack for Generalist Computer Use</h1>
+    <p class="article-title-ko">오픈GCUA: 범용 컴퓨터 사용을 위한 완전 개방형 스택을 향하여</p>
+    <p class="article-sub">컴퓨터 사용 에이전트가 GUI 클릭에만 의존하지 않고 코드 실행과 하네스(harness) 제어권의 일부를 모델 스스로에게 넘기도록 설계하면, 별도의 모델 재학습 없이도 8개 프런티어 모델 전부에서 작업 성능과 실행 효율이 동시에 크게 개선됨을 보이는 오픈소스 프로젝트 1차 공개 보고서.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.22200" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.22200" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: OpenGCUA: Toward a Fully Open Stack for Generalist Computer Use</li>
+<li><strong>저자</strong>: Hanzhang Zhou, Long Li, Quyu Kong, Lei Wang, Panrong Tong, Long Chen, Tianyu Xia, Gongjie Zhang, Xu Zhang, Chen Liu, Jianan Zhang, Chenglin Cai, Zhengwen Zeng, Steven Hoi, Yue Wang (Alibaba Token Hub / Alibaba Group, MAI-UI 팀)</li>
+<li><strong>출처</strong>: arXiv:2610.22200v1 [cs.CV] (2026년 10월 15일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 GitHub 저장소("OpenGCUA GitHub")와 프로젝트/인터랙티브 웹사이트 링크가 언급되어 있으나 구체적 URL 텍스트는 본문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.22200">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>컴퓨터 사용 에이전트가 GUI 클릭에만 의존하지 않고 코드 실행과 하네스(harness) 제어권의 일부를 모델 스스로에게 넘기도록 설계하면, 별도의 모델 재학습 없이도 8개 프런티어 모델 전부에서 작업 성능과 실행 효율이 동시에 크게 개선됨을 보이는 오픈소스 프로젝트 1차 공개 보고서.</p>
+<h2>배경 및 문제의식</h2>
+<ul>
+<li>컴퓨터 사용(computer use)에 대한 관심이 커지면서 GPT-6 Astra 등 최신 시스템은 더 이상 스크린샷 기반 GUI 클릭에만 의존하지 않고, 셸 명령, 접근성(accessibility) API, 애플리케이션/서비스 API 등 프로그래밍적 접근까지 결합해 작업을 수행한다. 저자들은 이를 "GUI 전용 상호작용"에서 "사용자의 컴퓨터에서 어떤 수단으로든 작업을 완수하는 시스템"으로의 전환점으로 본다.</li>
+<li>이런 흐름을 포착하기 위해 저자들은 <strong>범용 컴퓨터 사용 에이전트(Generalist Computer-Use Agent, GCUA)</strong> 라는 개념을 정의한다. GCUA는 "무엇을 관찰할지, 어떻게 행동할지, 작업을 어떻게 조직화할지"를 모델이 매 단계 스스로 결정하는 에이전트 시스템이다.</li>
+<li>문제는 GPT-6 Astra와 같은 프런티어 GCUA 구현체가 대부분 폐쇄형이라는 점이다. 모델 가중치, 전체 프롬프트 설계, 실기기(real-device) 하네스, 기기 제어 SDK, 실행 트라젝토리가 공개되지 않아, 커뮤니티가 이런 시스템의 설계를 재현하거나 비교·분석하기 어렵다.</li>
+<li>이에 저자들은 GCUA를 위한 풀스택(모델·시스템·트라젝토리·효율성·평가)을 커뮤니티와 함께 여는 오픈 프로젝트 **Open Generalist CUA(OpenGCUA)**를 제안하며, 이 논문은 그 첫 번째 릴리스 보고서다.</li>
+</ul>
+<h2>핵심 기여</h2>
+<ol>
+<li><strong>GCUA의 형식적 정의</strong>: 기존 GUI 에이전트, CLI 에이전트, 멀티에이전트 하이브리드, 저자들의 이전 작업인 GUI+CLI 하이브리드 에이전트(Qwen-UI-Agent)를 모두 "매 단계 (무엇을 관찰, 어떻게 행동, 어떻게 조직화)를 사전에 고정했는지 여부"라는 공통 수식으로 비교·포괄하는 틀을 제시한다.</li>
+<li><strong>코드 실행(code execution) 에이전트 설계</strong>: GUI 조작(PyAutoGUI 등)과 셸 명령을 하나의 파이썬 프로그램 안에서 조건문·반복문·변수로 결합하도록 하여, 중간 결과에 따라 다음 행동을 즉시 결정할 수 있게 한다.</li>
+<li><strong>하네스-투-모델 결정 이전(harness-to-model decision transfer)</strong>: 기존에는 하네스(실행 환경)가 "매 스텝 후 스크린샷 찍기"처럼 고정 규칙으로 처리하던 관찰 시점·작업 상태 관리 등의 결정을, 모델이 스스로 판단하도록 넘긴다(온디맨드 관찰, todo 기반 작업 상태 추적, 의도(intent) 명시 등).</li>
+<li><strong>실증 평가</strong>: OSWorld-v2 오프라인 벤치마크에서 Claude Opus 5, GPT-6 Astra를 포함한 8개 프런티어 모델에 동일한 OpenGCUA 하네스를 적용해, GUI 전용 배치 실행 대비 평균 부분 점수 +19.6점, 작업당 스텝 수 평균 −53.0% 라는 일관된 개선을 확인했다.</li>
+<li><strong>실기기(real-device) 하네스와 크로스디바이스 SDK 공개</strong>: 벤치마크가 포착하지 못하는 실제 사용자 컴퓨터 환경(공유 제어, 배경 창, 변화하는 요청 등)에 대응하는 5계층 구조의 실기기 하네스와, 컴퓨터·브라우저·모바일을 하나의 인터페이스로 다루는 크로스디바이스 SDK의 예비 버전을 공개한다.</li>
+<li><strong>구현·프롬프트·트라젝토리 공개</strong>: 8개 모델의 평가 트라젝토리와 하네스 구현, 프롬프트를 오픈소스로 공개해 커뮤니티가 코드 실행 및 하네스-투-모델 결정 이전 패턴을 분석할 수 있게 한다.</li>
+</ol>
+<h2>방법론</h2>
+<p><strong>GCUA의 형식화</strong>: 매 스텝 $t$에서 정책 $\pi_\theta$는 (무엇을 관찰할지 $q_t$, 어떻게 행동할지의 프로그램 $p_t$, 다음 작업 상태 $m_{t+1}$)을 작업 상태 $m_t$와 직전 관찰 $o_t$로부터 함께 산출한다. 행동 프로그램 $p_t$는 GUI, 접근성 트리(AX Tree), CLI, API라는 네 가지 인터페이스의 프리미티브를 자유롭게 조합할 수 있다. 기존 GUI 에이전트·CLI 에이전트·멀티에이전트 하이브리드·Qwen-UI-Agent(GUI+CLI 배치형)는 모두 이 세 결정 중 일부를 사전에 고정한 특수 사례로 표현된다.</p>
+<p><strong>코드 실행</strong>: 시스템 프롬프트가 PyAutoGUI(데스크톱), Playwright(브라우저), bash()(셸)를 코드 블록 안에서 사용하도록 지시하고, 하네스는 코드 블록을 추출·문법 검사 후 실행하며 표준출력/에러/실행 상태를 모델에 반환한다. 논문은 실제 트라젝토리에서 관찰된 다섯 가지 코드 실행 패턴을 제시한다: (1) 인터페이스 간 교차 활용(GUI 클릭 후 파일/상태를 코드로 검증한 뒤 다음 GUI 동작 진행), (2) 반복문 기반 실행(여러 대상에 동일 절차 반복), (3) 결과 의존적 실행(중간 결과를 코드 내 조건문으로 판단해 분기), (4) 관찰 준비(여러 뷰를 모아 하나의 콘택트 시트로 정리해 모델에 제시), (5) 실행 가능한 검증(assert 문으로 의도된 변경과 보존되어야 할 내용 모두를 프로그램 안에서 점검).</p>
+<p><strong>하네스-투-모델 결정 이전</strong>: screenshot() 함수로 모델이 다음 입력에 새 스크린샷이 필요한지 직접 판단하게 하는 "온디맨드 관찰", todo.update()/todo.list()로 진행 상황·미해결 사항을 모델이 직접 기록·조회하는 "작업 상태 추적", 각 프로그램 실행 전 <code>&lt;intent&gt;</code> 블록으로 코드의 목적을 명시하는 "행동 의도" 메커니즘을 도입한다. 반면 과거 스크린샷을 일괄 제거하는 롤링 스크린샷 버퍼, 오래된 텍스트 출력을 축약하는 마이크로 컴팩션 같은 컨텍스트 보존 정책은 하네스가 고정 규칙으로 계속 관리한다.</p>
+<p><strong>실기기 하네스(5계층 구조)</strong>: 모델(계획·코드 생성) → 런타임/호스트(영속 인터프리터, 다음 입력 구성) → 디바이스 SDK(관찰·행동을 명시적 리소스에 바인딩) → 드라이버(네이티브 접근성·좌표 조작으로 변환, trycua의 Cua Driver 활용) → 실제 앱/OS(권한과 진짜 상태의 근원)로 구성되며, 공유 기기에서의 간섭 최소화(접근성 동작 우선, 필요시 포그라운드로 단계적 확대), 명시적 관찰 대상 선택, 접근성 정보 관리, ask_user를 통한 사용자와의 지속적 상호작용 등을 설계 원칙으로 삼는다.</p>
+<p><strong>크로스디바이스 SDK</strong>: ui.ax(구조화된 접근성 관찰/행동)와 ui.vision(이미지 기반 관찰/좌표 행동)을 공통 인터페이스로 제공하고, mu.emit으로 선택된 관찰 결과만 모델에 전달하며, mu.files.copy 등으로 기기 간 파일 전송을 지원해 하나의 세션 안에서 폰·컴퓨터·브라우저를 넘나드는 작업을 조율한다.</p>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li><strong>벤치마크</strong>: OSWorld-v2의 82개 과제로 구성된 오프라인 서브셋(인터넷 접근이 필요 없는 과제만 선별, v2.1)을 사용했고, Claude Opus 5, GPT-6 Astra, Gemini 3.8 Flash, Qwen3.8-Max, Qwen3.8-Flash, Kimi K3, DeepSeek-V4.1-Flash, GLM-5.3-Flash 등 8개 모델을 비교했다. 평가 지표는 부분 점수(partial score), 성공률, 작업당 스텝 수, 작업당 출력 토큰 수다.</li>
+<li><strong>GUI 전용 대비 전체 GCUA 설정</strong>: 8개 모델 평균 부분 점수가 45.3에서 64.9로 +19.6점 상승했고, 스텝 수는 평균 53.0% 감소, 출력 토큰은 평균 27.2% 감소했다. GPT-6 Astra는 67.1→75.7점(스텝 −67.2%), GLM-5.3-Flash는 성공률이 가장 크게(+35.2점 부분 점수) 개선되는 등 모든 모델에서 일관되게 이득을 보였다.</li>
+<li><strong>코드 실행 단독 효과(ablation)</strong>: Qwen3.8-Max, DeepSeek-V4.1-Flash, GLM-5.3-Flash 세 모델에서, 동일한 GUI+CLI 접근 권한을 유지한 채 배치형 액션을 코드 실행으로 바꾸는 것만으로 부분 점수가 15.5~33.6점 상승하고 스텝 수가 55.3~63.1% 감소했다. 이는 접근 가능한 인터페이스가 같아도 실행 방식(배치 vs. 코드) 자체가 성능에 큰 영향을 준다는 것을 보여준다.</li>
+<li><strong>하네스-투-모델 결정 이전 단독 효과</strong>: 온디맨드 관찰 기능만으로 Qwen3.8-Max의 캐시 적중률이 75.6%→86.1%, DeepSeek-V4.1-Flash는 61.9%→76.3%로 상승했으며, 점수 하락 없이 효율이 개선되었다. todo(작업 상태 추적)는 점수 자체도 끌어올렸고(Qwen3.8-Max 62.4→64.0), intent(의도 명시)는 주로 사용자 이해를 돕는 용도로 점수에는 약간의 손해가 있었다.</li>
+<li><strong>비용/시간 제약 하 성능</strong>: 지출 상한을 두고 보면 저가 영역에서는 Qwen3.8-Flash·GLM-5.3-Flash·Gemini 3.8 Flash가 우위를 보이다가, 예산이 커지면 GPT-6 Astra가 최고 점수(75.7점, 약 $15.26/과제)로 역전된다. 즉 벤치마크 최고점 모델이 모든 예산 구간에서 최선은 아니다.</li>
+<li><strong>실기기(real macOS) 평가</strong>: 워크북 추론, PDF 양식 작성, 식단 제약 쇼핑 리서치, 호텔 비교 등 4개 실제 macOS 과제에서, 동일한 하네스 하에 Qwen3.8-Max는 GPT-6 Astra 대비 1.5배 많은 스텝, 5.7배 많은 출력 토큰, 19.4배 많은 추론 토큰을 사용했다. 사례 분석 결과 Qwen은 단순 스크린샷 촬영 같은 기본 동작에도 과도한 추론 토큰을 소모하고, 실제로 포그라운드가 아닌 작업 대상(배경 탭 등)을 제대로 특정하지 못해 엉뚱한 화면(로그인 페이지)을 캡처하는 등, 실기기 조건 적응과 전체 작업 범위를 코드로 올바르게 커버하는 능력에서 GPT-6 Astra에 뒤처짐을 확인했다(예: 워크북 125개 필수 항목 중 GPT는 125개 모두, Qwen은 85개만 채움).</li>
+</ul>
+<h2>한계점</h2>
+<ul>
+<li>이번 1차 릴리스는 새로 학습된 GCUA 모델을 포함하지 않으며, 기존 프런티어 모델들에 하네스·프롬프트 설계만 적용해 검증한 결과다. 저자들은 모델 자체 개발을 다음 릴리스의 핵심 과제로 명시한다.</li>
+<li>실기기 평가는 단 4개 macOS 과제, 모델별 최대 3회 반복 실행에 그쳐 결과를 일반적인 모델 순위로 받아들일 수 없고, 저자들도 이를 "경향성을 보여주는 예비 결과"로만 제시한다. 실기기용 벤치마크 자체도 아직 개발 중이다.</li>
+<li>비용/시간 제약 분석에서 기록된 소요 시간(wall-clock time)은 API 대역폭, 동시 실행 환경 수, 공급자 측 큐잉, 툴 실행 지연 등 통제되지 않은 조건에 영향을 받아 모델 간 비교 가능성이 제한적이며, 저자들도 이를 "탐색적(exploratory)" 증거로만 취급한다고 명시한다.</li>
+<li>시각 전용(스크린샷만) 피드백으로는 버튼 활성화 여부, 입력 필드 값 등 결과 의존적 조건을 프로그램이 직접 확인하기 어렵다는 한계가 있으며, 이는 접근성 트리 결합의 필요성으로 이어진다.</li>
+<li>todo·intent 같은 모델 생성 기록은 모델 자신의 판단(자가 보고)일 뿐 독립적인 환경 검증이 아니므로, 실제 작업 완료 여부를 보장하지 않는다.</li>
+<li>공개된 실기기 하네스와 크로스디바이스 SDK는 "예비(preliminary)" 버전이며 프로젝트 자체가 완성된 상태가 아니라고 저자들이 명시하고 있다.</li>
+</ul>
+<h2>시사점</h2>
+<ul>
+<li>컴퓨터 사용 에이전트 연구의 초점이 "GUI를 얼마나 잘 클릭하는가"에서 "코드 실행을 포함해 어떤 수단으로든 작업을 완수하는가"로 이동하고 있다는 저자들의 진단은, 향후 에이전트 설계와 벤치마크 모두가 코드 실행·프로그래밍적 접근을 기본 전제로 삼아야 함을 시사한다.</li>
+<li>모델 재학습 없이 하네스·프롬프트 설계만으로 모든 평가 모델에서 일관된 성능·효율 개선이 나타났다는 점은, 에이전트 성능 향상의 상당 부분이 시스템(하네스) 설계에 달려 있으며, 이는 모델 자체의 역량과는 별개로 벤치마킹·비교 시 반드시 통제해야 할 변수임을 보여준다.</li>
+<li>폐쇄형 프런티어 시스템(GPT-6 Astra 등)이 구현 세부사항을 공개하지 않는 상황에서, 하네스·SDK·트라젝토리를 공개하는 이번과 같은 오픈 프로젝트는 GCUA 설계 공간(무엇을 관찰·어떻게 행동·어떻게 조직화할지)에 대한 커뮤니티 차원의 체계적 비교 연구를 가능하게 한다.</li>
+<li>벤치마크 점수와 실기기 성능·효율 사이에 큰 괴리가 있을 수 있다는 실증 결과(Qwen3.8-Max의 과도한 추론 토큰 소모, 배경 창 오인식 등)는, 향후 에이전트 평가가 통제된 벤치마크를 넘어 실제 사용자 기기 환경에서의 신뢰성·비용 효율성까지 함께 측정해야 함을 보여준다.</li>
+</ul>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.22200" target="_blank" rel="noopener">huggingface.co/papers/2610.22200</a> · 2026-10-17</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

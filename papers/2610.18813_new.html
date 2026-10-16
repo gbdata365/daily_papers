@@ -1,0 +1,123 @@
+<meta charset="UTF-8">
+<title>셀프에볼빙 하네스</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#6 · Daily Papers 2026-10-17</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 187</span>
+    </div>
+    <h1 class="article-title">Self-Evolving Agent Harness</h1>
+    <p class="article-title-ko">셀프에볼빙 하네스: 자기진화형 에이전트 하네스</p>
+    <p class="article-sub">모델 가중치는 고정한 채 에이전트의 프롬프트·메모리·워크플로우·실행 코드 등 "소프트웨어 하네스(harness)"를 실행 피드백으로 지속적으로 개정하는 "하네스 자기진화(harness self-evolution)" 개념을 체계적으로 정의하고, 이를 진화 알고리즘 및 continual PAC-learning 관점에서 분석해 일반화·망각·승인에 대한 이론적 기준을 제시하는 프레임워크 논문이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.18813" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.18813" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Self-Evolving Agent Harness</li>
+<li><strong>저자</strong>: Chuyang Wei, Haoxiang Guan, Minghang Zhu, Kexin Zhou, Jiyan He, Xiren Zhou, Huanhuan Chen, Yifei Shen(교신저자) — Zhongguancun Academy, Zhongguancun Institute of Artificial Intelligence, 중국과학기술대학교(University of Science and Technology of China) 소속</li>
+<li><strong>출처</strong>: arXiv:2610.18813v1 [cs.AI] (2026년 10월 13일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/zgcagi/Harness-RSI">https://github.com/zgcagi/Harness-RSI</a> (코드·보충자료, 지속 업데이트되는 66페이지 분량의 동반 기술보고서 포함)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.18813">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>모델 가중치는 고정한 채 에이전트의 프롬프트·메모리·워크플로우·실행 코드 등 "소프트웨어 하네스(harness)"를 실행 피드백으로 지속적으로 개정하는 "하네스 자기진화(harness self-evolution)" 개념을 체계적으로 정의하고, 이를 진화 알고리즘 및 continual PAC-learning 관점에서 분석해 일반화·망각·승인에 대한 이론적 기준을 제시하는 프레임워크 논문이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>배포 이후 과업과 환경이 계속 변하기 때문에 에이전트는 지속적인 적응 메커니즘이 필요하다. 적응은 모델 가중치를 재학습하는 방식과, 모델은 고정한 채 하네스(프롬프트, 메모리, 워크플로우, 도구)를 수정하는 방식으로 나눌 수 있다. 저자들은 하네스 수정에 집중하는 이유로 (1) 하네스가 고정된 모델의 행동을 직접 규정하고 이전 실패에서 얻은 교훈과 과업 제약을 보존할 수 있다는 점, (2) 기존 모델 배포(심지어 비공개 API 모델)를 그대로 재사용할 수 있어 재학습·추가 체크포인트 비용을 피할 수 있다는 점, (3) 지시문·메모리·코드는 직접 검사, 버전 비교, 변경 추적이 가능해 모델 체크포인트 간 행동 차이를 추적하는 것보다 분석이 용이하다는 점을 든다. Reflexion, Voyager, Promptbreeder, Agent Workflow Memory 등 기존 방법들은 "무엇을 수정하는지, 후보를 어떻게 생성하는지, 어떻게 승인하는지"가 제각각이어서 통일된 분류체계와 신뢰성 있는 수용 기준이 부재하다는 문제의식에서 출발한다.</p>
+<h2>핵심 기여</h2>
+<p>논문은 세 가지 기여를 제시한다.
+1. <strong>정의와 운영적 분류체계</strong> (2~3장): 피드백 기반으로 지속되는 하네스 개정 생애주기를 정식화하고, 수정 대상을 해석형 상태 수정(interpreted-state updates: 지시문, 저장된 경험, 과업 수준 조정)과 실행형 수정(executable revisions: 역량 구현, 저장소/런타임 제어 로직, 플러그인 기반 서비스 구성)으로 분류한다.
+2. <strong>조건부 이론 분석</strong> (4장): 하네스 탐색 과정을 진화 알고리즘(EA) 구조와 대응시키고, 안정성(stability)·집중 부등식(concentration)을 이용해 기대 일반화, 예산 제한하의 유지(retention), 신선한 검증 데이터에 기반한 고확률 승인 규칙을 도출한다.
+3. <strong>시스템적 함의와 설계 트레이드오프</strong> (5~6장): 5가지 응용 영역에서 수정 사항의 전파·복구 부담을 분석하고, 모델-하네스 페어링, 배포, 재사용 결정과 연결하며 지속적 검증·안전 제약의 필요성을 논의한다.</p>
+<h2>방법론</h2>
+<p>논문은 하네스 H를 모델 M의 과업 환경 E 내 실행을 규율하는 소프트웨어·설정으로 정의하고, 하나의 실행을 τ ~ Run(M, H, E), 최종 평가를 y = J(τ)로 표기한다. 하네스의 런타임 기능을 7가지(에이전트 루프/실행 제어, 도구·스킬 오케스트레이션, 컨텍스트 구성, 메모리·상태 관리, 컨텍스트 압축, 스케줄링/협응, 실행 인프라)로 정리한 표(Table 1)를 제시한다. 자기진화는 라운드 k마다 이전 하네스 H(k-1)로 b개의 rollout 배치를 생성하고, Update 연산으로 새 하네스 H(k)를 얻는 과정으로 정의되며, 이 생애주기가 성립하려면 (1) 자신의 실행에서 얻은 피드백으로 알고리즘적으로 개정안을 구성·선택하며 갱신 메커니즘을 유지하는 것, (2) 승인된 개정이 저장되어 이후 런에 로드되는 지속성, 두 조건이 모두 필요하다고 규정한다.</p>
+<p>분류체계에서 해석형/실행형의 구분은 프로그래밍 언어가 아니라 "수정되는 아티팩트의 역할"에 따른다. 실행형 수정은 다시 (a) 콜러블 함수·모듈 단위의 컴포넌트/코드 패치, (b) 컨텍스트 구성·오케스트레이션 루프·실행 훅·복구·종료 로직까지 포함하는 저장소/런타임 로직 수정, (c) 선언적 인터페이스·의존성 제약·생애주기 연산을 통해 런타임 서비스 바인딩 자체를 교체하는 "Everything is a Plugin" 구조로 세분된다.</p>
+<p>이론 부분에서는 하네스 탐색을 변이(variation), 적합도 평가, 선택/유지라는 진화 알고리즘의 네 요소로 분해하고, Elitist (1+1)/(1+λ) 탐색, 아카이브 기반 탐색, 재조합, Quality-diversity(MAP-Elites), 협력적 공진화, Pareto 선택, 밴딧 기반 탐색 등 8가지 대응관계를 SICA, Self-Harness, DGM, DarwinX, HarnessBank, HarnessCompass, Meta-Harness, HGM 등 기존 방법에 매핑한다(Figure 2). 이어서 continual PAC-learning 관점에서 (i) replace-one exchangeability를 이용해 기대 일반화 격차의 상한(βs,k)을 유도하고, (ii) 고정된 회귀 예산(regression budget) εs,u 가정 하에 텔레스코핑 합으로 누적 퇴행(망각) 상한을 도출하며, (iii) 매 라운드 신선하고 독립적인 검증 데이터와 Hoeffding 부등식 + union bound를 이용해 1-δ 확률로 동시에 성립하는 승인 규칙(음의 상한을 가진 후보만 채택)을 제시한다. 또한 evaluator의 손실과 실제 목표 위험(target risk) 간 불일치 η를 명시적으로 반영한 충분조건(식 9)도 함께 제시한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>이 논문 자체는 새로운 알고리즘이나 실험을 수행하지 않으며, 기존 연구의 보고 수치를 재구성해 사례로 제시한다.
+- <strong>SpreadsheetBench</strong> (Table 2, Shen et al. 2026a 재구성): GPT-5.4-nano 기준 Initial 29.89% → SkillOpt 51.60% → SkillOpt-Lite 66.19% → HarnessOpt 단독 76.51% → HarnessOpt+skill 77.58%로 점진적 향상. 네 개 모델 전반에서 HarnessOpt+skill이 SkillOpt-Lite보다 5.69~11.39%p 개선되었고, 특히 GPT-5.4-nano+HarnessOpt+skill(77.58%)이 더 큰 모델인 GPT-5.5+SkillOpt(76.20%)를 능가하는 "모델-하네스 교차" 현상이 관찰되지만, 저자들은 이것이 동일 비용 조건에서의 우월성을 입증하는 것은 아니라고 명시한다.
+- <strong>DSH Everything/"Everything Is a Plugin" 사례</strong> (Table 3·4, Pan 2026 인용): 시뮬레이션된 사무 업무에서 Codex 기반 플러그인이 batch-lookup·요약 도구를 생성해 첫 과업의 도구 호출 수를 13회에서 3회로 줄이지만, 첫 과업 자체의 시간(+54.9%)·토큰(+15.7%) 비용은 증가한다. 5개 과업을 누적하면 토큰 110,351개, 시간 22.97초가 절감된다고 보고되나, 저자들은 첫 과업의 총계와 누적 1회차 보고 수치 간 불일치(예: 토큰 4,895 대 6,453)를 직접 지적하며 두 보고를 단일한 비용 궤적으로 취급할 수 없다고 명시한다. LiveBrowseComp에서는 XYZ+dsh-everything이 51.39점으로 40B 미만 모델 중 1위, 전체 11개 모델 중 2위를 기록한다.
+- <strong>엣지-클라우드 추론 지연시간</strong> (Figure 3, Shen et al. 2023 인용): 네트워크 전송률(100~500KB/s) 조건에서 클라이언트-엣지 협업 추론이 클라우드 전용·엣지 전용 방식보다 지연시간 측면에서 유리함을 보여주는 기존 연구 결과를 재인용한다.</p>
+<p>저자들은 이 모든 사례가 "잠재적 재사용 이득과 모델-하네스 페어링의 가능성"을 보여주는 예시일 뿐이며, 반복 실행, 동일 예산, 동일 과업 품질을 통제한 비교 실험이 필요하다고 스스로 한계를 명시한다.</p>
+<h2>한계점</h2>
+<ul>
+<li>본 논문은 신규 알고리즘이나 자체 실험 결과를 제시하지 않는 프레임워크/포지션 성격의 논문으로, 실증 수치는 모두 타 연구에서 재인용한 것이다.</li>
+<li>이론적 상한들은 과업이 라운드 내·간에 독립적으로 샘플링된다는 가정, 고정된 회귀 예산 가정 등 명시적 조건 하에서만 성립하며, 실제 배포 환경의 상관된(correlated) 세션에는 별도의 분석이 필요하다고 저자들이 인정한다.</li>
+<li>인용된 HarnessBank, Self-Harness 등의 실제 검증 방식은 훈련 과업 재사용 등으로 인해 논문이 요구하는 "신선하고 독립적인 검증 데이터" 조건을 충족하지 못한다는 점을 저자들이 직접 지적한다.</li>
+<li>평가 함수 J와 실제 목표 위험 간 불일치(η)에 대한 독립적 측정이 없으면, 제시된 보장은 evaluator가 정의한 손실에만 한정된다.</li>
+<li>EIP(Everything Is a Plugin) 사례의 비용 보고 자체에 불일치가 있어 하나의 신뢰할 수 있는 비용 궤적으로 간주할 수 없다.</li>
+<li>물리적 로봇, 임상, 공공서비스 등 분야에서는 소프트웨어 롤백이 실제 피해(부상, 장비 손상, 놓친 치료 시점, 손상된 기록 등)를 되돌릴 수 없는 비가역성 문제가 있다.</li>
+</ul>
+<h2>시사점</h2>
+<p>모델 재학습 없이 하네스 수준에서 지속적 적응을 다루는 접근은 비용과 검사 가능성 측면에서 실용적 대안이 될 수 있으며, 진화 알고리즘과 continual learning 이론을 결합함으로써 "언제 개정을 승인해야 안전한가"에 대한 정량적 기준(신선한 검증 데이터, Hoeffding 상한 기반 승인 규칙)을 제공해 실무자들이 임의적인 A/B 테스트 대신 통계적으로 근거 있는 승인 절차를 적용할 수 있게 한다. 개인 워크스페이스, 기업 자동화, 과학적 발견, 로봇공학, 공공/임상 서비스라는 다섯 가지 응용 영역에 대해 지속적 하네스 수정이 주는 지식 공유의 이점과 동시에 오류 전파, 책임 소재 불명확, 비가역적 피해의 위험을 체계적으로 짚고, 버전 관리, 권한 분리(최소 권한), 비상 정지·승인 절차를 수정 가능 영역 밖에 두는 등 구체적인 거버넌스 권고를 제시한다. 또한 모델-하네스 공동설계, 분산/엣지 실행, 플러그인 재사용의 경제성, 분포·평가자 변화에 대한 지속적 검증, 자기수정 시스템의 안전 경계 설정이라는 다섯 가지 향후 연구 방향을 제시함으로써 "하네스 RSI(recursive self-improvement)"라는 새로운 연구 분야의 의제를 구체화한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.18813" target="_blank" rel="noopener">huggingface.co/papers/2610.18813</a> · 2026-10-17</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

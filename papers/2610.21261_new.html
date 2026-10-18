@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>스파스 오토인코더 표현의 행동적 조합성</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#12 · Daily Papers 2026-10-19</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 106</span>
+    </div>
+    <h1 class="article-title">Behavioral Compositionality of Sparse Autoencoder Representations</h1>
+    <p class="article-title-ko">스파스 오토인코더 표현의 행동적 조합성</p>
+    <p class="article-sub">언어모델의 활성값을 해석하는 Sparse Autoencoder(SAE)의 개별 특징(feature)들이 하위 계산을 거친 뒤 실제 행동(behavior)에 미치는 영향을 "단순히 더하면 되는지"를 정량적으로 측정하는 지표 SAE Additivity Residual(SAR)을 제안하고, 학습된 SAE 좌표가 무작위 회전 좌표보다 더 가산적(additive)이지만 완전히 가산적이지는 않음을 실증했다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.21261" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.21261" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Behavioral Compositionality of Sparse Autoencoder Representations</li>
+<li><strong>저자</strong>: Haotian Ma, Ziye Mei, Frederic Sala (University of Wisconsin–Madison)</li>
+<li><strong>출처</strong>: arXiv:2610.21261v1 [cs.LG] (15 Oct 2026)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/OpenSAE/SAE-Behavioral-Compositionality">코드 저장소</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.21261">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>언어모델의 활성값을 해석하는 Sparse Autoencoder(SAE)의 개별 특징(feature)들이 하위 계산을 거친 뒤 실제 행동(behavior)에 미치는 영향을 "단순히 더하면 되는지"를 정량적으로 측정하는 지표 SAE Additivity Residual(SAR)을 제안하고, 학습된 SAE 좌표가 무작위 회전 좌표보다 더 가산적(additive)이지만 완전히 가산적이지는 않음을 실증했다.</p>
+<h2>배경 및 문제의식</h2>
+<p>SAE는 모델 활성값을 희소하고 선형적으로 디코딩되는 특징들로 분해해 모델 해석, 다중 특징 설명, 행동 조작(steering) 등에 사용된다. 그런데 SAE 디코더 자체는 선형이지만, 디코딩된 기여분들이 이후 신경망 레이어를 통과하면서 서로 강화·상쇄·상호의존하는 비선형 상호작용을 일으킬 수 있다. 기존 SAE 평가 연구들은 재구성 오차, 희소성, 해석 가능성 등을 측정했지만, 독립적으로 특징을 특성화한 뒤 이를 조합해 회로(circuit)나 결합 설명, 개입(intervention)을 만들었을 때 그 결과가 실제로 신뢰할 만한지는 다루지 않았다. 즉 "개별 특징의 효과를 알면 그 합으로 전체 효과를 예측할 수 있는가"라는 근본 질문이 미해결 상태였다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li><strong>행동적 조합성(behavioral compositionality) 측정 틀 제시</strong>: 선택된 SAE 디코딩 기여분의 부분집합을 유지/제거하며 나머지 활성값은 고정한 상태로 하위 모델에 전파시켜, 그 행동 반응이 1차(개별 특징 합) 근사로 얼마나 잘 설명되는지를 측정하는 SAR 지표를 정의했다.</li>
+<li><strong>엄밀한 이론적 연결</strong>: 독립적 부분집합 샘플링 하에서 SAR이 정확히 해당 차수 이상의 상호작용 에너지와 동일함을 증명하고(정리 1), 이 값이 "연합(coalition) 순서 보존 오차"의 상한이 됨을 보였다(정리 2). 또한 하위 연속함수가 아핀(affine)이면 SAR1이 0이 됨을 보였다(따름정리 1).</li>
+<li><strong>실증적 비교</strong>: 학습된 SAE 좌표를 동일 부분공간 내 합을 보존하는 무작위 직교회전과 비교해, 18개의 모델·행동 설정 전체에서 학습된 좌표가 더 낮은 1차 잔차(SAR1)를 보임을 입증했고, 쌍별(pairwise) 항을 추가하면 모든 설정에서 held-out 연합 순서 예측이 개선되며 이는 동일 파라미터 수의 무작위 3차항 대조군보다 우수함을 보였다.</li>
+</ol>
+<h2>방법론</h2>
+<p>언어모델 F의 특정 레이어·토큰 위치 활성값 h_x에서, 프롬프트별 상위 K개 활성 SAE 특징의 디코딩된 기여분 δ_i(x) = z_i(x)d_i를 정의한다. 특징 부분집합 S에 대해 S에 속한 기여분은 유지하고 나머지는 제거한 패치된 활성값을 상위 동결된 레이어에 통과시켜 행동 반응 g_x(S) = ψ(F_{ℓ←h̃_x(S)}(x))를 얻는다(S=전체 집합이면 원래 활성값과 동일). 이 g_x를 r차 이하 상호작용만 포함하는 함수 공간 A_r(N)에 L2 투영한 Π_r g_x와의 잔차를 분산 대비 비율로 정규화한 것이 SAR_r이며, SAR_1은 "개별 특징 효과만으로 설명 안 되는 변동 비율"이다. 독립 베르누이 포함 샘플링 하에서는 SAR_r이 r차 초과 상호작용 항들의 정규화된 에너지와 정확히 일치함을 증명했다(정리 1). 비교 기준으로는, 선택된 부분공간을 보존하면서 합을 유지하는 직교행렬 Q(Q1=1)로 SAE 좌표를 무작위 회전시킨 D_x^Q = D_x Q를 사용해, "SAE가 학습한 좌표 자체"가 조합성에 기여하는지 "선택된 부분공간 자체"의 성질과 구분했다. 실제 추정은 샘플링한 연합(coalition)들을 학습/평가셋으로 나누어 저차 모델을 적합(fit)하고 held-out 셋에서 예측 잔차, Spearman 순위 충실도(rank fidelity), 부호 오차, 선택 후회(selection regret) 등을 계산하는 방식으로 이루어졌다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Gemma-3 4B, Mistral-7B, Llama-3.1 8B 세 모델에 대해 단순 복사(simple copying), 주어-동사 일치, 성별 대명사 선호, CounterFact, IOI, 비교 판단(greater-than) 등 6가지 행동 과제로 실험했다(추가로 7개 파이프라인과 여러 표현 깊이에서도 분석). 각 프롬프트마다 상위 K=16개 활성 SAE 기여분을 선택하고 384개 연합을 샘플링해(256개 학습, 128개 평가) 분석했다. 결과: 57개의 모델·레이어·행동 조합 전체에서 median dSAR1이 양수로, 1차 가산성이 완전히 성립하지 않음을 확인했다(아핀 대조군은 수치적으로 0). 단순 복사와 주어-동사 일치는 CounterFact보다 잔차가 낮았다. 학습된 SAE 좌표는 18개 설정 모두에서 무작위 회전 좌표보다 낮은 1차 잔차를 보였다. 쌍별 항 추가는 모든 설정에서 held-out 연합 순서 예측을 개선했고, 동일 파라미터 수의 무작위 3차항 대조군을 능가했다. 결합 스티어링(steering) 실험에서는 쌍별 모델링이 순위 충실도를 0.5874에서 0.7790으로 높이고, 순서 오차를 0.1444에서 0.0606으로 낮췄다.</p>
+<h2>한계점</h2>
+<p>논문에 따르면 SAR은 모집단 상호작용 구조를 정확히 포착하지만, 실제 추정값(dSAR)은 유한 샘플 기반 held-out 예측 잔차이지 모집단 SAR 자체는 아니며 구조적 잔차와 적합 오차가 혼재되어 있다. 평가 연합 수는 조합 공간(2^K) 전체를 다 보지 못하고 샘플링(384개)에 의존한다. 또한 실험은 주로 3개의 중간 규모 모델(4B~8B)과 특정 레이어·6가지 행동 과제에 국한되어 있어, 더 큰 모델이나 다른 유형의 행동으로의 일반화는 논문에 명시되지 않음.</p>
+<h2>시사점</h2>
+<p>SAE 기반 해석가능성 연구에서 "특징이 해석 가능하다"는 것과 "특징들의 효과가 가산적으로 조합된다"는 것은 별개의 문제이며, 다중 특징을 결합한 회로 설명이나 스티어링 개입을 설계할 때는 반드시 쌍별 이상의 상호작용을 고려해야 신뢰할 수 있는 결과를 얻을 수 있음을 보여준다. 이는 향후 SAE 기반 모델 해부(model editing), 행동 조작, 안전성 개입 연구에서 단순 선형 가산 가정의 한계를 명시적으로 점검해야 한다는 실무적 지침을 제공한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.21261" target="_blank" rel="noopener">huggingface.co/papers/2610.21261</a> · 2026-10-19</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

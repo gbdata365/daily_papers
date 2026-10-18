@@ -56,13 +56,13 @@
 <header class="article-head">
   <div class="wrap">
     <div class="kicker-row">
-      <span class="rank">#9 · Daily Papers 2026-10-17</span>
-      <span class="cat-tag">생성모델</span>
-      <span class="upvote-tag">▲ 114</span>
+      <span class="rank">#10 · Daily Papers 2026-10-19</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 119</span>
     </div>
     <h1 class="article-title">InfiniSplat v2: Analyzing and Improving Feed-Forward 3DGS from Any Views</h1>
-    <p class="article-title-ko">인피니스플랫 v2: 임의 시점으로부터의 피드포워드 3D 가우시안 스플래팅 분석 및 개선</p>
-    <p class="article-sub">임의의 시점에서 입력된 이미지로부터 3D Gaussian Splatting(3DGS) 장면을 한 번의 순전파로 복원하는 피드포워드(feed-forward) 방식에서, 기하(geometry) 예측과 가우시안 속성(attribute) 예측을 구조적으로 분리하고 학습 방식을 개선함으로써 대각도(large-angle) 시점 변화에서도 고품질 노벨뷰 렌더링을 달성한 연구다.</p>
+    <p class="article-title-ko">인피니스플랫 v2: 임의 시점에서의 피드포워드 3DGS 분석 및 개선</p>
+    <p class="article-sub">사전학습된 멀티뷰 기하 모델(DA3)이 예측한, 다소 부정확한 포인트 클라우드 위에서 Gaussian 속성(불투명도·스케일·회전·색상)만을 별도 브랜치로 학습하고, 학습 시 예측 카메라 대신 정답(GT) 카메라로 정렬하며, 입력 시점과 크게 다른 방향의 타깃 뷰로 지도학습함으로써, 임의 시점 특히 큰 시점 변화에서도 고품질 노벨뷰 렌더링을 가능케 하는 피드포워드 3D Gaussian Splatting(3DGS) 기법 InfiniSplat v2를 제안한다.</p>
     <div class="meta-links">
       <a href="https://huggingface.co/papers/2610.20341" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
       <a href="https://arxiv.org/abs/2610.20341" target="_blank" rel="noopener">arXiv 원문 →</a>
@@ -74,48 +74,29 @@
   <div class="wrap">
 <ul>
 <li><strong>제목</strong>: InfiniSplat v2: Analyzing and Improving Feed-Forward 3DGS from Any Views</li>
-<li><strong>저자</strong>: Yongzhen Hu, Hao Yu (공동 1저자), Jiawei Wang, Xianming Zeng, Jianyun Xu, Xingliang Liu, Ruizhen Hu, Xiaowei Zhou, Hujun Bao, Sida Peng (교신저자). Zhejiang University, Hello TransTech, Shenzhen University, Causa Robotics 소속.</li>
-<li><strong>출처</strong>: arXiv:2610.20341v1 [cs.CV] (2026년 10월 14일)</li>
-<li><strong>프로젝트 페이지</strong>: <a href="https://zju3dv.github.io/InfiniSplat2">https://zju3dv.github.io/InfiniSplat2</a></li>
+<li><strong>저자</strong>: Yongzhen Hu, Hao Yu, Jiawei Wang, Xianming Zeng, Jianyun Xu, Xingliang Liu, Ruizhen Hu, Xiaowei Zhou, Hujun Bao, Sida Peng (Zhejiang University, Hello TransTech, Shenzhen University, Causa Robotics)</li>
+<li><strong>출처</strong>: arXiv:2610.20341v1 [cs.CV] (14 Oct 2026)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://zju3dv.github.io/InfiniSplat2">zju3dv.github.io/InfiniSplat2</a></li>
 <li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.20341">arXiv PDF 보기</a></li>
 </ul>
 <h2>한 줄 요약</h2>
-<p>임의의 시점에서 입력된 이미지로부터 3D Gaussian Splatting(3DGS) 장면을 한 번의 순전파로 복원하는 피드포워드(feed-forward) 방식에서, 기하(geometry) 예측과 가우시안 속성(attribute) 예측을 구조적으로 분리하고 학습 방식을 개선함으로써 대각도(large-angle) 시점 변화에서도 고품질 노벨뷰 렌더링을 달성한 연구다.</p>
+<p>사전학습된 멀티뷰 기하 모델(DA3)이 예측한, 다소 부정확한 포인트 클라우드 위에서 Gaussian 속성(불투명도·스케일·회전·색상)만을 별도 브랜치로 학습하고, 학습 시 예측 카메라 대신 정답(GT) 카메라로 정렬하며, 입력 시점과 크게 다른 방향의 타깃 뷰로 지도학습함으로써, 임의 시점 특히 큰 시점 변화에서도 고품질 노벨뷰 렌더링을 가능케 하는 피드포워드 3D Gaussian Splatting(3DGS) 기법 InfiniSplat v2를 제안한다.</p>
 <h2>배경 및 문제의식</h2>
-<p>3D Gaussian Splatting은 명시적(explicit) 3D 장면 표현을 이용해 효율적인 novel view rendering을 가능하게 했지만, 원래는 장면마다 개별적으로 최적화(per-scene optimization)해야 했다. 최근에는 DUSt3R, MASt3R, VGGT, Depth Anything 3(DA3) 같은 사전학습된 멀티뷰 기하 모델(geometry foundation model)이 등장하면서, 입력 이미지들로부터 깊이와 카메라를 예측해 점군(point cloud)을 얻고, 이를 바탕으로 피드포워드 방식으로 가우시안 장면을 바로 예측하는 연구(DA3-GS, GS-LRM, FLARE 등)들이 늘고 있다.</p>
-<p>하지만 이렇게 예측된 점군은 전체적으로는 그럴듯해도, 여러 시점에서 역투영(back-projection)한 점들을 하나의 좌표계로 합치면 서로 어긋나거나 공중에 떠 있는 듯한(flying point) 고립된 점 군집이 생기는 문제가 흔하다. 기존 방법(예: DA3-GS)은 이런 불완전한 기하 예측 위에서 가우시안 속성까지 함께 학습하다 보니, 큰 시점 변화가 있는 novel view에서 블러(blur), 고스팅(ghosting), 디테일 손실 같은 아티팩트가 두드러진다는 것이 저자들의 핵심 문제의식이다.</p>
+<p>3D Gaussian Splatting(3DGS)은 명시적 장면 표현을 통해 효율적인 렌더링을 지원하며, 최근의 피드포워드 기법들은 입력 이미지로부터 Gaussian 장면을 직접 예측해 장면별 최적화 없이도 노벨뷰 합성을 수행한다. 이때 DUSt3R, VGGT, Depth Anything 3(DA3) 같은 사전학습 멀티뷰 기하 모델이 깊이와 카메라를 예측해 포인트 클라우드를 구성하는 출발점을 제공하지만, 이 포인트 클라우드는 전체적인 장면 구조는 잘 포착해도 공간적으로 고립되거나 뷰 간 불일치하는 "플라잉 포인트" 군집을 포함한다. 기존 방법(DA3-GS 등)은 이런 기하 위에서 Gaussian 속성을 함께 예측하지만, 결과 렌더링에는 블러·고스팅·디테일 손실이 여전히 나타난다. 저자들은 이런 불완전한 기하 예측을 그대로 활용하면서도 고품질의, 특히 큰 시점 변화에서도 안정적인 노벨뷰 렌더링을 만들어내는 Gaussian 속성 학습 방법이 필요하다는 문제의식에서 출발한다.</p>
 <h2>핵심 기여</h2>
-<p>논문은 가우시안 속성 학습에 영향을 주는 세 가지 핵심 요인을 분석하고, 각각에 대응하는 구조·학습 개선을 제안한다.</p>
-<ol>
-<li><strong>듀얼 브랜치 아키텍처(기하-속성 분리)</strong>: 기존 방법들이 기하 예측과 가우시안 속성 예측을 공동으로 최적화하면서 기하 품질이 함께 저하되는 현상을 발견하고, 기하를 예측하는 branch를 고정(freeze)한 채 별도의 학습 가능한 branch가 가우시안 속성만 예측하도록 구조를 재설계했다.</li>
-<li><strong>GT 카메라 기반 정렬 학습</strong>: 학습 시 예측된 카메라 포즈를 그대로 쓰면 포즈 오차가 네트워크를 오도할 수 있다는 점을 밝히고, 학습 중에는 ground-truth(GT) 카메라 포즈를 이용해 예측된 가우시안들을 정렬(scale-align)한다.</li>
-<li><strong>대각도(large-angle) 타겟뷰 지도학습</strong>: 입력 시점 근방의 뷰로만 지도학습하면 가우시안의 스케일·방향이 충분히 제약되지 않는다는 점에 착안해, 입력 시점과 광학축 방향이 크게 다른 타겟 뷰를 우선적으로 샘플링해 지도학습에 사용한다.</li>
-</ol>
-<p>이 세 가지 개선을 결합한 결과, 6개 데이터셋에서 포즈가 주어진(pose-conditioned) 설정과 포즈가 없는(pose-free) 설정 모두에서 평가된 베이스라인들 중 평균 LPIPS와 DISTS가 가장 우수했다. 또한 이미지 재구성 손실만으로 학습된 불투명도(opacity)가 여러 시점 간 기하적으로 일관되지 않은 점들의 렌더링 기여도를 선택적으로 억제한다는 관찰도 제시한다.</p>
+<p>논문은 세 가지 핵심 개선을 제시한다.
+1. <strong>이중 브랜치 구조(기하-속성 분리)</strong>: 기하 예측과 Gaussian 속성 예측을 함께 최적화(fine-tuning)하면 오히려 기하 자체가 저하된다는 점을 실험적으로 확인하고, 기하 브랜치(DA3)는 동결(frozen)한 채 Gaussian 속성만 예측하는 학습 가능한 별도 브랜치를 도입했다.
+2. <strong>스케일 정렬 GT 카메라 학습</strong>: 학습 시 예측된 카메라 포즈를 그대로 사용하면 포즈 오차가 큰 각도(large-angle) 지도학습 상황에서 네트워크를 오도할 수 있음을 발견하고, 평균 반경 거리 정규화로 스케일을 맞춘 GT 카메라를 입력 뷰 역투영과 타깃 뷰 렌더링 모두에 일관되게 사용하도록 했다.
+3. <strong>큰 각도 타깃 뷰 지도학습</strong>: 입력 시점 근처의 타깃 뷰로만 지도학습하면 Gaussian의 스케일·방향이 충분히 제약되지 않는다는 점에 착안해, 입력 카메라들과 광학축 각도 차이가 큰 타깃 뷰를 우선적으로 샘플링해 다양한 투영 방향에서 Gaussian 형태를 제약했다.</p>
+<p>이 세 가지 개선을 결합한 동일한 학습 모델이 6개 데이터셋에서 포즈 조건부(pose-conditioned)·포즈 미사용(pose-free) 두 설정 모두 평가 대상 중 최저(최고 품질) 평균 LPIPS·DISTS를 달성했으며, 포즈 조건부 설정에서는 최강 베이스라인 대비 LPIPS 25.8%, DISTS 32.9% 감소를 보였다.</p>
 <h2>방법론</h2>
-<p>전체 파이프라인은 DA3(Depth Anything 3) 기반 가우시안 복원(DA3-GS)을 배경으로 한다. N개의 입력 이미지(및 선택적 카메라 조건)로부터 M개의 가우시안 {(중심 μ, 불투명도 α, 스케일 s, 회전 q, SH 색상 c)}를 예측해 novel view를 렌더링하는 것이 목표다.</p>
-<ul>
-<li><strong>(1) 듀얼 브랜치 구조</strong>: 동일한 사전학습 DA3 가중치로부터 독립적으로 파라미터화된 두 branch를 구성한다. 고정된 기하 branch(Φ_geo)는 깊이맵과 카메라를 예측하고, 학습 가능한 속성 branch(Φ_attr)는 멀티레이어 패치 특징을 추출해 DPT 기반 가우시안 디코더로 픽셀별 속성(ξ)을 예측한다. 속성 branch는 마지막 K개의 Transformer 블록만 파인튜닝하며, 위치 오프셋 없이 역투영된 점 위치를 가우시안 중심으로 그대로 사용한다.</li>
-<li><strong>(2) 스케일 정렬 학습(Scale-aligned training)</strong>: 예측 깊이·카메라의 역투영 좌표계와 GT 지도 카메라 좌표계 사이의 불일치를 줄이기 위해, Mean Radial Distance Normalization으로 예측 재구성의 스케일을 정규화하고, Umeyama 알고리즘으로 GT 카메라를 이 정규화된 스케일에 맞춰 정렬한다. 학습 시 입력 뷰의 역투영과 타겟 뷰 렌더링 모두 이 스케일 정렬된 GT 카메라를 사용함으로써, 예측 포즈로 만든 점과 GT 포즈로 지도학습하는 데서 오는 불일치(mismatch)를 방지한다. 역투영된 점들은 AnySplat·WorldMirror 2.0 방식의 복셀(voxel) 기반 전략으로 중복 점을 병합한다.</li>
-<li><strong>(3) 랜덤 대각도 타겟뷰 지도학습</strong>: 지도학습 전에 불투명도가 임계값 τ_α 미만인 가우시안을 가지치기(pruning)한다. 후보 타겟 카메라의 광학축과 가장 가까운 입력 뷰의 광학축 사이 각도 차이를 점수화해, 각도 차이가 큰(viewing direction이 크게 다른) 타겟 뷰를 우선 샘플링해 입력 뷰와 함께 렌더링 지도학습에 사용한다. GT 깊이 기반 워프 마스크로 적어도 하나의 입력 뷰에서 깊이가 일관되는 영역만 손실 계산에 포함한다.</li>
-<li><strong>학습 후 refinement(3.3절)</strong>: 초기 장면 G0에서 시작해, 입력 뷰로의 렌더링 그래디언트(RenderGrad)를 피드백 신호로 사용하는 recurrent KNN Transformer 기반 refiner가 가우시안 속성(중심은 고정)을 반복적으로 업데이트한다.</li>
-<li><strong>2단계 학습</strong>: Stage I은 양 branch 모두 GT 포즈 조건 하에 입력·타겟 렌더링을 masked L1 + LPIPS 손실로 지도학습(속성 branch의 마지막 K개 블록과 가우시안 디코더만 갱신)하고, Stage II는 복원기(reconstructor)를 고정한 채 특징 투영과 refiner만 학습한다. 추론 시에는 포즈가 주어지면 공급된 포즈로, 없으면 기하 branch가 예측한 포즈로 가우시안 중심을 구성하는 동일 모델을 사용한다.</li>
-</ul>
+<p>입력 이미지들에 대해 동결된 DA3 기하 브랜치(Φ_geo)가 깊이 맵과 카메라를 예측하고, DA3와 동일한 가중치로 초기화되지만 마지막 K(=10)개 트랜스포머 블록만 미세조정되는 학습 가능한 속성 브랜치(Φ_attr)가 멀티레이어 패치 특징을 추출해 DPT 디코더를 통해 불투명도·스케일·회전·색상 등 Gaussian 속성을 예측한다. Gaussian 중심(μ)은 예측된 깊이의 역투영 위치로 고정되며 학습 가능한 위치 오프셋을 두지 않는다. 학습 시에는 "평균 반경 거리 정규화"로 예측 깊이·카메라의 스케일을 정규화한 뒤, Umeyama 알고리즘으로 GT 카메라 중심을 이 정규화된 스케일에 맞춰 정렬하고, 이 스케일 정렬된 GT 카메라로 입력 뷰 역투영과 타깃 뷰 렌더링을 모두 수행해 예측-GT 포즈 불일치로 인한 잔차를 제거한다. 중복 포인트는 AnySplat·WorldMirror 2.0 방식의 복셀 기반 병합으로 정리하고, 불투명도가 임계값 미만인 포인트는 가지치기한다. 타깃 뷰 샘플링 시에는 입력 카메라들과의 광학축 각도 차이(식 5)가 큰 후보에 편향된 확률로 샘플을 뽑아 큰 각도 지도학습을 구현한다. 학습은 2단계로 진행되며, 1단계(Stage I)는 마스킹된 L1 손실과 LPIPS 손실로 속성 브랜치와 Gaussian 디코더만 학습하고, 2단계(Stage II)는 재구성기를 고정한 채 입력 뷰 렌더링 그래디언트와 DPT 특징을 결합해 순환 KNN 트랜스포머 기반 정제(refinement) 모듈이 Gaussian 속성(중심 제외)을 반복 보정하도록 학습한다.</p>
 <h2>실험 설정 및 결과</h2>
-<ul>
-<li><strong>학습 데이터</strong>: Hypersim, Raw3D, ScanNet++ 혼합(학습/검증 장면 분리).</li>
-<li><strong>평가 데이터셋(6종)</strong>: DL3DV, ETH3D, NRGBD, Mip-NeRF 360, RealEstate10K(RE10K), DTU. 입력 뷰 수 N ∈ {4, 8, 16}, 타겟 뷰 4개씩 사용.</li>
-<li><strong>비교 베이스라인</strong>: tttLRM, AnySplat, C3G, QuerySplat, DA3-GS, DepthSplat, ReSplat, TokenGS, VolSplat, WorldMirror 2.0.</li>
-<li><strong>평가지표</strong>: LPIPS, DISTS(주 지표)와 PSNR, SSIM.</li>
-<li><strong>주요 결과</strong>: 포즈가 주어진 설정에서 동일하게 학습된 모델의 피드포워드 출력이 가장 낮은(즉 최고) 평균 LPIPS/DISTS를 기록했으며, 가장 강력한 베이스라인 대비 LPIPS는 25.8%, DISTS는 32.9% 감소했다. 포즈가 없는 설정에서는 WorldMirror 2.0 대비 LPIPS 19.5%, DISTS 30.7% 개선. refinement(3회 업데이트, Ours*)를 적용하면 포즈 조건 설정에서 PSNR·SSIM·LPIPS·DISTS 4개 지표 모두 1위를 기록했다.</li>
-<li><strong>Ablation</strong>: ETH3D·DTU에서 속성 branch 파인튜닝(A), 기하 고정(G), GT 카메라 역투영(C), 대각도 지도학습(V) 각각을 제거했을 때 모두 성능이 저하됨을 확인. 특히 기하를 함께 파인튜닝하면(w/o G) 위치 업데이트가 속성 오차를 보상하는 경로가 생겨 LPIPS/DISTS가 각각 16.6%/23.2% 악화되었고, 고정 중심 대신 학습된 위치 오프셋을 쓰면(w/ O) 국소적 블러와 깊이 왜곡이 발생했다. GT 카메라 역투영은 DTU LPIPS를 예측 카메라 대비 36.1% 개선시켰다.</li>
-<li><strong>불투명도-기하 일관성 분석</strong>: Hypersim 검증 장면에서 GT 깊이 라벨로 분석한 결과, 임계값 0.01로 가지치기하면 전체 점의 7.5%만 제거되지만 기하적으로 불일치하는(outlier) 점의 51.8%가 제거되고, 표면과 일치하는 점의 93.3%는 보존됨을 확인했다. 이는 이미지 재구성 손실만으로도 불투명도가 불일치 점을 선택적으로 억제함을 보여준다.</li>
-<li><strong>추가 실험</strong>: refinement와 Adam 기반 직접 그래디언트 디센트 비교, 입력 해상도별 추론 지연시간 측정(H20 GPU 기준, 1022×756 해상도에서 평균 5.6초), KITTI 1,000여 프레임 슬라이딩 윈도우를 이용한 대규모 거리 장면 복원 등도 제시된다.</li>
-</ul>
+<p>Hypersim·Raw3D·ScanNet++ 혼합 데이터로 학습한 뒤 DL3DV, ETH3D, NRGBD, Mip-NeRF 360, RealEstate10K, DTU의 6개 데이터셋에서 입력 뷰 수 N∈{4,8,16}으로 평가했다. tttLRM, AnySplat, C3G, DA3-GS, DepthSplat, QuerySplat, ReSplat, TokenGS, VolSplat, WorldMirror 2.0과 비교한 결과, InfiniSplat v2(피드포워드 출력)는 포즈 조건부·포즈 미사용 두 설정 모두에서 평균 LPIPS·DISTS 1위를 기록했다(포즈 조건부: LPIPS 0.2472, DISTS 0.1163; 포즈 미사용: LPIPS 0.3026, DISTS 0.1341). 정제(refinement) 단계를 추가한 Ours*는 포즈 조건부에서 추가로 소폭 개선되었다. ETH3D·DTU에서의 구성요소별 제거(ablation) 실험 결과, 기하 브랜치를 미세조정하면(w/o G) LPIPS가 오히려 악화되었고(기하 동결 시 16.6~23.2% 개선), 학습 가능한 위치 오프셋을 추가하면(w/ O) 블러와 깊이 왜곡이 발생했다. GT 카메라 역투영을 생략하면(w/o C) DTU LPIPS가 36.1% 악화되었고, 큰 각도 지도학습을 생략하면(w/o V) 두 지표 모두 저하되었다. 추가로, 이미지 재구성 손실만으로 학습된 불투명도가 기하적으로 불일치하는 포인트를 선택적으로 억제한다는 점도 확인했다(임계값 0.01에서 전체 포인트의 7.5%만 제거하면서 불일치 포인트의 51.8%를 제거).</p>
 <h2>한계점</h2>
-<p>논문이 명시한 한계는 다음과 같다. 불투명도 학습과 가지치기가 신뢰할 수 없는 가우시안의 기여를 억제할 수는 있지만, 가우시안 중심을 고정했기 때문에 예측 기하에 심각한 오류가 있을 경우 이를 교정하지 못하며, 결과적으로 복원 품질은 여전히 기하 예측 모델(geometric prior)의 품질에 의해 제약된다. 또한 픽셀 단위(pixel-aligned)로 예측된 점들은 복셀 병합만으로는 완전히 제거되지 않는 중복(redundancy)을 발생시키며, 입력 뷰의 커버리지가 제한적일 경우 관측되지 않은 영역에 구멍(hole)이 남을 수 있다. 저자들은 향후 과제로 더 강력한 기하 사전(prior), 더 컴팩트한 가우시안 표현, 그리고 커버리지 부족 문제를 다루기 위한 생성 모델 및 카메라 궤적 설계 연구를 제시한다.</p>
+<p>저자들은 별도의 "한계점" 절을 명시적으로 두지 않았다. 다만 본문에서 확인되는 한계로는, 이 방법이 여전히 사전학습된 기하 모델(DA3)이 예측한 포인트 위치 자체는 그대로 사용하므로, 기하 예측이 심각하게 왜곡된 영역에서는 속성 학습만으로 완전히 보정하기 어려울 수 있다. 또한 정제 모듈(Stage II)의 이득이 포즈 조건부 설정에서는 나타나지만 포즈 미사용 설정 일부 데이터셋(DTU 등)에서는 기본 모델보다 소폭 저하되는 경우도 Table 1에 보인다. 평가 지표는 LPIPS·DISTS 등 지각적 품질 지표에 한정되어 있으며, 실시간 처리 속도나 메모리 효율 등에 대한 분석은 논문에 명시되지 않음.</p>
 <h2>시사점</h2>
-<p>본 연구는 피드포워드 3DGS에서 "기하 예측을 신뢰하고 고정한 채 속성만 학습"하는 설계가 기하와 속성을 공동 최적화하는 기존 방식보다 더 안정적인 학습 신호를 제공할 수 있음을 실증적으로 보여준다. 특히 학습 시 GT 카메라로 스케일을 정렬하고, 입력 시점과 크게 다른 각도의 타겟 뷰로 지도학습하는 두 가지 비교적 단순한 학습 기법만으로도 대각도 시점 변화에 대한 강건성이 크게 향상되었다는 점은, 복잡한 아키텍처 변경 없이도 학습 데이터·손실 설계만으로 피드포워드 3D 복원 품질을 개선할 여지가 크다는 것을 시사한다. 또한 이미지 재구성 손실만으로 학습된 불투명도가 기하적 이상치를 자연스럽게 억제한다는 관찰은, 명시적인 기하 정제 없이도 노이즈가 섞인 예측 점군으로부터 신뢰할 수 있는 장면 표현을 구축할 수 있는 가능성을 보여준다.</p>
+<p>이 연구는 "기하 예측과 외관(Gaussian 속성) 예측을 함께 최적화하면 서로를 해친다"는 관찰을 바탕으로, 피드포워드 3DGS에서 기하를 동결하고 속성만 학습하는 것이 오히려 더 좋은 결과를 낳는다는 설계 원칙을 제시한다. 이는 멀티뷰 기하 파운데이션 모델이 계속 발전하는 흐름 속에서, 그 예측을 "있는 그대로" 신뢰하고 그 위에 특화된 모듈을 쌓는 것이 유리할 수 있음을 시사한다. 또한 학습 시 사용하는 카메라의 스케일 정합과, 입력 시점에서 먼 각도의 타깃 뷰로 지도학습하는 전략은 다른 피드포워드 3D 재구성 기법에도 폭넓게 적용 가능한 실용적 지침으로 볼 수 있다.</p>
     <div class="back-bottom">
       <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
     </div>
@@ -124,7 +105,7 @@
 
 <footer>
   <div class="wrap">
-    <span>출처: <a href="https://huggingface.co/papers/2610.20341" target="_blank" rel="noopener">huggingface.co/papers/2610.20341</a> · 2026-10-17</span>
+    <span>출처: <a href="https://huggingface.co/papers/2610.20341" target="_blank" rel="noopener">huggingface.co/papers/2610.20341</a> · 2026-10-19</span>
     <span>my-design 시스템 적용</span>
   </div>
 </footer>

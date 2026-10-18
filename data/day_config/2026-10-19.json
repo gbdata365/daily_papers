@@ -1,0 +1,110 @@
+{
+  "2610.21601": {
+    "base": "2610_웨이포인트오피디_정책변화-일관성-기반-온폴리시-증류",
+    "rank": "#1",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "668",
+    "en_title": "Waypoint-OPD: Transferring RL-Induced Policy Shifts via Gated On-Policy Distillation",
+    "ko_title": "웨이포인트-OPD: 게이트형 온폴리시 증류를 통한 RL 유도 정책 변화 전이"
+  },
+  "2610.18829": {
+    "base": "2610_옴니컴퍼스_전방위-비디오-그라운딩-이해-벤치마크",
+    "rank": "#2",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "578",
+    "en_title": "OmniCompass: A Holistic Benchmark for Omni-Modal Video Grounding and Understanding",
+    "ko_title": "옴니컴퍼스: 전방위 모달 비디오 그라운딩과 이해를 위한 총체적 벤치마크"
+  },
+  "2610.22276": {
+    "base": "2610_엠제이이브_공간지능-네이티브-어텐션-매칭",
+    "rank": "#3",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "354",
+    "en_title": "MJev-Spatial: System One Spatial Intelligence via Native Attention Matching",
+    "ko_title": "MJev-Spatial: 네이티브 어텐션 매칭을 통한 시스템 1 공간 지능"
+  },
+  "2610.22200": {
+    "base": "2610_오픈지씨유에이_완전개방형-컴퓨터사용-에이전트-스택",
+    "rank": "#4",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "316",
+    "en_title": "OpenGCUA: Toward a Fully Open Stack for Generalist Computer Use",
+    "ko_title": "OpenGCUA: 범용 컴퓨터 사용을 위한 완전 개방형 스택을 향하여"
+  },
+  "2610.22350": {
+    "base": "2610_에프디이짐_라스트마일-AI-딜리버리-벤치마크",
+    "rank": "#5",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "284",
+    "en_title": "FDE-Gym: The Last Mile of AI Delivery",
+    "ko_title": "FDE-Gym: AI 딜리버리의 라스트 마일"
+  },
+  "2610.17665": {
+    "base": "2610_로타벤치_인터랙티브-투영정렬-3D-공간추론-벤치마크",
+    "rank": "#6",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "202",
+    "en_title": "RoTA-Bench: Evaluating 3D Spatial Reasoning through Interactive Projection Alignment",
+    "ko_title": "RoTA-Bench: 인터랙티브 투영 정렬을 통한 3D 공간 추론 평가"
+  },
+  "2610.18813": {
+    "base": "2610_하네스알에스아이_자기진화-에이전트-하네스",
+    "rank": "#7",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "200",
+    "en_title": "Self-Evolving Agent Harness",
+    "ko_title": "자가진화 에이전트 하네스"
+  },
+  "2610.20939": {
+    "base": "2610_마이짐_GUI에이전트-평가-강화학습-통합플랫폼",
+    "rank": "#8",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "154",
+    "en_title": "MAI-Gym: An Open All-in-One Platform for GUI Agent Evaluation and RL Training across Mobile and Computer Environments",
+    "ko_title": "MAI-Gym: 모바일·컴퓨터 환경 전반의 GUI 에이전트 평가 및 강화학습 훈련을 위한 올인원 오픈 플랫폼"
+  },
+  "2610.14993": {
+    "base": "2610_동적밴드분할_음원분리-동적-주파수-경계-학습",
+    "rank": "#9",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "134",
+    "en_title": "Learning Where to Split: Dynamic Band Splitting for Audio Source Separation",
+    "ko_title": "어디서 나눌지 학습하기: 오디오 음원 분리를 위한 동적 밴드 분할"
+  },
+  "2610.20341": {
+    "base": "2610_인피니스플랫투_임의시점-피드포워드-3DGS-개선",
+    "rank": "#10",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "119",
+    "en_title": "InfiniSplat v2: Analyzing and Improving Feed-Forward 3DGS from Any Views",
+    "ko_title": "인피니스플랫 v2: 임의 시점에서의 피드포워드 3DGS 분석 및 개선"
+  },
+  "2610.22341": {
+    "base": "2610_쓰리디코드버스_3D월드를-코드로-탐구",
+    "rank": "#11",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "107",
+    "en_title": "3DCodeVerse: Exploring 3D Worlds as Code",
+    "ko_title": "3DCodeVerse: 코드로서의 3D 세계 탐구"
+  },
+  "2610.21261": {
+    "base": "2610_에스에이알_SAE표현의-행동적-조합성",
+    "rank": "#12",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "106",
+    "en_title": "Behavioral Compositionality of Sparse Autoencoder Representations",
+    "ko_title": "스파스 오토인코더 표현의 행동적 조합성"
+  }
+}

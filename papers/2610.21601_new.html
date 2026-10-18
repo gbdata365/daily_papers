@@ -56,13 +56,13 @@
 <header class="article-head">
   <div class="wrap">
     <div class="kicker-row">
-      <span class="rank">#2 · Daily Papers 2026-10-17</span>
+      <span class="rank">#1 · Daily Papers 2026-10-19</span>
       <span class="cat-tag">모델·기법</span>
-      <span class="upvote-tag">▲ 451</span>
+      <span class="upvote-tag">▲ 668</span>
     </div>
     <h1 class="article-title">Waypoint-OPD: Transferring RL-Induced Policy Shifts via Gated On-Policy Distillation</h1>
-    <p class="article-title-ko">웨이포인트-OPD: 게이트형 온폴리시 증류를 통한 RL 유도 정책 이동 전이</p>
-    <p class="article-sub">강화학습(RL)으로 학습된 교사 모델의 RL 이전·중간·이후 세 체크포인트를 비교해, 학습 초반과 후반의 정책 변화 방향이 일치하는 부분만 선택적으로 학생 모델에 전이하는 "게이트형 온폴리시 증류(Waypoint-OPD)" 기법을 제안한다.</p>
+    <p class="article-title-ko">웨이포인트-OPD: 게이트형 온폴리시 증류를 통한 RL 유도 정책 변화 전이</p>
+    <p class="article-sub">교사(teacher) 모델이 강화학습(RL)을 거치며 변한 정책을 학생(student) 모델에 증류할 때, RL 중간 체크포인트를 활용해 "초반 변화와 후반 변화가 같은 방향인지"를 점검하고, 방향이 일치하지 않는 신호는 걸러내는 Waypoint-OPD를 제안한다.</p>
     <div class="meta-links">
       <a href="https://huggingface.co/papers/2610.21601" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
       <a href="https://arxiv.org/abs/2610.21601" target="_blank" rel="noopener">arXiv 원문 →</a>
@@ -76,52 +76,27 @@
 <li><strong>제목</strong>: Waypoint-OPD: Transferring RL-Induced Policy Shifts via Gated On-Policy Distillation</li>
 <li><strong>저자</strong>: Bingxi Hou, Guochao Jiang, Guofeng Quan, Weiqing Li, Wenfeng Feng, Guohua Liu, Yuewei Zhang (Alibaba Cloud Computing)</li>
 <li><strong>출처</strong>: arXiv:2610.21601v1 [cs.LG] (2026년 10월 15일)</li>
-<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음 (코드 저장소: https://github.com/hhhbxloveai/WaypointOPD)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음 (코드: https://github.com/hhhbxloveai/WaypointOPD)</li>
 <li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.21601">arXiv PDF 보기</a></li>
 </ul>
 <h2>한 줄 요약</h2>
-<p>강화학습(RL)으로 학습된 교사 모델의 RL 이전·중간·이후 세 체크포인트를 비교해, 학습 초반과 후반의 정책 변화 방향이 일치하는 부분만 선택적으로 학생 모델에 전이하는 "게이트형 온폴리시 증류(Waypoint-OPD)" 기법을 제안한다.</p>
+<p>교사(teacher) 모델이 강화학습(RL)을 거치며 변한 정책을 학생(student) 모델에 증류할 때, RL 중간 체크포인트를 활용해 "초반 변화와 후반 변화가 같은 방향인지"를 점검하고, 방향이 일치하지 않는 신호는 걸러내는 Waypoint-OPD를 제안한다.</p>
 <h2>배경 및 문제의식</h2>
-<p>RL로 미세조정된 언어모델의 수학·코드 추론 능력을 다른(학생) 모델로 옮기려면 보통 검증 가능한 보상으로 반복적인 샘플링·검증·최적화 과정을 다시 거쳐야 해 비용이 크다. 이를 줄이기 위한 대안으로 "정책 이동 증류(policy-shift distillation)"가 연구되어 왔는데, 대표적으로 Direct-OPD는 교사 모델의 RL 이전(Initial) 체크포인트와 RL 이후(Final) 체크포인트 간 로그확률 비율(즉, RL로 인한 정책 변화량)을 학생이 생성한 궤적에 대한 암묵적 보상으로 사용한다.</p>
-<p>그러나 이 방식은 Initial과 Final 두 지점만 비교하기 때문에, 학습 과정에서 각 토큰에 대한 교사의 선호(preference)가 "일관되게" 같은 방향으로 변했는지, 아니면 초반에 늘었다가 후반에 줄어드는 식으로 서로 상쇄되었는지를 구분하지 못한다. 서로 다른 중간 경로를 거쳐 동일한 최종 변화량에 도달한 두 경우를 Direct-OPD는 똑같이 취급하므로, 일관되지 않은(noisy) 변화까지 그대로 학생에게 전이할 위험이 있다. 저자들은 "초반 변화와 후반 변화가 서로 동의(agree)하는 정도가 최종 이동량을 얼마나 신뢰해 전이할지에 대한 단서를 줄 수 있다"는 가설을 세운다.</p>
+<p>On-Policy Distillation(OPD) 계열 기법들은 교사 모델이 RL을 통해 얻은 정책 변화(policy shift)를 학생 모델이 생성한 경로(trajectory)에 전이시킨다. 기존의 Direct-OPD는 RL 이전(Initial)과 이후(Final) 두 체크포인트의 로그확률 차이만을 보상 신호로 사용하는데, 이 "끝점(endpoint)" 신호만으로는 학습 초반과 후반의 변화가 서로 강화하는 방향이었는지, 아니면 상반되어 상쇄된 결과인지 구분할 수 없다는 한계가 있다. 예를 들어 두 가지 전혀 다른 변화 과정이 동일한 끝점 차이를 만들어낼 수 있으므로, 끝점 신호만 쓰는 방식은 신뢰도가 낮은 변화까지 그대로 전이시킬 위험이 있다.</p>
 <h2>핵심 기여</h2>
-<p>논문이 명시한 기여는 다음과 같다.
-- <strong>선택적 전이를 위한 시간적 일치(temporal agreement) 기준 제시</strong>: 학생이 생성한 프리픽스에서, RL 중간 지점인 웨이포인트(Waypoint) 체크포인트를 이용해 초반·후반 두 구간의 정책 변화 방향이 일치하는지를 평가함으로써, 엔드포인트(Initial-Final) 비교만으로는 알 수 없는 "방향 정보"를 추출한다.
-- <strong>웨이포인트 기반 게이팅(Waypoint-OPD) 제안</strong>: 이 일치도를 이용해 각 학생 생성 프리픽스마다 엔드포인트 신호(Direct-OPD 보상)의 가중치를 조절하는 밀집(dense) 온폴리시 증류 목적함수를 설계했다. 기존 Direct-OPD 대비 동결된 교사 모델로 한 번 더 점수를 매기는 추가 연산만 필요하며, 추가적인 교사 재학습이나 검증기 호출은 없다.
-- <strong>여러 모델 규모·도메인에서 일관된 성능 향상</strong>: Qwen3-8B, Qwen3-14B, Qwen3-30B-A3B(MoE)를 학생 모델로, 수학·코드 추론 두 도메인에서 비교한 6개 설정 모두에서 Waypoint-OPD가 비교 대상(Base, OPD, OPD², Direct-OPD) 중 가장 높은 도메인 평균 점수를 기록했다.</p>
+<ol>
+<li>교사 RL 학습의 중간 지점(Waypoint) 체크포인트를 이용해 초반-후반 정책 변화 사이의 "방향 일치도(temporal agreement)"를 측정하는 새로운 평가 기준을 제시했다.</li>
+<li>이 일치도를 바탕으로 끝점 신호에 게이트(gate)를 씌워 가중치를 조절하는 Waypoint-OPD를 설계했으며, 추가로 필요한 연산은 동결된 교사 모델의 순전파(scoring) 1회뿐이다.</li>
+<li>Qwen3-8B, Qwen3-14B, Qwen3-30B-A3B 세 가지 학생 모델과 수학·코드 추론 두 영역, 총 6가지 설정 모두에서 비교 대상 중 최고 평균 성능을 달성했다.</li>
+</ol>
 <h2>방법론</h2>
-<ul>
-<li><strong>문제 설정</strong>: 동일한 교사 RL 실행에서 나온 세 체크포인트, 즉 RL 이전 Initial(π₀), RL 중간 지점 Waypoint(π_m), RL 이후 Final(π₁)을 모두 동결한 채 사용한다. 학생 모델 π_θ는 프롬프트 x에 대해 온폴리시로 응답 y를 생성하며, 학생의 초기화 상태 π_S는 KL 정규화를 위한 기준점으로 고정된다.</li>
-<li><strong>Direct-OPD 복습</strong>: 토큰 단위 로그확률 차이 δ_t(a) = log π₁(a|s_t) − log π₀(a|s_t)를 암묵적 보상으로 사용하여, 학생이 자신의 초기화로부터 너무 벗어나지 않도록 KL 페널티와 함께 이 보상을 극대화한다.</li>
-<li><strong>학생-로컬 궤적 일치도 계산</strong>: 학생이 방문한 각 프리픽스 s_t에서, 학생 자신의 분포 기준 확률이 높은 상위 k개 토큰 후보(Top-k)를 뽑는다. 세 교사 체크포인트 모두로 이 후보들을 채점해, 초반 변화 δ^(1)_t = log π_m − log π₀와 후반 변화 δ^(2)_t = log π₁ − log π_m를 구하고, 후보 전체에 걸친 균일한(상수) 이동 성분을 제거하기 위해 학생확률 가중 평균을 빼는 "중심화(centering)" 연산을 적용한다.</li>
-<li><strong>일치도 게이트(agreement gate)</strong>: 중심화된 초반·후반 변화 벡터 u_t, v_t 사이의 (학생확률로 가중된) 코사인 유사도 c_t를 계산하고, 게이트 g_t = max(0, c_t)를 정의한다. 즉 두 구간의 변화 방향이 일치(코사인 양수)하면 그 정도만큼 엔드포인트 신호를 살리고, 방향이 반대(코사인 음수)면 신호를 완전히 억제(0)한다. 두 벡터의 노름이 거의 0인 경우엔 별도의 로우놈 폴백(fallback) 규칙을 쓴다.</li>
-<li><strong>배치 스케일 정규화</strong>: 배치 내 게이트 값의 평균을 목표 값 τ로 맞추도록 클리핑된 스칼라 κ_B를 곱해, 배치마다 평균 보상 스케일이 들쭉날쭉해지는 것을 방지한다.</li>
-<li><strong>최종 학습 목적함수</strong>: 후보 토큰별 어드밴티지 A_t(a) = sg[κ_B · q_t(a) · g_t · d_t(a)] (sg는 그래디언트가 흐르지 않는 stop-gradient)를 이용해, Top-k 후보들에 대한 밀집 크로스엔트로피 형태의 보상과 학생 KL 페널티(π_S 기준)를 결합한 목적함수를 최대화한다. 구현은 dual-clipped PPO를 사용하며 verl 프레임워크 위에 구축되었다.</li>
-<li>요컨대 Waypoint는 "모방 대상"이 아니라, 최종(Initial→Final) 이동량을 얼마나 신뢰해서 전이할지 결정하는 "증거"로만 쓰인다는 점이 핵심 설계 사상이다.</li>
-</ul>
+<p>Initial(π0, RL 이전), Waypoint(πm, RL 중간 스텝), Final(π1, RL 종료) 세 개의 동결된 교사 체크포인트를 사용한다. 학생이 생성한 각 프리픽스(prefix)에서 학생 확률이 높은 top-k 후보 토큰들을 추출하고, 이 후보들에 대해 Initial→Waypoint(초반 변화, δ(1))와 Waypoint→Final(후반 변화, δ(2))의 로그확률 차이를 각각 계산한다. 이 두 변화 벡터를 학생 분포로 가중한 뒤 평균을 빼서 중심화(centering)하고, 두 벡터 사이의 코사인 유사도를 구해 게이트 값 g_t = max(0, cos)로 사용한다. 즉 초반과 후반 변화가 같은 방향(코사인 양수)이면 끝점 신호를 그대로 유지하고, 반대 방향(코사인 음수)이면 신호를 억제한다. 여기에 배치 단위로 평균 게이트 크기를 목표값에 맞춰 재조정하는 배치 스케일링(κ_B)을 추가해, 최종적으로 게이트와 스케일이 적용된 끝점 신호를 토큰별 밀집(dense) 보상으로 사용하여 dual-clipped PPO 방식으로 학생을 학습시킨다.</p>
 <h2>실험 설정 및 결과</h2>
-<ul>
-<li><strong>교사·학생 모델</strong>: 동일한 Qwen3-4B RL 실행에서 얻은 Initial(RL 전), Waypoint(RL 중간 스텝 600), Final(RL 스텝 1200) 세 체크포인트를 교사로 사용. 학생은 Qwen3-8B, Qwen3-14B, Qwen3-30B-A3B(MoE) 세 가지 규모·구조.</li>
-<li><strong>데이터/평가</strong>: 수학은 DAPO-Math-17K로 학습하고 AIME 2024/2025/2026, HMMT 2025년 2월·11월, HMMT 2026년 2월, AMC 2023 등 7개 벤치마크에서 mean@32로 평가. 코드는 Codeforces 기반 프롬프트로 학습하고 MBPP, MBPP+, LiveCodeBench v4/v5/v6에서 mean@8로 평가.</li>
-<li><strong>비교 대상</strong>: Base(증류 없음), 표준 OPD(Final 교사 모방), OPD²(샘플 토큰 기반 부호 일치 증류), Direct-OPD(엔드포인트 로그비율 증류).</li>
-<li><strong>주요 결과</strong>:</li>
-<li>수학: Waypoint-OPD는 Direct-OPD 대비 8B/14B/30B-A3B에서 각각 평균 2.18, 1.59, 1.89점 향상 (21개 벤치마크 비교 중 19개에서 우위). 14B와 30B-A3B 학생은 Final 교사(56.13점)를 각각 3.07, 1.72점 상회했고, 8B는 거의 동률(56.14 vs 56.13).</li>
-<li>코드: Direct-OPD 대비 평균 2.66, 1.52, 1.19점 향상 (15개 비교 모두 우위). 14B와 30B-A3B는 Final 교사(55.37)를 각각 2.45, 2.17점 상회.</li>
-<li>학습 곡선(Qwen3-8B, 동일 스텝 비교): 학습 스텝 60 이후부터 Waypoint-OPD가 세 벤치마크(AIME25, AIME26, HMMT Nov) 모두에서 Direct-OPD를 꾸준히 앞섰고, HMMT November에서는 스텝 60/80/100에서 Final 교사 점수(40.83)도 넘어섰다(최대 42.60).</li>
-<li><strong>제거(ablation) 실험 (Qwen3-8B 수학)</strong>:</li>
-<li>게이트 제거(No gate, g_t=1 고정): 평균 56.14 → 53.50으로 하락(7개 벤치마크 모두 하락).</li>
-<li>게이트 셔플(Shuffled gate, 프리픽스와 게이트 값의 대응을 무작위로 섞음): 평균 51.20으로 더 큰 폭 하락 — 게이트를 아예 안 쓰는 것보다도 나쁜 결과로, 게이트가 "해당 프리픽스"와 정확히 결합되어야 의미가 있음을 시사.</li>
-<li>배치 정규화 제거(κ_B=1 고정): 평균 55.22로 소폭 하락(0.92점), 7개 중 6개 벤치마크에서 정규화가 유리했으나 HMMT25 Feb에서는 오히려 무정규화가 더 높았음.</li>
-</ul>
+<p>Qwen3-4B를 교사로 하여 RL 스텝 0(Initial), 600(Waypoint), 1200(Final) 체크포인트를 사용했다. 수학 영역은 DAPO-Math-17K로 학습하고 AIME 2024/2025/2026, HMMT 2025Feb/2025Nov/2026Feb, AMC 2023 총 7개 벤치마크(mean@32)로 평가했으며, 코드 영역은 Codeforces 기반 프롬프트로 학습하고 MBPP, MBPP+, LiveCodeBench v4/v5/v6(mean@8)로 평가했다. Direct-OPD 대비 수학에서 평균 1.59~2.18%p, 코드에서 1.19~2.66%p 향상되었으며, 21개 수학 비교 중 19개, 15개 코드 비교 전부에서 Direct-OPD를 앞섰다. 14B와 30B-A3B 학생은 두 영역 모두에서 Final 교사의 평균 점수를 넘어섰다. Qwen3-8B 수학 과제에 대한 제거 실험에서는 게이트를 없애면 평균 2.64%p, 게이트를 무작위로 섞으면 4.94%p 성능이 하락해 일치도 기반 가중치 부여의 효과를 확인했다.</p>
 <h2>한계점</h2>
-<ul>
-<li>논문은 학습/추론에 사용한 데이터셋이 모두 공식 출처에서 가져온 것이며 익명화되어 있다고 밝히면서도, 데이터셋에 사회적으로 유해하거나 독성적인 언어가 전혀 없다고 보장할 수는 없다고 명시한다.</li>
-<li>전이 목적함수는 "최종(Initial→Final) 이동량"을 유일한 전이 대상으로 삼고, Waypoint는 그 신뢰도를 판단하는 보조 증거로만 쓰이므로, 웨이포인트 체크포인트의 선택(RL 몇 스텝 지점인지)이 결과에 영향을 줄 수 있다(부록에서 별도로 다룬다고 언급되나 본문에서는 상세 결과가 제시되지 않음).</li>
-<li>방법은 교사와 학생이 동일한 토크나이저를 공유한다는 전제, 그리고 교사의 세 체크포인트(Initial/Waypoint/Final)에 모두 접근 가능해야 한다는 전제에 의존한다.</li>
-<li>논문 스스로도 "일치(agreement)는 가중 기준일 뿐 정답성을 보장하는 것은 아니다"라고 명시하며, 게이트가 유익한 신호만을 걸러낸다는 보장이 이론적으로 주어지지는 않는다.</li>
-</ul>
+<p>저자들은 방향 일치도가 "유익한 지도 신호임을 보장하지는 않는다"고 명시했으며, 배치 정규화가 보상 벡터의 절대적 크기(norm)를 고정하지는 못한다고 밝혔다. 또한 제거 실험에서 중심화(centering) 등 다른 구성 요소와 게이팅의 효과가 완전히 분리되지는 않아, 성능 향상분을 게이팅 단독의 기여로 온전히 귀속시키기는 어렵다. 그 외 세부 한계는 논문에 명시되지 않음.</p>
 <h2>시사점</h2>
-<p>RL로 학습된 교사 모델의 지식을 다른 모델로 값싸게 전이할 때, 단순히 "RL 전후 차이"만 볼 것이 아니라 학습 과정 중간 체크포인트를 활용해 그 차이가 "일관된 신호"인지 "우연히 상쇄되어 남은 잔차"인지 구분하는 것이 증류 품질을 끌어올릴 수 있음을 보여준다. 추가 검증기 호출이나 교사 재학습 없이 동결된 체크포인트 하나를 더 활용하는 것만으로 성능 향상이 가능하다는 점에서, 비용 대비 효율이 높은 실용적 기법으로 평가될 수 있으며, 체크포인트 기반 선택적 증류·가중치 부여 아이디어는 향후 다른 정책 이동 전이 기법에도 일반화될 수 있는 설계 원리로 제시된다.</p>
+<p>RL로 학습된 교사의 정책 변화를 증류할 때 끝점(시작-끝) 차이만 보는 대신 중간 체크포인트를 "증거"로 활용해 신호의 신뢰도를 선별하는 접근은, 추가 학습이나 검증 없이 기존 증류 파이프라인에 저비용으로 결합할 수 있는 실용적 개선책을 제시한다. 이는 교사-학생 지식 전이 전반에서 중간 체크포인트 활용이 유의미한 정보를 제공할 수 있음을 보여준다.</p>
     <div class="back-bottom">
       <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
     </div>
@@ -130,7 +105,7 @@
 
 <footer>
   <div class="wrap">
-    <span>출처: <a href="https://huggingface.co/papers/2610.21601" target="_blank" rel="noopener">huggingface.co/papers/2610.21601</a> · 2026-10-17</span>
+    <span>출처: <a href="https://huggingface.co/papers/2610.21601" target="_blank" rel="noopener">huggingface.co/papers/2610.21601</a> · 2026-10-19</span>
     <span>my-design 시스템 적용</span>
   </div>
 </footer>

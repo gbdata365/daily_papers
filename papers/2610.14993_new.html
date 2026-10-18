@@ -1,5 +1,5 @@
 <meta charset="UTF-8">
-<title>어디서 분할할지 학습하기</title>
+<title>어디서 나눌지 학습하기</title>
 <style>
   :root{
     --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
@@ -56,13 +56,13 @@
 <header class="article-head">
   <div class="wrap">
     <div class="kicker-row">
-      <span class="rank">#8 · Daily Papers 2026-10-17</span>
+      <span class="rank">#9 · Daily Papers 2026-10-19</span>
       <span class="cat-tag">모델·기법</span>
-      <span class="upvote-tag">▲ 131</span>
+      <span class="upvote-tag">▲ 134</span>
     </div>
     <h1 class="article-title">Learning Where to Split: Dynamic Band Splitting for Audio Source Separation</h1>
-    <p class="article-title-ko">어디서 분할할지 학습하기: 오디오 음원분리를 위한 동적 대역분할</p>
-    <p class="article-sub">고정된 주파수 대역 경계를 쓰던 기존 밴드 스플리팅 음원분리 모델과 달리, 입력 혼합 오디오의 내용에 따라 대역 경계와 폭을 동적으로 조정하면서도 토큰(대역) 수는 고정시키는 Dynamic Band Splitting(DBS) 프레임워크를 제안하여, 동일한 연산 예산 안에서 여러 분리 백본(BSRNN, TIGER, BS-RoFormer, MelRoFormer)의 성능을 일관되게 향상시켰다.</p>
+    <p class="article-title-ko">어디서 나눌지 학습하기: 오디오 음원 분리를 위한 동적 밴드 분할</p>
+    <p class="article-sub">오디오 음원 분리(source separation) 모델이 사용하는 주파수 밴드 경계를 고정하지 않고, 입력 믹스처의 내용에 따라 동적으로 조정하는 Dynamic Band Splitting(DBS) 프레임워크를 제안하여 동일한 토큰(밴드) 예산 안에서 분리 성능을 크게 끌어올렸다.</p>
     <div class="meta-links">
       <a href="https://huggingface.co/papers/2610.14993" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
       <a href="https://arxiv.org/abs/2610.14993" target="_blank" rel="noopener">arXiv 원문 →</a>
@@ -74,45 +74,30 @@
   <div class="wrap">
 <ul>
 <li><strong>제목</strong>: Learning Where to Split: Dynamic Band Splitting for Audio Source Separation</li>
-<li><strong>저자</strong>: Bingzhe Zhang, Kai Li, Xiaolin Hu (Tsinghua University 소속; Bingzhe Zhang와 Kai Li는 공동 1저자, Kai Li와 Xiaolin Hu는 교신저자)</li>
-<li><strong>출처</strong>: arXiv:2610.14993v1 [cs.SD] (2026년 10월 10일)</li>
-<li><strong>프로젝트 페이지</strong>: <a href="https://cslikai.cn/Dynamic-Band-Splitting">DBS 코드 및 오디오 데모</a></li>
+<li><strong>저자</strong>: Bingzhe Zhang, Kai Li, Xiaolin Hu (Tsinghua University, IDG/McGovern Institute for Brain Research, Chinese Institute for Brain Research)</li>
+<li><strong>출처</strong>: arXiv:2610.14993v1 [cs.SD] (10 Oct 2026)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://cslikai.cn/Dynamic-Band-Splitting">코드 및 오디오 데모</a></li>
 <li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.14993">arXiv PDF 보기</a></li>
 </ul>
 <h2>한 줄 요약</h2>
-<p>고정된 주파수 대역 경계를 쓰던 기존 밴드 스플리팅 음원분리 모델과 달리, 입력 혼합 오디오의 내용에 따라 대역 경계와 폭을 동적으로 조정하면서도 토큰(대역) 수는 고정시키는 Dynamic Band Splitting(DBS) 프레임워크를 제안하여, 동일한 연산 예산 안에서 여러 분리 백본(BSRNN, TIGER, BS-RoFormer, MelRoFormer)의 성능을 일관되게 향상시켰다.</p>
+<p>오디오 음원 분리(source separation) 모델이 사용하는 주파수 밴드 경계를 고정하지 않고, 입력 믹스처의 내용에 따라 동적으로 조정하는 Dynamic Band Splitting(DBS) 프레임워크를 제안하여 동일한 토큰(밴드) 예산 안에서 분리 성능을 크게 끌어올렸다.</p>
 <h2>배경 및 문제의식</h2>
-<p>오디오 음원분리는 혼합 신호에서 음성, 음악, 음향효과 등 개별 소스를 복원하는 과제로, 음악 리믹스, 오디오 복원, 보청 지원, 회의록 작성 및 자막 생성 등에 활용된다. BSRNN, BS-RoFormer, Mel-Band RoFormer, TIGER 같은 밴드 스플리팅 기반 분리기는 STFT로 얻은 복소 스펙트로그램의 주파수 축을 미리 정해진(수작업) 비균일 레이아웃으로 나누어 각 대역을 고정 차원 토큰으로 인코딩함으로써 연산량을 줄인다. 그러나 이러한 경계는 모든 혼합 신호에 동일하게 적용되는 '모델 수준의 구조적 사전 지식'으로 고정되어 있어서, 실제로 유의미한 스펙트럼 구조는 소스 내용에 따라 달라진다는 문제가 있다. 즉 넓은 대역이 여러 구별적 성분을 하나로 뭉개버리거나, 반대로 세밀하게 나뉜 대역이 정보가 적은 구간에 토큰을 낭비하는 비효율이 발생한다. 대역 수를 늘리면 해상도는 좋아지지만 분리기의 연산 비용도 함께 증가하므로, 저자들은 "고정된 대역(토큰) 예산 하에서 혼합 신호마다 주파수 해상도 배분을 어떻게 적응적으로 맞출 것인가"를 핵심 과제로 제시한다.</p>
+<p>음원 분리 모델은 음악, 음성, 음향 효과 등 개별 소스를 복원해야 하는데, 스펙트로그램 전체를 고해상도로 처리하면 계산 비용이 크다. BSRNN, BS-RoFormer, Mel-Band RoFormer, TIGER 같은 밴드 분할(band-split) 기반 방법들은 주파수 축을 미리 정의된 비균일 밴드로 나누고 각 밴드를 하나의 토큰으로 압축해 계산량을 줄인다. 그러나 이 경계는 모든 입력 믹스처에 대해 동일하게 고정되어 있다. 문제는 소스에 따라 변별력 있는 스펙트럼 구조의 위치와 밀도가 달라진다는 점이다. 넓은 밴드는 여러 변별적 성분을 하나의 표현으로 뭉개버릴 수 있고, 반대로 세밀하게 나뉜 밴드가 정보량이 적은 구간에 낭비될 수도 있다. 밴드 수를 늘리면 해상도는 좋아지지만 분리기(separator)의 계산 비용도 함께 증가하므로, 고정된 밴드-토큰 예산 안에서 믹스처별로 주파수 해상도 배분을 적응시키는 것이 핵심 과제다.</p>
 <h2>핵심 기여</h2>
 <ul>
-<li>고정된 대역-토큰 예산(budget) 안에서 혼합 신호마다 경계 위치와 대역 폭을 학습적으로 바꾸는 엔드투엔드 프레임워크인 Dynamic Band Splitting(DBS)을 제안했다.</li>
-<li>주파수 축을 4개의 고정 블록(B1~B4)으로 나누고, 각 블록 내부에서 콘텐츠 조건부 경계 점수를 예측한 뒤 Hard Top-K로 정해진 개수의 경계만 선택하는 방식을 설계하여, 대역 개수는 고정하면서 경계 위치는 입력마다 바뀌도록 했다.</li>
-<li>분리 이후 대역 토큰을 원래 STFT 해상도로 복원하기 위한 확률 기반 스무딩(smoothing), 토큰 확장, 주파수 방향 정제(refinement), 주파수 공유 복소 마스크 디코더로 이어지는 전체 복원 파이프라인을 제시했다.</li>
-<li>경계 선택이라는 비연속적(hard) 연산을 역전파 가능하게 하기 위해 straight-through estimator 기반의 학습 방식과, 목표 압축비를 맞추는 정규화 손실(Lratio)을 도입했다.</li>
-<li>DBS를 BSRNN, TIGER, BS-RoFormer, MelRoFormer 등 서로 다른 밴드 스플리팅 백본에 적용해 범용성을 입증했으며, DnR v2, MUSDB18-HQ, EchoSet 세 벤치마크에서 일관된 성능 향상을 보였다.</li>
+<li><strong>입력 조건부 동적 경계</strong>: 고정된 주파수 블록(B1~B4) 내부에서, 믹스처 내용에 따라 경계 위치와 밴드 폭이 달라지는 Hard Top-K 기반 경계 선택 방식을 제안했다. 전체 밴드 수(토큰 예산)는 모든 입력에 대해 동일하게 유지된다.</li>
+<li><strong>엔드투엔드 학습 가능한 경계 예측기</strong>: 분리기와 함께 경계 예측기를 공동 학습할 수 있도록 Straight-Through Estimator 기반의 미분 가능한 경로를 설계했다.</li>
+<li><strong>원본 STFT 해상도로의 복원</strong>: 분리된 밴드 토큰을 다시 원래 STFT 그리드로 확장(스무딩 + 주파수 방향 정제)하여, 분리기 내부 해상도와 최종 출력 해상도를 분리했다.</li>
+<li><strong>다양한 백본과의 호환성</strong>: BSRNN, TIGER, BS-RoFormer, Mel-Band RoFormer 등 기존 밴드 분할 백본에 DBS를 결합해 일관된 성능 향상을 확인했다.</li>
 </ul>
 <h2>방법론</h2>
-<p>DBS는 모노 혼합 신호 x의 STFT 스펙트로그램 X를 입력으로 받아, (1) 혼합 신호에 의존하는 주파수 분할 P(X)를 예측하고, (2) 이를 이용해 J개의 대역을 고정 길이 토큰 시퀀스로 풀링하며, (3) 분리 백본으로 처리한 뒤, (4) 같은 분할 정보를 사용해 다시 원래 STFT 해상도로 복원하여 복소 마스크를 추정하는 4단계 구조를 갖는다.</p>
-<ol>
-<li><strong>동적 대역 분할</strong>: 주파수 축을 4개의 고정 블록으로 나누고 각 블록에 대역 예산 Jr을 배정한다(전체 예산 J는 모든 혼합에서 동일). 각 블록 내부에서는 실수·허수 성분에 시간 방향 합성곱을 적용하고, 구간별 평균·피크 대 평균 비율·표준편차 대 평균 비율 등 진폭 통계량을 추출한 뒤, BiLSTM으로 문맥 벡터를 얻는다. 인접한 주파수 빈 사이의 "특징 차이 항"과 "진폭 변화 항"을 결합해 경계 확률 pr(f)를 계산하고(식 1), Hard Top-K로 블록당 정확히 Jr개의 대역(경계 Jr−1개)을 선택한다.</li>
-<li><strong>대역 토큰화 및 분리</strong>: 선택된 대역의 주파수 빈들을 학습된 가중치로 풀링하여 대역마다 폭에 상관없이 동일 차원(D)의 토큰 하나를 생성하고, 이를 주파수 순서로 이어 붙여 고정 크기 토큰 시퀀스 Z를 만든다. 이 Z는 BSRNN, TIGER, BS-RoFormer, MelRoFormer 등 기존 분리 백본에 그대로 입력된다.</li>
-<li><strong>토큰 확장 및 마스크 디코딩</strong>: 분리된 토큰을 경계 확률로 가중한 보간을 통해 부드럽게 만들고(확률 기반 스무딩), 하드 할당 정보를 이용해 각 STFT 빈으로 토큰을 복제·확장한 뒤, 깊이별·점별 연산으로 구성된 주파수 방향 정제 블록을 거쳐 인접 주파수 간 정보를 혼합한다. 마지막으로 주파수 공유 디코더가 각 빈에서 소스별 복소 마스크 파라미터를 산출하고, 추정된 소스 스펙트로그램 Ŝk = X ⊙ Mk를 역STFT로 파형으로 변환한다.</li>
-<li><strong>엔드투엔드 학습</strong>: 경계 선택(Hard Top-K)은 미분 불가능하므로, straight-through estimator를 이용해 순전파에서는 하드 분할을 쓰고 역전파에서는 로컬 소프트 할당으로 근사한다. 추가로 목표 압축비(1/ρr)에 맞춰 경계 확률의 평균을 맞추는 정규화 손실 Lratio를 분리 손실 Lsep와 함께 사용한다(전체 손실 L = Lsep + λratio·Lratio).</li>
-</ol>
+<p>입력 믹스처 (x)의 복소 스펙트로그램 (X=\mathrm{STFT}(x))를 R개의 고정된 주파수 블록으로 나누고, 각 블록에 고정된 밴드 예산 (J_r)을 배정한다(전체 예산 (J)는 모든 입력에서 동일). 각 블록 내부에서는 Conv2D와 BiLSTM으로 구성된 예측기가 인접 주파수 빈(bin) 사이의 특징 유사도와 진폭 통계 차이를 결합해 경계 확률 (p_r(f))를 계산한다. 이 확률 중 상위 (J_r-1)개를 Hard Top-K로 선택해 실제 경계를 확정하고, 선택된 밴드 안의 빈들을 학습된 가중치로 풀링하여 고정 차원의 밴드 토큰을 만든다. 이 토큰 시퀀스는 BSRNN, TIGER 등 기존 분리 백본에 그대로 입력되고, 분리된 토큰은 경계 확률로 가중한 스무딩, 동일 분할을 이용한 STFT 그리드 확장, 주파수 방향 정제(residual conv)를 거쳐 주파수 공유(frequency-shared) 디코더로 복소 마스크를 예측한다. Hard Top-K의 이산적 선택으로 인한 비미분성은 Straight-Through Estimator로 해결하며, 경계 확률의 평균 밀도를 원하는 압축비로 맞추기 위한 정규화 항((L_\text{ratio}))을 분리 손실에 추가해 전체 모델을 공동 학습한다.</p>
 <h2>실험 설정 및 결과</h2>
-<p>DnR v2(영화 음성/음악/음향효과, 0–22.05kHz), MUSDB18-HQ(보컬/드럼/베이스/기타 4스템 음악 분리), EchoSet(2인 화자 음성 분리, 0–8kHz) 세 벤치마크에서 평가했다. DnR v2와 MUSDB18-HQ는 1025개 STFT 빈을 128개 대역 토큰으로, EchoSet은 321개 빈을 67개 대역 토큰으로 압축했다.</p>
-<ul>
-<li><strong>DnR v2</strong>: DBS-BSRNN은 평균 SI-SDR을 7.69dB에서 9.07dB로(약 29.0%의 상대적 향상, 절대 1.38dB 향상), DBS-TIGER는 8.74dB에서 10.13dB로(1.39dB 향상) 개선했으며, 세 소스(음악/음성/음향효과) 모두에서 향상이 나타났다.</li>
-<li><strong>MUSDB18-HQ</strong>: 외부 데이터 없이 4스템을 동시에 추정하는 단일 모델 설정에서, DBS-BSRNN은 평균 SDR을 5.09dB→5.43dB(0.35dB 향상, 약 6.8% 상대적 향상)로, DBS-BS-RoFormer는 4.50dB→6.34dB(1.84dB, 가장 큰 향상), DBS-MelRoFormer는 7.25dB→8.07dB(0.82dB)로 끌어올렸다.</li>
-<li><strong>EchoSet</strong>: DBS-BSRNN은 공개된 BSRNN 결과보다 SDRi·SI-SDRi를 각각 0.46dB, 0.43dB(약 3.6% 상대 향상) 개선했고, DBS-TIGER는 TIGER 대비 각각 0.33dB, 0.31dB 개선했다.</li>
-<li><strong>대역 경계 방식 비교(소거 실험)</strong>: 동일 아키텍처에서 균일(uniform) 분할, Mel 스케일 분할, 학습형 필터뱅크와 비교했을 때 DBS-BSRNN이 가장 우수했다(균일 분할 대비 평균 SI-SDR 1.07dB 향상). 학습된 경계를 추론 시 고정 BSRNN 레이아웃으로 바꿔 끼우면 성능이 9.07dB에서 8.62dB로 떨어져, 학습된 경계 자체가 성능에 기여함을 확인했다.</li>
-<li><strong>경계 적응성 분석</strong>: 64개의 DnR v2 테스트 혼합에서 중심 구간의 경계가 서로 모두 달랐고, 같은 녹음 내 인접 구간 사이에서도 경계가 바뀌었으며, 동일 입력을 반복 추론하면 경계가 동일하게 재현되어, 모델이 실제로 입력 내용에 따라 경계를 결정짓는 것을 확인했다.</li>
-<li><strong>구조 설계 소거 실험</strong>: 블록 수를 4→2→1로 줄이면 평균 SI-SDR이 9.07→8.32→6.30dB로 하락했고(블록이 적을수록 경계가 저주파 쪽에 몰림), 진폭 통계만으로 경계를 예측하는 경우(학습된 특징 제거) 6.93dB로 하락했다. 전환(transition) 사전 정보 제거 시 4.09dB, 확신도(confidence) 경로 제거 시 7.53dB, 주파수 정제 단계 제거 시 3.92dB로 각각 큰 성능 저하가 나타나 각 구성 요소의 필요성을 뒷받침했다.</li>
-</ul>
+<p>DnR v2(영화 음악·대화·음향효과 분리), MUSDB18-HQ(보컬·드럼·베이스·기타 4-스템 음악 분리), EchoSet(2인 화자 음성 분리) 세 벤치마크에서 평가했다. DnR v2에서 DBS-BSRNN은 평균 SI-SDR을 7.69→9.07 dB(약 1.38 dB, 상대적으로 약 29.0%의 향상이라고 저자들은 보고), DBS-TIGER는 8.74→10.13 dB로 각각 개선했다. MUSDB18-HQ(단일 모델이 4개 스템을 동시에 추정)에서는 BSRNN이 5.09→5.43 dB, BS-RoFormer가 4.50→6.34 dB(가장 큰 개선폭인 1.84 dB), Mel-Band RoFormer가 7.25→8.07 dB로 모두 향상되었다. EchoSet에서도 DBS-BSRNN과 DBS-TIGER 모두 기존 공개 결과 대비 SDRi/SI-SDRi가 소폭 개선되었다. 균일 분할(Uniform), Mel 밴드, 학습형 필터뱅크 등 다른 전처리 방식과 비교했을 때도 DBS가 가장 우수했으며, 64개의 DnR v2 테스트 믹스처에서 중심 구간들의 경계가 서로 다르게 선택되고 인접 구간 간에도 경계가 변하는 반면 동일 입력을 반복 추론하면 경계가 동일하게 재현되어, 경계가 노이즈가 아니라 입력 내용에 반응함을 확인했다. 블록 수를 4개에서 2개, 1개로 줄이면 평균 SI-SDR이 9.07→8.32→6.30 dB로 점차 하락했고, 학습된 스펙트럼 특징 없이 진폭 통계만으로 경계를 예측한 경우 9.07→6.93 dB, 주파수 정제 단계를 제거한 경우 9.07→3.92 dB로 크게 하락해 각 구성요소의 기여도를 확인했다.</p>
 <h2>한계점</h2>
-<p>저자들이 명시한 한계는 다음과 같다. DBS는 대역 개수를 고정한 채 추론 윈도우마다 단 하나의 분할만 선택하므로, 표현 크기 자체(대역 수)나 윈도우 내부에서의 경계 위치를 적응적으로 바꾸지는 못한다. 가변 예산(학습 가능한 대역 수) 변형을 사전 실험해 본 결과, 모델이 블록마다 허용되는 최대 예산을 선택하는 경향을 보여, 가변 예산 라우팅을 위해서는 명시적인 복잡도 제약이 추가로 필요함을 시사했다.</p>
+<p>저자들은 DBS가 추론 윈도우(window)당 하나의 분할만 선택하며 밴드 수 자체는 고정되어 있어, 윈도우 내부에서 표현 크기나 경계 위치를 추가로 적응시키지는 못한다고 명시했다. 가변 밴드 수(learnable-count)를 시도한 예비 실험에서는 모델이 거부 없이 각 블록에서 허용 가능한 최대 예산을 선택하는 경향을 보여, 가변 예산 라우팅을 위해서는 명시적인 복잡도 제약이 추가로 필요하다고 언급했다.</p>
 <h2>시사점</h2>
-<p>이 연구는 음원분리에서 밴드 스플리팅의 '주파수 레이아웃'을 모델이 설계 시점에 고정하는 구조적 사전지식이 아니라, 입력에 따라 학습적으로 결정되는 요소로 전환할 수 있음을 보여준다. 동일한 연산(토큰) 예산 안에서도 콘텐츠에 맞춰 해상도를 재배분하는 것만으로 여러 백본(BSRNN, TIGER, BS-RoFormer, MelRoFormer)에 걸쳐 일관된 성능 향상이 가능하다는 점은, 향후 다른 시간-주파수 기반 오디오 처리 모델(음성 인식, 음향 이벤트 탐지 등)에서도 "어디를 더 세밀하게 볼 것인가"를 입력 조건부로 학습하는 적응적 표현 할당 기법이 폭넓게 적용될 수 있음을 시사한다. 또한 straight-through estimator와 비율 정규화 손실을 결합해 하드 top-K 선택을 엔드투엔드로 학습 가능하게 만든 방식은, 고정 예산 제약 하에서 이산적 구조를 학습해야 하는 다른 과제에도 참고할 수 있는 일반적인 기법으로 볼 수 있다.</p>
+<p>이 연구는 음원 분리에서 "얼마나 많은 밴드를 쓰는가"보다 "토큰 예산을 어디에 배분하는가"가 중요한 설계 변수임을 보여준다. 고정 계산 비용을 유지하면서도 입력 내용에 맞춰 주파수 해상도를 재배분하는 아이디어는 기존 밴드 분할 백본에 거의 구조 변경 없이 결합 가능하므로, 다른 시간-주파수 기반 오디오 처리 모델(예: 음성 향상, 화자 분리)에도 일반화될 수 있는 설계 원칙을 제시한다.</p>
     <div class="back-bottom">
       <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
     </div>
@@ -121,7 +106,7 @@
 
 <footer>
   <div class="wrap">
-    <span>출처: <a href="https://huggingface.co/papers/2610.14993" target="_blank" rel="noopener">huggingface.co/papers/2610.14993</a> · 2026-10-17</span>
+    <span>출처: <a href="https://huggingface.co/papers/2610.14993" target="_blank" rel="noopener">huggingface.co/papers/2610.14993</a> · 2026-10-19</span>
     <span>my-design 시스템 적용</span>
   </div>
 </footer>

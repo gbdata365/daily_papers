@@ -1,0 +1,114 @@
+<meta charset="UTF-8">
+<title>대화형 비디오 생성을 위한 추측 샘플링</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#8 · Daily Papers 2026-10-20</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 70</span>
+    </div>
+    <h1 class="article-title">Speculative Sampling in Interactive Video Generation</h1>
+    <p class="article-title-ko">대화형 비디오 생성을 위한 추측 샘플링</p>
+    <p class="article-sub">대화형 비디오 생성에서 응답 지연을 줄이기 위해 작은 양방향(bidirectional) 청크를 쓰던 기존 관행 대신, 큰 청크로 한 번에 샘플링하면서도 결과는 잘게 쪼개 전달하고 아직 확정되지 않은 미래 구간만 조건 변경 시 다시 계산하는 "Speculative Sampling" 기법을 제안한 연구이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.20556" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.20556" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Speculative Sampling in Interactive Video Generation</li>
+<li><strong>저자</strong>: Yubo Huang, Yuxuan Zhang, Jiaming Liu, Sirui Zhao, Enhong Chen (중국과학기술대학교, 홍콩중문대학교, 독립 연구자)</li>
+<li><strong>출처</strong>: arXiv:2610.20556v1 [cs.CV] (2026-10-14)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://yubo-shankui.github.io/speculative_sampling">https://yubo-shankui.github.io/speculative_sampling</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.20556">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>대화형 비디오 생성에서 응답 지연을 줄이기 위해 작은 양방향(bidirectional) 청크를 쓰던 기존 관행 대신, 큰 청크로 한 번에 샘플링하면서도 결과는 잘게 쪼개 전달하고 아직 확정되지 않은 미래 구간만 조건 변경 시 다시 계산하는 "Speculative Sampling" 기법을 제안한 연구이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>대화형 비디오 생성은 카메라 조작이나 행동 명령 같은 새로운 조건이 재생 도중 실시간으로 들어오는 환경을 다룬다. 이런 환경에서는 응답 지연을 낮추기 위해 한 번의 DiT 샘플링 호출에서 함께 처리하는 latent 프레임 수(청크 크기 K)를 작게 유지하는 것이 일반적이었다. 그러나 저자들의 사전 실험에 따르면 청크를 키울수록 비디오 품질이 올라가고 GPU 병렬성도 더 잘 활용되어, 샘플링 시간이 소폭만 늘어나도 훨씬 많은 latent를 함께 생성할 수 있음을 관찰했다. 이에 따라 저자들은 "저지연 상호작용을 위해 반드시 작은 양방향 모델링 윈도우를 희생해야 하는가?"라는 질문을 던지고, 생성(generation)과 산출물 확정(output commitment)을 분리하는 방향으로 접근한다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>조건 도착, 생성, 산출물 확정, 재생(playback)을 구분하는 대화형 비디오 서빙 시스템의 단순한 수학적 모델을 제시한다.</li>
+<li>청크 크기가 비디오 품질, 생성 시간, 중복 계산에 미치는 영향을 체계적으로 분석한다.</li>
+<li>재계산을 최소화하는 Speculative Sampling 기법을 두 상태(Produce/Consume) 유한 상태 기계(finite-state machine) 형태로 공식화한다.</li>
+<li>청크 크기와 산출물 확정 단위를 분리함으로써, 지연시간을 줄이는 접근의 초점을 "청크를 작게 쪼개기"에서 "청크당 생성 시간을 가속화하기"로 전환하는 대안적 경로를 제시한다.</li>
+</ol>
+<h2>방법론</h2>
+<p>핵심 아이디어는 다음 전달될 latent에 노이즈로 채운 패딩 latent(K-1개)를 덧붙여 양방향 모델링 윈도우를 확장한 뒤, 한 번의 DiT 샘플링 호출로 K개의 latent를 함께 예측하는 것이다. 이렇게 얻어진 패딩 구간의 예측 결과는 버리지 않고 예측 캐시(prediction cache)에 보관해 두었다가, 조건이 바뀌지 않는 한 재사용한다. 결과는 한 번에 K개씩이 아니라 더 작은 단위(delivery granularity q, 논문에서는 q=1)로 점진적으로 플레이어에 전달되며, 아직 재생되지 않은 "미확정 미래(uncommitted future)" 구간은 새 조건이 들어오면 교체 가능한 상태로 유지된다.</p>
+<p>이를 제어하기 위해 컨트롤러를 Produce(생성 작업이 진행 중)와 Consume(캐시된 예측을 재사용, 추가 샘플링 없음) 두 상태를 오가는 유한 상태 기계로 설계했다. 새 조건이 도착하면, 이미 재생이 확정된 보호 구간(protected prefix)은 그대로 둔 채 그 이후의 교체 가능한 구간만 새로 계획(replan)하여 다시 샘플링한다. 또한 Wan, LTX-2.3 같은 양방향(bidirectional) 비디오 생성 모델을 스트리밍 서빙에 맞게 적용하기 위해, 청크 간 연속성을 유지하는 continuation interface와 VAE의 시간축 압축 특성에 맞춰 경계 프레임을 다시 인코딩하는 절차도 함께 제시한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Wan1.3B, LTX-2.3, Sol-H3 세 가지 비디오 생성 모델에 대해 VBench 지표와 H200 GPU 상의 순전파(forward) 지연을 측정하고, 실제 서빙 환경에서의 종단 간(end-to-end) 지연(L50/L95), GPU 활용률, 재생 끊김(stall) 비율을 평가했다. 청크 크기 K가 1보다 클 때 대체로 VBench 점수가 향상되었으며, 예를 들어 Wan 4-step 480p 설정에서 K=1일 때 79.00이던 VBench 총점이 K=3에서 81.66으로 상승했다. 반면 순전파 지연은 K를 1에서 3으로 늘려도 480p에서 2.05배, 720p에서 2.74배 증가에 그쳐, latent 수가 3배로 느는 것에 비해 완만하게 증가했다.</p>
+<p>실제 서빙 평가에서 Speculative Sampling은 청크 경계로 인한 대기시간을 제거하는 방향으로 응답 지연을 줄였으며, 이는 논문이 제시한 이론적 모델의 예측과 일치했다. 큰 청크를 사용하는 설정에서도 L50 지연 증가가 0.26~0.39초에 불과했고, 동시에 GPU 점유율은 기존 방식(약 49~52%) 대비 훨씬 낮은 17~23% 수준으로 측정되어 더 많은 동시 스트림을 처리할 여유가 있음을 보였다. 특히 Sol-H3 모델에서는 큰 청크를 쓰는 본 기법의 L50이 1.42/1.41초로, 작은 청크를 쓰는 기존 방식의 1.87/1.87초보다 오히려 더 낮으면서도 재생 끊김이 없었다.</p>
+<h2>한계점</h2>
+<p>논문은 두 가지 한계를 명시한다. 첫째, 본 기법은 새 조건이 들어오기 전에 예측이 실제로 재사용될 때만 이득을 주는데, 조건이 자주 또는 지속적으로 바뀌면 샘플링된 청크의 상당 부분이 버려져 DiT 연산이 낭비될 수 있다. 둘째, 청크 내 양방향(bidirectional) 어텐션을 사용하기 때문에, 이후 폐기되는 구간의 정보가 보존되는 KV(key-value) 캐시에 이미 섞여 들어갔을 수 있어, 해당 KV 항목을 삭제하더라도 재생성되는 이어지는 구간에 그 영향이 완전히 제거되지 않을 수 있다.</p>
+<h2>시사점</h2>
+<p>본 연구는 Self-Forcing과 같은 복잡한 스트리밍 전용 후처리 학습(post-training) 없이도, 크고 품질이 좋은 양방향 비디오 생성 모델을 저지연 대화형 스트리밍 시스템에 그대로 서빙할 수 있는 경로를 제시한다. 이는 지연시간 단축의 초점을 "생성 단위를 작게 쪼개는 것"에서 "청크당 생성(고품질 조인트 샘플링)을 더 빠르게 만드는 것"으로 옮기는 관점 전환으로, DiT 샘플링 가속이나 병렬화 기법과 결합하여 추가적인 지연시간 개선 여지를 남긴다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.20556" target="_blank" rel="noopener">huggingface.co/papers/2610.20556</a> · 2026-10-20</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

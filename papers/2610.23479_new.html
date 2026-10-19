@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>헥사쉘</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#1 · Daily Papers 2026-10-20</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 279</span>
+    </div>
+    <h1 class="article-title">HexaShell: A Thin Harness for Exploring the Limits of VLM Agents as Robot Coding Agents</h1>
+    <p class="article-title-ko">헥사쉘: VLM 에이전트를 로봇 코딩 에이전트로 활용할 때의 한계를 탐구하는 얇은 하네스</p>
+    <p class="article-sub">비전-언어 모델(VLM) 기반 코딩 에이전트에게 로봇 제어용 명령줄 하나만 쥐여주고, 실패할 때마다 스스로 삼각측량 기반 "도구"를 작성·수정하게 함으로써, 별도의 로봇 데이터나 학습 없이도 RoboDojo 벤치마크에서 기존 학습 기반 정책들을 능가하는 새로운 state-of-the-art를 달성했다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.23479" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.23479" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: HexaShell: A Thin Harness for Exploring the Limits of VLM Agents as Robot Coding Agents</li>
+<li><strong>저자</strong>: Hongcheng Gao, Alex Zhou, Jay Zhu 외 13명 (HexaFuture)</li>
+<li><strong>출처</strong>: arXiv:2610.23479v1 [cs.RO] (2026-10-16)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음 (코드 저장소: https://github.com/HexaFuture/HexaShell)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.23479">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>비전-언어 모델(VLM) 기반 코딩 에이전트에게 로봇 제어용 명령줄 하나만 쥐여주고, 실패할 때마다 스스로 삼각측량 기반 "도구"를 작성·수정하게 함으로써, 별도의 로봇 데이터나 학습 없이도 RoboDojo 벤치마크에서 기존 학습 기반 정책들을 능가하는 새로운 state-of-the-art를 달성했다.</p>
+<h2>배경 및 문제의식</h2>
+<p>로봇 조작 분야의 성능 순위표는 그동안 대규모 시연 데이터로 학습한 정책(비전-언어-행동 모델 등)이 주도해왔으나, 최근 VLM 기반 에이전트가 이를 따라잡기 시작했다. 저자들은 "코딩 에이전트가 컴퓨터가 아니라 로봇을 제어할 때, 소프트웨어 저장소에서 버그를 고치듯 실패를 코드로 고쳐나가는 방식이 얼마나 통하는지, 그리고 어디서 한계에 부딪히는지"를 탐구한다. 핵심 난제는 VLM이 픽셀만 보고 센티미터 단위의 정확한 3차원 위치를 추정하는 데 서툴다는 점과, 표준 관측에는 깊이 정보가 없다는 점이다. 단안 깊이 추정 네트워크(Depth Anything V2 등)로 보완해도 헤드 카메라 기준 중앙값 41mm, 손목 카메라 기준 약 100mm의 오차가 발생해 정밀 조작에 부족하다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li><strong>얇은 하네스와 짧은 수정 루프</strong>: 에이전트를 건드리지 않고, 로봇에 명령 하나(robo)만 내리게 하는 얇은 인터페이스를 설계했다. 에이전트가 배우는 모든 것은 유닛 테스트가 딸린 작은 "도구(tool)" 코드로 저장되며, 실패 후에는 같은 모델의 "최적화 에이전트"가 도구 하나를 수정하고 같은 레이아웃을 재시도한다. 수정 1회에 중앙값 6.3분이 소요되며, 로봇 데이터나 모델 학습/변경은 필요 없다.</li>
+<li><strong>깊이 네트워크 대신 삼각측량</strong>: 동일한 하네스·루프·모델에서, 캘리브레이션된 카메라로 두 시점의 광선 교차(삼각측량)를 이용한 위치 측정이 깊이 추정 네트워크보다 leaderboard 지표 기준 8.7점 높은 성능을 보였다(레이아웃 단위 비교에서 57승 23패, p&lt;0.001).</li>
+<li><strong>VLM 에이전트의 물리적 한계 지도화</strong>: 420회의 재시험 에피소드를 통해, 성공 여부가 에이전트의 "기억"이나 "읽기" 능력이 아니라 과제가 요구하는 접촉(contact) 유형에 좌우됨을 보였다. 미는 동작(pushing)은 92.5%, 기억 과제는 65.0% 성공률을 보인 반면, 정밀 삽입(tight insertion)은 8.3%에 그쳤다.</li>
+</ol>
+<h2>방법론</h2>
+<p>HexaShell은 세 요소로 구성된다. (1) <strong>하네스</strong>: 외부 네트워크·API 키 없이 컨테이너에서 실행되는 코딩 에이전트(Codex + GPT-6-Astra, 중간 추론 강도)에게 move, rotate, point, gripper, wait, obs, status, done 등 기본 명령과 3대의 640×480 RGB 카메라(헤드 1대, 손목 2대) 영상, 캘리브레이션 정보만 제공한다. 하네스는 명령을 조인트 동작으로 변환할 뿐 어떤 전략적 판단도 하지 않는다. (2) <strong>RGB 기반 3D 측정 도구</strong>: 테이블 평면 높이 추정(table_plane), 알려진 평면 위의 점 측정, 두 카메라의 광선 교차를 이용한 삼각측량 등 순수 OpenCV 기하학을 사용하며, 헤드 카메라만으로 부족할 때는 손목 카메라를 움직여 두 번째 시점을 확보하는 능동 시각(active perception)을 적용한다. (3) <strong>진화 루프</strong>: 각 과제마다 평가 시드 0의 첫 10개 레이아웃으로 도구를 만들고, 실패 시 "최적화 에이전트"가 명령 로그·카메라 프레임·현재 도구 코드를 읽어 진단 후 도구를 작성·수정한다(레이아웃당 최대 5회 수정). 10개 레이아웃 학습 후 도구를 동결하고, 학습에 쓰이지 않은 새로운 10개 레이아웃으로 재시험한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>RoboDojo 벤치마크(Isaac Sim 상의 양팔 ARX X5 로봇, 일반화·기억·장기 과제·정밀도·개방형 등 5개 유형 42개 과제)에서 평가했다. HexaShell은 leaderboard 지표 기준 성공률 39.7%, 진행 점수(progress score) 48.0을 기록해, 기존 최고 학습 기반 정책인 VPP2(32.3%/39.3)와 PhysicalRSI(31.4%/36.3)를 능가하며 새로운 SOTA를 달성했다. 도구 없는 동일 모델(GPT-6-Astra, 고정 하네스)은 22.5%에 그쳐, 도구 진화의 효과가 뚜렷했다. 복잡한 산만 물체(distractor)가 추가된 혼잡 환경에서도 성공률 손실이 거의 없었던(개발 레이아웃 기준 성공의 95% 유지) 반면, 학습 기반 정책들은 평균 18%만 유지했다. 실패 에피소드의 약 57%는 스텝 한도 소진(agent가 실패를 인지했지만 동작을 고치지 못함), 30%는 에이전트가 성공을 선언했으나 체커가 불인정한 경우였다.</p>
+<h2>한계점</h2>
+<p>가장 두드러진 한계는 접촉(contact) 중심 과제다. 정밀 삽입(수 mm 공차)은 8.3%에 그쳤고, 액체·천 등 변형 가능한 물체를 다루는 과제(pour liquid, fold clothes 등)에서도 성능이 낮았다. 특히 옷 개기(fold clothes) 과제에서는 사전에 계획을 세우는 도구 방식이, 매 순간 상황을 보고 수정하는 단계별(step-by-step) 에이전트보다 오히려 성능이 떨어졌다(50% vs 72%). 저자들은 "한계는 추론이 아니라 접촉"이라고 명시하며, 에이전트가 실패를 인지하고도 그에 맞춰 실제 동작(모션)을 고치지 못하는 것이 근본 원인이라고 밝혔다. 또한 측정에 깊이 센서를 쓰지 않아 두 번째 시점 확보에 전체 실행 스텝의 3.6%가 소요되는 비용도 존재한다.</p>
+<h2>시사점</h2>
+<p>이 연구는 로봇 데이터 수집이나 정책 재학습 없이, 범용 코딩 에이전트가 "실패로부터 재사용 가능한 코드 도구를 만드는" 방식만으로도 최신 학습 기반 로봇 정책을 능가할 수 있음을 보여준다. 이는 소프트웨어 공학에서의 "실패하는 테스트를 고치는" 패러다임이 물리적 로봇 제어에도 효과적으로 이식될 수 있음을 시사하며, 동시에 현재 VLM 에이전트의 본질적 병목이 "시각적 인식이나 추론"이 아니라 "정밀한 접촉 제어"에 있다는 구체적 증거를 제시한다. 향후 연구 방향으로, 그리퍼가 부품을 쥔 상태에서도 지속적으로 측정하며 모션을 교정하는 기법이 제안된다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.23479" target="_blank" rel="noopener">huggingface.co/papers/2610.23479</a> · 2026-10-20</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

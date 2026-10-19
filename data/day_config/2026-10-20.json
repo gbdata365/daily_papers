@@ -1,0 +1,92 @@
+{
+  "2610.23479": {
+    "base": "2610_헥사쉘_로봇-코딩-에이전트의-한계-탐구",
+    "rank": "#1",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "279",
+    "en_title": "HexaShell: A Thin Harness for Exploring the Limits of VLM Agents as Robot Coding Agents",
+    "ko_title": "헥사쉘: VLM 에이전트를 로봇 코딩 에이전트로 활용할 때의 한계를 탐구하는 얇은 하네스"
+  },
+  "2610.22471": {
+    "base": "2610_GPT6아스트라_체화-지능-달성-여부-검증",
+    "rank": "#2",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "236",
+    "en_title": "Has GPT-6-Astra Achieved Embodied Intelligence?",
+    "ko_title": "GPT-6-Astra는 체화 지능을 달성했는가?"
+  },
+  "2610.20424": {
+    "base": "2610_비즈벤치_장기-에이전트-실무-배포-난제-공개",
+    "rank": "#3",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "169",
+    "en_title": "BizBench: Unveiling Hidden Challenges in Deploying Long-Horizon Agents for Real-World Business",
+    "ko_title": "비즈벤치: 실무 비즈니스를 위한 장기 호라이즌 에이전트 배포의 숨은 난제 공개"
+  },
+  "2610.21783": {
+    "base": "2610_액트3D_3D-세계-탐색하며-사고하기-학습",
+    "rank": "#4",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "143",
+    "en_title": "Learning to Think and Explore in 3D World",
+    "ko_title": "3D 세계에서 생각하고 탐색하는 법 학습하기"
+  },
+  "2610.19159": {
+    "base": "2610_인투더언노운_AI-에이전트-개방형-과학연구-벤치마크",
+    "rank": "#5",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "130",
+    "en_title": "Into the Unknown: Benchmarking AI agents on open scientific research problems",
+    "ko_title": "미지의 영역으로: 개방형 과학 연구 문제에서 AI 에이전트 벤치마킹"
+  },
+  "2610.09872": {
+    "base": "2610_라이브메이스_진화하는-시장-LLM-에이전트-역량-평가",
+    "rank": "#6",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "110",
+    "en_title": "LiveMACE: Process-Aware Evaluation of LLM Agent Capabilities in Evolving Markets",
+    "ko_title": "라이브메이스: 진화하는 시장에서의 LLM 에이전트 역량에 대한 과정 인식 평가"
+  },
+  "2610.18784": {
+    "base": "2610_캐리온_장기작업-에이전트-객체지향-컨텍스트-관리",
+    "rank": "#7",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "99",
+    "en_title": "Pack Light, CarryOn: Building Object-Oriented Context for Long-Horizon Agents",
+    "ko_title": "패크 라이트, 캐리온: 장기 과업 에이전트를 위한 객체지향 컨텍스트 구축"
+  },
+  "2610.20556": {
+    "base": "2610_추측샘플링_대화형-비디오-생성-지연시간-단축",
+    "rank": "#8",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "70",
+    "en_title": "Speculative Sampling in Interactive Video Generation",
+    "ko_title": "대화형 비디오 생성을 위한 추측 샘플링"
+  },
+  "2610.23121": {
+    "base": "2610_씬디자이너_에이전틱-3D-장면-생성-설계-지능",
+    "rank": "#9",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "49",
+    "en_title": "Scene-Designer: Learning Design Intelligence for Agentic 3D Scene Generation",
+    "ko_title": "씬디자이너: 에이전틱 3D 장면 생성을 위한 설계 지능 학습"
+  },
+  "2610.14157": {
+    "base": "2610_오픈모바일2_앱네이티브-도구-활용-모바일-에이전트",
+    "rank": "#10",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "38",
+    "en_title": "OpenMobile-2: Building Versatile Mobile Agents with Scalable Environments and App-Native Tools",
+    "ko_title": "오픈모바일-2: 확장 가능한 환경과 앱 네이티브 도구로 만드는 범용 모바일 에이전트"
+  }
+}

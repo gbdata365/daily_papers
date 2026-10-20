@@ -1,0 +1,114 @@
+<meta charset="UTF-8">
+<title>플릿 경험으로부터의 학습</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#6 · Daily Papers 2026-10-21</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 107</span>
+    </div>
+    <h1 class="article-title">Learning from Fleet Experience: A Collective Learning Paradigm for Robots</h1>
+    <p class="article-title-ko">플릿 경험으로부터의 학습: 로봇을 위한 집단 학습 패러다임</p>
+    <p class="article-sub">배포 중인 로봇 플릿(fleet)이 생성하는 자율 실행 경험을 사람의 추가 시범이나 교정 동작 없이 서로 공유하여 하나의 공통 정책을 개선하는 "집단 경험 학습(CEL)" 패러다임을 제안하고, 이를 구현한 FERT 알고리즘과 FATS 분산 학습 시스템으로 96대 로봇 규모에서 93.3~99.2%의 실제 조작 과제 성공률을 달성했다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.25736" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.25736" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Learning from Fleet Experience: A Collective Learning Paradigm for Robots</li>
+<li><strong>저자</strong>: Chao Yu, Shu'ang Yu, Hao Lin, Hongzhi Zang, Yuxiang Yan, Chenxi Jiang 외 다수 (총 40인), Tsinghua University, AgiBot, Infinigence AI 공동 연구. 교신저자는 Maoqing Yao(AgiBot), Yu Wang(Tsinghua)</li>
+<li><strong>출처</strong>: arXiv:2610.25736v1 [cs.RO] (2026년 10월 19일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://cel-robot-learning.github.io">https://cel-robot-learning.github.io</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.25736">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>배포 중인 로봇 플릿(fleet)이 생성하는 자율 실행 경험을 사람의 추가 시범이나 교정 동작 없이 서로 공유하여 하나의 공통 정책을 개선하는 "집단 경험 학습(CEL)" 패러다임을 제안하고, 이를 구현한 FERT 알고리즘과 FATS 분산 학습 시스템으로 96대 로봇 규모에서 93.3~99.2%의 실제 조작 과제 성공률을 달성했다.</p>
+<h2>배경 및 문제의식</h2>
+<p>로봇 파운데이션 모델은 시각·언어 이해를 물리적 행동으로 변환하는 초기 능력을 제공하지만, 물체 속성·접촉 조건·개별 로봇 차이 등으로 인해 실제 배포 환경에서 신뢰도 높은 실행을 자동으로 보장하지는 못한다. 기존에는 전문가 시범(expert demonstration)이나 사람이 실시간으로 개입해 교정하는 방식(HG-DAgger 등)으로 정책을 개선해왔는데, 이는 로봇 플릿이 커질수록 원격조작자가 모든 로봇의 실행을 계속 모니터링하고 개입해야 한다는 확장성의 한계를 가진다. 저자들은 "플릿 규모가 커질수록 사람의 교정 공급 능력이 함께 확장되기 어렵다"는 문제의식에서 출발하여, 전문가 지도 없이 로봇 자신의 배포 경험만으로 정책을 개선하는 학습 과정을 모색한다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li><strong>집단 경험 학습(Collective Experience Learning, CEL)</strong>: 배포된 여러 로봇이 생성한 실행 경험을 모아 공유 정책을 업데이트하고, 개선된 정책이 다시 플릿으로 배포되어 추가 경험을 생성하는 폐루프 학습 패러다임을 제시.</li>
+<li><strong>실패 유도 경험 검색 미세조정(Failure-guided Experience Retrieval fine-Tuning, FERT)</strong>: 성공 궤적을 "집단 경험 버퍼"에 저장해 행동 지도(supervision)로 쓰고, 실패 맥락(failure context)을 질의(query)로 사용해 관련된 성공 구간을 검색·우선순위화함으로써 추가 전문가 시범이나 교정 동작 없이 정책을 업데이트.</li>
+<li><strong>결함 허용 비동기 학습 시스템(Fault-Tolerant Asynchronous Training System, FATS)</strong>: 로봇 실행, 클라우드 추론, 정책 최적화를 비동기적으로 연결하고 개별 로봇의 장애·중단에도 학습 루프가 지속되도록 지원하는 분산 시스템(SwarmLink 데이터 플레인 + HotSwarm 제어 플레인).</li>
+<li>FERT 국소 개선 효과에 대한 이론적 하한(Lemma/Theorem)을 제시하여, 성공 재현(replay)과 검색 가중치 부여가 기대 성공률을 향상시키는 방향임을 수학적으로 뒷받침.</li>
+</ol>
+<h2>방법론</h2>
+<p>FERT는 네 단계로 구성된다. (1) <strong>비동기 경험 수집</strong>: 플릿 로봇들이 독립적으로 과제를 수행하며 각 궤적에 이진 성공/실패 라벨이 부여되고, 성공 궤적만 집단 경험 버퍼 D+에 저장된다(실패 궤적의 행동은 지도 신호로 쓰이지 않음). (2) <strong>경험 인코딩</strong>: VLA 정책(π0)의 고정된 시각 인코더로 카메라 영상 특징을 추출하고 관절 상태와 결합해 검색용 임베딩을 생성. (3) <strong>실패 유도 검색</strong>: 실패 궤적 종료 직전 구간(최대 90프레임, 종료 10프레임 전까지)을 질의로 삼아, 완화된 시간 정합 기법인 Subsequence-DTW(S-DTW)로 성공 경험 버퍼에서 가장 유사한 구간(top-K=10)을 검색. (4) <strong>우선순위 기반 미세조정</strong>: 검색된 구간에 샘플링 우선순위를 지수적으로 누적(retention factor ρ) 부여하고, 이 우선순위에 비례해 행동 청크를 샘플링해 음의 로그우도(흐름매칭 손실) 기반으로 정책을 미세조정한다. 전체 과정은 π0 기반 정책이 SFT와 다중로봇 HG-DAgger로 먼저 초기화된 뒤 시작되며, 이후 단계에서는 사람이 성공/실패 결과만 라벨링하고 환경을 리셋할 뿐 추가 시범이나 교정 동작은 제공하지 않는다.</p>
+<p>시스템 측면에서 FATS는 환경(로봇)·추론·학습 워커를 분리하고, 데이터 플레인(SwarmLink)이 분산 채널로 추론 요청을 모으고 궤적 필드를 클라우드에서 조립하며, 제어 플레인(HotSwarm)이 '스테이션(고정 자리)'과 '워커(프로세스)' 개념을 분리해 장애가 난 로봇만 해당 자리에서 재시작하고 다른 로봇은 계속 경험을 수집하도록 한다. 이를 통해 동기식 전체 재시작 방식 대비 장애로 인한 손실 시간을 플릿 규모와 무관하게 일정 비율로 억제한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>AgiBot G2 양팔 로봇을 사용해 꽃꽂이(Flower Arrangement), 옷 개기(Clothes Folding), 휴대폰 충전(Phone Charging), 의자 조립(Stool Assembly), 휴대폰 포장(Phone Packaging, 다단계 과제) 등 5가지 실제 조작 과제에서 평가했다. 학습에 사용되지 않은 held-out 로봇 2대에서 과제당 120회(로봇당 60회) 시행했다. 다중로봇 HG-DAgger가 평균 성공률을 36.3%에서 81.0%로 끌어올린 뒤, FERT는 추가 전문가 개입 없이 평균 97.3%까지 향상시켰다(평균 실패율 86.0% 상대 감소). 휴대폰 포장 과제는 96대 로봇 학습 시 79.2%에서 98.3%로 개선되었으며, 모든 과제에서 FERT는 사람 원격조작(teleoperation) 기준보다도 평균 16.7%p 높은 성공률을 보였다. 또한 RLT(단일 로봇 온라인 RL)와 RECAP(플릿 데이터 오프라인 RL, 둘 다 사람 교정 동작 사용) 대비 각각 평균 12.3%p, 11.5%p 높은 성능을 보였다.</p>
+<p>플릿 규모 확장 실험에서는 로봇당 수집 시간을 고정한 채 로봇 수를 늘렸을 때, FERT는 대체로 플릿이 커질수록 성공률이 증가한 반면(소규모에서는 오히려 초기화 정책보다 낮아지는 경우도 존재), HG-DAgger는 일부 과제에서 포화 또는 성능 저하를 보였다. 애블레이션 연구(16로봇, 휴대폰 포장)에서는 실패 유도 검색을 제거하면 성공률이 86.7%에서 64.2%로 급락했고, 검색 구간 확장(hpre/hpost)을 제거하면 57.5%로, 우선순위 유지 계수 ρ 설정에 따라서도 성능이 크게 달라져 해당 설계 요소들의 기여를 확인했다. 96대 로봇 실제 운영(10:37~18:30) 측정에서는 30건의 장애(22대 로봇 영향)가 있었지만 전체 로봇시간의 1.3%만 손실되었고, 동기식 수집이나 전체 재시작 방식으로 재현(replay)했을 때보다 훨씬 적은 경험 손실을 보여 FATS의 결함 허용 설계가 실효성이 있음을 입증했다.</p>
+<h2>한계점</h2>
+<p>논문은 결론부에서 현재 연구가 단일 로봇 플랫폼(AgiBot G2) 위에서 5개의 과제별(task-specific) 정책만을 평가했다는 점을 한계로 명시한다. 더 넓은 과제 분포, 이종(heterogeneous) 로봇 플랫폼으로의 확장, 그리고 장기간 운영에 따른 환경 변화에 대한 적응은 향후 연구 과제로 남겨두었다. 이 외의 별도 "Limitations" 절은 논문에 명시되지 않음. 또한 실패 여부를 사람이 직접 라벨링하고 환경을 리셋하는 과정은 여전히 사람의 개입을 필요로 하며(행동 교정만 제거), 소규모 플릿에서는 성공 경험의 다양성 부족으로 FERT 성능이 초기화 정책보다 낮아질 수 있다는 점도 실험적으로 관찰되었다.</p>
+<h2>시사점</h2>
+<p>이 연구는 로봇 플릿이 커질수록 사람의 교정 공급 능력과의 비례적 확장 없이도, 로봇 스스로 생성하는 성공/실패 경험만으로 정책 신뢰도를 지속적으로 높일 수 있는 실용적 경로를 제시한다. 이는 대규모 상용 로봇 플릿 배포에서 "배포가 곧 추가 학습 데이터 생성"으로 이어지는 선순환 구조를 가능케 하며, 사람의 역할을 전문가 조작자에서 결과 라벨링·환경 리셋 수준으로 축소할 수 있음을 시사한다. 실패 맥락 기반 검색과 우선순위 샘플링이라는 아이디어는 다른 모방학습·강화학습 파이프라인에도 적용 가능한 일반적 기법으로 볼 수 있으며, FATS가 보여준 스테이션/워커 분리 기반 결함 허용 설계는 향후 대규모 로봇 학습 인프라 구축에 참고할 만한 시스템 패턴을 제공한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.25736" target="_blank" rel="noopener">huggingface.co/papers/2610.25736</a> · 2026-10-21</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

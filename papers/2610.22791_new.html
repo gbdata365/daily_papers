@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>하네스-정책 최적화를 통한 자가진화 코딩 에이전트</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#10 · Daily Papers 2026-10-21</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 41</span>
+    </div>
+    <h1 class="article-title">Self-Evolving Coding Agents via Harness-Policy Optimization</h1>
+    <p class="article-title-ko">하네스-정책 최적화를 통한 자가진화 코딩 에이전트</p>
+    <p class="article-sub">코딩 에이전트를 구성하는 정책 모델(policy)과 하네스(harness, 외부 스캐폴드)를 번갈아 최적화하여, 에이전트 스스로 자신의 실패를 분석해 하네스를 개선하고 이를 바탕으로 강화학습으로 정책을 업데이트하는 재귀적 자가개선 프레임워크 Self-HPO를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.22791" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.22791" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Self-Evolving Coding Agents via Harness-Policy Optimization</li>
+<li><strong>저자</strong>: Zhepei Wei, Wenlin Yao, Baolin Peng 외 5인 (Microsoft Research, University of Virginia, Carnegie Mellon University)</li>
+<li><strong>출처</strong>: arXiv:2610.22791v1 [cs.CL] (2026년 10월 16일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/MSR-Orchard/Self-HPO">GitHub: MSR-Orchard/Self-HPO</a> / <a href="https://huggingface.co/self-hpo">HuggingFace: self-hpo</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.22791">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>코딩 에이전트를 구성하는 정책 모델(policy)과 하네스(harness, 외부 스캐폴드)를 번갈아 최적화하여, 에이전트 스스로 자신의 실패를 분석해 하네스를 개선하고 이를 바탕으로 강화학습으로 정책을 업데이트하는 재귀적 자가개선 프레임워크 Self-HPO를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>LLM 코딩 에이전트의 성능은 모델 자체의 능력(정책)뿐 아니라, 관찰 내용·도구 실행·피드백·종료 시점을 결정하는 외부 스캐폴드인 하네스에 의해서도 크게 좌우된다. 기존 연구는 하네스만 최적화(정책 고정)하거나 정책만 최적화(하네스 고정)하는 두 갈래로 나뉘어 왔는데, 하네스만 바꾸면 모델 자체의 능력 한계는 그대로 남고, 정책만 학습시키면 고정된 하네스가 제공하는 경험 범위 안에서만 배울 수 있다는 한계가 있다. 최근 두 요소를 함께 최적화하려는 시도도 있었지만, 외부의 고정된 하네스 제안자(proposer)에 의존하다 보니 정책이 계속 바뀌면서 최적화 목표 자체가 움직이는(moving target) 문제를 해결하지 못했다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>하네스 최적화(H-step)와 정책 최적화(P-step)를 반복적으로 번갈아 수행하며, 진화하는 정책 자신이 하네스 제안자 역할도 겸하는 재귀적 자가개선 프레임워크 Self-HPO를 제안했다.</li>
+<li>SWE-Bench Verified/Multilingual/Pro 세 개 벤치마크에서 Self-HPO가 하네스 전용·정책 전용 베이스라인을 일관되게 능가함을 보였으며, 평균 해결률을 57.8%에서 64.8%로 끌어올리고 분포 외(OOD) 설정으로도 이득이 전이됨을 확인했다.</li>
+<li>최적화된 하네스와 정책 각각이 서로의 기본(base) 버전과 조합되어도 개선 효과를 유지하며, 두 요소를 함께 최적화했을 때의 이득이 각 요소의 개별 이득의 합보다 크다는 것, 그리고 Self-HPO가 단순 신뢰도(pass@1)뿐 아니라 능력의 한계(pass@k)까지 확장시킨다는 것을 분석으로 보였다.</li>
+</ol>
+<h2>방법론</h2>
+<p>과제 x에 대해 정책 P와 하네스 H가 결합되어 궤적(trajectory)을 생성하고, 실행 가능한 검증기(verifier)가 이를 0/1로 채점한다. Self-HPO는 이 하네스-정책 쌍을 라운드마다 번갈아 갱신한다. H-step에서는 현재 정책 Pt를 고정한 채, 탐색 집합(search set) St 상의 실패 궤적을 정책 스스로 분석하게 하여 프롬프트 및 실행 로직(코드) 수준의 하네스 후보 K개를 제안시키고, 가장 성능이 좋은 후보를 다음 하네스 Ht+1로 채택한다. P-step에서는 이 Ht+1을 고정한 채, GRPO와 Orchard 프레임워크의 Balanced Adaptive Rollout(BAR)을 결합한 강화학습으로 정책을 Pt+1로 업데이트한다. 이때 보상 없는(zero-variance) 그룹을 줄이기 위해 BAR가 보상이 균형 잡히도록 추가 롤아웃을 샘플링한다. P-step에서 전혀 풀리지 않은 "하드 태스크"들이 다음 라운드 H-step의 새로운 탐색 집합 St+1이 되어, 하네스 탐색이 항상 정책의 최신 실패 양상을 따라가도록 만든다. 이 루프는 하드 태스크 집합이 라운드 간 안정화될 때까지 반복되며, 외부의 강력한 모델(Opus 4.8)을 하네스 제안자로 사용하는 변형(HPO)도 함께 제시한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>기본 정책으로 Qwen3.5-35B-A3B, 시드 하네스로 mini-SWE-agent를 사용했고, SWE-rebench·SWE-rebench V2·Scale-SWE에서 구성한 2,484개 과제로 2라운드(H-step당 후보 6개, P-step당 50회 RL 업데이트)를 수행했다. 평가는 SWE-Bench Verified(주 벤치마크, 500문항), SWE-Bench Multilingual(300문항), SWE-Bench Pro(642문항, 3회 평균)로 진행했다. 자가개선 설정에서 Self-HPO는 SWE-Verified 69.5%(Base 61.0% 대비 +8.5점), 평균 64.8%(Base 57.8% 대비 +7.0점)를 기록해 정책 전용 RLVR(61.9%) 및 하네스 전용 Self-Harness(60.1%)를 모두 능가했으며, 비(非)파이썬 언어로 구성된 OOD 벤치마크에서도 이득이 전이되었다. 외부 모델(Opus 4.8) 설정에서도 HPO가 SFT 증류 및 Meta-Harness(하네스 전용)보다 우수했다(SWE-Verified 71.6%). 교차 평가 결과 H2+P2 조합(69.5%)의 이득(+8.5점)이 H2나 P2 단독 이득의 합(6.9점)보다 컸고, pass@k 분석에서는 pass@8이 80.0%에서 84.8%로 상승해 능력 한계 자체가 확장되었음을 보였다. 소거 실험에서는 P-step에 RL 대신 SFT/RFT를 쓰면 성능이 하락하고, 탐색 집합을 고정하면(갱신 안 하면) 성능이 낮아지며, 외부 제안자 대신 자가 제안자를 쓰면 소폭(약 2.1점) 하락하지만 여전히 단일 요소 베이스라인보다 우수함을 확인했다.</p>
+<h2>한계점</h2>
+<p>논문에 별도의 "한계점" 절은 없으나, 본문에서 언급된 제약은 다음과 같다. 자가 제안(Self-proposer) 방식은 외부의 강력한 모델(Opus 4.8)을 제안자로 쓰는 경우보다 성능이 약 2.1점 낮다. 또한 pass@1 분석에서 Self-HPO는 이미 Base가 잘 풀던(Resolved) 과제군에서는 오히려 2.2점 하락하는 등, 개선 효과가 모든 과제에서 균일하지 않다. 그 외 학습 비용(라운드당 하네스 탐색과 대규모 RL 업데이트에 드는 연산량)이나 더 많은 라운드로 확장했을 때의 장기적 수렴 양상에 대한 구체적 논의는 제시되지 않았다.</p>
+<h2>시사점</h2>
+<p>이 연구는 LLM 에이전트의 성능이 정책과 하네스라는 두 축의 상호작용에서 나온다는 점을 실증적으로 보여주며, 외부 감독 모델 없이도 에이전트가 스스로의 실패를 분석해 자신의 실행 환경(스캐폴드)을 고쳐나갈 수 있음을 시사한다. 하네스 탐색 대상을 고정하지 않고 정책 학습 과정에서 드러나는 "하드 태스크"로 계속 갱신하는 방식은, 모델이 발전함에 따라 최적화 목표도 함께 움직여야 한다는 일반적 원칙으로 확장될 수 있어, 코딩 에이전트를 넘어 다른 도구 사용 에이전트의 자가개선 설계에도 참고할 수 있는 접근으로 보인다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.22791" target="_blank" rel="noopener">huggingface.co/papers/2610.22791</a> · 2026-10-21</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>오픈VL하네스</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#7 · Daily Papers 2026-10-21</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 95</span>
+    </div>
+    <h1 class="article-title">OpenVLHarness: Real World Visual Agentic Tool-Use with Multimodal Memory</h1>
+    <p class="article-title-ko">오픈VL하네스: 멀티모달 기억 기반 실세계 비주얼 에이전틱 도구 사용</p>
+    <p class="article-sub">멀티모달 대형언어모델(MLLM)에 "능력 계층(capability layer)"과 "영속적 멀티모달 기억(persistent multimodal memory)"을 결합한 범용 도구사용 하네스 OpenVLHarness를 제안하여, 22개 벤치마크·8개 백본 모델에서 평균 9.7~12.6점의 성능 향상을 달성했다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.26860" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.26860" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: OpenVLHarness: Real World Visual Agentic Tool-Use with Multimodal Memory</li>
+<li><strong>저자</strong>: Yu Zhou, Cheng-Fu Yang, Rui Sun, Di Wu(이상 공동 1저자) 외 7인 (Sibo Peng, Mingyang Zhang, Zhen Yang, Ruiyi Zhang, Nanyun Peng, Zhe Gan, Kai-Wei Chang) — UCLA 및 Apple 소속</li>
+<li><strong>출처</strong>: arXiv:2610.26860v1 [cs.CL] (2026년 10월 19일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://openvlharness.github.io">openvlharness.github.io</a> (코드: <a href="https://github.com/uclanlp/OpenVLHarness">github.com/uclanlp/OpenVLHarness</a>)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.26860">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>멀티모달 대형언어모델(MLLM)에 "능력 계층(capability layer)"과 "영속적 멀티모달 기억(persistent multimodal memory)"을 결합한 범용 도구사용 하네스 OpenVLHarness를 제안하여, 22개 벤치마크·8개 백본 모델에서 평균 9.7~12.6점의 성능 향상을 달성했다.</p>
+<h2>배경 및 문제의식</h2>
+<p>MLLM은 시각적 추론에서 빠르게 발전했지만, 조밀한 장면의 미세 객체 탐지, 롱테일 지식 검색, 중간 측정값 기반 계산 등은 모델 내부 추론만으로 해결하기 어렵다. 저자들은 22개 벤치마크에 대한 통제 실험에서 추론 예산(reasoning effort)을 늘려도 성능 향상이 미미함을 확인했다(예: GPT-6 Luna의 xhigh→max 단계에서 토큰 비용은 2.7배 늘지만 점수는 0.7점만 상승). 이는 단순한 추론 확장이 아니라 외부 도구를 통한 실제 증거 획득이 필요함을 시사한다. 기존 시각 도구사용 에이전트들은 (1) 이기종 백엔드의 서로 다른 호출 규약과 출력 형식(분할 마스크, 깊이 맵 등)을 모델이 해석 가능한 형태로 통일하는 문제와 (2) 이후 추론 단계에서 원본 산출물(수치 데이터 등)에 다시 접근해야 하는 문제를 동시에 해결하지 못한다는 한계가 있었다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>이기종 지각·검색·연산 도구를 과업 단위 인터페이스로 통일하고, 그 출력을 모델이 읽을 수 있는 관찰(observation)로 변환하는 능력 계층(capability layer) 설계.</li>
+<li>이미지, 구조화 데이터, 웹 참조를 질의 전체에 걸쳐 재사용 가능한 핸들로 유지하는 영속적 멀티모달 기억(persistent multimodal memory) 메커니즘.</li>
+<li>22개 벤치마크·8개 오픈/독점 백본에 대한 대규모 평가, 구성요소 제거(ablation) 연구, 그리고 모델 가중치 업데이트 없이 하네스 자체를 특정 도메인에 특화시키는 "하네스 탐색"과 "도구 생성" 두 최적화 워크플로우 제시(전체 하네스·도구·평가 프로토콜 오픈소스 공개).</li>
+</ol>
+<h2>방법론</h2>
+<p>OpenVLHarness는 MLLM 오케스트레이터에 두 가지 보완적 장치를 결합한다. 능력 계층은 각 능력(capability)을 입력 타입·노출 정보로 정의하여, 예를 들어 Visual Grounding은 SAM 3나 Grounding DINO 등 다른 백엔드로 교체 가능하면서도 호출 규약은 동일하게 유지한다. 기본 구성은 지각 5종(Zoom-in, Visual Grounding, OCR, Depth Estimation, Camera Trajectory), 정보 탐색 3종(Text Search, Image Search, Webpage Visit), 그리고 중간 결과에 대한 연산을 수행하는 Python Coding Agent로 총 9개 능력을 포함한다. 각 능력에는 출력 처리기(output processor)가 있어 원시 출력(RLE 마스크, 수치 배열 등)을 시각적 첨부물·자연어 설명·압축된 구조 정보로 변환해 모델이 해석할 수 있게 한다.</p>
+<p>영속적 멀티모달 기억은 질의별 아티팩트 레지스트리를 유지하며, 이미지 아티팩트·구조화 데이터 바인딩·웹 참조 세 범주로 나뉜다. 각 도구 호출 후 "환경 업데이트(Environment Update)"가 사용 가능한 핸들 목록을 모델에 제시하여, 이후 호출이 과거 증거(예: 그라운딩 마스크, 깊이 배열)를 식별자로 재참조할 수 있게 한다. Python Coding Agent는 오케스트레이터가 자연어로 지정한 계산 목표(예: "탐지된 각 영역의 평균 깊이 계산")를 받아, 동일 백본 모델 기반의 별도 코드 생성 세션에서 저장된 데이터를 변수로 실제 실행하는 프로그램을 작성한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>그라운디드 지각(5개), 시각 검색·심층 리서치(6개), 일반 VQA·환각(6개), 공간 추론(5개) 등 4개 도메인 22개 벤치마크에서 Qwen2.5-VL-7B, Qwen3-VL-8B/32B, Kimi K3 등 오픈 모델과 GPT-5, GPT-6 Luna/Sol/Astra 등 독점 모델 총 8개 백본으로 평가했다. Qwen3-VL-8B에서는 기본 34.2점에서 45.4점(+11.2)으로, 32B에서는 38.3점에서 50.9점(+12.6)으로 상승했으며, 기존 학습 불필요(training-free) 베이스라인인 OctoTools, Visual Sketchpad와 Codex를 모두 능가했다. 특히 GPT-6 Luna에서는 Codex가 오히려 도구 미사용 기본 모델보다 낮은 점수(43.8 vs 45.8)를 보인 반면 OpenVLHarness는 56.5점을 기록해, 코딩 에이전트 하네스가 자동으로 멀티모달 추론을 개선하지 않음을 보였다. 추론 노력(reasoning effort)을 5단계로 바꿔가며 비교한 결과, OpenVLHarness는 medium 수준의 비용만으로 다른 방법들의 max 수준 성능을 상회했으며(최대 37%의 토큰 비용), 제거 연구에서는 원시 도구 접근(+3.8~4.3점)에 능력 계층 추가(+3.2~3.4점), 그리고 영속적 멀티모달 기억 완성(+3.1~4.5점)이 각각 누적적으로 기여함을 확인했다. 실패 분석에서는 조밀한 장면(25개 이상 객체)에서의 지각 오류, 검색 도구 호출 누락, 공간추론에서의 복합 오류가 주요 원인으로 나타났으며, 이에 기반한 하네스 탐색(프롬프트·도구 설명 수정)과 도구 생성(신규 복합 도구 작성) 두 특화 기법이 각각 문제 유형에 맞게 성능을 추가로 끌어올렸다(예: SparBench에서 도구 생성으로 +8.2점).</p>
+<h2>한계점</h2>
+<p>논문에 별도의 "한계점" 절은 명시되어 있지 않다. 다만 실패 분석(3.5절)에서 다음과 같은 약점이 보고된다: 25개 이상의 객체가 밀집한 장면에서는 탐지 누락·병합으로 인한 지각 오류가 여전히 빈번하고(해당 도메인 실패의 75%), 시각 검색·심층 리서치 영역에서는 필요한 도구 호출이 누락되는 경우가 많으며(49%), 공간 추론과 일반 VQA에서는 도구 호출 누락과 모델 자체의 추론 오류가 혼재되어 나타난다. 또한 GPT 계열 결과는 API 비용 문제로 단일 실행(single run)만 수행되어 Qwen 계열(3회 평균)에 비해 통계적 변동성 검증이 제한적이다.</p>
+<h2>시사점</h2>
+<p>이 연구는 멀티모달 에이전트의 성능 향상이 단순히 추론 토큰(추론 노력)을 늘리는 것만으로는 한계가 있으며, 이기종 도구의 출력을 모델이 해석 가능한 형태로 렌더링하는 것과 그 기저 데이터를 여러 추론 단계에 걸쳐 주소 지정 가능하게 유지하는 기억 메커니즘이 상호보완적으로 중요하다는 점을 실증적으로 보여준다. 또한 모델 가중치를 갱신하지 않고도 실패 진단에 기반해 하네스 자체(프롬프트·도구 구성)를 도메인에 맞게 특화할 수 있다는 점은, 향후 범용 시각 에이전트를 특정 실무 도메인에 저비용으로 적응시키는 실용적 경로를 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.26860" target="_blank" rel="noopener">huggingface.co/papers/2610.26860</a> · 2026-10-21</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

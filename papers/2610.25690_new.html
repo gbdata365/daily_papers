@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>스케일내브</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#8 · Daily Papers 2026-10-21</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 84</span>
+    </div>
+    <h1 class="article-title">ScaleNav: Scalable Internet Video Pretraining for Language-Conditioned Local Navigation</h1>
+    <p class="article-title-ko">스케일내브: 언어 조건부 로컬 내비게이션을 위한 확장 가능한 인터넷 영상 사전학습</p>
+    <p class="article-sub">자막·레이블 없는 인터넷 1인칭(에고센트릭) 영상으로 "목표에 다가갈 때 화면이 어떻게 변하는지"에 대한 사전지식을 학습한 뒤, 적은 양의 시뮬레이션 행동 데이터로 이를 실행 가능한 로봇 동작으로 전환함으로써, 언어 지시 기반 로컬 내비게이션 성능을 끌어올린 통합 world-action 모델이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.25690" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.25690" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: ScaleNav: Scalable Internet Video Pretraining for Language-Conditioned Local Navigation</li>
+<li><strong>저자</strong>: Yihui Yang, Yuanhong Yu, Jiawei Wang 외 7인 (Zhejiang University, Li Auto Inc., Shenzhen University 공동 연구)</li>
+<li><strong>출처</strong>: arXiv:2610.25690v1 [cs.RO] (2026년 10월 19일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://zju3dv.github.io/ScaleNav/">ScaleNav 프로젝트 페이지</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.25690">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>자막·레이블 없는 인터넷 1인칭(에고센트릭) 영상으로 "목표에 다가갈 때 화면이 어떻게 변하는지"에 대한 사전지식을 학습한 뒤, 적은 양의 시뮬레이션 행동 데이터로 이를 실행 가능한 로봇 동작으로 전환함으로써, 언어 지시 기반 로컬 내비게이션 성능을 끌어올린 통합 world-action 모델이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>로봇이 "창가에 있는 책상으로 가서 멈춰"와 같이 초기 시야에 보이는 목표물을 자연어 지시만으로 찾아가는 과제(언어 조건부 로컬 내비게이션)는 장기 과업을 수행하는 LLM 플래너의 하위 목표 실행 등에서도 중요하다. 기존에는 별도의 grounding 모듈과 내비게이션 알고리즘을 결합하는 모듈형 접근과, 관측·지시를 행동으로 직접 매핑하는 end-to-end 정책이 있었지만, 후자는 다양한 환경에 일반화하기 위해 방대한 학습 데이터가 필요하다. 그런데 실제 로봇 행동 데이터는 수집 비용이 크고, 시뮬레이션 데이터는 sim-to-real 격차를 남긴다. 반면 인터넷에는 사람의 1인칭 내비게이션 행동을 담은 영상이 풍부하지만 로봇 행동 레이블이 없다는 근본적 한계가 있다. 기존 연구들은 영상에서 추정 궤적이나 latent action 같은 중간 지도신호를 추출해 활용했으나, 이 추출 과정에서 생긴 오차나 편향이 후속 정책 학습에 그대로 전파되는 문제가 있었다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>공유 Diffusion Transformer(DiT) 기반의 통합 world-action model(WAM)을 제안하여, 미래 관측(영상)과 행동 청크를 하나의 모델에서 동시에 예측하도록 설계했다.</li>
+<li>영상에서 별도의 프록시(의사) 행동 레이블을 만들지 않고, (1) 지시 조건부 영상 사전학습 → (2) 행동 정합(action alignment) → (3) 공동 미세조정(joint fine-tuning)의 3단계 학습으로 인터넷 영상의 내비게이션 사전지식을 실행 가능한 행동으로 직접 연결했다.</li>
+<li>Short-Horizon OVON의 단일 시점(single-view) 변형에서 86.5%, 자체 구축한 HabitatGS-LN 벤치마크에서 94.9%의 성공률을 달성하여 비교 대상 베이스라인들을 모두 능가했으며, 실제 사족보행 로봇(Unitree Go2) 배치 실험으로 현실 일반화 가능성도 검증했다.</li>
+</ul>
+<h2>방법론</h2>
+<p>모델은 Wan2.2-TI2V-5B 비디오 생성 모델을 기반으로 하며, 노이즈가 섞인 미래 영상 latent와 행동 청크(평면 이동량과 yaw 변화로 구성된 action)를 토큰으로 결합해 DiT에 입력하고, flow matching 방식으로 각각의 속도장을 동시에 예측한다. 시야가 바뀌어도 초기 지시("왼쪽에서 두 번째 문" 등)를 정확히 해석할 수 있도록, 최초 프레임을 계속 참조하는 anchor 메커니즘과 최근 청크들의 슬라이딩 윈도우 히스토리를 chunk-wise causal attention으로 결합한다.</p>
+<p>학습은 3단계로 진행된다. Stage 1(영상 사전학습)에서는 행동 레이블 없이 약 18.2K개의 인터넷 1인칭 영상-지시 쌍만으로, 카메라가 목표에 다가갈 때 관측이 어떻게 변화하는지를 학습한다. Stage 2(행동 정합)에서는 약 2.6K개의 시뮬레이션 행동 레이블 데이터를 사용해, DiT 본체는 대부분 고정한 채 새로 초기화한 action head와 action embedding MLP, 그리고 공유 self-attention만 학습시켜 실행 가능한 행동 청크 예측 능력을 결합한다. Stage 3(공동 미세조정)에서는 나머지 DiT 모듈과 video head까지 모두 풀어 영상·행동 예측을 함께 최적화한다. 목표 도달 후 정지 행동은 마지막 청크를 마지막 프레임 반복 및 제로 모션 행동으로 패딩해 암묵적으로 학습시킨다. 학습 데이터는 SpatialVID-HQ의 장면 주석을 활용해 유튜브에서 선별한 실내 1인칭 영상(VLM으로 후보 도착 지점과 지시문 생성·검수)과, Habitat-GS/InteriorGS 실내 장면에서 SCAN-Planner 기반 경로planning으로 수집한 행동 레이블 시뮬레이션 데이터 두 가지로 구성된다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Short-Horizon OVON(단일 시점 적응판, 36개 HM3D 장면·524 에피소드)과 자체 구축한 HabitatGS-LN(45개 InteriorGS 장면·157 에피소드, 속성·공간관계 기반 지시까지 포함) 두 시뮬레이션 벤치마크에서 성공률(SR)과 경로효율(SPL), 추론 지연시간을 측정했다. NavDP, ApexNav(둘 다 LocateAnything으로 grounding 추가), StreamVLN, Uni-NaVid(제로샷 및 자체 데이터 파인튜닝 버전)와 비교한 결과, ScaleNav는 두 벤치마크 모두에서 SR·SPL 최고 성능(86.5%/71.3%, 94.9%/86.1%)을 기록했고, RTX 4090 기준 실행당 76ms의 비교적 낮은 지연시간을 보였다. 인터넷 영상 없이 학습한 변형 대비 SR이 각각 5.3%p, 4.5%p 향상되어 영상 사전학습의 효과가 확인되었다. Ablation에서는 영상에서 추정한 의사 행동 레이블로 학습하는 방식이 오히려 성능을 떨어뜨렸고(73.9% SR), 별도의 영상 사전학습 단계 없이 행동 데이터와 함께 학습하는 것보다 제안된 3단계 분리 학습이 더 우수했다(94.9% vs 90.4%). 초기 프레임 anchor 제거 시 SR이 94.9%→89.8%로 하락해 그 효과도 확인됐다. 실제 로봇(Unitree Go2) 실험에서는 전시장, 라운지, 사무공간 등 3개 환경, 총 60회 시행에서 ScaleNav가 전체 83.3% SR로 StreamVLN(41.7%), Uni-NaVid(51.7%), 인터넷 영상 미사용 변형(65.0%)을 모두 앞섰다.</p>
+<h2>한계점</h2>
+<p>논문은 정량 평가가 실내 환경에서 초기 시야에 보이는 물체 목표로의 내비게이션에 국한되어 있음을 명시한다. 실외 환경으로의 일반화와 영역(region) 수준 목표로의 내비게이션은 아직 검증되지 않은 과제로 남아 있다고 밝히고 있다.</p>
+<h2>시사점</h2>
+<p>행동 레이블이 없는 방대한 인터넷 영상으로부터 중간 프록시(궤적, latent action 등)를 거치지 않고 "영상 예측" 자체를 사전학습 신호로 삼아, 이후 소량의 시뮬레이션 행동 데이터로 효율적으로 실행 가능한 정책으로 전환하는 패러다임을 보여준다. 이는 로봇 행동 데이터 수집 비용과 sim-to-real 격차라는 이중 제약 속에서, 영상-행동 공동 예측 world-action model 구조가 데이터 효율적인 스케일링 경로가 될 수 있음을 시사하며, 향후 내비게이션 외 다른 로봇 작업에도 유사한 영상 사전학습 전략이 확장될 가능성을 열어준다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.25690" target="_blank" rel="noopener">huggingface.co/papers/2610.25690</a> · 2026-10-21</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

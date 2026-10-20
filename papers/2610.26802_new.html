@@ -1,0 +1,108 @@
+<meta charset="UTF-8">
+<title>파라미터 효율적 미세조정(PEFT)을 통한 뇌 인코딩 모델 확장</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#1 · Daily Papers 2026-10-21</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 231</span>
+    </div>
+    <h1 class="article-title">Scaling Parameter-Efficient Fine-Tuning for Brain Encoding</h1>
+    <p class="article-title-ko">파라미터 효율적 미세조정(PEFT)을 통한 뇌 인코딩 모델 확장</p>
+    <p class="article-sub">거대 멀티모달 사전학습 백본을 통째로 얼리던 기존 뇌 인코딩 방식 대신, LoRA 기반 파라미터 효율적 미세조정(PEFT)을 적용함으로써 전체 파라미터의 약 5%만 학습하고도 Algonauts 2025 챌린지에서 새로운 최고 성능(SoTA)을 달성한 연구다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.26802" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.26802" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Scaling Parameter-Efficient Fine-Tuning for Brain Encoding</li>
+<li><strong>저자</strong>: Josh Ying, Guanglong Sun, Nolan Ho 외 6인 (Columbia University, Mind Lab, Tsinghua University, HKUST(GZ) 소속; 교신저자 Hossein Adeli, Nikolaus Kriegeskorte)</li>
+<li><strong>출처</strong>: arXiv:2610.26802v1 [cs.LG] (2026년 10월 19일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/zfying/brain-lora">GitHub 코드 저장소</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.26802">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>거대 멀티모달 사전학습 백본을 통째로 얼리던 기존 뇌 인코딩 방식 대신, LoRA 기반 파라미터 효율적 미세조정(PEFT)을 적용함으로써 전체 파라미터의 약 5%만 학습하고도 Algonauts 2025 챌린지에서 새로운 최고 성능(SoTA)을 달성한 연구다.</p>
+<h2>배경 및 문제의식</h2>
+<p>뇌 인코딩 모델은 자극(영상, 음성, 텍스트 등)으로부터 fMRI 등 신경 반응을 예측하는 모델이다. 기존 주류 방법은 행동 과제로 사전학습된 대형 모델을 고정(frozen)된 특징 추출기로 사용하고, 신경 데이터로는 오직 readout(출력층)만 학습하는 방식이었다. 이는 강력한 사전학습 prior를 유지할 수 있지만, 모델 표현력을 뇌 인코딩에 특화시키지 못한다는 한계가 있다. 반대로 처음부터 학습시키거나 백본 전체를 완전히 미세조정(full fine-tuning)하는 방법은 신경 데이터가 비싸고 희소하기 때문에 오히려 성능이 떨어지는 경우가 많았다. 저자들은 이 사이의 간극을 메우는 해법으로 LoRA 등 PEFT 기법이 거의 탐구되지 않았다는 문제의식에서 출발한다.</p>
+<h2>핵심 기여</h2>
+<p>논문은 네 가지 기여를 제시한다. 첫째, 백본의 인과적(causal) 구조를 활용해 슬라이딩 윈도우 대신 단일 순전파로 여러 시점을 한 번에 예측함으로써 특징 추출 비용을 약 350배 절감했다(효율성). 둘째, 4.7B~104B 파라미터 규모의 아홉 개 멀티모달 백본 전체에서 LoRA가 일관되게 성능을 향상시켰으며, 동일 백본(Qwen3-Omni) 기준 이전 SoTA 대비 약 5%의 학습 파라미터만으로 더 높은 성능을 보였다(효과성). 셋째, 적응된 멀티모달 백본에서도 모달리티 기여도 분석을 통해 시각/청각 피질의 전형적 지형도가 그대로 복원됨을 보이며 해석 가능성을 입증했다(해석가능성). 넷째, 여러 LoRA를 하나의 백본에서 동시에 학습하는 배치형 multi-LoRA 커널을 개발해 200개 이상의 어댑터를 앙상블, 공개 리더보드 1위를 달성했다(확장성).</p>
+<h2>방법론</h2>
+<p>인코딩 모델은 고정 또는 부분 조정되는 사전학습 백본 f_θ와 readout g_φ의 조합으로 정의되며, PEFT는 원래 가중치 θ0에 저차원 변화량 Δ(ψ)만 더해 학습하는 방식(Θ_PEFT)으로 공식화된다. 이 틀에서 세 가지 스케일링 축이 제시된다: 더 강력한 백본으로 "확장(scale up)", 적응 파라미터 수를 줄이는 "축소(scale down)", 여러 어댑터를 동시에 학습하는 "분산 확장(scale out)"이다.</p>
+<p>구체적으로 Qwen3-Omni 백본의 어텐션 모듈에 rank-16 LoRA를 32번째 레이어까지 삽입(약 891만 개 학습 파라미터)하고, 선형 또는 cross-attention readout(약 5230만 개 파라미터)을 함께 1 epoch 동안 공동 최적화한다. 핵심 효율화 기법은 기존의 슬라이딩 윈도우 방식(클립당 약 2,800회 순전파) 대신 149초(100 TR) 윈도우를 단일 인과적 순전파로 처리해 모든 시점의 표현을 동시에 얻는 것으로, 60초의 문맥(context lead)을 추가해 윈도우 시작부의 성능 손실을 보완했다. 또한 SGD 공동 최적화 이후 선형 readout 가중치를 ridge 회귀로 재추정하는 폐쇄형(closed-form) 재적합 단계를 거친다. 모달리티 해석을 위해서는 video/audio/text 세 입력에 대한 정확한 Shapley 값을 계산해 각 모달리티의 기여도와 백본 내부에서의 교차 모달 혼합 정도를 정량화했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>실험은 CNeuroMod/Algonauts 2025 챌린지 데이터(네 명의 피험자가 7개 시즌의 Friends 드라마를 시청하며 수집한 전뇌 fMRI, 1,000개 피질 영역으로 분할)를 사용하며, Season 6을 검증, Season 7 및 OOD 영화 세트를 평가에 사용한다. 주요 결과로 단일 모델 기준 BrainLoRA(cross-attention readout, 6140만 파라미터)는 ID 0.327, OOD 0.228의 Pearson r을 기록해, 11억 파라미터 readout을 쓰는 이전 SoTA MIRAGE(ID 0.310, OOD 0.217)를 능가했다. 완전 미세조정(203억 파라미터)은 LoRA와 비슷하거나 약간 낮은 성능을 보여, 적은 데이터 환경에서는 LoRA가 더 유리함을 확인했다. 학습된 어댑터는 미학습 피험자와 전혀 다른 데이터셋(NNDb)에도 제로샷으로 전이되어 유사한 성능 향상을 보였다. 모달리티 귀속 분석에서는 1차 시각피질이 비디오(72.5%)에, 청각피질과 측두엽이 오디오(각각 72.9%, 60.3%)에 의해 주로 설명되는 전형적 지형도가 재현되었고, 적응 이후 오디오 기여도가 39% 증가하고 모달리티 간 교차 혼합이 8.9%에서 15.3%로 거의 두 배 증가했다. 마지막으로 261개의 독립적으로 학습된 어댑터를 결합한 앙상블은 검증 0.348, ID 0.343, OOD 0.248을 달성해 공개 포스트챌린지 리더보드 1위를 기록했으며, multi-LoRA 커널은 32개 어댑터 동시 학습 시 단일 어댑터 대비 약 29.8배의 속도 향상을 보였다.</p>
+<h2>한계점</h2>
+<p>저자들이 명시한 한계는, 모든 실험이 네 명의 피험자가 시청각 내러티브(영화/드라마)를 보는 단일 벤치마크 계열에서만 이루어졌다는 점이다. 미학습 피험자 및 별도 데이터셋(NNDb)으로의 전이를 확인했지만, 두 경우 모두 "내러티브 영화" 영역을 벗어나지 않는다. 여러 데이터셋과 모달리티에 걸친 공동 학습은 향후 과제로 남겨두었다고 밝히고 있다.</p>
+<h2>시사점</h2>
+<p>이 연구는 PEFT가 신경 데이터가 희소한 환경에서도 거대 멀티모달 백본을 뇌 인코딩에 효율적으로 특화시킬 수 있는 유력한 패러다임임을 보여준다. 저자들은 백본을 키우는 확장(scale up), 학습 파라미터를 줄이는 축소(scale down), 다수의 경량 어댑터를 동시에 학습하는 분산 확장(scale out)이라는 세 축을 결합하면, 과제·데이터셋·피험자·종(species)을 아우르는 "뇌 파운데이션 모델"로 나아갈 수 있다고 전망한다. 이는 매번 모델을 처음부터 학습시키는 비용 없이, 하나의 강력한 사전학습 모델을 다양한 신경과학적 특화 모델 집합으로 전환할 수 있는 실용적 경로를 제시한다는 점에서 의의가 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.26802" target="_blank" rel="noopener">huggingface.co/papers/2610.26802</a> · 2026-10-21</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

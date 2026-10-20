@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>오알라이선스</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#2 · Daily Papers 2026-10-21</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 148</span>
+    </div>
+    <h1 class="article-title">OR-License: Evaluating LLM Agents as Real-World Operations Research Practitioners</h1>
+    <p class="article-title-ko">오알라이선스: 실무 운영연구 전문가로서의 LLM 에이전트 평가</p>
+    <p class="article-sub">OR-License는 실제 유상 컨설팅 프로젝트에서 발굴한 31개 운영연구(OR) 과제를 기반으로, LLM 에이전트가 원본 클라이언트 자료만 가지고 전문가 수준의 최적화 솔루션을 "정보 수집부터 구현·검증까지" 끝까지 수행할 수 있는지 평가하는 벤치마크이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.24087" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.24087" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: OR-License: Evaluating LLM Agents as Real-World Operations Research Practitioners</li>
+<li><strong>저자</strong>: Peisong Wang, Feixue Liu, Yize Meng, Bowen Liu 외 다수 (HKUST-GZ, HKU, Tencent Hunyuan 등 다수 산학 기관 공동 저자, 교신저자 Yong-Hong Kuo·Jia Li)</li>
+<li><strong>출처</strong>: arXiv:2610.24087v1 [cs.CL] (2026년 10월 16일)</li>
+<li><strong>프로젝트 페이지</strong>: 해당 없음 (논문 내 Website/Code/Dataset 링크가 언급되나 구체 URL은 본문에 기재되지 않음)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.24087">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>OR-License는 실제 유상 컨설팅 프로젝트에서 발굴한 31개 운영연구(OR) 과제를 기반으로, LLM 에이전트가 원본 클라이언트 자료만 가지고 전문가 수준의 최적화 솔루션을 "정보 수집부터 구현·검증까지" 끝까지 수행할 수 있는지 평가하는 벤치마크이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>운영연구(OR)는 제조, 물류, 헬스케어, 유통 등에서 고부가가치 의사결정을 지원하지만, 실제 배치를 위해서는 전문가가 불완전한 비즈니스 자료를 요구사항 도출·문제 정식화·해법 전략 선택·솔버 구현의 과정을 거쳐 실행 가능한 의사결정 프로세스로 변환해야 한다. 기존 OR 벤치마크는 대개 이미 완결된 문제 설명이나 사전 정의된 최적화 과제에서 출발하여, 실제 업무에서 핵심적인 "원본 비즈니스 자료를 전문가가 검증한 해법으로 번역하는 과정"을 다루지 못한다는 한계가 있다. 저자들은 LLM 기반 OR 연구들과 최근 다단계 에이전트 벤치마크들에도 불구하고 세 가지 간극이 남아있다고 지적한다: (1) 과제 복잡도와 실제 현업과의 괴리, (2) 정보 습득 과정(에이전트가 누락된 정보를 스스로 질문해 얻어야 하는 현실)의 부재, (3) 전문가가 실제로 승인한 납품물에 근거한 평가 기준의 부재.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>총 368만 달러 규모의 실제 유상 OR 프로젝트에서 파생된 10개 산업, 31개 인스턴스로 구성된 데이터셋을 비식별화하여 공개하였다.</li>
+<li>에이전트가 프로젝트 전 과정(문제 정식화·해결·개선)에 걸쳐 클라이언트 측 비즈니스 사실을 질의할 수 있게 하되 OR 전문지식은 제공하지 않는 통제된 클라이언트 시뮬레이터 ORSim을 도입했다.</li>
+<li>실행 가능성(feasibility)과 전문가 대비 목적함수 품질을 결합한 Deployment-Adjusted Quality(DAQ) 지표와, 페널티 강도를 조절하는 Reliability-Quality Profile(DAQα)을 제안하고, 질의-가설-실험-해석-개선(HCAEU) 체인 분석을 통한 궤적(trajectory) 수준 분석을 수행했다.</li>
+</ul>
+<h2>방법론</h2>
+<p>각 OR-License 과제는 산업별 시나리오 안에 여러 인스턴스를 포함하며, 인스턴스마다 결정공간, 목적함수, 숨겨진 검증기(verifier)가 정의된다. 에이전트는 초기 비즈니스 브리핑과 입력 파일을 받고, 공식 테스트 케이스에 대해 실행 가능한 의사결정을 산출해야 한다. ORSim은 선택(Select)-승인(Authorize)-렌더링(Render)의 3단계 구조로 동작한다: 시뮬레이터 측 LLM이 폐쇄형 사실 카탈로그에서 관련 항목을 선택하고, 결정론적 컨트롤러가 소유권·공개범위·질의당 최대 공개 건수(3건)를 검증한 뒤, 응답 전용 LLM이 승인된 텍스트만 자연어로 전달한다. 평가는 제출 이후 숨겨진 검증기로 엄격한 실행 가능성(Strict Feasibility)을 확인하고, 실행 가능한 인스턴스에 한해 전문가 해법 대비 목적함수 품질(Qfeas)을 계산하며, 실행 불가능한 인스턴스에는 0점을 부여하는 DAQ로 종합한다. 추가로 질문이 발생한 워크플로우 단계(S1~S6)를 수작업으로 분류하고, 연구적 탐구 행위를 가설(H)-설명(C)-실험(A)-해석(E)-개선(U)의 HCAEU 체인으로 코딩하여 체인 완결률과 단계별 품질을 분석했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Claude Code를 주 평가 하네스로 사용하고 ORSim을 Bash 명령으로 노출시켜, 11개의 최신 LLM(Claude Opus 5, DeepSeek-V4.1-Flash, Doubao-Seed-2.1-Pro, Gemini 3.8 Flash, GLM-5.3-Flash, GPT-5.6 Sol, Grok 4.6, Hy3, Hy4 Preview, Muse Spark 1.3, Qwen3.8-Max)에 대해 모델-과제 쌍당 5회씩 실행하여 평가했다(Codex 하네스 비교는 부록에 별도 보고). 결과적으로 모델 간 차이는 조건부 목적함수 품질(96.92%~101.01%, 약 4점 차이)보다 실행 가능성(45.16%~88.39%, 약 43점 차이)에서 훨씬 크게 나타났다. 가장 우수한 Grok 4.6도 실행 가능성 88.39%, DAQ 86.55%로 전문가 기준(DAQ=1)에 13.45점 못 미쳤으며, 이 격차의 약 86%는 실행 불가능한 납품(0점 처리)에서 비롯되었다. Reliability-Quality Profile 분석에서도 모든 모델 순위는 페널티 강도(α=1~3)에 걸쳐 안정적이었지만 어떤 모델도 전문가 수준을 따라잡지 못했다. HCAEU 체인 완결률은 모델별로 24%(Muse Spark 1.3)~45%(Grok 4.6)에 그쳤다. 클라이언트 정보 질의는 S1(솔버 코드 작성 이전) 단계에 86.7%~98.3%로 집중되었으나, 후반 단계(S4, S5)의 질의가 오히려 더 높은 확인된 문제 해결 비율(최대 약 71%)을 보였다. 오류 분석에서는 구현 오류(IMP)보다 정식화 관련 오류(제약조건 CON, 동적 전이 DYN, 목적함수·불확실성 OBJ/UNC)가 다수 모델에서 지배적으로 나타났다.</p>
+<h2>한계점</h2>
+<p>논문 본문에는 별도의 "한계점" 절이 명시되어 있지 않다. 다만 결론부에서 연구진은 현재 에이전트들이 정보 습득을 초기 요구사항 수집에만 집중하고 해법 개발이 진행되는 동안 지속적으로 가정을 재검토하지 못하는 점, 연구적 탐구(HCAEU)를 끝까지 완결하는 신뢰성이 부족한 점, 구현 이전에 올바른 문제 정식화 자체에서 실패가 두드러지는 점을 주요 역량 공백으로 지적한다. 이는 벤치마크가 보여주는 실증적 한계이며, 데이터셋 규모(31개 인스턴스, 10개 산업) 자체도 산업 커버리지 측면에서 제한적일 수 있다는 점이 시사된다.</p>
+<h2>시사점</h2>
+<p>이 연구는 LLM 에이전트가 단순히 주어진 최적화 문제를 "푸는" 능력과, 실제 비즈니스 자료로부터 올바른 문제를 "정의하고 정보를 능동적으로 수집하며 검증하는" 능력이 서로 다른 차원의 역량임을 보여준다. 향후 신뢰할 수 있는 장기 호라이즌 OR 에이전트를 만들기 위해서는 지속적인 정보 격차 해소, 비즈니스 요구사항에 충실한 문제 정식화, 그리고 실험적 증거와 연계된 자기개선 메커니즘이 필요하다는 점을 시사하며, 이는 OR뿐 아니라 전문직 업무 전반에 LLM 에이전트를 투입할 때 고려해야 할 일반적 설계 원칙으로 확장될 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.24087" target="_blank" rel="noopener">huggingface.co/papers/2610.24087</a> · 2026-10-21</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

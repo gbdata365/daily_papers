@@ -1,0 +1,110 @@
+{
+  "2610.26802": {
+    "base": "2610_브레인로라_PEFT-기반-뇌-인코딩-모델-확장",
+    "rank": "#1",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "231",
+    "en_title": "Scaling Parameter-Efficient Fine-Tuning for Brain Encoding",
+    "ko_title": "파라미터 효율적 미세조정(PEFT)을 통한 뇌 인코딩 모델 확장"
+  },
+  "2610.24087": {
+    "base": "2610_오알라이선스_LLM-에이전트-운영연구-실무-평가-벤치마크",
+    "rank": "#2",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "148",
+    "en_title": "OR-License: Evaluating LLM Agents as Real-World Operations Research Practitioners",
+    "ko_title": "오알라이선스: 실무 운영연구 전문가로서의 LLM 에이전트 평가"
+  },
+  "2610.26625": {
+    "base": "2610_에고익스피리언스_인간-경험-기반-1인칭-세계표현-학습",
+    "rank": "#3",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "120",
+    "en_title": "EgoXperience: Learning World-Grounded Egocentric Representations from Human Experience",
+    "ko_title": "에고익스피리언스: 인간 경험으로부터 세계에 기반한 1인칭 표현 학습"
+  },
+  "2610.26825": {
+    "base": "2610_멤티원_메모리-네이티브-진화-향한-기반모델",
+    "rank": "#4",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "109",
+    "en_title": "MemT-1.0: Towards Memory-Native Evolution",
+    "ko_title": "MemT-1.0: 메모리 네이티브 진화를 향하여"
+  },
+  "2610.26549": {
+    "base": "2610_홀리월드_1인칭-경험-기반-전일적-세계지능-구축",
+    "rank": "#5",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "108",
+    "en_title": "Holi-World: Building Holistic World Intelligence from Human-Ego Experience",
+    "ko_title": "홀리월드: 1인칭 경험으로 구축하는 전일적 세계 지능"
+  },
+  "2610.25736": {
+    "base": "2610_플릿러닝_로봇-집단-경험-학습-패러다임",
+    "rank": "#6",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "107",
+    "en_title": "Learning from Fleet Experience: A Collective Learning Paradigm for Robots",
+    "ko_title": "플릿 경험으로부터의 학습: 로봇을 위한 집단 학습 패러다임"
+  },
+  "2610.26860": {
+    "base": "2610_오픈VL하네스_멀티모달-기억-기반-실세계-도구사용-에이전트",
+    "rank": "#7",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "95",
+    "en_title": "OpenVLHarness: Real World Visual Agentic Tool-Use with Multimodal Memory",
+    "ko_title": "오픈VL하네스: 멀티모달 기억 기반 실세계 비주얼 에이전틱 도구 사용"
+  },
+  "2610.25690": {
+    "base": "2610_스케일내브_언어조건부-내비게이션-위한-영상-사전학습",
+    "rank": "#8",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "84",
+    "en_title": "ScaleNav: Scalable Internet Video Pretraining for Language-Conditioned Local Navigation",
+    "ko_title": "스케일내브: 언어 조건부 로컬 내비게이션을 위한 확장 가능한 인터넷 영상 사전학습"
+  },
+  "2610.26824": {
+    "base": "2610_스펙엠알엘_파라메트릭-스펙트럼-기반-마트료시카-표현학습",
+    "rank": "#9",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "80",
+    "en_title": "SpecMRL: Redesign Matryoshka Representation Learning within Parametric Spectrum",
+    "ko_title": "SpecMRL: 파라메트릭 스펙트럼 내에서 마트료시카 표현학습 재설계"
+  },
+  "2610.22791": {
+    "base": "2610_자가진화코딩에이전트_하네스정책-최적화",
+    "rank": "#10",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "41",
+    "en_title": "Self-Evolving Coding Agents via Harness-Policy Optimization",
+    "ko_title": "하네스-정책 최적화를 통한 자가진화 코딩 에이전트"
+  },
+  "2610.24960": {
+    "base": "2610_코워크엔브_장기협업-에이전트-훈련환경-합성",
+    "rank": "#11",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "38",
+    "en_title": "CoworkEnv: Synthesizing Training Environments for Long-Horizon Cowork Agents",
+    "ko_title": "코워크엔브: 장기 협업 에이전트를 위한 훈련 환경 합성"
+  },
+  "2610.25404": {
+    "base": "2610_엠티포싱_자기회귀확산-기반-다회차-이미지편집",
+    "rank": "#12",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "35",
+    "en_title": "MT Forcing: Towards Stable and Consistent Multi-Turn Image Editing with Autoregressive Diffusion",
+    "ko_title": "MT Forcing: 자기회귀 확산 기반 안정적이고 일관된 다회차 이미지 편집"
+  }
+}

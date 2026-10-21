@@ -1,0 +1,107 @@
+<meta charset="UTF-8">
+<title>로피디아 W0</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#3 · Daily Papers 2026-10-22</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 173</span>
+    </div>
+    <h1 class="article-title">Ropedia W0: Scaling Loco-Manipulation World Models across Embodiments with Human Experience</h1>
+    <p class="article-title-ko">로피디아 W0: 인간 경험을 활용한 체현 간 이동-조작 월드 모델 스케일링</p>
+    <p class="article-sub">사람의 1인칭 영상과 로봇 영상을 카메라 포즈 및 투영된 골격이라는 하나의 통일된 기구학적 인터페이스로 묶어, 걷기(이동)와 손 조작(매니퓰레이션)을 동시에 예측하는 사람-로봇 교차 체현 월드 모델 "Ropedia W0"를 제시한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.26855" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.26855" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Ropedia W0: Scaling Loco-Manipulation World Models across Embodiments with Human Experience</li>
+<li><strong>저자</strong>: Tianqi Liu, Hanfei Zhao, Qiufeng Liang, Hui En Pang 등 15명 (난양이공대학, Ropedia, 듀크대학, UC 샌디에이고, 칭화대학 소속)</li>
+<li><strong>출처</strong>: arXiv:2610.26855v1 [cs.CV] (2026년 10월 19일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://ropedia.github.io/ropedia-w0/">https://ropedia.github.io/ropedia-w0/</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.26855">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>사람의 1인칭 영상과 로봇 영상을 카메라 포즈 및 투영된 골격이라는 하나의 통일된 기구학적 인터페이스로 묶어, 걷기(이동)와 손 조작(매니퓰레이션)을 동시에 예측하는 사람-로봇 교차 체현 월드 모델 "Ropedia W0"를 제시한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>월드 모델은 행동의 결과를 미리 예측해 구현형 에이전트의 의사결정을 돕지만, 기존 연구들은 대부분 고정된 베이스의 그리퍼 조작에 집중해 이동으로 인한 시점 변화와 손-물체 상호작용을 함께 다루지 못했다. 또한 서로 다른 로봇(그리퍼, 휴머노이드 등)은 행동 공간이 제각각이라, 기존 방법들은 로봇별 전용 액션 인터페이스나 추가 적응을 요구했다. 사람 영상은 풍부하고 저렴하게 구할 수 있는 보완 데이터원이지만, 기존 공개 1인칭 데이터셋들은 카메라 궤적이나 손 포즈 주석이 부정확하거나 누락되어 있고 형식이 제각각이라 통합 학습에 부적합했다.</p>
+<h2>핵심 기여</h2>
+<p>1) 사람과 그리퍼 로봇, 다지 휴머노이드를 아우르는 최초의 통일된 1인칭 이동-조작 월드 모델 Ropedia W0를 제안했다. 2) 카메라 포즈(이동)와 투영된 골격(조작)이라는 공유 기구학적 표현으로, 사람과 로봇 영상을 함께 학습할 수 있는 확장 가능한 구조를 설계했다. 3) 수집-주석-품질검사를 통합한 휴먼인더루프 파이프라인을 구축해, 1만 시간 이상의 사람 영상과 3천 시간의 로봇 영상으로 구성된 Xp-Data(수작업 로봇 키포인트 보정 포함)를 만들었다. 4) 장기 이동-조작을 평가하는 새 벤치마크 Xp-Teleop을 함께 공개했다.</p>
+<h2>방법론</h2>
+<p>모델은 초기 프레임, 텍스트 프롬프트, 그리고 매 프레임의 카메라·골격 조건을 입력받아 미래 1인칭 영상을 예측하는 잠재 비디오 디퓨전 트랜스포머다. 이동은 플뤼커(Plücker) 레이맵으로 인코딩된 상대 카메라 포즈로, 조작은 사람 손 MANO 포즈나 로봇의 URDF 순기구학(FK)에 수작업 보정을 더한 이미지 정합 골격 투영으로 표현해, 체현마다 다른 관절 구조를 하나의 시각적 형식으로 통일한다. 이 조건들은 비디오 토큰에 공간 정렬 방식으로 더해지고, 손목 포즈와 광시야 골격 같은 보조 정보는 교차주의(cross-attention)로 주입된다. 학습은 사람 영상만으로 하는 사전학습과 사람+로봇 혼합 중간학습 2단계로 진행하며, 5B 모델과 Wan2.2 기반 14B 활성 파라미터의 MoE(A14B) 모델 두 규모로 구현했다. 이후 Causal Forcing과 LongLive 기법으로 증류해 4단계 자기회귀 생성기를 만들어 실시간·분단위 롤아웃을 가능하게 했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>DreamDojo, Ψ0, ω-HOME, Xp-Teleop, AgiBot 등 다섯 개의 교차 체현 벤치마크와 비학습 1인칭 영상(EgoSuite, OpenAoE)에서 PSNR/SSIM/LPIPS, 카메라 궤적 오차(ATE/RPE/RRE), 손 키포인트 PCK 등을 측정했다. Ropedia W0는 제로샷, 소량 데이터(few-shot), 전체 데이터 사후학습 전 구간에서 DreamDojo(14B), Cosmos3 등 기존 베이스라인을 능가했으며, 특히 데이터가 적은 구간에서 이득이 컸다. 사람 영상 사전학습 시간을 늘릴수록 사람·로봇 평가 모두에서 성능이 꾸준히 향상되는 스케일링 경향을 확인했고, 모델 크기를 5B에서 A14B로 키울 때도 전반적으로 품질이 개선되었다. 응용 실험에서는 정책 평가 점수가 실제 성공률과 높은 상관관계(Pearson r=0.984, 0.996)를 보였고, 모델 기반 플래닝으로 무작위 선택 대비 과제 진행률이 크게 향상되었으며(시뮬레이션 92% vs 53%, 실로봇 55% vs 26%), 자사 월드 모델로 초기화한 월드-액션 모델(FastWAM 기반)이 LIBERO-Plus와 실로봇 과제에서도 성능 향상을 보였다. 증류된 5B 학생 모델은 단일 GPU에서 21.3fps로 동작해 실시간 VR 상호작용을 지원했다.</p>
+<h2>한계점</h2>
+<p>논문에 별도의 "한계점" 절이 명시되어 있지는 않다. 다만 본문 전반에서 드러나는 한계로, 로봇 영상의 순기구학 투영이 부정확해 상당량의 수작업 키포인트 주석과 보정이 필요했다는 점, 그리고 실시간 증류 모델이 고품질 양방향 교사 모델의 충실도를 완전히 대체하지는 못하고 근사하는 수준이라는 점을 들 수 있다.</p>
+<h2>시사점</h2>
+<p>사람의 일상 1인칭 영상이 로봇 조작 학습을 위한 대규모 저비용 보조 데이터원으로서 실질적으로 확장 가능하며, 카메라 포즈와 투영 골격이라는 단순한 기구학적 공통 인터페이스만으로 이종 체현(그리퍼, 다지 손, 인간) 간 지식 전이가 가능함을 보였다. 이는 로봇별 전용 액션 인코더 없이도 범용 월드 모델을 구축할 수 있는 길을 제시하며, 정책 평가·플래닝·월드-액션 모델 초기화·실시간 VR 원격조작 등 다방면에 즉시 활용 가능한 실용적 가치를 지닌다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.26855" target="_blank" rel="noopener">huggingface.co/papers/2610.26855</a> · 2026-10-22</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

@@ -1,0 +1,107 @@
+<meta charset="UTF-8">
+<title>솔라렌더러</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#9 · Daily Papers 2026-10-22</span>
+      <span class="cat-tag">생성모델</span>
+      <span class="upvote-tag">▲ 44</span>
+    </div>
+    <h1 class="article-title">SolarRenderer: Few-Step Generative Reference Rendering</h1>
+    <p class="article-title-ko">솔라렌더러: 소수 단계 생성형 레퍼런스 렌더링</p>
+    <p class="article-sub">게임 엔진이나 코딩 에이전트가 만든 레이아웃·모션·카메라 등 거친 구조 정보를 입력받아, 사전학습된 대형 비디오 생성 모델에 가벼운 LoRA 어댑터만 추가해 4단계 만에 사실적인 영상으로 렌더링하는 구조 조건부 비디오 생성기 SolarRenderer를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.28630" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.28630" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: SolarRenderer: Few-Step Generative Reference Rendering</li>
+<li><strong>저자</strong>: Guian Fang, Shengju Qian, Dongyue Lu, Junchao Huang, Lutao Jiang, Xin Wang, Yiren Song, Li Jiang, Mike Zheng Shou (싱가포르국립대학교(NUS), LightSpeed, 홍콩중문대(심천), SLAI, 홍콩과학기술대(광저우) 공동 연구)</li>
+<li><strong>출처</strong>: arXiv:2610.28630v1 [cs.CV] (2026년 10월 20일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://enderfga.cn/SolarRenderer">enderfga.cn/SolarRenderer</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.28630">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>게임 엔진이나 코딩 에이전트가 만든 레이아웃·모션·카메라 등 거친 구조 정보를 입력받아, 사전학습된 대형 비디오 생성 모델에 가벼운 LoRA 어댑터만 추가해 4단계 만에 사실적인 영상으로 렌더링하는 구조 조건부 비디오 생성기 SolarRenderer를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>게임 개발이나 영상 사전시각화, 에이전트 기반 콘텐츠 제작에서는 장면의 레이아웃, 캐릭터 모션, 카메라 경로를 먼저 설계하고 이를 실제처럼 보이는 영상으로 바꾸는 렌더링 단계가 필요하다. 그러나 기존 구조 조건부 렌더러들은 (1) 한 엔진이 내놓는 특정 표현(화이트박스 프레임, 시맨틱 맵, 프록시 비디오 등)에만 맞춰져 있어 다른 엔진이나 새로운 표현이 나오면 재설계가 필요하고, (2) 대형 비디오 백본에 수십 단계의 디노이징이 필요하거나 이를 가속하려면 비용이 큰 증류가 필요하며, (3) 학습에 쓰이는 조건-영상 쌍이 실제 영상에서 추정값으로 만들어져 프레임 단위로 정확히 정렬되지 않는다는 세 가지 한계를 가진다.</p>
+<h2>핵심 기여</h2>
+<p>논문은 다음을 제시한다. 첫째, 별도의 타입 식별자나 추가 분기 없이 백본의 원래 레퍼런스 경로를 통해 어떤 구조 표현이든 하나의 제어용 LoRA로 처리하는 방식(omni-structure control). 둘째, 사전학습된 4단계 가속 LoRA를 구조 신호로 안내하여 재학습하는 structure-guided distribution matching 기법으로, 학습된 제어 능력을 유지하면서 50단계 샘플링 대비 12.3배 빠른 4단계 렌더링을 달성. 셋째, 게임 엔진·시뮬레이터·유튜브 영상에서 수집한 13.6만 개 클립으로 구성되고 조건과 타깃 영상이 프레임 단위로 정렬된 학습 데이터셋. 넷째, 동일한 설계를 블록 단위 인과적 어텐션으로 확장해 768p 영상을 실시간으로 스트리밍 렌더링하는 변형 모델.</p>
+<h2>방법론</h2>
+<p>SolarRenderer는 동결된 MiniMax-H3 33B Ref2VA 백본에 두 개의 경량 LoRA를 추가하는 구조다. 구조 비디오는 별도 모듈 없이 백본이 원래 레퍼런스 영상을 받아들이는 경로로 입력되며, 각 구조 프레임은 그것이 설명하는 타깃 프레임과 동일한 회전 위치 인코딩(RoPE) 좌표를 부여받아 시공간적으로 정렬된다. 레퍼런스는 타입을 구분하지 않고 프롬프트의 고정된 문장으로만 설명되므로, 새로운 구조 표현이 등장해도 추가 파라미터 없이 문장만 바꿔 대응할 수 있다. 학습은 2단계로 분리된다. 1단계(제어 적응)에서는 플로우 매칭 목적함수로 제어 LoRA를 학습시켜 구조를 따르는 능력을 얻고, 2단계(가속 적응)에서는 제어 LoRA를 고정한 채 별도의 가속 LoRA만, 1단계의 전체 스텝 모델을 교사로 삼아 구조 신호를 증폭한 distribution matching으로 학습시켜 4단계 생성이 가능하도록 만든다. 이 과정에서 교사의 예측을 구조 조건이 있을 때와 없을 때로 비교해 구조 신호만을 증폭시키는 방식(classifier-free guidance와 유사한 원리)을 사용한다. 실시간 스트리밍을 위한 인과적 변형은 영상을 5프레임 단위 블록으로 나누고 각 블록이 과거 프레임에만 주의를 기울이도록 teacher forcing으로 재학습한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>학습 데이터는 Magpie, CARLA, 게임 엔진 녹화, Blender, UnrealZoo, 유튜브, WildWorld, OmniWorld 등 8개 소스에서 수집한 13.6만 개, 약 243시간 분량의 158프레임 클립이며, 조건과 타깃 영상의 시간·공간적 정렬을 자동으로 검증하는 절차를 거쳤다. 평가는 학습 분포와 유사한 인-디스트리뷰션 테스트셋과, 16종의 구조 표현(이 중 11종은 학습에 전혀 등장하지 않음, 예: 포즈 스켈레톤, 손그림, 와이어프레임, 포인트 클라우드)을 포함한 일반화 벤치마크 두 가지로 이루어졌으며, Gemini 기반 쌍대 비교 평가와 화질·구조 일치도·첫 프레임 보존 등 자동 지표를 함께 사용했다. 결과적으로 SolarRenderer는 두 테스트셋 모든 평가 항목에서 기존 구조 조건부 렌더러(LynnReal-Omni, StreamRender-H3, Streaming CWM, PAI ControlNet-Union, Cosmos-Transfer2.5, Wan2.2-VACE-Fun 등)를 능가했고, 학습에 없던 구조 표현에도 강한 일반화 성능을 보였다. 인과적(실시간) 변형은 양방향 모델보다는 다소 낮은 점수를 받았지만 다른 스트리밍 방식보다 높은 성능을 유지하면서 768p 영상을 최대 28FPS로 실시간 렌더링했다. 또한 ablation 실험을 통해 네이티브 레퍼런스 경로, 타깃 정렬 RoPE, 구조 신호 증폭, 프레임 정렬된 학습 데이터 각각이 성능 향상에 기여함을 확인했다.</p>
+<h2>한계점</h2>
+<p>인과적 스트리밍 변형은 양방향 모델에 비해 전체 품질이 다소 낮으며, 블록이 진행될수록 첫 프레임의 색감에서 점차 멀어지는 경향(드리프트)이 있다고 논문은 언급한다. 또한 모델은 대형 사전학습 백본(MiniMax-H3 33B)에 의존하므로 백본 자체의 편향이나 한계를 그대로 물려받을 수 있으며, 제공되는 구조가 불충분하거나(예: 박스 형태의 거친 프록시) 매칭되지 않을 경우 렌더링 품질이 저하될 수 있음을 데이터 구축 과정에서 시사한다.</p>
+<h2>시사점</h2>
+<p>타입 식별자 없이 네이티브 레퍼런스 경로와 타깃 정렬 위치 인코딩만으로 임의의 구조 표현을 다룰 수 있다는 점은, 새로운 게임 엔진이나 센서, 표현 방식이 등장할 때마다 렌더러를 재설계할 필요가 없다는 실용적 가치를 지닌다. 또한 제어 LoRA와 가속 LoRA를 분리해 학습하는 2단계 전략은 대형 생성 모델에 제어 능력과 추론 가속을 동시에 비용 효율적으로 결합하는 일반적인 방법론으로 다른 조건부 생성 과제에도 응용될 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.28630" target="_blank" rel="noopener">huggingface.co/papers/2610.28630</a> · 2026-10-22</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

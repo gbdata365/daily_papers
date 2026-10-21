@@ -1,0 +1,107 @@
+<meta charset="UTF-8">
+<title>확산 모델을 위한 보정 학습</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#11 · Daily Papers 2026-10-22</span>
+      <span class="cat-tag">생성모델</span>
+      <span class="upvote-tag">▲ 34</span>
+    </div>
+    <h1 class="article-title">Correction Training for Diffusion Models</h1>
+    <p class="article-title-ko">확산 모델을 위한 보정 학습</p>
+    <p class="article-sub">확산 모델의 디노이저 예측을 다시 입력받아 같은 정답 이미지로 복원하도록 학습한 "보정기(corrector)"를 샘플링 각 단계에서 반복 적용함으로써, 가이던스(CFG) 없이도 품질을 크게 끌어올리고 다양성 손실도 줄이는 방법을 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.14136" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.14136" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Correction Training for Diffusion Models</li>
+<li><strong>저자</strong>: Donghoon Ahn, Runqian Wang, Alexei A. Efros, Taesung Park (UC Berkeley), Yash Belhe (Reve) 외</li>
+<li><strong>출처</strong>: arXiv:2610.14136v1 [cs.AI] (2026년 10월 14일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://sunovivid.github.io/correction-training/">https://sunovivid.github.io/correction-training/</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.14136">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>확산 모델의 디노이저 예측을 다시 입력받아 같은 정답 이미지로 복원하도록 학습한 "보정기(corrector)"를 샘플링 각 단계에서 반복 적용함으로써, 가이던스(CFG) 없이도 품질을 크게 끌어올리고 다양성 손실도 줄이는 방법을 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>확산 모델은 학습 시 실제 이미지에 노이즈를 섞은 입력으로 학습되지만, 추론(샘플링) 시에는 모델 자신의 이전 단계 예측값이 입력으로 들어간다. 이 학습-추론 불일치(노출 편향, exposure bias)로 인해 샘플링 초기 단계의 구조적 오류가 이후 단계까지 누적되어 아티팩트나 비정합적 구조를 만든다. 기존에는 classifier-free guidance(CFG)로 품질을 높였지만 다양성 저하와 과포화(oversaturation) 문제가 따른다.</p>
+<h2>핵심 기여</h2>
+<p>디노이저의 출력(클린 이미지 예측)을 입력으로 받아 동일한 정답 타깃을 복원하도록 학습하는 명시적인 "보정" 과제를 도입했다. 학습 시에는 한 번만 보정을 지도하지만, 추론 시에는 같은 보정기를 여러 번 반복 적용해도 품질이 계속 향상됨을 보였다. 또한 가이던스 없이도 CFG에 필적하는 품질을 얻고, CFG와 결합하면 다양성과 과포화 문제를 동시에 개선할 수 있음을 보였다. 마지막으로 반복 보정으로 얻은 개선 효과를 지식 증류를 통해 원래 디노이저에 흡수시켜 추가 추론 비용 없이 유지하는 방법도 제시했다.</p>
+<h2>방법론</h2>
+<p>디노이저 D는 노이즈 입력 z_t로부터 클린 이미지를 예측하고, 보정기 C는 이 예측(stop-gradient 처리)을 입력받아 동일한 타깃 x를 다시 예측하도록 L2 손실로 학습된다. 전체 손실은 기존 디노이징 손실과 보정 손실의 가중합이며, 사전학습된 디노이저와 별도의 보정기를 함께 파인튜닝한다. 샘플링 시에는 각 디노이징 스텝마다 디노이저의 예측을 보정기에 K번 반복 통과시켜 더 정제된 클린 이미지 예측을 얻고, 이를 바탕으로 다음 노이즈 상태를 구성한다. 추가로 디노이저와 보정기가 백본 일부를 공유하는 경량화 구성과, 반복 보정 결과를 단일 순전파로 재현하도록 디노이저를 직접 증류하는 방법도 실험했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>DiT, SiT, SiT-REPA, JiT 등 ImageNet-256 클래스 조건부/무조건부 생성 모델에 적용한 결과, 가이던스 없이도 FID가 큰 폭으로 개선되었다(예: DiT 9.58→2.07, SiT 8.55→1.92, SiT-REPA 5.53→1.31, 무조건부 생성 24.82→5.37). 이는 CFG 성능에 근접하거나 능가하는 수준이며, autoguidance보다도 더 낮은 FID와 높은 정밀도를 달성했다. 텍스트-이미지 생성(NanoGen 기반)에서도 GenEval, DPG-Bench 점수가 CFG 유무와 무관하게 향상되었고, 사람 평가에서도 CFG+보정 조합이 품질과 다양성 모두에서 기존 CFG 단독보다 60% 이상 선호되었다. 동일 파라미터 수의 단일 깊은 디노이저와 비교했을 때도 반복 보정 쪽이 더 우수했으며, 증류를 통해 약 67% 적은 NFE로 유사한 FID를 재현할 수 있었다. 분석 결과 반복 보정은 학습 입력 분포와 추론 시 분포 간의 간극(학습-추론 갭)을 실제로 줄이는 것으로 확인되었다.</p>
+<h2>한계점</h2>
+<p>반복 보정 횟수가 과도해지면 모호한 구조를 지나치게 규칙적인 패턴(예: 원반 모양, 격자무늬)으로 바꾸는 "과보정" 현상이 나타난다. 또한 보정을 반복할수록 개별 디노이징 오차 자체는 오히려 증가할 수 있어, 품질 향상이 단순한 오차 감소만으로 설명되지 않으며 그 작동 원리에 대한 이론적 이해는 아직 부족하다.</p>
+<h2>시사점</h2>
+<p>디노이징과 보정을 분리된 학습 과제로 명시화하면, 학습 시 지도한 범위를 넘어서는 반복 적용(추론 시 외삽)만으로도 상당한 품질 향상을 얻을 수 있음을 보여준다. 이는 가이던스에 의존하지 않고도 추론 연산을 더 효율적으로 배분하는 대안적 경로를 제시하며, 특히 조건 신호가 없는 무조건부 생성에서 가이던스-없는 고품질 생성의 가능성을 넓힌다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.14136" target="_blank" rel="noopener">huggingface.co/papers/2610.14136</a> · 2026-10-22</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

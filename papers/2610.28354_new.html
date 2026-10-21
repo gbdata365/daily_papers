@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>S-Agent 2.0</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#5 · Daily Papers 2026-10-22</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 91</span>
+    </div>
+    <h1 class="article-title">S-Agent 2.0: Spatial Reasoning with a General Coding Agent</h1>
+    <p class="article-title-ko">S-Agent 2.0: 범용 코딩 에이전트를 통한 공간 추론</p>
+    <p class="article-sub">범용 코딩 에이전트에 커맨드라인 3D 인지 툴킷을 결합해, 측정값을 "획득-기억-해석"하는 증거 루프를 완성함으로써 별도 학습 없이도 공간 추론 벤치마크 전반에서 전문화된 에이전트 시스템을 능가하는 S-Agent 2.0을 제시한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.28354" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.28354" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: S-Agent 2.0: Spatial Reasoning with a General Coding Agent</li>
+<li><strong>저자</strong>: Rui Gong, Ruoyu Wang, Yalun Dai, Hao Li, Sidi Yang, Qihao Zhao, Hongyu Li, Zeyang Guan, Fangzhou Hong, Zhaoxi Chen, Kim-Hui Yap, Ziwei Liu (난양공과대학교, 홍콩대학교, Ropedia)</li>
+<li><strong>출처</strong>: arXiv:2610.28354v1 [cs.CV] (2026년 10월 20일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://ropedia.github.io/S-Agent-2.0">ropedia.github.io/S-Agent-2.0</a> (코드 및 실행 트레이스 공개)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.28354">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>범용 코딩 에이전트에 커맨드라인 3D 인지 툴킷을 결합해, 측정값을 "획득-기억-해석"하는 증거 루프를 완성함으로써 별도 학습 없이도 공간 추론 벤치마크 전반에서 전문화된 에이전트 시스템을 능가하는 S-Agent 2.0을 제시한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>공간 지능(물체 위치, 상호관계, 움직임 파악)은 로봇·자율주행 등 실세계 에이전트에 필수적이다. 최근 에이전틱 VLM들은 3D 인지 도구를 능동적으로 호출해 단일 패스 추론의 한계를 넘어서고 있지만, 저자들은 SpatialClaw 같은 특화 시스템의 실패 사례를 분석한 결과 "도구가 올바른 증거를 반환해도 모델이 정답에 도달하지 못하는" 간극이 여전히 크다는 점을 지적한다. 실패는 두 가지로 나뉘는데, 하나는 모델이 자신이 들고 있는 측정값을 잘못 읽는 경우(부호 반전, 좌표계 혼동)이고, 다른 하나는 측정값이 작업공간에 남아 있는데도 모델이 그림을 다시 눈대중으로 보거나 무관한 이유로 값을 버리는 경우다. 즉 획득(acquisition)은 문제가 아니며, 기억(memory)과 해석(interpretation) 단계가 비어 있는 것이 핵심 문제라고 진단한다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>범용 코딩 에이전트(OpenHands, Codex, Claude Code 등 어떤 하네스에서도)와 커맨드라인 인지 툴킷만으로 공간 추론 에이전트를 구성할 수 있음을 보인다.</li>
+<li>모든 호출이 장면 증거를 획득하고, 지속적 장면 메모리에 기록하며, 결과를 평이한 공간 언어로 해석해 반환하는 "증거 루프 폐쇄형" 커맨드라인 인지 툴킷을 설계한다.</li>
+<li>MMSI-Bench, ReVSI 등에서 Qwen3.8-27B 기준 +13.9/+20.5점, Gemini-3.8-Flash 기준 +11.2/+9.6점의 향상을 달성하며, 특화 에이전트 SpatialClaw를 모든 벤치마크·백본에서 능가한다.</li>
+</ol>
+<h2>방법론</h2>
+<p>S-Agent 2.0은 (1) 플래너 겸 실행자인 범용 코딩 에이전트 π, (2) 커맨드라인 인지 툴킷 T, (3) 에피소드별 지속 장면 메모리 S로 구성된다. 장면 메모리는 원본 프레임, 중력 정렬된 세계 좌표계의 융합 포인트클라우드, 그리고 이름이 붙은 인스턴스 레지스트리(위치, 외연, 6자유도 포즈)를 보관한다. 인지 작업은 두 경로로 나뉜다: 도구 인지(recon으로 장면 재구성·카메라 등록, segment로 모델이 지정한 프롬프트에 따라 픽셀 단위 분할)와 모델 인지(add-instance로 모델이 상상하거나 인식한 인스턴스를 메모리에 직접 등록, drop으로 잘못된 인스턴스를 제거)이다. 코딩 에이전트 특유의 "결과를 보고 수정 후 재실행"하는 습성이 두 인지 경로를 교차검증하게 만든다. 모든 측정 결과는 단위가 있는 수치 필드와 함께 "결론" 문장(개체명, 기준 좌표계, 공간 언어로 된 해석)을 동반한 구조화 리포트로 반환되어, 모델이 수치를 재해석할 필요 없이 바로 답변에 활용할 수 있다. 인지 모델은 Depth Anything 3(재구성), π³_mos(움직임 마스크), GeoCalib(중력 방향), SAM 3(프롬프트 기반 분할)을 그대로 사용하며 추가 학습은 없다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>MMSI-Bench, MindCube, SPAR-Bench(다중 뷰), ReVSI, MMSI-Video-Bench(비디오) 등 5개 벤치마크에서 Qwen3.8-27B(오픈소스)와 Gemini-3.8-Flash(폐쇄형)를 백본으로 평가했다. MMSI-Bench에서 S-Agent 2.0은 오픈 백본 기준 66.5점으로 모든 에이전틱 베이스라인과 대부분의 독점 모델을 앞섰고, ReVSI에서는 두 백본 모두에서 SpatialClaw를 능가했다(82.3 vs 74.5, 90.5 vs 79.7). 특히 백본 성능이 올라갈수록 SpatialClaw의 도구 효과는 급격히 줄어드는(ReVSI에서 +13.2→+2.7) 반면, S-Agent 2.0의 효과는 +9.6으로 유지되었다. OpenHands, Codex, Claude Code 등 서로 다른 코딩 에이전트 하네스에서도 일관되게 작동함을 확인했다. 인터페이스 요소별 제거 실험에서는 해석된 판독값 제거 시 -1.3~-3.5점, 장면 메모리 제거 시 -2.5~-3.5점, 모델 인지 인터페이스 제거 시 -5.9~-8.8점으로 가장 큰 손실이 발생해, 모델 인지와의 결합이 성능에 핵심적임을 보였다.</p>
+<h2>한계점</h2>
+<p>남아 있는 오류는 대부분 "그라운딩" 단계, 즉 질문을 구체적 측정 대상으로 변환하는 과정에서 발생한다. 예컨대 질문이 요구하는 가상 관찰 시점(imagined viewpoint)을 잘못 시뮬레이션하거나, 엉뚱한 방위를 가져와 관찰자를 등록하거나, 올바른 양을 측정하되 잘못된 의미로 해석하는(바닥 기준 높이를 물체 자체 높이로 착각하는 등) 사례가 여전히 존재한다. 또한 절대 거리 추정 유형에서는 GPT-6 등 독점 모델에도 뒤처지는 항목이 남아 있다.</p>
+<h2>시사점</h2>
+<p>이 연구는 공간 추론을 위해 반드시 전용 에이전트 하네스를 새로 설계할 필요 없이, 기존 범용 코딩 에이전트의 "검사 후 수정" 습성을 그대로 활용하면서 인지 툴킷 쪽 인터페이스 설계(획득-기억-해석의 완결성)에 투자하는 것만으로도 더 큰 성능 향상과 범용성을 얻을 수 있음을 시사한다. 이는 향후 공간 지능 에이전트 설계가 모델 자체의 추론 능력보다 도구-모델 간 "그라운딩" 인터페이스 설계에 더 주목해야 함을 보여준다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.28354" target="_blank" rel="noopener">huggingface.co/papers/2610.28354</a> · 2026-10-22</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

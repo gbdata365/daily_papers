@@ -1,0 +1,107 @@
+<meta charset="UTF-8">
+<title>코에보-RSI</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#7 · Daily Papers 2026-10-22</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 59</span>
+    </div>
+    <h1 class="article-title">CoEvo-RSI: When Harnesses Evolve, Which Models Should Follow?</h1>
+    <p class="article-title-ko">코에보-RSI: 하네스가 진화할 때, 어떤 모델이 따라가야 하는가?</p>
+    <p class="article-sub">에이전트의 "두뇌"(언어모델)와 "몸체"(실행 하네스)를 함께 진화시키는 재귀적 자기개선(RSI) 프레임워크 CoEvo-RSI를 제안하여, 하네스가 진화하며 모델에 요구하는 행동과 모델이 실제로 학습한 능력 사이의 불일치("brain-body mismatch")를 양방향 이력 상속으로 해소한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.25078" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.25078" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: CoEvo-RSI: When Harnesses Evolve, Which Models Should Follow?</li>
+<li><strong>저자</strong>: Jiaqi Su, Guibin Zhang, Jie-Jing Shao, Cong Pang, Tiankuo Yao, Ivor Tsang, Haiyan Yin, Shuicheng Yan (싱가포르국립대학교(NUS), 싱가포르 과학기술연구청(A*STAR), SenseTime)</li>
+<li><strong>출처</strong>: arXiv:2610.25078v1 [cs.LG] (2026년 10월 18일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/SuJQ0722/CoEvo-RSI">GitHub</a>, <a href="https://huggingface.co/collections/nullptr04/coevo-rsi">Hugging Face</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.25078">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>에이전트의 "두뇌"(언어모델)와 "몸체"(실행 하네스)를 함께 진화시키는 재귀적 자기개선(RSI) 프레임워크 CoEvo-RSI를 제안하여, 하네스가 진화하며 모델에 요구하는 행동과 모델이 실제로 학습한 능력 사이의 불일치("brain-body mismatch")를 양방향 이력 상속으로 해소한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>에이전트 성능은 추론과 행동 선택을 담당하는 모델(브레인)과 도구 인터페이스·액션 공간·메모리·실행 흐름을 정의하는 하네스(바디)에 공동으로 좌우된다. 기존 연구는 모델 학습(강화학습, 자기증류 등)과 하네스 최적화(프롬프트·도구·제어 흐름의 반복 개선)를 각각 발전시켜 왔고 최근에는 둘을 함께 진화시키는 "모델-하네스 공진화" 접근이 등장했다. 그러나 하네스와 모델이 각자 따로 진화하면서 점점 벌어지는 "brain-body mismatch" 문제, 즉 진화한 하네스가 요구하는 행동을 모델이 학습한 적이 없거나, 하네스가 모델이 이미 가진 능력의 사용을 제한하는 문제는 충분히 다뤄지지 않았다.</p>
+<h2>핵심 기여</h2>
+<p>논문은 (1) brain-body mismatch 문제를 공식적으로 정의하고 인터페이스 위반을 저비용으로 진단하는 지표인 턴 단위 인터페이스 불일치율(TIMR)을 제안하며, (2) 진화 아카이브와 양방향 이력 상속을 결합한 CoEvo-RSI 방법을 설계하고, (3) 다중 에이전트 실패 원인 규명, 가정용 기기 제어, SQL 작업 등 세 영역에서 이를 실증 평가하여 공진화로 훈련된 Qwen3.5-9B가 Qwen3.8-Max나 DeepSeek-V4-Pro 같은 더 큰 모델을 능가함을 보인다.</p>
+<h2>방법론</h2>
+<p>CoEvo-RSI는 고정된 메타에이전트가 두 단계의 상속을 조율한다. 먼저 하네스 측에서는 "큐레이터"가 현재 모델-하네스 쌍의 실행 피드백과 아카이브(과거 하네스, 체크포인트, 실행 이력)를 근거로 증거를 정리하고, 여러 독립적인 "하네스 편집자"가 각자 과거 설계 중 하나를 베이스로 선택해 새 하네스 후보들을 생성한다. 다음으로 모델 측에서는 생성된 하네스의 요구사항에 맞춰 아카이브에서 체크포인트를 선택하거나 TIES-Merging으로 병합하여 후보 모델-하네스 쌍을 구성한다. 검증 세트로 가장 유망한 쌍을 고른 뒤, 선택된 하네스로 생성한 거부샘플링(rejection-sampling) 궤적만으로 지도 미세조정(SFT)을 수행해 모델을 적응시키고, 기존 쌍 대비 성능 향상이 일정 마진을 넘을 때만 다음 세대로 승격한다. 모든 결과(성공·실패 포함)는 다시 아카이브에 누적되어 이후 라운드의 상속에 활용된다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Qwen3.5-9B를 초기 모델로, DeepSeek-V4.1-Flash를 메타에이전트로 하여 10라운드, 라운드당 8개의 하네스 후보로 진화를 수행했다. 세 영역에서 평가한 결과, 다중 에이전트 실패 귀속(Who&amp;When, TraceElephant)에서는 Who&amp;When Pro 기준 Qwen3.8-Max 대비 +4.40점, TraceElephant에서 DeepSeek-V4-Pro 대비 +14.16점의 정확도 향상을 보였다. 역할 인지 Text-to-SQL(RBAC Spider/BIRD)에서는 Safe-EX 80.85%, 위반율 1.57%로 최고 성능을 기록했고, 가정용 기기 제어(HomeBench)에서는 GLM-5.3 대비 성공률 +4.90점을 달성했다. 10라운드에 걸쳐 TIMR은 0.22% 이하로 유지되면서 작업 정확도는 꾸준히 상승했으며, 하네스만 진화(Harness-only)·모델만 학습(Model-only)·최신 세대만 사용(Latest-only)하는 변형들과 비교해 양방향 상속과 전체 공진화가 가장 우수했다. 또한 공진화된 9B 모델은 더 큰 직접 LLM 대비 최대 22~38배 낮은 API 비용으로 동등하거나 더 나은 성능을 보였다.</p>
+<h2>한계점</h2>
+<p>TIMR은 관찰 가능한 인터페이스 위반만 포착할 뿐 브레인-바디 정렬 전반을 완전히 특성화하지는 못한다고 저자들이 직접 명시한다. 또한 CoEvo-RSI는 특정 작업군(실패 귀속, SQL, 스마트홈)에 특화된 모델-하네스 쌍을 만드는 데 초점을 맞추고 있어, 동일 도메인 내 held-out 데이터에서의 강한 성능이 전혀 다른 도메인으로의 전이를 보장하지는 않는다. 저자들은 이를 전체 영역에 걸친 자율적 개선이라는 더 넓은 RSI 목표와는 구분되는, 선택된 도메인 내 소형 모델 성능 극대화라는 실용적 목표로 명확히 한정하고 있다.</p>
+<h2>시사점</h2>
+<p>이 연구는 에이전트 자기개선 연구에서 모델 학습과 하네스 최적화를 분리된 과정으로 다루던 기존 관행을 넘어, 둘 사이의 상호 호환성(브레인-바디 정렬)을 명시적 설계 목표로 삼아야 함을 보여준다. 특히 진화 과정의 모든 중간 산물(과거 하네스, 체크포인트, 실행 이력)을 보존하고 재활용하는 아카이브 기반 접근이, 최신 세대만 사용하는 방식보다 안정성과 성능 회복력 면에서 우수함을 실증해, 향후 자기개선 에이전트 시스템 설계에 이력 기반 상속 메커니즘의 중요성을 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.25078" target="_blank" rel="noopener">huggingface.co/papers/2610.25078</a> · 2026-10-22</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

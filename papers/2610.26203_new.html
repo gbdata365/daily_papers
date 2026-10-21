@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>집중형 옴니모달 GUI 에이전트</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#1 · Daily Papers 2026-10-22</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 215</span>
+    </div>
+    <h1 class="article-title">Focused Omni-Modal GUI Agents</h1>
+    <p class="article-title-ko">집중형 옴니모달 GUI 에이전트</p>
+    <p class="article-sub">화면·비디오·오디오·상호작용 이력·기기상태를 매 스텝 균일하게 처리하는 옴니모달 GUI 에이전트가 겪는 "순차적 주의 분산(Sequential Distraction)" 문제를 규명하고, 프리즌된 백본에 경량 잔차 어댑터 FocusGUI를 덧붙여 매 스텝 어떤 모달리티·채널이 중요한지 동적으로 우선순위를 매김으로써 디코더의 주의를 유도하는 방법을 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.26203" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.26203" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Focused Omni-Modal GUI Agents</li>
+<li><strong>저자</strong>: Fuyao Zhang, Wenwen He, Jiaming Zhang, Yurong Hao, Xuan Wang, Guowei Guan, Che Wang, Longtao Huang, Wei Yang Bryan Lim (난양공과대학교, Alibaba Group)</li>
+<li><strong>출처</strong>: arXiv:2610.26203v1 [cs.CV] (2026년 10월 19일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음 (GitHub·Homepage 아이콘은 표지에 있으나 구체 URL 텍스트는 확인되지 않음)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.26203">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>화면·비디오·오디오·상호작용 이력·기기상태를 매 스텝 균일하게 처리하는 옴니모달 GUI 에이전트가 겪는 "순차적 주의 분산(Sequential Distraction)" 문제를 규명하고, 프리즌된 백본에 경량 잔차 어댑터 FocusGUI를 덧붙여 매 스텝 어떤 모달리티·채널이 중요한지 동적으로 우선순위를 매김으로써 디코더의 주의를 유도하는 방법을 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>GUI 에이전트는 점점 더 정적 스크린샷이 아니라 화면·비디오·오디오·상호작용 이력·기기상태가 뒤섞인 스트리밍 옴니모달 관찰 위에서 동작한다. 그런데 저자들의 분석에 따르면 각 모달리티의 중요도(지배적 모달리티)는 인접 스텝 간 45.3%에서 바뀌고, 한 스텝 안에서도 실제로 결정에 쓰이는 증거는 극히 희소하다(타겟 요소가 화면 면적의 중앙값 0.87%에 불과). 그럼에도 기존 방법은 매 스텝마다 전체 관찰을 동일한 비중으로 디코더에 노출하며, 실행된 행동이 다시 다음 스텝의 맥락에 섞여 들어가므로 한 번의 오판이 이후 궤적 전체로 누적되는 오류(Sequential Distraction)를 낳는다. 기존의 대응책인 화면 영역 크롭/정제(OmniParser, RegionFocus 등)는 신호가 화면 밖(오디오·비디오·기기상태)에서 올 수 있다는 점, 그리고 크롭이 좌표·텍스트 등 실행에 필요한 주변 문맥까지 함께 제거해버린다는 점에서 근본적인 해법이 되지 못한다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>다중 스텝 옴니모달 상호작용에서 관련성이 "스텝 단위 속성"으로서 일시적이고 희소하며, 행동이 관찰에 재투입되어 오류가 궤적 전반으로 누적됨을 실증적으로 규명(Sequential Distraction).</li>
+<li>에이전트에게 "주어지는 증거"와 디코더가 "그것을 읽는 방식"을 구분하고, 공간적 정제(크롭)만으로는 행동 선택과 인자 그라운딩을 동시에 만족시킬 수 없음을 보임.</li>
+<li>FocusGUI 제안: 프리즌 백본의 행동 생성 경계 직전에 제로 초기화 잔차를 주입하는 경량 어댑터로, 행동 지도학습만으로 학습되며 모달리티 관련성 라벨이나 백본 파인튜닝이 필요 없음. 4개 백본, 5개 과제 범주에서 일관된 성능 향상을 보임.</li>
+</ol>
+<h2>방법론</h2>
+<p>매 스텝의 관찰(목표, 화면, 비디오, 오디오, 상호작용 이력, 기기상태)을 분리 가능한 "지각 채널"들로 노출하고, 각 채널을 소스별 투영기로 공유 차원의 임베딩으로 변환한다. 전체 통합 표현에서 유도한 "결정 기준(decision reference)"과 각 채널 임베딩의 호환성을 비교해 스텝별 우선순위 점수를 계산(소프트맥스)하고, 이 우선순위로 가중합한 표현을 더 낮은 차원의 "압축 포커스 잠재표현"으로 줄인다. 이 잠재표현을 디코더의 행동 생성 직전 소수(K=4)의 기존 임베딩 위치에 제로 초기화된 잔차로 더해 넣는다(가산적 잔차이므로 학습 초기에는 원래 모델과 동일하게 작동). 원본 멀티모달 경로·프리즌 백본·언어모델 헤드는 전혀 바뀌지 않고, 오직 채널 투영기·우선순위 계산·압축·잔차 정렬에 해당하는 FocusGUI 전용 모듈(약 1.15M~1.45M개 파라미터)만 학습된다. 학습은 다음 행동 토큰에 대한 음의 로그우도 하나만을 목적함수로 사용하며, 어떤 모달리티·채널이 중요한지에 대한 별도 지도 신호는 필요 없다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>OmniGUI 벤치마크(29개 앱, 708개 에피소드, 2,572개 행동 스텝, 화면·오디오·비디오·행동이력이 동기화된 스마트폰 GUI 상호작용)에서 Type Match(TM), Exact Match(EM), Goal Progress(GP)로 평가했다. Qwen2.5-Omni, VITA-1.5, MiniCPM-o 4.5, Baichuan-Omni-1.5 네 개 백본에 적용하고 DRS-GUI, OmniParser, RegionFocus, GUI-Actor와 비교한 결과, FocusGUI는 평균 TM을 31.0%에서 64.2%로, EM을 11.2%에서 33.5%로 끌어올렸으며 가장 강력한 기존 강화 기법 대비 TM +30.1점의 우위를 보였다. 화면 크롭 기반 방법들은 TM은 거의 제자리였지만 EM과 GP가 오히려 하락했는데, 이는 비-화면 신호에 대응하지 못하고 배경 크롭이 좌표·텍스트 그라운딩에 필요한 문맥을 없애버리기 때문으로 해석된다. 구성요소 제거 실험에서는 채널 분해, 스텝 적응적 우선순위화, 행동충분 압축 투영, 잔차 정렬 네 요소가 모두 기여하며, 특히 Goal Progress(궤적 수준 성공)에 상대적으로 더 크게 기여함을 확인했다. 상호작용 깊이별 분석에서 프리즌 백본은 스텝이 진행될수록 TM이 첫 스텝 64.79%에서 3스텝 이후 32.79%로 급락하는 반면, FocusGUI는 초기 정확도의 86.8%를 유지해 궤적이 길어질수록 격차가 더 벌어졌다. 학습된 채널 우선순위를 상호작용 단계별로 분석한 결과 초반에는 상호작용 상태/화면이, 후반으로 갈수록 오디오·비디오가 더 높은 비중을 차지하도록 재배열됨을 관찰했으며, 이는 별도의 모달리티 라벨 없이 행동 지도학습만으로 학습된 결과다.</p>
+<h2>한계점</h2>
+<p>현재 우선순위 계산은 해당 스텝의 관찰에만 의존하는 반응형(reactive) 구조로, 다음 스텝에서 중요해질 채널을 미리 예측하지는 못한다. 또한 평가가 4개의 오픈소스 옴니모달 백본과 스마트폰 GUI의 5개 상호작용 범주에 한정되어 있어, 더 넓은 범위의 컴퓨터 사용 환경(데스크톱, 웹 등)으로의 일반화는 추가 검증이 필요하다.</p>
+<h2>시사점</h2>
+<p>멀티모달 에이전트 설계에서 "무엇을 입력으로 줄 것인가"와 "그것을 디코더가 어떻게 읽을 것인가"를 분리하는 관점이 유효하며, 관련성 신호를 입력 자체를 깎아내는 대신 경량 잔차로 주입해 디코더의 주의를 유도하는 방식이 성능과 비용 측면에서 효율적임을 보여준다. 관련성이 스텝 단위로 변화한다는 통찰은 향후 온라인·스트리밍 멀티모달 에이전트나 장기 상호작용 과제 설계 전반에 폭넓게 적용될 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.26203" target="_blank" rel="noopener">huggingface.co/papers/2610.26203</a> · 2026-10-22</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

@@ -1,0 +1,110 @@
+{
+  "2610.26203": {
+    "base": "2610_포커스지유아이_선택적-집중-옴니모달-GUI-에이전트",
+    "rank": "#1",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "215",
+    "en_title": "Focused Omni-Modal GUI Agents",
+    "ko_title": "집중형 옴니모달 GUI 에이전트"
+  },
+  "2610.27999": {
+    "base": "2610_매트릭스게임4_실시간-플레이가능-게임월드-비디오모델",
+    "rank": "#2",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "178",
+    "en_title": "Matrix-Game 4.0: Harnessing Video Models for Real-Time Playable Game Worlds",
+    "ko_title": "매트릭스-게임 4.0: 실시간 플레이 가능 게임 월드를 위한 비디오 모델 활용"
+  },
+  "2610.26855": {
+    "base": "2610_로피디아W0_인간경험-기반-이동조작-월드모델",
+    "rank": "#3",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "173",
+    "en_title": "Ropedia W0: Scaling Loco-Manipulation World Models across Embodiments with Human Experience",
+    "ko_title": "로피디아 W0: 인간 경험을 활용한 체현 간 이동-조작 월드 모델 스케일링"
+  },
+  "2610.27628": {
+    "base": "2610_파르_진행정렬-재귀-길이일반화",
+    "rank": "#4",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "147",
+    "en_title": "PAR: Progress-Aligned Recurrence for Length Generalization in State Tracking",
+    "ko_title": "PAR: 상태 추적의 길이 일반화를 위한 진행 정렬 재귀"
+  },
+  "2610.28354": {
+    "base": "2610_에스에이전트2.0_범용-코딩-에이전트-공간추론",
+    "rank": "#5",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "91",
+    "en_title": "S-Agent 2.0: Spatial Reasoning with a General Coding Agent",
+    "ko_title": "S-Agent 2.0: 범용 코딩 에이전트를 통한 공간 추론"
+  },
+  "2610.28578": {
+    "base": "2610_세이지A1.5_능력조합-기반-장기과업-과학탐구-에이전트",
+    "rank": "#6",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "63",
+    "en_title": "Sage-A1.5: From Long-Horizon Execution to Scientific Exploration with Capability Composition",
+    "ko_title": "Sage-A1.5: 능력 조합을 통한 장기 과업 수행에서 과학적 탐구로"
+  },
+  "2610.25078": {
+    "base": "2610_코에보_하네스-모델-공진화",
+    "rank": "#7",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "59",
+    "en_title": "CoEvo-RSI: When Harnesses Evolve, Which Models Should Follow?",
+    "ko_title": "코에보-RSI: 하네스가 진화할 때, 어떤 모델이 따라가야 하는가?"
+  },
+  "2610.25043": {
+    "base": "2610_브이엘에이롤링_적응형-행동-재사용-기반-고속-디노이징",
+    "rank": "#8",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "59",
+    "en_title": "VLA-Rolling: Fewer Denoising Steps, Better Control via Adaptive Action Reuse",
+    "ko_title": "VLA-롤링: 적응형 행동 재사용을 통한 더 적은 디노이징 단계로 더 나은 제어"
+  },
+  "2610.28630": {
+    "base": "2610_솔라렌더러_소수-단계-생성형-레퍼런스-렌더링",
+    "rank": "#9",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "44",
+    "en_title": "SolarRenderer: Few-Step Generative Reference Rendering",
+    "ko_title": "솔라렌더러: 소수 단계 생성형 레퍼런스 렌더링"
+  },
+  "2610.28594": {
+    "base": "2610_브이피엠_포인트-궤적-예측-4D-월드-모델",
+    "rank": "#10",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "41",
+    "en_title": "Learning the 4D World through Point Trajectory Forecasting",
+    "ko_title": "포인트 궤적 예측을 통한 4D 세계 학습"
+  },
+  "2610.14136": {
+    "base": "2610_코렉터_확산모델-예측-보정-학습",
+    "rank": "#11",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "34",
+    "en_title": "Correction Training for Diffusion Models",
+    "ko_title": "확산 모델을 위한 보정 학습"
+  },
+  "2610.25844": {
+    "base": "2610_스위프트_약한-가이드-기반-타겟-외삽-확산모델",
+    "rank": "#12",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "26",
+    "en_title": "SWIFT: Self-guided Weak-to-strong dIFfusion models via Target extrapolation",
+    "ko_title": "스위프트: 타겟 외삽을 통한 자기지도 약-강 확산 모델"
+  }
+}

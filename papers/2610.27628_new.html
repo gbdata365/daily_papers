@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>PAR</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#4 · Daily Papers 2026-10-22</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 147</span>
+    </div>
+    <h1 class="article-title">PAR: Progress-Aligned Recurrence for Length Generalization in State Tracking</h1>
+    <p class="article-title-ko">PAR: 상태 추적의 길이 일반화를 위한 진행 정렬 재귀</p>
+    <p class="article-sub">루프(looped) 언어모델의 각 반복(iteration)이 과제 진행 단계와 정확히 대응하도록 학습시키고 재귀 상태의 크기를 고정함으로써, 학습 시 본 길이의 16배에 달하는 상태 추적(state tracking) 문제에서도 거의 완벽한 정확도를 유지하는 방법인 Progress-Aligned Recurrence(PAR)를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.27628" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.27628" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: PAR: Progress-Aligned Recurrence for Length Generalization in State Tracking</li>
+<li><strong>저자</strong>: Pan Wang, Yihao Hu, Guangyuan Dong, Yitong Lin, Hang Wang, Zimi Liu, Zhihao Wen, Jianshe Li, Jiang-Ming Yang, Wei Wu, Yongqi Tong (Ant International, National University of Singapore)</li>
+<li><strong>출처</strong>: arXiv:2610.27628v1 [cs.CL] (2026년 10월 20일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.27628">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>루프(looped) 언어모델의 각 반복(iteration)이 과제 진행 단계와 정확히 대응하도록 학습시키고 재귀 상태의 크기를 고정함으로써, 학습 시 본 길이의 16배에 달하는 상태 추적(state tracking) 문제에서도 거의 완벽한 정확도를 유지하는 방법인 Progress-Aligned Recurrence(PAR)를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>루프형(언어) 모델은 동일한 트랜스포머 블록을 반복 적용해 테스트 시 연산량을 늘릴 수 있지만, 기존 학습 방식은 각 반복이 무엇을 계산해야 하는지를 명시하지 않는다. 최종 정답만으로 지도학습을 하면 중간 반복들이 조기에 답을 내도록 유도되어 반복 횟수를 늘려도 실제로는 더 긴 문제를 풀지 못하는 문제가 있다. 저자들은 순차적 상태 추적(각 연산이 이전 상태를 갱신하는 과제, 예: 치환 적용·규칙 체인 조회)을 통제된 실험 환경으로 삼아, "반복 횟수를 과제 길이에 맞추는 것"과 "중간 상태에 대한 지도"라는 두 조건이 길이 일반화에 실제로 필요한지를 분석한다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>길이 일반화를 "깊이-길이 대응(depth-length correspondence)"으로 정식화하고, 상태 표류(state drift)와 반복 목표의 불일치(unaligned loop targets)를 두 가지 실패 유형으로 규명했다.</li>
+<li>반복 k의 예측이 과제의 처음 k단계 수행 후 상태와 일치하도록 하는 진행 정렬(progress-aligned) 지도와, 모든 토큰의 재귀 상태를 첫 반복 시점의 RMS 노름으로 재조정하는 상태-노름 고정(state-norm anchoring)을 결합한 PAR을 제안했다.</li>
+<li>사전 지정된 반복 깊이 없이도 추론을 스스로 멈추는 학습된 정지(halting) 규칙과, 중간 정답 레이블 없이 최종 정답만으로 대응 관계를 학습하는 프리픽스 자기증류(prefix self-distillation)를 추가로 제안했다.</li>
+</ol>
+<h2>방법론</h2>
+<p>Qwen2.5-0.5B를 전반부(프리류드, 1~8층)·반복 코어(가중치 공유, 9~16층)·후반부(코다, 17~24층)로 재구성하고, 어댑터를 통해 코어를 R회 반복한다(1회만 돌리면 원래 모델과 동일하게 동작). 학습 시 반복 k의 출력이 d단계 과제의 "첫 k단계까지의 중간 정답"을 맞히도록 교차엔트로피 손실을 적용하며, 이때 상태-노름 고정으로 반복이 거듭돼도 상태 크기가 안정적으로 유지되게 한다. 과제 길이를 몰라도 추론을 멈출 수 있도록 기존 코다의 출력 헤드가 매 반복마다 "정답을 아직 더 계산해야 하는지"를 Yes/No로 예측하도록 학습시키고, 연속된 여러 반복에서 확신이 유지될 때만 정지한다(실험적으로 "8번 중 6번 초과" 규칙 채택). 중간 정답 레이블이 없는 일반 데이터의 경우, 원 문제의 앞부분(prefix)을 잘라낸 더 짧은 문제로 보고, 지수이동평균(EMA) 교사 모델이 그 짧은 문제에 대해 내놓는 답 분포를 학생 모델의 해당 반복이 모사하도록 하는 프리픽스 자기증류로 중간 지도를 대신한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>"그룹 단어 문제(group word problems)"라는 순차 상태 추적 과제(치환군 S5·A5, swap-S5 등)로 평가했다. swap-S5에서 최대 32회 이동으로 학습한 PAR은 512회 이동(학습 길이의 16배)에서도 평균 완전 상태 정확도 95.5%를 유지한 반면, 동일 설정의 최신 비교 모델 RLT는 55.7%, 명시적 사고연쇄(CoT) 미세조정은 0.8%에 그쳤다. 고정 깊이, 가중치 비공유 다층 모델, 무작위 반복 횟수 등 기존 방식은 모두 2배 확장조차 버티지 못했다. Qwen2.5(0.5B~7B)와 Qwen3(0.6B~4B) 전 모델 크기에서 PAR이 일관되게 기존 대비 큰 폭의 성능 우위를 보였으며, 학습된 정지 규칙은 과제 길이를 모르는 상태에서도 16배 확장 시 92.9%의 정확도로 정답 반복 횟수를 사실상 정확히 추정했다. 프리픽스 자기증류만으로 학습한 경우도(중간 레이블 없이) 16배 확장에서 85% 이상의 정확도를 달성했다. 절제 실험(ablation)은 진행 정렬 지도와 상태-노름 고정 두 조건이 모두 있어야만 16배 확장이 가능함을 보였다 (둘 중 하나만 적용 시 확장 배율이 2배 미만~8배 수준에 그침).</p>
+<h2>한계점</h2>
+<p>본 연구는 중간 상태가 명확히 정의되는 알고리즘적·템플릿형 상태 추적 과제로 한정되어 있으며, 그래프 도달 가능성처럼 순차적 분해가 되지 않는 과제에는 적용 범위를 벗어난다. 프리픽스 자기증류와 학습된 정지는 Qwen2.5-0.5B에서만 검증되었고, 더 큰 백본(최대 7B)에서는 시드 간 분산이 매우 커서(16배 확장 시 표준편차 33~43%p) 모델 크기에 따른 단조적 경향이 확인되지 않았다. 또한 개방형 자연어 추론에 이 대응 관계를 적용하는 것은 향후 과제로 남겨두었다.</p>
+<h2>시사점</h2>
+<p>루프형 모델에서 테스트 시 반복 횟수를 늘리는 것만으로는 더 긴 문제를 풀 수 없으며, "각 반복이 무엇을 계산해야 하는가"를 명시적 학습 목표로 정의하고 반복 간 상태 크기를 안정화하는 것이 반복 깊이를 실제 추론 능력으로 전환하는 핵심 조건임을 보여준다. 이는 중간 추론 과정을 텍스트로 노출하지 않고도(잠재 추론) 사전학습 모델에 저비용으로 재귀 깊이를 주입해 분포 밖 길이에서도 신뢰할 수 있는 성능을 얻을 수 있는 실용적 경로를 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.27628" target="_blank" rel="noopener">huggingface.co/papers/2610.27628</a> · 2026-10-22</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>Policy-Mask</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#12 · Daily Papers 2026-10-24</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 23</span>
+    </div>
+    <h1 class="article-title">Policy-Mask: Budget-Aware Adaptation of Diffusion Features to Discriminative Tasks</h1>
+    <p class="article-title-ko">Policy-Mask: 예산 인지형 확산 특징 선택으로 판별 작업에 적응하기</p>
+    <p class="article-sub">고정된(frozen) 디퓨전 모델에서 판별 태스크(분할·분류·대응)에 사용할 특징을 추출할 때, 타임스텝·레이어·채널 부분집합을 정해진 예산(budget) 아래 동시에 선택하는 강화학습 기반 정책 Policy-Mask를 제안해, 고정 규칙이나 일부 변수만 최적화하는 기존 방법보다 동일 예산에서 더 높은 성능을 달성한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.28889" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.28889" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Policy-Mask: Budget-Aware Adaptation of Diffusion Features to Discriminative Tasks</li>
+<li><strong>저자</strong>: Ivan Listopadov (HSE University), Maksim Nakhodnov (MSU, Constructor University), Aibek Alanov (HSE University, FusionBrain Lab)</li>
+<li><strong>출처</strong>: arXiv:2610.28889v1 [cs.CV] (2026년 10월)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.28889">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>고정된(frozen) 디퓨전 모델에서 판별 태스크(분할·분류·대응)에 사용할 특징을 추출할 때, 타임스텝·레이어·채널 부분집합을 정해진 예산(budget) 아래 동시에 선택하는 강화학습 기반 정책 Policy-Mask를 제안해, 고정 규칙이나 일부 변수만 최적화하는 기존 방법보다 동일 예산에서 더 높은 성능을 달성한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>디퓨전 모델의 중간 표현은 의미적 분할, 이미지 분류, 의미적 대응(correspondence) 등 다양한 판별 태스크에 유용한 신호를 담고 있다. 그러나 이 유용한 신호는 디노이징 궤적상의 타임스텝, 네트워크의 깊이(레이어), 그리고 각 레이어의 채널 전반에 걸쳐 분산되어 있어, 어떤 타임스텝·레이어·채널 조합을 추출해야 하는지 결정하는 일이 간단하지 않다. 기존 방법들은 대개 이 선택을 사람이 정한 고정 규칙으로 처리하거나(DDAE 등), 학습된 집계(aggregation) 방식을 쓰거나, RepFusion처럼 디스틸레이션 과정에서 타임스텝만 학습으로 선택하고 레이어·채널 선택은 여전히 고정 규칙에 맡긴다. 이로 인해 저장·연산 효율이 중요한 경량 학생(student) 모델을 만들 때 최적의 특징 선택이 이루어지지 않는 문제가 있다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>정확한 개수(exact-cardinality) 샘플링을 갖춘, 타임스텝·레이어·채널 부분집합 (t, l, K)에 대한 예산 제약 정책을 제안했다.</li>
+<li>세 정책 헤드(타임스텝, 레이어, 채널)의 상대적 업데이트 기여도를 조정하는 채널-점수 정규화 기법을 도입했다.</li>
+<li>전체 1280개 채널 중 128개만 사용해도 4개 분할 벤치마크에서 전체 채널 고정 추출 대비 1.2~1.6 mIoU의 향상을 달성했다.</li>
+<li>U-Net 기반 채널 선택을, DiT·MMDiT·flow transformer 등 트랜스포머 계열 디퓨전 모델의 특징 격자(feature lattice)로 공식적으로 매핑하는 방법을 제시했다.</li>
+</ol>
+<h2>방법론</h2>
+<p>고정된 teacher 디퓨전 모델 D, 학습 가능한 학생 S_φ, 보조 태스크 디코더 q_ω, 그리고 정책 π_θ로 구성된다(그림 1). 예산 b가 주어지면 정책은 가능한 행동 집합 A_b = {(t, l, K) : |K| = b} 안에서 타임스텝 t, 레이어 l, 채널 부분집합 K를 선택하는 행동을 출력하고, 선택된 teacher 특징이 학생을 지도하는 증류 타깃이 된다(식 1~3). 채널 선택은 Gumbel top-b 트릭을 사용해 비복원으로 정확히 b개의 채널을 뽑으며, 그 로그확률은 Plackett-Luce 순서 점수로 계산된다(식 4~6). 정책은 베이스라인 c를 둔 REINFORCE로 학습되며, 보상은 태스크 디코더 손실의 음수(-ℓ_dec)로 주어진다. 핵심 설계인 채널-점수 정규화는 채널 점수(여러 채널에 대한 로그확률의 합)를 선택 개수 b로 나누어, 채널 수가 늘어날수록 채널 헤드의 그래디언트 기여도가 과도하게 커져 타임스텝·레이어 헤드를 압도하는 문제를 방지한다(식 8). 또한 U-Net이 아닌 DiT·MMDiT teacher에 대해서는 채널 축 대신 이미지 토큰의 은닉 차원(hidden dimension)을 선택 대상으로 삼는 일반화된 행동 매핑을 공식화했다(식 9).</p>
+<h2>실험 설정 및 결과</h2>
+<p>주 실험은 고정된 SD-1.5 U-Net teacher와 1280개의 정렬된(aligned) 채널을 기준으로, 학생이 128개 채널만 사용하도록 압축하는 설정이다. ADE20K, Cityscapes, CelebA-HQ, Pascal VOC(mIoU), CIFAR-10/CIFAR-100(top-1 정확도), SPair-71k(PCK@0.1)로 평가했다. 128채널 설정에서 Policy-Mask는 전체 1280채널을 고정 (t, l)에서 그대로 사용하는 베이스라인보다도 ADE20K 38.9(전체 채널 37.4), Cityscapes 70.2(68.6), CelebA-HQ 79.1(77.9), Pascal VOC 74.8(73.5)로 모두 더 높은 mIoU를 기록했다. 또한 top-variance, Fisher proxy 같은 다른 채널 선택 휴리스틱보다도 일관되게 우수했다. DDAE·RepFusion과 비교했을 때 CIFAR-10 95.2%, CIFAR-100 75.4%(RepFusion 대비 각각 +1.0, +1.3점), SPair-71k PCK@0.1은 이미지 정규화 기준 76.3, bbox 정규화 기준 67.5를 기록했다. Ablation 연구에서는 타임스텝만 선택하는 정책(31.78 mIoU)보다 타임스텝-레이어 조합 그리드 정책(33.32)이 더 우수했지만, 여기에 휴리스틱 top-b 채널 선택을 추가하거나(32.82) 정규화 없이 조인트 정책을 학습시키면(31.68) 오히려 성능이 떨어졌다. 채널-점수 정규화는 고정 정렬(A_l fixed) 조건에서 3개 시드 평균 ADE20K mIoU를 36.8에서 37.7로 끌어올렸다. 채널 예산을 128에서 256으로 늘리면 최고 검증 mIoU가 0.72 상승했지만, 이는 채널 수와 증류 손실 스케일이 동시에 변하기 때문에 예산 자체의 순수한 효과로 분리하기는 어렵다고 저자들은 밝혔다. DiT 계열인 PixArt-Σ와 MMDiT 계열인 SD3.5에도 동일한 행동 체계를 이식해, teacher별 용량 비율을 약 10%로 맞춘 조건에서 평가를 수행했다(U-Net 34.1, PixArt-Σ 35.0, SD3.5 36.4 mIoU; 단, 이는 아키텍처 간 순위를 매기기 위한 비교가 아니라 인터페이스 이식의 유효성을 보여주기 위한 것이라고 명시함).</p>
+<h2>한계점</h2>
+<p>논문 4.5절(Limitations)에 명시되어 있다. 첫째, 채널 예산 스윕 실험(그림 2)은 선택되는 특징과 증류 손실의 크기(강도)를 동시에 변화시키므로, 채널 수 증가 자체의 순수한 효과를 증류 강도와 분리해 입증하지 못한다—선택된 채널에 대해서만 정규화된 KD 손실을 적용하는 후속 스윕이 필요하다고 언급한다. 둘째, 정규화 ablation과 RepFusion 비교는 3개 시드로 반복 측정했지만, action-axis ablation·예산 스윕·정성적 분석은 단일 시드로만 수행되어 통계적 변동성을 완전히 통제하지는 못했다. 셋째, 트랜스포머 teacher 비교(표 3)는 teacher별 용량 비율만 맞춘 것으로, 전이된 행동 인터페이스의 유효성을 보여주는 것이지 teacher 아키텍처 간 순위를 매기는 비교는 아니다.</p>
+<h2>시사점</h2>
+<p>디퓨전 특징 추출을 "예산 제약 하의 의사결정 문제"로 공식화함으로써, 사람이 정한 고정 규칙보다 더 압축적이면서도 효과적인 특징 선택이 가능함을 보인다. 저장·연산 자원이 제한된 환경에서 디퓨전 teacher 기반 표현학습을 적용할 때 실질적인 효율화 방법을 제공하며, U-Net뿐 아니라 DiT·MMDiT 등 최신 트랜스포머 기반 디퓨전 아키텍처로도 확장 가능함을 보여준다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.28889" target="_blank" rel="noopener">huggingface.co/papers/2610.28889</a> · 2026-10-24</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

@@ -1,0 +1,110 @@
+<meta charset="UTF-8">
+<title>메타익스퍼트</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#10 · Daily Papers 2026-10-24</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 25</span>
+    </div>
+    <h1 class="article-title">Meta Expert: Cross-Layer Expert Sharing for Storage- and Retrieval-Efficient MoE</h1>
+    <p class="article-title-ko">메타익스퍼트: 레이어 간 전문가 공유로 저장·검색 효율적인 MoE</p>
+    <p class="article-sub">기존 MoE처럼 레이어마다 독립된 전문가(Local Expert)를 두는 대신 여러 레이어가 하나의 전문가 풀을 공유하는 "Meta Expert" 구조를 제안하여, 동일한 활성 파라미터·연산량 조건에서 전문가 수를 70~80%만 사용하고도 Vanilla MoE와 동등하거나 더 나은 성능을 달성한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.27598" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.27598" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Meta Expert: Cross-Layer Expert Sharing for Storage- and Retrieval-Efficient MoE</li>
+<li><strong>저자</strong>: Ermo Hua, Xiangyu Hong, Baiting Wu, Che Jiang 외 (Tsinghua University, Shanghai AI Laboratory 소속 연구진)</li>
+<li><strong>출처</strong>: arXiv:2610.27598v1 [cs.AI] (2026년 10월)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.27598">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>기존 MoE처럼 레이어마다 독립된 전문가(Local Expert)를 두는 대신 여러 레이어가 하나의 전문가 풀을 공유하는 "Meta Expert" 구조를 제안하여, 동일한 활성 파라미터·연산량 조건에서 전문가 수를 70~80%만 사용하고도 Vanilla MoE와 동등하거나 더 나은 성능을 달성한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>대규모 언어모델(LLM)의 스케일업에는 Mixture-of-Experts(MoE)와 같은 파라미터 희소화 기법이 핵심적인 역할을 해왔다. 그런데 지금까지의 효율화 연구는 주로 "폭(width)" 방향, 즉 한 레이어 내 전문가 수와 라우팅에 집중되어 왔고, "깊이(depth)" 방향의 파라미터 효율은 상대적으로 덜 연구되었다. 해석가능성 연구들은 서로 다른 레이어의 피드포워드 네트워크(FFN)가 유사한 지식을 저장하는 경향, 즉 층간 중복(inter-layer redundancy)이 존재함을 시사한다. Looped Transformer류의 파라미터 공유 기법은 이러한 중복을 줄이지만, 동일 블록을 반복 적용하면서 추가적인 순환(recursion)과 직렬 연산 비용이 발생한다. 저자들은 이 둘의 장점을 절충하기 위해, 반복 횟수는 그대로 두되 레이어마다 선택 가능한 "후보 전문가"를 층간에 공유하는 새로운 파라미터 루프 방식인 Cross-Layer Expert Sharing을 제안한다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>Meta/Local Expert의 총 개수 비율, 레이어당 활성화 비율, 모든 레이어에 Meta Expert를 둘지 여부, Meta Expert 자체의 부분 계층 구조 등 다차원적 설계 공간을 체계적으로 실험 분석했다.</li>
+<li>잔차 연결(residual connection) 관점에서 Meta Expert가 효과적인 이유를 이론적으로 규명했다. 순방향(forward) 잔차뿐 아니라, 활성화 수준에서 작동하는 역방향(backward) 잔차 경로—기존 레이어별 아키텍처에는 없던 경로—를 제공하여, 얕은 레이어와 깊은 레이어가 서로의 표현에 양방향으로 접근할 수 있게 함을 보였다.</li>
+</ol>
+<h2>방법론</h2>
+<p>표준 MoE 레이어는 레이어 전용 라우터 R_l과 레이어 전용 Local Expert 집합 {φ_e(·; θ_l^e)}을 사용하여, 입력 은닉 상태에 대해 top-k 전문가를 선택해 가중합을 계산한다(Eq. 1). 반면 순수 Meta Expert 모델에서는 모든 레이어가 하나의 공유 라우터 R과 하나의 공유 전문가 풀 {φ_e(·; θ^e)}을 사용한다(Eq. 2). 저자들은 두 설계의 혼합 비율—Meta/Local의 총량 비율(0~100%)과 레이어당 활성 비율(25~75%)—을 스윕하는 동시에, 토폴로지 측면에서 (i) 처음/마지막 몇 개 레이어만 Local Expert 전용으로 둘지, (ii) Meta Expert 풀 자체를 여러 서브풀로 나누어 체인/인터리브 방식으로 순환시킬지를 함께 탐색했다. 비교를 공정하게 하기 위해 전체 전문가 수와 전체 활성화 수를 고정하여 FLOPs를 맞췄으며, 전문가 간 기능적 중복도를 측정하는 redundancy 지표를 별도로 도입했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>2B-A0.5B 규모 모델로 파일럿 스윕을 수행한 뒤, 여러 연산량(FLOPs) 구간에서 스케일링 래더 검증을 실시했다. Meta Expert의 총량 비율이 높을수록 손실(loss)과 중복도가 일관되게 낮아졌고, 활성 비율은 "Meta 4개 + Local 4개"가 최적으로 나타났다. 총량 비율은 75%(MR75)가 100% 순수 Meta 설정보다 약간 더 낮은 손실을 보여 안정성과 성능의 균형점으로 채택되었다(순수 Meta는 학습 불안정 가능성 존재). 토폴로지 실험에서는 처음과 마지막 2개 레이어를 Local Expert 전용으로 하고 Meta Expert를 2개 서브풀로 나눈 구성(F2L2+Loop2)이 모든 연산량 구간에서 가장 우수했다. 이 최적 설계를 결합한 모델은 Vanilla MoE 대비 전문가 수를 약 20~30% 절약하면서(전체 파라미터 기준 15~25%) 손실을 개선했다. 6B-A1.6B 모델을 200B 토큰으로 학습한 뒤 MMLU, C-Eval, CMMLU, BBH, OpenBookQA, TriviaQA에서 다운스트림 평가를 수행한 결과, MR75+Loop2, MR75+F2L2+Loop2 등 Meta Expert 변형들이 Vanilla 대비 대부분의 벤치마크에서 더 높은 점수를 기록했다(예: OpenBookQA 0.350→0.364, C-Eval 0.435→0.449). 이론 분석(4장)에서는 수식을 통해, 단일 forward pass 안에서 얕은 레이어가 깊은 콘텐츠를 다시 읽고 재인코딩하는 경로(shallow reads deep)와, 깊은 레이어가 얕은 콘텐츠에 O(1) 길이의 경로로 접근하는 경로(deep reads shallow)가 동시에 존재함을 보였다.</p>
+<h2>한계점</h2>
+<p>논문에 별도의 "한계점" 절은 없으나, 결론부에서 저자들은 경미한 수준의 계층적(hierarchical) Meta Expert 구조가 전문가 중복도를 다소 높이는데도 손실 저하로 이어지지 않는 이유는 아직 규명되지 않은 열린 문제(open question)라고 명시했다. 또한 본 분석을 더 큰 규모의 모델과 더 넓은(broader) 아키텍처로 확장하는 것을 향후 과제로 남겼다.</p>
+<h2>시사점</h2>
+<p>이 연구는 깊이 방향의 층간 중복을 단순한 비효율이 아니라 "전환 가능한 유효 용량(effective capacity)"으로 재해석할 수 있음을 보여준다. 동일한 다운스트림 성능을 더 적은 전문가 파라미터로 달성할 수 있다는 점에서, 모델 서빙 시 메모리 저장과 전문가 검색(retrieval) 효율이 중요한 대규모 MoE 배포 환경에 실질적인 설계 지침을 제공한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.27598" target="_blank" rel="noopener">huggingface.co/papers/2610.27598</a> · 2026-10-24</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

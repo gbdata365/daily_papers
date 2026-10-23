@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>FRED</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#11 · Daily Papers 2026-10-24</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 23</span>
+    </div>
+    <h1 class="article-title">Self-Distilling Future Video Representations for World Action Models</h1>
+    <p class="article-title-ko">FRED: 미래 비디오 표현 자가증류로 학습하는 월드 액션 모델</p>
+    <p class="article-sub">월드 액션 모델(World Action Model, WAM)이 단일 디노이징 스텝에서 얻는 미래 비디오 표현을, 실제 미래 관측에서 추출한 표현을 타깃으로 하는 자가증류(self-distillation)를 통해 더 정보가 풍부하게 만들어 로봇 제어 성능을 크게 끌어올리는 FRED 프레임워크를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.30320" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.30320" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Self-Distilling Future Video Representations for World Action Models</li>
+<li><strong>저자</strong>: Huiwon Jang, Suhyeok Jang, Hyeonmo Kang, Seungku Kim, Jinwoo Shin, Sihyun Yu (KAIST, RLWRLD 소속 연구진)</li>
+<li><strong>출처</strong>: arXiv:2610.30320v1 [cs.RO] (2026년 10월)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://huiwon-jang.github.io/FRED/">https://huiwon-jang.github.io/FRED/</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.30320">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>월드 액션 모델(World Action Model, WAM)이 단일 디노이징 스텝에서 얻는 미래 비디오 표현을, 실제 미래 관측에서 추출한 표현을 타깃으로 하는 자가증류(self-distillation)를 통해 더 정보가 풍부하게 만들어 로봇 제어 성능을 크게 끌어올리는 FRED 프레임워크를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>World Action Model은 사전학습된 비디오 디퓨전 모델(VDM)이 보유한 풍부한 시공간적 사전지식을 활용해 일반화 가능한 로봇 정책을 학습하는 접근법이다. 최근 WAM들은 반복적인 디노이징 대신, 가우시안 노이즈를 입력으로 한 VDM의 단일 forward pass에서 얻은 중간 은닉 상태(hidden state)로 별도의 액션 디코더를 조건화하여 추론 지연을 크게 줄인다. 그러나 이 설계에서는 액션 예측 품질이 전적으로 "노이즈로부터 생성된 미래 표현"의 질에 의존하게 된다. 저자들은 사전 분석을 통해 VDM이 WAM 학습 과정에서 노이즈로부터 미래 로봇 모션 정보를 점진적으로 더 잘 담아내게 되지만(학습이 진행될수록 모션 분류 프로빙 정확도가 상승), 실제 미래 관측에서 얻은 표현과는 여전히 품질 격차가 존재함을 확인했다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>WAM에서 사용되는 VDM을 "미래 표현 생성기(future representation generator)"로 재해석하는 관점을 제시했다.</li>
+<li>노이즈로부터 생성된 미래 표현을, 모멘텀 teacher(온라인 모델의 EMA 사본)가 실제 미래 관측(노이즈가 섞인 ground-truth)으로부터 추출한 표현에 자가증류로 정렬시키는 FRED를 제안했다. 추가로 짧은 과거 관측 이력을 조건으로 제공해 시간적 맥락을 보강했다.</li>
+<li>다양한 실제 로봇 조작 환경—제로샷 환경 일반화, 인간-로봇 공동학습(co-training)—에서 기존 WAM 대비 일관되게 우수한 성능을 입증했다.</li>
+</ul>
+<h2>방법론</h2>
+<p>학생(student) VDM 인코더 f_θ는 노이즈 ε로부터 표현 h를 생성하고, 모멘텀 teacher f_θ⁻는 동일 조건에서 노이즈가 섞인 실제 미래 관측 o^τ_{t+1}로부터 타깃 표현 h^τ를 생성한다(식 1). 두 표현은 각각 프로젝션 헤드를 거쳐 softmax 분포 p, p^τ로 변환되는데, teacher 쪽은 collapse 방지를 위해 centering과 sharpening(DINO/iBOT 스타일)을 적용한다. 두 분포 간 KL divergence를 최소화하는 자가증류 손실 L_SD로 학생 인코더를 학습시킨다(식 2~3). 또한 학생·teacher 인코더 모두에 단일 현재 프레임이 아닌 H프레임의 짧은 과거 이력을 조건으로 주어, 로봇이 어떻게 움직여왔는지에 대한 단서를 제공한다. 전체 학습 목적함수는 비디오 flow-matching 손실과 L_SD의 가중합이며(식 4), 액션 flow-matching 손실의 그래디언트는 비디오 백본으로 역전파되지 않도록 분리(stop-grad)한다. 추론 시에는 표현 생성기 f_θ로부터 h를 얻은 뒤 액션 디코더 π_φ가 Euler ODE 샘플링으로 행동을 생성한다. 5B 스케일(Wan2.2-TI2V-5B 백본 + 16레이어 DiT 액션 디코더)과 14B 스케일(Wan2.1-I2V-14B 백본 + 24레이어 DiT) 두 가지로 구현했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>DROID 데이터셋으로 학습한 후 환경별 파인튜닝 없이 새로운 실제 환경에서 제로샷 평가를 수행했다(in-domain easy/long-horizon, out-of-domain, object grounding 과제). FRED는 Fast-WAM, DiT4DiT, AGRA, DreamZero 등 경쟁 WAM과 π0.5, GR00T N1.7 같은 VLA 베이스라인 대비 모든 과제 유형에서 우수했으며, 특히 long-horizon 과제(5B 기준 31.7%→46.7%, 14B 기준 61.7%→81.7%)와 out-of-domain 과제(5B 10.4%→37.5%, 14B 10.4%→52.1%)에서 큰 폭의 개선을 보였다. OpenArm 휴머노이드를 이용한 인간-로봇 공동학습 실험에서도, 로봇 시연만 사용한 경우와 인간 비디오를 함께 학습한 경우 모두에서 FRED가 최고 성능을 기록했다. 특히 로봇 학습 데이터에는 없고 인간 비디오에만 시연된 스킬을 전이하는 human skill transfer 과제에서 FRED는 instruction-following 97.2%, task success 50.0%를 달성한 반면, 가장 강력한 경쟁 WAM도 instruction-following 19.4%, task success는 0%에 그쳤다. RoboCasa Kitchen 벤치마크를 이용한 컴포넌트 분석에서는 self-distillation과 historical conditioning을 각각 제거할 경우 성공률이 68.8%에서 65.1%, 64.8%로 떨어져 두 요소 모두 상호보완적으로 기여함을 확인했다. VideoREPA, SRA, Self-Flow 등 다른 디퓨전 표현학습 기법과 비교해도 FRED가 가장 큰 개선 폭을 보였다. 흥미롭게도 정책 성능은 1-step 비디오 생성 품질(FVD, r=0.24)이나 깨끗한 미래 관측에서 얻은 표현 품질(r=0.49)보다, "노이즈로부터 생성된 1-step 표현의 품질"과 훨씬 강하게 상관되었다(r=0.89). 설계 선택 분석에서는 teacher 노이즈 수준 τ=0.25, 19번째 레이어에서의 특징 추출, λ_SD=0.01, 액션 손실에 대한 stop-gradient 적용이 각각 최적으로 나타났다. 추론 속도 측면에서 FRED는 5B 스케일에서 DiT4DiT 대비 약 1.2배의 지연만 추가되며, 14B 스케일에서는 다단계 디노이징을 사용하는 DreamZero보다 약 8배 빠르다.</p>
+<h2>한계점</h2>
+<p>부록 F(Limitations and Future Work)에 명시되어 있다. 첫째, FRED는 기반 VDM 백본의 언어 이해 능력에 의존하는데, 미래 표현 학습 목적함수가 언어적 grounding에 대한 추가적 지도를 제공하지 않아, 인간 비디오만으로 공동학습했을 때 human skill transfer 과제에서 instruction-following이 0%에 그친다(사전학습 VLA 베이스라인은 일부 instruction-following 능력을 유지). 둘째, 인간-로봇 간 전이가 암묵적(implicit)으로 이루어지며, 두 embodiment 간 표현의 명시적 대응관계를 학습하지 않는다. 셋째, 현재 사전학습된 비디오 디퓨전 모델 대부분이 인간 비디오 위주로 학습되어 로봇 도메인 적응이 필요하며, 더 강력한 로봇 도메인 사전지식을 가진 대규모 비디오 백본을 사용하면 추가적인 성능 향상 여지가 있다(14B 스케일에서 더 큰 개선폭이 관찰된 것과 일치).</p>
+<h2>시사점</h2>
+<p>비디오 디퓨전 모델을 단순한 생성기가 아니라 "미래 표현 생성기"로 재해석하는 관점을 제시하고, 비교적 단순한 자가증류 기법만으로 액션 생성 성능을 크게 끌어올릴 수 있음을 보여준다. 이는 추론 지연이 낮으면서도 범용성과 일반화 능력을 갖춘 로봇 파운데이션 모델 설계에 실질적인 방향성을 제공하며, 특히 라벨 없는 인간 비디오를 로봇 정책 학습에 활용하는 데 유용한 통찰을 준다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.30320" target="_blank" rel="noopener">huggingface.co/papers/2610.30320</a> · 2026-10-24</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

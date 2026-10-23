@@ -1,0 +1,123 @@
+<meta charset="UTF-8">
+<title>GAFU</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#8 · Daily Papers 2026-10-24</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 31</span>
+    </div>
+    <h1 class="article-title">What Generation Knows: Unlocking Fine-Grained Understanding in Unified Multimodal Models</h1>
+    <p class="article-title-ko">GAFU: 통합 멀티모달 모델의 세밀한 이해를 여는 생성 정보 활용법</p>
+    <p class="article-sub">통합 멀티모달 모델(UMM)의 생성(generation) 경로가 이해(understanding) 경로보다 세밀한 시각 정보에 더 민감하고 상호보완적이라는 사실을 체계적으로 입증한 뒤, 생성 측 표현을 압축·정렬하여 질의조건부로 이해 경로에 주입하는 후처리 학습 프레임워크 GAFU를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.23987" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.23987" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: What Generation Knows: Unlocking Fine-Grained Understanding in Unified Multimodal Models</li>
+<li><strong>저자</strong>: Tengju Ru, Weitong Lian, Zecong Tang, Zhiheng Liu, Lingyi Meng, Haoran Li, Kaixuan Wang, Bohao Li, Xihui Liu (저장대학교, 홍콩대학교, 홍콩중문대학교(선전), Shenzhen Loop Area Institute)</li>
+<li><strong>출처</strong>: arXiv:2610.23987v1 [cs.CV] (2026년 10월)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/LRuca/GAFU">GitHub (LRuca/GAFU)</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.23987">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>통합 멀티모달 모델(UMM)의 생성(generation) 경로가 이해(understanding) 경로보다 세밀한 시각 정보에 더 민감하고 상호보완적이라는 사실을 체계적으로 입증한 뒤, 생성 측 표현을 압축·정렬하여 질의조건부로 이해 경로에 주입하는 후처리 학습 프레임워크 GAFU를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>비전-언어모델(VLM)은 고수준 의미 이해에는 강하지만, 객체 속성·개수·공간관계 등 세밀한(fine-grained) 시각 이해에서는 여전히 취약하다. 이는 언어에 정렬된 시각 인코더(CLIP, SigLIP 등)가 시각 정보를 제한된 표현으로 압축하는 과정에서 세밀한 단서가 상류에서 소실되기 때문이다. 한편 UMM은 이해와 생성을 하나의 모델에서 함께 학습하며, 생성 경로는 통상 VAE/VQ-VAE 기반으로 이해 경로보다 더 풍부한 구조적·공간적·국소적 디테일을 보존하는 것으로 알려져 있다. 그러나 기존의 '생성이 이해를 돕는다(generation-assisted understanding)' 연구는 대부분 생성적 지도(supervision)로 이해 측 표현을 간접적으로 형성하거나, 명시적으로 이미지를 생성한 뒤 그 결과를 다시 이해 경로로 재인코딩하는 방식에 의존해왔다. 전자는 과제 조건부 증거 선택이 제한되고 표현 요구사항 충돌 위험이 있으며, 후자는 추론 시 오버헤드와 생성 오류 전파 문제가 있다. 즉, 생성 측의 '네이티브(native)' 표현 자체가 이해에 어떤 추가 증거를 제공하는지, 그리고 그것을 어떻게 직접 활용할 수 있는지는 충분히 탐구되지 않았다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>UMM에서 이해 측·생성 측 시각 표현을 체계적으로 비교 분석하여, 생성 측 표현이 (a) 세밀한 의미 변화에 더 민감하고, (b) 이해 측이 놓치는 변화를 포착하는 표현적 상보성을 가지며, (c) 이러한 이점이 공간적 구조 보존에 의존함을 규명.</li>
+<li>이 발견에 기반해, 표현 압축·과제조건부 주입·정렬 손실·선호학습(preference learning)을 통해 이해 경로가 생성 측의 보완적 정보를 활용할 수 있도록 하는 프레임워크 GAFU 제안.</li>
+<li>다양한 UMM 아키텍처와 시각 이해 과제에서 GAFU를 검증, 15개 모델-벤치마크 조합 모두에서 동일 데이터로 학습한 SFT 대비 평균 3.56~5.98%p 향상.</li>
+</ol>
+<h2>방법론</h2>
+<p>저자들은 먼저 BAGEL, Janus-Pro, Lance, Show-o2-7B, BLIP3-o-4B, DreamLLM-7B 등 6개 UMM에서 생성 측 표현(R_G)과 이해 측 표현(R_U)을 VisMin의 최소 편집 이미지 쌍(object/attribute/count/relation 4개 도메인, 2,084쌍)으로 비교하는 3가지 분석을 수행했다.
+- <strong>세밀한 의미 민감도</strong>: 저수준 외형 변화를 통제한 대조(control) 이미지를 구성해, 편집 전후 표현 변화량(log 변환된 민감도 S_R)을 측정. 24개 모델-도메인 조합 전부에서 생성 측이 이해 측보다 민감도가 높았다(특히 attribute, object에서 두드러짐).
+- <strong>상보성 분석</strong>: 한쪽 표현만 강하게 반응하는 샘플 비율(P_G-only vs P_U-only)을 비교, 24개 조합 모두에서 생성 측 단독 강반응 비율이 더 높음을 확인(평균 차이 25.70%p).
+- <strong>공간 의존성</strong>: 이미지를 블록 단위로 뒤섞는 공간 셔플을 적용하면 생성-이해 민감도 격차가 거의 모든 조합에서 줄어들어, 생성 측 이점이 공간적 구조 보존에 기인함을 확인(relation 도메인에서 격차 축소가 가장 큼).</p>
+<p>이 분석을 바탕으로 GAFU는 2단계로 구성된다.
+1. <strong>1단계: 생성 표현 압축 및 정렬</strong>: 인코더-디코더 구조로 생성 측 표현을 256개의 학습 가능한 질의(query)와 결합해 고정 크기의 G 토큰으로 압축한다. 재구성 손실(L_rec, L1+L2+LPIPS), 공간결합 손실(L_spa, G 토큰이 원래 생성 표현의 공간 위치를 예측하도록 함), 관계정렬 손실(L_rel, G와 이해 측 표현 U를 여러 스케일(4,8,16)의 공간 그리드로 풀링한 뒤 쌍별 코사인 유사도 관계를 맞춤)을 결합해 Cambrian 이미지 100만 장으로 학습하며, 이때 UMM의 원래 이해/생성 경로는 고정한다.
+2. <strong>2단계: 과제조건부 주입 및 파인튜닝</strong>: 이해 경로의 각 트랜스포머 레이어 뒤에 교차주의(cross-attention) 모듈을 삽입해, 현재 텍스트 은닉 상태를 질의(query)로, 투영된 G 토큰을 키/값으로 사용하여 과제 관련 생성 정보를 선택적으로 읽어들인다. 학습 목표는 정답 교차엔트로피(CE), CE 공간의 쌍별 선호학습(DPO, 정답 G와 다른 이미지의 G를 바꿔치기한 shuffle-G 분기보다 낮은 CE를 갖도록 유도), 그리고 원본 출력 분포를 보존하는 KL 정규화의 조합이다(λ_KL은 학습 중 점진적으로 감쇠).</p>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li><strong>모델/데이터</strong>: BAGEL(14B), Janus-Pro(7B), Lance(3B) 세 UMM에 적용. 1단계는 Cambrian 100만 이미지로, 2단계는 FineVision, Visual Spatial Reasoning(VSR), PathVQA로 파인튜닝.</li>
+<li><strong>일반 세밀 이해 성능(표1)</strong>: VStar-Bench, OmniSpatial, MMVP에서 GAFU가 세 UMM 모두에서 동일 데이터 SFT를 능가. VStar-Bench +5.23~7.85점, OmniSpatial +2.61~4.44점, MMVP +3.67~5.67점. 특히 BAGEL(14B) 기준 VStar-Bench 47.12, OmniSpatial 34.51, MMVP 79.67로 비교 대상 중 최고치를 기록하며 InternVL3, Qwen3-VL 등 VLM 베이스라인도 능가.</li>
+<li><strong>도메인 특화 이해 성능</strong>: PathVQA(+1.12~7.65점), VSR-Bench(+1.09~6.15점)에서도 SFT 대비 일관된 개선. 특히 VSR-Bench에서는 SFT가 Base 대비 제한적 개선만 보인 반면 GAFU는 뚜렷한 추가 이득을 보여, 공간·관계 정보 활용이 핵심 한계였음을 시사.</li>
+<li><strong>Ablation(표2, BAGEL 기준)</strong>: 정렬 목적함수에서 공간결합(spatial binding)과 관계정렬(relation alignment)을 각각 제거하면 성능이 하락하며, 둘을 함께 쓸 때 상호보완적으로 가장 높은 성능(MMVP에서 단독 제거 대비 +4.67~5.34점). 주입 인터페이스 비교에서, 텍스트 은닉 상태를 질의로 쓰는 방식이 G와 U를 단순 연결하거나 시각 은닉 상태로 질의하는 방식보다 우수(최대 6.28점 차이). 주입 밀도는 10개 레이어 희소 주입과 전체 레이어 주입 간 차이가 0.00~1.67점으로 작아, 접근 방식이 빈도보다 중요함을 시사. 파인튜닝 손실에서는 DPO가 VStar-Bench·MMVP를 개선하지만 KL 없이는 OmniSpatial이 11.09점 하락하며, KL을 포함한 전체 목적함수가 모든 벤치마크에서 가장 우수.</li>
+<li>최대 상대 개선폭은 VStar-Bench 20.00%, OmniSpatial 17.94%, VSR-Bench 8.62%로 보고됨.</li>
+</ul>
+<h2>한계점</h2>
+<p>논문은 별도의 '한계점' 절을 명시하지 않았다. 다만 Ablation 결과에서 드러나듯 DPO만 단독 적용 시 OmniSpatial 성능이 크게 저하되는 등(11.09점 하락) 선호학습이 적절한 정규화(KL) 없이는 오히려 특정 과제에서 역효과를 낼 수 있음을 저자들이 직접 보였다. 또한 1단계 압축이 생성 표현을 완전히 보존하지 못하는 손실 압축(lossy compression)이라는 점, 그리고 분석 및 평가가 특정 UMM 아키텍처(BAGEL, Janus-Pro, Lance 등) 범위 내에서 이루어졌다는 점도 암묵적 한계로 볼 수 있다.</p>
+<h2>시사점</h2>
+<p>이 연구는 UMM의 생성 경로가 단순히 이미지를 만들어내는 부산물이 아니라, 이해 경로가 놓치는 세밀하고 공간적으로 구조화된 시각 증거를 담고 있는 별도의 유용한 정보원임을 정량적으로 보여준다. 명시적 이미지 생성이나 재인코딩 없이 네이티브 생성 표현을 직접 압축·정렬·주입하는 방식이 효과적이라는 결과는, 향후 통합 멀티모달 모델 설계에서 이해-생성 간 시너지를 얻기 위한 구체적이고 실용적인 경로(생성적 지도에 의존하지 않는 직접적 표현 재사용)를 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.23987" target="_blank" rel="noopener">huggingface.co/papers/2610.23987</a> · 2026-10-24</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

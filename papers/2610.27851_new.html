@@ -1,5 +1,5 @@
 <meta charset="UTF-8">
-<title>라라월드</title>
+<title>라라월드(LaLa-World)</title>
 <style>
   :root{
     --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
@@ -56,13 +56,13 @@
 <header class="article-head">
   <div class="wrap">
     <div class="kicker-row">
-      <span class="rank">#9 · Daily Papers 2026-10-24</span>
-      <span class="cat-tag">생성모델</span>
-      <span class="upvote-tag">▲ 27</span>
+      <span class="rank">#10 · Daily Papers 2026-10-25</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 29</span>
     </div>
     <h1 class="article-title">LaLa-World: Scaling Latent World Models with Natural Language Actions</h1>
-    <p class="article-title-ko">라라월드: 자연어 행동으로 확장하는 잠재 세계모델</p>
-    <p class="article-sub">자연어를 수치 행동(action)과 시각 변화(visual change)를 아우르는 공통 인터페이스로 사용해, 이질적인 시뮬레이션/로봇 제어 데이터와 이미지·비디오 데이터를 하나의 예측기로 함께 학습하는 언어 조건부 잠재 세계모델(latent world model) LaLa-World를 제안하고, 이를 행동예측기로 파인튜닝한 LaLa-Policy까지 확장한다.</p>
+    <p class="article-title-ko">라라월드(LaLa-World): 자연어 행동으로 잠재 월드모델 확장하기</p>
+    <p class="article-sub">수치 행동(action)과 영상의 시각적 변화를 모두 "자연어"로 통일해 표현함으로써, 서로 다른 로봇·시뮬레이션 도메인과 일반 이미지/영상 데이터를 하나의 예측기로 함께 학습시키는 JEPA 스타일의 잠재 월드모델(LaLa-World)을 제안한다.</p>
     <div class="meta-links">
       <a href="https://huggingface.co/papers/2610.27851" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
       <a href="https://arxiv.org/abs/2610.27851" target="_blank" rel="noopener">arXiv 원문 →</a>
@@ -74,44 +74,30 @@
   <div class="wrap">
 <ul>
 <li><strong>제목</strong>: LaLa-World: Scaling Latent World Models with Natural Language Actions</li>
-<li><strong>저자</strong>: Junha Song, Geonmo Gu, Jeongeun Park, Heejeong Nam, Lucas Maes, Byeongho Heo, Dongyoon Han, Sangdoo Yun (NAVER AI Lab, Georgia Institute of Technology, Brown University, Mila &amp; Université de Montréal)</li>
-<li><strong>출처</strong>: arXiv:2610.27851v2 [cs.CV] (2026년 10월)</li>
-<li><strong>프로젝트 페이지</strong>: <a href="https://github.io/lala-world">github.io/lala-world</a> (LaLa-World 및 LaLa-Policy 코드 함께 공개)</li>
+<li><strong>저자</strong>: Junha Song 외 (NAVER AI Lab 주도, Georgia Tech, Brown University, Mila &amp; Université de Montréal 공동 연구; 교신저자 Sangdoo Yun)</li>
+<li><strong>출처</strong>: arXiv:2610.27851v2 [cs.CV] (2026년 10월 21일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.io/lala-world">github.io/lala-world</a></li>
 <li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.27851">arXiv PDF 보기</a></li>
 </ul>
 <h2>한 줄 요약</h2>
-<p>자연어를 수치 행동(action)과 시각 변화(visual change)를 아우르는 공통 인터페이스로 사용해, 이질적인 시뮬레이션/로봇 제어 데이터와 이미지·비디오 데이터를 하나의 예측기로 함께 학습하는 언어 조건부 잠재 세계모델(latent world model) LaLa-World를 제안하고, 이를 행동예측기로 파인튜닝한 LaLa-Policy까지 확장한다.</p>
+<p>수치 행동(action)과 영상의 시각적 변화를 모두 "자연어"로 통일해 표현함으로써, 서로 다른 로봇·시뮬레이션 도메인과 일반 이미지/영상 데이터를 하나의 예측기로 함께 학습시키는 JEPA 스타일의 잠재 월드모델(LaLa-World)을 제안한다.</p>
 <h2>배경 및 문제의식</h2>
-<p>세계모델(world model)은 주어진 행동에 대해 미래 상태를 예측함으로써 계획(planning)과 의사결정의 기반이 된다. JEPA 스타일의 잠재 세계모델(LWM, 예: V-JEPA 2-AC, DINO-WM)은 픽셀 수준 재구성 없이 잠재 표현 변화만 예측해 계산 효율이 높아 상상 기반 계획(imagination-based planning)에 유리하다. 그러나 기존 LWM의 행동조건부 예측기는 대개 특정 시뮬레이션/로봇 데이터셋 하나에 대해서만 학습되며, 데이터셋마다 수치 행동 벡터의 차원과 물리적 의미가 달라(예: 한 도메인에서는 수평/수직 변위, 다른 도메인에서는 힘) 여러 도메인을 아우르는 공유 동역학 학습이 어렵다. 또한 이미지·비디오 데이터는 수치 행동 주석이 없어 LWM 학습에 활용하기 힘들다. 반면 비디오 생성모델(생성적 세계모델)은 자연어를 조건으로 사용해 다양한 도메인의 시각 데이터로부터 학습할 수 있지만, 계획 시 매 후보 행동마다 픽셀 수준 영상을 합성해야 해 비용이 크다. 저자들은 "잠재 세계모델의 효율성과 생성모델의 유연한 언어 인터페이스를 결합할 수 있는가"라는 문제의식에서 출발한다.</p>
+<p>월드모델은 행동에 따라 미래 상태가 어떻게 변할지 예측해 플래닝(계획 수립)의 토대를 제공한다. 픽셀을 직접 복원하지 않고 잠재 표현(latent representation)의 변화만 예측하는 JEPA 스타일의 잠재 월드모델(LWM, 예: V-JEPA 2-AC, DINO-WM)은 계산 효율이 높아 다수의 후보 행동을 반복적으로 롤아웃하는 '상상 기반 플래닝(MPC)'에 유리하다. 그러나 기존 LWM은 각 시뮬레이션·로봇 도메인마다 고유한 차원과 물리적 의미를 가진 수치 행동 벡터로 학습되기 때문에, 도메인마다 따로 학습해야 했고 수치 행동 레이블이 없는 풍부한 이미지·영상 데이터는 활용하기 어려웠다. 반면 언어 조건을 사용하는 영상 생성모델(비디오 파운데이션 모델)은 다양한 데이터를 하나의 모델로 학습할 수 있지만, 픽셀 수준 생성을 목표로 하기 때문에 학습·추론 비용이 크다. 저자들은 "언어"를 공통 인터페이스로 삼아 LWM의 효율성과 생성모델의 유연한 언어 조건화 장점을 동시에 취할 수 있는지를 탐구한다.</p>
 <h2>핵심 기여</h2>
 <ul>
-<li>언어를 공유 인터페이스로 사용해 제어 궤적 데이터와 더 폭넓은 이미지·비디오 데이터를 함께 학습하는 잠재 세계모델 LaLa-World 제안.</li>
-<li>여러 도메인에 걸쳐 단일 예측기로 학습한 LaLa-World가 도메인별로 개별 학습된 기존 LWM들을 MPC 계획 성능에서 능가함을 입증.</li>
-<li>동일 조건(언어 조건, 학습 데이터, 비전 인코더)에서 RAEv2 기반 생성적 세계모델과 비교, LaLa-World가 더 높은 계획 성능과 더 큰 학습·추론 효율성을 보임을 입증.</li>
-<li>사전학습된 LaLa-World를 행동 예측기로 파인튜닝한 LaLa-Policy를 제시, 기존 정책모델과 경쟁력 있는 성능을 더 빠른 추론 속도로 달성.</li>
+<li>수치 행동과 시각적 변화를 모두 언어로 표현하는 "언어 조건화 전이 데이터"를 구성하여, 7개의 시뮬레이션/로봇 데이터셋과 일반 이미지·영상 데이터(OpenVid, OmniEdit, ShareGPT 등)를 하나의 예측기로 함께 학습 가능하게 함.</li>
+<li>언어모델(Qwen3.5-0.8B)을 예측기 백본으로 사용해, 별도의 텍스트 인코더 없이 언어 조건을 직접 읽고 미래 잠재 상태를 예측하는 구조(LaLa-World)를 제안.</li>
+<li>동일 조건(언어 조건, 학습 데이터, 비전 인코더)에서 RAEv2 기반 생성형 월드모델과 공정 비교를 수행해, 잠재 월드모델이 더 적은 학습 비용과 더 빠른 추론으로 더 높은 플래닝 성능을 낼 수 있음을 입증.</li>
+<li>사전학습된 LaLa-World를 행동·미래 표현을 동시에 예측하는 정책 모델 LaLa-Policy로 파인튜닝하여, Cosmos Policy와 경쁠한 성능을 유지하면서 추론 속도를 크게 높임.</li>
 </ul>
 <h2>방법론</h2>
-<p>LaLa-World는 기존 LWM의 인코더-예측기 틀을 따르되, 수치 행동 조건 c 대신 언어 조건 z를 사용한다(ê_{t+1}=P_φ(e_{t-w+1:t}, z)).</p>
-<ol>
-<li><strong>언어 조건부 전이 데이터 구성</strong>:</li>
-<li><strong>제어 데이터의 언어화</strong>: Push-T, Point Maze, Wall, Meta-World, DROID 등 7개의 시뮬레이션·로봇 데이터셋에서 각 도메인 고유의 수치 행동 벡터(방향·크기 포함)를 고정 템플릿을 사용해 자연어 문장(예: "push the ball with force 0.50 left and 0.46 up")으로 변환한다. 이를 통해 차원과 물리적 의미가 다른 여러 도메인의 제어 데이터를 하나의 언어 형식으로 통합한다.</li>
-<li><strong>이미지·비디오 데이터 추가</strong>: 제어 데이터만으로는 언어 표현의 다양성이 제한되므로, OpenVid의 캡션 비디오, OmniEdit·ShareGPT의 이미지 편집 지시문 쌍을 추가해, 프레임 간 변화를 설명하는 캡션/편집 지시문 자체를 언어 조건으로 사용한다(수치 행동 주석 불필요).</li>
-<li><strong>모델 아키텍처</strong>: 관측 인코더는 고정된 자기지도 사전학습 비전 트랜스포머(DINOv2-S/14 또는 DINOv3-L/16)를 사용해 표현 붕괴를 방지한다. 예측기는 사전학습된 언어모델(기본값 Qwen3.5-0.8B)을 그대로 사용하여, 언어 조건을 텍스트로 토큰화해 시각 잠재 토큰과 함께 입력하고, 2층 MLP와 3D 위치 임베딩(시간+2D 공간)을 통해 시각 잠재를 임베딩 공간에 매핑한 뒤, 학습된 질의 토큰(query token)으로부터 미래 표현 ê_{t+1}을 읽어낸다. 학습 목표는 예측-타깃 표현 간 제곱오차(L=‖ê_{t+1}-e_{t+1}‖²)이며, 자기수용감각(proprioceptive state) 정보는 입력이나 타깃으로 사용하지 않는다(도메인 특이성을 피하기 위함). 디코더(미래 상태 시각화용)는 별도로 L1 재구성과 LPIPS 손실로 학습되며 세계모델 학습 자체에는 사용되지 않는다.</li>
-<li><strong>MPC 계획</strong>: 교차엔트로피법(CEM)으로 후보 행동열을 샘플링하고, 각 후보를 자기회귀적으로 H스텝 적용한 뒤 목표 관측과의 잠재 거리(비용 C=‖ê_{t+H}-e_goal‖²)로 평가해 최적 행동을 선택한다. LaLa-World는 CEM이 샘플링한 수치 행동을 템플릿으로 언어화해 예측기에 입력한다.</li>
-<li><strong>LaLa-Policy</strong>: 사전학습된 LaLa-World 예측기에 학습 가능한 행동 질의(action query)를 추가하고, Isaac-GR00T의 행동헤드 구조를 적용한 확산 트랜스포머 기반 행동 생성기 A_ψ를 결합해, 관측과 과제 지시문으로부터 행동 청크와 미래 잠재 표현을 동시에(반복적 디노이징으로) 예측하도록 파인튜닝한다.</li>
-</ol>
+<p>LaLa-World는 기존 LWM의 인코더-예측기 구조를 따르되, 수치 행동 조건 c 대신 언어 조건 z를 사용한다. (1) 언어 조건화 데이터 구축: 시뮬레이션/로봇 데이터셋의 수치 행동 벡터를 고정된 템플릿으로 "왼쪽으로 2, 위로 4 이동" 같은 문장으로 변환하고, 여기에 캡션이 있는 영상(OpenVid)과 이미지 편집 지시문(OmniEdit, ShareGPT) 데이터를 더해 더 폭넓은 언어 표현과 시각 변화에 노출시킨다. (2) 모델 구조: 관측 프레임은 고정(frozen)된 DINOv2/DINOv3 인코더로 잠재 표현으로 인코딩되고, 언어 조건은 토크나이즈되어 2계층 MLP로 매핑된 시각 잠재값과 함께 언어모델(Qwen3.5-0.8B) 기반 예측기에 입력된다. 시공간 위치 임베딩을 추가하고, 학습된 쿼리 토큰을 통해 미래 잠재 표현을 출력하며, 예측값과 실제 미래 표현 간 제곱오차(L2 loss)로 학습한다. 프로프리오셉션(자기 신체 감각 상태) 정보는 도메인별 특수성 때문에 입력·예측 대상에서 제외했다. 시각화를 위해 별도의 12층 트랜스포머 디코더를 L1+LPIPS 손실로 학습했으나, 이는 월드모델 학습 자체에는 사용되지 않는다. 플래닝은 CEM(Cross-Entropy Method) 기반 MPC로 수행되며, 후보 행동열을 언어로 변환해 모델에 넣고, 예측된 최종 잠재 상태와 목표 관측의 인코딩 간 거리를 비용으로 삼아 최적 행동을 선택한다. 정책 학습(LaLa-Policy)에서는 예측기에 행동 쿼리를 추가해, 비전-언어 조건에 기반한 디퓨전 트랜스포머 행동 생성기(Isaac-GR00T 구조 기반)로 행동 청크를 생성하도록 파인튜닝한다.</p>
 <h2>실험 설정 및 결과</h2>
-<ul>
-<li><strong>MPC 계획(표1)</strong>: Wall, PointMaze, Push-T, MetaWorld-R(Reach), MetaWorld-RW(Reach-Wall) 등 5개 시뮬레이션 과제에서 LaLa-World는 평균 성공률 72.1%로 DreamerV3, TD-MPC2, IRIS, LeWorldModel, DINO-WM, JEPA-WMs 등 개별 도메인별로 학습된 기존 LWM 베이스라인을 모두 상회(JEPA-WMs 대비 +7.5%p, Push-T에서는 68.8%→81.2%로 가장 큰 향상). Rope, Granular, 그리고 학습에 포함되지 않은 RoboCasa(제로샷)·DROID 데이터셋에서도 LaLa-World가 평균 최고 성능(50.4%)을 기록.</li>
-<li><strong>이미지·비디오 데이터의 효과</strong>: 제어 데이터만 사용할 때 평균 성능 59.3%에서, 이미지·비디오 데이터를 추가하면 61.6%로 향상. 또한 행동 템플릿을 다른 표현으로 바꿔 쓴("move the gripper"→"shift the robot hand" 등) 패러프레이즈 평가에서, 제어 데이터만 학습한 모델은 성능이 6.8점 하락하는 반면 전체 데이터로 학습한 LaLa-World는 견고함을 유지.</li>
-<li><strong>수치 없는 질적 언어 행동</strong>: "move slightly down"과 같이 수치가 없는 질적 표현으로도 LaLa-World가 계획을 성공적으로 수행할 수 있음을 Wall, RoboCasa에서 정성적으로 확인.</li>
-<li><strong>잠재 모델 vs 생성 모델 비교(매칭 조건)</strong>: DINOv3-L/16 인코더, 동일 언어 조건, 동일 학습 데이터, 약 0.8B 파라미터로 맞춘 RAEv2(diffusion transformer) 기반 생성적 세계모델과 비교한 결과, LaLa-World는 RAEv2의 5-스텝 디노이징 12시간 학습 성능(59.4%)을 단 2시간 만에 달성했고, 동일 예측기 깊이 조건에서 RAEv2(1-step/5-step) 대비 각각 2.9배/13.9배 빠르게 계획을 수행하면서도 더 높은 평균 성능을 보임. 전체적으로 6배 적은 학습 비용과 13.9배 빠른 계획 속도로 비교 가능한 성능을 달성.</li>
-<li><strong>LaLa-Policy(표2, 3)</strong>: LIBERO 벤치마크에서 LaLa-World로 초기화한 LaLa-Policy가 성공률 97.7%로 Dita, π0, UniVLA, OpenVLA-OFT, CogVLA, Cosmos Policy 등 기존 VLA/정책모델을 능가(랜덤 초기화 대비 +3.6%p, Qwen3.5 초기화 대비도 개선). RoboCasa에서는 데모 300개 기준 Cosmos Policy(66.4%)와 유사한 수준(66.4% vs 65.1%, 랜덤 초기화 대비는 우위), 데모 50개 기준에서는 57.3%로 Cosmos Policy(56.0%) 등을 상회. 추론 속도 면에서는 LIBERO 기준 평균 궤적당 추론시간이 Cosmos Policy 대비 5.2배, RoboCasa 기준 5.5배 빠름.</li>
-</ul>
+<p>Wall, PointMaze, Push-T, MetaWorld, Rope, Granular 등 6개 시뮬레이션 데이터셋과 실제 로봇 데이터셋 DROID, 그리고 학습에 쓰이지 않은 RoboCasa(제로샷 평가)에서 MPC 플래닝 성능을 비교했다. DreamerV3, TD-MPC2, IRIS, LeWorldModel, DINO-WM, JEPA-WMs, V-JEPA 2-AC 등 도메인별로 개별 학습된 기존 베이스라인과 비교한 결과, 단일 예측기로 모든 도메인을 함께 학습한 LaLa-World가 두 비교군 모두에서 평균 최고 성능(시뮬레이션 평균 72.1%, JEPA-WMs 대비 +7.5%p; 로봇/제로샷 평균 50.5%)을 기록했다. 이미지·영상 데이터를 추가 학습하면 평균 플래닝 성능이 59.3%에서 61.6%로 향상되고, 동일 행동을 다른 표현으로 바꿔 말해도(패러프레이즈) 성능 저하가 거의 없어(통제 데이터만 쓴 경우 6.8%p 하락과 대비) 언어 표현에 대한 로버스트성이 커졌다. 수치 값 없이 "약간 아래로" 같은 정성적 표현만으로도 유효한 플래닝이 가능함을 보였다. 동일한 DINOv3 인코더, 언어 조건, 학습 데이터로 매칭한 RAEv2(디퓨전 트랜스포머 기반 생성형 월드모델) 베이스라인과 비교했을 때, LaLa-World는 RAEv2의 5-스텝 디노이징 12시간 학습 성능을 2시간 만에 따라잡고 이후 59.4%(RAEv2 최고 48.0%)까지 도달했으며, 학습 비용 6배 절감, 플래닝 속도 최대 13.9배 향상을 달성했다. LIBERO와 RoboCasa 벤치마크에서 LaLa-World를 초기화로 삼아 파인튜닝한 LaLa-Policy는 π0, GR00T-N1.5, Video Policy, Cosmos Policy 등 기존 정책 모델과 경쁠한 성공률을 보이며, Cosmos Policy 대비 궤적당 평균 추론 시간을 최대 5.5배 줄였다. 또한 LaLa-World로 초기화한 경우가 무작위 초기화나 순수 언어모델(Qwen3.5) 초기화보다 더 나은 정책 성능을 보여, 월드모델 사전학습이 정책 학습에도 유의미한 전이 효과를 준다는 점을 확인했다.</p>
 <h2>한계점</h2>
-<p>저자들은 'Future Directions'(향후 연구방향) 절에서 다음과 같은 제약을 스스로 명시한다: (1) 예측기 규모(0.8B)와 학습 데이터 양이 Wan과 같은 비디오 생성모델에 비해 여전히 작아, 더 큰 규모에서도 이점이 유지되는지는 확인되지 않음. (2) 표현 붕괴를 막기 위해 비전 인코더를 고정했기 때문에, 미래 예측에 유용한 표현으로 인코더 자체를 종단간 학습하지 못함. (3) 예측기가 다음 한 스텝의 잠재 상태만 지도학습되어, 비디오 생성모델처럼 여러 미래 프레임을 자기회귀적으로 길게 예측하는 능력은 검증되지 않음. (4) MPC 실험의 계획 호라이즌이 최대 6스텝으로 비교적 짧아, 더 먼 미래의 결과를 예측해야 하는 장기 과제에서의 성능은 평가되지 않음. (5) LaLa-Policy 평가가 시뮬레이터(LIBERO, RoboCasa)에 한정되어 있으며, 실제 로봇(real robot)에서의 검증은 이루어지지 않음.</p>
+<p>저자들이 명시한 향후 과제로서, (1) 학습 데이터와 모델 크기의 추가적인 스케일업, (2) 예측 호라이즌(미래를 내다보는 시간 범위) 확장, (3) 실제 로봇 환경에서의 정책 평가가 필요하다고 언급했다. 또한 LaLa-World가 생성한 디코딩 이미지는 픽셀 복원을 목표로 학습되지 않았기 때문에 시각적 품질이 낮을 수 있다는 점도 논문에서 밝히고 있다. 그 외 세부적인 한계(예: 언어 템플릿 설계의 일반화 범위, 매우 정밀한 수치 제어가 필요한 과제에서의 성능)는 논문에 명시되지 않음.</p>
 <h2>시사점</h2>
-<p>이 연구는 자연어가 서로 다른 물리적 의미와 차원을 가진 다양한 제어 행동 공간을 통합하는 실용적 인터페이스가 될 수 있으며, 동시에 수치 행동 주석이 없는 방대한 이미지·비디오 데이터까지 세계모델 학습에 끌어들일 수 있음을 보여준다. 특히 잠재 표현만 예측하는 효율적인 JEPA 스타일 세계모델도 (픽셀 재구성을 목표로 하지 않고도) 생성적 세계모델에 필적하거나 더 나은 계획 성능을 훨씬 낮은 학습·추론 비용으로 달성할 수 있다는 결과는, 시각적으로 화려한 출력 없이도 잠재 세계모델이 계획과 정책학습에서 실질적 이점을 가질 수 있음을 시사하며, 향후 세계모델 연구가 반드시 고품질 영상 생성을 목표로 하지 않아도 됨을 뒷받침한다.</p>
+<p>이 연구는 시각적으로 "그럴듯한" 영상을 생성하지 않아도, 잠재 공간에서 미래를 예측하는 월드모델이 플래닝과 정책 학습에서 생성형 비디오모델보다 더 효율적이고 실용적일 수 있음을 보여준다. 언어를 수치 행동과 시각적 변화를 아우르는 공통 인터페이스로 사용하는 아이디어는, 이질적인 로봇·시뮬레이션 데이터와 대규모 범용 이미지/영상 데이터를 하나의 모델로 통합 학습시키는 길을 열어, 향후 범용 월드모델 및 로봇 정책의 확장성(scalability) 연구에 중요한 참고가 될 것으로 보인다.</p>
     <div class="back-bottom">
       <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
     </div>
@@ -120,7 +106,7 @@
 
 <footer>
   <div class="wrap">
-    <span>출처: <a href="https://huggingface.co/papers/2610.27851" target="_blank" rel="noopener">huggingface.co/papers/2610.27851</a> · 2026-10-24</span>
+    <span>출처: <a href="https://huggingface.co/papers/2610.27851" target="_blank" rel="noopener">huggingface.co/papers/2610.27851</a> · 2026-10-25</span>
     <span>my-design 시스템 적용</span>
   </div>
 </footer>

@@ -1,5 +1,5 @@
 <meta charset="UTF-8">
-<title>팩터인지 예측학습</title>
+<title>MLLM 잠재표현을 실제로 활용하기</title>
 <style>
   :root{
     --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
@@ -56,13 +56,13 @@
 <header class="article-head">
   <div class="wrap">
     <div class="kicker-row">
-      <span class="rank">#2 · Daily Papers 2026-10-24</span>
+      <span class="rank">#3 · Daily Papers 2026-10-25</span>
       <span class="cat-tag">생성모델</span>
-      <span class="upvote-tag">▲ 163</span>
+      <span class="upvote-tag">▲ 165</span>
     </div>
     <h1 class="article-title">Making MLLM Latents Matter: Factor-Aware Predictive Learning for Cinematic Video Generation</h1>
-    <p class="article-title-ko">팩터인지 예측학습: 영화급 비디오 생성을 위한 MLLM 잠재공간 활용법</p>
-    <p class="article-sub">MLLM(멀티모달 대형언어모델)의 표현이 비디오 생성 과정에서 실제로 무시되고 우회되는 문제를 지적하고, 이를 생성에 실질적으로 반영시켜 적은 입력으로도 시간적 추론과 캐릭터·장면·행동·카메라 등 요소별(factor-aware) 제어가 가능하도록 하는 3단계 학습법 FAPL을 제안한 논문이다.</p>
+    <p class="article-title-ko">MLLM 잠재표현을 실제로 활용하기: 영화적 비디오 생성을 위한 요소 인식 예측 학습</p>
+    <p class="article-sub">멀티모달 대형언어모델(MLLM)의 잠재표현이 비디오 디퓨전 트랜스포머(DiT)에서 실제로 쓰이도록 만드는 3단계 학습법(FAPL)을 제안해, 적은 입력으로부터의 시간적 추론과 인물·배경·동작·카메라에 대한 요소별(factor-aware) 제어를 동시에 개선한 영화적(cinematic) 비디오 생성 연구.</p>
     <div class="meta-links">
       <a href="https://huggingface.co/papers/2610.30926" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
       <a href="https://arxiv.org/abs/2610.30926" target="_blank" rel="noopener">arXiv 원문 →</a>
@@ -74,41 +74,38 @@
   <div class="wrap">
 <ul>
 <li><strong>제목</strong>: Making MLLM Latents Matter: Factor-Aware Predictive Learning for Cinematic Video Generation</li>
-<li><strong>저자</strong>: Songlin Yang, Zhe Wang 외 (HKUST MMLab, Tencent Video, École Polytechnique LIX 소속 공동연구팀)</li>
-<li><strong>출처</strong>: arXiv:2610.30926v1 [cs.CV] (2026년 10월)</li>
+<li><strong>저자</strong>: Songlin Yang, Zhe Wang 등 HKUST MMLab 연구팀과 Tencent Video, 에콜 폴리테크니크(LIX) 소속 연구자들로 구성된 다기관 공동 연구팀 (교신/프로젝트 리드: Songlin Yang, Anyi Rao)</li>
+<li><strong>출처</strong>: arXiv:2610.30926v1 [cs.CV] (2026년 10월 22일)</li>
 <li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음</li>
 <li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.30926">arXiv PDF 보기</a></li>
 </ul>
 <h2>한 줄 요약</h2>
-<p>MLLM(멀티모달 대형언어모델)의 표현이 비디오 생성 과정에서 실제로 무시되고 우회되는 문제를 지적하고, 이를 생성에 실질적으로 반영시켜 적은 입력으로도 시간적 추론과 캐릭터·장면·행동·카메라 등 요소별(factor-aware) 제어가 가능하도록 하는 3단계 학습법 FAPL을 제안한 논문이다.</p>
+<p>멀티모달 대형언어모델(MLLM)의 잠재표현이 비디오 디퓨전 트랜스포머(DiT)에서 실제로 쓰이도록 만드는 3단계 학습법(FAPL)을 제안해, 적은 입력으로부터의 시간적 추론과 인물·배경·동작·카메라에 대한 요소별(factor-aware) 제어를 동시에 개선한 영화적(cinematic) 비디오 생성 연구.</p>
 <h2>배경 및 문제의식</h2>
-<p>영화적(cinematic) 비디오 생성은 대본과 소수의 참조 이미지처럼 희소한(sparse) 입력만으로 그럴듯한 행동·카메라 동선을 추론하는 "시간적 추론" 능력과, 캐릭터·장면·행동·카메라 중 원하는 요소만 바꾸고 나머지는 보존하는 "요소 인지 제어" 능력을 동시에 요구한다. 기존에는 MLLM의 시각적 사전지식과 의미적 추론 능력을 Video Diffusion Transformer(DiT)에 조건으로 주입하는 방식이 제안되었지만, 저자들은 두 가지 핵심 장애물을 관찰했다. 첫째, DiT는 텍스트 인코더나 VAE로 인코딩된 참조 영상 같은 기존 경로만으로도 생성 손실을 충분히 줄일 수 있어 MLLM 잠재표현(latent)을 사실상 우회(bypass)해버린다(실험적으로 Omni-Video 2(1.3B)는 MLLM 조건만 줄 경우 노이즈에 가까운 결과를, 14B 모델이나 UniVideo는 인물을 두 명으로 착각하는 등 의미적 오류를 보였다). 둘째, 일반적인 비디오 단위 지도학습 신호만으로는 특정 요소의 개입이 출력의 어느 부분에 영향을 주어야 하는지, 그리고 희소 입력으로부터 시간적으로 유의미한 표현을 MLLM이 스스로 만들어내야 한다는 요구를 명시적으로 가르치지 못한다.</p>
+<p>영화적 비디오 생성은 두 가지를 동시에 잘해야 한다. 첫째, 대본과 몇 장의 참조 이미지 같은 "희소한(sparse)" 입력만으로 그럴듯한 동작 순서와 카메라 움직임을 추론하는 시간적 추론(temporal inference) 능력이 필요하다. 둘째, 인물(character)·배경(scene)·동작(action)·카메라(camera) 네 가지 요소를 각각 독립적으로 제어하면서도 서로 호환되게 유지하는 요소 인식 제어(factor-aware control) 능력이 필요하다(예: 인물을 바꿀 때 동작은 그대로 유지되어야 함).</p>
+<p>MLLM은 풍부한 시각적 사전지식과 의미 추론 능력을 갖고 있어 이 두 능력 모두에 유용한 후보로 꼽힌다. 그러나 저자들은 MLLM의 특징(latent)을 단순히 비디오 DiT에 조건으로 넣는 것만으로는 부족하다는 점을 실증적으로 보여준다. 텍스트 인코더나 VAE 참조 이미지 같은 기존 조건화 경로가 있으면, DiT는 학습 손실을 줄이기 위해 MLLM 특징을 "우회(bypass)"해 버리는 경향이 있다(즉 MLLM 조건만 주면 노이즈나 어색한 아티팩트가 나오고, 충돌하는 조건이 주어지면 VAE 참조 이미지가 결과를 지배해버림). 또한 기존의 비디오 단위 학습 방식은 특정 MLLM 구간(span)에 대한 개입이 출력의 어떤 변화와 대응하는지 명시적으로 학습시키지 못하고, 희소 입력으로부터 생성에 유용한 표현을 만들어내도록 MLLM 자체를 학습시키지도 않는다.</p>
 <h2>핵심 기여</h2>
 <ol>
-<li>멀티모달 이해 능력과 영화적 비디오 생성에 그 능력을 실제로 활용하는 것 사이의 간극을 규명하고, 이를 메우는 Factor-Aware Predictive Learning(FAPL)을 제안.</li>
-<li>짝지어진(paired) 편집 데이터에서 요소별 잠재 구간을 교체하는 factor-span replacement를 통해, 별도의 분리된(disentangled) 표현을 가정하지 않고도 "무엇이 바뀌어야 하고 무엇이 보존되어야 하는지"에 대한 구조화된 지도신호를 구성.</li>
-<li>고정된 생성기(DiT)를 매개로 텍스트만 주어진 제한적 관측과 텍스트+완전한 비디오 관측이 동일한 비디오 타깃을 공유하도록 학습시켜, 희소 입력으로부터의 예측과 완전 관측 재구성을 연결하는 predictive learning 체계를 구성.</li>
+<li>MLLM의 이해 능력과 그것이 실제 생성에 "실행 가능하게(actionable)" 쓰이는 것 사이의 간극을 밝히고, 이를 메우기 위한 FAPL(Factor-Aware Predictive Learning)을 제안.</li>
+<li>쌍을 이룬 편집 데이터(paired edits)를 활용해 특정 요소(factor)에 대한 잠재표현 개입과 그에 따른 출력 변화/비대상 요소 보존을 명시적으로 연결하는 요소 인식 학습 신호(factor-span replacement)를 도입. 완전히 분리된(disentangled) 표현을 가정하지 않고도 요소별 제어를 학습시킴.</li>
+<li>고정된(freeze) 생성기를 매개로, 제한된 입력으로부터의 예측과 완전한 관찰로부터의 재구성을 공유 타깃(shared video target)으로 연결하는 예측적 학습(predictive learning) 방식을 제시하여, 시간적으로 유의미하면서도 생성에 호환되는 MLLM 표현을 학습.</li>
 </ol>
 <h2>방법론</h2>
-<p>FAPL은 사전학습된 MLLM, 커넥터(connector), DiT로 구성된 MLLM-조건부 비디오 확산 프레임워크 위에서 3단계로 학습을 진행한다(Algorithm 1, Fig. 3).</p>
+<p>FAPL은 사전학습된 MLLM, 커넥터(connector), 비디오 DiT 구조를 그대로 재사용하면서 3단계로 학습을 진행한다.</p>
 <ul>
-<li><strong>Stage I: MLLM-Only Generator Grounding.</strong> MLLM과 커넥터를 고정(freeze)하고, 텍스트 전용 입력과 텍스트+완전 비디오 입력 두 관측 모드 모두에서 원래의 텍스트 인코더·VAE 참조 경로를 비활성화한 채 MLLM 잠재표현만을 조건으로 사용해 DiT를 학습시킨다. 이를 통해 DiT가 MLLM 표현에 실질적으로 의존하도록 강제하는 "생성 인터페이스"를 먼저 확립한다.</li>
-<li><strong>Stage II: Factor-Aware Control Improvement.</strong> 캐릭터·장면·행동·카메라 네 가지 요소 중 하나만 바뀐 영상 쌍(source-target pair)을 사용한다. 구조화된 프롬프트(네 개의 필드로 구성)에서 수정된 필드에 대응하는 MLLM 은닉상태·투사된 잠재표현 구간을 식별한 뒤, 두 예시 간 해당 구간만 서로 교체(factor-span replacement, 식 4)하여 DiT가 이를 보고 대응하는 타깃 비디오를 재현하도록 학습한다(식 5). MLLM과 커넥터는 이 단계에서도 고정한다.</li>
-<li><strong>Stage III: Prediction From Limited Inputs.</strong> 앞 두 단계로 학습된 DiT(φ*)를 고정하고, MLLM과 커넥터를 텍스트 전용/텍스트+완전비디오 두 관측 모드가 동일한 타깃 비디오를 공유하도록 공동 미세조정한다. 텍스트 전용 모드는 제한된 정보로부터의 예측을, 완전 관측 모드는 보완적인 재구성 지도를 제공하여, 고정된 생성기를 통해 MLLM 표현이 "생성에 바로 쓸 수 있는(generation-compatible)" 형태로 학습되게 한다.</li>
+<li><strong>1단계: MLLM 전용 생성기 그라운딩(Stage I)</strong>. MLLM과 커넥터를 고정(freeze)한 채, 텍스트만 주어지는 경우와 텍스트+전체 비디오가 함께 주어지는 두 가지 관찰 모드에서 DiT만 학습시킨다. 이때 텍스트 인코더·VAE 참조 경로를 모두 끄고 MLLM 잠재표현만을 유일한 콘텐츠 조건으로 사용해, DiT가 MLLM 특징을 반드시 활용하도록 강제한다.</li>
+<li><strong>2단계: 요소 인식 제어 개선(Stage II)</strong>. 인물·배경·동작·카메라 중 하나의 요소만 바뀌고 나머지는 그대로인 쌍(pair) 비디오 데이터를 사용한다. 구조화된 설명(캡션을 4개 필드로 재작성)을 통해 MLLM 투사된 잠재표현에서 각 요소에 대응하는 구간(span)을 특정하고, 한 예시의 특정 요소 구간을 다른 예시의 동일 요소 구간으로 교체(factor-span replacement)한 뒤, 교체된 조건이 실제로 대응하는 타깃 비디오를 생성하도록 DiT를 학습시킨다. 양방향 교체를 모두 학습에 사용한다.</li>
+<li><strong>3단계: 제한된 입력으로부터의 예측 학습(Stage III)</strong>. 2단계까지 학습된 DiT를 고정하고, 이번에는 MLLM과 커넥터를 공동으로 미세조정한다. 텍스트만 주는 경우와 텍스트+완전한 비디오를 주는 경우가 동일한 타깃 비디오로 감독되며, 고정된 DiT를 통해 역전파되는 그래디언트가 MLLM이 희소한 관찰로부터도 생성에 적합한 표현을 만들어내도록 학습시킨다.</li>
 </ul>
-<p>추론 시에는 (i) 대본과 참조 이미지로부터의 생성, (ii) 구조화된 프롬프트 중 한 필드만 수정하고 해당 잠재 구간만 교체하는 요소별 제어, (iii) 캐릭터/장면 참조를 공유하면서 샷별로 행동·카메라만 바꾸는 멀티샷 생성의 세 가지 응용을 하나의 아키텍처로 지원한다.</p>
+<p>추론 시에는 대본/참조만으로 생성(sparse-to-video), 구조화된 프롬프트의 특정 필드만 바꿔 해당 구간만 교체하는 요소별 편집(factor-aware editing), 공유된 인물/배경 참조를 활용한 멀티샷 생성(multi-shot generation) 세 가지 응용을 동일한 아키텍처로 지원한다.</p>
 <h2>실험 설정 및 결과</h2>
-<p>UniVideo(13B DiT)를 기반 모델로 FAPL을 구축하고, Omni-Video 2(1.3B/14B), UniVideo(원본) 등과 비교했다. 학습 데이터는 CoinVE-200K를 1차 소스로, OmniVBench 데이터를 보조로 사용해 구성한 100K 쌍(요소별 25K)이며, Stage I/II/III를 각각 10K/15K/10K 스텝 학습했다. 평가는 CineFactor-10K(held-out 소스 기반 1만 건)와 ShotVerse-Bench(멀티샷 100개 시퀀스)에서 세 가지 과제로 수행했다.</p>
-<ul>
-<li><strong>Sparse-to-Video 생성</strong>: 텍스트만으로 5K건 평가. FAPL은 Motion Order 61%(UniVideo 48%, Omni-Video 2 14B 43%), Translation Error 0.0586, Rotation Error 1.02 rad로 비교 모델 대비 모두 개선.</li>
-<li><strong>Factor-Aware Editing</strong>: 구조화 프롬프트 중 한 필드만 수정한 5K건(요소당 1.25K)에서 FiVE의 ⌢-Acc 지표로 평가, FAPL 58% (UniVideo 42%, Omni-Video 2 14B 37%).</li>
-<li><strong>Multi-Shot Consistency</strong>: ShotVerse-Bench 100개 시퀀스에서 Subject/Scene Consistency, FaceSim-Arc(얼굴 정체성) 평가. FAPL은 FaceSim-Arc 0.523으로 UniVideo(0.451), Omni-Video 2 14B(0.468) 대비 우수.</li>
-</ul>
-<p>Ablation(Table 2, UniVideo 13B 기준)에서는 Stage I만으로도 Motion Order가 48%→54%로 개선되고, Stage II에서 factor-span replacement를 적용한 경우(⌢-Acc 57%)가 적용하지 않은 경우(48%)보다 크게 향상되었으며, Stage III의 혼합 관측 학습이 텍스트 전용 학습(57%)보다 Motion Order(61%)와 카메라 오차를 추가로 개선함을 확인했다. 또한 Omni-Video 2(1.3B/14B)와 UniVideo 모두에 Stage I 방식(MLLM-only grounding)을 적용했을 때 생성 품질이 개선되어, 제안 기법이 특정 MLLM-DiT 조합에 국한되지 않고 일반화됨을 보였다.</p>
+<p>FAPL은 13B 규모 DiT를 갖춘 UniVideo를 백본으로 구축되었고, Omni-Video 2(1.3B/14B DiT)와 원본 UniVideo(13B)를 베이스라인으로 비교했다. 학습 데이터는 CoinVE-200K를 주 소스로, OmniVBench의 공개 학습 데이터를 보조로 사용해 요소별로 균등하게(약 25K씩) 구성한 10만 개의 소스-타깃 비디오 쌍이다. 평가는 CoinVE-200K와 OmniVBench 데이터 중 학습에 쓰이지 않은 부분으로 구성한 CineFactor-10K(1만 개 테스트 케이스)와 ShotVerse-Bench의 멀티샷 테스트셋(100개 시퀀스)에서 수행되었다.</p>
+<p>세 가지 과제, 즉 (1) 텍스트만으로의 sparse-to-video 생성, (2) 요소별 편집(factor-aware editing), (3) 멀티샷 생성에서 FAPL은 모든 베이스라인을 일관되게 앞섰다. 구체적으로 Motion Order 정확도가 61%(베이스라인 UniVideo 48%)로 상승했고, 카메라 궤적의 이동/회전 오차가 감소했으며, 요소별 편집 정확도(∩-Acc)는 58%(베이스라인 42%)로 크게 올랐다. 멀티샷 일관성에서도 Subject/Scene Consistency와 얼굴 동일성 지표(FaceSim-Arc, 0.523 vs. 베이스라인 최대 0.468)가 모두 개선되었다.</p>
+<p>단계별 ablation 연구에서는 1단계만 적용해도 Motion Order와 카메라 오차가 개선되고, 2단계에서 factor-span replacement를 적용하면(57% ∩-Acc) 교체를 하지 않은 경우(48%)보다 크게 향상되는 반면 Motion Order/카메라 지표에는 추가 개선이 없어 효과가 편집 과제에 집중됨을 보였다. 3단계에서 혼합 관찰(mixed-observation) 학습은 텍스트 전용 학습 대비 Motion Order를 57%→61%로, 이동/회전 오차를 각각 감소시키면서도 편집 정확도는 유지(57%→58%)하여, 완전 관찰 재구성이 시간적 추론 능력 향상에 기여함을 확인했다.</p>
 <h2>한계점</h2>
-<p>논문은 FAPL이 기존 MLLM-조건부 DiT의 근본적 약점(표현 우회)을 해결하지만, 성능은 여전히 기반이 되는 MLLM과 DiT 자체의 능력에 의해 제한된다고 명시한다. 구체적으로 현재 MLLM은 3D 블로킹(배치)을 해석하거나 복잡한 카메라 동작을 추론하는 데 어려움을 겪고, 사전학습된 DiT 또한 사실적인 연기 등 복잡한 요소를 구현하는 시각적 충실도에 한계가 있다고 서술한다.</p>
+<p>FAPL은 기존 MLLM 조건화 DiT 구조의 근본적 약점(특징 우회)을 해결하지만, 성능은 여전히 백본이 되는 MLLM과 DiT 자체의 능력에 제한된다. 저자들은 현재의 MLLM이 3D 블록아웃(blockout)을 해석하거나 복잡한 카메라 동작을 추론하는 데 어려움을 겪으며, 사전학습된 DiT도 사실적인 연기(acting) 같은 복잡한 요소 구현이나 시각적 충실도 측면에서 한계가 있다고 명시한다.</p>
 <h2>시사점</h2>
-<p>이 연구는 MLLM과 생성모델을 단순 연결하는 것만으로는 멀티모달 이해 능력이 생성에 실질적으로 반영되지 않는다는 점을 실증적으로 보여주고, 짝지어진 편집 데이터와 공유 타깃을 활용한 단계적 학습 설계가 "이해에서 제어 가능한 생성으로"의 전이를 가능하게 함을 시사한다. 저자들은 추론(reasoning)이 제어 가능한 합성을 이끌고, 생성 과정이 제한된 관측으로부터 누락된 내용을 추론하는 학습에 근거 있는 지도신호를 제공한다는 상호보완적 관계를 향후 더 강력한 MLLM과 비디오 생성기로 확장할 수 있는 방향으로 제시한다.</p>
+<p>이 연구는 MLLM의 멀티모달 이해 능력을 비디오 생성에 "실제로 쓰이게(actionable)" 만드는 것이 아키텍처를 복잡하게 바꾸는 것보다 더 결정적인 병목일 수 있음을 보여준다. 쌍 편집 데이터를 활용한 구간 교체 학습과, 고정된 생성기를 매개로 한 예측적 표현 학습이라는 두 가지 아이디어는 향후 다른 멀티모달 조건화 생성 모델(이미지, 3D, 오디오 등)에도 일반화될 수 있는 학습 전략으로 보인다. 또한 "추론이 제어 가능한 합성을 이끌고, 생성이 거꾸로 제한된 관찰로부터의 추론 학습에 근거를 제공한다"는 상호 보강 관계를 제시함으로써, 이해(understanding)와 생성(generation) 모델을 통합하려는 후속 연구에 방법론적 참고가 될 수 있다.</p>
     <div class="back-bottom">
       <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
     </div>
@@ -117,7 +114,7 @@
 
 <footer>
   <div class="wrap">
-    <span>출처: <a href="https://huggingface.co/papers/2610.30926" target="_blank" rel="noopener">huggingface.co/papers/2610.30926</a> · 2026-10-24</span>
+    <span>출처: <a href="https://huggingface.co/papers/2610.30926" target="_blank" rel="noopener">huggingface.co/papers/2610.30926</a> · 2026-10-25</span>
     <span>my-design 시스템 적용</span>
   </div>
 </footer>

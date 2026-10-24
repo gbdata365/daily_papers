@@ -1,5 +1,5 @@
 <meta charset="UTF-8">
-<title>위비즈원-VL</title>
+<title>위비스원-VL</title>
 <style>
   :root{
     --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
@@ -56,13 +56,13 @@
 <header class="article-head">
   <div class="wrap">
     <div class="kicker-row">
-      <span class="rank">#1 · Daily Papers 2026-10-24</span>
+      <span class="rank">#1 · Daily Papers 2026-10-25</span>
       <span class="cat-tag">모델·기법</span>
-      <span class="upvote-tag">▲ 221</span>
+      <span class="upvote-tag">▲ 232</span>
     </div>
     <h1 class="article-title">WeVisOne-VL: Unified Visual Perception from Objects to Pixels</h1>
-    <p class="article-title-ko">위비즈원-VL: 객체부터 픽셀까지 통합하는 시각 인식 모델</p>
-    <p class="article-sub">객체 검출·지칭(referring)·카운팅·OCR 같은 객체 수준 과제와 분할(segmentation)·매팅(matting) 같은 픽셀 수준 과제를 하나의 자연어 인터페이스와 구조화된 다음 토큰 예측(next-token prediction)으로 통합한 비전-언어 모델 WeVisOne-VL을 제안한 연구이다.</p>
+    <p class="article-title-ko">위비스원-VL: 객체부터 픽셀까지 통합된 시각 인지</p>
+    <p class="article-sub">Tencent WeChat Vision 팀이 개발한 WeVisOne-VL은 객체 탐지·지칭 표현 localization·카운팅·OCR 같은 "객체 단위" 작업과 분할·매팅 같은 "픽셀 단위" 작업을 하나의 자연어 인터페이스와 구조화된 다음 토큰 예측으로 통합한 비전-언어 모델(VLM)이다.</p>
     <div class="meta-links">
       <a href="https://huggingface.co/papers/2610.31329" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
       <a href="https://arxiv.org/abs/2610.31329" target="_blank" rel="noopener">arXiv 원문 →</a>
@@ -74,32 +74,50 @@
   <div class="wrap">
 <ul>
 <li><strong>제목</strong>: WeVisOne-VL: Unified Visual Perception from Objects to Pixels</li>
-<li><strong>저자</strong>: Tianming Liang, Junyi Pan, Yuxi Li, Canmiao Fu, Zhipeng Huang, Chong Sun, Chen Li, Jing Lyu (WeChat Vision, Tencent Inc.)</li>
-<li><strong>출처</strong>: arXiv:2610.31329v1 [cs.CV] (2026년 10월)</li>
-<li><strong>프로젝트 페이지</strong>: <a href="https://tencent.github.io/WeVisOne-VL">https://tencent.github.io/WeVisOne-VL</a> (코드: <a href="https://github.com/Tencent/WeVisOne-VL">GitHub</a>, 가중치: Hugging Face)</li>
+<li><strong>저자</strong>: Tianming Liang, Junyi Pan, Yuxi Li 등 Tencent WeChat Vision 팀 (총 8인, 공동1저자 3인·교신저자 포함)</li>
+<li><strong>출처</strong>: arXiv:2610.31329v1 [cs.CV] (2026년 10월 22일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://tencent.github.io/WeVisOne-VL">https://tencent.github.io/WeVisOne-VL</a> (코드: https://github.com/Tencent/WeVisOne-VL, 가중치: HuggingFace tencent/wevisone-vl)</li>
 <li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.31329">arXiv PDF 보기</a></li>
 </ul>
 <h2>한 줄 요약</h2>
-<p>객체 검출·지칭(referring)·카운팅·OCR 같은 객체 수준 과제와 분할(segmentation)·매팅(matting) 같은 픽셀 수준 과제를 하나의 자연어 인터페이스와 구조화된 다음 토큰 예측(next-token prediction)으로 통합한 비전-언어 모델 WeVisOne-VL을 제안한 연구이다.</p>
+<p>Tencent WeChat Vision 팀이 개발한 WeVisOne-VL은 객체 탐지·지칭 표현 localization·카운팅·OCR 같은 "객체 단위" 작업과 분할·매팅 같은 "픽셀 단위" 작업을 하나의 자연어 인터페이스와 구조화된 다음 토큰 예측으로 통합한 비전-언어 모델(VLM)이다.</p>
 <h2>배경 및 문제의식</h2>
-<p>컴퓨터 비전은 전통적 검출·분할 모델에서 오픈월드 인식 모델, 그리고 최근의 대형 비전-언어 모델(VLM)로 발전해 왔지만, 실제 배포 관점에서는 여전히 만족스럽지 않다. 기존 모델들은 존재하지 않는 객체를 환각(hallucinate)하거나, 낯선 객체 표현을 만났을 때 사용자 의도를 잘못 해석하거나, 눈에 잘 띄지 않는 인스턴스를 놓쳐 재현율(recall)이 낮아지는 문제를 자주 보인다. 또한 객체 수준의 박스/점 예측과 픽셀 수준의 분할/매팅 예측은 대개 별도의 전문 모델이나 별도의 대형 분할 모델(SAM 등)에 의존해 구현되어 왔으며, 이를 단일 언어 인터페이스로 신뢰성 있게 통합하는 것은 미해결 과제였다.</p>
+<p>지난 10년간 컴퓨터 비전은 YOLO·DETR 같은 전통적 탐지/분할 모델에서 Grounding-DINO·SAM 같은 오픈월드 인지 모델, 그리고 최근의 대규모 VLM으로 발전해 왔다. 그러나 성능과 효율을 함께 고려하면 현재 모델들은 여전히 실제 배포에 부족한 수준이다. 존재하지 않는 객체를 환각으로 만들어내거나, 낯선 표현을 접하면 사용자 의도를 잘못 해석하거나, 눈에 잘 띄지 않는 인스턴스를 놓쳐 재현율(recall)이 떨어지는 문제가 흔하다. 저자들은 "신뢰할 수 있는 시각 인지 시스템"이라는 목표 아래, 객체 수준 인지와 픽셀 수준 인지를 하나의 모델·하나의 자연어 인터페이스로 통합할 필요성을 제기한다.</p>
 <h2>핵심 기여</h2>
 <ol>
-<li>객체 검출, 지칭 로컬라이제이션, 카운팅, 포인팅, OCR 같은 객체 수준 인식과 분할·매팅 같은 픽셀 수준 인식을 하나의 구조화된 다음 토큰 예측 인터페이스로 통합한 VLM WeVisOne-VL(2B/4B)을 제시.</li>
-<li><code>&lt;OBJ&gt;</code> 토큰을 매개로 VLM의 인스턴스 표현과 공유 ViT의 다단계(multi-level) 특징을 결합해, 별도의 대형 분할 모델 없이도 박스에서 마스크·알파 매트까지 인스턴스 단위 픽셀 출력을 생성하는 경량(약 9.6M 파라미터) 픽셀 디코더를 설계.</li>
-<li>의미 발견(semantic discovery)부터 인스턴스 정합 지도(instance-aligned supervision), 매팅용 알파 지도까지 연결하는 통합 데이터 엔진(WeVisOne-VL Data Engine, WDE)을 구축하여 1억 장 이상의 이미지와 약 36억 개의 바운딩박스 주석을 확보하고, 모델 오류 피드백을 통해 데이터를 반복 정제.</li>
-<li>3단계 지도 미세조정(SFT) 커리큘럼과 불확실성 기반 샘플 선택에 기반한 혼합 과제 강화학습(GRPO)을 결합한 학습 파이프라인을 제안하여, 객체 부재 질의에 대한 견고한 거부(rejection) 능력까지 함께 달성.</li>
+<li><strong>통합 데이터 엔진(WDE, WeVisOne-VL Data Engine)</strong>: 지식 그래프를 매개로 카테고리 개념과 합성적 지칭 표현을 정리하고, 복수의 탐지·분할 전문가 모델의 예측을 시각-언어 검증으로 통합해 1억 장 이상의 이미지, 약 36억 개의 바운딩박스 수준 주석을 구축했다. 분할 마스크뿐 아니라 연속적인 알파 매트(투명도) 주석까지 자동으로 확장하는 전용 매팅 파이프라인도 포함한다.</li>
+<li><strong>통합 모델 설계</strong>: Qwen3-VL을 백본으로, 좌표를 압축 표현하는 전용 토큰(<code>&lt;0&gt;</code>~<code>&lt;1000&gt;</code>)과 인스턴스 표현을 나타내는 특수 <code>&lt;OBJ&gt;</code> 토큰을 도입했다. <code>&lt;OBJ&gt;</code> 토큰의 은닉 상태를 경량 픽셀 디코더(약 960만 파라미터)에 전달해 별도의 대형 분할 모델(예: SAM) 없이도 마스크와 알파 매트 같은 밀집 예측을 생성한다.</li>
+<li><strong>3단계 커리큘럼 SFT + 혼합 작업 RL 학습 파이프라인</strong>: 작업 정렬 → 고해상도/고밀도 인지 확장 → 토큰-픽셀 교차 학습의 3단계 지도미세조정 후, 불확실성이 높은 샘플을 선별해 GRPO 기반 강화학습으로 그라운딩 품질을 직접 최적화한다.</li>
+<li><strong>2B/4B 두 가지 크기의 오픈소스 공개</strong>: 30개 이상의 벤치마크에서 객체/픽셀 수준 과제 모두 선도적 성능을 보이며, 대상이 없는 질의에 대한 거부(rejection) 능력도 함께 확보했다.</li>
 </ol>
 <h2>방법론</h2>
-<p><strong>데이터 엔진(WDE).</strong> GRIT, CC3M, LAION, SA-1B 및 여러 과제별 데이터셋을 기반으로, (1) Wikipedia/WordNet 기반 지식 그래프로 카테고리 개념과 지칭 표현을 조직화하여 목표 지향적 수집을 수행하고, (2) SAM3와 자체 개방어휘 검출기의 제안을 Qwen3-VL로 검증하여 검출/지칭 주석을 생성하며, (3) SAM2로 이진 마스크를 확장하고, (4) BiRefNet·MatAnyone2 기반 전문가 보조 주석과 SAM2.1 기반 경량 알파 정제 헤드를 학습시켜 연속적인 알파 매트 지도를 생성한다. 이후 모델 학습 라운드마다 오류를 분석해(개념·도메인·규모·오클루전·과제·실패유형별 군집화) 추가 수집과 주석 보정에 반영하는 반복 정제 루프를 갖춘다. 또한 '빨간 차'를 '파란 차'로 바꾸는 식의 애매한 부정(negative) 질의를 전체 이미지 검증을 통해 걸러내어, 모델이 공백(empty) 타깃을 올바르게 거부하도록 가르치는 하드 네거티브를 구성한다.</p>
-<p><strong>모델 구조.</strong> Qwen3-VL을 백본으로 하여, 좌표를 <code>&lt;0&gt;</code>~<code>&lt;1000&gt;</code> 토큰으로 정규화해 인코딩하고 박스는 <code>[x0,y0,x1,y1]</code>, 점은 <code>[x0,y0]</code>로 시퀀셜하게 생성한다(타깃 부재 시 <code>None</code>). 분할/매팅 등 픽셀 과제에서는 각 박스 예측 직후 <code>&lt;OBJ&gt;</code> 토큰을 생성하며, 이 토큰의 은닉상태가 경량 픽셀 디코더에 전달된다. 픽셀 디코더는 (1) ViT의 다단계 특징을 정제하는 시각 특징 어댑터, (2) VLM 출력에서 직접 인스턴스 쿼리를 초기화하는 Deformable DETR 스타일의 박스 가이드 쿼리 디코더, (3) 다단계 특징을 융합하고 동적 커널로 초기 마스크를 예측한 뒤 coarse-to-fine 방식으로 정제하는 인스턴스 조건부 밀집 예측 모듈로 구성되며, 총 파라미터는 약 9.6M에 불과하다.</p>
-<p><strong>학습 파이프라인.</strong> 3단계 SFT 후 혼합 과제 RL을 적용한다. Stage 1(과제 정렬)은 비전 인코더·프로젝터를 고정하고 언어모델만 약 9000만 예제로 학습해 구조화된 출력 형식을 익힌다. Stage 2(해상도·밀도 확장)는 비전 인코더까지 unfreeze하고 입력 해상도와 응답당 최대 박스/점 수를 늘려 소형·밀집 객체 인식을 개선한다. Stage 3(토큰-픽셀 교차 최적화)은 2억5천만 장의 분할 데이터로 픽셀 디코더를 먼저 워밍업한 뒤, VLM과 디코더를 함께 미세조정하여 <code>&lt;OBJ&gt;</code> 토큰을 VLM과 픽셀 디코더 사이의 다리로 확립하고, 이어서 1억3천만 매팅 샘플로 디코더를 추가 특화한다. 이후 RL 단계에서는 SFT 모델로 샘플링한 응답들의 보상 평균·분산으로 불확실성 점수를 계산해 학습하기 어려운(중간 난이도의) 샘플 약 14만 개를 선별하고, 이를 포함한 17.8만 예제에 대해 GRPO를 적용한다. 보상은 예측-정답 박스 간 매칭에 기반한 접지(grounding) 보상(IoU 세제곱 가중)을 사용하며, 지칭 분할은 <code>&lt;OBJ&gt;</code> 토큰 생성 여부까지, 부정 샘플은 '객체 없음' 예측 여부까지 반영한다.</p>
+<ul>
+<li><strong>작업 형식화</strong>: 탐지, 지칭 localization, 포인팅, 카운팅, OCR, 분할/매팅 등 모든 시각 과제를 구조화된 다음 토큰 예측으로 통일했다. 좌표는 정규화된 <code>&lt;0&gt;</code>~<code>&lt;1000&gt;</code> 토큰으로 표현하고, 대상이 이미지에 없으면 좌표 필드를 <code>None</code>으로 채워 "거부"를 직접 학습시킨다. 분할·매팅처럼 픽셀 단위 출력이 필요한 경우 바운딩박스 바로 뒤에 <code>&lt;OBJ&gt;</code> 토큰을 추가로 생성한다.</li>
+<li><strong>모델 구조</strong>: Qwen3-VL 비전 인코더가 이미지를 인코딩하고, 언어모델이 자기회귀적으로 구조화된 응답을 생성한다. 픽셀 단위 과제에서는 <code>&lt;OBJ&gt;</code> 토큰마다 경량 디코더가 호출되며, 이 디코더는 (1) ViT의 다중 레벨 특징을 정리하는 시각 특징 어댑터, (2) 박스 사전 정보를 활용하는 Deformable DETR 스타일의 박스 가이드 쿼리 디코더, (3) 쿼리와 시각 특징을 융합해 전체 해상도의 마스크/알파 매트를 생성하는 인스턴스 조건부 밀집 예측 단계로 구성된다. 매팅에는 세밀한 경계와 부분 투명도를 위한 코스-투-파인(coarse-to-fine) 정제 모듈이 추가된다.</li>
+<li><strong>데이터 엔진</strong>: 지식 그래프 기반 개념 발굴 → SAM3/자체 오픈보캐뷸러리 탐지기 + Qwen3-VL 검증으로 탐지·지칭 주석 생성 → SAM2로 마스크 생성 → BiRefNet·MatAnyone2 전문가 예측과 자체 학습한 매팅 어노테이터로 알파 매트 생성 → 모델 오류를 리뷰해 데이터 수집·보정에 피드백하는 반복적 정제 과정을 거친다. 모호한 부정(negative) 질의를 신중히 검증해 하드 네거티브/하드 포지티브 샘플도 구성한다.</li>
+<li><strong>학습 파이프라인</strong>: SFT 1단계(작업 정렬, 어휘 확장, 비전 인코더 동결), 2단계(해상도·박스 수 확장, 전체 파인튜닝), 3단계(세그멘테이션 워밍업 후 토큰-픽셀 교차 학습, 이어서 매팅 전용 파인튜닝)로 진행된다. 이후 SFT 모델의 불확실성(보상 평균·분산 기반 점수)이 높은 약 14만 개 샘플을 선별해, Hungarian 매칭 기반 IoU 세제곱 보상으로 GRPO 강화학습을 수행한다.</li>
+</ul>
 <h2>실험 설정 및 결과</h2>
-<p>객체 검출(COCO/LVIS/Dense200/VisDrone), 지칭 검출(RefCOCOg, HumanRef, Ref-Adv, PR-Bench, DVGBench, Ref-L4, 자체 WeRef-Bench 등), 카운팅(CountQA, PixMo-Count, CLOC, KubriCount, MixCount), 포인팅(PointBench, PixMo-Points 등), OCR(HierText, ICDAR2015, TotalText, SROIE), 지칭 분할(RefCOCO/+/g, ReasonSeg, Ref-ZOM), 프롬프트 매팅(P3M-500-NP, AM-2K, PPM-100, 자체 WeRefMat) 등 30개 이상의 벤치마크에서 평가했다. Qwen3-VL/3.5 계열, Rex-Omni, LocateAnything 등 VLM 기반 모델 및 GroundingDINO-T 등 특화 모델과 비교한 결과, WeVisOne-VL(2B/4B)은 비교 가능한 규모의 VLM 대비 거의 모든 벤치마크에서 최고 또는 차순위 성능을 기록했다. 예를 들어 Dense200/VisDrone 같은 밀집·소형 객체 검출에서 개선폭이 특히 컸고(Mean F1 WeVisOne-VL-4B 71.3/44.7), RefCOCOg 등 지칭 검출과 WeRef-Bench의 거부율(Rej)에서도 기존 VLM을 상회했다. 카운팅에서는 PixMo-Count 검증/테스트에서 93.7%/89.6%의 정확 일치율로 모든 벤치마크·스플릿에서 최고 성능을 보였고, 지칭 분할(RefCOCO 계열 등)과 Ref-ZOM의 부재 타깃 거부에서도 기존 분할 특화 모델들을 능가했다. 매팅에서는 박스 프롬프트 기준 전문 매팅 모델과 경쟁력 있는 성능을, 자체 벤치마크 WeRefMat의 카테고리/지칭 프롬프트 기준으로는 SAM2-Matting 기반 베이스라인들을 큰 폭으로 상회했다. 정성적 비교(Fig. 5~13)에서도 먼지에 가려진 코끼리, 밀집한 과일, 커브 형태의 OCR 텍스트, 애매한 부재 타깃 거부 등에서 베이스라인 대비 우수한 사례를 다수 제시했다.</p>
+<ul>
+<li>객체 수준 5개 과제(탐지, 지칭 탐지, 카운팅, 포인팅, OCR)와 픽셀 수준 2개 과제(지칭 분할, 이미지 매팅)에 대해 30개 이상 벤치마크로 평가했으며, Qwen3-VL/Qwen3.5 계열과 Rex-Omni, LocateAnything 등 전문 그라운딩 모델을 주요 비교 대상으로 삼았다.</li>
+<li><strong>탐지</strong>: COCO, LVIS, Dense200(고밀도), VisDrone(드론 촬영)에서 비슷한 규모의 VLM 대비 평균 F1이 일관되게 우수했고, 특히 밀집·소형 객체가 많은 Dense200·VisDrone에서 격차가 크게 벌어졌다.</li>
+<li><strong>지칭 탐지</strong>: RefCOCOg, HumanRef, RefAdv, PR-Bench, DVGBench, Ref-L4 및 자체 구축한 WeRef-Bench(영어·중국어 2,880개 질의)에서 단일/다중/부재 타겟 전 상황에 걸쳐 기존 VLM을 상회했다.</li>
+<li><strong>카운팅</strong>: CountQA, PixMo-Count, CLOC, KubriCount, MixCount 전 벤치마크·분할에서 최고 정확도를 기록(예: PixMo-Count test 89.6%).</li>
+<li><strong>포인팅</strong>: PointBench, PixMo-Points 및 탐지 기반 포인팅 변환 평가에서 최상위 성능.</li>
+<li><strong>OCR</strong>: HierText, ICDAR2015, TotalText, SROIE에서 전문 OCR 시스템(PP-OCRv5)과 범용 VLM을 모두 상회.</li>
+<li><strong>지칭 분할</strong>: RefCOCO/+/g, ReasonSeg, Ref-ZOM에서 LISA·GSVA·UniPixel·Youtu-VL 등 기존 분할 특화 모델 대비 우수했으며, 특히 Ref-ZOM의 부재 타겟 거부율에서 큰 차이를 보였다(예: 4B 모델 거부율 86.0%).</li>
+<li><strong>매팅</strong>: P3M-500-NP, AM-2K, PPM-100(박스 프롬프트) 및 자체 WeRefMat(카테고리/지칭 프롬프트)에서 Matte Anything, SAM2-Matting 계열보다 낮은 오차(MAD/MSE/SAD 등)를 기록.</li>
+<li>정성적 분석에서는 먼지에 가려진 먼 거리 코끼리 탐지, 인접 인스턴스 분리, 서수·속성·관계 기반 지칭 표현 해석, "쌍(pair)"과 같은 집계 단위 카운팅, 대상 부재 질의의 올바른 거부 등에서 베이스라인 대비 강점을 보였다.</li>
+</ul>
 <h2>한계점</h2>
-<p>저자들은 논문에서 다음 한계를 직접 서술한다. 첫째, 근본적인 시각 인지에 집중하다 보니 범용 학습 데이터 비중이 상대적으로 적어 베이스 모델 대비 일반적 능력이 저하될 수 있다. 둘째, 추론 효율성을 위해 체인-오브-쏘트(CoT) 추론 없이 구조화된 출력을 직접 생성하도록 학습하여, 복잡한 추론이 필요한 과제에서는 능력이 제한될 수 있다. 셋째, 현재 방식은 단일 턴(single-turn) 예측에 한정되어 있으며, 다중 턴 도구 상호작용을 통한 점진적 시각 이해 정제로의 확장이 향후 과제로 남는다. 또한 벤치마크의 질의는 명확하고 잘 구성된 반면, 실제 사용자 지시는 모호하거나 주저하는 경우가 많아, 맥락이나 화법의 변화가 상당한 난이도를 유발할 수 있다는 실세계 복잡성과의 괴리도 지적한다.</p>
+<ul>
+<li>범용 목적 학습 데이터 비중이 제한적이어서 기반 모델(Qwen3-VL) 대비 일반적인 범용 능력이 저하될 수 있다.</li>
+<li>추론 효율을 위해 Chain-of-Thought 추론 없이 구조화된 출력을 바로 생성하도록 학습해, 복잡한 추론 과제 처리 능력에 제약이 있을 수 있다.</li>
+<li>현재는 단일 턴(single-turn) 예측에 한정되어 있으며, 다중 턴 도구 상호작용을 통한 점진적 시각 이해 개선(에이전트 프레임워크 결합)이 향후 과제로 남아 있다.</li>
+<li>벤치마크의 질의는 대체로 명확하고 잘 정의되어 있지만, 실제 사용자 지시는 모호하고 머뭇거리는 경우가 많아, 이런 실세계 복잡성에 대응하는 강력한 의도 추론 능력이 아직 부족하다.</li>
+</ul>
 <h2>시사점</h2>
-<p>이 연구는 좌표 토큰화와 <code>&lt;OBJ&gt;</code> 토큰이라는 비교적 단순한 설계만으로 객체 수준과 픽셀 수준 인식을 하나의 자기회귀 인터페이스에 통합할 수 있음을 보이며, 별도의 대형 분할 모델 없이도 경량 디코더로 고품질 마스크·매트를 생성할 수 있다는 점에서 실용적 VLM 설계에 시사점을 준다. 또한 지식 그래프 기반 데이터 엔진과 오류 피드백 기반 반복 정제, 불확실성 기반 RL 샘플 선택이 결합된 학습 파이프라인은, 환각과 거부 실패라는 VLM의 고질적 문제를 완화하면서 신뢰할 수 있는 실세계 시각 인식 시스템을 구축하는 방법론적 참고 사례를 제공한다.</p>
+<p>WeVisOne-VL은 객체 단위 로컬라이제이션과 픽셀 단위 밀집 예측(분할·매팅)을 별도의 전문 모델(예: SAM) 없이 하나의 VLM과 경량 디코더로 통합함으로써, "포인트부터 박스, 마스크, 알파 매트까지" 사용자가 원하는 임의의 세분화 수준으로 응답하는 실용적인 시각 인지 시스템의 가능성을 보여준다. 특히 대상이 없는 질의를 정확히 거부하는 능력과 밀집/혼잡 장면에서의 높은 재현율은 콘텐츠 제작, 산업 검사, 자율주행, 임베디드 지능 등 실제 배포 환경에서 VLM의 신뢰성을 높이는 데 중요한 시사점을 제공한다. 데이터 엔진(지식 그래프 기반 개념 정리, 다중 전문가 검증, 모델 오류 피드백 루프)과 불확실성 기반 RL 샘플링 전략은 향후 다른 통합 멀티모달 인지 모델 구축에도 참고할 만한 방법론적 틀을 제시한다. 모델과 코드, 가중치가 오픈소스로 공개되어 커뮤니티의 후속 연구를 촉진할 것으로 기대된다.</p>
     <div class="back-bottom">
       <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
     </div>
@@ -108,7 +126,7 @@
 
 <footer>
   <div class="wrap">
-    <span>출처: <a href="https://huggingface.co/papers/2610.31329" target="_blank" rel="noopener">huggingface.co/papers/2610.31329</a> · 2026-10-24</span>
+    <span>출처: <a href="https://huggingface.co/papers/2610.31329" target="_blank" rel="noopener">huggingface.co/papers/2610.31329</a> · 2026-10-25</span>
     <span>my-design 시스템 적용</span>
   </div>
 </footer>

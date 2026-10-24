@@ -1,0 +1,110 @@
+{
+  "2610.31329": {
+    "base": "2610_위비스원_객체부터-픽셀까지-통합-시각인지",
+    "rank": "#1",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "232",
+    "en_title": "WeVisOne-VL: Unified Visual Perception from Objects to Pixels",
+    "ko_title": "위비스원-VL: 객체부터 픽셀까지 통합된 시각 인지"
+  },
+  "2610.24738": {
+    "base": "2610_레이어에디터_재사용가능한-레이어로-이미지-편집하기",
+    "rank": "#2",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "175",
+    "en_title": "Editing Images into Reusable Layers via Compositional Edit-Prior Distillation",
+    "ko_title": "합성적 편집-사전 증류를 통해 이미지를 재사용 가능한 레이어로 편집하기"
+  },
+  "2610.30926": {
+    "base": "2610_FAPL_MLLM-잠재표현-활용-시네마틱-비디오생성",
+    "rank": "#3",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "165",
+    "en_title": "Making MLLM Latents Matter: Factor-Aware Predictive Learning for Cinematic Video Generation",
+    "ko_title": "MLLM 잠재표현을 실제로 활용하기: 영화적 비디오 생성을 위한 요소 인식 예측 학습"
+  },
+  "2610.30181": {
+    "base": "2610_오픈DS월드_실제-웹-환경-딥서치-벤치마크",
+    "rank": "#4",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "154",
+    "en_title": "Deep Search in Real-World Web Environments",
+    "ko_title": "실제 웹 환경에서의 딥서치(Deep Search)"
+  },
+  "2610.30949": {
+    "base": "2610_아이퀘스트Q1_에이전틱-CLI-기반모델-역량강화",
+    "rank": "#5",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "86",
+    "en_title": "IQuest-Q1: Advancing Foundation Capabilities for Agentic CLI Systems",
+    "ko_title": "IQuest-Q1: 에이전틱 CLI 시스템을 위한 기반 역량 강화"
+  },
+  "2610.29677": {
+    "base": "2610_피지컬알에스아이_물리적-AI-재귀적-자기개선",
+    "rank": "#6",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "50",
+    "en_title": "Toward Recursive Self-Improvement in Physical AI",
+    "ko_title": "물리적 AI에서의 재귀적 자기개선을 향하여"
+  },
+  "2610.25100": {
+    "base": "2610_딥퓨전메모리_청크단위-파라메트릭-메모리",
+    "rank": "#7",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "41",
+    "en_title": "Deep Fusion Memory: A Chunk-Level Parametric Memory for Large Language Models",
+    "ko_title": "딥 퓨전 메모리: 대규모 언어모델을 위한 청크 단위 파라메트릭 메모리"
+  },
+  "2610.23987": {
+    "base": "2610_가푸_생성-기반-세밀한-이해-잠금해제",
+    "rank": "#8",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "32",
+    "en_title": "What Generation Knows: Unlocking Fine-Grained Understanding in Unified Multimodal Models",
+    "ko_title": "생성이 아는 것: 통합 멀티모달 모델에서 세밀한 이해 능력 잠금해제"
+  },
+  "2610.30320": {
+    "base": "2610_프레드_월드액션모델-미래비디오표현-자기증류",
+    "rank": "#9",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "30",
+    "en_title": "Self-Distilling Future Video Representations for World Action Models",
+    "ko_title": "월드 액션 모델을 위한 미래 비디오 표현의 자기증류 학습"
+  },
+  "2610.27851": {
+    "base": "2610_라라월드_자연어-행동-기반-잠재-월드모델-확장",
+    "rank": "#10",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "29",
+    "en_title": "LaLa-World: Scaling Latent World Models with Natural Language Actions",
+    "ko_title": "라라월드(LaLa-World): 자연어 행동으로 잠재 월드모델 확장하기"
+  },
+  "2610.30753": {
+    "base": "2610_필름플로우_3D-가상-영화촬영-에이전트시스템",
+    "rank": "#11",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "26",
+    "en_title": "FilmFlow: Agentic System for 3D Virtual Film Cinematography",
+    "ko_title": "FilmFlow: 3D 가상 영화 촬영을 위한 에이전트 시스템"
+  },
+  "2610.27598": {
+    "base": "2610_메타엑스퍼트_계층간-전문가-공유-MoE",
+    "rank": "#12",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "25",
+    "en_title": "Meta Expert: Cross-Layer Expert Sharing for Storage- and Retrieval-Efficient MoE",
+    "ko_title": "메타 엑스퍼트: 저장 및 검색 효율적인 MoE를 위한 계층 간 전문가 공유"
+  }
+}

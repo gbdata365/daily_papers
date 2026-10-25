@@ -1,5 +1,5 @@
 <meta charset="UTF-8">
-<title>Policy-Mask</title>
+<title>폴리시마스크</title>
 <style>
   :root{
     --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
@@ -56,13 +56,13 @@
 <header class="article-head">
   <div class="wrap">
     <div class="kicker-row">
-      <span class="rank">#12 · Daily Papers 2026-10-24</span>
+      <span class="rank">#11 · Daily Papers 2026-10-26</span>
       <span class="cat-tag">모델·기법</span>
-      <span class="upvote-tag">▲ 23</span>
+      <span class="upvote-tag">▲ 32</span>
     </div>
     <h1 class="article-title">Policy-Mask: Budget-Aware Adaptation of Diffusion Features to Discriminative Tasks</h1>
-    <p class="article-title-ko">Policy-Mask: 예산 인지형 확산 특징 선택으로 판별 작업에 적응하기</p>
-    <p class="article-sub">고정된(frozen) 디퓨전 모델에서 판별 태스크(분할·분류·대응)에 사용할 특징을 추출할 때, 타임스텝·레이어·채널 부분집합을 정해진 예산(budget) 아래 동시에 선택하는 강화학습 기반 정책 Policy-Mask를 제안해, 고정 규칙이나 일부 변수만 최적화하는 기존 방법보다 동일 예산에서 더 높은 성능을 달성한다.</p>
+    <p class="article-title-ko">폴리시마스크: 예산 제약 하 확산 모델 특징의 판별 작업 적응</p>
+    <p class="article-sub">고정된 확산 모델(diffusion model)에서 분류·분할·대응 등 판별적(discriminative) 과제에 쓸 특징을 뽑아낼 때, 타임스텝·레이어·채널을 정해진 예산(budget) 안에서 동시에 선택하도록 강화학습으로 훈련된 정책 네트워크 POLICY-MASK를 제안한다.</p>
     <div class="meta-links">
       <a href="https://huggingface.co/papers/2610.28889" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
       <a href="https://arxiv.org/abs/2610.28889" target="_blank" rel="noopener">arXiv 원문 →</a>
@@ -75,29 +75,43 @@
 <ul>
 <li><strong>제목</strong>: Policy-Mask: Budget-Aware Adaptation of Diffusion Features to Discriminative Tasks</li>
 <li><strong>저자</strong>: Ivan Listopadov (HSE University), Maksim Nakhodnov (MSU, Constructor University), Aibek Alanov (HSE University, FusionBrain Lab)</li>
-<li><strong>출처</strong>: arXiv:2610.28889v1 [cs.CV] (2026년 10월)</li>
+<li><strong>출처</strong>: arXiv:2610.28889v1 [cs.CV] (2026년 10월 20일)</li>
 <li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음</li>
 <li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.28889">arXiv PDF 보기</a></li>
 </ul>
 <h2>한 줄 요약</h2>
-<p>고정된(frozen) 디퓨전 모델에서 판별 태스크(분할·분류·대응)에 사용할 특징을 추출할 때, 타임스텝·레이어·채널 부분집합을 정해진 예산(budget) 아래 동시에 선택하는 강화학습 기반 정책 Policy-Mask를 제안해, 고정 규칙이나 일부 변수만 최적화하는 기존 방법보다 동일 예산에서 더 높은 성능을 달성한다.</p>
+<p>고정된 확산 모델(diffusion model)에서 분류·분할·대응 등 판별적(discriminative) 과제에 쓸 특징을 뽑아낼 때, 타임스텝·레이어·채널을 정해진 예산(budget) 안에서 동시에 선택하도록 강화학습으로 훈련된 정책 네트워크 POLICY-MASK를 제안한다.</p>
 <h2>배경 및 문제의식</h2>
-<p>디퓨전 모델의 중간 표현은 의미적 분할, 이미지 분류, 의미적 대응(correspondence) 등 다양한 판별 태스크에 유용한 신호를 담고 있다. 그러나 이 유용한 신호는 디노이징 궤적상의 타임스텝, 네트워크의 깊이(레이어), 그리고 각 레이어의 채널 전반에 걸쳐 분산되어 있어, 어떤 타임스텝·레이어·채널 조합을 추출해야 하는지 결정하는 일이 간단하지 않다. 기존 방법들은 대개 이 선택을 사람이 정한 고정 규칙으로 처리하거나(DDAE 등), 학습된 집계(aggregation) 방식을 쓰거나, RepFusion처럼 디스틸레이션 과정에서 타임스텝만 학습으로 선택하고 레이어·채널 선택은 여전히 고정 규칙에 맡긴다. 이로 인해 저장·연산 효율이 중요한 경량 학생(student) 모델을 만들 때 최적의 특징 선택이 이루어지지 않는 문제가 있다.</p>
+<p>확산 모델의 중간 활성값(intermediate feature)은 분할, 분류, 의미적 대응(semantic correspondence) 등 다양한 다운스트림 과제에 유용한 표현을 담고 있지만, 어느 디노이징 타임스텝, 어느 네트워크 레이어, 어느 채널 부분집합을 추출할지는 자명하지 않다. 기존 방법들은 이 선택을 사람이 손으로 정한 고정 규칙에 맡기거나, RepFusion처럼 타임스텝 하나만 학습하고 레이어·채널 선택은 여전히 고정된 규칙에 맡기는 식으로 일부만 최적화했다. 이 논문은 타임스텝, 레이어, 채널 부분집합이라는 세 축을 동시에, 그리고 명시적인 채널 예산(budget) 제약 아래에서 함께 최적화하는 문제를 다룬다.</p>
 <h2>핵심 기여</h2>
 <ol>
-<li>정확한 개수(exact-cardinality) 샘플링을 갖춘, 타임스텝·레이어·채널 부분집합 (t, l, K)에 대한 예산 제약 정책을 제안했다.</li>
-<li>세 정책 헤드(타임스텝, 레이어, 채널)의 상대적 업데이트 기여도를 조정하는 채널-점수 정규화 기법을 도입했다.</li>
-<li>전체 1280개 채널 중 128개만 사용해도 4개 분할 벤치마크에서 전체 채널 고정 추출 대비 1.2~1.6 mIoU의 향상을 달성했다.</li>
-<li>U-Net 기반 채널 선택을, DiT·MMDiT·flow transformer 등 트랜스포머 계열 디퓨전 모델의 특징 격자(feature lattice)로 공식적으로 매핑하는 방법을 제시했다.</li>
+<li>타임스텝 t, 레이어 l, 채널 집합 K를 하나의 액션으로 묶어 정확한 카디널리티(exact-cardinality) 제약(|K|=b) 하에 샘플링하는 예산 조건부 정책을 제시했다.</li>
+<li>채널 점수를 선택 크기 b로 정규화하는 기법을 도입해, 세 정책 헤드(타임스텝·레이어·채널)의 상대적 기여도가 한쪽으로 쏠리지 않도록 균형을 맞췄다.</li>
+<li>전체 1280개 채널 중 128개(약 10%)만 사용하고도 네 가지 분할 벤치마크에서 전체 채널을 쓰는 고정 추출 방식보다 1.2~1.6 mIoU 높은 성능을 달성했다.</li>
+<li>U-Net 기반 확산 특징 선택 방식을 PixArt-Σ, SD3.5 같은 디퓨전 트랜스포머(DiT, MMDiT) 구조로 확장하는 형식적인 매핑을 제시했다.</li>
 </ol>
 <h2>방법론</h2>
-<p>고정된 teacher 디퓨전 모델 D, 학습 가능한 학생 S_φ, 보조 태스크 디코더 q_ω, 그리고 정책 π_θ로 구성된다(그림 1). 예산 b가 주어지면 정책은 가능한 행동 집합 A_b = {(t, l, K) : |K| = b} 안에서 타임스텝 t, 레이어 l, 채널 부분집합 K를 선택하는 행동을 출력하고, 선택된 teacher 특징이 학생을 지도하는 증류 타깃이 된다(식 1~3). 채널 선택은 Gumbel top-b 트릭을 사용해 비복원으로 정확히 b개의 채널을 뽑으며, 그 로그확률은 Plackett-Luce 순서 점수로 계산된다(식 4~6). 정책은 베이스라인 c를 둔 REINFORCE로 학습되며, 보상은 태스크 디코더 손실의 음수(-ℓ_dec)로 주어진다. 핵심 설계인 채널-점수 정규화는 채널 점수(여러 채널에 대한 로그확률의 합)를 선택 개수 b로 나누어, 채널 수가 늘어날수록 채널 헤드의 그래디언트 기여도가 과도하게 커져 타임스텝·레이어 헤드를 압도하는 문제를 방지한다(식 8). 또한 U-Net이 아닌 DiT·MMDiT teacher에 대해서는 채널 축 대신 이미지 토큰의 은닉 차원(hidden dimension)을 선택 대상으로 삼는 일반화된 행동 매핑을 공식화했다(식 9).</p>
+<p>학생 모델(student)은 교사(teacher)인 고정된 확산 모델을 추론 시 전혀 호출하지 않고 동작하며, 학습 단계에서만 교사의 응답을 증류(distillation) 받는다. 정책 네트워크는 입력 이미지와 예산 b를 받아 (t, l, K) 형태의 행동을 출력한다. 타임스텝 t와 레이어 l은 범주형 분포에서 선택하고, 채널 집합 K는 각 채널에 대한 로짓(logit)에 Gumbel 노이즈를 더한 뒤 상위 b개를 순서 있게 뽑는 Gumbel top-b 방식(복원 없는 샘플링)으로 선택한다. 이는 Plackett-Luce 분포에 따른 정확한 확률을 가지며, 비복원 추출이면서도 매 스텝 정확히 b개의 채널을 보장한다.</p>
+<p>선택된 교사 특징은 정렬 맵(alignment map) A_l을 거쳐 공통 특징 공간으로 투영된 뒤 마스킹되어 학생 모델의 증류 타깃이 된다. 작은 작업 디코더(task decoder) q_ω가 선택된 교사 특징으로 과제를 예측하고, 그 손실의 음수가 정책의 보상(reward)으로 쓰인다. 정책은 베이스라인을 적용한 REINFORCE(스코어 함수 추정량)로 업데이트되며, 학생 모델은 과제 손실과 지식 증류(KD) 손실의 합으로 학습된다. 핵심 아이디어 중 하나는 채널 점수(로그 확률)가 선택 채널 수 b에 비례해 커지는 문제를 1/b로 나누어 정규화함으로써, 타임스텝·레이어 헤드 대비 채널 헤드의 그레디언트가 지나치게 커지는 것을 막은 것이다. 또한 U-Net 채널 축 대신 디퓨전 트랜스포머의 이미지 토큰 은닉 차원을 선택 대상으로 바꾸는 방식으로 PixArt-Σ, SD3.5 MMDiT에도 동일한 프레임워크를 적용했다.</p>
 <h2>실험 설정 및 결과</h2>
-<p>주 실험은 고정된 SD-1.5 U-Net teacher와 1280개의 정렬된(aligned) 채널을 기준으로, 학생이 128개 채널만 사용하도록 압축하는 설정이다. ADE20K, Cityscapes, CelebA-HQ, Pascal VOC(mIoU), CIFAR-10/CIFAR-100(top-1 정확도), SPair-71k(PCK@0.1)로 평가했다. 128채널 설정에서 Policy-Mask는 전체 1280채널을 고정 (t, l)에서 그대로 사용하는 베이스라인보다도 ADE20K 38.9(전체 채널 37.4), Cityscapes 70.2(68.6), CelebA-HQ 79.1(77.9), Pascal VOC 74.8(73.5)로 모두 더 높은 mIoU를 기록했다. 또한 top-variance, Fisher proxy 같은 다른 채널 선택 휴리스틱보다도 일관되게 우수했다. DDAE·RepFusion과 비교했을 때 CIFAR-10 95.2%, CIFAR-100 75.4%(RepFusion 대비 각각 +1.0, +1.3점), SPair-71k PCK@0.1은 이미지 정규화 기준 76.3, bbox 정규화 기준 67.5를 기록했다. Ablation 연구에서는 타임스텝만 선택하는 정책(31.78 mIoU)보다 타임스텝-레이어 조합 그리드 정책(33.32)이 더 우수했지만, 여기에 휴리스틱 top-b 채널 선택을 추가하거나(32.82) 정규화 없이 조인트 정책을 학습시키면(31.68) 오히려 성능이 떨어졌다. 채널-점수 정규화는 고정 정렬(A_l fixed) 조건에서 3개 시드 평균 ADE20K mIoU를 36.8에서 37.7로 끌어올렸다. 채널 예산을 128에서 256으로 늘리면 최고 검증 mIoU가 0.72 상승했지만, 이는 채널 수와 증류 손실 스케일이 동시에 변하기 때문에 예산 자체의 순수한 효과로 분리하기는 어렵다고 저자들은 밝혔다. DiT 계열인 PixArt-Σ와 MMDiT 계열인 SD3.5에도 동일한 행동 체계를 이식해, teacher별 용량 비율을 약 10%로 맞춘 조건에서 평가를 수행했다(U-Net 34.1, PixArt-Σ 35.0, SD3.5 36.4 mIoU; 단, 이는 아키텍처 간 순위를 매기기 위한 비교가 아니라 인터페이스 이식의 유효성을 보여주기 위한 것이라고 명시함).</p>
+<p>주 실험은 Stable Diffusion 1.5 U-Net을 교사로, 정렬된 채널 폭 1280 중 128개(약 10%)를 선택하는 설정을 사용했다. 평가는 분할(ADE20K, Cityscapes, CelebA-HQ, Pascal VOC, mIoU 기준), 분류(CIFAR-10, CIFAR-100, top-1 정확도), 의미적 대응(SPair-71k, PCK@0.1)에서 이루어졌다.</p>
+<ul>
+<li>128개 채널만으로 POLICY-MASK는 전체 1280채널 고정 추출 대비 ADE20K, Cityscapes, CelebA-HQ, Pascal VOC에서 각각 1.5, 1.6, 1.2, 1.3 mIoU 더 높은 성능을 보였고, top-variance·Fisher 기반 채널 선택 베이스라인도 모두 앞섰다(ADE20K 38.9 mIoU).</li>
+<li>CIFAR-10에서 95.2%, CIFAR-100에서 75.4% top-1 정확도를 기록해, 같은 128차원 조건에서 RepFusion보다 각각 1.0, 1.3포인트 높았다.</li>
+<li>SPair-71k에서는 이미지 정규화 기준 PCK@0.1 76.3, 바운딩박스 정규화 기준 67.5를 달성했다.</li>
+<li>구성요소별 제거 실험(ablation)에서는 레이어 선택이 다운스트림 정확도에 큰 영향을 미치며, 채널 예산을 128에서 256으로 늘리면 성능이 소폭(약 0.27~0.72 mIoU) 더 좋아지는 지점을 확인했다(다만 이는 증류 손실 스케일 변화와 얽혀 있어 완전히 독립적인 효과는 아님).</li>
+<li>채널 점수 정규화(1/b 인자)를 적용하면 적용하지 않은 경우보다 ADE20K mIoU가 36.8에서 37.7로 향상되었고, 행동 축(action-axis) 제거 실험에서는 정규화하지 않은 결합 정책(31.68 mIoU)이 타임스텝만 쓰는 정책(31.78)보다도 낮아, 정규화가 실제로 필요함을 보였다.</li>
+<li>PixArt-Σ DiT, SD3.5 MMDiT 교사에 동일한 매칭 비율(약 10%)로 적용한 결과도 보고되었으며(ADE20K mIoU 35.0, 36.4 등), U-Net과 다른 교사 아키텍처 간 직접적 성능 비교보다는 선택 인터페이스가 트랜스포머 구조로도 이전 가능함을 보여주는 데 의의를 두었다.</li>
+</ul>
 <h2>한계점</h2>
-<p>논문 4.5절(Limitations)에 명시되어 있다. 첫째, 채널 예산 스윕 실험(그림 2)은 선택되는 특징과 증류 손실의 크기(강도)를 동시에 변화시키므로, 채널 수 증가 자체의 순수한 효과를 증류 강도와 분리해 입증하지 못한다—선택된 채널에 대해서만 정규화된 KD 손실을 적용하는 후속 스윕이 필요하다고 언급한다. 둘째, 정규화 ablation과 RepFusion 비교는 3개 시드로 반복 측정했지만, action-axis ablation·예산 스윕·정성적 분석은 단일 시드로만 수행되어 통계적 변동성을 완전히 통제하지는 못했다. 셋째, 트랜스포머 teacher 비교(표 3)는 teacher별 용량 비율만 맞춘 것으로, 전이된 행동 인터페이스의 유효성을 보여주는 것이지 teacher 아키텍처 간 순위를 매기는 비교는 아니다.</p>
+<ul>
+<li>채널 예산을 바꾸는 실험(Figure 2의 스윕)은 선택되는 특징과 동시에 증류 손실의 스케일(전체 1280채널 기준 평균)도 함께 바꾸기 때문에, 채널 수 자체의 순수한 효과와 증류 강도 변화의 효과가 분리되지 않는다.</li>
+<li>정규화 제거 실험과 RepFusion 비교는 3개 시드로 반복했지만, 행동 축 제거 실험과 채널 예산 스윕, 정성적 분석은 단일 시드로만 수행되어 통계적 변동성이 충분히 검증되지 않았다.</li>
+<li>트랜스포머 교사(PixArt-Σ, SD3.5) 실험은 교사별로 한 번씩만 평가되었고, U-Net과의 아키텍처 간 성능 순위를 매기기 위한 것이 아니라 동일 비율 하에서의 인터페이스 이전 가능성만을 보여준다.</li>
+<li>채널 수와 증류 강도를 분리해 최적의 운영 예산을 선택하는 문제는 여전히 해결되지 않은 과제로 남아 있다.</li>
+</ul>
 <h2>시사점</h2>
-<p>디퓨전 특징 추출을 "예산 제약 하의 의사결정 문제"로 공식화함으로써, 사람이 정한 고정 규칙보다 더 압축적이면서도 효과적인 특징 선택이 가능함을 보인다. 저장·연산 자원이 제한된 환경에서 디퓨전 teacher 기반 표현학습을 적용할 때 실질적인 효율화 방법을 제공하며, U-Net뿐 아니라 DiT·MMDiT 등 최신 트랜스포머 기반 디퓨전 아키텍처로도 확장 가능함을 보여준다.</p>
+<p>POLICY-MASK는 확산 모델에서 판별 과제를 위한 특징 추출을 "어디서, 얼마나 뽑을 것인가"라는 예산 제약 하의 의사결정 문제로 재정의하고, 이를 강화학습 정책으로 공동 최적화할 수 있음을 보였다. 특히 극히 일부의 채널(10%)만으로도 전체 채널을 쓰는 것보다 더 나은 성능을 낼 수 있다는 결과는, 확산 특징을 활용한 압축적이고 효율적인 표현 학습 및 지식 증류 파이프라인 설계에 실질적인 지침을 제공하며, 향후 디퓨전 트랜스포머 계열 모델로의 확장 가능성도 열어준다.</p>
     <div class="back-bottom">
       <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
     </div>
@@ -106,7 +120,7 @@
 
 <footer>
   <div class="wrap">
-    <span>출처: <a href="https://huggingface.co/papers/2610.28889" target="_blank" rel="noopener">huggingface.co/papers/2610.28889</a> · 2026-10-24</span>
+    <span>출처: <a href="https://huggingface.co/papers/2610.28889" target="_blank" rel="noopener">huggingface.co/papers/2610.28889</a> · 2026-10-26</span>
     <span>my-design 시스템 적용</span>
   </div>
 </footer>

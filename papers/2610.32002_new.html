@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>드라메이즈</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#12 · Daily Papers 2026-10-27</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 11</span>
+    </div>
+    <h1 class="article-title">DraMaze: A Multi-Agent Pipeline with Future-Aware Memory for Diverse Microdrama Script Generation</h1>
+    <p class="article-title-ko">드라메이즈: 미래 인지형 메모리를 갖춘 멀티에이전트 파이프라인을 통한 다양한 마이크로드라마 대본 생성</p>
+    <p class="article-sub">마이크로드라마(숏폼 드라마) 장편 대본을 LLM으로 생성할 때 반복적으로 나타나는 서사 패턴 획일화 문제를, 진화적 플롯 탐색과 미래 목표 기반의 "역방향 서사 의존 트리(BNDT)" 메모리로 해결하는 멀티에이전트 파이프라인 DraMaze를 제안하고, 전용 벤치마크 MiDramaBench로 그 효과를 검증한 논문이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.32002" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.32002" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: DraMaze: A Multi-Agent Pipeline with Future-Aware Memory for Diverse Microdrama Script Generation</li>
+<li><strong>저자</strong>: Siyang He, Qiqi Wang 등 8인 (Fudan University, Shanghai Innovation Institute, Tencent 소속 공동 연구)</li>
+<li><strong>출처</strong>: arXiv:2610.32002v1 [cs.CL] (2026-10-22)</li>
+<li><strong>프로젝트 페이지</strong>: 별도 프로젝트 페이지는 논문에 명시되지 않음 (코드 저장소: https://github.com/rimory6/DraMaze.git)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.32002">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>마이크로드라마(숏폼 드라마) 장편 대본을 LLM으로 생성할 때 반복적으로 나타나는 서사 패턴 획일화 문제를, 진화적 플롯 탐색과 미래 목표 기반의 "역방향 서사 의존 트리(BNDT)" 메모리로 해결하는 멀티에이전트 파이프라인 DraMaze를 제안하고, 전용 벤치마크 MiDramaBench로 그 효과를 검증한 논문이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>마이크로드라마 수요 급증으로 LLM 기반 대본 자동 생성의 필요성이 커졌지만, 수십 화에 걸친 장편 생성에서는 등장인물과 사건이 바뀌어도 유사한 전개 방식(서사 메커니즘)이 반복되는 경향이 있다. 저자들은 실험을 통해 생성이 진행될수록 후보 전개들이 점점 더 소수의 메커니즘에 쏠리는 "서사 메커니즘 엔트로피 감소" 현상을 확인했으며, DOME류의 지식그래프 메모리나 밀집 의미 검색(Dense RAG)을 적용해도 이 현상이 해소되지 않고 오히려 과거 트로프(관용적 서사 패턴) 재사용을 부추긴다는 점을 발견했다. 실제로 핵심 서브이벤트 27개 중 두 방식 모두 7개만 검색해 재현율이 25.93%에 그쳤고, 이렇게 검색된 메모리로 이어 쓴 속편은 사람이 직접 고른 메모리를 사용한 경우보다 과거 인과 패턴을 훨씬 더 많이 반복했다. 즉 의미적 유사성과 실제 서사적 가치 사이에 간극이 있다는 것이 핵심 문제의식이다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>장편 생성에서 서사 메커니즘 다양성이 점진적으로 저하되는 현상을 정량적으로 규명하고, 기존 의미 기반 검색이 이를 완화하기는커녕 트로프 재사용을 강화할 수 있음을 실증.</li>
+<li>진화적 플롯 탐색(evolutionary plot planning)과 미래 인지형 서사 메모리(future-aware narrative memory), 동적 세계-상태 추적을 결합한 멀티에이전트 파이프라인 <strong>DraMaze</strong> 제안.</li>
+<li>대본의 논리성(Logic)과 창작 품질(Quality)을 평가하는 이중언어 벤치마크 <strong>MiDramaBench</strong>와, 서사 반복·다양성을 정량화하는 코절 패턴(causal-pattern) 지표를 함께 제안.</li>
+</ul>
+<h2>방법론</h2>
+<p>파이프라인은 크게 (1) 기획, (2) 진화적 트리 탐색, (3) 에피소드 아웃라인화, (4) 역방향 서사 의존 트리 구축, (5) 에피소드별 집필의 다섯 단계로 구성된다. Outline Planner가 설정(Setup)-전개(Development)-절정(Climax)-해결(Resolution)의 4단계 큰 줄거리를 먼저 설계한다. 이어지는 <strong>진화적 트리 탐색(Evolutionary Tree Search)</strong>에서는 각 서사 앵커(anchor)마다 로컬 탐색 트리를 확장하며 후보 다음 사건들을 생성하고, 과거 인과 패턴을 cause-method-outcome-response 형태로 저장한 "트로프 메모리"와 비교해 참신성을 평가한다. 확률 0.25로 "돌연변이"를 가해 인과 구조를 재구성한 추가 분기를 만들어 탐색 공간을 넓히고, 일관성·참신성·목표 도달 가능성의 가중합으로 최종 체인을 선택한다. <strong>Backward Narrative Dependency Tree(BNDT)</strong>는 최종 결말로부터 거꾸로 중간 목표와 선행 조건을 재귀적으로 분해해 만든 목표 트리로, 각 에피소드가 어떤 목표를 설정·진전·완료하는지 매핑한다. 이를 기준으로 매 에피소드 집필 전, 현재 에피소드의 목표 노드에 직접 연결된 기억과 그 선행 목표 서브트리에서 중요도가 높은 기억을 함께 검색해 "미래에 실제로 필요한" 정보 위주로 메모리를 활용한다. 또한 별도의 세계-상태 메모리가 인물·관계·자산 상태를 지속적으로 갱신해 일관성을 유지한다. 평가는 3명의 독립 LLM 리뷰어가 근거 기반으로 오류·강점을 기록하는 Evidence Ledger 방식과, 0~100점 전체적(holistic) 평가 방식을 절반씩 결합해 Logic·Quality 점수를 산출하는 멀티에이전트 평가 프레임워크를 사용했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>MiDramaBench는 공개 소설 데이터셋 PG-19를 20/40/60화 분량(약 3만~13만 단어)으로 각색해 구축했으며, 영어 20개·중국어 10개 총 30개 이야기로 평가셋을 구성했다. 백본 모델 Qwen3.6-27B 기준, DraMaze는 DOME·StoryWriter 베이스라인 대비 모든 화수에서 Logic·Quality 점수가 꾸준히 높았고, 그 격차는 화수가 늘수록 커져 60화 기준 최강 베이스라인보다 Logic 8.5점 높은 82.5점을 기록했다. 4-gram·3-gram 반복률도 가장 낮고 조건부 엔트로피는 가장 높아(60화 기준 3-gram 반복률 14.6% vs. 최강 베이스라인 21.5%) 서사 다양성 유지 효과를 확인했다. DeepSeek-V4-Pro, GLM5.3-Flash 등 다른 백본으로 교차 검증했을 때도 Logic 4.8~11.0점, Quality 3.5~5.5점의 일관된 개선을 보여 백본에 무관한 효과를 입증했다. Ablation 연구에서는 미래 인지형 메모리를 제거하면 Logic/Quality가 81.3/86.3에서 74.5/81.2로 떨어지고 반복률이 증가했으며, 진화적 트리 탐색까지 제거하면 다양성이 추가로 저하되었다. 멀티에이전트 파이프라인 자체를 제거하고 단순 직접 생성으로 대체한 경우 Logic/Quality가 70.3/76.8까지 크게 떨어져, 계층적 기획과 멀티에이전트 협업 구조의 기여도가 가장 크다는 것을 확인했다.</p>
+<h2>한계점</h2>
+<p>논문에서 명시적으로 다룬 한계는 제한적이지만, 내용상 다음과 같은 한계를 추론할 수 있다. 평가 체계가 LLM 기반 다중 에이전트 프레임워크에 의존하고 있어 실제 인간 평가와의 상관성 검증은 별도로 제시되지 않았다. 또한 벤치마크 MiDramaBench는 기존 소설(PG-19)을 각색해 구성한 것으로, 실제 제작 현장에서 쓰이는 마이크로드라마 대본과는 형식·관습 면에서 차이가 있을 수 있다. 검증 범위도 최대 60화(약 6만 단어) 규모까지로, 이보다 훨씬 긴 초장편 생성에서의 성능이나 진화적 트리 탐색·BNDT 구축에 따르는 추가 연산 비용에 대해서는 논문에 명시되지 않았다.</p>
+<h2>시사점</h2>
+<p>이 연구는 장편 서사 생성에서 "의미적으로 유사한 기억"과 "서사적으로 가치 있는 기억"이 다를 수 있음을 보여주고, 미래 목표를 기준으로 기억을 조직·검색하는 방식이 반복을 줄이면서도 일관성과 창작 다양성을 동시에 높일 수 있음을 실증했다. 이러한 미래 인지형 메모리와 진화적 탐색 설계는 마이크로드라마뿐 아니라 장편 소설, 시나리오, 게임 스토리라인 등 장기적 일관성과 다양성이 함께 요구되는 다양한 장편 생성 과제에 적용 가능한 설계 원칙을 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.32002" target="_blank" rel="noopener">huggingface.co/papers/2610.32002</a> · 2026-10-27</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

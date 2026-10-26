@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>비디오를 통해 세상을 읽고</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#1 · Daily Papers 2026-10-27</span>
+      <span class="cat-tag">서베이</span>
+      <span class="upvote-tag">▲ 213</span>
+    </div>
+    <h1 class="article-title">Reading, Writing, Sharing, and Interacting with the World through Video</h1>
+    <p class="article-title-ko">비디오를 통해 세상을 읽고, 쓰고, 공유하고, 상호작용하기 (통합 비디오 월드모델 서베이)</p>
+    <p class="article-sub">이 논문은 비디오 기반 파운데이션 모델 연구를 "읽기(이해)·쓰기(생성)·공유(통합)·상호작용(월드 모델링)"이라는 네 가지 연산으로 통합적으로 정리한 서베이로, 관찰된 비디오와 그 이면에 있는 잠재적 세계 상태 사이의 관계를 공통의 분석 틀로 제시한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.31668" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.31668" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Reading, Writing, Sharing, and Interacting with the World through Video</li>
+<li><strong>저자</strong>: Shengqiong Wu, Meng Luo, Bobo Li, Ziwei Liu, Shuicheng Yan, Ming-Hsuan Yang, Philip Torr, Hao Fei (Oxford대, NUS, NTU, UC Merced 소속, 총 8인)</li>
+<li><strong>출처</strong>: arXiv:2610.31668v1 [cs.CV] (2026-10-22)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://vid-gen.github.io/video-world-model-survey">https://vid-gen.github.io/video-world-model-survey</a> (GitHub: https://github.com/vid-gen/awesome-video-world-model)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.31668">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>이 논문은 비디오 기반 파운데이션 모델 연구를 "읽기(이해)·쓰기(생성)·공유(통합)·상호작용(월드 모델링)"이라는 네 가지 연산으로 통합적으로 정리한 서베이로, 관찰된 비디오와 그 이면에 있는 잠재적 세계 상태 사이의 관계를 공통의 분석 틀로 제시한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>비디오는 시공간에 걸쳐 개체·관계·행동이 어떻게 변화하는지를 직접 담아내는 독특한 양식으로, 최근 비디오 이해를 위한 Video-LLM과 비디오 생성을 위한 디퓨전·오토리그레시브 모델 모두 빠르게 발전해 왔다. 동시에 Sora, Genie, GAIA-1, V-JEPA 2 등 환경이 시간에 따라 어떻게 변하는지를 예측하는 "월드 모델" 연구도 활발해지면서, 비디오 관찰과 그 기저의 진화하는 세계 상태를 연결하는 문제가 공통 과제로 떠오르고 있다. 저자들은 기존 서베이들이 이해, 생성, 통합(unification), 월드모델이라는 방향을 각각 따로 다뤄왔을 뿐, 비디오 관찰과 세계 상태의 관계라는 하나의 공통 축으로 묶어내지 못했다는 점을 문제의식으로 삼는다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>비디오-세계 관계를 읽기(reading)·쓰기(writing)·공유(sharing)·상호작용(interacting)이라는 네 가지 상호보완적 연산으로 정의하는 "월드모델링 렌즈" 프레임워크를 제시했다.</li>
+<li>비디오 월드모델을 예측 공간(observation-space vs. latent-state)과 전이 인터페이스(passive vs. action-conditioned vs. interactive)라는 두 독립 축으로 분류하는 택소노미를 제안했다.</li>
+<li>과제·표현·모델·데이터셋·벤치마크 전반을 아우르는 포괄적 정리와 함께, "시간적 일관성"과 "세계 일관성"을 구분하고 각 연산에 대한 4단계 증거 사다리(그럴듯한 출력→조건 충실성→세계 상태 일관성→의사결정 효용)를 제시했다.</li>
+<li>공개 reading list, 택소노미, 코드, 데이터, 리소스를 제공하는 프로젝트 페이지와 GitHub 저장소를 공개했다.</li>
+</ul>
+<h2>방법론</h2>
+<p>서베이 논문이므로 "방법론"은 저자들이 세운 분석 프레임워크 자체이다. 저자들은 관찰된 비디오 V를 잠재적 시간적 세계 W에 대한 부분적(partial)·손실적(lossy)·시간 순서가 있는 관측으로 정의한다. 이를 토대로 (1) reading(V→W): 관찰로부터 세계의 의미·공간·시간·물리·인과적 속성을 추론; (2) writing(W→V): 텍스트·이미지·행동 등 조건으로부터 비디오 트레이스를 생성; (3) sharing(V↔W): 읽기 맵과 쓰기 맵이 파라미터·토큰·표현 등 적어도 하나의 구성요소를 공유하는 통합 모델; (4) interacting(W↺): 행동이나 조건에 따라 세계 상태를 반복적으로 전이시키는 월드모델링(오픈루프 또는 온라인 상호작용)으로 정의한다. 또한 생성된 트레이스가 국소적으로 매끄러운지를 뜻하는 "시간적 일관성"과, 그 트레이스가 실제로 가능한 세계 궤적과 양립하는지를 뜻하는 "세계 일관성"을 별개 속성으로 구분하며(둘은 서로를 함의하지 않음), 네 연산 각각에 대해 단순 정답률부터 의사결정 효용까지 이어지는 4단계 증거 수준(Table 2)을 평가 기준으로 제안한다. 이어 4~7장에서 각 연산별로 과제·데이터·평가 프로토콜, 표현학습 방식, 모델 아키텍처(대조학습·마스크학습·디퓨전·오토리그레시브·플로우 매칭 등), 제어 전략, 실제 응용 사례를 체계적으로 검토한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>서베이이므로 자체 실험 대신 기존 연구들의 흐름을 정리한다. 2017~2026년에 걸친 읽기·쓰기·공유·상호작용 네 흐름의 대표 모델들을 시계열로 정리하고(Figure 1), 일반 짧은 비디오·사운딩 비디오·에고센트릭 비디오·스트리밍/온라인 비디오·롱폼 비디오·인터랙티브 비디오·도메인 특화 비디오라는 7가지 비디오 시나리오별로 요구되는 증거와 모델링 수요를 비교한다(Table 3). 읽기 영역에서는 의미·공간·시간·물리·인과 이해 과제와 벤치마크(예: 환각 탐지, 시간 의존적 벤치마크 등)를, 쓰기 영역에서는 디퓨전·오토리그레시브/마스크·플로우 기반 생성과 어텐션/어댑터/잠재공간 기반 제어 전략을, 공유 영역에서는 이산 토큰·연속 잠재·모듈형 통합 아키텍처와 학습 패러다임(고립 학습·듀얼 학습·공동학습·시너지 학습)을, 상호작용 영역에서는 관측공간/잠재상태 예측과 수동/행동조건/상호작용형 전이 인터페이스에 걸친 대표 시스템(GAIA-1, Genie, V-JEPA 2, Cosmos, Dreamer 4 등)을 종합 비교·분석한다.</p>
+<h2>한계점</h2>
+<p>저자들은 비디오 월드모델 연구 전반에 걸친 7가지 공개 과제를 제시한다: (1) 가려진 뒤 숨겨진 상태 변화를 추적하지 못하는 등 장기 수평선에서의 세계 일관성 유지 문제, (2) 생성 결과가 그럴듯해 보여도 중력 같은 물리 파라미터 변화에 올바르게 반응하지 못하는 물리·인과적 근거 부족, (3) 통합 모델에서 이해-생성 간 시너지가 측정 가능한 형태로 입증되지 않은 문제, (4) 스위트마다 프롬프트·제어공간·호라이즌·판정 기준이 달라 점수를 비교할 수 없는 평가 표준화 부재, (5) 라벨 없는 비디오로부터 행동(제어 신호)을 추출할 때 카메라·배경 움직임과 실제 행동이 뒤섞이는 문제, (6) 장면과 임바디먼트(체화) 전반에 걸친 일반화의 한계, (7) 희귀 사건과 확률적 미래에 대한 보정된 확률 추정의 부재. 서베이 자체의 한계로는, 포괄 범위가 넓은 만큼 각 개별 연구에 대한 깊이 있는 실증적 비교보다는 프레임워크적 정리에 중점을 둔다는 점을 들 수 있다.</p>
+<h2>시사점</h2>
+<p>저자들은 비디오 파운데이션 모델 연구가 단순한 인식 정확도나 지각적 충실도를 넘어, 가려짐·재방문·장기 수평선에서도 유지되는 지속적 상태, 제어 가능한 진화, 물리·인과적 타당성, 그리고 상호작용 및 다운스트림 의사결정에 기반한 평가로 중심이 옮겨가고 있다고 강조한다. 이는 "그럴듯한 비디오를 렌더링하는 것"에서 "세계가 어떻게 변화하는지를 모델링하는 것"으로의 전환을 요구하며, 향후 연구는 단순히 더 많은 비디오 클립을 모으기보다 알려진 숨겨진 상태 변화, 쌍을 이룬 물리적 개입(intervention), 매칭된 ablation, 라벨링된 행동, 관측된 사건 빈도 등 개입 기반의 데이터와 평가 프로토콜을 구축해야 한다고 제안한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.31668" target="_blank" rel="noopener">huggingface.co/papers/2610.31668</a> · 2026-10-27</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

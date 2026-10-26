@@ -1,0 +1,107 @@
+<meta charset="UTF-8">
+<title>UserArena</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#2 · Daily Papers 2026-10-27</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 47</span>
+    </div>
+    <h1 class="article-title">UserArena: Benchmarking Interactive User Simulation for Long-Horizon Shopping Agents</h1>
+    <p class="article-title-ko">UserArena: 장기 호라이즌(Long-Horizon) 쇼핑 에이전트를 위한 대화형 사용자 시뮬레이션 벤치마크</p>
+    <p class="article-sub">UserArena는 11,010명의 실제 사용자와 566,102개 상품으로 구성된 장기(long-horizon) 쇼핑 에이전트용 사용자 시뮬레이션 벤치마크로, 5단계 평가 프로토콜과 프로덕션 A/B 테스트 검증을 제공하며, 이와 함께 On-Policy Trajectory Distillation(OPTD)이라는 새로운 시뮬레이터 학습 기법도 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.30932" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.30932" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: UserArena: Benchmarking Interactive User Simulation for Long-Horizon Shopping Agents</li>
+<li><strong>저자</strong>: Jujia Zhao, Jiakai Tang, Jing Yu 등 9인 (Leiden University, Renmin University of China, Alibaba Group, Institute of Computing Technology, Chinese Academy of Sciences)</li>
+<li><strong>출처</strong>: arXiv:2610.30932v1 [cs.IR] (22 Oct 2026)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://recgpt-team.github.io/UserArena-Page">UserArena Page</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.30932">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>UserArena는 11,010명의 실제 사용자와 566,102개 상품으로 구성된 장기(long-horizon) 쇼핑 에이전트용 사용자 시뮬레이션 벤치마크로, 5단계 평가 프로토콜과 프로덕션 A/B 테스트 검증을 제공하며, 이와 함께 On-Policy Trajectory Distillation(OPTD)이라는 새로운 시뮬레이터 학습 기법도 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>에이전틱 추천(agentic recommendation)에서는 에이전트가 연속된 맥락 의존적 결정을 통해 쇼핑 목표를 달성하는데, 이를 개발·평가하려면 환경과 사용자 반응을 함께 모사하는 충실한 추천 월드모델이 필요하다. 그러나 기존 리소스는 장기간에 걸친 세밀한 실사용자 궤적을 거의 제공하지 않거나, 궤적 수준 평가 및 프로덕션 A/B 결과와의 오프라인 검증을 지원하지 않는다. 또한 LLM 기반 사용자 시뮬레이터 학습은 (i) 실제 행동과 어긋나는 행동 오보정, (ii) 다음 행동만 정답으로 간주해 다른 타당한 대안을 벌점 처리하는 희소 지도신호, (iii) teacher forcing이 정답 프리픽스에만 의존해 추론 시 자기 생성 프리픽스와 불일치하는 노출 편향이라는 세 가지 난점을 안고 있다.</p>
+<h2>핵심 기여</h2>
+<p>1) 11,010명 사용자, 566,102개 아이템, 64,729개 세션 궤적, 13종 행동 유형으로 구성되고 실제 프로덕션 피드·상품 페이지와 연동되는 대화형 벤치마크 UserArena를 제안하며, 환경 준수(L0)부터 결과 충실도(L4)까지 5단계 평가 프로토콜을 도입했다. 2) 궤적 수준 의도(trajectory-level intent)를 활용해 학생 모델이 직접 생성한 롤아웃에 조밀한 토큰 단위 교사 타깃을 제공하는 On-Policy Trajectory Distillation(OPTD)을 제안했다. 3) 텍스트 기반·GUI 기반 대표 시뮬레이터들을 벤치마킹해 효과성·효율성을 비교하고 UserArena의 행동 구성 및 상호작용 호라이즌을 분석했다.</p>
+<h2>방법론</h2>
+<p>UserArena는 실제 전자상거래 플랫폼의 사용자 궤적을 바탕으로 피드 및 상품 상세 페이지를 재구성한 환경을 제공하며, Replay(기록된 상태에서 다음 행동만 예측, 상태 누적 없음)와 Rollout(시뮬레이터가 직접 행동을 선택해 세션 끝까지 진행) 두 평가 모드를 지원한다. L0은 출력이 실행 가능한 행동으로 파싱되는지(환경 준수), L1은 다음 행동의 F1/정확도(로컬 행동 충실도), L2는 Decision-mix JSD와 궤적 길이 오차(순차적 행동 충실도), L3은 사용자 이력에 따른 행동 이질성 재현 정도(개인화된 모집단 충실도), L4는 CTR/ACR 오차와 종단상태 JSD(결과 충실도)를 측정한다. OPTD는 (1) 학생 정책 자신의 롤아웃에서 상태를 샘플링하고, (2) LLM 추출기로 전체 학습 궤적에서 궤적 수준 의도(z_u)를 뽑아 고정된 교사 모델에 특권 정보로 제공하며, (3) 의도 조건부 분포와 의도 없는 분포 사이를 KL 발산 예산 내에서 보간하는 토큰별 신뢰 영역으로 과도한 의도 의존을 제한하고, (4) 일반화된 Jensen-Shannon 발산 기반 증류 손실과 기록된 응답에 대한 teacher-forced 그라운딩 손실을 결합해 학습한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Qwen3.5-2B를 공통 백본으로 텍스트 기반 시뮬레이터(RecAgent, Agent4Rec, Shop-R1, Customer-R1, AlignUSER, SimUSER)와 GUI 기반 시뮬레이터(A/B Agent, STA)를 OPTD와 비교했다. 단일 세션 설정에서 OPTD는 보고된 L1-L4 8개 지표 전부에서 1위를 기록했고, 크로스세션(장기) 설정에서도 8개 지표 중 5개에서 1위를 차지하며 특히 순차적 행동 충실도(L2)와 개인화된 모집단 충실도(L3)에서 가장 강했다. 10,000명 사용자 풀을 이용한 프로덕션 A/B 오프라인 검증에서 OPTD는 실제 온라인 정책 효과(ΔPV-CTR)를 가장 근접하게 재현했으며(효과 비율 0.713배, 오차 0.287), 범용 대형모델(GPT-6-Sol/Luna)은 온라인 반응을 과대추정했다. 구성요소 제거 실험에서는 on-policy 샘플링, 의도 조건화, 신뢰 영역, 그라운딩, SFT 초기화가 모두 성능에 기여했으며(SFT 워밍업 제거 시 저하가 가장 컸음), Turing 스타일 인간 평가에서도 OPTD의 궤적이 실제 사용자 궤적과 가장 구별하기 어려운 것으로 나타났다.</p>
+<h2>한계점</h2>
+<p>논문은 별도의 한계점 절을 명시하지 않으나, 향후 과제로 UserArena 기반 리더보드 플랫폼 구축과 세션 전반에서 진화하는 선호·행동 일관성을 유지하는 더 강력한 장기 시뮬레이터 연구를 언급한다. 본문에서는 실사용자 트레이스가 아닌 합성 궤적 기반 시뮬레이터(A/B Agent)가 UserArena의 고정된 행동 프로토콜로 전이될 때 상대적으로 불안정하다는 점, 그리고 강화학습 기반 시뮬레이터(STA)의 성능 향상이 충실도 수준 전반에 걸쳐 일관되지 않는다는 점이 한계로 지적된다.</p>
+<h2>시사점</h2>
+<p>UserArena는 실제 프로덕션 데이터와 A/B 테스트 결과를 연동한 장기 호라이즌 쇼핑 에이전트 시뮬레이션 벤치마크로서, 추천 정책 비교가 실제 온라인 지표와 얼마나 부합하는지를 오프라인에서 검증할 수 있게 해 에이전틱 추천 연구의 재현성과 신뢰도를 높일 수 있다. 또한 OPTD가 보여주는 온폴리시·궤적수준 의도 기반 증류 방식은 노출 편향과 희소 보상 문제를 동시에 완화하는 일반적 시뮬레이터 학습 패러다임으로, 다른 장기 대화형 에이전트의 평가·학습에도 확장될 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.30932" target="_blank" rel="noopener">huggingface.co/papers/2610.30932</a> · 2026-10-27</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

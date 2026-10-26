@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>HiSTEVE 1.0</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#3 · Daily Papers 2026-10-27</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 38</span>
+    </div>
+    <h1 class="article-title">HiSTEVE 1.0: Harnessing Human-Interface VLA Agents for Open-World Games</h1>
+    <p class="article-title-ko">HiSTEVE 1.0: 오픈월드 게임을 위한 인간 인터페이스 VLA 에이전트</p>
+    <p class="article-sub">HiSTEVE는 마인크래프트 같은 오픈월드 게임에서 사람처럼 키보드와 마우스만으로 장시간 자율 플레이가 가능하도록, 상위 계획을 맡는 VLM 플래너와 하위 제어를 맡는 단일 VLA 정책을 능력 인식형 에이전트 하네스로 결합한 계층형 시스템이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.31162" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.31162" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: HiSTEVE 1.0: Harnessing Human-Interface VLA Agents for Open-World Games</li>
+<li><strong>저자</strong>: Zecong Tang, Zian Guan, Yuncheng Guo, Zhanqiu Zhang, Yiwen Guo, Bo Dai 등 6인 (홍콩대, 저장대, 푸단대, LIGHTSPEED Studios 소속)</li>
+<li><strong>출처</strong>: arXiv:2610.31162v1 [cs.CV] (2026년 10월 22일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/Andytonglove/HiSTEVE-1.0">GitHub - HiSTEVE-1.0</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.31162">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>HiSTEVE는 마인크래프트 같은 오픈월드 게임에서 사람처럼 키보드와 마우스만으로 장시간 자율 플레이가 가능하도록, 상위 계획을 맡는 VLM 플래너와 하위 제어를 맡는 단일 VLA 정책을 능력 인식형 에이전트 하네스로 결합한 계층형 시스템이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>기존 마인크래프트 에이전트는 시각-운동 정책(VLA)을 통한 원시 인터페이스 제어와, LLM/VLM 기반의 장기 계획 중 한쪽만 잘하는 경향이 있었다. VLA 기반 정책은 과제 상태를 지속적으로 추적하거나 과제 의존성을 추론하는 능력이 부족했고, 반대로 LLM/VLM 플래너 기반 에이전트는 환경 API나 사전 정의된 스킬에 의존해 실제 게임에서는 쓸 수 없는 경우가 많았다. 또한 비-GUI 카메라 조작과 GUI 인터페이스 조작은 시각 분포와 마우스 동작 의미가 달라 하나의 정책으로 함께 학습하면 부정적 전이가 발생하는 문제도 있었다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>구조화된 메모리와 VLM 플래너를 갖춘 능력 인식형(capability-aware) 에이전트 하네스를 제안해, 장시간 실행 동안 목표 유지와 계획 수정을 가능하게 함.</li>
+<li>VLA 정책 문맥에 기반해 하위 과제 완료 여부를 판단하는 정책 결합형(policy-coupled) 과제 완료 상태 탐지기를 도입해 계획-실행 루프를 닫음.</li>
+<li>비-GUI/GUI 상호작용 간 간섭을 줄이는 영역별(regime-specific) RMSNorm 분기와 분리된 마우스 이동 토큰 임베딩(Dual-Mouse), 그리고 세계 지식 주입-모방학습-강화학습의 3단계 학습 전략을 설계함.</li>
+<li>MineStudio Bench에서 85.0%, OpenHA에서 37.4% 평균 성공률로 최고 성능을 달성했으며, 처음부터 철제 곡괭이를 제작하는 등 장시간 과제도 사람처럼 수행함.</li>
+</ul>
+<h2>방법론</h2>
+<p>HiSTEVE는 두 가지 시간 규모로 작동한다. 느린 계획 단계에서는 작업 기억(working memory), 일화 기억(episodic memory), 절차 기억(procedural memory), 세계 기억(world memory) 네 종류로 구성된 구조화된 메모리를 바탕으로, VLM 플래너(GPT-4o)가 현재 목표와 실행 가능한 스키마 집합 내에서 다음 원자 하위 과제(atomic subtask)를 선택한다. 각 스키마는 적용 조건, 시각적으로 관찰 가능한 완료 조건, 실패 조건, 실행 예산을 명시한 파라미터화된 형태로 정의되어, 플래너가 VLA의 실제 수행 능력 범위 안에서만 과제를 지시하도록 제한한다. 하위 과제가 주어지면 자연어 지시문으로 변환되어 Qwen2.5-VL-7B 기반의 단일 VLA 정책이 1인칭 시각 관찰로부터 네이티브 키보드-마우스 행동을 20Hz로 예측해 수행한다. 비-GUI와 GUI 상호작용 간 간섭을 줄이기 위해, 디코더 레이어마다 상호작용 유형별로 학습 가능한 스케일 벡터를 따로 두는 Regime-Specific RMSNorm(RS-Norm)과, 같은 물리적 행동 코드북으로 디코딩되지만 토큰 집합은 분리되는 Dual-Mouse 표현을 도입한다. 완료 판단을 위해 VLA의 이미지 인코더를 공유하고 정책 문맥을 교차 주의(cross-attention)로 주입받는 경량 탐지기(Qwen2.5-VL-3B 기반)를 별도로 학습해, 두 차례 연속 임계값을 넘을 때만 하네스에 완료 후보 신호를 보내는 증거 기반 핸드오프 방식을 사용한다. VLA 학습은 세계 지식 주입(월드 개념과 시각적 접지), 모방 학습(하위 과제-행동 매핑), 그리고 환경 피드백 기반 강화학습(그룹 상대적 이점을 활용한 GRPO 변형과 성공/실패 궤적 쌍을 이용한 DPO 스타일 손실 결합) 3단계로 진행된다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>MineStudio Bench(채굴·전투·제작·제련 20개 과제), OpenHA(체화형·GUI·전투 과제의 가족별 성공률), LongBench(49개 숨은 진단 노드를 가진 14개 장기 목표 과제)에서 평가했으며, VPT·STEVE-1·ROCKET-1·JARVIS-VLA 및 OpenHA 계열(LatentHA, MotionHA, GroundingHA, TextVLA, Text/CoA) 등과 비교했다. HiSTEVE는 MineStudio Bench에서 평균 85.0%(채굴 93.3%, 전투 86.7%, 제작 66.7%, 제련 93.3%)로 최강 베이스라인 대비 20.0%p 향상되었고, OpenHA에서는 37.4%로 체화형 과제 중심으로 가장 큰 향상을 보였다. LongBench에서는 자원·제작, 탐색·기억, 복구, 개방형 과제에서 각각 42.9%, 28.6%, 14.3%, 14.3%의 최종 목표 성공률을 기록해 베이스라인 대비 최대 28.6%p 향상되었다. 자체 구축한 4,674개 검증 샘플에서 완료 탐지기는 정확도·F1 0.863으로 Qwen3.5(9B/35B)와 GPT-4o/GPT-5.5 등 범용 VLM 프롬프트 방식보다 크게 앞섰다. 절제 실험 결과 RS-Norm과 Dual-Mouse는 상호 보완적으로 성능을 높였고(공유 표현 41.1% → 결합 시 80.7%, MineStudio All 기준), VLA를 고정한 채 하네스만 완전하게 적용했을 때 LongBench 목표 성공률이 10.7%에서 25.0%로 두 배 이상 상승해 하네스의 중요성을 뒷받침했다.</p>
+<h2>한계점</h2>
+<p>강건한 GUI 상호작용은 여전히 가장 취약한 부분으로, 다단계 아이템 배치나 중간 상태 수정, 결과 확인 과정에서 실패가 두드러진다. 또한 장기 과제 중 복구(Recovery)와 약하게 구조화된 개방형(Open-ended) 과제의 성공률은 다른 과제군보다 뚜렷하게 낮아, 강건한 복구와 모호한 목표 처리 능력은 여전히 중요한 과제로 남아 있다. 단일 VLA 실행기의 신뢰도를 높이는 것만으로는 장기 과제 성능이 비례해서 좋아지지 않는다는 점도 확인되어, 실행기 개선만으로는 장기 자율성 문제를 해결할 수 없음을 시사한다.</p>
+<h2>시사점</h2>
+<p>이 연구는 오픈월드 게임에서 사람과 동일한 인터페이스 제약(키보드·마우스, 시각 관찰만 사용) 안에서도 상위 계획과 하위 제어를 긴밀히 결합하면 장시간 자율 플레이가 가능함을 보여준다. 특히 이질적인 상호작용 유형(비-GUI/GUI) 간 간섭을 구조적으로 분리하는 설계와, 정책 문맥을 활용한 경량 완료 탐지기를 통한 증거 기반 핸드오프가 범용 VLM 프롬프팅보다 훨씬 신뢰할 수 있는 실행-검증 루프를 만든다는 점은, 향후 다른 게임이나 로봇 조작 등 체화 에이전트 전반에 적용 가능한 설계 원칙으로 확장될 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.31162" target="_blank" rel="noopener">huggingface.co/papers/2610.31162</a> · 2026-10-27</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

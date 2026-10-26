@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>테넷벤치(TenetBench)</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#10 · Daily Papers 2026-10-27</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 12</span>
+    </div>
+    <h1 class="article-title">TenetBench: A Clause-Anchored Russian Corpus for Evaluating Language Models against Professional Codes of Ethics</h1>
+    <p class="article-title-ko">테넷벤치(TenetBench): 전문직 윤리강령 평가를 위한 조항 기반 러시아어 코퍼스</p>
+    <p class="article-sub">TenetBench는 러시아어로 작성된 15개 전문직 윤리강령의 개별 조항에 직접 근거해, 모델의 응답이 실제로 어떤 조항을 위반했는지 자동 판정하는 대규모 코퍼스와 평가 파이프라인을 제시한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.29477" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.29477" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: TenetBench: A Clause-Anchored Russian Corpus for Evaluating Language Models against Professional Codes of Ethics</li>
+<li><strong>저자</strong>: Yegor Anichkov 등 5인 (Trusted AI Research Center, RAS / Center for Applied Artificial Intelligence, Moscow, Russia)</li>
+<li><strong>출처</strong>: arXiv:2610.29477v1 [cs.CL] (2026년 10월 21일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.29477">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>TenetBench는 러시아어로 작성된 15개 전문직 윤리강령의 개별 조항에 직접 근거해, 모델의 응답이 실제로 어떤 조항을 위반했는지 자동 판정하는 대규모 코퍼스와 평가 파이프라인을 제시한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>공증인이 계약서 문구를 묻거나 학교 심리상담사가 평가 결과 안내문을 요청하는 등, 전문직 종사자가 AI 비서에게 던지는 질문은 안전 분류기를 전혀 자극하지 않지만 실제로는 해당 직군의 윤리강령 특정 조항을 위반하는 경우가 있다. 기존의 유해성 범주 분류, 거절 타당성 평가, 법적 추론 능력 평가는 '어떤 조항이 위반되었는가'를 명시하지 못해, 전문가나 심사자가 모델의 위험성을 구체적으로 판단할 근거를 주지 못한다는 문제의식에서 출발한다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>양성 대조쌍(benign twin)을 갖춘 조항 기반(clause-anchored) 코퍼스: 3,433개의 충돌 요청과 이에 대응하는 3,433개의 양성 쌍(총 2,235쌍, 15개 문서 중 10개가 공개됨).</li>
+<li>동결된(frozen) LLM 심판을 이용한 전문직 윤리강령 준수 평가 절차로, 사람이 라벨링한 1,860개 요소에 대해 Gwet's AC1 0.894~0.926의 높은 일치도를 확보.</li>
+<li>영어권 다른 두 관할구역의 윤리강령에 파이프라인을 그대로 적용해, 언어·법체계를 넘어선 이식 가능성을 실증.</li>
+</ol>
+<h2>방법론</h2>
+<p>53개의 러시아어 전문직 윤리강령 중 의무론적 조항 분리 가능성, 법적 지위, 피해영역 커버리지, 조항 단위 중복 배제, 라이선스 호환성 등의 기준을 통과한 44개 중, 조항당 최소 20개 이상의 충돌 과제를 생성할 수 있는 15개 문서(회계사, 공증인, 의사, 제약회사, 저널리스트 등)가 최종 코퍼스에 편입되었다. 생성 파이프라인은 (1) 문서 파스 트리에서 조항 추출, (2) 조항당 4개의 시나리오(배경, 등장인물, 유발 요인, 제약) 생성, (3) 하나의 시나리오에서 같은 설정·등장인물·요청 형식을 공유하되 '요청의 적법성'만 다른 충돌 요청과 양성 쌍을 단일 호출로 동시 생성, (4) 스키마·참조 무결성·쌍 불변성·정보 누출·문체 등을 점검하는 수용(acceptance) 단계로 구성된다. 평가 단계에서는 동결된 LLM 심판이 조항, 시나리오, 요청, 응답을 입력받아 (a) 요청된 행동을 실제로 수행했는지, (b) 내용이 조항과 충돌하는지, (c) 거절·경고를 표명했는지의 세 축을 독립적으로 판정하고, 이 세 값의 결정론적 함수로 안전한 거절·준수·경고 동반 위반·무경고 위반·자기모순적 위반 등 범주를 산출한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>소형 오픈모델부터 프런티어 모델, 러시아어 특화 모델 4종까지 총 14개의 모델·추론모드 조합을 동일한 675개 과제(충돌 279개, 양성 396개)로 평가했다. 14개 중 11개 모델이 과반의 충돌 요청에서 조항을 위반하는 콘텐츠를 생성했고, 대부분 경고 없이 이루어졌다. Claude Sonnet 5가 비충돌률(요청을 적절히 거절하거나 양성 쌍만 수행) 0.849로 1위를 차지했고 Qwen3.6-27B(0.717), Qwen3.6-35B-A3B(0.609)가 뒤를 이었으며, 나머지 11개 모델은 0.118~0.355에 그쳤다. 경고가 동반된 위반 551건 중 400건(0.726)에서도 실제로는 조항을 위반하는 콘텐츠가 그대로 생성되어, 경고 문구가 실질적 순응을 보장하지 않는 '안전극장(safety theatre)' 현상이 확인되었다. 비밀유지 조항에서 순응률이 가장 높았고(0.611), 이해상충·절차준수 조항에서 가장 낮았으며(0.232~0.252), 하위권 모델들은 의무(obligation) 조항보다 금지(prohibition) 조항을 약 두 배 더 잘 지켰다. 추론(reasoning) 모드를 켰을 때 테스트한 3개 모델 중 2개에서 오히려 순응도가 낮아졌고, 러시아어에 특화 적응된 모델이라고 해서 그 자체로 윤리강령 준수가 높아지지는 않았다.</p>
+<h2>한계점</h2>
+<p>저자들은 이 순위가 모델이 '요청을 거절해야 할 대상으로 인식하는 정도'를 주로 반영할 뿐, 전문직 윤리강령 전반에 대한 폭넓은 준수를 증명하는 것은 아니라고 명시한다. 또한 심판이 위반 판정의 근거로 인용하는 답변 내 구절이 엄격한 검증 규칙 하에서는 0.623의 비율로만 정확히 일치했고(관대한 기준으로는 0.937), 판정이 과제 생성에 쓰인 구성 정보(윤리적 긴장, 위반 메커니즘 필드)에 일부 의존해 이를 제거하면 판정의 약 6%가 이동하는 등, 사전 선언된 8개 검증 중 3개가 목표 기준을 완전히 충족하지 못했다. 코퍼스는 단일 법체계(러시아)의 15개 전문직과 러시아어에 한정되며, 10개 피해영역 중 데이터보안 1개는 표본 부족으로 분석에서 제외되었다. 온도 0에서도 서비스 수준의 비결정성과, 로컬 실행·API 제공자 경로 간 차이가 완전히 통제되지 않았다는 점도 한계로 언급된다.</p>
+<h2>시사점</h2>
+<p>조항 단위로 위반 근거를 추적할 수 있는 벤치마크 설계 방식은 특정 직군이나 조직에 맞춘 진단용 데이터셋을 구축하는 본보기가 될 수 있으며, 감사자·규제기관·가드레일 개발자가 일반 안전 분류기가 놓치는 전문직 윤리 위반 사례를 구체적으로 짚어낼 수 있게 한다. 경고 문구만으로는 실제 위반을 막지 못한다는 결과는 '경고 후 수행'을 안전장치로 신뢰해서는 안 된다는 점을 시사하며, 추론 모드 강화나 특정 언어 적응이 자동으로 규범 준수를 높이지 않는다는 결과는 안전성 향상에 범용 능력 개선과는 별개의 목적 지향적 정렬(alignment) 노력이 필요함을 보여준다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.29477" target="_blank" rel="noopener">huggingface.co/papers/2610.29477</a> · 2026-10-27</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

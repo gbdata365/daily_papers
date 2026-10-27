@@ -1,0 +1,113 @@
+<meta charset="UTF-8">
+<title>인터랙티브월드</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#5 · Daily Papers 2026-10-28</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 109</span>
+    </div>
+    <h1 class="article-title">InteractiveWorld: A Verifiable Human-Centric Environment for Building Better Interactive MLLM Assistants</h1>
+    <p class="article-title-ko">인터랙티브월드: 더 나은 상호작용형 MLLM 어시스턴트 구축을 위한 검증 가능한 인간 중심 환경</p>
+    <p class="article-sub">사람의 1인칭 시점에서 안내만 제공하고 실제 행동은 사람이 수행하는 "에고센트릭 AI 어시스턴트"를 평가하기 위해, 자연어 지시가 실제로 환경 상태를 바꾸는 최초의 폐루프(closed-loop) 시뮬레이션 환경 InteractiveWorld와 이를 기반으로 한 벤치마크 InteractiveBench를 제안한 연구.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.33966" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.33966" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: InteractiveWorld: A Verifiable Human-Centric Environment for Building Better Interactive MLLM Assistants</li>
+<li><strong>저자</strong>: Qinsi Wang, Wei Wen, Chong Zhou 등 Meta 소속 연구진이 주축이며, Duke University 소속 공동 저자(Hai Helen Li, Yiran Chen 등)가 함께 참여함. 교신저자는 Qi Qian(Meta).</li>
+<li><strong>출처</strong>: arXiv:2610.33966v1 [cs.HC] (2026년 10월)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://meta-interactiveworld.github.io/">https://meta-interactiveworld.github.io/</a> (코드: <a href="https://github.com/facebookresearch/InteractiveWorld">https://github.com/facebookresearch/InteractiveWorld</a>)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.33966">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>사람의 1인칭 시점에서 안내만 제공하고 실제 행동은 사람이 수행하는 "에고센트릭 AI 어시스턴트"를 평가하기 위해, 자연어 지시가 실제로 환경 상태를 바꾸는 최초의 폐루프(closed-loop) 시뮬레이션 환경 InteractiveWorld와 이를 기반으로 한 벤치마크 InteractiveBench를 제안한 연구.</p>
+<h2>배경 및 문제의식</h2>
+<p>웨어러블 기기를 통해 사용자의 시야를 공유하며 말로 안내해주는 에고센트릭 AI 어시스턴트는 로봇과 달리 직접 행동하지 않고 사람이 보고 듣고 행동하도록 돕는 역할을 한다. 그러나 이런 어시스턴트가 실제로 사람을 도울 수 있는지 평가하기는 어렵다. 기존 벤치마크는 대부분 미리 녹화된 1인칭 영상에 대해 질의응답을 하는 정적(static) 방식이어서, 모델이 어떤 답을 내놓든 영상(세상)이 전혀 바뀌지 않는다. 그러나 실제 어시스턴스는 동적(dynamic)이다: 어시스턴트의 매 지시가 사람의 행동과 이후 관찰 내용을 바꾸므로, 폐루프 적응·장면 추적·기억·추론·소통을 복합적으로 요구한다. 실제 사람과의 인터랙션 데이터를 대규모로 수집하는 것은 비용과 확장성 문제로 어려워, 이 간극을 메울 검증 가능한 시뮬레이션 환경이 필요했다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>InteractiveWorld</strong>: Isaac Sim 위에 구축된 최초의 사람-어시스턴트 폐루프 상호작용 환경으로, 8,000개 이상의 오브젝트와 50여 개의 장면을 포함한다. 어시스턴트는 직접 조작하지 않고 자연어로 '사람 에이전트'를 안내하며, 사람 에이전트는 관찰을 바탕으로 자율적으로 행동을 수행하고 환경은 그 행동에 따라 상태를 갱신하고 새 1인칭 시점을 렌더링한다.</li>
+<li><strong>InteractiveBench</strong>: InteractiveWorld 위에 구축된 최초의 동적·폐루프 벤치마크로, Guidance(안내), Planning(계획), Accessibility(접근성), Decision(의사결정), Prevention(사고 예방), Finding(물건 찾기) 6개 범주에 걸쳐 사람이 검수한 120개의 멀티턴 과제를 포함한다. 각 과제는 시뮬레이터 내 최종 오브젝트 상태를 기준으로 자동·검증 가능하게 채점된다.</li>
+<li>12개의 최신 MLLM을 대상으로 한 실험을 통해 현재 모델들이 상호작용형 보조 과제에서 아직 신뢰할 만한 수준에 크게 못 미친다는 것을 밝히고, 실패 원인을 지각·기억·소통 등으로 세분화하여 분석했다.</li>
+</ul>
+<h2>방법론</h2>
+<p>InteractiveWorld는 세 개의 계층으로 구성된다. (1) <strong>물리 계층(Physical Layer)</strong>: SMPL+H 기반 전신 인체 모델에 머리에 카메라를 부착해 1인칭 시점을 구현하고, 기구학적으로 구동해 넘어짐 등 물리적 오류를 방지하며, 충돌을 사전에 점검·보정한다. BEHAVIOR-1K 등에서 가져온 8,000여 개 오브젝트·50여 개 장면 자산을 지원한다. (2) <strong>인간 행동 계층(Human Action Layer)</strong>: 목표 오브젝트에 대해 A* 탐색으로 충돌 없는 경로를 계획해 자율 내비게이션을 수행하고, 오브젝트 형태·기능에 맞춰 서거나 숙이거나 쭈그리는 등 자세를 적응시켜 조작(manipulation)한다. (3) <strong>의미 계층(Semantic Layer)</strong>: [Grab], [Walk], [PutInside] 등 내비게이션·관찰·조작·일상 행동을 아우르는 36개의 실행 가능한 행동 프리미티브를 정의하여, 자연어 안내를 사람 에이전트가 수행할 구체적 행동 시퀀스로 변환(grounding)한다. 이 세 계층을 통해 "관찰-안내-실행"이 반복되는 폐루프가 형성되며, 환경이 실제 오브젝트 상태를 추적하므로 과제 성공 여부를 자동으로 검증할 수 있다.</p>
+<p>InteractiveBench 평가에서는 대상 모델이 어시스턴트 역할을, 보조 모델(기본값 Gemini 3.1 Pro)이 사람 에이전트 역할을 맡는다. 각 과제는 초기 장면 설정 → 워밍업(사전 맥락 제공) → 어시스턴트와 사람이 번갈아 안내·행동을 주고받는 폐루프 상호작용 → 어시스턴트가 $done$을 출력하거나 최대 턴 수에 도달하면 종료 → 사전 정의된 상태 조건과 실제 환경 상태를 비교해 채점, 의 순서로 진행된다. 턴당 시각 입력은 32프레임으로 제한한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Claude Fable 5.1, Claude Opus 5, Claude Opus 4.8, GPT-5.6 Sol/Luna, GPT-5.5, Muse Spark 1.1(Meta), GLM-5.3-Flash, Kimi K3, Qwen 3.8 Max, Gemini 3.1 Pro, DeepSeek V4.1 Flash 등 12개 최신 MLLM을 어시스턴트로 테스트했다. 전반적으로 가장 성능이 좋은 Claude Fable 5.1도 평균 성공률(Pass) 41.7%에 그쳤고, 나머지 모델은 모두 33.3% 이하였다(동일 조건에서 오라클 어시스턴트는 100% 성공). 특히 장기 호흡(long-horizon)이 필요한 Guidance(최고 20.0%)와 Planning(최고 25.0%) 범주에서 성능이 크게 떨어졌다. 아홉 가지 능력(오브젝트 인식, 공간 파악, OCR, 장기 기억, 계획, 지식, 오류 탐지, 적극성, 소통)별 세분화 평가에서는 모델별로 강점이 다르게 나타났다(예: Claude Fable 5.1은 기억·계획, Claude Opus 5는 적극성·소통에서 상대적으로 강함).</p>
+<p>행동 효율성(Oracle 대비 실제 행동 수 비율) 측면에서도 대부분 모델이 Accessibility·Guidance에서 Oracle 대비 2.35~3.66배의 불필요한 행동을 수행했다. 실패 원인 분석 결과 지각(perception)과 기억(memory) 오류가 전체 첫 실패의 70.4~85.7%를 차지해 가장 큰 병목으로 확인됐고, 소통(communication) 능력이 낮으면 다른 능력이 좋아도 전체 성공률이 떨어지는 경향도 관찰됐다(GLM-5.3-Flash 사례). 과제 길이가 길어질수록(특히 Guidance·Planning) 성공률이 급격히 하락하는 패턴도 확인됐다. 추가로 추론 시 숨겨진 $Memory$ 필드를 부여하는 메모리 증강 기법은 Prevention·Finding에서는 5~15%p 개선 효과가 있었지만 Planning에서는 오히려 저하되는 등 일관되지 않은 결과를 보였으며, 사람 에이전트 역할 모델을 바꿔도 어시스턴트 간 순위는 비교적 안정적으로 유지됐다.</p>
+<h2>한계점</h2>
+<p>저자들이 직접 논의한 핵심 한계는 다음과 같다. 현재 모델들은 지각·기억 오류가 누적되어 장기 상호작용에서 실패가 연쇄적으로 확산되는 경향이 있으며, 안내 메시지가 사람이 따라갈 수 있을 만큼 명확하지 않은 소통 문제도 다수 관찰되었다. 메모리 증강과 같은 단순한 개입만으로는 장기 호흡 과제에서의 상태 추적 한계를 충분히 해결하지 못했고, 범주별 효과도 일관되지 않았다. 또한 사람 에이전트 모델의 선택이 평가 결과에 영향을 미치는 것으로 나타나, 시뮬레이션된 사람 에이전트를 실제 사용자 행동에 더 가깝게 보정(behavioral calibration)하는 추가 연구가 필요하다고 언급했다.</p>
+<h2>시사점</h2>
+<p>이 연구는 정적 벤치마크로는 포착할 수 없는 '폐루프 상호작용' 능력—지속적 상태 추적, 재계획, 명확한 소통—을 평가할 수 있는 검증 가능한 시뮬레이션 플랫폼을 제시함으로써, 실세계에 배치 가능한 에고센트릭 AI 어시스턴트 연구의 발판을 마련한다. 현재 최상위 모델도 과제의 절반도 안정적으로 완수하지 못한다는 결과는, 향후 연구가 지각·기억의 견고성, 장기 계획 및 재계획, 그리고 사람이 이해하기 쉬운 단계별 소통 능력을 함께 개선하는 방향으로 나아가야 함을 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.33966" target="_blank" rel="noopener">huggingface.co/papers/2610.33966</a> · 2026-10-28</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

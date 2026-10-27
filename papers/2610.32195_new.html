@@ -1,0 +1,113 @@
+<meta charset="UTF-8">
+<title>프린키피아</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#12 · Daily Papers 2026-10-28</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 22</span>
+    </div>
+    <h1 class="article-title">Principia: Test-Time Hypotheses to Principle Construction for Scientific Discovery</h1>
+    <p class="article-title-ko">프린키피아: 과학적 발견을 위한 테스트타임 가설에서 원리 구축까지</p>
+    <p class="article-sub">Principia는 테스트 타임에 축적되는 실험 관측들로부터 비교 기반 인과 가설을 만들고 이를 귀납적으로 일반화하여 과학적 원리를 지속적으로 구축·갱신하는 LLM 기반 프레임워크다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.32195" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.32195" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Principia: Test-Time Hypotheses to Principle Construction for Scientific Discovery</li>
+<li><strong>저자</strong>: Dongki Kim, Sangwoo Park, Jinheon Baek, Soyeong Jeong, Sung Ju Hwang (KAIST, DeepAuto.ai 소속 연구진)</li>
+<li><strong>출처</strong>: arXiv:2610.32195v1 [cs.LG] (2026년 10월)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/DongkiKim95/Principia">GitHub 코드 저장소</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.32195">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>Principia는 테스트 타임에 축적되는 실험 관측들로부터 비교 기반 인과 가설을 만들고 이를 귀납적으로 일반화하여 과학적 원리를 지속적으로 구축·갱신하는 LLM 기반 프레임워크다.</p>
+<h2>배경 및 문제의식</h2>
+<p>약물 발견과 같은 복잡한 과학적 발견 과정에서는 입력(예: 분자)과 그 실험 결과 사이의 인과관계를 설명하는 과학적 원리가 처음부터 알려져 있지 않은 경우가 많다. 사람 연구자는 축적된 관측을 해석해 잠정적 설명(가설)을 만들고, 이를 일반화해 원리로 발전시키며, 새로운 관측이 들어오면 기존 설명을 재검토하는 과정을 반복한다. 그러나 이 가설-원리 구축 과정은 상당한 도메인 전문성과 시간, 비용을 요구하기 때문에 과학적 발견 속도의 병목이 된다. 저자들은 이러한 원리 구축 과정을 LLM으로 자동화하되, 개별 관측 하나만으로는 어떤 입력 특성이 결과에 기여했는지 특정하기 어렵고, 발견 과정에서 관측되는 데이터는 전체 입력 공간의 극히 일부에 불과해 LLM이 생성한 가설이 불완전하거나 틀릴 수 있다는 두 가지 난제를 지적한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>테스트 타임에 점진적으로 쌓이는 실험 관측으로부터 과학적 원리를 구성하고 지속적으로 개정하는 프레임워크 Principia를 제안했다.</li>
+<li>단일 관측이 아닌, 서로 유사한 입력 쌍을 비교해 인과 가설을 생성하는 "비교 인과 가설(comparative causal hypothesis)" 개념을 도입해 가설 생성의 근거를 명확히 했다.</li>
+<li>유사도 기반 클러스터링으로 관련 가설들을 묶고, 이를 귀납적으로 일반화해 상위 수준의 "귀납적 원리(inductive principle)"를 구성하는 메커니즘을 제시했다.</li>
+<li>새로운 관측을 이용해 기존 가설과 원리를 재검증·개정함으로써, 지식이 발견 과정 내내 진화하는 폐루프 구조를 설계했다.</li>
+<li>분자 최적화, 단백질 엔지니어링, 유전자 섭동, 분자 특성 예측 등 다양한 과학적 발견 벤치마크에서 내부 지식, 외부 검색, 경험 요약 기반 기존 방법들을 능가함을 보였다.</li>
+</ul>
+<h2>방법론</h2>
+<p>Principia는 세 가지 핵심 구성 요소로 이루어진다. 첫째, "비교 인과 가설 생성" 단계에서는 특성이 비슷한 참조 입력과 대상 입력(예: 원본 분자와 수정된 분자, 혹은 유사도가 가까운 입력들)을 짝지어 비교 증거를 구성하고, LLM이 두 입력의 공통점·차이점과 관측 결과를 연결해 인과 가설을 생성한다. 이 가설과 비교 증거는 입력을 노드로, 비교 관계를 엣지로 하는 그래프 형태의 "가설 메모리"에 저장된다. 둘째, "귀납적 원리 구성" 단계에서는 도메인에 맞는 거리 측정을 이용한 k-medoids 클러스터링으로 유사한 입력들을 묶고, 각 클러스터에 속한 가설들을 LLM이 종합해 더 일반적인 패턴을 나타내는 원리를 도출한 뒤 "원리 메모리"에 저장한다. 셋째, "새로운 관측을 통한 가설 개정" 단계에서는 새 입력에 대해 관련 가설·원리를 LLM 기반 검색으로 선택해 최적화(후보 생성)나 예측에 활용하고, 그 결과로 얻어진 새 관측을 바탕으로 사용된 가설을 개정한다. 개정된 가설과 새 관측은 다시 원리 재구성에 반영되어, 관측-가설 생성-원리 구성-지식 적용-개정이 반복되는 순환 구조를 이룬다. 실험에서는 백본 모델로 GPT-5-mini(최적화 과제) 및 GPT-5.4-mini(예측 과제)를 사용했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>연구진은 Scientific Discovery Evaluation 벤치마크를 활용해 제한된 오라클(실험) 호출 예산 하에서 분자 최적화(JNK3, GSK3β, Median1/2, Valsartan Smarts), 단백질 서열 엔지니어링(Syn-3bfo, AAV, GB1), 유전자 섭동(Scharenberg22, IFNG) 과제에서 AUC@10 등을 측정했다. Principia는 가이드 없는 최적화 기법(MolLEO), 경험 요약 기반(ExLLM), 외부 웹 검색 기반(WebSearch, DeepEvolve), 관측 기반 가설 없이 원리만 사용하는 기법(PiFlow) 등 모든 비교 기준선을 능가했다. 또한 동일한 최종 성능에 도달하는 데 ExLLM, WebSearch, MolLEO, DeepEvolve 대비 각각 약 55%, 84%, 86%, 86% 더 적은 오라클 호출만으로 충분함을 보여 비용 효율성을 입증했다. 분자 특성 예측 과제(TDC의 8개 이진 분류 과제: DILI, hERG, Ames, Skin Reaction, CYP1A2/2C9/2D6/3A4)에서도 Direct·Few-shot 예측 및 내부/외부 지식·텍스트 요약 기반 기준선 대비 정확도와 F1 점수에서 일관되게 더 높은 성능을 기록했다. 추가 분석에서는 비교 기반 가설 생성이 단일 관측 기반 가설보다 효과적이며, 원리 구성과 가설 개정 각각을 제거하면 성능이 떨어지고, LLM 기반 지식 검색을 제거해도 성능이 하락함을 확인했다. 정성적 분석에서는 구성된 원리(예: 에폭사이드/옥시란 함유 아릴 에터기가 돌연변이 유발성과 연관된다는 패턴)가 기존 과학 문헌의 결과와 부합함을 보였다.</p>
+<h2>한계점</h2>
+<p>논문에 별도의 한계점 절은 없으나, 본문 내용을 통해 다음과 같은 제약을 유추할 수 있다. 전체 프레임워크의 성능은 가설·원리를 생성하고 검색하는 LLM(GPT-5-mini/5.4-mini)의 품질에 의존하며, 비교 증거 구성 시 사용하는 거리 측정이 도메인별로 적절히 설계되어야 한다. 또한 클러스터링과 LLM 기반 검색·개정을 매 라운드마다 반복 수행해야 하므로 추가적인 연산 비용이 발생하며, 평가는 분자·단백질·유전자 중심의 과학적 발견 벤치마크에 한정되어 수행되었다.</p>
+<h2>시사점</h2>
+<p>이 연구는 과학적 발견에서 병목이 되어온 '관측에서 원리로의 번역' 과정을 LLM이 테스트 타임에 자동으로 수행할 수 있음을 보여준다. 비교 기반 가설 생성과 귀납적 일반화, 그리고 새로운 관측을 통한 지속적 개정이라는 구조는 신약 개발이나 단백질 설계처럼 지식이 사전에 완비되지 않은 실험 주도 분야에서 AI 에이전트가 단순히 후보를 제안하는 것을 넘어 재사용 가능한 과학적 지식 자체를 구축·축적하는 방향으로 발전할 수 있음을 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.32195" target="_blank" rel="noopener">huggingface.co/papers/2610.32195</a> · 2026-10-28</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

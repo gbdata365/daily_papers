@@ -1,0 +1,114 @@
+<meta charset="UTF-8">
+<title>스트림바이브</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#2 · Daily Papers 2026-10-28</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 237</span>
+    </div>
+    <h1 class="article-title">StreamVibe: Proactive Video Agents for Evolving User Intent</h1>
+    <p class="article-title-ko">스트림바이브: 진화하는 사용자 의도에 대응하는 능동형 비디오 에이전트</p>
+    <p class="article-sub">StreamVibe는 명시적 요청뿐 아니라 암묵적이고 시간에 따라 변화하는 사용자 의도까지 실시간 스트리밍 비디오에서 파악해 능동적으로 돕는 비전-언어 에이전트 프레임워크로, 이를 평가할 벤치마크(StreamVibe-Bench)와 모델(StreamVibe-VL), 상태 관리 하네스(StreamVibe-Harness)를 함께 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.34662" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.34662" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: StreamVibe: Proactive Video Agents for Evolving User Intent</li>
+<li><strong>저자</strong>: Chengzhi Liu 외 다수 (Google 소속이 주도하며, UC Santa Barbara, UC Santa Cruz, Stanford University, University of Oxford, Emory University, Columbia University 소속 연구자들이 공동 참여). 교신저자는 UC Santa Barbara 소속 Chengzhi Liu(chengzhi@ucsb.edu)이며, 해당 연구는 저자가 Google 학생 연구원(Student Researcher)으로 재직할 당시 수행됨.</li>
+<li><strong>출처</strong>: arXiv:2610.34662v1 [cs.CV] (2026년 10월, 제출일 2026년 10월 26일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://stream-vibe.github.io">stream-vibe.github.io</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.34662">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>StreamVibe는 명시적 요청뿐 아니라 암묵적이고 시간에 따라 변화하는 사용자 의도까지 실시간 스트리밍 비디오에서 파악해 능동적으로 돕는 비전-언어 에이전트 프레임워크로, 이를 평가할 벤치마크(StreamVibe-Bench)와 모델(StreamVibe-VL), 상태 관리 하네스(StreamVibe-Harness)를 함께 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>기존 비전-언어 모델은 오프라인 영상 이해에서 벗어나 실시간 스트리밍 환경에서의 능동적(proactive) 상호작용으로 발전하고 있지만, 대부분 "다운로드가 끝나면 알려줘"와 같은 명시적이고 단발성인 요청 처리에 머물러 있다. 저자들은 실제 환경에서는 (1) 사용자가 명시하지 않은 암묵적 의도(예: "막히면 도와줘")를 지속적인 관찰로부터 추론해야 하고, (2) 이전 상호작용이 환경과 작업 진행 상태를 바꾸기 때문에 과거엔 적절했던 응답이 이후엔 불필요하거나 틀린 것이 될 수 있어 작업 관련 상태를 계속 추적해야 하며, (3) 상호작용이 진행되는 동안 사용자의 의도 자체가 수정·추가·중단 등으로 계속 진화한다는 세 가지 난제를 지적한다. 이를 "의도 인지형 상호작용(intent-aware interaction)" 문제로 정의하고, 이를 다룰 벤치마크·모델 역량·컨텍스트 관리 방법이 부재하다는 점을 문제의식으로 삼는다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>StreamVibe-Bench</strong>: 명시적(Explicit)·암묵적(Implicit)·동적(Dynamic) 의도를 모두 포괄하는 최초의 통합 능동형 상호작용 벤치마크로, 평가용 4,100개 샘플과 학습용 85,000개 샘플, 물리적/디지털 환경, 포인트별(Pointwise)·궤적(Trajectory) 평가를 모두 지원한다.</li>
+<li><strong>StreamVibe-VL</strong>: 언제, 무엇을 도와야 하는지를 함께 학습하는 스트리밍 능동형 비디오 모델로, 적응형 스트리밍 지도학습(SFT)과 상호작용 핵심 시점에 집중하는 지역화 궤적 강화학습(RL)을 결합해 응답 타이밍과 답변 품질을 함께 최적화한다.</li>
+<li><strong>StreamVibe-Harness</strong>: 사용자 의도를 유연한 생애주기를 가진 영속적 상태로 유지하고, 계층적 메모리를 통해 최신 의도와 환경 상태를 지속적으로 추적·갱신하는 에이전트 하네스.</li>
+</ul>
+<h2>방법론</h2>
+<p>StreamVibe는 능동형 비서 문제를 인과적 스트리밍 의사결정 과정으로 정식화한다. 매 시점 에이전트는 현재까지의 비디오 스트림, 활성 의도 집합, 상호작용 이력만을 바탕으로 '침묵(SILENCE)' 또는 '응답(RESPONSE)'을 결정한다. 벤치마크 구축은 물리적(1인칭 일상 활동 등)·디지털(GUI 조작 등) 작업 영상을 수집한 뒤 Gemini-3.8-Flash로 증거 지점(evidence point)과 응답 시간 창, 참조 답변 후보를 생성하고, 4명의 검토자가 교차 검증해 신뢰도 높은 샘플만 채택하는 방식으로 이루어졌다. 평가는 정답 이력을 주고 개별 시점 판단만 보는 Pointwise 평가와, 모델이 스스로 생성한 이력 위에서 전체 스트림을 연속 실행하는 Trajectory 평가로 나뉜다.</p>
+<p>StreamVibe-VL의 학습은 2단계로 구성된다. 1단계(Adaptive Streaming SFT)는 결정 토큰(침묵/응답)의 가중치를 학습 분포에 맞게 동적으로 조정해 과도한 침묵이나 과잉 응답 편향을 줄이면서 응답 생성 학습도 함께 수행한다. 2단계(Localized Trajectory RL)는 전체 궤적을 한꺼번에 최적화할 때 생기는 보상 간섭 문제를 피하기 위해, 주석된 도움 시점 주변의 짧은 인과적 롤아웃만 추출해 GRPO로 최적화한다. 이때 보상은 타이밍 정합도와 내용 품질을 결합한 포인트 단위 보상(R_align)과, 중복·모순 응답을 줄이고 일관된 스트리밍 행동을 유도하는 궤적 단위 보상(R_glob)을 가중합(λ=0.7)해 구성한다.</p>
+<p>StreamVibe-Harness는 활성 의도 집합, 작업 진행/환경 상태, 과거 응답 기록으로 구성된 명시적 상호작용 상태를 유지하며, 각 의도를 독립적인 생애주기를 가진 상태 객체로 관리해 다중 의도의 동시 존재와 진화를 지원한다. 또한 계층적 메모리를 통해 최근 정보는 세밀하게, 오래된 정보는 점진적으로 압축해 보존함으로써 컨텍스트를 무한히 늘리지 않고도 관련 이력을 검색해 의사결정에 반영한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>StreamVibe-Bench 외에도 General Timing, EgoProactive, IPIBench 등 외부 능동형 상호작용 벤치마크와 MVBench, Video-MME, OVO-Bench, OVBench 등 일반 비디오 이해 벤치마크에서 평가를 수행했다. 비교 대상은 Gemini-3.1-Pro/3.8-Flash, GPT-Realtime-2.1 등 독점 모델, Qwen3-VL-8B 등 오프라인 오픈소스 모델, MMDuet2·MageVL·LiveStar·ViSpeak·VideoLLM-Online 등 오픈소스 스트리밍 모델이다.</p>
+<p>주요 결과로 StreamVibe-VL은 StreamVibe-Bench에서 오픈소스 베이스라인 대비 일관되게 우수했고, Pointwise 평가에서는 Content F1이 가장 높았으며 응답 품질에서도 독점 모델에 필적했다. SFT 대비 RL 적용 시 특히 동적 의도(Dynamic Intents)에서 더 큰 개선이 나타났고, 이 경향은 모델이 자체 생성 이력에 의존하는 Trajectory 평가에서도 유지되었다. 전반적으로 기존 베이스라인 대비 응답 타이밍·답변 품질이 10.7% 개선되었으며, Harness를 추가하면 지속적 상호작용에서의 일관성과 적응력이 추가로 12.3% 향상되었다. 반면 진단 분석에서는 (i) 암묵적·동적 의도가 명시적 의도보다 훨씬 어렵고, (ii) 재현율(Recall)을 높이면 불필요한 응답(오탐)도 함께 늘어나 선택성 확보가 쉽지 않으며, (iii) 상호작용이 길어질수록 타이밍 F1이 떨어지고 후반부일수록 재현율이 급격히 하락하는 등 지속 상호작용에서 성능 저하가 두드러진다는 점이 확인되었다.</p>
+<h2>한계점</h2>
+<p>저자들은 현재 설정이 사용자 의도의 진화를 비교적 단순화된 형태(수정·추가·중단)로 다루고 있으며, 실제 세계에서는 의도 변화와 환경 변화가 훨씬 복잡하고 긴밀하게 얽혀 있을 수 있다고 인정한다. 즉 새로운 관찰과 작업 결과, 그리고 에이전트의 이전 지원 행위 자체가 사용자의 새로운 목표나 제약을 다시 만들어내는 "공진화(co-evolving)" 상호작용은 현재 프레임워크에서 충분히 다루지 못하고 있다. 또한 실험적으로도 모델들이 암묵적·동적 의도 이해에서 여전히 한계를 보이고, 재현율과 오탐률 사이의 트레이드오프를 완전히 해결하지 못했으며, 상호작용이 길어질수록(특히 자체 생성 이력을 누적해 사용하는 Trajectory 설정에서) 성능이 저하되는 현상이 관찰되어, 장기 지속 상호작용에서의 안정성 확보는 여전히 미해결 과제로 남아 있다.</p>
+<h2>시사점</h2>
+<p>이 연구는 능동형 비디오 에이전트 연구의 초점을 "언제 응답할지"를 넘어 "사용자의 의도가 무엇이고 어떻게 변화하는지"까지 모델이 내재적으로 다룰 수 있어야 한다는 방향으로 넓힌다. 벤치마크·모델·상태 관리 하네스를 분리해 제시함으로써, 정책 학습(모델 자체의 응답 판단 능력)과 상태 추적(외부 메모리/생애주기 관리)이 상호 보완적으로 결합될 때 더 견고한 능동형 상호작용이 가능함을 보여준다. 이는 향후 실시간 비서, 작업 가이드 시스템, GUI 자동화 에이전트 등 장시간 지속되는 멀티턴 상호작용을 다루는 시스템 설계에 참고할 수 있는 벤치마크와 학습 방법론을 제공한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.34662" target="_blank" rel="noopener">huggingface.co/papers/2610.34662</a> · 2026-10-28</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

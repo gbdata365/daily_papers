@@ -1,0 +1,114 @@
+<meta charset="UTF-8">
+<title>워크 에이전트</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#6 · Daily Papers 2026-10-28</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 97</span>
+    </div>
+    <h1 class="article-title">Work Agents: Systems, Capabilities, and Optimization</h1>
+    <p class="article-title-ko">워크 에이전트: 업무 수행 에이전트의 시스템, 역량, 최적화</p>
+    <p class="article-sub">파운데이션 모델과 런타임 하니스가 결합해 상태를 가진 업무 공간(workspace)에서 실제 디지털 업무를 수행하고 검증 가능한 결과를 산출하는 시스템을 "워크 에이전트(work agent)"로 정의하고, 이를 특징짓는 두 가지 조건 축(업무 지속성·업무 개방성), 다섯 가지 업무 형태, 다섯 가지 핵심 역량, 그리고 최적화·평가 방법론까지 통합적으로 정리한 포지션 성격의 서베이 논문이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.35845" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.35845" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Work Agents: Systems, Capabilities, and Optimization</li>
+<li><strong>저자</strong>: Shanghai Jiao Tong University, The University of Hong Kong, The Hong Kong University of Science and Technology (Guangzhou), Tsinghua University, The Chinese University of Hong Kong, Zhejiang University, Sun Yat-sen University, Central South University 소속 연구진의 공동연구. 교신저자는 HKUST(광저우), HKU, 상하이교통대학 소속 연구자들임.</li>
+<li><strong>출처</strong>: arXiv:2610.35845v1 [cs.LG] (2026년 10월)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 GitHub 저장소("Awesome Work Agents")와 별도의 프로젝트 홈페이지 링크가 아이콘 형태로 표기되어 있으나, PDF 텍스트에서 실제 URL 문자열은 추출되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.35845">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>파운데이션 모델과 런타임 하니스가 결합해 상태를 가진 업무 공간(workspace)에서 실제 디지털 업무를 수행하고 검증 가능한 결과를 산출하는 시스템을 "워크 에이전트(work agent)"로 정의하고, 이를 특징짓는 두 가지 조건 축(업무 지속성·업무 개방성), 다섯 가지 업무 형태, 다섯 가지 핵심 역량, 그리고 최적화·평가 방법론까지 통합적으로 정리한 포지션 성격의 서베이 논문이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>파운데이션 모델의 추론·계획·도구사용 능력이 발전하면서 에이전트가 맡는 업무는 짧은 정보 생성 작업을 넘어 소프트웨어 엔지니어링, 사무업무, 웹·컴퓨터 사용, 기업 운영, 과학연구 등 복잡한 생산성 작업으로 확장되고 있다. Codex, Claude Code 같은 프론티어 에이전트는 여러 날에 걸친 멀티세션 작업과 결과 평가·피드백 기반 수정까지 수행한다. 그러나 저자들은 기존 연구가 에이전트가 위임받은 업무를 "신뢰성 있게" 완수하는 방식에 대해 통합된 관점을 결여하고 있다고 지적한다. 즉 과제 목표, 모델 역량, 시스템 메커니즘, 환경 상태, 결과 검증이 하나의 프로세스로 연결되지 못하고 모델 단위 평가나 개별 벤치마크 중심으로 파편화되어 있다는 문제의식에서 출발한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>통합 시스템 프레임워크</strong>: 워크 에이전트를 과제(Task), 모델(Model), 하니스(Harness), 업무공간(Workspace), 업무결과(Outcome), 검증(Verification)의 6요소로 구성된 시스템으로 정의하고, 모델-하니스 폐루프 실행과 결과 검증을 수식으로 정식화한다.</li>
+<li><strong>두 축의 조건 분류</strong>: 업무가 전달 즉시 종료되는지 아니면 여러 단계·이벤트에 걸쳐 지속되는지를 뜻하는 "업무 지속성(work persistence)"과, 업무 수행에 필요한 대상·정보·규칙이 사전에 주어지는지 실행 중에 발견해야 하는지를 뜻하는 "업무 개방성(work openness)"이라는 서로 독립적인 두 차원을 제시하고, 이 조합으로 질의응답·정보탐색·서비스 워크플로우·지속적 업무의 네 가지 전형적 상황을 구분한다.</li>
+<li><strong>다섯 가지 업무 형태(work forms)</strong>: 대화 수준(정보 산출), 원자적 행동 수준(단일 객체 수정), 다단계 수준(의존적 행동의 목표 달성), 워크플로우 수준(단계·인수인계 조정), 업무공간 수준(관련 객체·의존관계 발견)으로 업무 범위와 복잡도를 단계적으로 분류하고, 2023~2026년 발표된 약 90개 대표 벤치마크·방법론을 이 체계에 매핑한다.</li>
+<li><strong>다섯 가지 핵심 역량군</strong>: 지각과 이해, 추론과 의사결정, 계획과 조정, 실행과 상태관리, 검증·복구·재계획으로 구성된 역량군을 제시하고, 각 업무 형태가 이 역량들에 요구하는 수준을 정리한다.</li>
+<li><strong>최적화 체계</strong>: 훈련 환경 구축, 코퍼스·궤적 큐레이션, 피드백 설계부터 모델 최적화(사전·중간·사후학습), 하니스 최적화(관찰·행동 인터페이스, 실행 제어, 장기 컨텍스트·메모리·스킬), 모델-하니스 공동적응 및 재귀적 자기개선까지를 체계적으로 분류한다.</li>
+<li><strong>평가 체계 정리 및 미래 연구 의제</strong>: 벤치마크·평가방법론·지표·오픈소스 실행환경을 업무 결과 중심으로 재구성하고, 성능-비용 트레이드오프와 경제적 가치(Agentic ROI) 개념을 소개하며, 개인 업무 에이전트·휴먼 디지털 트윈·조직 업무 시스템이라는 미래 응용과 이를 위한 기술적 과제(환경, 지속성, 검증), 그리고 업무 실행 루프와 역량 개선 루프의 상호작용이라는 연구 의제를 제시한다.</li>
+</ul>
+<h2>방법론</h2>
+<p>이 논문은 새로운 모델이나 벤치마크를 제안하는 실증 연구가 아니라, 2023년부터 2026년까지 발표된 약 90개의 대표적 에이전트 연구(벤치마크, 환경, 프레임워크, 상용 시스템 사례 등)를 체계적으로 수집·분석하여 저자 고유의 개념적 분류체계(taxonomy)를 구성하는 서베이/포지션 방법론을 취한다. 구체적으로는 (1) 기존 연구들을 다섯 업무 형태 축을 따라 매핑하고(Figure 4), (2) 각 업무 형태가 다섯 핵심 역량에 어떤 요구를 가하는지 표로 정리하며(Table 3), (3) 학습 환경 구축, 코퍼스·궤적 큐레이션, 피드백 설계에 관한 대표 방법들을 메커니즘별로 비교한다(Table 4). 이러한 방식으로 흩어져 있던 개별 연구 성과들을 하나의 통일된 틀 안에서 재해석하는 것이 핵심 방법론이다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>별도의 모델 학습이나 벤치마크 실험은 수행하지 않았으며, 기존 문헌에 대한 분석적 종합이 결과에 해당한다. 약 90개 대표 연구를 다섯 단계 업무 형태로 분류한 결과, 업무 범위가 대화 수준에서 업무공간 수준으로 확장될수록 에이전트가 추적해야 할 의존관계와 검증 범위가 함께 늘어난다는 경향을 확인했다. 또한 성능-비용 트레이드오프 관련 선행 연구(HAL, HarnessTax, Harness-Bench 등)를 종합해, 동일한 모델이라도 어떤 하니스(실행 인터페이스·도구 구성)를 사용하느냐에 따라 작업 성공률이 비슷해도 호출 비용이 크게 달라질 수 있음을 보여주며, 모델 단독 비교보다 모델-하니스 조합 단위의 Pareto 분석이 필요하다고 주장한다. 경제적 가치 평가와 관련해서는 GDPval, Remote Labor Index, OmegaUse-OfficeVal 등 기존 벤치마크들의 과제 분포가 실제 노동시장 구조와 차이가 있다는 점을 지적하고, 과업 품질·인간이 절약한 시간·사용 비용을 함께 고려하는 "Agentic ROI" 개념을 통해 실제 배포 효용을 평가해야 한다고 제안한다.</p>
+<h2>한계점</h2>
+<p>저자들이 별도의 한계점 섹션을 두지는 않았지만, 논문 전반에서 다음과 같은 제약이 드러난다. 첫째, 다루는 범위를 사무 생산성, 전문 서비스, 기업 운영, 소프트웨어 엔지니어링, 과학연구 등 디지털 지식노동으로 한정하여, 물리적 로봇이나 실세계 신체 행동이 필요한 업무는 다루지 않는다. 둘째, 제시된 분류체계와 프레임워크는 어디까지나 개념적 정리이며, 이를 뒷받침하는 새로운 실증 평가나 독자적 벤치마크·모델을 제시하지는 않는다(기존 연구의 재구성과 종합에 가깝다). 셋째, 개인 업무 에이전트, 휴먼 디지털 트윈, 조직 업무 시스템 등 미래 응용과 지속적 위임(persistent delegation)에 관한 논의는 상당 부분 해결되지 않은 연구 질문으로 남아 있으며 구체적인 해법 제시는 제한적이다. 넷째, 경제적 가치·ROI 평가 방법론은 아직 초기 단계로, 저자들 스스로도 기존 벤치마크의 과업 대표성 부족과 인건비 환산의 어려움을 지적하고 있다.</p>
+<h2>시사점</h2>
+<p>이 논문은 에이전트 연구·개발자에게 모델 성능 단일 지표만이 아니라 하니스(관찰·행동 인터페이스, 메모리, 실행 제어)와 업무공간 설계, 결과 검증 메커니즘을 함께 고려해야 함을 강조한다. 벤치마크나 시스템을 설계할 때 업무 지속성과 개방성이라는 두 축을 명시적으로 고려하면, 기존 평가 체계가 놓치고 있는 사각지대(예: 장기간 지속되는 책임, 실행 중 발견해야 하는 과제 세계)를 식별하는 데 도움이 될 수 있다. 또한 향후에는 업무를 실제로 수행하는 "업무 실행 루프"와 그 경험으로부터 배우는 "역량 개선 루프"를 분리하지 않고 결합하여, 지속적인 서비스 제공 중에도 안전하게 자기개선할 수 있는 시스템 설계가 중요한 연구 방향으로 제시된다. 실무자 입장에서는 단순 과제 정확도보다 품질·시간 절감·비용을 함께 고려하는 "Agentic ROI" 관점으로 에이전트의 실제 배포 가치를 평가할 것을 제안한다는 점도 실용적 시사점이다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.35845" target="_blank" rel="noopener">huggingface.co/papers/2610.35845</a> · 2026-10-28</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

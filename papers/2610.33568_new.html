@@ -1,0 +1,107 @@
+<meta charset="UTF-8">
+<title>트래젝토리2짐</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#1 · Daily Papers 2026-10-28</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 330</span>
+    </div>
+    <h1 class="article-title">Trajectory2Gym: Decision-Grounded Compositional Interaction Synthesis for Tool-Use Agents</h1>
+    <p class="article-title-ko">트래젝토리2짐: 도구 사용 에이전트를 위한 결정 기반 구성적 상호작용 합성</p>
+    <p class="article-sub">도구 사용 에이전트 학습에서 "성공한 궤적"이 아니라 "에이전트가 실제로 관찰 가능한 정보에 근거해 내린, 다단계 의존 관계를 갖춘 결정"만을 선별·구성해 지도학습 신호로 사용함으로써, 여러 규모의 Qwen3 모델에서 Tau1·Tau2·BFCL 세 벤치마크 성능을 일관되게 크게 끌어올리는 Trajectory2Gym 프레임워크를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.33568" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.33568" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Trajectory2Gym: Decision-Grounded Compositional Interaction Synthesis for Tool-Use Agents</li>
+<li><strong>저자</strong>: Yihao Hu, Zhihao Wen 등 8인. Westlake University와 Ant International 소속 연구진이 공동 수행 (Zhihao Wen이 공동 1저자, Wei Wu와 Tao Lin이 교신저자).</li>
+<li><strong>출처</strong>: arXiv:2610.33568v1 [cs.CL] (2026년 10월)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://yihaohu0118.github.io/Trajectory2Gym-page/">Trajectory2Gym 홈페이지</a> / <a href="https://github.com/yihaohu0118/Trajectory2Gym">코드(GitHub)</a> / <a href="https://huggingface.co/datasets/mis2/Trajectory2gym">데이터셋(Hugging Face)</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.33568">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>도구 사용 에이전트 학습에서 "성공한 궤적"이 아니라 "에이전트가 실제로 관찰 가능한 정보에 근거해 내린, 다단계 의존 관계를 갖춘 결정"만을 선별·구성해 지도학습 신호로 사용함으로써, 여러 규모의 Qwen3 모델에서 Tau1·Tau2·BFCL 세 벤치마크 성능을 일관되게 크게 끌어올리는 Trajectory2Gym 프레임워크를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>도구 사용 에이전트(tool-use agent)는 사용자의 요청, 중간 관찰, 상태 변화가 연쇄적으로 다음 행동을 결정짓는 복합적(compositional) 상호작용을 자주 다룬다. 그러나 기존의 궤적 수집·학습 파이프라인은 대부분 "최종 작업이 성공했는가"만으로 궤적을 필터링하여 학습 데이터로 사용한다. 저자들은 이런 방식에 두 가지 근본적 결함이 있다고 지적한다. 첫째는 구성적 커버리지(compositional coverage) 부족으로, 수집된 궤적 후보 3만 4772개 중 약 41%는 지도 대상이 될 결정이 2개 이하였고, 10%만이 실제 오류 이후 복구 과정을 포함한 결정을 담고 있었다. 둘째는 결정 근거성(decision grounding) 문제로, API 호출이 성공적으로 실행되었다고 해서 그 행동이 에이전트가 당시 볼 수 있었던 정보로 정당화된다는 보장은 없다는 것이다. 즉 성공 여부만으로는 궤적이 "무엇을 가르치는지" 또는 "모방할 가치가 있는지"를 판단할 수 없다는 문제의식에서 출발한다.</p>
+<h2>핵심 기여</h2>
+<p>논문은 구성적 커버리지와 결정 근거성을 에이전트가 볼 수 있는 이력(agent-visible history)에 대한 결정 단위(decision-level) 지도 마스크로 공식화하고, 이를 만족하는 학습 데이터를 자동으로 구축하는 Trajectory2Gym을 제안한다. 주요 기여는 다음 세 가지로 요약된다. (1) 네이티브 실행 환경에서 지원이 부족한(under-supported) 상호작용 구조를 의도적으로 구성·실행하는 구성적 상호작용 합성, (2) 실제로 실행되고 에이전트에게 노출된 관찰·행동 이력에 의해 뒷받침되는 결정만을 학습 대상으로 인증하는 결정 근거 지도 기법, (3) 능력 경로(capability path)별 지원 깊이를 고려해 궤적을 선택하고 부모(원본 궤적) 단위로 정규화해 학습 가중치를 부여하는 구조적 지원 학습(structural-support learning)이다.</p>
+<h2>방법론</h2>
+<p>Trajectory2Gym은 세 단계로 구성된다. 첫째, 의미적 행동·인자·관찰 결과·복구·분기·종료 등을 아우르는 공유 능력 어휘(capability vocabulary) 위에서 경로(path)를 정의하고, 생성기(generator)가 해당 경로에 맞는 요청과 초기 상태를 만들면 교사(teacher) 정책이 실제 네이티브 환경에서 과제를 수행해 실행 로그를 얻는다. 지원이 부족한 경로를 우선적으로 목표로 삼아 생성기를 조건화함으로써 희귀한 구조도 확보한다. 둘째, 실행 로그로부터 에이전트가 실제로 접근 가능했던 맥락(visible context)만 추출하고, 각 행동이 (a) 오류 없이 인증된 실행이었는지, (b) 식별자 등 필요한 정보가 이전에 보여진 관찰으로부터 근거를 갖는지를 검사해 "결정 근거성"을 판정한다. 거절된 호출이라도 그 결과가 맥락으로는 유지되지만 모방 손실의 대상(target)이 되지는 않으며, 이후 올바른 복구 행동만이 지도 대상이 된다. 작업 완료 여부와 요구되는 행동 순서(ordered requirements)도 함께 검사해 최종 지도 마스크를 결정한다. 셋째, 인증된 궤적 풀에서 경로별 목표 지원 개수(target support depth)를 설정해 과소/과대 대표된 구조의 균형을 맞추는 구조적 선택을 수행하고, 하나의 의미적 궤적이 여러 학습 예시로 렌더링되더라도 전체 손실에서 동일한 가중치를 갖도록 부모 단위로 정규화한 지도 미세조정(parent-normalized SFT)을 적용한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>1.7B부터 30B-A3B까지 다섯 가지 규모의 Qwen3 모델을 대상으로 Tau1, Tau2, BFCL(Berkeley Function-Calling Leaderboard) 세 벤치마크에서 평가했다. 각 모델은 공개된 초기화 체크포인트에서 시작해 Trajectory2Gym이 구성한 데이터로 1 epoch 전체 파라미터 SFT만 수행했으며, 별도의 강화학습은 사용하지 않았다. 결과적으로 모든 규모에서 Tau1·Tau2 평균이 20~41점, 세 벤치마크 평균이 16.9~29.8점 상승했다. 특히 4B 모델은 공개된 30B-A3B 초기화 모델의 Tau2 점수(28.33)를 능가하는 69.17을 기록했고, 8B 모델은 여러 공개 에이전트 학습 체크포인트(강화학습 기반 포함) 및 폐쇄형 참조 모델과 비교해도 세 벤치마크 평균이 가장 높았다. BFCL에서는 특히 멀티턴(multi-turn) 도구 사용 범주에서 개선폭이 가장 컸다. 매칭된 구성 요소별 제거 실험(ablation)에서는 목표 지향적 경로 확장, 결정 근거 지도, 구조적 선택, 부모 정규화 네 가지 설계 요소 모두가 양의 기여를 했으며, 특히 부모 정규화가 가장 큰 단일 개선(8.04점)을 보였다. 민감도 분석에서는 구조적 지원 깊이를 무작정 늘린다고 성능이 계속 좋아지는 것은 아니며, 얕은 설정이 오히려 더 나은 경우도 있어 지원 배분이 단순한 데이터량 문제가 아님을 보였다.</p>
+<h2>한계점</h2>
+<p>논문은 폐쇄형 시스템 및 강화학습 기반 비교 모델들과의 비교가 학습 데이터, 모델 계열, 컨텍스트 예산이 서로 달라 구성 요소 단위의 엄밀한 공정 비교(matched comparison)는 아니라는 점을 명시한다. 또한 구조적 지원 깊이 설정은 사전에 규모별로 정해진 스케줄에 의존하며, 이것이 항상 최적은 아님을 자체 민감도 실험이 보여준다(지원 깊이를 늘려도 성능이 단조 증가하지 않음). BFCL 중 Live Simple 범주처럼 일부 단일 호출 질의 유형에서는 오히려 점수가 하락하는 경우도 관찰되었는데, 저자들은 이를 상태 유지형 과제에 최적화된 학습이 즉각적인 단일 호출 질의에는 부분적으로 상충될 수 있음을 시사하는 것으로 해석한다. 본 방법은 현재 네이티브 환경에서의 오프라인 궤적 구성에 한정되며, 온폴리시 롤아웃이나 웹·소프트웨어·터미널 에이전트로의 확장은 향후 과제로 남아 있다.</p>
+<h2>시사점</h2>
+<p>이 연구는 도구 사용 에이전트의 성능 향상이 단순히 더 많은 성공 궤적을 수집하는 데서 오는 것이 아니라, 궤적이 어떤 의존 관계를 실제로 구현하고 있으며 그 결정이 에이전트에게 보였던 정보로 얼마나 정당화되는지에 달려 있음을 체계적으로 보여준다. 이는 향후 에이전트 학습 데이터 파이프라인에서 데이터 양(volume)뿐 아니라 구조적 커버리지와 결정 수준의 근거성을 별도로 추적·관리해야 한다는 설계 지침을 제시하며, 강화학습 없이도 결정 근거 기반의 데이터 구성만으로 멀티턴·상태 유지형 과제에서 상당한 개선이 가능함을 보여준다는 점에서 실용적 함의가 크다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.33568" target="_blank" rel="noopener">huggingface.co/papers/2610.33568</a> · 2026-10-28</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

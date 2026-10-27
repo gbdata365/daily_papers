@@ -1,0 +1,110 @@
+<meta charset="UTF-8">
+<title>실행 가능한 계획과 자가 증류 트랜스퓨전을 통한 공간 오디오 생성 및 편집</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#9 · Daily Papers 2026-10-28</span>
+      <span class="cat-tag">생성모델</span>
+      <span class="upvote-tag">▲ 38</span>
+    </div>
+    <h1 class="article-title">Spatial Audio Generation and Editing with Executable Plans and Self-Distilling Transfusion</h1>
+    <p class="article-title-ko">실행 가능한 계획과 자가 증류 트랜스퓨전을 통한 공간 오디오 생성 및 편집</p>
+    <p class="article-sub">AMBIT은 실행 가능한 장면 계획(SCENEPLAN)과 트랜스퓨전 기반 통합 아키텍처, 그리고 온라인 자가증류 후처리를 결합하여, 1차 앰비소닉스(FOA) 형식의 공간 오디오를 텍스트로부터 생성하고 지시문으로 정밀하게 편집할 수 있는 프레임워크다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.34415" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.34415" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Spatial Audio Generation and Editing with Executable Plans and Self-Distilling Transfusion</li>
+<li><strong>저자</strong>: Kam Man Wu, Yu Zhang, Pengjun Fang, Mingfei Chen, Weijia Chen, Zeyue Tian, Qifeng Chen 등. HKUST(홍콩과기대), Noiz AI, University of Washington 소속 연구진이 공동 저술</li>
+<li><strong>출처</strong>: arXiv:2610.34415v1 [cs.SD] (2026년 10월)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://wjm-george.github.io/AMBIT/">https://wjm-george.github.io/AMBIT/</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.34415">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>AMBIT은 실행 가능한 장면 계획(SCENEPLAN)과 트랜스퓨전 기반 통합 아키텍처, 그리고 온라인 자가증류 후처리를 결합하여, 1차 앰비소닉스(FOA) 형식의 공간 오디오를 텍스트로부터 생성하고 지시문으로 정밀하게 편집할 수 있는 프레임워크다.</p>
+<h2>배경 및 문제의식</h2>
+<p>공간 오디오 제작은 몰입형 미디어, 가상 음향, 인터랙티브 환경 등에서 점점 더 중요해지고 있으며, 텍스트 기반 생성과 지시문 기반 편집을 모두 요구한다. 편집 작업은 특히 어떤 소스를 바꾸고 어떤 소스는 그대로 유지할지를 의미론적·구조적 수준에서 결정해야 하고, 참조 오디오로부터 잔여 음향 디테일을 가져와야 한다는 추가적인 난제가 있다. 기존 연구들은 FOA 생성에서 점점 더 풍부한 공간 제어를 제공해왔지만(ImmerseDiffusion, SonicMotion, SwanWeave 등), 언어적 의도·소스 속성·실제 렌더링된 음향을 일관되게 정렬하는 통합된 프레임워크는 부족했다. 저자들은 (1) 3차원 소스 제어에 언어를 접지하는 문제, (2) 압축된 잠재 표현에서 음향과 공간 구조를 보존하는 문제, (3) 이산적 계획(planning)과 연속적 렌더링(rendering) 간의 학습-추론 불일치(paired training vs. student 예측에 의존하는 inference)를 핵심 과제로 제시한다.</p>
+<h2>핵심 기여</h2>
+<p>AMBIT은 세 가지 상호 연결된 기여로 구성된다.
+1. <strong>소스 기반 트랜스퓨전 계획·렌더링</strong>: 자기회귀(AR) 방식으로 소스의 내용, 활동 구간, 3D 경로를 명시하는 실행 가능한 SCENEPLAN을 예측하고, 이를 결정론적으로 컴파일하여 동일한 공유 백본 내에서 정류 흐름(rectified-flow) 기반 FOA 렌더링 조건으로 사용한다. 편집 시에는 계획이 유지할 소스와 변경할 소스를 모두 명시하며, 대조적(contrastive) 특징이 변경 요청을 접지하고 전체 참조 잠재값이 잔여 음향 디테일을 제공한다.
+2. <strong>FOA 인식 연속 VAE</strong>: 공유 디코더 기반의 전방향(omnidirectional) W 채널 복원, 비대칭 그룹 KL 정규화, 공간 공분산 매칭(spatial covariance matching)을 결합하여 채널 간 에너지·위상·일관성 구조를 보존한다.
+3. <strong>결합 트랜스퓨전 온-폴리시 자가증류(Joint Transfusion OPSD)</strong>: 학습-추론 불일치를 줄이기 위해, 학생 모델이 스스로 생성한 접두(prefix)와 샘플링 상태에 대해 두 개의 고정된 교사 모델(계획 교사, 렌더링 교사)이 지도(supervise)하는 방식으로 플래너와 렌더러를 동시에 정제한다.</p>
+<h2>방법론</h2>
+<p>AMBIT은 Transfusion 스타일의 트랜스포머(공유 블록 + 태스크별 인터페이스, 약 3억3천만 파라미터)를 사용하여, 자기회귀(AR) 방식의 플래너와 Diffusion Transformer(DiT) 기반 렌더러가 동일한 백본의 서로 다른 모드로 동작한다. 사용자의 생성/편집 지시문은 AR 플래너를 통해 소스별 설명, 활동 구간, 정적/동적 3D 궤적을 담은 SCENEPLAN 토큰 시퀀스로 변환되고, 이는 결정론적 컴파일러에 의해 프레임 정렬된 의미론적 토큰과 공간 제어 신호로 바뀐다. 렌더링 단계에서는 이 조건을 바탕으로 정류 흐름(rectified flow) 목적함수로 FOA 잠재 속도를 예측하고 Euler 샘플러로 적분하여 VAE 디코더가 최종 파형을 복원한다. 편집을 위해 AMBIT CLAP이라는 자체 대조학습 기반 오디오-텍스트 정렬 모델을 훈련하여 의미/장면 정렬 특징을 플래너에 제공하며, 변경이 필요한 부분은 음향적으로 다르게(네거티브로), 보존할 부분은 포지티브로 대조하도록 학습한다. VAE는 Stable Audio Open의 연속 오디오 VAE를 4채널로 확장하고, W 채널 보조 재구성(비대칭 그룹 KL), 지역 STFT 공분산을 이용한 에너지 비율·위상·코히런스 매칭 손실(SCM)을 추가로 적용한다. 마지막으로 OPSD 단계에서는 학생이 생성한 접두사에 대해 고정된 플래닝 교사가 토큰 분포 증류를, 학생이 방문한 샘플링 상태에 대해 고정된 렌더링 교사가 clean latent 증류를 수행하며, 두 손실을 결합해 공유 트랜스포머와 모드별 모듈을 함께 업데이트한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>학습에는 160만 개의 합성·녹음 FOA 샘플과 100만 개의 편집 쌍(음성, 음악, 환경음 포함)을 사용했으며, VAE는 100만 개 FOA 클립으로 사전학습했다. 평가는 생성 요청 8,000건, 편집 쌍 5,000건, VAE 테스트 클립 2,000건으로 구성된다. VAE 재구성 평가에서 AMBIT VAE는 DAC, EnCodec, WavTokenizer 대비 W 채널 SI-SDR, 방향 오차, 세기 코히런스 오차, paired CLAP 네 지표 모두에서 가장 우수했다. 생성 품질 평가에서는 AudioX-Turbo, TangoFlux, BEWO 등과 비교해 음악·사운드 도메인에서 더 높은 paired CLAP과 낮은 FAD를 보였고, 음성 도메인에서는 WER/CER이 가장 낮았다(단, UTMOS는 Qwen3-TTS보다 낮음). 편집 품질 평가에서는 SwanWeave를 포함한 7개 베이스라인 대비 6개 지표(paired CLAP, FD, FAD, KL, LSD 등) 모두에서 최고 성능을 기록했다. 공간 정확도 평가(GCC, CRW, FSAD, DOA, 방위각/궤적 오차 등)에서도 장면·객체 수준 모두에서 베이스라인을 능가했으며, 편집되지 않은 소스의 방향·레벨·파형 보존 성능도 가장 우수했다. 마지막으로 OPSD 후처리는 지속적 SFT, ReFL, GRPO 변형 대비 9개 전체 지표에서 최고 성능을 보여 결합 자가증류의 효과를 확인했다.</p>
+<h2>한계점</h2>
+<p>저자들은 현재 SCENEPLAN 구성이 약 15초 길이의 장면까지만 지원한다는 점을 명시적인 한계로 언급한다. 더 긴 사운드스케이프로 확장하는 것과, 연속적인 다중 편집에 걸친 음향적 일관성을 평가하는 것을 향후 과제로 제시한다.</p>
+<h2>시사점</h2>
+<p>AMBIT은 이산적 장면 계획(기호적 소스 제어)과 연속적 오디오 렌더링을 하나의 트랜스퓨전 백본 안에서 통합하고, 학습-추론 간 불일치를 온-폴리시 자가증류로 보정함으로써 공간 오디오 생성·편집의 품질과 제어 가능성을 함께 높일 수 있음을 보여준다. 이는 텍스트 기반 3D 오디오 콘텐츠 제작, 가상/증강현실 음향 디자인, 기존 오디오 신 중 일부만 자연어로 수정하는 인터랙티브 편집 도구 등에 직접 응용될 수 있는 접근으로, 특히 "무엇을 바꾸고 무엇을 보존할지"를 명시적으로 분리해 다루는 설계가 실용적 오디오 편집 워크플로우에 시사하는 바가 크다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.34415" target="_blank" rel="noopener">huggingface.co/papers/2610.34415</a> · 2026-10-28</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

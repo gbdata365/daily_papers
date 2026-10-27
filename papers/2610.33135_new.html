@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>월드캐스트</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#8 · Daily Papers 2026-10-28</span>
+      <span class="cat-tag">생성모델</span>
+      <span class="upvote-tag">▲ 42</span>
+    </div>
+    <h1 class="article-title">WorldCast: World-Consistent Character Video Generation with Large-Angle Camera Control</h1>
+    <p class="article-title-ko">월드캐스트: 대각도 카메라 제어를 지원하는 월드-컨시스턴트 캐릭터 비디오 생성</p>
+    <p class="article-sub">초기 시점에서는 보이지 않던 캐릭터 영역까지 포함해, 대각도(large-angle) 카메라 회전·이동·반경 변화에도 캐릭터의 기하·외형·정체성을 일관되게 유지하며 영상을 생성하는 프레임워크 WorldCast와 이를 학습·평가하기 위한 대규모 데이터셋 CLACT를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.33135" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.33135" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: WorldCast: World-Consistent Character Video Generation with Large-Angle Camera Control</li>
+<li><strong>저자</strong>: Lei Cao, Yu Liu 등 10인. 우한대학교(Wuhan University) 전자정보대학·로보틱스대학과 샤오미(Xiaomi Inc.) 산하 MiLM Plus 소속 연구진의 공동 연구.</li>
+<li><strong>출처</strong>: arXiv:2610.33135v1 [cs.CV] (2026년 10월)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://pixctrol.github.io/WorldCast/">https://pixctrol.github.io/WorldCast/</a> (코드: <a href="https://github.com/PixCtrol/WorldCast">GitHub</a>, 데이터셋: <a href="https://huggingface.co/datasets/ly56/CLACT">Hugging Face</a>, 모델 카드: <a href="https://huggingface.co/ly56/worldcast">Hugging Face</a>)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.33135">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>초기 시점에서는 보이지 않던 캐릭터 영역까지 포함해, 대각도(large-angle) 카메라 회전·이동·반경 변화에도 캐릭터의 기하·외형·정체성을 일관되게 유지하며 영상을 생성하는 프레임워크 WorldCast와 이를 학습·평가하기 위한 대규모 데이터셋 CLACT를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>영화적인 캐릭터 영상 제작에는 시각적 품질뿐 아니라 정밀한 카메라 제어가 필요하다. 그러나 기존의 카메라 제어 비디오 생성 기법들은 회전·이동·반경 변화가 복합적으로 섞인 대각도 궤적, 그리고 임의의 초기 방위각에서 출발하는 궤적을 정확히 따라가지 못하는 한계가 있다. 더 큰 문제는 이러한 큰 시점 변화가 초기 프레임에서는 전혀 관측되지 않았던 캐릭터 부위(예: 뒷모습, 측면)를 새로 드러낸다는 점으로, 이로 인해 기하학적 왜곡, 외형 열화, 정체성(identity) 붕괴가 발생한다. 즉 목표 카메라 궤적이 (1) 비디오가 따라야 할 기하학적 제약과 (2) 새로 합성해야 할 미관측 캐릭터 정보라는 두 가지 과제를 동시에 결정하는 구조적으로 얽힌 문제다. 저자들은 기존 카메라 모션 데이터셋이 복잡한 대각도 궤적이나 동일 캐릭터의 다중 시점 관측을 충분히 제공하지 못해 이 문제를 체계적으로 연구하기 어렵다는 점도 지적한다.</p>
+<h2>핵심 기여</h2>
+<p>논문은 크게 세 가지를 기여한다. 첫째, 다양한 대각도 카메라 궤적과 캐릭터의 다중 시점 관측을 함께 제공하는 캐릭터 중심 데이터셋 겸 벤치마크 <strong>CLACT</strong>(Character-centric, Large-Angle Camera Trajectories)를 구축했다. 둘째, 궤적에 정합된 기하학적 가이던스와 다중 시점 캐릭터 메모리를 결합한 영상 생성 프레임워크 <strong>WorldCast</strong>를 제안했다. 셋째, 다중 시점 앵커(anchor) 이미지의 기하 정보를 목표 카메라 궤적과 동일한 좌표계로 정렬해, 시점에 맞는 캐릭터 특징을 검색·주입하는 <strong>Geometry-Aligned Memory Attention(GAMA)</strong> 모듈을 설계했다.</p>
+<h2>방법론</h2>
+<p>WorldCast는 Wan2.1-I2V-14B 비디오 확산 트랜스포머(플로우 매칭 기반)를 백본으로 사용하며, 크게 두 축으로 구성된다.</p>
+<p>1) <strong>기하학적 카메라 컨디셔닝</strong>: 초기 프레임의 단안 깊이를 추정한 뒤, 학습 참조 영상을 이용해 깊이와 카메라 이동량 간의 상대적 스케일을 보정(scale alignment)한다. 이렇게 스케일이 맞춰진 초기 프레임을 3D 포인트 클라우드로 역투영하고, 이를 목표 카메라 궤적을 따라 렌더링하여 각 프레임에 대한 RGB 가이던스와 "미관측 영역"을 표시하는 커버리지 마스크를 얻는다. 여기에 플뤼커 광선(Plücker ray) 기반 카메라 표현을 더해 노이즈가 섞인 비디오 잠재 표현과 함께 패치 임베딩으로 입력한다.</p>
+<p>2) <strong>Geometry-Aligned Memory Attention(GAMA)</strong>: 초기 프레임과 전/후/측면 등 캐릭터의 다중 시점 "앵커" 이미지들로부터 세그멘테이션으로 캐릭터 전경만 추출하고, 사전학습된 다중 시점 기하 추정 모델로 카메라 포즈를 공동 추정한다. Umeyama 정렬을 통해 이 앵커들의 좌표계를 목표 궤적의 좌표계에 맞춘 뒤, 각 앵커를 인코딩해 "기하 정합 캐릭터 메모리"를 구성한다. 백본의 여러 블록 사이에 삽입된 메모리-어텐션 블록이 비디오 토큰을 쿼리로 하여 이 메모리에서 시점에 맞는 캐릭터 특징을 검색하고, 영(0)으로 초기화된 잔차 연결을 통해 비디오 토큰에만 주입함으로써 사전학습된 백본의 성능을 보존하면서 점진적으로 캐릭터 정보를 보강한다.</p>
+<p>학습은 2단계로 진행된다. 1단계는 76,698개의 SpatialVID 시퀀스와 50,000개의 Unreal Engine 5(UE5) 렌더링 시퀀스로 카메라 제어 능력을 학습하고, 2단계는 30,000개의 Blender 렌더링 다중 시점 샘플로 GAMA(메모리 어텐션·앵커 어댑터)만 추가 학습한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>평가는 42개의 캐릭터 중심 장면(합성 17개, 실사 25개)으로 구성된 CLACT 벤치마크에서 수행되며, 각 장면에 대해 대각도 궤도·이동·복합 모션 등 6종의 카메라 궤적과 다양한 초기 방위각을 적용한다. 평가지표는 카메라 제어 정확도(ATE, RTE, RRE), 캐릭터 일관성(MEt3R, ArcFace, CLIP, DINO 유사도), 시각 품질(Subject consistency, IQ)이다.</p>
+<p>CamI2V, Uni3C, GEN3C, Lyra 2.0, DualCamCtrl(카메라 제어 생성), ViewCrafter, MVGenMaster(새 시점 생성), ReCamMaster, DepthDirector, CameraAnything(비디오 재렌더링) 등 기존 기법들과 비교한 결과, WorldCast는 카메라 제어 정확도(ATE 0.065로 최저 수준)와 캐릭터 일관성(MEt3R 0.228, ArcFace 0.555 등) 대부분의 지표에서 가장 우수했고, 시각 품질도 경쟁력 있는 수준을 유지했다. 특히 비교 대상 기법들은 추가 참조 시점을 활용해도 성능 향상이 제한적이거나 불안정했던 반면, WorldCast는 궤적 정합 기하 가이던스와 기하 정합 캐릭터 메모리를 결합함으로써 대각도 조건에서도 안정적인 개선을 보였다. 정성적 비교에서도 Uni3C가 큰 시점 변화에서 얼굴 등에 심한 왜곡을 보이고 MVGenMaster가 캐릭터 세부와 외형 단서를 잃는 데 비해, WorldCast는 궤적을 더 정확히 따르면서 캐릭터 정체성·3D 구조·외형을 더 잘 유지했다.</p>
+<p>제거 실험(ablation)에서는 GAMA 전체를 제거하면 카메라 제어와 캐릭터 일관성이 모두 크게 저하되고, 앵커 기하 정렬을 제거하면 회전 오차가 크게 늘어나며, 전경 마스킹을 제거해도 전반적 성능이 떨어져 각 구성요소의 필요성이 확인되었다. 또한 UE5 학습 데이터와 플뤼커 광선 조건화가 카메라 제어 정확도에 기여함을 보였고, 캐릭터 앵커 수를 1개에서 4개로 늘릴수록 교차 시점 기하 일관성과 정체성·외형 유사도가 개선되나 3개에서 4개로 늘릴 때는 개선 폭이 줄어드는 체감 효과(diminishing returns)를 관찰했다.</p>
+<h2>한계점</h2>
+<p>논문은 별도의 한계점 절을 명시적으로 두지는 않았지만, 결론에서 향후 연구 방향으로 다음을 언급하며 현재 접근의 한계를 시사한다: 현재는 사전에 준비된 캐릭터 다중 시점 앵커 이미지에 의존하므로 보다 유연한 앵커 획득 방식이 필요하고, 복잡한 동적 장면(dynamic scenes)에 대한 대응이 아직 제한적이며, 더 길고 상호작용적인(interactive) 카메라 궤적에 대한 확장도 향후 과제로 남아 있다.</p>
+<h2>시사점</h2>
+<p>WorldCast는 카메라 궤적이 요구하는 기하학적 제약과 미관측 캐릭터 정보 복원이라는 두 문제를 하나의 공유 좌표계 안에서 함께 다룸으로써, 캐릭터 중심 영상 생성에서 "대각도 카메라 제어"와 "장시간·대규모 시점 변화에서도 유지되는 정체성"을 동시에 달성할 수 있음을 보여준다. 또한 CLACT 데이터셋과 벤치마크는 이후 연구들이 대각도 카메라 제어와 캐릭터 일관성을 함께 정량 평가할 수 있는 공통 기반을 제공하며, 다중 시점 앵커를 활용한 메모리 어텐션 설계는 영화적 캐릭터 영상, 가상 인간, 퍼포먼스 캡처 기반 콘텐츠 제작 등에 폭넓게 응용될 수 있을 것으로 보인다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.33135" target="_blank" rel="noopener">huggingface.co/papers/2610.33135</a> · 2026-10-28</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

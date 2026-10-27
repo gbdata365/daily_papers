@@ -1,0 +1,110 @@
+{
+  "2610.33568": {
+    "base": "2610_트래젝토리2짐_도구사용-에이전트-상호작용-합성",
+    "rank": "#1",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "330",
+    "en_title": "Trajectory2Gym: Decision-Grounded Compositional Interaction Synthesis for Tool-Use Agents",
+    "ko_title": "트래젝토리2짐: 도구 사용 에이전트를 위한 결정 기반 구성적 상호작용 합성"
+  },
+  "2610.34662": {
+    "base": "2610_스트림바이브_진화하는-사용자-의도-대응-능동형-비디오-에이전트",
+    "rank": "#2",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "237",
+    "en_title": "StreamVibe: Proactive Video Agents for Evolving User Intent",
+    "ko_title": "스트림바이브: 진화하는 사용자 의도에 대응하는 능동형 비디오 에이전트"
+  },
+  "2610.32285": {
+    "base": "2610_트라이얼바이트레이스_AI-에이전트-하네스-신뢰성-평가",
+    "rank": "#3",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "208",
+    "en_title": "Trial by Trace: Benchmarking AI Agent Harnesses for Reliability and Failure Attribution",
+    "ko_title": "트라이얼 바이 트레이스: 신뢰성과 실패 원인 분석을 위한 AI 에이전트 하네스 벤치마킹"
+  },
+  "2610.34467": {
+    "base": "2610_다이나플로우_자유형식-멀티에이전트-오케스트레이션-학습",
+    "rank": "#4",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "183",
+    "en_title": "DynaFlow: Learning Free-Form Multi-Agent Orchestration",
+    "ko_title": "다이나플로우: 자유 형식 멀티 에이전트 오케스트레이션 학습"
+  },
+  "2610.33966": {
+    "base": "2610_인터랙티브월드_검증가능한-인간중심-상호작용-MLLM-환경",
+    "rank": "#5",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "109",
+    "en_title": "InteractiveWorld: A Verifiable Human-Centric Environment for Building Better Interactive MLLM Assistants",
+    "ko_title": "인터랙티브월드: 더 나은 상호작용형 MLLM 어시스턴트 구축을 위한 검증 가능한 인간 중심 환경"
+  },
+  "2610.35845": {
+    "base": "2610_워크에이전트_업무수행-에이전트-시스템과-최적화",
+    "rank": "#6",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "97",
+    "en_title": "Work Agents: Systems, Capabilities, and Optimization",
+    "ko_title": "워크 에이전트: 업무 수행 에이전트의 시스템, 역량, 최적화"
+  },
+  "2610.33956": {
+    "base": "2610_컨티뉴얼러닝시험_장기-자기개선-경험학습-평가",
+    "rank": "#7",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "44",
+    "en_title": "Continual Learning Exam: Benchmarking Long-Horizon RSI and Experiential Learning in LLM Agents",
+    "ko_title": "컨티뉴얼 러닝 이그잼: LLM 에이전트의 장기적 재귀적 자기개선과 경험 학습 벤치마킹"
+  },
+  "2610.33135": {
+    "base": "2610_월드캐스트_대각도-카메라-제어-캐릭터-비디오-생성",
+    "rank": "#8",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "42",
+    "en_title": "WorldCast: World-Consistent Character Video Generation with Large-Angle Camera Control",
+    "ko_title": "월드캐스트: 대각도 카메라 제어를 지원하는 월드-컨시스턴트 캐릭터 비디오 생성"
+  },
+  "2610.34415": {
+    "base": "2610_공간오디오생성_실행가능계획-자가증류-트랜스퓨전",
+    "rank": "#9",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "38",
+    "en_title": "Spatial Audio Generation and Editing with Executable Plans and Self-Distilling Transfusion",
+    "ko_title": "실행 가능한 계획과 자가 증류 트랜스퓨전을 통한 공간 오디오 생성 및 편집"
+  },
+  "2610.33413": {
+    "base": "2610_AV페이블_장편비디오-오디오비주얼-조작-포렌식",
+    "rank": "#10",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "32",
+    "en_title": "AV-FABLE: Audio-Visual Manipulation Forensics in Long-Form Videos",
+    "ko_title": "AV-FABLE: 장편 영상에서의 오디오-비주얼 조작 포렌식"
+  },
+  "2610.33512": {
+    "base": "2610_정밀도목적함수_루브릭기반RL-보상해킹-완화",
+    "rank": "#11",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "28",
+    "en_title": "Eat Your Precision: Precision Objective Mitigates Reward Hacking in Rubric-based RL",
+    "ko_title": "잇 유어 프리시전: 정밀도 목적함수로 루브릭 기반 RL의 보상 해킹 완화하기"
+  },
+  "2610.32195": {
+    "base": "2610_프린키피아_테스트타임-가설에서-원리구축까지-과학발견",
+    "rank": "#12",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "22",
+    "en_title": "Principia: Test-Time Hypotheses to Principle Construction for Scientific Discovery",
+    "ko_title": "프린키피아: 과학적 발견을 위한 테스트타임 가설에서 원리 구축까지"
+  }
+}

@@ -1,0 +1,107 @@
+<meta charset="UTF-8">
+<title>VibeVideoBench</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#4 · Daily Papers 2026-10-29</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 169</span>
+    </div>
+    <h1 class="article-title">VibeVideoBench: Evaluating Multimodal Agents on Code-Driven Video Generation</h1>
+    <p class="article-title-ko">VibeVideoBench: 코드 기반 영상 생성에 대한 멀티모달 에이전트 평가</p>
+    <p class="article-sub">디퓨전 비디오 생성 모델이 아니라 코드를 작성해 프레임과 사운드를 직접 만들어내는 멀티모달 에이전트들을 평가하기 위해, 239개의 실제적이면서도 채점 가능한 과제로 구성된 벤치마크 VibeVideoBench를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.35864" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.35864" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: VibeVideoBench: Evaluating Multimodal Agents on Code-Driven Video Generation</li>
+<li><strong>저자</strong>: 총 24명, Beijing University of Posts and Telecommunications·Zhongguancun Academy·Peking University·Jilin University·Kling Team 공동 연구진</li>
+<li><strong>출처</strong>: arXiv:2610.35864v2 [cs.CV] (2026-10-27)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://vibevideobench.github.io">vibevideobench.github.io</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.35864">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>디퓨전 비디오 생성 모델이 아니라 코드를 작성해 프레임과 사운드를 직접 만들어내는 멀티모달 에이전트들을 평가하기 위해, 239개의 실제적이면서도 채점 가능한 과제로 구성된 벤치마크 VibeVideoBench를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>디퓨전 기반 비디오 생성 모델은 보기에는 그럴듯한 영상을 만들어내지만 정확한 수식, 올바른 차트, 규칙이 일관된 게임, 화면과 동기화된 내레이션처럼 정밀함이 필요한 요구사항은 만족시키기 어렵다. 반면 Claude Code, Codex 같은 코딩 에이전트는 렌더러·헤드리스 브라우저·TTS·ffmpeg 등 툴체인을 스스로 운용하며 장시간 자율적으로 코드를 작성해 영상을 만들 수 있게 되었다. 그런데 VBench, EvalCrafter 같은 기존 비디오 생성 벤치마크는 짧고 무음인 디퓨전 클립을 평가할 뿐이고, 코드-투-비주얼 벤치마크는 정적 산출물(차트, 웹페이지 등)만 채점하며, 논문·강의 영상 생성 파이프라인들은 특정 도메인에 맞춰 수작업으로 설계된 워크플로우라 범용 에이전트를 시험하지 못한다. 저자들은 영상이 그림·소리·시간이 결합된 지각적 산출물이라 텍스트 전용 에이전트 벤치마크의 유닛 테스트로는 평가할 수 없다는 점을 지적하며, 에이전트가 자신의 출력을 화면·소리·시간 축에서 스스로 점검할 수 있는지를 시험하는 새로운 평가체계가 필요하다고 본다.</p>
+<h2>핵심 기여</h2>
+<p>1) 일반 목적 멀티모달 에이전트가 이미지·비디오 생성 모델 없이 코드만으로 완성된 오디오-비주얼 MP4를 만들게 하는, 영어·중국어 12개 카테고리 239개 과제로 구성된 벤치마크를 처음으로 제시한다. 2) 전달 스펙을 검증하는 프로그램 체크(L1), 요구사항별로 추적되는 약 1만 3천 개의 루브릭 체크(L2), 과제별로 앵커링된 5개 품질 차원 점수(L3)로 이루어진 계층적·근거 기반 평가 프로토콜을 제시하며, 오디오 체크는 청취 가능한 심사 모델에게만 라우팅한다. 3) 여섯 개 랩의 아홉 개 최전선 에이전트 시스템을 동일 환경·동일 한 시간 예산으로 비교한 2,151회의 대규모 실증 연구를 수행한다.</p>
+<h2>방법론</h2>
+<p>각 과제는 실제 사용자 요청, 실제 영상(자막을 바탕으로 재구성), 실제 에셋 팩, 강의 노트·논문 등 네 가지 소스를 재작성해, 사실·정체성·타이밍·오디오 정책을 고정하면서도 창작 자유는 유지하는 자기완결적 스펙으로 만든다. 에이전트는 외부 이미지·비디오 생성 모델 없이 three.js, Canvas, SVG, cairo 같은 렌더링 수단과 TTS만을 사용해 한 시간 안에 사운드까지 포함한 MP4를 샌드박스 내에서 완성해야 한다. 평가는 세 단계로 나뉘는데, L1 프로그램 체크는 해상도·프레임레이트·길이·오디오 유무 등을 자동 검증하고, L2 루브릭 체크는 과정과 결과 주장을 분리해 요구사항별로 추적하며, L3 품질 점수는 시각 품질·미학·내용 논리·타이밍·오디오 다섯 차원을 1·3·5점 기준으로 채점한다. L2·L3는 세 개의 독립된 VLM 심사 패널(두 패널은 소리까지 포함한 전체 영상을 보고, 나머지 한 패널은 시각 체크와 오디오 체크를 각각 비전 모델과 오디오 모델에 분리 라우팅)이 수행한다. 각 모델은 벤더의 네이티브 하네스에서 사후 턴 없이 최고 수준의 자율성으로, 동일한 컨테이너와 한 시간 예산 하에 실행된다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>여섯 개 랩의 아홉 개 최전선 에이전트 시스템으로 2,151회의 심사된 롤아웃을 수집했다. GPT-6 Astra와 Claude Opus 5.5가 심사 패널과 인간 평가자 모두에게서 1·2위를 차지했지만, 최고 시스템조차 핵심 요구사항을 모두 만족한 과제는 76.3%에 불과했다. 영상을 전달하지 못한 경우를 0점으로 처리하면 순위가 크게 바뀌는데, 예컨대 Gemini 4 Argon은 영상의 77%만 전달해 4위에서 7위로 떨어진다. 비디오를 전달하지 못한 224건 중 169건은 최종 렌더링이 너무 늦게 시작되었거나(예: 프레임 단위 브라우저 캡처), 너무 느리게 진행되었거나, 전혀 시작되지 못한 경우로, 이는 에이전트의 시간 관리 실패를 보여준다(실패가 없었던 Opus는 마감보다 평균 24분 먼저 작업을 끝냈다). 각 시스템은 cairo, PIL/numpy, 브라우저 캔버스·three.js 등 자체 렌더링 스택을 구축하며 95%의 실행에서 스스로 프레임을 점검하지만, 자기 점검 빈도는 품질과 거의 무관했다(ρ=-0.07). 세 심사 패널 평균은 인간 선호 순위와 매우 높은 상관(ρ=0.98)을 보였지만, 개별 영상 쌍 비교에서는 인간과 73%만 일치했다.</p>
+<h2>한계점</h2>
+<p>모든 실행이 한 시간으로 고정되어 더 긴 예산에서의 성능 변화는 다루지 못했다. 루브릭이 주로 스펙 준수 여부를 측정하기 때문에 창의성·독창성은 미학 차원을 통해서만 부분적으로 평가된다. 모든 심사 패널이 독점(proprietary) 모델이고 오디오-비주얼 타이밍에 둔감하다는 한계가 있으며, 패널 간 순위는 안정적이지만 절대 점수는 패널마다 달라 혼용할 수 없다. 과제의 대부분(239개 중 209개)이 영어이고 해상도는 1080p급으로 제한되어 있으며 매우 긴 런타임의 과제는 적다.</p>
+<h2>시사점</h2>
+<p>코드 기반 영상 생성은 강의, 데이터 스토리, 안내문 등 정밀하고 수정 가능하며 접근성 높은 콘텐츠를 더 저렴하게 만들 수 있게 하지만, 동시에 설득력 있는 외양을 가진 허위정보·마케팅 콘텐츠의 위험도 수반한다. 이 벤치마크는 에이전트의 "보임"과 "실제 품질" 사이의 괴리, 그리고 시간 관리 실패가 전체 성능 저하의 핵심 축임을 드러내어, 향후 에이전트 설계가 자기 점검의 정확성과 작업 스케줄링 능력을 함께 개선해야 함을 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.35864" target="_blank" rel="noopener">huggingface.co/papers/2610.35864</a> · 2026-10-29</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

@@ -1,0 +1,110 @@
+{
+  "2610.34283": {
+    "base": "2610_크로노리플레이_스트리밍-공간지능-다중인터페이스-학습",
+    "rank": "#1",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "345",
+    "en_title": "ChronoReplay: One Answer Interface Is Not Enough for Streaming Spatial Intelligence",
+    "ko_title": "ChronoReplay: 스트리밍 공간 지능을 위해서는 하나의 답변 인터페이스로 충분하지 않다"
+  },
+  "2610.35013": {
+    "base": "2610_MPO_장기호라이즌-에이전트-턴단위-정책최적화",
+    "rank": "#2",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "316",
+    "en_title": "Multiscale Policy Optimization for Long-Horizon LLM Agents",
+    "ko_title": "장기 호라이즌 LLM 에이전트를 위한 Multiscale Policy Optimization(MPO)"
+  },
+  "2610.36077": {
+    "base": "2610_트리니티_능력기반-재귀적-자기개선-멀티모달-에이전트",
+    "rank": "#3",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "311",
+    "en_title": "The Trinity: Capability-Driven Recursive Self-Improvement for Multimodal Agents",
+    "ko_title": "The Trinity: 멀티모달 에이전트를 위한 능력 기반 재귀적 자기개선"
+  },
+  "2610.35864": {
+    "base": "2610_바이브비디오벤치_코드기반-영상생성-에이전트-벤치마크",
+    "rank": "#4",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "169",
+    "en_title": "VibeVideoBench: Evaluating Multimodal Agents on Code-Driven Video Generation",
+    "ko_title": "VibeVideoBench: 코드 기반 영상 생성에 대한 멀티모달 에이전트 평가"
+  },
+  "2610.37381": {
+    "base": "2610_피디알브이엘에이_물리동역학-기반-VLA모델",
+    "rank": "#5",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "135",
+    "en_title": "PDRVLA: A Vision-Language-Action Model with Physical Dynamics Representations",
+    "ko_title": "PDRVLA: 물리 동역학 표현을 활용한 비전-언어-행동 모델"
+  },
+  "2610.36729": {
+    "base": "2610_하이노마스_자유형식-대화형-월드생성",
+    "rank": "#6",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "104",
+    "en_title": "Hy-Nomas: Towards Free-form Interactive World Generation",
+    "ko_title": "Hy-Nomas: 자유형식 대화형 월드 생성을 향하여"
+  },
+  "2610.34073": {
+    "base": "2610_메모리택스_에이전트메모리-순가치-분석",
+    "rank": "#7",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "99",
+    "en_title": "Memory Tax: Dissecting the Net Value of Agent Memory",
+    "ko_title": "메모리 택스: 에이전트 메모리의 순가치 분석"
+  },
+  "2610.37662": {
+    "base": "2610_FVQ_이산토큰-시각신호-의미손실-분석",
+    "rank": "#8",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "81",
+    "en_title": "Can Discrete Tokens Serve as Semantically Lossless Representations of Visual Signals?",
+    "ko_title": "이산 토큰은 시각 신호의 의미적으로 손실 없는 표현이 될 수 있는가?"
+  },
+  "2610.24520": {
+    "base": "2610_해빗벤치_에이전트메모리-습관추론-평가",
+    "rank": "#9",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "78",
+    "en_title": "HABIT-Bench: Evaluating Habit Induction from Longitudinal Weak Evidence in Agent Memory",
+    "ko_title": "HABIT-Bench: 에이전트 메모리에서 종단적 약한 증거로부터의 습관 추론 평가"
+  },
+  "2610.36068": {
+    "base": "2610_롤백_월드모델-경험-되감기-정책개선",
+    "rank": "#10",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "50",
+    "en_title": "Rollback: Experience Backtracking in World Models for Policy Improvement",
+    "ko_title": "롤백: 정책 개선을 위한 월드모델 내 경험 되감기"
+  },
+  "2610.37341": {
+    "base": "2610_코드캡벤치_코드가-좋은-비디오-캡션이-될-수-있나",
+    "rank": "#11",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "48",
+    "en_title": "CodeCap-Bench: Can Code Serve as a Good Video Caption?",
+    "ko_title": "CodeCap-Bench: 코드는 좋은 비디오 캡션이 될 수 있는가?"
+  },
+  "2610.37666": {
+    "base": "2610_씽크월드_월드-이미지네이션으로-동역학-사고-강화",
+    "rank": "#12",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "47",
+    "en_title": "ThinkWorld: World Imagination Reinforces Chain-of-Dynamics Reasoning",
+    "ko_title": "ThinkWorld: 월드 이미지네이션으로 강화하는 Chain-of-Dynamics 추론"
+  }
+}

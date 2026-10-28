@@ -1,0 +1,107 @@
+<meta charset="UTF-8">
+<title>ChronoReplay</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#1 · Daily Papers 2026-10-29</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 345</span>
+    </div>
+    <h1 class="article-title">ChronoReplay: One Answer Interface Is Not Enough for Streaming Spatial Intelligence</h1>
+    <p class="article-title-ko">ChronoReplay: 스트리밍 공간 지능을 위해서는 하나의 답변 인터페이스로 충분하지 않다</p>
+    <p class="article-sub">하나의 답변 형식(범주형/수치형/시간형)에만 특화되는 "인터페이스 고착(interface lock-in)" 문제를 해결하기 위해, 서로 다른 형태의 공간 질의 데이터를 시간 순서대로 재생(replay)하며 균형 있게 학습시키는 ChronoReplay를 제안하고, 단일 체크포인트로 세 가지 스트리밍 공간 벤치마크(OVO-S, OST, UCS)에서 동시에 성능을 끌어올렸다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.34283" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.34283" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: ChronoReplay: One Answer Interface Is Not Enough for Streaming Spatial Intelligence</li>
+<li><strong>저자</strong>: 총 11명, Westlake University를 중심으로 ZJU, USTC, SMU, FDU, ECNU, SJTU 등 7개 기관이 공동 참여한 연구진 (3인 공동 1저자)</li>
+<li><strong>출처</strong>: arXiv:2610.34283v1 [cs.CV] (2026-10-25)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://yihaohu0118.github.io/ChronoReplay/">ChronoReplay 홈페이지</a> · <a href="https://github.com/yihaohu0118/ChronoReplay">GitHub 코드</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.34283">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>하나의 답변 형식(범주형/수치형/시간형)에만 특화되는 "인터페이스 고착(interface lock-in)" 문제를 해결하기 위해, 서로 다른 형태의 공간 질의 데이터를 시간 순서대로 재생(replay)하며 균형 있게 학습시키는 ChronoReplay를 제안하고, 단일 체크포인트로 세 가지 스트리밍 공간 벤치마크(OVO-S, OST, UCS)에서 동시에 성능을 끌어올렸다.</p>
+<h2>배경 및 문제의식</h2>
+<p>스트리밍 비디오를 보며 길을 안내하는 로봇은 "거울이 왼쪽/오른쪽에 있는지"(범주형), "소파까지 몇 미터인지"(수치형), "식물을 언제 지나쳤는지"(시간형) 같은 서로 다른 답변 형식의 질문에 모두 답해야 한다. 그런데 기존 연구는 대개 하나의 답변 인터페이스에만 지도학습을 집중시켜, 해당 벤치마크에서는 성능이 오르지만 다른 형식의 질의로는 전이(transfer)가 약하거나 오히려 악화되는 현상이 나타난다. 저자들은 이를 "interface lock-in"이라 명명한다. 또한 거리나 시간 같은 수치·시간 정답은 그 값이 산출된 관찰 이력(prefix)과 분리되면 의미가 모호해진다는 점도 지적한다.</p>
+<h2>핵심 기여</h2>
+<p>ChronoReplay는 두 가지 구성 요소로 이 문제를 다룬다. 첫째, family-balanced learning은 범주형·수치형·시간형 타깃을 각자의 원본 형식(옵션, 단위/정밀도, 타임스탬프) 그대로 유지하면서 두 데이터 계열(preservation, trajectory)의 손실 비중을 명시적으로 조정해 한쪽이 공유 파라미터를 지배하지 않도록 한다. 둘째, Causal Replay construction은 각 타깃을 그것이 유효한 인과적 관찰 접두사(prefix)에 묶어 시간 순서대로 재생함으로써, 누적된 이동량이나 검색된 시점이 그 기원(origin) 및 경로와 함께 학습되도록 한다. 이 방식은 추가적인 메모리 모듈이나 새로운 라벨 없이 동일한 Qwen3-VL-8B 백본에 적용된다.</p>
+<h2>방법론</h2>
+<p>모델은 시점 t까지의 인과적 관찰 이력을 표현 z_t로 인코딩하고, 질의의 인터페이스(범주/수치/시간)에 따라 같은 표현에서 답을 읽어낸다. 학습 데이터는 33,180개의 단일 턴 preservation 예시(범주형 30,635개 + 수치형 2,545개)와 6,381개의 다중 라운드 trajectory 에피소드(45,006개의 지도 턴)로 구성되며, 두 계열의 손실을 토큰 길이로 정규화한 뒤 가중치 λ(=α/(1+α), 기본 α=0.5)로 결합한다. 비교 실험을 위해 턴 순서를 섞은 SHIFTED, 답을 정형화된 필드로 바꾼 CANONICAL, 적응적 프레임 선택 등 여러 대조 조건을 설계했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Qwen3-VL-8B-Instruct를 기반으로 동일한 관찰 접근(Uniform-128 등) 하에서 평가했을 때, ChronoReplay는 OVO-S-Bench를 48.98→53.89, OST-Bench를 50.52→63.93(+13.41점), UCS-Bench를 45.33→52.77(+7.44점)로 끌어올려 세 벤치마크 평균이 가장 높았다. 범주형만 학습한 모델은 OVO-S에서는 좋지만 OST가 오히려 하락했고, trajectory만 학습한 모델은 OST 개선이 미미했던 반면, ChronoReplay는 모든 지표에서 동반 개선을 보였다. 시간 순서를 유지한 replay는 턴 순서를 섞은 대조군보다 OST에서 평균 2.41점 높았고, 적응적 프레임 선택을 추가하면 학습된 모델을 바꾸지 않고도 더 적은 시각 토큰으로 추가 이득(+4.09점)을 얻었다.</p>
+<h2>한계점</h2>
+<p>답변 형식(native vs. canonical)의 효과는 벤치마크별로 엇갈려(UCS는 native가, OST는 canonical이 더 높음) 하나의 인코딩이 보편적으로 우월하다고 말할 수 없다. 단일 계열 학습 간 비교는 데이터 소스와 과업 커버리지가 달라 답변 형식만의 효과로 완전히 귀속시키기는 어렵다. 또한 평가가 실내 장면에 국한되어 있어 다른 환경에서의 일반화는 검증되지 않았다.</p>
+<h2>시사점</h2>
+<p>스트리밍 공간 지능에서 성능은 메모리 구조 자체보다 "지도 데이터가 어떤 구분을 보존하는지, 이질적인 이력을 어떻게 시간순으로 조직하는지, 추론 시 어떤 인과적 증거를 제공하는지"에 크게 좌우된다는 점을 보여준다. 이는 새로운 아키텍처 없이도 데이터 구성과 학습 목표 설계만으로 멀티모달 에이전트의 범주형·수치형·시간형 공간 추론을 동시에 향상시킬 수 있다는 실용적 시사점을 제공한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.34283" target="_blank" rel="noopener">huggingface.co/papers/2610.34283</a> · 2026-10-29</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

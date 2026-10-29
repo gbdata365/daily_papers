@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>추론 LLM의 순차적 실험 설계 상각화</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#7 · Daily Papers 2026-10-30</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 4</span>
+    </div>
+    <h1 class="article-title">Amortizing Sequential Experimental Design in Reasoning LLMs</h1>
+    <p class="article-title-ko">추론 LLM의 순차적 실험 설계 상각화</p>
+    <p class="article-sub">대형 언어모델(LLM)이 스무고개(Twenty Questions)와 같은 순차적 정보 수집 과제에서 베이지안 실험 설계(Bayesian Experimental Design, BED)의 정보 획득(information gain) 보상을 명시적으로 학습하도록 강화학습으로 훈련시키면, 추론(reasoning) 능력을 통해 질문 전략이 보지 못한 범주로까지 일반화되고 실제 임상 대화 과제로도 전이된다는 것을 보인 연구이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.20832" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.20832" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Amortizing Sequential Experimental Design in Reasoning LLMs</li>
+<li><strong>저자</strong>: Anita Kriz, Antonin Berthon (두 저자 동등 기여), Nicolás Astorga, Mihaela van der Schaar (University of Cambridge, UK)</li>
+<li><strong>출처</strong>: arXiv:2610.20832v1 [cs.LG] (2026년 10월 14일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.20832">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>대형 언어모델(LLM)이 스무고개(Twenty Questions)와 같은 순차적 정보 수집 과제에서 베이지안 실험 설계(Bayesian Experimental Design, BED)의 정보 획득(information gain) 보상을 명시적으로 학습하도록 강화학습으로 훈련시키면, 추론(reasoning) 능력을 통해 질문 전략이 보지 못한 범주로까지 일반화되고 실제 임상 대화 과제로도 전이된다는 것을 보인 연구이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>사람은 진단이나 문제 해결 시 사전 지식을 바탕으로 가설을 좁혀가며 효율적으로 질문을 던지지만, LLM은 멀티턴(multi-turn) 설정에서 정보를 적응적으로 수집하는 능력이 부족하다는 것이 선행 연구들에서 반복적으로 관찰되었다. 특히 LLM은 실험적 피드백에 둔감하며, 성능이 추론 능력보다는 사전 지식에 의존하는 경향이 있다. 저자들은 LLM이 능동적으로 정보를 수집하는 질문(action)을 직접 샘플링하도록 학습시키는 기존 접근과 달리, 질문 선택에 앞선 '추론 과정' 자체를 명시적으로 학습시키는 방법을 제안한다. 이를 위해 순차적 베이지안 실험 설계(sequential BED) 프레임워크를 활용해 불확실한 변수 θ에 대한 불확실성을 가장 많이 줄이는 설계(질문) x를 선택하는 문제로 formalize한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>순차적 BED를 추론 LLM에 상각화(amortize)하는 방법을 정식화하고, 이를 위한 생성 모델 구성과 정보 획득 보상 설계를 제시함 (AR-BED: Amortized Reasoning for Bayesian Experimental Design).</li>
+<li>정보 수집 행동이 LLM에 상각화될 수 있음을 실증하고, 훈련에 사용되지 않은 범주(OOD)로의 일반화 및 전혀 다른 과제(MedIQ 임상 대화 벤치마크)로의 전이를 보임.</li>
+<li>생성 모델 구성(대조 가설 집합, 우도 추정), 보상 추정 방식(기대 정보 획득 vs. 실현된 정보 획득), 가설 공간 설정, 다중 스텝 목적함수, 그리고 추론/훈련 시점 BED 기준선 대비 계산 비용 등을 체계적으로 분석함.</li>
+</ul>
+<h2>방법론</h2>
+<p>저자들은 정책을 π_φ(z_t, x_t | h_{t-1}) = π_φ(z_t | h_{t-1}) · π_φ(x_t | h_{t-1}, z_t) 형태로 분해하여, 이력 h_{t-1}가 주어지면 먼저 추론 과정(reasoning trace) z_t를 생성한 뒤 그 추론에 기반해 질문(design) x_t를 선택하도록 한다. 핵심은 이 정책을 평가하는 데 사용하는 정보-가치 생성 모델 p(θ, y; x)를 정책 LLM 자신의 믿음과 독립적으로 명시적으로 지정한다는 점이다. 사전분포 p(θ)는 고정된 유한 대조 가설 집합(contrastive set) Θ_C 위의 균등분포로 설정하고, 우도 p(y|θ,x)는 정책과 분리된 별도의 대형 LLM(semantic likelihood evaluator, GPT-5 사용)으로 평가한다. 보상은 sPCE(sequential prior contrastive estimation) 기반의 one-step 정보 획득을 실현된 값(realized reward) 또는 가설·응답 전체에 대해 주변화한 기대값(expected reward, Rao-Blackwellized 형태)으로 계산하며, 후자가 분산을 줄여 더 안정적인 학습 신호를 제공함을 보인다. 또한 미래 K스텝에 걸친 정보 보상의 할인합(discounted return)을 목표로 삼아 비근시안적(non-myopic) 정보 수집을 유도할 수 있도록 하였다. 정책 학습에는 GRPO(Group Relative Policy Optimization)를 사용하며, 기반 모델은 Gemma-4-E4B-it이다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>주요 훈련 환경은 스무고개(Twenty Questions, TQ)이며, 숨겨진 목표(예: 동물 이름) θ를 20번의 예/아니오/보통 질문 내에 맞히는 과제이다. Animals 범주(200개 대조 집합) 위에서 훈련한 뒤, Animals(ID)뿐 아니라 Plants, Celebrities, Countries(OOD) 범주로 평가하였다. 결과적으로 AR-BED는 추론 없는 기본 모델(Base), 직접 질문 샘플링으로 훈련한 모델(AR-BED Direct), 그리고 추론만 켠 기본 모델보다 전반적으로 높은 최종 정답률과 턴당 평균 정보 획득(EIG)을 달성했으며, 특히 OOD 범주로도 잘 일반화되었다. 추론 시점 BED 기준선(BED-LLM)과 훈련 시점 기준선(ASIG) 대비해서도 대부분의 범주에서 더 우수한 성능을 보였고, 계산 비용 면에서도 추론 시 약 61배, 훈련 시 약 2.9배 더 효율적이었다. 가설 집합이 잘못 설정된 경우(예: 포유류만으로 제한) 성능이 저하되는 것을 확인했고, 대조 집합 크기를 키울수록(100→200) OOD 전이 성능이 개선되었다. 기대 정보 획득 보상이 실현된 보상보다 대체로 더 강한 학습 신호를 제공했다(Celebrities 제외). 다중 스텝(K&gt;1) 목적함수는 통제된 Cube-NM 환경에서 비근시안적 정보 수집(초기에 비정보적이지만 이후 유용한 행동 선택)을 학습시키는 것으로 확인되었고, 자연어 스무고개 환경에서도 중간 수준의 이득을 보였다. 마지막으로, 스무고개로 훈련된 정책을 실제 임상 질의응답 벤치마크 MedIQ(피부과 등)에 적용했을 때, 훈련에 전혀 사용하지 않은 의료 영역임에도 기본 모델 대비 정확도, 정답 확률, Brier 점수가 모두 개선되어 긍정적 전이가 관찰되었다.</p>
+<h2>한계점</h2>
+<p>본 연구는 비교적 짧은 롤아웃 horizon(K)만을 다루었으며, 신뢰할 수 있는 학습 신호를 유지하면서 더 긴 horizon으로 확장하는 것은 향후 과제로 남아 있다. 또한 성능은 실제 가설 공간과 비교해 대조 가설 집합(contrastive set)의 커버리지가 잘못 설정(misspecified)된 경우에 민감하게 저하되는 것으로 나타났으며, 대조 집합의 크기, 구성, 사전 가중치가 학습 및 전이에 미치는 영향에 대한 추가 연구가 필요하다.</p>
+<h2>시사점</h2>
+<p>이 연구는 정보 수집이 LLM에서 매 상호작용마다 명시적 탐색을 재구성하는 대신, 일반화 가능한 추론 능력으로 학습되고 상각화될 수 있음을 보여준다. 실험 설계에 사용하는 생성 모델을 정책 LLM 자신의 믿음과 분리하여 독립적으로 지정하는 설계와, 여러 턴에 걸쳐 누적 가능한 기대 정보 획득 보상을 사용하는 설계가 모두 정보 수집 성능과 전이 가능성을 높이는 데 기여한다는 점에서, 향후 적응적 질의 생성이 필요한 다양한 LLM 에이전트(의료 진단, 고객 상담 등) 훈련에 참고할 수 있는 실용적 설계 지침을 제공한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.20832" target="_blank" rel="noopener">huggingface.co/papers/2610.20832</a> · 2026-10-30</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

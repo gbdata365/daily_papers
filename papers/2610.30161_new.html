@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>TauIndianBankBench</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#6 · Daily Papers 2026-10-30</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 8</span>
+    </div>
+    <h1 class="article-title">TauIndianBankBench: Procedure-Aware, Action-Oriented Evaluation of Tool-Using Conversational Agents</h1>
+    <p class="article-title-ko">TauIndianBankBench: 절차 인식 기반 행동 중심 도구사용 대화형 에이전트 평가</p>
+    <p class="article-sub">인도 소매은행 업무를 시뮬레이션한 벤치마크 TauIndianBankBench를 통해, 최종 결과(기록)만 확인하는 기존 방식이 LLM 에이전트가 은행 규정상 필수 절차(예: 필수 조회, 불필요한 변경 금지)를 지켰는지 제대로 평가하지 못함을 보이고, 절차 준수 여부까지 함께 채점하는 action check를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.30161" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.30161" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: TauIndianBankBench: Procedure-Aware, Action-Oriented Evaluation of Tool-Using Conversational Agents</li>
+<li><strong>저자</strong>: Krishanu Adhikary, Prashant Devadiga (소속: National Payments Corporation of India, NPCI)</li>
+<li><strong>출처</strong>: arXiv:2610.30161v1 [cs.CL] (2026년 9월 30일)</li>
+<li><strong>프로젝트 페이지</strong>: 코드 <a href="https://github.com/npci/TauIndianBankBench">github.com/npci/TauIndianBankBench</a>, 데이터셋 <a href="https://huggingface.co/datasets/NPCI/tau-indian-banking">huggingface.co/datasets/NPCI/tau-indian-banking</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.30161">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>인도 소매은행 업무를 시뮬레이션한 벤치마크 TauIndianBankBench를 통해, 최종 결과(기록)만 확인하는 기존 방식이 LLM 에이전트가 은행 규정상 필수 절차(예: 필수 조회, 불필요한 변경 금지)를 지켰는지 제대로 평가하지 못함을 보이고, 절차 준수 여부까지 함께 채점하는 action check를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>인도의 많은 은행은 FAQ 페이지나 정해진 스크립트 기반 챗봇으로 고객을 응대하고 있으며, 언어모델 기반 어시스턴트가 이를 대체하면 더 빠르고 유연한 응대가 가능하다. 그러나 은행 업무는 카드 정지, 예금 해지 등 고객에게 직접적인 영향을 주는 작업이므로, 정보의 정확성뿐 아니라 은행이 정한 절차(procedure)—예를 들어 예금을 해지하기 전에 해지 견적을 먼저 조회해야 한다는 규정—를 반드시 따라야 한다. 기존의 도구 사용 에이전트 벤치마크(τ-bench, τ²-bench 등)는 대화가 끝난 뒤 데이터베이스의 최종 상태만을 비교하는 "최종 상태 검사(final-state check)"를 사용하는데, 문제는 절차에서 요구되는 여러 필수 단계(특히 조회성 단계)가 레코드를 변경하지 않기 때문에, 에이전트가 이를 건너뛰어도 최종 기록은 정답과 똑같아 보여 "성공"으로 오판된다는 점이다. 저자들은 이러한 한계를 지적하며, 절차 준수 여부까지 측정할 수 있는 평가 체계의 필요성을 제기한다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>합성 인도 소매은행 환경(가짜 고객 944명, 계좌·카드·예금·대출·사전지시·수표·서비스 요청 등)과 33개의 서비스 도구, 24개의 정책 문서, 그리고 성문화된 은행 정책에서 도출한 1,000개의 과업(task)으로 구성된 TauIndianBankBench를 공개했다.</li>
+<li>기존 τ²-bench의 action matching 개념을 확장한 "action check"를 제안했다. 이는 정책상 요구되는 조회(read) 호출까지 포함해 정답 호출 순서(gold chain)의 모든 호출이 세션에 나타나야 하며, 요청하지 않은 변경(write)이 있으면 실패 처리하는 "쓰기 순수성(write purity)" 조건을 둔다.</li>
+<li>6개의 공개 가중치 모델(Gemma 4 계열 4종, Gemma 4 26B 전문가 혼합 모델, Qwen3.8-27B)을 최종 상태 검사와 action check 양쪽으로 평가하여, 최종 상태 검사만으로는 절차 위반을 놓친다는 것을 정량적으로 입증했다.</li>
+</ol>
+<h2>방법론</h2>
+<p>각 세션은 평가 대상 어시스턴트와, 또 다른 언어모델이 연기하는 시뮬레이션된 고객 간의 대화로 진행되며(τ²-bench 하네스를 기반으로 함), 양측 모두 공유 데이터베이스에 접근해 상태를 변화시킬 수 있다. 과업은 여러 번의 연쇄 호출이 필요한 Sequencing(순차), 예외 상황 인지가 필요한 Edge-case(예외), 자주 쓰이지 않는 도구를 다루는 Rare-tool(희귀 도구), 그리고 기준선 역할을 하는 단순 요청의 Control(대조) 네 범주로 나뉜다. 각 과업에는 정답 호출 순서인 gold chain이 주어지며, 평균 3.54회, 최대 6회의 호출로 구성된다. 세션은 두 가지 기준으로 채점된다. 최종 상태 검사는 세션 종료 시점의 데이터베이스 기록을 정답 재현(oracle replay) 결과와 비교하며, action check는 세션의 전체 대화 기록(trajectory)을 보고 gold chain의 모든 호출(조회 포함)이 실제로 수행되었는지, 그리고 요청되지 않은 변경이 없었는지를 확인한다. 두 검사를 모두 통과해야 그 세션은 "성공"으로 인정되며, 부분 점수는 부여하지 않는다. 과업은 언어모델이 실제 환경에서 초안을 작성한 뒤 여러 필터(첫 메시지 다양성, 최소 호출 수, 학습/테스트 분리, 재현 검증)를 거쳐 채택되었다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Gemma 4 계열(E2B, E4B, 12B, 31B)과 26B 전문가 혼합 모델, Qwen3.8-27B 등 총 6개 모델을 1,000개 과업의 base split에서 평가했으며, 동일한 시뮬레이션 고객(MiniMax-M2.7, 온도 0)을 사용했다. 전체 통과율은 Qwen3.8-27B가 0.849로 가장 높았고, Gemma 4 31B(0.776), 26B 전문가 혼합(0.714), 12B(0.699), E4B(0.607), E2B(0.479) 순으로 나타났으며, Gemma 4 계열 내에서는 모델 크기가 클수록 성능이 일관되게 높았다. 최종 상태 검사만 사용할 경우 모든 모델의 통과율이 6.5~12.0포인트 상승했는데, 이는 필수 단계를 건너뛰거나 불필요한 변경을 했음에도 최종 기록만 맞으면 통과로 처리되는 절차 위반 사례가 존재함을 보여준다. 상위 3개 모델(Qwen3.8-27B, Gemma 4 31B, 26B 전문가 혼합)에서는 두 검사 중 하나만 실패하는 세션 대부분이 action check만 걸러낼 수 있는 절차 위반이었던 반면, 가장 성능이 낮은 E2B에서는 반대로 최종 상태 검사만 걸러낼 수 있는 기록 오류가 더 많았다. 과업 범주별로는 Sequencing에서 모델 간 격차가 가장 컸고(0.455~0.921), Rare-tool 범주는 전반적으로 가장 낮은 점수를 보였다. Control(단순 요청) 범주에서는 모델 크기와 뚜렷한 상관관계가 나타나지 않아, 절차가 복잡한 범주일수록 모델 간 역량 차이가 더 잘 드러남을 시사한다. 또한 스크립트로 작성된 네 가지 단순 베이스라인 에이전트는 어느 것도 과업을 통과하지 못해 벤치마크가 지나치게 쉽게 풀리지 않음을 확인했다.</p>
+<h2>한계점</h2>
+<p>논문은 다음과 같은 한계를 명시한다. 첫째, 평가 점수는 어시스턴트뿐 아니라 시뮬레이션 고객 모델의 거동에도 좌우되며, 그 시뮬레이터 자체의 오류율은 별도로 측정되지 않았다. 둘째, 모든 고객 데이터는 합성 데이터이므로 예외 상황의 유형별 비율이 실제 은행 거래 데이터의 분포를 그대로 반영하지는 않는다. 셋째, 현재 버전(1.0.0)은 영어로 된 인도 소매은행 업무만 다루며, 다른 언어나 업무 영역은 향후 과제로 남겨두었다. 넷째, 평가는 계산 비용이 크다. 각 세션이 최대 200스텝에 이르는 실시간 다중턴 대화이며, 1,000개 과업 전체를 한 번 평가하는 데도 상당한 추론 비용이 발생한다.</p>
+<h2>시사점</h2>
+<p>이 연구는 최종 결과 상태만을 비교하는 평가 방식이 규제가 엄격한 금융 등 도메인에서는 모델의 절차 준수 능력을 과대평가할 수 있음을 보여주며, 향후 도구 사용 대화형 에이전트 벤치마크는 최종 상태 검사와 더불어 행동(절차) 기반 검사를 함께 보고해야 함을 제안한다. 또한 인도 소매은행 업무에 모델을 적응(파인튜닝 등)시킬 때는 학습 전후 모두 이 두 가지 기준으로 평가해야 한다고 권고하며, 이를 위한 별도의 train/test 분할을 함께 공개했다. TauIndianBankBench는 τ²-bench 하네스의 표준 도메인으로 배포되어 OpenAI 호환 엔드포인트라면 어떤 모델이든 바로 평가에 활용할 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.30161" target="_blank" rel="noopener">huggingface.co/papers/2610.30161</a> · 2026-10-30</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

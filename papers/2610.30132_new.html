@@ -1,0 +1,117 @@
+<meta charset="UTF-8">
+<title>롱제로</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#8 · Daily Papers 2026-10-30</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 3</span>
+    </div>
+    <h1 class="article-title">LongZero: Enhancing Long-Context Reasoning in LLMs from Zero Data</h1>
+    <p class="article-title-ko">롱제로: 데이터 없이 LLM의 장문맥 추론 능력 강화하기</p>
+    <p class="article-sub">외부 문서나 더 강한 교사 모델 없이, LLM이 스스로 질문·근거·정답을 먼저 작성한 뒤 이를 장문 컨텍스트로 확장하는 LongZero 방법을 통해 강화학습(RL)만으로 LLM의 장문맥(long-context) 추론 능력을 향상시킬 수 있음을 보인다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.30132" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.30132" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: LongZero: Enhancing Long-Context Reasoning in LLMs from Zero Data</li>
+<li><strong>저자</strong>: Zhennan Wan, Jianfei Chen (교신저자) — Tsinghua University, Dept. of Comp. Sci. and Tech., Institute for AI, BNRist Center, THBI Lab, Tsinghua-Bosch Joint ML Center 소속</li>
+<li><strong>출처</strong>: arXiv:2610.30132v1 [cs.CL] (2026년 10월 21일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/zhennan1/LongZero">GitHub (코드 및 데이터)</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.30132">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>외부 문서나 더 강한 교사 모델 없이, LLM이 스스로 질문·근거·정답을 먼저 작성한 뒤 이를 장문 컨텍스트로 확장하는 LongZero 방법을 통해 강화학습(RL)만으로 LLM의 장문맥(long-context) 추론 능력을 향상시킬 수 있음을 보인다.</p>
+<h2>배경 및 문제의식</h2>
+<p>검증 가능한 보상 기반 강화학습(RLVR)이 짧은 컨텍스트의 추론 능력 향상에는 성공적이었으나, 이를 장문맥 추론으로 확장하려면 (1) 충분히 긴 길이, (2) 여러 문서에 흩어진 근거의 검색·통합, (3) 학습 신호를 만들어낼 만한 난이도, (4) 자동으로 검증 가능한 정답이라는 조건을 모두 만족하는 학습 데이터가 필요하다. 그러나 사람이 직접 이런 장문맥 질문-답변 데이터를 만드는 것은 비용이 크고, 자연 발생 데이터는 양이 부족하며, 기존 합성 파이프라인은 외부 말뭉치를 확장하거나 더 강한 교사 모델에 의존한다는 한계가 있다. 또한 교사 모델이나 외부 문서를 쓰면 모델이 문맥을 읽지 않고도 사전지식(parametric knowledge)으로 답을 맞히는 혼입 문제도 발생할 수 있다. 한편 '제로 데이터로부터의 RL'(모델이 스스로 과제를 제안하고 풀이함으로써 학습)은 수학, 코드, 게임, 도구 사용 에이전트 등 짧은 컨텍스트 영역에서 우수한 성과를 보였지만, 장문맥 과제에는 아직 적용되지 않았다. 이에 저자들은 "LLM이 외부 데이터 없이도 스스로 장문맥 추론 능력을 향상시킬 수 있는가"라는 연구 질문을 제기한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>모델이 질문·근거·정답을 먼저 구조화된 형태로 작성한 뒤 이를 장문의 다중 문서 컨텍스트로 확장하고, 이 데이터로 스스로를 학습시키는 장문맥 RL 방법인 LongZero를 제안했다.</li>
+<li>두 개의 기반 모델과 다섯 개의 장문맥 추론 벤치마크에서 LongZero를 평가하여, 자기 생성(self-generated) 과제로부터 일반적인 장문맥 추론 과제로 성능이 일반화됨을 보였다.</li>
+<li>외부 말뭉치 기반의 두 가지 합성 데이터 베이스라인과 비교하여 LongZero가 둘 다 능가함을 보임으로써, 외부 데이터 없이도 LLM의 장문맥 추론을 개선할 수 있는 효과적인 방법임을 입증했다.</li>
+</ul>
+<h2>방법론</h2>
+<p>LongZero는 두 종류의 데이터를 합성한다.</p>
+<ol>
+<li><strong>추론(reasoning) 데이터</strong>: 가상의 세계(world)를 하향식(top-down)으로 생성한다. 먼저 정책 모델 πθ가 개체(entities), 사실(facts), 혼동을 유발하는 방해 사실(distractors), 그리고 여러 문서에 걸쳐 사실을 연결해야 답할 수 있는 다중 홉(multi-hop) 질문과 정답을 포함하는 간결한 JSON 형태의 "세계 명세(world specification)"를 작성한다. 이후 각 사실을 M개의 문서 중 하나에 배정하는 "계획(plan)" 단계를 거쳐, 각 문서를 독립적으로 장문으로 "확장(expansion)"한다. 정답이 장문 속에 verbatim(그대로)으로 남아있는지 확인하는 "충실성 게이트(faithfulness gate)"를 통해 확장 과정에서 정답이 훼손된 질문은 제거한다. 질문의 난이도는 컨텍스트 길이, 홉 수, 방해 사실 수에 비례하도록 설계된다(Difficulty(x,q) ∝ |x|·H_q·K_q).</li>
+<li><strong>검색(retrieval) 데이터</strong>: MRCR(다중 라운드 상호참조 해결) 과제 형식을 따른다. 정책 모델이 "{명사}에 대한 {형식}을 써라" 같은 반복 요청에 여러 번 응답하여 스스로 대화 내용을 생성하고, 그중 일부 응답을 "니들(needle)"로 삼아 긴 대화에 무작위로 삽입한 뒤, 특정 순번의 니들을 재현하도록 요구한다.</li>
+</ol>
+<p>이렇게 생성된 질문 중 모델이 항상 맞히거나 항상 틀리는 질문은 학습 신호가 없으므로 제외하고, 정답과 오답이 모두 나오는 "불안정 구간(unstable band)"의 질문만 남기는 난이도 필터링을 적용한다. 최종적으로 추론 데이터와 검색 데이터를 2:1 비율로 혼합한 데이터셋에 대해 GRPO(Group Relative Policy Optimization, DAPO 스타일의 토큰 단위 정책 경사 손실 포함)로 모델을 학습시킨다. 보상은 규칙 기반으로, 추론 데이터는 정답 일치 여부(이진 보상), 검색 데이터는 Python difflib의 SequenceMatcher 유사도를 사용한 조밀한 부분 점수로 계산된다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Qwen3-4B-Thinking-2507과 Qwen3-8B(사고 모드) 두 기반 모델에 대해 각각 자기 자신이 데이터를 합성·필터링하고 GRPO로 학습시켰다(Qwen3-4B-Thinking-2507은 72스텝, Qwen3-8B는 108스텝). 평가는 LongBench(LB1), LongBench v2(LBv2), FRAMES, AA-LCR, LongReason(32K 분할)의 다섯 개 장문맥 추론 벤치마크에서 수행했다. 비교 대상은 (1) 기반 모델(base model), (2) LoongRL 파이프라인으로 HotpotQA를 16K 토큰까지 확장한 "Enhanced HotpotQA", (3) 397B 규모의 더 강력한 교사 모델(Qwen3.5-397B-A17B)이 작성·검증한 "Teacher-synthesized QA"이다.</p>
+<p>결과적으로 LongZero는 두 기반 모델 모두에서 평균 점수가 가장 높았다(Qwen3-4B-Thinking-2507: 54.68→57.42, Qwen3-8B: 44.63→45.66). 세 RL 방법 모두 평균적으로 기반 모델보다 개선되었지만, LongZero가 가장 큰 개선 폭을 보였고 다섯 벤치마크 중 네 개에서 최고 성능을 기록했다. 특히 교사 모델이 작성한 데이터보다도 LongZero가 더 나은 성능을 보여, 더 강력한 생성기가 반드시 더 나은 학습 데이터를 보장하지는 않음을 시사했다. 또한 학습에 쓰인 합성 컨텍스트는 수만 토큰 수준으로 짧지만, LBv2와 AA-LCR처럼 훨씬 긴 입력을 요구하는 벤치마크에도 성능 개선이 전이되는 길이 일반화(length generalization) 현상이 관찰되었다. 소거 실험(ablation)에서는 추론 데이터와 검색 데이터가 상호 보완적이며, 2:1 비율의 혼합이 둘 중 하나만 사용하거나 1:1로 섞는 것보다 더 나은 평균 성능을 보였다.</p>
+<h2>한계점</h2>
+<p>AA-LCR 벤치마크(72K~115K 토큰 입력)에서는 YaRN으로 확장한 131K 토큰 컨텍스트 창 내에서 사고(thinking) 과정이 출력 공간을 많이 소모해, Qwen3-8B 응답 중 상당수(200개 중 120개)가 최종 답을 내지 못하는 문제가 관찰되었다. 또한 벤치마크 상에서의 성능 향상 폭이 검증 데이터에서 관찰된 향상 폭보다 작은 분포 이동(distribution shift) 문제가 있으며, 베이스라인과 달리 LongZero도 일부 벤치마크(Qwen3-4B-Thinking-2507의 AA-LCR, Qwen3-8B의 LBv2)에서는 기반 모델 대비 성능이 소폭 하락했다. 저자들은 이 방법이 아직 모델이 스스로 생성한 데이터를 반복적으로 재생성·재필터링하지 않으며, 더 긴 컨텍스트나 계산·비교 등 다른 유형의 질문으로의 확장은 향후 과제로 남겨두었다고 밝힌다.</p>
+<h2>시사점</h2>
+<p>LongZero는 외부 말뭉치나 더 강력한 교사 모델 없이도 LLM 스스로가 질문-근거-정답을 먼저 설계한 후 이를 장문 컨텍스트로 확장함으로써, 정답의 정확성을 구조적으로 보장하면서 장문맥 추론 RL 학습 데이터를 무한히 생성할 수 있는 실용적 경로를 제시한다. 이는 데이터 비용이 교사 모델이 아닌 학습 대상 모델 자체의 규모에 따라 결정되도록 하여, 모델이 강해질수록 데이터 합성 난이도가 함께 올라가는 기존 접근의 구조적 한계를 피할 수 있음을 시사한다. 가상의(fictional) 세계에서 학습했음에도 실제 위키백과 기반 질문 등 현실 과제로 일반화된다는 결과는, 장문맥 추론에서 중요한 것이 특정 지식이 아니라 "문맥을 주의 깊게 읽고 근거를 통합하는 일반적 기술"임을 보여준다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.30132" target="_blank" rel="noopener">huggingface.co/papers/2610.30132</a> · 2026-10-30</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

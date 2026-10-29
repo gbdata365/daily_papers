@@ -1,0 +1,101 @@
+{
+  "2610.32749": {
+    "base": "2610_스트리밍화자분리_실환경-오디오비주얼-목표화자-추출",
+    "rank": "#1",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "149",
+    "en_title": "Efficient Streaming Audio-Visual Target Speaker Extraction for Real-World Acoustic Scenes",
+    "ko_title": "Falcon: 실환경 음향 상황을 위한 효율적 스트리밍 오디오비주얼 목표화자 추출"
+  },
+  "2610.35684": {
+    "base": "2610_옴니쇼케이스_멀티뷰-이미지-전방향-주체일관-영상생성",
+    "rank": "#2",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "42",
+    "en_title": "OmniShowcase: Omnidirectional Subject-Consistent Video Generation from Multi-View Images",
+    "ko_title": "옴니쇼케이스: 멀티뷰 이미지 기반 전방향 주체 일관 영상 생성"
+  },
+  "2610.31670": {
+    "base": "2610_센서모터정렬_임바디드-정책-성공-플라토닉-대리지표",
+    "rank": "#3",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "20",
+    "en_title": "Sensorimotor Alignment: A Platonic Proxy for Embodied Policy Success",
+    "ko_title": "센서모터 정렬: 임바디드 정책 성공을 위한 플라토닉 대리 지표"
+  },
+  "2610.22507": {
+    "base": "2610_리얼씨엘아이_CLI-에이전트-인간협업-통합평가",
+    "rank": "#4",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "15",
+    "en_title": "RealCLI: Toward a Unified Evaluation of Human-Agent Collaboration for CLI Agents",
+    "ko_title": "RealCLI: CLI 에이전트를 위한 인간-에이전트 협업 통합 평가"
+  },
+  "2610.37230": {
+    "base": "2610_타오_LLM-에이전틱-서빙-도구인식-공동스케줄링",
+    "rank": "#5",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "15",
+    "en_title": "TAO: Tool-Aware Joint Scheduling for LLM-Based Agentic Serving",
+    "ko_title": "TAO: LLM 기반 에이전틱 서빙을 위한 도구 인식 공동 스케줄링"
+  },
+  "2610.30161": {
+    "base": "2610_타우인디언뱅크벤치_도구사용-대화형-에이전트-평가",
+    "rank": "#6",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "8",
+    "en_title": "TauIndianBankBench: Procedure-Aware, Action-Oriented Evaluation of Tool-Using Conversational Agents",
+    "ko_title": "TauIndianBankBench: 절차 인식 기반 행동 중심 도구사용 대화형 에이전트 평가"
+  },
+  "2610.20832": {
+    "base": "2610_실험설계상각화_추론-LLM-순차적-실험설계",
+    "rank": "#7",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "4",
+    "en_title": "Amortizing Sequential Experimental Design in Reasoning LLMs",
+    "ko_title": "추론 LLM의 순차적 실험 설계 상각화"
+  },
+  "2610.30132": {
+    "base": "2610_롱제로_데이터없이-LLM-장문맥-추론-강화",
+    "rank": "#8",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "3",
+    "en_title": "LongZero: Enhancing Long-Context Reasoning in LLMs from Zero Data",
+    "ko_title": "롱제로: 데이터 없이 LLM의 장문맥 추론 능력 강화하기"
+  },
+  "2610.29702": {
+    "base": "2610_코즈그라운드_적응형-임바디드-플래닝-인과적-그라운딩",
+    "rank": "#9",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "3",
+    "en_title": "CausGround: Causal Interaction Grounding for Adaptive Embodied Planning",
+    "ko_title": "CausGround: 적응형 임바디드 플래닝을 위한 인과적 상호작용 그라운딩"
+  },
+  "2610.35671": {
+    "base": "2610_딥시크안전성평가_제어상실-유해조작-위험성-평가",
+    "rank": "#10",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "1",
+    "en_title": "Evaluating DeepSeek V4.1 Flash-1017 for loss of control and harmful manipulation risks",
+    "ko_title": "DeepSeek V4.1 Flash-1017의 제어 상실 및 유해 조작 위험성 평가"
+  },
+  "2610.34186": {
+    "base": "2610_후게_휴머노이드-제너럴리스트-VLA-확장",
+    "rank": "#11",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "1",
+    "en_title": "HuGe: Scaling Humanoid Generalist Vision-Language-Action Models with Egocentric Experience",
+    "ko_title": "HuGe: 자기중심적 경험을 활용한 휴머노이드 제너럴리스트 VLA 모델 확장"
+  }
+}

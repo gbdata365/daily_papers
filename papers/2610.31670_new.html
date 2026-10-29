@@ -1,0 +1,118 @@
+<meta charset="UTF-8">
+<title>센서모터 정렬</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#3 · Daily Papers 2026-10-30</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 20</span>
+    </div>
+    <h1 class="article-title">Sensorimotor Alignment: A Platonic Proxy for Embodied Policy Success</h1>
+    <p class="article-title-ko">센서모터 정렬: 임바디드 정책 성공을 위한 플라토닉 대리 지표</p>
+    <p class="article-sub">로봇 파운데이션 모델의 시각-언어(센서) 표현이 실제 엔드이펙터 모션 궤적(모터 표현)의 기하 구조와 얼마나 잘 정렬되는지를 측정하는 학습이 필요 없는 오프라인 지표 Sensorimotor Alignment(S²)를 제안하고, 이 지표가 폐루프(closed-loop) 로봇 작업 성공률과 강하게 양의 상관관계를 가짐을 여러 모델군에서 보인다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.31670" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.31670" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Sensorimotor Alignment: A Platonic Proxy for Embodied Policy Success</li>
+<li><strong>저자</strong>: Yunfei Xie, Howard H. Qian, Shiyi Lan, Kaiyu Hang, Chen Wei (교신저자) — Rice University, NVIDIA 소속 연구진</li>
+<li><strong>출처</strong>: arXiv:2610.31670v2 [cs.CV] (2026-10-23)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://yunfeixie233.github.io/s2/">https://yunfeixie233.github.io/s2/</a> (코드: https://github.com/yunfeixie233/sensorimotor-alignment)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.31670">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>로봇 파운데이션 모델의 시각-언어(센서) 표현이 실제 엔드이펙터 모션 궤적(모터 표현)의 기하 구조와 얼마나 잘 정렬되는지를 측정하는 학습이 필요 없는 오프라인 지표 Sensorimotor Alignment(S²)를 제안하고, 이 지표가 폐루프(closed-loop) 로봇 작업 성공률과 강하게 양의 상관관계를 가짐을 여러 모델군에서 보인다.</p>
+<h2>배경 및 문제의식</h2>
+<p>로봇 파운데이션 모델은 대규모 비전-언어 모델(VLM), 비디오 모델, 월드 액션 모델(World Action Model, WAM) 위에 구축되는 경우가 많지만, 이를 평가하려면 비용이 크고 느리며 노이즈가 많은 폐루프 롤아웃(시뮬레이션 또는 실제 로봇)이 필요하다. 기존의 저비용 오프라인 대리 지표들, 예를 들어 VLM의 시각질의응답(VQA) 점수나 월드 모델의 픽셀 단위 비디오 품질 지표(FID, SSIM, PSNR)는 수동적인 지각·생성 품질만을 측정할 뿐, 표현이 실제 '행동(모션)'을 위해 조직화되어 있는지는 평가하지 못한다. 저자들은 Platonic Representation Hypothesis(PRH) — 모델이 충분히 발전하면 서로 다른 모달리티(예: 비전, 언어)의 표현이 하나의 공유된 현실 모델로 수렴한다는 가설 — 를 로보틱스로 확장하여, 물리적 모션 궤적 역시 세계에 대한 또 하나의 '투영'으로 볼 수 있는지, 그리고 더 유능한 임바디드 모델일수록 센서 표현이 모션 구조와 더 긴밀히 정렬되는지를 검증하고자 한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>PRH에서 영감을 받아, 더 유능한 임바디드 모델일수록 센서 표현이 모션 궤적 구조와 더 밀접하게 정렬될 것이라는 새로운 임바디먼트(embodiment) 관점을 제시하고, 이를 측정하는 학습이 필요 없는(training-free) 오프라인 지표 S²를 제안.</li>
+<li>VLA(Vision-Language-Action 모델), 원시 VLM, WAM(World Action Model), 실제 로봇 정책 등 여러 모델군과 시뮬레이션·실제 환경 모두에서 S²가 다운스트림 작업 성공률과 양의 상관관계를 가짐을 보여, 폐루프 평가 이전 단계의 저비용 모델 선별 지표로 활용 가능함을 입증.</li>
+<li>S²를 이용해 VLA와 WAM에서 기존에 폐루프 결과로만 관찰되던 여러 현상(언어 지시 무시 현상, 비전 인코더 고정의 성능 저하, 반복적 디노이징 생략 가능성, 중간 깊이 블록의 중요성 등)을 표현 수준에서 설명하는 진단 도구로 활용.</li>
+</ul>
+<h2>방법론</h2>
+<p>S²는 DROID(단일팔, Franka Panda), BridgeDataV2(단일팔, WidowX), ALOHA(양팔, WAM용) 등 참조 데이터셋에서 에피소드를 샘플링해 계산한다. 각 에피소드에 대해 (1) 이미지 프레임과 작업 지시문(텍스트)을 모델의 비전/텍스트 인코더로 인코딩해 센서 표현 벡터를 얻고, (2) 샘플링된 시점 이후 h스텝 동안의 엔드이펙터 위치·회전(roll, pitch, yaw)·그리퍼 상태를 모터 표현(궤적)으로 구성한다. 센서 공간에서는 코사인 거리, 모터 공간에서는 Dynamic Time Warping(DTW)으로 궤적 간 거리를 계산하고, 각 에피소드별로 센서 공간과 모터 공간의 k-최근접 이웃 집합을 구해 두 집합의 중첩 정도(상호 최근접 이웃 중첩, mutual nearest-neighbor overlap)를 측정한다. 실제 보고되는 S² 값은 Huh et al.의 CKNNA(centered kernel nearest-neighbor alignment)를 변형한 정규화된 지표로, k=10 이웃을 기본값으로 사용한다. 중첩이 클수록 "센서 표현이 비슷한 에피소드는 모터 궤적도 비슷하다"는 의미이며 이는 더 강한 센서모터 정렬을 뜻한다.</p>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li><strong>VLA (12개 모델, SimplerEnv 평가)</strong>: S²와 성공률의 Pearson 상관계수 r = +0.717 (부트스트랩 95% 신뢰구간 [+0.436, +0.912]). StarVLA, CogACT, GR00T, Pi0, SpatialVLA 등 다양한 아키텍처·훈련 방식에 걸쳐 상관관계 유지(리브-원-아웃 검증에서도 r = +0.526~+0.785).</li>
+<li><strong>원시 VLM (8개 백본, 파인튜닝 전)</strong>: 파인튜닝 전 S²가 이후 VLA로 파인튜닝했을 때의 성공률과 r = +0.681(p=0.031)로 상관, 반면 동일 설정에서 VQA 점수는 r = -0.154로 상관관계가 거의 없음 — S²가 VQA보다 우수한 조기 선별 지표임을 시사.</li>
+<li><strong>WAM (6개 모델, RoboTwin 2.0 평가)</strong>: r = +0.718(p=0.054); 비디오 품질 지표(FID, SSIM, PSNR)는 유의한 상관을 보이지 못하거나(SSIM r=+0.558, PSNR r=+0.468) 심지어 반대 방향(FID r=+0.680, 품질이 나쁠수록 성공률이 높아지는 역설적 결과)으로 나타남.</li>
+<li><strong>실제 로봇 정책 (MolmoB0T 보고, 5개 정책·40개 과제 공유 평가)</strong>: r = +0.831(p=0.041)로 실제 환경에서도 강한 상관 확인.</li>
+<li><strong>강건성 검증</strong>: 참조 데이터셋(DROID vs BridgeDataV2), 궤적 호라이즌(h=1~220), 구현 세부 선택, DTW 워핑 등 8가지 계산 설정 변화에도 상관관계가 양의 방향으로 유지됨. 반대로 임바디먼트가 불일치하는 네거티브 컨트롤(양팔 WAM을 단일팔 DROID로 평가)에서는 상관관계가 r=+0.999에서 r=+0.246으로 급락해, S²가 실제 임바디먼트 차이에 민감하게 반응함을 확인.</li>
+<li><strong>표현 수준 설명</strong>: 파인튜닝된 VLA는 비전 특징의 S²(r=+0.694)가 텍스트 특징의 S²(r=+0.237)보다 성공률과 훨씬 강하게 상관해, VLA가 언어 지시보다 시각 정보에 주로 의존해 모션을 생성함을 뒷받침. 비전 인코더를 고정(freeze)하면 S²와 성공률이 모두 크게 하락(S² 41% 감소, 성공률 40% 감소)해 엔드투엔드 파인튜닝의 이점을 설명. WAM에서는 가장 이른 디노이징 단계부터 이미 S²가 높고 이후 거의 변하지 않아, 반복적 디노이징을 생략해도 성능 손실이 적은 이유를 설명. 또한 30개 블록 중 중간 깊이(블록 14)에서 S²가 가장 높게 나타나, 의미적 추론을 담당하는 중간 레이어가 모션과도 가장 밀접히 정렬됨을 시사.</li>
+</ul>
+<h2>한계점</h2>
+<p>저자들이 명시한 한계는 세 가지다. (1) S²와 작업 성공률 간의 관계는 테스트된 모델들에 대한 상관관계일 뿐이며, 센서모터 정렬을 훈련 과정에서 직접 활용해 성공률을 높일 수 있는지는 아직 입증하지 못함. (2) S² 값이 비슷한 모델들도 실제 성공률은 서로 다를 수 있어, S²는 모델 선정의 최종 단계가 아니라 유망한 모델·VLM 백본을 비용이 큰 파인튜닝이나 폐루프 테스트 이전에 걸러내는 저비용 오프라인 대리 지표로만 활용해야 함. (3) 평가 대상이 된 모델군, 벤치마크, 훈련 레시피가 제한적이고 비교에 사용된 모델 수도 적으며 실제 로봇 환경도 단일 설정에 그쳐, 더 폭넓은 일반화 가능성은 추가 검증이 필요함.</p>
+<h2>시사점</h2>
+<p>이 연구는 Platonic Representation Hypothesis를 로보틱스 영역으로 확장해, 모션 궤적을 비전·언어와 함께 세계에 대한 또 하나의 투영으로 바라보는 새로운 임바디먼트 관점을 제시한다. S²는 VQA 점수나 비디오 품질 지표보다 작업 성공률과 더 밀접히 연관되는 저비용 오프라인 지표로서, 값비싼 폐루프 평가 이전에 모델이나 VLM 백본을 효율적으로 선별하는 실용적 도구로 활용될 수 있다. 또한 VLA·WAM 설계에서 관찰되는 여러 현상(언어 지시 무시, 인코더 고정의 악영향, 디노이징 생략 가능성, 중간 레이어의 중요성)을 표현 수준에서 설명함으로써, 폐루프 성공률만으로는 드러나지 않는 로봇 파운데이션 모델의 내부 작동 원리를 이해하는 데 기여하며, 향후 센서모터 정렬 자체를 훈련 목표로 최적화하는 연구 방향을 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.31670" target="_blank" rel="noopener">huggingface.co/papers/2610.31670</a> · 2026-10-30</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

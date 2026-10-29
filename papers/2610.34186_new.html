@@ -1,0 +1,113 @@
+<meta charset="UTF-8">
+<title>HuGe</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#11 · Daily Papers 2026-10-30</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 1</span>
+    </div>
+    <h1 class="article-title">HuGe: Scaling Humanoid Generalist Vision-Language-Action Models with Egocentric Experience</h1>
+    <p class="article-title-ko">HuGe: 자기중심적 경험을 활용한 휴머노이드 제너럴리스트 VLA 모델 확장</p>
+    <p class="article-sub">HuGe는 2,000시간이 넘는 1인칭(egocentric) 인간 영상과 로봇 데이터를 함께 활용해, 기존 VLA(Vision-Language-Action) 아키텍처를 휴머노이드 전신(whole-body) 제어로 확장하는 3단계 학습 파이프라인을 제안하고, 시뮬레이션 벤치마크 HumanoidArena와 실제 Unitree G1 로봇 실험에서 최고 성능을 달성한 연구이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.34186" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.34186" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: HuGe: Scaling Humanoid Generalist Vision-Language-Action Models with Egocentric Experience</li>
+<li><strong>저자</strong>: Yang Liu, Jiacheng Liu, Hengtao Li, Yuheng Huang, Zijian Yang, Ji Dai, Maoxin Wang, Yi Gao, Qishen Wang, Baohua Yin, Peiyang Li, Shuanghao Bai, Mingyang Sun, Pengxiang Ding, Jianqin Yin, Lixin Yang, Donglin Wang 등. Westlake University, Zhejiang University, Shanghai Innovation Institute를 비롯해 Hebei University of Technology, Beijing University of Posts and Telecommunications, Southwest University of Finance and Economics, University of Science and Technology of China, University of Sussex, Xi'an Jiaotong University, Shanghai Jiao Tong University 등 다수 기관의 공동 연구</li>
+<li><strong>출처</strong>: arXiv:2610.34186v1 [cs.RO] (2026년 10월 25일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음 (원문에 "Project Page" 및 "Code" 링크가 표기되어 있으나 추출된 텍스트에 실제 URL은 포함되어 있지 않음)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.34186">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>HuGe는 2,000시간이 넘는 1인칭(egocentric) 인간 영상과 로봇 데이터를 함께 활용해, 기존 VLA(Vision-Language-Action) 아키텍처를 휴머노이드 전신(whole-body) 제어로 확장하는 3단계 학습 파이프라인을 제안하고, 시뮬레이션 벤치마크 HumanoidArena와 실제 Unitree G1 로봇 실험에서 최고 성능을 달성한 연구이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>최근 VLA 모델들은 탁상 조작(tabletop manipulation) 과제에서 큰 성과를 보였지만, 이를 휴머노이드 로봇으로 확장하려면 두 가지 난제가 있다. 첫째, 휴머노이드의 고차원 행동 공간과 복잡한 전신 동역학 때문에 팔 동작을 몸통·하체와 조율해야 하며, 기존 로봇 팔용 VLA 정책을 그대로 전이하기 어렵다. 둘째, 다양한 휴머노이드 시연 데이터를 실제 로봇에서 수집하는 것은 비용과 시간이 많이 든다. 1인칭 인간 시연 영상은 이를 보완할 대규모 데이터원이 될 수 있지만, 인간과 로봇 간 시각적 외형 차이와 로봇 고유의 자기수용감각(proprioception) 정보 부재로 인해 직접적인 활용이 어렵다는 문제의식에서 출발한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>2,000시간 이상의 1인칭 인간 및 로봇 데이터를 활용해 3단계(1인칭 사전학습 → 휴머노이드 적응 → 다운스트림 파인튜닝) 학습 파이프라인을 통해 학습된 휴머노이드 제너럴리스트 VLA 패밀리인 HuGe를 제안한다.</li>
+<li>인간 시연을 휴머노이드 정책 학습에 전이하기 위한 데이터 적응 기법으로, 시뮬레이션 재생(simulation playback)을 통한 의사 자기수용감각(pseudo-proprioceptive) 상태 구성과, 1인칭 관찰 영상 속 인간 팔을 로봇 팔로 교체하는 시각적 적응(visual adaptation)을 제시한다.</li>
+<li>HumanoidArena 시뮬레이션 벤치마크에서 기존 베이스라인 대비 최고 성능(state-of-the-art)을 달성하고, 실제 환경 실험과 분석을 통해 학습 레시피의 효과를 검증한다.</li>
+</ul>
+<h2>방법론</h2>
+<p>HuGe는 시각 관찰, 자기수용감각 상태, 언어 지시를 입력받아 64차원 잠재 모션 토큰과 좌우 손 개폐 여부를 나타내는 2개의 이진 변수로 구성된 66차원 행동 벡터를 예측한다. 모션 토큰은 사전학습된 전신 제어기 SONIC의 보편 토큰 공간에 속하며, SONIC의 제어 디코더가 이 토큰을 관절 단위 명령으로 변환해 전신 동작을 생성하고, 이진 변수는 손의 개폐를 별도로 제어한다. 이 인터페이스 위에서 OFT, GR00T, π(파이) 등 기존 3가지 대표적 VLA 아키텍처를 수정 없이 휴머노이드용으로 인스턴스화하여 비교한다.</p>
+<p>학습은 3단계로 진행된다. 1단계(1인칭 사전학습)에서는 EgoDex, EgoVerse, Xperience-10M 등의 대규모 1인칭 인간 시연과 BEHAVIOR-1K의 시뮬레이션 로봇 시연을 SONIC 모션 토큰으로 변환하여 언어 조건부 행동 예측을 학습하며, 시뮬레이터에서 모션 토큰을 재생해 29개 관절각·손 상태 2개·중력 방향 3차원으로 구성된 34차원 의사 자기수용감각 상태를 함께 구성한다. 2단계(휴머노이드 적응)에서는 Humanoid Everyday, UniFoLM-WBT, HIW-500 등 실제 G1 로봇 시연 데이터로 계속 학습하여 정책을 실제 관찰 및 상태 분포에 맞춘다. 3단계(다운스트림 파인튜닝)에서는 HumanoidArena 및 실제 콜라 집기-놓기 과제에 맞춰 정책을 추가로 적응시키는데, 이때 로봇 원격조작 데이터 수집 부담을 줄이기 위해 PICO 4 Ultra와 트래커로 수집한 1인칭 인간 시연을 함께 사용한다. 이 과정에서 Phantom 파이프라인을 활용해 영상 속 인간 손·팔을 제거·인페인팅한 뒤 시뮬레이션 렌더링된 로봇 손으로 합성함으로써, 인간-로봇 간 시각적 불일치를 줄이는 시각적 적응을 적용한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>시뮬레이션 실험은 HumanoidArena의 7개 과제(인간-사물 상호작용 3종, 인간-장면 상호작용 4종)에서 수행되었다. 학습 전략 비교에서는 전체 파라미터 파인튜닝(Full)이 프리즈 백본이나 LoRA보다 뚜렷이 우수해, 이후 모든 실험에 전체 파인튜닝을 채택했다. 의사 자기수용감각 상태를 1인칭 사전학습에 포함하면 HuGe-GR00T와 HuGe-Pi의 평균 성공률이 각각 5.00%p, 2.86%p 향상되었으나, 텍스트 기반 상태 인터페이스를 쓰는 HuGe-OFT는 상태 정보가 잘려 들어가는 문제로 오히려 성능이 저하되었다. 1인칭 사전학습 데이터 규모를 늘릴수록 HuGe-GR00T와 HuGe-Pi는 각각 66.67%, 65.00%까지 성능이 향상되어 추가 1인칭 경험이 전이 가능한 정보를 제공함을 보였다. 전체 비교에서 HuGe-GR00T와 HuGe-Pi는 가장 강력한 베이스라인인 π0.5 대비 각각 12.86%p, 11.19%p 높은 평균 성공률을 기록해 ACT, DP, FM, GR00T(스크래치 및 GR00T N1.7 초기화) 등 베이스라인들을 능가했다.</p>
+<p>실제 환경 실험에서는 Unitree G1(Inspire 손 장착)으로 콜라를 집어 쓰레기통에 놓는 전신 장기 과제(접근-파지-이동-투하)를 수행했다. π 아키텍처 기반 HuGe만을 사용해 비교한 결과, 로봇 시연 110개만 사용했을 때 성공률 43.3%였으나, 원본 1인칭 시연 400개를 추가하면 60.0%, 시각적으로 적응된(인간 손을 로봇 손으로 합성한) 1인칭 시연을 추가하면 66.7%까지 성공률이 향상되었다. 시각적 적응은 Wan2.2, VideoMAE V2, V-JEPA 2 특징 공간 모두에서 1인칭 관찰과 실제 로봇 관찰 간 Fréchet 거리를 13.83~33.54% 감소시켜, 실제 로봇 분포에 더 가까워졌음을 정량적으로 확인했다. 30회 시행 중 실패의 상당수는 물체 파지 단계에서 발생했으며, 손의 무게로 인한 균형 불안정이 관찰되었다.</p>
+<h2>한계점</h2>
+<p>세 가지 HuGe 변형 모두 DoubleDesk 과제에서는 0~15.00%의 낮은 성공률을 보였는데, 저자들은 이를 사전학습 데이터에 반복적인 파지 시도가 많고 전신 데이터에 비중이 쏠려 정교한 손 조작(fine-grained grasping) 학습이 부족했기 때문으로 추정하며, 향후 대규모 로봇 팔 조작 데이터를 사전학습에 통합할 필요성을 언급한다. 또한 실제 로봇 실험에서는 덱스트러스 핸드의 무게로 인한 균형 불안정이 실패의 한 요인으로 관찰되었으며, 1인칭 인간 데이터는 시뮬레이션 과제 환경에서 직접 수집할 수 없어 실제 환경에서만 1인칭 데이터 활용 효과를 검증했다는 한계도 있다.</p>
+<h2>시사점</h2>
+<p>이 연구는 1인칭 인간 시연이라는 대규모·저비용 데이터원을 로봇 전용 수집 데이터의 한계를 보완하는 실질적 자원으로 전환할 수 있음을, 의사 자기수용감각 구성과 시각적 적응이라는 두 가지 데이터 적응 기법을 통해 보여준다. 또한 기존에 검증된 VLA 아키텍처(OFT, GR00T, π)를 구조 변경 없이 공통 행동 인터페이스(SONIC 모션 토큰)로 묶어 비교함으로써, 아키텍처 선택보다 학습 데이터 구성과 적응 전략이 휴머노이드 전신 제어 성능에 미치는 영향이 크다는 점을 시사한다. 이는 향후 휴머노이드 제너럴리스트 정책 개발에서 인간 동영상 데이터 활용 전략을 설계하는 데 참고할 수 있는 실용적 레시피를 제공한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.34186" target="_blank" rel="noopener">huggingface.co/papers/2610.34186</a> · 2026-10-30</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

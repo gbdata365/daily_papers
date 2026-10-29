@@ -1,0 +1,133 @@
+<meta charset="UTF-8">
+<title>CausGround</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#9 · Daily Papers 2026-10-30</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 3</span>
+    </div>
+    <h1 class="article-title">CausGround: Causal Interaction Grounding for Adaptive Embodied Planning</h1>
+    <p class="article-title-ko">CausGround: 적응형 임바디드 플래닝을 위한 인과적 상호작용 그라운딩</p>
+    <p class="article-sub">멀티모달 대형언어모델(MLLM) 기반 임바디드 플래너가 환경별 행동의 전제조건(precondition)과 효과(effect)를 재사용 가능한 인과 지식으로 추출·활용하도록 하여, 파라미터 업데이트 없이도 장기 과제(long-horizon task) 계획 성공률을 크게 높이는 비파라메트릭(non-parametric) 프레임워크 CausGround를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.29702" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.29702" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: CausGround: Causal Interaction Grounding for Adaptive Embodied Planning</li>
+<li><strong>저자</strong>: Yijun Shen, Diqi He, Jinbang Guo, Wanyue Zhang, Jiaming Mi, Huan Yang, Zhongyuan Wang, Zhiwei Yu, Kai Zhang. East China Normal University, Beijing Academy of Artificial Intelligence (BAAI), Northwestern Polytechnical University, University of Chinese Academy of Sciences 산하 School of Artificial Intelligence, Chinese Academy of Sciences 산하 Institute of Automation 소속 저자들의 공동 연구이며, Zhiwei Yu와 Kai Zhang이 교신저자(Corresponding author)로 표기되어 있음</li>
+<li><strong>출처</strong>: arXiv:2610.29702v1 [cs.RO] (2026년 10월 21일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://causground.github.io">https://causground.github.io</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.29702">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>멀티모달 대형언어모델(MLLM) 기반 임바디드 플래너가 환경별 행동의 전제조건(precondition)과 효과(effect)를 재사용 가능한 인과 지식으로 추출·활용하도록 하여, 파라미터 업데이트 없이도 장기 과제(long-horizon task) 계획 성공률을 크게 높이는 비파라메트릭(non-parametric) 프레임워크 CausGround를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>MLLM 기반 임바디드 에이전트는 높은 수준의 행동 계획을 세우는 데 강력한 추론 능력을 보여주지만, 실제 물리적 상호작용을 수행하려면 "언제 행동이 실행 가능한지"와 "그 행동이 세계를 어떻게 변화시키는지"를 정확히 알아야 한다. 이러한 전제조건과 효과는 환경마다 다르며 MLLM이 사전학습만으로 완전히 포착하기 어렵다. 예를 들어 냉장고에 컵을 넣으려면 먼저 냉장고 문이 열려 있어야 한다는 전제조건을 무시하면, 장기 과제 수행 중 오류가 누적되어 실패나 불필요한 재시도로 이어진다. 기존 적응 방법은 (1) 파인튜닝이나 강화학습으로 모델 파라미터를 환경에 맞게 갱신하는 방식으로 비용이 크고 환경별 데이터 수집이 필요하거나, (2) 추론 시점에 상호작용 경험을 비정형 궤적이나 에피소드 메모리로 저장하는 방식으로 어떤 경험이 인과적으로 중요한지 구분하기 어렵고 현재 시각 장면에 다시 접지(grounding)하기 힘들다는 한계가 있다. 또한 기존 세계 상태 표현은 객체의 세부 속성과 객체 간 관계를 함께 포착하지 못해 행동의 전제조건 충족 여부 판단이 어려웠다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>행동의 전제조건과 효과를 중심으로 임바디드 상호작용 지식을 정형화하고, 객체 속성(attribute)과 객체 간 관계(relation)를 함께 포착하는 분해된(factorized) 세계 상태 표현을 제안하여 현재 시각 관찰에 인과 지식을 접지할 수 있게 함</li>
+<li>상호작용 궤적을 재사용 가능한 행동 중심 인과 지식으로 증류하고, 계획 시점에 과제 관련 인과 의존성을 동적으로 접지하는 비파라메트릭 프레임워크 CausGround를 제안. 이를 통해 파라미터 갱신 없이 행동 전 충족해야 할 조건과 행동 후 세계가 어떻게 바뀌는지를 함께 추론할 수 있음</li>
+<li>VirtualHome, RoboCasa 시뮬레이션, 실제 환경 기반 SWITCH 벤치마크, 그리고 실제 로봇 조작 실험까지 다양한 장기 임바디드 환경에서 여러 MLLM 백본에 걸쳐 일관된 성능 향상을 입증</li>
+</ul>
+<h2>방법론</h2>
+<p>CausGround는 크게 두 단계로 구성된다.</p>
+<ol>
+<li>
+<p><strong>분해된 세계 상태 표현(Factorized World-State Representation)</strong>: 시점 t의 세계 상태를 객체 집합 O_t와 객체 간 관계 집합 R_t로 표현한다. 각 객체는 의미 범주(category)와 속성-값 쌍(attribute-value pair) 집합으로 구성되며, 각 관계는 두 객체 사이의 형식화된(typed) 엣지(예: ON(cup, table), INSIDE(cup, fridge))로 표현된다. 이 표현은 현재 관찰, 행동 전제조건, 행동 효과를 동일한 스키마로 다룰 수 있게 하여 지식 구축과 실시간 접지 사이의 다리 역할을 한다.</p>
+</li>
+<li>
+<p><strong>행동 중심 인과 지식 구축(Action-Centered Causal Knowledge Construction)</strong>: 특정 행동(예: GRAB, OPEN)에 대해 사전/사후 상태와 실행 결과로 이루어진 상호작용 궤적 집합을 수집한다. 성공과 실패를 가르는 상태 요인만을 일관되게 전제조건 집합으로 남기고, 실행 결과와 무관한 요인은 우연적(incidental)인 것으로 버린다. 마찬가지로 성공한 실행의 사전/사후 상태를 비교해 일관되게 뒤따르는 변화만 효과 집합으로 남긴다. 한 행동의 효과가 다른 행동의 전제조건을 만족시키면 두 행동 사이에 인과 의존성(causal dependency)을 연결하여 다단계 상호작용을 구성할 수 있게 한다. 이 지식은 여러 객체에 공통되는 일반 지식(generic knowledge)과 특정 객체에만 유효한 특수 지식(instance-specific knowledge)으로 구분되어 CausGround 라이브러리에 저장된다.</p>
+</li>
+<li>
+<p><strong>과제 접지 계획(Task-Grounded Planning)</strong>: 주어진 과제 설명과 초기 세계 상태로부터, (a) 목표 상태를 해석해 효과와 전제조건에 대한 역방향 추론(backward reasoning)으로 목표 지향적 인과 의존성을 얻고, (b) CausGround 라이브러리에서 관련 일반/특수 인과 지식을 의미적으로 검색하여, 두 경로를 결합해 과제 지식 K_task를 구성한다. 이 지식은 에피소드 시작 시 한 번 구성되며, 매 단계마다 현재 시각 관찰과 결합되어 고정된(frozen) 플래너가 다음 행동을 선택하도록 돕는다. 역방향 추론은 실행 가능한 행동을 식별하고, 전방향(forward) 추론은 상태 전이를 예측하며, 행동 간 교차 의존성은 장기 계획에 구조적 지침을 제공한다.</p>
+</li>
+</ol>
+<h2>실험 설정 및 결과</h2>
+<p>VirtualHome(비전 기반 폐루프 고수준 플래닝, 75개 과제, 단/중/장기로 구분), RoboCasa(가정 조작 과제를 고수준 스킬 단계로 재구성, 원샷/폐루프 리플래닝 평가), 실세계 에고센트릭 장기 상호작용 벤치마크 SWITCH(행동 선택, 오류 복구, 상태 검증, 검증 행동의 4개 카테고리), 그리고 실제 듀얼암 로봇 조작 실험에서 평가되었다. 플래너 백본으로는 Qwen3.5-9B/27B/35B-A3B를 주로 사용하였고, 추가로 Gemma4, InternVL3.5 등 서로 다른 모델 계열과 규모에서도 검증하였다. 비교 대상은 Vanilla 플래너, SelfReVision, LookPlanGraph였다.</p>
+<ul>
+<li>VirtualHome: 평균 과제 성공률이 Vanilla 대비 24.9%에서 53.3%로 향상되었고, 평균 최종 진행도(progress)는 38.4%에서 71.3%로 상승. 단/중/장기 모든 구간에서 일관된 향상을 보임</li>
+<li>RoboCasa: 원샷 플래닝 성공률이 평균 26.9%에서 38.9%로, 폐루프 리플래닝 성공률이 43.0%에서 57.0%로 향상</li>
+<li>SWITCH: 상호작용 추론 평균 정확도가 25.8%에서 31.9%로 향상되었으며, Action, Recovery, Verification Action, Verification State 전 영역에서 개선</li>
+<li>구성요소 분석(ablation): 분해된 세계 상태와 인과 지식 각각이 Vanilla 대비 성능을 높이며, 둘을 결합한 CausGround가 가장 높은 성능(VirtualHome 기준 성공률 62.7%, 진행도 79.8%, Qwen3.5-27B)을 보임. 인과 지식(특히 역방향 인과 검색)이 성능 향상의 주된 기여 요인으로 분석됨</li>
+<li>모델 계열 일반화: Qwen3.5, InternVL3.5, Gemma4 등 6개 모델(4B~38B)에서 모두 일관된 향상을 보여 특정 모델 패밀리나 규모에 종속되지 않음을 확인</li>
+<li>실세계 로봇 실험: MLLM이 자연어 지시를 목표 상태로 해석하면 CausGround가 인과 지식에 대한 역방향 추론으로 실행 가능한 고수준 행동 시퀀스(예: OPEN(Microwave) → PICK(Bread) → PLACE(Bread, Plate))를 도출하여 다단계 조작을 성공적으로 수행</li>
+</ul>
+<h2>한계점</h2>
+<p>논문에 별도의 "Limitations" 절은 명시되어 있지 않다. 다만 본문 및 부록 내용을 통해 다음과 같은 한계가 시사된다.
+- 인과 지식의 품질은 사전 수집된 상호작용 궤적과 그로부터 전제조건/효과를 식별하는 과정에 의존하며, VirtualHome의 경우 각 행동에 대한 통제된 개입(controlled intervention) 실험을 통해 라이브러리를 구축했는데, 이러한 통제된 개입이 항상 가능하지 않은 환경(RoboCasa, SWITCH 등)에서는 반복된 공식 궤적에서의 일관성 기반 필터링으로 대체해야 했다는 점에서 환경에 따라 지식 구축 방식과 품질이 달라질 수 있음
+- 세계 상태를 추출하는 것은 결국 고정된(frozen) MLLM이므로, 시각 관찰로부터 객체 속성과 관계를 잘못 인식하면 그릇된 전제조건 판단으로 이어질 가능성이 있음(논문은 이를 직접적인 한계로 논하지는 않음)
+- VirtualHome 실험에서는 원본 렌더링이 상태와 시각적으로 불일치하는 문제가 있어 별도의 이미지 편집 모델(Qwen-Image-Edit)로 관찰을 보정하는 절차가 필요했다는 점에서, 비전 기반 벤치마크 자체의 한계도 일부 드러남</p>
+<h2>시사점</h2>
+<p>CausGround는 모델 파라미터를 갱신하지 않고도 환경별 상호작용 역학을 명시적이고 재사용 가능한 인과 지식(전제조건과 효과)으로 정제함으로써 임바디드 에이전트의 장기 계획 능력을 향상시킬 수 있음을 보여준다. 이는 비정형 궤적이나 암묵적 메모리에 의존하던 기존 비파라메트릭 적응 방식과 달리, 행동 단위의 명시적 인과 구조가 플래너에게 "언제 실행 가능한가"와 "실행하면 무엇이 바뀌는가"에 대한 구조화된 참조를 제공함으로써 다양한 MLLM 백본과 환경(시뮬레이션뿐 아니라 실세계 로봇)에 걸쳐 일반화 가능한 해법이 될 수 있음을 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.29702" target="_blank" rel="noopener">huggingface.co/papers/2610.29702</a> · 2026-10-30</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

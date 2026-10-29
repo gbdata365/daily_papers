@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>Falcon</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#1 · Daily Papers 2026-10-30</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 149</span>
+    </div>
+    <h1 class="article-title">Efficient Streaming Audio-Visual Target Speaker Extraction for Real-World Acoustic Scenes</h1>
+    <p class="article-title-ko">Falcon: 실환경 음향 상황을 위한 효율적 스트리밍 오디오비주얼 목표화자 추출</p>
+    <p class="article-sub">이 논문은 실제 환경의 음향 조건(근거리/원거리 화자, 잔향, 돌발 소음)을 반영한 오디오비주얼 목표화자 추출(AVTSE) 벤치마크 RealSSA와, 단일 패스로 다중 스케일 시간-주파수 분리를 수행하는 경량 인과(causal) 모델 Falcon을 함께 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.32749" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.32749" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Efficient Streaming Audio-Visual Target Speaker Extraction for Real-World Acoustic Scenes</li>
+<li><strong>저자</strong>: Wendi Sang, Kai Li, Yifan Li, Jianqiang Huang, Xiaolin Hu (칭하이대학교(Qinghai University), 칭화대학교(Tsinghua University) 컴퓨터과학과 및 BNRist·THBI 연구소, 중국 베이징뇌과학연구소(Chinese Institute for Brain Research) 공동 연구)</li>
+<li><strong>출처</strong>: arXiv:2610.32749v1 [cs.SD] (2026-10-23)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://cslikai.cn/Falcon/">https://cslikai.cn/Falcon/</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.32749">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>이 논문은 실제 환경의 음향 조건(근거리/원거리 화자, 잔향, 돌발 소음)을 반영한 오디오비주얼 목표화자 추출(AVTSE) 벤치마크 RealSSA와, 단일 패스로 다중 스케일 시간-주파수 분리를 수행하는 경량 인과(causal) 모델 Falcon을 함께 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>오디오비주얼 목표화자 추출(AVTSE)은 입술 움직임 등 시각 정보를 단서로 삼아 다화자 혼합 음성에서 목표 화자의 음성만 분리해내는 기술로, 화상회의나 보청 기기처럼 지연시간에 민감한 응용에서는 인과적(causal, 미래 프레임을 보지 않는) 모델이 필요하다. 그러나 저자들은 현재 연구에 두 가지 간극이 있다고 지적한다. 첫째, LRS2-2Mix, LRS3-2Mix, VoxCeleb2-2Mix 같은 기존 벤치마크는 화자 수를 2명으로 고정하고 근거리/원거리 간섭화자, 잔향, 배경소음, 돌발소음 등 실제 녹음 환경의 변동 요소를 반영하지 않는다. 둘째, AV-TFGridNet, AV-Mossformer2 등 고성능 인과 아키텍처는 연산량이 지나치게 커 엣지 기기에 배치하기 어렵고, SwiftNet 같은 경량 대안은 작은 분리기를 여러 번 반복 호출하는 방식이라 반복마다 연산량이 누적되어 절감 효과가 상쇄된다. 또한 기존 학습에 흔히 쓰이는 SI-SNR 손실은 목표 음성과의 거리만 최소화할 뿐, 공간적으로 가까운 근거리 간섭화자의 잔여 누출(residual leakage)을 명시적으로 억제하지 못한다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li><strong>RealSSA 벤치마크</strong>: 화자 구성(1~5명의 동적 근거리 간섭화자, 원거리 간섭화자 포함 시 10~15명 추가), 실내외 4가지 장면 유형(소규모 회의실, 중간 규모 실내, 대형 공공장소, 야외), 잔향·환경소음·돌발소음을 동시에 제어 가능한 RealSSA-Sim과, 실제 모바일 기기로 녹음한 held-out 평가셋 RealSSA-Real로 구성된다.</li>
+<li><strong>Falcon 모델</strong>: 단일 인코더-디코더 패스 안에서 주파수축, 시간축, 결합 시간-주파수 모델링을 레벨별로 수행하는 단일 패스 다중 스케일 분리기(Single-Pass Multi-Scale Separator)를 제안하여, 여러 번 반복 호출하지 않고도 다양한 스케일의 시간-주파수 정보를 포착한다.</li>
+<li><strong>인코더 공간 화자 대조 손실(encoder-space speaker contrastive loss)</strong>: 오디오 인코더가 만든 임베딩 공간에서 추정치를 목표 화자 쪽으로 끌어당기고 근거리 간섭화자로부터 밀어내는 대조 손실을 추가하여, 추론 비용 없이 잔여 누출을 억제하고 다른 백본 구조에도 적용 가능함을 보였다.</li>
+</ol>
+<h2>방법론</h2>
+<p>Falcon은 오디오 인코더(STFT 기반, 실수부·허수부·크기 스펙트럼을 3채널로 입력), 시각 인코더(FRCNN 기반, CTCNet에서 가져온 고정 백본), 그리고 두 모달리티를 융합한 특징을 처리하는 분리기(Separator)로 구성된다. 분리기는 비대칭 U-Net 구조로, 인코더 병목 지점에서만 시간-주파수 정제 블록(Time-Frequency Refinement Block, TFRB)을 적용해 거친 전역 맥락을 포착하고, 디코더의 각 레벨(coarse-to-fine)마다 별도의 레벨별 TFRB를 두어 서로 다른 스케일의 세부 구조를 점진적으로 복원한다. 각 TFRB는 주파수축 양방향 LSTM, 시간축 단방향(인과적) LSTM, 2D 블록-인과적 셀프 어텐션을 순차적으로 적용한다. 전역 맥락 주입(Global Context Injection, GCI) 모듈이 병목의 전역 특징을 각 스킵 연결에 게이트 방식으로 주입하여 인코더-디코더 간 정보를 조율한다. 학습 손실은 SI-SNR 기반 재구성 손실에 인코더 공간 화자 대조 손실을 더한 것으로, 쿼리(추정 목표 음성의 인코더 표현)를 깨끗한 목표 음성(양성)에 끌어당기고 근거리 간섭화자(음성)로부터 코사인 유사도 기반 마진-소프트맥스 가중 반발항으로 밀어내며, 잔향·감쇠로 신호가 이미 약한 원거리 간섭화자는 음성 집합에서 제외한다. 이 대조 손실은 학습 시에만 작동하고 추론 시 추가 연산이 없다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>RealSSA-Sim/Real 외에 LRS2-2Mix, LRS3-2Mix, VoxCeleb2-2Mix에서도 평가했으며, SI-SNRi·SDRi(분리 품질), DNSMOS·NISQA(비침습적 음질), WER(Mega-ASR), 화자 유사도(WeSpeaker ResNet34)를 지표로 사용했다. Falcon은 네 가지 시뮬레이션 벤치마크 모두에서 가장 높은 SI-SNRi/SDRi를 기록했으며, 특히 VoxCeleb2-2Mix에서 SwiftNet-12 대비 1.1dB 높은 SI-SNRi를 보였다. RealSSA-Real에서는 DNSMOS 3.276으로 SwiftNet-12와 동률 1위를 기록했고, RealSSA-Sim WER에서 가장 낮은 25.47%를 달성했다(2위 AV-TF-GridNet보다 1.84%p 개선). 계산 효율 측면에서는 AV-TF-GridNet 대비 파라미터 91.9%, MACs 95.0%, GPU 추론 지연 91.0% 감소를 달성했으며, SwiftNet-12와 파라미터 수(0.5M)는 같지만 MACs는 76.6%, GPU 지연은 70.2% 줄었다. 메모리 사용량(CPU RAM 125.3MB, GPU 364.7MB)도 비교 모델 중 가장 낮았다. RealSSA-Sim으로 학습한 모델을 RealSSA-Real에 적용했을 때, 기존 최대 규모 코퍼스인 VoxCeleb2로 학습한 경우보다 다섯 가지 아키텍처 모두에서 DNSMOS가, 네 가지에서 NISQA가 개선되어 RealSSA-Sim이 실환경 일반화에 효과적인 학습 데이터임을 시사했다. 어블레이션에서는 다운샘플링 깊이를 1단에서 3단으로 늘릴수록 SI-SNRi가 0.6dB 향상되었고(인과성 제약상 3단이 한계), 제안한 대조 손실은 Falcon·SwiftNet-12·Dolphin 세 아키텍처 모두에서 일관되게 SI-SNRi를 0.2~0.4dB 개선시켰다. 대조 손실의 온도 파라미터 τ를 0에서 1로 선형 어닐링하는 방식이 고정 스케줄이나 더 공격적인 어닐링보다 우수했다.</p>
+<h2>한계점</h2>
+<p>Falcon의 분리기와 인코더 공간 화자 대조 손실은 모두 단일 채널 오디오에서만 동작하며, 논문에서 부록에 시뮬레이션한 4채널 마이크로폰 어레이로의 확장은 향후 과제로 남겨두었다. RealSSA-Real은 10명의 참가자와 8개 환경에서 약 84분 분량으로 수집되어 아키텍처 간 경향성 비교에는 충분하지만 규모가 제한적이며, 후속 릴리스에서 확장이 필요하다고 밝혔다. 또한 대조 손실은 현재 시뮬레이션에서 제공되는 근거리 간섭화자의 깨끗한 개별 음원 파형에 의존하므로, 레이블이 없는 실제 녹음에 이를 적용하는 것은 향후 연구 방향으로 남겨두었다.</p>
+<h2>시사점</h2>
+<p>이 연구는 화자 수·공간적 근거리/원거리 구성·잔향·돌발소음을 동시에 변화시키는 현실적 벤치마크의 부재와, 경량성과 추출 성능을 동시에 만족하는 인과 모델의 부재라는 두 가지 간극을 함께 해결함으로써, 실제 엣지 기기 배치를 염두에 둔 AVTSE 연구의 평가 기준과 설계 방향을 제시한다. 특히 추론 비용이 전혀 들지 않는 학습 전용 손실(대조 손실)이 서로 다른 분리기 아키텍처에 이식 가능하다는 결과는, 유사한 보조 손실 설계가 다른 음성 분리·추출 과제에도 폭넓게 적용될 수 있음을 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.32749" target="_blank" rel="noopener">huggingface.co/papers/2610.32749</a> · 2026-10-30</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

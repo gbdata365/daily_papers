@@ -1,0 +1,118 @@
+<meta charset="UTF-8">
+<title>옴니쇼케이스</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#2 · Daily Papers 2026-10-30</span>
+      <span class="cat-tag">생성모델</span>
+      <span class="upvote-tag">▲ 42</span>
+    </div>
+    <h1 class="article-title">OmniShowcase: Omnidirectional Subject-Consistent Video Generation from Multi-View Images</h1>
+    <p class="article-title-ko">옴니쇼케이스: 멀티뷰 이미지 기반 전방향 주체 일관 영상 생성</p>
+    <p class="article-sub">소수의 다중 시점(multi-view) 참조 이미지만으로, 카메라가 360도 전방향으로 회전해도 피사체(subject)의 정체성과 3D 형태가 깨지지 않는 영상을 생성하는 subject-to-video(S2V) 프레임워크 OmniShowcase를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.35684" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.35684" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: OmniShowcase: Omnidirectional Subject-Consistent Video Generation from Multi-View Images</li>
+<li><strong>저자</strong>: Junyeong Ahn, Geonwoo Kim, Kinam Kim, Gihwi Kim, Hoonjin Jung, Hyojin Jang, Jaegul Choo (KAIST AI, Inha University, FLIPTION 소속)</li>
+<li><strong>출처</strong>: arXiv:2610.35684v1 [cs.CV] (2026년 10월 26일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://justin4ai.github.io/OmniShowcase">justin4ai.github.io/OmniShowcase</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.35684">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>소수의 다중 시점(multi-view) 참조 이미지만으로, 카메라가 360도 전방향으로 회전해도 피사체(subject)의 정체성과 3D 형태가 깨지지 않는 영상을 생성하는 subject-to-video(S2V) 프레임워크 OmniShowcase를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>기존 S2V(subject-to-video) 방법들은 대부분 단일 참조 이미지에 의존하기 때문에, 카메라가 이동하며 참조 이미지에 없던 피사체의 뒷면이나 측면을 드러낼 때 모델이 해당 외형과 기하 구조를 임의로 추론해야 한다. 이로 인해 실루엣, 구조, 표면 디테일이 일관되지 않게 생성되는 문제가 발생한다. 최근 일부 연구(MV-S2V, 3DreamBooth 등)는 다중 참조 뷰를 입력으로 활용해 이 문제를 완화하려 했지만, (1) 뷰 사이를 잇는 명시적인 3D 구조를 제공하지 않거나, (2) 학습 데이터 자체가 카메라 시점 변화에도 동일한 3D 피사체가 유지됨을 보장하지 못한다는 한계가 있었다. 저자들은 이것이 순수히 외형(photometric) 문제가 아니라 입력에 없는 3D 구조를 추론해야 하는 기하학적(geometric) 문제라고 본다.</p>
+<h2>핵심 기여</h2>
+<p>논문은 세 가지를 제시한다.
+1. 완전 자동화된 3D 일관 데이터 합성 파이프라인: 3D 에셋을 다양한 카메라 궤적을 따라 렌더링하고, 사실적인 배경과 합성하여 학습용 영상을 생성한다(사람의 개입 없이 동작).
+2. SHOWCASE-4K 데이터셋: 4,000개의 영상과 이에 대응하는 소스 메쉬, 카메라 궤적, 참조 이미지, 표면 노멀(surface-normal) 시퀀스로 구성되며, 시점 변화에 따른 피사체 일관성 평가를 위한 held-out 벤치마크 SHOWCASEBENCH도 함께 공개한다.
+3. 기하학 인지 조건화(geometry-aware conditioning) 기법: 참조 뷰로부터 재구성한 표면 노멀 턴테이블(normal turntable)을 조건으로 제공하되, 조건 프레임과 생성 프레임 사이에 시간적(frame-wise) 정렬을 요구하지 않는 방식.</p>
+<h2>방법론</h2>
+<p>OmniShowcase는 사전학습된 이미지-투-비디오(I2V) 디퓨전 트랜스포머(Wan2.1 I2V-14B-480P)를 백본으로 하여 LoRA로 저차원 미세조정(fine-tuning)한다.</p>
+<ul>
+<li><strong>데이터 합성</strong>: Objaverse, Digital Twin Catalog, Google Scanned Objects에서 3D 메쉬를 선별(VLM 기반 품질 게이트 포함)한 뒤, Blender로 목표 궤적 영상과 4개의 참조 뷰(90도 간격)를 렌더링한다. 피사체만 깨끗하게 렌더링한 뒤, 비디오 인페인팅 모델(VACE)로 프롬프트 기반의 사실적인 배경을 합성해 도메인 갭을 줄인다. 궤적은 Orbit/Helix-Up/Down/In 등 4종의 궤도 계열과 arc/truck/dolly/zoom 등 8종의 추가 모션을 조합해 총 88개 카메라 궤적 구성을 사용한다.</li>
+<li><strong>기하 조건 생성</strong>: 참조 뷰(소스 메쉬가 아님)로부터 피사체를 마스킹하고 다중 뷰 포인트맵 추정과 3D 가우시안(3D Gaussian) 재구성을 수행한 뒤, 15도 고도에서 25프레임의 노멀 턴테이블을 렌더링한다. 추론 시에도 동일한 절차로 조건을 만들기 때문에 학습-추론 간 조건 신호의 분포 차이가 없다.</li>
+<li><strong>조건화 메커니즘</strong>: 참조 이미지 잠재(latent), 노멀 턴테이블 잠재, 목표 영상 잠재를 시간 축으로 이어붙여(concatenate) 트랜스포머에 입력한다. 참조/노멀 잠재는 깨끗한 상태로 유지하고, 목표 영상 잠재에만 노이즈를 섞어 rectified-flow 손실로 학습한다. 노멀 턴테이블(25프레임, 고정 yaw 스윕)과 목표 영상(80프레임, 임의 궤적)은 길이와 궤적이 다르기 때문에, 프레임 단위 정렬 없이 하나의 독립된 조건 구간으로 입력된다는 점이 특징이다.</li>
+<li>학습은 LoRA 파라미터만 최적화하며, 4개의 NVIDIA B200 GPU에서 약 50시간이 소요된다(33,000 스텝).</li>
+</ul>
+<h2>실험 설정 및 결과</h2>
+<p>SHOWCASEBENCH(50개 피사체, 4종 360도 궤적)와 NAVI(35개 피사체) 두 벤치마크에서 Phantom-MV, MAGREF-MV, MV-S2V, 3DreamBooth 등 단일/다중 뷰 S2V 기준 모델들과 비교했다. 평가 지표로는 정체성 보존(DINO, CLIP 유사도), 3D 일관성(MEt3R, GT 포인트클라우드와의 거리인 GT-CD, RotCoverage), 텍스트 정합(ViCLIP), 영상 품질(VBench의 imaging/aesthetic/dynamic degree)을 사용했다.</p>
+<p>OmniShowcase는 두 벤치마크 모두에서 DINO, CLIP, MEt3R, GT-CD 지표 최고 성능을 기록했으며, 텍스트 정합과 영상 품질에서도 경쟁력 있는 수준을 유지했다. 기준 모델들은 카메라가 지시된 궤적을 완주하지 못하거나(Phantom-MV, MAGREF-MV), 생성 도중 피사체 형태가 바뀌거나(MV-S2V), 정체성과 기하 구조 모두에서 벗어나는(3DreamBooth) 문제를 보였다. 44명이 참여한 사용자 선호도 연구에서도 정체성 보존, 3D 일관성, 프롬프트 정합, 전체 품질의 네 항목 모두에서 OmniShowcase가 70.9~79.4%의 선택률로 가장 높은 선호도를 얻었다.</p>
+<p>또한 조건화 방식에 대한 ablation에서, 기하 조건을 아예 제거하거나 노멀 대신 컬러 렌더링을 사용하거나 턴테이블 프레임 수를 줄이는 경우 모두 성능이 저하되어, 표면 노멀 기반의 명시적 기하 조건이 핵심적임을 확인했다. 참조 뷰 개수를 1~4개로 바꾼 ablation에서는 뷰 개수가 늘어날수록 GT-CD 등 기하 일관성 지표가 꾸준히 개선되었다.</p>
+<h2>한계점</h2>
+<p>논문은 두 가지 한계를 직접 언급한다. 첫째, 생성된 영상의 배경이 때때로 비사실적(synthetic)으로 보일 수 있다. 둘째, 네 개의 참조 뷰 사이에서 형태가 강체(rigid)가 아닌, 즉 변형되는 피사체는 제대로 다루지 못한다. 이 두 문제는 향후 연구 과제로 남겨두었다.</p>
+<h2>시사점</h2>
+<p>이 연구는 다중 뷰 참조와 명시적 3D 기하 조건(표면 노멀 턴테이블)을 결합함으로써, 카메라가 전방향으로 회전하는 상황에서도 피사체의 정체성과 구조를 안정적으로 유지하는 영상 생성이 가능함을 보였다. 특히 3D 에셋 렌더링 기반의 완전 자동 데이터 합성 파이프라인은 사람 개입 없이도 기하학적으로 일관된 대규모 학습 데이터를 저비용으로 구축할 수 있음을 보여주며, 조건과 목표 시퀀스 간 프레임 정렬을 요구하지 않는 조건화 설계는 서로 다른 길이·궤적의 데이터를 유연하게 다룰 수 있는 방법론적 시사점을 제공한다. 이는 전자상거래 상품 쇼케이스 영상, 가상 제품 데모 등 피사체 일관성이 중요한 실제 응용에 직접적으로 활용될 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.35684" target="_blank" rel="noopener">huggingface.co/papers/2610.35684</a> · 2026-10-30</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

@@ -1,0 +1,116 @@
+<meta charset="UTF-8">
+<title>당신의 벤치마크는 난이도에 대한 경험적 측도다</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#3 · Daily Papers 2026-10-31</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 138</span>
+    </div>
+    <h1 class="article-title">Your Benchmark Is an Empirical Measure Over Difficulty</h1>
+    <p class="article-title-ko">당신의 벤치마크는 난이도에 대한 경험적 측도다</p>
+    <p class="article-sub">벤치마크를 단순한 문제 모음이 아니라 "난이도 축 위의 경험적 확률 측도"로 재해석하여, 벤치마크 점수가 왜곡되거나 국소적인 학습 개선을 놓치는 두 가지 근본 원인(측도 불일치, 커버리지 공백)을 수학적으로 정의하고, 이를 완화하는 자동 문항 보강 알고리즘 BenchFill을 제안한 연구.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.29927" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.29927" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Your Benchmark Is an Empirical Measure Over Difficulty</li>
+<li><strong>저자</strong>: Yifan Sun, Naicheng Yu, Jiawen Gong, Jingyan Shen, Huan Zhang (일리노이대 어바나-샴페인, UC 샌디에이고, 뉴욕대 공동 연구, 공동 1저자 3인 포함)</li>
+<li><strong>출처</strong>: arXiv:2610.29927v1 [cs.LG] (2026년 10월 21일, NeurIPS 2026 Track on Evaluations and Datasets)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://benchmark-difficulty-measure.github.io">benchmark-difficulty-measure.github.io</a> (코드: https://github.com/ASTRAL-Group/benchmark-difficulty-measure, 데이터셋: https://huggingface.co/datasets/Yifan99/BenchFill)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.29927">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>벤치마크를 단순한 문제 모음이 아니라 "난이도 축 위의 경험적 확률 측도"로 재해석하여, 벤치마크 점수가 왜곡되거나 국소적인 학습 개선을 놓치는 두 가지 근본 원인(측도 불일치, 커버리지 공백)을 수학적으로 정의하고, 이를 완화하는 자동 문항 보강 알고리즘 BenchFill을 제안한 연구.</p>
+<h2>배경 및 문제의식</h2>
+<p>벤치마크 평가는 "문제를 풀어 평균 점수를 낸다"는 단순한 절차처럼 보이지만, 그 결론은 모델의 실제 성능뿐 아니라 문제들이 난이도 축 위에 어떻게 분포되어 있는지에도 좌우된다. 저자들은 두 가지 구체적 실패 상황을 제시한다. 첫째, 리더보드 비교 상황에서 두 모델이 쉬운 문제에서는 비슷하고 어려운 문제에서는 크게 차이 나는데, 벤치마크가 쉬운 문제에 치우쳐 있으면 실제로는 두 모델의 격차가 큰데도 벤치마크 점수는 거의 같다고 나올 수 있다(측도 불일치, measure mismatch). 둘째, 학습 모니터링 상황에서 모델이 특정 난이도 구간에서만 크게 개선되었는데 벤치마크에 그 구간을 대표하는 문항이 전혀 없다면, 실제 성능 향상이 벤치마크 점수에는 거의 반영되지 않는다(커버리지 공백, coverage gap). 이 논문은 이러한 두 현상을 "벤치마크가 유도하는 난이도에 대한 경험적 측도"라는 측도 이론적 틀로 정식화하는 것을 목표로 한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>벤치마크를 난이도 공간 위의 경험적 측도(각 문항이 자신의 난이도 지점에 동일한 가중치를 갖는 점질량들의 합)로 바라보는 새로운 관점을 제시하고, 이를 통해 측도 불일치와 커버리지 공백이라는 두 실패 모드를 엄밀하게 정의했다.</li>
+<li>두 가지 진단 지표를 제안했다: (1) 벤치마크의 난이도 분포와 목표 분포 사이의 1-Wasserstein 거리인 Difficulty Distribution Mismatch(DDM), (2) 인접한 벤치마크 난이도 점들 사이의 최대 간격인 Max Gap. 각 지표에 대해 리더보드 순위 역전 가능성과 국소적 성능 향상의 탐지 가능성을 정확히 통제하는 이론(정리)을 증명했다.</li>
+<li>7개 도메인(수학, 코딩, 에이전틱 작업, 논리, 과학, 지시 따르기, 의학)에 걸친 25개 널리 쓰이는 벤치마크를 실증 분석하여, 다수 벤치마크에서 난이도 불균형과 큰 커버리지 공백이 실제로 존재함을 보였다.</li>
+<li>난이도를 겨냥해 새로운 문항을 자동으로 생성·삽입하는 진화 탐색 알고리즘 BenchFill을 제안하여, 벤치마크당 단 3개의 문항 추가로 상위 3개 간격의 합을 21.09%~38.88% 줄였다.</li>
+</ul>
+<h2>방법론</h2>
+<p>난이도를 [0,1] 구간의 연속값 z로 나타내고, 모델 θ의 난이도 z에서의 기대 성능을 s_θ(z)로 정의한다. 벤치마크 B의 각 문항이 가진 난이도 {z_i}는 균등 가중치 점질량의 합인 경험적 측도 ν_B를 이룬다. 벤치마크 점수는 이 측도에 대한 s_θ의 적분으로 표현되며, 두 모델 간 점수 차이는 모델 종속적 함수 Δ(z)와 벤치마크 종속적 측도 ν_B가 결합된 형태로 나타난다. 만약 의도한 평가 목표를 나타내는 목표 분포 μ와 ν_B가 다르면, 벤치마크 결론이 목표 분포 기준 결론과 달라질 수 있다. 저자들은 이 불일치를 1-Wasserstein 거리(DDM)로 정량화하고, Δ가 립시츠 연속이면 벤치마크 기반 점수차와 목표 기반 점수차의 차이가 L·W1(ν_B, μ)로 제한되며, 이 값이 충분히 작으면 순위 역전이 일어나지 않음을 증명했다(정리 2.1). 또한 사전 정보가 없을 때는 난이도 축 전체에 대해 어떤 위치에서 성능차가 발생할지 전혀 모르는 최악의 경우(minimax) 분석을 통해, 균등분포(Uniform)가 유일하게 최적인 "기본 목표 분포"임을 증명했다(정리 2.2).</p>
+<p>두 번째로, 벤치마크가 유한한 개수의 난이도 점에서만 질량을 가지므로 특정 구간에 문항이 전혀 없으면 그 구간에서의 성능 향상을 전혀 감지하지 못할 수 있다는 점을 가설검정 틀로 형식화했다. 인접 난이도 점들 사이 최대 간격 G(B)를 정의하고, 개선 구간의 폭 w가 G(B) 이하이면 아무리 반복 샘플링을 늘려도 검정력이 유의수준 α에 머물러 개선을 탐지할 수 없고, w가 G(B)를 넘으면 반복 횟수가 커질수록 검정력이 1로 수렴함을 증명했다(정리 2.3, 비대칭 미니맥스 탐지 경계).</p>
+<p>난이도 추정에는 문항 반응 이론(Item Response Theory, IRT)의 1PL(일원 로지스틱) 모델을 사용하여, 다양한 능력 수준(1.7B~397B 파라미터)의 LLM 12개(비에이전틱 벤치마크) 또는 HAL 평가 결과의 15~66개 모델(에이전틱 벤치마크)의 응답 행렬로부터 모델 능력 θ_j와 문항 난이도 b_i를 베이지안 MCMC로 공동 추정했다. 적합 전후로 수렴 진단(R̂, ESS, divergent transitions 등)과 LOO 안정성 검사를 거쳐 추정 신뢰도를 확보했다.</p>
+<p>마지막으로 커버리지 공백을 메우기 위한 BenchFill 알고리즘을 제안했다. 가장 큰 간격 [z_L, z_R]의 중간값을 목표 난이도 z<em>로 설정하고, 기존 문항들로 구성된 메모리 M에서 z</em>에 가장 가까운 "부모" 문항들을 골라 LLM(리라이터)으로 형식과 스타일을 유지한 채 새로운 "자식" 문항을 생성한다. 각 자식 문항은 사전 추정된 모델 능력 θ_j를 고정한 채 신규 문항 파라미터만 적합하는 온라인 IRT 보정으로 난이도를 추정받고, 목표 난이도에 더 가까운 문항이 발견되면 메모리를 갱신해 다음 라운드의 참조 목록과 부모 선택에 반영한다. 여러 라운드 반복 후 목표 난이도에 가장 근접한 유효 문항을 최종 삽입 후보로 선택하고, 삽입 전 사람이 직접 검수한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>25개 벤치마크(MATH-500, AIME24/25/26, AMC23, HumanEval, MBPP+, GAIA, SWE-bench-Mini, IFEval, MMLU-Pro 계열, GPQA-Diamond, ZebraLogic, MedQA 등)에 대해 DDM, Max Gap, 상위 5개 간격 합(Top-5 Sum)을 계산했다. 결과적으로 25개 중 10개 벤치마크가 DDM ≥ 0.10으로 균등분포 대비 뚜렷한 난이도 편향을 보였고, 8개 벤치마크가 Max Gap ≥ 0.10, 9개 벤치마크가 Top-5 Sum ≥ 0.30으로 심각한 커버리지 공백을 드러냈다. 특히 RLVR 학습 모니터링에 흔히 쓰이는 AIME24/25는 Top-5 Sum이 약 0.5에 달해 난이도 축의 상당 부분이 사실상 비어 있었다. 커버리지 공백은 소규모 벤치마크만의 문제가 아니라 HumanEval, BBH-5 objects처럼 문항 수가 많은 벤치마크에서도 나타났다.</p>
+<p>BenchFill은 리라이터로 MiniMax-M2.7을 사용해(온도 1.0, 최대 8라운드, 라운드당 부모 4개·자식 4개, 참조 목록 최대 16개) 8개 대표 벤치마크의 가장 큰 간격 3곳에 문항을 삽입하는 실험을 수행했다. 균등 부모 선택 기반의 동일 예산 베이스라인(평균 17.52% 간격 감소), 이상적 상한인 오라클(순차적으로 현재 최대 간격의 중점에 문항을 삽입, 평균 35.06% 감소)과 비교했을 때, BenchFill은 평균 32.67%의 Top-3 간격 합 감소를 달성해 오라클에 근접했고, AIME24/25/26에서는 오라클 수준에 도달했다. 목표 난이도와의 평균 절대 편차(Target Dev.)도 0.01 미만으로 낮아, 생성된 문항이 의도한 난이도에 정확히 맞춰졌음을 보였다. 이를 바탕으로 AMC23, AIME24/25/26의 간격 보강판(각각 40→80, 30→50, 30→52, 30→53문항)을 제작해 AMC23-BenchFill 등으로 공개했으며, 부록 실험에서는 보강된 벤치마크가 실제 SFT 이후 모델의 국소적 성능 향상을 베이스라인보다 더 잘 탐지함을 추가로 확인했다.</p>
+<h2>한계점</h2>
+<p>저자들이 직접 밝힌 한계는, 이 틀이 모든 벤치마크 실패를 포괄하려는 것이 아니라 난이도 측도의 기하학적 구조를 통해 평가를 분석하는 하나의 방향을 보여준 것이라는 점이다. 또한 현재 접근은 기본적으로 "사후적(post-hoc)"이다. 즉 이미 만들어진 벤치마크의 난이도 분포를 추정하고 문제점을 진단한 뒤 사후에 문항을 보강하는 방식이며, 벤치마크 설계 단계에서부터 목표 분포와 해상도를 함께 고려하는 "사전적 설계"로 확장하는 것은 향후 과제로 남겨두었다. 그 외에도 Max Gap 지표는 본질적으로 벤치마크 크기에 의존하며, IRT 난이도 추정 자체도 모델 선택(능력 범위 포함)에 따라 추정 품질이 달라질 수 있다.</p>
+<h2>시사점</h2>
+<p>이 연구는 벤치마크 점수를 "difficulty-neutral"한 절대적 지표로 해석하는 관행에 경종을 울린다. 특히 사전 정보 없이 벤치마크를 사용할 때는 균등분포를 기준으로 DDM과 Max Gap을 점검하여, 리더보드 비교 결과나 학습 중 모니터링되는 점수 변화를 해석할 때 해당 벤치마크의 암묵적 난이도 가중치를 감안해야 한다는 실무적 지침을 제공한다. 또한 LLM 기반 자동 문항 생성(BenchFill)과 사람 검수를 결합한 파이프라인은 기존 벤치마크를 재구축하지 않고도 비용 효율적으로 국소 해상도를 높이는 실용적 방법을 제시하며, 공개된 보강 벤치마크(AIME/AMC-BenchFill 등)는 RLVR 등 국소적 학습 진전을 추적해야 하는 연구에 바로 활용될 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.29927" target="_blank" rel="noopener">huggingface.co/papers/2610.29927</a> · 2026-10-31</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

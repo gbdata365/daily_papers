@@ -1,0 +1,123 @@
+<meta charset="UTF-8">
+<title>IDM</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#1 · Daily Papers 2026-10-31</span>
+      <span class="cat-tag">생성모델</span>
+      <span class="upvote-tag">▲ 235</span>
+    </div>
+    <h1 class="article-title">Intrinsic Distribution Matching</h1>
+    <p class="article-title-ko">IDM: 내재적 분포 매칭 기반 소수 스텝 텍스트-이미지 생성</p>
+    <p class="article-sub">IDM은 1~2회의 네트워크 평가만으로 텍스트-이미지 생성을 수행하는 distillation 모델이 생성기 자신의 EMA(지수이동평균) 특징 공간에서 평균·표준편차를 직접 맞추는 손실을 추가함으로써, 외부 인코더 없이도 긴 텍스트 렌더링 품질을 최고 수준으로 끌어올리는 방법이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.39633" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.39633" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Intrinsic Distribution Matching</li>
+<li><strong>저자</strong>: Deyuan Liu, Yansen Han, Kaiwen Zheng 등 (Inclusion AI, Westlake University, Tsinghua University, Zhejiang University, Shanghai Innovation Institute, MBZUAI 공동 연구팀, 교신저자 Jintao Zhang, Jianguo Li, Tao Lin)</li>
+<li><strong>출처</strong>: arXiv:2610.39633v1 [cs.CV] (2026년 10월 29일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/inclusionAI/IDM">GitHub 코드 저장소</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.39633">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>IDM은 1~2회의 네트워크 평가만으로 텍스트-이미지 생성을 수행하는 distillation 모델이 생성기 자신의 EMA(지수이동평균) 특징 공간에서 평균·표준편차를 직접 맞추는 손실을 추가함으로써, 외부 인코더 없이도 긴 텍스트 렌더링 품질을 최고 수준으로 끌어올리는 방법이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>디퓨전·플로우 매칭 기반 이미지 생성 모델은 품질이 뛰어나지만 여러 번의 네트워크 평가(step)를 거쳐야 해서 추론 비용이 크다. 이를 줄이기 위한 few-step/1-step 생성 기법 중 하나가 Distribution Matching Distillation(DMD)인데, 이는 사전학습된 교사 모델의 점수(score)와 생성 분포를 추정하는 별도의 "fake-score" 네트워크 간 차이를 이용해 생성기를 업데이트한다. 최근 TwinFlow, APEX 같은 연구는 생성기 내부에 분리된 두 개의 velocity branch를 이용해 별도의 fake-score 네트워크 없이도 이 점수 차이를 추정하는 방식을 제안했다. 저자들은 이 내부 점수 추정 방식이 전체 분포 정보를 담고 있음에도, 학습이 유한하고 점수 추정이 근사적이기 때문에 평균·분산 같은 통계량이 정확히 맞춰지지 않을 수 있다는 점에 주목하고, 이를 명시적으로 보완할 수 있는 방법을 모색한다. 특히 한 번 또는 두 번의 스텝만으로 프롬프트에 명시된 세부사항(특히 긴 텍스트 렌더링)을 정확히 표현해야 하는 점이 핵심 난제로 제시된다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li><strong>분포-그래디언트 분해</strong>: reverse-KL 점수 차이(DMD가 사용하는 필드)를 "평균·공분산으로 결정되는 가우시안 성분"과 "그 이상의 비가우시안 잔차 성분"으로 정확히 분해한다. 이는 두 분포가 평균·분산이 같아도 분포 자체는 다를 수 있음을 보이며, 모멘트 매칭만으로는 부족하지만 명시적으로 제약할 수 있는 통계량이 존재함을 시사한다.</li>
+<li><strong>내재적 분포 매칭(IDM) 제안</strong>: 기존 DMD 보정을 그대로 유지하면서, 생성기의 EMA 사본이 추출한 특징의 평균과 좌표별 표준편차를 생성 샘플과 참조 샘플 간에 맞추는 손실(feature-moment loss)을 추가한다. 외부 특징 인코더(예: DINOv2)나 별도의 discriminator, score 모델 없이 생성기 자신과 그 EMA만으로 두 가지 학습 신호를 모두 얻는다.</li>
+<li><strong>대규모 실험 검증</strong>: Z-Image-Turbo(6B)와 Qwen-Image(20B)에 대해 전체 파라미터 튜닝 및 LoRA(rank 32/64) 튜닝으로 실험하고, 손실 제거·특징 맵 교체·velocity/endpoint 회귀 방식 등 다양한 통제 비교(ablation)를 수행해 각 설계 요소의 기여를 분리해서 분석한다.</li>
+</ol>
+<h2>방법론</h2>
+<p>IDM은 두 가지 학습 신호를 결합한다.</p>
+<ol>
+<li><strong>DMD 손실(Lscore)</strong>: APEX 방식처럼 조건 벡터 c의 부호를 바꿔(-c) 하나의 생성기 네트워크에서 "참조 velocity 추정"과 "모델 velocity 추정"을 모두 얻는다. 두 velocity의 차이가 곧 점수 차이(score difference)에 해당하며, 이를 재노이징(re-noising)한 예측 샘플에서 계산해 detach한 뒤 velocity 타깃과 clean-sample(endpoint) 타깃을 동시에 만든다. 이 둘을 결합한 회귀 손실로 생성기를 학습시킨다.</li>
+<li><strong>특징-모멘트 손실(Lpop)</strong>: 생성기의 EMA 파라미터로 만든 특징 추출기 φ를 이용해 생성 샘플과 참조 샘플의 마지막 레이어 은닉 표현을 평균 풀링한 특징 벡터를 얻는다. 이 특징들의 평균과 좌표별 표준편차를 생성 분포와 참조 분포 사이에서 맞추는 손실(두 대각 가우시안 사이의 제곱 2-Wasserstein 거리와 동일한 형태)을 적용한다. 최대 16,384개의 특징을 저장하는 큐(queue)를 이용해 모집단 통계치를 안정적으로 근사한다.</li>
+</ol>
+<p>전체 목적함수는 기본 생성 손실(RCGM 기반 Lbase)에 λscore·Lscore와 λpop·Lpop(기본값 각각 1과 0.5)를 더한 형태이며, 학습 중에는 매 반복마다 생성 샘플을 만들고 고노이즈 구간에서 EMA 특징을 추출해 손실을 계산한다. EMA는 0.99의 감쇠율로 매 스텝 갱신되며, 추론 시에는 특징 추출이나 큐 없이 생성기만으로 1~2회의 순전파로 이미지를 만든다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Z-Image-Turbo 6B와 Qwen-Image 20B를 백본으로, BF16/FlashAttention4/FSDP2 환경에서 각각 15K, 10K 스텝 학습(32×H100 또는 8×A100)했다. 평가는 GenEval(구성적 프롬프트 이행), MJHQ-30K 기반 FID/CLIP, DPG-Bench(세부 프롬프트 이행), WISE(세계 지식), OneIG, 그리고 긴 텍스트 렌더링을 측정하는 LongText-Bench(중국어/영어)로 진행했다.</p>
+<ul>
+<li>2회 평가(2 NFE) 기준, IDM(Z-Image)은 LongText-CN 94.25%, LongText-EN 90.20%를 기록해 비교 대상 중 최고치를 달성했으며, 기존 Z-Image-Turbo++보다 각각 2.63점, 0.32점 높았다.</li>
+<li>Qwen-Image 백본에서는 full-parameter 튜닝으로 GenEval 0.91, FID 6.34를 기록해 APEX(GenEval 0.90, FID 6.44)보다 소폭 우수하면서도 유사한 추론 지연 시간(0.44초)을 보였다.</li>
+<li>통제 비교에서 feature-moment 손실(Lpop)을 추가하면 GenEval, LongText-CN/EN, OneIG, DPG-Bench 등 5개 지표 모두에서 성능이 개선되었고(예: GenEval 77.46→77.81), DMD 손실(Lscore)을 제거하면 더 큰 하락(GenEval 0.91점 감소)이 발생해 두 손실 중 DMD 보정이 더 핵심적임을 보였다.</li>
+<li>EMA 특징을 이용한 모멘트 매칭은 외부 인코더인 DINOv2를 사용한 경우(GenEval 77.75)와 거의 동등한 성능(77.81)을 보여, 별도 인코더가 필요 없다는 설계 선택이 타당함을 입증했다.</li>
+<li>velocity 회귀와 endpoint 회귀를 동일 가중치로 결합하는 것이 각각 단독으로 사용하는 것보다 전반적으로 우수했다.</li>
+</ul>
+<h2>한계점</h2>
+<p>논문은 별도의 "한계점" 절을 명시적으로 두지는 않았다. 다만 부록에서 제곱오차 회귀(조건부 평균 추정)가 일반적으로 목표 분포의 공분산을 과소추정(contraction)하는 현상을 수학적으로 보이며, 이는 회귀 기반 해석의 본질적 한계로 지적된다(다만 이것이 DMD 자체가 분산 정보를 결여한다는 뜻은 아니라고 명시함). 또한 feature-moment 손실은 평균과 좌표별 표준편차라는 저차 통계량만을 맞추므로, 두 분포가 이 모멘트들이 같더라도 실제로는 다를 수 있다는 점(비가우시안 잔차)이 이론적으로 남아있으며, 이 손실이 전체 분포를 완전히 일치시키는 것은 아니라는 점이 방법론상 전제로 명시되어 있다.</p>
+<h2>시사점</h2>
+<p>생성기 자신의 EMA 사본을 특징 추출기로 재활용해 분포 매칭용 통계적 제약을 거는 아이디어는, 별도의 외부 인코더나 판별자 없이도 few-step 생성 품질(특히 세밀한 텍스트 렌더링)을 개선할 수 있음을 보여준다. 이는 추가 모델 없이 기존 DMD/내부 점수 추정 파이프라인에 저비용으로 통합 가능한 손실 설계로서, 6B~20B급의 대형 텍스트-이미지 모델에 대해 LoRA 튜닝만으로도 효과가 확인되어 실제 서비스 적용 시 자원 효율적인 파인튜닝 전략으로 활용될 수 있다. 또한 reverse-KL 필드를 가우시안 모멘트와 비가우시안 잔차로 분해하는 분석 틀은, 향후 분포 매칭 기반 distillation 기법에서 어떤 통계량을 명시적으로 제약할지 설계하는 데 일반적인 지침으로 활용될 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.39633" target="_blank" rel="noopener">huggingface.co/papers/2610.39633</a> · 2026-10-31</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

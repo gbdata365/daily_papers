@@ -1,0 +1,126 @@
+<meta charset="UTF-8">
+<title>WorkFactory</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#8 · Daily Papers 2026-10-31</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 30</span>
+    </div>
+    <h1 class="article-title">WorkFactory: Turning Professional Intents into Executable Work for Scalable Agent Training</h1>
+    <p class="article-title-ko">WorkFactory: 전문업무 의도를 실행 가능한 작업으로 바꾸는 확장형 에이전트 학습 프레임워크</p>
+    <p class="article-sub">전문직 업무를 수행하는 에이전트를 학습시키기 위해, "정보 지지 그래프"로 작업에 필요한 정보의 의존관계와 위치를 명시적으로 설계하고 실행 기반 점검·보수를 거쳐 실행 가능한 업무 환경 11만여 개를 자동 구축하는 프레임워크 WorkFactory를 제안하고, 이를 통해 학습된 WorkPilot 에이전트 계열이 여러 전문업무 벤치마크에서 크게 향상된 성능을 보임을 입증한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.37161" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.37161" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: WorkFactory: Turning Professional Intents into Executable Work for Scalable Agent Training</li>
+<li><strong>저자</strong>: Ziyang Zeng, Tingyang Chen, Jia Deng, Qiyao Wang, Shuo Tang, Yike Yang, Tao Ren, Wayne Xin Zhao, Feng Chang 등 (IQuest Research, 저장대학교, 중국인민대학교 가오링 인공지능대학원, 중국과학원 선전첨단기술연구원, 상하이교통대학교, 베이징대학교 공동 연구)</li>
+<li><strong>출처</strong>: arXiv:2610.37161v1 [cs.AI] (2026년 10월 27일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/IQuestLab/WorkFactory">GitHub (IQuestLab/WorkFactory)</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.37161">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>전문직 업무를 수행하는 에이전트를 학습시키기 위해, "정보 지지 그래프"로 작업에 필요한 정보의 의존관계와 위치를 명시적으로 설계하고 실행 기반 점검·보수를 거쳐 실행 가능한 업무 환경 11만여 개를 자동 구축하는 프레임워크 WorkFactory를 제안하고, 이를 통해 학습된 WorkPilot 에이전트 계열이 여러 전문업무 벤치마크에서 크게 향상된 성능을 보임을 입증한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>업무 수행 에이전트(working agent)를 교사(teacher) 궤적 기반 지도학습으로 향상시키려면, 다양한 직업 분야에 걸친 "실행 가능한" 과업(task)이 대규모로 필요하다. 그런데 기존의 과업 합성 방식은 참고 자료나 파일을 재사용·조합하는 데 집중한 나머지, 과업을 수행하는 데 필요한 정보가 누락되거나 서로 모순되는 경우가 많았다. 예컨대 공급업체 선정 과업에서 수요 예측과 견적서는 주어지지만 특정 벤더의 운임 포함 여부처럼 꼭 필요한 조건이 빠지면, 교사 에이전트가 근거 없는 가정을 하거나 작업을 끝맺지 못해 학습 신호로서의 궤적 품질이 떨어진다. 반대로 중간 계산 결과나 최종 답을 미리 제공해버리면 에이전트가 수행해야 할 실질적인 작업 자체가 사라진다. 즉, "풀이에 필요한 모든 전제는 주어지되 중간·최종 결과는 에이전트가 직접 도출해야 하는" 경계를 지키는 것이 핵심 난제이며, WorkFactory는 바로 이 경계를 명시적으로 설계하고 지키는 것을 목표로 한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>정보 지지 그래프(information support graph) 기반 설계</strong>: 의도된 결과물에서 거꾸로(backward) 추론하여, 결과물 산출에 필요한 계산·판단과 그 근거 정보, 그리고 그 정보가 어떤 매체(사용자 요청, 참고 자료, 외부 자원, 미래 산출물 등)에 위치해야 하는지를 그래프로 명시한 뒤 이를 바탕으로 작업 환경(파일, 요청문 등)을 구체화한다.</li>
+<li><strong>실행 기반 환경 보수(execution-based repair)</strong>: 설계 그래프를 보지 못하는 독립적인 "탐침(probe)" 에이전트가 솔버가 보는 것과 동일한 조건에서 실제로 과업을 시도해 보고 정보 누락·모순 등 결함을 진단하면, 원래 의도된 작업 범위를 바꾸지 않는 선에서 요청문·참고 자료를 수정해 재검증한다.</li>
+<li><strong>대규모 전문업무 코퍼스 구축 및 공개</strong>: 612개 직업, 112,686개 과업으로 구성된 학습 코퍼스를 구축하고, 이를 활용해 4B·27B·35B-A3B 규모의 Qwen 계열 모델을 미세조정한 WorkPilot 모델군을 만들어 데이터·모델 일부를 공개하였다.</li>
+<li><strong>스케일링 및 구성요소별 효과 분석</strong>: 학습 데이터 규모 확대에 따른 성능 향상 양상(모델별로 다른 수준의 체감 효과), 실행 길이(턴 수)의 증가 후 감소 패턴, 도구 호출 실패율 변화, 그리고 정보 수준 설계·실행 기반 보수 각각의 기여도를 통제된 비교실험으로 정량화하였다.</li>
+</ul>
+<h2>방법론</h2>
+<p>WorkFactory는 크게 세 단계로 구성된다.</p>
+<ol>
+<li><strong>다중 소스 기반 전문 의도(intent) 합성</strong>: 직업 분류체계(occupational hierarchies), 문서화된 스킬(documented skills), 실제 전문 산출물(real deliverables) 세 가지 소스를 활용해 의도를 생성한다. 직업을 구체적 역할·상황으로 확장하거나, 한 작업의 출력이 다른 작업의 입력이 되는 방식으로 스킬을 조합하거나, 실제 산출물로부터 역으로 지시문을 추론(instruction backtranslation)하는 세 경로를 사용하며, LLM 기반 검토를 통해 내적 일관성·현실성·업무 적합성을 평가해 의도 라이브러리에 등록한다.</li>
+<li><strong>그래프 기반 환경 구축</strong>: 각 의도에 대해 의도된 출력에서부터 역방향으로 필요한 계산·판단과 그 근거 정보(정보 단위 V_info)를 추적하고, 정보 간 연관·변환·근거·제약 관계(E_info)를 설정한다. 이어 각 정보가 어떤 매체(사용자 요청, 참고 파일, 외부 자원, 미래 산출물, 내부 구축 요건 등, V_carrier)에 위치할지를 결정(E_loc)한다. 이 그래프를 바탕으로 구체적인 사용자 요청문, 파일 명세, 생성 의존관계로 구성된 "구축 계획"을 세우고, 환경 생성기(worker)가 파일을 재사용·수정·합성하여 실제 작업 환경을 만든다. 프로그램적·LLM 기반 점검을 거쳐 계획에 부합하지 않는 과업은 재시도 후 폐기된다.</li>
+<li><strong>실행 기반 보수</strong>: 그래프나 계획, 과거 실행 결과를 보지 못하는 독립 탐침 솔버가 솔버 시점에서 과업을 시도하면서 작업을 막는(blocking) 정보 결함을 진단한다. 진단에 따라 수정자가 요청문·참고 파일을 수정하되 파일 개수·종류·의존 구조는 유지하며, 수정 결과는 구축 점검과 "작업 보존성" LLM 심사(원래 핵심 목표·필수 작업·산출물 요건이 유지되는지)를 모두 통과해야 하고, 통과분은 다시 탐침을 거친다. 결함이 모두 해소되거나 보수 예산이 소진될 때까지 반복하며, 해소되지 않은 과업은 폐기한다.</li>
+</ol>
+<p>최종적으로 통과된 과업에 대해 독립된 교사 모델(GLM-5.3)이 깨끗한 샌드박스에서 동일한 정보 접근 경계 하에 과업을 수행하여 교사 궤적을 수집한다. 반복적 추론·도구 호출, 산출물 미비 등을 걸러내는 경량 필터와, 실행 턴이 가장 긴 상위 5% 과업에 대해서는 산출물 쌍대 비교 기반의 선택적 리젝션 샘플링을 추가로 적용해 품질을 높인 뒤, 마스킹된 자기회귀 지도학습용 시퀀스로 변환한다.</p>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li><strong>데이터 규모</strong>: 612개 직업, 112,686개 과업, 평균 참고 파일 4.15개(평균 용량 1.56MiB), 평균 57.36 어시스턴트 턴·62.95 도구 호출·136.18K 토큰의 교사 궤적을 수집하였으며, 목표 산출물 형식은 XLSX(30.7%), PDF(28.0%), DOCX(22.9%) 등이 주를 이룬다.</li>
+<li><strong>평가 벤치마크</strong>: GDPval(-AA), JobBench, Workspace-Bench(-Lite), OmegaUse-OfficeVal 네 가지 전문업무 벤치마크에서 Qwen3.5-4B, Qwen3.6-27B, Qwen3.6-35B-A3B 기반 모델을 WorkFactory 데이터로 미세조정한 WorkPilot 모델과 각 베이스 모델을 비교하였다.</li>
+<li><strong>주요 결과</strong>: 세 가지 모든 규모에서 베이스 모델 대비 전 벤치마크 성능이 크게 향상되었다. 예를 들어 WorkPilot-35B-A3B는 GDPval-AA 879→1565 Elo, JobBench 28.91→62.35, Workspace-Bench 47.12→56.53, OmegaUse-OfficeVal 7.14→21.18로 개선되었다. WorkPilot-27B는 GDPval-AA에서 1612 Elo(로컬 추정치)를 달성해 DeepSeek-V4.1-Flash(1600)에 근접하는 프런티어급 성능을 보였다.</li>
+<li><strong>스케일링 분석</strong>: 학습 과업 수를 2K~110K로 늘렸을 때 GDPval-AA Elo는 계속 증가하지만 모델별로 체감 효과가 다르게 나타났다(35B-A3B는 30K에서 이미 최종 이득의 88%, 27B는 94% 달성). 실행 턴 수는 초반에 급증(기준 24.87→2K 과업 시 162.88턴)한 뒤 110K에서 다시 감소(85.90턴)하는 양상을 보였으며, 코드 실행·웹 검색 실패율도 데이터 증가에 따라 전반적으로 감소했으나 웹 페치(fetch) 실패율은 40~48%대에서 거의 변화가 없었다.</li>
+<li><strong>구성요소 분석</strong>: 직접적인 아티팩트 수준 설계 대비, 정보 수준 설계(그래프) 도입만으로도 "작업 흐름 단절"(broken derivation) 결함이 24.86%→6.86%로 크게 줄었으나 "정보 유출/지름길"과 "자기 불일치" 결함은 소폭 늘었다. 여기에 실행 기반 보수를 추가하면 8개 결함 범주 전부에서 추가 개선이 나타났고(교차 파일 불일치 25.74%→4.84% 등), 이는 다운스트림 GDPval-AA Elo를 1245→1293→1326으로 끌어올리는 결과와 연결되었다.</li>
+<li><strong>교사 모델 선택 효과</strong>: 동일한 3만 개 과업에 대해 GLM-5.3로 수집한 궤적으로 학습한 학생 모델(1483 Elo)이 DeepSeek-V4-Flash-0731 궤적으로 학습한 모델(1248 Elo)보다 우수했으며, 둘 다 베이스 모델(879 Elo)보다는 크게 개선되었다.</li>
+<li><strong>비용-성능</strong>: 작업당 추론 비용 추정 시 WorkPilot 세 모델(약 $0.012~$0.396/과업)이 모두 비용-성능 비지배(non-dominated) 프런티어에 위치하여 효율성 측면에서도 경쟁력을 보였다.</li>
+</ul>
+<h2>한계점</h2>
+<p>저자들이 직접 밝힌 한계는 다음과 같다. 첫째, 교사 모델인 GLM-5.3이 텍스트 입력만 지원하여, Qwen 백본이 가진 시각(vision) 및 멀티모달 정합 구성요소를 활용하지 못한 채 텍스트 전용 인터페이스로만 학습·평가하였다. 즉 시각적 근거를 활용한 학습은 다루지 않았다. 둘째, 본 연구는 교사 궤적에 대한 지도 미세조정(SFT)에 집중하였으며, 강화학습 기반 학습은 다루지 않았다(추후 과제로 남김).</p>
+<h2>시사점</h2>
+<p>WorkFactory는 에이전트 학습용 과업을 "그럴듯한 자료 모음"이 아니라 "정보의 의존관계와 위치"를 명시적으로 설계한 뒤 실행으로 검증·보수하는 방식으로 접근함으로써, 업무 환경의 논리적 일관성이 교사 궤적의 품질, 나아가 학습된 에이전트의 성능에 직접적으로 영향을 준다는 점을 실증적으로 보여준다. 이는 단순히 데이터 양을 늘리는 것보다 과업 환경 자체의 "실행 가능성(executability)"을 보장하는 것이 지도학습 기반 에이전트 스케일링에 중요하다는 시사점을 주며, 12만 개에 달하는 다직업 과업 코퍼스와 4B~35B 규모의 공개 모델은 전문업무 에이전트 연구의 재현 가능한 기반을 제공한다. 또한 모델 규모별로 성능 체감 곡선과 실행 길이·도구 신뢰성 변화 양상이 다르다는 관찰은, 향후 에이전트 학습 데이터 설계 시 모델 규모에 맞춘 데이터량 책정이 필요함을 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.37161" target="_blank" rel="noopener">huggingface.co/papers/2610.37161</a> · 2026-10-31</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

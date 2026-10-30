@@ -1,0 +1,123 @@
+<meta charset="UTF-8">
+<title>MLLM의 검색 헤드</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#9 · Daily Papers 2026-10-31</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 28</span>
+    </div>
+    <h1 class="article-title">A Broader Look into MLLM's Retrieval Heads</h1>
+    <p class="article-title-ko">MLLM의 검색 헤드, 더 넓게 보다</p>
+    <p class="article-sub">멀티모달 대형언어모델(MLLM)이 오디오·비주얼 같은 새로운 모달리티로 확장되어도, 소수의 "검색 헤드(retrieval heads)"가 질문에 필요한 근거를 찾아내는 역할을 그대로 담당하며, 이 헤드들은 모달리티 간에 공유되고 백본 모델로부터 보존되고, 이를 직접 학습 대상으로 삼으면 문서 검색 성능을 실질적으로 끌어올릴 수 있음을 보인 연구이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.32411" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.32411" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: A Broader Look into MLLM's Retrieval Heads</li>
+<li><strong>저자</strong>: Jia Wang, Yuqing Li, Jiangnan Li(공동 1저자), Zheng Lin(교신저자), Mo Yu — 중국과학원 정보공학연구소(Institute of Information Engineering, CAS), 중국과학원대학교(UCAS), Tencent 소속</li>
+<li><strong>출처</strong>: arXiv:2610.32411v1 [cs.CL] (2026년 10월 23일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.32411">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>멀티모달 대형언어모델(MLLM)이 오디오·비주얼 같은 새로운 모달리티로 확장되어도, 소수의 "검색 헤드(retrieval heads)"가 질문에 필요한 근거를 찾아내는 역할을 그대로 담당하며, 이 헤드들은 모달리티 간에 공유되고 백본 모델로부터 보존되고, 이를 직접 학습 대상으로 삼으면 문서 검색 성능을 실질적으로 끌어올릴 수 있음을 보인 연구이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>긴 입력 안에서 질문에 답하는 데 필요한 근거(evidence)는 전체 맥락 중 일부에만 존재하는 경우가 많아, 이를 정확히 찾아내는 능력(evidence localization)이 멀티모달 이해의 핵심이다. 선행 연구는 언어모델에서 소수의 어텐션 헤드(retrieval heads)가 맥락의 정보를 출력으로 옮기는 역할을 담당하며, 이를 제거(ablation)하면 긴 맥락 검색 성능이 급격히 떨어진다는 것을 보였다. 이후 연구는 이 분석을 비전-언어모델의 이미지 근거로도 확장했다. 그러나 이러한 분석은 제한된 모달리티(텍스트, 이미지)와 모델에만 머물러 있었고, 모달리티가 더 늘어날 때도 같은 메커니즘이 유지되는지, 그리고 이 메커니즘을 실제 모델 성능 개선에 활용할 수 있는지는 충분히 탐구되지 않았다. 이 논문은 이 두 질문—① 모달리티가 확장될 때 검색 헤드 메커니즘도 함께 확장되는가, ② 이 메커니즘을 모델 개선의 토대로 쓸 수 있는가—를 오디오-비주얼 입력을 다루는 옴니모달 모델을 통해 검증한다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>텍스트, 이미지-텍스트, 오디오-비주얼의 세 가지 모달리티 환경에서 질문-근거 어텐션을 통일된 기준으로 측정하는 검색 헤드 탐지 방법을 18개 체크포인트(언어모델, 비전-언어모델, 통합모델, 옴니모달모델)에 적용해, 헤드의 희소성(sparsity), 모달리티 간 공유성(cross-modal sharing), 백본으로부터의 보존성(preservation)을 규명했다.</li>
+<li>헤드 제거(ablation) 실험을 통해 검색 헤드가 오디오-비주얼 검색에 실제로 필요함을 인과적으로 입증했고, 두 모달리티에서 공통으로 선택되는 극소수 헤드(전체의 2% 미만)를 제거하는 것만으로도 문서 이해, 공간 지각, 시각적 수학 등 훨씬 넓은 범위의 멀티모달 과제 성능이 저하됨을 보였다.</li>
+<li>검색 헤드의 어텐션을 랭킹(ranking) 목표로 직접 학습시키는 방법을 제안해, MMDocIR 문서 검색 과제에서 Qwen3-VL-8B의 페이지 단위 Recall@1을 6.03점 끌어올렸고, 세 가지 모델 패밀리에서 동일한 효과를 확인했다.</li>
+</ol>
+<h2>방법론</h2>
+<ul>
+<li><strong>검색 헤드 탐지</strong>: 각 예제에서 질문 토큰 위치에서 정답 근거(evidence) 토큰 위치로 향하는 어텐션 값을 계산하고, 질문 내용과 무관한 "의미 없는 질문(uninformative question)"으로 같은 맥락에서 다시 계산한 값을 빼서(캘리브레이션) 여러 예제에 대해 평균한 점수를 각 헤드의 검색 점수로 정의한다. 이 점수로 헤드를 정렬해 상위 5%를 "검색 헤드"로 규정한다.</li>
+<li><strong>Paired AV-NIAH 벤치마크</strong>: MLVU의 배경 비디오에 6자리 비밀번호를, (a) 합성 음성으로 읽어주는 오디오 조건, (b) 1초짜리 화면 배너로 보여주는 비주얼 조건으로 각각 삽입해, 배경·질문·정답은 고정하고 모달리티만 달리한 쌍(pair)을 만들었다. 질문은 "비밀번호가 무엇인가"로 통일했다.</li>
+<li><strong>대상 모델</strong>: 언어모델(Qwen2.5, Qwen3), 비전-언어모델(Qwen2.5-VL, Qwen3-VL, MiniCPM-V), 통합모델(BAGEL), 옴니모달모델(Qwen2.5-Omni, MiniCPM-o, SALMONN 2+/Pro) 등 총 18개 체크포인트를 비교해, 같은 계열의 백본과 모달리티 적응 이후 모델 간 헤드 점수의 Spearman 상관관계 및 상위 헤드 집합의 중첩도를 측정했다.</li>
+<li><strong>인과성 검증(ablation)</strong>: 특정 헤드 집합의 출력을 어텐션 출력 projection 전에 0으로 만들어 제거하고, 같은 수의 헤드를 각 레이어에서 무작위로(레이어별 비율 유지) 뽑은 대조군과 비교해, "무작위 제거보다 얼마나 더 성능이 떨어지는가"를 그 헤드 집합의 효과로 정의했다.</li>
+<li><strong>문서 검색 학습</strong>: 탐지된 검색 헤드들의 질문→후보 페이지 어텐션 총합으로 후보를 점수화하고, 이 점수를 정규화한 뒤 정답 페이지와 같은 문서 내 어려운 오답(hard negative)을 구분하는 랭킹 손실(softmax 기반)로 LoRA 어댑터만 학습시켰다. 추론 시에는 의미 없는 질문으로 얻은 점수를 빼서 보정했다.</li>
+</ul>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li><strong>희소성</strong>: 8개 옴니모달 모델 모두에서 상위 10% 미만의 헤드가 전체 양의 점수의 절반 이상을 차지했으며, 이는 음성·영상 증거 모두에서 성립했다.</li>
+<li><strong>모달리티 간 공유</strong>: 같은 모델에서 음성 조건과 영상 조건의 상위 5% 헤드 중 69~83%가 양쪽 모두에서 선택되었고(무작위로 겹칠 것으로 기대되는 수는 3개 미만), 전체 헤드 순위의 Spearman 상관은 0.88~0.92에 달했다.</li>
+<li><strong>백본으로부터의 보존</strong>: 옴니모달 모델은 적응 전 언어모델/비전-언어모델 백본과 텍스트 검색 과제에서 상관계수 0.95 이상(SALMONN 계열은 0.97 이상)을 보이며 검색 헤드 구조를 거의 그대로 유지했다.</li>
+<li><strong>인과적 역할</strong>: Qwen2.5-Omni-7B 기준, 상위 5% 검색 헤드를 제거하면 오디오 조건 정확도(EM)가 98.3%에서 0%로 붕괴했으나, 동수의 무작위 헤드 제거는 96.9%로 거의 영향이 없었다. 두 모달리티에서 공통으로 선택된 소수 헤드(모델별 10~14개, 전체의 2% 미만)만 제거해도 MMLongBench-Doc, CV-Bench, MMStar, CountBenchQA, MMMU(-Pro), MathVista, MathVision 등 8개 과제에서 뚜렷한 성능 저하가 나타났고, 이미지 검색 기준으로 고른 대조 헤드 집합보다 16개 모델-과제 조합 중 15개에서 더 큰 손상을 입혔다.</li>
+<li><strong>문서 검색 개선</strong>: MMDocIR에서 Qwen3-VL-8B의 페이지 Recall@1이 학습 전 56.45%에서 학습 후 62.48%로 +6.03점 향상되었고, 레이아웃(단락/표/그림 단위) 검색에도 +1.46점의 전이 효과가 있었다(레이아웃 라벨 없이 페이지 라벨만으로 학습했음에도). Qwen2.5-VL-7B(+5.69점), Gemma3-12B(+2.17점) 등 다른 모델 패밀리에서도 유사한 향상을 재현했으며, MMMU, MathVista 등 범용 벤치마크 성능에는 거의 영향(1점 이내)이 없었다.</li>
+</ul>
+<h2>한계점</h2>
+<p>논문에 별도의 "한계점" 섹션은 없으나(논문에 명시되지 않음), 본문에서 드러나는 제약으로는 다음을 들 수 있다. 분석에 사용된 AV-NIAH는 실제 배경 비디오에 인위적으로 비밀번호를 삽입한 합성 벤치마크로, 실제 사용 환경의 복잡한 질의-근거 관계를 완전히 대표하지는 못할 수 있다. 또한 분석 대상이 8개의 옴니모달 체크포인트 및 이와 연관된 백본 계열로 제한되어 있어 더 폭넓은 아키텍처로의 일반화는 추가 검증이 필요하다. 문서 검색 학습 역시 페이지 단위 라벨만으로 학습되어 레이아웃 단위 성능 향상은 상대적으로 작았고, 범용(out-of-domain) 벤치마크에서의 이득도 미미한 수준에 그쳤다. 아울러 검색 헤드 선정은 상위 5% 또는 top-k 같은 임계값 휴리스틱에 의존한다.</p>
+<h2>시사점</h2>
+<p>이 연구는 모델이 다루는 입력 모달리티가 텍스트·이미지에서 음성·영상으로 확장되어도, 해석 가능한 소수의 어텐션 헤드가 증거 탐색이라는 핵심 기능을 안정적으로 수행한다는 것을 보여줌으로써, 검색 헤드가 모달리티에 구애받지 않는 compact한 해석 도구(lens)가 될 수 있음을 시사한다. 더 나아가 이 메커니즘을 단순한 분석 대상이 아니라 LoRA 기반의 가벼운 학습 대상으로 활용해 실질적인 검색 성능 향상을 이끌어냈다는 점에서, 앞으로 모델 해석(interpretability)과 효율적인 파인튜닝을 연결하는 방법론으로서 어텐션 헤드 단위의 개입이 유용하게 쓰일 수 있음을 보여준다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.32411" target="_blank" rel="noopener">huggingface.co/papers/2610.32411</a> · 2026-10-31</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

@@ -1,0 +1,121 @@
+<meta charset="UTF-8">
+<title>LOWN</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#4 · Daily Papers 2026-10-31</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 90</span>
+    </div>
+    <h1 class="article-title">Look Only When Needed: Certificate-Guided Visual Routing for Efficient Diffusion VLMs</h1>
+    <p class="article-title-ko">LOWN: 필요할 때만 보기 — 효율적인 디퓨전 VLM을 위한 인증 기반 시각 라우팅</p>
+    <p class="article-sub">디퓨전 기반 비전-언어 모델(DVLM)이 디코딩의 매 단계마다 이미지를 다시 처리할 필요가 없다는 사실에 착안해, "텍스트만으로 예측한 결과가 직전 이미지 기반 예측과 일치하는지"를 간단한 인증서로 활용함으로써 이미지 처리를 꼭 필요한 단계에만 수행하는 학습·임계값 불필요 디코딩 기법 LOWN을 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.36671" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.36671" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Look Only When Needed: Certificate-Guided Visual Routing for Efficient Diffusion VLMs</li>
+<li><strong>저자</strong>: Donghyeon Cho, Joowon Kim, Seungho Shin, Eunho Yang (KAIST, AITRICS)</li>
+<li><strong>출처</strong>: arXiv:2610.36671v1 [cs.CV] (2026년 10월 27일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://hyeon9698.github.io/LOWN/">https://hyeon9698.github.io/LOWN/</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.36671">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>디퓨전 기반 비전-언어 모델(DVLM)이 디코딩의 매 단계마다 이미지를 다시 처리할 필요가 없다는 사실에 착안해, "텍스트만으로 예측한 결과가 직전 이미지 기반 예측과 일치하는지"를 간단한 인증서로 활용함으로써 이미지 처리를 꼭 필요한 단계에만 수행하는 학습·임계값 불필요 디코딩 기법 LOWN을 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>LLaDA-V와 같은 디퓨전 VLM은 자기회귀 모델과 달리 양방향 어텐션을 쓰기 때문에 표준적인 key-value 캐싱을 그대로 적용할 수 없고, 매 디노이징 스텝마다 시각 토큰·프롬프트·현재까지 생성된 응답 전체를 다시 forward 연산해야 한다. 그런데 저자들이 측정한 benchmark들에서 시각 토큰은 전체 입력의 89~97%를 차지하지만, 이미지를 뺀 forward 연산 비용은 전체의 3~10%에 불과하다. 즉 디코딩 비용 대부분이 "변하지 않는 이미지"를 반복해서 처리하는 데 쓰이고 있다는 것이다. 기존의 시각 토큰 프루닝(visual token pruning)이나 중간 상태 캐싱, 스텝 수 축소 기법들은 forward 연산 자체를 가볍게 만들거나 재사용하는 방향이지만, "지금 이 스텝에서 정말 이미지가 필요한가?"라는 질문 자체는 던지지 않았다. 저자들은 LLaDA-V의 예측을 이미지 포함(FULL) 조건과 이미지 제외(TEXT-ONLY) 조건에서 비교해, 언마스킹되는 토큰의 top-1 예측이 두 조건에서 평균 83.4% 일치하며, 이미지가 실제로 예측을 바꾸는 단계는 평균 22.8%(최저 7.9%)에 불과함을 확인했다. 또한 이미지가 필요한 단계의 비율과 위치가 벤치마크마다, 디코딩 궤적마다 크게 달라 고정된 스케줄(예: n스텝마다 한 번 이미지를 보기)로는 포착하기 어렵다는 점도 보였다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>FULL forward와 TEXT-ONLY forward를 쌍으로 비교하는 실험을 통해, 대부분의 디코딩 스텝에서 이미지 접근을 건너뛸 수 있으며 필요한 스텝은 과제·궤적마다 달라 고정 스케줄로는 잘 맞지 않음을 실증적으로 보였다.</li>
+<li>학습이나 과제별 임계값 튜닝 없이, "예측 일치(agreement)"라는 신호 하나로 이미지 처리 여부와 한 스텝에 몇 개의 토큰을 언마스킹할지를 동시에 결정하는 LOWN 기법을 제안했다.</li>
+<li>LLaDA-V, LaViDa, VidLaDA 등 세 가지 디퓨전 VLM 백본과 10개 벤치마크(+비디오 2개)에서 검증했으며, LLaDA-V 기준 평균 성능의 99.6%를 유지하면서 디코딩 FLOPs를 0.35배로 줄였고, 시각 토큰 프루닝 및 key-value 캐싱과도 orthogonal하게 결합 가능함을 보였다.</li>
+</ul>
+<h2>방법론</h2>
+<p>LOWN은 표준 디퓨전 VLM이 매 스텝 하나의 FULL forward로 묶어서 내리던 두 가지 결정, 즉 "지금 이미지가 필요한가"와 "얼마나 멀리 디코딩을 진행할 것인가"를 분리한다. 핵심 개념은 앵커(anchor)와 인증서(certificate)다.
+1. <strong>앵커 저장</strong>: LOWN이 FULL forward를 실행할 때마다, 아직 마스킹되어 있는 위치들에 대한 top-1 예측값과 신뢰도를 "앵커"로 저장한다.
+2. <strong>인증(Certify)</strong>: 각 스텝마다 비용이 훨씬 싼 TEXT-ONLY forward(이미지 없이 프롬프트+현재 응답만 입력, 위치 ID는 유지)를 수행한다. 마스킹된 위치들을 앵커 신뢰도 내림차순으로 정렬한 뒤, TEXT-ONLY 예측이 앵커 예측과 일치하는 위치를 "인증된" 토큰으로 간주한다. 신뢰도 순으로 인증된 토큰들의 최장 연속 구간(앞에서부터 이어지는 prefix)을 후보 집합으로 삼고, 한 번이라도 불일치가 나오면 그 지점에서 멈춘다.
+3. <strong>분기 결정</strong>: baseline이 한 스텝당 언마스킹하는 토큰 수를 k라 할 때, 인증된 prefix 길이가 k 이상이면 FULL forward 없이 그 전체 prefix를 앵커 예측값으로 언마스킹한다(즉 k개보다 더 많이 언마스킹할 수 있음). prefix 길이가 k보다 짧으면 그 스텝에서 FULL forward를 실행해 앵커를 새로 교체하고, 이때는 FULL과 TEXT-ONLY 예측이 서로 다른(불일치하는) 위치를 먼저 언마스킹하는 "불일치 우선(disagreement-first)" 순서로 k개를 선택한다.
+이 규칙 덕분에 LOWN은 baseline과 동일하거나 더 적은 스텝 수(T 이하)로 디코딩을 마치며, 모델 파라미터나 어텐션 구조는 전혀 바꾸지 않는다. 비용 분석 상으로는 전체 FLOPs가 "FULL forward 빈도(f)" + "TEXT-ONLY 스텝 비율(σ) × 비용 비율(ρ)"로 표현되며, 인증서가 f를 낮추고, prefix 전체 수용이 σ를 낮추는 효과를 갖는다. 또한 시각 토큰 프루닝과 결합할 경우 프루닝은 FULL forward 자체의 비용(π)을 낮추고 LOWN은 FULL forward가 호출되는 횟수(f)를 낮추므로 두 기법이 상호보완적으로 작동한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>LLaDA-V와 LaViDa를 대상으로 MathVista, ScienceQA, ChartQA, MME, MMBench, DocVQA, GQA, LLaVA-Bench, CapArena, DeCapBench 등 10개 벤치마크에서 평가했고, 비디오 이해 모델 VidLaDA-8B를 EgoSchema·MLVU에서 추가로 검증했다. 비교 대상은 시각 토큰 프루닝 기법인 RedVTP, ZOO-Prune, D3ToM과 디코딩 스케줄 기법 KLASS, 그리고 key-value 캐싱 기법 Fast-dLLM이다.
+- LLaDA-V 기준 LOWN은 동일 FLOPs 예산에서 다른 가속 기법들보다 10개 중 8개 벤치마크에서 최고 성능을 기록했고, 평균적으로 baseline 점수의 99.6%를 0.353배의 FLOPs로 달성했다(성능이 100%를 넘는 벤치마크를 100%로 캡하면 98.6%).
+- RedVTP(50% 유지)와 결합 시 0.223배 FLOPs에서 98.3%의 정규화 평균 점수로 10개 벤치마크 전부에서 1위를 기록했다.
+- Fast-dLLM(키-값 캐싱)과 결합하면 생성 시간이 38.1~50.1% 추가로 줄고 FLOPs가 44.1~58.9% 추가로 감소해, 캐싱 없는 baseline 대비 5.6~7.0배 빠르게 디코딩됐다.
+- 다른 백본으로의 전이: LaViDa에서는 추가 변경 없이 평균 성능의 99.7%를 0.174배 FLOPs로 유지했고, 비디오 모델 VidLaDA-8B에서는 EgoSchema·MLVU에서 각각 0.255배, 0.272배 FLOPs로 거의 동등한 점수를 보였다.
+- 실측 wall-clock 기준으로는 LLaDA-V의 10개 벤치마크 평균 생성 시간을 57.4%, 최대 73.2%까지 줄였다.
+- Ablation: 고정/무작위 이미지 접근 스케줄과 비교했을 때 LOWN의 적응형 규칙이 더 우수했고, "시각 라우팅(언제 FULL forward를 할지)"과 "적응형 수용(몇 개를 언마스킹할지)"을 분리한 분석에서 시각 라우팅만으로도 FLOPs를 27~68% 줄였으며 적응형 수용이 추가로 21~43%를 더 줄였다. 인증서의 신뢰성 측면에서는, 한 스텝 묵은 앵커를 기준으로 한 재검증 시 불일치율이 4.1~11.0%였고 앵커가 오래될수록(8스텝 전) 불일치율이 최대 25.3%까지 커졌지만, 실제 LOWN 운용에서는 앵커의 92~97%가 바로 전 스텝에서 만들어진 것이어서 실질 불일치율은 2.2~4.7% 수준으로 낮게 유지됐다.</p>
+<h2>한계점</h2>
+<p>LOWN은 TEXT-ONLY 예측이 앵커와 일치하면 그대로 재사용하기 때문에, 재사용된 토큰이 실제 최신 FULL 예측과 다를 가능성이 있으며 앵커가 오래될수록 이 오차가 커진다. 차트·문서 이해처럼 시각적 의존도가 지속적으로 높은 과제에서는 FULL forward가 자주 필요해 비용 절감 효과가 상대적으로 작다. 또한 몇 번의 FULL forward가 필요한지가 입력과 디코딩 과정에 따라 동적으로 결정되므로, 디코딩 전에 미리 계산 비용을 고정적으로 설정할 수 없다는 한계가 있다. 다만 시각 토큰 프루닝과 결합하면 프루닝의 유지율(retention ratio) 조절을 통해 비용에 어느 정도 통제력을 가질 수 있다고 저자들은 언급한다.</p>
+<h2>시사점</h2>
+<p>이 연구는 디퓨전 VLM의 디코딩에서 "이미지를 얼마나 압축할 것인가"뿐 아니라 "이미지를 언제 다시 볼 것인가"라는 완전히 새로운 축의 효율화 여지가 있음을 보여준다. 추가 학습이나 과제별 하이퍼파라미터 튜닝 없이도 기존의 시각 토큰 프루닝, 디코딩 스케줄링, key-value 캐싱 기법들과 자연스럽게 결합할 수 있다는 점에서 실용성이 높고, 이미지 정보를 영구적으로 삭제하지 않고 필요할 때 다시 참조할 수 있다는 점에서 세밀한 시각적 근거가 필요한 과제(차트·문서 독해 등)에서 프루닝 기법보다 강건하다. 이는 향후 멀티모달 디퓨전 모델의 추론 효율화 연구에서 "적응형 모달리티 접근 스케줄링"이라는 새로운 설계 공간을 여는 결과로 볼 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.36671" target="_blank" rel="noopener">huggingface.co/papers/2610.36671</a> · 2026-10-31</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

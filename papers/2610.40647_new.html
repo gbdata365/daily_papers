@@ -1,0 +1,122 @@
+<meta charset="UTF-8">
+<title>SpecSlot</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#10 · Daily Papers 2026-10-31</span>
+      <span class="cat-tag">생성모델</span>
+      <span class="upvote-tag">▲ 23</span>
+    </div>
+    <h1 class="article-title">Read, Allocate, Route: Role-Coupled Tokenization for Pixel-Space Generative Transformers</h1>
+    <p class="article-title-ko">SpecSlot: 픽셀공간 생성 트랜스포머를 위한 역할-결합 토큰화</p>
+    <p class="article-sub">픽셀 공간 생성 트랜스포머에서 "토큰이 담당하는 출력 역할"과 "토큰이 전역적으로 통신해야 하는지 여부"를 분리함으로써, 세부 묘사를 늘려도 전역 어텐션 비용이 함께 커지지 않도록 만든 토큰화 기법인 SpecSlot을 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.40647" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.40647" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Read, Allocate, Route: Role-Coupled Tokenization for Pixel-Space Generative Transformers</li>
+<li><strong>저자</strong>: Jiongfan Yang, Weichen Fan, Haiwen Diao, Zhongang Cai, Ziwei Liu (Peking University, Nanyang Technological University, SenseTime)</li>
+<li><strong>출처</strong>: arXiv:2610.40647v1 [cs.CV] (2026년 10월 29일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://yangjiongfan.site/specslot/">SpecSlot 프로젝트 페이지</a> (<a href="https://github.com/JiongfanYang/SpecSlot">GitHub</a>, <a href="https://huggingface.co/Gokottaw434/SpecSlot">Hugging Face</a>)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.40647">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>픽셀 공간 생성 트랜스포머에서 "토큰이 담당하는 출력 역할"과 "토큰이 전역적으로 통신해야 하는지 여부"를 분리함으로써, 세부 묘사를 늘려도 전역 어텐션 비용이 함께 커지지 않도록 만든 토큰화 기법인 SpecSlot을 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>오토인코더 없이 노이즈에서 픽셀을 직접 생성하는 픽셀 공간 생성 모델은 구조가 단순하지만, 전체 해상도의 이미지를 그대로 트랜스포머 토큰으로 표현해야 하므로 계산 비용이 크다. 기존 방식(JiT 등)은 하나의 공간 패치를 하나의 토큰에 대응시키는데, 이 경우 패치 크기를 줄여 더 세밀한 디테일을 얻으려 하면 토큰 수가 늘어나고, 이는 전역(global) 어텐션의 2차 비용을 그만큼 증가시킨다. 즉 "출력 디테일"과 "전역 통신량"이 같은 패치 그리드에 묶여 있는 것이 근본적인 문제다.</p>
+<p>저자들은 이미지의 주파수(frequency) 특성에서 힌트를 얻는다. 저주파 성분은 이미지 전체의 구조를 담고 있어 멀리 있는 영역과의 전역적인 정보 교환이 유리하지만, 고주파의 세부 디테일은 대체로 국소적(local)인 특성을 가진다. 그런데 기존 모델에서는 토큰이 "어디에 위치하는가"에 의해 통신 방식이 결정될 뿐, "그 토큰이 실제로 어떤 정보(저주파 혹은 고주파)를 만들어내는가"는 전혀 고려되지 않는다. 이 논문은 "토큰의 출력 역할이 통신 방식을 결정하도록 할 수는 없는가?"라는 질문에서 출발한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>W×K 인덱스 표현 도입</strong>: 공간적 앵커(anchor)의 밀도를 나타내는 W와, 각 앵커 내부에서 주파수 대역을 세분화하는 슬롯(slot) 개수 K를 분리된 두 변수로 노출시켜, 하나의 패치 크기 선택 문제였던 토큰화를 "품질-비용 배분(allocation)" 문제로 재정의했다.</li>
+<li><strong>GGLL(Global-Global-Local-Local) 라우팅 설계</strong>: 각 앵커에서 가장 저주파 대역을 담당하는 슬롯(슬롯 0, "carrier")만 전역 어텐션에 참여하고, 나머지 모든 슬롯은 자신이 속한 앵커 내부에서만 지역적으로 상호작용하도록 하여, 전역 시퀀스 길이를 W로 고정(즉 WK가 아니라 W)시켰다.</li>
+<li><strong>듀얼 베이시스(dual-basis) 출력</strong>: 동일한 슬롯 은닉 상태로부터 겹침(lapped) DCT 기반의 스펙트럼 예측과, 공간적(spatial) 보정값을 함께 산출하여 추가 토큰이나 어텐션 연결 없이 품질을 향상시켰다.</li>
+<li>ImageNet-256/512 및 텍스트-투-이미지 실험에서, 동일 또는 더 적은 연산량으로 FLOPs가 일치된 JiT 대조 모델과 동등하거나 우수한 FID를 달성함을 실측으로 보였다.</li>
+</ul>
+<h2>방법론</h2>
+<p>SpecSlot은 픽셀 공간 rectified-flow 트랜스포머이며, 노이즈와 이미지를 선형 경로로 섞은 상태 z_t에서 속도(velocity)를 예측하는 동일한 학습 목표를 JiT와 공유한다. 핵심은 Read, Allocate, Route라는 세 단계로 구성된 토큰화 과정이다.</p>
+<p>1) <strong>Read(읽기)</strong>: 이미지를 겹치지 않는 s×s 크기의 셀로 나눈 "공간 앵커" 격자를 구성하고, 공유 프로젝션으로 각 셀을 하나의 앵커 벡터로 인코딩한다. 이웃 앵커 간 정보를 섞어주는 영점 초기화된 깊이별(depthwise) 컨볼루션(input mixer)을 거친 뒤, 하나의 앵커 벡터를 K개의 슬롯 은닉 상태로 확장한다. 이때 각 슬롯에는 위치 정보와 "슬롯 인덱스"가 함께 부여된다.</p>
+<p>2) <strong>Allocate(할당)</strong>: 각 슬롯에게 DCT(코사인 변환) 좌표계에서 반지름(저주파→고주파) 순으로 정렬된 서로 겹치지 않는 계수 그룹을 하나씩 배정한다. 즉 슬롯 k는 k번째로 낮은(또는 높은) 주파수 대역을 전담하여 예측한다. 이렇게 만들어진 스펙트럼 예측은 50% 겹침(lapped) DCT와 Hann 윈도우, 정규화된 overlap-add를 사용해 복원되어, 인접한 윈도우 간 경계에서 생기는 블록 아티팩트를 줄인다. 또한 같은 슬롯 상태로부터 별도의 "공간 보정 헤드"가 해당 앵커 내 특정 타일(4분면 등)의 픽셀 값을 직접 예측하여, 스펙트럼 예측에 더해지는 보정항을 만든다.</p>
+<p>3) <strong>Route(라우팅)</strong>: 각 앵커에서 가장 저주파를 담당하는 슬롯(슬롯 0)만 "carrier"로 지정되어 클래스 컨텍스트 토큰과 함께 전역 블록에 참여하고, 나머지 모든 슬롯은 자신의 앵커 내부에서만 지역 블록에서 상호작용한다. 전역 블록 2개와 지역 블록 2개가 번갈아(GGLL) 3회 반복되어 총 6개의 전역, 6개의 지역 블록을 구성한다. 이로써 전역 어텐션의 2차 비용 항이 "앵커 수 W"에만 비례하게 되어, 세부 묘사를 늘리기 위해 K를 키워도 전역 통신 비용은 늘지 않는다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>ImageNet-1K에서 클래스 조건부 생성 모델을 256×256과 512×512 해상도로 각각 120 에폭 학습했다. JiT 계열(패치 크기 16, 8)과, forward GFLOPs를 맞춘 자체 제작 JiT-CM(Compute-Matched) 대조군, 그리고 입력 측에서만 주파수 정보를 활용하는 Spectral Forcing(SF) 베이스라인과 비교했다.</p>
+<ul>
+<li><strong>ImageNet-256</strong>: SpecSlot(W256/K2, W256/K4)은 JiT-B/16과 JiT-B/8 사이에서 두 개의 "비지배(nondominated)" 품질-비용 지점을 제공했다. SpecSlot-K4는 FLOPs가 거의 동일한 JiT-CM과 5-시드 95% 신뢰구간 내에서 동등한 평균 FID를 보이면서도 학습 초반에 더 빠르게 수렴했다.</li>
+<li><strong>ImageNet-512</strong>: SpecSlot-K4는 JiT-CM보다 FID를 2.84 개선하면서 GFLOPs는 3.9% 더 적었고, 가장 성능이 좋은 JiT-B/16과는 FID 0.69 차이에 불과하면서 비용은 38.2% 더 낮고 처리량은 1.6배 더 높았다. 저해상도 대비 고해상도에서 이득이 더 커진 이유로, 앵커당 더 많은 픽셀을 커버하면서도 전역 시퀀스 길이는 고정된다는 구조적 특성을 제시했다.</li>
+<li><strong>텍스트-투-이미지 생성</strong>: BLIP3o와 JourneyDB 데이터로 256×256에서 400 에폭 학습한 결과, SpecSlot(W256/K4)은 DPG-Bench에서 JiT-B/8보다 1.06점 높은 점수를 40.6% 낮은 forward 비용으로 달성했다. GenEval에서는 JiT-B/16보다 우수했으나, JiT-B/8이 약 1.7배의 비용으로 여전히 최고 품질을 유지했다.</li>
+<li><strong>설계 분석(어블레이션)</strong>: 고정된 토큰 예산(N=WK) 내에서 앵커 수 W를 늘리는 쪽이 슬롯 수 K를 늘리는 쪽보다 FID 개선에 더 효과적이었으며, K를 키울수록 슬롯의 "유효 활용률"(엔트로피 기반 effective rank)이 감소하는 경향을 관찰했다. 스펙트럼 예측과 공간 보정 두 출력 분기를 모두 사용하는 듀얼 베이시스가 단일 베이시스보다 FID를 추가로 0.40 개선했으며, 두 분기의 기여도가 서로 상쇄되지 않고 보완적임을 보였다. 또한 저주파를 담당하는 슬롯을 carrier로 지정하는 라우팅이, 다른 슬롯을 carrier로 바꾸는 경우보다 항상 더 좋은 FID를 보였고, 저주파 역할의 신호가 플로우 과정에서 가장 먼저 수렴(노이즈 대비 신호 비율이 가장 먼저 1을 넘김)한다는 관찰로 이 설계를 뒷받침했다.</li>
+</ul>
+<h2>한계점</h2>
+<p>논문에는 별도의 "한계점" 절이 명시되어 있지 않으나, 본문 및 결론에서 언급된 제약을 정리하면 다음과 같다. 첫째, 앵커 밀도(W)와 스펙트럼 세분화(K)를 늘릴수록 품질이 개선되는 경향은 논문에서 테스트한 범위(N=2,048 등) 내에서 관찰된 것으로, 이 범위를 벗어난 일반화 가능성은 저자들도 단정하지 않는다. 둘째, K에 대해 DCT 계수를 균등하게 나누기 위해 K가 출력 윈도우 크기의 제곱(L²)을 나누어야 한다는 구조적 제약이 있다. 셋째, 비교 대상이 주로 자체 구현한 JiT 계열 및 compute-matched 대조군에 한정되어 있어, 잠재공간(latent-space) 기반의 최신 디퓨전 모델 전반과의 직접 비교는 제한적이다. 넷째, 픽셀 공간 생성 모델 특유의 높은 절대 연산 비용 문제는 SpecSlot으로도 완전히 해소되지는 않으며, 여전히 패치 기반 모델보다 비싼 계산을 요구하는 구간이 존재한다.</p>
+<h2>시사점</h2>
+<p>SpecSlot은 "토큰화를 패치 크기라는 단일 선택이 아니라, 앵커 밀도와 스펙트럼 세분화라는 두 개의 독립적인 배분 변수로 다루는 문제"로 재정의함으로써, 픽셀 공간 생성 트랜스포머가 세부 묘사와 전역 통신 비용을 분리해 다룰 수 있는 새로운 설계 축을 제시한다. 이는 특정 아키텍처에 국한되지 않는 일반적인 원리로서, 향후 다른 생성 모델이나 비전 트랜스포머 설계에서 "토큰의 역할(주파수 대역, 공간 위치 등)에 따라 통신 패턴을 동적으로 결정"하는 방향으로 확장될 수 있는 잠재력을 보여준다. 특히 고해상도로 갈수록 이득이 커지는 경향은, 초고해상도 이미지/비디오 생성과 같이 토큰 수가 급증하는 상황에서 이러한 역할 기반 라우팅 전략이 더욱 유용할 수 있음을 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.40647" target="_blank" rel="noopener">huggingface.co/papers/2610.40647</a> · 2026-10-31</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

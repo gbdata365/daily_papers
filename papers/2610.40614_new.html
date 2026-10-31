@@ -56,13 +56,13 @@
 <header class="article-head">
   <div class="wrap">
     <div class="kicker-row">
-      <span class="rank">#7 · Daily Papers 2026-10-31</span>
+      <span class="rank">#5 · Daily Papers 2026-11-01</span>
       <span class="cat-tag">생성모델</span>
-      <span class="upvote-tag">▲ 34</span>
+      <span class="upvote-tag">▲ 38</span>
     </div>
     <h1 class="article-title">L3G-World: Real-Time Infinite World Generation with Latent 3D Gaussian Memory</h1>
-    <p class="article-title-ko">L3G-World: Latent 3D Gaussian 메모리를 이용한 실시간 무한 월드 생성</p>
-    <p class="article-sub">하나의 이미지와 카메라 경로만으로, 장면을 "latent 3D Gaussian" 형태의 압축된 메모리에 저장하고 갱신하면서 실시간(9 FPS)으로 공간적으로 일관된 무한한 가상 세계를 생성하는 월드 모델이다.</p>
+    <p class="article-title-ko">L3G-World: 잠재 3D 가우시안 메모리를 이용한 실시간 무한 월드 생성</p>
+    <p class="article-sub">단일 이미지와 카메라 경로만으로 실시간·장기간 탐험이 가능한 일관된 3D 월드를 생성하기 위해, VAE 잠재 특징을 직접 담은 "잠재 3D 가우시안 메모리(L3G)"를 제안하고 이를 비디오 디퓨전 트랜스포머와 번갈아 갱신·조건화함으로써 메모리 크기를 스트림 길이가 아닌 장면 범위에만 비례하게 만든 월드 생성 프레임워크 L3G-World를 제안한다.</p>
     <div class="meta-links">
       <a href="https://huggingface.co/papers/2610.40614" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
       <a href="https://arxiv.org/abs/2610.40614" target="_blank" rel="noopener">arXiv 원문 →</a>
@@ -74,42 +74,35 @@
   <div class="wrap">
 <ul>
 <li><strong>제목</strong>: L3G-World: Real-Time Infinite World Generation with Latent 3D Gaussian Memory</li>
-<li><strong>저자</strong>: Jinhyeok Choi, JoungBin Lee(공동 1저자), Jongmin Lee, Minkyeong Jeon, Jiyoung Kim, Kaeun Han, Yoonjin Yoon, Seungryong Kim (교신저자) — KAIST AI, Ewha Womans University, KAIST Urban AI Institute 소속</li>
+<li><strong>저자</strong>: Jinhyeok Choi, JoungBin Lee, Jongmin Lee, Minkyeong Jeon, Jiyoung Kim, Kaeun Han, Yoonjin Yoon, Seungryong Kim (KAIST AI, Ewha Womans University, KAIST Urban AI Institute). Choi와 Lee(JoungBin)는 공동 1저자, Yoon과 Kim은 공동 교신저자로 표기됨.</li>
 <li><strong>출처</strong>: arXiv:2610.40614v1 [cs.CV] (2026년 10월 29일)</li>
 <li><strong>프로젝트 페이지</strong>: <a href="https://cvlab-kaist.github.io/L3G-World/">https://cvlab-kaist.github.io/L3G-World/</a></li>
 <li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.40614">arXiv PDF 보기</a></li>
 </ul>
 <h2>한 줄 요약</h2>
-<p>하나의 이미지와 카메라 경로만으로, 장면을 "latent 3D Gaussian" 형태의 압축된 메모리에 저장하고 갱신하면서 실시간(9 FPS)으로 공간적으로 일관된 무한한 가상 세계를 생성하는 월드 모델이다.</p>
+<p>단일 이미지와 카메라 경로만으로 실시간·장기간 탐험이 가능한 일관된 3D 월드를 생성하기 위해, VAE 잠재 특징을 직접 담은 "잠재 3D 가우시안 메모리(L3G)"를 제안하고 이를 비디오 디퓨전 트랜스포머와 번갈아 갱신·조건화함으로써 메모리 크기를 스트림 길이가 아닌 장면 범위에만 비례하게 만든 월드 생성 프레임워크 L3G-World를 제안한다.</p>
 <h2>배경 및 문제의식</h2>
-<p>상호작용형 비디오 월드 모델은 사용자의 행동(카메라 이동 등)에 따라 다음 장면을 생성하는데, 긴 시간 동안 탐험해도 이전에 본 장면과 공간적으로 일치하는 결과를 유지하면서도 실시간으로 동작해야 한다는 두 가지 요구가 충돌한다. 기존 방법은 크게 두 갈래로 나뉜다. 하나는 이전 프레임이나 어텐션의 KV 캐시 같은 "시간적 컨텍스트"를 활용하는 방식인데, 메모리와 연산량이 생성된 영상 길이에 비례해 계속 늘어나 결국 메모리 부족(OOM)에 빠진다. 다른 하나는 포인트클라우드나 3D Gaussian 같은 명시적 3D 메모리를 사용하는 방식인데, feed-forward 방식은 매 프레임마다 조밀한 3D 표현을 누적시켜 중복이 쌓이고 렌더링이 느려지며, 한 번 잘못 재구성된 영역은 계속 틀린 채로 남는다. 반대로 최적화 기반 방식은 메모리는 장면 규모에만 비례해 콤팩트하지만 반복적인 최적화 때문에 느려서 실시간 생성에 쓸 수 없다. 또한 기존 3D 메모리들은 RGB로 렌더링한 뒤 다시 VAE로 인코딩해야 비디오 생성 모델에 조건을 줄 수 있어, 이 재인코딩 과정 자체도 실시간성을 해친다.</p>
+<p>인터랙티브 월드 모델은 사용자의 행동(카메라 이동 등)에 따라 시각 콘텐츠를 생성하지만, 실시간성을 유지하면서 장시간 탐험 중 공간적 일관성(동일 장소로 되돌아왔을 때 이전과 같은 모습을 재현하는 것)을 지키는 것이 어렵다. 기존 접근은 두 갈래로 나뉜다. 첫째, 어텐션의 KV 캐시나 과거 프레임을 참조하는 "시간적 컨텍스트" 방식은 생성 길이와 해상도에 비례해 메모리·연산량이 선형으로 증가해 결국 OOM(메모리 부족)에 이른다. 둘째, 포인트 클라우드나 3D 가우시안 같은 "명시적 3D 메모리"를 두는 방식은 생성된 프레임마다 조밀한 3D 표현을 누적하므로 같은 영역에 중복된 프리미티브가 쌓이고 렌더링이 느려지며, 저장된 내용이 갱신되지 않아 기하학적 오류가 그대로 지속된다. 또한 이런 명시적 3D 메모리는 RGB로 렌더링한 뒤 VAE로 다시 인코딩해야 비디오 생성기의 조건으로 쓸 수 있어 실시간 생성을 가로막는다. 최적화 기반 방법들은 메모리를 장면 범위에 비례하게 유지하지만, 반복적 최적화 때문에 지연이 크다는 트레이드오프가 있다.</p>
 <h2>핵심 기여</h2>
 <ul>
-<li>장면의 공간적 범위에 비례해서만 커지고, 생성된 영상 길이와는 무관하게 유지되는 압축된 "Latent 3D Gaussian Memory(L3G)"를 제안했다.</li>
-<li>메모리를 다루는 L3G-Mem과 비디오를 생성하는 L3G-Gen이라는 두 모듈이 서로 번갈아 작동하며 세계를 생성하는 L3G-World 프레임워크를 제시했다.</li>
-<li>각 3D Gaussian이 RGB뿐 아니라 VAE latent feature까지 저장하도록 하여, 메모리를 비디오 생성 모델의 latent space에 직접 렌더링함으로써 VAE 재인코딩 과정을 없앴다.</li>
-<li>가장 효율적인 기존 명시적 3D 메모리 기법과 비교해 3D 프리미티브 수를 26.7~38.9배, 메모리 재구성 속도를 3.0~3.2배, VAE latent 렌더링 처리량을 349~359배 향상시키며 H100 GPU 한 대에서 9.02 FPS의 실시간 생성을 달성했다.</li>
+<li>스트림 길이가 아니라 탐험한 장면의 공간적 범위에 비례해서만 커지는 압축적 "잠재 3D 가우시안 메모리(L3G)"를 제안하고, 이를 온라인으로 지속적으로 읽고 갱신하는 구조를 설계했다.</li>
+<li>메모리 갱신기 L3G-Mem과 메모리 조건부 비디오 디퓨전 트랜스포머 L3G-Gen이 자기회귀적으로 번갈아 동작하는 L3G-World 프레임워크를 제안했다. L3G-Mem은 새로 관측된 영역에만 가우시안을 새로 생성(spawn)하고 기존 가우시안은 잔차로 보정(refine)해, 메모리가 버퍼처럼 무한히 누적되는 대신 지속적으로 수정되는 장면 표현이 되도록 했다.</li>
+<li>각 가우시안이 VAE 잠재 특징을 함께 저장하도록 하여, 메모리를 RGB로 렌더링 후 재인코딩할 필요 없이 비디오 생성기의 잠재 공간으로 바로 렌더링할 수 있게 했다. 여기에 few-step distillation을 결합해 실시간(약 9 FPS) 생성을 달성했다.</li>
+<li>가장 효율적인 기존 명시적 3D 메모리 베이스라인과 비교해 최대 38.6배 적은 3D 프리미티브, 3.2배 빠른 메모리 재구성, 359배 빠른 VAE 특징 렌더링을 보이면서도 생성 품질과 장기 일관성에서 최고 성능을 달성했다고 보고한다.</li>
 </ul>
 <h2>방법론</h2>
-<p>L3G-World는 두 모듈이 자기회귀적으로(autoregressive) 교대하는 루프로 동작한다.</p>
-<ol>
-<li><strong>L3G-Mem (메모리 갱신기)</strong>: 입력 영상 윈도우와 이전 메모리를 받아, 이전 메모리를 현재 카메라 시점으로 렌더링해 얻은 opacity(가림 정도)와 RGB 오차를 이용해 "아직 제대로 표현되지 못한" 영역을 찾아 spawn mask를 만든다. 이 마스크 영역에서만 geometry feature를 K-means로 군집화해 새로운 Gaussian을 추가(spawn)하고, 이미 존재하지만 보이는 Gaussian들은 refinement 토큰으로 뽑아 residual 업데이트로 보정(refine)한다. 두 종류의 토큰은 하나의 transformer에서 cross-attention과 self-attention을 거쳐 함께 처리되며, 동시에 VAE latent를 별도 브랜치에서 끌어와 각 Gaussian에 공간적으로 대응되는 latent feature도 부여한다. 즉 메모리는 단순히 쌓이는 버퍼가 아니라 지속적으로 갱신되는 장면 표현이다.</li>
-<li><strong>L3G-Gen (메모리 조건부 비디오 생성기)</strong>: 이전 메모리의 VAE latent와 opacity를 목표 카메라 시점으로 렌더링해 얻은 값을 노이즈가 섞인 latent와 채널 방향으로 이어붙여 diffusion transformer(DiT)의 조건으로 사용한다. 이 과정에서 RGB 렌더링 후 VAE 재인코딩이 필요 없다. 카메라 포즈는 RayRoPE로, 시간 정보는 시간축 RoPE로 인코딩하며, rectified flow 방식으로 학습한다. 실시간 추론을 위해 AnyFlow 기법으로 few-step distillation을 적용해 'L3G-World Fast'라는 경량 버전도 만들었다.</li>
-<li>두 모듈이 반복되며 L3G-Gen이 생성한 다음 청크를 L3G-Mem이 다시 메모리에 반영하는 구조로, 메모리를 계속 읽고 쓰면서 세계를 확장·보정한다.</li>
-</ol>
-<p>구현에는 geometry backbone으로 Depth Anything 3, 비디오 생성 백본으로 Cosmos-Predict2.5를 사용했고, DL3DV와 RealEstate10K 데이터셋으로 각각 L3G-Mem과 L3G-Gen을 학습했다.</p>
+<p>L3G-World는 영상 스트림을 윈도우(청크) 단위로 처리하며, 각 자기회귀 스텝에서 이전 메모리 M_{k-1}과 현재 입력 윈도우를 받아 메모리를 M_k로 갱신한다.</p>
+<p><strong>L3G-Mem(메모리 갱신기)</strong>: 먼저 이전 메모리를 현재 카메라 시점으로 렌더링해 RGB와 불투명도(알파) 맵을 얻는다. 불투명도가 낮거나 실제 관측 영상과 RGB 오차가 큰 픽셀을 "충분히 표현되지 않은 영역"으로 표시하는 스폰 마스크(spawn mask)를 만든다. 이 마스크 안의 영역에서만 기하학 특징(Depth Anything 3 기반)을 K-means로 클러스터링해 새 가우시안을 만들 스폰 쿼리 토큰을 뽑는다(ZipSplat 방식 응용). 동시에 현재 시점에서 보이는 기존 가우시안들의 메모리 토큰을 리파인 토큰으로 가져와, 관측과 비교해 잔차 보정을 하도록 한다. 두 토큰 집합(스폰·리파인)은 하나의 트랜스포머에서 기하 특징에 대한 교차 어텐션, 스트림별 자기 어텐션, 그리고 전역 자기 어텐션을 거쳐 함께 처리된다. 별도의 "잠재 리프팅" 가지에서는 입력 영상의 VAE 잠재값으로부터 VAE 잠재 토큰을 뽑아 스폰 토큰과 채널 방향으로 결합한다. 최종적으로 MLP 기반 헤드가 스폰 토큰은 새 가우시안으로, 리파인 토큰은 기존 가우시안에 대한 잔차 업데이트로 디코딩한다. 학습은 여러 윈도우에 걸쳐 자기회귀적으로 진행되며 RGB L1, LPIPS, depth L1, VAE 잠재 MSE, 가시성 손실을 결합한 목적함수를 사용한다.</p>
+<p><strong>L3G-Gen(메모리 조건부 비디오 생성)</strong>: 이전 메모리에 저장된 VAE 잠재와 알파 마스크를 목표 카메라 시점으로 렌더링해 공간적으로 정렬된 조건 잠재를 얻고, 이를 노이즈가 섞인 목표 잠재와 채널 방향으로 결합해 디퓨전 트랜스포머(Cosmos-Predict2.5 기반, LoRA로 미세조정)에 입력한다. 카메라 레이 기반 회전 위치 임베딩(RayRoPE)과 참조 프레임용 시간적 RoPE 오프셋을 적용하며, rectified flow 목적함수로 학습한다. 실시간 추론을 위해 AnyFlow 방식의 on-policy distillation으로 few-step 학생 모델을 만들어 "L3G-World Fast"로 부른다.</p>
+<p>이 두 모듈이 반복적으로 메모리를 읽고 쓰며(생성된 청크 → 메모리 갱신 → 다음 청크 조건화) 루프를 형성해, 한 장의 입력 이미지와 카메라 경로, 텍스트 프롬프트로부터 무한히 탐험 가능한 월드를 생성한다.</p>
 <h2>실험 설정 및 결과</h2>
-<p>DL3DV와 RealEstate10K 데이터셋에서 481프레임짜리 루프 클로저(출발점으로 되돌아오는) 경로를 이용해 장시간 탐험 후에도 장면이 일관되게 유지되는지 평가했다. 비교 대상은 시간적 컨텍스트 기반 모델(Yume 1.5, Matrix-Game 3.0)과 명시적 3D 메모리 기반 모델(GEN3C, Spatia, SPMem, Lyra 2.0, 3DScenePrompt, NeoVerse) 등이다.</p>
-<ul>
-<li><strong>메모리 효율성</strong>: Gaussian 기반 방법인 NeoVerse와 비교해 프리미티브 수는 266~417배, 메모리 사용량은 42~67배 줄었고, RGB 렌더링은 8.3~10.4배, VAE 조건화 처리량은 349~359배 빨라졌다. 효율적인 포인트클라우드 기반 방법인 Lyra 2.0과 비교해도 메모리 재구성 8.9~9.5배, 메모리 사용량 7.8~10.4배, VAE 렌더링 처리량 643~648배의 우위를 보였다.</li>
-<li><strong>일관성 및 생성 품질</strong>: 두 데이터셋 모두에서 PSNR, LPIPS 등 self-consistency 지표와 FID, SC(Subject Consistency), BC(Background Consistency) 등 생성 품질 지표에서 최고 또는 차순위 성능을 기록했다. 특히 루프 클로저 비교 영상에서, 시간적 컨텍스트 기반 모델들은 복귀 시 외형/기하 드리프트를 보였고, Spatia·NeoVerse는 블러와 렌더링 아티팩트가 누적된 반면 L3G-World는 장면 구조를 안정적으로 유지했다.</li>
-<li><strong>카메라 포즈 정확도</strong>: DL3DV에서는 가장 낮은 translation error와 두 번째로 낮은 rotation error를 보였으나, RealEstate10K에서는 일부 기존 방법이 포즈·MEt3R(기하 일관성) 지표에서 더 낮은 오차를 보였다.</li>
-<li><strong>Ablation</strong>: adaptive spawning을 제거하면 Gaussian 수가 약 1.8배 늘고 품질도 떨어졌고, refinement를 제거하면 품질이 크게 하락했다. VAE latent lifting을 빼고 RGB 렌더링 후 VAE 인코딩으로 대체하면 렌더링 속도가 크게 느려지고 latent 품질도 저하되어, 두 핵심 설계(선택적 spawn/refine, 직접 latent 렌더링)가 모두 성능에 기여함을 확인했다.</li>
-</ul>
+<p>L3G-Mem은 ZipSplat 구조와 Depth Anything 3 백본을 바탕으로 DL3DV 데이터셋에서 학습했고, L3G-Gen은 Cosmos-Predict2.5를 기반으로 DL3DV와 RealEstate10K에서 학습했으며, A100 GPU 4장으로 학습, H100 GPU 1장으로 평가(400프레임 비디오 생성 기준)했다. 비교 대상은 점구름 기반(GEN3C, Spatia, SPMem, Lyra 2.0, 3DScenePrompt), 가우시안 기반(NeoVerse), 시간적 컨텍스트 기반(Yume 1.5, Matrix-Game 3.0) 월드 모델들이다.</p>
+<p>DL3DV와 RealEstate10K 양쪽에서 L3G-World는 가장 적은 수의 3D 프리미티브(예: NeoVerse 대비 약 26~39배 적음)로 가장 빠른 메모리 재구성(3.0~3.2배)과 가장 빠른 VAE 공간 렌더링(349~359배)을 보였으며, 생성 품질(FID, IQ, AQ 등), 장기 자기일관성(PSNR/SSIM/LPIPS), 카메라 포즈 오차, 3D 일관성(MEt3R) 지표에서도 대체로 베이스라인들을 능가했다. few-step distillation을 적용한 L3G-World Fast는 품질을 일부 희생하는 대신 H100 한 장에서 9.02 FPS의 실시간 생성 속도를 달성했다. 반면 시간적 컨텍스트 방식(Yume 1.5, Matrix-Game 3.0)은 400프레임 생성에서 OOM이거나 낮은 FPS를 보였고, 명시적 3D 메모리 방식들은 메모리나 렌더링 비용이 크거나(3DScenePrompt는 수백만 단위 프리미티브) 실시간이 아니었다.</p>
+<p>어블레이션에서는 적응적 스포닝을 제거하면 가우시안 수가 약 1.8배 늘고 품질이 떨어졌고, 리파인먼트 스트림이나 전역 자기 어텐션을 제거해도 성능이 저하되었다. RGB 손실을 빼면 VAE 조건부 생성에도 불구하고 3D 기하 학습 품질이 나빠졌으며, VAE 잠재를 직접 들어올리는 대신 RGB 렌더링 후 재인코딩하는 방식으로 바꾸면 렌더링이 느려지고 잠재 품질도 저하되었다. L3G-World 수준의 어블레이션에서도 메모리 리파인먼트를 끄면 자기일관성, 포즈 정확도, 3D 일관성이 모두 나빠져, 메모리를 단순히 누적하는 것이 아니라 지속적으로 보정하는 것이 중요함을 확인했다.</p>
 <h2>한계점</h2>
-<p>저자들이 직접 명시한 한계는 다음과 같다. 첫째, latent 3D Gaussian 메모리는 정적인 장면을 가정해 설계되어, 독립적으로 움직이는 동적 객체를 명시적으로 모델링하지 못한다. 둘째, 메모리 크기가 생성 길이와는 무관하지만 탐험 범위가 매우 커지면 여전히 메모리가 증가할 수 있어, 적응적 가지치기(pruning)나 계층적 메모리 구조 같은 추가 방안이 필요하다. 셋째, refinement 메커니즘이 점진적으로 오류를 보정하지만, 장시간 자기회귀 생성 과정에서 발생한 오류가 완전히 제거되지 못하고 이후 메모리 갱신에 전파될 수 있다.</p>
+<p>논문은 세 가지 한계를 명시한다. 첫째, 잠재 3D 가우시안 메모리는 주로 정적인 장면을 위해 설계되어 독립적으로 움직이는 객체를 명시적으로 모델링하지 않는다. 둘째, 메모리가 생성 길이가 아니라 탐험한 공간 범위에 비례해 커지긴 하지만, 극도로 넓은 영역을 탐험하면 여전히 메모리가 계속 증가할 수 있어 적응적 가지치기(pruning)나 계층적 메모리 구조가 필요할 수 있다. 셋째, 리파인먼트 메커니즘이 부정확한 가우시안을 점진적으로 보정할 수 있지만, 장기간 자기회귀 생성 중 발생한 오류가 이후 메모리 갱신에 전파될 가능성은 여전히 남아 있다.</p>
 <h2>시사점</h2>
-<p>이 연구는 월드 모델의 메모리를 "쌓이기만 하는 버퍼"가 아니라 "지속적으로 갱신되는 압축된 장면 표현"으로 재정의했다는 점에서 의미가 있다. 특히 3D 메모리에 RGB뿐 아니라 VAE latent feature까지 저장해 생성 모델의 latent space에 직접 렌더링한다는 아이디어는, 3D 표현과 latent 비디오 생성 모델 사이의 비효율적인 인코딩/디코딩 변환을 없애는 실용적인 해법으로, 향후 실시간 상호작용형 시뮬레이션(게임, 로보틱스, 자율주행 시뮬레이션 등)의 메모리 설계에 참고할 만한 방향을 제시한다.</p>
+<p>이 논문은 월드 모델의 장기 일관성과 실시간성이라는 두 요구가 서로 충돌한다는 문제를, "메모리를 무조건 쌓는 것"이 아니라 "필요한 곳에만 추가하고 기존 내용을 지속적으로 고치는 것"으로 풀 수 있음을 보여준다. 특히 가우시안에 VAE 잠재 특징을 직접 저장해 RGB 재인코딩 과정을 없앤 설계는, 3D 장면 메모리와 잠재 비디오 디퓨전 모델 사이의 인터페이스를 효율화하는 일반적인 방향을 제시한다. 이는 게임·시뮬레이션·자율주행 등 장시간 인터랙티브 탐험이 필요한 월드 모델 전반에, 메모리를 장면 기하에 결속시키면서도 생성기의 잠재 공간과 직접 연동하는 설계 패턴으로 확장될 수 있음을 시사한다.</p>
     <div class="back-bottom">
       <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
     </div>
@@ -118,7 +111,7 @@
 
 <footer>
   <div class="wrap">
-    <span>출처: <a href="https://huggingface.co/papers/2610.40614" target="_blank" rel="noopener">huggingface.co/papers/2610.40614</a> · 2026-10-31</span>
+    <span>출처: <a href="https://huggingface.co/papers/2610.40614" target="_blank" rel="noopener">huggingface.co/papers/2610.40614</a> · 2026-11-01</span>
     <span>my-design 시스템 적용</span>
   </div>
 </footer>

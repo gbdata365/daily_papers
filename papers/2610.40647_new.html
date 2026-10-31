@@ -1,5 +1,5 @@
 <meta charset="UTF-8">
-<title>SpecSlot</title>
+<title>읽기</title>
 <style>
   :root{
     --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
@@ -56,13 +56,13 @@
 <header class="article-head">
   <div class="wrap">
     <div class="kicker-row">
-      <span class="rank">#10 · Daily Papers 2026-10-31</span>
+      <span class="rank">#6 · Daily Papers 2026-11-01</span>
       <span class="cat-tag">생성모델</span>
-      <span class="upvote-tag">▲ 23</span>
+      <span class="upvote-tag">▲ 36</span>
     </div>
     <h1 class="article-title">Read, Allocate, Route: Role-Coupled Tokenization for Pixel-Space Generative Transformers</h1>
-    <p class="article-title-ko">SpecSlot: 픽셀공간 생성 트랜스포머를 위한 역할-결합 토큰화</p>
-    <p class="article-sub">픽셀 공간 생성 트랜스포머에서 "토큰이 담당하는 출력 역할"과 "토큰이 전역적으로 통신해야 하는지 여부"를 분리함으로써, 세부 묘사를 늘려도 전역 어텐션 비용이 함께 커지지 않도록 만든 토큰화 기법인 SpecSlot을 제안한다.</p>
+    <p class="article-title-ko">읽기, 할당, 라우팅: 픽셀 공간 생성 Transformer를 위한 역할-결합 토큰화</p>
+    <p class="article-sub">픽셀 공간(pixel-space) 생성 Transformer에서 "하나의 패치 = 하나의 토큰"이라는 고정된 설계를 깨고, 각 공간 앵커(anchor)를 여러 개의 주파수별 슬롯(slot)으로 확장한 뒤 가장 저주파인 슬롯만 전역(global) 어텐션에 참여시킴으로써, 출력 디테일을 늘려도 전역 어텐션 비용은 거의 그대로 유지하는 토큰화·라우팅 기법 SpecSlot을 제안한다.</p>
     <div class="meta-links">
       <a href="https://huggingface.co/papers/2610.40647" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
       <a href="https://arxiv.org/abs/2610.40647" target="_blank" rel="noopener">arXiv 원문 →</a>
@@ -74,40 +74,42 @@
   <div class="wrap">
 <ul>
 <li><strong>제목</strong>: Read, Allocate, Route: Role-Coupled Tokenization for Pixel-Space Generative Transformers</li>
-<li><strong>저자</strong>: Jiongfan Yang, Weichen Fan, Haiwen Diao, Zhongang Cai, Ziwei Liu (Peking University, Nanyang Technological University, SenseTime)</li>
+<li><strong>저자</strong>: Jiongfan Yang, Weichen Fan, Haiwen Diao, Zhongang Cai, Ziwei Liu (Peking University, Nanyang Technological University, SenseTime; Ziwei Liu 교신저자)</li>
 <li><strong>출처</strong>: arXiv:2610.40647v1 [cs.CV] (2026년 10월 29일)</li>
-<li><strong>프로젝트 페이지</strong>: <a href="https://yangjiongfan.site/specslot/">SpecSlot 프로젝트 페이지</a> (<a href="https://github.com/JiongfanYang/SpecSlot">GitHub</a>, <a href="https://huggingface.co/Gokottaw434/SpecSlot">Hugging Face</a>)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://yangjiongfan.site/specslot/">https://yangjiongfan.site/specslot/</a> (GitHub: https://github.com/JiongfanYang/SpecSlot, Hugging Face: https://huggingface.co/Gokottaw434/SpecSlot)</li>
 <li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.40647">arXiv PDF 보기</a></li>
 </ul>
 <h2>한 줄 요약</h2>
-<p>픽셀 공간 생성 트랜스포머에서 "토큰이 담당하는 출력 역할"과 "토큰이 전역적으로 통신해야 하는지 여부"를 분리함으로써, 세부 묘사를 늘려도 전역 어텐션 비용이 함께 커지지 않도록 만든 토큰화 기법인 SpecSlot을 제안한다.</p>
+<p>픽셀 공간(pixel-space) 생성 Transformer에서 "하나의 패치 = 하나의 토큰"이라는 고정된 설계를 깨고, 각 공간 앵커(anchor)를 여러 개의 주파수별 슬롯(slot)으로 확장한 뒤 가장 저주파인 슬롯만 전역(global) 어텐션에 참여시킴으로써, 출력 디테일을 늘려도 전역 어텐션 비용은 거의 그대로 유지하는 토큰화·라우팅 기법 SpecSlot을 제안한다.</p>
 <h2>배경 및 문제의식</h2>
-<p>오토인코더 없이 노이즈에서 픽셀을 직접 생성하는 픽셀 공간 생성 모델은 구조가 단순하지만, 전체 해상도의 이미지를 그대로 트랜스포머 토큰으로 표현해야 하므로 계산 비용이 크다. 기존 방식(JiT 등)은 하나의 공간 패치를 하나의 토큰에 대응시키는데, 이 경우 패치 크기를 줄여 더 세밀한 디테일을 얻으려 하면 토큰 수가 늘어나고, 이는 전역(global) 어텐션의 2차 비용을 그만큼 증가시킨다. 즉 "출력 디테일"과 "전역 통신량"이 같은 패치 그리드에 묶여 있는 것이 근본적인 문제다.</p>
-<p>저자들은 이미지의 주파수(frequency) 특성에서 힌트를 얻는다. 저주파 성분은 이미지 전체의 구조를 담고 있어 멀리 있는 영역과의 전역적인 정보 교환이 유리하지만, 고주파의 세부 디테일은 대체로 국소적(local)인 특성을 가진다. 그런데 기존 모델에서는 토큰이 "어디에 위치하는가"에 의해 통신 방식이 결정될 뿐, "그 토큰이 실제로 어떤 정보(저주파 혹은 고주파)를 만들어내는가"는 전혀 고려되지 않는다. 이 논문은 "토큰의 출력 역할이 통신 방식을 결정하도록 할 수는 없는가?"라는 질문에서 출발한다.</p>
+<p>픽셀 공간 생성 모델은 별도로 학습된 오토인코더(VAE) 없이 노이즈에서 픽셀을 직접 생성하므로 압축에 의한 정보 손실이 없다는 장점이 있지만, 이미지를 그대로 Transformer 토큰으로 표현해야 하므로 연산 비용이 크다. 기존 방식들은 패치 하나당 토큰 하나를 쓰기 때문에, 패치 크기를 8×8로 줄여 디테일을 높이면(256×256 이미지 기준 토큰 수가 256개에서 1,024개로 증가) 전역 어텐션의 2차 비용이 16배로 폭증한다. JiT, 멀티스케일 디테일러 헤드, 효율적 어텐션(윈도우·희소화) 등 선행 연구들은 이 비용을 줄이려 했지만 "출력 디테일"과 "전역 통신량"이 같은 공간 패치 격자에 묶여 있다는 근본 구조는 그대로 두었다. 저자들은 저주파 성분(전체적인 구조)은 이미지 전역과 교환할 가치가 크지만 고주파 성분(세부 디테일)은 국소적으로만 처리해도 충분하다는 관찰에서, "토큰이 무엇을 출력하는가(역할)"가 "그 토큰이 어떻게 통신해야 하는가"를 결정하도록 설계를 바꿀 수 있는지를 질문한다.</p>
 <h2>핵심 기여</h2>
 <ul>
-<li><strong>W×K 인덱스 표현 도입</strong>: 공간적 앵커(anchor)의 밀도를 나타내는 W와, 각 앵커 내부에서 주파수 대역을 세분화하는 슬롯(slot) 개수 K를 분리된 두 변수로 노출시켜, 하나의 패치 크기 선택 문제였던 토큰화를 "품질-비용 배분(allocation)" 문제로 재정의했다.</li>
-<li><strong>GGLL(Global-Global-Local-Local) 라우팅 설계</strong>: 각 앵커에서 가장 저주파 대역을 담당하는 슬롯(슬롯 0, "carrier")만 전역 어텐션에 참여하고, 나머지 모든 슬롯은 자신이 속한 앵커 내부에서만 지역적으로 상호작용하도록 하여, 전역 시퀀스 길이를 W로 고정(즉 WK가 아니라 W)시켰다.</li>
-<li><strong>듀얼 베이시스(dual-basis) 출력</strong>: 동일한 슬롯 은닉 상태로부터 겹침(lapped) DCT 기반의 스펙트럼 예측과, 공간적(spatial) 보정값을 함께 산출하여 추가 토큰이나 어텐션 연결 없이 품질을 향상시켰다.</li>
-<li>ImageNet-256/512 및 텍스트-투-이미지 실험에서, 동일 또는 더 적은 연산량으로 FLOPs가 일치된 JiT 대조 모델과 동등하거나 우수한 FID를 달성함을 실측으로 보였다.</li>
+<li>공간 앵커가 입력 정보를 모으고, 각 앵커를 K개의 슬롯으로 확장해 슬롯마다 서로 겹치지 않는(disjoint) DCT(이산 코사인 변환) 계수 그룹을 할당하는 인덱스 기반 W×K 표현을 제안. 앵커 밀도(W)와 스펙트럼 세분화(K)를 독립적인 할당 변수로 분리했다.</li>
+<li>슬롯 인덱스로부터 통신 그래프를 결정하는 carrier-routed GGLL(Global-Global-Local-Local) 어텐션 스케줄을 정의: 각 앵커의 최저 주파수 슬롯(carrier) 1개만 전역 블록에 들어가고, 나머지 모든 슬롯은 앵커 내부 로컬 블록에서만 상호작용하여 전역 시퀀스 길이를 W×K가 아닌 W로 유지.</li>
+<li>ImageNet-256/512 및 텍스트-이미지 생성에서 FLOPs가 비슷한 JiT 대비 더 나은 FID, 또는 JiT-B/16에 근접한 품질을 더 낮은 비용으로 달성하는 두 개의 새로운 품질-비용 균형점을 제시.</li>
 </ul>
 <h2>방법론</h2>
-<p>SpecSlot은 픽셀 공간 rectified-flow 트랜스포머이며, 노이즈와 이미지를 선형 경로로 섞은 상태 z_t에서 속도(velocity)를 예측하는 동일한 학습 목표를 JiT와 공유한다. 핵심은 Read, Allocate, Route라는 세 단계로 구성된 토큰화 과정이다.</p>
-<p>1) <strong>Read(읽기)</strong>: 이미지를 겹치지 않는 s×s 크기의 셀로 나눈 "공간 앵커" 격자를 구성하고, 공유 프로젝션으로 각 셀을 하나의 앵커 벡터로 인코딩한다. 이웃 앵커 간 정보를 섞어주는 영점 초기화된 깊이별(depthwise) 컨볼루션(input mixer)을 거친 뒤, 하나의 앵커 벡터를 K개의 슬롯 은닉 상태로 확장한다. 이때 각 슬롯에는 위치 정보와 "슬롯 인덱스"가 함께 부여된다.</p>
-<p>2) <strong>Allocate(할당)</strong>: 각 슬롯에게 DCT(코사인 변환) 좌표계에서 반지름(저주파→고주파) 순으로 정렬된 서로 겹치지 않는 계수 그룹을 하나씩 배정한다. 즉 슬롯 k는 k번째로 낮은(또는 높은) 주파수 대역을 전담하여 예측한다. 이렇게 만들어진 스펙트럼 예측은 50% 겹침(lapped) DCT와 Hann 윈도우, 정규화된 overlap-add를 사용해 복원되어, 인접한 윈도우 간 경계에서 생기는 블록 아티팩트를 줄인다. 또한 같은 슬롯 상태로부터 별도의 "공간 보정 헤드"가 해당 앵커 내 특정 타일(4분면 등)의 픽셀 값을 직접 예측하여, 스펙트럼 예측에 더해지는 보정항을 만든다.</p>
-<p>3) <strong>Route(라우팅)</strong>: 각 앵커에서 가장 저주파를 담당하는 슬롯(슬롯 0)만 "carrier"로 지정되어 클래스 컨텍스트 토큰과 함께 전역 블록에 참여하고, 나머지 모든 슬롯은 자신의 앵커 내부에서만 지역 블록에서 상호작용한다. 전역 블록 2개와 지역 블록 2개가 번갈아(GGLL) 3회 반복되어 총 6개의 전역, 6개의 지역 블록을 구성한다. 이로써 전역 어텐션의 2차 비용 항이 "앵커 수 W"에만 비례하게 되어, 세부 묘사를 늘리기 위해 K를 키워도 전역 통신 비용은 늘지 않는다.</p>
+<p>SpecSlot은 전체 과정을 Read-Allocate-Route 세 단계로 구성한다.
+1. <strong>Read(읽기)</strong>: 입력 잠재 상태 z_t를 s×s 크기의 겹치지 않는 셀로 나누고, 공유 프로젝션으로 각 셀을 앵커 벡터로 인코딩한다. 제로 초기화된 깊이별(depthwise) 3×3 컨볼루션(input mixer)으로 인접 앵커 간 정보를 섞은 뒤, 공유 1×1 프로젝션으로 하나의 앵커 벡터를 K개의 슬롯 히든 상태로 확장한다. 역할은 입력이 아니라 슬롯의 위치 인덱스·출력 헤드·라우팅 규칙에서 비롯된다.
+2. <strong>Allocate(할당)</strong>: 출력 윈도우(L=2s) 안의 DCT-II 계수를 반경(저주파→고주파) 순으로 정렬해 K개의 동일한 그룹으로 나누고, 슬롯 k가 그룹 k를 전담하도록 고정 배정한다. 공유된 선형 헤드가 각 슬롯이 맡은 계수를 예측하며, 디코딩은 50% 겹치는(lapped) DCT 프레임의 역변환·Hann 윈도우·정규화된 overlap-add로 수행해 윈도우 경계에서의 블록 아티팩트를 방지한다. 추가로 동일한 슬롯 상태를 재사용해 공간(픽셀) 영역에서 국소 보정항을 더하는 두 번째 헤드를 두어, 스펙트럼 기반 예측과 공간 보정을 합산한 최종 예측을 만든다.
+3. <strong>Route(라우팅)</strong>: 저주파 그룹을 담당하는 슬롯(슬롯 0, carrier)만 클래스/텍스트 컨텍스트 토큰과 함께 전역 어텐션 블록에 들어가고, 나머지 슬롯들은 각자의 앵커 내부에서 로컬 블록으로만 상호작용한다. 전역·로컬 블록을 2개씩 번갈아 쌓는 GGLL 패턴을 3번 반복해 총 6개의 전역 블록과 6개의 로컬 블록을 구성한다. 이 구조로 전역 시퀀스 길이는 W+C(앵커 수+컨텍스트 토큰 수)로 고정되어, K를 늘려도 전역 어텐션 비용이 커지지 않는다.</p>
+<p>학습 목적함수는 JiT와 동일한 픽셀 공간 rectified-flow(직선 경로 보간 및 속도 MSE) 손실을 그대로 사용한다.</p>
 <h2>실험 설정 및 결과</h2>
-<p>ImageNet-1K에서 클래스 조건부 생성 모델을 256×256과 512×512 해상도로 각각 120 에폭 학습했다. JiT 계열(패치 크기 16, 8)과, forward GFLOPs를 맞춘 자체 제작 JiT-CM(Compute-Matched) 대조군, 그리고 입력 측에서만 주파수 정보를 활용하는 Spectral Forcing(SF) 베이스라인과 비교했다.</p>
-<ul>
-<li><strong>ImageNet-256</strong>: SpecSlot(W256/K2, W256/K4)은 JiT-B/16과 JiT-B/8 사이에서 두 개의 "비지배(nondominated)" 품질-비용 지점을 제공했다. SpecSlot-K4는 FLOPs가 거의 동일한 JiT-CM과 5-시드 95% 신뢰구간 내에서 동등한 평균 FID를 보이면서도 학습 초반에 더 빠르게 수렴했다.</li>
-<li><strong>ImageNet-512</strong>: SpecSlot-K4는 JiT-CM보다 FID를 2.84 개선하면서 GFLOPs는 3.9% 더 적었고, 가장 성능이 좋은 JiT-B/16과는 FID 0.69 차이에 불과하면서 비용은 38.2% 더 낮고 처리량은 1.6배 더 높았다. 저해상도 대비 고해상도에서 이득이 더 커진 이유로, 앵커당 더 많은 픽셀을 커버하면서도 전역 시퀀스 길이는 고정된다는 구조적 특성을 제시했다.</li>
-<li><strong>텍스트-투-이미지 생성</strong>: BLIP3o와 JourneyDB 데이터로 256×256에서 400 에폭 학습한 결과, SpecSlot(W256/K4)은 DPG-Bench에서 JiT-B/8보다 1.06점 높은 점수를 40.6% 낮은 forward 비용으로 달성했다. GenEval에서는 JiT-B/16보다 우수했으나, JiT-B/8이 약 1.7배의 비용으로 여전히 최고 품질을 유지했다.</li>
-<li><strong>설계 분석(어블레이션)</strong>: 고정된 토큰 예산(N=WK) 내에서 앵커 수 W를 늘리는 쪽이 슬롯 수 K를 늘리는 쪽보다 FID 개선에 더 효과적이었으며, K를 키울수록 슬롯의 "유효 활용률"(엔트로피 기반 effective rank)이 감소하는 경향을 관찰했다. 스펙트럼 예측과 공간 보정 두 출력 분기를 모두 사용하는 듀얼 베이시스가 단일 베이시스보다 FID를 추가로 0.40 개선했으며, 두 분기의 기여도가 서로 상쇄되지 않고 보완적임을 보였다. 또한 저주파를 담당하는 슬롯을 carrier로 지정하는 라우팅이, 다른 슬롯을 carrier로 바꾸는 경우보다 항상 더 좋은 FID를 보였고, 저주파 역할의 신호가 플로우 과정에서 가장 먼저 수렴(노이즈 대비 신호 비율이 가장 먼저 1을 넘김)한다는 관찰로 이 설계를 뒷받침했다.</li>
-</ul>
+<p>클래스 조건 ImageNet-1K(256×256, 512×512) 및 텍스트-이미지(256×256, BLIP3o·JourneyDB 혼합 데이터) 생성 실험을 수행했으며, 비교 대상은 JiT-B/16, JiT-B/8, Spectral Forcing(SF) 베이스라인, 그리고 저자들이 직접 구성한 FLOPs 매칭 JiT 컨트롤(JiT-CM)이다. 평가는 50스텝 Heun 샘플러, EMA 가중치, FID/Inception Score(5개 독립 시드 평균) 기준이다.
+- <strong>ImageNet-256</strong>: SpecSlot-K2/K4는 JiT-B/16과 JiT-B/8 사이에서 두 개의 새로운(nondominated) 품질-비용 지점을 제공한다. SpecSlot-K4는 FLOPs·처리량이 거의 동일한 JiT-CM과 FID가 통계적으로 비슷한 수준이면서 학습 초반에 더 빠르게 수렴한다.
+- <strong>ImageNet-512</strong>: SpecSlot-K4가 JiT-CM보다 FID를 2.84 개선하면서 GFLOPs는 3.9% 더 적고, JiT-B/16과는 FID 0.69 차이에 불과하면서 비용은 38.2% 낮고 처리량은 1.6배 높다.
+- <strong>텍스트-이미지 생성</strong>: SpecSlot(W256/K4)이 DPG-Bench에서 JiT-B/8보다 1.06점 높은 점수(62.21 vs 61.15)를 기록하면서 전방 연산 비용은 40.6% 낮다. GenEval에서는 JiT-B/16을 능가하지만 JiT-B/8에는 못 미친다.
+- <strong>분석/ablation</strong>: 앵커 밀도(W)를 늘리는 것이 슬롯 수(K)를 늘리는 것보다 품질 개선에 더 효과적이며, K를 키울수록 슬롯의 "유효 활용률"(엔트로피 기반 effective rank)은 감소한다. 스펙트럼 기반 출력과 공간 보정 헤드를 함께 쓰는 이중 기반(dual-basis) 방식이 단일 기반보다 FID가 더 낮다. 전역 라우팅을 모든 슬롯으로 확장한 Full-global/Dense-global 컨트롤과 비교하면, GGLL은 비슷한 FLOPs에서 더 낫거나(Dense-global 대비), 더 적은 비용으로 근접한 품질(Full-global 대비)을 보여 "저주파 슬롯만 전역 통신"하는 설계가 합리적임을 뒷받침한다. 메커니즘 분석에서는 가장 저주파인 슬롯(carrier)이 학습 과정에서 가장 먼저 신호를 신호-대-잡음 임계값 이상으로 회복한다는 점을 확인해, 이 슬롯을 전역 경로로 지정한 설계 선택을 뒷받침한다.</p>
 <h2>한계점</h2>
-<p>논문에는 별도의 "한계점" 절이 명시되어 있지 않으나, 본문 및 결론에서 언급된 제약을 정리하면 다음과 같다. 첫째, 앵커 밀도(W)와 스펙트럼 세분화(K)를 늘릴수록 품질이 개선되는 경향은 논문에서 테스트한 범위(N=2,048 등) 내에서 관찰된 것으로, 이 범위를 벗어난 일반화 가능성은 저자들도 단정하지 않는다. 둘째, K에 대해 DCT 계수를 균등하게 나누기 위해 K가 출력 윈도우 크기의 제곱(L²)을 나누어야 한다는 구조적 제약이 있다. 셋째, 비교 대상이 주로 자체 구현한 JiT 계열 및 compute-matched 대조군에 한정되어 있어, 잠재공간(latent-space) 기반의 최신 디퓨전 모델 전반과의 직접 비교는 제한적이다. 넷째, 픽셀 공간 생성 모델 특유의 높은 절대 연산 비용 문제는 SpecSlot으로도 완전히 해소되지는 않으며, 여전히 패치 기반 모델보다 비싼 계산을 요구하는 구간이 존재한다.</p>
+<p>논문에 별도의 "한계점" 절은 없으나 본문에서 다음과 같은 제약이 언급된다.
+- K는 출력 윈도우의 계수 수(L²)를 정확히 나눌 수 있어야 하는 등(K | L²) 구조적 제약이 있다.
+- 앵커 밀도(W) 증가가 품질 개선에 더 유리하다는 경향은 측정된 N=2,048 범위 내에서만 확인되었으며, 저자들은 이 경향이 더 넓은 범위로 일반화된다고 주장하지 않는다.
+- 가장 고비용의 JiT-B/8(ImageNet-256) 및 GenEval 벤치마크에서는 SpecSlot이 여전히 JiT-B/8보다 품질이 낮다. 즉 SpecSlot은 JiT의 저비용·고비용 설정 사이의 중간 지점을 제공하는 것이며 모든 지표에서 최고 성능을 달성하는 것은 아니다.
+- 모든 비교는 단일 H800 GPU, BF16, TorchInductor 컴파일 기준의 FLOPs·처리량 측정에 기반하며, 다른 하드웨어·배치 설정에서의 일반화는 논문에 명시되지 않음.
+- 평가는 ImageNet 클래스 조건 생성과 제한된 텍스트-이미지 데이터(BLIP3o, JourneyDB)에 한정되어 있으며, 더 높은 해상도나 더 다양한 텍스트-이미지 벤치마크에 대한 결과는 논문에 명시되지 않음.</p>
 <h2>시사점</h2>
-<p>SpecSlot은 "토큰화를 패치 크기라는 단일 선택이 아니라, 앵커 밀도와 스펙트럼 세분화라는 두 개의 독립적인 배분 변수로 다루는 문제"로 재정의함으로써, 픽셀 공간 생성 트랜스포머가 세부 묘사와 전역 통신 비용을 분리해 다룰 수 있는 새로운 설계 축을 제시한다. 이는 특정 아키텍처에 국한되지 않는 일반적인 원리로서, 향후 다른 생성 모델이나 비전 트랜스포머 설계에서 "토큰의 역할(주파수 대역, 공간 위치 등)에 따라 통신 패턴을 동적으로 결정"하는 방향으로 확장될 수 있는 잠재력을 보여준다. 특히 고해상도로 갈수록 이득이 커지는 경향은, 초고해상도 이미지/비디오 생성과 같이 토큰 수가 급증하는 상황에서 이러한 역할 기반 라우팅 전략이 더욱 유용할 수 있음을 시사한다.</p>
+<p>SpecSlot은 "토큰화를 패치 크기 하나로 결정하는 단일 선택"에서 "앵커 밀도와 스펙트럼 세분화라는 두 개의 독립적인 할당 변수를 조정하는 문제"로 재구성함으로써, 픽셀 공간 생성 Transformer에서 출력 디테일과 전역 통신 비용을 분리할 수 있음을 보여준다. 이는 토큰의 "역할"(출력에서 담당하는 역할)에 따라 통신 패턴을 결정한다는 아이디어로, 향후 더 높은 해상도의 오토인코더-프리(autoencoder-free) 생성 모델이나 다른 모달리티(비디오 등)의 효율적인 토큰화 설계에도 적용될 수 있는 일반적인 원리를 제시한다. 또한 저주파 정보가 학습 중 가장 먼저 회복된다는 관찰은, 주파수 기반 라우팅이나 커리큘럼 설계에 추가적인 단서를 제공할 수 있다.</p>
     <div class="back-bottom">
       <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
     </div>
@@ -116,7 +118,7 @@
 
 <footer>
   <div class="wrap">
-    <span>출처: <a href="https://huggingface.co/papers/2610.40647" target="_blank" rel="noopener">huggingface.co/papers/2610.40647</a> · 2026-10-31</span>
+    <span>출처: <a href="https://huggingface.co/papers/2610.40647" target="_blank" rel="noopener">huggingface.co/papers/2610.40647</a> · 2026-11-01</span>
     <span>my-design 시스템 적용</span>
   </div>
 </footer>

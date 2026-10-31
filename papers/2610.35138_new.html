@@ -1,0 +1,131 @@
+<meta charset="UTF-8">
+<title>코디자인 벤치</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#11 · Daily Papers 2026-11-01</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 20</span>
+    </div>
+    <h1 class="article-title">Co-Design Bench: Multimodal Collaborative Coding Evaluation for Agentic Models</h1>
+    <p class="article-title-ko">코디자인 벤치: 에이전틱 모델을 위한 멀티모달 협업 코딩 평가</p>
+    <p class="article-sub">실제 사용자 코딩 세션에서 수집한 273개의 멀티모달·리포지토리 편집 과제와 2,331개의 숨겨진 전문가 채점 기준으로, 코딩 에이전트가 "개별 요구사항 충족"과 "과제 전체 완수" 사이에서 얼마나 큰 간극을 보이는지를 정량적으로 드러내는 벤치마크를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.35138" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.35138" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Co-Design Bench: Multimodal Collaborative Coding Evaluation for Agentic Models</li>
+<li><strong>저자</strong>: Xilin Wei, Shengyuan Ding, Xinyu Fang(공동 1저자) 외 Tiancheng Gu, Yuchi Wang, Zhixun Li, Ziyu Liu, Yuhang Zang, Weixiang Yu, Cheng Lu, Chonggao Sun, Tong Zhou, Dahua Lin, Hang Zhang, Shuai Bai, Dayiheng Liu (Fudan University, Alibaba Token Hub/Alibaba Group, Zhejiang University, 홍콩중문대, 상하이교통대, 난양공대 공동 연구)</li>
+<li><strong>출처</strong>: arXiv:2610.35138v1 [cs.AI] (2026년 10월 26일 제출)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://codesignbench.github.io/">https://codesignbench.github.io/</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.35138">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>실제 사용자 코딩 세션에서 수집한 273개의 멀티모달·리포지토리 편집 과제와 2,331개의 숨겨진 전문가 채점 기준으로, 코딩 에이전트가 "개별 요구사항 충족"과 "과제 전체 완수" 사이에서 얼마나 큰 간극을 보이는지를 정량적으로 드러내는 벤치마크를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>웹 애플리케이션의 협업 설계(co-design)는 기존 결과물을 점검하고, 수정을 요청하고, 결과를 평가하는 반복적 과정이다. 코딩 에이전트가 이 과정에 참여하려면 이미지·음성·영상·문서 등 멀티모달 요청을 실제로 동작하는 코드 수정으로 정확히 옮겨야 한다. 그러나 기존 벤치마크들은 스크린샷 기반 참조 복원(Design2Code 등), 합성·사전 정의된 편집(WebCompass, MT-Web2Code), 버전 히스토리 기반 편집(DesignBench), 또는 저장소 이슈·프리랜서 작업 구현(SWE-bench, SWE-Lancer) 등 문제의 일부만 다루며, 실제 세션에서 나온 "국소적 멀티모달 편집"과 "조율이 필요한 다중 변경 저장소 편집"을 함께 포괄하지 못한다.</p>
+<p>또한 에이전트의 실행 방식(단발성 대 반복적 에이전틱 실행) 자체가 측정되는 점수에 큰 영향을 준다는 점도 문제로 지적된다. 저자들은 WebCompass-edit의 동일한 150개 과제에서 qwen3.7-plus를 단발성 실행에서 에이전틱 실행으로 바꾸기만 해도 평균 등급 완성도가 73.6%에서 95.1%로 21.5%p 상승함을 보여, 실행 조건이 측정치를 크게 좌우한다는 점을 실증적으로 제시한다. 이는 벤치마크가 반복적 도구 접근을 허용하는 실제적 환경에서 평가를 수행해야 하며, 기준 충족도와 완전한 과제 성공을 모두 보고해야 한다는 필요성으로 이어진다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li><strong>실사용자 기반 벤치마크 구축</strong>: 26,314개의 실제 코딩 세션, 39,325개의 원본 질의(중복 제거 후 37,463개)에서 273개의 과제(국소 멀티모달 편집 100개 + 저장소 편집 173개)와 2,331개의 전문가 작성 숨겨진 채점 기준을 구성. 각 과제는 실행 가능한 편집 전 애플리케이션(baseline)과 컨테이너 환경을 포함한다.</li>
+<li><strong>참조-불필요(reference-free) 평가 프로토콜 개발</strong>: "판정 후 반박(judge-then-refute)" 방식으로, 코드 및 브라우저 증거를 이용해 1차 판정(PASS/PARTIAL/FAIL)을 내린 뒤, 별도의 LLM 검증자가 스텁 코드·하드코딩·도달 불가능한 기능·요구사항 불일치 등을 찾아 긍정 판정을 재검증한다. 시각적 주장은 스크린샷, 상호작용 주장은 녹화된 브라우저 행동 로그가 반드시 뒷받침되어야 하며, 증거가 없으면 평가가 중단된다.</li>
+<li><strong>"기준 충족 vs. 완전한 과제 성공" 간극 규명</strong>: 10개의 모델 엔드포인트를 동일한 에이전틱 하네스(Claude Code)로 평가해, 최고 성능 모델도 평균 기준 통과율은 69.9%에 달하지만 과제를 완전히 통과(Full-Pass)한 비율은 26.4%에 불과함을 보이고, 입력 모달리티·편집 범위(변경 유형 개수)에 따른 성능 차이를 분석한다.</li>
+</ol>
+<h2>방법론</h2>
+<p><strong>과제 정의</strong>: 각 과제 t = (S, I, C)로 정의된다. S = (B, E)는 실행 가능한 편집 전 베이스라인 B와 그 컨테이너화된 환경 E, I = (q, X, K)는 정규화된 요청 q, 선택적 멀티모달 첨부파일 X, 유지된 세션 히스토리 K, C는 숨겨진 전문가 작성 채점 기준 집합이다. 에이전트는 솔버 하네스 H 하에서 (S, I)를 받아 실행 경로 τ를 통해 최종 상태 Ŝ를 산출한다.</p>
+<p><strong>데이터 구축 파이프라인</strong>: (1) 세션 로그·저장소 아카이브·HTML 번들로부터 실행 가능한 편집 전 상태를 복원하고 의존성·빌드·컨테이너 실행·Playwright 렌더링 검증을 통과시킨다(복원 불가능한 서비스가 필요한 과제는 제외). (2) 정규화 및 F1~F6의 하드 필터(환경 차단, 잡담, 모호함, 비편집성 질의 등)로 후보를 걸러내고, 난이도(d)·검증가능성(v)·과거 실패 신호(f)로 순위를 매긴 뒤 세션 구간당 최대 3개 질의를 하나의 경계 있는 과제로 통합한다. 전문가가 요청문을 다듬고 기준 단위 루브릭을 작성한다.</p>
+<p><strong>두 트랙</strong>:
+- Multimodal Editing(ME, 100개): 국소적 시각·구조·콘텐츠 편집으로 이미지/음성/영상/문서 첨부가 옵션으로 주어짐(첨부 없음 20, 이미지 4, 영상 27, 음성 32, 문서 17개). 553개 기준(과제당 평균 5.5개).
+- Repository Editing(RE, 173개): 다중 파일 프런트엔드 저장소에서 컴포넌트·라우트·상태·데이터 흐름에 걸친 조율된 변경을 요구. 1,778개 기준(과제당 평균 10.3개), 173개 중 166개(96%)가 복수의 변경 유형을 포함.</p>
+<p><strong>평가 프로토콜</strong>: 격리된 환경에서 최종 산출물을 빌드·렌더링한 뒤, 고정된 에이전틱 평가자(Agent-as-a-Judge 방식)가 소스 diff, 렌더링된 페이지, Playwright 트레이스를 이용해 기준별로 PASS/PARTIAL/FAIL을 부여한다. 이후 별도의 LLM 검증자가 긍정 판정을 반박 시도하고, 시각/상호작용 증거 누락 시 평가를 중단(abort)시킨다. 점수는 Strict Completion(완전 통과 기준 비율), Graded Completion(부분 점수 포함), Full-Pass Rate(모든 기준을 통과한 과제 비율)로 집계된다. 낮은 점수(Gt &lt; 0.8)의 경우, 병렬 "해결 가능성(solvability)" 에이전트가 최소 패치를 시도해 실패 원인을 모델 한계/환경 차단/혼합/초기 결함으로 구분하는 귀인 분석도 수행한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>10개 모델 엔드포인트(gpt-6-astra, opus-5, qwen3.8-max-0902, kimi-k3, qwen3.8-27b, opus-4-8, gpt-5.6-sol, glm-5.2, glm-5.3-flash, grok-4.6)를 동일한 Claude Code 에이전틱 하네스, 동일한 컨테이너·시스템 프롬프트·도구 인터페이스 하에서 평가했다(최대 3시간/120턴 제한).</p>
+<ul>
+<li><strong>전체 성능</strong>: 최고 성능 gpt-6-astra가 전체 273개 과제에서 평균 Strict Completion 0.699, Full-Pass Rate 26.4%를 기록. 즉 과제의 73.6%는 하나 이상의 기준을 완전히 만족시키지 못했다. ME에서는 Strict 0.754·Full-Pass 41.0%, RE에서는 Strict 0.667·Full-Pass 17.9%로, 트랙별 난이도 격차가 뚜렷했다.</li>
+<li><strong>순위 역전</strong>: 두 트랙 간 Strict Completion 순위의 스피어만 상관은 0.818로 비교적 일관되지만, kimi-k3는 ME 4위에서 RE 6위로, qwen3.8-27b는 ME 5위에서 RE 2위로 뒤바뀌는 등 트랙별 강점 차이가 존재한다.</li>
+<li><strong>입력 모달리티별</strong>: 텍스트 전용 과제는 qwen3.8-27b(0.779), 이미지 과제는 opus-5(0.891), 영상/음성/문서 과제는 gpt-6-astra가 최고 성능을 보였다. 문서 첨부 과제는 풀링 평균 Strict Completion이 가장 높았지만(0.652) Full-Pass율은 18.2%로 텍스트 전용(37.0%)보다 낮아, 기준 충족도와 완전 성공률이 다른 그림을 보여준다는 점을 재확인했다.</li>
+<li><strong>편집 범위(RE)</strong>: 변경 유형이 1~2개인 과제(Strict 0.654)가 3~4개인 과제(Strict 0.591)보다 높은 점수를 받았으며, 10개 엔드포인트 전부가 변경 범위가 넓을수록 낮은 점수를 기록했다. 다만 Full-Pass율은 두 그룹 간 비슷했고(9.1% vs 9.7%), 대신 Zero-Pass(기준 전부 실패)율이 0.9%→5.8%로 늘었다.</li>
+<li><strong>능력 차원별</strong>: Functional Implementation(기능 구현, 126개 과제)이 가장 높은 풀링 Strict Completion(0.619)을 보였지만 Full-Pass율은 가장 낮았다(10.3%), 반대로 Grounded Understanding(근거 이해)은 Strict가 더 낮지만(0.604) Full-Pass율은 더 높았다(20.2%).</li>
+<li><strong>추가 강건성 검증</strong>: (1) 평가자(judge) 모델을 GLM-5.2, kimi-k3, Qwen3.8-27B 등으로 교체해도 모델 간 상대적 순위는 대체로 안정적이었다(점수 변동 최대 0.053). (2) 솔버 하네스(codex, opencode, qwen-code)를 바꾸면 모델-하네스 상호작용이 커서, 동일 모델이라도 하네스에 따라 순위가 뒤바뀔 수 있음을 확인(ME에서 하네스 순위 스피어만 상관 -1.00). 이는 모델 성능을 하네스와 함께 보고해야 함을 시사한다.</li>
+</ul>
+<h2>한계점</h2>
+<p>논문에 별도의 "한계점" 절은 없으나, 본문에서 다음과 같은 제약을 명시하고 있다.
+- 과제 그룹별 비교(모달리티, 편집 범위, 능력 차원)는 과제 구성과 내용 차이에서 비롯된 기술적 관찰일 뿐, 통제된 인과 효과를 추정한 것이 아니다.
+- 평가자 민감도 검증과 하네스 민감도 검증은 각각 "서술적" 점검으로, 완전한 평가자 불변성이나 하네스 독립성을 입증하지는 않는다. 특히 하네스를 바꾸면 모델 순위가 역전될 수 있어, 특정 하네스 하의 결과가 보편적인 모델 능력 순서를 보장하지 않는다.
+- 토큰/비용 집계는 API 과금 방식(재시도, 캐시 포함)을 따른 실행량 지표일 뿐 금전적 비용과는 다르다.
+- 전문가 2인이 200개 과제-모델 출력에 대해서만 루브릭 점수를 교차 검증했으며, 전체 2,730개 평가쌍에 대한 전면적 인간 검증은 아니다.
+- 과제는 실제 세션에서 파생되었지만 고정된 요청으로 평가되며, 실행 중 추가적인 사용자 피드백(반복적 협의)은 시뮬레이션하지 않는다.
+- 데이터 출처가 특정 상업 코딩 플랫폼(Alibaba Token Hub 등)의 실제 세션에 한정되어 있어, 다른 생태계·언어·프레임워크로의 일반화 가능성은 논문에 명시되지 않음.</p>
+<h2>시사점</h2>
+<p>이 연구는 코딩 에이전트 평가에서 "부분적 요구사항 충족률"만으로는 실제 배포 가능한 품질을 가늠하기 어렵다는 점을 명확히 보여준다. 최고 성능 모델도 과제의 4분의 1만 완전히 통과시킨다는 결과는, 에이전트가 다수의 개별 기준을 그럭저럭 만족시키면서도 하나의 누락으로 전체 과제를 실패로 돌릴 수 있음을 뜻하며, 향후 에이전트 설계는 "커버리지 극대화"가 아니라 "완전한 배달(complete delivery)"을 목표로 해야 함을 시사한다. 또한 모델 순위가 트랙(멀티모달 편집 대 저장소 편집)과 솔버 하네스에 따라 크게 달라진다는 발견은, 단일 벤치마크·단일 하네스 결과만으로 모델 우열을 일반화하는 관행에 대한 경고로 읽을 수 있다. 실행 가능한 베이스라인과 기준별 증거를 공개로 유지함으로써, 향후 연구가 요구사항 파악·변경 전파·최종 상태 검증 각 단계에서의 실패 원인을 분석하고 새로운 솔버를 비교하는 공통 시험대로 활용될 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.35138" target="_blank" rel="noopener">huggingface.co/papers/2610.35138</a> · 2026-11-01</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

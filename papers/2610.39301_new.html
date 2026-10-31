@@ -1,5 +1,5 @@
 <meta charset="UTF-8">
-<title>Youtu-Parsing-Omni</title>
+<title>유튜파싱옴니</title>
 <style>
   :root{
     --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
@@ -56,13 +56,13 @@
 <header class="article-head">
   <div class="wrap">
     <div class="kicker-row">
-      <span class="rank">#5 · Daily Papers 2026-10-31</span>
+      <span class="rank">#2 · Daily Papers 2026-11-01</span>
       <span class="cat-tag">모델·기법</span>
-      <span class="upvote-tag">▲ 54</span>
+      <span class="upvote-tag">▲ 67</span>
     </div>
     <h1 class="article-title">Youtu-Parsing-Omni: One Encoder, One Schema, All Modalities</h1>
-    <p class="article-title-ko">Youtu-Parsing-Omni: 하나의 인코더와 하나의 스키마로 모든 모달리티를 파싱하다</p>
-    <p class="article-sub">문서·이미지·오디오·비디오를 하나의 공유 인코더(Youtu-Omni-Encoder)와 하나의 통합 출력 스키마(OmniSchema)로 처리하는 5B 규모 옴니모달 파서를 제안하고, 모델이 스스로 생성한 결과를 기준-조건부 자기 자신으로부터 얻은 토큰 단위 목표와 대조해 학습하는 자기진화형 사후학습 기법(OSAD)을 통해 문서 파싱(OmniDocBench v1.6)과 범용 옴니모달 파싱(OmniParsingBench) 모두에서 최고 수준의 성능을 달성한다.</p>
+    <p class="article-title-ko">유튜파싱옴니: 하나의 인코더, 하나의 스키마, 모든 모달리티</p>
+    <p class="article-sub">문서·이미지·오디오·비디오를 하나의 인코더(Youtu-Omni-Encoder)와 하나의 통합 출력 스키마(OmniSchema)로 처리하는 50억 파라미터급 옴니모달 파서로, 문서 파싱에서 최고 성능을, 오디오·비디오를 포함한 옴니모달 파싱 벤치마크에서 오픈 웨이트 모델 중 최고 성능을 달성했다.</p>
     <div class="meta-links">
       <a href="https://huggingface.co/papers/2610.39301" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
       <a href="https://arxiv.org/abs/2610.39301" target="_blank" rel="noopener">arXiv 원문 →</a>
@@ -74,36 +74,37 @@
   <div class="wrap">
 <ul>
 <li><strong>제목</strong>: Youtu-Parsing-Omni: One Encoder, One Schema, All Modalities</li>
-<li><strong>저자</strong>: Yunhang Shen, Zhangquan Chen, Xiaotian Li, Zhongpeng Cai 등 29인 (Youtu-Parsing-Omni Team, Tencent 소속 연구팀; Xing Sun 교신저자)</li>
-<li><strong>출처</strong>: arXiv:2610.39301v1 [cs.CV] (2026년 10월 29일)</li>
-<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/TencentCloudADP/youtu-parsing">GitHub (TencentCloudADP/youtu-parsing)</a> · <a href="https://huggingface.co/tencent/Youtu-Parsing-Omni">Hugging Face 모델 (tencent/Youtu-Parsing-Omni)</a></li>
+<li><strong>저자</strong>: Youtu-Parsing-Omni Team (Tencent Youtu Lab 소속; Core Contributor로 Yunhang Shen, Zhangquan Chen, Xiaotian Li, Zhongpeng Cai 등 다수, 전체 저자 및 기여 내역은 본문 말미에 명시)</li>
+<li><strong>출처</strong>: arXiv:2610.39301v1 [cs.CV] (2026년 10월 29일 제출)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음 (코드: https://github.com/TencentCloudADP/youtu-parsing, 모델: https://huggingface.co/tencent/Youtu-Parsing-Omni)</li>
 <li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.39301">arXiv PDF 보기</a></li>
 </ul>
 <h2>한 줄 요약</h2>
-<p>문서·이미지·오디오·비디오를 하나의 공유 인코더(Youtu-Omni-Encoder)와 하나의 통합 출력 스키마(OmniSchema)로 처리하는 5B 규모 옴니모달 파서를 제안하고, 모델이 스스로 생성한 결과를 기준-조건부 자기 자신으로부터 얻은 토큰 단위 목표와 대조해 학습하는 자기진화형 사후학습 기법(OSAD)을 통해 문서 파싱(OmniDocBench v1.6)과 범용 옴니모달 파싱(OmniParsingBench) 모두에서 최고 수준의 성능을 달성한다.</p>
+<p>문서·이미지·오디오·비디오를 하나의 인코더(Youtu-Omni-Encoder)와 하나의 통합 출력 스키마(OmniSchema)로 처리하는 50억 파라미터급 옴니모달 파서로, 문서 파싱에서 최고 성능을, 오디오·비디오를 포함한 옴니모달 파싱 벤치마크에서 오픈 웨이트 모델 중 최고 성능을 달성했다.</p>
 <h2>배경 및 문제의식</h2>
-<p>에이전트가 텍스트가 아닌 문서·이미지·음성·영상을 매번 원본 그대로 모델에 입력해 재인코딩하는 방식은 비용이 크고, 답변이 어떤 영역·구간에서 나왔는지 추적하기도 어렵다. "옴니모달 파싱"은 이런 입력을 한 번만 변환해 공간·시간상에 위치가 명시된 구조화된 텍스트 레코드로 만들어, 텍스트 전용 LLM도 읽고 근거를 추적할 수 있게 하는 지각(perception) 계층을 제공한다. 그런데 기존 파서는 이 역할을 부분적으로만 수행한다. 문서 파서는 일반 페이지에는 강하지만 화학구조식·악보 같은 기호 콘텐츠는 여전히 전용 모델에 맡기고, 문서 밖(이미지·오디오·비디오) 파싱은 아직 캡셔닝·질의응답 중심으로 설계되어 있어 공간·시간에 근거가 명시된 구조화 출력이 부족하다. 결과적으로 입력 유형별로 서로 다른 모델과 출력 형식이 쓰이는데, 저자들은 출력이 결국 "공간·시간에 고정된 구조화 레코드"라는 공통 형태를 띠므로 입력별 전문 모델 대신 하나의 파서·하나의 스키마로 통합할 수 있다고 본다. 이를 위해서는 두 가지 난제가 있다. (C1) 모달리티 간 공동 지각: 기존 옴니모달 모델과 선행 파서 Logics-Parsing-Omni는 비전·오디오를 별도로 사전학습된 두 타워로 각각 인코딩해 지각 단계에서 모달리티 간 융합이 없고, 시간축도 서로 독립적으로 색인되며, 모달리티마다 별도 아키텍처·사전학습이 필요하다. (C2) 과업 간 공동 최적화: 10개의 서로 다른 출력 필드를 갖는 과업을 동시에 최적화해야 하는데, 지도 미세조정(SFT)은 참조 접두사에서만 학습하고, 검증 가능 보상 기반 강화학습(RLVR)은 모델 자신의 출력에서 학습하지만 이질적인 기준을 하나의 스칼라 보상으로 압축해야 하고 시퀀스 단위 피드백만 준다.</p>
+<p>LLM 에이전트는 검색, 도구 호출, 화면 조작 등에서 텍스트가 아닌 문서·이미지·음성·영상을 다뤄야 하는데, 이를 모델이 원본 픽셀/파형 형태로 매번 직접 인코딩하는 것은 비용이 크고 결과의 근거(어느 영역·구간에서 왔는지)를 추적하기 어렵다. "옴니모달 파싱"은 입력을 한 번 구조화된 텍스트 레코드로 변환해, 텍스트 전용 모델조차 이를 읽고 근거를 인용할 수 있게 하는 지각(perception) 계층을 제공한다. 그러나 기존 파서는 입력 범위가 제한적이다. 문서 파서는 표준 페이지에는 강하지만 화학구조식·악보 같은 기호 콘텐츠는 전문 모델에 맡기는 경우가 많고, 문서를 넘어선 범위(이미지·오디오·비디오)의 파싱은 아직 미성숙하며, 옴니모달 모델 대부분은 캡셔닝·QA에 치우쳐 있어 모달리티별로 서로 다른 모델과 출력 형식이 쓰인다. 저자들은 출력이 결국 공간/시간에 고정(anchored)된 구조화 레코드라는 공통점에 착안해, 모달리티별 전문 모델 대신 하나의 인코더와 하나의 스키마로 통합할 것을 제안한다. 이를 위해 두 가지 과제를 해결해야 한다: (C1) 모달리티 간 공동 지각(비전·오디오를 별도 인코더로 처리하면 모달리티 간 융합과 시간 정렬이 어려움), (C2) 10개 과업에 걸친 공동 최적화(SFT는 참조 프리픽스만 학습하고, RLVR은 과업별 이질적 기준에 대한 스칼라 보상 설계가 어려움).</p>
 <h2>핵심 기여</h2>
 <ul>
-<li><strong>Youtu-Omni-Encoder</strong>: 비전·오디오 전용 두 타워를 하나의 공유 Transformer로 대체한 통합 인코더. 사전학습된 텍스트 언어모델(Qwen3-0.6B-Base)로 가중치를 초기화해 글자 읽기 능력을 강화하고, 모든 모달리티가 같은 공간-시간 좌표계((𝑡, ℎ, 𝑤) 위치 인코딩)를 공유하며, 일부 레이어(fusion layer)에서만 비디오 프레임이 동시간 오디오에 주의를 기울이게 해 지각 단계 안에서 모달리티 간 융합과 시간 정렬이 이루어지도록 했다.</li>
-<li><strong>OmniSchema</strong>: 문서·화학구조·악보·차트·플로우차트·기하도형·자연이미지·오디오·자연비디오·텍스트가 많은 비디오 등 10개 파싱 과업의 출력을 하나의 공간·시간 근거(bounding box 또는 타임스탬프)가 달린 JSON 스키마로 통일, 과업이 달라도 동일한 사후학습 목표 함수를 적용할 수 있게 했다.</li>
-<li><strong>OmniSchema-Aware On-Policy Distillation (OSAD)</strong>: 모델이 스스로 만든 롤아웃을, 참조(정답) 파스를 함께 보고 있는 동결된 자기 자신의 복사본이 제공하는 토큰 단위 목표와 비교해 학습하는 자기진화형 사후학습. 매 라운드가 끝나면 학습된 가중치로 "교사" 역할의 복사본을 갱신해 파서와 그 지도 신호가 함께 진화하도록 하며, 손수 설계한 보상이나 별도로 학습된 교사 모델이 필요 없다.</li>
-<li><strong>단일 체크포인트로 최고 성능</strong>: 5B 파라미터 하나로 OmniDocBench v1.6에서 1위(Overall 96.96), 공개 모델 중 OmniParsingBench 1위(Avg. 75.08, 특히 오디오·비디오에서 우세), 최고 차트 파싱 점수(95.02), 화학구조 정확 일치율 최고, 전용 광학악보인식 모델과 대등한 악보 인식 성능을 동시에 달성.</li>
+<li><strong>Youtu-Omni-Encoder</strong>: 비전 타워와 오디오 타워를 분리하던 기존 구조를 하나의 공유 Transformer로 대체. 사전학습된 텍스트 LLM(Qwen3-0.6B-Base)으로 초기화해 텍스트 판독 능력을 강화했으며, 모달리티별로는 가벼운 입력 스템(stem)과 출력 프로젝터만 둔다.</li>
+<li><strong>통합 시공간 위치 인코딩과 선택적 융합</strong>: 비전 패치는 (t, h, w), 오디오 토큰은 (t, 0, 0)으로 하나의 로터리 위치 인코딩 축을 공유하며, 일부 "융합 레이어"에서만 같은 시간대의 영상 프레임과 오디오가 서로 주의(attention)를 주고받도록 하여 지각 단계에서부터 모달리티 간 정렬이 이뤄지게 한다.</li>
+<li><strong>OmniSchema</strong>: 문서(일반 문서, 화학구조식, 악보, 차트, 플로차트, 기하 도형, 자연 이미지), 오디오, 비디오(일반/텍스트 중심) 등 10개 파싱 과업의 출력을 모두 박스/타임스탬프로 고정된 요소(element)·구간(segment) 목록과 전역 설명(global_description)으로 통일한 JSON 스키마.</li>
+<li><strong>OSAD(OmniSchema-Aware On-Policy Distillation)</strong>: 스키마 토큰을 "구조(structure)" 토큰과 "내용(content)" 토큰으로 구분하고, 참조 정답을 보고 학습한 고정된 교사(teacher) 모델이 학생(student)의 자기 생성 출력(on-policy rollout)에 대해 토큰별 타깃 분포를 제공하는 자기진화형 사후학습 절차. 매 라운드가 끝나면 학습된 학생 가중치가 다음 라운드의 교사로 갱신되어 파서와 그 감독(supervision)이 함께 발전한다.</li>
 </ul>
 <h2>방법론</h2>
-<p><strong>아키텍처</strong>: Youtu-Parsing-Omni는 텍스트만 출력하는 디코더 전용 언어모델(Youtu-LLM-2B 계열)과, 이미지·오디오·비디오를 입력받는 하나의 지각 인코더로 구성된다. 인코더는 모달리티별 경량 "스템"(비전: 패치를 선형 매핑, 오디오: 로그-멜 스펙트로그램을 strided conv로 다운샘플링)과, 그 뒤를 잇는 공유 Transformer 블록(RMSNorm, SwiGLU, grouped-query attention, QK-Norm, 양방향 attention, RoPE), 그리고 모달리티별 머저(merger)+프로젝터로 이루어진다. 회전 위치 인코딩(RoPE)의 주파수 슬롯을 T(시간), H, W 세 축으로 나누어 할당해 비전 토큰은 프레임 인덱스와 패치 좌표를, 오디오 토큰은 시간 오프셋만(h=w=0) 사용하도록 해 두 모달리티가 같은 시간 좌표계를 공유한다. 비디오는 "독립 경로"(프레임·오디오 구간이 각자 독립적인 attention 윈도우를 가짐)와 "융합 경로"(프레임과 그 구간의 오디오를 하나의 윈도우로 묶어 fusion layer에서 서로 주의를 주고받음) 중 하나를 학습 시 확률 p_fus로 선택하게 해, 추론 시에도 두 경로 모두 쓸 수 있게 한다.</p>
-<p><strong>학습 절차</strong>: 사전학습은 4단계(Stage 0 지각 정렬: 인코더만 학습, 디코더는 동결해 조밀한 캡션/전사 신호로 학습; Stage 1 옴니모달 사전학습: 전체 파라미터 학습, 1.28T 토큰, 이미지 해상도·비디오 프레임 수 확대, fusion layer 4개 활성화; Stage 2 어닐링: 학습률 코사인 감쇠, 레이어별 학습률 감쇠, 융합 경로 확률 0.8로 일부 확률적 라우팅; Stage 3 장문맥 확장: 최대 128k 토큰·512프레임)으로 총 2.24T 토큰을 사용한다. 사후학습은 (1) SFT로 OmniSchema 형식과 지시 따르기 능력 확립, (2) GRPO 기반 schema-routed RLVR로 디코딩 가능성·페이로드 존재 여부를 게이트로 하고 형식 적합성과 과업별 내용 정확도를 곱한 보상으로 시퀀스 단위 최적화, (3) OSAD로 JSON의 구조 토큰(키·구두점)과 내용 토큰을 구분해 각기 다른 목표로 지도하는 토큰 적응형 자기진화 학습을 6라운드 수행하는 순서로 진행된다.</p>
+<p>모델은 디코더 전용 언어모델(텍스트 전용 Youtu-LLM 계열 기반)에 하나의 지각 인코더가 붙은 구조다. 인코더는 (1) 모달리티별 스템이 픽셀/로그-멜 스펙트로그램을 토큰으로 변환, (2) 양방향 어텐션의 공유 Transformer 블록(RMSNorm, SwiGLU, GQA, QK-Norm, RoPE 사용)이 이를 맥락화, (3) 모달리티별 머저(merger)·프로젝터가 디코더 폭으로 다운샘플/매핑하는 3단 파이프라인이다. 로터리 위치 인코딩의 주파수 슬롯을 T/H/W 세 축으로 분할해 모든 모달리티가 같은 시간 좌표계를 공유하도록 하며, 비디오는 학습 시 일정 확률(p_fus)로 오디오-비주얼이 융합되는 경로와 독립적으로 처리되는 경로 중 하나를 택해 두 경로 모두 추론 시 사용 가능하게 유지한다.</p>
+<p>학습은 사전학습 4단계(Stage 0 지각 정렬 → Stage 1 옴니모달 사전학습 → Stage 2 어닐링 → Stage 3 장문맥 확장, 총 2.24T 토큰)와 사후학습 3단계(SFT → 스키마 라우팅 RLVR → OSAD)로 구성된다. RLVR은 GRPO를 사용하며 보상은 디코딩 가능성·페이로드 존재 여부로 게이팅된 뒤 스키마 유효성/반복/미흡 커버리지에 대한 공통 요인과 과업별 내용 정확도 요인의 곱으로 계산된다(식 2). OSAD는 LoRA로 학습되는 학생과 참조 조건부 고정 교사 간에, 내용 토큰에는 대칭 Jensen-Shannon 발산, 구조 토큰에는 forward KL 발산을 각각 다른 온도로 적용하는 손실(식 3~5)을 사용하며, 총 6라운드를 수행한다.</p>
 <h2>실험 설정 및 결과</h2>
-<p>단일 5B 체크포인트를 단일 추론 설정으로 OmniDocBench v1.6, PureDocBench(깨끗함/디지털 저하/실물 재촬영 3개 트랙), OmniParsingBench(차트·기하·자연이미지·오디오·자연비디오·텍스트비디오), Video-MME-v2, ChemOCR, PDMX-Synth 등에서 평가했다.
-- <strong>문서 파싱</strong>: OmniDocBench v1.6에서 Overall 96.96으로 TeleOCR(96.91), OvisOCR2(96.47) 등을 제치고 1위를 차지했으며, 전작 Youtu-Parsing(93.74) 대비 표(TEDS +4.8)와 수식(CDM +3.2)에서 가장 크게 개선되었다. PureDocBench에서도 end-to-end 모델 중 최고(Avg3 76.29)를 기록했지만, 실물 재촬영 트랙에서는 모든 모델이 성능이 크게 떨어지는 공통 한계가 관찰되었다.
-- <strong>범용 옴니모달 파싱</strong>: OmniParsingBench에서 공개 모델 중 평균 75.08로 1위(Logics-Parsing-Omni 72.26), 유일하게 API 모델 Gemini-3-Pro(77.44)만 앞선다. 다만 우위는 균일하지 않아, 오디오·자연비디오·텍스트비디오 같은 시간축 과업에서는 Logics-Parsing-Omni보다 평균 6.5점 앞서지만 자연이미지·기하 같은 정적 과업에서는 평균 2.8점 뒤처진다. 전체 시스템 중 차트 파싱 점수(95.02)는 최고였다.
-- <strong>기호 콘텐츠</strong>: 화학구조 인식(ChemOCR)에서 정확 지문 일치율(Tani@1.0) 54.2로 DeepSeek-OCR2(49.6)를 능가했고, 악보 인식(PDMX-Synth)에서는 문자 오류율(CER) 22.73으로 전용 모델 LEGATO(23.30)와 대등했다.
-- <strong>인코더 구조 소거실험</strong>: 통합 인코더(텍스트 LM 초기화)는 파라미터가 더 적고 두 번째 타워가 없음에도 사전학습된 비전·오디오 두 타워 조합과 Avg-6에서 거의 동등(0.4점 차)하고 OCRBench에서는 오히려 77.2점 앞섰다. 반면 무작위 초기화로 바꾸면 OCRBench에서 크게 뒤지는 대신(130.6점 차) 공간/관계 추론 과업(BLINK)에서는 오히려 텍스트-초기화 버전보다 9.5점 앞서, 텍스트 LM 초기화가 "읽기"에는 크게 도움이 되지만 공간 추론에는 그렇지 않음을 시사했다.
-- <strong>OSAD 기여도</strong>: SFT 이후 OmniDocBench v1.6에서 얻은 총 1.99점의 개선 중 RLVR가 0.24점, OSAD 6라운드가 1.75점(88%)을 차지했으며, 라운드가 진행될수록 증가분은 점차 줄어들지만 꾸준히 양(+)의 개선을 보였다.</p>
+<p>단일 5B 체크포인트, 단일 추론 설정으로 OmniDocBench v1.6, PureDocBench, OmniParsingBench, Video-MME-v2, ChemOCR, PDMX-Synth 등 여섯 개 벤치마크에서 평가했다.
+- <strong>OmniDocBench v1.6</strong>(문서 파싱, 1,651샘플): Overall 96.96으로 비교 대상 중 1위(2위 TeleOCR 96.91, 2B 미만 전문 모델). 이전 모델 Youtu-Parsing(93.74) 대비 표(TEDS +4.8)와 수식(CDM +3.2)에서 큰 향상을 보였다.
+- <strong>PureDocBench</strong>(정상/디지털 열화/실사 재촬영 트랙): 엔드투엔드 모델 중 평균(Avg3) 76.29로 1위, 세 트랙 모두에서 전문 모델을 능가했다.
+- <strong>OmniParsingBench</strong>(자체 평가 툴킷으로 재채점): 평균 75.08로 오픈 웨이트 모델 중 1위(Logics-Parsing-Omni 72.26, Qwen3-Omni-30B-A3B 66.44 대비 우위이며 Gemini-3-Pro(API) 77.44보다는 낮음), 특히 오디오·비디오 분할에서 이득이 크다.
+- <strong>도메인 특화 벤치마크</strong>: ChemOCR에서 정확 분자 핑거프린트 일치율(Tani@1.0) 54.2로 DeepSeek-OCR2(49.6)를 상회, PDMX-Synth(악보→ABC 표기)에서 문자오류율(CER) 22.73으로 전문 모델 LEGATO(23.30)에 근접.
+- <strong>인코더 비교 연구</strong>: 랜덤 초기화된 통합 인코더는 사전학습된 분리 타워(SigLIP-2+SenseVoice) 대비 일반 멀티모달 평균(Avg-6)에서 약간 열세였지만, 텍스트 LLM으로 초기화하면 OCRBench 등에서 분리 타워를 크게 앞서며 격차를 거의 해소했다(읽기 능력 위주 향상, 공간추론 성능 BLINK는 오히려 스크래치 학습이 더 높음).
+- <strong>OSAD의 기여</strong>: SFT 이후 OmniDocBench Overall이 1.99점 상승했는데, 이 중 1.75점(88%)이 OSAD 6라운드에서, 0.24점만 RLVR에서 나왔으며, 라운드가 진행될수록 점진적으로 효과가 작아지는 양상을 보였다.</p>
 <h2>한계점</h2>
-<p>저자들은 전작 Youtu-Parsing과 비교해 아직 추론 가속 기법을 적용하지 못했다는 점을 한계로 명시한다. 전작은 공유 인코더 특징을 페이지 내 여러 영역에서 재사용하고 토큰·쿼리 단위 병렬 디코딩을 적용했지만, Youtu-Parsing-Omni는 더 큰 디코더로 처음부터 끝까지 자기회귀적으로 디코딩하기 때문에 표처럼 조밀한 구조화 콘텐츠에서는 처리량(throughput)이 더 낮을 것으로 예상되며, 이에 대한 병렬 디코딩 등 가속 기법 적용은 향후 과제로 남겨두었다.</p>
+<p>저자들이 직접 명시한 한계는 추론 가속화 부재다. 이전 모델 Youtu-Parsing은 공유 인코더 특징을 페이지 내 여러 영역에 재사용하고 토큰·쿼리 단위 병렬 디코딩을 적용했지만, Youtu-Parsing-Omni는 더 큰 디코더로 엔드투엔드 자기회귀 디코딩을 수행하므로 표와 같은 조밀한 구조화 콘텐츠에서 처리량(throughput)이 낮을 것으로 예상되며, 병렬 디코딩 등 가속 기법 도입은 향후 과제로 남겨두었다.</p>
 <h2>시사점</h2>
-<p>이 연구는 모달리티마다 별도 인코더·전용 모델을 두는 대신, 텍스트 언어모델로 초기화한 하나의 공유 인코더와 하나의 통합 출력 스키마만으로도 문서·이미지·오디오·비디오 전 영역에서 전문 모델급(혹은 그 이상의) 성능을 낼 수 있음을 보여준다. 특히 자기진화형 사후학습(OSAD)이 손수 설계한 보상이나 별도 교사 모델 없이도 이질적인 과업 전반에 걸쳐 성능을 꾸준히 끌어올릴 수 있다는 결과는, 서로 다른 출력 형식을 가진 다중 과업 모델의 사후학습 설계에 참고할 만한 방향을 제시한다. 또한 공간·시간에 근거가 명시된 구조화 레코드를 제공하는 "지각 계층"이라는 설계는, 비전·오디오를 직접 소비하지 않는 텍스트 전용 LLM 에이전트도 근거를 추적하며 비텍스트 정보를 활용할 수 있게 한다는 점에서 에이전트 시스템 구축에 실질적인 함의를 가진다. 코드와 모델 가중치가 공개되어 있어 재현 및 후속 연구에 활용될 수 있다.</p>
+<p>비전·오디오를 별도 전문 인코더로 다루던 관행에서 벗어나, 텍스트 LLM으로 초기화된 단일 공유 인코더와 통합 시공간 위치 인코딩만으로도 모달리티 간 융합과 정렬을 지각 단계 자체에서 해결할 수 있음을 보였다. 또한 이질적인 10개 과업의 출력을 하나의 스키마로 통일하면, 토큰의 "구조/내용" 역할 구분에 기반한 단일 자기진화형 사후학습(OSAD) 절차로 과업 전반을 함께 개선할 수 있다는 점에서, 과업별 보상 설계나 전용 교사 모델 없이도 온-폴리시 distillation을 확장하는 일반적인 방법론을 제시한다. 이는 멀티모달 파싱을 에이전트의 "지각 계층"으로 범용화하는 방향, 즉 다양한 전문 모델 대신 범용 파서 하나로 문서·이미지·음성·영상을 아우르는 접근이 특화 모델 수준의 정밀도를 희생하지 않고도 가능하다는 근거를 제공한다.</p>
     <div class="back-bottom">
       <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
     </div>
@@ -112,7 +113,7 @@
 
 <footer>
   <div class="wrap">
-    <span>출처: <a href="https://huggingface.co/papers/2610.39301" target="_blank" rel="noopener">huggingface.co/papers/2610.39301</a> · 2026-10-31</span>
+    <span>출처: <a href="https://huggingface.co/papers/2610.39301" target="_blank" rel="noopener">huggingface.co/papers/2610.39301</a> · 2026-11-01</span>
     <span>my-design 시스템 적용</span>
   </div>
 </footer>

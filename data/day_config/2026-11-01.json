@@ -1,0 +1,110 @@
+{
+  "2610.36671": {
+    "base": "2610_LOWN_필요할때만보기-인증기반-시각경로-확산VLM",
+    "rank": "#1",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "98",
+    "en_title": "Look Only When Needed: Certificate-Guided Visual Routing for Efficient Diffusion VLMs",
+    "ko_title": "필요할 때만 보기: 인증 기반 시각 라우팅으로 효율화한 확산 VLM"
+  },
+  "2610.39301": {
+    "base": "2610_유튜파싱옴니_하나의-인코더-하나의-스키마-모든-모달리티",
+    "rank": "#2",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "67",
+    "en_title": "Youtu-Parsing-Omni: One Encoder, One Schema, All Modalities",
+    "ko_title": "유튜파싱옴니: 하나의 인코더, 하나의 스키마, 모든 모달리티"
+  },
+  "2610.39302": {
+    "base": "2610_플라토닉표현_JEPA로-플라토닉-표현-가설-증명-및-개선",
+    "rank": "#3",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "58",
+    "en_title": "Proving and Improving the Platonic Representation Hypothesis with JEPAs",
+    "ko_title": "JEPA로 플라토닉 표현 가설 증명 및 개선"
+  },
+  "2610.38568": {
+    "base": "2610_에이알에스아이_제로데이터-멀티모달-자기개선-적응형-태스크-갱신",
+    "rank": "#4",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "58",
+    "en_title": "A-RSI: Adaptive Task Refresh for Zero-Data Multimodal Self-Improvement",
+    "ko_title": "A-RSI: 제로데이터 멀티모달 자기개선을 위한 적응형 태스크 갱신"
+  },
+  "2610.40614": {
+    "base": "2610_엘쓰리지월드_실시간-무한-월드-생성-가우시안-메모리",
+    "rank": "#5",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "38",
+    "en_title": "L3G-World: Real-Time Infinite World Generation with Latent 3D Gaussian Memory",
+    "ko_title": "L3G-World: 잠재 3D 가우시안 메모리를 이용한 실시간 무한 월드 생성"
+  },
+  "2610.40647": {
+    "base": "2610_스펙슬롯_읽기-할당-라우팅-역할결합-토큰화",
+    "rank": "#6",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "36",
+    "en_title": "Read, Allocate, Route: Role-Coupled Tokenization for Pixel-Space Generative Transformers",
+    "ko_title": "읽기, 할당, 라우팅: 픽셀 공간 생성 Transformer를 위한 역할-결합 토큰화"
+  },
+  "2610.37161": {
+    "base": "2610_워크팩토리_전문업무-의도를-실행가능한-작업으로-변환",
+    "rank": "#7",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "36",
+    "en_title": "WorkFactory: Turning Professional Intents into Executable Work for Scalable Agent Training",
+    "ko_title": "워크팩토리: 전문 업무 의도를 실행 가능한 작업으로 변환하여 확장 가능한 에이전트 학습 지원하기"
+  },
+  "2610.32411": {
+    "base": "2610_검색헤드_멀티모달-검색-헤드-넓게-보기",
+    "rank": "#8",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "28",
+    "en_title": "A Broader Look into MLLM's Retrieval Heads",
+    "ko_title": "MLLM 검색 헤드에 대한 더 넓은 시각"
+  },
+  "2610.33106": {
+    "base": "2610_바이브게임_프롬프트로-게임-개발-자가진화-적대-에이전트팀",
+    "rank": "#9",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "22",
+    "en_title": "VibeGame: Prompt-to-Game Development with AI-Native Engine and Self-Evolving Adversarial Agent Team",
+    "ko_title": "바이브게임: AI 네이티브 엔진과 자가진화형 적대적 에이전트 팀을 이용한 프롬프트-투-게임 개발"
+  },
+  "2610.40599": {
+    "base": "2610_헤어덱_한장-이미지로-애니메이션용-스타일-헤어카드",
+    "rank": "#10",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "20",
+    "en_title": "HairDeck: Animation-Ready Stylized Hair Cards from a Single Image",
+    "ko_title": "헤어덱: 한 장의 이미지로 만드는 애니메이션용 스타일 헤어카드"
+  },
+  "2610.35138": {
+    "base": "2610_코디자인벤치_멀티모달-협업-코딩-평가-벤치마크",
+    "rank": "#11",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "20",
+    "en_title": "Co-Design Bench: Multimodal Collaborative Coding Evaluation for Agentic Models",
+    "ko_title": "코디자인 벤치: 에이전틱 모델을 위한 멀티모달 협업 코딩 평가"
+  },
+  "2610.39633": {
+    "base": "2610_아이디엠_내재적-분포-매칭",
+    "rank": "#12",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "19",
+    "en_title": "Intrinsic Distribution Matching",
+    "ko_title": "내재적 분포 매칭"
+  }
+}

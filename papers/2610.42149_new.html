@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>LARC</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#7 · Daily Papers 2026-11-03</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 24</span>
+    </div>
+    <h1 class="article-title">Latent Reasoning in Continuous Space for Unified Multimodal Models</h1>
+    <p class="article-title-ko">LARC: 통합 멀티모달 모델을 위한 연속 공간 잠재 추론</p>
+    <p class="article-sub">통합 멀티모달 모델(UMM)이 이미지 생성 시 언어적 사고사슬(Chain-of-Thought) 대신 연속적인 잠재 공간에서 추론하도록 하여, LLM에서 보이던 테스트 타임 스케일링 효과를 이미지 생성에도 처음으로 구현한 프레임워크 LARC를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.42149" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.42149" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Latent Reasoning in Continuous Space for Unified Multimodal Models</li>
+<li><strong>저자</strong>: Byungwoo Jeon, Yoonwoo Jeong, Hyunseok Lee, Minsu Cho, Jinwoo Shin (KAIST, POSTECH, RLWRLD)</li>
+<li><strong>출처</strong>: arXiv:2610.42149v1 [cs.CV] (2026-10-30)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://rootyjeon.github.io/larc-umm">LARC-UMM</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.42149">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>통합 멀티모달 모델(UMM)이 이미지 생성 시 언어적 사고사슬(Chain-of-Thought) 대신 연속적인 잠재 공간에서 추론하도록 하여, LLM에서 보이던 테스트 타임 스케일링 효과를 이미지 생성에도 처음으로 구현한 프레임워크 LARC를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>기존의 추론 강화 UMM들은 추론을 이산적인(discrete) 토큰 공간에서 수행하는 반면 이미지 생성은 연속적인(continuous) 공간에서 이루어지는 "모달리티 불일치" 문제를 겪는다. 이 때문에 추론 예산을 늘려도 LLM처럼 매끄러운 성능 향상이 나타나지 않고, 추론이 표면적인 프롬프트 조작 수준에 머무른다고 저자들은 지적한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>추론과 생성 사이의 이산-연속 모달리티 불일치를 성능 정체의 근본 원인으로 규명함</li>
+<li>통합 멀티모달 모델 내에서 이미지 생성과 동일한 연속 잠재 공간에서 추론을 수행하는 최초의 프레임워크 LARC를 제안, 테스트 타임 스케일링을 가능하게 함</li>
+<li>Coconut 스타일의 잠재 추론을 확률적 요소(stochasticity)를 추가해 정책 경사(policy gradient) 학습이 가능하도록 확장하고, 정답 잠재 사슬이나 외부 평가자 없이 동작하는 정보이득(information-gain) 보상과 붕괴방지(collapse-prevention) 보상을 결합한 자가진화형 학습법을 설계함</li>
+</ul>
+<h2>방법론</h2>
+<p>LARC는 2단계로 학습된다. 1단계(커리큘럼 지도 미세조정)에서는 텍스트 구간과 연속 잠재 단계가 번갈아 나타나는 궤적 형식을 정의하고, <code>&lt;latent&gt;</code> 토큰이 등장하면 마지막 은닉 상태를 다음 입력 임베딩으로 재사용하는 방식으로, 토큰 단위 추론을 점진적으로 잠재 추론으로 전환하는 커리큘럼 학습을 수행한다. 2단계(자가진화 강화학습)에서는 GRPO를 최적화 알고리즘으로 사용하며, 고정된 참조 모델 대비 추론 궤적이 목표 이미지의 예측 분포를 얼마나 개선하는지를 측정하는 정보이득 보상과, 여러 잠재 단계가 동일한 벡터로 붕괴하는 것을 막는 다양성 정규화 보상을 결합해 정책을 업데이트한다. 실험에서는 BAGEL을 기반 모델로 삼아 FLUX-Reason, WEAVE, ScaleEdit에서 추출한 100만 개의 교차 사고사슬 데이터로 학습했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>GenEval, DPG-Bench, OneIG-Bench(텍스트-이미지 생성), CompBench(이미지 편집), MME·MMB·MMMU·MIRA(멀티모달 이해 및 시각 추론) 벤치마크에서 평가했다. LARC는 GenEval에서 기존 최고 수준 대비 약 7%p 향상된 점수(0.88)를 기록했고, DPG-Bench(+5.8%), OneIG-Bench(+10.2%p), CompBench의 LC-T 지표(20.434→22.509)에서도 기반 모델 BAGEL과 Uni-CoT를 모두 앞섰다. 또한 시각 추론 벤치마크 MIRA에서 7.5→11.7로 크게 향상되었으며, 잠재 추론 예산을 늘릴수록(테스트 타임 스케일링) 이미지 생성·편집·시각 추론 전반에서 단조롭게 성능이 향상되는 것을 확인했다. Best-of-N 샘플링 대비 동일 연산 예산에서도 일관되게 더 우수했다.</p>
+<h2>한계점</h2>
+<p>논문은 잠재 추론 RL 학습이 수십억 파라미터급 UMM 백본에 대해 비용이 크다는 점을 언급하며, 어댑터 기반·저랭크 방식 등 파라미터 효율적인 적응 방법이 향후 과제로 남아 있다고 밝힌다. 또한 추론 충실도가 향상될수록 적대적 프롬프트에 대한 생성 품질도 함께 좋아질 수 있어, 유해 콘텐츠 생성과 같은 이중 사용 위험이 커질 수 있다는 점도 한계이자 과제로 제시된다.</p>
+<h2>시사점</h2>
+<p>이 연구는 멀티모달 생성에서 추론 공간을 생성 공간과 일치시키는 것이 테스트 타임 스케일링을 가능케 하는 핵심 열쇠가 될 수 있음을 보여주며, 향후 통합 모델이 언어 모델 수준의 추론 확장성을 이미지·영상 등 다른 모달리티로 확장하는 설계 방향에 시사점을 준다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.42149" target="_blank" rel="noopener">huggingface.co/papers/2610.42149</a> · 2026-11-03</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

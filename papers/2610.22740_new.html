@@ -1,0 +1,107 @@
+<meta charset="UTF-8">
+<title>알투오케이</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#2 · Daily Papers 2026-11-03</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 86</span>
+    </div>
+    <h1 class="article-title">R^2Orch: Recursive Self-Improvement for Agent Orchestration via Self-Play within a Skill-Internalization Loop</h1>
+    <p class="article-title-ko">알투오케이: 스킬-내재화 루프 내 셀프플레이를 통한 에이전트 오케스트레이션의 재귀적 자기개선</p>
+    <p class="article-sub">R²Orch는 에이전트 오케스트레이터가 스스로 과제를 고르고(Self-Play) 더 이상 필요 없어진 스킬을 스스로 거둬들이는(Skill Withdrawal) 두 개의 루프를 중첩시켜, 스킬 없이도(zero-skill) 높은 성능을 내는 멀티에이전트 오케스트레이션 학습법을 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.22740" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.22740" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: R^2Orch: Recursive Self-Improvement for Agent Orchestration via Self-Play within a Skill-Internalization Loop</li>
+<li><strong>저자</strong>: Mingda Zhang, Yun Huang, Qiang Huang, Yanjin Li, Rui Qian 외 (홍콩중문대(선전), 푸단대, 일리노이대 어배나-섐페인, 칭화대, 싱가포르국립대)</li>
+<li><strong>출처</strong>: arXiv:2610.22740v2 [cs.AI] (2026년 10월 22일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음 (코드: github.com/beita6969/R2Orch)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.22740">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>R²Orch는 에이전트 오케스트레이터가 스스로 과제를 고르고(Self-Play) 더 이상 필요 없어진 스킬을 스스로 거둬들이는(Skill Withdrawal) 두 개의 루프를 중첩시켜, 스킬 없이도(zero-skill) 높은 성능을 내는 멀티에이전트 오케스트레이션 학습법을 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>기존 에이전트 오케스트레이션 학습은 (1) 사람이 미리 짜놓은 고정 커리큘럼에 의존하고, (2) GRPO류의 그룹 상대강화학습에서 한 과제의 모든 롤아웃이 같은 결과로 수렴하면 이득 신호(advantage)가 사라지는 "advantage collapse" 문제를 겪으며, (3) 스킬 하나하나를 단일한 노이즈 섞인 점수로만 평가해 스킬 라이브러리가 서서히 품질 저하를 겪는다는 세 가지 한계를 공유한다.</p>
+<h2>핵심 기여</h2>
+<p>논문은 이를 해결하기 위해 내부 루프(Self-Play로 오케스트레이터인 Director를 개선)와 외부 루프(Director가 더 이상 의존하지 않는 스킬을 철회)가 맞물리는 "Recursive Self-Play Orchestration" 패러다임을 제안한다. 구체적으로 (a) 후보 스킬을 숨긴 상태에서도 롤아웃 결과가 계속 갈리는 과제를 고르도록 Proposer에 보상하는 "Recursive Learnability" 학습 목표와, (b) 동일한 무작위 롤아웃 그룹 내에서 스킬 유무에 따른 통제 평가로 스킬 철회 시점을 베이즈적으로 결정하는 "Skill Withdrawal" 기법을 제시한다.</p>
+<h2>방법론</h2>
+<p>에이전트 그래프(노드=역할·모델이 지정된 에이전트, 엣지=에이전트 간 핸드오프)를 Director가 ADD AGENT, SET PROMPT 등 원자적 편집으로 구성하며, Worker 풀은 고정한 채 GRPO의 리브원아웃(leave-one-out) 추정으로 학습한다. 매 롤아웃 그룹의 일부를 무작위로 숨겨(hidden part) 후보 스킬 kx를 제거한 상태로 평가하면서, 이 숨긴 부분에서 측정된 학습가능성(learnability) 곡률로 Proposer의 보상을 산출하고, 베이즈 부트스트랩 사후분포로 각 스킬을 철회(Withdraw)할지 유지(Keep)할지 결정한다. 두 루프는 "실패는 스킬로, 스킬은 파라미터로, 철회는 다시 새로운 실패로" 이어지는 하나의 순환을 이룬다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>HotpotQA, NQ-Open, MedQA, AIME 2026, MBPP+, ALFWorld 등 6개 분포 내(IID) 벤치마크와 TriviaQA, MuSiQue, GPQA, MATH-Hard, SWE-Bench, WebShop 등 6개 분포 외(OOD) 벤치마크, 총 12개 벤치마크에서 평가했다. Qwen3.5-9B를 Worker로 학습한 Director가 제로 스킬 상태에서도 학습/워크플로 탐색/스킬 내재화/셀프플레이 등 6개 계열 베이스라인을 모든 벤치마크에서 능가했으며, 재학습 없이 6종의 다른 Worker 백본에도 성능 향상이 전이되었다. 소거 실험에서는 Recursive Self-Play Orchestration, Recursive Learnability, Skill Withdrawal 세 요소를 각각 제거할 때 모두 성능이 하락함을 확인했다.</p>
+<h2>한계점</h2>
+<p>R²Orch는 각 데이터셋에 맞춰 사람이 수작업으로 만든 초기 스킬 세트에서 출발하며, 이후의 철회·개정·증류는 이 초기 스킬을 기반으로 이루어진다. 따라서 새로운 도메인에 대해 초기 스킬을 자동으로 도출하는 문제는 아직 해결되지 않은 채로 남아 있다.</p>
+<h2>시사점</h2>
+<p>사람이 설계한 고정 커리큘럼이나 정적인 스킬 라이브러리에 의존하지 않고, 오케스트레이터가 스스로 "무엇을 배울지"와 "무엇을 버릴지"를 함께 학습하도록 한 점은 에이전트 시스템의 자기개선(self-improvement) 연구에 새로운 설계축을 제시하며, 특히 다른 백본으로의 재학습 없는 전이 가능성은 범용 오케스트레이터 구축에 실용적 함의를 지닌다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.22740" target="_blank" rel="noopener">huggingface.co/papers/2610.22740</a> · 2026-11-03</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

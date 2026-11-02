@@ -1,0 +1,107 @@
+<meta charset="UTF-8">
+<title>AGI를 향한 스케일링은 System-1이 System-2에 허용하는 것에 좌우되는가?</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#3 · Daily Papers 2026-11-03</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 52</span>
+    </div>
+    <h1 class="article-title">Does Scaling Toward AGI Depend on What System-1 Lets System-2 Execute?</h1>
+    <p class="article-title-ko">AGI를 향한 스케일링은 System-1이 System-2에 허용하는 것에 좌우되는가?</p>
+    <p class="article-sub">값비싼 System-2(실행기)가 모든 상호작용을 다 수행하는 대신, 저비용 System-1(예측기)이 사전에 유용성을 평가해 실행 여부를 걸러주도록 두 시스템을 공동 설계하면 AGI를 향한 스케일링 효율이 유의미하게 개선될 수 있다는 이론적 관점(Perspective) 논문이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.39497" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.39497" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Does Scaling Toward AGI Depend on What System-1 Lets System-2 Execute?</li>
+<li><strong>저자</strong>: Qi Wang, Yun Qu, Lizhou Cai, Heming Zou 등 13인 (칭화대학교 자동화학과·컴퓨터공학과, 교신저자 Xiangyang Ji)</li>
+<li><strong>출처</strong>: arXiv:2610.39497v1 [cs.AI] (2026년 10월 29일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://cheemswang.github.io/blogs/sys1-sys2-codesign.html">cheemswang.github.io/blogs/sys1-sys2-codesign</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.39497">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>값비싼 System-2(실행기)가 모든 상호작용을 다 수행하는 대신, 저비용 System-1(예측기)이 사전에 유용성을 평가해 실행 여부를 걸러주도록 두 시스템을 공동 설계하면 AGI를 향한 스케일링 효율이 유의미하게 개선될 수 있다는 이론적 관점(Perspective) 논문이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>현재 AGI를 향한 발전은 주로 추론·계획·도구 사용을 담당하는 자원집약적 "System-2"의 모델 크기, 데이터, 연산량을 늘리는 방향으로 이루어져 왔다. 그러나 모델이 커질수록 각 상호작용(토큰 생성, 롤아웃, 도구 호출 등)을 생성·평가·실행하는 비용 자체가 병목이 될 수 있다. 저자들은 "상호작용의 개수"가 아니라 "그중 실제로 유용한 상호작용의 밀도(ρ_u)"가 스케일링 효율을 결정하는 핵심 변수라고 주장하며, 이를 "실행 전에 가치를 판단하는" 문제로 재정의한다.</p>
+<h2>핵심 기여</h2>
+<p>논문은 (1) System-1(경량 예측기)이 후보 상호작용의 기대 유용성을 추정하고 임계값을 넘는 경우에만 System-2(고비용 실행기)가 실행하도록 하는 "조건부 상호작용(conditional interaction)"이라는 predict-gate-execute-update 루프를 정식화하고, (2) 이 틀 아래에서 실행된 연산 대비 정보 효율을 나타내는 지표인 "상호작용 정보 효율(IIE)"을 정의하며, (3) 완벽하거나 불완전한 예측기 하에서 IIE 이득이 대략 1/ρ_u에 근접함을 증명하고, (4) 디지털 학습(RLVR)·물리적 적응(로봇 도메인 랜덤화)·테스트타임 추론·에이전트형 도구/컴퓨터 사용이라는 네 영역에 이 틀을 공통으로 적용할 수 있음을 보인다.</p>
+<h2>방법론</h2>
+<p>핵심 수학적 장치는 베이지안 서프라이즈(사후-사전 분포 간 KL 발산)로 정의되는 유용성 함수 u(i)와, 이를 기반으로 후보를 선별하는 볼츠만 형태의 선택 정책 π_CI(파라미터: 임계값 κ_t, 역온도 β)이다. System-1과 System-2는 각각 Operator 연산자(T_pred, T_exec)로 분리되어 서로 다른 속도로 갱신되며, System-2의 실행 결과가 다시 System-1을 재학습(refit)시키는 피드백 루프를 형성한다. 이를 기반으로 완벽/불완전 예측기 하의 IIE 이득 공식, 예측기 크기와 실행기 크기를 함께 늘리는 "공동 스케일링" 정리, 테스트타임 조기 정지 및 에이전트 행동 선택에 대한 비용 상한을 각각 정리(Proposition/Theorem) 형태로 도출한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>이 논문은 실증 실험을 직접 수행하는 연구 논문이 아니라 이론적 관점(Perspective) 논문으로, 제시된 명제와 정리는 수학적으로 증명되며 RLVR 프롬프트 선택, 로봇 도메인 랜덤화 등 저자들의 기존 관련 연구에서 보고된 경험적 결과(몇 배 수준의 롤아웃 절감 등)를 간접 근거로 인용한다. 별도의 벤치마크 수치 비교 실험 결과는 논문에 명시되지 않음.</p>
+<h2>한계점</h2>
+<p>저자들은 스스로 다음 한계를 명시한다: System-1의 선택적 게이팅으로 인해 실행되지 않은 후보의 결과를 관측할 수 없어 예측기 학습 데이터에 선택 편향(selective labels problem)이 발생하는 점, ρ_u의 실제 감소 패턴(Hypothesis 25)이 아직 측정되지 않은 가설이라는 점, 다중 에이전트·자기대국(self-play) 환경처럼 상호작용의 유용성이 참여자 간 관계에 따라 달라지는 경우 단일 학습자 전제가 깨질 수 있다는 점, 그리고 안전이 중요하거나 비가역적인 상황에서는 게이팅 자체가 부적절할 수 있다는 점이다.</p>
+<h2>시사점</h2>
+<p>이 연구는 차세대 AI 시스템의 스케일링을 "얼마나 많은 연산을 쓰는가"가 아니라 "그 연산 중 얼마나 많은 비중이 실제로 유용한 상호작용에 쓰이는가"의 관점에서 재구성할 것을 제안한다. 이는 LLM 사후학습의 프롬프트/롤아웃 선별, 로보틱스의 시뮬레이션 과제 샘플링, 테스트타임 추론의 조기 종료, 에이전트의 도구 호출 라우팅 등 폭넓은 영역에서 비용 효율적인 시스템 설계 원칙으로 활용될 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.39497" target="_blank" rel="noopener">huggingface.co/papers/2610.39497</a> · 2026-11-03</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

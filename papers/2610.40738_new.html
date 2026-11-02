@@ -1,0 +1,107 @@
+<meta charset="UTF-8">
+<title>에이프리얼 보이스 27B 프리뷰</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#5 · Daily Papers 2026-11-03</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 33</span>
+    </div>
+    <h1 class="article-title">Apriel Voice 27B Preview: An Open Model for Speech, Reasoning, and Tool Use</h1>
+    <p class="article-title-ko">에이프리얼 보이스 27B 프리뷰: 음성·추론·도구 사용을 위한 오픈 모델</p>
+    <p class="article-sub">ServiceNow가 공개한 Apriel Voice 27B Preview는 음성·텍스트·이미지를 하나의 추론 백본으로 처리해 별도의 대화 모델 없이 음성으로 응답과 툴 호출까지 수행하는 오픈 음성-언어 모델이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.40738" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.40738" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Apriel Voice 27B Preview: An Open Model for Speech, Reasoning, and Tool Use</li>
+<li><strong>저자</strong>: ServiceNow 소속 Aman Tiwari, Akshay Kalkunte 등 Core Contributors 8인과 다수의 Contributors(총 20명 이상)</li>
+<li><strong>출처</strong>: arXiv:2610.40738v1 [cs.SD] (2026년 10월 29일)</li>
+<li><strong>프로젝트 페이지</strong>: Apriel Live라는 실시간 데모 인터페이스가 공개되어 있음(구체적 URL은 원문 하이퍼링크 참조, 별도 텍스트 명시 없음)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.40738">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>ServiceNow가 공개한 Apriel Voice 27B Preview는 음성·텍스트·이미지를 하나의 추론 백본으로 처리해 별도의 대화 모델 없이 음성으로 응답과 툴 호출까지 수행하는 오픈 음성-언어 모델이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>기존 음성 비서 시스템은 ASR-LLM-TTS로 이어지는 3단계 캐스케이드이거나, 음성 인식 모델에 별도의 대화/추론 모델을 결합하는 구조가 많아 음성 이해와 추론·툴 실행 능력이 분리되어 있었다. 저자들은 음성을 단순히 받아쓰는 것을 넘어 요청을 이해하고, 맥락을 추론하며, 대화를 유지하고, 도구를 통해 행동까지 할 수 있어야 진정한 음성 에이전트라고 보고, 텍스트·이미지 처리 능력을 유지한 채 음성 인터페이스를 추가하는 통합 백본을 목표로 삼았다.</p>
+<h2>핵심 기여</h2>
+<p>post-trained Gemma 4 26B-A4B(MoE, 총 260억·활성 40억 파라미터) 체크포인트를 기반으로, (1) 음성 조건부 에이전트적 능력을 유지한 공유 백본, (2) 자동 생성된 음성 조건부 대화와 소스별 교차 엔트로피(CE)/정방향 KL(FKL) 감독을 결합한 2단계 적응 레시피, (3) 로컬 교사 서빙·룩어헤드·전체 어휘 퓨즈드 커널을 활용한 효율적 온라인 증류 구현, (4) 음성·텍스트·이미지 전반에 대한 종합 평가 및 Apriel Live 대화형 배포를 제시했다.</p>
+<h2>방법론</h2>
+<p>Whisper large-v3-turbo로 음성을 인코딩한 뒤 학습된 프로젝터(약 4,770만 파라미터)로 디코더 임베딩 공간에 투영하여, 별도 전사 없이 음향 표현을 직접 추론에 사용한다. 1단계에서는 백본을 고정한 채 다국어 전사·번역·연속 생성으로 프로젝터만 학습시켜 음성 인터페이스를 익히고, 2단계에서는 프로젝터·백본·MoE 라우터를 함께 업데이트하며 합성 대화, 툴 상호작용, 텍스트 리플레이를 학습한다. 이때 원본 체크포인트를 고정한 "교사" 모델이 소스별로 가중된 CE와 전체 어휘 FKL을 통해 과제 습득과 기존 능력 보존을 동시에 지도한다. 학습 효율화를 위해 교사 추론과 학생 연산을 노드 내에서 분리하고 1-배치 룩어헤드로 중첩시키며, 대용량 로짓 텐서의 메모리 부담을 줄이는 퓨즈드 CE/FKL 커널을 사용했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>8노드(교사 GPU 16개, 학생 GPU 48개, H100 80GB)에서 약 3일간 2단계 학습을 수행했으며, 음성 인식(LibriSpeech 등 평균 WER 12.61), 음성 번역(평균 BLEU 42.87), 추론·툴콜(Big Bench Audio 98.90, Speech-BFCL 81.13), 대화형 서비스 평가(EVA-A 51.27%, EVA-X 74.13%), τ-Voice 과제 완료율(65.51%, 평균 지연 1.91초) 등에서 오픈소스 2단계 음성-언어 모델 중 최고 성능을 보였고, 지연 시간 측면에서는 비교군 중 가장 낮은 축에 속했다. 텍스트·이미지 능력도 원 Gemma 4 백본 대비 MMLU-Pro, GPQA Diamond, AIME 등에서 대체로 유지되었다.</p>
+<h2>한계점</h2>
+<p>영어 음성 이해·추론에 집중되어 있어 다국어 능력과 평가가 제한적이며, 언어 간 성능이 고르지 않다. 내부 평가와 공개 벤치마크 간 프롬프트·채점 방식 차이로 엄격한 통계적 유의성이나 다른 프런티어 모델과의 직접적 순위 비교는 보장되지 않는다. 합성 데이터 생성과 증류 과정에서 잘못된 타깃이나 교사 모델의 오류가 전파될 수 있고, 변환 충실도 검증이 모든 오류나 자연스러운 음성 변이를 포착하지는 못한다. 또한 시각 컴포넌트가 고정되어 있어도 디코더 변화로 인해 이미지 추론 능력이 완전히 그대로 유지된다는 보장은 없다.</p>
+<h2>시사점</h2>
+<p>별도의 ASR·대화·TTS 모델을 잇는 캐스케이드 없이, 하나의 추론 백본이 음성·텍스트·이미지를 아우르며 추론과 툴 실행까지 수행할 수 있음을 오픈소스 규모에서 보여준 사례로, 소스별 CE/FKL 감독과 온라인 증류 효율화 기법은 향후 멀티모달 에이전트 모델의 적응 학습 레시피에 참고가 될 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.40738" target="_blank" rel="noopener">huggingface.co/papers/2610.40738</a> · 2026-11-03</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

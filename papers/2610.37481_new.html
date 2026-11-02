@@ -1,0 +1,107 @@
+<meta charset="UTF-8">
+<title>그래디언트를 따라가기</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#9 · Daily Papers 2026-11-03</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 23</span>
+    </div>
+    <h1 class="article-title">Follow the Gradient: Tracing Safety Degradation Back to Training Data</h1>
+    <p class="article-title-ko">그래디언트를 따라가기: 안전성 저하의 원인을 훈련 데이터에서 추적하다</p>
+    <p class="article-sub">겉보기에는 무해해 보이지만 모델의 안전성을 몰래 저하시키는 파인튜닝 데이터를, 그래디언트가 유해 행동과 얼마나 정렬되는지를 기준으로 대규모로 찾아내 제거하는 방법을 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.37481" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.37481" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Follow the Gradient: Tracing Safety Degradation Back to Training Data</li>
+<li><strong>저자</strong>: Saket Reddy, Amro Abbas, Anshuman Suri, Ari Morcos, David Schwab, Pratyush Maini (DatologyAI, UIUC)</li>
+<li><strong>출처</strong>: arXiv:2610.37481v1 [cs.LG] (2026년 10월 27일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음 (SafeTulu 데이터셋 및 Hugging Face Space로 공개)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.37481">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>겉보기에는 무해해 보이지만 모델의 안전성을 몰래 저하시키는 파인튜닝 데이터를, 그래디언트가 유해 행동과 얼마나 정렬되는지를 기준으로 대규모로 찾아내 제거하는 방법을 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>LLM을 파인튜닝하면 명백히 유해한 예시가 전혀 없어도 안전성 정렬이 약해질 수 있고, 이런 안전성 저하 데이터는 표면적으로 무해해 보여 기존 독성 필터나 LLM 기반 안전성 판별기로는 잘 걸러지지 않는다. 저자들은 이를 데이터 선택 문제로 보고, 모델에 실제로 어떤 변화를 일으키는지를 반영하는 신호인 그래디언트를 이용해 안전성 저하를 유발하는 학습 예시를 찾고자 한다.</p>
+<h2>핵심 기여</h2>
+<p>기존 영향 함수 기반 기법인 LoRIF를 단순화하여, 곡률 보정을 생략하고 마지막 4개 트랜스포머 블록에만 역전파를 제한함으로써 100만 개 규모 데이터셋도 약 1시간 내에 임베딩할 수 있는 SimpleLoRIF를 제안했다. 이를 이용해 코드 취약점 파인튜닝이 코딩과 무관한 광범위한 유해 행동(emergent misalignment)을 유발하는 현상을 그래디언트 공간에서 AUC 최대 0.865로 탐지할 수 있음을 보였고, 이 방법으로 Tulu 3 데이터셋에서 안전성 저하 가능성이 가장 높은 20%를 제거한 SafeTulu를 공개했다.</p>
+<h2>방법론</h2>
+<p>SimpleLoRIF는 각 문서를 해당 문서가 모델에 일으키는 그래디언트의 저랭크(rank-1) 근사로 표현하고, 두 문서의 그래디언트 유사도를 프로베니우스 내적 형태로 계산한다. SafeTulu 구축은 (1) 학습셋과 목표셋(SafeRLHF의 유해 응답들) 전체를 임베딩하고, (2) 목표셋과의 그래디언트 유사도가 가장 높은 학습 문서 상위 20%를 제거한 뒤, (3) 필터링된 데이터로 파인튜닝하고, (4) 안전성과 역량을 평가하는 4단계로 이루어진다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Qwen, Llama, Olmo 세 모델 계열에서 GCG(Greedy Coordinate Gradient)와 ActorBreaker 두 가지 공격에 대한 공격 성공률(ASR), 그리고 MMLU Pro, IFEval, GSM8K, MATH 500, MBPP, MedQA 등 역량 지표로 평가했다. SafeTulu로 학습한 모델은 기준 학습 대비 GCG ASR을 최대 22%까지 낮추었고, LLM 판별 기반 필터링 및 선행 그래디언트 기반 기법(He et al.)보다 우수했으며, 전반적인 역량은 거의 손실 없이 유지되거나 오히려 개선되었다. 질적 분석에서는 제거된 데이터가 도구 실행 실패, 서술형 산술 문제 등에 편중되어 있어, 잘 알려지지 않은 안전성 저하 요인일 수 있음을 시사했다.</p>
+<h2>한계점</h2>
+<p>저자들은 일반적인 안전성 저하만을 테스트했을 뿐, 아첨(sycophancy) 등 특정 유형의 유해 행동은 다루지 않았다고 밝혔다. 또한 SafeRLHF 외의 다른 목표(target) 데이터셋에 대해서는 검증하지 않았다는 한계도 언급했다.</p>
+<h2>시사점</h2>
+<p>그래디언트 기반 귀속 방법을 비용 효율적으로 만들면, 대규모 사후학습 데이터 믹스를 병합 전에 선별하거나, 이미 사용 중인 데이터셋을 감사하거나, 특정 피해 범주에 맞춘 필터링을 수행하는 등 실무적인 안전성 데이터 큐레이션 도구로 활용될 수 있음을 보여준다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.37481" target="_blank" rel="noopener">huggingface.co/papers/2610.37481</a> · 2026-11-03</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

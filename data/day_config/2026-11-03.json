@@ -1,0 +1,110 @@
+{
+  "2610.36545": {
+    "base": "2610_프레임포지_영상-파운데이션-모델로-통합-이미지-생성",
+    "rank": "#1",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "111",
+    "en_title": "FrameForge: Harnessing Priors of Video Foundation Models for Unified Image Generation",
+    "ko_title": "프레임포지: 영상 파운데이션 모델의 사전지식을 활용한 통합 이미지 생성"
+  },
+  "2610.22740": {
+    "base": "2610_알투오케이_에이전트-오케스트레이션-자기개선",
+    "rank": "#2",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "86",
+    "en_title": "R^2Orch: Recursive Self-Improvement for Agent Orchestration via Self-Play within a Skill-Internalization Loop",
+    "ko_title": "알투오케이: 스킬-내재화 루프 내 셀프플레이를 통한 에이전트 오케스트레이션의 재귀적 자기개선"
+  },
+  "2610.39497": {
+    "base": "2610_시스템1시스템2_AGI-스케일링과-시스템1시스템2-공동설계",
+    "rank": "#3",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "52",
+    "en_title": "Does Scaling Toward AGI Depend on What System-1 Lets System-2 Execute?",
+    "ko_title": "AGI를 향한 스케일링은 System-1이 System-2에 허용하는 것에 좌우되는가?"
+  },
+  "2610.42053": {
+    "base": "2610_알이에이_비동기-뇌소뇌-제어-구조-에이전트-런타임",
+    "rank": "#4",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "43",
+    "en_title": "REA: A Routed Embodied Agent Runtime for Asynchronous Brain-Cerebellum Control",
+    "ko_title": "REA: 비동기 브레인-소뇌 제어를 위한 라우팅 기반 임베디드 에이전트 런타임"
+  },
+  "2610.40738": {
+    "base": "2610_에이프리얼보이스_음성추론도구사용-통합-오픈모델",
+    "rank": "#5",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "33",
+    "en_title": "Apriel Voice 27B Preview: An Open Model for Speech, Reasoning, and Tool Use",
+    "ko_title": "에이프리얼 보이스 27B 프리뷰: 음성·추론·도구 사용을 위한 오픈 모델"
+  },
+  "2610.16927": {
+    "base": "2610_위페어_개인화-쇼트폼-검색어-재작성-충실도정렬",
+    "rank": "#6",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "26",
+    "en_title": "WeFair: Fidelity-Aware Alignment from Human Feedback for Personalized Query Rewriting in Short-Video Search",
+    "ko_title": "위페어: 쇼트비디오 검색을 위한 충실도 인식 인간 피드백 정렬 기반 개인화 쿼리 재작성"
+  },
+  "2610.42149": {
+    "base": "2610_라크_연속공간-잠재추론-통합-멀티모달-모델",
+    "rank": "#7",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "24",
+    "en_title": "Latent Reasoning in Continuous Space for Unified Multimodal Models",
+    "ko_title": "LARC: 통합 멀티모달 모델을 위한 연속 공간 잠재 추론"
+  },
+  "2610.40339": {
+    "base": "2610_위자드_에이전틱-제어-기반-실시간-월드-조작",
+    "rank": "#8",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "24",
+    "en_title": "Wizard: Manipulate Any World in Real Time via Agentic Control",
+    "ko_title": "위자드: 에이전틱 제어로 실시간 세계를 조작하다"
+  },
+  "2610.37481": {
+    "base": "2610_그래디언트추적_안전성-저하-원인을-훈련데이터에서-추적",
+    "rank": "#9",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "23",
+    "en_title": "Follow the Gradient: Tracing Safety Degradation Back to Training Data",
+    "ko_title": "그래디언트를 따라가기: 안전성 저하의 원인을 훈련 데이터에서 추적하다"
+  },
+  "2610.40373": {
+    "base": "2610_하이포_계층적-예견-기반-행동-유도-VLA-모델",
+    "rank": "#10",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "23",
+    "en_title": "HiFOR: Hierarchical Foresight with Action-Guided World Grounding for Vision-Language-Action Model",
+    "ko_title": "하이포: 계층적 예견과 행동 유도 월드 그라운딩 기반 VLA 모델"
+  },
+  "2610.35850": {
+    "base": "2610_오스왐_원스텝-행동-생성-월드-액션-모델",
+    "rank": "#11",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "22",
+    "en_title": "OSWAM: An Effective World Action Model with One-Step Action Generation",
+    "ko_title": "오스왐: 원스텝 행동 생성을 위한 효과적인 월드 액션 모델"
+  },
+  "2610.42136": {
+    "base": "2610_리리프트_밀집-3D-트래킹-궤적-복구-재구성",
+    "rank": "#12",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "22",
+    "en_title": "ReLift: Dense 3D Tracking as Lifted Trajectory Repair",
+    "ko_title": "리리프트: 밀집 3D 트래킹을 리프트된 궤적 복구 문제로 재구성하기"
+  }
+}

@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>위자드</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#8 · Daily Papers 2026-11-03</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 24</span>
+    </div>
+    <h1 class="article-title">Wizard: Manipulate Any World in Real Time via Agentic Control</h1>
+    <p class="article-title-ko">위자드: 에이전틱 제어로 실시간 세계를 조작하다</p>
+    <p class="article-sub">Wizard는 장면 기하 구조와 캐릭터 스켈레톤을 통합한 시각적 프록시를 매개로, 에이전틱 제어와 영상 생성 모델을 결합해 미지의 장면·캐릭터·동작에도 제로샷으로 일반화되는 실시간(24FPS) 게임 월드 모델이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.40339" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.40339" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Wizard: Manipulate Any World in Real Time via Agentic Control</li>
+<li><strong>저자</strong>: Yuzhe Wu, Zijun Lin, Yeying Jin (공동 1저자 포함, Tencent·NUS·NTU 소속)</li>
+<li><strong>출처</strong>: arXiv:2610.40339v1 [cs.CV] (2026-10-29)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://wyzardwu.github.io/wizard/">https://wyzardwu.github.io/wizard/</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.40339">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>Wizard는 장면 기하 구조와 캐릭터 스켈레톤을 통합한 시각적 프록시를 매개로, 에이전틱 제어와 영상 생성 모델을 결합해 미지의 장면·캐릭터·동작에도 제로샷으로 일반화되는 실시간(24FPS) 게임 월드 모델이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>최근 비디오 월드 모델은 플레이어가 자유롭게 구성 가능한 게임플레이를 생성할 수 있는 가능성을 열었지만, 기존 액션 조건부/프롬프트 조건부 모델들은 미리 정의된 동작 세트나 학습 시 본 장면·캐릭터에 묶여 있어 일반화가 어렵고, 에이전틱 프레임워크들도 대개 단순한 이동이나 차량 주행 수준에만 적용되어 세밀한 캐릭터 동작 제어는 다루지 못했다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>750개 장면과 178종 캐릭터를 포괄하는 50.3시간 분량의 정렬된 프록시-영상 데이터셋을 구축했다.</li>
+<li>장면 기하(깊이)와 캐릭터 스켈레톤을 하나의 통합 시각적 프록시로 인코딩하는 에이전틱 비디오-투-비디오 프레임워크를 제안했다.</li>
+<li>캐릭터 위치 정보를 이용한 적응형 어텐션 마스킹으로, 참조 이미지와 생성 영상 간 캐릭터 정체성 정합을 강화했다.</li>
+</ul>
+<h2>방법론</h2>
+<p>사용자가 제공한 캐릭터 이미지에서 VLM(Qwen3-VL)으로 신체 구조를 추정하고 SAM2·TripoSG·UniRig로 메시를 복원 및 리깅하여 스켈레톤을 생성한다. Elden Ring 플레이 영상, 절차적 합성 데이터, Unreal Engine 시뮬레이션, 공개 데이터셋(WildWorld)을 결합해 장면 기하와 캐릭터 스켈레톤이 정렬된 프록시 영상을 만들고, 이를 Wan2.2 기반 영상 생성 모델의 조건으로 사용한다. 에이전트는 모션 라이브러리에서 호환 가능한 동작을 검색·리타기팅하고, 체력·거리 등 전투 상태를 추적해 규칙 기반으로 전투 결과를 판정하며, 인과적 적응과 소수 스텝 증류를 통해 실시간(24FPS) 추론을 가능하게 한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Wan2.2-TI2V-5B를 기반으로 4.4만 개 클립에 대해 양방향 미세조정(3만 스텝) 후 인과적 적응(1만 스텝)과 증류를 거쳐 학습했다. 정량 지표 대신 정성적 시각화를 통해 미지의 장면·캐릭터·동작 조합에서의 제로샷 일반화, 체력 소진에 따른 전투 종료 등 메커니즘 일관성, 캐릭터 변신과 장면 조작(지형 반전, 새 요소 추가) 등 자유도 높은 게임플레이 생성을 입증했다.</p>
+<h2>한계점</h2>
+<p>모션 라이브러리에 의존하기 때문에 신체 구조가 독특한 캐릭터에 대해서는 호환되는 동작을 찾기 어렵고, 장시간 롤아웃 시 시각적 프록시와 생성 영상 간 일관성이 저하될 수 있다.</p>
+<h2>시사점</h2>
+<p>구조화된 시각적 프록시(기하+스켈레톤)를 매개로 삼아 상태 관리와 영상 생성을 분리하는 접근은, 플레이어가 직접 세계와 캐릭터를 구성하는 완전한 플레이어블 게임 월드로 나아가는 방향성을 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.40339" target="_blank" rel="noopener">huggingface.co/papers/2610.40339</a> · 2026-11-03</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

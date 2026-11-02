@@ -1,0 +1,107 @@
+<meta charset="UTF-8">
+<title>하이포</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#10 · Daily Papers 2026-11-03</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 23</span>
+    </div>
+    <h1 class="article-title">HiFOR: Hierarchical Foresight with Action-Guided World Grounding for Vision-Language-Action Model</h1>
+    <p class="article-title-ko">하이포: 계층적 예견과 행동 유도 월드 그라운딩 기반 VLA 모델</p>
+    <p class="article-sub">HiFOR는 단기 상태 변화·중간 목표·최종 목표를 계층적으로 함께 예측하고, 그 예측 결과 중 현재 행동과 관련된 정보만 선택적으로 꺼내 쓰는 방식으로 로봇 조작 성능을 높인 Vision-Language-Action(VLA) 프레임워크다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.40373" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.40373" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: HiFOR: Hierarchical Foresight with Action-Guided World Grounding for Vision-Language-Action Model</li>
+<li><strong>저자</strong>: Rongxing Ding, Hongyu Qu 외(난징 과학기술대, 싱가포르국립대, 중국과학원 선양자동화연구소, 홍콩중문대 공동 연구)</li>
+<li><strong>출처</strong>: arXiv:2610.40373v1 [cs.CV] (2026년 10월 29일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.40373">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>HiFOR는 단기 상태 변화·중간 목표·최종 목표를 계층적으로 함께 예측하고, 그 예측 결과 중 현재 행동과 관련된 정보만 선택적으로 꺼내 쓰는 방식으로 로봇 조작 성능을 높인 Vision-Language-Action(VLA) 프레임워크다.</p>
+<h2>배경 및 문제의식</h2>
+<p>기존의 미래 예측 기반 VLA 모델들은 단기 역학과 장기 과제 목표를 따로따로 모델링해 시간축 전체에 걸친 일관된 과제 이해가 어려웠다. 또한 예측된 미래 정보를 행동 정책에 그대로 주입할 뿐, 현재 수행해야 할 행동과의 관련성을 구분하지 않아 예측 정보의 효용을 충분히 살리지 못하는 한계가 있었다.</p>
+<h2>핵심 기여</h2>
+<p>1) 단기 상태 변화·의미적 중간 목표(milestone)·최종 목표 상태를 Hierarchical Dependency Mask(HDM)로 함께 예측하는 Hierarchical Foresight Prediction을 제안했다. 2) 시간·시점(view)·공간 축으로 미래 잠재 표현을 구조화하는 Structure-Aware Latent World Modeling을 도입했다. 3) 디노이징 과정에서 진화하는 행동 표현을 바탕으로 구조화된 미래 정보 중 관련 있는 것만 꺼내오는 Action-Guided Factorized World Retrieval을 설계했다.</p>
+<h2>방법론</h2>
+<p>HiFOR는 먼저 HDM을 이용해 미래의 여러 시간 범위(단기~장기)에 걸친 상태·중간목표·최종목표를 종속성을 유지한 채 동시에 예측한다. 이 예측 결과는 시간(horizon), 카메라 시점(view), 공간(spatial) 세 축으로 정리된 구조화 잠재 표현으로 저장되며, 행동 생성(디노이징) 과정에서 현재 행동 표현과의 관련도에 따라 필요한 부분만 선택적으로 검색(retrieval)되어 행동 정책에 반영된다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>LIBERO와 RoboTwin 2.0(Hard 설정) 두 시뮬레이션 벤치마크와 6개의 실제 로봇 조작 과제에서 평가했으며, 8×H200 GPU로 배치 크기 512, 3만 스텝 AdamW 학습을 수행했다. RoboTwin 2.0 Hard 설정에서 평균 성공률 49.40%로 π0.5 대비 9.05%p 높은 성능을 보였고, Blocks Ranking RGB·Place Cans Plasticbox 등 개별 과제에서도 베이스라인 대비 큰 성공률 향상을 보였다. LIBERO에서도 전체 과제 스위트 평균 기준 최고 성능을 기록했다.</p>
+<h2>한계점</h2>
+<p>논문에 명시된 별도의 한계점 섹션은 없음. 다만 실험이 2개의 시뮬레이션 벤치마크와 6개의 실제 조작 과제로 한정되어 있어, 더 다양한 로봇 플랫폼·과제·환경에 대한 일반화 가능성은 추가 검증이 필요해 보인다.</p>
+<h2>시사점</h2>
+<p>미래 예측을 '있는 그대로' 주입하는 대신 시간·시점·공간 구조로 정리한 뒤 현재 행동과의 관련성에 따라 선택적으로 활용한다는 아이디어는, 예측 기반 VLA 모델 전반에서 예측 정보의 활용 효율을 높이는 일반적인 설계 원칙으로 확장될 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.40373" target="_blank" rel="noopener">huggingface.co/papers/2610.40373</a> · 2026-11-03</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

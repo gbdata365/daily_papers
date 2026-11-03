@@ -1,0 +1,114 @@
+<meta charset="UTF-8">
+<title>노스씨유에이 기술 보고서</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#8 · Daily Papers 2026-11-04</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 30</span>
+    </div>
+    <h1 class="article-title">NorthCUA Technical Report: Turbocharging Computer-Use Agents through Experience at Scale</h1>
+    <p class="article-title-ko">노스씨유에이 기술 보고서: 대규모 경험을 통한 컴퓨터 사용 에이전트 강화</p>
+    <p class="article-sub">작업 구축·실행·학습을 하나로 연결하는 '경험 플라이휠(Experience Flywheel)'과 3단계 학습(Staged Learning)을 통해 대규모 경험으로 컴퓨터 사용 에이전트를 강화하는 통합 시스템 NorthCUA를 제안하고, Nano(9B)·Mini(35B)·Pro(397B) 모델 패밀리로 오픈소스 모델 중 최고 수준의 GUI 그라운딩·데스크톱 실행·웹 상호작용 성능을 달성한 기술 보고서.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.02102" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.02102" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: NorthCUA Technical Report: Turbocharging Computer-Use Agents through Experience at Scale</li>
+<li><strong>저자</strong>: NorthCUA Team (Shanghai Qiji Zhifeng Co., Ltd.)</li>
+<li><strong>출처</strong>: arXiv:2611.02102v1 [cs.LG] (2026-11-01)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://beipo.top/blog/northcua">beipo.top/blog/northcua</a> (모델: huggingface.co/beipo-ai/NorthCUA-Pro, 코드: github.com/china-qijizhifeng/NorthCUA-Harness)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.02102">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>작업 구축·실행·학습을 하나로 연결하는 '경험 플라이휠(Experience Flywheel)'과 3단계 학습(Staged Learning)을 통해 대규모 경험으로 컴퓨터 사용 에이전트를 강화하는 통합 시스템 NorthCUA를 제안하고, Nano(9B)·Mini(35B)·Pro(397B) 모델 패밀리로 오픈소스 모델 중 최고 수준의 GUI 그라운딩·데스크톱 실행·웹 상호작용 성능을 달성한 기술 보고서.</p>
+<h2>배경 및 문제의식</h2>
+<p>컴퓨터 사용 에이전트(CUA)는 API나 CLI가 아니라 GUI를 통해 화면을 해석하고 마우스·키보드 행동으로 소프트웨어를 조작해야 하는데, 여러 단계의 행동을 연결한 장기 워크플로를 신뢰성 있게 완료하려면 중간 진행 상황과 사용자 제약을 유지하고, 변화하는 인터페이스에 적응하며, 오류에서 회복하는 능력이 필요하다. 이런 워크플로를 조율하도록 에이전트를 학습시키려면 '정밀한 인터페이스 조작 능력'과 '연속된 결정이 전체 작업 성과로 이어지는 경험'을 모두 갖춘 대규모 학습 데이터가 필요하지만, 다양한 실행 가능 작업을 구성하고, 장시간 상호작용을 지속시키며, 그 결과로부터 신뢰성 있게 성공 여부를 판정하는 인프라를 갖추는 것 자체가 과제이다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>작업 구축(Experience Flywheel), 실행·기록(NorthCUA Harness), 정책 학습(Staged Learning)을 하나의 순환 구조로 연결한 통합 시스템 NorthCUA를 제시.</li>
+<li>데스크톱·웹 에이전트가 동일한 관찰-사고-행동 루프를 공유하도록 하는 풀 라이프사이클 하네스를 설계해, 지속적 워크스페이스·시각 컨텍스트·과업 메모리를 통해 장기 워크플로 전반의 결정을 추적 가능하게 함.</li>
+<li>의도(Intent)·환경(Environment)·검증기(Verifier)를 조합해 실행 가능한 작업을 대규모로 생성하는 Scaling Intents/Environments/Verifiers 기법과, 해결되지 않는 어려운 작업에 대해 스킬 안내 탐색과 체크포인트 보조 탐색을 활용하는 재귀적 자기개선(RSI) 기반 '난제 수집' 기법을 결합.</li>
+<li>폭넓은 GUI 중간학습(mid-training) → 검증된 장기 궤적 지도 미세조정(SFT) → 데스크톱-웹 공동 강화학습(RL)이라는 3단계 'Staged Learning' 레시피를 제시해, 경험이 쌓일수록 정책이 스스로의 최신 시도로부터 다시 학습하는 닫힌 루프를 구현.</li>
+<li>Qwen3.5 기반 Nano(9B)·Mini(35B)·Pro(397B) 모델 패밀리가 ScreenSpot-Pro, OSWorld-Verified, OSWorld-G, OSWorld 2.0, WebArena-Verified, WebTestBench 6개 벤치마크에서 오픈소스 모델 중 최고 성능을 달성했으며, 397B Pro는 조 단위 파라미터 모델인 Qwen3.8-Max와 Kimi-K3를 그라운딩·OSWorld-Verified·WebArena-Verified에서 능가함을 보임.</li>
+<li>반응 속도가 중요한 웹 워크플로를 위해, Jev 방식의 선택 헤드를 pre-RL Nano에 결합해 닫힌 집합의 행동은 직접 선택하고 개방형 출력만 생성하는 NorthCUA-Ultrafast를 제시해, 동일 성공 WebArena-Verified 작업 기준 평균 2.3배 빠른 실행을 달성.</li>
+</ul>
+<h2>방법론</h2>
+<p>NorthCUA Harness는 ReAct 스타일의 관찰-사고-행동 루프를 공유 런타임('Agent Kit')으로 구현해 데스크톱 에이전트(마우스·키보드 GUI 조작)와 웹 에이전트(DOM 기반 내비게이션·요소 조작)가 동일한 실행·기록 기반을 사용하도록 하며, 세션(소프트웨어 자원 유지)·라운드(한 사용자 요청 처리)·스텝(한 번의 정책 결정과 도구 실행)이라는 3단계 중첩 범위로 실행을 관리한다. 장기 워크플로의 컨텍스트 팽창 문제는 (1) 최근 k개 프레임만 유지하는 시각 컨텍스트에 클릭·드래그·스크롤·텍스트 입력 등 이전 행동을 시각적으로 표시하는 '행동 인지형 과거 오버레이'를 결합하고, (2) 오래된 행동·결과를 요약하되 최근 교환과 GUI는 그대로 유지하는 '과업 보존형 컨텍스트 압축'을 적용하며, (3) 에이전트가 스스로 작성한 사실(예: 연체 총액)을 구조화된 '작업 메모리'로 재사용하는 세 가지 메커니즘으로 해결한다. Experience Flywheel은 각 실행 가능 작업을 요청·입력자료·환경설정·평가요건을 담은 CaseSpec으로 패키징하며, 실행 후 작업별 검증기와 평가자가 선언된 요건에 따라 결과를 판정해 Staged Learning의 학습 신호로 전환한다. Staged Learning은 400만 건 이상의 GUI 상호작용 스텝으로 구성된 광범위한 중간학습 → 실행 결과가 검증된 완전한 워크플로에 집중하는 장기 SFT → SFT 정책의 시도들 중 결과가 갈리는 작업을 선별해 GRPO(그룹 상대 정책 최적화)로 데스크톱·웹을 함께 학습하는 온라인 RL 순으로 진행되며, 갱신된 정책은 다시 Harness로 돌아가 후속 수집에 쓰인다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>NorthCUA 패밀리는 ScreenSpot-Pro·OSWorld-G(단일 스텝 GUI 그라운딩), OSWorld-Verified·OSWorld 2.0(데스크톱 실행), WebArena-Verified·WebTestBench(웹 상호작용) 등 6개 벤치마크에서 Qwen3.8-Max, Kimi-K3, DeepSeek-V4.1-Flash, GLM-5.3-Flash와 비교 평가되었다. 397B NorthCUA-Pro는 ScreenSpot-Pro 93.3%(2위 Qwen3.8-Max 84.5%), OSWorld-G 91.0%(2위 Kimi-K3 73.8%), OSWorld-Verified 88.6점(2위 Qwen3.8-Max 86.1점), OSWorld 2.0 66.8%(2위 Kimi-K3 58.3%), WebArena-Verified 73.9%(2위 Kimi-K3 71.6%), WebTestBench F1 60.3%(2위 Kimi-K3 52.4%)로 모든 벤치마크에서 1위를 기록해, 조 단위 파라미터의 폐쇄형 모델들을 능가했다. 35B Mini 역시 OSWorld-Verified와 WebArena-Verified에서 Kimi-K3와 Qwen3.8-Max를 넘어서는 성능을 보였으며, 세 모델 크기 모두에서 장기 SFT와 공동 RL을 거치며 데스크톱·웹 두 영역 모두 단계적으로 성능이 향상되는 양상이 확인되었다(6장). 지연시간 최적화 실험(6.8절)에서는 NorthCUA-Ultrafast의 Head+LoRA 변형이 완전 생성 방식과 동일하게 성공한 WebArena-Verified 작업에서 평균 2.3배 빠른 실행 속도를 보였다.</p>
+<h2>한계점</h2>
+<p>저자들은 NorthCUA-Ultrafast가 닫힌 행동 집합에 대해서는 선택 헤드로 직접 응답해 속도를 높이지만, 이는 완전한 개방형 생성 대비 '품질-지연시간 트레이드오프(measured quality–latency tradeoff)'를 수반한다고 명시적으로 밝히고 있어, 반응 속도를 높이는 대가로 일부 유연성이나 품질을 희생할 수 있음을 인정한다. 또한 보고서 전반에서 긴 워크플로일수록 컨텍스트가 누적되는 문제, 시각 기록을 압축할 때 이전 GUI 좌표 참조(로케이터)가 유실될 수 있는 문제 등이 설계상 트레이드오프로 다뤄지고 있어, 압축·오버레이 메커니즘에 의존하는 장기 상호작용 관리가 완전한 해결책이 아니라 지속적인 공학적 균형의 대상임을 시사한다(본문 분량이 방대해 전체 123쪽에 걸친 모든 세부 한계 논의를 포괄하지는 못함: 논문에 명시되지 않음).</p>
+<h2>시사점</h2>
+<p>GUI 그라운딩 역량과 장기 워크플로 완수 역량을 별개로 다루지 않고, 작업 구축-실행-학습을 하나의 순환 구조로 묶어 정책이 스스로의 최신 시도에서 계속 학습하도록 설계하면, 훨씬 더 큰 파라미터의 폐쇄형 모델보다도 더 높은 성능을 오픈소스 모델로 달성할 수 있음을 보여준다. 이는 향후 컴퓨터 사용 에이전트 개발에서 모델 크기 확장보다 경험 생성·검증·재학습의 폐쇄 루프 인프라 설계가 더 결정적인 성능 요인이 될 수 있음을 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.02102" target="_blank" rel="noopener">huggingface.co/papers/2611.02102</a> · 2026-11-04</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

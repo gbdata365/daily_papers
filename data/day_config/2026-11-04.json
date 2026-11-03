@@ -1,0 +1,110 @@
+{
+  "2611.00859": {
+    "base": "2611_웨이브포싱_빛의속도-스트리밍-비디오생성",
+    "rank": "#1",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "101",
+    "en_title": "Wave Forcing: Towards Speed-of-Light Streaming Video Generation",
+    "ko_title": "웨이브 포싱: 빛의 속도에 준하는 스트리밍 비디오 생성을 향하여"
+  },
+  "2611.01860": {
+    "base": "2611_에이전틱컴퓨터그래픽스_에이전트기반-컴퓨터그래픽스-연구동향",
+    "rank": "#2",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "100",
+    "en_title": "Advances in Agentic Computer Graphics",
+    "ko_title": "에이전틱 컴퓨터 그래픽스의 발전"
+  },
+  "2611.03126": {
+    "base": "2611_씨유에이마스터_오픈월드-재귀개선-컴퓨터사용에이전트-확장",
+    "rank": "#3",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "91",
+    "en_title": "CUA-Master: Scaling Computer-use Agents through Open-World Recursive Improvements",
+    "ko_title": "씨유에이마스터: 오픈월드 재귀적 개선을 통한 컴퓨터 사용 에이전트 확장"
+  },
+  "2611.03178": {
+    "base": "2611_코워크오에스_실세계자동화를-위한-에이전트코워커-확장",
+    "rank": "#4",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "87",
+    "en_title": "CoworkOS: Scaling Agent Coworkers for Real-world Automation",
+    "ko_title": "코워크오에스: 실세계 자동화를 위한 에이전트 코워커 확장"
+  },
+  "2610.40191": {
+    "base": "2610_비디오젠에이전트하네스_비디오생성과-에이전트하네스의-만남",
+    "rank": "#5",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "68",
+    "en_title": "Video Generation Meets Agent Harness: Agentic Video Generation, Agentic World Modeling and Recursive Self-Improvement",
+    "ko_title": "비디오 생성과 에이전트 하네스의 만남: 에이전틱 비디오 생성, 에이전틱 세계 모델링, 재귀적 자기개선"
+  },
+  "2611.01560": {
+    "base": "2611_유니로봇에이전트_오픈모델-기반-로봇사용에이전트-대중화",
+    "rank": "#6",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "41",
+    "en_title": "Democratizing Robot-Use Agents: A Unified Harness with Open Models",
+    "ko_title": "로봇 사용 에이전트의 대중화: 오픈 모델 기반 통합 하네스"
+  },
+  "2611.02074": {
+    "base": "2611_스웨트레일_이력기반-코딩에이전트-궤적수집",
+    "rank": "#7",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "34",
+    "en_title": "SWE-Trail: History-Guided Trajectory Collection for Coding Agent Training",
+    "ko_title": "스웨트레일: 코딩 에이전트 학습을 위한 이력 기반 궤적 수집"
+  },
+  "2611.02102": {
+    "base": "2611_노스씨유에이_대규모경험기반-컴퓨터사용에이전트-강화",
+    "rank": "#8",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "30",
+    "en_title": "NorthCUA Technical Report: Turbocharging Computer-Use Agents through Experience at Scale",
+    "ko_title": "노스씨유에이 기술 보고서: 대규모 경험을 통한 컴퓨터 사용 에이전트 강화"
+  },
+  "2610.27954": {
+    "base": "2610_리트레이스_컴퓨터사용에이전트의-회복행동-분석",
+    "rank": "#9",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "29",
+    "en_title": "Lost in Recovery: Demystifying Recovery Behavior of Computer-Use Agents via Goal-Oriented Action Replay",
+    "ko_title": "회복 속에서 길을 잃다: 목표지향적 행동 재생을 통한 컴퓨터 사용 에이전트의 회복 행동 해부"
+  },
+  "2611.02897": {
+    "base": "2611_포토가이더_구도인식-크로핑과-360도-뷰프레이밍",
+    "rank": "#10",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "28",
+    "en_title": "PhotoGuider: Composition-Aware Cropping and 360° View Framing with Explainable Photographic Assessments",
+    "ko_title": "포토가이더: 설명 가능한 사진 평가 기반 구도 인식 크로핑과 360도 뷰 프레이밍"
+  },
+  "2611.03602": {
+    "base": "2611_리비소_비디오캡셔닝을-위한-우선순위기반-능동관찰",
+    "rank": "#11",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "25",
+    "en_title": "Reviso: Not All Visual Evidence Deserves Equal Attention in Video Captioning",
+    "ko_title": "리비소: 비디오 캡셔닝에서 모든 시각 증거가 동등한 주목을 받을 필요는 없다"
+  },
+  "2611.02112": {
+    "base": "2611_오쓰리피디_순서전용-온폴리시-증류",
+    "rank": "#12",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "24",
+    "en_title": "Order-Only On-Policy Distillation",
+    "ko_title": "순서 전용 온폴리시 증류"
+  }
+}

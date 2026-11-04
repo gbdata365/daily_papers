@@ -1,0 +1,113 @@
+<meta charset="UTF-8">
+<title>팩트임베드</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#8 · Daily Papers 2026-11-05</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 42</span>
+    </div>
+    <h1 class="article-title">Factorized MLLM Embeddings for Composed Image Retrieval</h1>
+    <p class="article-title-ko">팩트임베드: 합성 이미지 검색을 위한 분해형 MLLM 임베딩</p>
+    <p class="article-sub">참조 이미지와 수정 텍스트로 목표 이미지를 찾는 합성 이미지 검색(CIR)에서, MLLM이 질의를 단일 임베딩으로 바로 압축하기 전에 "분해된 잠재 변수(factorized latents)"로 목표 이미지를 먼저 상상하도록 학습시켜, 기존 CIR 방법과 범용 임베딩 모델을 모두 능가하는 성능을 달성한 연구.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.05193" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.05193" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Factorized MLLM Embeddings for Composed Image Retrieval</li>
+<li><strong>저자</strong>: WonJun Moon, Seongchan Kim, Seungryong Kim (KAIST AI), Dahun Kim (Google DeepMind)</li>
+<li><strong>출처</strong>: arXiv:2611.05193v1 [cs.CV] (2026-11-03)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://cvlab-kaist.github.io/FactEmbed/">FactEmbed 프로젝트 페이지</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.05193">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>참조 이미지와 수정 텍스트로 목표 이미지를 찾는 합성 이미지 검색(CIR)에서, MLLM이 질의를 단일 임베딩으로 바로 압축하기 전에 "분해된 잠재 변수(factorized latents)"로 목표 이미지를 먼저 상상하도록 학습시켜, 기존 CIR 방법과 범용 임베딩 모델을 모두 능가하는 성능을 달성한 연구.</p>
+<h2>배경 및 문제의식</h2>
+<p>합성 이미지 검색(Composed Image Retrieval, CIR)은 참조 이미지와 "이 부분을 이렇게 바꿔달라"는 수정 텍스트를 함께 입력받아, 그 수정이 반영된 목표 이미지를 갤러리에서 찾아내는 과제다. 최근 멀티모달 대형 언어모델(MLLM)을 대조 학습(contrastive learning)으로 미세조정해 질의와 목표 이미지를 각각 하나의 임베딩(주로 [EOS] 토큰의 은닉 상태)으로 압축하고 그 유사도를 직접 최적화하는 방식이 널리 쓰인다. 그러나 이 방식은 모델이 "텍스트가 수정하려는 속성"과 "그대로 유지해야 할 속성"을 명시적으로 구분하도록 유도하는 신호가 없어, MLLM이 가진 구성적 이해(compositional understanding) 능력을 충분히 활용하지 못한다는 한계가 있다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>질의 이해와 판별적 임베딩 학습을 분리하는 FactEmbed를 제안: 질의를 곧바로 하나의 벡터로 매핑하지 않고, 소수의 학습 가능한 "분해된 잠재 변수" 집합이 먼저 목표 이미지를 "상상"하도록 함으로써 중간 단계의 구성적 추론을 유도한다.</li>
+<li>목표 상상(target imagination) 목표: MLLM 중간 층에 경량 디코더를 붙여, 목표 이미지의 거친 레이아웃 사전 정보(coarse layout prior) 이상의 세부 특징을 잠재 변수들이 재구성하도록 학습시켜, 별도의 추론 과정이나 밀집 주석 없이도 잠재 변수가 의미적으로 구분된 요소에 자연스럽게 특화되게 만든다.</li>
+<li>검색 성능으로의 전이를 위해 요소 단위(factor-level) InfoNCE 대조 손실과, 디코더의 분해 정보를 MLLM 더 깊은 층의 주의(attention) 맵으로 증류(distillation)하는 손실을 추가로 설계.</li>
+<li>추론 시 [EOS] 임베딩으로 전역 검색을 빠르게 수행한 뒤, 같은 순전파에서 함께 얻어지는 평균 풀링된 잠재 변수로 상위 후보만 재순위화(reranking)하는 효율적인 2단계 추론 전략을 제시, 추가 연산 부담을 거의 없이 세밀한 정보를 활용.</li>
+<li>Refined-CIRR/Refined-FashionIQ 및 원본 CIRR/FashionIQ 벤치마크에서 기존 CIR 전용 기법과 범용 MLLM 임베딩 모델을 모두 능가하는 최고 성능(state-of-the-art) 달성.</li>
+</ul>
+<h2>방법론</h2>
+<p>FactEmbed는 Qwen2.5-VL-7B-Instruct를 DoRA 어댑터로 미세조정한 MLLM 백본을 질의 측과 목표 이미지 측에 공유해서 사용한다. 입력 시퀀스에 [EOS] 토큰 앞에 K개(기본값 8개)의 학습 가능한 "분해된 잠재 변수"를 추가하며, MLLM의 인과적 주의(causal attention)를 통해 멀티모달 입력과 상호작용한다. 중간 층(28개 층 중 14번째)에 셀프 어텐션과 3층 MLP로 구성된 경량 디코더를 붙여, 각 잠재 변수가 2D 그리드에 공간적으로 펼쳐진 뒤 목표 이미지의 DINOv2 패치 특징을 재구성하도록 학습한다. 이때 목표 이미지의 2×2 수준의 거친 레이아웃 사전 정보를 함께 조건으로 주어, 잠재 변수들이 전역 레이아웃이 아닌 국소적이고 세밀한 편집 대상 요소에 집중하도록 유도한다(레이아웃 사전 정보가 없으면 잠재 변수가 전역 구조에만 수렴하는 붕괴 현상이 관찰됨). 검색 학습 단계에서는 (1) 최적수송(Optimal Transport)을 이용해 질의 측과 목표 측 잠재 변수를 유연하게 매칭하는 요소 단위 InfoNCE, (2) [EOS] 토큰이 분해된 요소들을 통합해 형성하는 전역 임베딩에 대한 인스턴스 단위 InfoNCE를 함께 최적화한다. 또한 디코더가 만든 공간적 알파 마스크를 더 깊은 층(끝에서 3번째 층)의 잠재 변수-패치 주의 분포로 KL 발산을 이용해 증류함으로써, 분해 구조가 검색에 직접 쓰이는 깊은 층까지 전달되도록 한다. 학습은 (1) 재구성 손실만으로 잠재 변수와 디코더를 예열하는 1단계, (2) 전체 목표(검색 손실+상상 손실+증류 손실)로 백본까지 함께 학습하는 2단계로 구성되며, 추가로 ReCALL 방식을 따라 MLLM이 생성한 증강 삼중항(triplet)으로 후처리 학습 단계를 거친다. 추론 시에는 [EOS] 임베딩으로 전체 갤러리에서 상위 100개를 1차 검색한 뒤, 평균 풀링된 잠재 변수의 코사인 유사도를 더해 재순위화한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>CIRR과 FashionIQ 두 표준 CIR 벤치마크, 그리고 모호한 샘플을 정제한 Refined-CIRR/Refined-FashionIQ에서 Recall@N 및 CIRR의 부분집합 기준 Recallsubset@N으로 평가했다. FactEmbed(Qwen2.5-VL-7B 기반)는 Refined-CIRR에서 강력한 비교 대상인 CSMCIR, ReCALL보다 Recall@1에서 각각 2.7%p, 2.3%p 높았고, Refined-FashionIQ 평균 Recall@10에서도 각각 2.3%p, 2.4%p 앞섰다. 원본 CIRR 테스트셋에서는 Recall@1 56.60%로 ReCALL(53.76%) 등 기존 방법을 능가했다. 추론 전략 비교에서는 전체 잠재 변수를 최적수송으로 매칭하는 방식이 가장 높은 성능을 보였지만 갤러리 크기에 비례해 저장·검색 비용이 커지는 반면, 제안한 효율적 재순위화 방식은 이미지당 벡터 2개만 추가해 유사한 성능(R@1 격차 0.2%p대)을 유지했다. 구성요소 제거 실험에서는 목표 상상, 요소 단위 InfoNCE, 주의 증류, 효율적 재순위화, 후처리 학습을 모두 결합했을 때 가장 큰 성능 향상을 보였으며, 백본을 Qwen2.5-VL-7B에서 Qwen3-VL-8B로 바꾸면 CIRR R@1이 2.65%p 향상되어 ReCALL이 보고한 동일 백본 전환 효과(1.60%p)보다 크게 확장되는 것을 확인했다.</p>
+<h2>한계점</h2>
+<p>저자들은 다음을 한계로 명시한다: (1) 잠재 변수 수 K를 고정값으로 사용해 입력의 복잡도에 따라 필요한 의미적 요소 수가 달라질 수 있음을 반영하지 못하며, 질의에 따라 적응적으로 잠재 변수 수를 조절하는 방법은 향후 과제로 남겨둠. (2) 전체 잠재 변수 매칭이 더 높은 정확도를 보이지만 효율적 재순위화를 위해 평균 풀링을 사용해 세밀한 정보 일부를 활용하지 못하며, Matryoshka 표현 학습 등을 적용하면 개선 가능성이 있음. (3) 평가가 CIRR과 FashionIQ에 한정되어 있어, 범용 멀티모달 검색기로서의 일반화 가능성은 추가 검증이 필요함.</p>
+<h2>시사점</h2>
+<p>MLLM 기반 검색에서 질의를 곧바로 하나의 임베딩으로 압축하는 대신, 명시적인 "상상(재구성)" 단계를 거쳐 구성적 이해를 먼저 구조화한 뒤 판별적 표현을 구축하는 접근이 효과적임을 보여준다. 이는 밀집 주석이나 외부 LLM 호출 없이도, 생성적 재구성 신호를 구조적 감독(supervision)으로 활용해 모델 내부에 compositional reasoning을 심을 수 있다는 점에서, 복잡한 멀티모달 질의를 다루는 다른 검색·매칭 과제에도 적용될 수 있는 설계 방향을 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.05193" target="_blank" rel="noopener">huggingface.co/papers/2611.05193</a> · 2026-11-05</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

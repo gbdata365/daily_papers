@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>마음속에 갇힌 말</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#2 · Daily Papers 2026-11-05</span>
+      <span class="cat-tag">시뮬레이션</span>
+      <span class="upvote-tag">▲ 67</span>
+    </div>
+    <h1 class="article-title">Words Caught in the Heart: Simulating Person-Specific Expression for Self-Opaque Clients in Psychotherapy</h1>
+    <p class="article-title-ko">마음속에 갇힌 말: 심리상담에서 자기불투명 내담자를 위한 개인별 발화 시뮬레이션</p>
+    <p class="article-sub">심리상담 내담자를 시뮬레이션할 때 임상적으로 잘 정리된 사례 설명을 그대로 쓰면 내담자가 실제보다 더 명료하게 말하게 되는 문제를 지적하고, 심리 상태 변화·주관적 해석·발화 전략을 분리해 설계한 Pandora 프레임워크로 더 자연스럽고 AI처럼 느껴지지 않는 내담자 발화를 생성한 연구.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.00617" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.00617" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Words Caught in the Heart: Simulating Person-Specific Expression for Self-Opaque Clients in Psychotherapy</li>
+<li><strong>저자</strong>: Mengxi Xiao, Jingjing Chen, Ziyan Kuang 외 (Wuhan University, Huazhong Agricultural University, University of Manchester, Yale University, Mohamed bin Zayed University of Artificial Intelligence 공동, 교신저자 Qianqian Xie 등)</li>
+<li><strong>출처</strong>: arXiv:2611.00617v1 [cs.HC] (2026-10-31)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/whunextgen/Pandora">GitHub</a>, <a href="https://clain.org/Pandora/">Website</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.00617">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>심리상담 내담자를 시뮬레이션할 때 임상적으로 잘 정리된 사례 설명을 그대로 쓰면 내담자가 실제보다 더 명료하게 말하게 되는 문제를 지적하고, 심리 상태 변화·주관적 해석·발화 전략을 분리해 설계한 Pandora 프레임워크로 더 자연스럽고 AI처럼 느껴지지 않는 내담자 발화를 생성한 연구.</p>
+<h2>배경 및 문제의식</h2>
+<p>실제 상담에서 내담자는 괴로움을 겪으면서도 이를 아직 조리 있게 설명하지 못할 수 있고, 표현의 명료함은 감정 상태·안전감·치료자에 대한 신뢰에 따라 달라진다. 그런데 기존 LLM 기반 내담자 시뮬레이터(Patient-Ψ, MindVoyager, PatientAct 등)는 임상가가 정리한 사례 포뮬레이션(case formulation)을 그대로 생성에 활용하는 경향이 있어, 내담자가 자신의 어려움을 실제 이해 수준보다 더 명확하고 설명적으로 말하게 만드는 경향이 있다. 이는 상담자 훈련·평가용 시뮬레이터로서 신뢰도를 떨어뜨리는 요인이 된다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>임상적으로 정리된 내담자 표상과 내담자 본인의 실제 발화 사이의 간극을 지적하고, "심리적 경험이 어떻게 상황적·개인적 발화로 바뀌는가"를 중심으로 내담자 시뮬레이션 문제를 재정의함.</li>
+<li>치료자 개입에 따라 심리·관계 상태를 갱신하고, 주관적 평가(appraisal)와 귀인(attribution)을 구성한 뒤, 내용·전략을 계획하고, 별도의 발화 계획기(expression planner)가 내담자 고유의 언어 패턴과 결합해 최종 발화를 생성하는 Pandora 프레임워크를 제안함.</li>
+<li>발화 유사도·자기노출 정합도를 포함한 자동 평가와 인간 평가(AI 같다는 느낌 판정)를 결합한 평가 체계를 구축해, 다섯 개 베이스라인 및 발화계획 제거 버전(ablation)과 비교함.</li>
+</ul>
+<h2>방법론</h2>
+<p>Pandora는 매 턴마다 치료자 발화, 이전 대화, 이전 심리 상태, 사례 자료, 개인 언어 프로파일을 입력으로 받아 네 단계로 동작한다. (1) 규칙 기반 평가기가 치료자의 개입(명료화, 질문, 감정 반영 등)을 분석해 불신·방어·고통 등 12개 수치 차원으로 구성된 심리·관계 상태를 갱신한다. (2) 갱신된 상태와 사례 자료로부터 주관적 평가(위협 인식, 자기·관계적 함의)와 귀인(현재 내담자가 그 경험을 설명하는 방식)을 구성한다. (3) 이를 바탕으로 노출할 내용, 내담자의 태도(망설임·방어·혼란 등), 응답 전략(사실 답변 우선, 간결함, 반영에 대한 확인 등)을 계획한다. (4) 별도의 발화 계획기가 오프라인에서 내담자의 과거 발화로부터 추출한 습관적 표현(hedging, 전형적 문장 길이, 자주 쓰는 표지어 등)과 현재 턴의 심리·대화 조건을 결합해, 어투·확신도·감정 명시성·길이 목표를 지정하고, 최종적으로 LLM이 이 지침에 따라 자연어 발화를 생성한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>PsyDial-D4, AnnoMI, Eeyore, ConsistentMI 등 4개 상담·동기면담 데이터셋에서 선별한 115개 사례(중국어 97건, 영어 18건)로 OpenClaw, Patient Phi, MindVoyager, Consistent MI, Interactive Agents 5개 베이스라인 및 발화계획 제거판과 비교했다. 자동 평가에서 Pandora는 내용-축소 유사도 0.566/원문 유사도 0.385로 가장 강력한 베이스라인(Consistent MI, 0.512/0.352)을 능가했고, 자기노출 정합도 종합 지표(GDS)도 0.871로 최고치를 기록했다(베이스라인 중 최고는 0.664). 4명의 평가자(상담사 2명, 합성데이터 연구자 2명)가 45개 노출 항목을 평가한 인간 평가에서 Pandora의 "AI 같다"는 판정률은 7.2%로, 베이스라인(43.3~67.2%)보다 크게 낮았고, 발화계획을 제거하면 35.6%로 상승해 발화계획 모듈의 기여를 뒷받침했다.</p>
+<h2>한계점</h2>
+<p>저자들은 다음을 한계로 명시한다: (1) 평가 데이터가 중국어 중심이며 일부 재구성·생성된 자료를 포함해, 더 다양한 언어·문화·독립 수집 데이터로의 일반화는 추가 검증이 필요함. (2) 심리 상태 변수와 그 수치적 갱신 규칙은 설계상의 선택이며, 현재의 제거 실험은 발화계획 모듈 전체를 하나로 다루어 개별 신호의 기여는 더 세밀히 분리해 봐야 함. (3) 인간 평가가 소규모 패널과 개별 발화 단위로 이루어져 평가자 간 편차가 있고, 소스 노출 여부가 로그로 남지 않아 완전한 블라인드 여부는 확인되지 않음. (4) 이러한 발화 개선이 실제 상담자 훈련이나 평가에 도움이 되는지는 향후 연구 과제로 남음.</p>
+<h2>시사점</h2>
+<p>상담자 훈련·평가에 쓰이는 내담자 시뮬레이터가 단순히 심리적 맥락을 모델링하는 것만으로는 부족하며, "무엇을 말할지"와 "어떻게 말할지"를 분리해 명시적으로 계획하는 것이 더 자연스럽고 덜 인공적인 발화를 만드는 데 중요하다는 점을 보여준다. 이는 대화형 AI의 페르소나·사용자 시뮬레이션 전반에서 내용 계획과 언어적 실현(realization)을 별도 단계로 다루는 설계가 유효한 전략이 될 수 있음을 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.00617" target="_blank" rel="noopener">huggingface.co/papers/2611.00617</a> · 2026-11-05</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

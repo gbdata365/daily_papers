@@ -1,0 +1,110 @@
+{
+  "2611.05275": {
+    "base": "2611_라우트애니씽_범용-AI-시스템-모델-정책-라우팅-연구",
+    "rank": "#1",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "84",
+    "en_title": "Route Anything: A Study of Model and Policy Routing for General-Purpose AI Systems",
+    "ko_title": "라우트 애니씽: 범용 AI 시스템을 위한 모델 및 정책 라우팅 연구"
+  },
+  "2611.00617": {
+    "base": "2611_판도라_심리상담-내담자-발화-시뮬레이션",
+    "rank": "#2",
+    "category": "sim",
+    "category_label": "시뮬레이션",
+    "upvote": "67",
+    "en_title": "Words Caught in the Heart: Simulating Person-Specific Expression for Self-Opaque Clients in Psychotherapy",
+    "ko_title": "마음속에 갇힌 말: 심리상담에서 자기불투명 내담자를 위한 개인별 발화 시뮬레이션"
+  },
+  "2611.04814": {
+    "base": "2611_로코_상태인식-국소선호학습-추론압축",
+    "rank": "#3",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "65",
+    "en_title": "Think Less, Locally: Local Preference Learning for Reasoning Compression",
+    "ko_title": "생각은 적게, 지역적으로: 추론 압축을 위한 국소 선호 학습"
+  },
+  "2611.02737": {
+    "base": "2611_무비에딧_장편멀티샷-비디오편집",
+    "rank": "#4",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "61",
+    "en_title": "MoviEdit: Long-form Multi-Shot Video Editing Made Easy",
+    "ko_title": "무비에딧: 손쉬운 장편 멀티샷 비디오 편집"
+  },
+  "2611.04916": {
+    "base": "2611_클링_비디오생성-이면의-멀티모달-이해-통찰",
+    "rank": "#5",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "51",
+    "en_title": "Behind Video Generation: Observations and Insights on Multimodal Understanding from Kling",
+    "ko_title": "비디오 생성의 이면: 클링(Kling)에서 얻은 멀티모달 이해에 대한 관찰과 통찰"
+  },
+  "2611.05377": {
+    "base": "2611_드림엑스_비디오디퓨전-기반-범용-잠재행동-학습",
+    "rank": "#6",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "49",
+    "en_title": "DreamX: Video Diffusion Model is a Universal Latent Action Learner",
+    "ko_title": "드림엑스: 비디오 디퓨전 모델은 범용 잠재행동 학습자다"
+  },
+  "2611.02497": {
+    "base": "2611_로보콜로세움_실세계-규모의-물리적-지능-평가",
+    "rank": "#7",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "43",
+    "en_title": "RoboColosseum: Evaluating Physical Intelligence at Scale In-The-Wild",
+    "ko_title": "로보콜로세움: 실세계 환경에서의 대규모 물리적 지능 평가"
+  },
+  "2611.05193": {
+    "base": "2611_팩트임베드_합성이미지검색을-위한-분해형-MLLM-임베딩",
+    "rank": "#8",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "42",
+    "en_title": "Factorized MLLM Embeddings for Composed Image Retrieval",
+    "ko_title": "팩트임베드: 합성 이미지 검색을 위한 분해형 MLLM 임베딩"
+  },
+  "2611.03233": {
+    "base": "2611_액시온_오픈-에이전트-파운데이션-모델-단순화",
+    "rank": "#9",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "39",
+    "en_title": "Axion 1.0: Open Agent Foundation Models, Simplified",
+    "ko_title": "액시온 1.0: 단순화된 완전 공개형 에이전트 파운데이션 모델"
+  },
+  "2611.05036": {
+    "base": "2611_툴스페이스_장기수행-에이전트-툴중심-환경합성",
+    "rank": "#10",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "34",
+    "en_title": "ToolSpace: Scaling Tool-Centric Environment Synthesis for Long-Horizon Agents",
+    "ko_title": "툴스페이스: 장기 수행 에이전트를 위한 툴 중심 환경 합성 확장"
+  },
+  "2611.05280": {
+    "base": "2611_야나미_멀티턴-상태유지-멀티모달-대화-데이터셋",
+    "rank": "#11",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "26",
+    "en_title": "YANAMI: A Large-Scale Multimodal Dataset and Benchmark for Multiturn Stateful Interaction",
+    "ko_title": "야나미: 멀티턴 상태 유지 상호작용을 위한 대규모 멀티모달 데이터셋 및 벤치마크"
+  },
+  "2611.04418": {
+    "base": "2611_비드유에이전트_영상기반-멀티모달-명령데이터-큐레이션-에이전트",
+    "rank": "#12",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "23",
+    "en_title": "VidUEU-Agent: A Data-Curation Agent for Multimodal Understanding, Editing, and Unified Tasks",
+    "ko_title": "비드유이유-에이전트: 멀티모달 이해·편집·통합 과제를 위한 데이터 큐레이션 에이전트"
+  }
+}

@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>액시온 1.0</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#9 · Daily Papers 2026-11-05</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 39</span>
+    </div>
+    <h1 class="article-title">Axion 1.0: Open Agent Foundation Models, Simplified</h1>
+    <p class="article-title-ko">액시온 1.0: 단순화된 완전 공개형 에이전트 파운데이션 모델</p>
+    <p class="article-sub">중간학습(mid-training)·선호 최적화(DPO)·온폴리시 증류(OPD) 없이 2단계 지도미세조정(SFT)과 강화학습(RL)만으로 구성된 단순한 3단계 학습법으로, 상업용 프런티어 모델과 경쟁하는 완전 공개형 에이전트 파운데이션 모델 Axion 1.0을 만든 연구.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.03233" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.03233" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Axion 1.0: Open Agent Foundation Models, Simplified</li>
+<li><strong>저자</strong>: Yuqi Jia, Yunjie Tian(프로젝트 리드) 외 (Duke University, ByteDance, University of Maryland College Park, University at Buffalo 공동)</li>
+<li><strong>출처</strong>: arXiv:2611.03233v2 [cs.AI] (2026-11-03)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://axion1-0.github.io/">axion1-0.github.io</a>, <a href="https://github.com/bytedance/axion1_0">GitHub</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.03233">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>중간학습(mid-training)·선호 최적화(DPO)·온폴리시 증류(OPD) 없이 2단계 지도미세조정(SFT)과 강화학습(RL)만으로 구성된 단순한 3단계 학습법으로, 상업용 프런티어 모델과 경쟁하는 완전 공개형 에이전트 파운데이션 모델 Axion 1.0을 만든 연구.</p>
+<h2>배경 및 문제의식</h2>
+<p>최근 에이전트 모델들은 중간학습, 다단계 SFT, 역량별 특화 데이터, 선호 최적화, RL 등 점점 더 복잡한 학습 파이프라인을 쌓아가고 있어, 어떤 구성요소가 실제로 필요한지 파악하기 어렵고 재현 비용도 커진다. 또한 많은 "오픈" 모델이 가중치만 공개하고 데이터 구축·필터링·검증·프롬프트·학습 절차는 비공개로 남겨둔다. 저자들은 "강력하고 넓은 범용 에이전트 능력을 만드는 데 실제로 이 정도의 복잡성이 필요한가?"라는 질문에서 출발한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>중간학습·DPO·OPD 없이 경량 SFT 2단계 + RL 1단계로만 구성된 단순한 3단계 학습 레시피로 Axion 1.0을 학습.</li>
+<li>자기완결형(self-contained) 추론과 도구 의존형(tool-dependent) 추론 각각을 위한 데이터 구축 파이프라인을 설계 — 베이스 모델이 실제로 풀 수 있는 문제를 기준으로 난이도를 강화하는 방식(모델 인식적 데이터 구축)과, 결정론적 계산에 기반해 자동으로 검증 가능한 도구 사용 과제를 만드는 방식을 결합.</li>
+<li>이 압축된 레시피만으로도 폭넓은 에이전트 벤치마크에서 강력한 성능을 보이며 일부 지표에서는 상업용 프런티어 모델과 경쁠하는 수준에 도달.</li>
+<li>데이터 구축·생성·필터링·검증·프롬프트·학습 코드까지 포함한 전체 개발 과정을 공개해, 모델 가중치뿐 아니라 개발 과정 자체의 재현성을 확보.</li>
+</ul>
+<h2>방법론</h2>
+<p>학습은 (1) 공개 교재·경진대회·추론 데이터셋의 시드 문제를 조합(Composition)·매개변수화(Parameterization)·범위 변경(Range Shift)·사례 분석(Case Analysis) 중 하나로 변형해, 베이스 모델이 못 푸는 문제와 풀 수 있었던 문제를 더 강화한 문제로 재구성하는 Stage I(자기완결형 추론 SFT), (2) 천문학·생물학·화학·수학·핵물리 등 공개 데이터베이스에서 필터→선택→계산→언어화의 4단계로 문제를 구성하고, 구축 시점의 데이터베이스는 차단한 채 검색·웹 방문·Python만으로 풀게 하여 도구 사용을 강제하는 Stage II(도구 의존형 추론 SFT), (3) Stage II 체크포인트에서 시작해 verl 프레임워크 기반 GRPO로, 정답이면 보상 1, 오답이면 중간 검증 목표(verification target)의 달성도에 따라 부분 보상을 주는 강화학습 순서로 진행된다. 이 과정에서 토큰 단위로 직접 주고받는 TITO(Token-In-Token-Out)로 롤아웃과 학습 간 토큰 불일치를 없애고, MoE 모델의 추론-학습 엔진 간 전문가(expert) 라우팅 차이를 재현하는 R3(Rollout Routing Replay)로 학습 안정성을 높인다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Qwen3.6-35B-A3B와 Qwen3.5-122B-A10B를 베이스로 한 Axion 1.0-35B/122B를 검색·웹 방문·학술 검색·Python이 가능한 ReAct 환경에서 Humanity's Last Exam(HLE), BioMysteryBench, SEAL-0, HiPhO, FrontierScience(올림피아드·연구) 등 6개 벤치마크로 평가했다. Axion 1.0-35B는 비슷한 규모의 Agents-A1 대비 HLE +4.6%p, SEAL-0 +5.8%p, FrontierScience Olympiad +7.0%p 우위를 보였고, Axion 1.0-122B는 FrontierScience Research에서 GPT-5.6 Sol(66.7% vs 63.3%)을 능가했다. 체크포인트별 분석에서는 SFT Stage I·II가 성능 향상의 대부분을 이끌고 RL이 HLE-130·SEAL-0 등 일부 벤치마크에서 추가 개선을 제공함을 확인했으며, 4B/9B/35B/122B 크기 비교에서는 동일한 SFT 레시피가 작은 모델에서도 효과가 있음을 보였다.</p>
+<h2>한계점</h2>
+<p>논문은 명시적인 "한계점" 절을 따로 두지 않지만 본문에서 다음을 스스로 언급한다: (1) 체크포인트별 비교는 구성요소 제거(ablation) 실험이 아니라 순차적 비교이며, 35B/122B 결과는 서로 다른 베이스 아키텍처와 RL 적용 여부가 섞여 있어 통제된 크기 확장 실험으로 해석할 수 없음. (2) RL의 효과는 벤치마크·모델 크기에 따라 일관되지 않으며(예: FrontierScience Research는 35B에서는 RL 후 오히려 소폭 하락), (3) 롤아웃 라우팅 재생(R3)이 평균적인 학습 안정성(그래디언트 노름, PPO KL 등)은 개선하지만 최대 그래디언트 스파이크와 보상 표준편차는 오히려 증가해, 간헐적 불안정성을 완전히 해소하지는 못함. (4) 외부에서 가져온 베이스라인 점수들은 평가 환경(도구 접근 범위 등)이 다를 수 있어 교차 비교가 엄격하게 통제되지 않음.</p>
+<h2>시사점</h2>
+<p>에이전트 파운데이션 모델의 역량이 반드시 점점 더 복잡해지는 학습 스택(중간학습, DPO, OPD 등의 누적)에서 나오는 것이 아니라, 모델이 실제로 풀 수 있는 난이도에 맞춰 정교하게 구성된 데이터와 명확한 '자기완결형 추론 → 도구 기반 상호작용'의 학습 진행, 그리고 그 위에 RL을 더하는 것만으로도 충분히 확보될 수 있음을 보여준다. 데이터 구축 과정 자체를 공개하는 것이 가중치 공개보다 재현성 확보에 더 본질적일 수 있다는 점도 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.03233" target="_blank" rel="noopener">huggingface.co/papers/2611.03233</a> · 2026-11-05</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

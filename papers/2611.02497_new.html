@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>로보콜로세움</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#7 · Daily Papers 2026-11-05</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 43</span>
+    </div>
+    <h1 class="article-title">RoboColosseum: Evaluating Physical Intelligence at Scale In-The-Wild</h1>
+    <p class="article-title-ko">로보콜로세움: 실세계 환경에서의 대규모 물리적 지능 평가</p>
+    <p class="article-sub">전 세계 124개 현장, 100대 이상의 로봇을 연결한 분산 평가 네트워크로 5개 VLA(Vision-Language-Action) 정책과 3개 프런티어 AI 에이전트를 4가지 로봇 형태(SO-101, Franka, 양팔 YAM, G1 휴머노이드)에서 실제 물리 환경 속에서 비교 평가한 대규모 로봇 정책 벤치마크 연구.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.02497" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.02497" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: RoboColosseum: Evaluating Physical Intelligence at Scale In-The-Wild</li>
+<li><strong>저자</strong>: Tan Sang Nguyen, Yi Ru Wang, Jiafei Duan(교신저자) 등 다수 — 싱가포르국립대(NUS), 워싱턴대, 스탠퍼드대, UNC 채플힐, Allen Institute for AI, 옥스퍼드대, Hugging Face, BitRobot, Singapore Embodied AI Centre 등 다기관 공동</li>
+<li><strong>출처</strong>: arXiv:2611.02497v1 [cs.RO] (2026-11-02)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://robocolosseum.ai">robocolosseum.ai</a> · 코드: github.com/RoboColosseum · 모델/데이터셋: huggingface.co/RoboColosseum</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.02497">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>전 세계 124개 현장, 100대 이상의 로봇을 연결한 분산 평가 네트워크로 5개 VLA(Vision-Language-Action) 정책과 3개 프런티어 AI 에이전트를 4가지 로봇 형태(SO-101, Franka, 양팔 YAM, G1 휴머노이드)에서 실제 물리 환경 속에서 비교 평가한 대규모 로봇 정책 벤치마크 연구.</p>
+<h2>배경 및 문제의식</h2>
+<p>범용 로봇 정책(generalist policy)은 여러 로봇·과업·환경에 걸쳐 작동해야 하지만, 물리적 실험은 재현성을 보장하기 어렵다. 로봇 배치, 조명, 물체 속성 등 작은 조건 차이가 성능에 큰 영향을 주고, 물리 로봇 실험은 설치·리셋·유지보수에 많은 인력이 필요해 보통 적은 수의 시행에 의존하게 되어 성능 추정이 불안정하다. 여러 기관에 평가를 분산시키는 선행 시도들은 학생·자원봉사자 의존으로 지속하기 어려웠다. 따라서 통제된 비교 가능성과 다양한 실제 환경 커버리지를 동시에 만족하는, 지속 가능한 대규모 실세계 평가 인프라가 필요하다는 문제의식에서 출발한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>지리적으로 분산된 평가 현장들을 통합된 정책 서빙 인프라와 표준화된 프로토콜로 연결한 분산형 물리 평가 프레임워크 RoboColosseum을 제안.</li>
+<li>사전 적응 없이 블라인드 페어와이즈 비교로 다양한 실제 과업·환경에서 평가하는 <strong>Open Track</strong>과, 과업별 100개의 동일한 시범(demonstration)으로 미세조정한 뒤 20개 사전 정의 과업에서 평가하는 <strong>Fine-tune Track</strong>이라는 두 가지 상호보완적 평가 축을 설계.</li>
+<li>과업 난이도와 정책 능력을 동시에 추정하는 난이도보정 라쉬(Difficulty-Calibrated Rasch, DCR) 모델 기반 랭킹 시스템과, 챗봇 아레나(Chatbot Arena) 방식을 본뜬 능동 매치메이킹(active matchmaking) 전략을 적용.</li>
+<li>5개 VLA 정책(GR00T N1.7, π0.5, MolmoAct2, G0.5, LingBot-VLA v2)과 3개 프런티어 에이전트(GPT-6 Astra, Claude Opus 5.5, Grok 4.7)를 124개 현장에서 5,699건의 Open Track 페어와이즈 비교와 20개 과업의 Fine-tune Track으로 평가.</li>
+</ul>
+<h2>방법론</h2>
+<p>로봇 4종(SO-101, Bimanual-YAM, DROID 구성 Franka, Unitree G1)에 대해 표준화된 하드웨어·관측·행동 규격을 정의하고, 추론은 로컬 GPU 또는 원격 서버로 수행한다. 상시 운영 인력(최대 30명)이 오피스·가정·공장 등 실제 현장에서 평가를 수행하며, 영상에는 얼굴 블러링 등 익명화를 적용한다. Fine-tune Track에서는 각 임베디먼트별 5개(총 20개) 과업에 대해 100개의 텔레오퍼레이션 시범을 수집하고, 모든 정책을 동일 데이터로 각자의 공식 미세조정 절차에 따라 수렴까지 학습시킨 뒤 과업당 25회 시행으로 성공률(SR)과 과업별 하위 기준 충족 비율인 정규화 진행도(PS)를 측정한다. Open Track에서는 평가자가 현지에서 과업을 자유롭게 정의하고, 두 모델(신원 비공개)을 동일 조건에서 순차 실행해 승/패/무 및 진행도, 난이도(1~10점)를 기록한다. 랭킹은 Rasch/1PL 모델을 확장해 정책 능력(θ)과 과업 난이도(β)를 로지스틱 함수로 결합한 DCR 모델로 추정하며, 사람이 매긴 난이도 등급을 사전 분포로 활용하고, Elo 스케일로 변환해 공개 리더보드에 표시한다. 추가로 불확실성이 큰 모델 쌍에 평가를 우선 배분하는 능동 매치메이킹을 적용해 표본 효율을 높인다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>2026년 9월 17일~10월 28일(41일간) 진행된 평가에서 Open Track은 5,699건의 페어와이즈 비교(124개 현장, 4개 임베디먼트)를, Fine-tune Track은 4개 임베디먼트·20개 과업에서 각 25회 시행을 수행했다. 주요 결과: (1) 프런티어 에이전트가 사전 적응 없이도 특화된 VLA 정책과 경쟁력 있는 조작 성능을 보였으나(901건 비교 중 평균 5.3%p 우위, Claude Opus 5.5·GPT-6 Astra는 각각 +12.1%p·+11.0%p, Grok 4.7은 오히려 -7.5%p), 6개 과업 범주 전체에서 성공률은 최고 성능 정책(MolmoAct2)조차 6~13%에 불과했다. (2) 난이도가 1~4등급에서 9~10등급으로 올라가면 성공률은 30.7%→0.4%, 평균 진행도는 56.6%→3.5%로 급격히 떨어졌다. (3) 동일한 100개 시범으로 미세조정한 뒤에는 SO-101에서 GR00T N1.7, Franka·YAM에서 π0.5가 선두를 차지했으나, 정책 순위는 임베디먼트 간 일치도가 낮았다(Kendall's W=0.24). (4) Open Track 순위와 Fine-tune Track 순위 사이에도 상당한 순위 역전이 나타났다(Spearman ρ = -0.20~0.20). (5) G1 휴머노이드에서는 어떤 정책도 5개 과업 중 하나도 완전히 성공하지 못했지만 평균 진행도는 13.3~23.2%로 차이가 있었다. (6) 독립된 평가 현장 부분집합 간 DCR 순위 일치도는 임베디먼트별로 59~85%로 편차가 있었고, 능동 매치메이킹은 400~500회 평가만으로 균일 샘플링 대비(약 1,000회 필요) 전체 데이터 순위와 약 90% 일치하는 효율을 보였다.</p>
+<h2>한계점</h2>
+<p>저자들은 다음을 명시적 한계로 언급한다: (1) 현재 연구는 RoboColosseum의 초기 스냅샷으로, 모든 로봇 파운데이션 모델과 배치 환경을 포괄하는 전수 평가가 아니며, 체크포인트·하드웨어 호환성에 따라 모델·임베디먼트별 커버리지가 다르다. (2) Fine-tune Track은 데이터와 평가 절차는 고정하되 각 정책이 자체 공식 적응 방법을 쓰도록 허용해, 동일한 최적화기·학습 일정 하의 아키텍처 간 순수 비교라기보다는 '동일 데이터로부터의 실제적인 end-to-end 적응'을 측정한 것이다. (3) Open Track의 순위 안정성 분석은 현재까지 수집된 전체 데이터셋 기준 리더보드에 대한 상대적 재현성만을 정량화하며, 벤치마크가 성장함에 따라 동일 분석을 반복해야 한다.</p>
+<h2>시사점</h2>
+<p>단일 평가 지표로는 로봇 정책의 능력을 온전히 포착할 수 없으며, 개방형(Open) 평가와 적응형(Fine-tune) 평가, 그리고 성공률뿐 아니라 부분 진행도까지 함께 봐야 실제 모델 간 차이를 드러낼 수 있음을 보인다. 또한 분산형 대규모 페어와이즈 평가와 능동 매치메이킹을 결합하면 값비싼 실물 로봇 실험을 통계적으로 신뢰할 수 있으면서도 표본 효율적으로 운용할 수 있다는 점에서, 로봇 파운데이션 모델의 발전 속도를 가늠하려면 모델 자체의 개선뿐 아니라 이런 지속 가능한 실세계 평가 인프라가 함께 필요함을 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.02497" target="_blank" rel="noopener">huggingface.co/papers/2611.02497</a> · 2026-11-05</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

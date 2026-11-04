@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>라우트 애니씽</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#1 · Daily Papers 2026-11-05</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 84</span>
+    </div>
+    <h1 class="article-title">Route Anything: A Study of Model and Policy Routing for General-Purpose AI Systems</h1>
+    <p class="article-title-ko">라우트 애니씽: 범용 AI 시스템을 위한 모델 및 정책 라우팅 연구</p>
+    <p class="article-sub">언어·이미지·영상·음성 생성, 코딩 에이전트, 로봇 제어에 이르는 25개 벤치마크·452개 후보 모델/정책을 하나의 궤적 행렬로 묶어, 입력마다 최적의 모델이나 정책을 선택하는 "라우팅"이 품질-비용 측면에서 얼마나 유효한지를 이론과 실험으로 체계적으로 규명한 연구.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.05275" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.05275" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Route Anything: A Study of Model and Policy Routing for General-Purpose AI Systems</li>
+<li><strong>저자</strong>: Pengfei Zhou, Yixing Ma, Hexin Wang, Weidong Tang, Zhenglin Wan, Wangbo Zhao, Yang You (싱가포르국립대 HPC-AI Lab, InfRec/Cardinal AI Lab, UC 버클리, 홍콩과학기술대 공동)</li>
+<li><strong>출처</strong>: arXiv:2611.05275v1 [cs.CV] (2026-11-03)</li>
+<li><strong>프로젝트 페이지</strong>: Project Page·GitHub·Hugging Face 링크가 표지에 표기되어 있으나, 구체적인 URL은 본문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.05275">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>언어·이미지·영상·음성 생성, 코딩 에이전트, 로봇 제어에 이르는 25개 벤치마크·452개 후보 모델/정책을 하나의 궤적 행렬로 묶어, 입력마다 최적의 모델이나 정책을 선택하는 "라우팅"이 품질-비용 측면에서 얼마나 유효한지를 이론과 실험으로 체계적으로 규명한 연구.</p>
+<h2>배경 및 문제의식</h2>
+<p>범용 AI 시스템은 하나의 모델이 모든 능력을 갖추기보다, 언어모델·이미지/영상/음성 생성기·로봇 정책 등 이질적인 특화 모델·도구 집합(후보, candidate)을 상황에 맞게 오케스트레이션하는 방향으로 발전하고 있다. 그러나 "입력마다 가장 적합한 후보를 성능과 계산 비용을 함께 고려해 동적으로 고르는 라우팅"이 실제로 얼마나 이득을 주는지, 그리고 어떤 조건에서 학습된 라우터가 효과를 내는지는 텍스트 중심 연구를 넘어 다양한 모달리티에서 체계적으로 검증된 바가 없었다는 문제의식에서 출발한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>자원 가격과 품질 제약 하에서 최적 라우팅을 규정하고, 라우터가 관찰할 수 있는 정보(상태)가 라우터의 성능 상한을 어떻게 결정하는지 특성화하는 통일된 라우팅 이론(품질-비용 트레이드오프, "정보의 사다리(information ladder)" 명제, 결과 예측 vs 승자 예측 비교, 검증 가능한 품질 하한 등)을 수립.</li>
+<li>텍스트/이미지 이해, 이미지·영상·음성 생성, 코딩·업무 에이전트, 로봇 조작까지 25개 벤치마크에서 452개 후보 구성이 동일 입력에 대해 수행한 374,401건의 점수 기록으로 이루어진 "옴니모달 궤적 행렬(omni-modal trajectory matrix)"을 구축.</li>
+<li>이 데이터 위에서 다양한 전략(결과 회귀 라우터, 유형 분류 라우터, 승자 예측 라우터 등)의 라우터를 학습·평가하여, 라우팅이 실제로 이득을 내는 조건과 그 한계를 정량화.</li>
+<li>라우팅이 비용 대비 효율을 기준모델(reference) 대비 평균 8.82배(코드 작업 25.5배, 텍스트 QA 7.1배 등) 끌어올릴 수 있음을 보이고, 이러한 효율 개선이 성립하는 가격·품질 조건을 이론적으로 규명.</li>
+</ul>
+<h2>방법론</h2>
+<p>입력 x마다 유한한 후보 집합(언어모델, 이미지/영상/음성 생성기, 로봇 정책, 혹은 "저렴한 모델로 시도 후 거부 시 상위 모델로 에스컬레이션"과 같은 실행 계획)이 주어지며, 각 후보는 가치 V(벤치마크 지표)와 비용 D(달러 또는 시간)를 갖는다. 라우터는 상태 s=σ(x)(벤치마크, 능력 유형, 혹은 입력 자체일 수 있음)를 관찰해 후보를 선택하며, 가격 λ 하에서 가치에서 가중 비용을 뺀 값을 최대화하는 후보를 고르는 것이 최적임을 이론적으로 증명한다(정리 2). 더 세밀한 상태를 관찰할수록 라우터가 도달할 수 있는 성능은 "고정된 최적 후보 ≤ 유형별 최적 후보 ≤ 입력별 오라클" 순으로 사다리처럼 올라가며(명제 3, information ladder), 그 차이는 라우터가 학습해야 할 목표(각 후보의 성공/실패 결과를 회귀로 학습할지, 혹은 승자 레이블을 분류로 학습할지)에 따라 달라짐을 보인다(명제 4). 또한 학습 데이터에서 적합(fit)한 품질 하한이 테스트 데이터에서도 유지되도록, 가격 경로를 따라 라우터를 순서대로 통계적으로 검증하는 절차(명제 5, 고정순서 검정 기반 "인증된 품질 하한")를 제시한다. 실제 라우터는 Qwen3.5-4B를 과업 텍스트·출력 요구사항(로봇의 경우 카메라 프레임과 로봇 상태 추가)에 맞춰 파인튜닝해 구현하며, 결과 회귀 라우터(시그모이드 헤드로 각 후보의 정규화된 성공 확률 예측), 유형 분류 라우터(능력 유형을 분류 후 그 유형의 최적 후보를 테이블에서 조회), 승자 예측 라우터(최고 성능 후보의 이름을 직접 분류) 세 가지 설계를 비교한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>19,814개의 테스트 입력(24개 벤치마크) 기준, 벤치마크별 최적 고정 후보는 평균 82.60점, 입력별 오라클은 87.98점으로 격차는 5.4점이며, 영상 생성과 로봇 조작에서는 격차가 18~19점에 달하는 반면 음성 생성에서는 0.7점에 불과했다. 157개 리프(leaf)로 구성된 능력 트리 기반 라우터는 16개 벤치마크(3,444개 테스트 입력)에서 고정 후보(79.68점) 대비 0.3점 높은 79.98점(오라클 84.80점)을 기록했으며, 영상 생성(+2.1점), 코드/에이전트(Terminal-Bench +8.3점) 등에서 이득이 두드러졌다. 반면 이미지 생성에서는 31개 라우터 설계·124개 구성 중 고정 생성기를 유의하게 앞선 경우가 없었다. 로봇 조작(RoboTwin)에서는 카메라 3장과 로봇 상태를 입력받는 결과 회귀 라우터가 71.55% 성공률로 최고 단일 정책(70.45%)을 앞서면서도 정책당 추론 시간을 24% 절감했다. "승자를 예측하기보다 결과를 회귀로 학습하라"는 교훈을 뒷받침하는 실험에서는, 동일 조건에서 결과 회귀 라우터가 71.6% 성공률을 낸 반면 승자 분류 라우터는 지연시간 동점 처리 규칙 때문에 성공 사례의 78%가 오분류 레이블이 되어 42.8%에 그쳤다. 효율 측면에서는 CodeRouterBench·RouterBench·이미지 생성·로봇 조작 네 가지 테스트베드 평균으로 기준모델 대비 8.82배(코드 25.5배, 텍스트 QA 7.1배, 이미지 생성 1.35배, 로봇 1.33배) 효율 개선을 달성했으며, 통계적으로 인증된(certified) 라우터는 200회 중 200회 모두 품질 손실 없는 하한을 유지하면서도 19.4배의 효율을 보였다.</p>
+<h2>한계점</h2>
+<p>저자들이 실험을 통해 드러낸 주요 한계는 다음과 같다. (1) 능력 유형이나 벤치마크 단위의 거친 상태 정보만으로는 전체 잠재 이득의 8% 정도만 회수되며, 나머지는 같은 유형 내 입력별 변동(그 상당 부분은 라우터가 예측할 수 없는 순수한 결과 노이즈)에 묶여 있다. (2) 승자(최고 성능 후보)를 직접 예측하도록 학습한 라우터는 동점 처리 규칙에 따라 레이블이 왜곡되어 성능이 크게 저하되므로, 학습 목표 설계가 매우 중요하다. (3) 학습 데이터에 맞춰 적합(fit)한 품질 하한은 별도 통계적 인증 없이는 테스트 데이터에서 보장되지 않는다(200회 중 겨우 12.5%만 유지된 사례 존재). (4) 이미지 생성과 같이 후보 간 품질 차이가 작은 영역에서는 학습된 라우터가 고정 후보를 유의하게 넘어서지 못했다. (5) 더 풍부한 후보(검증기, 재시도, 캐스케이드)나 더 세밀한 상태(사전 예측, 기록된 과거 이력)를 추가하는 것은 그 자체 비용을 능가하는 가치를 제공할 때만 유효하며, 예를 들어 LLM 심판(judge)은 무료일 때만 효율적이고 정가로는 오히려 효율이 낮아진다.</p>
+<h2>시사점</h2>
+<p>이 연구는 라우팅이 단일 모달리티나 텍스트 영역에 국한된 기법이 아니라, 생성·에이전트·로봇 제어를 포함한 범용 AI 시스템 전반에서 품질과 비용을 동시에 개선할 수 있는 일반적 설계 원리임을 보여준다. 특히 "무엇을 학습 목표로 삼을 것인가(결과 회귀 vs 승자 분류)"와 "라우터가 어떤 정보를 관찰하는가(사다리의 어느 단계인가)"가 실제 성능을 가르는 핵심 변수임을 밝혀, 향후 멀티모달·멀티에이전트 시스템을 설계할 때 라우터의 학습 목표와 관찰 가능한 상태 설계에 더 신중해야 한다는 실무적 지침을 제공한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.05275" target="_blank" rel="noopener">huggingface.co/papers/2611.05275</a> · 2026-11-05</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

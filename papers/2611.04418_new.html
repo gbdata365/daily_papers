@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>비드유이유-에이전트</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#12 · Daily Papers 2026-11-05</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 23</span>
+    </div>
+    <h1 class="article-title">VidUEU-Agent: A Data-Curation Agent for Multimodal Understanding, Editing, and Unified Tasks</h1>
+    <p class="article-title-ko">비드유이유-에이전트: 멀티모달 이해·편집·통합 과제를 위한 데이터 큐레이션 에이전트</p>
+    <p class="article-sub">원시 영상을 4단계 파이프라인으로 가공해 멀티모달 이해·편집·통합 과제용 명령 데이터를 자동 합성하는 에이전트 VidUEU-Agent를 제안하고, 이를 확장해 10만 개 규모의 학습 데이터셋 VidUEU-100K를 구축한 연구.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.04418" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.04418" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: VidUEU-Agent: A Data-Curation Agent for Multimodal Understanding, Editing, and Unified Tasks</li>
+<li><strong>저자</strong>: Tengju Ru, Weitong Lian, Zecong Tang 외 (저장대학교Zhejiang University, 홍콩대학교The University of Hong Kong, 중국과학원 자동화연구소, 화웨이 테크놀로지스 공동 연구)</li>
+<li><strong>출처</strong>: arXiv:2611.04418v1 [cs.CV] (2026-11-03)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/LRuca/VidUEU-Agent">GitHub</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.04418">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>원시 영상을 4단계 파이프라인으로 가공해 멀티모달 이해·편집·통합 과제용 명령 데이터를 자동 합성하는 에이전트 VidUEU-Agent를 제안하고, 이를 확장해 10만 개 규모의 학습 데이터셋 VidUEU-100K를 구축한 연구.</p>
+<h2>배경 및 문제의식</h2>
+<p>멀티모달 대형 언어모델(MLLM)과 멀티모달 생성 모델은 각각 발전해왔지만 이해와 생성을 하나의 체계로 통합하는 통합 멀티모달 모델(UMM)은 고품질 명령 데이터가 부족해 발전이 제약되어 있다. 정지 이미지 기반 데이터셋은 실제 세계의 시간적 동역학을 담지 못하는 반면, 원시 영상은 풍부하고 동적인 지식을 담고 있지만 중복되고 잡음이 많으며 비정형적이어서 바로 과제 지향 명령 데이터로 쓸 수 없다. 즉 대규모 원시 영상을 이해와 생성을 동시에 지원하면서도 안정적인 모델 학습에 적합한 명령 데이터로 변환하는 방법이 핵심 과제다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>에이전트의 계획·도구 사용 능력을 활용해 원시 영상에서 이해(understanding)·편집(editing)·통합(unified) 과제용 명령 데이터를 합성하는 확장 가능한 자동화 프레임워크 VidUEU-Agent 제안.</li>
+<li>이 파이프라인을 확장해 8,268개의 다양한 원시 영상으로부터 약 2만 건의 정교한 메타데이터와 10만 건의 명령 샘플(이해 4만·편집 3만·통합 3만)로 구성된 대규모 데이터셋 VidUEU-100K 구축.</li>
+<li>VidUEU-100K로 여러 베이스라인 모델을 미세조정한 결과, 다양한 벤치마크에서 일관된 성능 향상을 확인해 데이터 및 에이전트 프레임워크의 효과를 입증.</li>
+</ul>
+<h2>방법론</h2>
+<p>VidUEU-Agent는 4단계로 구성된다. (1) 전역 인지(Global Perception): PySceneDetect로 영상을 샷 단위로 분할한 뒤, 샷·챕터·영상 세 단계로 VLM 기반 요약을 생성하고, 정보량·이미지 품질 기준의 Gate A로 저품질 샷을 걸러낸다. (2) 키프레임 마이닝(Keyframe Mining): 남은 샷에서 일정 간격으로 프레임을 추출해 도구 기반 품질 통계와 VLM 검증을 결합한 Gate B로 저품질 프레임을 제거하고 캡션을 생성하며, 챕터·샷 단위 계층적 도구 계획에 따라 선택된 도구들을 적용한 뒤, 도구 신호와 요약을 바탕으로 프레임을 점수화하고 가중 시설-위치(facility-location) 그리디 선택으로 대표성 있는 키프레임을 고른다. (3) 메타데이터 구성: 키프레임에 결합된 신호를 규칙 기반으로 검증·선별하고, 연속 키프레임 간 전환(transition)과 클립 요약을 생성한 뒤 신호를 이용해 품질·사실성을 검증, 최종 메타데이터 목록을 구성한다. (4) 명령 데이터 구성: VLM 기반 Gate C로 메타데이터의 정보량·논리적 일관성·전체 품질을 평가해 부적합한 것을 제거하고, 각 메타데이터에 이해/편집/통합 중 적합한 과제 유형을 라우팅한 뒤 명령 템플릿에 매칭하고 사용된 신호 ID를 인용하도록 요구해 추적성을 높인다. 추가로 자율적 데이터 반복(iteration) 절차를 두어, 매 반복마다 생성된 3만 샘플로 모델을 학습·평가하고 그 결과를 에이전트에 피드백해 영상 유형·키프레임 샘플링·과제 라우팅 분포를 조정함으로써 데이터 품질과 균형을 개선한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>DeepSeek-V3를 에이전트 LLM으로, Qwen3.5-9B를 VLM으로 사용해 VidUEU-100K를 구축했으며, OpenVid-1M·Panda-70M·Wikimedia·YouTube 및 FineGym·BDD100K·CodeVidCL 등에서 영상을 수집했다. InternVL3-8B(이해)와 Bagel-7B-MoT(이해·편집·통합)를 LoRA로 미세조정해 MMT-Bench, MME, LLaVA-Bench, MMDU, GEdit-Bench-En, WEAVEbench에서 평가했다. InternVL3-8B는 MME 2369.3, MMDU 61.1로 비교 모델 중 최고 점수를 기록했고, Bagel은 MMT-Bench 0.651로 최고 성능을 보였다. 편집 과제에서는 GEdit-Bench-En G_SC 7.565·G_PQ 7.328·G_O 6.951로 비교 모델을 모두 상회했다. 통합 과제에서는 WEAVEbench 전체 점수가 기존 Bagel의 0.446에서 0.501로 상승했다. 자율 데이터 반복 실험에서는 반복(Iteration) 1→4로 갈수록 MMDU·GEdit·WEAVE 점수가 전반적으로 상승했고, 최종 10만 샘플 데이터셋이 Iteration 4보다도 더 나은 성능을 보였다. 또한 Gate A/B/C, 유사도 기반 키프레임 선택, 신호 인용 규칙을 제거하는 모든 어블레이션에서 성능이 하락했으며, 특히 Gate B(프레임 품질 필터)를 제거하거나 에이전트 없이 고정 간격 샘플링만 쓰는 경우(N) 성능 저하가 가장 컸다.</p>
+<h2>한계점</h2>
+<p>논문은 별도의 '한계점' 절을 명시하지 않았으나, 사례 연구(4.5절)에서 통합 과제의 경우 모델이 초반 턴의 편집·맥락 활용은 잘 수행하지만 긴 상호 교차(interleaved) 이미지-텍스트 체인에서는 초반 오류가 후속 턴으로 전파되어 여전히 어려움이 남아 있다고 밝혔다. 또한 Creation(창작) 유형 과제의 향상폭이 상대적으로 작아, 영상 기반 상태 전환 감독이 개방형 창작적 생성보다는 구조화된 전환 과제에 더 효과적이라는 점을 저자들이 지적했다.</p>
+<h2>시사점</h2>
+<p>원시 영상을 에이전트 기반 다단계 파이프라인(전역 인지→키프레임 마이닝→메타데이터 구성→명령 데이터 합성)으로 가공하고, 하류 학습 결과를 피드백으로 활용해 데이터 분포를 자율적으로 개선하는 접근이 통합 멀티모달 모델 학습용 고품질 데이터를 비용 효율적으로 확보하는 실용적 경로가 될 수 있음을 보여준다. 다만 긴 상호작용 체인에서의 오류 전파 문제는 데이터 품질만으로 완전히 해결되지 않는 과제로 남아 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.04418" target="_blank" rel="noopener">huggingface.co/papers/2611.04418</a> · 2026-11-05</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

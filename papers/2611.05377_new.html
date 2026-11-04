@@ -1,0 +1,113 @@
+<meta charset="UTF-8">
+<title>드림엑스</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#6 · Daily Papers 2026-11-05</span>
+      <span class="cat-tag">생성모델</span>
+      <span class="upvote-tag">▲ 49</span>
+    </div>
+    <h1 class="article-title">DreamX: Video Diffusion Model is a Universal Latent Action Learner</h1>
+    <p class="article-title-ko">드림엑스: 비디오 디퓨전 모델은 범용 잠재행동 학습자다</p>
+    <p class="article-sub">사전학습된 비디오 디퓨전 모델의 시공간 표현과 생성적 사전지식을 그대로 활용해, 인간과 로봇을 아우르는 임바디먼트(embodiment)에 무관한 압축 잠재행동(latent action) 표현을 학습하는 프레임워크 DreamX를 제안한 연구.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.05377" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.05377" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: DreamX: Video Diffusion Model is a Universal Latent Action Learner</li>
+<li><strong>저자</strong>: Jisoo Kim, Chaehyun Kim, Junsu Kim, Jiho Park, Seongchan Kim, Eunbeen Hong, Soowon Son, Fu-En Yang, Seungryong Kim (KAIST, NVIDIA)</li>
+<li><strong>출처</strong>: arXiv:2611.05377v1 [cs.CV] (2026-11-03)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://cvlab-kaist.github.io/DreamX">DreamX Project Page</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.05377">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>사전학습된 비디오 디퓨전 모델의 시공간 표현과 생성적 사전지식을 그대로 활용해, 인간과 로봇을 아우르는 임바디먼트(embodiment)에 무관한 압축 잠재행동(latent action) 표현을 학습하는 프레임워크 DreamX를 제안한 연구.</p>
+<h2>배경 및 문제의식</h2>
+<p>범용 로봇 정책(VLA, 월드 액션 모델 등)은 다양한 로봇 시연 데이터가 필요하지만 수집 비용이 크다. 인간 1인칭 영상은 저비용의 대안이지만, 인간 영상에는 로봇 행동 레이블이 없고 로봇마다 제어 공간이 달라 같은 행동이 서로 다른 저수준 행동으로 표현되는 문제가 있다. 기존 잠재행동모델(LAM)은 인접한 두 프레임 사이의 변화만으로 행동을 역-순방향 동역학 구조로 학습하기 때문에, 행동이 외형(배경·임바디먼트)과 뒤섞여 다른 임바디먼트로 전이하기 어렵다는 한계가 있었다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>사전학습된 비디오 디퓨전 모델(Cosmos-Predict2.5)을 인코더와 디코더로 그대로 재사용해 범용 잠재행동을 학습하는 DreamX를 제안.</li>
+<li>학습 가능한 쿼리 토큰이 비디오 토큰과 함께 시공간 어텐션을 거치며, 프레임당 1,200개의 토큰을 4개의 잠재행동 토큰으로 압축(300배 압축).</li>
+<li>초기 프레임이 외형 정보를, 사전학습된 생성적 사전지식이 미래 전개 양상을 담당하게 함으로써 잠재행동이 외형과 분리된 모션 정보만 포착하도록 유도.</li>
+<li>이렇게 학습된 잠재공간은 임바디먼트·환경·행동 표현 방식이 달라도 공유되는 '행동 인터페이스' 역할을 하여, 쌍을 이룬 인간-로봇 학습 데이터 없이도 동영상 간 모션 전이와 인간→로봇 행동 전이를 가능하게 함.</li>
+<li>압축된 잠재행동을 예측 대상으로 삼는 경량 정책(DreamX policy)을 통해 비디오 디퓨전 기반 정책의 연산 비용을 크게 낮춤.</li>
+</ul>
+<h2>방법론</h2>
+<p>비디오는 VAE로 N개의 잠재 프레임으로 압축되고, 학습 가능한 쿼리 토큰 그룹이 각 잠재 프레임에 대응해 비디오 토큰과 함께 시공간 어텐션을 거쳐 잠재행동 Q를 추출한다(쿼리→비디오 어텐션은 프레임 인과적, 쿼리 간 어텐션은 비제한). 디코더는 동일한 사전학습 백본을 재사용하며, 초기 프레임과 잠재행동 Q만으로(텍스트 조건 없이) 미래 프레임을 재구성하도록 학습되어, 외형은 초기 프레임이 담당하고 Q는 그 외형을 설명하는 데 필요한 모션만 담도록 유도된다. 행동 레이블이 있는 경우 고유상태(proprioceptive state)를 추가로 조건부로 하여 저수준 행동 청크도 함께 복원하는 보조 과제를 수행한다. 학습은 비디오와 행동에 대한 플로우 매칭 손실을 결합한 목적함수로 인코더·디코더를 엔드투엔드 학습한다. 모션 전이 시에는 소스 비디오에서 추출한 잠재행동 Q_src를 고정한 뒤, 타깃 초기 프레임과 결합해 비디오를 생성하거나(비디오 전이), 타깃 로봇 상태와 결합해 저수준 행동으로 디코딩한다(행동 전이). 정책 학습에서는 잠재행동 토큰을 변분 병목(variational bottleneck)으로 저차원 압축 코드 Z로 다시 압축한 뒤, 현재 관찰·지시문으로부터 Z와 저수준 행동을 함께 예측하는 별도의 DiT 행동 헤드를 학습한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Cosmos-Predict2.5 2B를 기반으로 MolmoAct2-BimanualYAM, Bridge, DROID, AgiBot 등의 로봇 시연 데이터와 EgoDex, EgoVerse 인간 영상으로 사전학습했다(480×640 해상도, 최대 29프레임, 랭크-16 LoRA, 78,000 스텝). LARYBench에서 행동 회귀(MSE)와 분류(정확도) 모두 최고 성능을 기록했으며(평균 회귀 MSE 0.38→0.17, 분류 정확도 62.25%→69.67%, 최강 베이스라인 DiLA 대비), 32채널로 더 압축한 FAE-32도 모든 베이스라인을 능가했다. Any-to-any 비디오 전이에서 환경·임바디먼트가 크게 달라도 소스 모션을 재현했고, HumanAndRobot 벤치마크의 제로샷 인간→로봇 비디오 전이에서 FVD·LPIPS·PSNR·SSIM 전 지표에서 AdaWorld, VideoWorld2를 능가했다(FVD 57.44 대 170.19/241.92). 실세계 서랍 닫기 과제에서는 DreamX가 평균 서브골 성공률 96.7%로 Mimic-Video(50.0%)를 크게 앞서면서도 추론 지연시간은 1.47초로 19.1배 더 빨랐다(미래 비디오를 생성하지 않고 압축 코드만 예측하기 때문).</p>
+<h2>한계점</h2>
+<p>저자들은 다음을 명시한다: (1) 인간 영상은 식별 가능한 인물·장소를 포함할 수 있어 재배포 시 원본 데이터셋의 이용 약관과 개인정보 보호 요건을 따라야 함, (2) 비디오 전이 결과물은 합성물이므로 합성임을 명시해야 함, (3) 교차 임바디먼트 전이와 로봇 정책은 평가된 환경 밖에서는 실패할 수 있어 배포 전 안전성 검증이 필요함.</p>
+<h2>시사점</h2>
+<p>대규모 비디오로 사전학습된 디퓨전 모델의 시공간·생성적 사전지식을 그대로 재사용하면, 처음부터 학습하는 별도의 잠재행동 인코더 없이도 임바디먼트에 무관한 범용 행동 표현을 얻을 수 있음을 보여준다. 이는 인간 영상과 로봇 시연을 하나의 공유된 행동 공간으로 묶어, 로봇 행동 레이블이 부족한 상황에서도 정책 학습과 모션 전이를 가능하게 하는 실용적 경로를 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.05377" target="_blank" rel="noopener">huggingface.co/papers/2611.05377</a> · 2026-11-05</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

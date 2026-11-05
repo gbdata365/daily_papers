@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>픽셀에서 행동으로</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#2 · Daily Papers 2026-11-06</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 55</span>
+    </div>
+    <h1 class="article-title">From Pixels to Actions - Towards Native Vision-Language-Action Policies</h1>
+    <p class="article-title-ko">픽셀에서 행동으로: 네이티브 비전-언어-행동 정책을 향하여</p>
+    <p class="article-sub">별도의 사전학습 비전 인코더 없이 픽셀을 언어 백본에 직접 투입하고 백본의 여러 깊이에서 시각 표현을 읽어 행동을 예측하는 "구조적으로 네이티브한" VLA(Vision-Language-Action) 모델 NEO-VLA가 동일 조건의 인코더 기반 VLA보다 우수한 조작 성능을 보인다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.06918" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.06918" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: From Pixels to Actions – Towards Native Vision-Language-Action Policies</li>
+<li><strong>저자</strong>: Weichen Fan, Haiwen Diao 등 (Nanyang Technological University S-Lab, SenseTime Research, Ropedia) 공동 제1저자 다수, 교신저자 Ziwei Liu</li>
+<li><strong>출처</strong>: arXiv:2611.06918v1 [cs.CV] (2026년 11월 4일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://www.lmms-lab.com/posts/neo_vla/">NEO-VLA</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.06918">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>별도의 사전학습 비전 인코더 없이 픽셀을 언어 백본에 직접 투입하고 백본의 여러 깊이에서 시각 표현을 읽어 행동을 예측하는 "구조적으로 네이티브한" VLA(Vision-Language-Action) 모델 NEO-VLA가 동일 조건의 인코더 기반 VLA보다 우수한 조작 성능을 보인다.</p>
+<h2>배경 및 문제의식</h2>
+<p>기존 VLA 모델 대부분은 CLIP, SigLIP, DINOv2 같은 사전학습된 비전 인코더로 이미지를 고정된 특징으로 압축한 뒤, 그 결과를 언어 백본과 행동 모델에 전달한다. 그러나 조작(manipulation)은 국소 기하, 경계, 깊이, 미세한 상태 변화 등 이 압축 과정에서 가장 쉽게 손실되는 시각 신호에 크게 의존한다. 저자들은 "행동 정책이 고정된 시각적 종단점을 상속받아야 하는가, 아니면 진화하는 시각 연산에 직접 접근해야 하는가"라는 근본적 질문을 제기한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>구조적으로 네이티브한 VLA 정책</strong>: 경량 합성곱 패치 임베더, 공유 비전-언어 백본, 그리고 서로 다른 깊이의 시각 표현을 선택적으로 읽는 플로우매칭(flow-matching) 행동 전문가(action expert)로 구성된 NEO-VLA를 제안.</li>
+<li><strong>행동 판독 깊이에 대한 체계적 실증 연구</strong>: 레이어맵(layer-map) 비교와 연결점(attachment-point) 개입 실험을 통해, 특히 백본이 동결된 상태에서 초기 레이어의 시각 표현이 제어에 효과적임을 규명.</li>
+<li><strong>다양한 백본·벤치마크 비교</strong>: 동일한 행동 전문가와 학습 데이터로 네이티브 백본과 인코더 기반 백본을 비교하고, LIBERO·LIBERO-plus·RoboTwin 2.0에서 강한 성능을 입증.</li>
+</ul>
+<h2>방법론</h2>
+<p>이미지를 32×32 스트라이드의 경량 2단계 합성곱 패치 임베더로 토큰화해 언어 토큰과 함께 40레이어·2B 파라미터 백본 전체에서 공동 처리한다(선행 연구 NEO의 네이티브 비전-언어 구조 계승). 시간·높이·너비 좌표를 분리한 Native RoPE를 사용하며, 텍스트 토큰은 인과적 어텐션을, 시각 토큰은 블록 내 양방향 어텐션을 적용하는 모달리티 인식 멀티모달 어텐션 구조를 채택한다. 별도의 좁은 행동 전문가는 선택된 백본 레이어들의 캐시된 키/값을 읽어, 팔(arm)과 몸체(body) 행동 청크에 대한 속도장(velocity field)을 플로우 매칭으로 예측한다. 학습은 (1) 백본 동결 후 행동 전문가만 학습, (2) 전체 미세조정, (3) 자체 액션 데이터로 추가 미세조정의 3단계로 진행되며, AgiBot-World·RoboCOIN·Open X-Embodiment 등 9개 공개 로봇 데이터셋(약 223만 에피소드, 9,928시간)으로 사전학습한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Qwen3-VL-2B, Gemma-3-4B 등 인코더 기반 백본과 동일 설정(Open X-Embodiment 75k 스텝)으로 비교했을 때, 백본을 동결한 상태에서 NEO-VLA는 LIBERO 평균 90.9%를 기록해 Qwen3-VL(79.5%)과 Gemma-3(84.5%)를 능가했다. Qwen3-VL에 중간 인코더 특징 접근을 추가해도 동결 성능은 오히려 64.9%로 하락해, 단순한 중간 표현 접근이 아니라 인코더-프리 사전학습이 만들어내는 "제어 친화적 표현" 자체가 핵심임을 보였다. 레이어맵 실험에서는 초기 레이어를 포함하는 구성(skip-28)이 후기 레이어만 사용하는 구성(end-28)보다 우수했다(동결 시 90.9% vs 86.7%). 종합적으로 LIBERO 97.4%, 공개 가중치 모델 중 최고 수준인 LIBERO-Plus 89.7%, RoboTwin 2.0 Clean2Rand 69.40을 달성했으며, 실제 로봇 3개 과제에서도 π0.5와 동등하거나 상회하는 성공률(12/20, 17/20, 13/20)을 보였다. 추론 지연은 RTX 3090 기준 쿼리당 약 262~286ms다.</p>
+<h2>한계점</h2>
+<p>사전학습 데이터와 모델 용량을 완전히 통제하지 못해 성능 향상을 인코더 제거만의 효과로 단정하기 어렵다고 저자 스스로 명시한다. 또한 LIBERO-Pro 평가에서 시각적 외형이나 언어 표현 변화에는 강건하지만, 객체 위치나 과제 목표 자체가 바뀌는 분포 변화에는 여전히 취약하다. 서로 다른 선행 논문과의 벤치마크 프로토콜 차이로 인해 수치 간 직접 비교에도 한계가 있다.</p>
+<h2>시사점</h2>
+<p>체화 지능(embodied intelligence)에서 효과적인 제어는 백본이 '무엇을 표현하는가'뿐 아니라 '시각 연산의 어느 단계까지 행동이 접근 가능한가'에 좌우된다는 더 넓은 원칙을 제시한다. 인코더-프리 네이티브 백본과 다중 깊이 판독 설계가 향후 VLA 모델의 강건성과 효율성을 개선하는 유효한 방향이 될 수 있음을 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.06918" target="_blank" rel="noopener">huggingface.co/papers/2611.06918</a> · 2026-11-06</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

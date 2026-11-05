@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>뮤온알티</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#11 · Daily Papers 2026-11-06</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 13</span>
+    </div>
+    <h1 class="article-title">MUON-RT Reusing the Teacher's Trajectory for Momentum-Free Muon for LLM Self-Distillation</h1>
+    <p class="article-title-ko">뮤온알티: LLM 자기증류를 위한 모멘텀 없는 뮤온의 교사 궤적 재사용</p>
+    <p class="article-sub">EMA(지수이동평균) 교사 모델이 이미 들고 있는 학생-교사 파라미터 궤적을 재활용해, Muon 옵티마이저의 별도 모멘텀 버퍼를 없애면서도 자기증류(self-distillation) 성능을 오히려 높이는 메모리 효율적 옵티마이저 Muon-RT를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.41104" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.41104" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: MUON-RT: Reusing the Teacher's Trajectory for Momentum-Free Muon for LLM Self-Distillation</li>
+<li><strong>저자</strong>: Aryan Das, Vinay Kumar Verma (IIT Kanpur), Aakansha Mishra (Amazon)</li>
+<li><strong>출처</strong>: arXiv:2610.41104v1 [cs.LG] (2026년 10월 30일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.41104">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>EMA(지수이동평균) 교사 모델이 이미 들고 있는 학생-교사 파라미터 궤적을 재활용해, Muon 옵티마이저의 별도 모멘텀 버퍼를 없애면서도 자기증류(self-distillation) 성능을 오히려 높이는 메모리 효율적 옵티마이저 Muon-RT를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>SDFT(Self-Distillation Fine-Tuning), SDPO(Self-Distillation Policy Optimization) 같은 자기증류 기법은 학생 모델의 EMA인 교사 모델을 함께 유지해 학습 안정성과 기존 능력 보존을 돕는다. 그런데 최근 널리 쓰이는 Muon 옵티마이저는 은닉 가중치 행렬마다 별도의 모멘텀 버퍼를 추가로 유지해야 해서, 학생 가중치·교사 가중치·모멘텀까지 총 3개의 행렬 크기 상태를 들고 있어야 한다. 예를 들어 Qwen2.5-7B-Instruct 기준 모멘텀 Muon은 103.2GB, AdamW는 129.0GB의 지속 메모리가 필요하다. 저자들은 "교사가 이미 들고 있는 파라미터 궤적으로 모멘텀 버퍼를 대체할 수 있는가?"라는 질문을 던진다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>교사-학생 파라미터 차이(displacement)가 적용된 업데이트의 할인된 과거 이력을 담고 있으며, 경사하강법 하에서는 모멘텀에 비례하고, 국소 모델에서는 잡음을 줄여준다는 점을 이론적으로 규명(Lemma 1, 2).</li>
+<li>이 교사-학생 차이를 정규화해 Muon의 모멘텀 버퍼를 대체하는 Muon-RT를 제안. 직교화 이후 정규화된 교사-학생 차이를 더해 은닉 행렬당 지속 상태를 {학생, 교사, 모멘텀} 3개에서 {학생, 교사} 2개로 축소.</li>
+<li>목적함수 격차 기대값이 잔차 오차 수준으로 선형 수렴한다는 이론적 보장을 제시.</li>
+<li>SDFT에서 AdamW 대비 평균 정확도 2.6점 향상(메모리 42% 절감), 모멘텀 Muon 대비 5.4점 향상(메모리 27% 절감). SDPO에서는 AdamW 대비 2.0점 향상.</li>
+</ul>
+<h2>방법론</h2>
+<p>각 은닉 가중치 행렬에 대해 두 가지 신호를 분리해 처리한다. (1) 그래디언트 분기: 모멘텀 없이 현재 그래디언트를 Newton-Schulz 반복으로 직교화(O). (2) 교사 분기: 교사-학생 가중치 차이(D=W_T−W_S)에서 학생 가중치와 평행한 성분(스케일링에 의한 반경 방향 변화)을 제거하고, 추정된 최대 특이값으로 나누어 스펙트럼 정규화한 방향(P)을 얻는다. 두 방향을 직교화 이후에 혼합 계수 α로 결합해 최종 업데이트 U=(1−α)O+αP를 적용한다. 최대 특이값 추정에는 이전 스텝에서 워밍스타트된 거듭제곱 반복(power iteration)을 사용해 행렬당 길이 B의 벡터 하나만 추가로 저장한다. FSDP(완전 샤딩 데이터 병렬) 환경에서도 구현 가능함을 보였다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Qwen2.5-7B-Instruct에 SDFT(ToolAlpaca 툴 사용, SciKnowEval 과학 지식 과제)를 적용하고, Olmo-3-7B-Instruct에 SDPO(생물·재료 과제)를 적용해 평가했다. SDFT에서 Muon-RT는 툴 사용 74.2%, 과학 71.8%로 AdamW(70.6%, 70.2%)와 모멘텀 Muon(µ=0.95), MuonClip 등 모든 비교군을 능가했으며, HumanEval 등 기존 능력 보존 지표에서도 가장 우수했다. SDPO에서도 1시간·5시간 학습 모두에서 대체로 가장 높은 정확도를 기록(재료 과제 5시간 기준 82.8%). 메모리 측면에서는 10T 파라미터 규모로 투영 시 AdamW 대비 40%, 모멘텀 Muon 대비 25% 적은 메모리(121TB)가 필요하다고 보고했다. 수렴 속도 면에서도 더 적은 스텝으로 목표 정확도에 도달했다.</p>
+<h2>한계점</h2>
+<p>실험은 2개 모델 패밀리, 4개 과제, 7B 파라미터 규모로 제한되어 있으며 더 큰 모델과 다른 도메인에 대한 검증은 향후 과제로 남겨두었다. 수렴 이론은 비볼록 최적화에서 흔히 쓰이는 매끄러움(smoothness), PL(Polyak-Łojasiewicz) 조건, 정렬(alignment) 가정에 의존하지만 이 상수들을 LLM에서 실측하지는 않았다. 또한 Muon-RT는 SDFT·SDPO처럼 파라미터가 정렬된 EMA 교사가 이미 존재하는 설정에서만 적용 가능하며, 모멘텀 대체만을 위해 별도로 EMA 교사를 유지하는 방식에는 메모리 이점이 없다.</p>
+<h2>시사점</h2>
+<p>자기증류 과정에서 이미 유지되고 있는 교사 모델의 파라미터 이력을 "공짜로 얻는 모멘텀 정보"로 재해석함으로써, 별도의 옵티마이저 상태 없이도 정확도와 메모리 효율을 동시에 개선할 수 있음을 보여준다. 이는 대규모 LLM의 지속적 적응(continual adaptation) 비용을 낮추는 데 기여할 수 있으며, EMA 기반 교사를 활용하는 다른 학습 기법에도 유사한 아이디어가 확장될 여지가 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.41104" target="_blank" rel="noopener">huggingface.co/papers/2610.41104</a> · 2026-11-06</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

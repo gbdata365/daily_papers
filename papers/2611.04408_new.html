@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>핼리</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#6 · Daily Papers 2026-11-06</span>
+      <span class="cat-tag">인프라</span>
+      <span class="upvote-tag">▲ 26</span>
+    </div>
+    <h1 class="article-title">Halley: A Predictive Control Plane for Optical AI Data Center Networks</h1>
+    <p class="article-title-ko">핼리: 광학 AI 데이터센터 네트워크를 위한 예측형 제어 플레인</p>
+    <p class="article-sub">대규모 AI 데이터센터의 광학 네트워크(공유 레이저 풀, 광회로 스위치, 마이크로링 변조기, 교체형 모듈)가 장애를 겪기 전에 미리 예측하고 대응하는 4종 예측형 제어기 프레임워크 "Halley"를 제안하고, 시뮬레이션상 유효 처리량을 65.2%에서 76.5%로 끌어올린다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.04408" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.04408" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Halley: A Predictive Control Plane for Optical AI Data Center Networks</li>
+<li><strong>저자</strong>: Manav Mishra (Prompeteer.ai), Krishna M. Sivalingam (인도공과대학교 마드라스)</li>
+<li><strong>출처</strong>: arXiv:2611.04408v1 [cs.NI] (2026년 11월 3일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음 (재현용 코드·하드웨어 설계는 암호화된 저장소로만 공개)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.04408">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>대규모 AI 데이터센터의 광학 네트워크(공유 레이저 풀, 광회로 스위치, 마이크로링 변조기, 교체형 모듈)가 장애를 겪기 전에 미리 예측하고 대응하는 4종 예측형 제어기 프레임워크 "Halley"를 제안하고, 시뮬레이션상 유효 처리량을 65.2%에서 76.5%로 끌어올린다.</p>
+<h2>배경 및 문제의식</h2>
+<p>공제패키지형 광학(co-packaged optics, CPO)을 쓰는 최신 AI 데이터센터는 수만 개 가속기가 동기 학습 스텝마다 동시에 통신하므로, 광학 데이터플레인(공유 레이저 풀 → 광회로 스위치 → 마이크로링 변조기 → 교체형 모듈)의 네 계층 중 하나라도 지연되면 전체 클러스터가 유휴 상태가 된다. 현재 배포된 정책은 모두 "반응형"으로, 장애가 이미 벌어진 뒤에야 대응하거나 사전에 고정된 규칙(정적 n+k 예비 레이저, 고정 비율 예비 등)을 따른다. 특히 같은 모듈 안의 레이저들은 냉각·전원을 공유하기 때문에 장애가 상호 상관되어 발생하는데(공통원인 장애), 저자들은 이 상관관계가 예비 레이저 풀의 가용성에 근본적 상한("상관 천장", correlation ceiling)을 만든다는 점을 이론적으로 증명하고, 이를 깨기 위한 예측 제어 플레인을 설계한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>상관된 레이저 장애 하에서 예비 풀의 가용성이 예비 비율과 무관하게 수렴하는 상한(상관 천장)이 존재함을 증명하고, 비용 모델상 예비 구매보다 디커플레이션(모듈 간 상관 분리)이 더 저렴한 경로임을 보인다.</li>
+<li>데이터플레인 4계층 각각을 담당하는 예측 제어기 <strong>LightReserve</strong>(레이저 풀 크기 결정, 커버리지 보장), <strong>FoldFit</strong>(광회로 스위치 스케줄링, 최적 대비 11/9 이내 총 점유시간 보장), <strong>ThermaLead</strong>(마이크로링 발열 예측 선제 제어), <strong>TriageGuard</strong>(장애 위험이 높은 모듈 우선 보호)로 구성된 Halley 프레임워크를 제시한다.</li>
+<li>네 컴포넌트를 통합한 시뮬레이션에서 유효 클러스터 처리량(goodput)을 65.2%→76.5%(상대 17.3%↑)로 끌어올리고, 동일 학습량 기준 가속기 수요를 최대 14.7%, 전력을 최대 3.3~14.7% 절감할 수 있음을 보인다.</li>
+<li>안전필수 요소(워치독, ThermaLead 열 제어 루프)를 상용 FPGA(Lattice iCE40UP5K)와 SkyWater 130nm 공정으로 합성·배치·배선하고 형식 검증까지 완료해, 실제로 제작 가능한 수준까지 구현했다.</li>
+</ul>
+<h2>방법론</h2>
+<p>논문은 레이저 풀의 장애를 교환 가능한(exchangeable) 확률과정으로 모델링하고, de Finetti 정리를 이용해 공통원인 장애 수준을 나타내는 잠재변수 Θ(베타분포)를 도입한다. 이로부터 "상관 천장" 정리(Theorem 1)를 증명하고, LightReserve는 이 보장 하에서 목표 커버리지를 만족하는 최소 예비 레이저 수를 이진 탐색으로 계산한다(Algorithm 1). FoldFit은 광회로 스위치의 구성 전환 스케줄링을 다중프로세서 스케줄링 문제(MULTIFIT/FFD)로 재구성해 최적 대비 11/9 이내의 총 점유시간을 보장한다(Algorithm 2). ThermaLead는 마이크로링 공진 파장의 열 드리프트를 8샘플 이동평균으로 한 스텝 앞서 예측해 히터를 선제 구동한다(Algorithm 3). TriageGuard는 모듈별 온도·노후도·오류정정 이력으로 위험 점수를 매겨 예산 내에서 고위험 모듈에 우선적으로 핫스페어를 배정한다(Algorithm 4, 탐욕적 상위-B 선택이 최적임을 교환 논증으로 증명). 또한 18개 모듈×8레이저의 계층적 상관 구조로 "상관 천장" 정리를 확장(Theorem 2)하고, 레이저 비용($1,500/개)과 모듈 물리적 분리 비용(활성 레이저 자본의 20%) 가정 하에서 예비 구매와 디커플레이션 중 최소 비용 경로를 찾는 최적화도 수행한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>32채널 풀(NVIDIA Quantum-X 스위치 규모, 레이저당 FIT율 50, 상관계수 ρ=0.15 가정)을 기준 스트레스 설정으로 삼아, 4-레이저 고정 예비(2배 예산 상한) 대비 각 컴포넌트를 시뮬레이션으로 평가했다. 커버리지 기준 가용성은 LightReserve 단독으로 86.3%→99.9%까지 끌어올릴 수 있었으나 2배 예산 상한 내에서는 99.670%가 한계였고, 상관을 ρ=0.15→0.03으로 디커플레이션하면 동일 예산으로 99.999%까지 도달했다(예비만 사는 것보다 5.3배 저렴, $44,100 vs $234,000). FoldFit은 실제 MoE 통신 패턴에서 최적 대비 평균 1% 이내, 최악 6% 이내로 작동했다. ThermaLead는 다이더-락 대비 잠금 손실을 매끄러운 열 사이클에서 최대 32%, 노이즈가 섞인 경우 2% 감소시켰다. TriageGuard는 동일 핫스페어 예산으로 평균 복구시간(MTTR)을 균등 분배 대비 5.1~10.4% 단축했다. 네 컴포넌트를 결합한 전체 스택은 유효 처리량을 65.2%→76.5%(+11.3p), 가용성을 +13.6p 개선했고, 재구성 횟수는 45% 감소했다. 안전필수 회로는 FPGA에서 최대 92.5MHz(목표 50MHz 대비 38% 여유)로 타이밍을 만족했고, 형식적 시간귀납법(temporal induction)으로 네 가지 핵심 속성을 증명했다.</p>
+<h2>한계점</h2>
+<p>논문이 스스로 명시한 한계는 다음과 같다. (1) 레이저 장애율 λ=0.05, 상관계수 ρ=0.15 등 핵심 입력값은 측정치가 아닌 가정이며, 외부 레이저 모듈의 상관관계는 현재 공개된 현장 데이터가 없다. (2) FoldFit의 11/9 보장은 수요가 하나의 회로 구성 내에서 분할되지 않는 등 세 가지 조건 하에서만 성립하며, 전환 지연(switching delay) 자체는 보장에서 제외된다. (3) ThermaLead의 이동평균 예측은 온도 변화가 급격하거나(최대 49~67% 손실 증가) 노이즈가 많을 때 성능이 저하된다. (4) 네 컴포넌트는 각각 개별적으로 증명되었을 뿐, 통합 스택의 처리량 향상에 대한 최악 경우(worst-case) 보장은 없다(일부 꼬리 분포만 증명). (5) 하드웨어 구현은 합성·배치·배선·서명까지 완료했으나 실제 제작·현장 측정은 수행하지 않았다.</p>
+<h2>시사점</h2>
+<p>레이저 풀의 공통원인 장애가 만드는 가용성 "천장"은 예비 개수를 아무리 늘려도 깨지지 않으며, 물리적 분리(디커플레이션)를 통한 상관 완화가 예산 대비 더 효율적인 신뢰성 확보 경로가 될 수 있음을 수치로 보여준다. 이는 광학 상호연결이 급속히 확산되는 차세대 AI 데이터센터 설계에서, 예비 하드웨어 투자뿐 아니라 모듈 배치·열/전원 도메인 분리 전략이 가용성과 운영 비용에 직접적인 영향을 미친다는 점을 시사한다. 또한 예측 기반 제어가 "신뢰도가 낮으면 안전하게 반응형으로 물러난다"는 폴백 원칙과 결합될 때, 학습 인프라의 신뢰성과 전력/자본 효율을 동시에 개선할 수 있는 실용적 경로가 될 수 있음을 보여준다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.04408" target="_blank" rel="noopener">huggingface.co/papers/2611.04408</a> · 2026-11-06</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

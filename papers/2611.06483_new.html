@@ -1,0 +1,119 @@
+<meta charset="UTF-8">
+<title>멀티턴 강화학습은 LLM 에이전트의 무엇을 실제로 개선하는가?</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#5 · Daily Papers 2026-11-06</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 31</span>
+    </div>
+    <h1 class="article-title">What Does Multi-Turn Reinforcement Learning Really Improve in LLM Agents?</h1>
+    <p class="article-title-ko">멀티턴 강화학습은 LLM 에이전트의 무엇을 실제로 개선하는가?</p>
+    <p class="article-sub">멀티턴 에이전틱 강화학습(RL)이 거두는 성능 향상은 매 스텝의 의사결정 품질 개선이 아니라, 충분한 상호작용 예산 하에서의 오류 복구 및 장기 수행 능력 강화에서 비롯되며, 이를 보완하기 위해 학습 중 상호작용 예산을 다양화하는 BudgetMix RL을 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.06483" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.06483" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: What Does Multi-Turn Reinforcement Learning Really Improve in LLM Agents?</li>
+<li><strong>저자</strong>: Kejian Zhu, Zhuoran Jin 외 (중국과학원 자동화연구소, 중국과학원대학, 칭화대학)</li>
+<li><strong>출처</strong>: arXiv:2611.06483v1 [cs.LG] (2026년 11월 4일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://rethinking-agentic-rl.github.io/">rethinking-agentic-rl.github.io</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.06483">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>멀티턴 에이전틱 강화학습(RL)이 거두는 성능 향상은 매 스텝의 의사결정 품질 개선이 아니라, 충분한 상호작용 예산 하에서의 오류 복구 및 장기 수행 능력 강화에서 비롯되며, 이를 보완하기 위해 학습 중 상호작용 예산을 다양화하는 BudgetMix RL을 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>멀티턴 에이전틱 RL은 코드 작성, 도구 사용 등 장기 과제(long-horizon task)에서 LLM 에이전트의 성능을 크게 향상시켜 왔지만, "RL이 실제로 무엇을 개선하는지"는 충분히 규명되지 않았다. 기존 연구는 주로 궤적(trajectory) 단위의 성공 여부만 평가했고, 샘플링 폭(sampling breadth, k)만 다루는 단일 턴 중심의 Pass@K 평가로는 상호작용 깊이(interaction depth, T)라는 또 다른 축을 포착하지 못한다는 한계가 있었다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>궤적 성공률을 샘플링 폭(K)과 상호작용 깊이(T) 두 축으로 분해하는 Pass@(K,T) 평가 프레임워크를 활용해 RL 이득의 원천을 분석.</li>
+<li>RL 모델이 매 스텝 단위의 행동 품질을 일관되게 향상시키지 않으며, 그 이점이 오류 복구와 궤적 후반부에 집중된다는 것을 실증.</li>
+<li>로그우도(log-likelihood) 분석을 통해 RL이 개별 행동은 베이스 모델과 유사하게 유지하면서도, 전체 궤적의 상대적 선호도를 크게 높인다는 메커니즘을 제시.</li>
+<li>상호작용 예산을 학습 중 다양화하는 대안 학습 전략인 BudgetMix RL을 제안하고, 다양한 예산 조건에서 안정적인 성능을 보임을 실험으로 입증.</li>
+</ul>
+<h2>방법론</h2>
+<p>Pass@(K,T)는 k개의 독립 샘플 중 하나라도 성공할 확률을 측정하는 Pass@K를, 턴당 최대 허용 상호작용 횟수 T까지 함께 고려하도록 확장한 지표다. 연구진은 FrozenLake, DeepCoder-MT, BFCL v3, InterCode-SQL 네 가지 상호작용형 벤치마크에서 Qwen3-4B/8B를 기반으로 GRPO로 학습한 RL 모델과 베이스 모델을 비교했다. 스텝 단위 행동 품질은 동일 상태에서 베이스·RL 정책이 각각 샘플링한 행동을 비교(FrozenLake는 동적계획법으로 산출한 Q* 값, DeepCoder-MT는 단위 테스트 통과율 사용)해 측정했으며, 오류 상태 직후의 복구 능력을 별도로 분석했다. 메커니즘 분석을 위해 행동 단위의 음의 로그우도(NLL)와 궤적 단위의 누적 로그우도비(LLR)를 계산했다. 마지막으로 BudgetMix RL은 학습 시 과제별 최대 예산 T_max의 10% 단위 구간에서 예산을 균일 샘플링해 다양한 예산 조건에서 학습하도록 한다.</p>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li><strong>Pass@K (샘플링 폭)</strong>: RL 모델이 베이스 모델 대비 일관되게 우수하며, k가 증가할수록 RL이 베이스 모델의 경험적 능력 경계를 확장함을 확인(§3.1).</li>
+<li><strong>Pass@T (상호작용 깊이)</strong>: 예산 T가 클수록 RL의 이득이 뚜렷해지지만, 예산이 빡빡해질수록(T가 작을수록) 이득이 줄어들거나 일부 과제에서는 역전되기도 함(§3.2).</li>
+<li><strong>스텝 단위 품질</strong>: 동일 상태에서 RL이 베이스보다 우수한 행동을 고른 비율은 DeepCoder-MT 46.8%, FrozenLake 42.8%로, 전반적으로 베이스 모델과 비슷하거나 소폭 낮음. 반면 오류 상태 직후에는 RL의 우위 비율이 FrozenLake 65.7%, DeepCoder-MT 67.3%로 크게 상승.</li>
+<li><strong>궤적 내 위치별 이득</strong>: 궤적 초반에는 RL 이득이 거의 없거나 베이스보다 낮지만, 후반으로 갈수록 격차가 벌어짐.</li>
+<li><strong>로그우도 분석</strong>: RL이 생성한 행동들은 베이스 정책 하에서도 그럴듯한(plausible) 수준으로 평가되지만(Terminal-Bench 기준 평균 NLL 12.20 vs 10.25), 성공한 전체 궤적의 누적 LLR은 RL 성공 궤적이 약 228, 베이스 성공 궤적이 약 26으로 RL 정책이 자신의 궤적에 훨씬 높은 확률을 부여.</li>
+<li><strong>BudgetMix RL</strong>: Table 1 기준 25%/50%/75% 예산에서 GRPO/GiGPO/PPO 평균 대비 각각 +7.5/+5.3/+4.0%p(Qwen3-4B), +7.3/+4.7/+4.0%p(Qwen3-8B) 개선을 보였고, 100% 예산에서는 기존 풀예산 RL과 대등한 성능을 유지.</li>
+</ul>
+<h2>한계점</h2>
+<p>오류 상태 이후의 스텝 단위 품질 비교에 사용된 것은 FrozenLake·DeepCoder-MT 등 신뢰 가능한 스텝 단위 평가가 가능한 일부 과제에 한정되며, 보다 일반적인 에이전트 과제로의 일반화 여부는 논문에 명시되지 않음. 또한 고품질 프로세스 감독 신호(오라클 Q값 등)가 예산 의존성을 완화할 수 있음을 보였으나, 실제 환경에서 이러한 정밀한 감독 신호를 얻기는 어렵다는 점을 스스로 한계로 지적.</p>
+<h2>시사점</h2>
+<p>에이전트의 트레이닝/배포 시 최종 과제 성공률만으로 품질을 판단하는 것은 위험할 수 있으며, 특히 금융·데이터베이스 조작처럼 되돌릴 수 없는 행동이 포함된 실세계 응용에서는 매 스텝의 견고성을 별도로 평가·관리할 필요가 있음을 시사한다. BudgetMix RL처럼 학습 시 상호작용 예산을 다양화하는 전략은 제한된 예산 환경에서도 안정적인 에이전트를 만드는 실용적인 접근법이 될 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.06483" target="_blank" rel="noopener">huggingface.co/papers/2611.06483</a> · 2026-11-06</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

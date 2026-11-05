@@ -1,0 +1,122 @@
+<meta charset="UTF-8">
+<title>이모리워드</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#7 · Daily Papers 2026-11-06</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 22</span>
+    </div>
+    <h1 class="article-title">EmoReward: Self-Evolving Reward Calibration for Emotional Video Generation RL</h1>
+    <p class="article-title-ko">이모리워드: 감정 영상 생성 강화학습을 위한 자가진화형 보상 보정</p>
+    <p class="article-sub">완료된 학습 실행에서 얻은 보상 신호의 신뢰도를 다음 학습 실행에 전수하는 자가진화형 메커니즘으로, 영상 생성 RL에서 감정 표현 보상을 모델 재학습 없이 적응적으로 보정한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.06518" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.06518" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: EmoReward: Self-Evolving Reward Calibration for Emotional Video Generation RL</li>
+<li><strong>저자</strong>: Mingzhe Zheng, Yue Wu 외 (HKUST, Tencent Hunyuan, Fudan University, University of Waterloo)</li>
+<li><strong>출처</strong>: arXiv:2611.06518v1 [cs.CV] (2026년 11월 4일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://emoreward-project.github.io/">emoreward-project.github.io</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.06518">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>완료된 학습 실행에서 얻은 보상 신호의 신뢰도를 다음 학습 실행에 전수하는 자가진화형 메커니즘으로, 영상 생성 RL에서 감정 표현 보상을 모델 재학습 없이 적응적으로 보정한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>GRPO(Group Relative Policy Optimization) 같은 RL 기법은 코드·수학처럼 정답이 명확한 영역의 모델 사후학습에는 효과적이지만, 영상의 감정 표현처럼 주관적이고 정답이 하나로 정해지지 않는 품질을 평가하는 데는 한계가 있다. 기존 방법들은 시각 품질, 모션 품질, 텍스트 정합성 등에 대해 고정된 보상을 사용하는데, 이는 감정적 의도를 제대로 포착하지 못하고 보상 해킹(reward hacking)에 취약하다. 또한 얼굴·신체·색조 등 다양한 감정 근거(evidence) 신호들은 상황에 따라 신뢰도가 달라지므로, "현재 영상에서 어떤 감정적 근거를 얼마나 신뢰해야 하는가"라는 질문에 답할 수 있는 적응적 평가 체계가 필요하다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>보상 모델의 파라미터를 업데이트하지 않고도, 완료된 학습 실행에서 수집한 보상-결과 이력을 바탕으로 다음 실행의 보상 제공자(provider) 신뢰도를 보정하는 자가진화형 메커니즘인 EmoReward를 제안.</li>
+<li>다중 보상 시스템을 위한 메모리 모듈인 RewardMemory를 제안. 각 감정 상태(regime)별로 보상 제공자들의 신뢰도를 상관관계 기반으로 추정하여, 제한된 범위의 고정 가중치(배수)로 증류해 저장.</li>
+<li>"실행 간 자가진화(cross-run self-evolution)" 패러다임을 제시: 완료된 학습 실행의 경험을 다음 실행의 보상 배분에 재사용할 수 있게 함으로써, 멀티모달 파운데이션 모델의 사후학습에 새로운 방향을 제시.</li>
+</ul>
+<h2>방법론</h2>
+<p>EmoReward는 Plan → Act → Reflect → Evolve의 네 단계로 구성된다.
+- <strong>Plan(계획)</strong>: 프롬프트를 밸런스/각성도 같은 스칼라 목표, 목표 얼굴 액션 유닛(AU) 강도, 신체 단서, 표정 관찰 구간(expression window)을 포함하는 "EmoScript"로 변환한다.
+- <strong>Act(관측)</strong>: VLM 판정자, 얼굴 AU, 신체 단서, 시간적 근거, CLIP-ATT, R1-Omni, 모션 자연스러움 등 7종의 보상 제공자가 생성된 영상을 평가해 점수와 유효성(validity)을 함께 산출한다.
+- <strong>Reflect(반영)</strong>: 학습 단계(phase), 신호 간 상충(conflict), 얼굴 신뢰도(face), 민감도(subtlety)를 반영한 인스턴스 단위 게이트를 계산해, 현재 영상에서 각 제공자의 기여도를 동적으로 조정하고 가중 평균으로 감정 보상을 산출한다.
+- <strong>Evolve(진화)</strong>: RewardMemory가 완료된 참조 학습 실행의 이력(점수, 게이트, 가중치, 결과)을 감정 상태별로 그룹화하고, 각 제공자 점수와 실제 결과 간 상관관계를 계산해 신뢰도를 추정한 뒤, 이를 제한된 범위의 고정 배수로 변환해 다음 학습 실행에 적용한다. 보상 모델 자체는 전체 과정에서 동결(frozen) 상태로 유지된다.</p>
+<p>이렇게 산출된 감정 보상은 일반 영상 품질 보상과 가중 결합되어 최종 보상을 구성하며, DanceGRPO·FlowGRPO·SAGE-GRPO 등 다양한 RL 알고리즘에 결합될 수 있다.</p>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li>HunyuanVideo 1.5를 백본으로, DanceGRPO·FlowGRPO·SAGE-GRPO 세 가지 RL 알고리즘에 EmoReward를 적용해 평가했다. 평가셋은 학습셋과 겹치지 않는 302개의 감정 프롬프트.</li>
+<li>세 알고리즘 모두에서 VideoAlign 기반 종합 점수(Overall)가 상승했다(DanceGRPO +0.3218, FlowGRPO +0.2343, SAGE-GRPO +0.5645 등, Reflect/EmoReward 적용 시).</li>
+<li>7종의 보상 정책(VideoAlign 단독, 단일 제공자, 무작위 라우팅, 라운드로빈, 고정 융합, RewardMemory 미적용 EmoReward, RewardMemory 적용 EmoReward)을 비교한 통제 실험에서, RewardMemory를 포함한 EmoReward가 신뢰도 선택성(Selectivity 0.428)과 복합 점수(core 0.922, emo 0.884) 모두에서 가장 높은 성능을 보였다.</li>
+<li>18명이 참여한 인간 평가(30개 프롬프트, 항목당 540건 판정)에서 EmoReward는 감정 충실도·시간적 일관성·시각 품질 세 기준 모두에서 가장 높은 "Good" 비율(60.0%, 54.3%, 57.2%)과 가장 낮은 "Bad" 비율을 기록했다.</li>
+<li>Stable Diffusion 3.5, FLUX 등 이미지 생성 백본으로의 전이 실험에서도 목적함수에 따라 차이는 있으나 전반적으로 유의미한 개선을 보였다.</li>
+</ul>
+<h2>한계점</h2>
+<p>논문에 명시된 한계로, 이미지 백본(SD3.5, FLUX) 전이 실험은 학습 예산이 동일하지 않아 인과적 효과를 명확히 분리하기 어렵고, FLUX의 경우 이미 HPSv3에 최적화된 기준선이 가장 강한 성능을 유지해 결과가 목적함수에 따라 달라짐을 보였다. 또한 메모리가 없는 콜드스타트 상황에서는 기본 가중치로 회귀(fallback)하는 한계가 있다.</p>
+<h2>시사점</h2>
+<p>RLHF처럼 사람이 직접 라벨링하는 대신, "완료된 학습 실행의 경험"을 비용이 저렴한 자기 지도적 신호로 활용해 보상 모델의 신뢰도를 보정할 수 있다는 점은 주관적 품질(감정, 미적 선호 등)이 중요한 생성 모델 사후학습 전반에 적용 가능한 범용적 아이디어를 제공한다. 보상 모델 자체를 재학습하지 않고도 실행 간(cross-run) 지식 전이가 가능하다는 점에서, 비용 효율적인 반복 개선 파이프라인 설계에 시사하는 바가 크다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.06518" target="_blank" rel="noopener">huggingface.co/papers/2611.06518</a> · 2026-11-06</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

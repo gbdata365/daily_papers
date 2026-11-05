@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>데이터팜</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#8 · Daily Papers 2026-11-06</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 22</span>
+    </div>
+    <h1 class="article-title">PyRUA-DataFarm: LLM Agent as a Cost-Efficient Teleoperator for Real-Ready Robot Data</h1>
+    <p class="article-title-ko">데이터팜: 실사용 가능한 로봇 데이터를 위한 비용 효율적 원격조작자로서의 LLM 에이전트</p>
+    <p class="article-sub">코딩 에이전트가 사람 원격조작자를 대신해 단 한 번의 보정(calibration) 에피소드만으로 시뮬레이션 작업을 복원하고, 비디오 생성 모델이 외형을 입혀 실제 로봇 정책 학습에 바로 쓸 수 있는 "실사용급" 데이터를 자동으로 대량 생산하는 시스템을 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.05320" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.05320" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: PyRUA-DataFarm: LLM Agent as a Cost-Efficient Teleoperator for Real-Ready Robot Data</li>
+<li><strong>저자</strong>: Kewei Zhang, Juncheng Ma 외 (Peking University, NVIDIA)</li>
+<li><strong>출처</strong>: arXiv:2611.05320v1 [cs.RO] (2026년 11월 3일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://dagroup-pku.github.io/PyRUA-Lean/DataFarm">DataFarm</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.05320">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>코딩 에이전트가 사람 원격조작자를 대신해 단 한 번의 보정(calibration) 에피소드만으로 시뮬레이션 작업을 복원하고, 비디오 생성 모델이 외형을 입혀 실제 로봇 정책 학습에 바로 쓸 수 있는 "실사용급" 데이터를 자동으로 대량 생산하는 시스템을 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>로봇 모방학습에는 원격조작(teleoperation) 데이터가 주로 쓰이지만, 매 에피소드마다 로봇·운영자의 시간이 들고 새 작업마다 처음부터 다시 수집해야 해 비용이 크다. 기존 합성 데이터 생성 방식은 사람이 장면·전문가 정책·성공 판정을 직접 설계해야 하거나(사람 개입 필요), 실제-시뮬레이션 간 외형 격차(천 소재, 발광 디스플레이 등은 재현이 어려움) 문제를 안고 있었다. 저자들은 "코딩 에이전트가 원격조작자의 역할을 대신할 수 있는가"라는 질문을 던진다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>데이터 요청과 보정 에피소드 1개만 입력받아, 에이전트가 장면을 시뮬레이션으로 재구성하고 전문가 컨트롤러·성공 판정기를 스스로 작성하는 자동화된 데이터팜(DataFarm) 제안.</li>
+<li>시뮬레이터가 정확한 행동(action)을, 실제 이미지로 조건화한 비디오 생성 모델이 사실적 외형을 각각 담당하도록 역할을 분리.</li>
+<li>제작(production)과 인증(certification)을 분리: 에이전트가 볼 수 없는 숨겨진 판정기(judge)와 독립적인 검수자가 각 에피소드를 검증한 뒤에만 데이터셋에 포함.</li>
+</ul>
+<h2>방법론</h2>
+<p>파이프라인은 (1) 보정 에피소드로부터 장면·카메라·스케일을 복원하는 그라운딩(Grounding), (2) 시뮬레이터가 해당 작업의 스킬을 재현할 수 있는지 점검하는 시뮬레이터 자격 검증, (3) 작업 계약(task contract)과 전문가 컨트롤러·판정기 컴파일, (4) MiniMax-H3 등 비디오 모델로 시뮬레이터 롤아웃을 실사 영상으로 렌더링, (5) 자동 검증기와 독립 리뷰어의 이중 검수를 거쳐 데이터셋에 admission하는 5단계로 구성된다. 렌더링 시에는 머리·양 손목 카메라 시점을 하나의 캔버스에서 함께 생성해 시점 간 일관성을 확보하고, 긴 에피소드는 청크 단위로 생성한 뒤 이어붙여 드리프트를 줄인다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>양팔 로봇(PiPER)의 5개 작업(컵 쌓기, 사과 무게 재기, 북 치기, 서랍 열고 닫기, 수건 개기)에서, 데이터팜만으로 학습한 정책(π0.5)은 원래 장면에서 100회 중 93회 성공해 동일 개수의 원격조작 데이터로 학습한 정책(84회)과 대등하거나 상회했다. 특히 학습 데이터에 없던 식탁보·조명 조건(OOD)에서는 데이터팜 87회 대 원격조작 46회로 큰 격차를 보였다. 기존 real-to-sim-to-real 베이스라인(Sim+DR)은 ID 26회, OOD 21회에 그쳐 렌더링의 기여가 큼을 입증했다. 비용 면에서는 작업 적응에 평균 21달러(1회성), 에피소드당 평균 0.80달러가 들어 중국 원격조작 외주 시세(시간당 117달러)나 북미 인건비(시간당 290달러)보다 저렴했다.</p>
+<h2>한계점</h2>
+<p>시뮬레이터가 재현하지 못하는 스킬의 작업에는 적용이 어렵고, 보정 에피소드에 드러나지 않는 질량·마찰 등 동역학 값은 추정이 아닌 무작위화로 처리되어 정밀한 동역학이 중요한 작업에는 부족할 수 있다. 자동 검증기도 완벽하지 않아 생성 영상의 결함을 놓칠 수 있으며, 평가는 하나의 양팔 로봇 플랫폼과 5개 작업으로 한정되어 다른 로봇 형태나 더 넓은 작업군에 대한 검증은 남은 과제다.</p>
+<h2>시사점</h2>
+<p>로봇 데이터 수집에서 사람 원격조작자의 역할 상당 부분을 코딩 에이전트와 생성 모델 조합으로 대체할 수 있음을 실제 로봇 배포 성능으로 보여준 사례로, 데이터 생성 비용과 외형 다양성 확보를 동시에 해결하는 방향성을 제시한다. 숨겨진 판정기와 독립 검수라는 "자기 검증 금지" 설계는 LLM 에이전트가 생성한 데이터의 신뢰성을 담보하는 일반적 패턴으로 다른 에이전틱 데이터 생성 작업에도 참고가 될 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.05320" target="_blank" rel="noopener">huggingface.co/papers/2611.05320</a> · 2026-11-06</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

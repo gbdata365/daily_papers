@@ -1,0 +1,110 @@
+{
+  "2611.08449": {
+    "base": "2611_브플래시_플래시-프리미티브-디코딩-비주얼-플래닝",
+    "rank": "#1",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "88",
+    "en_title": "VFlash: Fast, Accurate Visual Planning via Flash Primitive Decoding",
+    "ko_title": "브플래시: 플래시 프리미티브 디코딩을 통한 빠르고 정확한 비주얼 플래닝"
+  },
+  "2611.04277": {
+    "base": "2611_하네스에스_형제-하네스-에이전트-일반화학습",
+    "rank": "#2",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "54",
+    "en_title": "Harness-S: Learning from Sibling Harnesses for Generalizable Agent Training",
+    "ko_title": "형제 하네스로부터 배우는 일반화 가능한 에이전트 훈련: Harness-S"
+  },
+  "2611.00883": {
+    "base": "2611_베스트랜드_랜덤기반-벤치마크-압축",
+    "rank": "#3",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "50",
+    "en_title": "Random Is Almost Enough? Stable and Low-Cost Benchmark Compression via BestRand",
+    "ko_title": "랜덤이면 거의 충분하다? BestRand를 통한 안정적이고 저비용인 벤치마크 압축"
+  },
+  "2611.08373": {
+    "base": "2611_에스엘에이_공간언어행동모델-지속사전학습",
+    "rank": "#4",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "48",
+    "en_title": "SLA: Scaling Spatial-Language-Action Model via Continual Pre-training",
+    "ko_title": "SLA: 지속적 사전학습을 통한 공간-언어-행동 모델 확장"
+  },
+  "2611.07392": {
+    "base": "2611_웰엠이미지_통합-이미지-생성모델",
+    "rank": "#5",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "37",
+    "en_title": "WeLM-Image: A Unified Image Generation Model towards Visual Intelligence",
+    "ko_title": "웰엠이미지: 시각 지능을 향한 통합 이미지 생성 모델"
+  },
+  "2611.06741": {
+    "base": "2611_테일스티어_멀티턴-이미지편집-드리프트방지",
+    "rank": "#6",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "35",
+    "en_title": "TailSteer: Trajectory-Tail Steering for Drift-Resistant Multi-turn Image Editing",
+    "ko_title": "테일스티어: 드리프트 저항적 멀티턴 이미지 편집을 위한 궤적-끝부분 조정"
+  },
+  "2611.03743": {
+    "base": "2611_에보멤스테이트_개인에이전트-진화형메모리",
+    "rank": "#7",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "20",
+    "en_title": "EvoMemState: Evolving Memory State for Personal Agents",
+    "ko_title": "에보멤스테이트: 개인 에이전트를 위한 진화형 메모리 상태"
+  },
+  "2611.07854": {
+    "base": "2611_드렉스_기초의사결정모델",
+    "rank": "#8",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "18",
+    "en_title": "Towards Foundation Decision Models: Drex",
+    "ko_title": "기초 의사결정 모델을 향하여: 드렉스"
+  },
+  "2611.04894": {
+    "base": "2611_비스서치벤치_장기시각탐색-에이전트평가",
+    "rank": "#9",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "17",
+    "en_title": "VisSearch-Bench: Evaluating Long Horizon Visual Search in Multimodal Agents",
+    "ko_title": "비스서치벤치: 멀티모달 에이전트의 장기 시각 탐색 능력 평가"
+  },
+  "2611.06817": {
+    "base": "2611_오픈휴먼웜_인간로봇경험-확장레시피",
+    "rank": "#10",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "14",
+    "en_title": "Open-HumanWAM: An Open Recipe for Scaling Human and Robot Experience for Embodied Foundation Models",
+    "ko_title": "오픈휴먼웜: 체화된 파운데이션 모델을 위한 인간-로봇 경험 확장 공개 레시피"
+  },
+  "2611.06976": {
+    "base": "2611_프리필투오토리그레시브_크로스모델전이",
+    "rank": "#11",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "12",
+    "en_title": "On the Opportunities and Challenges of Prefill-to-Autoregressive Cross-Model Transfer",
+    "ko_title": "PACT: 프리필-자기회귀 간 교차 모델 전이의 기회와 과제"
+  },
+  "2611.07909": {
+    "base": "2611_에드가_디퓨전가우시안아바타-정제",
+    "rank": "#12",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "10",
+    "en_title": "EDGAR: Efficient Diffusion-Driven Gaussian Avatar Refinement via Synthetic Failure",
+    "ko_title": "EDGAR: 합성 실패 사례 기반 효율적 디퓨전 구동 가우시안 아바타 정제"
+  }
+}

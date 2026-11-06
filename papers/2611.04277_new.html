@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>형제 하네스로부터 배우는 일반화 가능한 에이전트 훈련</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#2 · Daily Papers 2026-11-07</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 54</span>
+    </div>
+    <h1 class="article-title">Harness-S: Learning from Sibling Harnesses for Generalizable Agent Training</h1>
+    <p class="article-title-ko">형제 하네스로부터 배우는 일반화 가능한 에이전트 훈련: Harness-S</p>
+    <p class="article-sub">LLM 에이전트의 실행 하네스(harness)를 여러 갈래로 분화시켜 만든 "형제 하네스(sibling harness)" 집합을 활용해, 원래 하네스만 사용해도 더 뛰어난 성능을 내는 단일 정책을 학습시키는 프레임워크 Harness-S를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.04277" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.04277" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Harness-S: Learning from Sibling Harnesses for Generalizable Agent Training</li>
+<li><strong>저자</strong>: Kangning Zhang, Wenxiang Jiao, Bowen Fang, Shuai Shao, Jiachen Zhu, Rong Shan, Shijian Wang, Hao Wang, Yuan Lu, Weiwen Liu, Weinan Zhang (Shanghai Jiao Tong University, Xiaohongshu Inc., Zhongguancun Institute of Artificial Intelligence, Southeast University, Carnegie Mellon University)</li>
+<li><strong>출처</strong>: arXiv:2611.04277v1 [cs.AI] (2026년 11월 3일)</li>
+<li><strong>프로젝트 페이지</strong>: 코드 저장소 — https://github.com/DeepExperience/Harness-S</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.04277">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>LLM 에이전트의 실행 하네스(harness)를 여러 갈래로 분화시켜 만든 "형제 하네스(sibling harness)" 집합을 활용해, 원래 하네스만 사용해도 더 뛰어난 성능을 내는 단일 정책을 학습시키는 프레임워크 Harness-S를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>에이전트의 행동은 모델 정책뿐 아니라 프롬프트, 도구 인터페이스, 컨텍스트·메모리 관리 규칙 등을 포괄하는 "하네스"에 의해서도 크게 좌우된다. 저자들은 공통의 기본 하네스 H0에서 파생된 변형들을 관찰하여 세 가지 특성을 발견했다: (1) <strong>지역성(Locality)</strong> — 하네스 수정은 일부 실패만 고치고 다른 과제에서는 퇴보를 유발하는 경우가 많음, (2) <strong>상호 보완성(Complementarity)</strong> — 서로 다른 형제 하네스들은 서로의 오류를 보완할 수 있음, (3) <strong>비정상성(Nonstationarity)</strong> — 정책이 학습됨에 따라 특정 하네스의 유용성과 우열 순위가 뒤바뀔 수 있음. 이 때문에 모든 경우에 보편적으로 우수한 단일 하네스를 만들기 어렵고, 정책과 하네스를 번갈아 공진화시키는 기존 방식은 비용이 크고 재사용이 어렵다는 문제가 있다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>하네스 진화에서 지역성, 상호 보완성, 비정상성을 체계적으로 규명하고, 이를 활용해 형제 하네스들의 보완적 능력을 원래 하네스 H0 아래에서도 유지되는 단일 정책으로 전이시키는 Harness-S를 제안.</li>
+<li><strong>방향성 하네스 진화(Directional Harness Evolution)</strong>: 서로 다른 수리 방향으로 가지치기하며 보완적 변형들을 재사용 가능한 "형제 하네스 풀(Sibling Harness Pool)"에 보존하는 파이프라인.</li>
+<li><strong>보완적 하네스 구조 훈련(Complementary Harness Rescue Training)</strong>: H0에서 모든 초기 시도가 실패한 과제에 한해 학습 신호를 복구.</li>
+<li><strong>적응형 하네스 라우터(Adaptive Harness Router)</strong>: 보완적인 형제 하네스를 선택해 성공한 대안적 경로와 과제 내 보상 대비를 회수.</li>
+</ul>
+<h2>방법론</h2>
+<p>먼저 기본 하네스 H0에서 출발해, 훈련 과제에서의 실패를 진단하고 관련 근본 원인별로 자식 하네스를 파생시키는 방향성 진화를 수행한다(수식 2). 각 라운드에서는 검증 과제 커버리지를 공동 최대화하는 부모 집합을 선택하며(수식 3), 유효한 모든 자식 하네스는 고정된 "형제 하네스 풀"에 누적 보존된다. 정책 훈련 중에는 이 풀을 활용한 "보완적 구조 훈련"이 이루어지는데, 과제별로 H0 아래에서 K개의 롤아웃을 생성해 모두 실패하면(수식 5), 적응형 라우터가 선택한 보조 하네스들 아래에서 신선한 롤아웃을 추가로 생성하여 학습 그룹을 구성하고 GRPO(수식 6, 7)로 공유 정책을 업데이트한다. 라우터는 "하네스 행동 프로파일"(수식 8)과 다중 LLM의 독립적인 투표(수식 9, 10)를 결합해 과제별 적합한 형제 하네스를 선정하며, 정책이 학습됨에 따라 주기적으로 프로파일을 재보정(policy-aware profile re-anchoring)한다. 최종적으로는 풀 전체(H0 포함)에서 Rank-1 하네스를 선택하는 라우팅으로 추가적인 추론 시 이득도 얻을 수 있다(수식 12).</p>
+<h2>실험 설정 및 결과</h2>
+<p>Qwen3.5-4B와 Qwen3.5-9B를 AppWorld, SWE-Gym, DBBench 세 가지 장기 과제 벤치마크에서 평가했다. Harness-S는 정책만 학습하는 GRPO, H0 구조 훈련(H0 rescue), 고정 하네스 혼합, Meta-Harness, WHALE·HarnessForge 같은 정책-하네스 공진화 기법 등 다양한 비교군을 모두 능가했다. 예컨대 AppWorld에서 Harness-S(4B, H0)는 Pass@3 67.56%를 기록해 GRPO(60.31%)와 H0 rescue(61.83%)를 크게 앞섰으며, Rank-1 라우팅을 적용하면 68.32%까지 상승한다. 9B 모델의 Harness-S는 DBBench에서 프런티어 모델(GPT-6-Sol, DeepSeek-v4-Flash, GLM-5.3-Flash) 수준을 능가하기도 했다. 행동 분석 결과 Harness-S로 학습된 정책은 API 호출 전 스키마 조회, 쓰기 후 재확인(read-back), 테스트 차단 시 어서션 검사로 전환하는 등 더 신중한 행동 패턴을 보였고, 훈련 중 습득한 행동(예: 집합 교집합 활용, 계정 복구 절차)이 훈련에 쓰이지 않은 새로운 과제에도 전이됨을 사례 연구로 확인했다. 또한 DSH, Claude Code, OpenClaw 등 외부 하네스로 교체해도 성능 우위가 유지되는 교차 하네스 일반화도 관찰되었다.</p>
+<h2>한계점</h2>
+<p>논문에 명시된 별도의 "한계점" 절은 없으며, 결론에서 향후 연구 방향으로 언급된 내용을 통해 유추할 수 있다: 전이 효과의 지속성과 풀 재사용의 효율성에 대한 추가 연구가 필요하고, 독립적으로 개발된 하네스 간 과제 상태 교환 방식은 아직 다루지 않았으며, 수리 다양성이 정책 성능과 보정 비용에 미치는 영향(하네스 스케일링)도 추후 과제로 남아 있다. 또한 방법 자체가 LLM 기반 투표와 프로파일링에 의존하므로 외부 LLM 호출 비용이 수반된다.</p>
+<h2>시사점</h2>
+<p>이 연구는 에이전트 성능 향상을 위해 반드시 하나의 "최고 하네스"를 찾을 필요가 없으며, 서로 다른 실패를 보완하는 여러 하네스의 경험을 단일 정책에 압축적으로 전이시키는 것이 더 효율적일 수 있음을 보여준다. 이는 실무에서 에이전트 시스템을 프롬프트·툴 인터페이스 수정만으로 반복 개선하는 대신, 그러한 수정 경험을 정책 학습 신호로 체계적으로 환원하는 새로운 설계 패턴을 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.04277" target="_blank" rel="noopener">huggingface.co/papers/2611.04277</a> · 2026-11-07</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

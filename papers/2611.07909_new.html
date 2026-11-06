@@ -1,0 +1,113 @@
+<meta charset="UTF-8">
+<title>EDGAR</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#12 · Daily Papers 2026-11-07</span>
+      <span class="cat-tag">생성모델</span>
+      <span class="upvote-tag">▲ 10</span>
+    </div>
+    <h1 class="article-title">EDGAR: Efficient Diffusion-Driven Gaussian Avatar Refinement via Synthetic Failure</h1>
+    <p class="article-title-ko">EDGAR: 합성 실패 사례 기반 효율적 디퓨전 구동 가우시안 아바타 정제</p>
+    <p class="article-sub">단안(monocular) 영상이나 소수 이미지로 만든 3D 가우시안 아바타에서 생기는 흐릿함·왜곡·떠다니는 가우시안 같은 결함을, 참조 이미지 조건부 1-스텝 디퓨전 모델로 보정하고 그 보정 결과를 다시 아바타 최적화에 되먹임하는 프레임워크.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.07909" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.07909" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: EDGAR: Efficient Diffusion-Driven Gaussian Avatar Refinement via Synthetic Failure</li>
+<li><strong>저자</strong>: Kwan Yun, Minhyeok Bang, Colette Suhjung Koo, Junyong Noh (KAIST Visual Media Lab)</li>
+<li><strong>출처</strong>: arXiv:2611.07909v1 [cs.GR] (2026년 11월 5일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음 (코드는 "EDGAR"라는 이름으로 공개됨)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.07909">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>단안(monocular) 영상이나 소수 이미지로 만든 3D 가우시안 아바타에서 생기는 흐릿함·왜곡·떠다니는 가우시안 같은 결함을, 참조 이미지 조건부 1-스텝 디퓨전 모델로 보정하고 그 보정 결과를 다시 아바타 최적화에 되먹임하는 프레임워크.</p>
+<h2>배경 및 문제의식</h2>
+<p>3D Gaussian Splatting 기반 아바타는 실시간 렌더링과 편집 용이성 덕분에 각광받고 있지만, 단안 비디오나 소수 뷰로 복원할 경우 관측되지 않은 영역(옆모습, 벌어진 입, 머리카락 등)에서 기하와 텍스처가 심하게 부족 제약(under-constrained)되어 흐림, 늘어짐, 깊이 모호성 등의 아티팩트가 발생한다. 기존 디퓨전 기반 보정 기법들은 학습된 사전(prior)에만 의존해 원래 신원(identity)을 충실히 보존하지 못하는 한계가 있었다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>EDGAR-SET</strong>: 실제 캡처(NeRSemble, RGBAvatar 기반)와 합성(CAFCA 기반) 데이터를 결합해 "저품질 렌더링-정답 이미지-참조 이미지" триplet 40만 장을 구성한 하이브리드 데이터셋.</li>
+<li><strong>EDGAR</strong>: 참조 신원 이미지 조건부 1-스텝 디퓨전(SD-Turbo 기반) 보정 네트워크로, 열화된 아바타 렌더링을 선명하고 신원을 보존한 이미지로 변환.</li>
+<li>Mixture-of-Experts(MoE) 구조로 다양한 종류·강도의 열화 패턴에 특화된 처리를 수행.</li>
+<li>표정 일관성 손실(expression consistency loss)을 도입해 미세한 표정·근육 움직임 보존.</li>
+<li>보정된 다중뷰 렌더링을 가짜 정답(pseudo-target)으로 사용해 원본 3D 가우시안 아바타 자체를 재최적화, 렌더링 효율을 유지하면서 개선 효과를 3D 표현에 흡수.</li>
+</ul>
+<h2>방법론</h2>
+<p>EDGAR는 사전학습된 Sapiens 모델로 참조 이미지에서 신원 특징을 추출한 뒤, Fuse 블록(멀티헤드 교차주의)을 통해 1-스텝 디퓨전 백본(SD-Turbo)의 각 레이어에 주입한다. 디퓨전 모델의 교차주의·레지듀얼 레이어는 동결하고 자기주의(self-attention) 레이어만 LoRA로 미세조정하여 픽셀 간 관계를 재구성에 맞게 학습시킨다. 입력 이미지 인코더에서 디코더로 제로 초기화된 잔차 연결을 추가해 저품질 입력 정보를 디코더가 더 잘 활용하도록 한다. 다양한 열화 강도에 대응하기 위해 라우터가 중간 특징을 보고 6개 전문가(expert) 중 하나에 할당하는 MoE 구조를 채택했으며, 로드밸런싱 손실로 특정 전문가로의 쏠림을 방지한다. 학습 목적함수는 LPIPS·L2 픽셀 손실·VGG Gram 스타일 손실로 구성된 이미지 재구성 손실에, POSTER V2 특징 기반 표정 일관성 손실과 로드밸런싱 손실을 더한 형태다. 최종적으로 학습된 EDGAR로 아바타를 여러 시점에서 렌더링해 보정한 뒤, 이를 L1+SSIM 손실로 원본 가우시안 파라미터에 재최적화함으로써(가우시안 개수 증가 없이) 보정 효과를 3D 표현 자체에 반영한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>CAP4D(단일~소수 이미지 기반), GaussianAvatars(다중뷰 비디오 기반), RGBAvatar(단일 비디오 기반) 세 가지 서로 다른 재구성 방법에서 만든 아바타에 EDGAR를 적용해 비교했다. NeRSemble 10개 신원(자기 재연기)과 INSTA 6개 신원(교차 재연기)에서 평가한 결과, EDGAR는 CLIP 유사도·L1·LPIPS·PSNR·CSIM(신원 유사도) 등 대부분의 지표에서 SDEdit 방식의 디퓨전 보정 베이스라인과 미보정 원본을 능가했다. 특히 SDEdit 방식은 텍스처 과도한 매끄러움과 신원 변질(identity drift)을 일으킨 반면, EDGAR는 원본 신원을 유지하면서 머리카락·피부 질감 등 세부를 복원했다. 교차 뷰 일관성(기하학적 깊이 오차 및 재투영 커버리지)과 시간적 안정성(tWE) 측면에서도 대체로 개선을 보였으나 GaussianAvatars 파이프라인에서는 tWE가 다소 증가했다. 15명 참가자 대상 사용자 연구에서 EDGAR는 애니메이션 품질·신원 보존·전체 선호도 모든 항목에서 CAP4D 및 CAP4D+SDEdit 대비 87~98%의 높은 선택률을 기록했다. 보정에 소요되는 추가 비용은 아바타당 평균 5~17분(1회성)이며, 보정 후 렌더링 속도는 원본 대비 2% 이내로 거의 변화가 없다.</p>
+<h2>한계점</h2>
+<p>EDGAR-SET이 LPIPS 차이가 큰, 즉 구조적으로 복구 가능한 열화 샘플 위주로 필터링되어 구성되었기 때문에, 관측되지 않은 영역의 심각한 구조적 오류나 아티팩트는 보정 후에도 완전히 해결되지 않을 수 있다. 또한 각 시점을 독립적으로 보정하다 보니 뷰 간 불일치(서로 다른 디테일 또는 뷰 의존적 오차)가 발생할 수 있고, 이를 평균화하는 과정에서 일부 뷰 의존 오차가 유지될 가능성이 있다. GaussianAvatars 파이프라인에서는 공간적 충실도가 개선되어도 시간적 안정성(tWE)이 오히려 저하되는 경우가 관찰되어, 명시적인 시간적 지도(supervision)나 동적 얼굴 영역에 대한 더 나은 모델링이 향후 과제로 남아있다.</p>
+<h2>시사점</h2>
+<p>저해상도·소수뷰 입력으로 제작된 3D 아바타도 사후 보정(post-hoc refinement) 만으로 다중뷰·다중방법 호환되는 품질 개선이 가능함을 보여주며, 디퓨전 기반 보정 결과를 렌더링 단계가 아닌 3D 표현 자체에 흡수시키는 전략은 실시간 렌더링 성능을 희생하지 않고 품질을 높이는 실용적 방향을 제시한다. 이는 VR/텔레프레즌스, 소셜 게이밍 등 저비용 캡처 환경에서 고품질 아바타를 제공하려는 응용 분야에 직접적으로 도움이 될 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.07909" target="_blank" rel="noopener">huggingface.co/papers/2611.07909</a> · 2026-11-07</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

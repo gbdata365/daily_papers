@@ -1,0 +1,119 @@
+<meta charset="UTF-8">
+<title>기초 의사결정 모델을 향하여</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#8 · Daily Papers 2026-11-07</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 18</span>
+    </div>
+    <h1 class="article-title">Towards Foundation Decision Models: Drex</h1>
+    <p class="article-title-ko">기초 의사결정 모델을 향하여: 드렉스</p>
+    <p class="article-sub">자기회귀적 생성(long chain-of-thought) 없이, 문서(상태)와 질문·선택지 집합이 주어지면 선택지에 대한 확률 분포를 직접 반환하는 "결정 모델(decision model)" 4종(Drex DLM/v1.5/v2.0/Max)을 공개하고, 보정(calibration)·순서 강건성·학습 전략·아키텍처 선택이 성능에 미치는 영향을 대규모로 분석한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.07854" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.07854" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Towards Foundation Decision Models: Drex</li>
+<li><strong>저자</strong>: Nischay Dhankhar, Alisher Amantay, Zhanibek Datbayev 등 Nace.AI Research Team 소속 9명</li>
+<li><strong>출처</strong>: arXiv:2611.07854v1 [cs.CL] (2026년 11월 5일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://nace.ai/drex">nace.ai/drex</a>, <a href="https://github.com/nace-ai/drex-decision-models">GitHub</a>, <a href="https://huggingface.co/nace-ai">Hugging Face</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.07854">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>자기회귀적 생성(long chain-of-thought) 없이, 문서(상태)와 질문·선택지 집합이 주어지면 선택지에 대한 확률 분포를 직접 반환하는 "결정 모델(decision model)" 4종(Drex DLM/v1.5/v2.0/Max)을 공개하고, 보정(calibration)·순서 강건성·학습 전략·아키텍처 선택이 성능에 미치는 영향을 대규모로 분석한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>최근 AI 응용에서는 긴 사고사슬(long chain-of-thought) 기반 자기회귀 LLM이 높은 정확도를 보이지만, 실제 서비스에서는 답변이 일관되지 않고 출력 파싱이 필요하며 비용과 지연시간이 크다는 문제가 있다. 반면 분류(classification)·점수화(scoring)·임베딩 같은 비생성형 과제는 입력마다 레이블 집합이 고정되어 있지 않은 상황, 즉 질문과 함께 "선택지 집합"이 매 요청마다 바뀌는 상황에는 기존 방식(고정 분류 헤드, 제약 생성 등)이 잘 맞지 않는다. 저자들은 이러한 설정을 다루는 새로운 추론 방식으로 "결정 모델"을 제안하며, 사용자가 제시한 임의의 선택지 집합에 대해 보정된 확률을 반환하고, 선택지 순서가 바뀌어도 안정적이며, 운영 환경에서 쓸 만한 지연시간을 달성할 수 있는지를 연구 질문으로 삼는다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>포인터(pointer) 모델 3종과 리드아웃(readout) 모델 1종(Drex Max)</strong>: 하나의 공통 인터페이스(choice/noul/score 질문 유형)를 4개의 서로 다른 백본(diffusion LM, Gated DeltaNet 하이브리드 2종, 27B 조밀 멀티모달 모델)에 적용.</li>
+<li><strong>대규모 보정 측정(RQ1)</strong>: 약 23만 개 결정에 대해 신뢰구간, 도메인·선택지 수별 분해, 선택적 정확도(selective accuracy)를 보고.</li>
+<li><strong>선택지 순서 강건성 분석(RQ2)</strong>: 4개 상용 모델을 공개 API로 1,591개 결정에 대해 원래 순서/역순/무작위 순열로 비교.</li>
+<li><strong>3단계 학습 레시피(RQ3)</strong>: 지도 미세조정(SFT) → 조정된 피드백 기반 강화학습(RLAF) → (Max의 경우) 비전 SFT. RLAF가 Decision Index 점수를 2.0점 향상시키고, 손실 함수의 일관성 항(consistency term)이 순서 변경 시 선택지가 바뀌는 비율(flip rate)을 6.3%→4.2%로 낮춤을 확인.</li>
+<li><strong>Drex Max(RQ4)</strong>: Qwen3.8-27B 기반의 조밀(비-MoE) 27B 멀티모달 모델로, 인과적 마스크를 제거한 전체 어텐션과 리드아웃 헤드(255개 옵션 코드에 대한 로짓)를 사용. 모든 가중치를 오픈소스로 공개.</li>
+</ul>
+<h2>방법론</h2>
+<p>포인터 모델은 상태(S)와 질문 블록들을 하나의 토큰 시퀀스로 패킹하고, 블록-인과적(block-causal) 어텐션으로 인코딩한 뒤, <code>&lt;decide&gt;</code> 토큰의 은닉상태(쿼리)와 각 선택지의 <code>&lt;/opt&gt;</code> 토큰 은닉상태(키) 사이의 스케일드 내적을 소프트맥스하여 확률을 얻는다. 이 구조 덕분에 상태 인코딩은 한 번만 계산해 여러 질문에 재사용할 수 있다(질문 순서와 무관하게 동일 확률 보장). 반면 Drex Max는 질문마다 전체 시퀀스(이미지+상태+선택지+<code>&lt;ans&gt;</code>)를 양방향(전체-어텐션 레이어는 비인과적)으로 다시 인코딩하고, 리드아웃 헤드(편향 없는 선형층)가 <code>&lt;ans&gt;</code> 위치의 은닉상태를 255개 옵션-코드 로짓으로 매핑한다. 학습은 (1) SFT(교차엔트로피 + 선택지 순열에 대한 KL 일관성 손실 + 상태 필드 셔플 일관성 손실), (2) RLAF(검증된 정답과 "심판(judge)" 모델의 분포를 결합한 조정 타깃을 향해 적정 점수규칙(proper scoring rule) 기반 보상을 최대화, Max는 KL 정규화 적용), (3) Max에 한해 이미지 인코더 및 프로젝션을 학습하는 비전 SFT 단계로 구성된다. 온도 스케일링(T)을 보정에 적용하며, Decision Index 등 평가 벤치마크 데이터는 학습 데이터에서 오염 필터링을 통해 제외했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Decision Index 0.4.1(5개 도메인 37개 벤치마크), Decision Bench v4(1,071개, 텍스트/이미지 혼합), JevBench-231, DecideBench, OpenSpiel 게임 아레나, Artificial Analysis Decision Index 등 다수 벤치마크로 평가했다. Drex Max는 Decision Index 공개 서브셋에서 67.52점(Jev 1.14.0의 60.70, GPT-6 Luna Decisions의 47.78 대비 우위)을 기록했고, 전체 점수(private subset 포함)는 66.60점이다. Decision Bench v4에서는 이미지 인코더를 사용할 때 정확도 94.0%로 GPT-6 Sol·d3-turbo와 통계적으로 구분되지 않았고 Claude Opus 5.5보다 1.6점 낮았다. 지연시간은 요청당 중앙값 183ms로, GPT-6 Sol(약 2.0s)·Claude Opus 5.5(약 3.5s) 대비 훨씬 빠르다. 보정 측면에서 포인터 모델들은 배포 온도에서 ECE 1.4~4.5%를 보였고, 선택지 순서를 무작위로 섞을 때 가장 확률이 높은 선택지가 바뀌는 비율(flip rate)은 모델별로 4.3~5.9%였으며, 정확도 자체는 순서에 따라 최대 1.2%p 수준으로만 변했다. 다만 순서가 바뀌면 답이 바뀌는 결정들은 애초에 모델이 낮은 신뢰도를 부여한 결정들과 크게 겹쳤다. 학습 단계별 기여도 분석(Drex v2.0)에서는 1단계 SFT가 가장 큰 향상을 가져왔고, 2단계(특화 단계)·3단계(RLAF)는 특정 도메인에서 소폭의 추가 개선을 보였다.</p>
+<h2>한계점</h2>
+<ul>
+<li>지식 집중형(closed-book knowledge) 평가(HLE, GPQA 등)에서는 모든 Drex 모델이 프런티어 채팅 모델에 뒤처지며, 이 격차는 가장 어려운 문항에서 가장 크게 나타난다. 단일 순전파(forward pass)로는 긴 사고사슬이나 도구 사용을 대체하기 어렵다는 것이 원인으로 제시된다.</li>
+<li>Drex Max는 Language 도메인을 제외한 나머지 4개 도메인에서 평균 신뢰도가 정확도보다 5~9%p 높은 과신(over-confidence) 경향을 보이며, 선택지가 6~20개인 질문에서는 ECE가 8.4%까지 올라간다.</li>
+<li>선택지 순서를 무작위로 섞으면 선택지가 6개 이상인 결정의 13%에서 가장 확률 높은 옵션이 바뀐다.</li>
+<li>Decision Index 리더보드상의 여러 시스템은 백본, 학습 데이터, 학습 목적, 추론 설정이 서로 달라 점수 차이를 단일 설계 선택으로 귀속시킬 수 없다.</li>
+<li>포인터 헤드와 리드아웃 헤드, 어텐션 마스크(인과적 vs 비인과적) 등 각 구성요소가 Max의 성능 향상에 얼마나 기여하는지를 분리하는 통제 실험은 향후 과제로 남겨져 있다.</li>
+</ul>
+<h2>시사점</h2>
+<p>결정 모델은 선택지 집합이 요청마다 달라지는 실제 서비스(라우팅, 평가, 분류성 의사결정)에서 자기회귀적 LLM보다 훨씬 낮은 지연시간과 비용으로 프런티어 모델에 근접한 정확도를 낼 수 있음을 보여준다. 특히 모델이 출력하는 확률을 신뢰도 임계값으로 활용해 저신뢰 결정만 사람 검토나 상위 시스템으로 넘기는 '선택적 자동화' 전략이 실용적으로 유효함을 시사하며, 네 가지 서로 다른 백본(디퓨전 LM, 선형 어텐션 하이브리드, MoE, 조밀 멀티모달)에 동일한 인터페이스를 적용할 수 있다는 점은 결정 모델이 특정 아키텍처에 종속되지 않는 범용적인 "읽기(readout)" 패러다임이 될 수 있음을 보여준다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.07854" target="_blank" rel="noopener">huggingface.co/papers/2611.07854</a> · 2026-11-07</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

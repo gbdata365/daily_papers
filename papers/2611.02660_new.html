@@ -1,0 +1,134 @@
+<meta charset="UTF-8">
+<title>HeLM</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#5 · Daily Papers 2026-11-08</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 7</span>
+    </div>
+    <h1 class="article-title">HeLM: Hierarchical Explicit Language Memory for Non-Markovian Manipulation</h1>
+    <p class="article-title-ko">HeLM: 비마르코프 조작을 위한 계층적 명시적 언어 기억</p>
+    <p class="article-sub">현재 관측만으로는 올바른 행동을 결정할 수 없는 "비마르코프적" 로봇 조작 과제를 해결하기 위해, 과업 관련 이력을 사람의 '내적 독백'처럼 명시적인 자연어 기억으로 유지하는 계층적 VLA(Vision-Language-Action) 프레임워크 HeLM을 제안하고, 실제 로봇 실험에서 기존 기법 대비 큰 성능 향상과 함께 메모리·속도 효율성까지 확보했다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.02660" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.02660" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: HeLM: Hierarchical Explicit Language Memory for Non-Markovian Manipulation</li>
+<li><strong>저자</strong>: Gyeonghun Kim, Donghoon Kim, Minsoo Choi, Suyun Lee (서울대학교, Seoul National University)</li>
+<li><strong>출처</strong>: arXiv:2611.02660v1 [cs.RO] (2026년 11월 2일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://kimspacehuni.github.io/HeLM/">HeLM 프로젝트 웹사이트</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.02660">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>현재 관측만으로는 올바른 행동을 결정할 수 없는 "비마르코프적" 로봇 조작 과제를 해결하기 위해, 과업 관련 이력을 사람의 '내적 독백'처럼 명시적인 자연어 기억으로 유지하는 계층적 VLA(Vision-Language-Action) 프레임워크 HeLM을 제안하고, 실제 로봇 실험에서 기존 기법 대비 큰 성능 향상과 함께 메모리·속도 효율성까지 확보했다.</p>
+<h2>배경 및 문제의식</h2>
+<p>최근 VLA(Vision-Language-Action) 모델들은 시각 관측과 언어 지시를 입력받아 로봇 행동을 생성하며 다양한 조작 과제에서 성과를 보였지만, 대부분 "현재 관측만으로 다음 행동이 결정된다"는 마르코프 가정 위에서 동작한다. 그러나 예를 들어 창문을 닦는 과제에서 로봇이 이미 닦은 부분을 또 닦는 것처럼, 실제 현실의 많은 작업은 과거 이력에 의존하는 비마르코프적 성격을 가진다. 즉 동일한 관측이라도 과거에 어떤 일이 있었는지에 따라 실제 상태와 필요한 행동이 달라질 수 있다.</p>
+<p>기존 연구들은 이 문제를 두 갈래로 다뤄왔다. 하나는 과거 관측으로부터 잠재(latent) 임베딩을 추출하거나 메모리 모듈에 토큰을 압축해 저장하는 방식인데, 잠재 표현에 의존하기 때문에 실패 원인을 해석하기 어렵다는 한계가 있다. 다른 하나는 과거 프레임을 그대로 쌓거나 핵심 장면(keyframe)을 저장해 시각 이력을 직접 활용하는 방식인데, 이미지 토큰이 누적되면서 계산 비용이 커져 긴 시간 범위(long-horizon)로 확장하기 어렵다.</p>
+<p>저자들은 사람이 복잡한 작업을 수행할 때 "버튼을 두 번 눌렀으니 한 번 더"처럼 내적 독백으로 진행 상황을 언어화해 관리하는 점에서 착안해, 자연어가 로봇 기억의 표현 수단으로서 효율적이고 해석 가능하다고 주장한다. 언어는 VLM 기반 정책의 본래 모달리티이기도 하고, 긴 시간에 걸쳐도 압축적으로 확장되며, 기억 상태를 사람이 직접 들여다볼 수 있다는 장점이 있다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>과업 관련 이력을 명시적 언어 기억으로 유지하면서, 사건(이벤트) 감지와 이벤트 트리거 방식의 기억 업데이트를 분리한 계층적 프레임워크 HeLM을 제안.</li>
+<li>실제 로봇 환경에서의 10개 과제에 대해 메모리 증강 기법 및 시각 기억 기반 기법들과 비교해 HeLM의 우위를 보이고, 구성 요소 단위의 실패 분석을 제공.</li>
+<li>하나의 지시(에피소드) 경계를 넘어 과거 정보를 유지해야 하는 "에피소드 간(inter-episode) 지속성"을 로봇 기억 연구의 새로운 축으로 정식화하고, 이를 평가하기 위한 10개 과제(56개 변형)의 비마르코프 과제 모음을 구축.</li>
+</ul>
+<h2>방법론</h2>
+<p>HeLM은 "언어가 VLA 기반 조작의 기억 표현 수단이 될 수 있다"는 단일 원칙을 따르며, 크게 네 부분으로 구성된다.</p>
+<ol>
+<li><strong>문제 정식화</strong>: 표준 VLA 정책은 행동을 현재 관측과 지시(Π(a|o,I))에만 조건화하지만, 비마르코프 환경에서는 동일한 관측이 다른 실제 상태에 대응될 수 있어 이 가정이 깨진다. HeLM은 명시적 텍스트 기억 Mt를 추가해 정책을 Π(a|o,I,M) 형태로 재정의한다.</li>
+<li><strong>계층적 구조</strong>: 고수준 정책(HLP, High-Level Policy)과 저수준 정책(LLP, Low-Level Policy)으로 나눈다. HLP는 사전학습된 VLM을 미세조정해 언어 기억을 관리하면서 행동 명령(action command)을 생성하고, LLP는 사전학습된 VLA로서 HLP의 명령과 현재 관측을 받아 실제 로봇 행동을 실행한다.</li>
+<li><strong>구조화된 기억</strong>: 사람의 작업기억(working memory)과 일화기억(episodic memory) 구분에서 착안해, 기억을 "작업 기억(working memory)"과 "일화적 맥락(episodic context)" 두 필드로 나눈다. 작업 기억은 하나의 지시 안에서 사건이 감지될 때마다 갱신되고, 일화적 맥락은 에피소드가 끝날 때 작업 기억으로부터 요약되어 승격되며 에피소드 경계를 넘어 유지된다.</li>
+<li><strong>두 단계 추론(Two-Stage Inference)</strong>: 동일한 VLM 파라미터를 공유하지만 서로 다른 시스템 프롬프트로 구분되는 '감지 모드(detect mode)'와 '업데이트 모드(update mode)'를 둔다. 감지 모드에서는 현재 관측·기억·행동 명령을 바탕으로 과업 관련 사건이 발생했는지만 판단하고, 업데이트 모드는 사건이 감지되었거나 지시가 바뀐 경우에만 활성화되어 기억과 다음 행동 명령을 함께 갱신한다. 이렇게 감지와 갱신을 분리해 불필요한 기억 갱신을 줄인다. LLP는 길이 H의 행동 청크(chunk)를 실행하고, HLP는 각 청크 경계에서 동기적으로 호출된다.</li>
+<li><strong>데이터 생성</strong>: 과업별로 유효한 행동 명령, 과업 관련 사건, 그에 대응하는 기억 갱신 규칙을 명시하는 TaskSpec이라는 논리 스키마(사람이 직접 작성하거나 LLM으로 생성)를 이용해, 짧은 서브과업 궤적으로부터 감지(DETECT)·갱신(UPDATE) 학습 데이터를 합성한다. 추론 시에는 과업별 사건·행동 어휘만 제공되고, TaskSpec이나 정답 기억 전이 정보는 제공되지 않아 HLP가 스스로 사건을 감지하고 기억을 구성해야 한다.</li>
+</ol>
+<p>HLP의 백본으로는 Qwen2.5-VL-7B를 사용해 QLoRA(rank 16)로 미세조정했으며, 약 13만 프레임의 TaskSpec 기반 합성 데이터로 학습했다. LLP는 저수준 행동 생성을 위해 π0 혹은 π0.5를 사용한다. 실제 로봇 실험은 7자유도 AgileX PiPER 팔과 테이블/손목 시점의 RGB 카메라를 이용했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>비교 대상은 세 가지 베이스라인이다: (1) 텍스트 기억 대신 시각 키프레임을 저장하는 Keyframe-HLP, (2) π0에 압축·검색 기반 메모리 모듈인 Perceptual-Cognitive Memory Bank(PCMB)를 결합한 PCMB-π0, (3) 명시적 기억 없이 종단간 학습된 기본 π0인 Naïve-π0. 모든 베이스라인은 과업당 150~200개의 시연으로 동일한 π0 행동 백본을 미세조정해 저수준 행동 능력을 통제했다.</p>
+<ul>
+<li><strong>에피소드 내(intra-episode) 과제(A1~A5)</strong>: HeLM은 평균 서브과업 성공률 85.7%로 Keyframe-HLP(72.9%), PCMB-π0(39.5%), Naïve-π0(16.7%)를 모두 크게 앞섰다. 엄격한 과제 성공률(순서·종료까지 모두 올바를 때)에서는 HeLM이 81.3%를 유지한 반면 Keyframe-HLP는 29.3%로, PCMB-π0와 Naïve-π0는 0%로 급락했다.</li>
+<li><strong>에피소드 간(inter-episode) 과제(E1~E5)</strong>: HeLM은 평균 89.2%의 서브과업 성공률을 보였으며, Keyframe-HLP는 시각 키프레임이 지시 경계를 넘어 누적되면서 16.6%로 크게 저하되었다. PCMB-π0와 Naïve-π0는 에피소드 경계에서 내부 상태를 리셋해 에피소드 간 맥락을 지원하지 못해 비교에서 제외되었다.</li>
+<li><strong>실패 분석</strong>: HeLM의 실패는 주로 시각 사건 감지 오류(64.1%, 특히 서랍 열기나 완료 판정에서의 오탐지)와 저수준 실행 실패(31.2%, 접촉이 필요한 조작에서 발생)에 집중되었고, 순서 오류(4.7%)는 드물며 종료 실패는 관찰되지 않았다. 반면 Keyframe-HLP는 종료 실패(33.3%)와 감지 실패(20.2%)가 두드러졌고, PCMB-π0·Naïve-π0는 순서·종료 오류가 지배적이었다.</li>
+<li><strong>메모리/미세조정 어블레이션(LIBERO-Mem, π0.5 기반)</strong>: HeLM은 전체 평균 58.5%로 π0.5(36.5%)를 상회했으며, 특히 긴 시간 추적이 필요한 T3~T8 과제에서 45.8% 대 10.0%로 차이가 두드러졌다. 언어 기억을 제거하거나(메모리 없음) 기억 인터페이스는 있으나 과업별 미세조정을 하지 않은 변형은 각각 12.0%, 8.5%로 성능이 크게 떨어졌다.</li>
+<li><strong>두 단계 추론 어블레이션</strong>: 사건 감지·행동 명령·기억 갱신을 한 번에 예측하는 일단계(one-stage) 변형은 평균 67.7%로, HeLM의 85.7%보다 낮았으며 조기 완료 판정과 잘못된 기억 갱신이 주요 실패 원인이었다.</li>
+<li><strong>조합적 일반화</strong>: 학습에 쓰인 서브과업들의 새로운 조합(미학습 개수, 더 긴 순서, 미학습 물체 등)으로 구성된 held-out 변형에서 HeLM은 HLP 추가 미세조정 없이도 평균 78%의 서브과업 성공률을 달성했고, Keyframe-HLP(65.7%)는 종료 판정에서 거듭 실패했다.</li>
+<li><strong>긴 시간 범위에서의 메모리·효율성</strong>: 반복 횟수나 순서 길이가 7단계까지 늘어나도 HeLM은 안정적인 성능(A1에서 100%, A2에서 최소 77%)을 유지했다. 계산 측면에서는 HeLM이 초반에는 자기회귀적 텍스트 생성 때문에 느리지만, 저장된 사건이 많아질수록(8개 사건 기준) Keyframe-HLP보다 2.5배 빠르고 메모리 사용량도 최대 4.5배 적었다(Keyframe-HLP 최대 28GB VRAM 대 HeLM 6GB 미만).</li>
+</ul>
+<h2>한계점</h2>
+<p>저자들이 명시한 한계점은 다음과 같다.
+- HeLM은 TaskSpec을 통해 사전 정의된 과업 관련 사건에 의존하므로, 과업별로 사건을 직접 정의해야 하며 "무엇을 기억해야 하는가"를 스스로 발견하는 개방형(open-ended) 문제는 다루지 않는다.
+- 평가가 이산적인 사건 중심으로 이루어져, 액체의 양이나 정밀한 기하학적 이력처럼 연속적인 상태 추적은 다루지 않는다.
+- 현재의 동기적 청크 단위 HLP 호출 방식은 추론 오버헤드를 유발하며, LLP의 행동 청크 안에서 일시적으로 발생하는 사건을 놓칠 수 있다.
+- 작업 기억과 일화적 맥락을 분리한 설계가 단일한 지속적 언어 기억을 사용하는 방식에 비해 실제로 얼마나 더 유리한지는 아직 검증되지 않았다.</p>
+<h2>시사점</h2>
+<p>이 연구는 로봇 조작에서 기억 표현 방식 자체가 정책 설계의 중요한 축이 될 수 있음을 보여준다. 잠재 벡터나 누적된 시각 프레임 대신 명시적 자연어를 기억 매체로 사용함으로써, 해석 가능성과 계산 효율성을 동시에 확보할 수 있다는 점이 핵심 시사점이다. 또한 하나의 에피소드 안에서의 기억(작업기억)과 에피소드 경계를 넘는 기억(일화적 맥락)을 구분하고, 사건 감지와 기억 갱신을 분리된 두 단계로 수행하는 설계가 실제로 성능과 효율성 모두에 기여함을 실증했다. 특히 기존 벤치마크들이 주로 하나의 에피소드 내 기억만 다뤄온 것과 달리, 에피소드 경계를 넘나드는 "에피소드 간" 과업을 별도의 평가 축으로 제시한 점은 향후 로봇 기억 연구의 평가 범위를 넓히는 데 기여할 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.02660" target="_blank" rel="noopener">huggingface.co/papers/2611.02660</a> · 2026-11-08</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

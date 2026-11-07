@@ -1,0 +1,125 @@
+<meta charset="UTF-8">
+<title>스웜이볼브</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#4 · Daily Papers 2026-11-08</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 8</span>
+    </div>
+    <h1 class="article-title">SwarmEvolve: Latent Agent Swarms for Evolutionary Discovery and Optimization</h1>
+    <p class="article-title-ko">스웜이볼브: 진화적 발견과 최적화를 위한 잠재 공간 에이전트 군집</p>
+    <p class="article-sub">수백 개의 저비용 LLM 에이전트가 텍스트로 디코딩하지 않고 잠재 공간(latent space)에서 추론하며 KV 캐시를 주고받아 교차·결합하는 방식으로, 기존 LLM 기반 진화적 프로그램 탐색 프레임워크보다 5~13배 빠르게 더 높은 점수의 수학·과학computing 프로그램을 찾아내는 SwarmEvolve를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.08483" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.08483" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: SwarmEvolve: Latent Agent Swarms for Evolutionary Discovery and Optimization</li>
+<li><strong>저자</strong>: Qile Jiang, George Em Karniadakis (Brown University, Division of Applied Mathematics)</li>
+<li><strong>출처</strong>: arXiv:2611.08483v1 [cs.AI] (2026년 11월 5일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/Qile-J/SwarmEvolve">GitHub</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.08483">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>수백 개의 저비용 LLM 에이전트가 텍스트로 디코딩하지 않고 잠재 공간(latent space)에서 추론하며 KV 캐시를 주고받아 교차·결합하는 방식으로, 기존 LLM 기반 진화적 프로그램 탐색 프레임워크보다 5~13배 빠르게 더 높은 점수의 수학·과학computing 프로그램을 찾아내는 SwarmEvolve를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>FunSearch, AlphaEvolve 등 최근의 LLM 기반 진화적 탐색(evolutionary search) 기법들은 LLM을 변이(mutation)·교차(crossover) 연산자로 사용해 수학적 발견이나 알고리즘 최적화에서 성과를 냈다. 그러나 이러한 프레임워크는 매 라운드마다 각 에이전트가 긴 텍스트 chain-of-thought를 생성해야 하고, 집단의 다양성을 유지하려면 이를 반복해서 많이 생성해야 하므로 탐색 속도가 느리고 비용이 크다는 한계가 있다. 에이전트 수, 모델 크기, 혹은 테스트 시점 학습을 늘릴수록 이 비용은 더욱 커져, 많은 공개 문제가 필요로 하는 규모로 탐색을 확장하기 어렵다. 저자들은 "저비용 에이전트의 군집(swarm)이 진화적 탐색을 더 빠르고 더 좋게 만들 수 있는가"라는 질문을 던진다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li><strong>다양성 확대</strong>: 기존 방법들이 한 번에 하나의 응답을 생성하거나 소수의 에이전트 팀을 운용하는 것과 달리, SwarmEvolve는 라운드마다 450개의 잠재(latent) 에이전트를 각기 다른 특화 방향·부모 프로그램·사고방식으로 동시에 실행하여 훨씬 다양한 제안을 샘플링한다.</li>
+<li><strong>잠재 공간 내 교차(crossover)</strong>: 서로 다른 부모 프로그램을 읽은 에이전트들의 KV 캐시를 요약자(summarizer) 에이전트가 함께 읽어, 아이디어들을 잠재 공간에서 직접 결합한 새 프로그램을 작성한다.</li>
+<li><strong>처리량 향상</strong>: 에이전트들이 단계 사이에 텍스트를 디코딩·인코딩하지 않으므로, 기존 SOTA 프레임워크 대비 시간당 5~13배 더 많은 프로그램을 평가하며, 경쟁 프레임워크가 60분 걸려 도달하는 점수를 평균 3~8분 만에 달성한다.</li>
+</ol>
+<h2>방법론</h2>
+<p>SwarmEvolve는 프로그램과 점수·평가 피드백을 보관하는 아카이브를 유지하며, 매 라운드마다 다음 단계를 수행한다.
+- <strong>군집 구성</strong>: 10개의 군집(swarm)을 구성하며 각 군집은 45개의 잠재 에이전트로 이루어진다. 각 에이전트는 다섯 가지 초점(focus) 문구와 아홉 가지 사고방식(예: 원리에서부터 사고하기, 가정 재검토하기)의 조합으로 만들어진 고유한 프롬프트를 받는다. 군집은 정제(refinement, 2개 상위 프로그램 각각에 2개 군집), 혼합(hybridization, 상위 10개 중 무작위 5개 프로그램), 탐색(exploration, 아카이브 전체에서 무작위 4개 프로그램, 일부 에이전트는 부모 프로그램 없이 문제만 읽음), 새출발(fresh-start, 초기 프로그램만 사용) 네 유형으로 나뉜다.
+- <strong>잠재 공간 추론</strong>: 각 에이전트는 문제 설명, 초점 프롬프트, 할당된 부모 프로그램과 평가 결과를 읽은 뒤, 마지막 은닉 상태(hidden state)를 다음 입력 임베딩으로 재투입하는 방식(LatentMAS 기반)으로 40단계의 잠재 추론을 수행하며 텍스트를 디코딩하지 않는다. 450개 에이전트는 페이지드 어텐션(paged attention)을 이용해 한 배치로 동시에 실행된다.
+- <strong>참신성 필터(novelty filter)</strong>: 각 에이전트의 40단계 평균 은닉 상태를 구해 군집 평균을 중심으로 정규화한 뒤, 코사인 거리 기준 그리디 최장점 선택(farthest-point selection)으로 가장 서로 다른 30개 에이전트를 남기고 15개를 제거한다.
+- <strong>KV 캐시 전달 및 요약</strong>: 남은 30개 에이전트의 KV 캐시(문제 설명, 초점 프롬프트+추론 과정, 부모 프로그램, 요약 지시문의 키·값을 모두 이어붙임, RoPE 회전으로 위치 보정)를 요약자 에이전트가 읽어, 방향에 대한 짧은 설명과 완전한 프로그램 하나를 작성한다.
+- <strong>파라미터 튜닝</strong>: 매 라운드마다 별도의 파라미터 튜닝 에이전트가 최고 성능 프로그램의 수치 파라미터 중 하나를 조정하는 제안을 내며, 라운드당 최대 8개의 이러한 미세 수정을 평가한다.
+- <strong>평가</strong>: 중복 프로그램 제거, 문법 검사, 누락된 표준 라이브러리 import 자동 추가 후, 결정론적 평가기가 CPU 코어에서 각 프로그램을 채점하고 아카이브에 추가한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>AlphaEvolve 부록 B에서 가져온 16개 문제(패킹, 기하학, 해석학, 조합론)와 저자들이 직접 설계한 5개 과학computing 문제(희소 선형계, 비정규 행렬 고유값, Burgers/대류-확산/Helmholtz 방정식)를 포함한 총 21개 문제에서, SwarmEvolve를 OpenEvolve, ShinkaEvolve, CodeEvolve와 비교했다. 모든 프레임워크는 Qwen3 8B/14B/32B-FP8 모델로 GPU 1개·CPU 8코어에서 60분씩, 시드 3개로 실행되었다.
+- SwarmEvolve는 세 가지 모델 모두에서 가장 높은 평균 점수를 기록했으며, Qwen3 8B 기준 평균 점수가 다른 세 베이스라인의 Qwen3 32B-FP8 평균 점수보다도 높았다.
+- 라운드당 평가 프로그램 수가 기존 방법보다 5~13배 많았고, 베이스라인이 60분 걸려 도달하는 점수를 중앙값 3~8분(모델 크기에 따라 다름)에 도달했다.
+- Qwen3 8B(소형 오픈웨이트 모델)만으로도 세 개 문제에서 프런티어 모델을 사용한 AlphaEvolve의 기존 결과를 개선했다(원 26개 지름 합 패킹 문제의 알려진 최적값 도달, 2·3차 자기상관 부등식 경계 개선 등).
+- 잠재 공간 분석(주성분 분석)을 통해, 서로 다른 초점을 가진 군집들이 잠재 공간에서 서로 구분되는 영역을 차지하고, 군집 내에서는 부모 프로그램별로 군집(cluster)이 형성되며 참신성 필터가 각 군집에서 고르게 에이전트를 보존함을 시각적으로 확인했다.
+- 추가 분석(부록)에서 잠재 추론을 텍스트 추론으로 바꾸면 성능이 떨어짐을 보여, 잠재 추론 자체가 성능 향상의 핵심 요인임을 뒷받침했다. 군집 크기를 늘리는 것은 탐색 초반 성능 향상에 특히 도움이 되었다.</p>
+<h2>한계점</h2>
+<p>저자들이 명시한 한계는 세 가지다.
+1. 요약자가 에이전트들의 KV 캐시를 직접 읽으려면 모든 에이전트와 요약자가 동일한 LLM을 공유해야 하므로, 서로 다른 모델을 혼합한 군집 구성은 현재 지원되지 않는다(다른 모델 간 KV 캐시 변환 학습이 향후 해결책으로 제시됨).
+2. 구현이 표준 어텐션을 사용하는 LLM을 전제로 하며, 과거 정보를 고정 크기 상태로 압축하는 선형 어텐션·상태공간·하이브리드 모델에는 아직 적용되지 않는다(여러 에이전트의 상태를 병합하는 방법이 필요).
+3. 한 라운드의 KV 캐시 메모리 사용량이 에이전트 수·잠재 추론 단계 수·레이어 수에 선형적으로 증가하여, 가장 큰 테스트 모델(32B)에는 대형 GPU가 필요하다(압축된 잠재 메시지나 다중 GPU 분산이 향후 과제로 제시됨).</p>
+<h2>시사점</h2>
+<p>SwarmEvolve는 잠재 공간에서 추론하고 통신하는 에이전트 군집이 진화적 프로그램 탐색을 빠르고 저렴하면서도 강력하게 만들 수 있음을 보여준다. 특히 프런티어 대형 모델이나 막대한 컴퓨팅 자원 없이도, 단일 GPU 상의 소형 오픈웨이트 모델만으로 기존 최고 수준의 수학적 구성·알고리즘 결과를 능가할 수 있다는 점은, AI 기반 과학적 발견의 접근성과 확장성을 크게 높일 수 있음을 시사한다. 또한 은닉 상태를 직접 측정해 다양성을 수치적으로 제어하는 방식은, 텍스트 기반 유사도 판별(외부 임베딩 모델, LLM judge 등)에 의존하던 기존 방법보다 더 효율적인 대안을 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.08483" target="_blank" rel="noopener">huggingface.co/papers/2611.08483</a> · 2026-11-08</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

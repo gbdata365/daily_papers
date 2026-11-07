@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>오픈프런티어스</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#12 · Daily Papers 2026-11-08</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 4</span>
+    </div>
+    <h1 class="article-title">OpenFrontiers: A Collection of Open Research Problems and a Benchmark for Scientific Rediscovery</h1>
+    <p class="article-title-ko">오픈프런티어스: 공개 연구 문제 모음과 과학적 재발견 벤치마크</p>
+    <p class="article-sub">LLM이 실제 미해결 연구 문제를 얼마나 잘 "재발견"할 수 있는지 측정하기 위해, 12,151개의 공개 연구 문제를 모은 코퍼스와 Lean 4로 형식 검증되는 200개 문제의 벤치마크(OpenFrontiers-Bench)를 구축했으며, 평가 결과 폐쇄형(인터넷 비사용) 조건에서 최신 LLM 에이전트들이 실제로 문제를 새로 풀어내는 경우는 매우 드물고, 웹 검색이 허용된 조건의 성공은 대부분 이미 공개된 풀이를 찾아내는 것에 불과함을 보였다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.37739" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.37739" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: OpenFrontiers: A Collection of Open Research Problems and a Benchmark for Scientific Rediscovery</li>
+<li><strong>저자</strong>: Jiarui Yao, Ruida Wang, Tong Zhang (University of Illinois Urbana-Champaign)</li>
+<li><strong>출처</strong>: arXiv:2610.37739v1 [cs.AI] (2026년 10월 27일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://huggingface.co/collections/FlippyDora/openfrontiers">Hugging Face 컬렉션</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.37739">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>LLM이 실제 미해결 연구 문제를 얼마나 잘 "재발견"할 수 있는지 측정하기 위해, 12,151개의 공개 연구 문제를 모은 코퍼스와 Lean 4로 형식 검증되는 200개 문제의 벤치마크(OpenFrontiers-Bench)를 구축했으며, 평가 결과 폐쇄형(인터넷 비사용) 조건에서 최신 LLM 에이전트들이 실제로 문제를 새로 풀어내는 경우는 매우 드물고, 웹 검색이 허용된 조건의 성공은 대부분 이미 공개된 풀이를 찾아내는 것에 불과함을 보였다.</p>
+<h2>배경 및 문제의식</h2>
+<p>최근 LLM은 IMO와 같은 고난도 수학 시험에서 완벽한 성적을 내고, 일부 연구용 에이전트는 올림피아드 문제에 대한 형식 검증 증명이나 새로운 구성을 만들어내는 등 "아직 아무도 풀지 못한 문제"에 도전하는 수준까지 나아가고 있다. 그러나 저자들은 이런 능력을 측정할 체계적인 수단이 부족하다고 지적한다. FrontierMath, Humanity's Last Exam, GPQA 같은 기존 벤치마크는 출제자가 이미 답을 알고 있는 문제에 기준답안을 대입해 채점하는 방식이라, 경쟁 문제 세트는 빠르게 포화되거나 훈련 데이터에 유출되는 문제가 있고, 최종 답만 맞히는 방식의 채점은 실제 증명 품질을 과대평가한다. 반면 진짜 "연구 문제"는 애초에 기준답안이 존재하지 않는다는 점에서 근본적으로 다르다. 따라서 연구 수준의 능력을 재려면 (1) 무엇이 아직 열려 있는 문제인지 정리한 지도와, (2) 실제로 채점이 가능한 과제, 이 두 가지가 모두 필요하다는 것이 이 논문의 출발점이다.</p>
+<h2>핵심 기여</h2>
+<p>논문은 서로 연결된 세 가지 결과물을 제시한다.
+1. <strong>OpenFrontiers 코퍼스</strong>: 62개 출처(문제 목록, 워크숍 자료, 논문·서베이의 미해결 문제 절, 상 관련 목록, 블로그, 위키백과 목록 등)에서 수집한 12,151개의 공개 연구 문제 레코드로, 원문 그대로의 문제 서술, 분야 및 MSC 2020 코드, 상태(open/unassessed/partially-solved/solved 등), 출처와 라이선스, 근거 자료(provenance) 등을 통일된 스키마로 기록한다.
+2. <strong>OpenFrontiers-Bench</strong>: 이 코퍼스를 바탕으로 만든 200개의 수학 연구 문제 벤치마크로, 각 문제는 검증된 Lean 4 명제를 가진다. 이 중 Rediscovery-110은 2026년까지 미해결로 남아 있다가 최근 풀이가 확인된 110개 문제, Open-90은 여전히 미해결인 90개 문제로 구성되며, 신뢰도와 다양성을 기준으로 추출한 50개 고품질 부분집합 HQ-50(해결 40개 + 미해결 10개)이 실제 평가에 쓰인다.
+3. <strong>평가 프로토콜</strong>: 폐쇄형(closed-book), 고정 검색(frozen-retrieval), 실시간 웹(live-web)이라는 세 가지 접근 조건 아래, 격리된 샌드박스에서 두 개의 독립적인 Lean 검사기로 형식 증명만을 채점하는 절차를 설계하고, 모델 계열(lineage) 및 학습 시점(cutoff) 오염을 통제하는 장치를 마련했다.</p>
+<h2>방법론</h2>
+<p>코퍼스 구축 시에는 결정론적 수집기를 직접 만들어 각 출처에서 데이터를 가져오고 체크섬을 기록했으며, 모든 문제를 하나의 통일 스키마(원문 그대로의 서술, 분야/MSC 코드, 상태, 출처·라이선스, 근거자료, 부분 진행 정보, Lean 4 첨부 자료 등)로 저장했다. 상태는 출처가 주장하는 바를 그대로 기록하는 정책을 택해, 근거가 불분명한 경우를 "unassessed"로 분류하고 자체적으로 "open"으로 승격하지 않도록 했다.</p>
+<p>벤치마크(OpenFrontiers-Bench) 구축을 위해, 해결된 문제 후보는 코퍼스의 연속된 버전 간 상태 변화, 2026년 아카이브 프리프린트, AI가 만든 풀이의 공개 발표 등에서 수집했고, 미해결 문제 후보는 상위에 Lean 명제가 존재하는 레코드에서 가져왔다. 두 명의 독립 검토자가 각 문제의 Lean 4 명제를 원문 충실성과 Lean 문법 적합성 측면에서 각각 검토했고, 풀이를 암시하는 주석은 모두 제거했다. 특히 110개의 재발견 대상 문제 중 55개는 풀이 자료 자체가 AI 시스템이 핵심 수학적 성과를 냈다고 명시하고 있어, 이런 경우 해당 모델 계열에 대해서는 "재발견"이라 할 수 없으므로 평가 시 모델별로 제외하는 절차를 두었다.</p>
+<p>평가는 문제별로 격리된 샌드박스(미리 빌드된 Mathlib이 포함된 Lean 작업 공간과 numpy/sympy/mpmath가 설치된 Python 환경)에서 이루어지며, 정답과 평가용 패키지는 모델에 노출되지 않는다. 세 조건(A: 폐쇄형, B: 2026년 1월 6일 이전 공개 자료로 제한된 고정 검색, C: 전면 웹 검색)은 오직 검색 가능 여부만 다르다. 제출물은 Lean 파일이며, 기준 명제에 정답을 채운 뒤 두 개의 독립 검사기(커널 재실행 방식의 검사기와 비교기)가 모두 수용해야 "해결"로 인정되고, 모델 심판(model-as-judge) 없이 정적 규칙(sorry/axiom 금지 등)으로 부정 사용을 차단한다. Claude Sonnet 5.5, GPT-6.1-sol, GPT-6-luna, Kimi-K3, GLM-5.3, DeepSeek-V4.1-Flash, Qwen3.8-27B 등 7개 모델을 각각 벤더 제공 에이전트 CLI를 통해 3시간의 시간 제한, 5개 CPU 코어, 24GB 메모리 조건에서 평가했으며, 에이전트가 너무 빨리 중단하는 경우를 보완하기 위해 남은 예산을 알려주며 세션을 이어가는 "continuation" 프로토콜도 함께 실험했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>HQ-50의 해결된 40개 문제를 기준으로 평가한 결과, 폐쇄형(A) 조건에서는 기본 프로토콜에서 모델당 0~3개, continuation 프로토콜에서도 최대 0~7개 문제만을 풀어내 "재발견"이 매우 드물게만 일어남을 확인했다. 고정 검색(B) 조건은 체계적인 도움이 되지 않았는데, 이는 검색 범위가 모든 풀이가 등장하기 이전 시점으로 한정되어 있기 때문이다. 반면 실시간 웹(C) 조건에서는 모델당 1~27개까지 풀이 개수가 늘었지만, 181건의 성공 중 167건이 실제로 풀이가 담긴 출처(프리프린트, 저장소, 문제 페이지 등)를 직접 찾아 들어간 시도에서 나왔다는 점에서, 이는 과학적 재발견이 아니라 순수한 정보 검색 능력을 반영하는 것으로 해석된다. 예를 들어 Erdős Problem #152는 폐쇄형·고정 검색 조건의 28회 시도에서는 전혀 풀리지 않았지만, 웹 검색이 가능한 14회 시도 중 11회에서 풀이 페이지를 찾아낸 뒤 풀렸다. 흥미롭게도 전면 웹 검색 조건에서도 어떤 모델도 이미 풀린 40개 문제를 모두 맞히지는 못해, 정보 탐색·검색 능력에도 여전히 개선 여지가 있음을 보였다. 또한 Claude Sonnet 5.5와 GPT 계열 모델들은 기본 프로토콜에서 몇 분 만에 시도를 끝내는 경향(중간값 180분 중 0.3~4.1분)을 보였고, continuation 프로토콜을 적용하면 더 많은 문제를 풀어, 적절한 프롬프팅과 하네스 설계만으로도 모델의 잠재적인 문제 해결 능력을 더 끌어낼 수 있음을 시사했다.</p>
+<h2>한계점</h2>
+<p>논문에 별도의 "한계점" 절은 없으나 본문 전반에서 다음과 같은 한계가 언급된다. 첫째, 코퍼스의 상태(open/solved 등) 레이블은 자체 검증이 아니라 출처가 주장하는 내용을 그대로 기록한 것이라, 실제로는 상태가 다를 수 있다. 둘째, AI가 만든 풀이를 해당 모델 계열의 "재발견"으로 인정하지 않기 위한 오염 제어 장치를 두었지만, 모델 출시일(cutoff) 하나만으로는 오염을 완전히 통제할 수 없으며 이는 모델별 수작업 제외로 보완해야 한다. 셋째, 코퍼스는 여러 분야를 포괄하지만 실제 벤치마크(OpenFrontiers-Bench)는 Lean 4로 형식화할 수 있는 수학 문제로 한정되어 있어, 물리학·컴퓨터과학 등 다른 분야의 미해결 문제는 다루지 못한다. 넷째, 평가 대상 모델은 7개에 한정되었고, 전면 웹 검색(C) 조건조차 모든 이미 풀린 문제를 재현하지 못해 모델의 정보 검색 능력 자체도 완전하지 않다는 점을 저자들이 직접 언급한다. 다섯째, 많은 에이전트가 할당된 시간 예산을 다 쓰지 않고 일찍 포기하는 경향을 보여, 현재의 하네스 설계가 깊이 있는 탐색을 충분히 유도하지 못한다는 한계도 드러났다.</p>
+<h2>시사점</h2>
+<p>이 연구는 "최종 답이 맞았는가"가 아니라 "실제로 새로운 수학적 성과를 만들어냈는가"를 형식 검증을 통해 구분함으로써, LLM의 연구 수준 문제 해결 능력을 과대평가하기 쉬운 기존 평가 방식의 허점을 드러낸다. 특히 웹 검색이 허용되면 성능이 크게 오르는 것처럼 보이지만 이는 재발견이 아니라 검색 능력의 반영일 뿐이라는 점을 명확히 분리해 보여줌으로써, 향후 "과학적 발견 AI"를 주장하는 연구나 모델을 평가할 때 폐쇄형 조건과 오염 통제가 왜 필수적인지에 대한 기준을 제시한다. 또한 지속적으로 갱신 가능한 공개 문제 코퍼스와 재현 가능한 선정 스크립트를 공개함으로써, 향후 더 많은 분야·모델을 포괄하는 벤치마크로 확장될 수 있는 기반을 마련했다는 점에서 의미가 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.37739" target="_blank" rel="noopener">huggingface.co/papers/2610.37739</a> · 2026-11-08</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

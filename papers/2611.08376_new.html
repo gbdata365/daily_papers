@@ -1,0 +1,127 @@
+<meta charset="UTF-8">
+<title>뮤어</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#6 · Daily Papers 2026-11-08</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 6</span>
+    </div>
+    <h1 class="article-title">Muir: Linear Attention with Sensitivity-Allocated Gating and Matched-Filter Readout</h1>
+    <p class="article-title-ko">뮤어: 민감도 할당 게이팅과 매치드 필터 리드아웃을 적용한 선형 어텐션</p>
+    <p class="article-sub">게이트 기반 선형 어텐션(delta-rule) 모델에서 상태 업데이트가 삭제(erase)보다 쓰기(write)에 훨씬 더 민감하다는 분석에 기반해, 모든 게이트를 민감도에 따라 랭크를 배분한 하나의 저랭크 프로젝션으로 통합하고 상태 행(row)의 에너지 불균형을 보정하는 매치드 필터(matched-filter) 읽기 게이트를 추가함으로써, 절감된 파라미터를 FFN 확장에 재투자하여 GDN-2와 Transformer 대비 언어모델링·장기 컨텍스트 성능을 모두 개선한 아키텍처 Muir를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.08376" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.08376" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Muir: Linear Attention with Sensitivity-Allocated Gating and Matched-Filter Readout</li>
+<li><strong>저자</strong>: Tushaar Gangavarapu (University of Texas at Austin, Google), Gil Tabak (Google), Clemens JS Schaefer (Google) (교신저자: Clemens JS Schaefer)</li>
+<li><strong>출처</strong>: arXiv:2611.08376v1 [cs.LG] (2026년 11월 5일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.08376">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>게이트 기반 선형 어텐션(delta-rule) 모델에서 상태 업데이트가 삭제(erase)보다 쓰기(write)에 훨씬 더 민감하다는 분석에 기반해, 모든 게이트를 민감도에 따라 랭크를 배분한 하나의 저랭크 프로젝션으로 통합하고 상태 행(row)의 에너지 불균형을 보정하는 매치드 필터(matched-filter) 읽기 게이트를 추가함으로써, 절감된 파라미터를 FFN 확장에 재투자하여 GDN-2와 Transformer 대비 언어모델링·장기 컨텍스트 성능을 모두 개선한 아키텍처 Muir를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>Transformer의 소프트맥스 어텐션은 시퀀스 길이에 대해 학습 비용이 제곱으로, 추론 캐시가 선형으로 증가하는 한계를 가진다. 선형 어텐션은 가변 길이 컨텍스트를 고정 크기의 key-value 상태로 압축해 이 문제를 해결하지만, 유한 차원 상태에 더 많은 key를 채워 넣으면 key들 간 간섭(interference)이 발생한다. Delta-rule 계열 모델은 들어오는 key에 대한 기존 예측을 지우고(erase) 새 값을 쓰는(write) 방식으로 이 간섭을 완화하며, 최근의 Gated DeltaNet-2(GDN-2)는 decay·erase·write·output 게이트를 모두 채널별(channel-wise)로 분리해 유연성을 높였다.</p>
+<p>그러나 저자들은 채널별 게이팅을 도입하면 세 가지 문제가 생긴다고 지적한다. 첫째, GDN-2는 erase 게이트와 write 게이트에 동일하게 완전 랭크(dense, d×d) 프로젝션을 할당해 전체 레이어 파라미터 예산(12d²)의 6분의 1을 게이트가 차지하고, 이를 보정하기 위해 FFN 너비를 25% 이상 줄여야 한다. 둘째, 상태 행(row)마다 decay 속도가 다르기 때문에 느리게 decay하는 행은 수백~수천 토큰에 걸쳐 값을 누적해 노름(norm)이 한 자릿수 이상 커지고, 가중치 없는(unweighted) 질의 읽기에서는 이 고노름 행이 출력을 지배해 더 강한 erase를 필요로 하게 만들며, 이는 저장된 연관관계를 조기에 덮어쓰는 부작용을 낳는다. 셋째, 채널마다 decay 속도가 다르면 청크 단위 병렬 학습(chunkwise parallel training)에서 누적 decay로 key를 나누는 연산이 TPU·Trainium 같은 광폭 행렬 유닛 가속기에서 요구되는 큰 청크 크기에서 언더/오버플로를 일으켜 수치적으로 불안정해진다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>채널별 게이트 delta 재귀(recurrence)를 분석하여, 상태 업데이트가 쓰기(write)보다 삭제(erase)에 훨씬 덜 민감함을 이론적·실증적으로 보임(학습된 모델에서 key 에너지가 헤드당 약 5% 채널에 집중되어 상태가 쓰기 교란에 약 13배 더 민감).</li>
+<li>상태 행 노름에 대한 닫힌 형태(closed-form) 스케일링 법칙을 도출하고, 매치드 필터 형태의 읽기 게인으로 질의를 가중하면 행 간 불균형이 완화되어 쓰기 시점의 erase를 줄이고 기억 유지 기간(memory horizon)을 늘릴 수 있음을 증명.</li>
+<li>위 분석에 기반해 decay·erase·write·output·읽기 게인(5종)의 게이트를 민감도에 따라 랭크를 차등 배분한 단일 저랭크 프로젝션으로 통합하고, 정적 채널 프로파일과 동적 토큰별 변조를 결합한 매치드 필터 읽기 게이트를 갖는 아키텍처 Muir를 제안.</li>
+<li>절감된 게이트 파라미터를 고정 파라미터 예산 하에서 FFN 확장(최대 +30.4%)에 재투자.</li>
+<li>광폭 행렬 유닛(TPU 등)에서 큰 청크 크기로도 안정적으로 학습할 수 있는 boundary-pivoted 청크 단위 병렬 커널을 설계.</li>
+<li>166M~1.34B 규모에서 GDN-2 대비 퍼플렉시티 1.8~2.0%, Transformer 대비 2.5~3.6% 개선, 상식 추론 정확도 최대 1.9점 향상, 추출형 recall 개선, 1.34B에서 멀티홉·멀티니들 recall 개선, 4K 학습 길이에서 1,000만 토큰까지 퍼플렉시티 드리프트 없이 외삽, 100만 토큰까지 거의 100%의 passkey 검색 정확도 달성을 실험적으로 입증.</li>
+</ul>
+<h2>방법론</h2>
+<p>Muir는 GDN-2의 네 가지 채널별 게이트(decay α, erase b, write w, output g)에 다섯 번째 게이트인 동적 질의 읽기 게인 γ(상태 읽기 직전에 ℓ2-정규화된 질의를 스케일링)를 추가한다. 토큰 표현 xt로부터 하나의 통합된 저랭크 다운 프로젝션(W↓)을 거쳐 전체 랭크 R_tot(=512)의 병목(bottleneck)을 만들고, 이를 다섯 개의 게이트별 업 프로젝션으로 나누어 각 채널별 게이트를 복원한다.</p>
+<p>랭크 배분은 민감도 비대칭성에 따라 결정된다. 상태를 직접 전체 차원으로 변조하는 게이트(output g, write w, 읽기 게인 q)는 decay(f)와 key에 축약되어 작용하는 erase(b)보다 두 배 높은 랭크를 받는다(구체적으로 r_f=r_b=64, r_g=r_w=r_q=128). 이 랭크 배분은 또한 TPU7x의 256열 MXU 타일 폭과 128-레인 VMEM 타일 경계에 맞춰 열을 정렬해, 영패딩 없이 두 개의 완전한 256×256 MXU 타일로 다운 프로젝션을 실행하고 업 프로젝션들을 두 개의 배치 행렬곱으로 묶어 처리하도록 설계되었다(하드웨어 정렬).</p>
+<p>읽기 게인 γt는 정적 채널 프로파일(γ^stat, 호라이즌에 따른 거듭제곱 법칙 프로파일을 학습)과 동적 토큰별 변조(2σ(z_t^q), 지연(lag)에 따른 매치드 필터를 학습)를 곱한 형태로 구성되며, 초기화 시 γt=1이 되어 기존 GDN-2와 동등하게 출발한다. 이 통합 저랭크 프로젝션은 GDN-2의 게이트 파라미터(2d²+512d)보다 훨씬 적은 파라미터(2dR_tot)를 쓰며, 고정된 12d² 레이어 예산 하에서 절감된 파라미터를 FFN 너비 확장(d_ffn=4d−R_tot)에 재투자한다. d=2,048, R_tot=512 기준으로 게이트 프로젝션 파라미터·FLOPs를 4.5배(−77.8%) 줄이고, 레이어당 비임베딩 파라미터를 14.6% 줄여 FFN을 5,888에서 7,680(+30.4%)으로 확장한다.</p>
+<p>학습 안정성을 위해, 채널별 decay와 랭크-1 erase 연산이 교환되지 않는 문제(비가환성)로 인해 표준 청크 단위 알고리즘이 큰 청크에서 수치적으로 불안정해지는 점을 해결하기 위해, 나눗셈이나 전체 청크 3차원 decay 텐서 없이 상대 decay를 분할하고 청크 내 삼각 시스템을 블록 행렬곱으로 푸는 boundary-pivoted 청크 단위 커널을 별도로 설계했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p><strong>모델 및 비교 대상</strong>: 166M, 406M, 834M, 1.34B 네 가지 규모에서 12d² 비임베딩 파라미터 예산 하에 Transformer(RoPE, Splash Attention), GDN-2, Muir(γ 없음), Muir(정적 γ), Muir(동적 γ, 최종 제안) 다섯 변형을 비교했다.</p>
+<p><strong>학습</strong>: FineWeb-Edu에서 샘플링한 1,000억 토큰으로 처음부터 사전학습했으며, Llama-2 SentencePiece 토크나이저, AdamW 옵티마이저, 청크 길이 256, 시퀀스 길이 4,096, 8개 TPU7x 칩에서 bfloat16 혼합 정밀도로 학습했다.</p>
+<p><strong>평가</strong>: lm-evaluation-harness를 이용한 언어모델링(FineWeb-Edu 검증 NLL, WikiText·LAMBADA 퍼플렉시티)과 8개 상식 추론 과제, RULER 기반 합성 연관 recall(단일/멀티홉/멀티니들/멀티쿼리 검색, 변수 추적), Based/JRT 실세계 추출형 recall 6종, 길이 외삽(최대 1,000만 토큰, 64K 쿨다운 포함), passkey 검색(최대 100만 토큰), 학습 처리량 및 수치 안정성을 측정했다.</p>
+<p><strong>주요 결과</strong>:
+- 모든 네 가지 규모에서 Muir의 세 변형 모두가 검증 NLL, WikiText 퍼플렉시티, 8개 과제 평균 정확도에서 GDN-2와 Transformer를 능가했다. 1.34B에서 완전한 Muir는 GDN-2 대비 검증 NLL을 20.4 mnat, Transformer 대비 36.2 mnat 낮췄으며, 매치드 필터 읽기가 그중 3.3 mnat을 기여했다.
+- GDN-2 대비 100억 토큰 기준 validation loss에 85억 토큰(1.2배 빠르게) 도달했고, 32K 시퀀스 길이에서 Transformer보다 2.7배 빠르게 학습했다.
+- RULER 합성 recall에서, 단일 니들 검색은 정적 γ가 유리(S-NIAH-1에서 8K까지 100% 유지)하고, 다중 홉·다중 질의처럼 지연(lag)이 달라지는 과제는 동적 γ가 유리해 전체 RULER 평균에서 최고 성능을 기록했다. Based/JRT 실세계 추출형 recall에서도 동적 γ가 성능 향상의 대부분을 견인하며 DROP에서는 Transformer를 능가했다.
+- 길이 외삽 실험에서, 정적 γ는 32K 이후 퍼플렉시티가 서서히 드리프트하지만 동적 γ는 이를 억제해 4K 학습 길이로부터 1,000만 토큰(2,560배)까지 드리프트 없이 가장 낮은 퍼플렉시티를 유지했다. 반면 Dynamic YaRN을 적용한 Transformer는 8K 이후 발산하고, 1,000만 토큰 처리에 25MB의 Muir 상태 대비 2.1TB(bfloat16)의 KV 캐시가 필요하다.
+- Passkey 검색에서는 정적 γ가 쓰기 게이트 랭크를 더 많이 보존해(r_w=256) 100만 토큰(256배 외삽)까지 거의 완벽한 recall을 유지했고, GDN-2는 4K~8K 이후 붕괴했다.
+- 메커니즘 분석을 통해 상태가 쓰기에 더 민감하다는 가설, 상태 행 노름의 스케일링 법칙, 학습된 읽기 게이트가 행 간 불균형을 완화하고 erase를 줄여 연관관계를 더 오래 유지한다는 것을 확인했다(GDN-2 대비 읽기 에너지 분산 35% 감소, 쓰기 시점 erase 17% 감소, 루트-니들 멀티홉 유지율 37%→45%, 삼각 시스템의 조건수 24% 감소).</p>
+<h2>한계점</h2>
+<p>저자들은 두 가지 한계를 명시한다. 첫째, 고정된 게이트 랭크 예산 하에서 정적 읽기와 동적 읽기 사이에 트레이드오프가 존재한다. 정적 필터는 단일 지연(single-lag) passkey 검색에는 충분하고 쓰기 랭크를 보존해 100만 토큰까지 거의 완벽한 recall을 내지만, 쓰기 랭크를 절반으로 줄여 동적 읽기를 구현하면 3만 2천 토큰 이후 단일 니들 유지력이 제한된다. 반대로 정적 읽기는 지연이 달라지는 멀티홉·추출형 과제에서는 성능이 떨어지고 연속된 텍스트에서는 느린 행의 에너지가 누적되며 드리프트가 발생하는 반면, 동적 읽기는 토큰별로 적응해 멀티-lag 질의를 해결하고 1,000만 토큰까지 평탄한 퍼플렉시티를 유지한다. 둘째, 순수 JAX 커널이 GDN-2와 처리량이 비슷하고 32K에서 Transformer보다 2.74배 빠르지만, Splash Attention의 Pallas 커널이 마스킹과 블록 연산을 VMEM 내에서 융합하는 데 비해 Muir의 청크 커널은 XLA가 청크 중간 결과를 HBM에 적재하기 때문에 짧은 컨텍스트(11K 미만)에서는 Splash Attention이 여전히 더 빠르다.</p>
+<h2>시사점</h2>
+<p>이 논문은 채널별 게이팅을 도입할 때 모든 게이트에 균등한 파라미터를 배분하는 것이 최선이 아니며, 상태 업데이트에 대한 민감도 분석에 기반해 erase처럼 상대적으로 덜 민감한 연산에는 더 낮은 랭크를, write처럼 더 민감한 연산에는 더 높은 랭크를 배분하는 것이 파라미터 효율과 성능을 동시에 높일 수 있음을 보여준다. 또한 상태 행들이 서로 다른 속도로 decay하면서 발생하는 에너지 불균형을 가중치 없는 읽기로 방치하면 과도한 erase와 조기 망각으로 이어진다는 통찰은, 선형 어텐션·상태공간모델 계열 아키텍처 전반에서 '읽기(readout)' 메커니즘 자체를 별도로 설계해야 할 필요성을 시사한다. 저자들은 이 민감도-할당 게이팅과 매치드 필터 읽기 아이디어가 게이트 delta 재귀뿐 아니라, 채널마다 다른 속도로 decay하거나 갱신되는 행렬 상태를 가중치 없는 질의로 읽는 다른 test-time 최적화 모델들에도 일반화될 수 있다고 제안한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.08376" target="_blank" rel="noopener">huggingface.co/papers/2611.08376</a> · 2026-11-08</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

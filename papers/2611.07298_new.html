@@ -1,0 +1,116 @@
+<meta charset="UTF-8">
+<title>학습 가능한 프리픽스 토큰을 이용한 검색 임베딩의 표현 간섭 완화</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#7 · Daily Papers 2026-11-08</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 6</span>
+    </div>
+    <h1 class="article-title">Reducing Representational Interference in Retrieval Embeddings with Trainable Prefix Tokens</h1>
+    <p class="article-title-ko">학습 가능한 프리픽스 토큰을 이용한 검색 임베딩의 표현 간섭 완화</p>
+    <p class="article-sub">검색 임베딩 모델을 학습할 때 입력 앞에 학습 가능한 [DUMP] 토큰 몇 개를 덧붙이기만 해도, 불필요한 토큰 수준 정보(어텐션 싱크 등)가 최종 임베딩에 섞여드는 현상을 줄여 검색 성능을 꾸준히 끌어올릴 수 있다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.07298" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.07298" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Reducing Representational Interference in Retrieval Embeddings with Trainable Prefix Tokens</li>
+<li><strong>저자</strong>: Seongtae Hong, Youngjoon Jang, Jungseob Lee, Chanjun Park, Heuiseok Lim (고려대학교, 숭실대학교)</li>
+<li><strong>출처</strong>: arXiv:2611.07298v1 [cs.IR] (2026년 11월 5일, CIKM 2026 게재)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.07298">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>검색 임베딩 모델을 학습할 때 입력 앞에 학습 가능한 [DUMP] 토큰 몇 개를 덧붙이기만 해도, 불필요한 토큰 수준 정보(어텐션 싱크 등)가 최종 임베딩에 섞여드는 현상을 줄여 검색 성능을 꾸준히 끌어올릴 수 있다.</p>
+<h2>배경 및 문제의식</h2>
+<p>임베딩 모델은 길이가 제각각인 텍스트를 고정 차원 벡터로 압축해 질의(query)와 문서(passage)를 같은 공간에서 비교할 수 있게 해준다. 이 압축 과정은 보통 [CLS] 풀링이나 마지막 토큰 풀링처럼 특정 지점의 표현만 추려내는 방식으로 이루어지는데, 저자들은 이 과정에서 의미와 무관한 토큰 수준의 잔여 정보(반복적인 위치 패턴, 특수 토큰이 만드는 인공적 신호 등)가 함께 섞여 들어가 임베딩의 품질을 떨어뜨릴 수 있다고 본다.
+이 문제는 '어텐션 싱크(attention sink)' 현상과 맞물려 더 심각해진다. 어텐션 싱크란 의미상 중요하지 않은 특정 위치가 과도하게 많은 어텐션을 받는 현상으로, 소프트맥스 연산의 구조적 특성상 자기회귀 생성 모델 안정화에는 도움이 되지만, 검색 임베딩처럼 풀링된 벡터가 순수한 의미 정보만 담아야 하는 상황에서는 오히려 방해가 된다. 기존의 대조학습(contrastive learning) 기반 파인튜닝은 질의-문서 간 정합성만 거시적으로 최적화할 뿐, 풀링 이전에 토큰 수준의 잡음이 어떻게 처리되는지는 직접 통제하지 않는다는 공백이 있다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>비전 트랜스포머의 'register 토큰'에서 아이디어를 가져와, 검색 임베딩 모델에 학습 가능한 [DUMP] 접두(prefix) 토큰을 도입하는 방법을 제안했다.</li>
+<li>모델 구조, 풀링 방식, 학습 손실 함수를 전혀 바꾸지 않고도 적용 가능한 "플러그 앤 플레이"형 경량 기법임을 보였다.</li>
+<li>인코더(gte-en-mlm-base, NeoBERT, EuroBERT, bge-m3-retromae)와 디코더(ettin-decoder, MobileLLM-R1) 등 6종의 서로 다른 임베딩 모델에 적용해, 표준 검색 벤치마크에서 평균 2.46%, 장문 컨텍스트 벤치마크에서 평균 2.41%의 상대적 성능 향상을 확인했다.</li>
+<li>토큰 단위 분석을 통해 [DUMP] 토큰이 실제로 저정보 토큰의 활성화 규모와 어텐션 분배 양상을 바꾼다는 내부 메커니즘 증거를 제시했다.</li>
+</ul>
+<h2>방법론</h2>
+<p>입력 텍스트 앞에 [DUMP1], [DUMP2], ..., [DUMPK] 형태의 인덱스가 붙은 특수 토큰 K개를 이어붙인 뒤, 기존과 동일한 토크나이저·인코더·풀링 과정을 거쳐 임베딩을 얻는다. 이 [DUMP] 토큰들의 임베딩 벡터는 모델 파라미터와 함께 초기화되고, 별도의 보조 손실 없이 표준 대조학습 손실(InfoNCE)을 통해서만 학습된다. 순전파 과정에서 [DUMP] 토큰은 셀프 어텐션을 통해 일반 텍스트 토큰들과 상호작용하며, 의미와 무관한 신호를 흡수하는 "버퍼" 역할을 하도록 유도된다. 풀링은 여전히 원래 목표 지점([CLS] 또는 마지막 토큰)에서 수행되지만, 그 표현 자체가 [DUMP] 토큰과의 상호작용에 의해 영향을 받아 간섭이 줄어드는 방식이다. 학습과 추론 모두에서 동일하게 [DUMP] 토큰을 접두어로 사용한다. 주요 실험에서는 K=4로 설정했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>학습 데이터는 RLHN에서 가져온 10만 개의 고품질 하드 네거티브 질의-문서 쌍과, 장문 검색 능력을 보강하기 위한 MLDR 데이터셋 1만 개를 합쳐 총 11만 개 인스턴스로 구성했다. 최대 시퀀스 길이 8192, 학습률 1×10⁻⁴, 온도 20.0, 배치 크기 256으로 1 epoch 파인튜닝했다.
+평가는 MTEB 프레임워크 하에서 BEIR 벤치마크의 하드 네거티브 버전(Natural Questions, HotpotQA, Quora, DBPedia, MS MARCO)과 Wikipedia, 그리고 장문 컨텍스트 평가를 위한 LongEmbed을 사용했으며 지표는 nDCG@10이다.
+결과적으로 인코더·디코더 아키텍처를 가리지 않고 [DUMP] 토큰을 추가한 모델이 기준 모델(Base)보다 거의 모든 데이터셋에서 더 나은 성능을 보였다. 예를 들어 ettin-decoder는 평균 0.4377에서 0.4775로, EuroBERT는 0.5786에서 0.5884로 향상되었다. 장문 컨텍스트 평가(LongEmbed)에서도 gte-en-mlm은 0.4797에서 0.5024로, ettin-decoder는 0.3330에서 0.3498로 향상되는 등 일관된 개선을 보였다.
+추가 분석에서는 [DUMP] 토큰 개수(K=1, 2, 4)에 따른 성능 변화가 모델별로 다르게 나타나 비단조적(non-monotonic)인 양상을 보였다 — 어떤 모델은 2개일 때, 어떤 모델은 4개일 때 최적이었다. 내부 표현 분석에서는 저정보(불용어) 토큰들이 기존에는 [CLS] 토큰 쪽으로 높은 L2 노름과 어텐션을 보냈지만, [DUMP] 토큰 도입 후에는 이러한 노름과 어텐션 비중이 [DUMP] 토큰들 쪽으로 옮겨가면서 [CLS] 표현이 더 깨끗해지는 경향이 관찰되었다.</p>
+<h2>한계점</h2>
+<p>논문에서는 별도의 "한계점" 절을 명시적으로 두지 않았다. 다만 본문 내용을 통해 확인되는 제약은 다음과 같다. 첫째, [DUMP] 토큰 개수에 따른 성능 변화가 비단조적이어서, 최적의 토큰 수를 모델·데이터셋마다 조정해야 하는 하이퍼파라미터 탐색 부담이 있다. 둘째, 실험에 사용된 모델들은 대체로 소규모(1억~3억 파라미터대) 인코더·디코더이며, 대형 LLM 기반 임베딩 모델이나 다국어/비영어 환경에서의 효과는 본문에서 다루어지지 않았다. 셋째, 평가 데이터셋이 대부분 영어 기반 BEIR 하위 셋과 LongEmbed로 한정되어 있어 다국어 검색에 대한 일반화는 논문에 명시되지 않음.</p>
+<h2>시사점</h2>
+<p>이 연구는 모델 구조나 학습 목표를 바꾸지 않고도, 입력에 학습 가능한 몇 개의 토큰만 추가하는 매우 가벼운 개입으로 검색 임베딩 품질을 개선할 수 있음을 보여준다. 비전 트랜스포머의 register 토큰과 유사한 아이디어가 텍스트 검색 임베딩에도 유효하다는 점에서, 어텐션 싱크나 저정보 토큰으로 인한 "표현 간섭"이 여러 모달리티에 공통되는 구조적 문제라는 시사점을 준다. 기존 임베딩 모델에 거의 추가 비용 없이 적용 가능한 플러그인 형태이기 때문에, 산업용 검색·RAG 시스템에서 기존 파인튜닝 파이프라인에 손쉽게 결합할 수 있는 실용적 개선책으로 활용될 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.07298" target="_blank" rel="noopener">huggingface.co/papers/2611.07298</a> · 2026-11-08</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

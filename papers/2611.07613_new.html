@@ -1,0 +1,121 @@
+<meta charset="UTF-8">
+<title>강도 기반 토큰 축소와 물리 인식 증강을 통한 실시간 풀웨이폼 라이다 트랜스포머</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#9 · Daily Papers 2026-11-08</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 5</span>
+    </div>
+    <h1 class="article-title">Towards Real-Time Full-Waveform LiDAR Transformers via Intensity-Guided Token Reduction and Physics-Aware Augmentation</h1>
+    <p class="article-title-ko">강도 기반 토큰 축소와 물리 인식 증강을 통한 실시간 풀웨이폼 라이다 트랜스포머</p>
+    <p class="article-sub">풀웨이폼 라이다(Full-Waveform LiDAR, FWL) 데이터의 강도(intensity) 분포가 희소하다는 물리적 특성을 활용해 토큰을 선별적으로 가지치기(pruning)하고 병합(merging)하는 FWL-ToPM과, 파형·절두체 구조를 보존하는 전용 증강 기법 FWLAug를 결합함으로써, 기존 대비 8배 이상 빠른 실시간 추론 속도와 함께 정확도까지 동시에 끌어올린 최초의 실시간 FWL 트랜스포머를 제시한 연구.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.07613" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.07613" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Towards Real-Time Full-Waveform LiDAR Transformers via Intensity-Guided Token Reduction and Physics-Aware Augmentation</li>
+<li><strong>저자</strong>: Kotaro Oishi, Kazuma Ikeda(공동 1저자), Ryosei Hara, Ryo Yoshida, Mariko Isogawa, Kentaro Yoshioka(공동 교신저자) 등 (Keio University)</li>
+<li><strong>출처</strong>: arXiv:2611.07613v1 [cs.CV] (2026년 11월 5일), NeurIPS 2026 게재</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://keio-csg.github.io/FWL-ToPM">https://keio-csg.github.io/FWL-ToPM</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.07613">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>풀웨이폼 라이다(Full-Waveform LiDAR, FWL) 데이터의 강도(intensity) 분포가 희소하다는 물리적 특성을 활용해 토큰을 선별적으로 가지치기(pruning)하고 병합(merging)하는 FWL-ToPM과, 파형·절두체 구조를 보존하는 전용 증강 기법 FWLAug를 결합함으로써, 기존 대비 8배 이상 빠른 실시간 추론 속도와 함께 정확도까지 동시에 끌어올린 최초의 실시간 FWL 트랜스포머를 제시한 연구.</p>
+<h2>배경 및 문제의식</h2>
+<p>기존 라이다는 각 레이저 펄스에서 가장 강한 피크 위치만 저장하기 때문에 안개·비·유리 등 투명 물체에서 발생하는 다중 경로 반사나 약한 신호를 제대로 포착하지 못해 유령(ghost) 포인트나 노이즈가 생기고, 이는 객체 탐지·SLAM 성능 저하와 안전 문제로 이어진다. 이를 해결하기 위해 각 픽셀의 전체 시간축 반사 강도 히스토그램을 저장하는 풀웨이폼 라이다(FWL)가 주목받고 있으며, 최근에는 트랜스포머 기반 FWL 모델(FWLT)이 유령 탐지, 안개 환경에서의 포인트 클라우드 복원 등에 활용되고 있다. 그러나 FWLT의 실용화에는 두 가지 근본적 걸림돌이 있다. 첫째, FWL 데이터는 픽셀당 전체 히스토그램을 저장하므로 데이터량이 포인트 클라우드보다 훨씬 크고, 그중 대부분이 객체 정보가 거의 없는 저강도 배경 영역이어서 계산 비용이 지나치게 커진다. 영상·비디오용으로 설계된 기존 토큰 축소 기법들은 정보가 2D 공간에 균일하게 퍼져 있다고 가정하기 때문에, FWL 데이터에서 드물게 분포하는 고강도(객체 관련) 토큰까지 무분별하게 제거해버리는 문제가 있다. 둘째, FWL은 공개 데이터가 부족하고 유리·물 등 소수 클래스의 샘플이 적어 모델이 다수 클래스에 과적합되기 쉬운데, 기존 영상·포인트 클라우드용 증강 기법은 FWL 특유의 ToF(Time-of-Flight) 파형 구조와 절두체(frustum) 기하를 무시하여 파형을 왜곡시킨다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>FWL-ToPM</strong>: 강도 분포 기반으로 저강도 배경 토큰을 가지치기하고 남은 토큰을 병합하는 FWL 전용 토큰 축소 메커니즘을 제안하여, 사전 학습 없이도 기존 모델에 적용 가능한 형태로 8배의 속도 향상(53.2 FPS)과 약 9포인트의 F1 성능 향상(0.503→0.592)을 동시에 달성, 최초의 실시간 FWL 트랜스포머를 구현했다.</li>
+<li>영상 기반 트랜스포머에서는 공격적인 토큰 가지치기가 학습을 불안정하게 만드는 것으로 알려져 있지만, FWL 데이터에서는 토큰의 최대 70%를 제거해도 오히려 정확도가 일관되게 향상된다는 점을 실험적으로 확인했다. 이는 저강도 배경 토큰이 객체 관련 신호를 희석시키는 노이즈로 작용하기 때문으로 해석된다.</li>
+<li><strong>FWLAug</strong>: 표준 영상·포인트 클라우드 증강이 위반하는 ToF 파형 구조와 절두체 기하를 보존하면서 학습 데이터의 다양성을 확장하는 FWL 전용 증강 프레임워크를 제안했다.</li>
+<li>Ghost-FWL 데이터셋 수집 장소와 완전히 분리된 위치에서 촬영한 분포 외(out-of-distribution, OOD) 테스트셋을 새로 구축했으며, 이 데이터셋에서 FWLAug가 비교 대상 중 최고의 평균 F1 성능을 달성함을 보였다.</li>
+</ul>
+<h2>방법론</h2>
+<p>FWL 데이터 V ∈ R^(H×W×T)(H, W는 각각 라이다의 방위각·고도축, T는 ToF 빈)를 입력으로 각 복셀의 클래스(노이즈, 객체, 유리, 유령 등)를 예측하는 프레임워크로, FWL-ToPM과 FWLAug 두 요소로 구성된다.</p>
+<p>FWL-ToPM은 비전 트랜스포머(ViT)를 백본으로 사용하되, 토큰 선택·집약 방식을 FWL 데이터 특성에 맞게 재설계했다. 먼저 입력을 3D 패치로 분할한 뒤, 각 패치의 최대 신호 강도를 기준으로 오름차순 정렬하여 하위 비율(ρ_low)의 저강도 패치를 가지치기(pruning) 대상으로 분류하고, 나머지 고강도 패치만 인코더에 입력한다. 가지치기된 영역은 학습 시 손실 계산에서 제외되고, 추론 시에는 노이즈 라벨로 처리된다. 이 가지치기는 가중치를 변경하지 않으므로 추가 학습 없이 사전 학습된 모델에도 바로 적용할 수 있다.</p>
+<p>가지치기 후 남은 패치에도 여전히 중복되는 토큰이 존재할 수 있어, 공간 채움 곡선(space-filling curve, 구체적으로 모튼 순서Morton order)을 이용해 가지치기로 인해 희소하고 불규칙해진 패치들을 3D 공간 근접성을 보존하는 1D 시퀀스로 재배열한 뒤, 일정 간격으로 목적지(dst) 토큰을 선택하고 나머지 소스(src) 토큰을 코사인 유사도가 가장 높은 dst 토큰에 병합(merging)한다. 어텐션 연산 후에는 병합된 토큰의 특징을 원래 위치로 복원(unmerge)하여 잔차 연결과의 일관성을 유지한다. 병합 과정 역시 가중치를 바꾸지 않아 추가 학습 없이 적용 가능하다.</p>
+<p>FWLAug는 각 픽셀의 히스토그램이 보존해야 하는 ToF 파형 구조와 라이다 원점을 꼭짓점으로 하는 절두체 기하를 유지하면서 데이터 다양성을 늘리는 두 가지 증강 기법으로 구성된다. FWLShiftMix는 객체의 피크 위치를 3D 포인트로 변환한 뒤 레이 방향으로 이동시켜 거리 다양성을 늘리고, 이동으로 생긴 빈 영역은 0으로 채우는 대신 다른 장면의 유리 포함 영역 데이터를 옮겨와 채움으로써 비현실적인 데이터 분포를 방지한다. FWLCutMix는 CutMix를 FWL에 맞게 확장하여, 소수 클래스(유리)가 포함된 영역을 소스 프레임에서 잘라 목적지 프레임의 임의 위치에 파형 전체를 그대로(T축 전체) 붙여넣는 방식으로 클래스 불균형을 완화한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>실험은 유령 탐지용 대규모 주석 FWL 데이터셋인 Ghost-FWL로 수행되었으며, 센서 내부 반사 노이즈·바닥/천장 반사 등을 제거한 뒤 GPU 메모리 제약으로 전체 프레임의 1/4 크기로 잘라 입력으로 사용했다. ViT 설정은 패치 크기 8×4×20, 블록 수 6, 어텐션 헤드 수 6, 특징 차원 240이며, focal loss와 AdamW로 50 에폭 학습했다. 평가 지표는 노이즈를 제외한 클래스들의 평균 F1(F1-mean)과 초당 처리 가능한 전체 크기 프레임 수(FPS)이다.</p>
+<p>기존 FWL 기반 방법(Scheuble et al., Ikeda et al.)과 비교했을 때 FWL-ToPM은 F1-mean 0.592, 53.2 FPS를 달성하여 약 9포인트의 F1 향상과 8배 이상의 속도 향상을 동시에 보였다. 영상 기반 토큰 축소 기법인 DynamicViT, ToMe와 비교해도 제안된 가지치기·병합 기법이 각각 더 우수한 성능을 보였으며, 가지치기와 병합을 함께 적용했을 때 F1-FPS 트레이드오프가 가장 우수했다(가지치기만 사용 시 F1 0.591·20.3 FPS, 병합만 사용 시 F1 0.565·18.0 FPS, 둘 다 사용 시 F1 0.592·53.2 FPS). 가지치기 비율을 높여 약 80 FPS까지 속도를 끌어올리면 정확도가 크게 떨어지는 반면, 병합은 정확도 저하를 억제하지만 속도 개선 폭이 제한적임을 확인했다. FWLAug의 경우, 분포 내(Ghost-FWL) F1-mean은 FWLShiftMix 단독 사용 시 가장 높았고(0.622), 분포 외(OOD) 테스트셋에서는 FWLCutMix와 FWLShiftMix를 함께 사용한 전체 FWLAug가 가장 큰 성능 향상(기준 대비 4.6포인트, 소수 클래스인 유리는 8.4포인트)을 보여 두 증강 기법의 상호 보완적 효과를 확인했다. 또한 추가 학습 없이 사전 학습된 모델에 토큰 축소를 바로 적용한 실험에서, 가지치기는 축소 비율이 커질수록 정확도가 급격히 떨어졌지만 병합은 약 20 FPS까지 속도를 높여도 F1-mean이 0.5 이상으로 유지되어, 병합 기법이 추가 학습 없이도 효과적으로 동작함을 보였다.</p>
+<h2>한계점</h2>
+<ul>
+<li>저강도 영역을 배경/노이즈로 간주해 가지치기하기 때문에, 원거리 객체나 저반사율 객체, 악천후 하의 약한 반사 신호 등 유용한 약신호까지 잘못 제거되어 거짓 음성(false negative)으로 이어질 위험이 있으며, 장면과 신호 분포에 따라 ρ_low, ρ_m, ρ_d를 적응적으로 조절하는 것은 향후 과제로 남아 있다.</li>
+<li>단일 FWL 센서 플랫폼으로만 평가되었으며, 일반화 성능 역시 Ghost-FWL과 동일한 센서·수집 구성·주석 프로토콜 하의 미지 장면에 대해서만 검증되었다. 센서 간(cross-sensor) 평가는 아직 수행되지 않았다.</li>
+<li>FWLAug는 완전한 광학 시뮬레이터가 아닌 규제화(regularization) 기법으로 설계되어, FWLShiftMix는 거리에 따른 강도 감쇠를 모델링하지 않고 붙여넣은 유리 영역과 이동된 객체 간의 광학적 상호작용을 재계산하지 않으며, FWLCutMix는 붙여넣기 경계에서의 공간적 불연속성으로 인해 전체 장면에서 일관된 반사 경로를 보장하지 못한다.</li>
+<li>효율성 평가가 모델 수준의 처리량(throughput)에 한정되어 있으며, 센서 입력부터 의사결정까지의 전체 지연 시간이나 실제 임베디드 로봇 플랫폼 배포 평가는 다루지 않았다.</li>
+</ul>
+<h2>시사점</h2>
+<p>이 연구는 데이터의 물리적 특성(강도 분포의 희소성, ToF 파형 구조, 절두체 기하)을 명시적으로 활용하면 범용 비전 트랜스포머 기법을 그대로 가져오는 것보다 훨씬 효과적인 효율화·일반화 전략을 세울 수 있음을 보여준다. 특히 영상 도메인에서는 금기시되는 공격적 토큰 가지치기가 FWL처럼 신호가 극히 희소한 센서 데이터에서는 오히려 성능을 높일 수 있다는 발견은, 센서 데이터의 통계적 특성에 맞춘 맞춤형 아키텍처 설계가 범용 설계보다 우월할 수 있음을 시사한다. 사전 학습된 모델에 추가 학습 없이 바로 적용 가능한 토큰 병합 기법은 실제 배포 환경에서의 실용성도 높여, 자율주행·로보틱스 분야에서 안개·유리 등 까다로운 조건을 다루는 실시간 인지 시스템 개발에 기여할 수 있을 것으로 보인다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.07613" target="_blank" rel="noopener">huggingface.co/papers/2611.07613</a> · 2026-11-08</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

@@ -1,0 +1,127 @@
+<meta charset="UTF-8">
+<title>터미널형 수학적 모델링 벤치</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#2 · Daily Papers 2026-11-08</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 9</span>
+    </div>
+    <h1 class="article-title">Terminal-style Mathematical Modeling Bench: The First Agentic and Verifiable Benchmark for Mathematical Modeling</h1>
+    <p class="article-title-ko">터미널형 수학적 모델링 벤치: 수학적 모델링을 위한 최초의 에이전틱·검증 가능 벤치마크</p>
+    <p class="article-sub">CUMCM·MCM 수학 모델링 경진대회 문제 18개를 컨테이너화된 터미널 환경에 그대로 옮기고, 에이전트가 제출한 단일 JSON 산출물을 다수의 인간 수상작 패널과 대조해 "방향성 인지형(one-sided)" 채점을 하는 동시에, 프로그램적 게이트와 Lean 4 증명이라는 두 겹의 물리적 타당성 검증을 더한 최초의 에이전틱·검증 가능 수학 모델링 벤치마크다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.08237" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.08237" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Terminal-style Mathematical Modeling Bench: The First Agentic and Verifiable Benchmark for Mathematical Modeling</li>
+<li><strong>저자</strong>: Xiaojun Wu, Cehao Yang (공동 1저자), Xuhui Jiang, Chengjin Xu, Jia Li (교신저자), Jian Guo (교신저자) — IDEA Research, 홍콩과기대(광저우), DataArcTech Ltd.</li>
+<li><strong>출처</strong>: arXiv:2611.08237v1 [cs.CL] (2026년 11월 5일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/wxj630/terminal-bench-math-modeling">GitHub 저장소</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.08237">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>CUMCM·MCM 수학 모델링 경진대회 문제 18개를 컨테이너화된 터미널 환경에 그대로 옮기고, 에이전트가 제출한 단일 JSON 산출물을 다수의 인간 수상작 패널과 대조해 "방향성 인지형(one-sided)" 채점을 하는 동시에, 프로그램적 게이트와 Lean 4 증명이라는 두 겹의 물리적 타당성 검증을 더한 최초의 에이전틱·검증 가능 수학 모델링 벤치마크다.</p>
+<h2>배경 및 문제의식</h2>
+<p>수학적 모델링은 현실의 불완전하게 정의된 문제를 가정·모형·풀이·민감도 분석·권고안이라는 사슬로 바꾸는 작업으로, 최종 답이 신뢰할 수 있는 기준값에 가깝고 물리적으로도 타당해야만 의미가 있다. 그런데 기존 벤치마크들은 둘 중 하나만 한다. Mamo류는 풀이기(solver)가 소비할 수 있는 형식적 산출물 하나만 채점하여 범위가 좁고, ModelingBench·MM-Bench류는 LLM 심사자가 보고서 전체를 채점하지만 그 안의 수치가 맞는지는 전혀 검증하지 않는다. 즉 "숫자가 맞는지 확인하는 벤치마크"가 없었다. 또한 모델링 문제는 정답이 하나가 아니어서 단일 논문을 정답으로 삼으면, 그 논문보다 더 나은 답을 낸 모델이 오히려 낮은 점수를 받는 비대칭적 오류가 생기고, 그럴듯하지만 물리적으로 말이 안 되는(예: 특정 변수가 허용 범위를 벗어난) 답은 단순 거리 비교로는 걸러낼 수 없다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li><strong>최초의 과제 유형과 18개 과제 데이터셋</strong>: CUMCM·MCM 2023~2025년의 A/B/C 문제 18개를 원문 그대로의 문제문, 공식 첨부파일, 그림(21개)과 함께 컨테이너화된 터미널 과제로 만들고, 과제당 하나의 JSON 산출물을 채점 대상으로 삼은 최초의 벤치마크.</li>
+<li><strong>방향 인지형(direction-aware), 한쪽만 벌점을 주는(one-sided) 채점</strong>: 지표별로 "높을수록 좋음/낮을수록 좋음/목표값에 가까울수록 좋음/정확히 일치해야 함" 방향성을 명시하고, 기준값보다 더 나은 답은 절대 벌점을 받지 않도록 설계했다. 퇴화된 구간, 단위가 고정되지 않은 지표 등 엣지 케이스에 대한 명시적 규칙과 회귀 테스트도 포함한다.</li>
+<li><strong>2단계 타당성 검증 체계</strong>: (1) 6가지 결정 가능한 불변식 형태로 18개 과제 전부를 커버하는 프로그램적 게이트, (2) 같은 불변식을 Lean 4로 재증명한 624개의 커널 검증 의무(obligation). 두 계층이 함께 "구조화된 산출물로 판별 가능한 모든 타당성 질문"을 결정하며, 하나라도 위반되면 해당 과제 점수를 0으로 만드는 하드 게이트다.</li>
+<li><strong>7개 멀티모달 모델·하네스 조합에 대한 실증 연구</strong>: 3회 반복(seed) 평균, 과제별 거동, 비용-견고성 분석, 3개의 사례 연구를 제시하고, 벤치마크 제작 과정에서 발견·수정한 채점 오류들과 그것이 순위에 미친 영향을 함께 공개했다.</li>
+</ol>
+<h2>방법론</h2>
+<p>TB-MathModel은 각 경진대회 문제를 다음 네 요소로 구성한 자기완결적 터미널 과제로 만든다: (i) 원문 문제문과 그림이 담긴 지시 파일, (ii) 첨부 자료와 출력 스키마를 담은 에이전트 컨테이너, (iii) 채점 패널과 실행 가능한 타당성 검사를 담은 별도의 검증 컨테이너, (iv) Outstanding Award(최우수상) 논문을 재현한 오라클. 에이전트는 네트워크가 차단된 Docker 컨테이너(python:3.12-slim, 2 CPU, 8GB, 4시간 제한) 안에서 코드를 실행하고 파일을 조작한 뒤 하나의 JSON 산출물만 제출한다.</p>
+<p>채점은 단일 정답이 아니라 과제별로 2~6개 지표로 구성된 "패널"을 사용하며, 패널은 해당 문제에 대해 공개된 최우수상 논문들(과제당 1~18편, 중앙값 4편) 각각이 보고한 값들로 구성된다(총 99편 중 94편이 유효 패널). 모델의 점수는 이 패널 전체에 대해 "각 인간 답안과 얼마나 가까운가"를 평균한 값(O-E VAL)과, 이를 저가 기준 모델(DeepSeek V4.1 Flash) 대비 상대 지표로 환산한 값(M ULTI-BO)으로 보고된다. 두 지표 모두 기준값과 같거나 더 나으면 절대 벌점을 받지 않는 one-sided 수식을 사용한다.</p>
+<p>타당성 검증은 점수 계산과 독립적으로 이루어진다. 1계층은 비율·상관계수·확률 등 구조적 범위 검사와, 헬리오스탯 정격 출력·용 댄스 속도 등 문제별 제약을 재계산하는 결정 가능한 6가지 형태의 게이트다. 2계층은 동일한 불변식을 Lean 4 정리로 재증명하여 게이트 자체의 정확성을 커널 수준에서 검증한다(624개 의무, Mathlib 없이 decide/omega로 해결, sorryAx·native_decide 없음을 확인).</p>
+<h2>실험 설정 및 결과</h2>
+<p>그림이 포함된 과제를 다룰 수 있는 7개의 멀티모달 모델·하네스 조합(GPT-6 Astra+codex, Fable 5.1+claude-code, DeepSeek-Flash+opencode, GPT-5.5 xhigh+codex, Kimi K3+opencode, GLM-5.3+opencode, Qwen3.8 Flash+opencode)을 과제당 3회씩 실행해 평가했다. 주요 결과는 다음과 같다.
+- 최상위 두 모델(GPT-6 Astra+codex: O-E VAL 64.58±2.93%, M ULTI-BO 1.132; Fable 5.1+claude-code: 63.11±1.33%, 1.081)이 선두를 차지했으며, 각각 기준선 대비 남은 격차의 13.2%, 8.1%를 좁혔다.
+- 저비용 모델인 DeepSeek-Flash+opencode는 과제당 $2.54로 59.81±1.25%를 기록해, 최상위 모델 대비 비용은 1/100 수준이지만 성능 차이는 약 4.8점에 불과했다.
+- 저비용 모델군(DeepSeek-Flash, Kimi K3, GLM-5.3, Qwen3.8 Flash)은 52.66~59.81% 범위에 분포했고, 이 중 두 최상위 모델만 기준선을 넘어섰다.
+- 시드 간 편차가 최대 2.93%p에 달해, 인접 순위 모델 간 차이는 통계적으로 유의하지 않은 경우가 많았다.
+- 같은 모델(DeepSeek-Flash)에 하네스만 바꿔 실행했을 때 O-E VAL 변화는 최대 0.07%p에 불과해, 점수가 하네스보다는 모델 자체를 측정하고 있음을 확인했다.
+- 추론 강도를 최대로 높인 DeepSeek-Flash는 오히려 점수가 48.11%로 떨어져, 더 많은 추론 연산이 반드시 정확도를 높이지는 않음을 보였다.
+- CUMCM(중국어, 공학/최적화 중심) 과제는 거의 모든 모델이 높은 점수를 받았지만 MCM(영어, 개방형 모델링) 과제는 모델 간 점수 차가 커서(예: GPT-6은 CUMCM 82.9% vs MCM 46.2%), 벤치마크의 변별력이 주로 개방형 문제에서 나온다는 점을 보였다.
+- 타당성 게이트는 헬리오스탯, 연막, Juneau, 올림픽 관련 과제 등에서 7개 셀을 하드 무효화했으며, "용 댄스(dragon-dance)" 과제에서는 오히려 12개 모델의 답이 모두 수렴하는데 반해 벤치마크가 참조했던 논문(앵커) 쪽이 물리적으로 타당하지 않은 것으로 드러나, 저자들이 해당 앵커를 수정하는 계기가 되었다.</p>
+<h2>한계점</h2>
+<ul>
+<li>각 과제는 재현 가능한 최우수상 논문 하나(또는 여러 편의 패널)를 기준으로 정규화되는데, 모델링에는 단일한 정답이 없으므로 더 자연스러운 확장은 다수 논문에 대한 분포(spread)를 보고하는 방식이다.</li>
+<li>두 검증 계층은 "구조화된 산출물로 판별 가능한" 타당성 질문(단위·값 범위, 내부 일관성)만 결정할 수 있고, 결과가 실제 물리적 참값과 일치하는지는 독립적인 재현이 가능한 문제에서만 검증할 수 있다. 증거가 없는 의무는 통과시키지 않고 "확인되지 않음"으로 보고한다.</li>
+<li>과제별 패널 크기가 1~18편으로 들쭉날쭉하며, 인간 전문가들 사이에서도 의견이 갈리는 과제(예: 11편 중 10편이 앵커와 반대 결론을 내린 테니스 모멘텀 과제)는 "문헌 분리(literature-split)" 과제로 표시하고 전체 순위 집계에서 제외한다.</li>
+<li>보고된 점수는 3회 시드 평균이며, 과제 틀 자체는 공학·학제간 문제로 확장될 수 있다는 가능성만 언급되어 있을 뿐 아직 실증되지 않았다.</li>
+</ul>
+<h2>시사점</h2>
+<p>TB-MathModel은 "숫자가 맞는지 확인하지 않는 벤치마크"라는 기존 모델링 평가의 근본적 공백을 메우면서, 동시에 벤치마크 자체의 앵커가 틀릴 수 있다는 점(용 댄스 사례)을 스스로 드러내 보임으로써 검증 가능한 평가 설계의 중요성을 입증했다. 저자들은 이 벤치마크가 단순히 모델을 순위화하는 데서 멈추지 않고, 게이트를 통과한 궤적만 선별해 보상으로 쓰는 거부 샘플링이나, 게이트를 하드 제약으로 결합한 그룹 상대 정책 최적화(GRPO) 같은 강화학습에 재현 가능한 보상 신호로 활용될 수 있다고 제안한다. 또한 CUMCM과 MCM 간의 점수 격차는 폐쇄형 수식 풀이보다 가정 설정·모델 구성·민감도 분석 역량을 집중적으로 훈련해야 한다는 방향을, 단위·범위 불일치로 인한 손실은 모델이 스스로 단위와 스키마를 검증하도록 훈련해야 한다는 방향을 시사한다. "프로그램적 게이트 + 증명 보조기 기반의 자기 검증"이라는 2계층 구조는 수학 모델링 외의 다른 에이전틱 추론 평가에도 전이 가능한 설계 원칙으로 제시된다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.08237" target="_blank" rel="noopener">huggingface.co/papers/2611.08237</a> · 2026-11-08</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

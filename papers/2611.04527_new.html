@@ -1,0 +1,139 @@
+<meta charset="UTF-8">
+<title>상상 없는 월드 액션 모델을 위한 미래 표현 증류</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#3 · Daily Papers 2026-11-08</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 9</span>
+    </div>
+    <h1 class="article-title">Future Representation Distillation for Imagination-free World Action Models</h1>
+    <p class="article-title-ko">상상 없는 월드 액션 모델을 위한 미래 표현 증류</p>
+    <p class="article-sub">사전학습된 비디오 디퓨전 모델의 미래 예측 지식을 "미래 영상을 직접 생성하지 않고" 현재 관측 프레임만으로 추론되는 시각 인코더에 표현(representation) 수준으로 증류함으로써, World Action Model(WAM)이 비디오 생성 WAM 수준의 조작 성능을 유지하면서도 11Hz 실시간 폐루프 제어와 기존 비디오 생성 WAM 대비 17.8배의 추론 속도 향상을 동시에 달성함을 보이는 논문이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.04527" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.04527" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Future Representation Distillation for Imagination-free World Action Models</li>
+<li><strong>저자</strong>: Jaehyeong Jo, Sangwon Jang, Sihyun Yu, Seonghyeon Ye, Yekyung Nah, Hojung Jung, Kimin Lee, Sung Ju Hwang (KAIST)</li>
+<li><strong>출처</strong>: arXiv:2611.04527v2 [cs.RO] (2026년 11월 4일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://harryjo97.github.io/dreamfree/">harryjo97.github.io/dreamfree</a> · <a href="https://github.com/harryjo97/dreamfree">GitHub</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.04527">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>사전학습된 비디오 디퓨전 모델의 미래 예측 지식을 "미래 영상을 직접 생성하지 않고" 현재 관측 프레임만으로 추론되는 시각 인코더에 표현(representation) 수준으로 증류함으로써, World Action Model(WAM)이 비디오 생성 WAM 수준의 조작 성능을 유지하면서도 11Hz 실시간 폐루프 제어와 기존 비디오 생성 WAM 대비 17.8배의 추론 속도 향상을 동시에 달성함을 보이는 논문이다.</p>
+<h2>배경 및 문제의식</h2>
+<ul>
+<li>대규모 비디오로 사전학습된 비디오 디퓨전 모델은 물리적 환경이 시간에 따라 어떻게 변화하는지에 대한 예측적 지식을 학습하며, 이를 로봇 제어에 활용하려는 시도가 World Action Models(WAMs)이다.</li>
+<li>기존 WAM들은 이 지식을 "미래 비디오 예측"이라는 비디오 디퓨전 모델의 원래 추론 과정을 그대로 사용하는 방식(미래 영상과 행동을 동시에 디노이징하거나, 예측된 미래 영상으로부터 행동을 디코딩)으로 활용한다.</li>
+<li>그러나 반복적인(iterative) 비디오 디노이징은 추론 비용이 크고, 예측된 영상이 부정확할 경우 그로부터 유도되는 행동도 부정확해질 수 있다. 또한 행동 예측에 영상 생성과 동일한 수준의 시각적 디테일이 정말로 필요한지도 불분명하다.</li>
+<li>저자들은 "비디오 디퓨전 모델이 가진 예측 지식을, 현재 관측으로부터 계산되는 시각 표현(feature) 안에 직접 담아낼 수 있다면 영상 생성 없이도 행동을 예측할 수 있다"는 가설을 세우고, 이를 검증하기 위해 미래 표현 증류(future representation distillation)라는 기법을 제안한다.</li>
+</ul>
+<h2>핵심 기여</h2>
+<ol>
+<li><strong>DREAMFREE 제안</strong>: 사전학습된 비디오 디퓨전 백본을 "미래를 예측하는 시각 인코더"로 재활용하는 WAM으로, 고정된(frozen) 비디오 디퓨전 모델로부터 미래 정보를 증류해 영상 생성 없이 행동 예측에 활용 가능한 시각 특징을 얻는다.</li>
+<li><strong>실시간성과 성능의 동시 달성</strong>: 과제 특화 적응 없이도 최신 VLA·WAM 베이스라인보다 높은 실세계 조작 성공률을 보이면서, 11Hz의 실시간 폐루프 제어를 달성했다.</li>
+<li><strong>스케일링 효과 입증</strong>: 더 큰 비디오 백본(5B→14B)과 추가 비디오 데이터(행동 라벨 없이)를 사용할수록 로봇 제어 성능이 향상됨을 보여, 비디오 사전학습 지식이 행동 예측 성능으로 효과적으로 전이됨을 입증했다.</li>
+<li><strong>영상만으로의 신규 과제 학습</strong>: 행동 라벨이 전혀 없는 비디오 시연(다른 로봇 체화(embodiment)의 비디오 포함)으로부터 새로운 과제를 학습할 수 있음을 보였다.</li>
+</ol>
+<h2>방법론</h2>
+<ul>
+<li><strong>구조 개요</strong>: DREAMFREE는 예측적 시각 인코더(predictive visual encoder)와 행동 모듈(action module)로 구성되며, 학습은 두 단계로 분리된다. 1단계에서는 행동 라벨 없이 시각 인코더만 학습하고, 2단계에서는 로봇 시연 데이터로 행동 모듈을 학습한다.</li>
+<li><strong>예측적 시각 인코더</strong>: 사전학습된 비디오 디퓨전 백본(Video DiT)으로 인코더를 초기화하고, 현재 프레임에 대응하는 은닉 상태를 시각 표현으로 사용한다. 구조화된 어텐션 마스크를 적용해 현재 프레임 토큰이 서로만 주의(attend)하도록 제한함으로써, 현재 프레임의 은닉 상태가 오직 현재 관측과 언어 지시에만 의존하게 만든다. 학습 시 인코더는 깨끗한(clean) 현재 프레임과 노이즈가 섞인 미래 프레임들을 함께 입력받는다.</li>
+<li><strong>미래 표현 증류(Future Representation Distillation)</strong>: REPA 기법에서 아이디어를 얻어, 인코더가 현재 프레임만으로 만들어낸 표현(경량 Transformer 디코더로 투영한 값)이, 전체 비디오(미래 포함)에 접근 가능한 고정된 교사(teacher) 비디오 디퓨전 모델의 중간 표현과 유사해지도록 정렬하는 증류 손실 L_distill을 사용한다. 교사 모델과 투영기(projector)는 학습에만 쓰이고 배포 시에는 버려진다.</li>
+<li><strong>생성 손실에 의한 정규화</strong>: 사전학습된 비디오 백본이 가진 예측 능력을 보존하기 위해, 원래의 생성적 flow matching 목적함수 L_gen을 함께 사용한다. 최종 인코더 학습 손실은 L_gen과 L_distill의 합이다.</li>
+<li><strong>행동 학습</strong>: 시각 인코더가 만든 표현에서, Perceiver 방식의 latent-query 리드아웃 모듈이 학습 가능한 쿼리를 이용해 행동과 관련된 고정 개수의 토큰을 추출한다. 이 토큰과 언어 지시, 로봇의 고유감각(proprioception) 상태를 조건으로, Diffusion Transformer(DiT) 기반 행동 디코더가 flow matching 목적함수로 행동 청크(action chunk)를 생성하도록 학습된다.</li>
+<li><strong>추론</strong>: 배포 시에는 시각 인코더를 한 번만 순전파(forward pass)하여 예측적 표현을 얻고, 이를 바탕으로 행동 디코더가 반복적 영상 디노이징 없이 행동 청크를 생성한다. 이 덕분에 14B 규모의 비디오 백본으로도 11Hz의 실시간 폐루프 제어가 가능하다.</li>
+</ul>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li><strong>구현</strong>: Wan2.2 5B 및 14B(A14B) 비디오 디퓨전 모델을 백본으로 사용했고, 행동 디코더는 1B 규모의 DiT다. 행동 호라이즌은 32로 설정했고, Fast-WAM 방식을 따라 비디오를 4배 시간축 다운샘플링해 청크당 9프레임을 사용했다.</li>
+<li><strong>표현 분석(Q1)</strong>: 행동 시퀀스를 디코딩하는 능력(action probing)과 미래 프레임의 VAE latent를 복원하는 능력(future probing)을 평가한 결과, 증류를 거친 DREAMFREE 인코더는 증류 없이 학습한 인코더나 원본 비디오 디퓨전 모델(현재 프레임만 입력)보다 더 낮은 오차를 보였고, 실제 미래 프레임을 본 비디오 디퓨전 모델의 성능에 근접했다. 이는 증류가 "현재 관측만으로 미래 정보를 포착하는" 능력과 "행동 예측에 유용한 특징을 만드는" 능력을 모두 향상시킴을 보여준다.</li>
+<li><strong>시뮬레이션 성능(Q2, Q3)</strong>: LIBERO 벤치마크에서 DREAMFREE는 크로스-엠보디먼트 사전학습 없이도 98.6%의 평균 성공률로 최신 VLA·WAM들과 동등하거나 그 이상을 기록했다. RoboCasa-Kitchen(24개 과제)에서는 14B 백본 사용 시 71.7%로 비교 대상 중 최고치를 달성했으며, 비슷하게 영상 생성 없이 행동을 예측하는 Fast-WAM(44.4~44.7%)보다 크게 앞섰다. 백본을 5B에서 14B로 확장하면 성공률이 13.2%p 상승했고, 추가 비디오 데이터(행동 라벨 없이)를 더하면 최대 74.4%까지 향상되어, 더 강한 비디오 사전지식과 더 많은 비디오 데이터가 실제 제어 성능으로 이어짐을 확인했다. 소거 실험에서는 증류 손실(L_distill)을 제거했을 때 성능 저하가 생성 손실(L_gen)을 제거했을 때보다 훨씬 컸다.</li>
+<li><strong>실세계 성능(Q4, DROID)</strong>: 10개 실세계 과제에서 DREAMFREE는 평균 성공률 64%(DreamZero 56%, π0.5 16%), 평균 과제 진행도 83%(DreamZero 71.8%, π0.5 33.5%)를 기록했다. 특히 변형 가능한 물체 조작이나 연속적인 재배치가 필요한 과제(수건으로 딸기 덮기, 삼각대에 모자 걸기, 그릇에 볼트 담기 등)에서 비디오 생성 기반 WAM인 DreamZero는 전부 실패했지만 DREAMFREE는 성공했다. 추론 지연은 DreamZero 대비 17.8배 빠르고(11Hz 달성), π0.5와 비슷한 지연으로 4배 높은 성공률을 보였다. 양손(bimanual) YAM 로봇에서도 추가 적응 없이 제로샷으로 다양한 조작 과제(집기-놓기, 펜 뚜껑 열기, 옷 접기 등)에 성공했다.</li>
+<li><strong>영상 기반 과제 전이(Q5)</strong>: 행동 라벨이 없는 복합 과제 비디오만 추가로 학습에 사용했을 때, 기본 모델은 성공률 0%였지만 증류를 포함한 DREAMFREE는 평균 21.7%의 성공률을 기록했다(증류 없이 동일 비디오만 쓰면 0%). 다른 체화(Franka Panda)의 비디오로 ALOHA-AgileX 로봇의 새로운 과제를 학습시킨 경우에도 성공률이 6.7%에서 30%로 향상되었다. 또한 정책 학습 후에도 10개의 비디오 시연만으로 시각 인코더를 미세조정(행동 모듈은 고정)해 새로운 과제 지식을 추가할 수 있음을 보였고, 다중 시점 비디오가 단일 시점보다 더 큰 개선을 가져왔다. 단, 로봇이 원래부터 수행할 수 없던 기초 동작(예: 캐비닛 열기)이 필요한 과제는 비디오만으로 학습되지 않았다.</li>
+</ul>
+<h2>한계점</h2>
+<ul>
+<li>DROID 환경에서는 계산 자원 제약으로 추가 비디오 데이터나 크로스-엠보디먼트 사전학습을 평가하지 못했으며, 더 큰 백본·데이터셋·체화로의 확장은 향후 과제로 남겨두었다.</li>
+<li>학습 파이프라인이 백본 적응, 예측 표현 학습, 행동 학습의 세 단계로 분리되어 있어 구조가 복잡하며, 시각 인코더와 행동 모듈을 함께(jointly) 학습하는 방향은 아직 탐구되지 않았다.</li>
+<li>영상만으로 새로운 과제를 학습시키는 전이는, 기반 정책이 해당 과제에 필요한 기초 동작 자체를 수행할 수 없는 경우에는 효과가 없었다(예: 캐비닛을 열지 못하는 정책은 영상만으로 캐비닛에 물건 넣기를 배우지 못함).</li>
+</ul>
+<h2>시사점</h2>
+<ul>
+<li>비디오 디퓨전 모델의 예측 지식은 반드시 "영상을 생성"하는 방식으로만 활용될 필요가 없으며, 표현(feature) 수준에서 증류하면 영상 생성과 비슷한 수준의 예측 정보를 훨씬 적은 추론 비용으로 얻을 수 있다는 점을 실증적으로 보여준다.</li>
+<li>영상 생성 기반 WAM은 예측이 부정확할 때 그 오류가 그대로 행동으로 이어지는 반면, 표현 수준의 예측은 오류 누적에 더 강건할 수 있어, 변형 물체나 다단계 과제처럼 예측이 어려운 상황에서 특히 유리할 수 있다.</li>
+<li>행동 라벨 없는 비디오만으로 새로운 과제(심지어 다른 로봇 체화의 비디오)를 학습할 수 있다는 결과는, 로봇 행동 데이터 수집이라는 병목을 영상 데이터로 일부 대체할 수 있는 가능성을 제시한다.</li>
+<li>비디오 백본을 키우고 비디오 데이터를 늘릴수록 성능이 꾸준히 향상된다는 스케일링 경향은, 앞으로 더 강력한 범용 비디오 파운데이션 모델이 로봇 제어 성능 향상에 직접적으로 기여할 수 있는 경로를 시사한다.</li>
+</ul>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.04527" target="_blank" rel="noopener">huggingface.co/papers/2611.04527</a> · 2026-11-08</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

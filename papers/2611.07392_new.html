@@ -1,5 +1,5 @@
 <meta charset="UTF-8">
-<title>웰엠이미지</title>
+<title>WeLM-Image</title>
 <style>
   :root{
     --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
@@ -56,13 +56,13 @@
 <header class="article-head">
   <div class="wrap">
     <div class="kicker-row">
-      <span class="rank">#5 · Daily Papers 2026-11-07</span>
+      <span class="rank">#6 · Daily Papers 2026-11-09</span>
       <span class="cat-tag">생성모델</span>
-      <span class="upvote-tag">▲ 37</span>
+      <span class="upvote-tag">▲ 44</span>
     </div>
     <h1 class="article-title">WeLM-Image: A Unified Image Generation Model towards Visual Intelligence</h1>
-    <p class="article-title-ko">웰엠이미지: 시각 지능을 향한 통합 이미지 생성 모델</p>
-    <p class="article-sub">WeChat(위챗) 서비스에 단일 GPU로 배포 가능하도록 설계된, 텍스트-이미지 생성·지시 기반 이미지 편집·다중 참조 합성을 하나의 백본으로 통합한 이미지 파운데이션 모델이다.</p>
+    <p class="article-title-ko">WeLM-Image: 시각 지능을 향한 통합 이미지 생성 모델</p>
+    <p class="article-sub">위챗(WeChat)의 대규모 소비자 서비스에 단일 GPU로 배포 가능하도록 설계된 통합 이미지 파운데이션 모델 WeLM-Image는, 이해(understanding)와 생성(generation)을 분리한 Mixture-of-Transformers(MoT)와 Mixture-of-Experts(MoE)를 결합한 백본으로 텍스트-이미지 생성, 지시 기반 편집, 다중 참조 이미지 합성을 하나의 모델에서 처리하며, PRISM-Bench·Qwen-Image-Bench·UnicBench 등에서 오픈소스 모델 중 1위를 기록했다.</p>
     <div class="meta-links">
       <a href="https://huggingface.co/papers/2611.07392" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
       <a href="https://arxiv.org/abs/2611.07392" target="_blank" rel="noopener">arXiv 원문 →</a>
@@ -74,31 +74,43 @@
   <div class="wrap">
 <ul>
 <li><strong>제목</strong>: WeLM-Image: A Unified Image Generation Model towards Visual Intelligence</li>
-<li><strong>저자</strong>: Tencent WeChat Vision 팀 (Canmiao Fu, Chen Li, Guohui Zhang 등 다수 저자 공동 작업)</li>
+<li><strong>저자</strong>: WeChat Vision, Tencent Inc. (텐센트 위챗 비전 팀)의 테크니컬 리포트. Core Contributors로 Canmiao Fu, Chen Li, Guohui Zhang, Hao Lu, Hongyang Wei, Huadong Wu, Huaisong Zhang, Hubery Yin, Liyuan Cui, Qixin Yan, Tong Shao, Xiaoqiang Zhou, Xinhang Leng, Ying Zhang, Zhenhai Liu, Zhipeng Huang 등이 이름을 올렸고, 다수의 Contributors와 후원자(스폰서) 명단이 추가로 기재됨(기여 역할별 알파벳 순 정렬, 일부는 이직으로 현재 소속 아님을 표시).</li>
 <li><strong>출처</strong>: arXiv:2611.07392v1 [cs.CV] (2026년 11월 5일)</li>
-<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음</li>
 <li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.07392">arXiv PDF 보기</a></li>
 </ul>
 <h2>한 줄 요약</h2>
-<p>WeChat(위챗) 서비스에 단일 GPU로 배포 가능하도록 설계된, 텍스트-이미지 생성·지시 기반 이미지 편집·다중 참조 합성을 하나의 백본으로 통합한 이미지 파운데이션 모델이다.</p>
+<p>위챗(WeChat)의 대규모 소비자 서비스에 단일 GPU로 배포 가능하도록 설계된 통합 이미지 파운데이션 모델 WeLM-Image는, 이해(understanding)와 생성(generation)을 분리한 Mixture-of-Transformers(MoT)와 Mixture-of-Experts(MoE)를 결합한 백본으로 텍스트-이미지 생성, 지시 기반 편집, 다중 참조 이미지 합성을 하나의 모델에서 처리하며, PRISM-Bench·Qwen-Image-Bench·UnicBench 등에서 오픈소스 모델 중 1위를 기록했다.</p>
 <h2>배경 및 문제의식</h2>
-<p>확산(diffusion) 및 플로우 기반 트랜스포머의 발전으로 이미지 생성 품질은 크게 향상되었지만, 실제 서비스에서는 긴 중국어·영어 혼용 프롬프트 이해, 정확한 텍스트 렌더링, 피사체 정체성을 보존한 편집, 여러 참조 이미지의 속성을 혼동 없이 결합하는 등 세밀한 제어 능력이 추가로 요구된다. 또한 WeChat처럼 대규모 소비자向 서비스에서는 단일 GPU 배포와 낮은 요청당 비용이라는 자원 효율성 제약이 모델 설계 단계부터 반드시 고려되어야 한다.</p>
+<ul>
+<li>디퓨전/플로우 기반 트랜스포머의 발전으로 이미지 품질과 프롬프트 정합성이 크게 개선되었지만, 모델이 성공하려면 긴 중국어·영어 프롬프트에서의 세밀한 제어(객체·관계·개수·레이아웃·스타일 동시 제약), 중국어·영어 텍스트의 정확한 렌더링, 주체 정체성을 유지한 복잡한 편집, 여러 참조 이미지를 속성 혼동 없이 결합하는 능력이 함께 요구된다.</li>
+<li>Qwen-Image, HunyuanImage 3.0, SenseNova-U1 등 최근 통합 이미지 파운데이션 모델들은 멀티모달 이해를 생성에 결합하는 다양한 방식을 보여주지만, 자기회귀 언어 모델링과 연속적 이미지 생성은 서로 다른 최적화·용량 요구사항을 가지므로 이를 조화시키는 확장 가능한 통합 모델이 필요하다.</li>
+<li>위챗의 소비자 서비스는 대규모 요청량과 저렴한 서빙 비용을 요구하므로, 저자들은 단일 GPU 배포와 저비용 추론을 모델 규모·추론 설계의 제약 조건으로 삼아 생성·편집·다중 참조 합성·텍스트 렌더링 전반의 능력을 실용적 파라미터·서빙 예산 내에서 극대화하는 것을 목표로 한다.</li>
+</ul>
 <h2>핵심 기여</h2>
 <ul>
-<li>이해(understanding)와 생성(generation) 경로를 분리하되 어텐션은 공유하는 Mixture-of-Transformers(MoT) 구조에, 각 경로마다 독립적인 Mixture-of-Experts(MoE)를 결합한 'MoT-MoE' 백본을 제안(총 저장 파라미터 31.7B, 타깃 잠재 토큰당 생성 측 활성 파라미터 약 5.4B).</li>
-<li>텍스트와 비전 토큰이 하나의 어텐션 컨텍스트를 공유하면서도 사전학습된 1D RoPE와 완전히 호환되는 '텍스트 호환 통합 3D RoPE'를 설계.</li>
-<li>약 0.6B장의 정제된 이미지로 구성된, 지식 기반 시각 어휘와 대규모 시각 클러스터링을 결합한 생성 지향 데이터 엔진을 구축.</li>
-<li>생성·편집을 각각 루브릭/체크리스트 기반 보상으로 강화학습한 뒤, 노이즈 인지 온폴리시 증류(on-policy distillation)로 하나의 모델에 통합.</li>
-<li>MeanFlow 기반 소수 스텝 증류로 8/4-스텝 가이던스 프리 추론이 가능한 경량 버전 WeLM-Image-Turbo를 제공.</li>
+<li><strong>통합 인터리브 시퀀스 표현</strong>: 텍스트 질의응답, 시각 이해, 텍스트-이미지 생성, 지시 기반 편집, 다중 참조 생성을 하나의 순서 보존 멀티모달 시퀀스(타입이 있는 텍스트/이미지 세그먼트)로 표현하여 과제별 전용 파이프라인 없이 하나의 백본으로 처리.</li>
+<li><strong>MoT-MoE 백본</strong>: 이해(UND) 경로와 생성(GEN) 경로를 독립적인 파라미터(프로젝션, 정규화, 전문가)로 분리하는 Mixture-of-Transformers 구조에, 각 경로마다 독립적인 Mixture-of-Experts를 결합. 두 경로는 공유 어텐션으로 매 레이어마다 상호작용하면서도 최적화 간섭을 줄임. 전체 31.7B 저장 파라미터, 타겟 latent 토큰당 약 5.4B 생성 파라미터 활성화(이해 경로는 토큰당 약 2.2B).</li>
+<li><strong>WeLM-Image-VAE</strong>: 재구성, DINOv2 기반 의미 정렬(semantic alignment), 텍스트 중심 디코더 미세조정의 3단계 학습을 거쳐 시각적 충실도와 텍스트 렌더링을 동시에 지원하는 전용 VAE.</li>
+<li><strong>텍스트 호환 통합 3D RoPE</strong>: 사전학습된 1D 텍스트 RoPE의 위치 변환을 정확히 보존하면서, (t, h, w) 세 축을 주파수 전역에 인터리브하여 VAE latent에 공간 구조를 부여.</li>
+<li><strong>생성 지향 데이터 엔진</strong>: 약 5B개의 원시 이미지-텍스트 쌍을 정제해 약 0.6B개의 고품질 이미지 풀을 구축하고, 지식 기반 비주얼 어휘(named concept)와 대규모 비주얼 클러스터링(unnamed appearance pattern)이라는 두 구조로 의미 커버리지와 편집 과제 균형을 맞춤. 학습 중 평가 결과를 필터링·샘플링·과제 배분·혼합 비율에 피드백.</li>
+<li><strong>단계적 강화학습 및 증류</strong>: 생성(루브릭/미학/텍스트렌더링/자연스러움 보상)과 편집(체크리스트 기반, 지시 이행이 보상을 게이팅)을 별도 RL로 최적화한 후, 노이즈-인식 온-폴리시 증류(noise-aware on-policy distillation)로 두 전문화된 정책을 하나의 체크포인트로 통합. 이어 MeanFlow 기반 few-step 증류로 8스텝, guidance-free 추론이 가능한 WeLM-Image-Turbo를 도출.</li>
 </ul>
 <h2>방법론</h2>
-<p>WeLM-Image는 텍스트·참조 이미지·타깃 잠재(latent)를 하나의 인터리브(interleaved) 시퀀스로 직렬화해 처리한다. 이해 경로(UND)는 텍스트와 ViT 임베딩을, 생성 경로(GEN)는 VAE 임베딩을 담당하며, 두 경로는 각자의 projection과 전문가(expert)를 갖되 마스킹된 자기 어텐션을 통해 상호작용한다. 27개 디코더 레이어 중 1번째 층은 경로별 dense FFN을, 나머지 26개 층은 경로별로 64개의 라우팅 전문가(+2개의 공유 전문가)를 두는 MoE FFN을 사용한다(UND는 top-6, GEN은 top-20 라우팅). 공간 구조 보존을 위해 VAE 잠재 토큰에는 중심 기준 (Δh, Δw) 오프셋을 부여하는 3D RoPE를 적용하며, 재구성·의미 정렬·텍스트 중심 디코더 미세조정의 3단계로 학습된 전용 VAE(WeLM-Image-VAE)를 사용한다. 학습은 사전학습 및 SFT 이후, 텍스트-이미지 생성과 이미지 편집을 별도의 강화학습 가지로 최적화(각각 정합성·미학·텍스트 렌더링·자연스러움 보상, 체크리스트 기반 편집 보상)한 뒤, 노이즈 수준에 따라 다른 교사(teacher) 신호를 사용하는 온폴리시 증류로 두 전문가를 하나의 모델로 통합한다. 마지막으로 MeanFlow 기반 증류를 통해 가이던스 없이 8~4 스텝으로 추론 가능한 Turbo 버전을 생성한다.</p>
+<p>WeLM-Image는 각 샘플을 순서를 보존하는 타입별 세그먼트(텍스트/이미지)의 시퀀스로 직렬화한다. 생성 템플릿에서는 N개의 참조 이미지가 각각 clean-VAE 세그먼트(GEN 경로)와 ViT 세그먼트(UND 경로)로 들어가고, 지시문(UND 경로)에 이어 노이즈가 섞인 타겟 VAE(GEN 경로, flow-matching 손실로 학습)가 온다. N=0이면 텍스트-이미지 생성, N≥1이면 편집/다중 참조 생성이 된다. 이해 템플릿은 선택적 입력 이미지 ViT 세그먼트와 질문 뒤에 응답이 오며, 응답에만 cross-entropy 손실이 적용된다.</p>
+<p>각 이미지 세그먼트는 ViT(고수준 내용·레이아웃·텍스트 파악)와 WeLM-Image-VAE(재구성·생성에 필요한 세부 시각 정보를 담는 연속 latent) 두 인코더로 표현된다. 백본은 27개 디코더 레이어, 히든 크기 2,048로 구성되며, 레이어 0은 경로별 dense FFN(중간 크기 11,264)을, 레이어 1~26은 경로별 MoE 서브레이어(전문가당 중간 크기 1,408, 64개 라우팅 전문가 + 2개 공유 전문가)를 사용한다. UND 경로는 top-6, GEN 경로는 top-20 전문가를 라우팅하여 생성 쪽에 더 많은 활성 용량을 배분한다. 한 어텐션 레이어 안에서 두 경로의 쿼리/키/값은 경로별로 계산되지만 하나의 마스킹된 어텐션 연산으로 결합되어, 노이즈가 섞인 타겟 쿼리가 텍스트·ViT·참조 latent 키/값에 모두 접근할 수 있다. 블록 구조 어텐션 마스크는 샘플 간 정보 유출을 차단하고, 텍스트는 인과적(causal) 어텐션, 이미지/노이즈 토큰은 해당 블록 내에서 양방향 어텐션을 사용한다.</p>
+<p>MoE 라우팅은 시그모이드 점수와 비기울기(non-gradient) 보정 바이어스를 이용한 로드 밸런싱(식 (5)~(6))과 보조 손실(계수 10⁻⁴)로 안정화된다. 3D RoPE는 32개 회전 채널 쌍을 t(12쌍), h·w(각 10쌍)에 인터리브 방식으로 배분해, 텍스트 토큰은 사전학습된 1D 위상과 수학적으로 동일한 변환을 받으면서 VAE latent에는 중심화된 로컬 (h, w) 오프셋을 부여한다. 최종 학습 목표는 텍스트 cross-entropy, flow-matching 손실, 라우터 보조 손실의 가중합(가중치 0.25, 1, 10⁻⁴)이며, flow-matching 손실은 해상도에 따른 과도한 가중을 막기 위해 이미지 단위로 정규화된다.</p>
+<p>데이터 파이프라인은 Ray/Pulsar/Elasticsearch 기반의 대규모 인프라(초당 15,000건 이상 처리) 위에서 약 5B개의 원시 이미지-텍스트 쌍을 해상도·블러·중복·안전성·미학(Elo 스타일 페어와이즈 선호 모델) 기준으로 정제해 약 0.6B개의 큐레이션 풀(59.74%가 1024px 이상)을 만든다. 이후 지식 기반 비주얼 어휘와 비주얼 클러스터링으로 커버리지·균형을 맞추고, 이를 바탕으로 텍스트-이미지, 편집, 다중 참조, 이해(VQA 포함) 데이터를 구성한다. 사전학습-SFT는 저해상도에서 이미지-텍스트/텍스트-이미지 학습을 결합한 뒤 해상도를 높이며 생성·편집·다중 참조 비중을 늘려 네이티브 1.5K 해상도까지 확장한다. SFT 이후 생성과 편집을 각각 강화학습으로 분리 최적화하고(생성: 루브릭 기반 프롬프트 정합성 + 미학/텍스트렌더링/자연스러움 보상; 편집: 체크리스트 기반 지시 이행·내용 보존·시각품질 보상), 노이즈-인식 온-폴리시 증류로 두 전문화 정책을 하나로 합친다(고노이즈 구간은 prompt-enhanced teacher가 전역 의미·레이아웃을 지도, 저노이즈 구간은 표준 RL teacher가 국소 디테일을 지도). 마지막으로 MeanFlow 기반 few-step 증류로 8스텝 guidance-free 모델인 WeLM-Image-Turbo를 만든다. 학습에는 토큰-예산 패킹, FSDP, 컨텍스트 병렬화를 사용해 최대 64K 토큰 패킹 시퀀스로 약 30B급 모델을 학습한다.</p>
 <h2>실험 설정 및 결과</h2>
-<p>GenEval, PRISM-Bench, OneIG-Bench, Qwen-Image-Bench, WeGenBench, UnicBench, WeGenEditBench 등 다수의 생성·편집 벤치마크에서 평가했다. 1536 해상도 모델은 PRISM-Bench, Qwen-Image-Bench, UnicBench에서 평가된 오픈소스 모델 중 1위를 기록했으며, GenEval 단일 객체 생성에서는 WeLM-Image-Turbo-8step이 만점(1.0000, 공동 1위)을 달성했다. 단일 이미지 편집 벤치마크(WeGenEditBench-single)에서도 Edit Goal·Overall 지표에서 최고 점수를 기록했다. 효율성 측면에서는 NVIDIA H20 GPU 기준 50스텝 모델이 동일 스텝 수의 Qwen-Image-2512 대비 8~15% 빠르고, 입력 이미지가 늘어날수록 편집 지연 시간 격차가 더 커진다(4개 참조 이미지 기준 약 5.1배 빠름). 8스텝 Turbo 모델은 1024×1024 이미지를 4.98초에 생성하며, 50스텝 기본 모델 대비 11.4배의 속도 향상을 보인다.</p>
+<ul>
+<li><strong>VAE 평가(Table 1)</strong>: COCO/ImageNet 512px 및 자체 텍스트가 많은 포스터 1024px 재구성 평가에서 WeLM-Image-VAE(83.75M 파라미터, 8× 압축, 16채널)가 비교 대상 중 PSNR 최고치를 기록했고, 동일 조건의 LightningDiT-XL/2 기반 ImageNet-1K 256px 생성 평가(FID/IS)에서도 16채널 토크나이저 중 최고 IS·최저 FID를 보임.</li>
+<li><strong>추론 효율(Table 4, Section 5)</strong>: NVIDIA H20 GPU에서 50스텝 기준 WeLM-Image는 Qwen-Image-2512보다 텍스트-이미지 생성에서 8~15% 빠르고, 1장 입력 편집에서 Qwen-Image-Edit-2511보다 1.96배, 4장 입력에서는 5.10배 빠르다(추가 입력당 지연 증가가 10.8초 수준으로 거의 선형적). 8스텝 few-step 증류 모델 WeLM-Image-Turbo는 1024×1024 이미지를 4.98초(단일 H20 GPU)에 생성하며, 이는 50스텝 classifier-free guidance 기준 베이스 모델 대비 11.4배 가속이고, 1~4장 입력 편집은 6.78~13.17초가 걸린다. 4-GPU 텐서병렬이 필요한 HunyuanImage-3.0-Instruct-Distil 대비로는 약 2.5배 빠르면서 GPU 1장만 사용한다.</li>
+<li><strong>텍스트-이미지 생성/텍스트 렌더링(Table 5 등)</strong>: GenEval, PRISM-Bench, OneIG-Bench, TIIF-Bench, DPG-Bench, Qwen-Image-Bench, WeGenBench, LongText-Bench, CVTG-2K 등 다수 벤치마크에서 Qwen-Image, HunyuanImage 3.0, Z-Image-Turbo, GLM-Image, FLUX.2-dev 등과 비교했으며, 종합 비교에서 1536 해상도 모델이 PRISM-Bench와 Qwen-Image-Bench 양쪽에서 평가된 오픈소스 모델 중 1위를 차지했다. GenEval에서는 WeLM-Image-Turbo-8step이 단일 객체 생성에서 만점(동률 1위)을 기록했다.</li>
+<li><strong>이미지 편집(Table 14 등)</strong>: GEdit, ImgEdit, UnicBench, 자체 구축 WeGenEditBench(2,740개 수작업 검증 샘플)로 단일·다중 이미지 편집을 평가했고, UnicBench와 WeGenEditBench에서 오픈소스 모델 중 최고 성능을 보였으며 다중 이미지 편집 벤치마크(MICo, OmniContext, WeGenEditBench-Multi)에서도 경쟁력 있는 결과를 보였다.</li>
+</ul>
 <h2>한계점</h2>
-<p>논문에 별도의 '한계점' 섹션은 없다. 다만 결론부에서 저자들은 향후 연구 방향으로 더 강력한 시각적 추론 능력, 복잡한 지시에 대한 신뢰성 있는 제어, 추가적인 효율성 개선이 필요하다고 언급하여, 현재 모델이 이 부분에서 개선 여지가 있음을 시사한다.</p>
+<p>논문 결론부에서 저자들은 "더 강한 시각적 추론, 복잡한 지시 하에서의 더 신뢰할 수 있는 제어, 지속적인 효율 개선"을 향후 과제로 명시하고 있어, 이것이 현재 모델의 한계로 해석될 수 있다. 다만 별도의 "한계점" 절은 본문에 없으며, 구체적인 실패 사례 분석이나 정량적 한계(예: 특정 편집 유형에서의 약점, 안전성 이슈 등)는 논문에 명시되지 않음.</p>
 <h2>시사점</h2>
-<p>이해와 생성을 분리하면서도 어텐션을 공유하는 MoT-MoE 구조와, 서비스 제약(단일 GPU 배포)을 설계 초기 단계부터 반영한 접근 방식은 실제 대규모 소비자 서비스에 통합 생성 모델을 적용하려는 다른 연구와 제품 개발에 참고할 만한 사례를 제공한다. 특히 루브릭/체크리스트 기반 보상 설계와 노이즈 인지 온폴리시 증류는 여러 전문화된 강화학습 정책을 단일 배포 모델로 합치는 실용적 방법론으로서 의의가 있다.</p>
+<p>WeLM-Image는 이해-생성 간 최적화 간섭을 줄이는 MoT와 조건부 연산을 늘리는 MoE를 결합해, 단일 GPU 서빙이라는 엄격한 제약 아래서도 생성·편집·다중 참조 합성을 하나의 모델로 통합할 수 있음을 보여준다. 또한 데이터 품질과 균형(지식 기반 어휘 + 클러스터링)을 생성 품질의 핵심 변수로 다루고, 과제별 RL을 온-폴리시 증류로 다시 통합하는 학습 전략은 서로 다른 보상 구조를 가진 멀티태스크 생성 모델을 하나로 합치는 실용적 방법론을 제시한다. MeanFlow 기반 few-step 증류를 통한 대규모 가속(4.98초/이미지)은 실제 소비자 서비스에 통합 생성 모델을 배포하는 데 필요한 비용-성능 트레이드오프를 구체적으로 보여주는 사례로, 산업 규모의 통합 비주얼 파운데이션 모델 설계에 참고할 만한 청사진을 제공한다.</p>
     <div class="back-bottom">
       <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
     </div>
@@ -107,7 +119,7 @@
 
 <footer>
   <div class="wrap">
-    <span>출처: <a href="https://huggingface.co/papers/2611.07392" target="_blank" rel="noopener">huggingface.co/papers/2611.07392</a> · 2026-11-07</span>
+    <span>출처: <a href="https://huggingface.co/papers/2611.07392" target="_blank" rel="noopener">huggingface.co/papers/2611.07392</a> · 2026-11-09</span>
     <span>my-design 시스템 적용</span>
   </div>
 </footer>

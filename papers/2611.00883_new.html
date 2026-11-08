@@ -1,5 +1,5 @@
 <meta charset="UTF-8">
-<title>랜덤이면 거의 충분하다? BestRand를 통한 안정적이고 저비용인 벤치마크 압축</title>
+<title>무작위만으로 충분할까? BestRand를 통한 안정적이고 저비용인 벤치마크 압축</title>
 <style>
   :root{
     --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
@@ -56,13 +56,13 @@
 <header class="article-head">
   <div class="wrap">
     <div class="kicker-row">
-      <span class="rank">#3 · Daily Papers 2026-11-07</span>
+      <span class="rank">#5 · Daily Papers 2026-11-09</span>
       <span class="cat-tag">벤치마크</span>
-      <span class="upvote-tag">▲ 50</span>
+      <span class="upvote-tag">▲ 51</span>
     </div>
     <h1 class="article-title">Random Is Almost Enough? Stable and Low-Cost Benchmark Compression via BestRand</h1>
-    <p class="article-title-ko">랜덤이면 거의 충분하다? BestRand를 통한 안정적이고 저비용인 벤치마크 압축</p>
-    <p class="article-sub">벤치마크 압축(소수 문항만으로 전체 벤치마크 점수를 추정하는 기법)에서 무작위 샘플링이 평균적으로는 효과적이지만 드물게 큰 오차를 내는 이유를 이론적으로 규명하고, 저비용의 프로브 모델 몇 개만으로 무작위 샘플링의 안정성을 크게 개선하는 BestRand 기법을 제안한다.</p>
+    <p class="article-title-ko">무작위만으로 충분할까? BestRand를 통한 안정적이고 저비용인 벤치마크 압축</p>
+    <p class="article-sub">이 논문은 벤치마크 일부 샘플만으로 전체 벤치마크 점수를 추정할 때 발생하는 오차 분포를 이론적으로 분석하고, 랜덤 샘플링이 평균적으로는 효과적이지만 드물게 큰 오차를 내는 불안정성을 지닌다는 점을 밝힌 뒤, 이를 저비용으로 보완하는 벤치마크 압축 기법 BestRand를 제안한다.</p>
     <div class="meta-links">
       <a href="https://huggingface.co/papers/2611.00883" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
       <a href="https://arxiv.org/abs/2611.00883" target="_blank" rel="noopener">arXiv 원문 →</a>
@@ -74,30 +74,43 @@
   <div class="wrap">
 <ul>
 <li><strong>제목</strong>: Random Is Almost Enough? Stable and Low-Cost Benchmark Compression via BestRand</li>
-<li><strong>저자</strong>: George Ling, Shanshan Zhong, Lijin Yang, Hao Yang, Nanxiang Li, Zhongzhan Huang (Bosch Research, Carnegie Mellon University)</li>
+<li><strong>저자</strong>: George Ling, Shanshan Zhong, Lijin Yang, Hao Yang, Nanxiang Li, Zhongzhan Huang (Bosch Research 및 Carnegie Mellon University 소속; 교신저자는 Zhongzhan Huang)</li>
 <li><strong>출처</strong>: arXiv:2611.00883v1 [cs.CL] (2026년 10월 31일)</li>
-<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음 (코드·데이터는 GitHub에 공개 예정이라고 언급됨)</li>
 <li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.00883">arXiv PDF 보기</a></li>
 </ul>
 <h2>한 줄 요약</h2>
-<p>벤치마크 압축(소수 문항만으로 전체 벤치마크 점수를 추정하는 기법)에서 무작위 샘플링이 평균적으로는 효과적이지만 드물게 큰 오차를 내는 이유를 이론적으로 규명하고, 저비용의 프로브 모델 몇 개만으로 무작위 샘플링의 안정성을 크게 개선하는 BestRand 기법을 제안한다.</p>
+<p>이 논문은 벤치마크 일부 샘플만으로 전체 벤치마크 점수를 추정할 때 발생하는 오차 분포를 이론적으로 분석하고, 랜덤 샘플링이 평균적으로는 효과적이지만 드물게 큰 오차를 내는 불안정성을 지닌다는 점을 밝힌 뒤, 이를 저비용으로 보완하는 벤치마크 압축 기법 BestRand를 제안한다.</p>
 <h2>배경 및 문제의식</h2>
-<p>LLM·VLM 평가는 방대한 벤치마크 전체를 돌리기에는 시간과 비용이 많이 들기 때문에, 전체 벤치마크를 대표하는 작은 부분집합(subset)만 평가해 점수를 추정하는 "벤치마크 압축"이 널리 쓰인다. 기존 연구들은 무작위 샘플링이 실제로 꽤 잘 작동한다는 것을 경험적으로 보여주었지만, 그 정확도와 신뢰성이 왜, 그리고 언제 불안정해지는지는 잘 규명되지 않았다. 저자들은 무작위 샘플링의 오차 분포가 대부분 작은 오차를 내지만 일부는 매우 큰 오차를 내는 긴 꼬리(long-tail) 분포를 가진다는 점에 주목하고, 이 불안정성의 근본 원인을 분석한다.</p>
+<p>대규모 언어모델(LLM)과 시각-언어모델(VLM)을 다양한 벤치마크에서 평가하는 데는 막대한 시간과 연산 비용이 든다. 벤치마크 압축(benchmark compression)은 전체 문항 대신 소수의 대표 부분집합(subset)만 평가하여 전체 점수를 근사하는 방법으로 이 비용을 줄이지만, 그 근사의 정확도와 신뢰성은 충분히 규명되어 있지 않았다. 저자들은 부분집합으로 전체 점수를 추정할 때의 오차 분포에 대한 정밀한 해석적 근사를 유도하여, 대부분의 부분집합은 작은 오차를 내지만 일부는 매우 큰 오차를 내는 긴 꼬리(long-tailed) 분포가 나타남을 보인다. 즉 랜덤 샘플링은 높은 확률로 꽤 좋은 성능을 내지만, 드물게 큰 오차가 나는 근본적인 불안정성을 갖고 있으며, 이 불안정성은 평가 모델 수를 늘려도 사라지지 않고 현대 파운데이션 모델들 간의 행동적 유사성(behavioral correlation)에서 기인한다는 점을 지적한다.</p>
 <h2>핵심 기여</h2>
 <ul>
-<li><strong>이론</strong>: 벤치마크 부분집합으로 전체 점수를 추정할 때 발생하는 오차(MAE)의 분포에 대한 정확한 해석적 근사식을 유도하고, 왜 무작위 샘플링이 높은 확률로 잘 작동하면서도 불안정한지를 설명. 이 불안정성이 모델 간의 내재적 유사성(behavioral correlation ρ)에서 비롯되며, 평가 모델 수를 늘려도 근본적으로 사라지지 않음을 증명.</li>
-<li><strong>방법</strong>: 무작위 샘플링의 저비용 효율성은 유지하면서 긴 꼬리(고오차) 위험을 줄이는 BestRand 제안. 소수의 저비용 "프로브 모델"로 가장 대표성 있는 후보 부분집합을 탐색하는 경량 메커니즘.</li>
-<li><strong>검증</strong>: 70개 이상의 텍스트·멀티모달·에이전트 벤치마크 및 VLA(비전-언어-행동) 평가로 효과를 입증.</li>
+<li><strong>이론적 기여</strong>: 벤치마크 압축의 오차 분포에 대한 정확한 해석적 근사를 유도하여, 랜덤 샘플링이 왜 높은 확률로 효과적이면서도 불안정한지를 설명한다. 또한 이 불안정성의 주요 원인이 파운데이션 모델 간의 내재적 유사성(공통 백본, 중첩된 학습 데이터, 지식 증류 등)에 있으며, 평가 모델 수가 늘어나도 근본적으로 제거되지 않음을 증명한다.</li>
+<li><strong>방법론적 기여</strong>: 랜덤 샘플링의 효율성은 유지하면서 그 긴 꼬리(고오차 위험)를 크게 줄이는 BestRand를 제안한다. 소수의 저비용 프로브(probe) 모델만으로 최적의 후보 부분집합을 탐색하는 경량화된 설계이며, 안정성 개선에 대한 이론적 근거도 함께 제시한다.</li>
+<li><strong>검증 범위</strong>: 텍스트·멀티모달·에이전트 영역의 70개 이상 벤치마크에서 BestRand를 검증하고, 나아가 VLA(Vision-Language-Action) 평가로도 확장하여 적용 범위를 넓혔다.</li>
 </ul>
 <h2>방법론</h2>
-<p>핵심 아이디어는 전체 N개 문항 중 k개를 뽑는 부분집합의 평균 점수와 전체 평균 점수 간 오차(E)의 분포를 이론적으로 분석하는 것이다. 정리(Theorem) 1에서는 오차 벡터가 근사적으로 다변량 정규분포를 따르며, 공통 편향(common shift) Ē의 분산인 스케일 s가 모델 간 평균 상관계수 ρ에 의해 결정됨을 보인다. ρ가 클수록(모델들이 비슷하게 행동할수록) 큰 오차가 날 확률의 하한이 높아지고, 이는 평가 모델 수(M)를 늘려도 사라지지 않는다. 정리 2는 모델 수가 많아질수록 MAE 분포의 최빈값이 이론적 하한에 가까워짐을 보여, "왜 무작위 샘플링이 대체로 거의 충분한지"를 설명한다.</p>
-<p>이를 바탕으로 제안하는 <strong>BestRand</strong> 절차는 다음 4단계로 구성된다: (1) 전체 벤치마크에서 풀(pool) P를 무작위로 추출하고 p개의 저비용 프로브 모델로 채점해 평균 점수(기준점 H)를 구함, (2) 후보 k-부분집합을 m번 무작위로 뽑아 각각의 프로브 평균 점수와 불균형도(d)를 계산, (3) H와 가장 가까운(불균형도가 가장 작은) 후보를 최종 부분집합으로 선택, (4) 이 부분집합에서만 실제 타깃 모델들을 평가. 정리 3을 통해 이 방식이 공통 편향의 "프로브로 설명 가능한 성분"을 제거함으로써 오차 분산을 줄인다는 것을 보인다.</p>
+<p>논문은 N개 문항과 M개 모델로 이루어진 점수 행렬 X를 정의하고, 부분집합 추정 오차 Em = 평균(부분집합) − 평균(전체)을 분석 대상으로 삼는다.</p>
+<ul>
+<li><strong>Theorem 1</strong>: 유효 샘플 크기가 충분히 크면 오차 벡터 E는 근사적으로 평균 0인 다변량 정규분포를 따르며, 오차의 하한은 공통 변동 규모(common-shift scale) s에 의해 결정된다. s는 모델 간 평균 상관계수 ρ가 클수록 커지고, 평가 모델 수 M을 늘려도 ρ에 의한 항은 사라지지 않아 큰 오차가 날 확률의 하한이 유지된다. 이는 랜덤 샘플링이 본질적으로 불안정한 이유를 설명한다.</li>
+<li><strong>Theorem 2</strong>: M이 커질수록 MAE 분포의 최빈값(mode)이 분포의 하한 y0에 가까워지는 속도를 규명하여, 왜 랜덤 샘플링이 "거의 충분(almost enough)"한지 설명한다. 즉 대부분의 경우 랜덤 샘플링은 낮은 오차를 내는 영역에 몰려 있지만, 작지 않은 비율로 고오차 사례가 남는다.</li>
+<li><strong>BestRand 절차</strong>: 이 이론적 통찰을 바탕으로 다음 4단계로 구성된다. (1) N개 문항 중 min(nk, N)개로 구성된 풀(pool) P를 무작위 추출하고 p개의 프로브 모델로 점수를 매겨 각 문항의 프로브 점수 벡터를 기록, (2) 풀 전체에 대한 평균 프로브 점수(참조값 H)를 계산, (3) 후보 부분집합을 m번 반복 추출하여 각 후보의 프로브 평균과 참조값 H 사이의 불균형(imbalance) dj를 계산, (4) dj가 가장 작은 후보 S<em>를 선택하여 실제 대상(target) 모델들을 이 S</em>에서만 평가. 후보 탐색은 캐싱된 프로브 점수의 평균 연산만 필요해 GPU상 배치 연산으로 거의 즉시 수행되며, 추가적인 모델 호출이 들지 않는다.</li>
+<li><strong>Theorem 3</strong>: 공통 변동 Ē를 프로브로 설명되는 부분(Ē∥)과 잔차 부분(Ē⊥)으로 직교 분해하여, 프로브 매칭을 통한 후보 선택이 공통 변동의 분산을 (1−R²)배로 줄일 수 있음을 보인다. 이는 BestRand의 설계가 랜덤 샘플링보다 안정적인 이유에 대한 이론적 근거가 된다.</li>
+<li>기본 설정으로 프로브 수 p=5, 후보 수 m=128, 풀 배수 n=4, 무작위 프로브 선택, L2 매칭을 사용한다.</li>
+</ul>
 <h2>실험 설정 및 결과</h2>
-<p>70개 이상의 벤치마크(텍스트 44개, 멀티모달 16개, 에이전트 10개)와 2~50%의 6가지 보존 비율(retention ratio)에서, SparseEval·Anchor Points·TinyBenchmarks·ZipBench·Random 등 6개 베이스라인과 비교했다. BestRand는 평균 MAE를 16.4% 줄이면서도 구축 비용은 평균 51.3%만 사용했고, 고오차 위험(high-error risk)을 50.2% 감소시켰다. 점수 범위·모델군(family)·시간(temporal) 변화에 대한 OOD(분포 외) 평가에서도 BestRand가 모든 설정에서 최저 오차를 기록하며 평균 21.8%의 OOD 오차 감소를 보였다. 절제 연구(ablation)에서는 프로브 모델 수(p), 후보 수(m), 풀 배수(n)가 많을수록 성능이 향상되지만 이득은 빠르게 수렴함을 확인했고, 프로브 모델 선택 방식이나 거리 측정 방식(L1/L2/L∞)에는 비교적 둔감함을 보였다.</p>
+<p>44개 텍스트(MMLU, GSM8K, HumanEval 등), 16개 멀티모달(MMMU, MathVista, MME 등), 10개 에이전트(OSWorld, tau-bench 등) 벤치마크, 총 70개에 대해 2%~50%의 여섯 가지 보존 비율(retention ratio)로 평가했다. 비교 대상 베이스라인은 Random, SparseEval(Linear/MLP), Anchor Points, TinyBenchmarks, ZipBench이며, 주요 지표는 평균절대오차(MAE)이다.</p>
+<ul>
+<li><strong>Table 1 (정확도)</strong>: BestRand는 텍스트·멀티모달·에이전트 전 영역에서 모든 보존 비율에 걸쳐 평균 MAE와 표준편차가 가장 낮았다(예: 텍스트 평균 MAE 2.92% vs Random 3.47%, ZipBench 3.23%). Random, ZipBench, TinyBenchmarks 세 경쟁 베이스라인 대비 평균 16.4% 낮은 MAE를 달성했다.</li>
+<li><strong>구성 비용</strong>: BestRand는 후보 풀에만 프로브를 적용하므로, 2% 보존 비율에서는 데이터 기반 베이스라인의 8.0%, 평균적으로는 51.3%의 구성 비용(construction cost)만 사용하면서도 가장 낮은 오차를 기록했다.</li>
+<li><strong>Figure 2, 3 (안정성/고오차 위험)</strong>: BestRand는 Random에 비해 오차 분포의 우측 꼬리(고오차 사례)를 크게 억제했다(HellaSwag -57%, OCRBench -47%, BFCL -36% 등). Random의 70번째 백분위수 또는 평균을 임계값으로 한 "고오차 위험" 측정에서 BestRand는 세 강력한 베이스라인 대비 평균 50.2% 낮은 위험을 보였다.</li>
+<li><strong>Ablation(Figure 4)</strong>: 프로브 수 p, 후보 수 m, 풀 배수 n을 늘릴수록 성능이 개선되나 m, n의 효과는 금방 수렴한다. 구성 모델 수가 2개에서 1000개로 늘어나도 BestRand는 소수의 구성 모델만으로도 최상위 성능을 유지했다(학습 기반 방법은 모델 수가 많아야 경쟁력이 생김). 프로브 모델 선택 방식(균등/무작위/저점/고점)과 매칭 노름(L1/L2/L∞)에 대한 민감도는 낮았으며(Wilcoxon 부호순위 검정 결과 대부분 유의하지 않음), 다만 저점수 모델만으로 프로브를 구성하는 것은 피하는 것이 좋다는 결과가 나왔다.</li>
+<li><strong>Figure 5 (정확도-비용 트레이드오프)</strong>: 동일한 구성 비용에서 BestRand가 가장 낮은 MAE를 달성했고, 동일한 MAE를 달성하는 데 필요한 비용도 가장 낮았다.</li>
+<li><strong>Table 2 (OOD 일반화)</strong>: 점수대(score-range), 모델군(model-family), 시간(temporal) 세 가지 분포 이동(shift) 상황에서, 과거 기록을 학습하는 방법들(SparseEval, Anchor Points 등)은 종종 Random보다도 성능이 떨어졌으나, BestRand는 모든 다섯 가지 설정에서 가장 낮은 오차를 기록했으며 경쟁 베이스라인 대비 평균 21.8% 낮은 OOD 오차를 달성했다.</li>
+</ul>
 <h2>한계점</h2>
-<p>논문에 별도의 "한계점" 절은 없으나 본문에서 다음을 명시함: 이론적 분산 감소 효과는 "이상적인 잠재적 이득"을 설명할 뿐 유한한 풀 크기에서의 엄밀한 축소를 보장하지 않으며, 모델 간 상관관계(ρ)에서 비롯된 불안정성의 비소실(non-vanishing) 성분은 평가 모델 수를 아무리 늘려도 완전히 제거되지 않는다. 또한 역사적 모델 성능 기록을 학습하는 기존 기법들은 분포 변화(OOD) 상황에서 오히려 Random보다 성능이 나빠질 수 있음이 관찰되었다.</p>
+<p>논문에 명시되지 않음 (별도의 "한계점" 섹션은 없으며, 결론부에서는 벤치마크 압축 개선이 복잡한 선택 알고리즘보다는 단순 샘플링이 실패하는 상황을 이해하고 저비용으로 보정하는 데 있다는 점을 시사하는 정도로만 언급함).</p>
 <h2>시사점</h2>
-<p>벤치마크 압축의 신뢰성 문제를 "더 정교한 선택 알고리즘"이 아니라 "언제, 왜 단순한 무작위 샘플링이 실패하는지"를 이해하고 저비용으로 보정하는 방향에서 접근했다는 점이 특징적이다. 모델 평가 비용이 계속 증가하는 상황에서, 소수의 프로브 모델만으로 안정성을 크게 개선할 수 있다는 결과는 실무적 벤치마크 설계 및 평가 파이프라인 구축에 직접적인 비용 절감 효과를 제공할 수 있다.</p>
+<p>이 연구는 벤치마크 압축의 정확도와 신뢰성을 특정 방법론에 의존하지 않고 이론적으로 설명할 수 있는 프레임워크를 제공하며, 모델 평가 비용 절감이 필요한 실무자들에게 "왜, 언제 랜덤 샘플링이 실패하는지"를 이해하고 이를 저비용으로 교정하는 방향이 유효함을 보여준다. BestRand는 복잡한 학습 기반 예측 모델 없이도 적은 수의 프로브 모델만으로 안정적이고 분포 이동에도 강건한 벤치마크 압축이 가능함을 입증했으며, 텍스트·멀티모달·에이전트·VLA 등 다양한 평가 영역에 폭넓게 적용될 수 있다는 점에서 LLM/VLM 평가 비용 절감에 실질적인 시사점을 제공한다.</p>
     <div class="back-bottom">
       <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
     </div>
@@ -106,7 +119,7 @@
 
 <footer>
   <div class="wrap">
-    <span>출처: <a href="https://huggingface.co/papers/2611.00883" target="_blank" rel="noopener">huggingface.co/papers/2611.00883</a> · 2026-11-07</span>
+    <span>출처: <a href="https://huggingface.co/papers/2611.00883" target="_blank" rel="noopener">huggingface.co/papers/2611.00883</a> · 2026-11-09</span>
     <span>my-design 시스템 적용</span>
   </div>
 </footer>

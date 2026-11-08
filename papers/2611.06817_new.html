@@ -1,5 +1,5 @@
 <meta charset="UTF-8">
-<title>오픈휴먼웜</title>
+<title>Open-HumanScale</title>
 <style>
   :root{
     --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
@@ -56,13 +56,13 @@
 <header class="article-head">
   <div class="wrap">
     <div class="kicker-row">
-      <span class="rank">#10 · Daily Papers 2026-11-07</span>
+      <span class="rank">#9 · Daily Papers 2026-11-09</span>
       <span class="cat-tag">모델·기법</span>
-      <span class="upvote-tag">▲ 14</span>
+      <span class="upvote-tag">▲ 32</span>
     </div>
-    <h1 class="article-title">Open-HumanWAM: An Open Recipe for Scaling Human and Robot Experience for Embodied Foundation Models</h1>
-    <p class="article-title-ko">오픈휴먼웜: 체화된 파운데이션 모델을 위한 인간-로봇 경험 확장 공개 레시피</p>
-    <p class="article-sub">1인칭(에고센트릭) 인간 영상을 5만 시간 규모로 정제·정렬해 로봇 파운데이션 모델을 사전학습시키는 완전 공개형 레시피를 제시하고, 사전학습 시간에 따라 로봇 성능이 로그-선형으로 향상되는 스케일링 법칙을 실증했다.</p>
+    <h1 class="article-title">Open-HumanScale: An Open Recipe for Scaling Human and Robot Experience for Embodied Foundation Models</h1>
+    <p class="article-title-ko">Open-HumanScale: 체화 파운데이션 모델을 위한 인간·로봇 경험 확장 공개 레시피</p>
+    <p class="article-sub">5만 시간 규모의 1인칭(에고센트릭) 인간 조작 영상만으로 사전학습한 월드-액션 모델이 로봇 후속학습(post-training) 뒤 강력한 분포 외(out-of-distribution) 일반화 성능을 보이고, 사전학습 시간에 따라 로그-선형(log-linear) 스케일링 법칙을 따른다는 것을 실증했으며, 더 나아가 인간-로봇 하이브리드 데이터와 시각적 목표(goal-image) 조건화를 결합해 제로샷 로봇 실행과 파라미터 업데이트 없는 "체화된 인컨텍스트 러닝"을 구현한, 데이터·코드·체크포인트를 모두 공개한 로봇 파운데이션 모델 레시피 연구이다.</p>
     <div class="meta-links">
       <a href="https://huggingface.co/papers/2611.06817" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
       <a href="https://arxiv.org/abs/2611.06817" target="_blank" rel="noopener">arXiv 원문 →</a>
@@ -73,42 +73,51 @@
 <article class="body">
   <div class="wrap">
 <ul>
-<li><strong>제목</strong>: Open-HumanWAM: An Open Recipe for Scaling Human and Robot Experience for Embodied Foundation Models</li>
-<li><strong>저자</strong>: Juncheng Ma, Jiaxin Li, Jiankai Tu, Bo Liang 외 다수 (Peking University, NUS, MIT, UCSB, NVIDIA 공동 연구팀)</li>
-<li><strong>출처</strong>: arXiv:2611.06817v2 [cs.CV] (2026년 11월 5일)</li>
-<li><strong>프로젝트 페이지</strong>: <a href="https://dagroup-pku.github.io/open-humanwam/">Open-HumanWAM</a> / <a href="https://github.com/DAGroup-PKU/HumanNet/tree/Open-HumanWAM">GitHub</a></li>
+<li><strong>제목</strong>: Open-HumanScale: An Open Recipe for Scaling Human and Robot Experience for Embodied Foundation Models</li>
+<li><strong>저자</strong>: Juncheng Ma, Jiaxin Li, Jiankai Tu, Bo Liang(공동 1저자) 외 Guodong Lv, Yufan Deng, Junzhe Tang, Liangzhu Yang, Chen Bian, Shukai Gong, Yintianrun Zhang, Zicong Cao, Baohao Zhu, Jianxin Bi, Tengfei Yan, Yinyuan Zhang, Kewei Zhang, Xinglong Chen, Kaiqi Chen, Duomin Wang, Xiaotian Tang, Liang Tan, Li Li, Yuan Xu, Haosen Yang, Yuqi Wang, Jingfei Xia, Songyan Huang, Zhiyang Dou, Zhen Dong, Enze Xie, Wojciech Matusik, Tat-Seng Chua, Daquan Zhou(교신저자). 소속: PKU(북경대), NUS(싱가포르국립대), MIT, UCSB, NVIDIA.</li>
+<li><strong>출처</strong>: arXiv:2611.06817v1 [cs.CV] (2026년 11월 5일 — 분석에 사용한 PDF 추출본은 v2이며, 본문에서는 모델/프로젝트명이 "HumanWAM"으로 표기됨)</li>
+<li><strong>프로젝트 페이지</strong>: https://dagroup-pku.github.io/open-humanwam/ (GitHub: https://github.com/DAGroup-PKU/HumanNet/tree/Open-HumanWAM, HuggingFace 모델/데이터셋도 공개)</li>
 <li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.06817">arXiv PDF 보기</a></li>
 </ul>
 <h2>한 줄 요약</h2>
-<p>1인칭(에고센트릭) 인간 영상을 5만 시간 규모로 정제·정렬해 로봇 파운데이션 모델을 사전학습시키는 완전 공개형 레시피를 제시하고, 사전학습 시간에 따라 로봇 성능이 로그-선형으로 향상되는 스케일링 법칙을 실증했다.</p>
+<p>5만 시간 규모의 1인칭(에고센트릭) 인간 조작 영상만으로 사전학습한 월드-액션 모델이 로봇 후속학습(post-training) 뒤 강력한 분포 외(out-of-distribution) 일반화 성능을 보이고, 사전학습 시간에 따라 로그-선형(log-linear) 스케일링 법칙을 따른다는 것을 실증했으며, 더 나아가 인간-로봇 하이브리드 데이터와 시각적 목표(goal-image) 조건화를 결합해 제로샷 로봇 실행과 파라미터 업데이트 없는 "체화된 인컨텍스트 러닝"을 구현한, 데이터·코드·체크포인트를 모두 공개한 로봇 파운데이션 모델 레시피 연구이다.</p>
 <h2>배경 및 문제의식</h2>
-<p>로봇 조작 정책 학습에는 원격조작(teleoperation) 데이터 수집 비용이 매우 크다는 한계가 있다. 반면 인터넷상의 1인칭 인간 조작 영상은 손 동작과 언어 설명이 함께 기록되어 있어 대규모로 확보할 수 있지만, 이런 원시 데이터를 실제 로봇 정책 성능 향상으로 연결하는 체계적인 데이터 정제·학습 레시피는 아직 충분히 연구되지 않았다. 기존 연구(EgoScale, HumanScale, Dyna-2 등)는 에고센트릭 데이터의 가치를 보여주었지만, 데이터 다양성이나 로봇 데이터와의 결합 등은 충분히 분석하지 못했다.</p>
+<p>로봇 파운데이션 모델은 과업과 환경을 넘나드는 전이 가능한 조작 능력을 얻기 위해 다양한 조작 경험이 필요하지만, 원격조작(teleoperation)으로 로봇 데이터를 수집하는 것은 비용이 매우 크다. 반면 손동작·언어 주석이 달린 1인칭(에고센트릭) 인간 비디오는 다양한 장면·과업에 걸친 풍부한 인간-물체 상호작용 기록을 저비용으로 제공할 수 있다. 그러나 이러한 인간 데이터를 단순히 규모만 늘렸을 때 실제로 다운스트림 로봇 성능이 일관되게 개선되는 큐레이션·정렬·학습 레시피는 아직 충분히 검증되지 않았다. EgoScale, Being-H0.8, HumanScale, Dyna-2 등 선행 연구들이 에고센트릭 사전학습의 가치를 보였지만, 데이터 다양성의 역할이나 로봇 쪽 supervision이 얼마나 필요한지에 대한 체계적 분석은 부족했다. 이 논문은 이러한 공백을 메우기 위해 100시간~5만 시간 규모로 통제된 스케일링 실험을 수행하는 "완전 공개형(open)" 레시피를 제시한다.</p>
 <h2>핵심 기여</h2>
-<ol>
-<li><strong>Open-HumanWAM-50K</strong>: HumanNet, EgoSuite-Open100K, EgoDex, Gen-HumanEgo, EgoVerse 등 5개 공개 소스에서 손 동작·언어 주석이 달린 영상을 정제하여 만든 5만 시간 규모의 에고센트릭 사전학습 코퍼스(3,590만 클립)를 공개.</li>
-<li>100시간~5만 시간 구간에서 사전학습 시간이 늘수록 로봇 과업 성공률이 로그-선형으로 증가하는 경험적 스케일링 법칙을 발견(특히 분포 밖(out-of-distribution) 일반화에서 효과가 큼).</li>
-<li>데이터의 "다양성"(과업·장면 수)이 단순 시간 길이보다 성능 향상에 더 크게 기여함을 입증.</li>
-<li>순수 에고센트릭 데이터만으로 사전학습한 <strong>HumanWAM-Vanilla</strong>가 RoboTwin 2.0, RoboDojo 시뮬레이션과 실제 로봇 실험에서 경쟁력 있는 성능을 달성.</li>
-<li>인간·로봇 데이터를 함께 쓰는 <strong>HumanWAM-Goal</strong>(시각적 목표 조건부 모델)을 통해 제로샷 실행 성능을 최신 수준(SOTA)까지 끌어올리고, 파라미터 업데이트 없이 시각적 목표 이미지에 따라 행동을 바꾸는 "체화된 인컨텍스트 학습" 능력을 입증.</li>
-</ol>
-<h2>방법론</h2>
 <ul>
-<li><strong>데이터 구축</strong>: 각 소스에서 손의 가시성, 동작 안정성, 유휴(정지) 구간 등을 기준으로 필터링한 뒤, 사람 손목 자세와 로봇 말단장치(EEF) 자세를 하나의 16차원 양손(bimanual) EEF 액션 공간(위치 3 + 쿼터니언 4 + 손 벌림 정도 1, 양손)으로 정렬. 카메라 좌표계, 손목 축, 그리퍼 개폐 정도를 교차 소스 간에 통일했다.</li>
-<li><strong>모델 구조</strong>: Wan2.2-TI2V-5B 비디오 백본에 동일 깊이의 "액션 전문가(action expert)"를 추가한 Mixture-of-Transformers 구조(World-Action Model). 언어·고유수용감각(proprioception) 입력을 받아 현재/미래 비디오와 액션을 함께 예측하며, 역동역학(Inverse-Dynamics, IDM) 어텐션을 통해 액션 토큰이 생성된 미래 비디오 프레임을 참고하도록 했다.</li>
-<li><strong>사전학습·후학습 절차</strong>: 100~5만 시간 규모로 사전학습한 뒤 RoboTwin 2.0(50개 과업)에 대해 적은 수의 깨끗한 로봇 시연(clean demo)으로 후학습(post-training)하여 성능을 비교. clean(학습 분포), scene-ood(배경·질감 랜덤화), random(배경·조명·테이블 높이 등 전면 랜덤화) 세 조건에서 평가.</li>
-<li><strong>HumanWAM-Goal</strong>: 로봇 데이터와 인간 데이터를 함께 사용하며, 목표 이미지를 조건으로 주는 구조로 확장하여 로봇 시연 없이도(제로샷) 과업을 수행하도록 설계.</li>
+<li><strong>Open-HumanWAM-50K 코퍼스 공개</strong>: HumanNet, EgoSuite-Open100K, EgoDex, Gen-HumanEgo, EgoVerse의 5개 공개 소스를 손동작 시각성(hand visibility), 동작/카메라 안정성, 유휴(idle) 구간 필터링으로 큐레이션하여 구축한 5만 시간·3,590만 클립 규모의 코퍼스와, 서로 다른 소스 간 카메라 프레임·손목 축·그리퍼 개방도를 정렬한 통합 양손(bimanual) end-effector 액션 표현을 공개.</li>
+<li><strong>순수 에고센트릭 사전학습의 로그-선형 스케일링 법칙 규명</strong>: 100시간부터 5만 시간까지 사전학습 데이터를 늘릴 때 다운스트림 로봇 성공률이 <code>SR = a + b·log10(H)</code> 형태로 일관되게 증가함을 isolated attention과 IDM(inverse-dynamics) attention 두 구조 모두에서 확인(R²=0.87~0.97). 또한 데이터 다양성(과업·장면 커버리지) 확장이 단순히 시간만 늘리는 것보다 더 가파른 스케일링 곡선을 만든다는 것, cross-source action alignment와 인간 동작 예측(human motion prediction) supervision이 성능에 기여한다는 것을 7개 연구 질문(Q1~Q7)에 대한 통제 실험으로 체계적으로 분석.</li>
+<li><strong>HumanWAM-Vanilla 모델</strong>: 5만 시간 에고센트릭 데이터만으로 사전학습한 world-action 모델로, 로봇 후속학습 후 RoboTwin 2.0 Clean2Clean 92.08%·Clean2Random 68.88%, RoboDojo 평균 성공률 14.17%·진행도 점수 19.00을 달성. 실로봇 4과업에서 평균 성공률이 분포 내(ID) 57.5%→87.5%, 분포 외(OOD) 2.5%→67.5%로 개선.</li>
+<li><strong>HumanWAM-Goal 모델(인간-로봇 하이브리드 + 시각적 목표 조건화)</strong>: 약 1.46만 시간의 로봇 사전학습 데이터에 최대 4.59만 시간의 인간 에고센트릭 데이터를 더한 하이브리드 코트레이닝 모델로, 제로샷 평균 성공률 13.94%(RoboTwin 2.0), 후속학습 후 Clean2Clean 92.70%·Clean2Random 84.60%(평균 88.65%, SOTA)를 달성. 실로봇 20개 과업 제로샷 성공률도 인간데이터 추가에 따라 20.0%→30.5%로 상승하며, 파라미터 업데이트 없이 시각 목표 이미지만 바꿔 다른 조작 결과를 유도하는 "체화된 인컨텍스트 러닝(embodied in-context learning)"을 보임.</li>
+<li><strong>전체 스택 오픈소스 공개</strong>: 코퍼스, 데이터 큐레이션·사전학습 파이프라인, 사전학습/후속학습 체크포인트, 추론 코드, 시뮬레이션 평가 스위트를 모두 공개하여 재현 가능한 스케일링 연구를 지원.</li>
 </ul>
+<h2>방법론</h2>
+<p><strong>데이터 구축 및 통합 액션 표현.</strong> 5개 공개 에고센트릭 데이터셋(HumanNet 서브셋, EgoSuite-Open100K, EgoDex, Gen-HumanEgo, EgoVerse)을 모아 손동작 시각성, 동작/카메라 안정성(가속도·저크 체크), 유휴 구간(32프레임 슬라이딩 윈도우) 필터링의 3단계 큐레이션을 거쳐 3,139만 개 에피소드에서 3,590만 개의 연속 클립, 총 5만 시간을 확보했다. 서로 다른 소스의 손목 포즈·카메라 좌표·그리퍼 개방도를 통일하기 위해, 카메라 프레임 변환, 정준(canonical) 손목 축으로의 회전 정렬(Procrustes 정렬), 엄지-인덱스 핑거팁 거리를 이용한 그리퍼 개방도 정규화를 적용하여 16차원(좌/우 각각 위치3+쿼터니언4+개방도1) 통합 양손 EEF 액션 공간을 구성했다.</p>
+<p><strong>모델 아키텍처.</strong> Wan2.2-TI2V-5B 비디오 백본을 확장한 Mixture-of-Transformers 구조로, 비디오 전문가(video expert)와 액션 전문가(action expert)가 조건부 교차 어텐션과 공동 마스킹 self-attention으로 상호작용한다. 액션 토큰이 현재 프레임만 볼 수 있는 isolated attention, 서로 모든 토큰을 참조하는 mutual attention, 미래 비디오를 먼저 생성한 뒤 액션을 예측하는 inverse-dynamics(IDM) attention, 두 방식을 확률적으로 섞는 optional-IDM을 비교했으며, IDM 방식과 절대 카메라 프레임 액션 표현의 조합이 가장 우수한 일반화 성능을 보였다.</p>
+<p><strong>사전학습·후속학습 프로토콜.</strong> 코퍼스 규모(100~50,000시간)에 따라 글로벌 배치 크기와 학습 스텝을 조정한 AdamW 코사인 스케줄로 사전학습한 뒤, RoboTwin 2.0(50개 양손 조작 과업, Aloha-AgileX 임보디먼트)에서 과업당 50개의 깨끗한(clean) 시연으로 후속학습하고, clean/scene-ood/random 세 조건에서 성공률을 측정해 스케일링 법칙을 피팅했다.</p>
+<p><strong>HumanWAM-Goal의 하이브리드 확장.</strong> 다중 임보디먼트와 모바일 조작을 아우르기 위해 액션 공간을 49차원(관절 23 + 섀시 3 + EEF·헤드 23)으로 확장하고, 그리퍼 개방도를 미터 단위 절대 물리량으로, EEF 위치·자세를 현재 관측 기준의 청크 상대(chunk-relative) 좌표로 표현하여 임보디먼트에 무관한 전이가 가능하도록 설계했다. Cosmos3-Nano-16B를 백본으로 사용하며(언어 인코딩을 담당하는 고정된 Qwen3-VL 기반 Reasoner + 공유 비디오-액션 Generator), 언어 지시와 함께 시각적 목표 이미지를 조건으로 입력받아 미래 비디오와 액션 청크를 UniPC 기반 joint rectified-flow로 한 번에(단일 단계) 디노이즈한다. 목표 이미지는 궤적 내 미래 관측(2~8초 후 40%, 에피소드 종료 프레임 20%, 서브태스크 종료 프레임 20%, 목표 없음 20%)에서 온라인 샘플링되며, 후속학습 시에는 일부를 GPT Image 2.5로 합성하고 ChatGPT Astra High로 시각적·지시적 일치성을 자동 검증했다. 로봇 사전학습 데이터는 8개 실로봇 도메인에서 110만 개 이상의 에피소드, 약 1.46만 시간 규모로 구성됐다.</p>
 <h2>실험 설정 및 결과</h2>
 <ul>
-<li><strong>스케일링 법칙</strong>: 에고센트릭 사전학습을 100시간에서 1만 시간으로 늘리면 RoboTwin clean 성공률은 71.2%→80.0%, scene-ood는 25.2%→58.1%, random은 8.4%→28.7%로 상승(에고센트릭 사전학습이 없으면 각각 69.5%, 16.2%, 2.1%에 그침). IDM 어텐션 구성에서는 5만 시간까지 확장 시 scene-ood 49.1%→73.2%, random 21.5%→42.9%로 지속 향상.</li>
-<li><strong>데이터 다양성 효과</strong>: 동일한 데이터 양이라도 과업·장면 다양성을 함께 늘리면(scaled-diversity) 단순히 시간만 늘릴 때(matched-diversity)보다 스케일링 기울기가 더 가파름(scene-ood 기준 +4.73pp 더 가파른 기울기).</li>
-<li><strong>HumanWAM-Vanilla 성능</strong>: RoboTwin 2.0에서 Clean2Clean 92.08%, Clean2Random 68.88%(평균 80.48%)로 비교 대상 VLA·World-Action 모델군 중 최고 수준. RoboDojo에서는 평균 성공률 14.17%, 평균 진행도 점수 19.00으로 기존 World-Action 모델 대비 우수하나 최신 에이전트형 시스템에는 다소 못 미침. 실제 로봇(Cobot Magic) 4개 과업(종이컵 쌓기, 수건 접기, 서랍 정리, 책상 정리)에서 시각 조건 변화 시 성공률이 2.5%(No-Ego)→67.5%(HumanWAM-Vanilla)로 크게 향상.</li>
-<li><strong>HumanWAM-Goal 성능</strong>: 제로샷 평가에서 기존 공개 VLA/World-Action 모델 대부분이 체크포인트 비호환 등으로 평가 자체가 불가능했던 반면, HumanWAM-Goal은 로봇 데이터만으로 11.48%, 인간-로봇 하이브리드로 13.94% 제로샷 평균 성공률을 달성. 후학습 후에는 RoboTwin 2.0 공식 리더보드 기준 Clean 92.70%, Random 84.60%(평균 88.65%)로 기존 1위(GO-3 Nano Preview) 대비 평균 +3.64pp 향상되어 SOTA를 기록. 실제 로봇(Astribot S1) 20개 과업에서는 인간 데이터를 4.59만 시간 추가하자 제로샷 평균 성공률이 20.0%→30.5%로 상승.</li>
+<li><strong>순수 에고센트릭 스케일링(RoboTwin 2.0, 50 tasks)</strong>: isolated attention 기준 100→10,000시간으로 늘릴 때 clean 성공률 71.2%→80.0%, scene-ood 25.2%→58.1%, random 8.4%→28.7%로 증가(로그-선형 피팅 R²=0.88~0.97). IDM attention 기준 100→50,000시간에서는 clean이 87~89%로 포화되지만 scene-ood는 49.1%→73.2%, random은 21.5%→42.9%로 계속 개선.</li>
+<li><strong>데이터 다양성 vs 시간</strong>: EgoSuite-Open100K에서 과업·장면 커버리지를 함께 늘린 scaled-diversity 코퍼스가 동일 시간의 matched-diversity 코퍼스보다 scene-ood·random에서 각각 +4.73, +4.50의 스케일링 기울기 증가를 보임.</li>
+<li><strong>로봇 적응 샘플 효율성</strong>: 5,000시간 사전학습 모델은 25개 시연만으로 500시간 모델이 50개 시연으로 달성한 성능(scene-ood 42.0% vs 37.9%, random 21.8% vs 16.2%)을 상회.</li>
+<li><strong>cross-source action alignment / human motion supervision 효과</strong>: 정렬된(Aligned) 액션 표현이 정렬 안 된(Raw) 표현보다 clean +5.5pp, scene-ood +9.0pp, random +8.4pp 개선. 인간 동작 예측을 50% 포함하면 video-only 대비 scene-ood 13.0%→34.8%, random 3.6%→16.3%로 크게 개선.</li>
+<li><strong>에고센트릭 vs 로봇 사전학습</strong>: 500~5,000시간 구간에서 동일 시간의 에고센트릭 사전학습이 로봇 사전학습보다 모든 조건(clean/scene-ood/random)에서 우수(5,000시간 기준 scene-ood 52.3% vs 45.6%, random 27.6% vs 22.4%).</li>
+<li><strong>HumanWAM-Vanilla 최종 성능</strong>: RoboTwin 2.0 Clean2Clean 92.08%·Clean2Random 68.88%(평균 80.48%, Table 7 기준 VLA 베이스라인 전부 상회, 일부 최신 WAM보다 OOD에서 다소 낮음). RoboDojo 평균 SR 14.17%/진행도 19.00(Table 8). 실로봇 4과업(종이컵 쌓기, 수건 접기, 서랍 정리, 책상 정리)에서 테이블보/조명 변화 조건까지 포함해 평균 성공률 ID 57.5%→87.5%, OOD 2.5%→67.5%로 개선(Table 9).</li>
+<li><strong>HumanWAM-Goal 제로샷/후속학습 성능</strong>: 제로샷 평균 성공률이 로봇 전용 11.48%→하이브리드(인간 4.59만 시간 추가) 13.94%로 상승, 단일 체크포인트 과업 커버리지(≥2% 성공)도 18→22개 과업으로 확대(Table 13, Figure 17). 후속학습 후 RoboTwin 2.0 Clean2Clean 92.70%·Clean2Random 84.60%(평균 88.65%)로 SOTA 달성(Table 14). 실로봇 20개 과업 제로샷 성공률은 로봇데이터 고정(1.46만 시간) 상태에서 인간데이터를 +1.59만/+4.59만 시간 추가함에 따라 20.0%→26.0%→30.5%로 상승.</li>
+<li><strong>어블레이션</strong>: IDM attention + 절대 카메라프레임 액션 조합이 isolated attention + 상대 액션보다 모든 조건에서 우수(Table 10). 액션 전문가를 사전학습된 비디오 가중치에서 초기화하는 것은 랜덤 초기화보다 이득이 없었음(Table 11). 로봇 후속학습에 손목 카메라 뷰를 직접 추가하면 scene-ood/random 일반화가 오히려 저하되지만, EgoPro를 이용한 멀티뷰 중간학습(mid-training)을 거치면 이 손실을 완화할 수 있었음(Table 5).</li>
 </ul>
 <h2>한계점</h2>
-<p>RoboDojo 벤치마크에서는 암산(덧셈·뺄셈 등)이나 과거 관측에 대한 기억이 필요한 일부 과업에서 최신 에이전트 기반 시스템에 못 미치는데, 저자들은 이를 HumanWAM-Vanilla가 별도의 메모리·추론 모듈 없이 기본적인 World-Action 구조만을 사용했기 때문이라고 설명한다. 또한 액션 공간을 양손 조작(bimanual manipulation)으로 제한하여 이동(locomotion) 등 신체 전체의 움직임은 다루지 않으며, 인간 데이터의 질 편차나 주석 오차가 일부 소스(HumanNet 등)에서 완전히 제거되지 않을 수 있다는 점은 논문에 명시되지 않음.</p>
+<ul>
+<li>논문에서 직접 언급: HumanWAM-Vanilla는 기본적인 world-action 아키텍처만 사용하고 별도의 특화 모듈이 없어, RoboTwin 2.0 Clean2Random에서 GO-3 Nano Preview(81.48%) 등 특화 모듈을 갖춘 최신 WAM보다 다소 낮은 68.88%를 기록(남은 격차는 이러한 아키텍처 차이에서 기인한다고 추정).</li>
+<li>RoboDojo의 메모리·산술 추론이 필요한 과업에서는 전용 memory/reasoning 모듈이 없어 DM0.5, Galaxea G0.5 등 최신 모델/에이전트 시스템에 비해 전체적으로 뒤처짐.</li>
+<li>순수 인간 데이터만으로는 로봇의 물리적 형태·제어 동역학에 노출되지 않는 임보디먼트 갭(embodiment gap)이 존재하여, 바로 배포할 수 없고 매 목표 과업마다 시연 기반 미세조정이 필요한 파인튜닝 패러다임에 머문다는 점을 명시.</li>
+<li>순수 teleoperation 로봇 데이터만 확장할 경우 장면 다양성의 한계로 OOD(Random) 성능이 약 8,000시간 이상에서 정체(plateau)됨.</li>
+<li>액션 공간이 양손 조작(bimanual manipulation)에 한정되어 있으며, 이동(locomotion) 관련 차원은 포함하지 않음(에고센트릭 데이터의 신체/머리 움직임이 과업과 무관하고 불규칙하기 때문).</li>
+<li>후속학습 시 사용한 합성 목표 이미지 검증은 시각적·지시적 일관성만 보장하며 물리적 실현가능성은 보장하지 않음.</li>
+</ul>
 <h2>시사점</h2>
-<p>이 연구는 로봇 조작 정책의 사전학습에서 "얼마나 많은 시간"뿐 아니라 "얼마나 다양한 과업·장면"을 포함하는지가 중요하다는 것을 실증적으로 보여주며, 인간 영상과 로봇 시연을 통일된 액션 공간에서 함께 학습시키는 하이브리드 전략이 제로샷 일반화와 체화된 인컨텍스트 학습(목표 이미지만으로 파라미터 업데이트 없이 행동을 바꾸는 능력)까지 가능케 한다는 점에서, 향후 오픈소스 로봇 파운데이션 모델 연구의 재현 가능한 기준점을 제공한다.</p>
+<p>이 연구는 로봇 파운데이션 모델 스케일링에서 단순한 데이터 "양"보다 과업·장면 "다양성"이 더 중요한 축일 수 있음을 실증적으로 보여주며, 완전히 공개된 코퍼스·파이프라인·체크포인트가 재현 가능한 스케일링 연구의 기반이 될 수 있음을 제시한다. 또한 시각적 목표(goal-image) 조건화는 언어 지시만으로는 모호한 과업 의도를 명확히 하면서, 파라미터 업데이트 없이 다양한 조작 결과를 유도하는 새로운 체화된 인컨텍스트 러닝 인터페이스로서의 가능성을 보여준다. 인간 비디오와 로봇 데이터를 하나의 임보디먼트-무관(embodiment-agnostic) 액션 공간으로 통합하는 설계가, 서로 다른 로봇·인간 소스를 아우르는 제로샷 전이의 핵심 요소로 제시되어, 이후 인간-로봇 공동 사전학습 기반 범용 조작 정책 연구에 실용적 지침을 제공한다.</p>
     <div class="back-bottom">
       <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
     </div>
@@ -117,7 +126,7 @@
 
 <footer>
   <div class="wrap">
-    <span>출처: <a href="https://huggingface.co/papers/2611.06817" target="_blank" rel="noopener">huggingface.co/papers/2611.06817</a> · 2026-11-07</span>
+    <span>출처: <a href="https://huggingface.co/papers/2611.06817" target="_blank" rel="noopener">huggingface.co/papers/2611.06817</a> · 2026-11-09</span>
     <span>my-design 시스템 적용</span>
   </div>
 </footer>

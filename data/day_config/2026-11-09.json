@@ -1,0 +1,110 @@
+{
+  "2611.05376": {
+    "base": "2611_코그니티브심바이온트_자율에이전트에서-인지공생체로",
+    "rank": "#1",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "116",
+    "en_title": "From Autonomous Agents to Cognitive Symbionts: Toward AI-Augmented Human Intelligence",
+    "ko_title": "자율 에이전트에서 코그니티브 심바이온트로: AI 증강 인간 지능을 향하여"
+  },
+  "2611.08449": {
+    "base": "2611_브이플래시_플래시프리미티브디코딩-시각계획",
+    "rank": "#2",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "106",
+    "en_title": "VFlash: Fast, Accurate Visual Planning via Flash Primitive Decoding",
+    "ko_title": "VFlash: 플래시 프리미티브 디코딩을 통한 빠르고 정확한 시각 계획"
+  },
+  "2611.08373": {
+    "base": "2611_에스엘에이_공간언어행동모델-지속사전학습",
+    "rank": "#3",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "92",
+    "en_title": "SLA: Scaling Spatial-Language-Action Model via Continual Pre-training",
+    "ko_title": "SLA: 지속적 사전학습을 통한 공간-언어-행동 모델 확장"
+  },
+  "2611.04277": {
+    "base": "2611_하네스에스_형제하네스-에이전트학습",
+    "rank": "#4",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "66",
+    "en_title": "Harness-S: Learning from Sibling Harnesses for Generalizable Agent Training",
+    "ko_title": "Harness-S: 형제 하네스로부터 배우는 범용 에이전트 학습"
+  },
+  "2611.00883": {
+    "base": "2611_베스트랜드_벤치마크압축",
+    "rank": "#5",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "51",
+    "en_title": "Random Is Almost Enough? Stable and Low-Cost Benchmark Compression via BestRand",
+    "ko_title": "무작위만으로 충분할까? BestRand를 통한 안정적이고 저비용인 벤치마크 압축"
+  },
+  "2611.07392": {
+    "base": "2611_웰엠이미지_통합이미지생성모델",
+    "rank": "#6",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "44",
+    "en_title": "WeLM-Image: A Unified Image Generation Model towards Visual Intelligence",
+    "ko_title": "WeLM-Image: 시각 지능을 향한 통합 이미지 생성 모델"
+  },
+  "2611.06741": {
+    "base": "2611_테일스티어_드리프트저항-멀티턴이미지편집",
+    "rank": "#7",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "40",
+    "en_title": "TailSteer: Trajectory-Tail Steering for Drift-Resistant Multi-turn Image Editing",
+    "ko_title": "TailSteer: 드리프트에 강한 멀티턴 이미지 편집을 위한 궤적-테일 스티어링"
+  },
+  "2611.03743": {
+    "base": "2611_에보멤스테이트_개인에이전트-진화메모리",
+    "rank": "#8",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "33",
+    "en_title": "EvoMemState: Evolving Memory State for Personal Agents",
+    "ko_title": "EvoMemState: 개인화 에이전트를 위한 진화하는 메모리 상태"
+  },
+  "2611.06817": {
+    "base": "2611_오픈휴먼스케일_인간로봇경험확장-로봇파운데이션모델",
+    "rank": "#9",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "32",
+    "en_title": "Open-HumanScale: An Open Recipe for Scaling Human and Robot Experience for Embodied Foundation Models",
+    "ko_title": "Open-HumanScale: 체화 파운데이션 모델을 위한 인간·로봇 경험 확장 공개 레시피"
+  },
+  "2611.04894": {
+    "base": "2611_비주얼서치벤치_장기시각탐색-벤치마크",
+    "rank": "#10",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "22",
+    "en_title": "VisSearch-Bench: Evaluating Long Horizon Visual Search in Multimodal Agents",
+    "ko_title": "VisSearch-Bench: 멀티모달 에이전트의 장기 시각 탐색 평가"
+  },
+  "2611.07854": {
+    "base": "2611_드렉스_파운데이션의사결정모델",
+    "rank": "#11",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "22",
+    "en_title": "Towards Foundation Decision Models: Drex",
+    "ko_title": "파운데이션 의사결정 모델을 향하여: Drex"
+  },
+  "2611.06976": {
+    "base": "2611_프리필전이_프리필투오토리그레시브-모델간전이",
+    "rank": "#12",
+    "category": "analysis",
+    "category_label": "해석·분석",
+    "upvote": "15",
+    "en_title": "On the Opportunities and Challenges of Prefill-to-Autoregressive Cross-Model Transfer",
+    "ko_title": "프리필-투-오토리그레시브 모델간 전이의 기회와 과제"
+  }
+}

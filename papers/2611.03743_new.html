@@ -1,5 +1,5 @@
 <meta charset="UTF-8">
-<title>에보멤스테이트</title>
+<title>EvoMemState</title>
 <style>
   :root{
     --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
@@ -56,13 +56,13 @@
 <header class="article-head">
   <div class="wrap">
     <div class="kicker-row">
-      <span class="rank">#7 · Daily Papers 2026-11-07</span>
+      <span class="rank">#8 · Daily Papers 2026-11-09</span>
       <span class="cat-tag">에이전트</span>
-      <span class="upvote-tag">▲ 20</span>
+      <span class="upvote-tag">▲ 33</span>
     </div>
     <h1 class="article-title">EvoMemState: Evolving Memory State for Personal Agents</h1>
-    <p class="article-title-ko">에보멤스테이트: 개인 에이전트를 위한 진화형 메모리 상태</p>
-    <p class="article-sub">개인화 LLM 에이전트의 장기 기억을 개별 사실(fact)이 아니라 "사실 간 관계"와 "현재 요청에 대한 적용 방식"까지 함께 상태(state)로 관리하도록 설계한 상태 중심(state-centric) 메모리 프레임워크.</p>
+    <p class="article-title-ko">EvoMemState: 개인화 에이전트를 위한 진화하는 메모리 상태</p>
+    <p class="article-sub">개인화 에이전트의 장기 기억을 "사실(fact)의 집합"이 아니라 "사실 + 관계 상태 + 추론 상태"로 모델링하여, 기억 간의 갱신·충돌 관계와 현재 요청에 대한 적용 방식까지 명시적으로 다루는 상태 중심(state-centric) 메모리 프레임워크 EvoMemState를 제안한 논문.</p>
     <div class="meta-links">
       <a href="https://huggingface.co/papers/2611.03743" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
       <a href="https://arxiv.org/abs/2611.03743" target="_blank" rel="noopener">arXiv 원문 →</a>
@@ -74,32 +74,47 @@
   <div class="wrap">
 <ul>
 <li><strong>제목</strong>: EvoMemState: Evolving Memory State for Personal Agents</li>
-<li><strong>저자</strong>: Zhishang Xiang, Yunbo Tang 등 (Xiamen University, Nanyang Technological University, University of British Columbia, University of Waterloo, Jilin University 소속 공동 연구진)</li>
+<li><strong>저자</strong>: Zhishang Xiang, Yunbo Tang (공동 1저자), Zhongqiao Liu, Junkai Chen, Zerui Chen, Qingguo Hu, Yuxuan Zhang, William Grant, Qinggang Zhang(교신저자), Jinsong Su(교신저자) — Xiamen University, Nanyang Technological University, University of British Columbia, University of Waterloo, Jilin University 소속</li>
 <li><strong>출처</strong>: arXiv:2611.03743v1 [cs.IR] (2026년 11월 2일)</li>
-<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음 (코드: https://github.com/XMUDeepLIT/EvoMemState.git)</li>
 <li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.03743">arXiv PDF 보기</a></li>
 </ul>
 <h2>한 줄 요약</h2>
-<p>개인화 LLM 에이전트의 장기 기억을 개별 사실(fact)이 아니라 "사실 간 관계"와 "현재 요청에 대한 적용 방식"까지 함께 상태(state)로 관리하도록 설계한 상태 중심(state-centric) 메모리 프레임워크.</p>
+<p>개인화 에이전트의 장기 기억을 "사실(fact)의 집합"이 아니라 "사실 + 관계 상태 + 추론 상태"로 모델링하여, 기억 간의 갱신·충돌 관계와 현재 요청에 대한 적용 방식까지 명시적으로 다루는 상태 중심(state-centric) 메모리 프레임워크 EvoMemState를 제안한 논문.</p>
 <h2>배경 및 문제의식</h2>
-<p>기존 장기 기억 시스템(MemGPT, MemoryBank, Mem0, LightMem 등)은 사실 중심(fact-centric) 패러다임을 따라 사실을 추출·저장·갱신·검색하는 데 집중한다. 그러나 새로운 사실이 기존 사실을 갱신, 제약, 또는 모순시키는 관계를 개별 기록만으로는 포착하기 어렵고, 설사 관련 기억을 모두 검색하더라도 에이전트가 해당 기억을 현재 요청에 얼마나, 어떻게 적용해야 할지는 암묵적으로 남는다. 저자들은 예비 실험을 통해 (1) 기존 시스템 다수가 관련 기억을 함께 검색하지 못하며(최대 61.8% 불완전 검색), (2) 모든 관련 기억이 검색되어도 단순 자기성찰(self-reflection) 프롬프트만으로는 정답률이 오히려 떨어짐(평균 50.5%→48.9%)을 확인하며 문제를 구체화한다.</p>
+<p>LLM 기반 개인 에이전트는 대화가 누적될수록 사용자 선호, 경험, 제약 등을 장기간 유지해야 한다. 기존 메모리 시스템(MemoryBank, MemGPT, LightMem, Mem0, A-MEM, Supermemory 등)은 사실을 추출·정리·갱신·검색하는 "사실 중심(fact-centric)" 패러다임을 따르지만, 개별 사실을 독립적인 레코드로 취급하다 보니 새로운 사실이 기존 사실을 어떻게 갱신·제약·충돌시키는지, 그리고 현재 요청에서 그 사실이 얼마나 적용 가능하고 어떤 우선순위를 갖는지가 암묵적으로만 남는다.</p>
+<p>저자들은 MemSyco-Bench의 Valid Memory Selection 하위셋을 이용한 사전 연구를 통해 두 가지 한계를 확인했다. (1) 기존 사실 중심 시스템들(MemoryBank, LightMem, Supermemory 등)은 관련된 기억을 함께 완전히 검색하지 못하는 경우가 58.9~61.8%에 달했고, 모든 필요한 기억이 검색된 경우와 일부가 누락된 경우 사이의 정답 정확도 차이가 시스템 대부분에서 5.9~33.3%p에 이르렀다. (2) 모든 관련 기억이 검색되어도 에이전트가 이를 적절히 사용하는 것은 보장되지 않는다. 고정된 자기반성(self-reflection) 프롬프트를 추가했을 때 오히려 평균 정확도가 50.5%에서 48.9%로 떨어지는 경우도 있었다. 이는 완전한 검색만으로는 올바른 기억 사용을 보장할 수 없고, 기억의 적용 가능성·역할·우선순위를 다루는 별도의 메커니즘이 필요함을 시사한다.</p>
 <h2>핵심 기여</h2>
 <ul>
-<li>기존 사실 중심 메모리의 한계(관계 정보 부재, 완전 검색이 적절한 활용을 보장하지 않음)를 실증적으로 규명</li>
-<li>Persistent Facts(불변 원본 사실), Relational States(사실 간 유효성·범위·관계), Reasoning State(현재 요청에 대한 적용성·역할·우선순위)라는 세 가지 요소로 개인 기억을 표현하는 EvoMemState 프레임워크 제안</li>
-<li>Ontology-Guided Memory State Induction, RL-Based State Evolution, State-Aware Reasoning의 3단계로 이를 구현</li>
-<li>MemSyco-Bench, MemTrapBench, LoCoMo, LoCoMo-Refined 네 개 벤치마크에서 기존 메모리 시스템 대비 검색 완전성과 메모리 근거 응답 정확도에서 일관된 개선을 입증</li>
+<li>사실 중심 개인 메모리의 한계를 규명: 개별적으로 유지되는 사실들은 해석에 필요한 관계적 맥락을 결여하며, 완전한 검색조차 적절한 사용을 보장하지 않음을 실증적으로 보임.</li>
+<li>상태 중심(state-centric) 장기 메모리 프레임워크 EvoMemState 제안: 개인 메모리를 Persistent Facts(지속적 사실), Relational States(관계 상태), Reasoning State(추론 상태)로 표현.</li>
+<li>이를 구현하는 세 가지 구성 요소 제시: (i) Ontology-Guided Memory State Induction, (ii) RL-Based State Evolution, (iii) State-Aware Reasoning.</li>
+<li>장기 대화 및 메모리 사용 벤치마크에서 검색 완전성과 메모리 근거 응답 정확도 측면에서 기존 메모리 시스템 대비 일관된 성능 향상을 입증.</li>
 </ul>
 <h2>방법론</h2>
-<p>1) <strong>Ontology-Guided Memory State Induction</strong>: 대화 이력에서 시간순 Persistent Facts를 추출하고, 이를 빈 온톨로지에 순차적으로 통합(Induce)하여 개념 계층(PARENT_OF, CONTAINS)과 사실 간 관계(SUPERSEDES=갱신, CONFLICTS_WITH=미해결 모순)로 구성된 개인 기억 온톨로지를 점진적으로 구축한다. 각 사실의 Relational State는 현재 유효성(validity)·범위(scope)·관계(relation) 정보를 담되, 원본 사실 자체는 덮어쓰지 않고 보존한다.
-2) <strong>RL-Based State Evolution</strong>: 요청 q, 관련 사실, Relational State를 입력받아 요청별 Reasoning State(적용성·역할·우선순위)를 생성하는 정책 π_θ를 GRPO(Group Relative Policy Optimization)로 학습한다. 보상은 동일 메모리 증거를 받은 고정된(frozen) 개인 에이전트가 Reasoning State를 사용했을 때와 사용하지 않았을 때의 정답 점수 차이로 정의되며, 여러 후보 Reasoning State를 샘플링해 상대적 우위(advantage)를 계산한다.
-3) <strong>State-Aware Reasoning</strong>: 추론 시 요청과 의미적으로 유사한 K개의 Persistent Facts를 시드로 검색한 뒤, 저장된 관계를 양방향으로 순회(Traverse)하여 갱신·모순·제약으로 연결된 사실까지 확장 수집한다. 학습된 정책이 이 증거로부터 Reasoning State를 생성하고, 개인 에이전트는 사실·Relational State·Reasoning State를 모두 활용해 최종 응답을 생성한다.</p>
+<p>EvoMemState는 누적된 Persistent Facts $F_t$와 이들의 관계를 표현하는 Relational States $R_t = {(f_i, a_i^t, \rho_i^t)}$(각 사실의 현재 유효성·범위 $a_i^t$, 다른 사실과의 갱신·충돌·제약 관계 $\rho_i^t$), 그리고 특정 요청 $q_t$에 대해 생성되는 Reasoning State $Z_{q_t} = \Psi(q_t, F_t, R_t)$(기억의 적용 가능성·역할·우선순위를 지정)로 메모리 상태를 정의한다.</p>
+<ol>
+<li>
+<p><strong>Ontology-Guided Memory State Induction</strong>: 대화 기록에서 시간순으로 Persistent Facts(사용자 선호·경험·신념·상황·제약에 대한 단일 명제, 출처와 시점 포함)를 추출하고, 빈 온톨로지에서 시작해 각 사실을 순서대로 통합하며 개인 메모리 온톨로지(그래프)를 구축한다. 그래프는 개념 노드와 사실 노드로 구성되며, PARENT_OF/CONTAINS로 개념 계층을 구성(CREATE·MERGE·SPLIT 연산으로 갱신)하고, SUPERSEDES(갱신)·CONFLICTS_WITH(미해결 충돌) 관계 엣지로 사실 간 관계를 표현한다. 이 온톨로지 구조로부터 각 사실의 Relational State가 유도된다.</p>
+</li>
+<li>
+<p><strong>RL-Based State Evolution</strong>: Relational State만으로는 특정 요청에서 기억을 어떻게 활용해야 하는지 결정할 수 없으므로, Memory State Evolution Policy $\pi_\theta$를 학습해 요청별 Reasoning State를 생성한다. 후보 Reasoning State가 고정된(frozen) 개인 에이전트의 응답 품질을 기준 답변 없이 받은 경우와 비교해 얼마나 개선시키는지로 보상을 계산하고(참조 답변 대비 점수 차이), GRPO(Group Relative Policy Optimization, Shao et al. 2024)를 이용해 정책을 학습한다. 정책은 Qwen3-4B-Instruct-2507로 초기화된다.</p>
+</li>
+<li>
+<p><strong>State-Aware Reasoning</strong>: 추론 시점에 요청과 의미적으로 유사한 K개의 Persistent Facts를 시드로 검색한 뒤, 저장된 메모리 관계를 양방향으로 순회(traverse)하여 갱신·제약·충돌로 연결된 모든 사실을 포함시킨다. 학습된 정책이 요청, 검색된 사실, 관계 상태로부터 Reasoning State를 생성하고, 개인 에이전트는 이 두 상태를 모두 활용해 최종 응답을 생성한다.</p>
+</li>
+</ol>
+<p>오프라인 메모리 구축에는 DeepSeek-V4-Flash를, 온라인 응답 생성 모델로는 Qwen3-8B와 GPT-4o-mini를 사용했다.</p>
 <h2>실험 설정 및 결과</h2>
-<p>Qwen3-8B와 GPT-4o-mini를 응답 모델로, MemSyco-Bench·MemTrapBench(메모리 활용 양상 평가)와 LoCoMo·LoCoMo-Refined(장기 대화 회상 평가) 네 벤치마크에서 NaiveRAG, MemGPT, MemoryBank, Mem0, A-MEM, LightMem, Supermemory, SimpleMem, PGMem 등 9개 베이스라인과 비교했다. EvoMemState는 MemSyco-Bench에서 두 백본 모두 최고 정확도(57.6%, 58.9%)를 기록해 최강 베이스라인을 각각 12.2%p, 5.9%p 앞섰고, When/How to Use 정확도 최고, Syco. Rate(부적절한 과거 기억 의존) 최저, Correct Use 최고를 달성했다. LoCoMo-Refined에서도 LLM-judge·토큰 F1 점수 모두 최고(최강 베이스라인 대비 +6.1%, +7.0%)였으며, 완전 검색 비율(85.6%)과 완전 증거 확보 시 정확도(Acc@complete, LoCoMo-Refined 70.8%/MemSyco-Bench 68.5%)에서도 베이스라인 대비 각각 11.5%p, 31.2%p 앞섰다. 제거 실험(ablation)에서는 Relational State 제거 시 MemSyco-Bench·MemTrapBench 점수가 각각 8.9%, 6.4% 하락했고, RL 기반 상태 진화를 제거(규칙 생성만 유지)해도 유사한 폭(7.9%, 16.4%)으로 하락해 두 구성요소 모두 핵심적임을 보였다. 또한 학습된 정책을 다른 메모리 시스템(NaiveRAG, Mem0, A-MEM, MemoryBank 등)에 결합해도 평균 0.2~4.9%p의 일관된 성능 향상이 전이됨을 확인했다.</p>
+<p><strong>데이터셋</strong>: MemSyco-Bench, MemTrapBench(개인 에이전트의 과거 기억 사용 평가), LoCoMo 및 LoCoMo-Refined(장기 대화 회상·추론 평가) 4개 벤치마크를 사용.</p>
+<p><strong>베이스라인</strong>: NaiveRAG, MemGPT, MemoryBank, Mem0, A-MEM, LightMem, Supermemory, SimpleMem, PGMem 등 9개 비교 시스템.</p>
+<p><strong>주요 결과(Table 1)</strong>: Qwen3-8B 기준 MemSyco-Bench에서 EvoMemState는 평균 정확도 57.6%로 최강 베이스라인 대비 12.2%p 높았고, GPT-4o-mini 기준으로는 58.9%로 5.9%p 높았다. When-to-Use/How-to-Use 정확도 최고, Sycophancy(영합) 비율 최저, Correct Use 최고를 기록했다. LoCoMo-Refined에서는 LLM-judge 점수와 토큰 F1 모두 최고 성능을 보였으며(최강 베이스라인 대비 judge 점수 6.1%p, 7.0%p 향상), MemTrapBench에서도 Safety·Task Boundary 항목에서 최고 점수를 달성했다.</p>
+<p><strong>메모리 상태 효과성(Q2, Figure 5)</strong>: EvoMemState는 완전 검색률(Complete Retrieval Rate) 85.6%로 최고 베이스라인과 비슷한 수준을 달성했으나, Acc@complete(완전 검색 시 정확도)는 LoCoMo-Refined 70.8%, MemSyco-Bench 68.5%로 최강 베이스라인 대비 각각 11.5%p, 31.2%p 높아, 완전한 증거 확보 자체보다 이를 올바르게 사용하는 능력이 성능 차이를 만든다는 것을 보였다.</p>
+<p><strong>일반화(Q3, Figure 6)</strong>: 학습된 Memory State Evolution Policy를 다른 메모리 시스템(NaiveRAG, Mem0, A-MEM, MemoryBank, MemGPT, LightMem)에 적용했을 때도 모두 0.2~4.9%p 성능이 향상되어, 정책이 특정 메모리 시스템에 종속되지 않고 전이됨을 확인했다.</p>
+<p><strong>Ablation(Q4, Table 2)</strong>: Relational State를 제거하면 MemSyco-Bench와 MemTrapBench 점수가 8.9%p, 6.4%p 하락했고, Reasoning State 생성(RL 기반 정책) 없이 규칙 생성만 유지하거나 제거하면 MemSyco-Bench 정확도와 MemTrapBench 점수가 각각 최대 15.0%p까지 하락하여, 두 상태 모두가 성능에 필수적임을 보였다.</p>
 <h2>한계점</h2>
-<p>연구는 텍스트 기반 상호작용 이력에만 초점을 맞추고 있으며, 문서·이미지 등 실제 개인 기억 시스템이 다뤄야 할 멀티모달 정보는 다루지 않는다. 멀티모달 정보를 표현·연결·활용하도록 기억 구조를 확장하는 것은 향후 과제로 남겨두었다.</p>
+<p>저자들은 본 연구가 텍스트 기반 상호작용 기록에만 초점을 맞추고 있음을 명시했다. 실제 개인 메모리 시스템은 문서, 이미지 등 멀티모달 정보도 다루어야 하며, 메모리 구조를 여러 모달리티에 걸쳐 표현·연결·적용하도록 확장하는 것은 향후 과제로 남겨두었다.</p>
 <h2>시사점</h2>
-<p>개별 사실의 정확한 저장·검색만으로는 개인화 에이전트의 신뢰할 수 있는 기억 활용을 보장할 수 없으며, 사실 간 관계(갱신·모순·제약)를 명시적으로 모델링하고 메모리 활용 경험 자체를 강화학습으로 내재화하는 것이 응답 품질 향상에 중요하다는 점을 시사한다. 이는 향후 장기 메모리 기반 개인 비서·에이전트 설계에서 검색 완전성(retrieval completeness)과 사용 적절성(use appropriateness)을 분리해 다루어야 함을 보여주는 사례로 볼 수 있다.</p>
+<p>이 논문은 장기 개인화 메모리를 설계할 때 "무엇을 저장하느냐"뿐 아니라 "저장된 사실들이 서로 어떻게 관계되고, 현재 요청에 어떻게 적용되어야 하는가"를 명시적으로 모델링하는 것이 중요하다는 점을 보여준다. 특히 선호 변경이나 상충하는 정보가 누적되는 실제 개인 에이전트 환경에서, 단순한 사실 검색-합성 파이프라인은 일관성 없는 응답(영합, 오래된 정보 사용 등)을 유발할 수 있으며, 관계형 상태 구축과 강화학습 기반의 사용 경험 내재화를 결합하는 접근이 신뢰할 수 있는 개인화 응답에 기여할 수 있음을 시사한다. 또한 학습된 추론 상태 생성 정책이 다른 메모리 백엔드에도 전이 가능하다는 결과는, 이러한 "추론 상태 생성기"를 기존 메모리 시스템에 모듈처럼 추가하는 실용적 적용 가능성을 제시한다.</p>
     <div class="back-bottom">
       <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
     </div>
@@ -108,7 +123,7 @@
 
 <footer>
   <div class="wrap">
-    <span>출처: <a href="https://huggingface.co/papers/2611.03743" target="_blank" rel="noopener">huggingface.co/papers/2611.03743</a> · 2026-11-07</span>
+    <span>출처: <a href="https://huggingface.co/papers/2611.03743" target="_blank" rel="noopener">huggingface.co/papers/2611.03743</a> · 2026-11-09</span>
     <span>my-design 시스템 적용</span>
   </div>
 </footer>

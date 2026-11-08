@@ -1,5 +1,5 @@
 <meta charset="UTF-8">
-<title>PACT</title>
+<title>프리필-투-오토리그레시브 모델간 전이의 기회와 과제</title>
 <style>
   :root{
     --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
@@ -56,13 +56,13 @@
 <header class="article-head">
   <div class="wrap">
     <div class="kicker-row">
-      <span class="rank">#11 · Daily Papers 2026-11-07</span>
-      <span class="cat-tag">모델·기법</span>
-      <span class="upvote-tag">▲ 12</span>
+      <span class="rank">#12 · Daily Papers 2026-11-09</span>
+      <span class="cat-tag">해석·분석</span>
+      <span class="upvote-tag">▲ 15</span>
     </div>
     <h1 class="article-title">On the Opportunities and Challenges of Prefill-to-Autoregressive Cross-Model Transfer</h1>
-    <p class="article-title-ko">PACT: 프리필-자기회귀 간 교차 모델 전이의 기회와 과제</p>
-    <p class="article-sub">큰 모델이 프롬프트를 미리 읽고(prefill) 그 은닉 상태를 작은 모델에 전달해 생성을 맡기는 'PACT' 방식이, 실제로는 발신자(sender)의 정보 덕분이 아니라 학습 가능한 브리지 자체의 수신자 측 적응(adaptation) 때문에 성능이 오르는 경우가 많다는 것을 밝히고, 이를 구분하는 평가 프로토콜(PACT-Check)을 제안한다.</p>
+    <p class="article-title-ko">프리필-투-오토리그레시브 모델간 전이의 기회와 과제</p>
+    <p class="article-sub">이 논문은 큰 모델이 프롬프트를 프리필(prefill)만 하고 작은 모델이 독립적으로 응답을 생성하는 "PACT(Prefill-to-Autoregressive Cross-model Transfer)" 방식을 다루며, 오픈소스 프레임워크 PLatour를 제시하는 동시에, 성능 향상이 실제로 "모델 간 정보 전달" 덕분인지 아니면 단순한 "수신 모델의 자체 적응" 때문인지를 가려내는 검증 절차 PACT-Check를 제안한다.</p>
     <div class="meta-links">
       <a href="https://huggingface.co/papers/2611.06976" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
       <a href="https://arxiv.org/abs/2611.06976" target="_blank" rel="noopener">arXiv 원문 →</a>
@@ -74,29 +74,38 @@
   <div class="wrap">
 <ul>
 <li><strong>제목</strong>: On the Opportunities and Challenges of Prefill-to-Autoregressive Cross-Model Transfer</li>
-<li><strong>저자</strong>: Zhenyi Shen, Junru Lu, Wei Liu 외 (King's College London, Tencent Youtu Lab, National Physical Laboratory)</li>
+<li><strong>저자</strong>: Zhenyi Shen, Junru Lu, Wei Liu (공동 1저자), Jiangnan Ye, Jiazheng Li, Di Yin, Xing Sun, Tameem Adel, Yali Du, Lin Gui, Yulan He. King's College London(영국), Tencent Youtu Lab(중국), National Physical Laboratory(영국) 소속</li>
 <li><strong>출처</strong>: arXiv:2611.06976v1 [cs.CL] (2026년 11월 4일)</li>
-<li><strong>프로젝트 페이지</strong>: 코드 공개 (GitHub: zhenyi4/platour)</li>
 <li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.06976">arXiv PDF 보기</a></li>
 </ul>
 <h2>한 줄 요약</h2>
-<p>큰 모델이 프롬프트를 미리 읽고(prefill) 그 은닉 상태를 작은 모델에 전달해 생성을 맡기는 'PACT' 방식이, 실제로는 발신자(sender)의 정보 덕분이 아니라 학습 가능한 브리지 자체의 수신자 측 적응(adaptation) 때문에 성능이 오르는 경우가 많다는 것을 밝히고, 이를 구분하는 평가 프로토콜(PACT-Check)을 제안한다.</p>
+<p>이 논문은 큰 모델이 프롬프트를 프리필(prefill)만 하고 작은 모델이 독립적으로 응답을 생성하는 "PACT(Prefill-to-Autoregressive Cross-model Transfer)" 방식을 다루며, 오픈소스 프레임워크 PLatour를 제시하는 동시에, 성능 향상이 실제로 "모델 간 정보 전달" 덕분인지 아니면 단순한 "수신 모델의 자체 적응" 때문인지를 가려내는 검증 절차 PACT-Check를 제안한다.</p>
 <h2>배경 및 문제의식</h2>
-<p>대형 언어모델은 성능은 좋지만 디코딩 비용이 크고, 소형 모델은 효율적이지만 복잡한 과제에서 성능이 떨어진다. PACT(Prefill-to-Autoregressive Cross-model Transfer)는 큰 '발신자(sender)' 모델이 프롬프트만 미리 처리하여 내부 표현(은닉 상태)을 만들고, 작은 '수신자(receiver)' 모델이 이를 받아 이후 생성을 전담하는 잠재 통신(latent communication) 방식이다. 기존 연구(예: Mostik)는 수신자 성능이 향상되었다는 결과만으로 '정보 전이가 일어났다'고 해석했지만, 저자들은 이 향상이 실제로 발신자의 유용한 정보 때문인지, 아니면 학습 가능한 브리지가 수신자를 그냥 미세조정한 효과인지 구분되지 않는다는 근본적 문제를 제기한다.</p>
+<p>대형 언어모델은 강력하지만 디코딩(생성) 단계에서 계산·메모리 비용이 크고, 소형 모델은 효율적이지만 복잡한 과업에서 성능이 떨어진다. PACT는 이 트레이드오프를 완화하기 위해, 입력 프롬프트 처리(프리필)는 대형 "sender(송신)" 모델이 담당하고, 이후의 자기회귀적 생성은 소형 "receiver(수신)" 모델이 송신 모델의 개입 없이 전담하는 구조다. 이는 기존의 prefill-decode 분리 서빙 인프라와도 호환된다. 선행 연구인 비공개 시스템 Mostik(2026)은 753B 파라미터 송신 모델과 4B 파라미터 수신 모델 간 성능 격차의 47%를 줄였다고 보고했지만, 코드가 공개되지 않아 재현이나 체계적 분석이 불가능했다. 또한 기존 오픈소스 PACT 방법들(C2C, KV-Lingo 등)은 생성 길이 확장, 송신-수신 모델 간 용량 차이, 하이브리드 어텐션 구조로의 확장 가능성 등에 대한 이해가 제한적이었다. 더 근본적으로, 저자들은 "성능 향상이 있었다는 사실만으로는 수신 모델이 송신 모델의 정보로부터 실제로 이득을 보았는지 알 수 없다"는 문제의식을 제기한다.</p>
 <h2>핵심 기여</h2>
-<ol>
-<li><strong>PLatour</strong>: 레이어별로 대응되는 깊이의 발신자-수신자 레이어를 영점 초기화된 선형 프로젝터로 연결하고, 강화학습(GRPO)으로 직접 브리지만 학습시키는 오픈소스 PACT 프레임워크. KV 캐시가 아닌 은닉 상태를 전달해 하이브리드 어텐션 구조에도 적용 가능.</li>
-<li><strong>PACT-Check</strong>: 더미 전이(Dummy Transfer), 무관 전이(Irrelevant Transfer), 자기 통신(Self-Communication), 학습된 수신자(Trained Receiver)의 네 가지 대조군(sanity check)을 통해 성능 향상이 '진짜 정보 전이' 때문인지 검증하는 평가 프로토콜.</li>
-<li><strong>PACT-Score</strong>: PACT 시스템의 정확도에서 가장 강한 대조군의 정확도를 뺀 지표로, 양수이면 발신자 정보의 실질적 이득이 있다는 증거로 해석.</li>
-</ol>
+<ul>
+<li><strong>PLatour(Prefill-only LATent cOmmUnication for Reasoning)</strong>: 레이어별로 상대적 깊이를 매칭한 경량의 0으로 초기화된 선형 투영(bridge)을 통해 송신 모델의 은닉 상태를 수신 모델의 잔차 스트림에 주입하는 프레임워크. 강화학습(GRPO)으로 직접 태스크 보상을 최적화하며, 정렬(alignment)이나 증류(distillation) 기반 사전 학습이 필요 없고, 하이브리드 어텐션 아키텍처와도 호환된다.</li>
+<li>PLatour는 생성 과업에서 기존 오픈소스 방법(C2C, KV-Lingo)을 일관되게 능가하고, 수학·코딩 공유 벤치마크에서는 훨씬 작은 송신 모델(35B)로 비공개 시스템 Mostik(753B)의 보고 성능을 상회한다.</li>
+<li><strong>PACT-Check</strong>: Dummy Transfer(DT), Irrelevant Transfer(IT), Self-Communication(SC), Trained Receiver(TR) 네 가지 대조 실험으로 구성된 평가 프로토콜. 통제된 실험을 통해, 일부 과업에서의 성능 향상이 실제로는 "무의미한 송신 신호", "자기 자신과의 통신", "수신 모델 단독 학습"으로도 재현될 수 있음을 보여준다.</li>
+<li><strong>PACT-Score</strong>: PACT 시스템의 성능에서 가장 강력한 대조군(control)의 성능을 뺀 값으로, 진짜 "정보 전달"에 기인한 이득이 얼마나 되는지를 정량화하는 지표.</li>
+<li>학습 가능한 bridge가 유용한 송신 정보를 활용하지 않고도 파라미터 효율적 적응(adaptation) 메커니즘으로 작동할 수 있음을 실증적으로 규명.</li>
+</ul>
 <h2>방법론</h2>
-<p>PLatour는 발신자 은닉 상태 $H_S(x)$를 학습 가능한 선형 브리지 $B_\phi$로 투영해 수신자의 잔차 스트림(residual stream)에 더하는 방식으로 주입한다(수식: $\tilde{h}^R_{\ell,t} = h^R_{\ell,t} + a_t W_\ell h^S_{m(\ell),t}$). 이는 프리필 단계에서만 일어나며, 이후 수신자는 발신자 개입 없이 독자적으로 생성한다. 발신자·수신자 모델은 모두 고정(freeze)하고 프로젝터만 GRPO 보상으로 학습한다. 레이어 대응은 상대적 깊이 비율로 매칭하며, 선형-풀 어텐션이 혼재된 하이브리드 구조에서는 어텐션 유형 제약도 추가로 적용한다. PACT-Check의 네 가지 대조군은 각각: 더미 전이(질문과 무관한 고정 신호만 주입), 무관 전이(엉뚱한 질문의 표현 주입), 자기 통신(수신자가 스스로를 발신자로 사용), 학습된 수신자(LoRA/풀파라미터로 수신자만 SFT 또는 GRPO)로 구성된다.</p>
+<p>PLatour는 수신 모델의 각 레이어 ℓ에 대해 편향이 없는 선형 투영 W_ℓ(송신 모델 은닉 차원 → 수신 모델 은닉 차원)을 두고, 송신 모델의 해당(상대적 깊이 매칭) 레이어 은닉 상태를 프롬프트 토큰 위치(마지막 토큰 제외)에서 덧셈 방식으로 수신 모델의 잔차 스트림에 주입한다(식: h̃ = h + a_t·W_ℓ·h_sender, a_t는 마지막 토큰에서만 0). 투영은 0으로 초기화되어 학습 전에는 수신 모델 단독 동작을 그대로 보존하며, 비선형 MLP 대신 단순 선형 투영을 사용해 분석 용이성과 성능을 모두 확보했다. 레이어 매칭은 송신·수신 레이어 수 비율에 따른 상대적 깊이 기반 공식으로 결정되며, 하이브리드 어텐션(선형 어텐션+완전 어텐션 혼합) 구조에서는 완전 어텐션 레이어끼리만 매칭하는 비대칭 제약을 추가한다. 통신은 프리필 단계에만 국한되며, 이후 수신 모델은 송신 모델의 개입 없이 독자적으로 디코딩을 수행한다. 학습은 송신·수신 백본을 모두 고정한 채 bridge 파라미터만 GRPO(강화학습)로 직접 태스크 보상에 대해 최적화하며, 표현 정렬이나 출력 분포 모방(distillation)은 의도적으로 배제했다(두 모델 표현을 억지로 일치시키면 둘 다 0으로 붕괴하는 자명해가 존재하는 등의 문제를 피하기 위함).</p>
+<p>PACT-Check는 학습된 bridge가 실제로 송신 정보를 활용하는지 검증하기 위해 네 가지 대조 실험을 수행한다: (1) Dummy Transfer — 질문과 무관한 고정 신호만 주입, (2) Irrelevant Transfer — 관련 없는 다른 질문의 표현을 주입, (3) Self-Communication — 수신 모델 자신을 송신 모델로 사용(이 경우 bridge는 선형 잔차 어댑터로 귀결), (4) Trained Receiver — LoRA 또는 전체 파라미터 미세조정으로 수신 모델만 단독 학습. 이 네 가지 중 가장 성능이 높은 대조군과 PACT 시스템의 정확도 차이를 PACT-Score로 정의한다.</p>
 <h2>실험 설정 및 결과</h2>
-<p>Qwen3(답변형 과제: ARC-C, MMLU-Redux, Chemistry; 생성형 과제: Chemistry, GSM8K, MATH500)와 Qwen3.5(수학: DAPO-17k 학습 후 AIME, HMMT, IMO-AnswerBench 평가; 코딩: DeepCoder-24k 학습 후 LiveCodeBench, HumanEval, MBPP 평가)에서 실험했다. PLatour는 오픈소스 기준선 C2C, KV-Lingo를 능가했고, 753B 발신자를 쓰는 비공개 Mostik보다 훨씬 작은 35B 발신자로도 수학·코딩 벤치마크에서 더 높은 점수를 기록했다(예: AIME-135 74.63% vs Mostik 70.74%). 그러나 PACT-Check를 적용하자 상황이 복잡해졌다. ARC-C, MMLU-Redux 같은 답변형 과제에서는 여전히 양의 PACT-Score를 유지해 실질적 정보 전이가 확인되었지만, GSM8K·MATH500 등 다수의 생성형 과제에서는 PACT-Score가 0에 가깝거나 음수로 나타나, 관찰된 성능 향상 대부분이 '학습된 수신자(TR)' 같은 대조군만으로도 재현 가능했다. 즉 일부 과제에서는 브리지가 실제 정보 전달 통로가 아니라 파라미터 효율적 적응(prefix tuning·adapter와 유사) 역할만 한 것으로 드러났다.</p>
+<p>Qwen3 계열(235B/8B → 1.7B)로 ARC-C, MMLU-Redux, Chemistry(SciKnowEval) 등 답변형 과업과 Chemistry, GSM8K, MATH500 등 생성형(chain-of-thought) 과업을 평가했고, Qwen3.5 계열(397B/35B → 4B, GLM-5.2 기반 Mostik과 비교)로 AIME, HMMT, IMO-AnswerBench(수학) 및 LiveCodeBench v6, HumanEval, MBPP(코딩)를 평가했다. 비교 대상은 C2C, KV-Lingo, TextComm, Mostik(보고치), 그리고 LoRA-SFT/Full-SFT/LoRA-GRPO/Full-GRPO 등 수신 모델 단독 학습, Self-Communication 등 총 12개 베이스라인이다.</p>
+<ul>
+<li>답변형 과업에서는 C2C, KV-Lingo, PLatour-SFT 모두 수신 모델 단독 성능을 크게 상회했다(예: Qwen3-235B→1.7B에서 PLatour-SFT 평균 85.68% vs. 수신 단독 55.75%).</li>
+<li>생성형 과업은 더 어려워, C2C와 KV-Lingo는 세 벤치마크 모두에서 수신 단독보다 오히려 낮았지만, PLatour(GRPO 학습)는 Chemistry/GSM8K/MATH500 모두에서 수신 단독을 일관되게 능가했다(예: Qwen3-235B→1.7B에서 평균 78.95% vs. 수신 단독 65.23%).</li>
+<li>Qwen3.5 규모 확장 실험(Table 2)에서, PLatour(35B 송신)는 AIME-80 75.63%, LiveCodeBench v6 54.29%, HumanEval 94.97%, MBPP 89.93% 등을 기록하며, 753B 규모의 비공개 Mostik 보고치(AIME-135 70.74%, LCB v6 54.14% 등)를 능가했다.</li>
+<li>추론 효율성 측면에서 PLatour는 초기 프리필 비용이 추가되지만, 디코딩이 전체 지연시간을 지배하는 긴 생성 상황에서는 수신 모델 단독과 유사한 총 추론 시간을 보였다.</li>
+<li>그러나 PACT-Check 적용 결과(Table 3, Figure 4)는 상황이 더 복잡함을 드러낸다. ARC-C, MMLU-Redux 같은 답변형 과업에서는 PLatour-SFT 등이 모든 대조군을 능가하는 양(+)의 PACT-Score를 유지했지만, 생성형 과업에서는 C2C·KV-Lingo가 전부 음(-)의 PACT-Score를 보였고, PLatour조차 Chemistry에서는 양의 점수(+3.34pp)를 유지했으나 GSM8K(+0.23pp)는 거의 0, MATH500(-4.05pp)은 음수였다. 즉 GSM8K나 MATH500에서의 큰 성능 향상은 질문별 송신 정보가 아니라 bridge의 적응 능력(또는 수신 모델 단독 학습)으로도 재현 가능했다.</li>
+</ul>
 <h2>한계점</h2>
-<p>브리지가 가진 추가 파라미터 때문에 보상 기반 학습만으로는 '전달된 정보로 인한 개선'과 '브리지 자체의 적응 능력에 의한 개선'을 구분하기 어렵다. 또한 비교 대상인 Mostik은 비공개이고 학습 데이터·범용 브리지 여부가 불명확해 완전히 통제된 비교가 아니며, PLatour를 397B 발신자로 확장했을 때는 학습 중 클리핑 급증으로 성능이 크게 저하되는 불안정성도 관찰되었다. 같은 모델 계열 내에서만 검증되었다는 점도 한계로 언급된다.</p>
+<p>저자들이 논문에서 직접 언급한 한계는 다음과 같다. Mostik과의 비교는 완전히 통제된 비교가 아니다(Mostik의 학습 데이터가 비공개이고, 범용 bridge를 쓰는지 영역별 bridge를 쓰는지도 불명확한 반면, PLatour는 영역별로 별도 bridge를 학습). 397B 송신 모델 변형은 35B 변형보다 성능이 낮았고, 학습 중 클리핑(clipping) 급증 이후 성능이 크게 저하되며 충분히 회복되지 않는 현상이 관찰되었다. 더 근본적으로, 학습 가능한 bridge는 추가 파라미터를 수신 모델에 주입하므로, 보상 기반 학습만으로는 "진짜 정보 전달"과 "bridge 자체의 학습된 표현(적응)"에 의한 이득을 구분하지 못한다는 점이 핵심 과제로 지적된다. PLatour는 GRPO 학습 특성상(생성된 응답에 의존) 생성 과업에만 적용되었고 답변형 과업에는 평가되지 않았다. 또한 같은 모델 계열(Qwen) 내에서만 실험했으며, 이질적인 모델 계열 간 일반화, 송신 모델 규모 확장 시 학습 안정성, bridge가 실제로 전달하는 정보에 대한 메커니즘적 설명 등은 미해결 과제로 남겨두었다.</p>
 <h2>시사점</h2>
-<p>벤치마크 점수 향상만으로 잠재 통신 시스템이 '정보를 정말로 전이했다'고 주장할 수 없으며, 향후 PACT류 연구는 PACT-Check와 같은 통제된 대조군 평가를 동반해야 함을 보여준다. 또한 지식 전이와 수신자 적응을 구분하는 것, 모델 계열이 다른 경우로 일반화하는 것, 대형 발신자 연산을 여러 요청에 걸쳐 캐시·재사용하는 것 등이 향후 과제로 제시된다.</p>
+<p>이 논문은 PACT류 모델간 지연시간 절감 기법을 평가할 때, 단순 벤치마크 성능 향상만으로는 "정보가 실제로 전달되었는지"를 입증할 수 없음을 보여주는 방법론적 기여가 두드러진다. PACT-Check·PACT-Score와 같은 통제된 대조 실험 프레임워크는 향후 모델간 latent communication, KV 캐시 전이, cross-model adapter 등 유사 연구 전반에 적용 가능한 평가 기준으로 쓰일 수 있다. 실용적으로는, 화학(Chemistry)처럼 수신 모델이 자체적으로 풀기 어렵고 송신 모델이 명확한 지식 우위를 가진 과업에서는 PACT가 유의미한 이득을 주지만, GSM8K처럼 수신 모델도 이미 상당히 잘 푸는 과업에서는 그 이득이 송신 정보 전달이 아니라 bridge의 자체 적응 능력에서 올 수 있다는 점을 시사한다. 이는 PACT 시스템을 설계·배포할 때 과업 선택과 평가 방식이 매우 중요하다는 실무적 함의를 제공하며, 대형-소형 모델 협업을 통한 추론 비용-성능 파레토 최적화라는 방향에서 "문제 이해(대형 모델 프리필)"와 "해답 탐색(소형 모델 생성)"을 분리하는 아이디어, 그리고 긴 공유 시스템 프롬프트에 대한 송신 표현 캐싱·재사용 등의 향후 연구 기회도 제시한다.</p>
     <div class="back-bottom">
       <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
     </div>
@@ -105,7 +114,7 @@
 
 <footer>
   <div class="wrap">
-    <span>출처: <a href="https://huggingface.co/papers/2611.06976" target="_blank" rel="noopener">huggingface.co/papers/2611.06976</a> · 2026-11-07</span>
+    <span>출처: <a href="https://huggingface.co/papers/2611.06976" target="_blank" rel="noopener">huggingface.co/papers/2611.06976</a> · 2026-11-09</span>
     <span>my-design 시스템 적용</span>
   </div>
 </footer>

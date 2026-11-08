@@ -1,5 +1,5 @@
 <meta charset="UTF-8">
-<title>테일스티어</title>
+<title>TailSteer</title>
 <style>
   :root{
     --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
@@ -56,13 +56,13 @@
 <header class="article-head">
   <div class="wrap">
     <div class="kicker-row">
-      <span class="rank">#6 · Daily Papers 2026-11-07</span>
+      <span class="rank">#7 · Daily Papers 2026-11-09</span>
       <span class="cat-tag">생성모델</span>
-      <span class="upvote-tag">▲ 35</span>
+      <span class="upvote-tag">▲ 40</span>
     </div>
     <h1 class="article-title">TailSteer: Trajectory-Tail Steering for Drift-Resistant Multi-turn Image Editing</h1>
-    <p class="article-title-ko">테일스티어: 드리프트 저항적 멀티턴 이미지 편집을 위한 궤적-끝부분 조정</p>
-    <p class="article-sub">이미지 편집 모델의 디노이징(denoising) 궤적 중 세부 디테일이 결정되는 "끝부분(tail)"만 선택적으로 보정하도록 추가 학습시켜, 기존 모델의 편집 능력은 그대로 유지하면서 여러 차례 반복 편집 시 발생하는 누적 드리프트(의도치 않은 변형)를 크게 줄이는 최종 단계 학습 프레임워크 TailSteer를 제안한다.</p>
+    <p class="article-title-ko">TailSteer: 드리프트에 강한 멀티턴 이미지 편집을 위한 궤적-테일 스티어링</p>
+    <p class="article-sub">TailSteer는 디노이징 궤적(denoising trajectory)의 마지막 구간(tail)에만 보존(preservation) 교정을 집중시키는 파인튜닝 기법으로, 모델 자신의 온폴리시(on-policy) 롤아웃에서 얻은 지도 신호만으로 기존 편집·생성 능력을 거의 그대로 유지하면서 15~20회에 걸친 멀티턴 이미지 편집에서의 누적 드리프트(cumulative drift)를 크게 줄인다.</p>
     <div class="meta-links">
       <a href="https://huggingface.co/papers/2611.06741" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
       <a href="https://arxiv.org/abs/2611.06741" target="_blank" rel="noopener">arXiv 원문 →</a>
@@ -74,30 +74,45 @@
   <div class="wrap">
 <ul>
 <li><strong>제목</strong>: TailSteer: Trajectory-Tail Steering for Drift-Resistant Multi-turn Image Editing</li>
-<li><strong>저자</strong>: Ruikang Li, Zixuan Chen, Jiarui Wu 등 (MMLab, CUHK / SenseTime Research / Shanghai Artificial Intelligence Laboratory)</li>
+<li><strong>저자</strong>: Ruikang Li, Zixuan Chen, Jiarui Wu, Mingde Yao, Yiyuan Zhang, Yujin Wang, Hanming Deng, Lewei Lu, Tianfan Xue. 소속은 MMLab(CUHK, 홍콩중문대학교), SenseTime Research, Shanghai Artificial Intelligence Laboratory(상하이 인공지능연구소)로 표기됨.</li>
 <li><strong>출처</strong>: arXiv:2611.06741v1 [cs.CV] (2026년 11월 4일)</li>
-<li><strong>프로젝트 페이지</strong>: <a href="https://lyricccco.github.io/tailsteer/">TailSteer 프로젝트 페이지</a></li>
+<li><strong>프로젝트 페이지</strong>: https://lyricccco.github.io/tailsteer/</li>
 <li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.06741">arXiv PDF 보기</a></li>
 </ul>
 <h2>한 줄 요약</h2>
-<p>이미지 편집 모델의 디노이징(denoising) 궤적 중 세부 디테일이 결정되는 "끝부분(tail)"만 선택적으로 보정하도록 추가 학습시켜, 기존 모델의 편집 능력은 그대로 유지하면서 여러 차례 반복 편집 시 발생하는 누적 드리프트(의도치 않은 변형)를 크게 줄이는 최종 단계 학습 프레임워크 TailSteer를 제안한다.</p>
+<p>TailSteer는 디노이징 궤적(denoising trajectory)의 마지막 구간(tail)에만 보존(preservation) 교정을 집중시키는 파인튜닝 기법으로, 모델 자신의 온폴리시(on-policy) 롤아웃에서 얻은 지도 신호만으로 기존 편집·생성 능력을 거의 그대로 유지하면서 15~20회에 걸친 멀티턴 이미지 편집에서의 누적 드리프트(cumulative drift)를 크게 줄인다.</p>
 <h2>배경 및 문제의식</h2>
-<p>최근 Nano Banana 2, ChatGPT Images 등 대화형 이미지 편집 시스템은 사용자가 여러 턴에 걸쳐 이미지를 점진적으로 수정하는 방식으로 쓰인다. 그러나 각 편집 결과가 다음 턴의 입력이 되면서 작은 오차가 누적되어, 텍스처가 흐려지거나 편집 대상이 아닌 객체·배경이 왜곡되는 "드리프트" 현상이 발생한다. 단일 턴 편집 성능이 뛰어나도 이런 장기적 견고성은 보장되지 않는다. 기존 해결책은 ⅰ) 마스크나 LoRA 같은 보조 모듈 추가, ⅱ) VAE 등 표현 공간 개선, ⅲ) 이전 턴의 잠재 상태를 캐싱하는 명시적 메모리 유지로 나뉘는데, 각각 편집 범위를 제한하거나 기반 모델 자체의 견고성을 근본적으로 개선하지 못하는 한계가 있다.</p>
+<p>최근 Nano Banana 2, ChatGPT Images, Reve, Muse Image 등 대화형·반복적 이미지 편집 워크플로우가 널리 쓰이면서, 사용자는 한 번에 완성된 결과를 요청하기보다 자연어 피드백으로 이미지를 여러 턴에 걸쳐 점진적으로 수정한다. 그런데 단일 턴(single-turn) 편집에 강한 모델도 편집 결과를 다시 입력으로 재사용하는 멀티턴 상황에서는 작은 오류가 턴마다 누적되어, 미세한 텍스처 손실, 비대상 객체·얼굴 디테일 변형, 배경 구조 왜곡 등 눈에 보이는 드리프트로 이어질 수 있다.</p>
+<p>기존 해결책은 크게 세 갈래로 나뉜다. (1) 마스크 기반 공간 가이던스, LoRA 어댑터, 주파수 보정 등 보조 모듈/제약을 추가하는 방식은 사전학습된 생성 prior를 일부 희생시키며 적용 가능한 편집 범위가 제한된다. (2) VAE 표현 공간을 개선하거나 픽셀 디퓨전으로 VAE를 우회하는 방식은 단일 턴 오류는 줄이지만 반복 편집에서는 여전히 성능이 저하된다. (3) 과거 잠재 상태나 시각적 컨텍스트를 캐싱하는 메모리 기반 방식, 혹은 에이전트형 추론·계획 방식은 기반 모델 자체의 강건성을 직접 개선하지 못하고 추가 추론 오버헤드를 동반한다. 저자들은 이 세 방향 모두 보조 모듈, 대안 표현, 별도 모델을 필요로 한다는 공통된 한계를 지적하며, 기반 모델 자체를 직접 개선해 멀티턴 강건성을 내재화하는 접근을 제안한다.</p>
 <h2>핵심 기여</h2>
-<ol>
-<li>디노이징 궤적에서 저주파(전체 구조)는 초반에, 고주파(세부 디테일)는 궤적 후반부(tail)에서 결정되며, 이 tail에서의 보존 오차가 여전히 교정 가능하다는 점을 실증적으로 규명.</li>
-<li><strong>TailSteer</strong>: 모델 자신의 온폴리시(on-policy) 디노이징 롤아웃으로부터 보존 지도 신호를 얻어, 초반 디노이징 역학은 그대로 보존하면서 후반부만 점진적으로 보존 지향 종점(preservation-aware endpoint)으로 유도하는 최종 단계 학습 기법 제시.</li>
-<li>누적 드리프트와 편집 완료도를 함께 측정하는 <strong>Add &amp; Preserve</strong> 평가 벤치마크 도입.</li>
-</ol>
+<ul>
+<li>디노이징 궤적에서 저주파 구조는 초반에 빠르게 자리잡고 고주파 디테일은 궤적 끝(tail) 부근에서 주로 결정된다는 관찰(coarse-to-fine 진행)에 기반하여, 궤적 tail이 멀티턴 편집 드리프트를 교정할 수 있는 핵심 개입 지점임을 제시함.</li>
+<li>TailSteer라는 최종 단계(final-stage) 학습 프레임워크를 제안. 모델 자신의 온폴리시 디노이징 롤아웃에서 보존 지도 신호를 얻어, 초반 디노이징 동역학은 base 모델과 거의 동일하게 유지하면서 tail 부분만 점진적으로 보존 지향 엔드포인트로 스티어링함.</li>
+<li>Add &amp; Preserve라는 평가 벤치마크를 새로 도입해, 누적 시각적 드리프트와 편집 완료도(지시 수행 여부)를 분리하여 측정할 수 있도록 함. 이를 통해 FLUX, SenseNova, Qwen 계열 모델 전반에서 base 모델의 역량을 거의 유지한 채 장기 편집 보존 성능을 크게 향상시켰음을 입증.</li>
+</ul>
 <h2>방법론</h2>
-<p>TailSteer는 정답 편집 쌍(ground-truth pair) 없이 두 종류의 자체 롤아웃으로 지도 신호를 구성한다: (a) 원본과 동일하게 유지되어야 하는 "아이덴티티 편집"(전체 보존), (b) 국소 영역만 변경되는 "로컬 편집"(부분 보존, 변경 영역을 이진 마스크로 추출). 이렇게 얻은 소스 이미지와 마스크로 "보존 지향 목표 종점"을 구성한다.</p>
-<p>이어서 궤적 전체에 보정을 가하는 대신, 보정 시작 시점(steering onset) $k_s$ 이전 구간(prior region)에서는 모델이 원본 기반 모델의 속도장(velocity)을 그대로 재현하도록 학습시키고, $k_s$ 이후 전이 구간(transition region)에서는 기반 모델의 속도와 보존 목표로 향하는 속도를 점진적으로 블렌딩한 목표로 학습시킨다. 중요한 점은 이 목표 속도들이 모두 정제 모델(refined model) 자신의 롤아웃 상에서 온폴리시로 재계산된다는 것으로, 이를 통해 학습-추론 간 분포 불일치를 줄인다. 추론 시에는 별도의 모델 전환이나 외부 모듈 없이, 학습된 단일 모델이 전체 샘플링을 수행한다.</p>
+<p>TailSteer는 세 단계로 구성된다.</p>
+<ol>
+<li><strong>보존 지향 궤적 엔드포인트 구성(data-free)</strong>: 사람이 직접 큐레이션한 source-target 편집 쌍 대신, (a) "변화 없음"을 요구하는 identity editing과 (b) 특정 영역만 바꾸는 local editing 두 가지 프롬프트로 frozen base 모델의 롤아웃을 생성한다. identity/locality 체크를 통과한 결과만 채택하고, local editing의 경우 원본과 결과의 차이로부터 이진 보존 마스크 M을 만들어 <code>x_tgt = M⊙x_src + (1-M)⊙x_base</code>로 보존 지향 엔드포인트를 구성한다(식 1). 즉 모델이 선택한 편집 실현(realization)은 그대로 두고, 바뀌지 않아야 할 영역만 원본으로 복원한 타깃을 만든다.</li>
+<li><strong>단일 스텝(one-step) 터미널 개입 검증</strong>: 가장 단순한 형태로, 마지막 샘플링 스텝에서만 base 모델을 이 엔드포인트로 향하도록 파인튜닝(식 2~3)해본 결과, FLUX.2 [klein] Base 9B에서 마지막 스텝에만 파인튜닝 모델을 적용했을 때 20턴까지도 드리프트가 뚜렷이 줄었다. 반면 전체 50스텝에 파인튜닝 모델을 적용하면 디테일이 뭉개지고 彩도(채도)가 떨어지는 trade-off가 나타나, 초반 동역학 보존이 필요함을 확인했다.</li>
+<li><strong>TailSteer(전체 방법)</strong>: steering onset <code>k_s</code>를 기준으로 궤적을 prior 영역(0~k_s, base 동역학 재현)과 transition 영역(k_s~τ, 점차 보존 쪽으로 전환)으로 나눈다. 캐시된 anchor 상태에서 refined 모델 자신이 롤아웃하여 도달한 상태 x_k에서, frozen base 모델의 속도 v_base와 엔드포인트 지향 속도 v_pres를 가중치 λ(k)로 블렌딩한 타깃 v*를 계산하고(식 4), 이를 MSE 손실(식 5)로 학습한다. 모든 지도 신호는 refined 모델 자신이 도달한 상태에서 온폴리시로 재계산되며, 추론 시에는 추가 모듈이나 모델 전환 없이 refined 모델 하나가 전체 샘플링을 수행한다.</li>
+</ol>
+<p>학습 데이터는 Open Images와 MONET에서 추출한 11,947장의 후보 소스 이미지에 각각 local-edit 지시 3개와 identity-edit 지시 1개를 매칭해 생성했으며, 백본별로 독립적으로 트레일젝토리를 생성·필터링했다. 8×H100 GPU, BF16, 유효 배치 16으로 2,000 업데이트 학습했다.</p>
 <h2>실험 설정 및 결과</h2>
-<p>FLUX.1 Kontext, FLUX.2 [klein] Base 9B, SenseNova-U1.5-8B-MoT, Qwen-Image-2.1 등 3개 모델 계열, 4개 백본에 대해 Open Images·MONET에서 수집한 11,947개 소스 이미지로 실험했다. Qwen-IB/GEdit/RISE/ImgEdit 등 단일 턴 벤치마크에서 TailSteer 적용 후에도 원본 모델 성능이 거의 유지되었으며, MSE-Bench·EdiVal-Bench 등 멀티턴 벤치마크와 자체 제안한 Add &amp; Preserve(20턴 반복 편집에서 PSNR/SSIM/LPIPS로 영역 밖 드리프트 측정)에서 PSNR·SSIM 상승 및 LPIPS 하락으로 드리프트가 크게 줄었음을 확인했다. 일부 설정에서는 TailSteer 적용 모델이 강력한 상용 API 모델인 GPT-Image-2.5 Sunburst보다도 더 나은 보존 성능을 보였다. 절제 실험에서는 전체 궤적에 대한 일반 SFT는 드리프트를 줄이지만 지시 따르기 능력을 크게 해친 반면, tail 구간만 학습하거나 온폴리시 학습을 빼면 보존·편집 능력 균형이 무너져, TailSteer의 핵심 설계 요소(tail 집중 + 온폴리시) 모두가 필요함을 보였다.</p>
+<p>FLUX.1 Kontext <a href="30 steps">dev</a>, FLUX.2 [klein] Base 9B(50 steps), SenseNova-U1.5-8B-MoT(50 steps), Qwen-Image-2.1(40 steps) 4개 백본에 대해 각각 3가지 steering onset을 실험했다.</p>
+<ul>
+<li><strong>단일 턴 역량 유지(Table 1)</strong>: Qwen-Image-Bench, BizGenEval(텍스트-이미지 생성)과 GEdit-Bench, RISEBench, ImgEdit-Bench(단일 턴 편집)에서 TailSteer 적용 모델은 base 모델과 거의 동등한 점수를 유지했으며, FreqEdit·ConsLoRA 같은 비교 기법은 GEdit 등에서 더 큰 성능 하락을 보였다.</li>
+<li><strong>일반 멀티턴 편집(Table 2)</strong>: MSE-Bench(5턴), EdiVal-Bench 기준으로 TailSteer는 대부분 설정에서 EdiVal content consistency를 높이고 선택된 steering onset에서 MSE-Bench 성공률을 개선했으나, instruction-following 향상은 일관적이지 않았다.</li>
+<li><strong>Add &amp; Preserve(저자 신규 벤치마크, 100장 이미지, 10턴 연속 추가/제거 편집)</strong>: 박스 바깥 영역의 PSNR/SSIM/LPIPS로 드리프트를, 박스 안 Cumulative Object Accuracy(COA)로 편집 완료도를 분리 측정한 결과, TailSteer는 COA를 base 모델 수준으로 유지하면서도 드리프트를 크게 줄였다. 특히 TailSteer-Klein은 PSNR/SSIM/LPIPS 세 지표 모두에서 GPT-Image-2.5 Sunburst(API 호출)를 능가했고, TailSteer-SenseNova도 COA를 거의 유지하면서 드리프트를 줄였다.</li>
+<li><strong>정성 비교(Fig. 6, 7)</strong>: 20턴 비교에서 training-free MTC는 디테일을 잃고 VINCIE(비디오 데이터 학습)는 심한 저하를 보인 반면, TailSteer는 커피잔·라떼아트·쿠키 등 초기에 생성된 디테일과 테이블 색을 끝까지 유지했다. 멀티 이미지 입력(스켈레톤 가이드, 다중 객체/인물 합성)에서도 compositing 능력을 유지하며 배경 드리프트를 줄였다.</li>
+<li><strong>VAE 재구성 영향</strong>: 턴 사이 반복적인 VAE 인코딩/디코딩도 색 왜곡 등 드리프트 원인이 될 수 있음을 발견했고, Klein 백본에서 latent feedback(턴 간 VAE 우회)을 TailSteer와 결합하면 10턴 PSNR이 기존 방식의 5턴 수준에 도달하는 추가 개선을 확인했다.</li>
+<li><strong>학습 전략 어블레이션(Table 3, Fig. 10)</strong>: 동일 데이터로 비교했을 때, 표준 SFT는 드리프트는 줄이지만 instruction following이 약화되고(객체 제거 실패 등), tail만 학습하거나 last-step만 학습하는 변형은 각각 편집 능력 저하 또는 전체 궤적 추론 시 더 큰 성능 저하를 보였다. 온폴리시 학습을 제거하면 보존 성능은 유지되나 공간적 추론(치즈를 삼각형으로 배열하는 등)에 실패했다. 전체 TailSteer가 보존-편집 능력 균형에서 가장 우수했다.</li>
+<li><strong>데이터 스케일/트레일젝토리 유형 어블레이션(Table 4)</strong>: 데이터가 적을 때는 local-edit 트레일젝토리가 identity-edit보다 보존 효과가 더 크지만 데이터가 커질수록 그 차이는 줄어들며, identity+local(3:1) 혼합 및 데이터 규모 확대가 전반적으로 드리프트 저항을 개선함을 확인했다(최종 설정: 38,540개 트레일젝토리).</li>
+</ul>
 <h2>한계점</h2>
-<p>저자들은 VAE를 사용하는 백본(Klein)에서 반복적인 잠재 공간 인코딩·디코딩 자체도 색상 변형 등 드리프트의 추가 원인이 될 수 있음을 지적하며, TailSteer만으로는 완전히 해결되지 않고 잠재 재사용(latent feedback) 등과 결합해야 추가 개선이 가능하다고 언급한다. 그 외 세부 한계는 논문에 명시되지 않음.</p>
+<p>본문에서 명시적으로 언급된 한계로는: (1) MSE-Bench 등 일반 멀티턴 벤치마크에서 instruction-following 성능 향상이 steering onset이나 설정에 따라 일관되게 나타나지는 않는다는 점, (2) 집계된 멀티턴 성공률만으로는 "모델이 원래 못 푸는 지시"와 "이전 턴에서 누적된 시각적 저하로 인한 실패"를 구분하기 어렵다는 점(이 때문에 Add &amp; Preserve 벤치마크를 별도로 설계함), (3) VAE 기반 편집기에서 턴 간 반복 인코딩/디코딩에서 오는 색상 변화(residual color shift)가 TailSteer 단독으로는 완전히 해결되지 않으며, latent feedback 등 추가 보완이 필요하다는 점이 제시됨. 그 외 계산 비용, 특정 편집 유형(식별 편집·로컬 편집 기반 데이터)에 한정된 학습 데이터 구성이 가질 수 있는 일반화 한계 등은 논문에 명시적으로 논의되지 않음.</p>
 <h2>시사점</h2>
-<p>이 연구는 장기 반복 편집의 견고성이 반드시 새로운 아키텍처나 외부 모듈을 통해서만 얻어지는 것이 아니라, 기반 모델이 이미 학습한 능력을 "어떻게 완성하는가"를 조정함으로써도 얻을 수 있음을 보여준다. 디노이징 궤적의 구조(저주파→고주파)에 대한 통찰을 학습 전략에 직접 반영한 점은, 향후 생성 모델의 신뢰성 개선 연구에 궤적 인식(trajectory-aware) 학습이라는 새로운 설계축을 제시한다.</p>
+<p>TailSteer는 "멀티턴 강건성을 처음부터 다시 학습할 필요 없이, 기반 모델이 각 편집을 완성하는 방식을 정교화함으로써 풀어낼 수 있다"는 관점을 제시한다. 보조 모듈이나 외부 메모리, 모델 교체 없이 디노이징 궤적의 tail만 겨냥한 최종 단계 파인튜닝으로 FLUX·SenseNova·Qwen 등 서로 다른 아키텍처/표현 방식에 걸쳐 일관되게 적용 가능하다는 점에서, 오픈 웨이트 기반 모델이 특정 장기 편집 시나리오에서 GPT-Image-2.5 Sunburst 같은 상용 모델과 경쟁하거나 능가할 수 있음을 보여준다. 또한 사람이 큐레이션한 ground-truth 편집 쌍이나 cross-turn 학습 데이터 없이 모델 자신의 롤아웃만으로 지도 신호를 구성하는 "데이터-프리(data-free)" 패러다임은, 대규모 파운데이션 모델에 멀티턴 강건성을 이식하는 데 드는 데이터 큐레이션 비용을 크게 줄일 수 있는 실용적 방향을 제시한다.</p>
     <div class="back-bottom">
       <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
     </div>
@@ -106,7 +121,7 @@
 
 <footer>
   <div class="wrap">
-    <span>출처: <a href="https://huggingface.co/papers/2611.06741" target="_blank" rel="noopener">huggingface.co/papers/2611.06741</a> · 2026-11-07</span>
+    <span>출처: <a href="https://huggingface.co/papers/2611.06741" target="_blank" rel="noopener">huggingface.co/papers/2611.06741</a> · 2026-11-09</span>
     <span>my-design 시스템 적용</span>
   </div>
 </footer>

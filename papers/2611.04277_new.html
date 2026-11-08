@@ -1,5 +1,5 @@
 <meta charset="UTF-8">
-<title>형제 하네스로부터 배우는 일반화 가능한 에이전트 훈련</title>
+<title>Harness-S</title>
 <style>
   :root{
     --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
@@ -56,13 +56,13 @@
 <header class="article-head">
   <div class="wrap">
     <div class="kicker-row">
-      <span class="rank">#2 · Daily Papers 2026-11-07</span>
+      <span class="rank">#4 · Daily Papers 2026-11-09</span>
       <span class="cat-tag">에이전트</span>
-      <span class="upvote-tag">▲ 54</span>
+      <span class="upvote-tag">▲ 66</span>
     </div>
     <h1 class="article-title">Harness-S: Learning from Sibling Harnesses for Generalizable Agent Training</h1>
-    <p class="article-title-ko">형제 하네스로부터 배우는 일반화 가능한 에이전트 훈련: Harness-S</p>
-    <p class="article-sub">LLM 에이전트의 실행 하네스(harness)를 여러 갈래로 분화시켜 만든 "형제 하네스(sibling harness)" 집합을 활용해, 원래 하네스만 사용해도 더 뛰어난 성능을 내는 단일 정책을 학습시키는 프레임워크 Harness-S를 제안한다.</p>
+    <p class="article-title-ko">Harness-S: 형제 하네스로부터 배우는 범용 에이전트 학습</p>
+    <p class="article-sub">에이전트 실행 환경(하네스)을 다양한 방향으로 분화시켜 만든 "형제 하네스 풀"을 활용해, 기본 하네스에서 모두 실패한 과제만 선택적으로 구제(rescue) 학습함으로써, 보조 하네스 없이도 원래의 기본 하네스에서 성능이 지속되는 단일 정책을 학습시키는 방법인 Harness-S를 제안한다.</p>
     <div class="meta-links">
       <a href="https://huggingface.co/papers/2611.04277" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
       <a href="https://arxiv.org/abs/2611.04277" target="_blank" rel="noopener">arXiv 원문 →</a>
@@ -74,30 +74,53 @@
   <div class="wrap">
 <ul>
 <li><strong>제목</strong>: Harness-S: Learning from Sibling Harnesses for Generalizable Agent Training</li>
-<li><strong>저자</strong>: Kangning Zhang, Wenxiang Jiao, Bowen Fang, Shuai Shao, Jiachen Zhu, Rong Shan, Shijian Wang, Hao Wang, Yuan Lu, Weiwen Liu, Weinan Zhang (Shanghai Jiao Tong University, Xiaohongshu Inc., Zhongguancun Institute of Artificial Intelligence, Southeast University, Carnegie Mellon University)</li>
+<li><strong>저자</strong>: Kangning Zhang, Wenxiang Jiao, Bowen Fang, Shuai Shao, Jiachen Zhu, Rong Shan, Shijian Wang, Hao Wang, Yuan Lu, Weiwen Liu, Weinan Zhang. 소속은 Shanghai Jiao Tong University, Xiaohongshu Inc., Zhongguancun Institute of Artificial Intelligence, Southeast University, Carnegie Mellon University이며, Wenxiang Jiao, Yuan Lu, Weiwen Liu, Weinan Zhang가 교신저자(Corresponding authors)로 표시되어 있음.</li>
 <li><strong>출처</strong>: arXiv:2611.04277v1 [cs.AI] (2026년 11월 3일)</li>
-<li><strong>프로젝트 페이지</strong>: 코드 저장소 — https://github.com/DeepExperience/Harness-S</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/DeepExperience/Harness-S">GitHub 코드 저장소</a></li>
 <li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.04277">arXiv PDF 보기</a></li>
 </ul>
 <h2>한 줄 요약</h2>
-<p>LLM 에이전트의 실행 하네스(harness)를 여러 갈래로 분화시켜 만든 "형제 하네스(sibling harness)" 집합을 활용해, 원래 하네스만 사용해도 더 뛰어난 성능을 내는 단일 정책을 학습시키는 프레임워크 Harness-S를 제안한다.</p>
+<p>에이전트 실행 환경(하네스)을 다양한 방향으로 분화시켜 만든 "형제 하네스 풀"을 활용해, 기본 하네스에서 모두 실패한 과제만 선택적으로 구제(rescue) 학습함으로써, 보조 하네스 없이도 원래의 기본 하네스에서 성능이 지속되는 단일 정책을 학습시키는 방법인 Harness-S를 제안한다.</p>
 <h2>배경 및 문제의식</h2>
-<p>에이전트의 행동은 모델 정책뿐 아니라 프롬프트, 도구 인터페이스, 컨텍스트·메모리 관리 규칙 등을 포괄하는 "하네스"에 의해서도 크게 좌우된다. 저자들은 공통의 기본 하네스 H0에서 파생된 변형들을 관찰하여 세 가지 특성을 발견했다: (1) <strong>지역성(Locality)</strong> — 하네스 수정은 일부 실패만 고치고 다른 과제에서는 퇴보를 유발하는 경우가 많음, (2) <strong>상호 보완성(Complementarity)</strong> — 서로 다른 형제 하네스들은 서로의 오류를 보완할 수 있음, (3) <strong>비정상성(Nonstationarity)</strong> — 정책이 학습됨에 따라 특정 하네스의 유용성과 우열 순위가 뒤바뀔 수 있음. 이 때문에 모든 경우에 보편적으로 우수한 단일 하네스를 만들기 어렵고, 정책과 하네스를 번갈아 공진화시키는 기존 방식은 비용이 크고 재사용이 어렵다는 문제가 있다.</p>
+<p>언어모델 에이전트의 행동은 모델 정책(policy)뿐 아니라 프롬프트, 도구 인터페이스, 컨텍스트/메모리 관리, 실행 규칙 등을 포괄하는 "하네스(harness)"에 의해서도 크게 좌우된다. 최근 연구들(Meta-Harness, HarnessX, Life-Harness 등)은 하나의 기본 하네스 H0로부터 파생된 변형("형제 하네스", sibling harness)들을 자동으로 진화시켜 실행 지원을 개선하려 시도한다.</p>
+<p>저자들은 하나의 실행 시스템 내에서 하네스를 진화시킬 때 다음 세 가지 특성이 나타남을 관찰한다.
+- <strong>지역성(Locality)</strong>: 하네스 수정은 특정 실패 유형을 고치지만 기존에 풀던 과제에서 퇴행(regression)을 유발하는 경우가 많아, 변형들이 서로 다른 강점을 갖게 된다.
+- <strong>상호보완성(Complementarity)</strong>: 형제 하네스들은 서로의 오류를 복구할 수 있어, 여러 변형의 성공 사례를 합친 "오라클 합집합(oracle union)"이 단일 변형이나 기본 하네스에서의 반복 샘플링보다 더 많은 과제를 해결한다.
+- <strong>비정상성(Nonstationarity)</strong>: 하네스의 유용성은 정책이 학습을 거치면서 변화하며, 특정 변형이 기본 하네스보다 우월했던 것이 학습 후 오히려 불리해지거나 변형들 간의 순위가 뒤바뀔 수 있다.</p>
+<p>이 세 가지 특성 때문에 (i) 여러 지역적 수정을 하나의 "만능 하네스"로 통합하기가 매우 어렵고(수정들이 서로 상충하거나 간섭함), (ii) 하네스와 정책을 번갈아 갱신하는 방식은 비용이 크고 재사용이 어려우며, 진화된 하네스-정책 조합에서 얻은 이득이 정책이 기본 하네스로 되돌아갔을 때 사라지는 문제가 있다. 이에 저자들은 보편적으로 우월한 단일 하네스를 추구하는 대신, 형제 하네스를 활용해 기본 실행 시스템의 실패만 선택적으로 구제하고 그 결과로 얻은 능력을 원래 하네스에서도 유지되는 단일 정책으로 전이시키는 Harness-S를 제안한다.</p>
 <h2>핵심 기여</h2>
 <ul>
-<li>하네스 진화에서 지역성, 상호 보완성, 비정상성을 체계적으로 규명하고, 이를 활용해 형제 하네스들의 보완적 능력을 원래 하네스 H0 아래에서도 유지되는 단일 정책으로 전이시키는 Harness-S를 제안.</li>
-<li><strong>방향성 하네스 진화(Directional Harness Evolution)</strong>: 서로 다른 수리 방향으로 가지치기하며 보완적 변형들을 재사용 가능한 "형제 하네스 풀(Sibling Harness Pool)"에 보존하는 파이프라인.</li>
-<li><strong>보완적 하네스 구조 훈련(Complementary Harness Rescue Training)</strong>: H0에서 모든 초기 시도가 실패한 과제에 한해 학습 신호를 복구.</li>
-<li><strong>적응형 하네스 라우터(Adaptive Harness Router)</strong>: 보완적인 형제 하네스를 선택해 성공한 대안적 경로와 과제 내 보상 대비를 회수.</li>
+<li>하네스 진화에서 지역성, 상호보완성, 비정상성이라는 세 가지 성질을 체계적으로 규명하고, 이를 해결하기 위해 Harness-S를 제안함.</li>
+<li><strong>Directional Harness Evolution(방향성 하네스 진화)</strong>: 서로 다른 수정 방향(repair direction)을 따라 분기하며, 유효한 변형들을 모두 보존하는 재사용 가능한 "형제 하네스 풀(Sibling Harness Pool)"을 구축함. 이 풀은 정책 학습 중 고정된다.</li>
+<li><strong>Complementary Harness Rescue Training(상호보완적 하네스 구제 학습)</strong>: 기본 하네스 H0에서 초기 시도가 모두 실패한 과제에 대해서만 형제 하네스 풀을 호출하여 재시도를 수행하고, 이를 강화학습(GRPO) 신호로 활용함.</li>
+<li><strong>Adaptive Harness Router(적응형 하네스 라우터)</strong>: Harness Behavior Profile과 다중 LLM의 투표(voting)를 이용해 과제별로 Top-k 보조 하네스를 선택하며, 정책이 학습됨에 따라 프로파일을 주기적으로 재조정(policy-aware profile re-anchoring)함.</li>
+<li>AppWorld, SWE-Gym, DBBench 세 벤치마크에서 Harness-S가 정책 단독 학습 대비 기본 하네스 H0 복귀 시에도 성능을 크게 능가함을 보이고, 행동 분석과 held-out 사례를 통해 하네스에서 유도된 행동이 정책 자체로 전이됨을 입증함.</li>
 </ul>
 <h2>방법론</h2>
-<p>먼저 기본 하네스 H0에서 출발해, 훈련 과제에서의 실패를 진단하고 관련 근본 원인별로 자식 하네스를 파생시키는 방향성 진화를 수행한다(수식 2). 각 라운드에서는 검증 과제 커버리지를 공동 최대화하는 부모 집합을 선택하며(수식 3), 유효한 모든 자식 하네스는 고정된 "형제 하네스 풀"에 누적 보존된다. 정책 훈련 중에는 이 풀을 활용한 "보완적 구조 훈련"이 이루어지는데, 과제별로 H0 아래에서 K개의 롤아웃을 생성해 모두 실패하면(수식 5), 적응형 라우터가 선택한 보조 하네스들 아래에서 신선한 롤아웃을 추가로 생성하여 학습 그룹을 구성하고 GRPO(수식 6, 7)로 공유 정책을 업데이트한다. 라우터는 "하네스 행동 프로파일"(수식 8)과 다중 LLM의 독립적인 투표(수식 9, 10)를 결합해 과제별 적합한 형제 하네스를 선정하며, 정책이 학습됨에 따라 주기적으로 프로파일을 재보정(policy-aware profile re-anchoring)한다. 최종적으로는 풀 전체(H0 포함)에서 Rank-1 하네스를 선택하는 라우팅으로 추가적인 추론 시 이득도 얻을 수 있다(수식 12).</p>
+<p>논문은 정책 πθ와 하네스 H가 함께 과제 x에 대한 궤적(trajectory)과 성공 여부 Rx(τ)를 결정한다고 정의하고, 특정 정책·과제에 대한 하네스의 유용성을 기대 성공률로 정의한다. 형제 하네스 풀 H = {H0, H1, ..., HM}은 공통의 실행 기반, 환경 인터페이스, 과제 검증기(verifier)를 공유하는 변형들로 구성된다.</p>
+<ol>
+<li><strong>방향성 하네스 진화</strong>: H0에서 시작하여 실행 궤적의 실패를 진단하고, 관련된 근본 원인들을 그룹화한 "수정 방향(repair direction)"마다 자식 하네스를 생성한다. 각 세대에서 검증 과제 커버리지를 최대화하는 조합을 다음 세대의 부모로 선택하되, 실행 가능하고 프로토콜을 준수하는 모든 자식 하네스는 풀에 보존된다. 이 과정을 T세대 반복하여 고정된 하네스 풀을 만든다.</li>
+<li><strong>상호보완적 하네스 구제 학습</strong>: 각 과제에 대해 정책이 H0 하에서 K개 롤아웃을 생성하고, 모두 실패하면 라우터가 선택한 Top-k 형제 하네스에서 각각 한 번씩 새로운 롤아웃을 생성한다. 이 "구제 그룹"이 원래의 실패 그룹을 대체하여 GRPO(Group Relative Policy Optimization)의 학습 신호로 사용된다. 성공과 실패가 함께 존재하는 그룹은 보상 대비(reward contrast)를 제공해 학습에 유효한 신호가 된다.</li>
+<li><strong>적응형 하네스 라우터</strong>: "Harness Behavior Profile"은 각 형제 하네스가 현재 정책 대비 어떤 조건에서 유리하거나 불리한지를 LLM이 검증 궤적 비교를 통해 요약한 것이다. 여러 LLM 투표자(voter)가 과제, 프로파일, 검증 성공률 등을 종합해 하네스 순위를 매기고 Top-k를 선정한다. 체크포인트마다 현재 정책으로 검증 궤적을 다시 수집해 프로파일을 재조정(re-anchoring)함으로써 비정상성 문제에 대응한다.</li>
+<li><strong>지식 전이 및 Rank-1 추론</strong>: 학습이 끝난 정책은 구제 학습을 통해 형제 하네스에서 얻은 행동을 내재화한 것으로 간주되며, 추가로 라우터를 재사용하여 과제별로 가장 적합한 하네스(Rank-1)를 추론 시점에 선택하면 동일한 실행 횟수로도 추가적인 성능 향상을 얻을 수 있다.</li>
+</ol>
 <h2>실험 설정 및 결과</h2>
-<p>Qwen3.5-4B와 Qwen3.5-9B를 AppWorld, SWE-Gym, DBBench 세 가지 장기 과제 벤치마크에서 평가했다. Harness-S는 정책만 학습하는 GRPO, H0 구조 훈련(H0 rescue), 고정 하네스 혼합, Meta-Harness, WHALE·HarnessForge 같은 정책-하네스 공진화 기법 등 다양한 비교군을 모두 능가했다. 예컨대 AppWorld에서 Harness-S(4B, H0)는 Pass@3 67.56%를 기록해 GRPO(60.31%)와 H0 rescue(61.83%)를 크게 앞섰으며, Rank-1 라우팅을 적용하면 68.32%까지 상승한다. 9B 모델의 Harness-S는 DBBench에서 프런티어 모델(GPT-6-Sol, DeepSeek-v4-Flash, GLM-5.3-Flash) 수준을 능가하기도 했다. 행동 분석 결과 Harness-S로 학습된 정책은 API 호출 전 스키마 조회, 쓰기 후 재확인(read-back), 테스트 차단 시 어서션 검사로 전환하는 등 더 신중한 행동 패턴을 보였고, 훈련 중 습득한 행동(예: 집합 교집합 활용, 계정 복구 절차)이 훈련에 쓰이지 않은 새로운 과제에도 전이됨을 사례 연구로 확인했다. 또한 DSH, Claude Code, OpenClaw 등 외부 하네스로 교체해도 성능 우위가 유지되는 교차 하네스 일반화도 관찰되었다.</p>
+<p>Qwen3.5-4B와 Qwen3.5-9B 모델을 AppWorld, SWE-Gym, DBBench 세 벤치마크에서 평가했으며(8×NVIDIA H800 GPU 사용), Pass@3(3회 중 최소 1회 성공 비율)와 Avg@3(3회 평균 성공률)를 지표로 사용했다.</p>
+<ul>
+<li><strong>전체 성능(RQ1, Table 1)</strong>: Harness-S는 H0 평가에서도 정책 단독 학습(GRPO), 고정 정책 하네스 최적화(Meta-Harness), 하네스-정책 공동진화(WHALE, HarnessForge) 등 모든 비교 대상을 능가했다. 예를 들어 AppWorld에서 4B 모델 기준 GRPO의 H0 Pass@3 60.31%/Avg@3 48.98% 대비, Harness-S는 H0에서 67.56±1.87%/56.87±1.47%, Rank-1 라우팅 시 68.32±1.74%/61.45±1.35%를 기록했다. 9B 모델의 라우팅된 Harness-S는 DBBench에서 프런티어 모델(GPT-6-Sol, DeepSeek-v4-Flash, GLM-5.3-Flash) 참조치를 능가하기도 했다.</li>
+<li><strong>학습 메커니즘(RQ2, Figure 3)</strong>: Harness-S는 전체 학습 과정에서 Effective Group(성공·실패가 공존하는 그룹) 비율이 79.38%로 H0 구제(70.94%)나 표준 GRPO(64.69%), 고정 혼합 하네스 방식보다 높았으며, 유효 학습 토큰 비율도 80.88%로 가장 높았다. 그 결과 H0 검증 성공률도 63.33%로 H0 구제(54.00%), GRPO(48.00%)보다 높게 끝났다.</li>
+<li><strong>구제 전략 비교(RQ3, Table 2)</strong>: 무작위 선택, 규칙 기반 라우터, LLM 라우터(4×2), Top-8 고정 프로파일, Top-8 적응형(Harness-S) 등을 비교했을 때, 과제별 적응형 선택과 프로파일 재조정이 구제 성공률과 최종 성능을 모두 가장 크게 끌어올렸다(Avg@3 기준 고정 프로파일 대비 4.71%p 향상).</li>
+<li><strong>행동 분석(RQ4, Table 3·4)</strong>: Harness-S 정책은 AppWorld에서 API 스키마를 먼저 조회하는 비율이 67.6%(기본 42.62%, GRPO 38.2%)로 늘고 불필요한 반복 실행은 줄었으며, SWE-Gym에서는 테스트가 막혔을 때 assertion으로 전환하는 비율이 48.5%(GRPO 13.3%)로 크게 증가했다. 구체적 사례(집합 교집합 적용, Venmo→Amazon 계정 복구 절차 전이)를 통해 구제 학습 중 습득한 행동이 학습되지 않은 held-out 인스턴스에서도 재현됨을 보였다.</li>
+<li><strong>라우터 효과(RQ5, Table 5)</strong>: 학습 전에는 H0가 라우터 Rank-1로 선택되는 비율이 1.53%에 불과했으나 학습 후 22.52%로 증가했고, Rank-1과 H0 간 성능 격차도 Pass@3 기준 14.21%p에서 0.76%p로 크게 줄어 보조 하네스에 대한 의존도가 감소했음을 보였다.</li>
+<li><strong>교차 하네스 일반화(RQ6, Figure 4)</strong>: 추가 학습 없이 DeepSeek Harness(DSH) H0에서 학습한 정책을 Claude Code, OpenClaw 등 외부 하네스에서 평가해도 Harness-S가 가장 높은 Pass@3을 유지했으나(최대 +14.37%p), 두 외부 하네스 모두에서 DSH H0 대비 절대 성능은 더 낮게 나타났다.</li>
+</ul>
 <h2>한계점</h2>
-<p>논문에 명시된 별도의 "한계점" 절은 없으며, 결론에서 향후 연구 방향으로 언급된 내용을 통해 유추할 수 있다: 전이 효과의 지속성과 풀 재사용의 효율성에 대한 추가 연구가 필요하고, 독립적으로 개발된 하네스 간 과제 상태 교환 방식은 아직 다루지 않았으며, 수리 다양성이 정책 성능과 보정 비용에 미치는 영향(하네스 스케일링)도 추후 과제로 남아 있다. 또한 방법 자체가 LLM 기반 투표와 프로파일링에 의존하므로 외부 LLM 호출 비용이 수반된다.</p>
+<p>논문에 별도의 "한계점" 절은 없으나, 본문에서 다음과 같은 제약이 논의됨.
+- 외부(미학습) 하네스로 전이했을 때 Pass@3 우위는 유지되지만, 원래 학습에 사용된 DeepSeek Harness(DSH) H0 대비 절대 성능은 여전히 더 낮아, 실행 인터페이스에 대한 민감성이 완전히 제거되지는 않음.
+- Harness-S의 전체 파이프라인(방향성 하네스 진화 + 구제 학습 + 라우터 운용)은 GPU 시간과 외부 LLM 토큰 사용이 수반되며, 이는 공동진화 베이스라인과 비슷한 범위이지만 추가적인 오프라인 진화·검증 비용이 필요함(Appendix G 참조로 명시).
+- 저자들은 "미래 연구 방향"으로 정책 간 하네스 풀의 효율적 재사용, 독립적으로 개발된 하네스 간 과제 상태 교환 방법, 그리고 수정 다양성(repair diversity) 확장이 정책 이득과 보정 비용에 미치는 영향("Harness Scaling")에 대한 추가 연구가 필요함을 명시하고 있어, 이 부분이 현재 연구에서 다루지 못한 한계로 볼 수 있음.</p>
 <h2>시사점</h2>
-<p>이 연구는 에이전트 성능 향상을 위해 반드시 하나의 "최고 하네스"를 찾을 필요가 없으며, 서로 다른 실패를 보완하는 여러 하네스의 경험을 단일 정책에 압축적으로 전이시키는 것이 더 효율적일 수 있음을 보여준다. 이는 실무에서 에이전트 시스템을 프롬프트·툴 인터페이스 수정만으로 반복 개선하는 대신, 그러한 수정 경험을 정책 학습 신호로 체계적으로 환원하는 새로운 설계 패턴을 제시한다.</p>
+<p>Harness-S는 "더 나은 단일 하네스를 설계한다"는 기존 접근 대신, 서로 다른 실패를 복구하는 다수의 특화된 하네스를 유지하면서 그 효과를 선택적으로, 그리고 실패한 과제에 한정해 정책에 주입한다는 점에서 하네스 최적화와 에이전트 강화학습을 결합하는 새로운 패러다임을 제시한다. 특히 구제 학습이 끝난 뒤 보조 하네스 없이도(즉 원래의 기본 실행 환경에서도) 성능 향상이 유지된다는 결과는, 실행 스캐폴딩의 개선 효과가 정책 파라미터 자체에 내재화될 수 있음을 보여주며, 이는 비용이 큰 특수 목적 하네스를 매 배포 시점마다 유지할 필요 없이 범용 에이전트 정책의 일반화 능력을 높이는 방법으로 응용될 수 있다. 또한 정책 학습이 진행됨에 따라 하네스의 유용성이 변하는 비정상성 문제를 라우터 프로파일 재조정으로 다루는 방식은, 하네스-정책 공동 적응이 필요한 다른 에이전트 학습 시스템에도 일반적으로 적용 가능한 설계 원칙을 제시한다.</p>
     <div class="back-bottom">
       <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
     </div>
@@ -106,7 +129,7 @@
 
 <footer>
   <div class="wrap">
-    <span>출처: <a href="https://huggingface.co/papers/2611.04277" target="_blank" rel="noopener">huggingface.co/papers/2611.04277</a> · 2026-11-07</span>
+    <span>출처: <a href="https://huggingface.co/papers/2611.04277" target="_blank" rel="noopener">huggingface.co/papers/2611.04277</a> · 2026-11-09</span>
     <span>my-design 시스템 적용</span>
   </div>
 </footer>

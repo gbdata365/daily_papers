@@ -1,0 +1,107 @@
+<meta charset="UTF-8">
+<title>PCB라우트에이전트</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#4 · Daily Papers 2026-11-10</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 23</span>
+    </div>
+    <h1 class="article-title">PCBRouteAgent: How Close Are LLM Agents to Becoming PCB Routing Engineers?</h1>
+    <p class="article-title-ko">PCB라우트에이전트: LLM 에이전트는 PCB 라우팅 엔지니어에 얼마나 근접했는가?</p>
+    <p class="article-sub">PCB(인쇄회로기판) 배선(routing)을 보드 수준의 전략 수립과 세부 실행으로 분리해, LLM 에이전트가 KiCad의 네이티브 배선 엔진을 활용해 복잡한 실제 보드에서도 규칙 위반 없이 배선을 완성하도록 하는 멀티모달 에이전트 PCBRouteAgent를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.08175" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.08175" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: PCBRouteAgent: How Close Are LLM Agents to Becoming PCB Routing Engineers?</li>
+<li><strong>저자</strong>: Yue Zhang, Jilei Sun, Liqiang Jing, Yijie Wei, Ruohan Yang (텍사스대학교 댈러스, 텍사스 인스트루먼츠, 아이오와주립대학교)</li>
+<li><strong>출처</strong>: arXiv:2611.08175v1 [cs.AI] (2026년 11월 5일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://chip-ai-agent.github.io/research/pcbrouteagent">https://chip-ai-agent.github.io/research/pcbrouteagent</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.08175">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>PCB(인쇄회로기판) 배선(routing)을 보드 수준의 전략 수립과 세부 실행으로 분리해, LLM 에이전트가 KiCad의 네이티브 배선 엔진을 활용해 복잡한 실제 보드에서도 규칙 위반 없이 배선을 완성하도록 하는 멀티모달 에이전트 PCBRouteAgent를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>PCB 배선은 부품 배치가 끝난 보드에서 각 전기적 넷(net)의 패드들을 구리 배선과 비아로 연결하는 작업으로, 설계 규칙(간격, 선폭, 비아 등)을 만족시키면서 배선 길이와 레이어 전환을 최소화해야 하는 결합된 물리적 설계 문제다. 기존 규칙 기반 자동 배선기나 강화학습 기반 방법들은 배선 결정 방식과 실행 연결 방식에 한계가 있고, PCBWorld와 같은 최근 환경에서 평가된 LLM 에이전트들도 복잡한 실제 보드에서는 여전히 규칙 기반 라우터에 비해 완성도가 떨어진다. 저자들은 에이전트가 어떤 연결을 우선할지, 제한된 배선 공간을 어떻게 넷들 간에 배분할지, 언제 레이어 전환이 필요한지 등 보드 수준의 조율 능력이 부족하다는 점을 핵심 문제로 지목한다.</p>
+<h2>핵심 기여</h2>
+<p>인간 배선 엔지니어가 전역 전략과 지역 실행을 함께 고려하는 방식을 모사하여, (1) 보드 이미지와 구조화된 전기·기하 정보를 결합해 연결 위상·배선 순서·공간/레이어 가이드를 생성하는 Global Routing Planner와, (2) KiCad의 네이티브 배선 엔진을 통해 실제 배선과 비아를 생성하고 국소적 복구를 수행하는 Detailed Routing Executor를 통합한 피드백 기반 계획-실행 루프를 제안한다. 실행 실패 시 구조화된 피드백을 계획자에게 전달해 기존에 완성된 배선은 보존하면서 가이드만 선택적으로 수정하는 점이 특징이다.</p>
+<h2>방법론</h2>
+<p>Global Routing Planner는 보드 이미지(전체 레이아웃, 전/후면 구리층, 미연결 수요)와 구조화된 텍스트(패드 좌표, 넷 할당, 연결 클러스터, 설계 규칙)를 함께 입력받는다. 각 넷에 대해 최소 신장 트리(MST)로 연결 위상을 구성하고, 넷별 예상 배선 길이를 기준으로 배선 순서를 초기화하며, 각 연결 엣지에 대해 사각형 모양의 배선 코리더와 레이어 전환이 필요한 경우 비아 전환 영역을 지정한다. Detailed Routing Executor는 이 가이드를 바탕으로 KiCad의 push-and-shove(PNS) 라우터를 호출해 실제 배선 경로를 단계적으로 완성하며, 장애물에 막히면 walkaround·shove·A* 탐색·앵커 전환 등 제한된 국소 복구를 시도한다. 복구가 실패하면 실패 경위, 마지막 도달 위치, 장애물 정보 등을 담은 구조화된 피드백을 Global Routing Planner에 전달해 가이드를 재계획(replanning)하도록 하며, 이 계획-실행 루프는 모든 목표 연결이 완료되거나 예산이 소진될 때까지 반복된다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>PCBWorld-Bench의 247개 합성·실제 보드(D2, D3-A, D3-B, D3-C 네 분할)에서 Claude Opus 5.5 및 Haiku 5.5를 백본으로 평가했다. 완전 합성 보드인 D2에서는 Clean-Pass(규칙 위반 없이 전체 연결 완료) 비율 100%를 달성했고, 실제 보드 D3-A, D3-B, D3-C에서는 각각 94.9%, 100%, 40%를 기록하며 가장 강력한 평가 기준선인 Freerouting(75%, 64%, 30%) 대비 각각 19.9, 36, 10퍼센트포인트 향상되었다. 또한 D3-C에서 평균 설계 규칙 위반 건수를 Freerouting의 32.0건에서 6.3건으로 줄였다. 동일한 Haiku 5.5 백본으로 비교했을 때도 PCBRouteAgent는 PCBWorld 대화형 에이전트 대비 모델 호출 수를 약 131배, 토큰 사용량을 8.8배, API 비용을 4.3배, 누적 실행 시간을 14배 줄이면서도 모든 분할에서 더 높은 완성률을 보였다.</p>
+<h2>한계점</h2>
+<p>대형 보드(D3-C, 패드 수 100개 초과)에서는 평균 연결 완료율(라우터빌리티)이 94.9%로 높음에도 불구하고 10개 보드 중 6개가 완전히 끝까지 완성되지 못해 Clean-Pass 비율이 40%에 그쳤다. 즉 대부분의 목표를 연결하는 것과 보드 전체를 끝까지 완성하는 것 사이에 여전히 간극이 존재한다. 또한 완성도가 높아질수록 배선 길이가 다소 늘어나는 경향(D3-B에서 Freerouting 대비 10.9% 더 긴 배선)이 있어, 배선의 물리적 효율성(길이, 비아 수)을 더 개선할 여지가 남아 있다.</p>
+<h2>시사점</h2>
+<p>PCB 배선처럼 전역적 계획과 세밀한 물리적 실행이 긴밀하게 얽힌 공학 문제에서, LLM 에이전트를 계획자(Planner)와 실행자(Executor)로 역할 분리하고 실행 피드백을 통한 선택적 재계획 메커니즘을 결합하는 접근이 효과적일 수 있음을 보여준다. 이는 PCB 설계 자동화뿐 아니라 유사한 구조(전역 전략 수립 + 도구 기반 국소 실행 + 실패 피드백 반영)를 갖는 다른 물리적/공학적 에이전트 과제에도 적용 가능한 설계 패턴을 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.08175" target="_blank" rel="noopener">huggingface.co/papers/2611.08175</a> · 2026-11-10</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

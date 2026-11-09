@@ -1,0 +1,107 @@
+<meta charset="UTF-8">
+<title>LLM은 자신이 아는 것을 모른다</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#7 · Daily Papers 2026-11-10</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 21</span>
+    </div>
+    <h1 class="article-title">LLMs Don't Know What They Know: Benchmarking Temporal Self-Knowledge for Financial Backtesting</h1>
+    <p class="article-title-ko">LLM은 자신이 아는 것을 모른다: 금융 백테스팅을 위한 시간적 자기인식 벤치마킹</p>
+    <p class="article-sub">LLM의 금융 백테스트가 신뢰할 수 있는지 검증하기 위해, 모델이 실제로 "아는 것"과 스스로 "안다고 주장하는 것" 사이의 괴리를 측정하는 벤치마크 FinDendro를 제안하고, 기존 안전장치(공급사 공개 cutoff, 자기 보고, 과거 시점 지정 지시)가 모두 정보 유출을 막지 못함을 보인다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.06808" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.06808" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: LLMs Don't Know What They Know: Benchmarking Temporal Self-Knowledge for Financial Backtesting</li>
+<li><strong>저자</strong>: Lingfei Qian, Yan Wang 등 (The Fin AI, University of Manchester, Mohamed bin Zayed University of Artificial Intelligence, Deepkin AI, University of Florida, University of Montreal 공동 연구진)</li>
+<li><strong>출처</strong>: arXiv:2611.06808v1 [cs.CL] (2026년 10월 30일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음 (벤치마크 전체 공개 예정이라고만 언급)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.06808">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>LLM의 금융 백테스트가 신뢰할 수 있는지 검증하기 위해, 모델이 실제로 "아는 것"과 스스로 "안다고 주장하는 것" 사이의 괴리를 측정하는 벤치마크 FinDendro를 제안하고, 기존 안전장치(공급사 공개 cutoff, 자기 보고, 과거 시점 지정 지시)가 모두 정보 유출을 막지 못함을 보인다.</p>
+<h2>배경 및 문제의식</h2>
+<p>LLM을 활용한 금융 백테스트는 모델이 평가 대상 시점의 결과를 이미 학습 데이터로 알고 있을 경우 결과가 부풀려지는 "hindsight leakage" 문제가 있다. 실무에서는 이를 막기 위해 ① 공급사가 공개한 학습 cutoff 신뢰, ② 모델에게 직접 아는지 묻기, ③ 과거 특정 시점 기준으로 답하라고 지시하기 등의 안전장치를 사용하지만, 저자들은 이 세 가지 안전장치 자체가 신뢰할 수 있는지는 거의 검증된 적이 없다고 지적한다.</p>
+<h2>핵심 기여</h2>
+<p>1999~2026년의 미국 거시경제 지표, 50개 대기업 월말 주가, 연준 금리 결정 등 2,226개의 날짜가 명시된 사실로 구성된 벤치마크 FinDendro를 제안했다. 각 사실마다 '가치 질문(Task 1)', '가치+지식주장 질문(Task 2, Recall/Predict)', '과거 시점 지정 예측 질문(Task 3)'의 3가지 과제, 총 4개의 프롬프트를 구성해, 모델의 실제 지식 수준(Knows)과 자기 보고 지식 수준(Says)을 같은 사실들에 대해 직접 비교할 수 있게 설계했다.</p>
+<h2>방법론</h2>
+<p>지속성 전략(이전 값을 그대로 답하면 맞는 경우)과 다수 클래스 편향(연준 결정의 78%가 '동결')을 통제하여 우연 정답률을 약 0.27로 맞췄다. 모델별로 실제 지식이 사라지는 분기(knowledge ends)와 지식 주장이 사라지는 분기(claims end)를 각각 2015~2020년 기준 정확도와 우연 수준의 중간값을 임계치로 추정했다. GPT-5, DeepSeek-V3.2, GPT-4o, Llama-3.3-70B 등 4개 프런티어 모델을 API로, Qwen3-8B·Qwen3.5-9B를 로컬로, 그리고 고정 cutoff로 학습된 TiMaGPT·ChronoGPT-Instruct·DatedGPT 계열의 point-in-time 모델들도 비교군으로 평가했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>GPT-5는 통제된 사실의 76%를 정답으로 맞히면서도 안다고 주장하는 비율은 38%에 그쳐, 실제보다 지식을 과소 보고했다. Llama-3.3-70B는 반대로 실제 정확도가 우연 수준으로 떨어진 뒤에도 최대 7분기까지 지식 주장을 유지했다. 과거 시점을 지정해 답하라고 지시하면 지식 주장 비율은 크게 낮아지지만(GPT-5 39%→1%) 정답률은 거의 변하지 않아(76%→75%), 모델이 답변의 표현만 바꿀 뿐 실제로 아는 내용은 그대로임을 보였다. "모른다"고 답한 사실에서도 GPT-5는 정답을 61% 맞혀, 자기 보고 필터링만으로는 과거 지식을 걸러낼 수 없음을 확인했다.</p>
+<h2>한계점</h2>
+<p>저자들은 FinDendro가 미국 경제 한 가지 지역과 월간 금융 사실 세 종류에 한정되어 있어 다른 지역이나 텍스트 기반 사건으로의 일반화는 검증되지 않았다고 밝힌다. 경계 추정에는 고정된 임계값 규칙을 사용했으며, 모델이 단순 추세 외삽으로 우연히 정답을 맞히는 경우는 걸러내지 못한다. 또한 API로 접근한 모델들은 버전이 바뀔 수 있어 식별이 불확실하고, 테스트한 point-in-time 모델들은 규모가 작아 대형 모델이 엄격한 cutoff 하에서도 정직하게 행동할지는 확인하지 못했다.</p>
+<h2>시사점</h2>
+<p>금융 분야에서 LLM을 활용한 백테스트를 신뢰하려면 공급사의 공개 cutoff나 모델의 자기 보고에 의존하지 말고, FinDendro와 같은 행동 기반 지식 경계 측정을 거쳐 평가 기간을 선정해야 한다는 실무적 시사점을 제공한다. 또한 모델 개발사 입장에서도 학습 cutoff 공개와 더불어 도메인별 행동 평가를 병행 제공하는 것이 평가 신뢰성을 높이는 데 필요하다는 점을 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.06808" target="_blank" rel="noopener">huggingface.co/papers/2611.06808</a> · 2026-11-10</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

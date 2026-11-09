@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>피투모피디(P²-MOPD)</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#2 · Daily Papers 2026-11-10</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 42</span>
+    </div>
+    <h1 class="article-title">P^2-MOPD: Accelerating Multi-Teacher On-Policy Distillation via Parameter Priors</h1>
+    <p class="article-title-ko">피투모피디(P²-MOPD): 파라미터 사전을 통한 멀티 교사 온폴리시 증류 가속화</p>
+    <p class="article-sub">여러 도메인 전문가(teacher) 모델을 하나의 학생 모델로 증류하는 멀티 티처 온폴리시 증류(MOPD)에서, 전문가 파라미터를 학생 가중치에 대한 학습 가능한 "파라미터 사전(prior)"으로 함께 최적화하는 P²-MOPD를 제안해 절반의 학습 스텝으로 더 빠르고 균형 잡힌 지식 회복을 달성한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.03953" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.03953" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: P²-MOPD: Accelerating Multi-Teacher On-Policy Distillation via Parameter Priors</li>
+<li><strong>저자</strong>: Sinuo Wang, Jiacheng Lu, Zeyu Zhang, Maojia Song, Rui Sun, Beidi Luan, Yutong Xie, Jing Li, Daxin Jiang, Qi Wu, Zuo Bai (Australian Institute for Machine Learning·StepFun·상하이교통대학교·싱가포르공과대학·MBZUAI 등)</li>
+<li><strong>출처</strong>: arXiv:2611.03953v2 [cs.LG] (2026년 11월 5일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음 (코드는 <a href="https://github.com/SinuoWang/P2-MOPD">GitHub</a>에 공개)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.03953">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>여러 도메인 전문가(teacher) 모델을 하나의 학생 모델로 증류하는 멀티 티처 온폴리시 증류(MOPD)에서, 전문가 파라미터를 학생 가중치에 대한 학습 가능한 "파라미터 사전(prior)"으로 함께 최적화하는 P²-MOPD를 제안해 절반의 학습 스텝으로 더 빠르고 균형 잡힌 지식 회복을 달성한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>최근 거대 언어모델은 의료, 법률, 금융, 지시 따르기 등 도메인별 전문가 모델을 따로 학습한 뒤 하나의 범용 모델로 통합하는 방식이 표준이 되고 있다. 멀티 티처 온폴리시 증류(MOPD)는 학생 모델이 스스로 생성한 응답에 대해 각 도메인 교사가 피드백을 주는 방식으로 이 통합을 수행하지만, 모든 도메인을 고르게 회복시키지 못하고 특정 도메인(특히 의료)에서 뒤처지는 문제가 반복적으로 보고되었다. 반면 태스크 산술(task arithmetic)과 같은 학습이 필요 없는 모델 병합 기법은 전문가들의 가중치를 선형 결합하는 것만으로도 일부 성능을 회복하지만, 병합 계수의 선택이 어렵고 회복 폭이 제한적이다. 저자들은 전문가 파라미터들의 선형 결합 자체가 학생 모델의 결합 계수에 대해 미분 가능한 하나의 모델이라는 점에 착안해, 전문가를 초기화나 병합 대상으로만 쓰지 않고 학습 내내 구조화된 사전(prior)으로 활용하는 방법을 제안한다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>학생의 전체 가중치와 전문가 가중치의 혼합 계수(α)를 하나의 미분 가능한 모델로 보고, 동일한 MOPD 목적함수 아래서 두 가지를 공동으로(jointly) 최적화하는 P²-MOPD를 제안했다.</li>
+<li>전문가 파라미터가 "파라미터 사전"으로 작동해 학생이 태스크 벡터(task vector) 방향을 따라 더 멀리, 그리고 더 균형 있게 이동하도록 만드는 메커니즘을 제시하고, 이를 기하학적으로(태스크 벡터 투영 분석) 해석했다.</li>
+<li>1.7B·4B 두 스케일, 4개 도메인에서 MOPD 대비 절반의 학습 스텝만으로 더 높은 최종 회복률과 최저 도메인(worst-domain) 회복률을 달성함을 실험으로 입증했다.</li>
+</ol>
+<h2>방법론</h2>
+<p>P²-MOPD는 학생 모델의 각 모듈 가중치를 "학습 가능한 전체 가중치(B)"와 "고정된 전문가들의 태스크 벡터(τ_k = θ_k − θ_0)에 대한 학습 가능한 혼합 계수(α)의 선형 결합"의 합으로 재매개변수화한다(W = B + Σ α_k·τ_k). 학생은 여전히 MOPD와 동일하게 자신의 롤아웃에 대해 각 도메인 교사의 teacher-forcing 점수로부터 보상을 받아 정책 경사(policy-gradient) 방식으로 업데이트되지만, 이번에는 그 경사가 전체 가중치 B와 혼합 계수 α라는 두 채널로 동시에 흐른다. 전문가 로그 확률은 보상(상수 취급, gradient 차단)을 통해서만 학생을 지도하고, 전문가 파라미터 자체는 혼합 계수를 통해 학생 가중치 안으로 직접 들어간다. 초기화는 균등 계수(α=1/K)로 구성된 태스크 산술 병합(TA merge)에서 시작하며, Adam 옵티마이저로 두 채널을 각각 클리핑해 독립적으로 업데이트한다. 계수는 모듈 단위(module-wise)로 부여하는 것을 기본 설정으로 하되, 레이어·모델 단위로 묶는 것도 가능하다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Qwen3-4B와 Qwen3-1.7B 두 스케일에서, 의료(MedQA)·법률(CaseHOLD)·금융(FinQA)·지시 따르기(IFBench) 4개 도메인 전문가를 대상으로 IM-MOPD와 동일한 프로토콜(100스텝, 8GPU)로 비교했다. P²-MOPD는 학습 50스텝만으로 MOPD(TA init)의 최종 평균 회복률(83.1%/80.9%)을 넘어섰고, 100스텝 종료 시점에는 평균 회복률 94.85%(4B)/94.74%(1.7B)를 기록해 MOPD(TA init) 83.13%/80.93%, IM-MOPD 88.02%/67.81%를 모두 앞섰다. 특히 최저 도메인 회복률(worst-domain recovery)을 47.2%/32.0%(MOPD)에서 89.4%/88.0%(P²-MOPD)로 크게 끌어올려, MOPD가 가장 뒤처뜨리던 의료 도메인(MedQA)을 집중적으로 개선했음을 보였다. 태스크 벡터 투영 분석에서는 P²-MOPD가 변위 에너지의 85~90%를 전문가 방향(태스크 벡터) 안에서 만들어내며, 특히 의료 방향(τ_med)으로 MOPD보다 13~15배 더 멀리 이동함을 확인했다. Ablation에서는 혼합 계수만 학습(기존 모델 공간 범위 내)하거나 학생 가중치만 학습(MOPD와 동일)하는 경우 모두 P²-MOPD보다 열등했으며, 두 채널을 함께 학습하는 것이 최선의 평균·최저 도메인 회복률을 만든다는 것을 확인했다. 학습 비용 측면에서는 스텝당 연산 비용이 다소 늘어나지만(4B 기준 1.24배), 훨씬 적은 스텝만으로 목표 품질에 도달해 벽시계 기준 비용은 오히려 낮았다(목표 품질 도달까지 4B는 0.31배, 1.7B는 0.55배의 시간).</p>
+<h2>한계점</h2>
+<p>논문은 τ²-bench라는 다섯 번째 도메인은 유료 상용 LLM API에 의존하는 사용자 시뮬레이터가 필요해 실험에서 제외했다고 명시한다. 또한 모든 실험이 100스텝이라는 고정된 학습 예산과 Qwen3 계열의 두 스케일(1.7B, 4B)에 한정되어 있어, 더 많은 도메인 수나 더 큰 모델 규모에서도 동일한 효과가 유지되는지는 논문에 명시되지 않음. 그 외 세부 한계는 논문에 명시되지 않음.</p>
+<h2>시사점</h2>
+<p>이 연구는 모델 병합과 증류를 별개의 단계로 다루던 기존 관행에서 벗어나, 전문가 파라미터를 학습 내내 "미분 가능한 사전"으로 유지하는 것이 멀티 도메인 모델 통합의 효율성과 균형성을 동시에 높일 수 있음을 보여준다. 이는 여러 도메인 전문가를 하나의 생산용 모델로 합치는 실무(프론티어 LLM의 도메인 통합 등)에서, 적은 추가 학습 비용으로 약자 도메인의 성능 저하를 방지하는 실용적 기법으로 활용될 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.03953" target="_blank" rel="noopener">huggingface.co/papers/2611.03953</a> · 2026-11-10</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

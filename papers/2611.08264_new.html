@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>스플랫애니싱</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#1 · Daily Papers 2026-11-10</span>
+      <span class="cat-tag">생성모델</span>
+      <span class="upvote-tag">▲ 60</span>
+    </div>
+    <h1 class="article-title">SplatAnything: Gaussian Spacing Normalization for Feed-forward 3DGS across Arbitrary Scenes</h1>
+    <p class="article-title-ko">스플랫애니싱: 임의의 장면에 대한 피드포워드 3DGS를 위한 가우시안 간격 정규화</p>
+    <p class="article-sub">임의의 장면 스케일과 카메라 구성에서도 안정적으로 동작하는 피드포워드(feed-forward) 3D 가우시안 스플래팅(3DGS)을 위해, 가우시안 중심 간 간격을 직접 정규화하는 새로운 좌표 정규화 기법 "Gaussian Spacing Normalization(GSNorm)"을 제안한 연구다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.08264" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.08264" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: SplatAnything: Gaussian Spacing Normalization for Feed-forward 3DGS across Arbitrary Scenes</li>
+<li><strong>저자</strong>: Hao Yu, Zhenwei Wang, Yongzhen Hu 등 (저장대학교(Zhejiang University), 텐센트 훈위안(Tencent Hunyuan), Causa Robotics 공동 연구)</li>
+<li><strong>출처</strong>: arXiv:2611.08264v1 [cs.CV] (2026년 11월 5일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.08264">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>임의의 장면 스케일과 카메라 구성에서도 안정적으로 동작하는 피드포워드(feed-forward) 3D 가우시안 스플래팅(3DGS)을 위해, 가우시안 중심 간 간격을 직접 정규화하는 새로운 좌표 정규화 기법 "Gaussian Spacing Normalization(GSNorm)"을 제안한 연구다.</p>
+<h2>배경 및 문제의식</h2>
+<p>기존 피드포워드 3DGS 방법들은 기하학 파운데이션 모델이 예측한 3D 포인트의 평균 반경 거리(radial distance)를 기준으로 장면을 정규화하는 "Radial Distance Normalization(RDNorm)"을 사용한다. 그러나 이 방식은 전역적인 반경 통계만 맞출 뿐, 실제로 가우시안 커버리지와 직결되는 "가우시안 간격(Gaussian spacing, 인접 픽셀의 3D 투영점 사이 거리)"은 장면 스케일과 카메라 구성에 따라 최대 4.5배까지 달라질 수 있다. 이 때문에 비슷하게 보이는 지역 관측이더라도 장면마다 가우시안 스케일의 학습 타깃이 달라지는 모호성(ambiguity)이 발생하며, 결과적으로 작은 스케일에 편향된 모델은 구멍(holes)을, 큰 스케일에 편향된 모델은 과도한 흐림(over-smoothing)을 만들어낸다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>RDNorm이 가우시안 간격을 직접 정규화하지 못해 발생하는 스케일 지도학습의 모호성 문제를 규명했다.</li>
+<li>장면 단위의 대표적인 가우시안 간격 통계(중앙값)를 기준으로 좌표계를 재조정하는 GSNorm을 제안해, 보다 일관된 가우시안 스케일 예측 기준을 제공했다.</li>
+<li>다양한 데이터셋·입력 뷰 희소성·극단적 뷰포인트 외삽(extrapolation) 조건을 포괄하는 교차 데이터셋 벤치마크를 새로 구축해 기존 방법 대비 체계적 평가를 가능케 했다.</li>
+</ol>
+<h2>방법론</h2>
+<p>각 뷰의 픽셀 u에서 깊이 D(u)와 카메라 내부 파라미터를 이용해 수평·수직 방향의 가우시안 간격을 유도하고, 그 기하평균으로 지역적 간격을 정의한다. GSNorm은 모든 유효 관측에 대해 이 간격의 "중앙값"이 1이 되도록 하는 전역 스케일 인자(s_g)를 계산해 장면의 기하(깊이, 카메라 변환 등)를 재조정한다. 아키텍처 측면에서는 사전학습된 기하 파운데이션 모델(WorldMirror 2.0)로 다중 뷰 기하를 추정한 뒤, 이를 RDNorm 공간에서 GSNorm 공간으로 변환하고, 가우시안 백본(Gaussian Backbone)과 경량 예측 헤드(GSHead)를 통해 픽셀별 불투명도·회전·스케일·구면조화(SH) 계수를 예측한다. 학습은 픽셀 단위 MSE 손실과 LPIPS 지각 손실을 결합해 수행하며, 64개의 NVIDIA H20 GPU에서 4~32개의 입력 뷰와 504~1024 해상도를 섞어 20,000 스텝 동안 진행했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>ScanNet, NRGBD, DL3DV, Tanks and Temples, Mip-NeRF 360, ETH3D, DTU 등 7개 데이터셋에서 1~64개의 입력 뷰, 다양한 해상도(약 480p~1K)와 뷰 외삽 조건으로 평가했다. 포즈가 없는(w/o Pose) 설정과 포즈가 주어지는(w/ Pose) 설정 모두에서 AnySplat, YoNoSplat, DA3-GS, Mirror2-GS, QuerySplat, DepthSplat, TokenGS, ResSplat 등 기존 방법들과 비교한 결과, SplatAnything은 대부분의 데이터셋·설정에서 DISTS·LPIPS 지표 기준 최고 성능을 기록했으며, 특히 큰 뷰포인트 외삽이나 장면 스케일 변화가 큰 상황에서 성능 향상 폭이 두드러졌다. 정규화 공간에 대한 제거(ablation) 실험에서도 RDNorm, RDNorm+스케일 보정 대비 GSNorm이 입력 뷰 수(1~64개)에 관계없이 일관되게 더 낮은 DISTS·LPIPS를 보였다.</p>
+<h2>한계점</h2>
+<p>SplatAnything은 외부 기하 파운데이션 모델이 제공하는 기하학적 사전 정보(geometric prior)에 의존하므로, 매우 희소하거나 어려운 입력 조건에서 신뢰할 수 있는 기하가 복원되지 않으면 성능이 저하될 수 있다. 또한 입력 뷰에서 관측된 영역 위주로 복원이 이루어지기 때문에, 관측되지 않은 영역에는 구멍(holes)이 남을 수 있다.</p>
+<h2>시사점</h2>
+<p>가우시안 간격이라는 렌더링 품질과 직결되는 통계량을 직접 정규화 기준으로 삼는다는 아이디어는, 기하 파운데이션 모델 기반의 피드포워드 3D 재구성 파이프라인 전반에 적용 가능한 비교적 단순하면서도 효과적인 개선 방향을 제시한다. 저자들은 더 견고한 기하 추정과 미관측 영역을 보완하는 생성적 사전(generative prior) 도입을 향후 과제로 제시했다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.08264" target="_blank" rel="noopener">huggingface.co/papers/2611.08264</a> · 2026-11-10</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

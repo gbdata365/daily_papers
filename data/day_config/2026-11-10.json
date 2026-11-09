@@ -1,0 +1,92 @@
+{
+  "2611.08264": {
+    "base": "2611_스플랫애니싱_가우시안-간격-정규화-3D-생성",
+    "rank": "#1",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "60",
+    "en_title": "SplatAnything: Gaussian Spacing Normalization for Feed-forward 3DGS across Arbitrary Scenes",
+    "ko_title": "스플랫애니싱: 임의의 장면에 대한 피드포워드 3DGS를 위한 가우시안 간격 정규화"
+  },
+  "2611.03953": {
+    "base": "2611_피투모피디_파라미터-사전-기반-멀티교사-증류",
+    "rank": "#2",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "42",
+    "en_title": "P^2-MOPD: Accelerating Multi-Teacher On-Policy Distillation via Parameter Priors",
+    "ko_title": "피투모피디(P²-MOPD): 파라미터 사전을 통한 멀티 교사 온폴리시 증류 가속화"
+  },
+  "2611.06856": {
+    "base": "2611_롱바나나_장문맥-다중참조-이미지합성-벤치마크",
+    "rank": "#3",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "25",
+    "en_title": "LongBanana: An Expert-Verified Benchmark for Long-Context Multi-Reference Image Synthesis",
+    "ko_title": "롱바나나: 장문맥 다중 참조 이미지 합성을 위한 전문가 검증 벤치마크"
+  },
+  "2611.08175": {
+    "base": "2611_피시비라우트에이전트_PCB-라우팅-에이전트-평가",
+    "rank": "#4",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "23",
+    "en_title": "PCBRouteAgent: How Close Are LLM Agents to Becoming PCB Routing Engineers?",
+    "ko_title": "PCB라우트에이전트: LLM 에이전트는 PCB 라우팅 엔지니어에 얼마나 근접했는가?"
+  },
+  "2611.06043": {
+    "base": "2611_컨퓨셔스4-알투티투_실시간-스트리밍-음성인식",
+    "rank": "#5",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "22",
+    "en_title": "Confucius4-R2T2: A Stable-Prefix Streaming ASR Model for Real Real-Time Transcription",
+    "ko_title": "컨퓨셔스4-R2T2: 진정한 실시간 전사를 위한 안정적 접두사 스트리밍 음성인식 모델"
+  },
+  "2611.07624": {
+    "base": "2611_에이전트진화_간과된-요소-고찰",
+    "rank": "#6",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "22",
+    "en_title": "Beneath the Surface: What We Overlook When We Talk About Agent Evolution",
+    "ko_title": "표면 아래: 에이전트 진화를 논할 때 우리가 간과하는 것들"
+  },
+  "2611.06808": {
+    "base": "2611_시계열자기인식_금융백테스팅-벤치마크",
+    "rank": "#7",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "21",
+    "en_title": "LLMs Don't Know What They Know: Benchmarking Temporal Self-Knowledge for Financial Backtesting",
+    "ko_title": "LLM은 자신이 아는 것을 모른다: 금융 백테스팅을 위한 시간적 자기인식 벤치마킹"
+  },
+  "2611.01182": {
+    "base": "2611_구조인식커널_상대위치어텐션-고속연산",
+    "rank": "#8",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "19",
+    "en_title": "Fast and Exact Relative-Position Attention via Structure-Aware Kernels",
+    "ko_title": "구조 인식 커널을 통한 빠르고 정확한 상대위치 어텐션"
+  },
+  "2611.06748": {
+    "base": "2611_에보월드_시야밖-세계진화-비디오생성",
+    "rank": "#9",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "19",
+    "en_title": "EvoWorld: Towards Out-of-Sight World Evolution in Generative Video Models",
+    "ko_title": "에보월드: 생성형 비디오 모델에서 시야 밖 세계 진화를 향하여"
+  },
+  "2611.09894": {
+    "base": "2611_비디오코더_영상생성-에이전틱코딩-강화학습",
+    "rank": "#10",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "15",
+    "en_title": "Video-Coder: Reinforcing Agentic Coding for Video Generation",
+    "ko_title": "비디오코더: 비디오 생성을 위한 에이전틱 코딩 강화학습"
+  }
+}

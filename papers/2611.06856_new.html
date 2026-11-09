@@ -1,0 +1,107 @@
+<meta charset="UTF-8">
+<title>롱바나나</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#3 · Daily Papers 2026-11-10</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 25</span>
+    </div>
+    <h1 class="article-title">LongBanana: An Expert-Verified Benchmark for Long-Context Multi-Reference Image Synthesis</h1>
+    <p class="article-title-ko">롱바나나: 장문맥 다중 참조 이미지 합성을 위한 전문가 검증 벤치마크</p>
+    <p class="article-sub">다수의 참조 이미지에 흩어진 시각적 근거를 올바르게 검색·결합하여 하나의 이미지를 생성하는 능력을 정밀하게 측정하기 위한, 전문가가 설계하고 검증한 벤치마크 롱바나나(LongBanana)를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.06856" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.06856" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: LongBanana: An Expert-Verified Benchmark for Long-Context Multi-Reference Image Synthesis</li>
+<li><strong>저자</strong>: Haoxiang Cao, Yuxuan Zhang 등 다수 저자로 구성된 연구팀 (South China Normal University, University of British Columbia, Vector Institute, Carnegie Mellon University, University of Waterloo, KlingAI Research, University of Maryland, Tsinghua University, HKUST, HKU 등 다수 기관 공동 연구)</li>
+<li><strong>출처</strong>: arXiv:2611.06856v1 [cs.CV] (2026년 11월 4일) · NeurIPS 2026 Track on Evaluations and Datasets 게재</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://long-banana.com/">long-banana.com</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.06856">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>다수의 참조 이미지에 흩어진 시각적 근거를 올바르게 검색·결합하여 하나의 이미지를 생성하는 능력을 정밀하게 측정하기 위한, 전문가가 설계하고 검증한 벤치마크 롱바나나(LongBanana)를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>에이전트 기반 이미지 생성 시스템이 발전하면서, 여러 장의 참조 이미지에서 필요한 정보만 고르고 유사하지만 관련 없는 방해 요소(하드 네거티브)를 걸러내며, 요구된 관계와 제약을 만족하는 하나의 이미지를 합성하는 과제가 중요해졌다. 그러나 기존 이미지 생성·편집 벤치마크는 지시 기반 편집이나 소수 참조 이미지 상황에 집중되어 있어, 참조 근거가 올바르게 사용되었는지(즉 올바른 객체를 선택했는지, 잘못된 참조에서 속성을 베끼지 않았는지, 금지된 콘텐츠를 포함하지 않았는지)를 세밀하게 측정하기 어렵다. 저자들은 이러한 오류를 렌더링 오류가 아닌 "근거 귀속(provenance)" 오류로 규정하고, 이를 측정 가능하게 만드는 벤치마크의 필요성을 제기한다.</p>
+<h2>핵심 기여</h2>
+<p>논문은 네 가지를 기여한다. 첫째, 장문맥·다중참조 이미지 합성을 위한 벤치마크 데이터셋 롱바나나-벤치(LongBanana-Bench)로, 90개의 전문가 설계 케이스와 조밀한 참조 세트, 하드 네거티브, 미지원 콘텐츠 규칙, 3×3 분류 체계를 포함한다. 둘째, 엔티티-관계 그래프를 원자적 체크리스트 항목으로 변환하여 콘텐츠 충실도, 관계적 바인딩, 전역 제약 만족이라는 세 차원에서 평가하는 그래프 기반 평가 체계 롱바나나-이벨(LongBanana-Eval)이다. 셋째, 전문가가 검토한 체크리스트 라벨과 평가자 간 합의 통계, 근거 추적을 제공하는 검증 프로토콜이다. 넷째, 직접 생성·에이전트 하네스·RPR(ReAct–Plan–Exec–Reflect) 워크플로를 비교하는 에이전트 기반 이미지 생성 연구이다.</p>
+<h2>방법론</h2>
+<p>각 케이스는 시나리오 설명에서 출발해 LLM이 엔티티·속성·관계·전역 제약을 담은 엔티티-관계 그래프로 구조화하고, 이 그래프를 바탕으로 목표 지시문과 참조 이미지(사례당 평균 약 32장)를 생성한 뒤, 그래프의 각 노드·엣지·전역 제약을 하나씩 원자적 체크리스트 항목(총 4,670개)으로 변환하는 4단계 파이프라인으로 구축된다. 평가 시에는 '롱바나나이벨'이라는 에이전틱 체크리스트 판정자가 각 항목을 해당 평가 차원(콘텐츠 충실도/관계적 바인딩/전역 제약 만족)의 전문 비평자에게 배정하고, 필요 시 OCR, 개수 세기, 레이아웃 분석, 동일성 매칭 같은 검증 도구를 호출하여 0~2점의 라벨을 매기고 근거 추적을 기록한다. 생성 성능은 Hermes-Agent, OpenCode, OpenClaw 등 서로 다른 에이전트 하네스에 Nano Banana 2, Seedream 4, GPT Image 1 같은 이미지 생성 백엔드를 결합하고, 다이렉트 생성 대비 RPR(ReAct 기반 근거 수집 → Plan–Exec 분해 실행 → Reflect 기반 수정) 워크플로의 효과를 비교하는 방식으로 연구한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>900개 생성 결과(90케이스 × 10가지 생성 조건)에 대해 46,700개의 체크리스트 항목을 사람이 라벨링했으며, 이 중 15%(7,005개)를 이중 라벨링해 89.4%의 정확 일치율과 0.83의 가중 카파 값을 확보했다. 자동 판정자 롱바나나이벨은 단일 패스 VLM 심판 기준보다 사람 평가와의 상관관계(Pearson 0.8707, Spearman 0.8602, Kendall 0.6727)가 더 높았다. 생성 실험에서는 그래프 정보를 직접 활용하는 비에이전트 베이스라인(PD-Direct)이 강력한 기준선을 형성했지만, 대부분의 에이전트 하네스가 이를 상회했으며, 특히 OpenClaw+RPR+Nano Banana 2 조합이 전체 평균에서 가장 높은 점수(78.4)와 과제 통과율(P@70% 47.8%)을 기록해 적응적 근거 검색·계획·반성 워크플로의 가치를 보여주었다. 이미지 생성 백엔드 비교에서는 Nano Banana 2가 9개 모든 하위 범주에서 Seedream 4, GPT Image 1보다 우수했다.</p>
+<h2>한계점</h2>
+<p>논문 본문에는 구체적 한계 목록이 명시적으로 드러나지 않았으나(부록 E에 "책임 있는 공개와 안전장치" 및 한계·영향 관련 논의가 있다고 언급되지만 본문에서 상세 내용은 확인되지 않음), 벤치마크가 90개 케이스로 상대적으로 제한된 규모이며 평가 파이프라인이 특정 VLM(Gemini 3 Flash)에 기반한다는 점, 그리고 모든 생성 조건이 폐쇄형 또는 제한된 이미지 생성 백엔드 조합에 한정되어 있다는 점은 본문 설계에서 드러나는 한계로 볼 수 있다. 논문에 명시되지 않음.</p>
+<h2>시사점</h2>
+<p>롱바나나는 다중참조 이미지 생성에서 "그럴듯해 보이지만 틀린" 결과, 즉 근거 귀속 오류를 체계적으로 진단할 수 있는 감사 가능한(auditable) 평가 틀을 제공한다. 이는 향후 에이전트형 이미지 생성 시스템이 단순히 시각적 품질을 넘어 참조 근거를 정확히 추적하고 활용하는 능력을 기르는 데 공유 목표와 측정 도구로 활용될 수 있으며, 계획 수립과 생성 중 적응적 근거 검증·수정을 결합하는 방향이 향후 에이전트 설계의 핵심 과제임을 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.06856" target="_blank" rel="noopener">huggingface.co/papers/2611.06856</a> · 2026-11-10</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

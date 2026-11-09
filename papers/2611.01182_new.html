@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>구조 인식 커널을 통한 빠르고 정확한 상대위치 어텐션</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#8 · Daily Papers 2026-11-10</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 19</span>
+    </div>
+    <h1 class="article-title">Fast and Exact Relative-Position Attention via Structure-Aware Kernels</h1>
+    <p class="article-title-ko">구조 인식 커널을 통한 빠르고 정확한 상대위치 어텐션</p>
+    <p class="article-sub">RoPE 같은 파라미터 없는 위치 인코딩 대신 쓰이는 학습형 상대위치 어텐션(Shaw, Transformer-XL, DeBERTa, T5 등)을 FlashAttention 스타일의 타일 연산에 정확하게(exact) 융합하여, 추가적인 N×N 바이어스 행렬 없이도 순전파 최대 6.4배, 역전파 최대 21배 가속하는 Triton 커널을 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.01182" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.01182" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Fast and Exact Relative-Position Attention via Structure-Aware Kernels</li>
+<li><strong>저자</strong>: Delyan Boychev, Ivo Petrov, Dimitar I. Dimitrov (INSAIT, Sofia University "St. Kliment Ohridski")</li>
+<li><strong>출처</strong>: arXiv:2611.01182v1 [cs.LG] (2026년 10월 31일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.01182">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>RoPE 같은 파라미터 없는 위치 인코딩 대신 쓰이는 학습형 상대위치 어텐션(Shaw, Transformer-XL, DeBERTa, T5 등)을 FlashAttention 스타일의 타일 연산에 정확하게(exact) 융합하여, 추가적인 N×N 바이어스 행렬 없이도 순전파 최대 6.4배, 역전파 최대 21배 가속하는 Triton 커널을 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>RoPE, ALiBi 같은 파라미터 없는 상대위치 인코딩은 FlashAttention 같은 고속 커널에 쉽게 통합되지만, 학습 가능한 상대위치 항(content-position, position-position 상호작용)을 쓰는 방식(Shaw, Transformer-XL, DeBERTa, T5 등)은 쿼리-키 쌍마다 오프셋 기반 조회나 조밀한 N×N 바이어스 행렬 구체화가 필요해 메모리·대역폭·연산 비용이 급격히 커진다. FlexAttention 같은 프로그래머블 어텐션 프레임워크도 점별(pointwise) 콜백만 지원해 상대위치 항의 타일 단위 구조적 재사용을 활용하지 못하고, 역전파에서는 같은 관계 행(relation row)으로 모이는 그래디언트를 누적할 때 원자적 연산(atomic operation)으로 인한 경합까지 발생한다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>Shaw, Transformer-XL, DeBERTa, T5의 네 가지 상대위치 어텐션 메커니즘을 하나의 수식으로 통합하는 공통 정식화를 제시.</li>
+<li>N×N 바이어스 행렬을 구체화하지 않고 FlashAttention 스타일 타일 연산에 그대로 끼워 넣을 수 있는, 정확하고(exact) 메모리 효율적인 타일링 알고리즘 설계.</li>
+<li>다양한 메커니즘·시퀀스 길이·GPU 아키텍처에서 고정밀 기준과 수치적으로 일치함을 검증한 고성능 Triton 구현 제공.</li>
+</ol>
+<h2>방법론</h2>
+<p>핵심 아이디어는 세 가지다. 첫째, 쿼리/키를 관계 테이블(A^Q, A^K, b)에 투영할 때 각 쿼리 그룹이 실제로 도달 가능한(reachable) 오프셋 범위에만 투영을 계산해 불필요한 연산을 줄인다(오프셋 인식 타일링). 둘째, 클리핑(clipped)·버킷(bucketed) 맵처럼 넓은 영역이 동일한 관계 행으로 포화되는 경우, 온칩에서 쿼리·키별로 투영값을 한 번만 로드해 여러 키/쿼리 타일에서 재사용한다. 셋째, 역전파에서 다대일(many-to-one) 관계 행 환원 문제를 해결하기 위해, 쿼리 타일마다 하나의 스레드 블록이 담당하도록 두 패스(쿼리 병렬 패스, 키 병렬 패스) 역전파 스케줄을 설계하여 원자적 덧셈 없이 결정론적으로 그래디언트를 누적한다. 전체 알고리즘은 Triton으로 구현되었으며 Hugging Face, NeMo 모델에 가중치 변경 없이 적용 가능한 드롭인(drop-in) 방식이다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>NVIDIA H200 GPU에서 Shaw, Transformer-XL(TXL), DeBERTa, T5 네 가지 메커니즘에 대해 PyTorch SDPA, FlexAttention, FlashAttention-4, FlashInfer 등과 비교했다. 8K 토큰 기준 순전파는 1.8~6.4배, 역전파는 2.0~21배 빨랐으며, 최대 메모리 사용량은 순전파 2.9~128배, 역전파 1.4~54배 절감되었다. 모든 출력·그래디언트는 FP32 참조 구현과 비교해 수치적으로 정확함을 검증했다(저자들의 방법은 모든 설정에서 이 검증을 통과한 유일한 방식). 실제 응용으로 Parakeet-TDT-0.6B-v3 음성 인식(긴 오디오에서 처리량 약 2배, 메모리 1/5), Canary-1B-v2 파인튜닝(최대 1.36배 학습 가속, 더 긴 윈도우에서 메모리 부족 방지), DeBERTa-v3 장문서 분류(학습 속도 2배 이상, 피크 메모리 대폭 절감)에 적용해 효과를 입증했다.</p>
+<h2>한계점</h2>
+<p>Transformer-XL처럼 모든 오프셋에 고유한 관계 행을 부여하는 identity map의 경우, 투영 연산량과 공간이 여전히 시퀀스 길이에 대해 이차적으로(quadratic) 증가한다(이를 타일 내부에서 재계산하면 공간은 선형이 되지만 순전파가 2.0~2.9배 느려짐). 또한 관계 행이 연속된 오프셋을 포괄하지 않는 맵은 FP32 원자적 누적으로 대체되어 느리고 비결정적이다. 마지막으로 이 방법은 메커니즘·맵·GPU 전반에 걸친 범용성을 지향하다 보니 워프 특수화(warp specialization)나 비동기 벌크 전송 같은 하드웨어 특화 기법은 활용하지 않아 추가 가속 여지가 남아 있다.</p>
+<h2>시사점</h2>
+<p>학습 가능한 상대위치 어텐션이 그동안 속도·메모리 문제로 RoPE 등 파라미터 없는 방식에 밀려 외면받았던 상황에서, 이 연구는 가중치 재학습 없이 기존 모델에 적용 가능한 하드웨어 효율적 커널을 제공함으로써 장문맥 음성 인식·텍스트 처리 등에서 상대위치 인코딩의 실용성을 되살릴 수 있음을 보여준다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.01182" target="_blank" rel="noopener">huggingface.co/papers/2611.01182</a> · 2026-11-10</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>SIRIS</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#9 · Daily Papers 2026-11-11</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 12</span>
+    </div>
+    <h1 class="article-title">SIRIS: Can LLMs Tell When Simulation Errors Matter in AI-Driven Systems Research?</h1>
+    <p class="article-title-ko">SIRIS: LLM은 AI 기반 시스템 연구에서 시뮬레이션 오류의 중요성을 판단할 수 있는가?</p>
+    <p class="article-sub">LLM이 시스템 설계 평가에 쓰이는 시뮬레이터의 "모델링 한계(modeling limitation)"가 실제로 설계 추천 결과를 뒤집을 만큼 중요한지 스스로 판단할 수 있는지를 체계적으로 측정하는 평가 프레임워크 SIRIS를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.10329" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.10329" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: SIRIS: Can LLMs Tell When Simulation Errors Matter in AI-Driven Systems Research?</li>
+<li><strong>저자</strong>: Jinwoo Hwang, Sukmin Cho (공동 1저자), Tao Zhang, Soheil Abbasloo, Jongse Park, Peng Cheng (KAIST, Microsoft Research Asia)</li>
+<li><strong>출처</strong>: arXiv:2611.10329v1 [cs.AI] (2026년 11월 6일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음 (저자들은 SIRIS 아티팩트를 공개할 예정이라고 언급)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.10329">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>LLM이 시스템 설계 평가에 쓰이는 시뮬레이터의 "모델링 한계(modeling limitation)"가 실제로 설계 추천 결과를 뒤집을 만큼 중요한지 스스로 판단할 수 있는지를 체계적으로 측정하는 평가 프레임워크 SIRIS를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>AI-Driven Research for Systems(ADRS)에서는 LLM 에이전트가 후보 설계를 제안하고, 시뮬레이터로 성능을 평가한 뒤, 그 결과를 바탕으로 설계를 개선하는 과정을 반복한다. 그런데 시뮬레이터는 확장성을 위해 의도적으로 세부 동작(예: GPU 간 네트워크 대역폭 경쟁, 토큰화 오버헤드 등)을 단순화하거나 생략하는 "모델링 한계"를 가진다. 이런 한계는 때로는 예측값만 바꾸고 최선의 설계 선택에는 영향을 주지 않지만, 때로는 어떤 후보가 더 나은지에 대한 순위 자체를 뒤집기도 한다. LLM이 ADRS에서 이러한 시뮬레이터 결과를 바탕으로 의사결정을 내리려면, 한계가 "존재하는지"뿐 아니라 그 한계가 "지금의 결정에 영향을 주는지"까지 판단할 수 있어야 하는데, 기존 평가들은 이 둘을 구분하지 못했다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>시뮬레이터의 모델링 한계가 설계 추천을 무효화하는지에 대한 판단(judgment)을 기준으로 ADRS에서의 "시스템 이해도"를 평가해야 한다고 주장.</li>
+<li>시뮬레이터에 제어된 변형(perturbation)을 주입해 동일한 한계가 추천 결과를 유지시키는 경우(upheld)와 뒤집는 경우(overturned)를 쌍으로 구성하는 평가 프레임워크 SIRIS를 제안.</li>
+<li>13개의 최신 LLM(GPT, Grok, Gemini 계열)을 평가해, 대부분의 모델이 한계를 언급하면서도 올바른 결정에는 이르지 못하는 경우가 많다는 것을 발견.</li>
+</ul>
+<h2>방법론</h2>
+<p>SIRIS는 LLM 서빙(LLM serving) 시스템을 사례 연구 도메인으로 삼아, LLMServingSim 기반 시뮬레이터의 변형되지 않은 버전을 참조(reference)로 둔다. 요청 라우팅, prefill-to-decode 핸드오프, 로컬 스케줄링 등 3개 설계 문제에 대해 4개의 후보 설계를 구성하고, 7종의 변형(값 교체, 비용/경합 항목 생략, 비용 집계 방식 변경, 보간 산술 변경 등 고전적 변이 연산자에서 착안)을 시뮬레이터 코드에 주입한다. 각 변형마다 동일한 후보·지표·추천을 공유하지만 워크로드만 다른 upheld/overturned 문제 쌍을 만들고(총 29쌍, 58문제), LLM에게는 시스템 명세, 후보 코드, 워크로드, 그리고 '시뮬레이터 증거 없음/변형된 시뮬레이터 증거/참조 시뮬레이터 증거' 중 하나의 조건을 읽기 전용 도구로 제공해 최적 후보를 선택하게 한다. 이후 리뷰(2차 턴)를 통해 모델이 자기 수정을 시도하도록 하고, 판단(judgment, J)과 성향(disposition, D) 지표로 upheld/overturned 문제에서의 정답률 평균과 차이를 측정한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>GPT, Grok, Gemini 계열 13개 모델을 3회씩 반복 평가한 결과, 변형된 시뮬레이터 증거가 주어지면 모든 모델의 판단력(J)이 증거 없는 조건보다 높아졌으나, 참조(정답) 시뮬레이터 수준에는 미치지 못했다. GPT-6 Astra와 GPT-6.1 Sol이 가장 높은 판단력과 균형 잡힌 성향을 보였으나, 같은 판단력 점수(J≈66~67)를 가진 모델끼리도 성향(D)은 +10~+29로 크게 갈렸다. 한계를 식별(언급)한 응답 중에서도 약 1/4은 여전히 잘못된 설계를 선택했으며, 특히 upheld 문제에서 유효한 추천을 스스로 포기하는 오류가 참조 시뮬레이터 기준 p95 지연시간을 중앙값 14% 악화시켰다. 리뷰 턴(자기 수정)은 13개 모델 중 12개에서 upheld/overturned 정확도 격차를 줄였지만, 일부 모델(GPT-5.6 Sol 등)은 오류를 31건 고치면서 10건의 새로운 오류를 만드는 등 개선과 퇴보가 동시에 나타났다.</p>
+<h2>한계점</h2>
+<p>SIRIS는 하나의 시스템 도메인(LLM 서빙), 하나의 시뮬레이터 계열, 7종의 변형에 국한된 사례 연구이며 일반적인 모델 성능 순위를 제공하지 않는다. 정답은 참조 시뮬레이터 기준으로 정의되므로 실제 하드웨어에서의 우위는 검증되지 않았고, 상위 1개 설계 선택만 다루며 순위 전체나 더 미묘한 성능 차이는 반영하지 못한다. 또한 리뷰 턴에서의 변화는 자기 수정, 추가 연산, 새로 읽은 파일, 프롬프트에 의한 의심 유발 등 여러 요인이 섞여 있어 원인을 분리하지 못했다.</p>
+<h2>시사점</h2>
+<p>단순히 시뮬레이터의 한계를 "언급"하거나 "식별"하는 능력만으로는 ADRS에서의 신뢰할 수 있는 의사결정 능력을 보장할 수 없으며, 실제로 한계가 결정에 영향을 주는지까지 판단하는 능력을 별도로 평가해야 한다는 점을 보여준다. 이는 향후 LLM 기반 시스템 설계 자동화(ADRS) 파이프라인에서 평가자(evaluator) 역할을 하는 LLM의 신뢰도를 검증하는 데 중요한 방법론적 기준을 제공한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.10329" target="_blank" rel="noopener">huggingface.co/papers/2611.10329</a> · 2026-11-11</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

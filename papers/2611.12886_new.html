@@ -1,0 +1,114 @@
+<meta charset="UTF-8">
+<title>Reframe</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#4 · Daily Papers 2026-11-11</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 37</span>
+    </div>
+    <h1 class="article-title">Reframe: Observation-Aligned Multi-Teacher On-Policy Distillation for Agentic Visual Reasoning</h1>
+    <p class="article-title-ko">Reframe: 관찰 정렬 다중 교사 온폴리시 증류를 통한 에이전틱 시각 추론</p>
+    <p class="article-sub">비전-언어 모델(VLM)이 CropImage·SelectFrames 같은 도구를 호출하고도 그 결과를 실제로 활용하지 않는 "관찰 무시(observation neglect)" 문제를, 보상 설계와 결함 있는 도구 행동 교정이라는 2단계 학습(GD-GRPO, OG-MOPD)으로 해결하여 이미지·비디오 통합 에이전틱 시각 추론 성능을 끌어올린 프레임워크.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.12886" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.12886" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Reframe: Observation-Aligned Multi-Teacher On-Policy Distillation for Agentic Visual Reasoning</li>
+<li><strong>저자</strong>: Haozhi Yuan (Nanjing University), Handong Li, Yifan Zhang, Qianshan Wei (Institute of Automation, Chinese Academy of Sciences)</li>
+<li><strong>출처</strong>: arXiv:2611.12886v1 [cs.CV] (2026년 11월 9일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음 (코드/데이터셋/모델: https://github.com/EliYuan30/Reframe)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.12886">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>비전-언어 모델(VLM)이 CropImage·SelectFrames 같은 도구를 호출하고도 그 결과를 실제로 활용하지 않는 "관찰 무시(observation neglect)" 문제를, 보상 설계와 결함 있는 도구 행동 교정이라는 2단계 학습(GD-GRPO, OG-MOPD)으로 해결하여 이미지·비디오 통합 에이전틱 시각 추론 성능을 끌어올린 프레임워크.</p>
+<h2>배경 및 문제의식</h2>
+<p>증거가 희소한 지각 중심 과제에서 VLM에 도구(이미지 확대, 프레임 선택 등)를 부여하는 "에이전틱 시각 추론"이 활발히 연구되고 있다. 그러나 도구를 호출했다고 해서 모델이 그 반환 결과를 실제 추론에 반영한다는 보장은 없다(관찰 무시). 또한 기존의 다중 교사 온폴리시 증류(MOPD)는 학생이 생성한 궤적에 교사의 토큰 단위 피드백을 주는 효과적인 방식이지만, 선행 도구 행동이 부실하면 이후 어떤 관찰이 제공되는지 자체가 왜곡되어, 도구 행동이 나쁜 상태에서 나온 토큰 단위 피드백은 그 결함을 소급해서 복구할 수 없다는 한계가 있다. 아울러 기존 연구 대부분은 이미지 또는 비디오 한 모달리티에만 특화되어 있었다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>이미지·비디오 에이전틱 추론을 통합하는 최초의 "도구 사용 인지" MOPD 프레임워크 Reframe 제안. 롤아웃 궤적에 능동적으로 개입해 벗어난 도구 행동을 교정함으로써 관찰의 유효성(validity)을 보장하는 OG-MOPD 도입.</li>
+<li>관찰 무시 문제를 겨냥해, 입력 드롭아웃과 관찰 보상을 통해 도구 반환 관찰에 대한 의존(necessity)을 강제하는 GD-GRPO 제안.</li>
+<li>두 학습 단계를 모두 지원하는 Reframe-100K 데이터셋(이미지 6.3만, 비디오 3.7만 QA) 구축.</li>
+</ul>
+<h2>방법론</h2>
+<p>Reframe은 2단계로 구성된다.
+1) <strong>GD-GRPO (Ground-Drop-GRPO)</strong>: 공간(이미지)·시간(비디오) 특화 전문가를 각각 학습시키며, 정답 정확도 보상·도구 호출 보상·증거 기반(근거 IoU) 관찰 보상·무효 보상 패널티를 결합한 보상 함수(식 1)를 사용한다. 핵심 장치는 "원본 관찰 드롭아웃"으로, 첫 성공적 도구 호출 이후 확률 0.5로 원본 이미지/비디오 입력을 제거해 모델이 반드시 도구가 반환한 관찰에 의존해 답하도록 만든다. 드롭 여부(d_i)가 동일한 궤적끼리만 묶어 어드밴티지를 정규화하는 "드롭 조건부 서브그룹" 기법으로, 무작위 드롭아웃이라는 외부 변동 요인이 품질 비교를 교란하지 않도록 한다.
+2) <strong>OG-MOPD (Observation-Gated MOPD)</strong>: 학생의 도구 행동을 주석 기반 근거(IoU)로 검증해, 근거가 없거나 유효하지 않거나 임계값(δ) 미만인 행동을 정답 주석에서 유도한 "규범적(canonical) 행동"으로 교체한 뒤, 그 복구된 관찰 지점부터 증류를 재개한다. 학생이 직접 생성한 토큰에는 기존 MOPD의 교사 로짓 기반 역KL 손실을, 삽입된 교정 행동 토큰에는 별도의 NLL(negative log-likelihood) 손실을 적용하는 "분기 인지 증류(branch-aware distillation, 식 5)"로 두 토큰 소스를 구분해 지도한다.
+도구는 CropImage(공간 확대)와 SelectFrames(시간 프레임 선택) 두 가지로 제한했고, 기반 모델은 Qwen3.5-9B를 사용했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>이미지 7개(V*, HR-Bench-4K/8K, VisualProbe, ZoomBench, MME-RealWorld, PerceptionBench), 비디오 7개(Video-MME, Video-MME-v2, MVBench, MLVU, MME-VideoOCR, VSI-Bench, V-STaR) 총 14개 벤치마크에서 평가했다. Image-RL·Video-RL(단일 모달 전문가), Mix-RL, 바닐라 MOPD와 비교한 결과, Reframe은 이미지 평균 69.48, 비디오 평균 53.10으로 전 벤치마크에서 Mix-RL과 바닐라 MOPD를 능가했고, 전문가 교사들의 평균 성능도 넘어섰다. 외부 비교에서는 Pixel-Reasoner, Thyme, DeepEyes, DeepEyesV2 대비 이미지·비디오 평균에서 각각 11.71점, 8.86점 앞섰다. 특히 "관찰 의존도(observation dependence)" 지표(정답·무작위·회색 이미지 조건 간 정확도 차이로 정의)에서 Reframe은 75.53으로 비교 모델 중 최댓값(41.93)을 크게 상회했고, 도구 사용에 따른 성능 향상(tool gain)도 +5.23으로 가장 컸다. Ablation에서는 GD-GRPO가 결과 기반 GRPO 대비 관찰 의존도를 52.59→69.03으로, 도구 이득을 1.97→3.82로 높였으며, OG-MOPD의 관찰 보수(repair)는 바닐라 MOPD 대비 이미지 +1.29, 비디오 +0.78의 추가 성능 향상을 가져왔다.</p>
+<h2>한계점</h2>
+<p>논문은 명시적인 한계 섹션을 두지 않았다. 다만 본문에서 드러난 제약으로는: (1) 도구 집합을 CropImage·SelectFrames 두 가지로만 제한해 단순화했다는 점, (2) 기반 모델을 Qwen3.5-9B 한 종류로만 실험했다는 점, (3) Mix-RL이 단일 모달 전문가 대비 성능이 떨어지는 현상(모달리티 간 탐색이 결합되어 거친 신용 할당이 발생)이 완전히 해소되지는 않았다는 점을 들 수 있다. 그 외 세부 한계는 논문에 명시되지 않음.</p>
+<h2>시사점</h2>
+<p>이 연구는 에이전틱 시각 추론에서 "도구를 호출하는가"뿐 아니라 "호출로 얻은 관찰을 실제로 신뢰하고 사용하는가"가 별도로 다루어져야 할 핵심 축임을 보여준다. 관찰 상태 자체를 정렬(align)의 대상으로 삼는 관점은, 향후 멀티모달 에이전트의 도구 사용 신뢰성 평가 및 학습 방법 설계에서 일반적인 설계 원칙으로 확장될 수 있다. 또한 이미지와 비디오를 하나의 통합 모델·파이프라인으로 다루면서도 각 모달리티 전문가 수준의 성능을 능가했다는 점은, 멀티모달 통합 학습에서 발생하는 "능력 희석" 문제를 완화하는 실용적 해법으로서 의의가 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.12886" target="_blank" rel="noopener">huggingface.co/papers/2611.12886</a> · 2026-11-11</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

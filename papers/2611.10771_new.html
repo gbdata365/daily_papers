@@ -1,0 +1,116 @@
+<meta charset="UTF-8">
+<title>월드파운드리</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#2 · Daily Papers 2026-11-11</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 52</span>
+    </div>
+    <h1 class="article-title">WorldFoundry: Towards Unified Infrastructure for World Intelligence</h1>
+    <p class="article-title-ko">월드파운드리: 월드 인텔리전스를 위한 통합 인프라</p>
+    <p class="article-sub">영상·3D·4D·구현형(embodied) 에이전트까지 이질적인 월드 모델(world model)들을 하나의 추론·평가 체계로 통합해, "그럴듯해 보이는 생성"과 "실제로 작동하는 월드 모델"을 구분 가능하게 만드는 오픈소스 인프라 WorldFoundry를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.10771" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.10771" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: WorldFoundry: Towards Unified Infrastructure for World Intelligence</li>
+<li><strong>저자</strong>: OpenEnvision 팀 (Juanxi Tian, Jiadong Hou 외 다수, Felix Heide/Wei Xiong/Enze Xie/Wanhua Li 지도)</li>
+<li><strong>출처</strong>: arXiv:2611.10771v1 [cs.CV] (2026-11-07)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://openenvision.org/WorldFoundry/">OpenEnvision/WorldFoundry</a> / <a href="https://github.com/OpenEnvision/WorldFoundry">GitHub</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.10771">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>영상·3D·4D·구현형(embodied) 에이전트까지 이질적인 월드 모델(world model)들을 하나의 추론·평가 체계로 통합해, "그럴듯해 보이는 생성"과 "실제로 작동하는 월드 모델"을 구분 가능하게 만드는 오픈소스 인프라 WorldFoundry를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>최근 영상 생성 모델들은 점점 더 환경을 "시뮬레이션"하는 것처럼 보이지만, 시각적으로 그럴듯한 출력이 곧 지속적인 상태(state)·물리적 동역학·개입(intervention)에 대한 일관된 반응을 보장하지는 않는다. 또한 연구마다 서로 다른 환경, 입력 규격, 실행 절차, 평가 프로토콜을 사용하기 때문에, 관찰된 성능 차이가 모델 자체의 능력 차이인지 혹은 주변 실험 파이프라인의 차이인지 구분하기 어렵다. 이로 인해 "카탈로그에 등재됨", "실행 가능함", "부분 검증됨", "벤치마크 재현 성공"이라는 서로 다른 수준의 주장이 뒤섞여 "모델 지원"이라는 하나의 모호한 개념으로 취급되는 문제가 있다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>생성적 월드 모델(generative world model)을 "지속적 상태를 유지하고, 개입에 반응해 상태를 갱신하며, 관찰·반사실적(counterfactual) 개입 모두에 대해 시간적으로 일관된 궤적을 생성하는 예측적 동역학 시스템"으로 명확히 정의하고, 이로부터 지각적 그라운딩 → 지속적 상태 모델링 → 제어 가능한 변환 → 동역학 인지 예측 → 폐루프(closed-loop) 상호작용으로 이어지는 능력 진행(capability progression) 프레임워크를 도출함.</li>
+<li>영상, 3D/4D, 구현형 행동, 상호작용형 월드 시스템 전반에 대해 재현 가능한 추론·평가를 지원하는 오픈소스 인프라 WorldFoundry를 공개함. 모델·벤치마크 검색, 런타임·에셋 준비, 실행 오케스트레이션, 아티팩트 관리, 시각화를 하나의 체계로 통합하되, 모달리티별 어댑터를 통해 각 모델의 고유 입력·실행 의미·출력 표현·평가 프로토콜을 보존함.</li>
+<li>명시적 매니페스트(manifest), 영속적 아티팩트 계약(artifact contract), 근거 기반 스코어카드(evidence-aware scorecard)를 통해 "실행 준비 상태"와 "평가적 주장"을 분리하고, 모든 평가 결과를 뒷받침 아티팩트까지 추적 가능하게 함. 현재 카탈로그는 270개 모델, 74개 벤치마크, 62개 메트릭 항목을 포함.</li>
+</ol>
+<h2>방법론</h2>
+<p>WorldFoundry는 발견(discovery)-런타임 준비-실행-점검-평가로 이어지는 공통 라이프사이클을 중심으로 5개 구성요소로 설계되었다.
+- <strong>Surface Layer</strong>: TUI, CLI, 브라우저 기반 Workspace/Studio, Python API, MCP 인터페이스 등 다양한 접근 경로를 제공하되, 모두 동일한 오케스트레이션 경로로 수렴해 실행·평가의 일관성을 보장.
+- <strong>통합 추론·상호작용(Unified Inference and Interaction)</strong>: 각 모델 식별자를 매니페스트 기반 카탈로그 항목에 매핑하고, <code>GenerationRequest</code>(입력, 제어 신호, 생성 파라미터 등 공통 필드 + 모델별 페이로드)와 <code>GenerationResult</code>(실행 상태, 타이밍, 에러, 아티팩트 참조)라는 공통 계약으로 표준화. <code>WorldModelRunner</code>는 과제별 적응을 담당하는 Operator와 모델 생애주기·런타임을 담당하는 Pipeline으로 실행을 분리하며, 상호작용형 모델은 세션 상태를 유지한 채 반복 추론 가능.
+- <strong>아티팩트·표현 계약</strong>: 요청(sample) 단위와 실행(run) 단위를 분리하는 2단계 계약 체계로, 생성된 영상·기하 표현·4D·행동·궤적·상태 추적을 영속적이고 식별 가능한 아티팩트로 저장해 모델을 재실행하지 않고도 검사·재사용·재평가가 가능하도록 함.
+- <strong>평가·근거</strong>: 호환되는 메트릭과 벤치마크 프로토콜을 아티팩트에 적용하고, 샘플별 결과·집계 점수·커버리지·검증 상태·미해결 블로커·비교 가능 여부를 함께 기록.
+- <strong>모델·벤치마크 Zoo</strong>: 모델, 벤치마크, 과제, 런타임 프로파일, 에셋, 평가자, 준비 상태, 알려진 블로커를 매니페스트 기반으로 관리하는 레지스트리.</p>
+<h2>실험 설정 및 결과</h2>
+<p>논문은 새로운 모델을 제안하기보다, 기존의 대표적인 모델·벤치마크들을 WorldFoundry로 통합 실행하여 인프라의 유효성을 검증한다. 영상 생성, 상호작용형 월드 모델, 3D/4D 생성, 구현형 행동 생성 네 영역에서 기존 공개 시스템들(예: OpenVLA, RoboFlamingo, StarVLA, LingBot-VLA/VA 시리즈 등)을 WorldFoundry 상에서 실행하고, 각 시스템의 고유한 관찰 이력·카메라 설정·행동 좌표·정규화 통계 등을 보존한 채 호환 가능한 과제·임베디먼트(embodiment) 범위 내에서 비교했다. 대표 사례로 LIBERO-10 환경에서 OpenVLA를 폐루프로 실행한 결과, 단일 물체 집기-놓기 과제는 179스텝 내에 성공했지만 다단계 과제 2건은 520스텝 한도에 도달해 완료하지 못했다. 이를 통해 논문은 오프라인 행동 정확도보다 폐루프 완료율·회복 능력이 더 의미 있는 평가 기준이라고 주장한다.</p>
+<h2>한계점</h2>
+<p>현재 프레임워크는 추론·상호작용·아티팩트 관리·평가에 초점을 두며, 범용 학습(training) 인프라는 다루지 않는다(향후 과제로 남김). 카탈로그에 포함된 모델·벤치마크들은 외부 체크포인트, 라이선스가 필요한 데이터셋, 호스팅 서비스, 시뮬레이터 에셋 등 요구사항이 서로 달라 "카탈로그 등재", "실행 가능", "자산 준비 완료", "공식 런타임 검증", "벤치마크 평가 자격"이 서로 다른 단계로 남아 있으며, 모든 모델이 동일한 수준으로 검증되지는 않는다. 또한 FlashAttention, SageAttention, NVFP4 양자화 등 다양한 최적화 기법을 지원하지만, 이들이 실제 성능에 미치는 효과는 논문 시점까지 체계적으로 특성화되지 않았다고 명시한다.</p>
+<h2>시사점</h2>
+<p>생성형 영상 모델과 "월드 모델"을 혼용하는 최근 흐름 속에서, 지속적 상태·개입 반응성이라는 엄격한 기준으로 두 개념을 구분하고 이를 공정하게 비교할 수 있는 공용 인프라를 제공했다는 점에서 의미가 크다. 연구 재현성 문제(파이프라인 차이로 인한 성능 차이 혼입)를 아티팩트·계약 기반 설계로 해결하려는 접근은, 빠르게 늘어나는 월드 모델·구현형 에이전트 연구 전반의 평가 신뢰성을 높이는 데 기여할 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.10771" target="_blank" rel="noopener">huggingface.co/papers/2611.10771</a> · 2026-11-11</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

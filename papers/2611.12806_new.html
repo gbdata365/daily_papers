@@ -1,0 +1,113 @@
+<meta charset="UTF-8">
+<title>범용 정교 조작을 위한 이종 촉각 표현 학습</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#1 · Daily Papers 2026-11-11</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 92</span>
+    </div>
+    <h1 class="article-title">Learning Heterogeneous Tactile Representation for General Dexterous Manipulation</h1>
+    <p class="article-title-ko">범용 정교 조작을 위한 이종 촉각 표현 학습</p>
+    <p class="article-sub">서로 다른 종류의 촉각 센서(압저항형, 자기형, 광학형)로부터 얻은 이질적인 촉각 데이터를 하나의 공통 표현 공간으로 학습하는 촉각 파운데이션 모델 LingBot-Touch를 제안하고, 이를 다양한 정교 조작 정책에 플러그인 방식으로 결합해 성능을 크게 끌어올렸다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.12806" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.12806" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Learning Heterogeneous Tactile Representation for General Dexterous Manipulation</li>
+<li><strong>저자</strong>: Bing Han, Yichuan Peng, Haoyu Dong 등 Ant Group(Robbyant) 소속 연구진 다수 (교신: Wei Ning, Project Lead)</li>
+<li><strong>출처</strong>: arXiv:2611.12806v1 [cs.RO] (2026년 11월 9일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://technology.robbyant.com/lingbot-touch">https://technology.robbyant.com/lingbot-touch</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.12806">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>서로 다른 종류의 촉각 센서(압저항형, 자기형, 광학형)로부터 얻은 이질적인 촉각 데이터를 하나의 공통 표현 공간으로 학습하는 촉각 파운데이션 모델 LingBot-Touch를 제안하고, 이를 다양한 정교 조작 정책에 플러그인 방식으로 결합해 성능을 크게 끌어올렸다.</p>
+<h2>배경 및 문제의식</h2>
+<p>로봇의 정교한 손 조작에는 촉각이 필수적이지만, 현재 시판되는 촉각 센서들(압저항형, 자기형, 광학/visuotactile형)은 서로 다른 채널 형식·해상도·배치·샘플링 속도를 가져 센서 간 데이터를 공유하거나 통합 학습하기 어렵다. 이 때문에 촉각은 비전·언어처럼 대규모 학습으로 스케일링되지 못했고, 촉각이 조작 성능에 실제로 도움이 되는지에 대한 근거도 센서별 개별 연구에 흩어져 있었다. 저자들은 '접촉(contact)' 자체는 센서 종류와 무관한 물리적 사건이므로, 센서 고유의 물리적 특성을 제거하면 공통 표현을 학습할 수 있다고 보았다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>대규모 촉각 코퍼스</strong>: 사람이 착용하는 촉각 장갑과 원격조작 로봇 손에서 수집한 5,000시간, 46.4만 에피소드, 13.3억 프레임 규모의 압저항·자기·광학 촉각 데이터셋 구축.</li>
+<li><strong>촉각 파운데이션 모델 LingBot-Touch</strong>: 모든 센서의 taxel(촉각 센서 소자) 좌표를 손가락 끝 기준의 공통 구면 좌표계(canonical fingertip space)로 매핑하고, 센서별 경량 토크나이저와 공유 Transformer 백본(Haptic Transformer)을 결합해 하나의 인코더가 세 가지 센싱 원리를 모두 처리하고 학습에 없던 센서에도 재학습 없이 적용 가능.</li>
+<li><strong>Tactile-JEPA 학습 목표</strong>: 희소하고 라벨이 없는 촉각 신호에 맞춰, 신호 자체를 복원하는 대신 잠재 공간에서 마스킹된 영역의 표현을 예측하는 self-supervised objective를 사용(마스크 비율 웜업, 레이아웃 증강 포함).</li>
+<li><strong>스택 전반에 걸친 검증</strong>: 접촉 물리량(힘, 위치, 면적, 시간적 변화, 영상과의 정합)에 대한 프로브 실험, 26개 실제 로봇 조작 과제, 12개 시뮬레이션 강화학습 과제에서 효과를 검증.</li>
+<li><strong>오픈 릴리스</strong>: 추론 코드, 샘플 촉각 데이터, Tiny/Small 두 가지 크기의 사전학습 체크포인트 공개 예정.</li>
+</ul>
+<h2>방법론</h2>
+<p>각 센서의 taxel을 3차원 위치와 손가락 식별자로 표현해 공통 좌표계로 정규화하고, 시간·손가락·위치 정보를 5차원 회전위치임베딩(5D RoPE)으로 인코딩한다. 압저항·자기·광학 신호는 각각 전용의 2계층 MLP 토크나이저를 거쳐 공유 Haptic Transformer(HaT)로 입력된다. 학습은 V-JEPA 계열의 joint-embedding predictive 구조를 따라, context encoder가 보이는 토큰만으로 예측을 수행하고 target encoder(context encoder의 EMA)가 전체 클립으로부터 만든 표현을 타깃으로 삼아 마스킹·비마스킹 위치 모두에서 예측 오차를 최소화한다. 촉각 신호가 희소한 특성 때문에 마스킹 비율을 학습 초반 40%에서 80%로 선형적으로 올리는 웜업을 적용하며, 다양한 taxel 밀도와 위치를 무작위로 섞는 레이아웃 증강으로 학습에 없던 센서 레이아웃에도 일반화되도록 했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Sharpa Wave(학습에 포함된 광학 촉각 센서 손)와 XHand1(학습에 전혀 없던 자기 센서 손) 두 로봇 손에서 동결된 인코더를 프로브로만 평가했다. Sharpa Wave에서 LingBot-Touch는 접촉력 오차 0.81N, 접촉 중심 오차 0.12mm, 영상-촉각 매칭 top-5 재현율 72.6%를 기록해 비교 기준인 FTP-1(센서별 전용 어댑터 사용)의 2.31N, 2.19mm, 16.5%를 크게 앞섰다. 학습에 없던 XHand1에서도 센서 전용 파라미터 업데이트 없이 1.32N, 0.16mm, 47.1% 재현율을 달성해 FTP-1(3.72N, 5.89mm, 6.0%)보다 우수했다. 26개 실제 로봇 과제에서 LingBot-Touch 토큰을 추가하면 Diffusion Policy, π0.5, LingBot-VLA, T-Rex의 평균 성공률이 각각 13.9~24.8%포인트 상승했으며, 같은 원시 촉각 신호를 그대로 넣었을 때보다 훨씬 큰 개선 폭을 보였다. 시뮬레이션 상의 12개 정교 조작 강화학습 과제에서는 평균 성공률 69%로, 과제 전용 CNN 특징(46%) 및 촉각 미사용(21%)보다 높고 시드 간 분산도 훨씬 작았다. 또한 사전학습 데이터가 1K에서 5K 시간으로 늘어날수록, 그리고 서로 다른 센서의 데이터를 함께 사용할수록 성능이 지속적으로 향상되는 반면, 신호 복원 기반(VAE, MAE) 모델은 데이터가 늘어도 성능이 정체되거나 악화되었다.</p>
+<h2>한계점</h2>
+<p>저자들은 (1) 실험에 사용된 로봇 손의 종류가 제한적이어서 더 다양한 손 형태에 대한 검증이 필요하고, (2) 품질 기준을 충족하는 정전용량형(capacitive) 센서 데이터를 확보하지 못해 해당 센서 유형이 사전학습 데이터에서 빠져 있으며, (3) 현재의 공통 좌표계와 레이아웃이 손가락 끝에 집중되어 있어 손바닥 등 다른 접촉 부위에 대한 커버리지가 부족하다는 점을 한계로 명시했다.</p>
+<h2>시사점</h2>
+<p>이 연구는 촉각 데이터가 센서 종류에 관계없이 '접촉'이라는 공통 물리적 사건을 공유한다는 점을 활용하면, 개별 센서마다 수천 시간의 데이터를 모으지 않고도 서로 다른 센서의 데이터를 합쳐 하나의 범용 촉각 표현을 스케일링할 수 있음을 보여준다. 이는 향후 촉각 하드웨어 및 임바디드(embodied) 모델 설계에서 촉각을 비전·언어와 같은 '1급 입력'으로 다루는 방향을 제시하며, 당장 완벽한 고사양 센서를 기다리기보다 수집이 쉬운 센서(예: 사람이 착용하는 장갑)로 데이터를 모아도 실제 배포 로봇의 성능 향상에 기여할 수 있다는 실용적 함의를 준다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.12806" target="_blank" rel="noopener">huggingface.co/papers/2611.12806</a> · 2026-11-11</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

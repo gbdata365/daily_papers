@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>롱테일-SWE</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#7 · Daily Papers 2026-11-11</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 19</span>
+    </div>
+    <h1 class="article-title">Longtail-SWE: High-Quality SWE Tasks for Underrepresented Languages</h1>
+    <p class="article-title-ko">롱테일-SWE: 소수 언어를 위한 고품질 SWE 과제</p>
+    <p class="article-sub">SWE-bench류 저장소 수준 이슈 해결 벤치마크가 Python 등 주류 언어에 편중된 문제를 해결하기 위해, Clojure·Dart·Haskell 등 13개의 비주류(롱테일) 프로그래밍 언어에서 솔버-심판-수리자(solver-judge-repairer) 파이프라인으로 결함 있는 태스크를 복구·정제하여 202개의 고품질 평가 과제로 구성한 Longtail-SWE 벤치마크를 소개한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.10304" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.10304" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Longtail-SWE: High-Quality SWE Tasks for Underrepresented Languages</li>
+<li><strong>저자</strong>: Vladimir Dobrovolskii, Ibragim Badertdinov, Alexander Golubev (Nebius)</li>
+<li><strong>출처</strong>: arXiv:2611.10304v1 [cs.SE] (2026년 11월 6일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/SWE-rebench/Longtail-SWE">GitHub - SWE-rebench/Longtail-SWE</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.10304">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>SWE-bench류 저장소 수준 이슈 해결 벤치마크가 Python 등 주류 언어에 편중된 문제를 해결하기 위해, Clojure·Dart·Haskell 등 13개의 비주류(롱테일) 프로그래밍 언어에서 솔버-심판-수리자(solver-judge-repairer) 파이프라인으로 결함 있는 태스크를 복구·정제하여 202개의 고품질 평가 과제로 구성한 Longtail-SWE 벤치마크를 소개한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>SWE-bench(Jimenez et al., 2023) 이후 저장소 수준 이슈 해결 벤치마크들이 등장했지만 대부분 Python 등 널리 쓰이는 생태계에 집중되어 있어, Clojure, Dart, Elixir, Erlang, F#, Haskell, Julia, Kotlin, Lua, OCaml, R, Scala, Swift와 같이 저평가된 언어 생태계에서 에이전트 성능을 평가할 근거가 부족하다. 과거 이슈·PR에서 태스크를 자동 수집하면 검증 신뢰도가 떨어지고, 테스트가 유효한 대안 구현을 잘못 기각하거나 설명이 불충분해 틀린 해답을 통과시키는 결함이 흔하다. 특히 비주류 언어는 후보 풀 자체가 작아, 엄격한 필터링을 적용하면 복구 가능한 태스크마저 버려지고 벤치마크 구성에 편향이 생긴다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>태스크 복구 및 정제 파이프라인</strong>: 결함이 있는 저장소 수준 태스크의 설명과 테스트를 수정하여, 폐기 대신 복구할 수 있는 솔버-심판-수리자(solver-judge-repairer) 루프를 제안.</li>
+<li><strong>벤치마크 및 보조 세트</strong>: 13개 비주류 언어, 129개 저장소에서 가져온 202개의 도전적인 과제로 구성된 Longtail-SWE와 더 쉬운 보조 과제 세트를 공개.</li>
+<li><strong>실증 분석</strong>: 9개 모델 구성의 과제 해결 성능, 반복 시도 간 일관성, 자원 사용량을 분석하고, 태스크 복구·정제가 실행 가능한 후보 비율과 최종 보존율에 미치는 영향을 정량화.</li>
+</ul>
+<h2>방법론</h2>
+<p>Longtail-SWE는 SWE-rebench V2의 태스크 수집·환경 구축 방식을 기반으로, 1) 수집(Collection) - GitHub에서 단일 이슈에 연결된 병합 PR 수집 및 Kimi K3 기반 의미론적 선별, 2) 구축(Construction) - 언어별 Docker 환경 준비, 설치/빌드/테스트 명령 검증 및 FAIL_TO_PASS/PASS_TO_PASS 테스트 식별, 3) 수리(Repair) - 솔버가 태스크를 시도하고, 심판(judge)이 솔버의 트래젝토리·테스트 결과를 원래 설명·참조 패치와 비교해 과제 결함(미명시 요구사항, 과도하게 제한적인 테스트 등)을 진단하면 별도의 수리자(repairer) 에이전트가 평가 테스트 패치를 수정하거나 설명에 설명을 추가(단, 원본 참조 패치와 원 이슈의 의도는 불변), 4) 최종화(Finalization) - 추가 솔버 실행으로 난이도를 보정하고 사후 검증을 거쳐 최종 데이터셋을 확정하는 4단계 구조다. 태스크는 GPT 5.6 Luna, GPT 5.6 Terra, Kimi K3 세 심판 모델 모두가 수락해야 통과되며, 평균 4.2회(중앙값 4회)의 진단-수리-검증 라운드를 거친다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Opus 5.5(high), GPT 6.1 Sol(high), GPT 5.6 Sol(high), GPT 5.6 Luna(xhigh), Kimi K3(max), DeepSeek V4 Flash(high), GLM-5.3-Flash(max), Qwen 3.8 27B(xhigh), Qwen 3.6 27B(thinking) 등 9개 모델 구성을 SWE 에이전트형 스캐폴드로 과제당 3회 시도하여 평가했다. Opus 5.5(high)가 Pass@1 81.52%, Pass@3 89.11%로 전체 1위를 기록했으며(2위 GPT 6.1 Sol과 3.14%p 차), 3회 시도 후에도 10.89%의 과제는 미해결로 남았다. 언어별로는 Erlang(73.5%)과 Haskell(72.8%)의 평균 성공률이 가장 높고 Clojure(48.1%)가 가장 낮아 약 1.5배 차이를 보였다. 또한 구축 파이프라인 어블레이션에서, B2/B5(잠재적 복구 가능) 후보까지 포함하고 결합된 감사(auditor) 절차를 적용하면 원 SWE-rebench V2 경로 대비 최종 A등급 벤치마크 과제 수가 2.97배(66개→196개) 증가함을 보였다. 심판(judge)의 인간 대조 검증에서는 재현율 96.1%, 정밀도 87.5%를 달성했다.</p>
+<h2>한계점</h2>
+<p>참조 패치를 고정하고 설명에는 추가만 허용하는 구조는 변경 범위를 제한하지만 태스크의 본질적 요구사항이 미묘하게 바뀔 가능성을 완전히 배제하지 못한다. 65개 과제에 대한 인간 감사에서 결함 과제 탐지 재현율은 높았으나(96.1%), 정상 과제에 대한 특이도는 낮았다(50.0%)—초기 평가자 간 합치도도 낮아(Cohen's κ=0.15) 결함 판별의 어려움을 보여준다. 난이도 선별에 사용된 Qwen 3.8 27B 모델이 평가 대상 모델에도 포함되어 점수에 편향을 줄 수 있으며, 공개 이슈/PR 기반이라 모델 학습 데이터 오염 가능성을 완전히 배제할 수 없다. 언어당 12~27개 과제만 포함되어 언어 간 성능 차이가 언어 자체의 난이도보다는 표본 저장소·구성의 특성을 반영할 수 있다.</p>
+<h2>시사점</h2>
+<p>비주류 프로그래밍 언어 생태계에서도 자동화된 솔버-심판-수리 루프를 통해 신뢰할 수 있는 평가 과제를 효율적으로 복구·확장할 수 있음을 보여주며, 이는 향후 코딩 에이전트의 언어 다양성 평가 및 벤치마크 구축 방법론 전반에 적용될 수 있는 일반적 접근으로 제시된다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.10304" target="_blank" rel="noopener">huggingface.co/papers/2611.10304</a> · 2026-11-11</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

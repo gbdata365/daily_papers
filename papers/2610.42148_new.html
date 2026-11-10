@@ -1,0 +1,124 @@
+<meta charset="UTF-8">
+<title>Flide</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#5 · Daily Papers 2026-11-11</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 31</span>
+    </div>
+    <h1 class="article-title">Flide: Accelerating Decision Inference with Exact State Forking</h1>
+    <p class="article-title-ko">Flide: 정확한 상태 포킹을 통한 의사결정 추론 가속화</p>
+    <p class="article-sub">공유된 상태(state)에 대해 여러 질문을 동시에 묻는 Jev류 의사결정 모델(decision model)의 추론을, 논리적 트리 구조와 물리적 실행(단일 평탄화된 토큰 스트림)을 분리하는 ForkAttention으로 기존 엔진 대비 최대 9.5배 빠르면서도 float32 기준과 가장 가까운 정확도로 처리하는 추론 엔진 Flide를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.42148" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.42148" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Flide: Accelerating Decision Inference with Exact State Forking</li>
+<li><strong>저자</strong>: Bobo Li, Jiajia Song, Hao Fei, Wynne Hsu, Mong Li Lee (National University of Singapore, University of Oxford)</li>
+<li><strong>출처</strong>: arXiv:2610.42148v1 [cs.CL] (2026년 10월 30일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://flide.org">flide.org</a>, 소스코드: <a href="https://github.com/OmniJev/flide">github.com/OmniJev/flide</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.42148">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>공유된 상태(state)에 대해 여러 질문을 동시에 묻는 Jev류 의사결정 모델(decision model)의 추론을, 논리적 트리 구조와 물리적 실행(단일 평탄화된 토큰 스트림)을 분리하는 ForkAttention으로 기존 엔진 대비 최대 9.5배 빠르면서도 float32 기준과 가장 가까운 정확도로 처리하는 추론 엔진 Flide를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>LLM 에이전트 시스템에서는 라우팅, 응답 평가, 다음 행동 결정처럼 긴 텍스트를 생성하지 않고 여러 범주형(categorical) 질문에 답만 하면 되는 "Jev" 같은 경량 의사결정 모델이 각광받고 있다. 그러나 vLLM, SGLang 같은 기존 추론 엔진은 텍스트 생성에 최적화되어 있어, 하나의 상태(공유 컨텍스트)에 여러 질문이 딸린 요청을 처리할 때 심각한 비효율을 겪는다. vLLM류는 공유 접두사(prefix)를 캐싱해도 각 질문을 독립된 시퀀스로 다시 처리해 중복 연산이 발생하고, 특히 Gated DeltaNet 같은 재귀형(recurrent) 레이어를 쓰는 하이브리드 모델에서는 블록 경계에서만 상태를 복원할 수 있어 중복이 더 심하다. SGLang의 multi-item scoring은 질문들을 구분자(delimiter) 토큰과 함께 한 시퀀스에 이어 붙여 중복은 줄이지만, 구분자가 각 질문의 은닉 상태를 바꿔 출력 확률이 왜곡되고 결정이 뒤집히는 문제가 생긴다. 즉, 요청의 논리적 구조(공유 트렁크+분기 질문)와 엔진이 이를 물리적으로 실행하는 방식 사이의 불일치가 근본 원인이다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>생성형 추론 엔진의 중복 연산 문제와 multi-item scoring의 답변 왜곡 문제를 "요청의 논리 구조와 물리적 실행의 분리 부재"라는 하나의 근본 원인으로 규명</li>
+<li><strong>Flide</strong> 제안: 요청 트리를 GPU 상주 메타데이터로 유지하면서, 한 라운드 전체를 패딩 없는 단일 평탄 스트림으로 실행하고 <strong>ForkAttention</strong>으로 각 상태(state)를 정확히 포킹(forking)</li>
+<li>공개된 하이브리드 모델 및 전용 의사결정 모델 모두에서 vLLM·SGLang 대비 최대 한 자릿수(약 9.5배) 빠른 속도와 float32 기준에 가장 가까운(total variation 최소) 답변 정확도를 동시에 달성</li>
+</ul>
+<h2>방법론</h2>
+<p>Flide는 하나의 요청을 공유 상태 트렁크 $s$와 그로부터 뻗어나가는 질문 가지($q_1,\dots,q_n$)로 이루어진 트리로 보고, 한 라운드의 모든 요청을 패딩 없이 하나의 토큰 스트림 $[s^{(1)}|s^{(2)}|\cdots|q_1^{(1)}|\cdots]$으로 평탄화한다. 각 토큰은 요청 인덱스, 분기 인덱스, 위치 인덱스를 메타데이터로 들고 다닌다.
+- <strong>ForkAttention(완전 어텐션 레이어)</strong>: 쿼리 토큰이 같은 요청이면서 트렁크(분기 0)이거나 자기 자신의 분기이고, 뒤에 오지 않는 키에만 주목하도록 마스크를 구성해, 독립 실행 시와 동일한 연산만 수행하도록 보장
+- <strong>Gated DeltaNet(재귀 레이어) 처리</strong>: 상태의 재귀 행렬 $S_t$가 모든 이전 토큰을 압축하므로 마스크만으로는 분기를 분리할 수 없어, 스트림을 두 번 통과시킨다 — 1차 호출로 모든 요청의 상태 구간을 처리해 $S_P$(트렁크 끝 상태)를 얻고, 2차 호출에서 각 질문 구간이 자신의 $S_P$에서부터(복사 없이 인덱스로) 이어서 재귀를 계산
+- 이 두 메커니즘으로 각 질문이 독립적으로 실행했을 때와 정확히 동일한 은닉 상태를 계산함을 수학적으로 증명(Proposition 1, 귀납법)
+- <strong>Flat-Graph 실행</strong>: 요청 수·길이가 라운드마다 달라도 CUDA 그래프를 재사용할 수 있도록, 스트림 길이별로 미리 캡처해 둔 그래프 집합을 운용하고 실제 요청 경계·의존성은 GPU 메타데이터로 그래프 실행 시점에 주입
+- <strong>Selective Readout</strong>: 출력 헤드가 각 질문의 마지막 토큰만 읽으면 되므로 최종 레이어에서 해당 행만 계산해 불필요한 연산 제거
+- <strong>Incremental State Forking</strong>: 에이전트가 턴마다 상태를 누적해 가는 경우, 이전 체크포인트 이후의 짧은 미계산 구간과 새 토큰만 계산하고 Gated DeltaNet 상태·attention의 key/value 캐시를 체크포인트로 저장해 재사용
+- <strong>Bitwise Determinism(선택적 모드)</strong>: 배치 구성에 따라 부동소수점 축소 순서가 달라져 결정이 흔들리는 문제를 막기 위해, 질문별로 고정된 타일/청크에서 항상 동일한 순서로 리덕션을 수행하는 배치 불변(batch-invariant) 모드를 제공</p>
+<h2>실험 설정 및 결과</h2>
+<p>RACE, QuALITY, MultiRC, Decision Index(DI) 네 개 공개 데이터셋으로 "상태당 질문 1개" 및 "상태당 질문 여러 개"의 6개 워크로드를 구성했다. Qwen3.5(0.8B~27B, 하이브리드), Gemma 4(E2B~31B, 완전 어텐션), 전용 의사결정 모델 Open-Jev(2B/9B)까지 비교 대상에 포함했으며, 단일 NVIDIA H200 GPU에서 측정했다.
+- 하이브리드 모델(Qwen3.5)에서 Flide는 질문 1개짜리 요청에서도 최대 3.2배 빠르고, 질문이 여러 개로 늘어날수록 이득이 커져 vLLM 대비 최대 9.5배 낮은 지연시간, 최대 8.5배 높은 처리량을 보였다
+- 완전 어텐션 모델(Gemma 4)에서도 vLLM의 prefix caching 대비 다중 질문 요청의 지연시간을 1.1~2.9배 단축
+- 정확도 측면에서, Flide의 상위 답변은 float32 기준과 매 워크로드에서 가장 높은 일치율(Agr.)을 보였고, SGLang의 multi-item scoring(구분자 삽입 방식)은 최대 29%의 결정을 뒤집는 반면 Flide는 최대 2.3%에 그침
+- 전용 모델 Open-Jev + RadixFlow 스케줄러 대비도 짧은 입력에서 약 3배, 긴 입력에서도 최대 1.7배 빠름
+- 에이전트 궤적 재현 실험에서, 히스토리가 1,000토큰 단위로 증가해도 Flide는 단계당 지연 증가가 약 1ms에 불과해 vLLM/SGLang보다 한 자릿수 낮은 증가폭을 보임
+- 구성요소 제거(ablation) 실험에서 포킹을 제거하면 지연시간이 한 자릿수 이상 증가하고, CUDA 그래프를 제거하면 짧은 요청에서 지연시간이 급증하는 등 각 구성요소가 성능에 기여함을 확인</p>
+<h2>한계점</h2>
+<p>논문에 명시된 별도의 "한계점" 절은 없다. 다만 본문에서 드러나는 제약으로, Flide는 범주형 답변을 요구하는 의사결정 모델(및 그와 유사한 공유 상태+다중 질문 구조)에 특화된 설계이며, 완전한 배치 불변성(bitwise determinism)은 선택적 모드로만 제공되어 기본 모드에서는 여전히 미세한 부동소수점 반올림 차이가 존재할 수 있다.</p>
+<h2>시사점</h2>
+<p>LLM 에이전트 시스템에서 라우팅·평가·다음 행동 결정과 같은 저지연·확신도 기반 의사결정이 점점 더 많이 쓰이는 가운데, 요청의 논리적 구조(트리)와 물리적 실행(평탄 스트림)을 명시적으로 분리한다는 설계 원칙은 범용 생성 엔진에 끼워 맞추지 않고도 정확성과 속도를 동시에 얻을 수 있음을 보여준다. 이는 향후 에이전트 프레임워크나 멀티턴 의사결정 서비스에서 추론 엔진을 설계할 때 일반적으로 참고할 수 있는 접근으로 보인다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.42148" target="_blank" rel="noopener">huggingface.co/papers/2610.42148</a> · 2026-11-11</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>리프로브릿지</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#6 · Daily Papers 2026-11-11</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 29</span>
+    </div>
+    <h1 class="article-title">ReproBridge: Building Reproducibility into ML Research Artifacts</h1>
+    <p class="article-title-ko">리프로브릿지: ML 연구 산출물에 재현성을 구축하다</p>
+    <p class="article-sub">논문 재현에 성공한 코딩 에이전트(coding agent)의 실행 절차와 판단 근거를 "정제된 재현 가능 산출물(Refined Reproducible Artifact, RRA)"로 보존해두면, 이후 다른 에이전트나 연구자가 훨씬 적은 시행착오와 비용으로 동일 실험을 재현할 수 있음을 보인 연구.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.08452" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.08452" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: ReproBridge: Building Reproducibility into ML Research Artifacts</li>
+<li><strong>저자</strong>: Yubo Wang, Rui Meng, Jaehyun Nam, Tomas Pfister, Jinsung Yoon (University of Waterloo, Google)</li>
+<li><strong>출처</strong>: arXiv:2611.08452v1 [cs.AI] (2026-11-05)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://wyyyb.github.io/reprobridge_website/">https://wyyyb.github.io/reprobridge_website/</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.08452">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>논문 재현에 성공한 코딩 에이전트(coding agent)의 실행 절차와 판단 근거를 "정제된 재현 가능 산출물(Refined Reproducible Artifact, RRA)"로 보존해두면, 이후 다른 에이전트나 연구자가 훨씬 적은 시행착오와 비용으로 동일 실험을 재현할 수 있음을 보인 연구.</p>
+<h2>배경 및 문제의식</h2>
+<p>머신러닝 실험을 재현하려면 논문과 공개 코드만으로는 알 수 없는 세부사항(의존성 충돌 해결, 데이터 로더 수정, 설정값 보정 등)을 재구성해야 하는 경우가 많다. 코딩 에이전트가 이런 재구성을 성공적으로 수행하더라도, 그 과정에서 얻은 지식(어떤 수정을 왜 했는지)은 대화 로그나 셸 히스토리에 묻혀 사라지고, 다음 재현 시도자는 동일한 탐색을 처음부터 반복해야 한다. 저자들은 "재현 성공이 공개된 산출물 자체보다 에이전트의 누락 정보 추론 능력에 좌우되는 정도는 얼마나 되는가?"라는 질문을 던지고, 재현 과정에서 복원된 절차와 결정을 보존하면 이후 재현이 개선된다는 가설을 세운다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li><strong>정제된 재현 가능 산출물(RRA) 설계</strong>: 정제된 코드베이스, 환경 설정, 실험 실행기(launcher), 재현 가이드의 4개 구성요소로 이루어진 표준 산출물 형식을 제안.</li>
+<li><strong>ReproBridge 워크플로우</strong>: Intake-Planner-Builder-Reproducer-Distiller-Packager-Reviewer의 6개 역할을 거쳐 논문과 원본 코드로부터 RRA를 자동 구성하는 에이전트 워크플로우.</li>
+<li><strong>ReproBridge-Bench 벤치마크</strong>: ICML 2026 Spotlight 논문 중 36편, 387개 실험에서 추출한 1,029개 과제(task)에 대해 사람이 검증한 5회 참조 실행 점수를 포함한 재현성 평가 벤치마크를 구축하고 공개.</li>
+</ol>
+<h2>방법론</h2>
+<p>ReproBridge는 "Specify(명세) → Execute(실행) → Preserve(보존)"의 3단계, 6개 역할로 구성된다. Intake는 입력(논문+코드)을 매핑하고, Planner는 측정 대상과 모호성을 사전에 명시하며, Builder는 의존성을 고정하고 실행 환경을 구축한다. Reproducer가 실제로 계획을 실행·기록하고, Distiller가 실행 증거와 수정 이력을 바탕으로 재현 가이드를 작성하며, Packager가 이를 하나의 이식 가능한 산출물로 패키징한다. 독립된 Reviewer가 각 단계의 산출물과 주장을 검증한다. 평가에서는 신선한(fresh) 세션의 Reproducer가 원본 코드(Raw) 또는 RRA 중 하나만 받아 과제를 수행하고, 별도의 Auditor(주로 Codex, 일부는 Claude)가 보고된 수치가 실제 실행에서 나왔는지 증거 체인(실행 기록, 출력 파일, 해시)을 추적해 검증한다. 수치 일치 여부는 5회 인간 재현 실행의 평균과 표준편차로 정의된 호환 구간(Student-t 기반, 식 1)으로 판정한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Sonnet 4.6, Sonnet 5, Opus 5, Gemini 3.8 Flash 네 개 모델로 36개 논문·1,029개 과제를 평가한 결과(Table 3), RRA 사용 시 평균 재현 성공률이 76.4%에서 92.6%로 상승했고, 모델별로는 Opus 5(+5.5%p, 최강 raw 성능)부터 Gemini 3.8 Flash(+23.2%p)까지 모든 모델에서 개선되었다. 동시에 API 비용은 16.8~23.7% 절감되었고, 모델 간 성공률 편차는 21.6%p에서 3.9%p로 좁혀져 네 모델 모두 90% 이상의 평균 성공률을 기록했다. 구성요소 제거(ablation) 실험에서는 전체 RRA(93.0%) 대비 코드 제거 시 5.2%p, 환경 설정 제거 시 4.5%p로 손실이 가장 컸고, 가이드·실행기 제거도 각각 3.8%p, 3.1%p의 손실을 유발했다. 외부 벤치마크인 CORE-Bench Hard 45개 캡슐에서도 RRA가 원본 코드 및 비교 기법 VERITAS 대비 가장 높은 성공률(73.3%)과 가장 낮은 성공당 비용($4.34)을 보였다. 또한 2명의 인간 검수자가 교차검증한 결과 Auditor(Codex)는 88.6% 정밀도·79.5% 재현율로 허위 수치 대입 등 위반 사례를 탐지했다.</p>
+<h2>한계점</h2>
+<p>평가는 선정된 36개 논문과 고정된 참조 구간, 테스트된 에이전트에 한정되며 학회 전체의 재현율을 대표하지 않는다. 5회 참조 실행은 프로토콜상의 선택이지 충분한 불확실성 추정을 보장하지 않으며, 수치적 호환성이 과학적 타당성이나 실험 충실도를 보증하지는 않는다(RRA가 잘못된 가정을 그대로 보존할 수도 있음). 자동 감사(Auditor) 역시 인간 검증 대비 일부 위반을 놓친다. 또한 산출물 재구성·검토·패키징 전 과정을 포괄하는 완전한 개입 효과를 측정했을 뿐, 단순히 출력물을 재구성한 것만의 효과는 분리하지 못했으며, 비용 분석도 구축·검증·GPU 실행·인간 검토 비용을 제외한 재사용 단계의 API 비용만을 다룬다.</p>
+<h2>시사점</h2>
+<p>재현 과정에서 얻은 실행 지식(설정, 수정 이유, 모호성 해소 근거)을 구조화해 보존하는 것이 코드·데이터 공개만큼이나 재현성 향상에 중요하며, 이는 특히 원시 코드만으로는 성공률이 낮은 모델에서 효과가 크다는 점에서 "실행 지식의 보존"이 모델 역량 차이를 줄이는 평준화 효과를 가질 수 있음을 시사한다. 저자들은 논문 제출 전 저자 스스로 ReproBridge를 재현성 점검 도구로 활용하거나, 제3자 재현자가 동일 형식으로 결과를 공유해 이후 재현 비용을 낮추는 용도로 사용할 것을 제안한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.08452" target="_blank" rel="noopener">huggingface.co/papers/2611.08452</a> · 2026-11-11</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

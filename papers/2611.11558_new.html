@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>InfraRSI</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#8 · Daily Papers 2026-11-11</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 14</span>
+    </div>
+    <h1 class="article-title">InfraRSI: Harnessing Recursive Self-Improvement for Training Infrastructure</h1>
+    <p class="article-title-ko">InfraRSI: 훈련 인프라를 위한 재귀적 자기개선 활용</p>
+    <p class="article-sub">InfraRSI는 open-ended 명령을 "검증된" 분산 LLM 훈련 인프라 최적화로 바꾸는 5단계(init-doctor-run-report-apply) 에이전트 하네스로, 런치 설정과 소스 코드 패치를 공동 탐색하여 4개 훈련 워크로드에서 평균 1.83배의 속도 향상과 MFU(Model FLOPs Utilization) 17.4%→30.0% 개선을 달성한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.11558" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.11558" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: InfraRSI: Harnessing Recursive Self-Improvement for Training Infrastructure</li>
+<li><strong>저자</strong>: Yuchuan Tian, Haocheng Mei, Ye Yuan 외 (TokenRhythm Technologies, Peking University, Infinigence AI, Shanghai Jiao Tong University, Tsinghua University)</li>
+<li><strong>출처</strong>: arXiv:2611.11558v1 [cs.AI] (2026년 11월 8일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://infrarsi.github.io">infrarsi.github.io</a>, <a href="https://github.com/TokenRhythm/InfraRSI">GitHub</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.11558">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>InfraRSI는 open-ended 명령을 "검증된" 분산 LLM 훈련 인프라 최적화로 바꾸는 5단계(init-doctor-run-report-apply) 에이전트 하네스로, 런치 설정과 소스 코드 패치를 공동 탐색하여 4개 훈련 워크로드에서 평균 1.83배의 속도 향상과 MFU(Model FLOPs Utilization) 17.4%→30.0% 개선을 달성한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>기존 재귀적 자기개선(RSI) 연구는 알고리즘 발견이나 단일 CUDA/Triton 커널 합성처럼 고립된 단위에 집중해 왔다. 그러나 분산 LLM 훈련 처리량은 런치 설정, 오퍼레이터 커널, 통신 스케줄이 긴밀히 결합되어 있어, 단일 설정 변경만으로도 메모리 초과(OOM), 컴파일러 충돌, 측정 잡음, 수치적 드리프트 등이 쉽게 발생한다. 저자들은 제약 없는 코딩 에이전트나 탐욕적 로컬 탐색을 실제 훈련 레포지토리에 직접 적용하면 (1) 보상 해킹과 타이밍 경계 조작, (2) 클러스터마다 2자릿수 이상 차이 나는 측정 잡음, (3) 제로샷 LLM의 부정확한 속도 예측(스피어만 상관계수 r ∈ [-0.49, -0.06]), (4) 메모리·컴파일러 경계에서의 단일 후보 탐색의 근시안적 한계라는 4가지 반복되는 실패 양상이 나타남을 관찰했다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>통합 실행·검증 계약</strong>: 워크로드, 손실, 타이밍에 대한 16개 불변식(5개 계층: 실행/워크로드/스케줄/수치/타이밍)과 소스 경로 감사, 실패 비용 전액 기록, 독립적인 백투백 베이스라인 재검증을 결합.</li>
+<li><strong>예산 기반 조합 탐색</strong>: Cholesky 베이지안 실행시간 대리모델과 우측 절단 Tobit 피크메모리 모델을 이용해 경험적 사전(prior) 보정, 실패 원인 귀속, 고영향 노브(knob) 탈출을 수행하는 상태 유지형 탐색 컨트롤러.</li>
+<li><strong>크로스 하드웨어 경험 전이와 감사된 평가</strong>: GPU 아키텍처(H100/H200/H20) 간 성능 증거를 정규화해 전이하는 구조화된 경험 프로토콜, 그리고 오프라인 검증기를 통한 감사 체계.</li>
+</ul>
+<h2>방법론</h2>
+<p>InfraRSI는 <code>init</code>(편집 가능 범위와 작업 계약 고정) → <code>doctor</code>(기준 성능 프로파일링 및 클러스터 잡음 보정) → <code>run</code>(설정·코드 패치 공동 탐색) → <code>report</code>(결과 요약) → <code>apply</code>(검증된 변경 적용)의 5단계로 구성된다. <code>run</code> 단계의 핵심은 세 메커니즘이다: (1) 경험 기반 시드, 프라이어 기반 고영향 설정, 무작위 설정의 3가지 시작점을 사용하는 다중 시작 초기화와, 전역 실행시간/메모리(Cholesky 대리모델, 우측 절단 Tobit 모델)를 활용한 모델링, (2) 제로샷 LLM 프라이어를 경험적 베이즈 수축과 대조적(contrarian) 프로빙으로 보정, (3) 고영향 노브에 대한 신뢰영역 확장 탈출과 검증된 코드 패치의 누적(stacking). 각 후보는 손실/그래디언트 허용오차, 정밀도 메뉴, 타이밍 일치 등 16개 불변식을 모두 통과해야 승격되며, 승격 후보는 독립적 재실행으로 재검증된다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Qwen3.5-9B(8×H100), Gemma-4-26B-A4B MoE(8×H200), Qwen3.8-27B(8×H200), Qwen3.5-35B-A3B MoE(16×H100, 2노드) 4개의 조밀/MoE 훈련 워크로드에서 평가했다. InfraRSI는 Auto-Research(1.34배, MFU 24.5%), RE-Bench(1.37배, 25.1%), OptiCo(1.23배, 21.3%) 대비 기하평균 1.83배 속도 향상과 평균 MFU 30.0%를 달성했으며, Gemma-4-26B-A4B MoE에서는 최대 2.75배(MFU 17.6%)를 기록했다. 또한 크로스 SKU 경험 전이 시 Qwen3.5-9B의 최종 속도 향상이 1.70배(콜드 스타트)에서 1.82배로 개선되었고, 독립 오프라인 검증기는 1,212개의 저장된 실행에 대해 40/40 테스트 케이스에서 100% 일치를 보였다.</p>
+<h2>한계점</h2>
+<p>제로샷 LLM 프라이어는 하드웨어 실행 결과와 상관관계가 약하며(때로는 음의 상관), 특히 고영향 컴파일/통신 설정에 대해 거짓 음성(false-negative veto)을 내는 경우가 많아 추가적인 대조 프로빙과 경험적 보정이 필수적임이 드러났다. 또한 서로 다른 GPU 세대(H20/H100/H200) 간에는 루프라인(roofline) 차이로 인해 최적화 효과의 크기 압축이나 부호 반전(sign flip)이 발생해, 경험을 단순 재사용하면 음의 전이가 생길 수 있다(논문은 환경 유사성 기반 필터링으로 이를 완화).</p>
+<h2>시사점</h2>
+<p>InfraRSI는 LLM 기반 코드 제안을 엄격한 수치·타이밍 검증과 결합함으로써, 보상 해킹 없이 실제 분산 훈련 처리량을 신뢰성 있게 개선할 수 있음을 보여준다. 이는 파운데이션 모델 스케일링을 가속화하는 데 있어 훈련 인프라 자체를 재귀적으로 자기 개선시키는 새로운 방향을 제시하며, 특히 이기종 GPU 클러스터를 운영하는 실무 환경에서 구성 튜닝과 커널 패치를 자동화하는 데 실질적 가치가 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.11558" target="_blank" rel="noopener">huggingface.co/papers/2611.11558</a> · 2026-11-11</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

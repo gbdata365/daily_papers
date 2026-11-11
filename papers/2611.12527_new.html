@@ -1,0 +1,107 @@
+<meta charset="UTF-8">
+<title>웨이브젠</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#12 · Daily Papers 2026-11-12</span>
+      <span class="cat-tag">생성모델</span>
+      <span class="upvote-tag">▲ 12</span>
+    </div>
+    <h1 class="article-title">WaveGen: Truly End-to-End Waveform Generation via Internal Spectral Trajectory Learning</h1>
+    <p class="article-title-ko">웨이브젠: 내부 스펙트럴 궤적 학습을 통한 진정한 종단간(End-to-End) 파형 생성</p>
+    <p class="article-sub">WaveGen은 뉴럴 오디오 코덱, Mel-스펙트로그램 보코더, VAE 기반 잠재 표현, 사전학습된 자기지도(SSL) 표현, 듀레이션 예측기 등 어떤 외부·중간 모듈도 없이, 텍스트로부터 원시(raw) 파형을 단일 모델·단일 단계로 직접 생성하는 완전한 종단간(end-to-end) 디퓨전 기반 TTS 프레임워크로, Seed-en 벤치마크에서 WER 1.47·SIM 0.75의 최고 수준 성능을 달성한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.12527" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.12527" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: WaveGen: Truly End-to-End Waveform Generation via Internal Spectral Trajectory Learning</li>
+<li><strong>저자</strong>: Sang-Hoon Lee, Ha-Yeong Choi</li>
+<li><strong>출처</strong>: arXiv:2611.12527v1 [cs.SD] (2026-11-09)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/sh-lee-prml/WaveGen">GitHub</a> (코드와 체크포인트 공개)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.12527">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>WaveGen은 뉴럴 오디오 코덱, Mel-스펙트로그램 보코더, VAE 기반 잠재 표현, 사전학습된 자기지도(SSL) 표현, 듀레이션 예측기 등 어떤 외부·중간 모듈도 없이, 텍스트로부터 원시(raw) 파형을 단일 모델·단일 단계로 직접 생성하는 완전한 종단간(end-to-end) 디퓨전 기반 TTS 프레임워크로, Seed-en 벤치마크에서 WER 1.47·SIM 0.75의 최고 수준 성능을 달성한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>최근 TTS는 LLM 기반 뉴럴 코덱 언어모델, CFM(conditional flow matching) 기반 Mel-스펙트로그램 생성, 압축된 잠재 공간에서 작동하는 잠재 디퓨전 등으로 발전해 왔지만, 이들 모두 별도로 학습된 중간 표현(코덱, 보코더, 잠재 모델)과 외부 디코더에 의존한다. 이런 구조는 성능에는 효과적이지만 학습 단계와 아키텍처 의존성을 늘리고 최종 품질의 상한을 제약하며, 특히 고품질 파형 생성을 위해 GAN 학습이나 정교한 아키텍처 설계가 필요해 파이프라인이 점점 복잡해진다. 한편 Tacotron, VITS, EATS 같은 기존 종단간(E2E) TTS는 원시 파형의 높은 시간 해상도 때문에 텍스트-음성 정렬이 어렵고 적대적 학습 없이는 지각적으로 자연스러운 파형을 만들기 힘들어, 확장성과 제로샷 품질이 떨어졌다. E3-TTS가 파형 수준 디퓨전의 가능성을 보였지만 여전히 BERT 기반 텍스트 표현에 의존하고 계산 비용이 크다는 한계가 있었다. 저자들은 이런 다단계 파이프라인의 복잡성을 근본적으로 줄이기 위해, 어떤 외부 모듈 없이도 텍스트에서 파형을 직접 생성하는 더 엄격한 의미의 종단간 TTS를 추구한다.</p>
+<h2>핵심 기여</h2>
+<p>(1) 신경 오디오 코덱, Mel 보코더, VAE 잠재 모델 등 별도로 학습되는 중간 표현에 의존하지 않고 텍스트로부터 원시 파형을 직접 생성하는 완전 종단간 TTS 프레임워크 WaveGen을 제안했다. (2) 내부적인 저해상도 스펙트럴 궤적과 목표 파형 궤적을 하나의 모델 안에서 함께 학습시켜, 고해상도 파형 공간에서 CFM 기반 학습을 안정화하는 "Spectral Forcing" 기법을 도입했다. (3) 파형 생성을 위한 예측 공간과 손실 공간을 재검토해, x-prediction과 v-loss를 분리하고 다중 스케일 스펙트럴 v-loss를 적용하는 확장 가능한 디퓨전 아키텍처(공유 DiT 블록 + 분리된 diffusion head)를 설계했다. (4) 0.1B~0.6B로 모델 크기를 키우며 단일 아키텍처·공개 데이터·단일 단계 학습만으로 종단간 TTS가 기존의 복잡한 다단계 파이프라인에 대한 실질적 대안이 될 수 있음을 입증했다.</p>
+<h2>방법론</h2>
+<p>WaveGen은 24,000Hz의 고해상도 파형을 100Hz 수준의 저해상도 표현으로 reshape하여 효율적으로 디퓨전을 수행하는 DiT(Diffusion Transformer) 기반 구조다. 모델은 noisy 파형 표현과, 이를 돕기 위한 보조 타깃인 noisy 64-bin Mel 스펙트로그램(저해상도 spectral trajectory)을 함께 입력받아, 텍스트 임베딩을 시간축으로 평균-업샘플링해 외부 인코더 없이 결합한다. 이 내부 스펙트럴 궤적을 함께 생성하도록 강제하는 것이 Spectral Forcing으로, 외부 중간 표현이 아니라 모델 내부에서만 쓰이는 정렬용 가이드 역할을 한다. 공유 DiT 블록(14개)이 텍스트-음성 정렬의 백본 역할을 하고, 그 위에 파형용·스펙트럴용으로 분리된 얕은 디퓨전 head(2개)가 각 표현에 특화된 정제를 수행하며, 손실은 마스킹된(프롬프트 외) 영역에만 계산된다(masked-infilling 학습). 예측·손실 공간 설계에서는, velocity를 직접 예측하는 대신 clean 타깃(x-prediction)을 예측한 뒤 이를 velocity로 환산해 v-loss를 계산하는 "디커플링된 x-prediction/v-loss" 전략을 사용하는데, 이는 x-loss의 금속성 잡음과 v-prediction의 에너지 복원 실패를 모두 피한다. 여기에 더해 여러 STFT 해상도(필터뱅크 bin 수 16~512)에서 파형 velocity 차이의 에너지를 정규화해 반영하는 다중 스케일 스펙트럴 v-loss를 추가해 고주파 디테일을 보강한다. 최종 목적함수는 파형 v-loss, 스펙트럴 v-loss, 다중 스케일 스펙트럴 v-loss의 가중합이다. 추론 시에는 Euler ODE 솔버와 classifier-free guidance(CFG)를 사용하며, masked-infilling 학습-추론 불일치를 줄이기 위해 프롬프트 영역을 매 샘플링 스텝마다 ground-truth 기반 중간 상태로 고정하는 "prompt anchoring" 기법도 적용한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>소규모 실험 및 ablation은 LibriTTS(24kHz)로, 대규모 학습은 Emilia/Emilia-YODAS 영어 서브셋(약 100k~120k시간)으로 진행했으며 다국어(영어·중국어) 실험도 수행했다. Seed-en 제로샷 TTS 벤치마크에서 WaveGen(0.6B)은 WER 1.47, SIM 0.75를 기록해, 코덱·보코더·VAE 등 외부 디코더에 의존하는 F5-TTS, ZipVoice, CosyVoice3, Qwen3-TTS 등 대규모 다단계 TTS 시스템들과 대등하거나 더 나은 성능을 보였고, 사람 평가(MTurk 기반 MOS)에서도 비교 가능한 자연성·유사성 점수를 얻었다. Ablation 결과, Spectral Forcing이 없으면 정렬이 완전히 실패하고(WER 123.67), Mel bin을 64로 선택한 것이 정렬 속도와 고주파 복원의 균형점이었다. 분리된 디퓨전 head(14 공유+2 분리 구성)가 완전 공유 구조보다 우수했고, x-prediction+v-loss 조합이 v-prediction보다 에너지 복원과 지각 품질에서 뛰어났다. 제안한 다중 스케일 스펙트럴 v-loss는 기존 Flow2GAN 손실보다 WER·SIM·DNSMOS를 모두 개선했다. 2단계(텍스트→Mel→보코더) 파이프라인과 비교했을 때도 종단간 모델이 동일 NFE에서 더 나은 WER/SIM/DNSMOS를 보였다. 모델 크기(0.1B→0.6B)와 데이터 규모(0.5k→120k시간)를 늘릴수록 성능이 꾸준히 개선되는 확장성도 확인했으며, 선택적으로 Whisper 기반 REPA를 적용하면 추가 성능 향상이 가능함을 예비 실험으로 보였다.</p>
+<h2>한계점</h2>
+<p>저자들은 다음 한계를 명시한다. REPA 등 SSL 기반 가이던스를 쓰지 않았지만 이를 추가하면 학습이 더 빨라질 수 있음을 시사하며, 이는 향후 과제로 남겼다. 계산 자원의 제약으로 대규모 학습을 4 epoch로 제한했으며, 관찰된 스케일링 추세로 보아 더 긴 학습이 성능을 추가로 개선할 가능성이 있다. 또한 현재는 48kHz가 아닌 24kHz(또는 16kHz) 파형 생성에 국한되어 있으며, 48kHz로의 확장을 향후 계획으로 제시했다. Emilia 데이터셋이 MP3로 압축되어 있어 8kHz 이상의 고주파 복원이 제한되는 현상도 발견되었으며, 이는 데이터 품질이 종단간 파형 생성에 중요한 영향을 미친다는 점을 보여준다.</p>
+<h2>시사점</h2>
+<p>이 연구는 코덱·보코더·VAE·SSL 표현·듀레이션 예측기 등 그간 TTS 파이프라인을 복잡하게 만들었던 외부 모듈들이, 적절한 예측/손실 공간 설계(x-prediction+v-loss)와 내부 가이던스 기법(Spectral Forcing), 분리된 디퓨전 head 구조만 갖추면 모두 제거 가능하다는 것을 실증적으로 보여준다. 특히 GAN 기반 적대적 학습 없이도 고품질 파형을 생성할 수 있다는 점은, 복잡한 판별자 설계나 다단계 학습 없이도 TTS 시스템을 크게 단순화할 수 있는 길을 제시한다. 또한 모델·데이터 규모 확장에 따라 성능이 일관되게 향상되는 결과는, 종단간 파형 생성이 단일 아키텍처로도 산업적 규모의 다단계 시스템과 경쟁할 수 있는 실용적 대안이 될 수 있음을 시사하며, 음성 생성 연구의 구조적 단순화 방향에 중요한 참고점을 제공한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.12527" target="_blank" rel="noopener">huggingface.co/papers/2611.12527</a> · 2026-11-12</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

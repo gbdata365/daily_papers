@@ -1,0 +1,107 @@
+<meta charset="UTF-8">
+<title>ProTEUS</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#11 · Daily Papers 2026-11-12</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 13</span>
+    </div>
+    <h1 class="article-title">ProTEUS: A mutation-resolved world model for closed-loop protein evolution</h1>
+    <p class="article-title-ko">ProTEUS: 폐루프 단백질 진화를 위한 돌연변이-분해 월드 모델</p>
+    <p class="article-sub">ProTEUS는 서열·진화·구조 정보를 하나의 잠재공간에 통합한 "돌연변이-분해(mutation-resolved) 월드 모델"로, 단백질 변이체를 상태(state)로, 돌연변이를 행동(action)으로 표현하여 실험 피드백과 결합한 폐루프(closed-loop) 방식으로 효소 활성을 10배 이상 향상시키는 변이체를 찾아낸다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.13348" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.13348" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: ProTEUS: A mutation-resolved world model for closed-loop protein evolution</li>
+<li><strong>저자</strong>: Yikun Zhang, Minghao Guo, Guangxue Xu, Peter Yichen Chen, Wojciech Matusik, Wengong Jin, Jingjing Chai, Kaiyi Jiang (Yikun Zhang와 Minghao Guo는 공동 1저자; Kaiyi Jiang이 교신저자)</li>
+<li><strong>출처</strong>: arXiv:2611.13348v1 [q-bio.BM] (2026-11-09)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.13348">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>ProTEUS는 서열·진화·구조 정보를 하나의 잠재공간에 통합한 "돌연변이-분해(mutation-resolved) 월드 모델"로, 단백질 변이체를 상태(state)로, 돌연변이를 행동(action)으로 표현하여 실험 피드백과 결합한 폐루프(closed-loop) 방식으로 효소 활성을 10배 이상 향상시키는 변이체를 찾아낸다.</p>
+<h2>배경 및 문제의식</h2>
+<p>단백질 공학은 촉매 활성, 결합력, 안정성 등을 자연 상태 이상으로 끌어올리는 것을 목표로 하지만, 가능한 돌연변이 조합의 수가 방대한 데 비해 실험적으로 검증할 수 있는 서열은 극히 일부에 불과하다. ESM, MSA Transformer, Tranception, PoET, ESM-IF, ProteinMPNN, ESM-3 등 서열·진화·구조 정보를 활용하는 제로샷 모델들이 많이 제안되었지만, 이들은 자연에서의 진화적 선택과 실제 공학적으로 원하는 활성 목표 사이의 불일치 때문에 실측 활성과의 상관관계가 제한적이다. EVOLVEpro나 MULTI-evolve 같은 능동학습 기반 방법이 실험 데이터를 활용해 이 문제를 일부 해결했지만, 초기 고활성 변이 선별의 적중률이 낮고 특히 고차(high-order) 돌연변이에 대한 일반화 성능이 떨어진다는 한계가 있었다.</p>
+<h2>핵심 기여</h2>
+<p>(1) 182개의 deep mutational scanning(DMS) 데이터셋(161개 단백질)으로 사전학습된 MutationFormer를 제안하여, 서열·진화(MSA)·구조 정보를 잔기 단위로 정렬하고 돌연변이가 일어난 위치에 어텐션을 편향시켜 변이 효과를 예측하는 핵심 아키텍처를 구성했다. (2) AlphaFold3보다 10배 이상 빠르면서도 물리적 타당성(기하·입체화학적 제약)을 보장하는 all-atom 구조 예측기를 개발해, 대규모 고차 변이 라이브러리에 대한 구조 입력을 효율적으로 생성할 수 있게 했다. (3) 제로샷 점수와 누적된 실험 데이터를 결합하는 변이체 지명(nomination) 전략으로 폐루프 진화를 설계하고, LLM 에이전트가 후보 돌연변이의 생화학적 해석과 신뢰도 평가를 제공하는 human-in-the-loop 워크플로를 구축했다. (4) 레반수크라제(levansucrase)와 알데하이드 탈수소효소(ALDH)에 대한 실제 실험실 폐루프 진화 캠페인을 수행해, 100개 미만의 실험 예산으로 야생형 대비 10배 이상 높은 활성을 가진 변이체를 발견했다.</p>
+<h2>방법론</h2>
+<p>ProTEUS는 변이체를 조인트 잠재공간의 상태로, 돌연변이를 그 상태를 바꾸는 행동으로 보는 월드 모델 틀을 취한다. MutationFormer는 12층 트랜스포머로 아미노산 서열, MSA, 구조 특징을 잔기별로 정렬해 입력하고, 명시적인 돌연변이 마스크를 통해 야생형과 다른 위치에 어텐션 편향을 주어 주변 단백질 맥락은 유지하면서 변이 부위에 집중한다. 구조 입력은 Boltz-1의 어텐션 인코더·MSA 모듈·PairFormer를 기반으로 한 두 단계 디노이징 네트워크가 생성하며, 미분 가능한 Gauss–Seidel 투영(projection)을 적용해 비결합 원자 간 거리, 사면체 카이랄성, 이중결합 입체화학, 평면성, 리간드 내부 거리, 체인 간 결합 등 7가지 제약을 강제한다. 학습 시에도 이 투영 과정을 포함시켜(약 18만 개 PDB 구조로 미세조정) 모델이 투영 후에도 정확한 구조를 내도록 했다. 폐루프 진화 단계에서는 먼저 제로샷 점수로 초기 단일 변이 배치를 선별하고, 이후 라운드마다 실험으로 얻은 활성 측정값을 모델에 반영해 제로샷 점수·갱신된 활성 예측·실험적 피트니스 순위를 결합한 복합 점수로 다음 세대의 고차 변이체(최대 허용 변이 수를 유지하거나 1씩 증가)를 지명한다. 이 전체 과정은 후보 생성, 적합도 예측, 변이 지명, 실험 피드백 반영을 자동화하는 에이전틱 워크플로로 구현되어, LLM이 제안된 치환의 물리화학적 함의를 분석해 과학자에게 근거와 신뢰도를 함께 제시한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>ProteinGym 기반 182개 DMS 어세이로 사전학습한 결과 테스트셋에서 스피어만 상관 0.933, MSE 0.115를 달성했으며, 가장 강한 베이스라인인 PoET-2(상관 0.861)를 능가했다. 사전학습 데이터를 80배 늘리자 MSE가 0.262에서 0.115로 감소(약 56.3% 감소, 데이터 두 배마다 약 12.1% 감소)하는 스케일링 법칙 양상이 관찰되었다. 돌연변이 편향 어텐션을 제거하면 상관이 0.840에서 0.606으로 떨어지고, 서열 단일 모달 대비 서열+MSA+구조 멀티모달 입력이 0.807에서 0.938로 향상되는 등 설계 요소의 기여가 ablation으로 확인되었다. 19개의 held-out DMS 어세이에서 제로샷 스피어만 상관이 가장 높았고, 상위 10개 후보 중 평균 이상 활성 변이 비율이 ProTEUS 75.4% vs MULTI-evolve 64.6%로 우수했다. 지도 미세조정(5-fold 교차검증)에서는 평균 스피어만 상관 0.549로 ProteinNPT(0.367)를 크게 앞섰고, 능동학습 모사 실험(5라운드, 라운드당 30개 선택)에서 5라운드 후 정규화된 최고 피트니스가 0.741(EVOLVEpro 0.555)이었다. 구조 예측기는 CASP15 등 벤치마크에서 200-step Boltz-1 대비 약 9.4배(평균 7.81~10.81배 AlphaFold3 대비) 빠르면서도 7가지 물리적 타당성 검사를 모두 통과했다. 고차 변이 예측(K-vs-rest, 15개 데이터셋)에서 평균 스피어만 상관 0.448(MULTI-evolve 0.295)로 40개 비교 중 80%에서 우위를 보였다. 실제 실험에서는 레반수크라제의 경우 3라운드(약 90개 변이체) 내에 G23A:Q34N:G240W 변이체가 야생형 대비 14.03배 활성을 보였고, ALDH의 경우 5라운드(150개 변이체) 내에 S103V:A116K:H332N:L358I 4중 변이체가 야생형 대비 6.85배(정제 단백질 기준 정규화 활성은 7.90배) 활성을 보였다. 두 캠페인 모두에서 초기 제로샷 점수와 실측 활성의 상관은 낮았지만(레반수크라제 −0.24), 라운드가 진행되며 실험 데이터를 반영한 복합 점수의 상관이 점차 개선(최대 0.66)되었고, 발견된 치환 중 상당수가 상동 서열에서는 드물게 나타나는 비주류(non-consensus) 잔기였다.</p>
+<h2>한계점</h2>
+<p>저자들은 논의에서 몇 가지 개선 방향과 한계를 언급한다. 사전학습에 사용한 ProteinGym 데이터(약 250만 개 변이 측정값)는 서로 다른 실험 소스 간 잡음과 변동성이 커서 다른 도메인에 비해 고품질 큐레이션이 부족하며, 더 많은 고품질 활성 데이터가 축적되어야 추가적인 스케일링 이득을 기대할 수 있다고 밝힌다. 또한 능동학습(실험 라운드당 측정량) 규모가 커질수록 성능이 향상되는 경향이 관찰되어, 현재 실험으로 검증한 규모가 전체 가능성을 다 보여준 것은 아님을 시사한다. 두 가지 효소에 대한 폐루프 진화 결과는 "예비적 증거(preliminary evidence)"로 명시되어 있어, 더 다양한 단백질·활성 종류에 대한 추가 검증이 필요하다. 레반수크라제와 ALDH 실험 모두에서 모델 임베딩이 기능적으로 유의미한 구조를 갖는다는 것은 통계적으로 뒷받침되었으나(예: 순열 검정 P=0.046), 효과 크기는 비교적 작아 해석에 주의가 필요하다.</p>
+<h2>시사점</h2>
+<p>ProTEUS는 단백질 변이체를 "상태", 돌연변이를 "행동"으로 보는 월드 모델 프레임을 통해, 가상의 변이 평가와 실험적 학습을 하나의 폐루프 안에서 결합할 수 있음을 실제 효소 2종에 대한 wet-lab 캠페인으로 보여준다. 이는 순수 제로샷 예측이나 단일 라운드 액티브러닝을 넘어, 사전학습 데이터 규모 확장에 따른 지속적 성능 향상(스케일링 법칙)과 물리적으로 타당하면서도 빠른 구조 예측기의 결합이 실질적인 실험 효율(100개 미만의 테스트로 10배 이상 활성 개선)로 이어질 수 있음을 시사한다. 또한 LLM 에이전트를 결합한 human-in-the-loop 설계는 향후 실험실 자동화와 모델 업데이트가 상호 보완적으로 맞물리는 자율적 단백질 공학 파이프라인으로 발전할 수 있는 가능성을 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.13348" target="_blank" rel="noopener">huggingface.co/papers/2611.13348</a> · 2026-11-12</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

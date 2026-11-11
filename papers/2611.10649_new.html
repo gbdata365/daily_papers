@@ -1,0 +1,107 @@
+<meta charset="UTF-8">
+<title>MACaQ</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#9 · Daily Papers 2026-11-12</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 19</span>
+    </div>
+    <h1 class="article-title">MACaQ: Fast, Model Agnostic Calibrated Quantization for Low-Precision Weights and Activations</h1>
+    <p class="article-title-ko">MACaQ: 저정밀 가중치와 활성값을 위한 빠르고 모델 불문(model-agnostic) 보정 양자화</p>
+    <p class="article-sub">MACaQ는 모든 선형(linear) 레이어를 완전히 독립적으로 처리하는 MXFP4 W4A4(4비트 가중치·4비트 활성값) 사후 학습 양자화 기법으로, 레이어별로 온라인 스케일링과 블록-Hadamard 회전을 적용하고 Flip-Refinement라는 경량 Hessian 기반 보정을 더해, 기존 최상위 기법들과 동등하거나 더 나은 품질을 11배 이상 빠른 양자화 시간으로 달성한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.10649" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.10649" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: MACaQ: Fast, Model Agnostic Calibrated Quantization for Low-Precision Weights and Activations</li>
+<li><strong>저자</strong>: Lorenz K. Muller, Philippe Bich, Chiara Boretti, Hyun-Min Chang, Jiawei Zhuang, Lukas Cavigelli (Huawei Technologies, Switzerland, Computing Systems Lab)</li>
+<li><strong>출처</strong>: arXiv:2611.10649v1 [cs.LG] (2026-11-07)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.10649">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>MACaQ는 모든 선형(linear) 레이어를 완전히 독립적으로 처리하는 MXFP4 W4A4(4비트 가중치·4비트 활성값) 사후 학습 양자화 기법으로, 레이어별로 온라인 스케일링과 블록-Hadamard 회전을 적용하고 Flip-Refinement라는 경량 Hessian 기반 보정을 더해, 기존 최상위 기법들과 동등하거나 더 나은 품질을 11배 이상 빠른 양자화 시간으로 달성한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>최근 신경망 양자화의 핵심 아이디어는 입력과 가중치에 적절한 변환(change of basis)을 적용해 양자화하기 쉬운 분포로 바꾸는 것이다. 직교 회전(Hadamard 변환 등)이나 채널별 스케일링(대각 변환)이 대표적인데, 문제는 가중치 쪽 변환은 양자화 시점에 가중치에 흡수시킬 수 있지만 활성값 쪽 변환은 추론 시점에 온라인으로 적용해야 한다는 점이다. 기존 방법들은 이 온라인 연산 비용을 피하기 위해 변환을 네트워크를 가로질러 전파시켜 이전 레이어들에 흡수시키는 방식을 쓰는데, 이 방식은 레이어 간 의존성을 만들어 정규화층, 이전 프로젝션, 잔차 분기 등을 함께 수정해야 하는 공학적 복잡도와 아키텍처별 맞춤 작업, 그리고 느린 양자화 시간을 유발한다. 저자들은 이 레이어 간 의존성을 완전히 제거하면 양자화 로직을 한 레이어에만 국한시켜 훨씬 단순하고 빠르며 범용적인 양자화가 가능하다고 주장한다.</p>
+<h2>핵심 기여</h2>
+<p>(1) 모든 선형 레이어를 독립적으로 처리하는 엄격한 레이어별(per-layer) W4A4 MXFP4 양자화 파이프라인인 MACaQ를 제안하여, 최신 MXFP4 기법들보다 높은 출력 품질을 최대 11배 적은 양자화 시간으로 달성했다. (2) 경량 basis 변환을 온라인으로 유지하는 것이 추론 시 작은 오버헤드만 유발하면서도 레이어 간 의존성을 완전히 없앤다는 것을 보여, 엔지니어링을 단순화하고 레이어 하나씩 메모리에 올려 양자화하는 스트리밍 방식(낮은 메모리 요구)과 폭넓은 아키텍처에 대한 적용성을 가능케 했다. (3) 초기 round-to-nearest 양자화를 개선하는 Hessian 기반 좌표 하강(coordinate-descent) 기법인 Flip-Refinement를 도입했다. (4) vLLM에서 MACaQ 양자화 모델을 위한 효율적인 Triton 커널을 제공해 FP16 대비 최대 3배의 종단 간(end-to-end) 속도 향상을 달성하면서도 Qwen3-32B에서 온라인 변환의 오버헤드를 2.3%로 제한했다.</p>
+<h2>방법론</h2>
+<p>MACaQ는 한 선형 레이어를 네 단계로 양자화한다. ① 온라인 스케일링: 채널별 스케일 t를 두어 활성값 채널을 곱하고 대응하는 가중치 열을 나누는 변환(x⊙t, W⊘t)을 적용한다. 스케일 값은 활성값의 RMS 크기와 가중치 열의 표준편차 비율로 결정되며(균형 파라미터 α=0.75), 이는 두 양을 동시에 균형 있게 조정한다. ② 온라인 마이크로 회전: 스케일링 이후 32 크기의 블록 단위 블록-대각 Hadamard 변환을 입력 채널 차원에 적용해 이상치(outlier)를 채널 전반에 분산시킨다. 블록 크기를 MXFP4의 마이크로스케일링 블록 크기(32)와 맞춰 이상치가 여러 블록에 걸쳐 퍼지는 문제를 방지한다. ③ Hessian 가중 지수(exponent) 선택: MXFP4 블록마다 공유되는 E8M0 지수를 몇 개의 후보값(표준 지수 기준 +1/0/-1) 중 Hessian으로 가중된 재구성 오차가 최소인 값으로 선택한다. ④ Flip-Refinement: 선택된 지수를 고정한 채, 각 FP4 코드를 인접한 E2M1 표현값으로 옮기는 이동이 ridge 정규화된 Hessian 목적함수를 개선하는지 평가하고(닫힌 형태로 이득 계산), 모든 출력 행에 대해 병렬로 가장 이득이 큰 이동을 반복적으로 적용한다(최대 K회 반복). 이 네 단계는 레이어마다 독립적으로 수행되므로, 전방 훅(forward hook)으로 레이어 입력의 Hessian을 누적한 뒤 레이어를 하나씩 GPU에 올려 양자화하고 교체하는 스트리밍 절차가 가능하며, 나머지 가중치는 호스트 메모리에 둘 수 있다. 온라인 변환의 연산량은 입력 차원에만 비례해 출력 차원이 커질수록 행렬곱 대비 상대 비용이 줄어든다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Llama-3, Qwen3, Qwen3.5 계열 모델에서 WikiText-2/C4 퍼플렉시티를 QuaRot, FlatQuant, MR-GPTQ, DuQuant++ 등과 비교한 결과, MACaQ는 모든 모델에서 기존 기법들과 동등하거나 더 낮은(좋은) 퍼플렉시티를 기록했으며, Llama-3-8B에서 DuQuant++ 및 MR-GPTQ의 최고 성능을 11배 적은 양자화 시간(약 150초)으로 따라잡았다. IFEval과 MATH-500 생성형 벤치마크에서도 Qwen3-32B와 Qwen3.5-35B-A3B 기준 원본 FP16과 거의 동등한 성능을 유지했다. 대형 모델 양자화 사례로 1,220억 파라미터의 Qwen3.5-122B-A10B를 96GB GPU 한 대에서 64분 동안 32.5GB GPU 메모리만 사용해 양자화했으며, WikiText-2 퍼플렉시티는 5.14로 전체정밀도(5.06)에 근접했다. 이미지 디퓨전 모델인 FLUX.2 Klein 4B에 아키텍처별 수정 없이 그대로 적용한 결과, 공식 NVFP4(4.5비트/가중치) 대비 MACaQ(4.25비트/가중치)가 PSNR·SSIM·LPIPS·DINOv3 등 모든 충실도 지표에서 원본 BF16에 더 가까웠다. 커널 수준에서는 FP16 대비 최대 5배 이상의 속도 향상을 보였고 온라인 스케일·회전의 오버헤드는 레이어 크기가 클수록 줄어 작은 레이어에서 최대 약 6%, 큰 레이어에서는 3% 이하였다. 종단 간 측정에서는 Qwen3-32B 배치 1 기준 FP16 대비 약 3.06배, 배치 256에서도 유사한 속도 향상을 보였으며 디코드 오버헤드는 2.3%였다. 구성요소별 제거(ablation) 실험에서는 Hessian 지수 탐색, 마이크로 회전, 온라인 스케일, Flip-Refinement 각각이 비슷한 크기의 퍼플렉시티 개선에 기여했다.</p>
+<h2>한계점</h2>
+<p>저자들은 레이어 로컬 설계의 근본적 한계로 레이어 간 오차 보정이 불가능하다는 점을 명시하며, 교차 레이어 통계를 활용하는 보조 단계를 추가할 수는 있지만 그러면 다른 방법들만큼 양자화 시간이 느려질 것이라고 지적한다. MoE 모델 실험에서는 실용적 고려로 전문가(expert) 레이어만 양자화했다. 또한 가장 작은 모델(Qwen3-0.6B)에서는 온라인 basis 변환의 오버헤드가 8%까지 올라가 일부 설정에서는 유의미해질 수 있다고 밝혔다.</p>
+<h2>시사점</h2>
+<p>MACaQ는 레이어 간 의존성을 제거하고 모든 양자화 결정을 레이어 내부에 가둠으로써, 양자화 품질과 속도, 그리고 새로운 아키텍처로의 일반화 가능성 사이의 트레이드오프를 동시에 개선할 수 있음을 보여준다. 특히 활성값 변환을 온라인으로 유지하는 선택이 큰 레이어에서는 거의 비용이 들지 않는다는 이론적·실증적 분석은, 모델이 커질수록(혹은 레이어 출력 차원이 커질수록) 레이어 로컬 설계의 손해가 사라진다는 점을 시사하며, 이는 초대형 언어모델이나 완전히 다른 아키텍처(이미지 디퓨전 모델 등)에도 동일한 파이프라인을 그대로 적용할 수 있게 하는 실용적 이점으로 이어진다. 메모리에 올라가지 않는 초대형 모델을 레이어 단위 스트리밍으로 양자화할 수 있다는 점 또한, 제한된 하드웨어에서 거대 모델을 다루는 데 실질적인 해법을 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.10649" target="_blank" rel="noopener">huggingface.co/papers/2611.10649</a> · 2026-11-12</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

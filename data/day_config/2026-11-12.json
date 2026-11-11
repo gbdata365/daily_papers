@@ -1,0 +1,110 @@
+{
+    "2611.14210": {
+        "base": "2611_트리-아이징_비트-레벨-이징-편집-언어모델-수정",
+        "rank": "#1",
+        "category": "method",
+        "category_label": "모델·기법",
+        "upvote": "71",
+        "en_title": "Tree-Ising: Repairing Language Models with Bit-Level Ising Edits",
+        "ko_title": "Tree-Ising: 비트 수준 이징 편집으로 언어 모델 수정하기"
+    },
+    "2611.12885": {
+        "base": "2611_로보스크립트_에이전트-로봇-조작을-위한-월드-인컨텍스트-학습",
+        "rank": "#2",
+        "category": "agent",
+        "category_label": "에이전트",
+        "upvote": "47",
+        "en_title": "World In-Context Learning for Agentic Robot Manipulation",
+        "ko_title": "에이전트형 로봇 조작을 위한 월드 인컨텍스트 학습"
+    },
+    "2611.14033": {
+        "base": "2611_APEX-스트리밍비디오_조건-전환-기반-few-step-스트리밍-비디오-생성",
+        "rank": "#3",
+        "category": "gen",
+        "category_label": "생성모델",
+        "upvote": "47",
+        "en_title": "Few-Step Streaming Video Generation via Condition Shifting",
+        "ko_title": "조건 전환을 통한 Few-Step 스트리밍 비디오 생성"
+    },
+    "2611.14320": {
+        "base": "2611_위키트레이스_근거연결-메모리로-기억유발-성능저하-완화",
+        "rank": "#4",
+        "category": "agent",
+        "category_label": "에이전트",
+        "upvote": "45",
+        "en_title": "Don't Just Trust Your Memory: Evidence-Linked Memory Reduces Memory-Induced Degradation in LLM Agents",
+        "ko_title": "메모리를 무작정 믿지 마라: 근거 연결 메모리로 LLM 에이전트의 기억 유발 성능 저하 완화"
+    },
+    "2611.12426": {
+        "base": "2611_디나빗_이산-코드-범용-시각표현",
+        "rank": "#5",
+        "category": "method",
+        "category_label": "모델·기법",
+        "upvote": "32",
+        "en_title": "dNaViT: Discrete Codes are General-Purpose Visual Representations",
+        "ko_title": "dNaViT: 이산 코드는 범용 시각 표현이다"
+    },
+    "2611.14309": {
+        "base": "2611_엠엠디엠_대규모-멀티태스크-의사결정-벤치마크",
+        "rank": "#6",
+        "category": "bench",
+        "category_label": "벤치마크",
+        "upvote": "25",
+        "en_title": "MMDM: Measuring Massive Multitask Decision Making",
+        "ko_title": "MMDM: 대규모 멀티태스크 의사결정 측정"
+    },
+    "2611.11166": {
+        "base": "2611_덱스포사이트_암묵적-공간예측-기반-손재주-정책",
+        "rank": "#7",
+        "category": "agent",
+        "category_label": "에이전트",
+        "upvote": "24",
+        "en_title": "DexForesight: Grounding Dexterous Policies with Implicit Spatial Foresight",
+        "ko_title": "DexForesight: 암묵적 공간 예측을 통한 손재주(dexterous) 정책의 그라운딩"
+    },
+    "2611.07464": {
+        "base": "2611_핀코스모스_금융-에이전트-오픈월드-평가",
+        "rank": "#8",
+        "category": "bench",
+        "category_label": "벤치마크",
+        "upvote": "20",
+        "en_title": "FINCOSMOS: An Open-World Evaluation Paradigm for Agents in Finance",
+        "ko_title": "FinCosmos: 금융 에이전트를 위한 오픈월드 평가 패러다임"
+    },
+    "2611.10649": {
+        "base": "2611_맥아큐_저정밀-가중치-활성화-보정-양자화",
+        "rank": "#9",
+        "category": "method",
+        "category_label": "모델·기법",
+        "upvote": "19",
+        "en_title": "MACaQ: Fast, Model Agnostic Calibrated Quantization for Low-Precision Weights and Activations",
+        "ko_title": "MACaQ: 저정밀 가중치와 활성값을 위한 빠르고 모델 불문(model-agnostic) 보정 양자화"
+    },
+    "2611.12177": {
+        "base": "2611_로봇코딩시험_코딩에이전트-로봇제어-벤치마크",
+        "rank": "#10",
+        "category": "bench",
+        "category_label": "벤치마크",
+        "upvote": "15",
+        "en_title": "Embodied First Exam",
+        "ko_title": "코딩 에이전트를 위한 임바디드 퍼스트 이그잼 (로봇 제어 첫 시험 벤치마크)"
+    },
+    "2611.13348": {
+        "base": "2611_프로테우스_돌연변이-해상도-단백질-진화-월드모델",
+        "rank": "#11",
+        "category": "method",
+        "category_label": "모델·기법",
+        "upvote": "13",
+        "en_title": "ProTEUS: A mutation-resolved world model for closed-loop protein evolution",
+        "ko_title": "ProTEUS: 폐루프 단백질 진화를 위한 돌연변이-분해 월드 모델"
+    },
+    "2611.12527": {
+        "base": "2611_웨이브젠_내부-스펙트럴-궤적-학습-종단간-파형-생성",
+        "rank": "#12",
+        "category": "gen",
+        "category_label": "생성모델",
+        "upvote": "12",
+        "en_title": "WaveGen: Truly End-to-End Waveform Generation via Internal Spectral Trajectory Learning",
+        "ko_title": "웨이브젠: 내부 스펙트럴 궤적 학습을 통한 진정한 종단간(End-to-End) 파형 생성"
+    }
+}

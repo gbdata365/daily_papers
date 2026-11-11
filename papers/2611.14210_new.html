@@ -1,0 +1,107 @@
+<meta charset="UTF-8">
+<title>Tree-Ising</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#1 · Daily Papers 2026-11-12</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 71</span>
+    </div>
+    <h1 class="article-title">Tree-Ising: Repairing Language Models with Bit-Level Ising Edits</h1>
+    <p class="article-title-ko">Tree-Ising: 비트 수준 이징 편집으로 언어 모델 수정하기</p>
+    <p class="article-sub">MIT의 LLM 에이전트 기반 "weight-space programming"(가중치 직접 프로그래밍) 수법을 희소 이진 최적화 문제로 재구성하여, GPU 상의 이징(Ising)/QUBO 솔버로 단 몇 분, 1달러 미만의 비용에 언어모델의 추론 루프(reasoning loop) 오류를 LLM 에이전트보다 더 적은 가중치 변경으로 더 효과적으로 고치는 방법인 Tree-Ising을 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.14210" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.14210" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Tree-Ising: Repairing Language Models with Bit-Level Ising Edits</li>
+<li><strong>저자</strong>: Hadi Salloum, Ammar Ali</li>
+<li><strong>출처</strong>: arXiv:2611.14210v1 [cs.LG] (2026-11-10)</li>
+<li><strong>프로젝트 페이지</strong>: 코드 공개 예정 (논문에 "https://github.com/TheQuantumGOAT/Tree-Ising" 명시, 공개 시점 미정)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.14210">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>MIT의 LLM 에이전트 기반 "weight-space programming"(가중치 직접 프로그래밍) 수법을 희소 이진 최적화 문제로 재구성하여, GPU 상의 이징(Ising)/QUBO 솔버로 단 몇 분, 1달러 미만의 비용에 언어모델의 추론 루프(reasoning loop) 오류를 LLM 에이전트보다 더 적은 가중치 변경으로 더 효과적으로 고치는 방법인 Tree-Ising을 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>최근 MIT의 Takehi 등은 프런티어 LLM 에이전트(GPT-6 Astra)가 다른 신경망의 가중치를 직접 읽고 수정하여 모델의 결함을 고치는 "weight-space programming"을 시도했다. 이들은 작은 추론 모델 Qwen3.5-0.8B가 사고(thinking) 모드에서 반복적인 텍스트 루프에 빠져(MATH-500 문제의 93%가 토큰 한도까지 반복되어 정확도가 7.9%에 불과) 끝맺지 못하는 문제를, 에이전트가 158번의 상호작용, 8970만 토큰, 50회의 순전파(forward-pass) 요청과 15.6시간, 약 312달러를 들여 특정 레이어의 가중치 64개 열을 밀집(dense) 방식으로 다시 써서 정확도를 48.1%까지 끌어올린 바 있다. 이 결과는 가중치를 직접 "프로그래밍"할 수 있음을 보였지만, 모든 판단이 자연어 기반이라 최적의 수정인지 보장이 없고 비용이 매우 크다는 한계가 있었다. 저자들은 이 수리 작업이 사실 이산적인 조합 최적화 문제로 명확히 환원될 수 있다고 보고, 수학적으로 엄밀한 대안을 제시한다.</p>
+<h2>핵심 기여</h2>
+<p>(1) 신경망 가중치를 트리 형태의 이산 결정 경로로 표현하는 "state tree"(상태 트리) 표현 위에서, 손실 없는 BF16 저장 형식을 특수 사례로 삼아 희소한 이진 변수 기반의 수리(repair) 최적화 문제를 공식화하고, 고정된 통계량과 사전 선택된 이동(move) 조건 하에서 이 문제가 출력 행(row)별 독립적인 이징 문제로 정확히 분해됨을 보였다. (2) Qwen3.5-0.8B에서 Tree-Ising이 에이전트의 수정안보다 더 높은 정확도를 내면서도 더 적은 가중치·비트를 바꾸고, 순전파 요청·시간·비용을 수십~수백 배 절감함을 보였다. (3) 어떤 참조 수정 없이도 Qwen3.5-2B에 그대로 적용해 GSM8K 정확도를 21.6%에서 69.4%로 끌어올려 방법의 전이 가능성을 입증했다. (4) 보조적으로, 8개 변수로 이루어진 작은 하위 문제를 IBM Heron 양자 프로세서에서 QAOA로 실행하는 개념 증명(proof of concept)도 수행했다.</p>
+<h2>방법론</h2>
+<p>Tree-Ising은 다섯 단계로 구성된다. ① 가중치 표현: BF16 숫자를 부호 비트·8비트 지수·7비트 가수로 보고, 64개 가중치 묶음이 공유 지수(E)를 가지는 state tree로 표현한다. 허용되는 수정은 2의 거듭제곱 배(부호 반전 포함, 예: ×2, ×-1, ×1/4 등)로, 그룹의 공유 지수와 가수를 바꾸지 않으면서 단 하나의 상태 비트만 바꾸는 "트리 로컬" 이동으로 제한한다. ② 레이어 선택: 기본(base) 모델에 대한 한 번의 순전파 스캔으로, 각 MLP가 "루프 방향"을 따라 얼마나 강하게 글을 쓰는지 점수화해 에이전트가 수작업으로 고른 레이어(15, 19번)를 자동으로 재현한다. ③ 목적함수 정의: 성공적으로 완료된 추론 흔적과 반복되는 흔적의 평균 잔차(residual)로부터 "루프 방향"과 "종결 방향"을 추출하고, 루프 토큰에서 이 방향으로의 투사(투여량, dose)를 줄이면서 정상 토큰에서의 출력(부수 피해, collateral)은 보존하고 변경된 가중치 수(희소성)를 억제하는 목적함수를 구성한다. ④ 이징 모델화: 통계량이 고정되고 각 가중치에 이동이 하나씩 사전 선택되면, 목적함수가 출력 행마다 독립적인 QUBO(이징 모델)로 정확히 분해된다. ⑤ 최적화 풀이: GPU에서 시뮬레이티드 어닐링(simulated annealing) 또는 양자 영감 시뮬레이티드 바이퍼케이션(simulated bifurcation)으로 레이어의 모든 행 문제를 동시에 풀며, 네이티브 이징 모델이므로 양자 어닐러나 QAOA에도 그대로 대응시킬 수 있다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Qwen3.5-0.8B의 에이전트가 수정한 동일한 두 레이어(down_proj)에 Tree-Ising을 적용해 동일한 평가 프로토콜(vLLM, MATH-500·GSM8K·AMC23·Minerva Math·OlympiadBench 5개 벤치마크)로 비교했다. Tree-Ising은 MATH-500에서 54.6%(기본 모델 7.9%, 에이전트 51.7%)를 달성하며 다중비교 보정(Bonferroni) 후에도 MATH-500과 GSM8K에서 통계적으로 유의하게 에이전트를 능가했고, 5개 벤치마크 전부에서 에이전트보다 우수했다. 동시에 변경 가중치 수는 13~17% 적고 BF16 비트 플립은 2.2~2.3배 적으며, 공유 지수나 가수는 전혀 건드리지 않았다(에이전트는 다수의 가수를 변경). 비용 면에서는 순전파 요청이 50회에서 4회로, 소요 시간이 15.6시간에서 31분으로, 비용이 약 312달러에서 약 0.90달러로 줄었고 LLM 토큰은 전혀 쓰지 않았다. 시뮬레이티드 바이퍼케이션 솔버도 어닐링과 통계적으로 구분 불가능한(55.1%) 결과를 내 특정 솔버에 의존하지 않음을 보였다. 같은 레시피를 기준 수정 없이 Qwen3.5-2B에 적용했을 때도 레이어 스캔이 동일하게 15, 19번 레이어를 선택했고, GSM8K의 그리디 디코딩 정확도가 21.6%에서 69.4%로 상승했다. 밀집(dense) 폐형(closed-form) 해와 비교하면 비슷한 정확도를 얻기 위해 두 행렬의 가중치 96%를 바꿔야 해, Tree-Ising보다 약 62배 많은 변경이 필요했다. 또한 8변수 하위 문제를 IBM Heron 양자 프로세서에서 QAOA로 실행한 결과 1024회 샷 중 110회가 최적해를 샘플링해(균등 무작위 기준선은 4회), 양자 하드웨어에 올바르게 매핑되고 샘플링됨을 확인했지만 양자 우위를 입증하는 것은 아니다.</p>
+<h2>한계점</h2>
+<p>저자들은 여러 한계를 명시한다. 범위 면에서, 동일 계열의 두 모델과 하나의 실패 모드(추론 루프)만을 수학 벤치마크로 검증했으며 지시 따르기(instruction-following)나 일반 언어 능력, 기타 실패 모드는 측정하지 않았다. 기준선과 평가 측면에서는 기본 모델 정확도를 직접 재현하지 않고 선행 연구값을 그대로 사용했고, 일부 개발 단계에서 사용된 문제가 최종 평가 집합에 포함되어 있으며, 보정된 p값들은 단일 시드 기준의 명목값이다. 설계 선택 측면에서, Tree-Ising의 레시피는 에이전트의 공개 로그를 사후에 분석해 만든 것이고(Qwen3.5-0.8B에서는 에이전트가 고른 레이어와 투여량 비율을 그대로 사용), 레이어 제외 규칙도 사후 관찰을 통해 정해졌다. 선택된 레이어들이 모두 완전 어텐션(full-attention) 블록이라는 공통 아키텍처 특성에서 기인할 수 있어 독립적 검증으로 보기 어렵다. 목적함수 자체는 미수정 모델의 통계에서 유도된 1차 근사(surrogate)로, 레이어 간 연쇄 효과를 무시하며 후보 열과 이동 선택은 경험적 휴리스틱이다. 비트 집계는 단순한 인코더를 가정하며 실제 압축된 체크포인트에 대한 직접 패치는 아직 구현되지 않았다. 양자 하드웨어 실험은 전체 7.3백만 가중치 중 단 8개짜리 하위 문제 하나에 국한되며, 결과를 모델에 다시 반영하지도 않아 양자 우위를 보이는 것이 아니다.</p>
+<h2>시사점</h2>
+<p>이 연구는 최근 부상한 "LLM 에이전트가 다른 모델의 가중치를 직접 고친다"는 접근이 실제로는 명확한 수학적 최적화 문제로 환원 가능함을 보여준다. 자연어 기반 판단과 수십~수백 달러의 비용 대신, 순전파 통계만으로 목적함수를 구성하고 이를 GPU에서 저렴하게 풀 수 있는 이징 모델로 분해함으로써, 모델 수리를 그레디언트나 미세조정 없이도 훨씬 저비용·고효율로 수행할 수 있음을 시사한다. 또한 state tree와 같은 가중치 표현이 저장 형식(여기서는 BF16)의 구조를 그대로 활용하는 "포맷 네이티브" 편집을 가능케 하여, 공유 지수나 가수처럼 민감한 정보를 건드리지 않고도 최소한의 비트 변경으로 동작을 바꿀 수 있음을 보인다. 나아가 이러한 이징 문제가 양자 어닐러나 QAOA 등 양자 하드웨어에도 자연스럽게 매핑될 수 있어, 모델 편집이 향후 양자-고전 하이브리드 최적화 연구의 실용적 벤치마크로 쓰일 수 있는 가능성을 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.14210" target="_blank" rel="noopener">huggingface.co/papers/2611.14210</a> · 2026-11-12</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

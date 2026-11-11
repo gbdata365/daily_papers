@@ -1,0 +1,107 @@
+<meta charset="UTF-8">
+<title>dNaViT</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#5 · Daily Papers 2026-11-12</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 32</span>
+    </div>
+    <h1 class="article-title">dNaViT: Discrete Codes are General-Purpose Visual Representations</h1>
+    <p class="article-title-ko">dNaViT: 이산 코드는 범용 시각 표현이다</p>
+    <p class="article-sub">언어 모델의 토큰처럼 시각 정보도 하나의 공유된 이산(discrete) 어휘로 표현할 수 있는지를 탐구한 논문으로, 동결된 사전학습 비전 인코더에 잔차 변조(residual modulation)와 그룹형 product quantization을 결합한 네이티브 해상도 비전 트랜스포머 dNaViT를 제안하여, 하나의 코드북으로 이미지 재구성·분류·이해·생성·편집을 모두 지원하는 범용 시각 토크나이저를 구현했다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.12426" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.12426" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: dNaViT: Discrete Codes are General-Purpose Visual Representations</li>
+<li><strong>저자</strong>: Xiaotong Li, Zhengrong Yue, Xu Huang, Jialv Zou (공동 제1저자), Minhao Jing, Wenhao Yan, Haodong Li, Hai Huang, Bo Zhao, Yan Feng, Peng Pei, Xunliang Cai (Meituan LongCat Team)</li>
+<li><strong>출처</strong>: arXiv:2611.12426v1 [cs.CV] (2026-11-09)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음 (본문에 Project Page/GitHub/Hugging Face 링크 아이콘은 있으나 URL 텍스트는 확인되지 않음)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.12426">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>언어 모델의 토큰처럼 시각 정보도 하나의 공유된 이산(discrete) 어휘로 표현할 수 있는지를 탐구한 논문으로, 동결된 사전학습 비전 인코더에 잔차 변조(residual modulation)와 그룹형 product quantization을 결합한 네이티브 해상도 비전 트랜스포머 dNaViT를 제안하여, 하나의 코드북으로 이미지 재구성·분류·이해·생성·편집을 모두 지원하는 범용 시각 토크나이저를 구현했다.</p>
+<h2>배경 및 문제의식</h2>
+<p>언어 모델은 이산 토큰을 기반으로 한 next-token prediction으로 큰 성공을 거두었지만, 멀티모달 모델들은 여전히 이해용 의미 특징과 생성(디퓨전)용 재구성 지향 latent를 서로 다른 연속 표현으로 따로 사용하는 경우가 많아 비전과 언어 간 기법·인프라의 통합을 어렵게 한다. 이미지를 코드북 인덱스 시퀀스로 바꾸는 discrete visual tokenization(VQ-VAE, Chameleon, Emu3 등)은 이 간극을 좁힐 잠재력이 있지만, 연속적이고 조밀한 시각 신호를 유한한 어휘로 양자화하는 과정에서 정보 손실이 발생하며, 특히 understanding에 필요한 고수준 의미 추상화와 reconstruction에 필요한 세밀한 픽셀 정보를 하나의 이산 bottleneck 안에서 동시에 보존하는 문제는 아직 풀리지 않은 과제로 남아 있다.</p>
+<h2>핵심 기여</h2>
+<p>1) 이산 코드가 언어의 토큰처럼 범용 시각 primitive로 기능할 수 있는지를 탐구하며, 의미 구조와 세밀한 픽셀 정보를 하나의 공유 어휘 안에 함께 담는 네이티브 해상도 비전 토크나이저 dNaViT를 제안한다. 2) Residual Modulator(ResMod)로 동결된 비전 인코더의 여러 레이어 특징을 집계하고, grouped product quantization으로 이를 인코딩하며, 점진적(progressive) 학습으로 의미·픽셀 재구성 목표 간 충돌을 완화한다. 3) 이미지 재구성, 분류, 멀티모달 이해, 생성, 편집 등 다섯 가지 과업에 걸친 광범위한 평가로 범용성을 입증하고, 비교 모델보다 훨씬 적은 학습 데이터로도 경쟁력 있는 성능을 보인다. 4) 공유된 이산 토큰 공간이 "범용 시각 화폐(universal visual currency)" 역할을 할 수 있음을 보여주어, 완전히 통합된 네이티브 멀티모달 모델링의 토대를 제시한다.</p>
+<h2>방법론</h2>
+<p>dNaViT는 동결된 Qwen3-VL ViT(약 400M) 기반의 표현 인코더 위에 약 100M 규모의 Residual Modulator(ResMod)를 추가한 구조(총 약 500M)이다. ResMod는 인코더의 여러 레이어 특징을 LayerNorm 후 concat·projection하여 융합하고, 영(zero)으로 초기화된 스케일·시프트(γ, β) 잔차를 최종 의미 특징에 더해 공간적으로 변화하는 보정치를 학습한다. 초기화 시점에는 잔차가 0이라 사전학습된 특징이 그대로 보존되며, 학습이 진행되며 재구성에 필요한 세부 정보가 점진적으로 주입된다. 이렇게 보강된 특징은 채널 차원을 G개 그룹으로 나누어 각 그룹별 코드북으로 양자화하는 grouped product quantization을 거치는데, 이는 공간 토큰 그리드 크기를 늘리지 않고도 K^G 규모의 조합적 코드 공간을 확보해 양자화 용량을 키우는 역할을 한다. 양자화된 코드는 두 개의 디코더로 공급되는데, 의미 디코더는 코사인 유사도와 MSE를 결합한 손실로 ResMod 이후의 특징을 복원하고, 픽셀 디코더는 L1, MSE, LPIPS, ConvNeXt 지각 손실, Gram 행렬 손실을 결합해 이미지를 재구성한다(dual-branch objective). 학습은 1) 연속 픽셀 사전학습(ResMod와 픽셀 디코더만 학습), 2) 이산 의미 재구성(양자화기·의미 디코더 학습, 픽셀 경로는 gradient stop), 3) 공동 재구성(ResMod의 student/teacher 구조로 타깃 drift를 막으며 양자화기·두 디코더를 함께 미세조정)의 3단계로 진행된다. 또한 ViT 픽셀 디코더가 과도하게 매끄러운(over-smooth) 결과를 내는 한계를 보완하기 위해, 이산 코드만을 조건으로 받는 코드-조건부 Refiner(사전학습된 생성 모델 기반 flow decoder)를 도입하고, 다단계 teacher를 적대적 학습으로 1-step student로 증류하여 텍스트 조건 없이도 더 선명한 디테일을 복원한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>이미지 재구성에서는 ImageNet-1K 전체 검증셋 기준 dNaViT-G64(양자화 그룹 64개)가 512×512에서 28.12dB PSNR·0.81 SSIM, 1024×1024에서는 32.90dB·0.91을 기록했으며, 다운샘플링 비율 f=32로 공간 위치 수를 늘리지 않고도 다른 이산 토크나이저(LlamaGen, Open-MAGVIT2 등)를 능가했다. TokBench 세부 평가에서도 G64가 1024 해상도에서 텍스트 인식 정확도 63.08%, F-Sim 0.67을 보여 LlamaGen-f8과 비슷한 수준을 달성했다. 분류 과업에서는 선형 프로빙(linear probing) 기반 ImageNet-1K/A/V2/R/Sketch/ObjectNet 전이에서 연속 표현 기반 방법과 경쟁력 있는 성능을 보였으나 ImageNet-R, Sketch, ObjectNet에서는 UniTok에 뒤처졌다. 이해 과업에서는 dNaViT-G16을 Qwen3-8B와 결합해 평가했을 때 OCRBench 885점을 기록하며 비교 대상 이산 모델들을 모두 앞섰고 Qwen3-VL-8B와 DocVQA·OmniDocBench에서 비슷한 성능을 보였으며, MathVista에서도 Qwen3-VL-8B에 준하는 결과를 냈다. 생성에서는 dNaViT-8B가 GenEval2 49.5점으로 비교 모델 중 최고치를, Qwen-Image-Bench 52.17점으로 모든 오픈 웨이트 모델을 능가하는 성적을 거뒀으며, 편집(GEdit-Bench)에서는 SC 7.41·PQ 7.20·Overall 7.30점으로 오픈 모델 상위권에 들었다. 전반적으로 비교 모델들보다 훨씬 적은 학습 데이터로 이러한 성능을 달성했다는 점이 강조된다.</p>
+<h2>한계점</h2>
+<p>저자들은 별도의 한계점 절을 두지 않았지만 본문 전반에 한계를 명시한다. TokBench에서 작은 글씨(small text) 인식은 여전히 어렵고 FLUX.1 같은 강력한 재구성 모델과의 격차가 남아 있다. 분류 전이 성능은 ImageNet-R, ImageNet-Sketch, ObjectNet에서 UniTok에 못 미친다. 생성 벤치마크(Qwen-Image-Bench)에서는 오픈 웨이트 모델을 능가하지만 여전히 GPT Image 2 등 독점(proprietary) 모델보다는 낮은 점수를 기록했고, LongText-Bench 중국어 텍스트 렌더링에서도 최상위 독점 시스템에는 미치지 못한다. 또한 ViT 픽셀 디코더는 고주파 디테일(작은 글씨, 미세한 경계, 반복 텍스처)을 과도하게 매끄럽게 만드는 경향이 있어 별도의 Refiner가 필요하며, G16과 G64는 학습 설정과 기간이 달라 두 모델의 차이가 순수하게 양자화 그룹 수의 효과만을 반영한다고 보기는 어렵다고 저자들은 밝힌다.</p>
+<h2>시사점</h2>
+<p>이 연구는 이산 코드와 연속 시각 신호 사이의 간극이 표현 학습(representation learning)의 문제일 뿐 근본적인 한계가 아니라는 점을 시사한다. 적절한 모델링(동결 인코더 위의 잔차 변조, 충분한 양자화 용량, 듀얼 브랜치 재구성)을 적용하면 이산 코드도 이해·생성·재구성·편집을 모두 아우르는 범용 시각 primitive로 기능할 수 있으며, 이는 비전과 언어가 하나의 토큰 기반 패러다임으로 수렴하는 완전 통합 네이티브 멀티모달 모델로 나아가는 길을 제시한다. 특히 비교 모델보다 훨씬 적은 데이터로도 경쟁력 있는 성능을 달성했다는 점은, 공유 이산 어휘가 데이터 효율적인 멀티태스크 비전-언어 시스템 구축의 기반이 될 수 있음을 보여준다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.12426" target="_blank" rel="noopener">huggingface.co/papers/2611.12426</a> · 2026-11-12</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

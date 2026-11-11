@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>메모리를 무작정 믿지 마라</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#4 · Daily Papers 2026-11-12</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 45</span>
+    </div>
+    <h1 class="article-title">Don't Just Trust Your Memory: Evidence-Linked Memory Reduces Memory-Induced Degradation in LLM Agents</h1>
+    <p class="article-title-ko">메모리를 무작정 믿지 마라: 근거 연결 메모리로 LLM 에이전트의 기억 유발 성능 저하 완화</p>
+    <p class="article-sub">LLM 에이전트가 과거 경험에서 뽑아낸 교훈(lesson)을 무조건 신뢰하지 않고, 그 교훈이 유래한 원본 trajectory(궤적)까지 추적해 검증할 수 있게 하는 증거 연결형(evidence-linked) 메모리 시스템 WikiTrace를 제안하여, 메모리를 추가했을 때 오히려 성능이 떨어지는 "기억 유발 성능 저하(memory-induced degradation)"를 크게 줄였다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.14320" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.14320" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Don't Just Trust Your Memory: Evidence-Linked Memory Reduces Memory-Induced Degradation in LLM Agents</li>
+<li><strong>저자</strong>: Yukyeong Lee, Yumin Choi, Jinheon Baek, Sung Ju Hwang (KAIST, DeepAuto.ai)</li>
+<li><strong>출처</strong>: arXiv:2611.14320v1 [cs.AI] (2026-11-10)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/yukyeongleee/wikitrace">GitHub 저장소</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.14320">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>LLM 에이전트가 과거 경험에서 뽑아낸 교훈(lesson)을 무조건 신뢰하지 않고, 그 교훈이 유래한 원본 trajectory(궤적)까지 추적해 검증할 수 있게 하는 증거 연결형(evidence-linked) 메모리 시스템 WikiTrace를 제안하여, 메모리를 추가했을 때 오히려 성능이 떨어지는 "기억 유발 성능 저하(memory-induced degradation)"를 크게 줄였다.</p>
+<h2>배경 및 문제의식</h2>
+<p>외부 메모리는 LLM 에이전트가 과거 작업의 trajectory를 간결한 교훈으로 압축해 재사용함으로써 파라미터 업데이트 없이도 경험으로부터 학습하게 해준다. 그런데 메모리가 항상 도움이 되는 것은 아니며, 메모리가 없었다면 풀 수 있었던 과제를 메모리를 사용했을 때 오히려 실패하는 현상, 즉 기억 유발 성능 저하가 발생할 수 있다. 저자들은 이 저하의 원인을 분석한 결과, 실패 사례의 52%가 에이전트가 따른 특정 메모리 항목으로 귀결되며, 그중 가장 많은 경우가 "틀린 교훈을 따른 경우"였다. 이는 trajectory가 성공/실패라는 단일 이진 레이블만 가지고 있어서, 그로부터 교훈을 추출하는 과정이 어떤 행동이 실제로 결과에 영향을 미쳤는지 추측에 의존하기 때문이며, 기존 방법들은 교훈만 제공하고 그 근거가 된 trajectory를 함께 제공하지 않아 에이전트가 교훈을 검증할 방법이 없었다는 점을 문제로 지적한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>메모리를 추가했을 때의 성능 변화를 "Gain"(메모리가 실패를 성공으로 바꾸는 비율)과 "Regression"(메모리가 성공을 실패로 바꾸는 비율)으로 분리하여 측정하는 평가 틀을 제시하고, 기존 메모리 기법들의 Regression이 무메모리 재실행 수준과 비슷하거나 더 높다는 점을 보였다.</li>
+<li>기억 유발 성능 저하의 원인을 LLM 판정기로 분석해, 실패의 상당 부분이 틀린 메모리 항목, 범위를 벗어난 적용, 오용, 더 나은 항목을 놓친 경우 등으로 분류될 수 있음을 밝혔다.</li>
+<li>각 교훈(insight)을 그 교훈이 유래한 compilation(요약) 및 원본 raw trajectory까지 연결하는 3계층 구조의 증거 연결형 메모리 시스템 WikiTrace를 제안했다.</li>
+<li>다섯 개 벤치마크, 여덟 개 suite에서 WikiTrace가 기존 메모리 기법 및 "같은 교훈만 주어진" 베이스라인보다 일관되게 우수함을 입증했다.</li>
+</ul>
+<h2>방법론</h2>
+<p>WikiTrace는 메모리를 raw trajectory(R), compilation(C), insight(I), 그리고 이들을 잇는 source link(E)의 네 요소로 구성한다. 과거 각 실행(run)은 독립적으로 처리되어, 작업(task), trajectory, 성공/실패 이진 신호를 입력받는 "Compiler"가 해당 run이 왜 성공 또는 실패했는지를 설명하는 compilation과 최대 3개의 insight를 생성한다. 각 insight는 무엇을 해야 하는지, 언제 적용되는지, 어떤 run에서 나왔는지, 그 run이 성공했는지를 기록한 별도 문서이며, 한번 작성된 뒤에는 수정하거나 삭제하지 않기 때문에 서로 중복되거나 충돌하는 insight가 공존할 수 있다. Raw trajectory는 각 턴의 추론, 행동, 관찰, 성공 여부를 그대로 보존한다. 테스트 시점에는 에이전트가 먼저 모든 insight를 프롬프트로 받고, 현재 작업과 유사한 과거 세 개 run의 id와 제목도 함께 제공받는다. 이후 insight가 행동에 필요한 세부사항이 부족하거나, 다른 insight와 충돌하거나, 실패한 run에서 나온 경우, 또는 어떤 행동이 실패했을 때, 에이전트는 read·bash 같은 터미널 도구를 이용해 insight에서 compilation, 그리고 필요하면 raw trajectory까지 "descent(하강)"하여 근거를 직접 확인하고 insight를 수정하거나 보완한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>ALFWorld, ScienceWorld, PlanCraft(텍스트 월드 계열)와 τ³-bench Retail, AppWorld(Test-Normal/Test-Challenge, 도구 사용 계열) 등 5개 벤치마크, 8개 suite에서 Pi 터미널 에이전트(deepseek-v4-flash, 고난도 추론 설정)를 사용해 평가했다. No Memory, AWM, ExpeL, ReasoningBank, 그리고 WikiTrace와 동일한 insight만 주고 소스 링크는 제거한 "Insights Only"를 베이스라인으로 비교했다. WikiTrace는 평균 90.2점으로 전 suite에서 최고 성능을 기록했으며(No Memory 79.5점, Insights Only 87.0점), 모든 suite에서 No Memory 이상을 달성한 유일한 메모리 기법이었다. Gain/Regression 분석에서 WikiTrace의 Regression은 4.5%로 Insights Only(6.5%)와 무메모리 재실행 베이스라인(9.7%)보다 낮았고, 동시에 재실행 대비 Gain은 35%p 높아 기존 기법(7~14%p)과 Insights Only(27%p)를 상회했다. 추가 분석에서는 에이전트가 더 어려운 과제일수록 소스로 더 자주 descent하며(쉬운 과제 22% vs 어려운 과제 44%) 그 이득도 더 크다는 점, descent가 "문제가 발생했을 때"(막힌 시도·insight에 대한 의심 등) 일어날 때 Insights Only 대비 이득이 가장 크다는 점, 실패한 run의 insight만 사용할 경우 Insights Only의 Regression이 급증하지만 WikiTrace는 이를 완화한다는 점, 테스트 시점 비용이 Insights Only의 1.17배에 그친다는 점, 그리고 GLM-5.3-flash라는 다른 백본에서도 같은 경향이 재현된다는 점을 보였다.</p>
+<h2>한계점</h2>
+<p>메모리는 이진(성공/실패) trajectory 결과로부터 구축되기 때문에, 실패 원인에 대한 compilation의 진단이나 거기서 나온 insight가 틀릴 수 있다. source link는 에이전트가 insight를 그 run에 비추어 점검할 수 있게 해줄 뿐, insight가 맞는지를 자동으로 검증해주지는 않는다. 또한 WikiTrace는 모든 insight를 첫 메시지에 전부 넣기 때문에 메모리가 커질수록 프롬프트도 함께 커지며, 메모리가 너무 커서 전부 넣을 수 없는 경우에는 필요한 insight를 찾아내는 검색(retrieval) 문제가 별도로 해결되어야 하는데, 이는 이 논문에서 다루지 않은 과제로 남아 있다. 성능 저하 원인 분석과 descent 라벨링에 사용한 LLM 판정기는 에이전트의 추론 서술을 읽고 판단하는 것이므로, 실제로 결과를 만들어낸 요인이 아니라 에이전트가 "말한" 추론 내용만을 반영한다는 한계도 있다.</p>
+<h2>시사점</h2>
+<p>이 연구는 에이전트 메모리 설계가 재사용 가능한 교훈을 압축해 저장하는 것뿐 아니라, 그 교훈을 다시 점검할 수 있는 근거까지 함께 보존해야 한다는 점을 시사한다. 성공/실패라는 단일 신호만으로 추출된 교훈은 본질적으로 불확실할 수 있으므로, 교훈과 원본 경험을 분리하지 않고 연결해두는 구조가 메모리 기반 에이전트의 신뢰성을 높이는 실용적인 방향이 될 수 있음을 보여준다. 또한 Gain과 Regression을 분리해서 보는 평가 방식은 평균 정확도만으로는 드러나지 않는 메모리의 부작용을 진단하는 데 유용한 틀로 활용될 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.14320" target="_blank" rel="noopener">huggingface.co/papers/2611.14320</a> · 2026-11-12</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

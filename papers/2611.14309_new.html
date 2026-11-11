@@ -1,0 +1,107 @@
+<meta charset="UTF-8">
+<title>MMDM</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#6 · Daily Papers 2026-11-12</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 25</span>
+    </div>
+    <h1 class="article-title">MMDM: Measuring Massive Multitask Decision Making</h1>
+    <p class="article-title-ko">MMDM: 대규모 멀티태스크 의사결정 측정</p>
+    <p class="article-sub">System-1 Decision Model(단일 forward pass로 주어진 옵션들에 대해 구조화된 확률적 의사결정을 내리는 모델)의 능력을 종합적으로 평가하기 위해, 16개 과업·5,448개 문제로 구성된 대규모 멀티태스크 의사결정 벤치마크 MMDM을 제안한 논문이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.14309" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.14309" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: MMDM: Measuring Massive Multitask Decision Making</li>
+<li><strong>저자</strong>: Junhao Shen, Qing Zong, Yue Guo, Zhanqiu Zhang, Yiwen Guo, Hong Cheng</li>
+<li><strong>출처</strong>: arXiv:2611.14309v1 [cs.LG] (2026-11-10)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://mmdm-benchmark.github.io">mmdm-benchmark.github.io</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.14309">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>System-1 Decision Model(단일 forward pass로 주어진 옵션들에 대해 구조화된 확률적 의사결정을 내리는 모델)의 능력을 종합적으로 평가하기 위해, 16개 과업·5,448개 문제로 구성된 대규모 멀티태스크 의사결정 벤치마크 MMDM을 제안한 논문이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>System-1 Decision Model은 자유 텍스트를 생성하는 추론 과정 없이, 질의로 주어진 옵션 집합에 대해 한 번의 forward pass로 확률 분포를 직접 산출하는 모델로, 라우팅·도구 선택·루브릭 채점 등 다양한 실용 분야에 쓰인다. 그러나 기존 평가들은 널리 공개된 기존 벤치마크를 재사용하는 경우가 많아 테스트 데이터 오염(contamination) 문제가 있고, 실제 의사결정 상황에서 흔히 나타나는 긴 컨텍스트, 대규모 옵션 공간, 옵션 간 복잡한 논리적 종속성을 동시에 포착하지 못한다는 한계가 있다. 저자들은 이런 공백을 메우기 위해 새로운 문제와 재구성된 문제를 결합한 벤치마크가 필요하다고 주장한다.</p>
+<h2>핵심 기여</h2>
+<p>논문은 세 가지 기여를 제시한다. 첫째, 길어진 컨텍스트, 큰 옵션 공간, 상호 종속적인 옵션을 포함하는 새로운 의사결정 문제들을 결합한 멀티태스크 벤치마크(MMDM)를 소개한다. 둘째, 단일 선택(Hard Single-select)의 정확성, 다중 선택(Hard Multi-select)의 완전성, 소프트 레이블(Soft-label)의 분포적 정합성을 함께 평가하는 통합 평가 프로토콜과 공개 데이터셋·툴킷을 제공한다. 셋째, 28개 의사결정 모델을 평가해 기존 벤치마크가 포착하지 못했던 능력 격차(옵션 간 결합 일관성 실패, 다중 선택의 불완전한 복원 등)를 드러내고 향후 모델 개발 방향을 제시한다.</p>
+<h2>방법론</h2>
+<p>MMDM의 각 의사결정 인스턴스는 상태(state) s, 질의(query) q, 옵션 집합 O로 구성되며, 모델은 이를 입력으로 받아 확률 단체(probability simplex) 위의 분포를 출력한다. 정답 형식은 세 가지로 나뉜다. (1) Hard Single-select는 유일한 정답 옵션에 모든 확률 질량이 몰려야 하는 경우, (2) Hard Multi-select는 동등하게 유효한 옵션들의 완전한 집합을 모두 상위에 배치해야 하는 경우, (3) Soft-label은 상태에 내재된 불확실성에 따른 실제 확률 분포(예: 70% 성공/30% 실패)를 맞춰야 하는 경우이다. 평가 지표로는 Hard Single/Multi-select Accuracy 외에, 다중 선택의 정답군 분리도와 균형을 함께 반영하는 Separation-Balance F-score(SB-F), 전체 분포 오차를 측정하는 Brier 점수, 루브릭형 점수 문제에 쓰이는 기대점수 오차(Score nMAE)를 새롭게 정의했다. 데이터는 QuALITY, LongBench v2, BIRD, ComplexFuncBench, ToolTalk 등 공개 데이터셋 및 에이전트 궤적에서 소스 기반 재작성(원래 정답과 근거는 유지하되 상태·질의·오답을 다시 작성), 의미적 재구성(소스 데이터베이스나 에이전트 기록에 기반한 새 의사결정 문제 생성), 신규 제작의 세 경로로 수집했으며, 5개 모델의 다수결 스크리닝과 전문가의 독립적인 검토, 그리고 상태·질의를 가린 "옵션만" 프로브를 통한 지름길(shortcut) 여부 검증을 거쳐 품질을 관리했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>MMDM은 세계 지식, 독해, 연역적 추론, 옵션 논리, 제약 계획, 정량·시간 추론, 워크플로 결정, 에이전트 상태 추적, 정책·예외, 증거 검증, 코드·데이터베이스, 의도 라우팅, 도구·스킬 선택, 선호 판단, 점수·루브릭, 감정 인식의 16개 범주, 총 5,448개 문제(단일선택 4,112, 다중선택 633, 소프트레이블 703)로 구성되며 옵션 수는 2개에서 1,024개, 입력 길이는 최대 약 64,817토큰에 이른다. Random 기준선과 28개의 비공개·공개 System-1 의사결정 모델(Jev, Microsoft Decision-1, Liquid-d1, WeMM-JEV, KnowLine, Perplexity Decider 계열 등)을 평가한 결과, Perplexity Decider-V1.2는 세계 지식에서 78.75% 정확도를 보였지만 옵션 논리에서는 53.95%, 제약 계획에서는 47.95%로 급락했고, 전체 모델 중 가장 높은 다중 선택 정확도도 36.81%(WeMM-JEV)에 그쳤다. 또한 단일선택 정확도가 비슷한 모델들(WeMM-JEV와 KnowLine)도 Soft Brier나 Score nMAE에서는 큰 차이를 보였으며, 확신도 보정(calibration) 분석에서도 모델별로 과신(overconfidence)이 나타나는 구간이 달랐다. 컨텍스트 길이와 옵션 수가 늘어날수록 모델 간 순위가 뒤바뀌는 현상도 관찰되어, 긴 입력에서의 성능과 큰 옵션 공간에서의 성능이 서로 독립적임을 보여주었다. 사례 분석에서는 여러 모델이 최신 승인 이력을 무시하고 상충하는 워크플로를 선택하거나, 명시적으로 거짓인 보고서를 참(true)으로 평가하거나, 단순한 결함 하나를 점수 분포로 올바르게 변환하지 못하는 오류를 보였다.</p>
+<h2>한계점</h2>
+<p>저자들은 세 가지 한계를 명시한다. 첫째, MMDM은 고정된 상태·질의·옵션 집합으로 정의되는 텍스트 기반 의사결정에 초점을 두며, 멀티모달 입력이나 상호작용적 궤적(trajectory)으로의 확장은 다루지 않는다. 둘째, 다중 선택 문제는 옵션 논리, 제약 계획, 워크플로, 도구·스킬 선택 등 일부 범주에 집중되어 있고 소프트 타깃 대부분은 루브릭 채점에서 나왔기 때문에, 더 폭넓은 주관적 판단 평가에는 사람 간 평가 편차를 반영하는 참조 체계가 추가로 필요하다. 셋째, 신규 제작 문제와 소스 보존형 재작성·재구성을 결합했음에도, 재구성과 재작성이 새로운 요구사항과 맥락을 제시함에도 불구하고 원본 공개 소스 자료에 대한 사전 노출 가능성은 완전히 배제하지 못한다.</p>
+<h2>시사점</h2>
+<p>MMDM은 System-1 의사결정 모델을 평가할 때 단일 정확도 지표만으로는 부족하며, 다중 선택의 완전성, 소프트 레이블의 분포적 정확성, 확신도 보정, 컨텍스트 길이 및 옵션 규모에 따른 확장성을 함께 살펴야 함을 보여준다. 전체 정확도가 높은 모델이 특정 과업(제약이 있는 의사결정, 워크플로 선행조건 처리 등)에서는 취약할 수 있다는 결과는, 실제 배포 환경에서 모델을 선택할 때 작업 특성에 맞는 세부 평가가 중요하다는 점을 시사한다. 또한 공개된 벤치마크와 평가 툴킷은 향후 결합적 일관성(joint consistency), 제약 인지형 선택, 완전한 다중 선택 복원 능력을 개선하는 연구의 공통 기준점으로 활용될 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.14309" target="_blank" rel="noopener">huggingface.co/papers/2611.14309</a> · 2026-11-12</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

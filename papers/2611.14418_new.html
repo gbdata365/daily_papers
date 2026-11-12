@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>수요 기반 정밀도</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#11 · Daily Papers 2026-11-13</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 4</span>
+    </div>
+    <h1 class="article-title">Precision on Demand: Escalating Weight Bits at Uncertain Decoding Steps in a Small Local Model</h1>
+    <p class="article-title-ko">수요 기반 정밀도: 소형 로컬 모델의 불확실한 디코딩 구간에서 가중치 비트 상향하기</p>
+    <p class="article-sub">하나의 8비트 가중치 사본만 저장해 두고 평소에는 상위 4비트만으로 디코딩하다가, 저정밀 출력 분포의 엔트로피가 높거나 마진이 작아 "불확실"하다고 판단되는 스텝에서만 8비트 전체로 다시 디코딩하는 비트 수준 정밀도 게이팅 기법을 Qwen3-0.6B와 GSM8K로 검증한 실증 연구다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.14418" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.14418" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Precision on Demand: Escalating Weight Bits at Uncertain Decoding Steps in a Small Local Model</li>
+<li><strong>저자</strong>: Mohammed Nayeem Khan, Logesh L, Aliyas Ahmad Misri (Intel Corporation)</li>
+<li><strong>출처</strong>: arXiv:2611.14418v1 [cs.AI] (cross-list cs.CL, cs.LG) (2026년 11월 10일, v0.2)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.14418">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>하나의 8비트 가중치 사본만 저장해 두고 평소에는 상위 4비트만으로 디코딩하다가, 저정밀 출력 분포의 엔트로피가 높거나 마진이 작아 "불확실"하다고 판단되는 스텝에서만 8비트 전체로 다시 디코딩하는 비트 수준 정밀도 게이팅 기법을 Qwen3-0.6B와 GSM8K로 검증한 실증 연구다.</p>
+<h2>배경 및 문제의식</h2>
+<p>한 대의 기기에서 토큰을 하나씩 생성하는 소형 언어모델은 대부분의 시간을 메모리에서 가중치를 읽는 데 쓰므로, 토큰당 읽는 바이트 수가 비용의 1차 지표가 된다. 저비트 양자화는 이 비용을 줄이지만 정확도를 희생하며, 보통은 전체 생성 동안 단일 정밀도를 고정해서 사용한다. 저자들은 바이트를 다르게 배분하는 방법, 즉 평소에는 저정밀로 디코딩하다가 불확실한 순간에만 고정밀로 다시 디코딩하는 방식이 가능한지, 그리고 이것이 무작위로 고정밀 스텝을 섞는 것보다 더 효율적인지를 질문한다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>하나의 저장된 8비트 코드에서 상위 4비트(저정밀)와 전체 8비트(고정밀)를 모두 읽어낼 수 있는 "중첩 양자화(nested quantization)" 방식을 제안하고, 저정밀 출력 분포의 엔트로피 또는 로짓 마진만으로 "다시 계산할지"를 판단하는 저비용 불확실성 게이트를 설계했다.</li>
+<li>36,724개의 디코딩 스텝에 대한 재생(replay) 분석을 통해, 엔트로피 기반 게이트가 argmax가 뒤집히는 지점(품질에 영향을 주는 순간)을 무작위 선택보다 훨씬 잘 포착함을 정량적으로 보였다(AUC 0.928, 마진 게이트는 0.959).</li>
+<li>150개의 GSM8K 문제에 대한 실제 라이브 디코딩 실험으로 게이트의 정확도·비용 트레이드오프를 측정하고, 검증 기반 추측 디코딩(verified speculative decoding)과의 비용 대비 성능을 같은 비용 모델 위에서 직접 비교했다.</li>
+<li>계획했던 실험(무작위 통제군의 라이브 실행, Qwen3 사고모드 단계별 게이팅, 두 번째 모델/벤치마크) 중 실제로 수행되지 않은 부분을 표로 명확히 구분해 보고함으로써, 주장의 범위를 과장하지 않으려 한 투명한 보고 방식을 취했다.</li>
+</ol>
+<h2>방법론</h2>
+<p>트랜스포머 블록의 모든 선형 가중치(쿼리·키·값·출력·게이트·업/다운 프로젝션)를 비대칭 8비트 그리드로 반올림 양자화하고, 연속한 64개 입력 가중치마다 하나의 스케일·오프셋을 공유시킨다. 이 하나의 8비트 코드에서 상위 4비트만 취하면 "저정밀" 버전이 되고, 8비트를 모두 쓰면 "고정밀" 버전이 되므로 별도의 저장 공간이 필요 없다(임베딩 테이블과 출력 헤드는 bf16 유지). 게이트는 저정밀 패스의 출력 로짓 분포만 보고, 엔트로피가 임계값보다 크거나 상위 두 로짓의 차이(마진)가 임계값보다 작으면 같은 스텝을 고정밀로 다시 계산한다. 비용은 실제 커널 속도가 아니라 각 패스가 읽는 가중치 바이트 수로 시뮬레이션해서 계산했으며(패킹된 커널은 구현하지 않음), 임계값은 32개의 GSM8K 학습 문제로 보정했다. 비교 대상으로는 같은 비율로 무작위 스텝을 고정밀로 재계산하는 통제군(수식으로 계산된 기댓값)과, 실제 고정밀 대비 KL을 기준으로 가장 잘 포착할 수 있는 지점을 고르는 오라클 게이트를 사용했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Qwen3-0.6B·GSM8K 테스트 분할에서 수행한 재생 분석(all-high 궤적 36,724스텝) 결과, 전체 스텝의 평균 KL은 0.0203나트, argmax가 뒤집히는 비율은 3.79%였다. 저정밀 엔트로피는 argmax 반전을 예측하는 데 AUC 0.928, 마진은 0.959를 기록했고, 예산 15% 수준에서 엔트로피 게이트는 반전의 78%·KL 질량의 59%를, 마진 게이트는 94%·55%를 포착한 반면 무작위 선택은 기대값상 15%에 그쳤다. 150개 문제의 실제 라이브 디코딩에서는 전부 고정밀(all-high) 설정이 64.0%, 전부 저정밀(all-low)이 55.3%의 정확도를 보였고 그 차이(-8.7점)는 95% 구간이 0을 포함하지 않아 유의했다. 16% 수준으로 에스컬레이션하는 엔트로피 게이트는 전부 고정밀 대비 바이트의 0.874만 사용하면서 정확도 62.7%를 기록했지만, 전부 고정밀과의 차이(-1.3점)도 전부 저정밀과의 차이(+7.3점)도 95% 구간이 0을 포함해 통계적으로는 양쪽 어느 쪽과도 뚜렷이 구분되지 않았다(맥니머 검정 p=0.053~0.080). 동일한 비용 모델에서 비교한 검증 기반 추측 디코딩(제안 길이 k=4)은 전부 고정밀 대비 바이트 0.845만으로 KL을 정확히 0으로 만들어, 유사한 바이트 비용에서는 엔트로피 게이트보다 우월한 선택지로 나타났다. 또한 0.6B급 모델에서는 bf16 출력 헤드를 매 패스마다 읽어야 하므로, 블록 자체의 4비트/8비트 비율(0.529)과 달리 저정밀 패스 전체의 비용은 고정밀 대비 0.717에 그쳐 출력 헤드 비용이 절감 효과를 크게 희석시켰다.</p>
+<h2>한계점</h2>
+<p>저자들은 스스로 다음 한계를 명시했다: ① 캘리브레이션이나 이상치 처리, 패킹 커널이 없는 단순한 반올림 양자화만 사용했으며 GPTQ·AWQ 같은 정교한 4비트 기법을 쓰면 저·고정밀 격차와 게이트의 여지가 달라질 수 있다. ② 모델은 Qwen3-0.6B 하나, 벤치마크는 GSM8K(비사고 모드, 384토큰 상한) 하나뿐이며, 계획했던 1.7B 모델 실험은 수행되지 않았다. ③ 라이브 실험은 150문제로 표본이 작아 구간이 넓고, 10개 설정 간 다중비교 보정도 하지 않았다. 무작위 통제군의 라이브 실행, Qwen3 사고모드의 단계별 게이팅, 라이브 KL 측정은 계획만 하고 실제로는 수행하지 않았다. ④ 비용 모델은 가중치 읽기 바이트만 계산하며, 활성값·KV 캐시 트래픽·실제 커널 실행 시간·역양자화 비용은 반영하지 않았다.</p>
+<h2>시사점</h2>
+<p>단일 기기에서 동작하는 소형 로컬 언어모델의 경우, 전체 생성을 하나의 고정 정밀도로 묶기보다 "불확실한 순간에만 비트를 더 쓰는" 전략이 원리적으로 가능하며 무작위 재계산보다 효율적임을 보여준다. 다만 이 연구의 라이브 실험 규모로는 해당 전략이 전부 고정밀 방식의 정확도를 유지하면서 실제로 비용을 절감한다고 확정적으로 주장하기는 이르며, 저자들은 검증 기반 추측 디코딩이 동일 비용 모델상에서 이미 더 유리한 대안일 수 있음을 인정하고, 무작위 통제군 라이브 실행과 사고모드 단계별 게이팅 실험을 다음 단계로 제안한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.14418" target="_blank" rel="noopener">huggingface.co/papers/2611.14418</a> · 2026-11-13</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

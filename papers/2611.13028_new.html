@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>GTAGym</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#6 · Daily Papers 2026-11-13</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 12</span>
+    </div>
+    <h1 class="article-title">GTAGym: Real AAA Game Tasks Environment for Evaluation and Reinforcement Learning</h1>
+    <p class="article-title-ko">GTAGym: 평가와 강화학습을 위한 실제 AAA 게임 과제 환경</p>
+    <p class="article-sub">실제 AAA급 오픈월드 게임 GTA V의 메인 스토리 미션을 재구성해, 엔진 상태 기반으로 자동 채점이 가능한 에이전트 평가 벤치마크와 강화학습 환경 생성기를 함께 제공하는 GTAGym을 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.13028" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.13028" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: GTAGym: Real AAA Game Tasks Environment for Evaluation and Reinforcement Learning</li>
+<li><strong>저자</strong>: Jiajun Chen, Shicheng Fang, Jiahao Lu, Yuxin Wang, Xipeng Qiu (Shanghai Innovation Institute, Fudan University)</li>
+<li><strong>출처</strong>: arXiv:2611.13028v1 [cs.CV] (2026년 11월 9일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/ljbro/GTAGym">GitHub 코드</a>, <a href="https://huggingface.co/datasets/OpenMOSS-Team/GTAVBench">데이터셋</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.13028">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>실제 AAA급 오픈월드 게임 GTA V의 메인 스토리 미션을 재구성해, 엔진 상태 기반으로 자동 채점이 가능한 에이전트 평가 벤치마크와 강화학습 환경 생성기를 함께 제공하는 GTAGym을 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>AAA 게임은 공간 이해, 시간적 추론, 실행 능력을 요구하는 풍부한 에이전트 평가 테스트베드이지만, 과제 완료 여부를 자동으로 검증하기 어려워 평가가 사람의 수작업 판정에 의존하는 경우가 많았고, 이는 강화학습 적용을 특히 어렵게 만들었다. 기존 벤치마크들은 3D 상호작용, AAA 오픈월드 과제, 상태 기반 채점, 웹 실행, RL 인스턴스 생성 중 일부만 지원해 이를 모두 아우르는 환경이 부재했다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>GTA V의 실제 메인 스토리 미션 75개를 목표·상호작용 순서·완료 조건·동적 행동 단위로 분해해 엔진 상태 기반 자동 평가가 가능한 환경 GTAGym 구축.</li>
+<li>내비게이션·차량 제어·동적 상호작용 9개 범주 103개 온라인 3D 과제와 슈팅·스나이핑 47개 이미지 기반 과제로 구성된 평가 벤치마크 GTAVBench 및, 과제 지시를 첫 스크린샷에만 제시하고 상호작용 이력을 자동 압축하는 GTAVBench-AGI 브랜치 제시.</li>
+<li>사용자가 지정한 범위 내에서 과제 파라미터를 샘플링해 자동 보상·종료 신호가 포함된 3D 및 이미지 기반 RL 환경을 대량으로 생성하는 확장 가능한 템플릿 기반 생성기 제공.</li>
+</ul>
+<h2>방법론</h2>
+<p>GTAGym은 Babylon.js로 구축한 3D 환경에서 스크린샷-행동 기반의 폐쇄 루프 프로토콜로 에이전트와 상호작용하며, 과제별로 초기 상태·목표·단계 전이·완료 및 실패 판정 조건을 실행 가능한 형태로 명세한다. 내비게이션 과제는 소스 미니맵을 따라 경로를 수동으로 재현하고, 동적 상호작용 과제는 사전 정의된 NPC 행동과 충돌 기반 감속 등의 메커니즘을 활용한다. 이미지 기반 슈팅·스나이핑 과제는 실제 게임플레이 이미지에서 타깃 영역을 주석 처리해 구성한다. GTAVBench-AGI 브랜치에서는 목표가 텍스트 지시 대신 첫 화면 이미지로만 주어지며, Codex 하네스가 상호작용 이력을 자동으로 압축해 긴 상호작용에도 대응하도록 한다. RL 환경 생성 시에는 각 템플릿이 장면·자산·상호작용 로직·평가자·에피소드 예산을 고정한 채, 경로 길이나 회전 횟수 같은 샘플링 파라미터만 사용자가 지정한 구간 내에서 무작위로 생성한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>GPT-6-Astra, GPT-6.1-Sol, DeepSeek-V4.1-Flash-1017, GLM-5.3-Flash, Kimi-K3, Qwen3.8-27B 등 6개 프런티어 모델을 GTAVBench 및 GTAVBench-AGI에서 평가했다. 최고 성능 구성은 GTAVBench-AGI에서 전체 정확도 70.9%를 기록했으나, 이는 평균 89.8%인 인간 기준보다 18.9%p 낮았다. GTAVBench-AGI 프로토콜은 내비게이션 범주에서 특히 일관되게 성능을 끌어올렸지만(전체 모델에서 0.9~10.0%p 향상), 슈팅·스나이핑 범주에서는 모델별로 결과가 엇갈렸다. 생성된 도보 내비게이션 과제로 Qwen3.8-27B를 LoRA 기반 RL로 학습시킨 결과, 해당 과제 분포 내 성능이 향상되었고 분포 밖 과제 범주 및 실제 GTA V 과제에서도 성능이 15%에서 23%로 전이되었다.</p>
+<h2>한계점</h2>
+<p>공중 내비게이션, 회피, 추격 등 지속적인 차량·이동 제어가 필요한 과제에서는 모든 평가 모델이 공통적으로 취약했으며, GPT 계열 모델과 나머지 모델 간 성능 격차가 크게 나타났다. 또한 과제 생성은 수동으로 추출한 75개 미션 기반 템플릿에 의존하므로, 템플릿 범위를 벗어난 임의의 게임 상황에 대한 일반화 가능성은 논문에 명시되지 않음.</p>
+<h2>시사점</h2>
+<p>실제 상용 게임의 미션 구조를 그대로 활용하면서도 엔진 상태로 자동 채점이 가능한 평가·RL 환경을 함께 제공함으로써, 시뮬레이션에서 실제 복잡한 3D 환경으로 이어지는 에이전트 학습·평가 파이프라인을 더 저비용으로 구축할 수 있는 길을 보여준다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.13028" target="_blank" rel="noopener">huggingface.co/papers/2611.13028</a> · 2026-11-13</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>정렬은 어디서 나타나고 무엇을 의미하는가? 플라토닉 표현 가설 재조명</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#9 · Daily Papers 2026-11-13</span>
+      <span class="cat-tag">분석</span>
+      <span class="upvote-tag">▲ 6</span>
+    </div>
+    <h1 class="article-title">Where Does Alignment Emerge and What Does It Mean? A Closer Look at the Platonic Representation Hypothesis</h1>
+    <p class="article-title-ko">정렬은 어디서 나타나고 무엇을 의미하는가? 플라토닉 표현 가설 재조명</p>
+    <p class="article-sub">비전 모델과 언어 모델의 표현이 서로 닮아간다는 '플라토닉 표현 가설(PRH)'이 실제로 모델의 어느 층·어느 차원에서 나타나는지를 정밀하게 분석하고, 이 정렬 정도가 모델 성능과 어떤 조건에서 상관관계를 갖는지 검증한 연구다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.12869" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.12869" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Where Does Alignment Emerge and What Does It Mean? A Closer Look at the Platonic Representation Hypothesis</li>
+<li><strong>저자</strong>: Julia Herbst, Simon Roschmann, Quentin Bouniot, Zeynep Akata (Helmholtz Munich, TU Munich, Munich Center for Machine Learning, LTCI Télécom Paris)</li>
+<li><strong>출처</strong>: arXiv:2611.12869v1 [cs.LG] (2026년 11월 9일) — NeurIPS 2026 워크숍(Neural Network Artifacts as a New Data Modality) 발표</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/ExplainableML/prh-closer-look">GitHub 코드</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.12869">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>비전 모델과 언어 모델의 표현이 서로 닮아간다는 '플라토닉 표현 가설(PRH)'이 실제로 모델의 어느 층·어느 차원에서 나타나는지를 정밀하게 분석하고, 이 정렬 정도가 모델 성능과 어떤 조건에서 상관관계를 갖는지 검증한 연구다.</p>
+<h2>배경 및 문제의식</h2>
+<p>PRH는 충분히 유능한 비전 모델과 언어 모델이 서로 다른 모달리티로 학습되어도 유사한 표현 공간으로 수렴한다는 가설이다. 이 가설은 가벼운 정렬 레이어만으로 비전-언어 모델을 연결하는 여러 후속 연구의 동기가 되었다. 그러나 최근 연구들은 이 성능-정렬 상관관계가 최신 모델 계열에서는 재현되지 않는다고 지적했고, 표현 유사도 지표 자체가 모델의 깊이·폭에 따라 왜곡될 수 있어 적절한 비교 기준(baseline)이 필요하다는 문제도 제기되었다. 즉 기존 연구는 전체 층 중 최대 정렬 값만 보고해 왔기 때문에, 정렬이 실제로 어디서, 얼마나 강하게 나타나는지는 불분명했다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>단일 모달(비전 또는 언어) 모델들 사이에서 정렬이 구체적으로 어느 층·어느 차원대에서 발생하는지를 층별 히트맵과 PCA 압축 분석으로 규명했다.</li>
+<li>캡션(이미지 설명 텍스트)의 품질이 충분히 깨끗하고 정보량이 많을 경우, 최신 언어 모델에서도 '성능이 높을수록 정렬도 높다'는 PRH의 경향이 유지됨을 보였다.</li>
+<li>무작위 초기화 모델, 명시적으로 정렬된 비전-언어 모델(CLIP, SigLIP 2 등), 동일 모달리티 모델 쌍이라는 세 가지 기준선을 함께 제시해 교차 모달 정렬의 절대적 크기를 해석할 수 있는 맥락을 마련했다.</li>
+</ol>
+<h2>방법론</h2>
+<p>비전 모델(DINOv2, DINOv3, MAE)과 21개의 언어 모델(BLOOMZ, Llama, Qwen, Gemma, DeepSeek 계열 및 텍스트 임베딩 모델)을 대상으로, mutual k-최근접 이웃(mutual k-NN) 지표와 그 보정된 변형을 이용해 정렬도를 측정했다. WIT, CC3M, COCO, DOCCI 등 캡션 성격이 다른 여러 이미지-텍스트 데이터셋에서 1024개의 이미지-캡션 쌍을 샘플링해 비교했으며, DOCCI 캡션을 원본 길이의 약 10~75%로 요약한 버전도 추가로 만들어 캡션의 상세도(verbosity)가 정렬에 미치는 영향을 분리했다. 또한 PCA로 표현 차원을 압축해가며 정렬이 유지되는 최소 부분공간 크기를 탐색했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>교차 모달 정렬은 주로 모델의 후반부 층, 즉 더 추상적인 의미 표현이 형성된 이후에 나타났으며(DINOv3 21층과 Qwen3-8B 30층에서 최대 0.143), 동일 모달리티 내 정렬(비전-비전 최대 0.538, 언어-언어 최대 약 0.5)보다는 훨씬 약했다. 분산의 40%만 남기는 PCA 압축은 정렬을 오히려 유지하거나 소폭 향상시켰고, 교차 모달 정렬은 원래 1,536~5,120차원의 언어 표현 공간 중 약 100차원 내외의 작은 부분공간에 집중되어 있었다. 성능-정렬 상관관계는 WIT·CC3M처럼 짧고 노이즈가 많은 캡션에서는 약하거나 유의하지 않았지만(r=0.26~0.46), 길고 정교한 DOCCI 캡션에서는 뚜렷한 양의 상관관계(r=0.66, p=0.001)가 나타났고 이는 캡션을 10%로 압축해도 유지되었다(r=0.59). ARC·GSM8K 등 다른 벤치마크와도 비교했는데, 사실적·의미적 지식이 필요한 ARC는 정렬과 강하게 상관(r=0.73)했지만 수학 추론 위주인 GSM8K는 유의한 상관을 보이지 않았다. 마지막으로, 독립적으로 학습된 단일 모달 모델들의 교차 모달 정렬이 CLIP·SigLIP 2 같은 명시적 정렬 모델을 능가하는 경우도 있었지만, 동일 모달리티 모델 쌍의 정렬 수준에는 여전히 크게 못 미쳤다.</p>
+<h2>한계점</h2>
+<p>연구에서 다룬 모델·데이터셋·정렬 지표 범위 안에서만 결론이 유효하며, 비전-언어 두 모달리티 조합에 초점을 맞추었기 때문에 다른 모달리티로 결과가 일반화되는지는 추가 검증이 필요하다. 또한 mutual k-NN은 표현 정렬을 바라보는 하나의 관점일 뿐이며, 절대 점수는 표현 추출 방식·지표의 하이퍼파라미터·평가 데이터에 따라 달라질 수 있다.</p>
+<h2>시사점</h2>
+<p>비전-언어 모델을 연결하는 실무자에게는 어떤 층·어떤 부분공간이 실제로 정렬되어 있는지를 알면 더 적은 지도 학습과 연산만으로 효율적인 정렬 레이어를 설계하는 데 도움이 될 수 있다. 다만 저자들은 모델과 데이터셋이 내재한 사회적·문화적 편향은 정렬 점수만으로는 드러나지 않으므로, 실제 응용에서는 과제별 평가가 별도로 필요하다고 강조한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.12869" target="_blank" rel="noopener">huggingface.co/papers/2611.12869</a> · 2026-11-13</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

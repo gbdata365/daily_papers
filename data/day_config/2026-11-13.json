@@ -1,0 +1,101 @@
+{
+    "2610.40394": {
+        "base": "2610_토메매스_교과서기반-수학증명-데이터-구조화",
+        "rank": "#1",
+        "category": "method",
+        "category_label": "모델·기법",
+        "upvote": "39",
+        "en_title": "Scaling Mathematical Proof Supervision from Structured Textbooks",
+        "ko_title": "TOME-Math: 구조화된 교과서로부터 수학 증명 지도학습 확장하기"
+    },
+    "2611.13410": {
+        "base": "2611_스티어디스틸_폐루프-교사조향-양자화-에이전트-증류",
+        "rank": "#2",
+        "category": "method",
+        "category_label": "모델·기법",
+        "upvote": "31",
+        "en_title": "SteerDistill: Quantizing LLM Agents via Closed-Loop Teacher Steering",
+        "ko_title": "SteerDistill: 폐루프 교사 조향을 통한 LLM 에이전트 양자화"
+    },
+    "2610.39671": {
+        "base": "2610_북네비게이터_교과서기반-자기학습-강화학습",
+        "rank": "#3",
+        "category": "method",
+        "category_label": "모델·기법",
+        "upvote": "27",
+        "en_title": "Incentivizing Self-Learning in Large Language Models via Reinforcement Learning",
+        "ko_title": "강화학습을 통한 대규모 언어 모델의 자기학습 유도"
+    },
+    "2608.22237": {
+        "base": "2608_스파스리드_토큰효율적-외부콘텐츠-선택적-읽기",
+        "rank": "#4",
+        "category": "agent",
+        "category_label": "에이전트",
+        "upvote": "18",
+        "en_title": "Read Less, Solve More: Token-Efficient Sparse Reading of External Content for AI Agents",
+        "ko_title": "Read Less, Solve More: AI 에이전트를 위한 토큰 효율적 외부 콘텐츠 선택적 읽기"
+    },
+    "2611.10193": {
+        "base": "2611_피사_비용인식-앙상블-라우팅-LLM-추론",
+        "rank": "#5",
+        "category": "method",
+        "category_label": "모델·기법",
+        "upvote": "14",
+        "en_title": "Ensemble Routing for Prompt-Adaptive Cost-Aware LLM Inference",
+        "ko_title": "프롬프트 적응형 비용 인식 LLM 추론을 위한 앙상블 라우팅"
+    },
+    "2611.13028": {
+        "base": "2611_지티에이짐_AAA게임-과제-평가-강화학습-벤치마크",
+        "rank": "#6",
+        "category": "bench",
+        "category_label": "벤치마크",
+        "upvote": "12",
+        "en_title": "GTAGym: Real AAA Game Tasks Environment for Evaluation and Reinforcement Learning",
+        "ko_title": "GTAGym: 평가와 강화학습을 위한 실제 AAA 게임 과제 환경"
+    },
+    "2611.08286": {
+        "base": "2611_아이브이지짐_시뮬레이션사용자-시각상호작용모델-평가",
+        "rank": "#7",
+        "category": "bench",
+        "category_label": "벤치마크",
+        "upvote": "11",
+        "en_title": "Interactive Visual Gym: Evaluating Visual Interaction Models with Simulated Users in Interactive Worlds",
+        "ko_title": "Interactive Visual Gym: 상호작용 세계 속 시뮬레이션 사용자와 함께 시각적 상호작용 모델 평가하기"
+    },
+    "2611.12304": {
+        "base": "2611_이볼빙인프라_에이전트적응형-LLM-서빙-시스템",
+        "rank": "#8",
+        "category": "method",
+        "category_label": "모델·기법",
+        "upvote": "10",
+        "en_title": "Evolving Infra: Agent-Adaptive LLM Serving at Scale",
+        "ko_title": "Evolving Infra: 대규모 에이전트 적응형 LLM 서빙"
+    },
+    "2611.12869": {
+        "base": "2611_플라토닉가설_비전언어모델-표현정렬-위치분석",
+        "rank": "#9",
+        "category": "analysis",
+        "category_label": "분석",
+        "upvote": "6",
+        "en_title": "Where Does Alignment Emerge and What Does It Mean? A Closer Look at the Platonic Representation Hypothesis",
+        "ko_title": "정렬은 어디서 나타나고 무엇을 의미하는가? 플라토닉 표현 가설 재조명"
+    },
+    "2611.13766": {
+        "base": "2611_페임큐피_GPU가속-실시간-MPC-QP솔버",
+        "rank": "#10",
+        "category": "method",
+        "category_label": "모델·기법",
+        "upvote": "4",
+        "en_title": "FAME-QP: A GPU-Accelerated Quadratic-Programming Solver for Real-Time Model Predictive Control",
+        "ko_title": "FAME-QP: 실시간 모델예측제어를 위한 GPU 가속 이차계획법 솔버"
+    },
+    "2611.14418": {
+        "base": "2611_가변정밀도_불확실한-디코딩-구간-가중치-비트-상향",
+        "rank": "#11",
+        "category": "method",
+        "category_label": "모델·기법",
+        "upvote": "4",
+        "en_title": "Precision on Demand: Escalating Weight Bits at Uncertain Decoding Steps in a Small Local Model",
+        "ko_title": "수요 기반 정밀도: 소형 로컬 모델의 불확실한 디코딩 구간에서 가중치 비트 상향하기"
+    }
+}

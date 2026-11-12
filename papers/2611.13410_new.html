@@ -1,0 +1,107 @@
+<meta charset="UTF-8">
+<title>SteerDistill</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#2 · Daily Papers 2026-11-13</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 31</span>
+    </div>
+    <h1 class="article-title">SteerDistill: Quantizing LLM Agents via Closed-Loop Teacher Steering</h1>
+    <p class="article-title-ko">SteerDistill: 폐루프 교사 조향을 통한 LLM 에이전트 양자화</p>
+    <p class="article-sub">저정밀 양자화된 LLM 에이전트가 과제 요구사항이나 환경 조건을 놓쳐 실패하는 "행동 발산(behavioral divergence)" 문제를, 고정밀 교사 모델이 학생의 실패 지점에서 폐루프(closed-loop)로 교정 지침을 주고 이를 증류해 내재화하는 SteerDistill로 해결해, W4A16 환경에서 최강 양자화 베이스라인 대비 평균 1.67~2.18점 향상시키고 BF16 성능에 1점 이내로 근접했다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.13410" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.13410" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: SteerDistill: Quantizing LLM Agents via Closed-Loop Teacher Steering</li>
+<li><strong>저자</strong>: Genming Cui, Xiangyu Li 외 (칭화대 AI산업연구원(AIR), 중국과학기술대학교; 교신저자 Ting Cao)</li>
+<li><strong>출처</strong>: arXiv:2611.13410v1 [cs.AI] (2026년 11월 10일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://air-embodied-brain.github.io/SteerDistill">air-embodied-brain.github.io/SteerDistill</a> · <a href="https://github.com/air-embodied-brain/SteerDistill">코드</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.13410">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>저정밀 양자화된 LLM 에이전트가 과제 요구사항이나 환경 조건을 놓쳐 실패하는 "행동 발산(behavioral divergence)" 문제를, 고정밀 교사 모델이 학생의 실패 지점에서 폐루프(closed-loop)로 교정 지침을 주고 이를 증류해 내재화하는 SteerDistill로 해결해, W4A16 환경에서 최강 양자화 베이스라인 대비 평균 1.67~2.18점 향상시키고 BF16 성능에 1점 이내로 근접했다.</p>
+<h2>배경 및 문제의식</h2>
+<p>LLM 에이전트는 여러 턴에 걸쳐 도구를 호출하며 작업을 수행하는데, 반복적인 모델 호출 때문에 추론 비용이 중요한 문제가 되고, 저비트 양자화는 이를 줄이는 실용적 방법이다. 그러나 양자화된 에이전트는 종종 전체 정밀도(full-precision) 모델과 달리 과제 요구사항이나 환경 조건을 간과해, 성공적인 참조 경로와는 다른 환경 전이를 만들어낸다(예: 파일을 읽기 전에 디렉토리를 이동해야 하는데 이를 누락). 저자들은 이를 "행동 발산"이라 명명한다. 기존의 오프라인 학습·증류는 학생이 실제로 발산하는 맥락을 다루지 못하고, 온폴리시(on-policy) 롤아웃은 그런 맥락을 포착하지만 자체 재시도만으로는 정답을 거의 생성하지 못한다(BFCL V4 멀티턴 진단에서 비가이드 재시도의 정답률 9.6%).</p>
+<h2>핵심 기여</h2>
+<p>SteerDistill은 두 단계로 구성된 양자화 인지 증류(QAD) 기법이다. (1) <strong>교사 조향 경로 수정(Teacher-steered trajectory revision)</strong>: 동일한 과제·초기 상태에서 성공한 교사 참조와 비교해 학생의 첫 행동 발산 지점을 찾고, 그 지점의 역사·환경 상태를 복원한 뒤 교사가 구체적인 교정 지침(steering prompt)을 제공해 학생이 응답을 수정하도록 유도한다. 실행 결과를 환경 전이와 비교해 로컬 검증하고, 실패하면 피드백을 반영해 지침을 refine하며 재시도한다. (2) <strong>조향된 행동의 내재화</strong>: 검증된 교정 지점에서는 조향된 학생 스냅샷을 모방하도록 forward KL로, 그 외 지점에서는 전체 정밀도 교사를 모방하도록 reverse KL로 학습시켜, 추론 시에는 교사나 조향 지침 없이도 교정된 행동을 재현하게 만든다.</p>
+<h2>방법론</h2>
+<p>학생 모델 $\pi_\theta$는 교사와 동일한 체크포인트에서 초기화된 양자화 모델이며, 각 학습 사이클마다 고정된 스냅샷이 초기 롤아웃과 조향된 수정본을 생성하고, 그 결과로 다음 사이클의 학습된 파라미터를 얻는다. 개입 지점은 행동(액션) 불일치가 아니라 "환경 전이 발산"을 기준으로 선정하며(서로 다른 행동이 같은 환경 전이를 낳을 수 있으므로), 교정은 학생이 직접 수정하도록 유도("조향")하는 방식이 교사의 직접 대체(takeover)보다 효과적임을 확인했다. 손실 함수는 교정된 턴에는 forward KL, 그 외 턴에는 reverse KL을 적용하는 턴별 혼합 목적함수로 구성된다(식 1~3).</p>
+<h2>실험 설정 및 결과</h2>
+<p>Qwen3-8B, Qwen3.5-4B, Gemma 4 12B-it 세 모델과 BFCL V4, τ²-Bench, WebShop, ALFWorld, Search QA 다섯 개 에이전트 벤치마크에서 GPTQ, EfficientQAT, BitDistiller, On-Policy QAD, QeRL 다섯 베이스라인과 비교했다. Qwen3-8B·W4A16에서 SteerDistill은 평균 53.18점으로 최강 베이스라인 QeRL(51.00)을 2.18점 앞섰고 BF16(53.54)과 0.36점 차이에 불과했다. W4A8·W2A16 등 더 낮은 정밀도에서도 모든 벤치마크에서 가장 높은 평균 점수를 유지했다(단, W2A16의 Search QA에서는 BitDistiller가 근소하게 앞섬). τ²-Bench에서는 QeRL보다 학습 GPU 시간을 67% 줄이면서도 Pass@1이 1.84%p 높았고, 성공한 작업당 평균 출력 토큰 수도 더 적었다(4.0K vs 4.1~5.2K). 소거 실험을 통해 행동 발산 기준 개입, 조향(직접 대체 대신), 구조화된 교사 프롬프트, 로컬 검증된 교정 보존, FKL/RKL 혼합 라우팅 각각이 성능 향상에 기여함을 확인했다.</p>
+<h2>한계점</h2>
+<p>논문 본문에서는 상세 한계를 별도 섹션(Section E)으로 미뤘으며 본 요약에서 참조한 페이지 범위에는 포함되지 않아 구체적 한계는 논문에 명시되지 않음. 다만 W2A16과 같은 초저정밀 환경의 일부 벤치마크(Search QA)에서는 여전히 다른 베이스라인에 뒤처지는 경우가 있어, 모든 설정에서 보편적 우위를 보장하지는 않는다.</p>
+<h2>시사점</h2>
+<p>양자화로 인한 성능 저하를 단순 가중치 복원이 아니라 "에이전트가 실제로 틀리는 맥락"을 식별하고 교사가 그 맥락에서 교정을 제공하는 폐루프 방식으로 접근할 수 있음을 보여준다. 이는 에이전트형 LLM을 저비용으로 배포하려는 산업적 요구와 맞물려, 모델 자체를 재학습하지 않고도 추론 비용과 품질 사이의 트레이드오프를 개선할 수 있는 실용적 경로를 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.13410" target="_blank" rel="noopener">huggingface.co/papers/2611.13410</a> · 2026-11-13</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

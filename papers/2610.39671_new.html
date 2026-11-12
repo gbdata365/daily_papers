@@ -1,0 +1,107 @@
+<meta charset="UTF-8">
+<title>강화학습을 통한 대규모 언어 모델의 자기학습 유도</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#3 · Daily Papers 2026-11-13</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 27</span>
+    </div>
+    <h1 class="article-title">Incentivizing Self-Learning in Large Language Models via Reinforcement Learning</h1>
+    <p class="article-title-ko">강화학습을 통한 대규모 언어 모델의 자기학습 유도</p>
+    <p class="article-sub">답이 제거된 수학 교과서를 스스로 탐색·학습해 증명 문제를 푸는 "자기학습(self-learning)" 과제를 정의하고, BookNavigator 인터페이스와 세밀한 보상을 결합한 강화학습으로 Intern-S2-Preview-35B의 전체 증명 정확도를 51.5%에서 79.5%로 끌어올렸다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2610.39671" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2610.39671" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Incentivizing Self-Learning in Large Language Models via Reinforcement Learning</li>
+<li><strong>저자</strong>: Lingkai Kong, Yuzhe Gu 외 (상하이 AI 연구소, 상하이교통대, 홍콩중문대 MMLab, 중국과학기술대, 푸단대; 교신저자 Wenwei Zhang)</li>
+<li><strong>출처</strong>: arXiv:2610.39671v1 [cs.CL] (2026년 10월 29일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2610.39671">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>답이 제거된 수학 교과서를 스스로 탐색·학습해 증명 문제를 푸는 "자기학습(self-learning)" 과제를 정의하고, BookNavigator 인터페이스와 세밀한 보상을 결합한 강화학습으로 Intern-S2-Preview-35B의 전체 증명 정확도를 51.5%에서 79.5%로 끌어올렸다.</p>
+<h2>배경 및 문제의식</h2>
+<p>LLM은 사전학습으로 방대한 파라메트릭 지식을 갖추거나 검색증강생성(RAG)으로 외부 정보를 가져오지만, 낯선 문제를 풀려면 단순 사실 검색을 넘어 새로운 원리를 이해하고 그 적용 가능성을 판단하며 전개 중인 풀이에 통합하는 능력, 즉 "자기학습"이 필요하다. 저자들은 이런 능력을 지속적인 장문 참고자료 학습을 통해 개발하는 방법이 충분히 연구되지 않았다고 지적하며, 검색 기반 에이전트나 메타러닝·테스트타임 적응 연구와 달리, 지식 습득과 추론이 서로 계속 영향을 주고받는(시도한 유도 과정이 누락된 전제를 드러내고, 새로 발견한 원리가 풀이 전략을 바꾸는) 설정을 다룬다.</p>
+<h2>핵심 기여</h2>
+<p>논문은 158권의 수학 교과서에서 정의·정리·일반 증명은 남기고 연습문제 해답만 제거한 5,183개의 증명 문제-교과서 쌍을 구축하는 파이프라인을 제시한다. 모델이 목차 조회(get_toc), 키워드 검색(search_index), 절 읽기(read_section) 세 가지 행동으로 교과서를 능동적으로 탐색하도록 하는 <strong>BookNavigator</strong> 인터페이스를 도입하고, Group Relative Policy Optimization(GRPO)에 (1) 어닐링되는 탐색 보너스와 (2) 라운드 단위 도구 크레딧 재분배라는 두 가지 세밀한 보상 설계를 결합해, 교과서 탐색 유지와 비생산적 도구 호출 억제라는 상충하는 목표를 동시에 달성한다.</p>
+<h2>방법론</h2>
+<p>각 라운드에서 정책은 추론 $z_t$를 생성하고 행동 $a_t$(교과서 접근 행동)를 선택해 관측 $o_t$를 얻으며, 마지막 라운드에서 더 이상 교과서에 접근하지 않고 최종 증명 $\hat y$을 출력한다. 정답 여부는 숨겨진 참조 해답과 비교하는 LLM 심판이 $r(\tau)\in{-1,1}$로 판정한다. 탐색 보너스는 올바른 궤적 중 적어도 한 번 도구 호출이 성공한 경우 코사인 스케줄로 어닐링되는 가중치 $\beta_n$을 추가 보상으로 부여한다. 도구 크레딧은 별도의 고정된 초기 정책을 "도구 심판"으로 사용해 각 라운드의 교과서 활용을 useful/neutral/harmful로 분류하고, 이 점수를 토큰 가중 평균 대비 편차로 변환해 GRPO의 궤적 단위 이득(advantage)을 라운드 단위로 재분배한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Intern-S2-Preview-35B를 기반으로 ID-Book(훈련에 포함된 책의 held-out 문제), OOD-Book(훈련에서 제외된 책), OOD-Subject(훈련 시 다루지 않은 주제인 확률·통계) 세 평가 분할과, No-Book·Top-k Sections·Long-Context·Oracle Section 등 고정 검색 베이스라인들과 비교했다. 강화학습 후 Self-Learning은 세 분할 모두에서 최고 정확도(ID-Book 65.5%, OOD-Book 85.2%, OOD-Subject 86.7%, 전체 79.5%)를 기록했고, 최강 고정 검색 베이스라인(Top-k Sections, 73.1%) 대비 6.4%p 앞섰다. 교과서 교체·출처 절 제거 등 참조자료를 바꾼 통제 실험에서도 여전히 높은 성능을 유지해, 단순 암기나 특정 환경 적응이 아닌 전이 가능한 학습 전략임을 보였다. 수학 외 과제인 BrowseComp-Plus와 CL-bench에서도 각각 기본 모델 대비 1.7%p, 2.3%p 향상되어 범용적 적용 가능성을 시사했다. 소거 실험은 정답 전용 보상만으로는 도구 사용 비율이 36.9%에서 6.7%로 급감함을 보여, 탐색 보너스와 도구 크레딧이 함께 작용해야 교차 도메인 전이가 극대화됨을 확인했다.</p>
+<h2>한계점</h2>
+<p>모든 RL 훈련 정책이 CL-bench의 "절차적 과제 수행(Procedural Task Execution)" 범주에서는 오히려 기본 모델보다 낮은 점수를 보였는데, 저자들은 증명 중심 학습이 정해진 절차를 충실히 따르는 능력과는 성격이 다르기 때문일 수 있다고 해석한다. 또한 참조 해답이 제거된 교과서 기반 과제로 평가가 한정되어 있어, 더 넓은 범위의 지식 영역에서의 일반화는 추가 검증이 필요하다.</p>
+<h2>시사점</h2>
+<p>방대한 교과서·문헌 같은 자기지도 코퍼스를 강화학습으로 "스스로 공부하는" 능력의 훈련 신호로 활용할 수 있다는 가능성을 제시한다. 이는 고정된 검색-생성 파이프라인을 넘어, 모델이 능동적으로 무엇을 더 찾아볼지 결정하게 하는 도메인에 무관한 자기학습 전략이 장문맥·복합 추론 과제 전반의 범용 문제 해결 능력을 강화하는 경로가 될 수 있음을 보여준다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2610.39671" target="_blank" rel="noopener">huggingface.co/papers/2610.39671</a> · 2026-11-13</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

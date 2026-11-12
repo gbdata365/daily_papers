@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>프롬프트 적응형 비용 인식 LLM 추론을 위한 앙상블 라우팅</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#5 · Daily Papers 2026-11-13</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 14</span>
+    </div>
+    <h1 class="article-title">Ensemble Routing for Prompt-Adaptive Cost-Aware LLM Inference</h1>
+    <p class="article-title-ko">프롬프트 적응형 비용 인식 LLM 추론을 위한 앙상블 라우팅</p>
+    <p class="article-sub">프롬프트별로 LLM 모델의 성공 확률과 비용을 함께 추정해, 단일 모델 선택(PISA)과 다중 모델 앙상블 선택(PISA-E)을 재학습 없이 추론 시점에 유연하게 전환할 수 있게 하는 비용 인식 라우팅 프레임워크.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.10193" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.10193" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Ensemble Routing for Prompt-Adaptive Cost-Aware LLM Inference</li>
+<li><strong>저자</strong>: Saul Urso, Emanuele Carlini, Patrizio Dazzi, Matteo Mordacchini (이탈리아 CNR 정보과학기술연구소 및 피사대학교)</li>
+<li><strong>출처</strong>: arXiv:2611.10193v1 [cs.AI] (2026년 11월 6일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.10193">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>프롬프트별로 LLM 모델의 성공 확률과 비용을 함께 추정해, 단일 모델 선택(PISA)과 다중 모델 앙상블 선택(PISA-E)을 재학습 없이 추론 시점에 유연하게 전환할 수 있게 하는 비용 인식 라우팅 프레임워크.</p>
+<h2>배경 및 문제의식</h2>
+<p>여러 LLM을 함께 제공하는 서비스에서는 응답 품질과 추론 비용을 요청별로 균형 있게 맞추는 라우팅이 중요하다. 기존 방식은 프롬프트마다 모델을 하나만 고르는 단일 모델 라우팅이거나, 고정된 조합의 모델들을 항상 함께 호출하는 앙상블 방식으로 나뉘어 있어 비용-품질 선호나 앙상블 구성·크기를 요청 특성에 맞게 동적으로 조절하기 어려웠다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>프롬프트 임베딩에 대한 소프트 군집 소속도와 모델별 예측기를 결합해 개별 모델의 능력을 추정하는 단일 모델 라우터 PISA 제안.</li>
+<li>PISA의 능력 추정치를 재사용해, 비용-품질 선호도에 따라 추론 시점에 앙상블 구성과 크기를 함께 결정하는 확장판 PISA-E 제안.</li>
+<li>앙상블 성공 확률을 다루기 쉬운 대리 지표(과반수 성공 확률)로 근사해, 앙상블 전용 예측기를 추가로 학습하지 않고도 후보 집합을 평가할 수 있는 방법 제시.</li>
+</ul>
+<h2>방법론</h2>
+<p>PISA는 각 프롬프트를 임베딩한 뒤 X-means로 학습한 군집 중심들과의 거리를 소프트맥스로 변환해 소프트 소속도 벡터를 만들고, 이를 입력으로 모델별 로지스틱 회귀 예측기를 학습해 각 모델의 정답 확률을 추정한다. 여기에 모델별 평균 비용을 정규화해 더한 효용 함수로 비용-품질 트레이드오프 파라미터에 따라 단일 모델을 선택한다. PISA-E는 동일한 능력 추정치를 이용해 후보 모델들을 효용 순으로 정렬한 뒤, 홀수 크기의 접두사 집합들에 대해 포아송-이항 분포 기반 과반수 성공 확률과 정규화 비용을 계산하여 효용이 가장 높은 앙상블을 탐욕적으로 선택한다. 선택된 앙상블의 응답들은 모델별 추정 능력으로 가중한 셀프 가중 BERTScore 기반 최소 베이즈 위험 디코딩으로 통합된다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Track-2, RouterBench, FusionBench, SPROUT 네 가지 LLM 라우팅 벤치마크에서 ID(분포 내)·OOD(분포 외) 조건으로 평가했다. 단일 모델 라우터로서 PISA는 비교 대상인 EmbedLLM, Avengers-Pro, KNN, MLP보다 ID·OOD 모두에서 가장 높은 거시 평균 정규화 하이퍼볼륨(각각 37.41, 22.85)을 달성했다. 앙상블 방식으로서 PISA-E는 품질을 최우선으로 할 때 기존 최고 경쟁 기법 대비 ID에서 2.09%p, OOD에서 2.87%p 더 높은 거시 평균 작업 성능을 보였고, 비용을 낮춘 설정에서는 최고 경쟁 앙상블과 동등한 성능을 유지하면서 평균 추론 비용을 약 36%(ID), 25%(OOD) 절감했다. 고정 크기 앙상블과 비교한 소거 실험에서도 프롬프트별로 앙상블 크기를 적응적으로 조절하는 PISA-E가 더 높은 하이퍼볼륨을 기록했다.</p>
+<h2>한계점</h2>
+<p>앙상블 선택 시 각 모델의 정답 여부를 조건부 독립으로 가정하는 근사를 사용하며, 탐욕적 접두사 구성 방식은 전역 최적 부분집합을 보장하지 않는다. 또한 비용 추정은 학습 데이터에서 관측된 평균 호출 비용에 기반하므로, 실제 서비스 환경의 비용 변동성은 논문에 명시되지 않음.</p>
+<h2>시사점</h2>
+<p>재학습 없이 추론 시점의 비용-품질 선호만 바꿔가며 단일 모델 선택과 다중 모델 앙상블 선택을 매끄럽게 오갈 수 있다는 점은, 다양한 가격·성능 요구가 혼재하는 실서비스형 LLM 플랫폼에서 운영 유연성을 크게 높일 수 있는 실용적 방향을 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.10193" target="_blank" rel="noopener">huggingface.co/papers/2611.10193</a> · 2026-11-13</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

@@ -1,0 +1,113 @@
+<meta charset="UTF-8">
+<title>로피디아 엑스피리언스 2</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#9 · Daily Papers 2026-11-14</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 25</span>
+    </div>
+    <h1 class="article-title">Ropedia Xperience 2: A Gold Standard for Scaling Physical AI Environments and Behaviors</h1>
+    <p class="article-title-ko">로피디아 엑스피리언스 2: 피지컬 AI 환경과 행동 확장을 위한 골드 스탠다드</p>
+    <p class="article-sub">핸드헬드 LiDAR 3D 스캔과 헤드마운트 에고센트릭 녹화를 하나의 메트릭 공간에 정합(registration)해, 로봇이나 모션캡처 장비 없이도 환경과 행동 데이터를 동시에 대규모로 수집·재활용할 수 있는 피지컬 AI용 데이터셋 Ropedia Xperience 2를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.17060" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.17060" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Ropedia Xperience 2: A Gold Standard for Scaling Physical AI Environments and Behaviors</li>
+<li><strong>저자</strong>: Ropedia Research Team</li>
+<li><strong>출처</strong>: arXiv:2611.17060v1 [cs.CV] (2026년 11월 12일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://ropedia.com/xperience/2-research/">ropedia.com/xperience/2-research</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.17060">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>핸드헬드 LiDAR 3D 스캔과 헤드마운트 에고센트릭 녹화를 하나의 메트릭 공간에 정합(registration)해, 로봇이나 모션캡처 장비 없이도 환경과 행동 데이터를 동시에 대규모로 수집·재활용할 수 있는 피지컬 AI용 데이터셋 Ropedia Xperience 2를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>GPT-6 Astra, Claude Fable 5.1과 같은 대형 파운데이션 모델이 시각 입력만으로 로봇을 직접 제어하는 사례가 보고되고 있지만, 접촉이 많고 호라이즌이 긴(long-horizon) 실제 과업에서는 여전히 취약하다. 언어모델은 데이터·모델 크기·연산량에 따른 스케일링 법칙이 잘 알려져 있는 반면, 피지컬 AI에서는 "환경과 행동 데이터를 어떻게 스케일링해야 하는가"에 대한 답이 아직 정립되지 않았다. 이를 위해서는 어떤 데이터를 스케일링할지, 그리고 그 데이터를 어떻게 지속적으로 생산·재사용할지를 먼저 규명해야 한다는 것이 저자들의 문제의식이다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>로봇이나 모션캡처 인프라 없이, 단일 작업자가 핸드헬드 3D 스캐너와 HOMIE 헤드마운트 멀티카메라 레코더만으로 수행하는 2단계(스캔 → 녹화) 수집 프로토콜을 제시했다.</li>
+<li>1,589개의 공개 메트릭 스케일 3D 스캔과 74개 과업에 대한 4,230개 에고센트릭 녹화(총 131시간)로 구성된 데이터셋 Ropedia Xperience 2를 공개했다(전체 수집 인벤토리는 596개 장소 규모).</li>
+<li>녹화된 영상·카메라 궤적·손/신체 모션을 스캔된 장면 지오메트리에 정합하는 자동화 파이프라인을 구축해, 메시·3D Gaussian Splatting(3DGS)·계층적 언어 주석까지 함께 생성한다.</li>
+<li>하나의 캡처를 깊이·지오메트리 추정, 3D 객체 탐지, 공간 추론 등 3가지 벤치마크의 기준 데이터로 활용했다.</li>
+<li>동일한 캡처를 real-to-sim 변환, 인간-로봇 모션 리타게팅, 가상 원격조작(virtual teleoperation), 장기 호라이즌 궤적 생성 등 4가지 로봇 학습 응용으로 재활용하는 방법을 보였다.</li>
+</ul>
+<h2>방법론</h2>
+<p>각 장면은 먼저 핸드헬드 LiDAR 스캐너로 한 번 스캔되어 메시와 3DGS 기반의 메트릭·중력 정렬(gravity-aligned) 3D 표현으로 재구성된다. 이후 동일 장면에서 여러 개의 과업이 HOMIE 헤드마운트 레코더(4개의 피쉬아이 에고센트릭 RGB, 깊이, 카메라 포즈)로 녹화되며, 손 모션은 MANO(21개 관절), 신체 모션은 SMPL-H(52개 관절) 형식으로 추정된다. 등록(registration) 파이프라인은 이 녹화를 앞서 스캔된 장면 지오메트리와 같은 메트릭 좌표계로 정합하고, 계층적(과업-서브과업-액션) 언어 캡션을 자동 생성한다. 정합된 장면과 행동 데이터는 이어서 1) 시뮬레이션 환경으로의 real-to-sim 변환, 2) 인간 모션의 로봇 전신 궤적 리타게팅, 3) 변환된 시뮬레이션 장면에서의 가상 원격조작, 4) 자동화된 다중 서브과업 궤적 생성 등 네 가지 경로로 재사용된다. 이 데이터셋은 기존의 대규모 에고센트릭 상호작용 클립 모음인 Xperience-10M(약 1,000만 클립, 1만 시간)을 메트릭 장면 스캔과 정합 파이프라인으로 확장한 것이다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>스캔 재구성을 참조 지오메트리로 사용해 깊이·지오메트리 추정(11개 모델, AbsRel/AUC/CD 지표), 3D 객체 탐지(7개 모델, AP@0.25/AP@0.5), 공간 추론(12개 모델, 정확도)의 세 벤치마크에서 기존 모델들을 평가했다. 일부 기존 방법(DUSt3R, MASt3R 등)은 평가를 완료하지 못하는 한계가 드러났다. 응용 측면에서는 한 장면에서 217개 객체를 측정한 real-to-sim 변환, 평균 10.3분 길이에 손끝 오차 0.40~0.55cm 수준의 인간-로봇 리타게팅, 주전자를 잡고 옮기고 내려놓는 가상 원격조작 데모, 8개 서브과업에 대해 30/30 롤아웃이 성공한 장기 호라이즌 궤적 생성 등을 "측정됨/시연됨" 결과로 제시했다. 이러한 결과는 실제 로봇 원격조작 데이터셋인 DROID(350시간, 564개 장면, 50명의 조작자, 12개월 수집)를 기준(reference)으로 비교되었다.</p>
+<h2>한계점</h2>
+<p>공개된 스캔 구성은 가정집 실내에 편중되어 있고, 부분적으로만 커버되거나 재구성 결함이 있는 스캔도 포함되어 있다. 릴리스 등급에는 정책적 예외와 상충하는 QC(품질관리) 라벨 조정이 반영되어 있어, 모든 스캔에 대한 균일한 시각적·기하학적 검증으로 해석해서는 안 된다. 동일한 물리적 공간이 서로 다른 스캔으로 중복 기록될 수 있으며, 수집 현장 인벤토리가 공개된 부분집합에 대한 검증된 현장 전수조사는 아니다. 또한 녹화 개수와 길이는 전체 수집 인벤토리를 기술한 것이며, 손/신체 모션은 모션캡처 정답이 아닌 추정값이고, 보이지 않는 신체 부위는 추론된 값이며, 활동 캡션은 모델이 생성한 것이다. 단일 녹화-장면 변환으로는 지역적인 SLAM 드리프트를 교정할 수 없다.</p>
+<h2>시사점</h2>
+<p>이 연구는 로봇이나 모션캡처 장비 없이도 "환경"과 "행동" 데이터를 한 번의 수집 프로토콜로 동시에 확보하고, 이를 벤치마크 평가와 로봇 학습 데이터 생성 양쪽에 재사용할 수 있다는 점을 보여준다. 이는 언어모델의 데이터 스케일링 법칙에 대응하는 피지컬 AI 전용 스케일링 연구의 데이터 기반을 마련하려는 시도로, 향후 환경·행동 데이터의 규모와 다양성이 로봇 제어 능력에 미치는 영향을 체계적으로 연구하는 데 기여할 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.17060" target="_blank" rel="noopener">huggingface.co/papers/2611.17060</a> · 2026-11-14</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

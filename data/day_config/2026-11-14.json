@@ -1,0 +1,110 @@
+{
+  "2611.15777": {
+    "base": "2611_에스오아레나_시스템원-모델-역량과-신뢰성-벤치마크",
+    "rank": "#1",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "72",
+    "en_title": "SO-Arena: Benchmarking the Capability Spectrum and Reliability of System One Models",
+    "ko_title": "SO-Arena: System One 모델의 역량 범위와 신뢰성 벤치마킹"
+  },
+  "2611.14815": {
+    "base": "2611_버드드림즈_조감도-주행-세계모델-비디오생성",
+    "rank": "#2",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "46",
+    "en_title": "BirdDreams: Joint Perspective and BEV Video Generation for a Plausible, Reactive Driving World Model",
+    "ko_title": "버드드림즈: 그럴듯하고 반응적인 주행 세계모델을 위한 1인칭·조감도 공동 비디오 생성"
+  },
+  "2611.16748": {
+    "base": "2611_피직스루프_LLM-물리-인식-자기개선-비디오생성",
+    "rank": "#3",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "42",
+    "en_title": "PhysLoop: Harnessing LLMs' Physics Awareness for Self-Improving Video Generation Models",
+    "ko_title": "피직스루프: LLM의 물리 인식 능력을 활용한 비디오 생성 모델의 자기개선"
+  },
+  "2611.13004": {
+    "base": "2611_지스타_그룹-스케일-토큰-압축-자기회귀-생성",
+    "rank": "#4",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "40",
+    "en_title": "G-STAR: Group-Scaled Token Capacity for Deeply Compressed Autoregressive Generation",
+    "ko_title": "지스타: 심층 압축 자기회귀 생성을 위한 그룹 스케일 토큰 용량"
+  },
+  "2611.15131": {
+    "base": "2611_듀오_전이중-상호작용-상호보완-세계모델",
+    "rank": "#5",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "35",
+    "en_title": "Duo: A Reciprocal World Model for Full-Duplex Interaction",
+    "ko_title": "듀오: 전이중 상호작용을 위한 상호보완적 세계모델"
+  },
+  "2611.17167": {
+    "base": "2611_액터저지티처_장기-에이전트-의사결정-모델-분석",
+    "rank": "#6",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "29",
+    "en_title": "Actor, Judge, or Teacher? Understanding Decision Models in Long-Horizon Agents",
+    "ko_title": "액터, 저지, 혹은 티처? 장기 호라이즌 에이전트의 의사결정 모델 이해하기"
+  },
+  "2611.15844": {
+    "base": "2611_오픈비전바나나_완전공개-생성형-시각인지-레시피",
+    "rank": "#7",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "28",
+    "en_title": "Open Vision Banana: A Fully Open Recipe for Generative Visual Perception",
+    "ko_title": "오픈 비전 바나나: 생성형 시각 인지를 위한 완전 공개 레시피"
+  },
+  "2611.05984": {
+    "base": "2611_하이퍼커넥션_단순화-안정성-확장성-설계",
+    "rank": "#8",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "26",
+    "en_title": "On the Design of Hyper-Connections: Simplification, Stability, and Scalability",
+    "ko_title": "하이퍼커넥션 설계에 관하여: 단순화, 안정성, 확장성"
+  },
+  "2611.17060": {
+    "base": "2611_로피디아엑스피리언스2_피지컬AI-환경-행동-확장-골드스탠다드",
+    "rank": "#9",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "25",
+    "en_title": "Ropedia Xperience 2: A Gold Standard for Scaling Physical AI Environments and Behaviors",
+    "ko_title": "로피디아 엑스피리언스 2: 피지컬 AI 환경과 행동 확장을 위한 골드 스탠다드"
+  },
+  "2611.17331": {
+    "base": "2611_티티비_테스트타임베이킹-디코더전용-뷰합성-고속렌더링",
+    "rank": "#10",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "19",
+    "en_title": "TTB: Test-time Baking for Efficient Rendering of Decoder-only View Synthesis Models",
+    "ko_title": "티티비: 디코더 전용 뷰 합성 모델의 효율적 렌더링을 위한 테스트-타임 베이킹"
+  },
+  "2611.16217": {
+    "base": "2611_월드드래프트_코드-대신-비디오모델로-세계-렌더링",
+    "rank": "#11",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "14",
+    "en_title": "WorldDraft: If Code Builds the World, Can Video Models Just Render It?",
+    "ko_title": "월드드래프트: 코드가 세계를 만든다면, 비디오 모델은 그것을 렌더링하기만 하면 될까?"
+  },
+  "2611.16905": {
+    "base": "2611_팩토어드오네사이드애덤_실용적-확장가능한-SOAP-옵티마이저",
+    "rank": "#12",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "12",
+    "en_title": "Factored One-sided Adam-Moment for Practical and Scalable SOAP",
+    "ko_title": "FOAM: 실용적이고 확장 가능한 SOAP를 위한 인수분해된 단측 Adam-모멘트"
+  }
+}

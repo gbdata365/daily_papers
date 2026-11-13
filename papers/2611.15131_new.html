@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>듀오</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#5 · Daily Papers 2026-11-14</span>
+      <span class="cat-tag">생성모델</span>
+      <span class="upvote-tag">▲ 35</span>
+    </div>
+    <h1 class="article-title">Duo: A Reciprocal World Model for Full-Duplex Interaction</h1>
+    <p class="article-title-ko">듀오: 전이중 상호작용을 위한 상호보완적 세계모델</p>
+    <p class="article-sub">사용자의 음성·영상을 실시간으로 계속 인지하면서 자연스럽게 끼어들고 응답할 수 있는 전이중(Full-Duplex) 오디오비주얼 세계모델 Duo v1을 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.15131" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.15131" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Duo: A Reciprocal World Model for Full-Duplex Interaction</li>
+<li><strong>저자</strong>: Hengyuan Cao, Biao Gong 등 Ant Group 산하 inclusionAI 소속 연구팀 (총 19명, 공동 교신: Biao Gong, Zhenzhong Lan)</li>
+<li><strong>출처</strong>: arXiv:2611.15131v1 [cs.CV] (2026년 11월 11일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://duo-v1.github.io">Duo v1 홈페이지</a> · <a href="https://github.com/inclusionAI/Duo">GitHub</a> · <a href="https://huggingface.co/collections/inclusionAI/duo-v1">Hugging Face</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.15131">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>사용자의 음성·영상을 실시간으로 계속 인지하면서 자연스럽게 끼어들고 응답할 수 있는 전이중(Full-Duplex) 오디오비주얼 세계모델 Duo v1을 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>기존 World Model 연구들은 주로 물리적 현실을 그럴듯하게 시뮬레이션하는 데 집중해 왔으며, 지능(의사결정)은 세계 바깥에서 키보드·마우스·텍스트 프롬프트 같은 제한된 입력으로 세계를 조작하는 역할에 머물러 있었다. 그 결과 생성된 세계는 정교하지만 "대화할 상대가 없는" 생명력 없는 공간에 가깝다. 저자들은 지능과 물리적 현실이 세계를 구성하는 동등한 두 축이라는 관점에서, 생성된 세계 쪽의 존재가 사용자의 음성·영상을 실시간으로 지각하고 스스로 응답·침묵·끼어들기를 판단하는 "상호적(reciprocal)" 상호작용이 필요하다고 주장한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>지능(Intent)과 현실 구현(Realization)을 세계의 동등한 구성 요소로 보는 개념적 틀인 <strong>Reciprocal World Model(RWM)</strong>을 제시했다.</li>
+<li>RWM의 1차 구현체인 <strong>Duo v1</strong>을 공개했다. 언어 기반 Intent Module과 인과적(causal) 오디오비주얼 Realization Module을 결합한 모듈형 구조이다.</li>
+<li>세 가지 핵심 기술 설계를 제안했다: (1) 디퓨전 모델의 단순한 지시 인코더 역할을 넘어, Intent Module이 자기회귀적으로 매 청크마다 \&lt;speak&gt;/\&lt;wait&gt; 행동을 직접 판단하도록 한 설계, (2) 사용자 음성·영상·Intent 토큰·어시스턴트 미디어를 하나의 타임라인 위에서 청크 단위로 동기화하고 모듈별 어텐션 마스크로 인과성을 강제하는 설계, (3) 두 모듈 모두를 "자기 생성 이력(self-generated rollout)"으로 학습시켜 학습-추론 간 분포 불일치를 줄이는 <strong>dual rollout distillation</strong>.</li>
+<li>학습용 스크립트 기반 합성 영상통화 데이터와 실제 녹화 대화 데이터를 결합한 데이터 구축 파이프라인과, 실시간 스트리밍 추론 런타임을 함께 개발했다.</li>
+</ul>
+<h2>방법론</h2>
+<p>상호작용은 약 0.71초(24fps 기준 17프레임) 단위의 청크로 나뉜다. 각 청크에서 Intent Module은 전역 설명, 이전까지의 사용자 영상·음성·텍스트, 그리고 자신이 과거에 낸 텍스트 출력을 조건으로 받아 \&lt;speak&gt;+텍스트 또는 \&lt;wait&gt;을 자기회귀적으로 결정하며, 이때 디코딩된 텍스트가 아니라 모델의 은닉 상태(hidden states)가 Realization Module로 전달되는 의미 정보가 된다. 대부분의 청크가 "응답 없음"에 해당하기 때문에 생기는 '영원한 대기' 붕괴를 막기 위해 행동 비율을 재조정(action-aware rebalancing)하고, 과거 응답에 噪음을 주는 history perturbation으로 잘못된 이전 응답에서도 회복하는 능력을 학습시킨다. Realization Module은 공통 VAE로 인코딩된 오디오·비디오 잠재 표현과 Intent의 은닉 상태, 참조 이미지, 과거 생성 이력을 조건으로 받는 공동 인과적 디퓨전 트랜스포머이며, 청크별 어텐션 마스크로 미래 프레임이 결정에 유입되지 않도록 한다. 학습은 3단계로 진행된다: (1) Intent 모듈 학습, (2) 기록된 정답 텍스트·미디어 이력으로 Realization 모듈을 학습, (3) 고정된 Intent 모듈이 실제 추론처럼 자기회귀적으로 생성한 Intent 특징과 스스로 생성한 오디오비주얼 이력을 조건으로 distribution matching distillation을 수행해, 실제 라이브 상호작용 조건에 맞는 4단계 스트리밍 생성기를 얻는다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>30개의 실시간 전이중 상호작용 사례에 대해, 사용자 입력과 모델 응답을 같은 타임라인에 나란히 재생하며 사람이 6가지 이진 기준(응답 적합성, 언어 일치, 발화 명료성, 시각적 정체성 안정성, 오디오-비주얼 동기화, 오디오-비주얼 감정 일치)으로 평가했다. 총 180회 검사(30사례×6기준) 중 168회(93.3%)를 통과했으며, 언어 일치·발화 명료성·시각적 정체성 안정성은 90건 전부 통과했다. 감정 일치는 96.7%, 입모양-음성 동기화는 90.0%를 기록했다. 가장 낮은 지표는 "응답 적합성"(73.3%, 22/30)으로, 농담처럼 문맥을 벗어난 발화나 음성과 영상을 함께 해석해야 의도가 드러나는 상황(예: 실내에서 비 오는 날 자전거를 막 빌렸다고 말하는 경우를 조언 요청으로 오해)에서 주로 실패했다.</p>
+<h2>한계점</h2>
+<p>저자들도 Duo v1을 "예비적(preliminary)" 단계로 규정하며, 현재는 기본적인 오디오비주얼 대화만 지원한다고 밝힌다. 응답 적합성이 상대적으로 낮고, 장시간 세션에서의 일관성 유지와 오해 발생 후 회복 능력은 아직 충분히 검증되지 않았다. 논문에는 구체적인 지연 시간(latency)이나 대규모 정량 벤치마크 비교는 명시되지 않음.</p>
+<h2>시사점</h2>
+<p>이 연구는 세계모델을 "탐험 가능한 정적 시뮬레이션"에서 "실시간으로 상호작용하는 상대"로 확장하려는 방향을 제시한다. 자기회귀적 Intent 판단과 디퓨전 기반 Realization을 은닉 상태로 연결하고, 학습 시점부터 자기 생성 이력을 사용해 추론 환경과 맞추는 dual rollout distillation 아이디어는 향후 실시간 멀티모달 에이전트·아바타·동반자형 AI 설계에 참고할 수 있는 실용적 설계 패턴을 제공한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.15131" target="_blank" rel="noopener">huggingface.co/papers/2611.15131</a> · 2026-11-14</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

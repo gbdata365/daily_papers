@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>지스타</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#4 · Daily Papers 2026-11-14</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 40</span>
+    </div>
+    <h1 class="article-title">G-STAR: Group-Scaled Token Capacity for Deeply Compressed Autoregressive Generation</h1>
+    <p class="article-title-ko">지스타: 심층 압축 자기회귀 생성을 위한 그룹 스케일 토큰 용량</p>
+    <p class="article-sub">이산 자기회귀(autoregressive) 이미지 생성 모델에서 공간 압축률과 토큰당 코드 그룹 크기를 함께 키우는 '공간-그룹 공동 스케일링' 원리를 제시해, 32배~64배의 높은 압축률에서도 품질 저하 없이 생성 속도를 대폭 끌어올린 모델이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.13004" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.13004" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: G-STAR: Group-Scaled Token Capacity for Deeply Compressed Autoregressive Generation</li>
+<li><strong>저자</strong>: Xu Huang, Ye Huang 등 베이징대학교(Peking University), Meituan LongCat, 상하이교통대학교, 화중과기대, 홍콩중문대, 칭화대, MBZUAI 소속 공동 연구진</li>
+<li><strong>출처</strong>: arXiv:2611.13004v1 [cs.CV] (2026년 11월 8일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://dagroup-pku.github.io/G-STAR">G-STAR 프로젝트 페이지</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.13004">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>이산 자기회귀(autoregressive) 이미지 생성 모델에서 공간 압축률과 토큰당 코드 그룹 크기를 함께 키우는 '공간-그룹 공동 스케일링' 원리를 제시해, 32배~64배의 높은 압축률에서도 품질 저하 없이 생성 속도를 대폭 끌어올린 모델이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>이산 토큰 기반 자기회귀 이미지 생성은 언어 모델과 동일한 다음 토큰 예측 방식을 이미지에 적용할 수 있어 각광받지만 두 가지 근본적 한계가 있다. 첫째, 연속적인 이미지 특징을 유한한 코드북으로 양자화하는 과정에서 정보 손실(양자화 오차)이 발생해 복원 품질과 의미적 표현력이 떨어진다. 둘째, 자기회귀 모델은 토큰을 순차적으로 생성하기 때문에 시퀀스 길이가 길어질수록 추론 지연이 커지고, 이는 고해상도로 갈수록(토큰 수가 이미지 한 변 길이의 제곱에 비례해 증가) 디퓨전 모델 대비 속도 격차를 더 벌린다. 공간 압축률을 높여 토큰 수를 줄이면 속도는 빨라지지만, 공간당 정보량이 늘어나면서 양자화로 인한 정보 손실이 더 심해지는 trade-off가 생긴다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>멀티 코드북(그룹별) 양자화에서 고정된 명목 정보 예산 하에 그룹 크기가 공간 압축률의 제곱에 비례해 커져야 한다는 '공간-그룹 공동 스케일링' 원리를 이론적으로 도출하고 실험으로 검증했다.</li>
+<li>이 원리를 바탕으로 32배, 심지어 손실 없는 2×2 공간 패킹을 통한 효과적 64배 압축에서도 복원·이해·생성 성능을 유지하는 깊이 압축 토크나이저를 제안했다.</li>
+<li>그룹 내부 코드 간 의존성을 모델링하기 위해, 병렬 연산으로 특징을 한 번에 생성하고 마지막 단계에서만 가벼운 단일 레이어 인과적(causal) Transformer로 순차 의존성을 처리하는 '준자기회귀(semi-autoregressive) 깊이 디코더'를 설계했다.</li>
+<li>GSTAR-Pro-8B와 GSTAR-Flash-1.7B 두 모델로 GenEval, DPG-Bench, PRISM, LongText-Bench, Qwen-Image-Bench 다섯 개 벤치마크에서 기존 선두 모델들과 경쟁력 있는 성능을 보이면서, 1024×1024 해상도에서 기존 이산 자기회귀 모델 대비 20배 속도 향상(NVIDIA H200 기준 이미지당 2.5초)을 달성했다.</li>
+</ul>
+<h2>방법론</h2>
+<p>토크나이저는 Qwen-ViT 기반의 의미론적 인코더로 이미지를 압축된 잠재 격자로 변환한 뒤, 그룹별 양자화(product quantization)로 각 공간 위치를 여러 개의 이산 코드로 표현한다. 학습 목적함수는 복원 손실, 벡터양자화 손실, 의미 정합 손실, Gram 손실(2차 특징 상관관계 정합), commitment 손실을 결합한다. 공간 압축 계수 s와 그룹 수 G를 동시에 배율 α만큼 조정하면(s는 α배, G는 α²배) 전체 비트 예산은 그대로 유지하면서 전역 자기회귀 스텝 수만 줄어든다는 관계식을 유도했다. 또한 2×2 공간 패킹을 통해 추가 양자화 없이 네이티브 32배 토크나이저를 손실 없이 효과적 64배 인터페이스로 바꿀 수 있음을 보였다. 그룹 내부 코드 생성에는 (a) 순차적이라 느린 인과적 헤드, (b) 빠르지만 코드 간 상호 모순(멀티모달 충돌)이 발생할 수 있는 병렬 헤드, (c) 병렬 트렁크로 특징을 한 번에 계산한 뒤 단일 레이어 인과적 Transformer로 순서대로 샘플링하는 준자기회귀 헤드를 비교했으며, (c)를 채택해 품질과 속도를 모두 확보했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>GenEval, DPG-Bench, PRISM, LongText-Bench, Qwen-Image-Bench 등 텍스트-이미지 생성 벤치마크와 GEdit-Bench(영어 서브셋) 이미지 편집 벤치마크로 평가했다. GSTAR-Pro-8B(32배 압축, 8B 파라미터)는 GenEval 0.84, DPG-Bench 83.38, PRISM 6.98, LongText-Bench 0.935, Qwen-Image-Bench 50.07을 기록해 Emu3.5, BitDance, GLM-Image 등 유사 규모의 선두 디퓨전·자기회귀 모델들과 비슷한 수준을 보였다. 이미지넷 소규모 실험에서는 그룹 크기(G)를 키울수록 초기 수렴은 느리지만 최종적으로 복원(rFID/gFID)과 선형 프로브(의미 표현) 성능이 더 좋아짐을 확인했다. 준자기회귀 헤드는 인과적 헤드와 비슷한 생성 품질을 유지하면서 헤드 지연시간을 6.44초에서 3.41초로 줄였고, 병렬 헤드보다 모든 품질 지표에서 우수했다. 시스템 최적화(CUDA 그래프 캡처, 커널 퓨전, SGLang 서빙 통합)를 더해 1024×1024 생성 지연시간을 22.23초에서 2.50초로 8.9배 단축했다.</p>
+<h2>한계점</h2>
+<p>논문에 별도의 '한계점' 절이 명시되어 있지는 않다. 다만 본문에서 확인되는 제약으로는, 그룹 크기를 키우면 학습 초기 수렴 속도가 느려진다는 점, 그리고 평가가 주로 텍스트-이미지 생성·편집 작업에 한정되어 있어 다른 모달리티나 과제에 대한 일반화는 논문에 명시되지 않음이 있다.</p>
+<h2>시사점</h2>
+<p>이 연구는 압축률을 단순히 높이는 대신 '압축률과 표현 용량을 함께 조정'하는 설계 원리를 제시함으로써, 이산 자기회귀 이미지 생성 모델이 디퓨전 모델과의 속도 격차를 크게 좁히면서도 생성 품질을 희생하지 않을 수 있음을 보여준다. 가벼운 준자기회귀 디코더 설계는 코드 그룹 간 의존성을 다루는 멀티코드북 양자화 기반 생성 모델 전반에 적용 가능한 일반적인 가속 기법으로 활용될 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.13004" target="_blank" rel="noopener">huggingface.co/papers/2611.13004</a> · 2026-11-14</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

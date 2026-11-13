@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>하이퍼커넥션 설계에 관하여</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#8 · Daily Papers 2026-11-14</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 26</span>
+    </div>
+    <h1 class="article-title">On the Design of Hyper-Connections: Simplification, Stability, and Scalability</h1>
+    <p class="article-title-ko">하이퍼커넥션 설계에 관하여: 단순화, 안정성, 확장성</p>
+    <p class="article-sub">Hyper-Connections(HC) 구조를 분해 분석하여 잔차 혼합(residual mixing)을 제거하고 메모리 접근을 공유하는 SimpleHC를 제안함으로써, 대형 언어모델 학습에서 품질은 유지하면서 학습 오버헤드를 7.0%에서 2.4%까지 줄인 연구이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.05984" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.05984" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: On the Design of Hyper-Connections: Simplification, Stability, and Scalability</li>
+<li><strong>저자</strong>: Xiangdong Zhang, Xiaohan Qin, Sunan Zou 외 (Shanghai Jiao Tong University, Dots Studio, Peking University, Nanyang Technological University 등)</li>
+<li><strong>출처</strong>: arXiv:2611.05984v1 [cs.LG] (2026년 11월 4일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/aHapBean/SimpleHC">GitHub (SimpleHC)</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.05984">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>Hyper-Connections(HC) 구조를 분해 분석하여 잔차 혼합(residual mixing)을 제거하고 메모리 접근을 공유하는 SimpleHC를 제안함으로써, 대형 언어모델 학습에서 품질은 유지하면서 학습 오버헤드를 7.0%에서 2.4%까지 줄인 연구이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>Hyper-Connections는 여러 개의 잔차 스트림(residual stream)을 두고 학습 가능한 read/write 게이트와 믹싱(mixing) 연산으로 정보를 유연하게 라우팅하는 구조로, 최근 프런티어 언어모델들에 채택되고 있다. 그중 매니폴드 제약을 둔 변형인 mHC는 학습 안정성을 높였지만, 여전히 구성 요소의 역할이 충분히 규명되지 않았고 게이팅·믹싱 연산이 FLOPs로는 드러나지 않는 추가적인 메모리 트래픽 비용을 유발해 실제 학습 시간을 7~27%까지 늘리는 문제가 있었다. 저자들은 "더 단순한 설계로 학습 비용을 줄이면서 모델 품질과 안정성을 유지할 수 있는가"라는 질문을 던진다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>HC의 세 구성 요소(read 게이트, write 게이트, 잔차 혼합)를 체계적으로 분해하여, 혼합 없이 학습된 read/write 게이팅만으로도 mHC에 필적하는 성능을 낼 수 있음을 보임.</li>
+<li>비제약(unconstrained) 혼합은 품질을 높이지만 Sinkhorn 제약을 걸면 그 이득이 크게 줄어든다는 것을 규명하고, 비제약 혼합이 누적 증폭 등 전파 위험을 동반함을 지적.</li>
+<li>잔차 혼합을 제거한 "항등 전이(identity transition)" 구조와, 서브레이어마다 반복적으로 전체 상태를 읽고 쓰는 비용을 줄이는 "공유 메모리 접근(shared memory access)" 기법을 결합한 SimpleHC 아키텍처를 제안.</li>
+<li>전용 Triton/DeepGEMM 커널을 구현해 실제 학습에서 오버헤드를 거의 제거함.</li>
+</ul>
+<h2>방법론</h2>
+<p>SimpleHC는 잔차 혼합 행렬 $H_l^{res}$를 항등행렬로 고정하여 구조를 단순화하고, read/write 게이트만 유지한 채 업데이트를 덧셈 형태로 누적한다. 이 경우 임의의 서브레이어 상태는 직전 출력들의 가중합(스칼라 보정, scalar correction)으로 정확히 재구성될 수 있어, 확장된 $nC$ 차원 상태를 중간에 저장할 필요가 없다. 여기에 더해 그룹(기본 $K=4$)으로 묶은 여러 서브레이어의 게이트를 공통의 "그룹 진입 상태(group-entry state)" 하나로부터 한 번에 계산하는 공유 메모리 접근 방식을 도입해, 상태 읽기/쓰기 횟수를 기존 대비 최대 4배까지 줄인다. 이론적 메모리 접근량 분석 결과 $K=4$일 때 서브레이어당 트래픽이 기존 mHC(융합 구현 기준 18C)의 절반 수준인 9C로 감소한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>15B(활성 파라미터 1B)·30B(활성 2B) MoE 모델(DeepSeek MoE + MLA 백본)을 시퀀스 길이 8192로 학습하며 MMLU, HellaSwag, MATH, MBPP, C3 등 다수의 지식·추론·수학·코드·중국어 벤치마크로 평가했다. SimpleHC는 15B·30B 모델 모두에서 mHC, identityHC와 비슷하거나 더 나은 평균 점수(30B에서 63.1 vs mHC 62.9)를 보였고, 폭(hidden size) 1024~6144 구간에서 효율적 구현 기준 학습 오버헤드가 최대 6.3%에서 최대 폭 기준 2.4%까지 낮아져 mHC(최대 폭 기준 약 7.0%)보다 훨씬 효율적이었다. 또한 230B급 MoE 모델을 10배 학습률로 스트레스 테스트한 결과 mHC는 그래디언트 노름이 약 1.9×10^6까지 치솟는 반면 SimpleHC와 identityHC는 안정적으로 유지되었으며, 활성화 저장 메모리도 mHC 대비 약 31% 절감되었다.</p>
+<h2>한계점</h2>
+<p>논문은 비제약 혼합이 이론적으로 더 높은 품질 이득을 줄 수 있음을 인정하면서도 SimpleHC에서는 안정성을 위해 이를 포기했다고 명시한다. 또한 공유 메모리 접근은 서브레이어별 독립 게이트 파라미터는 유지하되 게이트를 계산하는 입력 상태만 그룹 진입점으로 공유하는 근사이므로, 그룹 크기 $K$가 지나치게 커지면(예: $K=8$) 성능이 소폭 저하됨을 실험으로 보였다. 세부적인 안정성 실패 원인 분석이나 더 큰 스케일(230B 초과)에서의 전면적 검증 등은 논문에 명시되지 않음.</p>
+<h2>시사점</h2>
+<p>SimpleHC는 복잡한 잔차 혼합 없이도 핵심 성능을 유지할 수 있음을 보여주며, 아키텍처 단순화와 실행 효율화(커널·메모리 접근 최적화)가 함께 이루어질 때 실제 학습 비용을 크게 줄일 수 있다는 점을 시사한다. 이는 향후 파운데이션 모델 설계에서 복잡한 구조적 혁신보다 효율적인 실행 경로 설계가 실질적 이득을 가져올 수 있음을 보여주는 사례로 평가된다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.05984" target="_blank" rel="noopener">huggingface.co/papers/2611.05984</a> · 2026-11-14</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

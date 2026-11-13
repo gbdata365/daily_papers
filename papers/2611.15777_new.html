@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>SO-Arena</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#1 · Daily Papers 2026-11-14</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 72</span>
+    </div>
+    <h1 class="article-title">SO-Arena: Benchmarking the Capability Spectrum and Reliability of System One Models</h1>
+    <p class="article-title-ko">SO-Arena: System One 모델의 역량 범위와 신뢰성 벤치마킹</p>
+    <p class="article-sub">System One(단일 forward pass로 구조화된 선택지 중 답을 고르는) 모델들의 역량 범위와 "결정 신뢰성"을 동시에 측정하는 11개 도메인, 2,919개 과제 규모의 벤치마크 SO-Arena를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.15777" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.15777" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: SO-Arena: Benchmarking the Capability Spectrum and Reliability of System One Models</li>
+<li><strong>저자</strong>: Lichen Li, Ziping Dong (공동 1저자), Sicheng Feng, Qi Li, Xinchao Wang (교신저자) 등 NUS(싱가포르국립대) 연구팀</li>
+<li><strong>출처</strong>: arXiv:2611.15777v1 [cs.CL] (2026년 11월 11일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://lichenlillc.github.io/SO-Arena">SO-Arena 홈페이지</a> · <a href="https://github.com/holdrain/SO-Arena">GitHub</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.15777">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>System One(단일 forward pass로 구조화된 선택지 중 답을 고르는) 모델들의 역량 범위와 "결정 신뢰성"을 동시에 측정하는 11개 도메인, 2,919개 과제 규모의 벤치마크 SO-Arena를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>System Two(긴 추론 체인을 생성하는) 모델과 달리, System One 모델은 한 번의 forward pass로 미리 정의된 선택지에 대한 확률 분포를 출력해 추론 지연을 크게 줄인다. 그러나 기존 벤치마크는 정답 레이블의 근거가 불충분하거나(ambiguous label), 난이도가 균일하게 섞여 모델 간 변별력이 낮고, 단순 정확도만 측정할 뿐 "선택지 순서가 바뀌거나 정답이 사라졌을 때도 일관되게 판단하는지"와 같은 결정 신뢰성은 평가하지 않는다는 한계가 있다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>40개의 공개 데이터셋·벤치마크·환경(GoEmotions, MATH500, GPQA Diamond, Mind2Web, BFCL, ToolSandbox 등)에서 수집·가공한 2,919개 과제를, 의미 이해·지식 및 추론·안전/정책 준수·근거 평가·에이전트 과제 수행의 5개 역량군 11개 도메인으로 구성하고, 참조 레이블을 사람과 LLM이 교차 검증했다.</li>
+<li>9개 도메인에 난이도 등급(Easy/Medium/Hard/Very Hard)을 부여해 모델 간 변별력을 높이고, 정적 선택 과제 외에 웹·툴 사용 등 샌드박스 기반 다단계 상호작용 과제와 "실행 기록을 올바르게 판정하는 검증자 역할" 과제도 포함했다.</li>
+<li>정확도와 별개로 "선택지 순서를 바꿔도 같은 답을 유지하는지(순서 안정성)"와 "정답이 선택지에서 빠졌을 때 이를 인지하는지(결측 인지력)"를 결합한 신뢰성 점수를 새로 정의했다.</li>
+<li>21개 모델(오픈웨이트 System One, 폐쇄형 API, System Two 기준 모델 포함)을 평가해 역량 순위와 신뢰성 순위가 크게 다를 수 있음을 보였다.</li>
+</ul>
+<h2>방법론</h2>
+<p>과제는 상태 s, 결정 목표 q, 선택 가능한 결과 집합 C로 구성된 (s, q, C) 형태로 정의되며, 모델은 각 결과에 대한 확률 분포를 반환한다. 출력 형식은 범주형 선택(choice), 이진 판단(noul, yes/no), 순서형 평가(score) 세 가지를 지원한다. 데이터 파이프라인은 (1) 40개 소스에서 과제 수집 후 사람·LLM 검토로 품질이 낮은 항목 제거, (2) 11개 도메인·5개 역량군으로 구성하고 정적/환경 기반 과제로 분류, (3) 가장 어려운 난이도 구간을 중심으로 도메인별 동일 가중 평균을 내는 역량 점수(Capability Score)와, 선택지 재정렬 시 안정성 및 정답 결측 인지력을 결합한 신뢰성 점수(Reliability Score)를 산출하는 3단계로 구성된다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>오픈웨이트 System One 모델(0.4B~31B), 폐쇄형 결정 API, 그리고 System Two 참조 모델(GPT-6 계열) 등 21개 모델을 비교했다. System Two 모델이 전반적 역량 점수에서 가장 높았고, 최상위 System One 모델도 약 10점 차이로 뒤따랐다. 반면 System One 모델은 GPU 1장에서 과제당 0.3초 이내로 응답해 System Two보다 수십 배 빨랐다. 신뢰성 측면에서는 역량 순위와의 불일치가 뚜렷하게 나타났는데, 역량 평가에서 1위를 차지한 모델이 신뢰성에서는 7위에 그쳤고, 신뢰성이 가장 높은 두 모델은 역량 순위에서 6~8위에 불과했다. 선택지 순서 안정성은 18개 System One 모델 중 14개가 0.8을 넘었지만, 정답 결측 인지력은 모델 간 편차가 매우 커서 거의 운(chance) 수준부터 약 0.8까지 분포했으며, 모델 크기가 클수록 반드시 더 높은 것은 아니었다.</p>
+<h2>한계점</h2>
+<p>논문에 별도의 "한계점" 절은 명시되어 있지 않다. 다만 본문에서 난이도 등급은 도메인 간에 서로 보정(calibrate)되어 있지 않다고 밝히고 있어, 도메인 간 난이도를 직접 비교하기는 어렵다. 또한 과제 레이블은 사람·LLM 검토를 거쳤으나 일부는 모델이 생성한 참조값(model-derived reference)에 기반해 메타데이터에 별도로 표시해 두었다고 언급한다.</p>
+<h2>시사점</h2>
+<p>단순 정확도만으로는 System One 모델의 실제 신뢰성을 가늠할 수 없으며, 특히 실제 서비스에 빠른 의사결정 모델을 배치할 때는 정확도와 더불어 선택지 변화에도 일관된 판단을 유지하는지, 정답이 없는 상황을 인지하는지를 함께 검증해야 한다는 점을 보여준다. 이는 추후 System One 모델 개발 시 역량과 신뢰성을 동시에 고려한 학습·평가 설계가 필요함을 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.15777" target="_blank" rel="noopener">huggingface.co/papers/2611.15777</a> · 2026-11-14</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

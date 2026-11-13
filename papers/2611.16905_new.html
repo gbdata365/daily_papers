@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>FOAM</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#12 · Daily Papers 2026-11-14</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 12</span>
+    </div>
+    <h1 class="article-title">Factored One-sided Adam-Moment for Practical and Scalable SOAP</h1>
+    <p class="article-title-ko">FOAM: 실용적이고 확장 가능한 SOAP를 위한 인수분해된 단측 Adam-모멘트</p>
+    <p class="article-sub">SOAP의 입력측 전처리(preconditioning)만 남기고 밀집(dense) 2차 모멘트를 행·열로 분해한 추정량으로 대체해, SOAP급 성능을 AdamW에 가까운 비용으로 얻어내는 2차 옵티마이저 FOAM(Factored One-sided Adam-Moment)을 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.16905" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.16905" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Factored One-sided Adam-Moment for Practical and Scalable SOAP</li>
+<li><strong>저자</strong>: Jaemyung Yu, Byeongho Heo, Sangdoo Yun, Dongyoon Han (NAVER AI Lab)</li>
+<li><strong>출처</strong>: arXiv:2611.16905v1 [cs.LG] (2026년 11월 12일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음 (코드: https://github.com/naver-ai/foam)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.16905">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>SOAP의 입력측 전처리(preconditioning)만 남기고 밀집(dense) 2차 모멘트를 행·열로 분해한 추정량으로 대체해, SOAP급 성능을 AdamW에 가까운 비용으로 얻어내는 2차 옵티마이저 FOAM(Factored One-sided Adam-Moment)을 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>Adam/AdamW는 트랜스포머 사전학습의 기본 옵티마이저이지만, Shampoo 계열의 Kronecker-분해 2차 옵티마이저(특히 SOAP)는 더 적은 스텝과 wall-clock 시간으로 더 낮은 손실에 도달할 수 있음을 보여왔다. 문제는 SOAP가 AdamW보다 약 4.5배 많은 옵티마이저 상태(출력측·입력측 두 개의 Kronecker 팩터 행렬과 고유분해)를 필요로 해 실무에서는 Muon이나 AdamW가 여전히 선호된다는 점이다. 저자들은 "SOAP의 이득을 SOAP의 비용 없이 얻을 수 있는가"라는 질문에서 출발한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>출력측 Kronecker 팩터(L)를 버리고 입력측 팩터(R)만 유지하는 입력 전용(input-only) 전처리를 제안하고, 어파인 레이어의 Hessian이 출력 방향으로 거의 블록-대각(near-block-diagonal) 구조를 가진다는 점에서 이 근사가 타당함을 이론·실증적으로 보인다.</li>
+<li>SOAP의 밀집 회전 2차 모멘트를 행 벡터 r과 열 벡터 c로 인수분해한 Adam-모멘트 추정량으로 교체해, 버퍼 크기를 m·n에서 m+n으로 줄인다. K-FAC Fisher 가정 하 대각 출력 곡률(curvature)에서는 이 추정량이 SOAP의 밀집 2차 모멘트를 정확히 복원하며, 실제로는 15~20%의 K-FAC 위반만 관찰된다.</li>
+<li>두 단순화를 결합해 옵티마이저 상태를 2mn+2m²+2n²에서 mn+2n²+m+n으로, 고유분해 횟수를 2회에서 1회로 줄인 FOAM을 제시한다.</li>
+</ul>
+<h2>방법론</h2>
+<p>FOAM은 (1) 입력측 팩터 R만으로 그래디언트를 전처리하고, (2) SOAP처럼 고유분해된 공간에서 2차 모멘트를 추정하되 이를 행·열 통계량(trace 정규화 포함)으로 인수분해해 저장·연산량을 줄인다. 전처리 주기(precondition frequency)와 Purifying-Shampoo의 스킵 허용 규칙을 적용해 고유분해를 상각(amortize)한다. 임베딩, lm-head, 1D/정규화 파라미터는 별도의 고정 AdamW 그룹으로 처리하고, 어텐션의 Q/K/V/O 프로젝션과 MLP 선형 계층 등 행렬 파라미터만 FOAM으로 전처리한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>GPT-2 스타일 아키텍처(RoPE, RMSNorm, untied embedding 등)를 FineWeb 데이터로 1× Chinchilla 토큰 예산 하에 124M(small)·350M(medium)·760M(large) 세 규모에서 8×H100 노드로 사전학습했다. AdamW, Muon, AdaMuon, SOAP(bilateral), FOAM을 비교한 결과, SOAP가 모든 규모에서 가장 낮은 검증 손실을 기록했지만 FOAM은 0.004~0.008 nats 차이로 근접했고 Muon·AdaMuon·AdamW보다는 항상 우수했다. FOAM은 SOAP의 절반 수준의 행렬 옵티마이저 상태만 사용하며, AdamW의 최종 손실에 도달하는 wall-clock 시간(tA)이 모든 규모에서 AdamW 자체와 7% 이내로 근접(760M에서는 10.53시간 대 10.55시간으로 거의 동일)한 반면, SOAP는 같은 조건에서 1.35배(small)~2.15배(large)의 시간이 필요했다. 1.56B 파라미터 및 ViT에서도 보조적인 근거가 있다고 언급된다.</p>
+<h2>한계점</h2>
+<p>실험이 GPT-2 규모(최대 1.56B 파라미터)에 머물러 있어 프런티어급 초대형 모델에서도 이득이 유지될지는 미해결 문제다. 구현상 R과 QR을 디바이스 간 샤딩하지 않아 70억 파라미터 이상 규모에서는 추가 엔지니어링이 필요하다. 또한 RoPE와 softmax를 거치는 key projection에서 분해 추정이 가장 부정확하며, 임베딩·lm-head는 어휘 차원이 커 밀집 팩터를 적용하지 못해 여전히 AdamW로 처리된다.</p>
+<h2>시사점</h2>
+<p>FOAM은 메모리 효율적 변형들이 주로 AdamW의 메모리를 줄이는 데 집중했던 것과 달리, SOAP급 품질을 Adam급 비용에 가깝게 가져오는 상보적인 접근을 제시한다. 옵티마이저 상태나 wall-clock 제약이 큰 상황에서 SOAP 대신 쓸 수 있는 실용적 대안으로, 특히 대규모 유효 배치(effective batch) 환경에서 가치가 크다고 저자들은 제안한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.16905" target="_blank" rel="noopener">huggingface.co/papers/2611.16905</a> · 2026-11-14</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>오픈 비전 바나나</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#7 · Daily Papers 2026-11-14</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 28</span>
+    </div>
+    <h1 class="article-title">Open Vision Banana: A Fully Open Recipe for Generative Visual Perception</h1>
+    <p class="article-title-ko">오픈 비전 바나나: 생성형 시각 인지를 위한 완전 공개 레시피</p>
+    <p class="article-sub">공개된 이미지 생성 모델만으로 Vision Banana급 범용 시각 인지(세그멘테이션·깊이·법선 추정) 성능을 재현하고, 그 핵심 설계 선택들을 체계적으로 밝혀낸 완전 공개 레시피를 제시한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.15844" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.15844" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Open Vision Banana: A Fully Open Recipe for Generative Visual Perception</li>
+<li><strong>저자</strong>: Arpit Jadon, Valentinos Pariza, Jona Ruthardt, Ryousuke Yamada, A. Sophia Koepke, Andrei Bursuc, Yuki M. Asano (Fundamental AI Lab, University of Technology Nuremberg 등)</li>
+<li><strong>출처</strong>: arXiv:2611.15844v1 [cs.CV] (2026-11-11)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://openvisionbanana.github.io">openvisionbanana.github.io</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.15844">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>공개된 이미지 생성 모델만으로 Vision Banana급 범용 시각 인지(세그멘테이션·깊이·법선 추정) 성능을 재현하고, 그 핵심 설계 선택들을 체계적으로 밝혀낸 완전 공개 레시피를 제시한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>최근 연구들은 사전학습된 이미지 생성 모델이 단순한 이미지 합성을 넘어 현실 세계에 대한 이해를 내재하고 있다고 본다. Vision Banana는 시각 인지 작업을 "조건부 이미지 편집"으로 재구성해 이런 가능성을 보여주었지만, 데이터·가중치·코드·구현 세부사항이 모두 비공개라 어떤 설계 요소가 성능을 좌우하는지 알 수 없었다. 저자들은 이 패러다임이 공개된 생성 모델에서도 통하는지, 그리고 Vision Banana 보고서에 설명되지 않은 설계 선택들이 결과에 어떤 영향을 주는지를 검증하고자 한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>공개 이미지 생성 모델을 세그멘테이션(시맨틱/인스턴스/참조), 깊이 추정, 법선(normal) 추정의 범용 인지 모델로 바꾸는 <strong>완전 공개 레시피</strong>(데이터 파이프라인, 학습 코드, 체크포인트 공개).</li>
+<li>색상 인코딩, 프롬프트 설계, 파라미터 적응 범위, 작업 간 균형 등 성능에 큰 영향을 미치는 <strong>설계 선택에 대한 통제 실험</strong>과 실패 모드 분석.</li>
+<li>추가 학습 없이 여러 색상 범례(legend)로 분할을 수행한 뒤 다수결로 결과를 합치는 <strong>레전드 앙상블(legend ensembling)</strong> 기법.</li>
+<li>Cityscapes에서 Vision Banana의 공개 성능(69.9 mIoU)을 능가(73.9 mIoU)하고, 최신 어파인 불변(affine-invariant) 깊이 추정기와 경쟁할 수준의 <strong>경쟁력 있는 공개 모델</strong>.</li>
+</ul>
+<h2>방법론</h2>
+<p>OVB는 과제별 전용 헤드 없이, 입력 이미지와 지시문을 받아 RGB 이미지를 생성하고 이를 결정론적 디코더로 과제별 예측값(세그멘테이션 맵, 깊이맵 등)으로 변환하는 구조다. 기반 모델로는 공개 가중치 생성기인 FLUX.2-Klein의 4B·9B 버전을 사용하며, 입력/문맥 임베더부터 출력층까지 트랜스포머 전체를 미세조정하고 VAE와 텍스트 인코더는 고정한다. 세그멘테이션은 RGB 삼원값, 16진 색상 코드(최대 분리된 200색 팔레트 중 상위 64색), 또는 37개 색상 이름 중 하나로 클래스를 표현하며, 고정 색상-클래스 매핑 대신 매 샘플마다 색상을 무작위로 바꿔 모델이 색을 외우지 않고 프롬프트의 범례를 따르도록 학습시킨다. 2.1M~3.8M개의 공개 데이터셋 학습 쌍을 사용했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>F2K9B Base를 축소된 설정(세그멘테이션/기하 각각 별도)으로 37.5K 스텝 미세조정하며 설계 요소를 하나씩 바꿔 비교했다. 고정 색상 매핑으로 학습하면 같은 매핑에서는 53.9 mIoU로 잘 작동하지만 평가 시 색을 바꾸면 7.1로 붕괴(경직된 암기)했고, 무작위 색상 학습은 51.0 mIoU로 이런 붕괴를 피했다. 최종 레시피는 Cityscapes 제로샷 mIoU 73.9(Vision Banana의 69.9 대비 우위)를 달성했고, 참조·추론 세그멘테이션에서는 Vision Banana에 5점 이내로 근접했으나 인스턴스 세그멘테이션은 더 뒤처졌다. 레전드 앙상블은 재학습 없이 Cityscapes에서 최대 8.7점, COCO-Object에서 최대 15.0점의 mIoU 향상을 가져왔다. 이미지 편집(ImgEdit-Bench) 능력은 대체로 유지되었고, GenAI-Bench 기준 텍스트-이미지 생성 성능(VQAScore)은 소폭 하락했다(9B가 4B보다 하락폭이 작음). 또한 인지 미세조정이 백본의 동결된 특징 품질도 개선해, OVB 9B는 객체 발견(object discovery)과 의미적 대응(semantic correspondence)에서 DINOv3 7B를 능가했다.</p>
+<h2>한계점</h2>
+<p>공개 기반 모델의 인지 성능이 Nano Banana Pro와 같은 비공개 상용 생성기에 비해 여전히 약하다는 점이 주된 한계로 명시되어 있다. 또한 인스턴스 세그멘테이션에서는 비공개 모델인 Vision Banana와의 격차가 다른 과제보다 더 크게 남아 있다.</p>
+<h2>시사점</h2>
+<p>이 연구는 생성 모델 기반 인지 패러다임이 특정 기업의 비공개 자원에 의존하지 않고도 재현·확장 가능함을 보여주며, 색상 팔레트·프롬프트 설계·파라미터 적응 범위 같은 미세한 선택들이 서로 상호작용하며 최종 성능을 좌우한다는 점을 실증적으로 규명했다. 공개된 데이터 파이프라인과 체크포인트는 향후 생성-인지 통합 모델 연구의 재현 가능한 기준점이 될 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.15844" target="_blank" rel="noopener">huggingface.co/papers/2611.15844</a> · 2026-11-14</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

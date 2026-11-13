@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>액터</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#6 · Daily Papers 2026-11-14</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 29</span>
+    </div>
+    <h1 class="article-title">Actor, Judge, or Teacher? Understanding Decision Models in Long-Horizon Agents</h1>
+    <p class="article-title-ko">액터, 저지, 혹은 티처? 장기 호라이즌 에이전트의 의사결정 모델 이해하기</p>
+    <p class="article-sub">행동(Actor)은 잘 못하는 의사결정 모델(Decision Model)도, 이미 끝난 궤적을 사후적으로 평가하는 저지(Judge)나 교사(Teacher) 역할로 쓰면 강화학습 정책을 효과적으로 가르칠 수 있다는 것을 ALFWorld·WebShop 실험으로 보여준 연구이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.17167" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.17167" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Actor, Judge, or Teacher? Understanding Decision Models in Long-Horizon Agents</li>
+<li><strong>저자</strong>: Haochen Liu, Qianhao Zhu, Zixuan Wang 등 (Zhejiang University, Baidu Inc.)</li>
+<li><strong>출처</strong>: arXiv:2611.17167v1 [cs.AI] (2026년 11월 12일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음 (코드: https://github.com/ZJU-REAL/decision-agents)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.17167">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>행동(Actor)은 잘 못하는 의사결정 모델(Decision Model)도, 이미 끝난 궤적을 사후적으로 평가하는 저지(Judge)나 교사(Teacher) 역할로 쓰면 강화학습 정책을 효과적으로 가르칠 수 있다는 것을 ALFWorld·WebShop 실험으로 보여준 연구이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>Decision Model은 자유 텍스트를 생성하는 대신 선택지 중 하나를 고르고 각 선택지에 확률을 부여하는 형태로 빠르고 저렴하게 답하는 사전학습 모델이다(JEV, Decider, GPT Decisions 등). 기존 연구는 이런 모델을 주로 "Actor"(에이전트의 다음 행동을 직접 선택하는 역할)로만 평가했는데, 이 역할에서는 과제에 필요한 하위 목표(subgoal)보다 눈에 더 잘 띄는 쉬운 하위 목표에 끌려가는 실패가 자주 나타난다. 저자들은 행동을 잘 못하는 모델이라도 이미 일어난 행동의 결과를 보고 사후에 평가(Judge)하거나, 그 평가를 보상 신호로 삼아 정책을 학습시키는(Teacher) 역할에서는 여전히 유용할 수 있는지를 묻는다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>동일한 Decision Model 6종(JEV, Decider v1.2, GPT Decisions 및 이들의 기반 LLM을 프롬프팅·제약적 디코딩으로 활용한 버전)을 Actor, Judge, Teacher라는 세 가지 역할로 나누어 공정하게 비교하는 실험 설계를 제시했다.</li>
+<li>순서가 있는 하위 목표(예: 컵을 데운 뒤 테이블에 놓기)에서 Actor 역할의 모델들이 왜 실패하는지를, 모델이 필요한 행동 자체를 몰라서가 아니라 결과가 보이기 전에 그 행동을 미리 예측해야 한다는 어려움 때문임을 분석했다.</li>
+<li>전체 궤적(Hindsight)을 보고 "이 행동이 목표 달성에 도움이 되었는가"(Progress)를 묻는 질문 방식이, "이후 과제가 성공할 것인가"(Value)를 묻는 방식보다 유용한 행동과 무의미한 행동을 훨씬 잘 구분한다는 것을 보였다.</li>
+<li>이렇게 얻은 Judge 점수를 GRPO 학습의 보상에 추가하는 "Teacher" 활용법을 제안하고, 이 방법이 ALFWorld와 WebShop 모두에서 정책의 성공률을 크게 끌어올림을 확인했다.</li>
+</ul>
+<h2>방법론</h2>
+<p>세 역할은 같은 Decision Model에 던지는 질문과 그 답을 쓰는 방식만 다르다. ① Actor: 매 스텝에서 목표·history·현재 관찰을 받아 다음 행동 하나를 선택한다. ② Judge: 다른 정책이 만든 완성된 궤적의 각 행동에 대해 "yes/no" 질문에 0~1 점수로 답하며, 이때 모델이 보는 범위(Prefix: 해당 행동까지만 / Hindsight: 전체 궤적)와 질문 내용(Value: 최종 성공 여부 / Progress: 그 행동이 도움이 되었는지)을 각각 조합해 비교한다. ③ Teacher: Judge와 동일한 방식으로 학습 중인 정책의 롤아웃을 채점하고, 롤아웃 그룹 내에서 중심화한 점수를 GRPO의 outcome advantage에 더해 보상으로 사용한다. 평가 환경은 하위 목표 간 순서 의존성이 있는 가정 내 과제 환경 ALFWorld와, 옵션 선택 뒤에만 구매가 가능한 쇼핑 환경 WebShop이다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>ALFWorld에서 모든 6개 모델은 두 하위 목표가 독립적인 Pick2 과제보다 순서 의존적인 Clean/Heat/Cool 과제에서 성공률이 크게 떨어졌다(JEV 기준 70.8% → 14.7%). 그런데 쉬운 하위 목표를 목표에서 제거하면 모델의 확률 질량이 필요한 행동 쪽으로 크게 이동했고(JEV의 경우 14.6%→77.6%), 단순히 프롬프트에 순서를 알려주는 것만으로는 성공률이 거의 개선되지 않았다(−2.8%~+5.2%). Judge 역할에서는 전체 궤적을 보여주고 Progress를 물었을 때 JEV가 유효한 행동과 무의미한 행동 사이에 0.36의 점수 차이를 만들었지만, Value를 물었을 때는 차이가 0.05에 불과했다(궤적 내 모든 행동이 같은 최종 결과를 공유하기 때문). Teacher로 쓴 경우, JEV의 Hindsight+Progress 점수로 학습한 Qwen2.5-1.5B 정책은 ALFWorld에서 72.8%→82.9%, WebShop에서 56.8%→71.4%까지 성공률이 향상되었고, 이는 Value 질문(ALFWorld 69.3%, WebShop 68.3%)보다 우수했으며 순서 의존 과제에서 특히 격차가 컸다(최대 86.8%). 또한 이렇게 학습한 1.5B 정책이 보상만으로 학습한 7B 정책보다 두 환경 모두에서 더 높은 성능을 보였고, 학습 1회당 교사 질의 비용은 22~30달러 수준이었다.</p>
+<h2>한계점</h2>
+<p>실험은 최대 30스텝 정도의 비교적 짧은 텍스트 기반 환경(ALFWorld, WebShop)에 한정되어 있어, 소프트웨어 엔지니어링이나 도구 사용처럼 더 길고 다양한 의존 관계를 가진 과제에도 결론이 일반화되는지는 확인되지 않았다. 또한 저지가 궤적 전체(Hindsight)를 보고 평가하는 사후 평가 방식에 의존하므로, 행동을 선택하는 시점에 과거 정보만 볼 수 있는 온라인 평가 상황에는 바로 적용하기 어렵다. JEV와 GPT Decisions는 비공개 모델로 학습 방식이 공개되지 않아, 어떤 학습 선택이 좋은 저지를 만드는지는 Decider v1.2 같은 공개 모델로만 부분적으로 확인할 수 있었다.</p>
+<h2>시사점</h2>
+<p>이 연구는 의사결정 모델을 에이전트 학습에 투입할 때, 그 모델이 직접 행동을 잘 하는지가 아니라 완성된 궤적을 얼마나 잘 평가하는지를 기준으로 선택해야 한다는 실용적 지침을 제시한다. 또한 추가적인 스텝 단위 레이블이나 학습된 크리틱 없이, 고정된 Decision Model에 "이 행동이 도움이 되었는가"를 묻는 것만으로 저비용의 스텝 단위 보상 신호를 얻을 수 있다는 점에서, 장기 호라이즌 에이전트의 강화학습 효율을 높이는 실용적인 방법을 제공한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.17167" target="_blank" rel="noopener">huggingface.co/papers/2611.17167</a> · 2026-11-14</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>티티비</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#10 · Daily Papers 2026-11-14</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 19</span>
+    </div>
+    <h1 class="article-title">TTB: Test-time Baking for Efficient Rendering of Decoder-only View Synthesis Models</h1>
+    <p class="article-title-ko">티티비: 디코더 전용 뷰 합성 모델의 효율적 렌더링을 위한 테스트-타임 베이킹</p>
+    <p class="article-sub">디코더 전용 뷰 합성 모델(Large View Synthesis Model, LVSM)의 크로스뷰 어텐션 정보를 가벼운 MLP에 "구워(bake)" 넣어, DVSM 수준의 화질을 유지하면서도 최대 23배 빠른 신규 시점 렌더링을 달성하는 기법.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.17331" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.17331" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: TTB: Test-time Baking for Efficient Rendering of Decoder-only View Synthesis Models</li>
+<li><strong>저자</strong>: Chin-Yang Lin, Ryo Hachiuma, Jaesung Choe, Min-Hung Chen, Yu-Chiang Frank Wang, Yen-Yu Lin, Wei-Chen Chiu, Yu-Lun Liu, Cheng Sun (NVIDIA, 대만 국립양밍자오퉁대학교)</li>
+<li><strong>출처</strong>: arXiv:2611.17331v1 [cs.CV] (2026년 11월 12일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://test-time-baking.github.io">test-time-baking.github.io</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.17331">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>디코더 전용 뷰 합성 모델(Large View Synthesis Model, LVSM)의 크로스뷰 어텐션 정보를 가벼운 MLP에 "구워(bake)" 넣어, DVSM 수준의 화질을 유지하면서도 최대 23배 빠른 신규 시점 렌더링을 달성하는 기법.</p>
+<h2>배경 및 문제의식</h2>
+<p>최근 디코더 전용 LVSM(예: DVSM)은 3D 기하 구조 없이 컨텍스트 이미지로부터 신규 시점을 직접 회귀하여 최고 수준의 화질을 보이지만, 크로스뷰 어텐션에 사용하는 KV-cache 크기가 입력 뷰 수에 비례해 커지기 때문에 뷰가 많아질수록 렌더링이 느려진다는 한계가 있다. 이를 해결하기 위해 크로스뷰 어텐션을 Test-Time Training(TTT) 방식의 고정 크기 fast-weight MLP로 대체하는 LaCT 같은 접근이 있었지만, 이는 렌더링을 일정한 복잡도(상수 시간)로 만드는 대신 화질이 크게 저하되는 대가를 치렀다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>크로스뷰 어텐션을 통째로 대체하는 대신, TTT의 fast-weight MLP가 크로스뷰 어텐션의 "출력"을 학습 목표로 삼도록 재구성하는 Test-Time Baking(TTB)을 제안하여, MLP가 어텐션을 대신하는 것이 아니라 보완하도록 함.</li>
+<li>MLP를 사전 채우기(reconstruction) 단계에서는 이미지 정보가 있는 토큰으로, 렌더링 단계에서는 카메라 정보만 있는 토큰으로 사용하면서 생기는 "모달리티 불일치" 문제를 규명하고, 각 컨텍스트 뷰를 정답 토큰과 카메라 전용 렌더링 토큰의 쌍으로 분리하여 해결.</li>
+<li>TTB의 내부 루프 최적화를 라이트필드(light field) 최적화와 연결지어, 수렴 지향적인 multi-step MSE 학습 레시피가 특히 효과적임을 제시.</li>
+</ul>
+<h2>방법론</h2>
+<p>TTB는 DVSM과 동일하게 L개의 블록(Intra-view Attention, FFN, Cross-view Attention, FFN)으로 구성된 디코더 구조를 기반으로 한다. 각 블록에 Test-Time Baking 레이어를 추가해, 컨텍스트 뷰마다 이미지 정보를 포함한 "정답 토큰"과 카메라 정보만 있는 "렌더링 토큰"을 쌍으로 만든다. 각 TTB 레이어에서 fast-weight MLP는 Muon 옵티마이저 기반 내부 루프(T=3 스텝)로, 렌더링 토큰을 정답 토큰의 크로스뷰 어텐션 출력에 매핑하도록 MSE 손실로 학습(bake)된다. 학습된 MLP는 이후 컨텍스트 렌더링 토큰과 신규 시점 토큰 모두에 공유되어, 신규 시점 렌더링 시에는 캐시된 KV 대신 상수 복잡도의 MLP 조회만으로 전역 장면 정보를 얻는다. 추가로, 뷰 수가 많아질 때 MLP 용량 한계를 완화하기 위해 카메라 포즈 기준 k-means로 컨텍스트 뷰를 그룹화하는 "fast-weight local-duplicate inference" 기법도 제시한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>DL3DV, Re10K, 그리고 MipNeRF360·Free·Hike 등 야외 데이터셋에서 DVSM, LaCT, LVSM과 비교 평가를 수행했다. DL3DV에서 TTB는 LaCT와 동일한 수준(약 23FPS)의 일정한 렌더링 속도를 유지하면서 DVSM 대비 화질 격차를 크게 줄였으며, DVSM 대비 최대 23배, LaCT 대비 2.3배 빠른 렌더링을 보였다. 세부 구조(미세한 난간, 창틀 격자 등)에서 LaCT·LVSM보다 선명한 결과를 보였다. 야외 데이터셋에서도 유사한 경향이 확인되었으며, 최근 LagerNVS 대비 3.1~9.5배 빠른 렌더링과 더불어 더 높은 화질을 보고했다. 어블레이션 결과, 컨텍스트 쌍 분리·크로스뷰 어텐션 타깃·MSE 손실(T=3) 세 요소 모두가 화질 향상에 기여함을 확인했다.</p>
+<h2>한계점</h2>
+<p>fast-weight MLP의 고정 용량으로 인해 컨텍스트 뷰 수가 매우 많아지면 화질이 정체되는 한계가 있으며(local-duplicate 라우팅은 휴리스틱으로, 이를 학습하는 것은 향후 과제로 남김), 학습 시 내부 루프의 크로스뷰 어텐션으로 인해 재구성(reconstruction) 연산량이 뷰 수에 대해 2차적으로 증가해 단일 샷(single-shot) 시나리오에는 불리하다. 또한 TTB는 생성(generation)이 아닌 재구성 기반 방법이므로 관측되지 않은 시점으로의 외삽(extrapolation)은 다루지 않는다.</p>
+<h2>시사점</h2>
+<p>TTT 기반 fast-weight 메커니즘을 어텐션의 "대체재"가 아닌 "협력자"로 재해석함으로써, 상수 복잡도 렌더링과 어텐션 수준 화질을 동시에 달성할 수 있음을 보였다. 이는 신규 시점 합성뿐 아니라 메모리·연산 제약이 있는 다른 시퀀스 처리 작업에서도 어텐션 출력을 경량 모듈로 "굽는" 방식의 적용 가능성을 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.17331" target="_blank" rel="noopener">huggingface.co/papers/2611.17331</a> · 2026-11-14</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

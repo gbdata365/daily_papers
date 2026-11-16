@@ -1,0 +1,113 @@
+<meta charset="UTF-8">
+<title>G-CAST</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#10 · Daily Papers 2026-11-17</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 17</span>
+    </div>
+    <h1 class="article-title">G-CAST: Governed Continual Self-Training for E-Commerce Agents under Evolving Demands</h1>
+    <p class="article-title-ko">G-CAST: 변화하는 수요 하의 이커머스 에이전트를 위한 통제형 지속 자기학습</p>
+    <p class="article-sub">사용자 수요와 에이전트 실행 하네스(도구·스킬·절차)가 끊임없이 변하는 실제 이커머스 환경에서, 체크포인트 전환 자체를 적응의 단위로 삼아 모델·학습 데이터·보상 함수를 함께 통제된 방식으로 진화시키는 지속학습 시스템 G-CAST를 제안.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.17814" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.17814" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: G-CAST: Governed Continual Self-Training for E-Commerce Agents under Evolving Demands</li>
+<li><strong>저자</strong>: Yuechun Yu, Wenzheng Kong, Xiaofeng Mao, Jin Zhang (Alibaba Group)</li>
+<li><strong>출처</strong>: arXiv:2611.17814v1 [cs.AI] (2026년 11월 13일, AAAI 2027 게재 예정)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음 (알리바바 1688 플랫폼의 "Yuancai" B2B 조달 에이전트에 실제 배포됨, http://cai.1688.com/)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.17814">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>사용자 수요와 에이전트 실행 하네스(도구·스킬·절차)가 끊임없이 변하는 실제 이커머스 환경에서, 체크포인트 전환 자체를 적응의 단위로 삼아 모델·학습 데이터·보상 함수를 함께 통제된 방식으로 진화시키는 지속학습 시스템 G-CAST를 제안.</p>
+<h2>배경 및 문제의식</h2>
+<p>배포된 LLM 기반 쇼핑 에이전트는 새로운 상품 카테고리, 조달 시나리오, 기능 요청이 등장하면서 사용자 수요가 지속적으로 변화("수요 드리프트")하고, 동시에 에이전트의 도구·스킬·운영 절차("하네스")도 계속 확장된다. 이 때 과거 하네스(계약, capability contract)에 맞춰 최적화된 모델은 (1) 새 기능을 언제·어떻게 올바르게 호출해야 하는지 모르는 "모델 불일치", (2) 과거 경로 데이터가 새 기능에 대한 증거를 충분히 담지 못하는 "데이터 불일치", (3) 과거 보상 함수가 확장된 계약 하의 행동을 제대로 평가하지 못하는 "보상 불일치"라는 세 가지가 서로 맞물린 문제에 직면한다. 주기적인 수동 재학습은 너무 늦고 노동 집약적이어서 이 문제를 해결하지 못한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>모델, 현재 캐퍼빌리티 계약, 실행 가능한 보상, 학습 증거, 누적 평가 장부(ledger)를 함께 버전 관리하면서, 체크포인트 전환을 학습 작업의 완료가 아닌 적응의 단위로 다루는 거버넌스 체계 G-CAST 설계.</li>
+<li>보상-라우팅·엔트로피 우선순위 데이터 오케스트레이션: 매 라운드마다 수락된 체크포인트로 질의당 여러 롤아웃을 생성하고, 보상에 따라 학습 데이터를 라우팅하며 풀 내에서 엔트로피 기반으로 우선순위를 매김.</li>
+<li>캐퍼빌리티 계약 기반 보상 진화: 하네스가 확장될 때 보상 함수를 통제된 방식으로 갱신해 새 도구·절차에 대한 올바른 평가가 가능하게 함.</li>
+<li>누적 평가에 기반한 거버넌스된 체크포인트 전환으로, 새로 등장한 요구에 적응하면서도 이전에 수락된 행동을 보존.</li>
+<li>알리바바 1688의 B2B 조달 에이전트 "Yuancai"에 실제 배포되어 운영 효율을 크게 개선(보상 감사 인력 약 2인일 → 30분, 수요-수락 턴어라운드 약 1주 → 2일).</li>
+</ul>
+<h2>방법론</h2>
+<p>배포된 체크포인트는 롤아웃 풀의 각 질의에 대해 해당 시점의 하네스 버전으로 8개의 궤적을 생성한다(맥락당 라우팅 전 16,000개 궤적). 새 맥락(demand period)이 도입되면 수락된 체크포인트를 그 기간의 100개 질의 평가 슬라이스에서 먼저 평가하고, 이후의 모든 후보는 모든 활성 슬라이스를 누적한 평가 스위트(기간이 늘수록 100→400개 질의로 증가)에서 평가된다. 이는 새로 등장한 수요를 다루면서도 이전에 수락된 역량을 희생하지 않아야 한다는 실제 배포 요구사항과 일치한다. 평가 질의는 모든 학습·리플레이·합성·보상 개발 과정에서 제외되어 평가 유출을 방지한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>사전학습 모델로 Qwen3-4B-Thinking-2507을 사용하고, 실제 운영 중인 이커머스 에이전트에서 샘플링한 4개의 서로 다른 시간대(수요 기간)에서 평가했다. 먼저 체크포인트를 갱신하지 않고 방치했을 때 누적 보상이 Period 1~4 평가에서 0.9065→0.6354로 크게 떨어지고, 새로 등장한 Period 4에서의 보상은 0.1877까지 추락함을 보여 지속적 자기학습이 필수적임을 입증했다. G-CAST를 강력한 자율 사후학습 베이스라인(AutoTrainess)과 비교한 결과, G-CAST는 훨씬 적은 학습 데이터(예: Iter.4에서 122/859행 대 AutoTrainess의 –/247행 이상)로도 새로운 수요에 대한 적응력(New period reward)과 기존 역량의 보존력(Retained reward)에서 모두 더 우수했다. 예를 들어 Iter.4에서 G-CAST는 보존 보상 +0.012, 신규 보상 +0.183 향상을 보였다. 어블레이션 결과 보상-라우팅·엔트로피 우선순위 데이터 오케스트레이션과 거버넌스된 보상 진화 둘 다 성능 향상에 중요하게 기여함을 확인했다.</p>
+<h2>한계점</h2>
+<p>이 연구는 하나의 종단적(longitudinal) 실제 운영 애플리케이션과 하나의 주요 모델 계열(Qwen3-4B-Thinking)에 기반하고 있어, 관찰된 수요·캐퍼빌리티 진화 패턴이 다른 에이전트 환경에 그대로 전이될지는 확인되지 않았다.</p>
+<h2>시사점</h2>
+<p>배포된 에이전트의 지속적 적응은 고정된 목표 하에서의 반복 학습이 아니라, 모델·데이터·보상이 함께 맞물려 변화해야 하는 결합된 문제로 다뤄야 한다는 것을 실증했다. G-CAST는 실제 운영 환경에서 거버넌스 자체(후보 체크포인트 3개와 제안된 보상 버전 2개를 검증 실패로 거부)가 개별 학습 실행의 성능 향상과는 별개로 실질적인 가치를 지닌다는 것을 보여준다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.17814" target="_blank" rel="noopener">huggingface.co/papers/2611.17814</a> · 2026-11-17</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

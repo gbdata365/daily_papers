@@ -1,0 +1,113 @@
+<meta charset="UTF-8">
+<title>모바일 AI 팩토리</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#12 · Daily Papers 2026-11-17</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 15</span>
+    </div>
+    <h1 class="article-title">Mobile AI Factory: Building Specialized Language Models for Your Mobile Device</h1>
+    <p class="article-title-ko">모바일 AI 팩토리: 모바일 기기를 위한 특화 언어모델 구축하기</p>
+    <p class="article-sub">과제 명세와 목표 스마트폰만 주어지면, 오케스트레이터 LLM이 데이터 수집·미세조정·양자화·탐색을 자율적으로 조율해 그 폰에 맞는 미세조정·양자화된 소형언어모델(SLM)을 자동으로 만들어내는 에이전트 시스템 Mobile AI Factory를 제안.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.13509" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.13509" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Mobile AI Factory: Building Specialized Language Models for Your Mobile Device</li>
+<li><strong>저자</strong>: Evan Li, Krishna Deshpande, Wen Cheng, Shyamnath Gollakota (University of Washington)</li>
+<li><strong>출처</strong>: arXiv:2611.13509v1 [cs.CL] (2026년 11월 10일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/evanly-gh/SLM_Factory">GitHub: evanly-gh/SLM_Factory</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.13509">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>과제 명세와 목표 스마트폰만 주어지면, 오케스트레이터 LLM이 데이터 수집·미세조정·양자화·탐색을 자율적으로 조율해 그 폰에 맞는 미세조정·양자화된 소형언어모델(SLM)을 자동으로 만들어내는 에이전트 시스템 Mobile AI Factory를 제안.</p>
+<h2>배경 및 문제의식</h2>
+<p>모바일 기기에서 직접 구동되는 소형언어모델은 민감한 데이터를 기기 내에 유지하고 네트워크 연결 없이도 동작할 수 있는 장점이 있지만, 목표 과제에 맞게 미세조정되고 목표 기기에 맞는 크기로 조정되어야만 잘 작동하며, 이 과정은 현재 전문가가 폰마다 반복적으로 수동 튜닝해야 한다. 페이스북 앱만 해도 1만 종 이상의 스마트폰·태블릿 모델에서 구동되고, 매년 새 폰이 출시되고 매주 약 2개의 새로운 오픈 파운데이션 모델이 공개되는 상황에서, 한 폰에서 잘 동작하는 설정이 다른 폰에서는 전혀 동작하지 않는 경우가 흔하다(예: llama.cpp GPU 프리필이 OnePlus 15에서는 CPU보다 5.4배 빠르지만 OnePlus 8 Pro에서는 7.4배 느림).</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>과제 명세와 목표 폰이 주어지면 오케스트레이터 LLM이 하이퍼파라미터 튜닝, 실제 데이터 마이닝, 합성 데이터 생성 중 무엇을 할지 결정하고, 고정된 규칙으로 정확도를 해치는 변경을 롤백하는 에이전트 시스템 Mobile AI Factory 설계.</li>
+<li>작은 모델부터 큰 모델까지, 여러 베이스 모델군과 양자화 수준에 걸쳐 탐색하면서 탐색 과정에서 정확도 목표를 적응적으로 조정하는 탐색 전략.</li>
+<li>목표 폰에서 여러 추론 엔진·백엔드에 걸쳐 실제로 측정한 하드웨어 프로파일을 탐색에 반영.</li>
+<li>10개 과제·4개 안드로이드 폰에서 평가해, 미지의 테스트셋에서 5개 과제는 5-shot 프런티어 모델 두 종을 최대 0.34점 차로 능가하고 3개 과제에서는 동등한 성능을 보임.</li>
+<li>전수 탐색(27개 모델 변형 전체 학습) 대비 0.03점 이내의 성능을 19배 적은 GPU 시간으로 달성.</li>
+</ul>
+<h2>방법론</h2>
+<p>개발자는 과제 명세(사용 가능한 데이터 소스, 평가 지표, 모델 출력에 대한 검증기, 선택적 정확도 목표, 프리필·디코드 속도·메모리·에너지 등 자원 요구사항)를 입력한다. 팩토리는 데이터를 큐레이션하고 모델을 미세조정·평가한 뒤 다음 행동을 결정하는 루프를 반복한다: 하이퍼파라미터를 조정할지, 실데이터를 더 모을지, 로컬 교사 모델(Qwen3.6-35B-A3B)로 합성 데이터를 생성할지를 오케스트레이터(Claude Sonnet 5)가 선택한다. 모델 풀은 SmolLM2, Gemma 3, Qwen3/3.5 계열의 135M~4B 파라미터 9개 베이스 모델에 4·8·16비트 양자화를 조합한 27개 변형으로 구성되며, "작게 시작해서 막히면 단계를 올리는(start small, climb if stuck)" 방식으로 작은 모델부터 탐색한다. 폰별 프로파일은 폰당 한 번만 측정해 재사용한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>생물의학 개체 추출(BC5CDR), 캘린더 추출, 중첩 의도 파싱(TOPv2), 세분화된 개체 추출(MultiCoNER), 함수 호출(BFCL), 의도 분류(CLINC150), 스팸 탐지, 감정 분류(GoEmotions), 문법 오류 교정(BEA-19), 대화 요약(DialogSum) 등 10개 과제에서 평가했다. 기본 목표 설정 하에 팩토리는 7개 과제에서 Claude Sonnet 5와 DeepSeek v4-Flash 중 더 나은 쪽을 0.037~0.357점 차로 능가했다(예: BC5CDR span F1 0.830 대 5-shot 최고 0.606). 정확도 목표를 0.99로 고정해 전체 탐색 단계를 밟게 했을 때는 의도 분류와 스팸 탐지에서 Claude와 노이즈 오차범위(0.015) 내로 동등한 성능을 보였다. 폰 측정 없이 전체 하드웨어·모델 명세를 제공받은 Claude Opus 5.5는 쉬운·중간 난이도 사례의 25%, 어려운 사례의 60%에서 앱 요구사항을 충족하지 못하는 설정을 골랐다는 점에서, 실제 폰 측정이 중요하다는 것을 보였다.</p>
+<h2>한계점</h2>
+<p>저자들이 직접 밝힌 한계로, 개발자는 여전히 데이터 소스·지표·검증기를 직접 제공해야 하며, 이 검증기 구축이 파이프라인에서 가장 수작업이 많이 드는 부분이다. 모델 풀은 135M~4B 사이의 미리 정해진 디코더 모델 집합에 한정되며, 학습은 LoRA 미세조정만 사용한다. 합성 데이터는 로컬 35B 교사 모델이 라운드당 수백 개 행만 생성해 비용은 저렴하지만 확장성에 한계가 있을 수 있다. 하드웨어 프로파일은 CPU·GPU만 다루며 모바일 NPU는 포함하지 않았고, 각 설정을 유휴 상태의 폰에서 한 번씩 측정했을 뿐 실제 배포 환경(다른 앱과의 동시 사용, 열 상태 변화, 더 긴 프롬프트)에서의 지속적 성능은 다를 수 있다.</p>
+<h2>시사점</h2>
+<p>최적의 모델과 설정은 폰마다 달라지며, 프런티어 모델조차 실제 측정 없이는 이를 올바르게 선택할 수 없다는 것을 보였다. 저자들은 향후 ML·에이전트 연구자들이 모바일 기기를 거의 고려하지 않고, 모바일 시스템 연구자들은 모델을 주어진 것으로 취급하는 현재의 간극을 넘어, 에이전트가 새로운 폰과 오픈 베이스 모델이 나올 때마다 다수의 폰 특화 소형 전문 모델을 자동으로 만들고 재구축하는 미래를 제시하며, 이 접근이 웨어러블·임베디드 기기로도 확장될 수 있다고 전망한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.13509" target="_blank" rel="noopener">huggingface.co/papers/2611.13509</a> · 2026-11-17</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

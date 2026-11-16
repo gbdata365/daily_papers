@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>브이제파-엘엠</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#7 · Daily Papers 2026-11-17</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 21</span>
+    </div>
+    <h1 class="article-title">V-JEPA-LM: Video-Language Models That Read Dynamics Beyond Static, Text-Aligned Representations</h1>
+    <p class="article-title-ko">브이제파-엘엠: 정적·텍스트 정렬 표현을 넘어 동역학을 읽는 영상-언어 모델</p>
+    <p class="article-sub">V-JEPA 같은 월드모델 영상 인코더는 동역학(속도·방향·순서 등) 정보를 내부적으로 잘 가지고 있지만 캡션·QA 기반 지도학습으로는 이를 언어모델이 "읽지" 못한다는 사실을 밝히고, 반사실적(counterfactual) 지도 학습으로 이를 읽어내게 만드는 V-JEPA-LM을 제안.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.17831" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.17831" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: V-JEPA-LM: Video-Language Models That Read Dynamics Beyond Static, Text-Aligned Representations</li>
+<li><strong>저자</strong>: Keuntae Kim, Dongjun Kim, Yong Suk Choi (한양대학교 컴퓨터공학과)</li>
+<li><strong>출처</strong>: arXiv:2611.17831v1 [cs.CV] (2026년 11월 13일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/kkt94/Llama-V-JEPA-LM">GitHub: kkt94/Llama-V-JEPA-LM</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.17831">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>V-JEPA 같은 월드모델 영상 인코더는 동역학(속도·방향·순서 등) 정보를 내부적으로 잘 가지고 있지만 캡션·QA 기반 지도학습으로는 이를 언어모델이 "읽지" 못한다는 사실을 밝히고, 반사실적(counterfactual) 지도 학습으로 이를 읽어내게 만드는 V-JEPA-LM을 제안.</p>
+<h2>배경 및 문제의식</h2>
+<p>V-JEPA 계열의 자기지도 영상 인코더는 캡션 없이도 비디오에서 세상이 어떻게 변화하는지(방향, 속도, 순서, 상태) 학습하는 월드모델이다. 하지만 언어로 답하게 하려면 이미지-텍스트 VLM과 같은 방식으로 캡션·질의응답 데이터에 정렬시키는데, 각 캡션이나 질문은 클립의 몇 가지 속성만 명시하기 때문에 모델은 클립을 "읽기"보다 텍스트가 묻는 속성을 "검색"하도록 학습된다. 실제로 동일한 속도-비율 항목에서 고정된(frozen) V-JEPA 특징을 선형 프로브로 읽으면 87% 정확도가 나오지만, 그 특징으로 학습된 VLM은 답을 거의 무작위 수준(chance)으로밖에 맞추지 못한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>동역학 정보가 인코더 내부 어디에 위치하는지 규명: V-JEPA 같은 예측형 인코더에는 영상 전반에 공유되는 부분공간(subspace)에 동역학이 담겨 있지만, SigLIP 같은 프레임 단위·텍스트 정렬 인코더에는 공유 성분으로 존재하지 않음(시간 역전 시 토큰이 단지 재배열될 뿐).</li>
+<li>공개 영상에 픽셀 변환(역전, 미러링, 재타이밍 등)을 적용해 답이 변환에 의해서만 결정되는 "답 균형(answer-balanced)" 반사실적 변형 쌍을 만들어, 모델이 변화량(change) 자체를 읽도록 강제하는 지도 학습 설계.</li>
+<li>단일 단계 학습, 4.53M개의 공개 샘플, 프레임당 32개의 비주얼 토큰만으로(기존 오픈 영상 LLM은 여러 단계, 9M~172M 샘플, 프레임당 평균 64~256 토큰 사용) 1B~8B 규모의 V-JEPA-LM(Qwen3, Llama 기반) 구축.</li>
+<li>11개 영상 벤치마크 평균에서 모든 크기 클래스 1위: 4B 모델이 72.1점으로 최고 오픈 4B 모델(61.1)과 8B 모델(64.8)을 모두 능가.</li>
+</ul>
+<h2>방법론</h2>
+<p>먼저 고정된 인코더에서 시간 역전·미러링·재타이밍 등 변환에 대해 토큰이 어떻게 이동하는지를 분석해, V-JEPA의 표현이 z(v) = c + d (c는 영상에 공통된 콘텐츠, d는 영상 전반에 걸쳐 일관된 방향을 갖는 변화 성분) 형태로 분해됨을 확인했다. 이 분석을 바탕으로, 공개 영상에 6개 계열·14종의 픽셀 변환을 적용해 원본과 변환본이 동일한 질문에 서로 다른 답을 갖도록 만든 반사실적 지도 데이터를 새로운 주석 없이 구축했다. 이렇게 하면 원본과 변환본이 공유하는 내용(content)만으로는 답을 구분할 수 없고, 오직 변화(change) 정보로만 답할 수 있어 모델이 동역학을 직접 읽도록 유도된다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>MVBench, PerceptionTest, TVBench, TempCompass, TOMATO, MotionBench, NExT-QA, MVP, TemporalBench, SSv2, Vinoground(텍스트/영상) 등 11개 벤치마크·12개 점수로 평가했다(32프레임, 동일 프롬프트, 선택지-문자 채점으로 모든 오픈모델을 직접 재평가). 1단계 학습·일부 데이터·프레임당 32토큰만으로도 각 크기 클래스에서 최고 평균 점수를 기록했다(4B: 72.14점, 최고 오픈 4B 대비 +11.1점; 2B: 66.02점, 최고 오픈 2B 대비 +13.6점). 격차는 동역학 관련 벤치마크에서 가장 크게 나타났다(4B 클래스 TOMATO 53.5 대 최고 36.5, Vinoground-video 66.8 대 최고 33.8). 동일 인코더 계열을 쓰는 메타(Meta)의 비공개 V-JEPA 2/2.1 영상 LLM과 비교해도 8B 모델이 6개 공통 벤치마크에서 각각 +6.7, +4.9점 앞섰다. 인코더와 지도 방식을 통제한 추가 실험에서는, 동일 예산 하에 반사실적 지도가 평균 +4.5점, 자연 벤치마크의 속도 질문에서는 +38점을 추가로 끌어올려 "인코더가 무엇을 읽을 수 있는지 결정하고, 지도 방식이 무엇을 읽을지 결정한다"는 결론을 확인했다.</p>
+<h2>한계점</h2>
+<p>인코더가 텍스트가 아닌 영상을 예측하도록 학습되었기 때문에, 텍스트 인식이나 단일 이미지 과제는 이 연구의 목표 범위 밖에 있다. 또한 시간당 수십 분~수시간 규모의 장시간 영상은 현재 규모에서 학습하기에 비용이 너무 커 향후 과제로 남겨두었다.</p>
+<h2>시사점</h2>
+<p>저자들은 캡션과 질문만으로는 월드모델 인코더가 가진 동역학 정보가 읽히지 않은 채로 남는다는 점을 명확히 보였으며, 더 강력한 인코더를 쓰는 것만으로는 문제가 해결되지 않고(V-JEPA 2.1이 동일 레시피에서 V-JEPA 2보다 TemporalBench·TOMATO 성능이 낮아짐) 올바른 지도 방식의 설계가 핵심임을 시사한다. 이는 월드모델 기반 영상 인코더를 언어모델과 결합할 때 데이터·지도 설계가 인코더 성능 자체보다 중요할 수 있음을 보여준다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.17831" target="_blank" rel="noopener">huggingface.co/papers/2611.17831</a> · 2026-11-17</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

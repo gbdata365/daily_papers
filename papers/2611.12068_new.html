@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>미릭스-2.0</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#4 · Daily Papers 2026-11-17</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 45</span>
+    </div>
+    <h1 class="article-title">MIRIX-2.0: Multi-Agent Memory System</h1>
+    <p class="article-title-ko">미릭스-2.0: 멀티에이전트 메모리 시스템</p>
+    <p class="article-sub">LLM 에이전트의 장기 기억을 완전한 타입별 기록으로 유지하면서도 명시적 예산 하에 검색이 가능하게 하는 "출처 하이퍼그래프(provenance hypergraph)" 기반 메모리 시스템 MIRIX-2.0을 제안하고, 정확성·실용성·효율성을 동시에 달성.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.12068" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.12068" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: MIRIX-2.0: Multi-Agent Memory System</li>
+<li><strong>저자</strong>: Wei-Chieh Huang, Weizhi Zhang, Jiayan Nan, Peng Xia, Yu Wang (MIRIX AI)</li>
+<li><strong>출처</strong>: arXiv:2611.12068v1 [cs.CL] (2026년 11월 9일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://mirix.io/">mirix.io</a> / <a href="https://github.com/Mirix-AI/MIRIX">GitHub</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.12068">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>LLM 에이전트의 장기 기억을 완전한 타입별 기록으로 유지하면서도 명시적 예산 하에 검색이 가능하게 하는 "출처 하이퍼그래프(provenance hypergraph)" 기반 메모리 시스템 MIRIX-2.0을 제안하고, 정확성·실용성·효율성을 동시에 달성.</p>
+<h2>배경 및 문제의식</h2>
+<p>LLM 에이전트가 장기간에 걸쳐 작동하려면 대화나 과제 수행 과정에서 쌓인 정보를 세션을 넘어 기억해야 한다. 기존 메모리 시스템은 세 가지 요구사항(정확성, 실용성, 효율성) 중 적어도 하나를 포기하는 경향이 있었다. 기록을 추출된 사실이나 요약으로 압축하는 시스템은 컴팩트하지만 세부사항을 영구적으로 잃고, 모든 기록을 그대로 보관하는 시스템은 정보를 잃지 않지만 히스토리가 늘어날수록 검색 효율이 떨어지며, 그래프 기반 메모리는 이항(binary) 트리플로 n항(n-ary) 사실을 쪼개면서 사실 간 연결 관계를 잃는다는 문제가 있었다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>완전한 기록을 그대로 유지하는 시스템-오브-레코드 역할을 하는 6종의 타입별 메모리 에이전트(에피소드, 의미, 절차, 핵심, 리소스 볼트 등) 설계.</li>
+<li>에피소드·의미 기록을 자신을 인용하는 n항 프레임으로 인덱싱하는 "출처 하이퍼그래프"를 도입해, 검색 시 조사하는 근거량이 히스토리 길이에 비례해 늘어나지 않도록 함(명시적 예산 하 검색).</li>
+<li>쓰기 경로 밖에서 동작하며 중복 앵커를 병합하고(기록을 재작성하지 않음) 과제 세션을 스킬로 증류하는 오프라인 통합 메커니즘 "AutoDream" 제안.</li>
+<li>파인튜닝 없이 폐쇄형·개방형 모델 모두에서 동작하며 공개 코드를 제공.</li>
+</ul>
+<h2>방법론</h2>
+<p>질의가 들어오면 Meta Memory Manager가 입력을 타입별 쓰기 에이전트에 라우팅해 에피소드/의미/절차 메모리 등 증거 평면(evidence plane) Pu를 채운다. 출처 하이퍼그래프 Gu는 이 증거를 자신의 출처 행을 인용하는 n항 프레임으로 인덱싱한다. 검색 시 플래너가 질의에서 명명된 앵커로부터 그래프를 탐색하되, 사실·기저 회상·관계 인용 각각에 명시적 행 수 예산을 두어 비용을 제한한다. AutoDream은 쓰기 경로와 분리되어 비동기로 동작하며, 의미 메모리에서는 코사인 유사도(≥0.86)로 후보를 추려 LLM 검증자가 동일 개체 여부를 판정해 중복 앵커를 병합하고, 절차 메모리에서는 과제 세션의 성공/실패를 평가해 재사용할 경험과 피할 경험을 구분한 스킬을 생성·수정한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>5개 QA 벤치마크 중 4개에서 비교 대상 중 가장 높은 정확도를 기록했으며, LoCoMo에서 91.4%, LongMemEval-S에서 72.6%(최강 베이스라인 대비 +14.3점)를 달성했다. AutoDream을 끈 상태에서도 단일·다중 홉 문서 QA에서 HyperMem 대비 각각 +31.0, +22.0점의 개선을 보였다. 절차적 메모리로서는 ALFWorld와 WebShop에서 비교 대상 메모리 기법 중 가장 높은 평균 성공률을 달성했고, MetaClaw-Bench에서 GPT-5.2와 함께 49.2%를 기록해 MetaClaw의 스킬 라이브러리(44.0%)를 앞섰다. AutoDream을 끈 상태에서는 5개의 시간 측정 벤치마크 모두에서 HyperMem보다 빠르게 답했고, WebShop에서는 메모리 기법 중 가장 적은 토큰을 소비했다.</p>
+<h2>한계점</h2>
+<p>저자들이 직접 명시한 한계로, 어블레이션은 구성요소를 그룹 단위로 추가하는 방식이어서 n항 프레임, 인용된 출처 행, 발생 식별자, 답변 시점 검증, 그리고 절차 메모리의 판정자·증류기·큐레이터 각각의 개별 효과를 분리하지 못했다. 또한 사용자 메모리 결과는 단일 실행에 기반하며 일부는 LLM 심판으로 채점되었고, 일부 베이스라인 수치는 원 저자가 보고한 값을 그대로 사용했다.</p>
+<h2>시사점</h2>
+<p>저자들은 완전한 기록을 시스템-오브-레코드로 유지하고 그래프는 단지 제한된 인덱스 역할만 하도록 하며, 통합(consolidation)이 "무엇이 증거인지"가 아니라 "증거들이 어떻게 연결되는지"만 바꾸도록 설계하면 메모리 레이어가 정확성·실용성·효율성을 동시에 달성할 수 있음을 시사한다. 다만 윤리적 측면에서, 사용자 동의 없는 프로파일링에 사용되어서는 안 되며, 저장된 내용이 모델에 전송되므로 민감 정보 보호와 사용자 열람·수정·삭제 권한이 뒷받침되어야 하고, 고위험 환경에서는 학습된 스킬과 병합된 개체를 사람이 주기적으로 검토해야 한다고 강조한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.12068" target="_blank" rel="noopener">huggingface.co/papers/2611.12068</a> · 2026-11-17</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

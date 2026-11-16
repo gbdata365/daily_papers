@@ -1,0 +1,110 @@
+{
+  "2611.18359": {
+    "base": "2611_에이전틱로보틱스_로봇-시스템의-새로운-시대-전망",
+    "rank": "#1",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "107",
+    "en_title": "Envisioning Agentic Robotics: A New Era of Robotic Systems",
+    "ko_title": "에이전틱 로보틱스 전망: 로봇 시스템의 새로운 시대"
+  },
+  "2611.18397": {
+    "base": "2611_게이머_장기호라이즌-실시간-게임-에이전트",
+    "rank": "#2",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "87",
+    "en_title": "Gamer: A Generalist Vision-Language-Action Foundation Model for Long-Horizon Real-Time Game Agent",
+    "ko_title": "게이머: 장기 호라이즌 실시간 게임 에이전트를 위한 범용 VLA 파운데이션 모델"
+  },
+  "2611.15789": {
+    "base": "2611_바이브프리비즈벤치_4D-장면-생성-코딩-에이전트-평가",
+    "rank": "#3",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "83",
+    "en_title": "VibePrevisBench: Evaluating Agentic Coding for 4D Scene Generation in Blender",
+    "ko_title": "바이브프리비즈벤치: Blender 4D 장면 생성을 위한 에이전틱 코딩 평가"
+  },
+  "2611.12068": {
+    "base": "2611_미릭스2_멀티에이전트-메모리-시스템",
+    "rank": "#4",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "45",
+    "en_title": "MIRIX-2.0: Multi-Agent Memory System",
+    "ko_title": "미릭스-2.0: 멀티에이전트 메모리 시스템"
+  },
+  "2611.18482": {
+    "base": "2611_엠엠플래시_VLM-추론-가속-스펙큘러티브-디코딩",
+    "rank": "#5",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "35",
+    "en_title": "MMFlash: Faster Speculative Decoding for Vision-Language Models",
+    "ko_title": "엠엠플래시: 비전-언어 모델을 위한 더 빠른 스펙큘러티브 디코딩"
+  },
+  "2611.12901": {
+    "base": "2611_스텝리파인_확산모델-환각-완화-스텝인지디코딩",
+    "rank": "#6",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "35",
+    "en_title": "Rethinking in Spikes: Mitigating Hallucinations in MDLMs with Step-Aware Decoding",
+    "ko_title": "스파이크 속의 재고: 스텝 인지 디코딩으로 MDLM의 환각 완화하기"
+  },
+  "2611.17831": {
+    "base": "2611_브이제파엘엠_정적표현-넘어-동역학-읽는-영상언어모델",
+    "rank": "#7",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "21",
+    "en_title": "V-JEPA-LM: Video-Language Models That Read Dynamics Beyond Static, Text-Aligned Representations",
+    "ko_title": "브이제파-엘엠: 정적·텍스트 정렬 표현을 넘어 동역학을 읽는 영상-언어 모델"
+  },
+  "2611.17878": {
+    "base": "2611_다이센스_위성영상-기반-도시에너지-동역학-생성",
+    "rank": "#8",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "20",
+    "en_title": "DySENSE: Dynamic Spatiotemporal ENergy Synthesis and Emulation with Satellite Imagery",
+    "ko_title": "다이센스: 위성영상을 활용한 동적 시공간 에너지 합성 및 에뮬레이션"
+  },
+  "2611.07226": {
+    "base": "2611_루프백트랜스포머_반복-루프-트랜스포머-잔차-설계",
+    "rank": "#9",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "18",
+    "en_title": "Loopback Transformer: Towards a Unified View of Residual Looped Transformers",
+    "ko_title": "루프백 트랜스포머: 잔차 루프 트랜스포머의 통합적 관점을 향하여"
+  },
+  "2611.17814": {
+    "base": "2611_지캐스트_이커머스-에이전트-통제형-지속학습",
+    "rank": "#10",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "17",
+    "en_title": "G-CAST: Governed Continual Self-Training for E-Commerce Agents under Evolving Demands",
+    "ko_title": "G-CAST: 변화하는 수요 하의 이커머스 에이전트를 위한 통제형 지속 자기학습"
+  },
+  "2611.18338": {
+    "base": "2611_멤에스큐엘_메모리-기반-텍스트투SQL",
+    "rank": "#11",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "17",
+    "en_title": "MEM-SQL: Memory-Empowered Text-to-SQL",
+    "ko_title": "멤-에스큐엘: 메모리 기반 텍스트-투-SQL"
+  },
+  "2611.13509": {
+    "base": "2611_모바일AI팩토리_모바일기기용-경량언어모델-자동제작",
+    "rank": "#12",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "15",
+    "en_title": "Mobile AI Factory: Building Specialized Language Models for Your Mobile Device",
+    "ko_title": "모바일 AI 팩토리: 모바일 기기를 위한 특화 언어모델 구축하기"
+  }
+}

@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>스파이크 속의 재고</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#6 · Daily Papers 2026-11-17</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 35</span>
+    </div>
+    <h1 class="article-title">Rethinking in Spikes: Mitigating Hallucinations in MDLMs with Step-Aware Decoding</h1>
+    <p class="article-title-ko">스파이크 속의 재고: 스텝 인지 디코딩으로 MDLM의 환각 완화하기</p>
+    <p class="article-sub">멀티모달 확산 언어모델(MDLM)의 디노이징 과정에서 나타나는 국소적 "엔트로피 스파이크"가 환각(hallucination)과 밀접히 연관된다는 사실을 밝히고, 그 구간에서만 선택적으로 연속적 잠재 정제(latent refinement)로 전환하는 학습이 필요 없는(training-free) 디코딩 전략 StepRefine을 제안.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.12901" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.12901" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Rethinking in Spikes: Mitigating Hallucinations in MDLMs with Step-Aware Decoding</li>
+<li><strong>저자</strong>: Zhongxing Xu, Zhonghua Wang 등 (Monash University, Cornell University, UC Santa Cruz, Northeastern University, University of Minnesota)</li>
+<li><strong>출처</strong>: arXiv:2611.12901v1 [cs.CL] (2026년 10월 14일, NeurIPS 2026 게재)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://mdlm-steprefine.github.io/">mdlm-steprefine.github.io</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.12901">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>멀티모달 확산 언어모델(MDLM)의 디노이징 과정에서 나타나는 국소적 "엔트로피 스파이크"가 환각(hallucination)과 밀접히 연관된다는 사실을 밝히고, 그 구간에서만 선택적으로 연속적 잠재 정제(latent refinement)로 전환하는 학습이 필요 없는(training-free) 디코딩 전략 StepRefine을 제안.</p>
+<h2>배경 및 문제의식</h2>
+<p>MDLM은 이미지와 텍스트를 입력받아 반복적 디노이징으로 텍스트를 생성하는데, 양방향 어텐션 덕분에 전역적 모델링 능력이 강하지만 여전히 환각에 취약하다. 기존 추론 시점 기법들은 주로 캐시 재사용이나 디노이징 스케줄링 등 효율성 개선에 집중했거나, 토큰 커밋 정책을 바꾸는 방식(불확실한 토큰 리마스킹, 연속 토큰 표현 도입 등)으로 품질을 개선하려 했지만, 디노이징 궤적 상의 시간적 불규칙성(특정 스텝에서만 불확실성이 튀는 현상)을 명시적으로 고려하지 않았다는 한계가 있었다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>디노이징 전반에서 마스크 엔트로피가 전체적으로 감소하는 경향 속에서도, 국소 시간 윈도우 대비 급격히 튀는 "엔트로피 스파이크"가 드물게 발생하며 이것이 최종 응답의 환각 토큰과 강하게 연관된다는 사실을 통계적으로 규명.</li>
+<li>엔트로피 스파이크 구간에서는 신뢰도 기반 디코딩의 판별력이 떨어져(해당 구간에서 무작위 디코딩으로 바꿔도 성능 저하가 거의 없음) 이산적 토큰 커밋이 불안정하다는 것을 실증.</li>
+<li>디노이징 스텝별 엔트로피 변화를 지역 트렌드와 비교해 스파이크를 탐지하고, 이때만 확률 가중 임베딩으로 여러 후보 의미를 유지한 채 반복 정제를 수행하는 플러그앤플레이 디코딩 전략 StepRefine 제안.</li>
+<li>분포 안정성을 모니터링해 불필요한 반복을 줄이고 표준 이산 디노이징으로 되돌리는 "정제 컨트롤러" 설계.</li>
+</ul>
+<h2>방법론</h2>
+<p>MDLM은 전체 마스크 토큰 시퀀스에서 시작해 각 디노이징 스텝마다 마스크 위치들에 대한 토큰 분포를 병렬로 예측하고, 신뢰도가 높은 일부를 확정(commit)한다. StepRefine은 매 스텝의 평균 마스크 엔트로피를 계산하고 이를 지역 시간 윈도우의 추세와 비교해 엔트로피 스파이크를 탐지한다. 스파이크가 감지되면 모델은 이산 디코딩 대신 확률 가중 토큰 임베딩(여러 후보 의미를 암묵적으로 유지)을 구성해 후보 의미와 맥락 간 상호작용을 충분히 촉진하는 연속적 정제를 여러 라운드 수행하고, 분포가 안정되면 정제 컨트롤러가 표준 이산 디노이징으로 복귀시킨다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>LLaDA-V-8B, LLaDA-O-8B, Dream-VL-7B, LaViDa-L-8B 등 4개 MDLM 백본에서, 일반 추론·이해(VStar, MMVP, MMEval-Pro, VMCBench, RealWorldQA), 환각 평가(MMHalu, Bingo, POPE), 수학적 추론(MathVision, MathVista), 과학적 추론(MMK12 물리·화학) 등 다양한 벤치마크로 평가했다. LLaDA-V-8B에서 CoTA, ReMix, WINO 등 기존 학습 불필요 디코딩 전략들을 능가했으며, 일반 추론 평균 정확도를 베이스라인 대비 +2.8% 개선하고 환각 벤치마크에서 MMHalu +2.5%, Bingo +4.4% 향상을 보였다. 모든 백본에서 평균 +2.3~+2.8%의 일관된 개선을 보였고, Fast-dLLM, dLLM-Cache, dKV-Cache 등 기존 dLLM 가속 기법과 결합했을 때도 속도 저하 없이 정확도가 추가로 향상됨을 확인했다(예: dLLM-Cache+StepRefine이 VStar에서 53.9→57.1점으로 개선되면서도 거의 동일한 속도 향상 유지).</p>
+<h2>한계점</h2>
+<p>논문에 별도의 한계점 섹션이 명시되어 있지 않다. 다만 방법론이 엔트로피 스파이크 탐지의 임계값(안정성 임계값 ϵ=0.01 등) 설정에 의존하며, 평가가 특정 4개 MDLM 백본과 선택된 벤치마크 범위 내에서 이루어졌다는 점은 일반적인 적용 범위에 대한 암묵적 제약으로 볼 수 있다.</p>
+<h2>시사점</h2>
+<p>적은 수의 고불확실성 디노이징 스텝에만 선택적으로 정제를 집중함으로써 추가 학습 없이도 MDLM의 신뢰성을 측정 가능한 수준으로 개선할 수 있음을 보였다. 이는 디노이징 궤적의 시간적 동역학을 활용하는 것이 효율성뿐 아니라 생성 품질·신뢰성 개선에도 유효한 축이 될 수 있음을 시사하며, 기존 가속 기법과 호환 가능하다는 점에서 실용적 적용 가능성이 높다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.12901" target="_blank" rel="noopener">huggingface.co/papers/2611.12901</a> · 2026-11-17</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

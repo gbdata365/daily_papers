@@ -1,0 +1,132 @@
+<meta charset="UTF-8">
+<title>인클루전메드</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#4 · Daily Papers 2026-11-18</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 62</span>
+    </div>
+    <h1 class="article-title">InclusionMed: Benchmarking AI for Inclusive Healthcare</h1>
+    <p class="article-title-ko">인클루전메드: 포용적 의료를 위한 AI 벤치마크</p>
+    <p class="article-sub">의료 AI 평가가 특정 역할·능력에 편중되지 않도록, 의료 역할(환자/의료전문가/의료행정전문가)과 AI 능력(지식/추론/행동)을 교차한 9칸 "Atlas" 구조로 벤치마크를 조직하고, 엄격한 심사를 거친 5개 벤치마크로 종합 지표인 InclusionMed Index를 구축한 개방형 의료 AI 평가 이니셔티브.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.21218" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.21218" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: InclusionMed: Benchmarking AI for Inclusive Healthcare</li>
+<li><strong>저자</strong>: The InclusionMed Collaboration</li>
+<li><strong>출처</strong>: arXiv:2611.21218v1 [cs.AI] (2026년 11월 16일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://inclusionmed.ai/">InclusionMed 웹사이트</a> (<a href="https://github.com/panuvi/inclusionmed">GitHub</a>)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.21218">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>의료 AI 평가가 특정 역할·능력에 편중되지 않도록, 의료 역할(환자/의료전문가/의료행정전문가)과 AI 능력(지식/추론/행동)을 교차한 9칸 "Atlas" 구조로 벤치마크를 조직하고, 엄격한 심사를 거친 5개 벤치마크로 종합 지표인 InclusionMed Index를 구축한 개방형 의료 AI 평가 이니셔티브.</p>
+<h2>배경 및 문제의식</h2>
+<p>의료 자원의 불균등한 분배 문제를 해결하는 데 의료 AI와 범용 파운데이션 모델이 새로운 가능성을 제공하고 있지만, 기존 벤치마크(MedQA, MedMCQA, HealthBench, MedAgentBench, CHI-Bench 등)와 종합 지표(HELM, MedHELM, Artificial Analysis Healthcare &amp; Medical Index)는 어떤 의료 역할과 능력을 대표하는지가 불분명한 채로 점수를 집계하는 경우가 많다. 저자들은 포괄적인(inclusive) 의료를 위해 벤치마크를 어떻게 선정·조직해야 평가 결과가 다양한 의료 수요를 반영하고 용도별 비교에 쓸모가 있을지를 문제로 삼는다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>InclusionMed Atlas</strong>: 의료 역할(환자와 대중/의료전문가/의료행정전문가) × AI 능력(지식/추론/행동)의 9칸 매트릭스로 벤치마크의 평가 초점을 명시적으로 매핑.</li>
+<li>문헌·공개 플랫폼·커뮤니티로부터 수집한 388개 후보 벤치마크를 6가지 심사 기준(의료 관련성, 신뢰성, 이용 가능성·허용된 사용, 상호보완적 커버리지, 최신성·데이터 독립성, 변별력)으로 심사하고 독립 재현까지 거쳐 최종 4개 공개 벤치마크(HealthBench Professional, PhysicianBench, ALE-CLI v1.0: Health and Medicine, CHI-Bench)와 1개 비공개 벤치마크(InclusionMed-DxFiles, 진단 추론 평가)로 압축.</li>
+<li>이 5개 벤치마크를 동일 가중치로 결합한 <strong>InclusionMed Index</strong>를 22개 모델에 대해 산출하고, 역할별·능력별 세부 점수까지 함께 공개.</li>
+<li>과제 단위 태깅(임상 전문분야, 의료 전문성 범주, 의료 워크플로)을 통한 세밀한 성능 분석과, 추론 비용 대비 성능(Pareto frontier) 분석을 제공.</li>
+</ul>
+<h2>방법론</h2>
+<ol>
+<li><strong>벤치마크 수집</strong>: 문헌·오픈소스 플랫폼·커뮤니티 기여로부터 388개 후보를 모아 LLM 보조 큐레이션으로 벤치마크 카드(과제 범위, 데이터·주석, 평가 프로토콜, 기존 모델 성능 링크)를 작성.</li>
+<li><strong>심사(Audit)</strong>: 공개·비공개 벤치마크에 동일한 6개 기준을 적용. LLM 보조 심사 + 사람 검토 병행. 388개 → 129개(신뢰성) → 68개(이용 가능성) → 19개(상호보완성) → 14개(최신성) → 8개(변별력)로 단계적으로 축소.</li>
+<li><strong>독립 재현</strong>: 8개 후보 벤치마크에 대해 GPT-6 Astra, Claude Opus 5.5, Gemini 3.8 Flash, DeepSeek V4.1 Flash, Qwen3.8 Max, Qwen3.8 27B, GLM-5.3, Grok 4.3의 동일 8개 모델로 직접 재현 평가를 수행해 점수 포화(saturation)와 변별력 부족을 검증. 그 결과 XLingHealth, NEJMQA-Exams, PubHealthBench는 포화, HealthBench(일반)는 변별력 부족으로 제외되고 4개 공개 벤치마크만 최종 채택.</li>
+<li><strong>InclusionMed Index 산출</strong>: 최종 5개 벤치마크(HealthBench Professional, PhysicianBench, ALE-CLI v1.0: Health and Medicine, CHI-Bench, InclusionMed-DxFiles) 각각에 동일 가중치(20%)를 부여해 모델별 평균 점수를 산출(수식 $I_i = \frac{1}{n}\sum_j x_{ij}$). 평가 방식은 벤치마크별로 직접 API 호출, FHIR 환경의 전자의무기록 에이전트, CLI 에이전트 등으로 상이.</li>
+<li><strong>비용 분석</strong>: 입출력 토큰 사용량과 공개된 모델 가격으로 과제당 평균 추론 비용을 추정하고 Index 점수와 함께 Pareto frontier를 분석.</li>
+</ol>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li>11개 모델 패밀리에서 파생된 22개 모델 릴리스를 5개 벤치마크로 평가, Index 점수는 17.5~49.1(100점 만점) 범위.</li>
+<li>전체 1위는 Gemini 4 Argon(49.1), 근소한 차로 Claude Opus 5.5(48.9)·Claude Fable 5.1(48.9), 이어 GPT-6 Astra(45.1), GPT-6.1 Sol(44.5).</li>
+<li>역할·능력별로는 순위가 달라짐: 의료전문가 역할에서는 Claude Opus 5.5가 1위(55.6), 추론 능력에서는 GPT-6 Astra가 1위(58.7), 행동(agency) 능력에서는 Claude Fable 5.1이 1위(46.1). GLM-5.3은 의료전문가 역할 14위지만 의료행정전문가 역할 4위를 기록하는 등 역할별 순위 역전이 다수 관찰.</li>
+<li>상위 10개 모델 공통으로 임상 전문분야 중 정신의학(psychiatry) 점수가 가장 낮고(중앙값 49.4), 환자 커뮤니케이션 항목 점수가 가장 높음(중앙값 69.1). 치료 계획·실행 과제는 임상 평가·진단 과제보다 일관되게 낮은 점수.</li>
+<li>비슷한 Index 점수를 가진 모델 간에도 추론 비용 차이가 커서, Claude Fable 5.1과 Claude Opus 5.5는 점수가 거의 같지만(48.9) 비용은 약 2.5배 차이(과제당 $4.12 대 $1.68); Kimi K3와 GPT-5.6 Luna는 점수가 비슷(37.9 대 36.9)해도 비용은 약 24배 차이.</li>
+<li>GPT-6 Luna, GPT-5.6 Luna, DeepSeek V4.1 Flash, GPT-6.1 Sol, Gemini 4 Argon 5개 모델이 성능-비용 Pareto frontier를 구성.</li>
+</ul>
+<h2>한계점</h2>
+<ul>
+<li>현재 Atlas는 9칸 중 3칸만 커버하며, 환자·대중을 1차 대상으로 한 벤치마크가 전혀 포함되지 않음.</li>
+<li>388개 후보 벤치마크 중 88%만 영어를 포함하고 대부분 미국·중국 소재 기관이 1저자로, 지리적·언어적 대표성이 제한적(1,034개 과제 중 지리 정보를 확인할 수 있던 338개 중 318개가 미국 관련).</li>
+<li>다중 턴 상호작용을 요구하는 벤치마크가 388개 중 79개뿐이라 지속적 상호작용 평가가 부족.</li>
+<li>비용 추정치는 실패한 실행·재시도, 판정(judge)·검색·샌드박스·플랫폼 비용을 제외하므로 실제 총 운영 비용을 반영하지 않음.</li>
+<li>모델이 개선됨에 따라 기존 벤치마크가 점수 포화에 가까워질 수 있어(이번에도 3개 벤치마크가 포화로 제외됨) 주기적 재평가가 필요.</li>
+<li>388개 후보 중 104개만 직접 재현에 필요한 자료를 충분히 제공해, 재현성 있는 평가 자원이 전반적으로 부족.</li>
+</ul>
+<h2>시사점</h2>
+<p>단일 종합 점수만으로는 의료 AI 모델의 적합성을 판단하기 어려우며, 역할·능력·과제 속성별 세부 프로파일과 추론 비용까지 함께 고려한 맥락 특화적 모델 선택이 필요함을 보여준다. 커뮤니티 기여를 통한 개방형·지속적 벤치마크 확장 방식은 의료 AI 평가에서 대표성과 재현성을 동시에 추구하는 모델로 참고할 만하다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.21218" target="_blank" rel="noopener">huggingface.co/papers/2611.21218</a> · 2026-11-18</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

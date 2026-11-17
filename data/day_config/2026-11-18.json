@@ -1,0 +1,110 @@
+{
+  "2611.21072": {
+    "base": "2611_세이지_과학인지-멀티모달-에이전트-모델",
+    "rank": "#1",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "85",
+    "en_title": "Sage S2.1 Flash Technical Report",
+    "ko_title": "세이지 S2.1 플래시: 과학 인지 멀티모달 에이전트 모델"
+  },
+  "2611.21003": {
+    "base": "2611_케이투호라이즌_오픈소스-언어모델-프론티어-플릿",
+    "rank": "#2",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "69",
+    "en_title": "K2-Horizon: A Frontier Fleet of Open Source Language Models",
+    "ko_title": "K2-Horizon: 오픈소스 언어모델 프런티어 플릿"
+  },
+  "2611.19937": {
+    "base": "2611_올록플로우_원시시장데이터-포트폴리오-트레이딩-액션-생성",
+    "rank": "#3",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "67",
+    "en_title": "AllocFlow: End-to-End Portfolio Trading Action Generation from Raw Market Data",
+    "ko_title": "올록플로우: 원시 시장 데이터로부터의 종단간 포트폴리오 트레이딩 액션 생성"
+  },
+  "2611.21218": {
+    "base": "2611_인클루전메드_의료형평성-AI-벤치마크",
+    "rank": "#4",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "62",
+    "en_title": "InclusionMed: Benchmarking AI for Inclusive Healthcare",
+    "ko_title": "인클루전메드: 포용적 의료를 위한 AI 벤치마크"
+  },
+  "2611.07222": {
+    "base": "2611_스필웨이_툴에이전트-프롬프트인젝션-방어",
+    "rank": "#5",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "49",
+    "en_title": "SPILLWAY: Separating Target Admission from Sanitization to Defend Tool-Using Agents against Prompt Injection",
+    "ko_title": "스필웨이: 목적지 승인과 새니타이제이션의 분리로 도구 사용 에이전트를 프롬프트 인젝션으로부터 방어하기"
+  },
+  "2611.20218": {
+    "base": "2611_swe코워크_코딩에이전트-디지털직원-벤치마크",
+    "rank": "#6",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "44",
+    "en_title": "SWE-CoWork: Benchmarking Coding Agents as Digital Employees in Organizations",
+    "ko_title": "SWE-CoWork: 조직 내 디지털 직원으로서의 코딩 에이전트 벤치마킹"
+  },
+  "2611.21607": {
+    "base": "2611_스케일브이엘에이_552억개-파라미터로-확장한-VLA-모델",
+    "rank": "#7",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "41",
+    "en_title": "ScaleVLA: Scaling Vision-Language-Action Models to 552 Billion Parameters",
+    "ko_title": "스케일VLA: 비전-언어-행동 모델을 5520억 파라미터로 확장하기"
+  },
+  "2611.17834": {
+    "base": "2611_페이퍼크리틱_AI-리뷰어-논문건전성평가-훈련",
+    "rank": "#8",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "26",
+    "en_title": "PaperCritic: Training AI Reviewers to Assess the Soundness of Papers",
+    "ko_title": "페이퍼크리틱: 논문 건전성을 평가하는 AI 리뷰어 훈련하기"
+  },
+  "2611.20254": {
+    "base": "2611_복스멜_토크나이저프리-멜-음성합성",
+    "rank": "#9",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "22",
+    "en_title": "VoxMel TTS Technical Report",
+    "ko_title": "복스멜 TTS 기술 보고서"
+  },
+  "2611.20882": {
+    "base": "2611_액셀러레이트벤치_프로그램최적화-에이전트-평가",
+    "rank": "#10",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "16",
+    "en_title": "Accelerate Bench: Evaluating Agents for Application-Level Program Optimization",
+    "ko_title": "Accelerate Bench: 응용 프로그램 수준 최적화를 위한 에이전트 평가"
+  },
+  "2611.17110": {
+    "base": "2611_살라_구체화-파운데이션모델-이중축-스케일링",
+    "rank": "#11",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "13",
+    "en_title": "SALA: Semantically Aligned Latent Actions Enable Dual-Axis Scaling of Embodied Foundation Models",
+    "ko_title": "SALA: 의미적으로 정렬된 잠재 행동으로 구체화 파운데이션 모델의 이중축 확장 실현"
+  },
+  "2611.20986": {
+    "base": "2611_calpha_범용언어모델-네이티브-생체분자지능",
+    "rank": "#12",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "11",
+    "en_title": "Calpha: Toward Native Biomolecular Intelligence in a General-Purpose Language Model",
+    "ko_title": "칼파: 범용 언어모델 속 네이티브 생체분자 지능을 향하여"
+  }
+}

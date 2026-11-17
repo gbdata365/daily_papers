@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>SALA</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#11 · Daily Papers 2026-11-18</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 13</span>
+    </div>
+    <h1 class="article-title">SALA: Semantically Aligned Latent Actions Enable Dual-Axis Scaling of Embodied Foundation Models</h1>
+    <p class="article-title-ko">SALA: 의미적으로 정렬된 잠재 행동으로 구체화 파운데이션 모델의 이중축 확장 실현</p>
+    <p class="article-sub">언어로 기술된 원자적 행동(atomic-action) 설명을 매개로 사람과 로봇의 잠재 행동(latent action) 표현을 의미적으로 정렬함으로써, 액션 라벨 없는 대규모 사람 영상을 로봇 정책 학습의 확장 가능한 지도 신호로 활용하는 방법을 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.17110" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.17110" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: SALA: Semantically Aligned Latent Actions Enable Dual-Axis Scaling of Embodied Foundation Models</li>
+<li><strong>저자</strong>: Jiachun Jin, Zetong Zhou, Haonan Wang, Zhijie Deng (Sharpa Robotics, SJTU-Sharpa Joint Lab for Embodied AI, SJTU)</li>
+<li><strong>출처</strong>: arXiv:2611.17110v2 [cs.RO] (2026년 11월 15일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://sala-vla.github.io/">SALA-VLA</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.17110">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>언어로 기술된 원자적 행동(atomic-action) 설명을 매개로 사람과 로봇의 잠재 행동(latent action) 표현을 의미적으로 정렬함으로써, 액션 라벨 없는 대규모 사람 영상을 로봇 정책 학습의 확장 가능한 지도 신호로 활용하는 방법을 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>구체화 파운데이션 모델(embodied foundation model, 예: VLA)은 다양한 로봇 상호작용 데이터에 의존하지만 이를 수집하는 비용이 매우 높다. 1인칭 시점의 사람 영상(egocentric human video)은 저비용 대안이 될 수 있고, 잠재 행동 모델(LAM)은 이런 영상을 행동 라벨 없이도 정책 학습에 활용하는 수단으로 쓰여왔다. 그러나 기존 LAM은 각 클립의 영상 재구성만으로 잠재 행동을 학습하기 때문에, 표현이 실제 행동의 의미가 아니라 장면(배경, 시점 등)의 시각적 유사성에 따라 군집화되는 문제가 있다. 이로 인해 사람과 로봇의 동일한 행동이 잠재 공간에서 가깝게 위치하지 않아, 사람 영상의 지식이 로봇 제어로 잘 전이되지 않는다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>사람과 로봇의 비정합(unpaired) 영상 클립에 대한 원자적 행동 언어 설명을 관계적 지도 신호로 사용하여, 두 구체화(embodiment) 간 잠재 행동을 정렬한다.</li>
+<li>로봇 쪽 잠재 행동만 행동 재구성으로 제어에 근거(ground)시키고, 사람 쪽 잠재 행동은 정지-그래디언트(stop-gradient)를 통해 이 로봇 잠재 행동 쪽으로만 이동하도록 정렬하는 '로봇-고정 의미 전이(Robot-Anchored Semantic Transfer)' 기법을 설계했다.</li>
+<li>시뮬레이션(RoboTwin 2.0)과 63자유도 실제 로봇 실험을 통해 SALA가 동일 데이터로 학습한 기존 LAM·WAM(world-action model)보다 우수함을 보였고, 사람 영상의 사전학습 규모와 과제별(post-training) 사람 시연 규모라는 두 축 모두에서 성능이 꾸준히 향상됨(확장성)을 확인했다.</li>
+</ul>
+<h2>방법론</h2>
+<p>SALA는 사람과 로봇 클립이 공유하는 시각 인코더 $\mathcal{E}<em>\theta$, SoftVQ 양자화기 $\mathcal{Q}</em>\phi$, 시각 디코더 $\mathcal{G}<em align>v$로 구성된 잠재 행동 토크나이저를 학습한다. 로봇 클립만 행동 디코더 $\mathcal{G}<em act>a$를 통해 실제 행동 청크를 재구성하는 손실 $\mathcal{L}</em>}$을 추가로 받아, 로봇 잠재 행동이 제어와 직접 연결되도록 '고정'시킨다. 이후 각 사람·로봇 클립에 붙은 원자적 행동 언어 설명을 고정된 텍스트 인코더로 임베딩하여 언어 유사도 $S^\ell$을 계산하고, 이를 소프트맥스로 변환한 이웃 분포 $P$로 삼아 잠재 공간상의 유사도 분포 $Q$가 이를 따르도록 정렬 손실 $\mathcal{L</em>}$(크로스 엔트로피)을 적용한다. 이때 정지-그래디언트로 로봇 잠재 행동은 고정된 앵커 역할만 하고, 사람 잠재 행동만 의미적으로 가까운 로봇 잠재 행동 쪽으로 이동하도록 학습된다. 전체 토크나이저 손실은 시각 재구성 손실, 행동 재구성 손실 $\mathcal{L<em align>{act}$, 정렬 손실 $\mathcal{L}</em>}$의 가중합이다. 학습된 토크나이저는 이후 고정되어, $\pi_0$ 스타일의 비전-언어 모델(VLM)+행동 전문가(flow matching 기반) 정책을 사전학습(사람 영상만, $\mathcal{L<em FM>{LA}$)·중간학습(로봇 원격조작 데이터, $\mathcal{L}</em>$)·후속학습(과제별 사람·로봇 시연) 세 단계로 지도한다.}+\mathcal{L}_{LA</p>
+<h2>실험 설정 및 결과</h2>
+<p>시뮬레이션에서는 RoboTwin 2.0의 50개 양팔 조작 과제에서 ARX-X5(비목표 구체화)의 영상 27,000개와 Aloha-AgileX(목표 구체화)의 궤적 2,500개를 사용했다. SALA는 Clean/Random 평균 성공률 64.4%로 비교 대상 VLA, WAM, LAM 베이스라인을 모두 상회했으며(최고 베이스라인 평균 57.1~58.7% 수준), 특히 도메인 랜덤화(Random) 환경에서 48.6%로 가장 높은 강건성을 보였다. 실제 로봇 실험에서는 Sharpa North 휴머노이드(63자유도, 22자유도 손 2개)로 기어 조립·양손 붓기·꽃 삽입·숟가락 뜨기 4개 과제를 평가했다. 사람 영상 2,678시간 사전학습을 늘릴수록 행동 예측 검증 오차가 꾸준히 감소했고, 과제별 사람 시연 비율을 10%→100%로 늘리자 평균 성공률이 53.75%→72.5%로 상승했다. 최종적으로 SALA는 4개 과제 평균 성공률 72.5%(20회 시행 기준)로 GR00T N1.7(41.25%), OpenWAM-α(63.75%), 잠재 행동을 제거한 바닐라 VLA(27.5%)를 모두 능가했다. 어블레이션에서는 정렬 손실 제거 시 성공률이 하락했고(특히 Random에서 48.6%→36.8%), 양방향 정렬(정지-그래디언트 제거) 역시 성능을 낮춰 설계 선택의 타당성을 확인했다.</p>
+<h2>한계점</h2>
+<p>토크나이저 학습에는 클립별 원자적 행동 언어 설명이 필요하다(다만 정책 자체는 라벨 없는 영상 프레임만으로 학습 가능). 사전학습 규모에 대한 확장성 분석은 최대 2,678시간까지만 검증되었으며, 더 큰 규모에서도 추세가 유지되는지는 논문에 명시되지 않음.</p>
+<h2>시사점</h2>
+<p>언어를 매개로 한 의미적 정렬이 로봇-전용 행동 라벨 없이도 이종 구체화(사람↔로봇) 간 지식 전이를 가능하게 하며, 사람 영상이라는 저비용 데이터를 사전학습과 과제별 후속학습 양쪽 축에서 모두 로봇 정책 성능을 끌어올리는 확장 가능한 자원으로 쓰일 수 있음을 보여준다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.17110" target="_blank" rel="noopener">huggingface.co/papers/2611.17110</a> · 2026-11-18</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

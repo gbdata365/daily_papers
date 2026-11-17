@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>복스멜 TTS 기술 보고서</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#9 · Daily Papers 2026-11-18</span>
+      <span class="cat-tag">생성모델</span>
+      <span class="upvote-tag">▲ 22</span>
+    </div>
+    <h1 class="article-title">VoxMel TTS Technical Report</h1>
+    <p class="article-title-ko">복스멜 TTS 기술 보고서</p>
+    <p class="article-sub">멜 스펙트로그램에 고정된 가역적 2축 Haar 웨이블릿 변환을 적용해, 별도의 학습형 토크나이저 없이도 안정적인 자기회귀(autoregressive) 음성 합성을 가능하게 하는 VoxMel 프레임워크를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.20254" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.20254" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: VoxMel TTS Technical Report</li>
+<li><strong>저자</strong>: Wenhao Guan, Jiaxin Ye, Haitao Li 등 (상하이자오퉁대학, 샤먼대학, 상하이 혁신연구원 등 소속)</li>
+<li><strong>출처</strong>: arXiv:2611.20254v1 [eess.AS] (2026년 11월 15일)</li>
+<li><strong>프로젝트 페이지</strong>: https://voxdance.github.io/voxmel-demo (GitHub: https://github.com/VoxDance-Lab/VoxMel)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.20254">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>멜 스펙트로그램에 고정된 가역적 2축 Haar 웨이블릿 변환을 적용해, 별도의 학습형 토크나이저 없이도 안정적인 자기회귀(autoregressive) 음성 합성을 가능하게 하는 VoxMel 프레임워크를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>기존의 제로샷 TTS는 코덱 토큰이나 학습된 오토인코더 기반의 연속 잠재표현(latent)을 자기회귀로 생성하는데, 이는 별도로 학습된 인코더의 품질에 합성 성능이 좌우되는 한계가 있다. 멜 스펙트로그램은 토크나이저가 필요 없고 해석 가능하다는 장점이 있지만, 프레임 전체를 그대로 자기회귀 히스토리에 피드백하면 시간적 중복성으로 인해 모델이 텍스트 조건보다 과거 음향 프레임에 의존하게 되고, 샘플링 오차가 누적되는 문제가 있다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>웨이블릿 기반 멜 분해</strong>: 멜 스펙트로그램에 고정·가역적인 2축 Haar 변환을 적용해 주파수 축 먼저, 그 다음 시간 축으로 분해함으로써 Coarse-Mel(핵심 저해상도 시퀀스)과 시간/주파수 잔차(residual)를 분리한다. 언어모델 백본은 Coarse-Mel만 자기회귀로 생성하고, 잔차는 비자기회귀(non-autoregressive) 계층이 별도로 예측한다.</li>
+<li><strong>GRPO 후처리 및 증류</strong>: 플로우 헤드를 고정한 상태에서의 GRPO(Group Relative Policy Optimization) 강화학습이 Seed-TTS-eval의 4개 지표를 모두 개선시킴을 보였다. 또한 가이던스 조건을 흡수한 소수 스텝(2~4 스텝) 증류 모델을 만들어 Coarse-Mel 헤드 연산량을 96회에서 2~4회로 줄였다.</li>
+<li><strong>평가 및 분석</strong>: LibriSpeech test-clean과 Seed-TTS-eval(영어/중국어)에서 제로샷 합성 성능을 평가하고, 잔차를 히스토리에서 제외하는 것이 텍스트 의존도와 종단간 성능에 미치는 영향을 어블레이션으로 분석했다.</li>
+</ul>
+<h2>방법론</h2>
+<p>Haar 변환은 인접한 시간 프레임 쌍 또는 주파수 채널 쌍을 평균(저주파 성분)과 절반 차이(잔차)로 나누는 가역 연산이다. 멜 스펙트로그램에 먼저 주파수축 분해를 적용해 Frequency-Averaged Mel과 주파수 잔차를 얻고, 다시 시간축으로 분해해 Coarse-Mel과 시간 잔차를 얻는다. Qwen2.5-0.5B를 백본으로 하는 디코더 전용 트랜스포머가 플로우 매칭(flow-matching) 헤드를 통해 Coarse-Mel을 한 스텝씩 자기회귀 생성하고, 별도의 비자기회귀 트랜스포머 두 개가 시간 잔차와 주파수 잔차를 각각 복원한다. 두 잔차 모두 자기회귀 히스토리에는 피드백되지 않는다. 학습은 조건부 플로우 매칭 손실을 사용하며, 분류기 없는 가이던스(classifier-free guidance)를 텍스트와 화자 프롬프트 각각에 대해 독립적으로 드롭아웃시켜 2단계 가이던스 스케일을 적용한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Emilia 데이터셋 10만 시간으로 0.6B 규모 모델을 학습했다. Seed-TTS-eval test-en 기준 지도학습 모델은 WER 1.51%, SIM 0.738을 기록했고, GRPO(고정 헤드) 적용 후 WER 1.15%, SIM 0.753으로 개선되었다. test-zh에서는 CER이 1.29%에서 1.17%로, SIM은 0.755에서 0.776으로 향상되었다. 4-스텝 증류 모델은 Coarse-Mel 헤드 연산을 24배 줄이면서도 WER/CER 면에서 지도학습 모델과 비슷한 수준을 유지했다. 모델 크기를 0.15B에서 0.6B로 늘릴수록 WER과 SIM이 함께 개선되는 스케일링 경향도 확인했다.</p>
+<h2>한계점</h2>
+<p>저자들은 Haar 분해를 한 번만 적용했고 다른 깊이나 웨이블릿 계열은 검토하지 않았다고 밝혔다. 평가도 영어·중국어의 짧은 단일 화자 발화에 국한되어 있으며, 성조 언어(중국어 제외), 복잡한 형태론을 가진 언어, 장문 합성, 다중 화자 대화, 감정 표현, 노래, 코드 스위칭 등은 다루지 않았다. 또한 음성 외 음악이나 일반 오디오 도메인으로의 확장은 향후 과제로 남겼다.</p>
+<h2>시사점</h2>
+<p>제로샷 음성 복제 기술은 사칭이나 비동의 음성 합성, 화자 검증 시스템 우회 등에 악용될 수 있어, 저자들은 학습 데이터 출처 공개, 허용 용도 명시, 워터마킹 및 합성 음성 탐지와 같은 안전장치 마련이 필요하다고 언급했다. 기술적으로는 토크나이저 없이도 멜 스펙트로그램을 안정적인 자기회귀 타깃으로 쓸 수 있음을 보여, 향후 경량 음성 합성 시스템 설계에 참고가 될 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.20254" target="_blank" rel="noopener">huggingface.co/papers/2611.20254</a> · 2026-11-18</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

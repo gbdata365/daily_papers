@@ -1,0 +1,107 @@
+<meta charset="UTF-8">
+<title>올록플로우</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#3 · Daily Papers 2026-11-18</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 67</span>
+    </div>
+    <h1 class="article-title">AllocFlow: End-to-End Portfolio Trading Action Generation from Raw Market Data</h1>
+    <p class="article-title-ko">올록플로우: 원시 시장 데이터로부터의 종단간 포트폴리오 트레이딩 액션 생성</p>
+    <p class="article-sub">원시 시장 데이터로부터 포트폴리오 전체의 매매 포지션을 한 번에 생성하는 플로우 매칭(flow matching) 기반 생성 모델로, 모방학습과 강화학습을 결합해 기존 알파 발굴 파이프라인보다 높은 수익률과 위험 대비 성과를 달성했다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.19937" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.19937" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: AllocFlow: End-to-End Portfolio Trading Action Generation from Raw Market Data</li>
+<li><strong>저자</strong>: Annan Wang, Yuchen Xie 등 (Nanyang Technological University, Stanford University, MIT 공동 연구)</li>
+<li><strong>출처</strong>: arXiv:2611.19937v1 [cs.LG] (2026년 11월 15일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://allocflow.github.io">allocflow.github.io</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.19937">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>원시 시장 데이터로부터 포트폴리오 전체의 매매 포지션을 한 번에 생성하는 플로우 매칭(flow matching) 기반 생성 모델로, 모방학습과 강화학습을 결합해 기존 알파 발굴 파이프라인보다 높은 수익률과 위험 대비 성과를 달성했다.</p>
+<h2>배경 및 문제의식</h2>
+<p>기존 포트폴리오 운용은 시세 예측(포캐스팅)과 포지션 배분(포트폴리오 구성)을 분리된 파이프라인으로 처리해, 개별 자산의 예측 신호를 포트폴리오 전체 목표와 정렬시키지 못하는 한계가 있었다. 또한 자산 간 상관관계와 자본 제약을 동시에 고려한 코디네이트된 포지션 결정이 필요한데, 이를 처음부터 연속적인 행동 공간에서 강화학습만으로 학습하는 것은 샘플 비효율적이고 불안정하다.</p>
+<h2>핵심 기여</h2>
+<p>논문은 세 가지 기여를 제시한다. (1) 동결된(frozen) 금융 파운데이션 모델 인코더의 시장 표현을 조건으로, 크로스에셋(cross-asset) 플로우 트랜스포머가 모든 자산의 부호 있는 목표 포지션 벡터를 한 번에 생성하는 end-to-end 구조. (2) 모방학습으로 초기 정책을 학습시킨 뒤, 그룹 상대적 강화학습(Flow-GRPO)으로 포트폴리오 단위 재무적 보상을 활용해 정책을 정교화하는 2단계 학습 절차. (3) 강화학습 정교화 후 모델이 교사(teacher) 전략의 성과를 모든 지표에서 능가함을 입증.</p>
+<h2>방법론</h2>
+<p>AllocFlow는 Kronos라는 동결된 금융 파운데이션 모델을 사용해 각 자산의 OHLCV(시가·고가·저가·종가·거래량) 이력을 토큰으로 압축하고, 이를 조건으로 DiT(Diffusion Transformer) 스타일의 플로우 헤드가 노이즈에서 시작해 반복적인 오일러 스텝을 통해 연속적인 목표 포지션 벡터(signed weights)를 생성한다. 1단계(모방학습)에서는 AgenticAlpha라는 교사 전략(AlphaGen과 AlphaSAGE의 알파를 결합)이 생성한 포지션을 플로우 매칭 손실과 점수·가중치·순위·총노출 보조 손실로 모사해 구조화된 초기 분포를 형성한다. 2단계(강화학습)에서는 Flow-GRPO를 사용해 동일한 시장 경로에서 여러 후보 포트폴리오를 생성하고 24시간 보유 후의 포트폴리오 단위 금융 보상(수익/변동성 기반 점수)으로 비교해 정책을 업데이트하며, 모방학습된 정책을 동결된 레퍼런스로 삼아 급격한 이탈을 억제한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>시간 단위(hourly)로 거래되는 암호화폐 무기한 선물(perpetual futures) 시장에서, 매주 거래량 기준 상위 20개 자산으로 구성된 유니버스를 대상으로 2024년 11월~2025년 12월 구간에서 평가했다. 모방학습 단계의 연율화 순수익률 27.79%, 칼마 비율(Calmar ratio) 0.955에서, 강화학습 정교화 후 순수익률 51.38%, 칼마 비율 4.043으로 크게 개선되었으며 최대 낙폭(MDD)도 29.10%에서 12.81%로 감소했다. 이는 비교 대상 알파 발굴 베이스라인(AlphaGen, AlphaSAGE, R&amp;D-Agent-Quant, AlphaAgent) 중 가장 우수한 칼마 비율(1.720)을 큰 폭으로 상회하는 수치다. 2026년 1~6월의 추가 미공개(out-of-sample) 6개월 데이터에서도 재학습 없이 칼마 비율 4.90을 달성해 성능이 유지됨을 보였다. 다양한 어블레이션 실험을 통해 플로우 트랜스포머 헤드, Kronos 인코더, 모방학습 초기화, 그룹 상대적 강화학습 각각이 성능에 필수적임을 확인했다.</p>
+<h2>한계점</h2>
+<p>논문에 명시된 한계로는, 평가가 암호화폐 무기한 선물이라는 특정 자산군에 한정되어 있고, 보상 설계에서 총노출이나 수수료를 직접 반영하면 오히려 배포 성능이 저하되는 트레이드오프가 존재한다는 점이 있다. 또한 자산 베타 중립성이나 명시적 리스크 상한은 평가된 디코더에 포함되어 있지 않다고 밝히고 있다.</p>
+<h2>시사점</h2>
+<p>개별 신호 예측과 포트폴리오 구성을 분리하던 기존 방식 대신, 원시 시장 데이터에서 포트폴리오 전체 행동을 직접 생성하는 end-to-end 생성 모델이 실제 거래 성과(수익률, 낙폭, 샤프·칼마 비율)에서 우위를 보일 수 있음을 실증했다는 점에서, 금융 의사결정에 생성형 AI와 강화학습을 결합하는 방향에 참고가 될 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.19937" target="_blank" rel="noopener">huggingface.co/papers/2611.19937</a> · 2026-11-18</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

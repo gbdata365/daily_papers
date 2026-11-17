@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>Accelerate Bench</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#10 · Daily Papers 2026-11-18</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 16</span>
+    </div>
+    <h1 class="article-title">Accelerate Bench: Evaluating Agents for Application-Level Program Optimization</h1>
+    <p class="article-title-ko">Accelerate Bench: 응용 프로그램 수준 최적화를 위한 에이전트 평가</p>
+    <p class="article-sub">코딩 에이전트가 과학 응용 프로그램 전체를 빌드·실행 설정까지 포함해 얼마나 잘 고속화할 수 있는지를 평가하는, 32개 CPU 최적화 과제로 구성된 벤치마크 Accelerate Bench를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.20882" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.20882" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Accelerate Bench: Evaluating Agents for Application-Level Program Optimization</li>
+<li><strong>저자</strong>: Bowen Liu, Yuhan Li, Nuo Chen 등 (Tencent Hy Team, HKUST, HKUST(광저우), Tsinghua University, Peking University 공동 연구)</li>
+<li><strong>출처</strong>: arXiv:2611.20882v1 [cs.AI] (2026년 11월 16일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://acceleratebench.com/">acceleratebench.com</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.20882">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>코딩 에이전트가 과학 응용 프로그램 전체를 빌드·실행 설정까지 포함해 얼마나 잘 고속화할 수 있는지를 평가하는, 32개 CPU 최적화 과제로 구성된 벤치마크 Accelerate Bench를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>기존 성능 최적화 벤치마크(GSO, SWE-Perf 등)는 사람이 만든 과거 커밋이나 패치를 기준으로 삼아 "어디를 고쳐야 하는지"가 이미 암시되어 있는 경우가 많다. 그러나 실제 응용 프로그램 최적화는 코드, 빌드 설정, 런타임 구성 등 소프트웨어 스택 여러 층위에 걸친 개입이 필요하며, 어디에 병목이 있고 무엇을 바꿔야 하는지를 에이전트가 스스로 찾아내야 한다. 저자들은 "요구되는 계산과 워크로드만 명시되고 정답 최적화 패치는 주어지지 않는" 설정에서 에이전트의 성능을 측정하고자 한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>6개 슈퍼컴퓨팅 경진대회(ASC, PAC, IPCC, SCC, ISC, IndySCC)에서 가져온 과학 응용 프로그램을 기반으로, 8개 응용 영역에 걸친 32개의 "워크로드 정의형" CPU 최적화 과제로 구성된 벤치마크를 구축했다.</li>
+<li>각 과제는 정확성 요구사항, 타이밍 기준, 허용된 수정 범위를 지정하고, 공개 테스트로 반복 개발을 지원하며, 별도의 비공개 검증기(verifier)가 최종 제출물을 채점한다.</li>
+<li>16개의 코딩 에이전트(모델+하네스 조합)를 벤치마크 v1.1에서 평가했고, 이와 별도로 5개 에이전트의 실행 궤적(trajectory)을 분석해 에이전트들이 실제로 "무엇을 바꾸고", "어떻게 테스트하며", "최적화 선택들이 서로 어떻게 상호작용하는지"를 분석했다.</li>
+</ul>
+<h2>방법론</h2>
+<p>각 과제는 동작하는 기준 구현(baseline), 빌드·실행 스크립트, 허용된 수정 디렉터리, 자원 제한이 걸린 컨테이너 환경으로 제공된다. 에이전트는 최대 8시간 동안 반복적으로 코드를 수정·빌드·실행·검증할 수 있으며, 공개 테스트에서는 러닝타임과 정확성 여부만 확인할 수 있고 실제 채점 기준(검증 코드)은 볼 수 없다. 평가 지표인 Score@1은 과제별 보상 $r_t(a) = C_t(a)\max(0, 1-T_t(a)/B_t)$(정답일 때 기준 대비 단축된 실행시간 비율)의 32개 과제 평균이다. 또한 $\tau$-배속 달성 과제 비율($A_{1.25}$, $A_2$), 기하평균 속도향상(GM) 등의 보조 지표를 사용했다. 별도로 GPT-5.6 Luna와 DeepSeek-V4.1-Flash를 활용해 480개 실행 궤적에 라벨을 붙여 어떤 최적화 기법(계산/재사용, 병렬화/벡터화, 컴파일러/빌드 튜닝 등)을 사용했는지 자동 분류했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Claude Sonnet 5.5와 Claude Opus 5.5가 각각 Score@1 67.4%, 59.4%로 다른 14개 에이전트(25.5%~49.2%)를 10포인트 이상 앞섰다. 그러나 대부분의 에이전트가 과제의 26~32개를 정답으로 제출해 정확성만으로는 에이전트를 구분하기 어려우며, 속도향상의 크기가 실제 차이를 만든다: 상위 두 에이전트는 32개 과제 중 22개 이상에서 2배 이상 빨라진 반면, 나머지 14개 에이전트는 8~17개 과제에서만 2배 속도를 달성했고, 정답으로 채점된 412개 결과 중 125개는 1.25배에도 못 미쳤다. 궤적 분석에서는 에이전트가 계산/재사용 변경(476개 라벨된 실행 중 225개)과 병렬화/벡터화(132개)를 가장 많이 사용했으나 컴파일러·빌드 튜닝은 40개에 그쳤고, 동일한 소스 코드도 빌드·런타임 설정만으로 0.29배~2.12배까지 실행시간이 달라지는 등 최적화 선택들 간 상호작용이 크다는 점을 확인했다.</p>
+<h2>한계점</h2>
+<p>평가는 지정된 규모와 자원 예산 내 CPU 워크로드로 한정되며, 속도향상은 과제가 제공한(각기 다른 수준으로 튜닝된) 기준 구현 대비 상대값이다. 일부 과제(HPCG 기반 과제 등)는 직접적인 해법이 존재해 구조를 악용한 속도향상이 가능하다. 점수는 모델 자체 능력과 하네스(harness)·추론 연산량·실행 조건이 혼합된 결과이며, 궤적 분석은 5개 에이전트, 7개 응용 프로그램의 31개 버전 이력 샘플에 기반한 관찰로 전체 실행에 대한 발생 빈도 추정치는 아니다.</p>
+<h2>시사점</h2>
+<p>이 벤치마크는 코딩 에이전트의 실제 적용 가능성을 "정답이 주어지지 않은" 현실적인 성능 엔지니어링 과제로 평가함으로써, 단순 정확성 지표를 넘어 최적화의 질과 일관성을 드러낸다. 빌드/런타임 설정과 코드 변경 간의 상호작용을 자동으로 발견·활용하는 능력이 앞으로 코딩 에이전트의 중요한 차별화 요소가 될 수 있음을 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.20882" target="_blank" rel="noopener">huggingface.co/papers/2611.20882</a> · 2026-11-18</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

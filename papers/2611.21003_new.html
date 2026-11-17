@@ -1,0 +1,113 @@
+<meta charset="UTF-8">
+<title>K2-Horizon</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#2 · Daily Papers 2026-11-18</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 69</span>
+    </div>
+    <h1 class="article-title">K2-Horizon: A Frontier Fleet of Open Source Language Models</h1>
+    <p class="article-title-ko">K2-Horizon: 오픈소스 언어모델 프런티어 플릿</p>
+    <p class="article-sub">0.9B 밀집 모델부터 375B(활성 23B) MoE까지 6종으로 구성된 완전 오픈소스 언어모델 패밀리를, 체크포인트·학습 데이터·코드 전체를 공개하며 제시한 기술 보고서.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.21003" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.21003" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: K2-Horizon: A Frontier Fleet of Open Source Language Models</li>
+<li><strong>저자</strong>: K2 Team, Institute of Foundation Models (Mohamed bin Zayed University of Artificial Intelligence) — Hector Liu, Eric Xing 외 다수</li>
+<li><strong>출처</strong>: arXiv:2611.21003v1 [cs.AI] (2026-11-16)</li>
+<li><strong>프로젝트 페이지</strong>: https://ifm.ai/k2/</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.21003">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>0.9B 밀집 모델부터 375B(활성 23B) MoE까지 6종으로 구성된 완전 오픈소스 언어모델 패밀리를, 체크포인트·학습 데이터·코드 전체를 공개하며 제시한 기술 보고서.</p>
+<h2>배경 및 문제의식</h2>
+<p>오픈 가중치 모델은 많지만 그 뒤에 숨은 데이터, 중간 학습 상태, 설계 결정은 거의 공개되지 않는다. 저자들은 전작 K2-V2의 "완전 공개" 철학을 사전학습부터 중간학습(mid-training), 후속학습(post-training), 배포에 이르는 전체 생애주기로 확장해, 재현 가능한 프런티어급 모델 개발 레시피를 제공하고자 한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>아키텍처</strong>: 전 모델군에 적용되는 Grouped RMSNorm(기존 RMSNorm을 차원 그룹 단위로 나누어 출력 크기 상한을 통제해 학습 안정성 향상)과, 36B-A4B 모델에 도입된 Mixture-of-Value Attention(MoVA, 어텐션의 value projection 자체에 MoE 라우팅과 SiLU 비선형성을 적용), softplus 기반 어텐션 게이트(기존 sigmoid 게이트와 달리 상한이 없어 증폭도 가능).</li>
+<li><strong>사전학습/중간학습</strong>: 밀집·희소 아키텍처 4개 모델(3.7B, 7B, 32B, 36B-A4B)을 동일한 22조 토큰 코퍼스로 학습해 규모·희소성 간 통제된 비교가 가능하도록 설계. 전체 사전학습 토큰의 약 10조 개가 합성 데이터.</li>
+<li><strong>데이터/공개 자산</strong>: 6개 모델, 380개 체크포인트, 23개 양자화 빌드, 21.6TB 학습 데이터, 58개 학습 run, 17개 코드 저장소를 공개.</li>
+<li><strong>후속학습</strong>: 375B 플래그십은 검색·지식작업·툴사용·과학적 추론·명령어 준수(기각 포함) 5개 영역별 RL 전문가를 학습한 뒤 가중치 병합(ISO-RAM)으로 단일 모델로 합치고 SFT로 마무리.</li>
+<li><strong>추론 가속</strong>: 별도의 draft 모델 없이 디코딩을 최대 2.2배 가속하는 무손실 확산 어댑터 Uno 도입.</li>
+</ul>
+<h2>방법론</h2>
+<p>Grouped RMSNorm은 특징 차원을 k개 그룹으로 나눠 그룹별로 RMS 정규화를 수행해 출력 크기 상한을 좁힌다. MoVA는 어텐션의 단일 value projection을 다수의 value 전문가 중 일부를 라우팅으로 선택·결합(SiLU 비선형 적용)하는 방식으로 대체해, KV 캐시 크기 증가 없이 MoE의 이점을 어텐션에도 적용한다. softplus 게이트는 β 파라미터로 조절되는 양의 무상한 게이트로, 초기화 시 항등함수에 가깝게 동작하면서도 sigmoid보다 표현력이 크다. 사전학습 하이퍼파라미터는 AdamW 타임스케일과 학습률의 모델 크기별 거듭제곱 법칙(η∝N^(-1/2))으로 소규모 실험을 거쳐 전이했으며, 로스 스파이크를 로컬 z-점수로 탐지해 체크포인트 롤백으로 대응하는 모니터링 체계를 운영했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>375B-A23B는 비슷한 시기 공개된 GLM-5.2, MiniMax M3, Nemotron 3 Ultra, Inkling 등 오픈 가중치 모델과 비교해 더 적은 파라미터로 대부분의 에이전틱·코딩 벤치마크(Toolathlon-Verified, SWE-Bench Pro 등)에서 1~2위를 기록했으며, GPT-5.6 Terra를 능가하고 GPT-5.6 Luna에 근접했다. 36B-A4B(MoE+MoVA)는 활성 파라미터가 1/7에 불과함에도 동일 데이터로 학습한 32B 밀집 모델과 MMLU·GSM8K·HellaSwag·HumanEval에서 1.2~3.7점 차이로 근접했다. 수학 연구 리뷰(논문 오류 탐지) 벤치마크에서도 다수의 폐쇄형 모델과 경쟁력 있는 이슈 회수율을 보였다.</p>
+<h2>한계점</h2>
+<p>안전성 평가에서, 챗 환경에서는 대형 모델일수록 명백한 유해 요청 거부율이 높지만(0.976) 작은 모델로 갈수록 점차 낮아진다(0.873). 반면 에이전틱(툴 사용) 환경에서는 챗 단계의 거부 학습이 부분적으로만 전이되며, 모델이 위험을 어휘적으로만 인식하고 의미적으로 인식하지 못해 선량한 프레이밍이나 신뢰되지 않는 콘텐츠, 단계적 escalation으로 쉽게 우회된다. 코드 실행·파일시스템 접근 등 행동 기반 공격에는 모델 크기가 커져도 방어력이 거의 향상되지 않는다. 저자들은 무인·광범위 권한의 에이전틱 사용은 어떤 크기에서도 현재 결과로 뒷받침되지 않는다고 명시한다. CBRN 위험, 기만, 설득 등 프런티어 리스크는 평가 범위 밖이다.</p>
+<h2>시사점</h2>
+<p>단일 기업 수준의 자원으로 사전학습부터 배포까지 전 과정을 투명하게 공개함으로써, 희소성·스케일에 따른 통제된 비교 연구와 재현 가능한 프런티어 모델 개발 레시피 연구를 가능케 한다. 동시에 에이전틱 안전성은 모델 크기만으로 해결되지 않는 "레시피 속성"이라는 점을 보여주어, 향후 에이전트 배포 시 사람 개입 및 권한 제한 등 외부 안전장치의 필요성을 강조한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.21003" target="_blank" rel="noopener">huggingface.co/papers/2611.21003</a> · 2026-11-18</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

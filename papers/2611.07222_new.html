@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>스필웨이</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#5 · Daily Papers 2026-11-18</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 49</span>
+    </div>
+    <h1 class="article-title">SPILLWAY: Separating Target Admission from Sanitization to Defend Tool-Using Agents against Prompt Injection</h1>
+    <p class="article-title-ko">스필웨이: 목적지 승인과 새니타이제이션의 분리로 도구 사용 에이전트를 프롬프트 인젝션으로부터 방어하기</p>
+    <p class="article-sub">도구를 사용하는 LLM 에이전트를 간접 프롬프트 인젝션으로부터 지키기 위해, "어디로 행동이 나가도 되는가(egress)"를 결정하는 모델-없는 규칙 기반 체크와 "에이전트가 무엇을 읽는가(ingress)"를 정리하는 결정적 새니타이저를 분리해 결합한 방어 기법 SPILLWAY를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.07222" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.07222" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: SPILLWAY: Separating Target Admission from Sanitization to Defend Tool-Using Agents against Prompt Injection</li>
+<li><strong>저자</strong>: Woosang Lim (SAINT Machines, KAIST), Yeseul Chang, Jaewoo Lee (Chung-Ang University)</li>
+<li><strong>출처</strong>: arXiv:2611.07222v2 [cs.CR] (2026-11-16)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://saintmachines.github.io/spillway">saintmachines.github.io/spillway</a>, 코드: <a href="https://github.com/saintmachines/spillway">github.com/saintmachines/spillway</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.07222">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>도구를 사용하는 LLM 에이전트를 간접 프롬프트 인젝션으로부터 지키기 위해, "어디로 행동이 나가도 되는가(egress)"를 결정하는 모델-없는 규칙 기반 체크와 "에이전트가 무엇을 읽는가(ingress)"를 정리하는 결정적 새니타이저를 분리해 결합한 방어 기법 SPILLWAY를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>이메일, 파일, 결제 등 외부 도구를 다루는 에이전트는 웹페이지나 공유 문서, 이메일 본문처럼 공격자가 작성할 수 있는 텍스트를 읽다가 숨겨진 지시를 실행해버리는 간접 프롬프트 인젝션에 취약하다. 기존 런타임 방어들은 대부분 또 다른 모델 호출을 추가해 공격자가 작성한 텍스트를 다시 읽게 하거나(MELON, Progent, DRIFT), 작업을 먼저 계획·라우팅하는 플래너 모델에 의존한다(ROPE, CaMeL). 저자들은 "행동의 목적지(target)가 어디서 왔는가"는 도구가 반환하는 타입이 있는 필드(이메일 발신자, 결제 수신 계정 등)만 보면 모델 없이도 판별할 수 있다는 점에 착안한다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>타입이 있는 도구 반환값만으로 행동 목적지를 허용/차단하는 결정적 "egress 바닥(floor)" 제시 — 별도의 per-task 라우팅 모델 없이 12개 백본×스위트 조합 모두에서 공격 성공률 0 달성.</li>
+<li>새니타이저(ingress)가 제거한 영역을 판정 모델(judge)이 다시 열람하지 못하도록 결합한 구조 — 새니타이저 없이 judge만 두면 공격자 계정으로의 송금을 허용해버리는 취약점을 실험으로 확인.</li>
+<li>라우팅 기반 방어(ROPE)와의 정면 비교 — SPILLWAY는 7개 위임 라우팅 스위트 전부와 ChatInject 두 스위트에서 공격 성공률 0이면서 더 높은 유용성을 유지, 에이전트 자신이 라우터 역할을 하면 ROPE는 누출이 발생.</li>
+</ol>
+<h2>방법론</h2>
+<p>SPILLWAY는 두 개의 경계를 지킨다. (A) Egress gate: 제안된 도구 호출의 목적지 값이 신뢰된 타입 ID 인덱스(읽기 전용 도구가 반환한 이메일/URL/계정 등)에 있고 사용자 평문에 반복되지 않았으면 허용하고, 그 외에는 위임 규칙이나 2단계(two-view) judge를 거쳐야만 통과한다(Algorithm 1). (B) Ingress 새니타이저: 모델이 읽기 전 위조된 채팅 템플릿 턴, 지시문 형태의 블록, 공격자가 꾸민 계좌 변경 주장을 결정적 규칙으로 찾아 placeholder로 치환하고 제거된 영역을 증거로 보관한다. 거부된 목적지가 이 제거 영역 안에 있으면 judge에게 다시 묻지 않는 "span veto"로 judge의 재열람을 차단한다. judge는 온도 0의 로컬 모델이며, 판정이 애매하면 무조건 거부(fail-closed)한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>AgentDojo(4개 스위트×3개 백본: gpt-4o-mini, qwen3-coder:30b, qwen3:8b)의 표준 공격과, ChatInject·AutoDojo 최적화 인젝션·공개된 강화학습 공격기 PISmith를 포함한 스트레스 테스트, 그리고 AgentDyn 기반 위임 라우팅 세팅에서 평가했다. SPILLWAY는 표준 공격의 12개 셀 전부에서 공격 성공률(in-scope ASR) 0을 기록한 유일한 방어였으며, 공격을 받는 상황에서의 유용성(UAU)도 가장 높았다(0.489, 무방비 에이전트는 0.489 중 0.539). 위조 채팅 템플릿 공격(ChatInject)에서도 원시(raw) 공격 성공 0, 공개 RL 공격기 PISmith 아래서도 평균 ASR 0.005로 비교 대상 중 최저 수준을 보였다. 모델 호출 비용 측면에서도 벤치마크당 judge 호출이 0.43회 이하로 MELON·DRIFT·Progent 대비 훨씬 적은 추가 호출만 발생했다.</p>
+<h2>한계점</h2>
+<p>SPILLWAY의 보장은 "신원(identity) 목적지"에 국한된다. 즉, 인젝션이 사용자의 기존 연락처나 실제 결제 대상처럼 이미 신뢰된 신원으로 행동을 유도하는 경우는 이 가드의 범위 밖이며, 도구 출력에 그대로 나타나지 않는(verbatim하지 않은) 목적지도 핵심 보장(P1) 밖에 있다. 목적지 역할은 벤치마크마다 한 번씩 수작업으로 정의한 어휘집(lexicon)에서 오므로, 새로운 도구 집합에는 이 어휘집을 새로 작성해야 한다. 또한 floor는 분류기가 아니라 집합 조회(set lookup)이므로 인젝션 문구 자체를 바꾸는 것은 막지 못하며, 적응형 공격자가 노릴 수 있는 지점(judge, 위임 규칙, 어휘집)은 저자들도 한계로 명시한다.</p>
+<h2>시사점</h2>
+<p>개인 비서형 AI 에이전트가 사용자의 메일·캘린더·결제를 실제로 조작하게 되면서, 프롬프트 인젝션 방어가 모델 호출을 늘리지 않으면서도 구조적으로 안전성을 보장할 수 있다는 점을 보여준다. 도구가 이미 제공하는 타입 정보를 활용해 별도의 라우팅 모델 없이 결정적으로 공격을 차단할 수 있다는 아이디어는, 향후 MCP 기반 에이전트 생태계 전반에 가볍게 적용 가능한 보안 계층으로 확장될 잠재력을 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.07222" target="_blank" rel="noopener">huggingface.co/papers/2611.07222</a> · 2026-11-18</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

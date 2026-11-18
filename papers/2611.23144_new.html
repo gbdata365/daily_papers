@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>π⁴</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#12 · Daily Papers 2026-11-19</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 12</span>
+    </div>
+    <h1 class="article-title">π⁴: A Foundation Model for 4D Scene Geometry and Motion</h1>
+    <p class="article-title-ko">π⁴: 4D 장면 기하학과 모션을 위한 파운데이션 모델</p>
+    <p class="article-sub">단일 이미지, 순서 없는 이미지 모음, 비디오 등 어떤 형태의 비정렬(uncalibrated) RGB 입력이든 한 번의 순전파(forward pass)만으로 조밀한 3D 기하, 카메라 포즈, 실제 스케일, 2D/3D 포인트 트랙, 움직이는 객체 마스크까지 함께 복원하는 약 0.5B 파라미터 규모의 통합 4D 파운데이션 모델 π⁴를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.23144" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.23144" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: π⁴: A Foundation Model for 4D Scene Geometry and Motion</li>
+<li><strong>저자</strong>: Yifan Wang, Weiguang Zhao 등 (Shanghai Artificial Intelligence Laboratory, Shanghai Jiao Tong University, Zhejiang University)</li>
+<li><strong>출처</strong>: arXiv:2611.23144v1 [cs.CV] (2026년 11월 17일)</li>
+<li><strong>프로젝트 페이지</strong>: Project Page, Code, Hugging Face Demo (구체적 URL은 논문에 명시되지 않음)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.23144">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>단일 이미지, 순서 없는 이미지 모음, 비디오 등 어떤 형태의 비정렬(uncalibrated) RGB 입력이든 한 번의 순전파(forward pass)만으로 조밀한 3D 기하, 카메라 포즈, 실제 스케일, 2D/3D 포인트 트랙, 움직이는 객체 마스크까지 함께 복원하는 약 0.5B 파라미터 규모의 통합 4D 파운데이션 모델 π⁴를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>최근 피드포워드(feed-forward) 모델들은 RGB 관측으로부터 직접 장면을 복원하는 패러다임을 확립했고, 이 패러다임은 모션 복원까지 확장되는 추세다. 그러나 장면 내용, 카메라 구성, 시간적 연속성, 입력 개수가 전혀 제약되지 않는 '실제 환경(in-the-wild)' 입력에 대해 고품질 기하 복원과 모션 복원을 동시에 안정적으로 달성하는 것은 여전히 큰 실용적 난제다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>기하(geometry) 브랜치와, 기하 정보에 조건화된 모션(motion) 브랜치를 결합해 하나의 공유 백본으로 기하·모션·세그멘테이션을 모두 처리하는 약 0.5B 파라미터 규모의 경량 통합 모델 구조.</li>
+<li>이미지 공간에서 대응점(correspondence)을 예측한 뒤 복원된 목표 뷰 기하로 3D에 들어올리는(lift) 방식으로, 장면 스케일에 독립적인 단순한 대응 목적함수를 구성.</li>
+<li>건축·대규모 장면 자산 렌더링, 전경이 두드러진 인터넷 비디오에 대한 전경 억제 기반 배경 기하 추정 등, 기하·카메라 커버리지 공백을 메우는 데이터 구축 파이프라인과 학습 레시피.</li>
+<li>최대 64개 뷰로만 학습했음에도 수천 장의 입력 이미지를 가진 대규모 장면까지 일관되게 처리할 수 있는 일반화 능력.</li>
+</ul>
+<h2>방법론</h2>
+<p>공유된 DINOv3 인코더가 중간 및 후반부 레이어 특징을 결합해 기하·모션 두 디코더에 특징을 제공한다. 두 디코더 모두 동일한 블록 쌍(프레임 어텐션 + 교차 뷰 어텐션)을 반복 적용하며 가중치를 공유하는 '루프형(looped) 트랜스포머' 구조를 사용하되, 두 브랜치의 파라미터는 서로 독립적이다. 기하 브랜치는 π³의 순열 등변(permutation-equivariant) 설계를 그대로 유지해 특정 기준 뷰를 지정하지 않으며, 카메라-월드 포즈·깊이·신뢰도·공유 스케일을 예측하고, 이어서 희소(sparse) 3D 정제기(refiner)가 세부 표면 구조를 개선한다. 모션 브랜치는 기하 브랜치를 동결한 채로 별도 학습되며, 공간적 적응 레이어 정규화(spatial AdaLN)를 통해 분리된(detached) 기하 특징으로 조건화된다. 모션 추정은 이미지 공간에서의 대응점 예측으로 유지되고, 이를 복원된 목표 뷰의 미터 단위 포인트맵에 샘플링하여 3D로 들어올리는 방식(수식 Yq→i(u) = X_i^metric(U_{q→i}(u)))으로 3D 트랙을 구성한다. 움직이는 객체 마스크는 동결된 SAM 2 이미지 인코더 특징과 모션 리드아웃을 결합해 질의(query)와 무관하게 예측한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>다양한 기하 평가 벤치마크에서 π⁴는 비교 대상 방법들 중 전체 평균 순위가 가장 높았으며, 단일/다중 뷰 2D·3D 포인트 트래킹과 움직이는 객체 세그멘테이션에서도 경쁄력 있는 성능을 보였다. 모델은 공유 백본을 사용함에도 전체 파라미터가 약 0.5B로, 비교 대상 베이스라인 대부분보다 절반 이하 크기다. 공중 촬영, 핸드헬드 촬영, 운전·스포츠 장면, 스타일화된 콘텐츠 등 다양한 실제 환경 입력에서 기하와 모션 복원을 하나의 순전파로 동시에 산출했으며, 학습 시 최대 64개 뷰만 사용했음에도 1,000장 이상의 입력 이미지를 가진 장면까지 처리할 수 있음을 보였다.</p>
+<h2>한계점</h2>
+<p>배경이 약한 텍스처를 가지거나 전경이 시각적으로 두드러지는 경우, 움직이는 전경을 정지된 것으로 잘못 해석해 정지 배경과 불일치하는 복원 결과를 낳는 카메라-객체 모션 모호성이 남아 있다. 또한 복원 원점에서 멀리 떨어진 카메라일수록 위치 오차가 커지는 경향이 있어, 좌표 표현과 이동량의 수치 스케일에 민감할 가능성이 있다. 학습 시 사용한 시퀀스 길이보다 긴 시퀀스에 대해서는 전통적인 기하 최적화 기법의 정확도를 항상 따라잡지 못하며, 전역적으로 일관된 카메라 궤적과 복원을 유지하는 것이 과제로 남아 있다.</p>
+<h2>시사점</h2>
+<p>기하와 모션을 하나의 공유 백본·순전파로 통합하면서도 파라미터 수를 크게 줄일 수 있다는 점은, 대규모 3D/4D 장면 이해를 실시간·경량 응용에 적용하는 데 중요한 실마리를 제공한다. 기하 조건화를 통해 모션을 이미지 공간에서 다루고 사후에 3D로 들어올리는 분리된 설계는, 복잡한 3D 모션 회귀 없이도 스케일에 독립적인 학습 목적함수를 구성할 수 있음을 보여준다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.23144" target="_blank" rel="noopener">huggingface.co/papers/2611.23144</a> · 2026-11-19</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

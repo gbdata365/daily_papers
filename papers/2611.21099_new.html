@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>포스하니스</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#5 · Daily Papers 2026-11-19</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 38</span>
+    </div>
+    <h1 class="article-title">ForceHarness: Turning Force into Action and Physics for Frozen Frontier Models</h1>
+    <p class="article-title-ko">포스하니스: 냉동 프런티어 모델에 힘을 행동과 물리량으로 부여하기</p>
+    <p class="article-sub">추가 학습이나 시연 없이도 가중치가 고정된(frozen) 프런티어 멀티모달 모델이 손목 힘(wrist force)을 이해하고 활용해 접촉이 필요한 로봇 조작 작업을 수행할 수 있게 하는 3계층 하니스 ForceHarness를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.21099" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.21099" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: ForceHarness: Turning Force into Action and Physics for Frozen Frontier Models</li>
+<li><strong>저자</strong>: Ke Sun, Kevin Yuchen Ma, Yike Zhang, Yanzhe Chen, Mike Zheng Shou (Show Lab, National University of Singapore)</li>
+<li><strong>출처</strong>: arXiv:2611.21099v1 [cs.RO] (2026년 11월 16일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://showlab.github.io/ForceHarness">showlab.github.io/ForceHarness</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.21099">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>추가 학습이나 시연 없이도 가중치가 고정된(frozen) 프런티어 멀티모달 모델이 손목 힘(wrist force)을 이해하고 활용해 접촉이 필요한 로봇 조작 작업을 수행할 수 있게 하는 3계층 하니스 ForceHarness를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>GPT-6 Astra와 같은 프런티어 멀티모달 모델은 이미지와 포즈 인터페이스만으로 로봇을 제로샷 제어할 수 있지만, 나사를 조이거나 무게가 비슷한 병을 구분하는 등 많은 조작 작업은 이미지로는 드러나지 않는 접촉력(contact force) 정보에 의존한다. API로만 접근 가능한 고정된(frozen) 모델에 힘 정보를 도입하려면 두 가지 난제가 있다: (1) 접촉은 API 모델의 응답 속도보다 훨씬 빠르게 변하므로 모델 아래에서 폐루프로 힘을 제어해야 하고, (2) 고정된 모델은 원시 힘 신호 스트림을 해석할 수 없으므로 힘을 모델이 추론 가능한 형태로 변환해 돌려줘야 한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>힘 센싱·보정, 자기종결형(self-terminating) 힘 프리미티브, 물리량 변환이라는 세 계층으로 구성되어 시연이나 파인튜닝 없이 고정 모델과 저수준 힘 제어를 연결하는 ForceHarness 제안.</li>
+<li>숨겨진 물리 변수를 포함한 7개 과제로 구성된 MuJoCo 벤치마크 HiddenPhys를 구축해, 전문가 힘 제어기 및 학습 기반 힘 정책과 동일 조건에서 비교 가능하게 함.</li>
+<li>실제 로봇, 공개 벤치마크 ForceBench, HiddenPhys 세 가지 환경에서 실험을 수행해, ForceHarness가 시연 기반 학습 정책과 동일한 하니스의 무(無)힘 버전을 모두 능가함을 입증.</li>
+</ul>
+<h2>방법론</h2>
+<p>최하단 "힘 센싱 및 보정" 계층은 손목 힘/토크 센서 또는 관절 토크(식 1)로부터 손에 가해지는 힘 F를 추정하고 영점 보정을 수행한다. 중간 "자기종결형 힘 프리미티브" 계층은 probe, push, slide, search, insert, wiggle, screw, press_turn, lift·hold, pull 등 총 12개 프리미티브로 구성되며, 각 프리미티브는 어드미턴스 제어(식 3)로 목표 힘을 유지하다가 접촉 이벤트(접촉, 정지, 저항 하락, 힘 한계, 시간 제한)가 발생하면 스스로 종료된다. 모델은 표준 임피던스 컨트롤러 위에서 동작하는 이 프리미티브들을 도구(tool call) 형태로 호출할 뿐, 저수준 제어 루프 자체는 변경하지 않는다. 최상단 "물리 변환 계층"은 각 프리미티브가 남긴 힘 궤적을 페이로드 질량, 마찰, 접촉 높이, 삽입 진행도 등 사람이 해석 가능한 물리량과 불확실도(식 4, 5)로 변환해 모델에게 반환함으로써, 모델이 원시 힘 수치 대신 의미 있는 물리적 양을 근거로 다음 행동을 결정하게 한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>손목 힘/토크 센서가 없는 Franka FR3 실제 로봇에서 6개 접촉 작업(화이트보드 닦기, 나사 조이기, USB 플러그 삽입, 가지 껍질 벗기기, 무게로 병 분류, 촉감으로 단단함 구분)을 수행한 결과, GPT-6 Astra의 제로샷 성공률이 힘 없이 3.3%에서 ForceHarness 적용 시 90.0%로 상승했고, GPT-6.1 Sol도 동일 프롬프트에서 47/60의 성공률을 보였다. 공개 벤치마크 ForceBench에서는 이미지 기반으로 동작하면서 성공률이 70.0%에서 87.5%로 개선되어, 해당 벤치마크에서 시연으로 학습된 힘 인지 정책(최고 35.31%)을 능가했다. 저자들이 구축한 HiddenPhys(7개 과제, 과제당 20개 시드)에서는 GPT-6 Astra가 힘 없이 87/140에서 ForceHarness 적용 시 135/140으로 상승해 손상(damage) 0건을 기록했으며, 이는 손으로 작성한 전문가 힘 제어기(136/140)와 거의 동등하고, 약 200개 시연으로 학습된 Diffusion Policy·π0.5·ForceVLA(65~83/140) 등을 크게 능가했다. Ablation 결과, 자기종결형 프리미티브만으로도 접촉 안전성이 크게 향상되며, 작은 모델일수록 원시 힘 수치보다 하니스가 계산한 물리량이 주어졌을 때 훨씬 나은 결정을 내렸다.</p>
+<h2>한계점</h2>
+<p>모델에 대한 질의(API 호출)마다 수 초의 지연이 발생해 반응적 협응(reactive coordination) 동작은 배제되며, 고정된 도구 메뉴는 새로운 동작 법칙 추가를 제한한다. 또한 ablation 연구는 시뮬레이션(HiddenPhys)에서만 수행되었다.</p>
+<h2>시사점</h2>
+<p>고정된 프런티어 멀티모달 모델도 파인튜닝 없이 보정·자기종결형 제어·물리량 변환을 결합한 하니스만으로 접촉력이 필요한 정밀 조작 작업을 전문가 수준으로 수행할 수 있음을 보여, 모델 자체의 재학습 없이 로봇 하니스 설계만으로 능력을 확장하는 방향성을 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.21099" target="_blank" rel="noopener">huggingface.co/papers/2611.21099</a> · 2026-11-19</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

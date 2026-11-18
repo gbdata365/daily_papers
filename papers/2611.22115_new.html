@@ -1,0 +1,110 @@
+<meta charset="UTF-8">
+<title>싱4(Xing 4)</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#1 · Daily Papers 2026-11-19</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 149</span>
+    </div>
+    <h1 class="article-title">TeleChat to Xing4: Advancing Frontier Agentic Models on Domestic Chips and Frameworks</h1>
+    <p class="article-title-ko">싱4(Xing 4): 국산 칩과 프레임워크 기반 프론티어 에이전틱 모델 고도화</p>
+    <p class="article-sub">중국 화웨이 Ascend NPU와 MindSpore 프레임워크만으로 2850억 파라미터급 MoE 모델을 훈련·서빙할 수 있도록, 아키텍처 설계부터 분산 학습 인프라, 에이전트 강화학습 플랫폼까지 전 과정을 국산화한 TeleChat 후속 모델 Xing 4 시리즈의 기술 보고서.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.22115" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.22115" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: TeleChat to Xing4: Advancing Frontier Agentic Models on Domestic Chips and Frameworks</li>
+<li><strong>저자</strong>: Xingchen AGI Lab, China Telecom</li>
+<li><strong>출처</strong>: arXiv:2611.22115v1 [cs.AI] (2026년 11월 17일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.22115">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>중국 화웨이 Ascend NPU와 MindSpore 프레임워크만으로 2850억 파라미터급 MoE 모델을 훈련·서빙할 수 있도록, 아키텍처 설계부터 분산 학습 인프라, 에이전트 강화학습 플랫폼까지 전 과정을 국산화한 TeleChat 후속 모델 Xing 4 시리즈의 기술 보고서.</p>
+<h2>배경 및 문제의식</h2>
+<p>대부분의 오픈소스 대형언어모델은 GPU 기반으로 훈련되지만, 이 연구는 GPU가 아닌 Ascend 910C NPU와 MindSpore 프레임워크라는 국산(도메스틱) 칩·프레임워크 생태계에서 프론티어급 에이전틱 모델을 훈련하는 데 따르는 시스템적 과제를 다룬다. 긴 문맥 처리 시 KV 캐시 접근 비용 증가, 깊은 네트워크에서 발생하는 비행렬 연산(정규화, 라우팅, 인덱싱 등) 오버헤드로 인한 Ascend 하드웨어 활용도 저하가 핵심 병목으로 지적된다.</p>
+<h2>핵심 기여</h2>
+<p>논문은 세 가지 축의 기여를 제시한다.
+1. <strong>Ascend 지향 아키텍처 설계</strong>: 희소 활성화, 어텐션 설계, 깊이-너비 균형, 추론적 디코딩을 모델 용량·장문맥 요구사항과 Ascend의 행렬 연산·메모리 접근·순차 실행 비용에 연결해 설계 트레이드오프를 명시.
+2. <strong>대규모 사전학습을 위한 분산 시스템 최적화</strong>: 토폴로지 인지형 하이브리드 샤딩(HSDP), 소유자 기반 Muon 옵티마이저 실행, 장시퀀스 워크로드 밸런싱, KV 압축, 활성화 메모리 관리를 통합.
+3. <strong>TeleGym과 통합 강화학습</strong>: 에이전트 실행, 평가, 궤적 생성을 정책 최적화로 연결하는 통합 플랫폼을 도입하고, 비동기 분산 실행과 부분 롤아웃(partial rollout)으로 이질적인 작업 소요 시간을 수용.</p>
+<h2>방법론</h2>
+<p>대표 구성(285B 파라미터, 토큰당 17B 활성화)은 45개 층 중 처음 3개 층을 Dense FFN으로, 나머지를 MoE FFN으로 구성하며, MLA(Multi-head Latent Attention)에 DSA(DeepSeek Sparse Attention)와 IndexShare(교차 층 인덱스 재사용)를 결합해 장문맥에서의 과거 KV 접근과 인덱스 재계산을 줄인다. 디코딩 단계에서는 블록 단위 드래프트 모델, 경량 마르코프 헤드, 수락 신뢰도 헤드로 구성된 DSpark 추론적 디코딩을 적용한다. 학습 인프라는 MindSpore HyperParallel 기반의 HSDP(Hybrid Sharded Data Parallel)로 슈퍼노드 내부는 완전 샤딩, 슈퍼노드 간에는 복제를 수행해 파이프라인 병렬화 없이도 통신 오버헤드를 억제하며, Muon 옵티마이저의 전행렬 직교화 연산을 매트릭스별 소유자(owner) 랭크에 위임해 중복 계산을 제거한다. 또한 연산자 단위 선택적 재계산(선택적 체크포인팅)으로 활성화 메모리를 절감하고, CPU 어피니티·코어 격리로 호스트 스케줄링 지연을 줄인다. 후속 학습 플랫폼 TeleGym은 TeleGym(실행 계층)–중간 서버(상호작용→학습 궤적 변환)–Slime(비동기 정책 최적화)의 3계층 구조로 수학 추론, 코드 생성, 멀티턴 에이전트 과제를 하나의 강화학습 루프로 통합한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>8,192장의 Ascend 910C 카드로 구성된 대규모 프로덕션 클러스터에서 285B 모델을 사전학습했다. 어텐션 설계 비교에서 MLA+DSA+IndexShare 조합은 MLA 단독 대비 프리필 처리량 4.68배, 디코딩 처리량 1.27배를 달성했고, DSpark 추론적 디코딩은 6개 수학·코드 벤치마크에서 기본 설정 대비 2.67~3.77배의 출력 처리량 향상을 보였다(MTP 기반 방식 대비도 1.48~2.10배 우수). 깊이-너비 트레이드오프 실험에서는 60층 구성보다 45층의 넓고 얕은 구성이 디코딩 처리량 1.11배, 훈련 처리량 약 10% 개선을 보여 채택되었다. 1,024 NPU 프로파일링 클러스터 기준으로 HSDP 도입만으로 파이프라인 병렬 기준선 대비 스텝 시간이 12.6%(1.14배) 단축되었고, 여기에 소유자 기반 Muon 실행이 추가로 9.1%, 레이어별 인덱서 역전파 최적화가 15.2%의 스텝 시간 단축을 각각 독립적으로 기여했다. CPU 핀닝과 코어 격리를 함께 적용하면 512장 클러스터에서 1~2%, 8,192장 클러스터에서는 5~10%의 훈련 처리량 향상이 관측되었다.</p>
+<h2>한계점</h2>
+<p>시뮬레이션 기반 성능 모델링(화웨이 Zhanlu 프레임워크)은 실제 프로덕션 서빙의 모든 오버헤드를 완전히 반영하지 못해, 보고된 결과가 실제 엔드투엔드 배포 측정치보다 낙관적일 수 있다고 저자들이 직접 명시한다. 또한 연산 재배치나 배치 커널 사용이 부동소수점 결과를 변화시킬 수 있어, 행렬별 직교화 도메인 선택이 수치적 동일성을 보장하지 않으며 실제 학습 구성에서 런타임·통신량·수치 거동을 별도로 측정해야 한다고 언급한다.</p>
+<h2>시사점</h2>
+<p>이 연구는 GPU 독점에 의존하지 않고도 비(非)엔비디아 국산 하드웨어·프레임워크 생태계에서 트랜스포머 기반 프론티어 모델을 처음부터 끝까지(아키텍처-사전학습-에이전트 후속학습) 구축할 수 있음을 보여주는 사례로서, 하드웨어 다변화 및 지정학적 공급망 제약 상황에서 대형언어모델 인프라 전략을 수립하는 데 참고할 수 있는 구체적 설계 패턴을 제공한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.22115" target="_blank" rel="noopener">huggingface.co/papers/2611.22115</a> · 2026-11-19</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>브레스닥스</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#6 · Daily Papers 2026-11-19</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 32</span>
+    </div>
+    <h1 class="article-title">Breath-Dx: A Time Series Classification Benchmark for Disease Screening with eNose</h1>
+    <p class="article-title-ko">브레스닥스: 전자코 기반 질병 선별 시계열 분류 벤치마크</p>
+    <p class="article-sub">전자코(eNose)를 이용한 날숨 기반 질병 선별을 위해, 1,234명 환자·9개 진단군으로 구성된 최대 규모 공개 임상 eNose 데이터셋 S-OH와, 센서 드리프트를 명시적으로 반영한 시간 분할 평가 프로토콜 위에서 10가지 시계열 분류 기법을 체계적으로 비교하는 벤치마크 Breath-Dx를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.15348" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.15348" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Breath-Dx: A Time Series Classification Benchmark for Disease Screening with eNose</li>
+<li><strong>저자</strong>: Ivan Poddiakov, Ivan Kruzhilov, Galina Zubkova, Svetlana Erofeeva, Andrey Savchenko, Pavel Blinov (Sber AI Lab, Moscow Power Engineering Institute, MONIKI, HSE University, SQB AI)</li>
+<li><strong>출처</strong>: arXiv:2611.15348v1 [cs.LG] (2026년 11월 11일), IEEE ICDM 2026 Best Paper Runner-Up (Applied Track)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/ivanpodd/Breath-Dx">GitHub: Breath-Dx</a>, <a href="https://huggingface.co/datasets/ivanpodd/S-OH">데이터셋 Hugging Face: S-OH</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.15348">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>전자코(eNose)를 이용한 날숨 기반 질병 선별을 위해, 1,234명 환자·9개 진단군으로 구성된 최대 규모 공개 임상 eNose 데이터셋 S-OH와, 센서 드리프트를 명시적으로 반영한 시간 분할 평가 프로토콜 위에서 10가지 시계열 분류 기법을 체계적으로 비교하는 벤치마크 Breath-Dx를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>전자코 기술은 날숨 속 휘발성 유기화합물(VOC)을 분석해 비침습적으로 질병을 선별할 수 있는 잠재력이 있지만, 이 분야는 서로 다른 프로토콜을 사용하는 소규모 비공개 데이터셋에 의존해 왔고, 특히 센서 드리프트(시간 경과에 따른 센서 반응 변화)라는 알려진 실패 모드가 제대로 정량화되지 않아 결과 간 비교가 어렵고 진전이 더딘 상황이었다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>9개 진단군(건강 대조군 포함)에 걸쳐 1,234명의 환자로부터 수집한, 17채널 다변량 시계열로 구성된 최대 규모 공개 임상 eNose 데이터셋 S-OH를 공개.</li>
+<li>센서 드리프트의 영향을 재현 가능하게 정량화한 최초의 벤치마크인 Breath-Dx를 구축하고, 시간 기반 검증에서 무작위 교차검증 대비 0.05~0.12의 AUC 하락이 발생함을 입증해 무작위 교차검증이 부적절함을 보임.</li>
+<li>특징 기반 테이블 학습기, CNN/ResNet 기반 컨볼루션 모델, 그래프 기반(Graphormer), 시계열 특화 모델(LSTM, InceptionTime, TS2Vec) 등 4개 계열·10개 기법에 대한 최초의 체계적 비교를 수행.</li>
+<li>임상 배포를 위한 실행 가능한 통찰을 도출: 간질환·위염에서는 호흡 신호가 인구통계 정보만으로는 얻을 수 없는 독립적 진단 가치를 제공하는 반면(센서 기반 AUC&gt;0.65 대 인구통계만 AUC≈0.5), 폐암·결핵에서는 나이 정보만으로도 센서 기반 모델에 필적하거나 이를 능가(AUC=0.678, 0.803)함을 확인.</li>
+</ul>
+<h2>방법론</h2>
+<p>각 환자는 17채널 다변량 시계열(895초, 0.4Hz, T=358 스텝)로 표현되며, 각 질병에 대해 건강 대조군 및 타 질병 모두를 음성 클래스로 두는 일대다(one-vs-rest) 이진 분류로 문제를 정의한다. 핵심 설계는 수집 주차(week) 단위로 훈련/테스트를 분리하는 시간 분할로, 환자 단위 데이터 누수를 방지하고 질병마다 테스트 구간이 훈련 구간과 시간적으로 떨어지도록 구성해 센서 드리프트에 대한 강건성을 평가한다. 비교 대상 기법은 (i) 공학적 동역학 특징(Stats_5, LogFit_2/4, Polynomial)을 사용하는 CatBoost·XGBoost·HistGradientBoost·RandomForest, (ii) 다항 특징을 이미지처럼 변환해 입력하는 CNN·ResNet18, (iii) 안정적인 8개 채널로 완전 그래프를 구성하고 채널별 커널 통계·체비셰프 다항 계수를 노드/엣지 특징으로 사용하는 Graphormer, (iv) 원시 신호를 직접 입력하는 LSTM·InceptionTime·TS2Vec(비지도 표현학습 후 로지스틱 회귀)이다. 평가지표로는 클래스 불균형에 강건한 ROC AUC를 사용하며, 각 질병·기법에 대해 16회의 무작위 훈련 분할에 걸친 평균과 표준편차를 보고한다. 드리프트 정량화를 위해 전체 데이터로 측정일(1~71일)을 예측하는 CatBoost 모델을 별도로 학습했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>전체 10개 기법 중 폐암(C34)·간염(B18)·COPD(J44)에서 AUC 0.70 전후의 가장 우수한 성능이 나타났으며, InceptionTime이 폐암에서 AUC 0.746, Graphormer가 COPD에서 0.767, CatBoost+Stats_5가 간염에서 0.698로 각각 최고 성능을 보였다. 반면 당뇨병(E11)과 호흡기 결핵(A15)은 거의 모든 기법에서 AUC 0.45~0.55의 우연 수준에 머물렀다. 평균 AUC 순위에서는 LSTM이 가장 높았고(0.598, 9개 질병 중 5개에서 상위 3위 안에 듦), Graphormer(0.556)와 ResNet18+Polynomial(0.551)이 뒤를 이었다. 시간 분할 평가는 무작위 교차검증 대비 모든 질병·기법에서 평균 0.05~0.12의 AUC 하락을 보여, 드리프트가 실제 배포 성능을 과대평가하게 만드는 심각한 요인임이 확인됐다. 측정일 예측 모델은 중앙값 절대오차 2~3일로 센서 신호에 강한 비정상성(드리프트)이 내재함을 재확인했다. 인구통계 분석에서는 성별·연령 계층에 따라 성능이 크게 달랐는데(예: 간염에서 여성 AUC 0.763 대 남성 0.552), 이는 질병별로 모델 성능이 인구통계적 교란 요인의 영향을 받을 수 있음을 시사한다.</p>
+<h2>한계점</h2>
+<p>데이터셋은 두 임상 사이트에서 수집되었지만 동일한 eNose 장비를 사용했기 때문에, 서로 다른 센서 하드웨어나 제조 배치 간 일반화는 검증되지 않았다. 본 벤치마크는 드리프트 보정 기법을 적용하지 않고 기준 성능만을 제공하므로, 도메인 적응이나 자기지도 사전학습 등 드리프트 강건 학습 기법에 대한 평가는 향후 과제로 남겨졌다. 또한 당뇨병·결핵과 같이 호흡 신호가 약하거나 혼재된 질병에서는 현재 센서 기술의 한계가 뚜렷하다.</p>
+<h2>시사점</h2>
+<p>단일 승자 기법이 없으며 목적에 따라 기법을 선택해야 한다는 점(일관성은 LSTM, 특정 질병 최고 성능은 Graphormer/InceptionTime, 비용·해석력은 CatBoost+Stats_5)을 보여주는 동시에, 무작위 교차검증 대신 시간 기반 평가를 표준으로 채택해야 하고 인구통계 베이스라인과의 비교 없이는 eNose 기반 선별 모델의 실제 진단 가치를 과대평가할 위험이 있음을 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.15348" target="_blank" rel="noopener">huggingface.co/papers/2611.15348</a> · 2026-11-19</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

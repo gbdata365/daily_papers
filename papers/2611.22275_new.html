@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>Heave-Ho</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#10 · Daily Papers 2026-11-19</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 21</span>
+    </div>
+    <h1 class="article-title">Heave-Ho: Decentralized Long-Horizon Multi-Humanoid Collaboration</h1>
+    <p class="article-title-ko">Heave-Ho: 분산형 장기 과업 다중 휴머노이드 협업</p>
+    <p class="article-sub">네트워크 통신 없이 여러 휴머노이드 로봇이 각자의 관측만으로 물체를 함께 들고 옮기는 장기 협업 과업을 수행하게 하는 분산형 프레임워크 Heave-Ho를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.22275" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.22275" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Heave-Ho: Decentralized Long-Horizon Multi-Humanoid Collaboration</li>
+<li><strong>저자</strong>: Ting-Hsuan Chen 등 (University of Southern California, VinMotion)</li>
+<li><strong>출처</strong>: arXiv:2611.22275v1 [cs.RO] (2026년 11월 17일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 프로젝트 페이지 링크가 있다고 언급되나 URL은 본문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.22275">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>네트워크 통신 없이 여러 휴머노이드 로봇이 각자의 관측만으로 물체를 함께 들고 옮기는 장기 협업 과업을 수행하게 하는 분산형 프레임워크 Heave-Ho를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>개별 휴머노이드의 전신 제어 능력은 크게 발전했지만, 테이블이나 소파처럼 혼자 들기 힘든 물체를 다루려면 여러 로봇이 힘을 공유하고 동작을 맞춰야 한다. 이때 세 가지 난제가 겹친다: (1) 물체를 통해 힘이 전달되므로 한 로봇의 균형과 파지가 동료의 행동에 의존하는 결합성, (2) 좁은 문을 통과하기 전 팀 전체와 물체를 재정렬하는 등 장기적이고 시각에 기반한 계획, (3) 늦은 들기나 어긋난 발걸음이 물체와 팀 전체를 무너뜨릴 수 있는 동기화 문제다. 중앙집중형 정책은 팀 크기가 바뀌면 입출력 차원을 다시 설계해야 하고 추론 시 네트워크 통신이 필요하다는 한계가 있다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>고정된 휴머노이드 기반 추적 모델(SONIC)을 동결한 뒤, 로봇들이 공유하는 잔차(residual) 정책을 멀티에이전트 강화학습으로 후속 학습시켜, 각 로봇이 로컬 관측만으로 물리적으로 결합된 협업 동작을 수행하도록 만드는 프레임워크.</li>
+<li>리더 로봇의 시각 입력으로부터 다음 팀 스킬을 선택하는 비전-언어 플래너와, 네트워크 통신 없이 음성으로 스킬 시작 시점을 동기화하는 리더-팔로워 메커니즘.</li>
+<li>2~10대의 휴머노이드로 구성된 12가지 협업 과업(운반, 어깨 메기, 끌기, 밀기, 전달, 정밀 배치 등)으로 구성된 벤치마크 HH-Bench.</li>
+</ul>
+<h2>방법론</h2>
+<p>저수준 정책은 동결된 파운데이션 추적 모델의 출력에 잔차 정책의 보정값을 더하는 구조(ai = πbase(oi) + πθ(oi, πbase(oi)))로, 중앙집중형 critic과 공유 actor를 사용하는 멀티에이전트 PPO로 학습된다. 모든 팀 스킬(들기, 내려놓기, 전후좌우 이동, 회전)은 동일한 두 개의 정적 '허브' 자세(빈손으로 서기 S0, 물체를 든 채 서기 S1)에서 시작하고 끝나므로 어떤 스킬 뒤에도 다른 스킬이 이어질 수 있다. 고수준에서는 Qwen3-VL-2B를 LoRA로 미세조정한 비전-언어 플래너가 리더의 머리 카메라 영상을 보고 다음 스킬을 하나의 토큰으로 결정하며, 리더가 이를 스피커로 말하면 팔로워들은 마이크로 인식하고 공통된 제어 틱 격자(grid) 위의 다음 슬롯에서 모두 동시에 스킬을 시작한다. 이 방식은 로봇 간 어떤 패킷도 교환하지 않는다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Unitree G1 휴머노이드(및 이종 플랫폼 EngineAI PM01)를 사용해 Isaac 기반 시뮬레이션과 실제 환경에서 평가했다. 시뮬레이션에서 저수준 정책은 HH-Bench 12개 과업에서 평균 94.41%의 성공률을 기록했으며, 이는 비교 대상 베이스라인/제거 실험 모델들(최대 28.56%)을 크게 앞섰다. 고수준 플래너는 50회 장기 과업 시도 중 43회를 완료했는데, 이는 제로샷 GPT-6(Astra) 플래너(21회)보다 우수했고, 의사결정당 지연시간도 약 120배 짧았다(52.5ms vs. 6.46s). 두 대의 동일한 로봇으로 학습된 정책은 재학습 없이 4대, 8대, 10대 로봇 팀이나 사람·이종 로봇이 섞인 팀으로도 확장되어, 실제 환경 실험에서 100회 중 92회, 혼성 팀 운반 실험에서는 40회 중 37회 성공했다.</p>
+<h2>한계점</h2>
+<p>리더의 음성을 팔로워가 들어야 동기화가 성립하므로 비교적 조용한 환경과 안정적인 음향 수신이 필요하다. 또한 새로운 과업에 대해 플래너를 학습시키려면 사람이 직접 원격조작으로 시연 데이터를 수집해야 하며, 이는 시간이 많이 소요된다.</p>
+<h2>시사점</h2>
+<p>파운데이션 추적 모델을 동결한 채 잔차 정책만 공유 학습시키는 방식은 팀 크기에 무관하게 확장 가능한 분산 제어를 가능케 하며, 음성 기반의 가벼운 동기화 메커니즘이 네트워크 통신 없이도 다수 로봇의 정밀한 협업 타이밍을 보장할 수 있음을 보여준다. 이는 실제 물류·건설 현장처럼 네트워크 신뢰성이 낮은 환경에서 다중 로봇 협업을 적용하는 데 실질적인 시사점을 준다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.22275" target="_blank" rel="noopener">huggingface.co/papers/2611.22275</a> · 2026-11-19</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

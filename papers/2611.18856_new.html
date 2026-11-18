@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>자기개선 메모리(SIM)를 통한 연속적 재귀 자기개선</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#7 · Daily Papers 2026-11-19</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 28</span>
+    </div>
+    <h1 class="article-title">Self-Improvement Memory Enables Continual Recursive Self-Improvement</h1>
+    <p class="article-title-ko">자기개선 메모리(SIM)를 통한 연속적 재귀 자기개선</p>
+    <p class="article-sub">LLM 에이전트의 하네스(harness)를 재귀적으로 자기개선(RSI)시킬 때, 이전 최적화 과정에서의 수정 이유와 결과를 기록하는 "자기개선 메모리(SIM)"를 도입해 벤치마크나 정책 모델이 바뀐 뒤에도 최적화를 이어갈 수 있게 한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.18856" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.18856" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Self-Improvement Memory Enables Continual Recursive Self-Improvement</li>
+<li><strong>저자</strong>: Xin Yu, Fei Xia 등 (Google Cloud AI, Google DeepMind, Pennsylvania State University)</li>
+<li><strong>출처</strong>: arXiv:2611.18856v1 [cs.LG] (2026-11-13)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.18856">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>LLM 에이전트의 하네스(harness)를 재귀적으로 자기개선(RSI)시킬 때, 이전 최적화 과정에서의 수정 이유와 결과를 기록하는 "자기개선 메모리(SIM)"를 도입해 벤치마크나 정책 모델이 바뀐 뒤에도 최적화를 이어갈 수 있게 한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>에이전트 하네스(컨텍스트, 도구, 실행 흐름을 관리하는 코드)를 재귀적 자기개선(Recursive Self-Improvement, RSI)으로 자동 최적화하는 연구가 늘고 있지만, 기존 방법은 고정된 정책 모델과 벤치마크 안에서만 최적화를 수행한다. 실제로는 모델이 업데이트되거나 새로운 과제 분포(벤치마크)가 등장하면 기존에 진화된 하네스만으로는 "왜 이 수정이 이루어졌는지, 무엇을 고치려 했는지, 테스트 결과가 어땠는지"를 알 수 없어 최적화 과정이 과거 시도를 반복하거나 그 목적을 모른 채 기존 구성요소를 바꾸는 문제가 발생한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>정책 모델이 바뀌는 상황(cross-model)과 벤치마크/데이터가 바뀌는 상황(cross-dataset)을 포괄하는 "연속적 재귀적 자기개선(Continual Recursive Self-Improvement, CRSI)" 설정을 정의.</li>
+<li>하네스 문제(root-cause)별로 수정 내역, 근거(rationale), 예측/관측된 결과, 평가 맥락(모델·벤치마크·라운드)을 구조화하여 기록하는 메모리인 Self-Improvement Memory(SIM)를 제안.</li>
+<li>코딩, 텍스트 분류, 에이전틱 워크스페이스, 엔지니어링 설계 등 4개 도메인에서 통제된 실험을 통해 SIM이 하네스만 이전하거나 원인(root cause)만 이전하는 경우보다 일관되게 우수함을 입증.</li>
+</ul>
+<h2>방법론</h2>
+<p>하네스 RSI는 고정된 정책 모델 M 주변에서 실행 가능한 하네스 H를 최적화하는 문제로 정식화된다. 각 라운드에서 제안자(Proposer, LLM 기반)가 피드백과 과거 기록을 바탕으로 k개의 후보 하네스를 생성하고, 선택자(Selector)가 성능·복잡도·회귀 위험 등을 고려해 다음 하네스를 결정한다. SIM은 반복되는 하네스 문제(예: "조기 완료 판정 오류")별로 엔트리를 만들어, 각 시도의 수정 내용·근거·예측 및 실제 결과·출처(도메인, 벤치마크, 정책, 라운드)를 누적 기록한다. 소스(source) 환경에서 쌓인 SIM과 진화된 하네스를 타깃(target) 환경(새로운 모델 또는 새로운 데이터)으로 이전하면, 제안자와 선택자가 이 기록을 참고해 기존 수정을 유지·수정·교체·제거할지 판단한다. 비교 대상은 Cold Start(시드 하네스에서 시작), Harness Transfer(하네스만 이전), Problem-Only Memory(원인만 기록), Full SIM(전체 기록 이전) 4가지 조건이다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>코딩(Terminal-Bench 2.1→4), 텍스트 분류, 에이전틱 워크스페이스(Harvey LAB→JobBench/GDPval/APEX-Agents), 엔지니어링 설계(EngDesign→Frontier-Eng) 등 4개 도메인에서 Gemini 3.8 Flash, Claude Opus 5.5 등을 정책/제안자/선택자로 사용해 실험했다. Full SIM은 6개의 cross-dataset 전환 모두에서 최고 점수를 기록했으며(Harness Transfer 대비 +2.43~4.35점), 4개의 cross-model(Opus→Gemini) 전환에서도 Harness Transfer 대비 +3.60~11.33점의 개선을 보였다. 특히 워크스페이스 도메인에서는 두 조건 모두 68.41점에서 시작했지만 Full SIM은 84.75점, Harness Transfer는 73.42점에 도달했다. 코딩 도메인의 10개 독립 소스 실행에 대한 쌍대 비교에서는 SIM이 9/10 실행에서 우위를 보이며 평균 2.36점의 개선(p=0.003)을 나타냈다. 세대 간 전이 실험(Table 1)에서는 Gemini 모델 세대가 바뀔 때도 하네스+SIM을 이어받는 방식이 매번 새로 최적화하는 방식(Fresh RSI)보다 3개 세대 중 2개에서 더 나은 결과를 보였다.</p>
+<h2>한계점</h2>
+<p>코딩 도메인을 제외한 나머지 도메인은 반복 실행 없이 조건당 1회씩만 평가했다. 실험은 호환 가능한 실행 인터페이스를 가진 하네스 설정으로 한정했고, 최적화기(제안자/선택자)의 탐색·계획 절차 자체는 고정한 채 SIM만을 변수로 다뤘다. 또한 워크스페이스 점수는 LLM 심판(judge)의 편향을 반영할 수 있다.</p>
+<h2>시사점</h2>
+<p>에이전트 하네스를 한 번 최적화하고 버리는 것이 아니라, 최적화 "경험" 자체를 구조화된 메모리로 보존하고 재사용하면 모델 교체나 벤치마크 변경과 같은 현실적인 전환 상황에서도 안정적으로 성능을 이어갈 수 있음을 보여준다. 이는 LLM 기반 에이전트 시스템을 지속적으로 유지·개선해야 하는 실무 환경(모델 버전 업그레이드, 신규 과제 도입)에 특히 유용한 설계 패턴이 될 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.18856" target="_blank" rel="noopener">huggingface.co/papers/2611.18856</a> · 2026-11-19</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

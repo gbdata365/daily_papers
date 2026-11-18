@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>멀티브랜치 트랜스포머</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#4 · Daily Papers 2026-11-19</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 43</span>
+    </div>
+    <h1 class="article-title">Multi-Branch Transformer</h1>
+    <p class="article-title-ko">멀티브랜치 트랜스포머</p>
+    <p class="article-sub">트랜스포머 블록을 깊이로 쌓거나 폭을 넓히는 대신 여러 개의 독립적인 블록 스택을 병렬로 실행한 뒤 결과를 합치는 "브랜칭(branching)"을 도입해, 같은 학습 연산량에서 더 낮은 손실과 더 빠른 추론을 동시에 달성한 Multi-Branch Transformer(MBT)를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.19800" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.19800" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Multi-Branch Transformer</li>
+<li><strong>저자</strong>: Gaotang Li, Lingjie Chen, Chunyuan Deng 외 (University of Illinois Urbana-Champaign, Rice University, University of Michigan, Cornell University)</li>
+<li><strong>출처</strong>: arXiv:2611.19800v1 [cs.LG] (2026년 11월 15일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/GaotangLi/Multi-Branch-Transformer">GitHub</a>, <a href="https://huggingface.co/collections/gaotang/multi-branch-transformer">Hugging Face 컬렉션</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.19800">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>트랜스포머 블록을 깊이로 쌓거나 폭을 넓히는 대신 여러 개의 독립적인 블록 스택을 병렬로 실행한 뒤 결과를 합치는 "브랜칭(branching)"을 도입해, 같은 학습 연산량에서 더 낮은 손실과 더 빠른 추론을 동시에 달성한 Multi-Branch Transformer(MBT)를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>기존 트랜스포머 언어모델의 스케일링은 블록을 더 깊게 쌓거나(depth) 블록 내부를 더 넓게(width) 만드는 두 축에 주로 의존해 왔다. 저자들은 이 두 축과 직교하는 세 번째 축으로서, 전체 트랜스포머 블록 단위를 병렬로 구성하는 "브랜칭"이 모델을 더 효과적이고 효율적으로 확장할 수 있는지를 질문한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>입력을 공유 초기층(prelude)에 통과시킨 뒤 K개의 독립적으로 파라미터화된 브랜치에서 병렬로 처리하고, 공유 최종층(coda) 이전에 결과를 융합(fusion)하는 Multi-Branch Transformer(MBT) 구조를 제안.</li>
+<li>폭과 깊이 배분 방식에 따라 Wide-Shallow(폭 유지), Narrow-Deep(깊이 유지), Balanced(절충) 세 가지 MBT 변형을 정의하고 비교.</li>
+<li>긴 문맥에서의 추론 효율을 높이기 위해 각 깊이에서 브랜치 표현들로부터 공유 KV 캐시를 구성하는 Joint-KV 기법을 제안.</li>
+<li>nano-vLLM 기반으로 브랜치 그룹화(branch grouping)와 헤드 폴딩(head folding)을 활용하는 추론 엔진을 구현.</li>
+</ul>
+<h2>방법론</h2>
+<p>MBT는 L개 블록으로 구성된 표준 트랜스포머의 중간 스택을 공유 prelude·coda와 K개의 독립적 브랜치 스택으로 재구성한다. 각 브랜치 출력은 정규화(RMSNorm) 후 은닉 차원 방향으로 concat하여 선형 사상으로 융합한다(식 4). Wide-Shallow는 원래 블록 폭을 유지하며 중간 블록들을 브랜치에 분배하고, Narrow-Deep은 원래 깊이를 유지하되 블록을 더 좁게 만들며, Balanced는 두 방식을 절충해 폭과 깊이를 함께 조정한다. Joint-KV는 각 깊이에서 여러 브랜치의 사전-어텐션 입력을 concat한 뒤 하나의 공유 투영 행렬로 KV를 생성하여(식 6), 쿼리는 브랜치별로 유지하면서 KV 캐시만 공유한다. 추론 엔진은 같은 깊이의 브랜치들을 한 단계로 묶어 실행(branch grouping)하고, 쿼리 헤드를 하나의 GQA 그룹으로 접어(head folding) 중복된 KV 메모리 접근을 줄인다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>FineWeb-Edu 데이터, Llama 3 토크나이저, 4096 문맥 길이로 0.8B~2.1B 파라미터 규모(W1~W4)의 MoE 기반 모델을 약 200 토큰/파라미터로 학습했다. 2-브랜치 Wide-Shallow MBT는 전체 블록의 약 1/3을 병렬 브랜치에 배분할 때 표준 트랜스포머 대비 검증 손실을 0.025~0.031 낮췄으며, 약 79%까지 브랜치 비율을 높여도 성능이 표준 수준을 유지했다. 스케일링 법칙 적합 결과 2-브랜치 MBT는 표준 모델 대비 약 1.23배의 바디 연산량 이점을 보였고, 9개 제로샷 벤치마크 평균 정확도를 54.23%에서 56.03%로 끌어올렸다. 브랜치 수를 2→4로 늘려도 검증 손실 변화 평균은 0.006 미만으로 유지되었으며, Balanced MBT가 Wide-Shallow보다 일관되게 더 낮은 손실을 보였다. Joint-KV를 적용한 최종 모델은 표준 대비 KV 캐시 저장량을 최대 34% 줄이면서도 더 낮은 손실을 유지했고, H200 GPU 단일 장비에서 최대 51.4% 더 높은 디코딩 처리량(128K 토큰 입력, 16개 동시 요청 기준 최대 1.5배 속도 향상)을 보였다. 융합 함수는 단순 concat-투영이 더 복잡한 학습형 융합과 성능 차이가 0.005 손실 이내로 거의 동등했으며, 브랜치를 중간층에 배치할 때 손실이 가장 낮았다.</p>
+<h2>한계점</h2>
+<p>브랜치 수가 늘어날수록(3, 4개) 깊이를 완전히 보존하려면 폭이 지나치게 좁아져 품질이 저하되는 경향이 있어 Balanced 변형으로 절충이 필요했다. Joint-KV는 브랜치 간 동기화가 필요해 분산 실행 시 통신 비용이 발생할 수 있으며, 본 연구는 4K~128K 토큰, 최대 2.1B 파라미터 규모에서만 검증되어 더 큰 모델이나 다른 모달리티로의 일반화는 논문에 명시되지 않음.</p>
+<h2>시사점</h2>
+<p>브랜칭이 깊이·폭에 이은 세 번째 독립적인 스케일링 축이 될 수 있음을 보이며, 학습 품질과 추론 속도를 동시에 개선할 실용적 아키텍처 설계 방향을 제시한다. 저자들은 YOCO나 Cross-Layer Attention과의 결합, 모달리티별 브랜치를 활용한 멀티모달 트랜스포머 확장 등을 향후 연구 방향으로 제안한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.19800" target="_blank" rel="noopener">huggingface.co/papers/2611.19800</a> · 2026-11-19</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>어센드짐(AscendGYM)</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#2 · Daily Papers 2026-11-19</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 91</span>
+    </div>
+    <h1 class="article-title">AscendGYM: A Cost-Aware Kernel Optimization Benchmark for Real-World Workloads on Ascend NPUs</h1>
+    <p class="article-title-ko">어센드짐(AscendGYM): Ascend NPU 실제 워크로드를 위한 비용 인지형 커널 최적화 벤치마크</p>
+    <p class="article-sub">화웨이 Ascend NPU 상의 실제 LLM 훈련·추론 워크로드에서 추출한 커널 48종을 대상으로, AI 모델·에이전트가 "기존 커널 구현을 얼마나 비용 효율적으로 개선할 수 있는가"를 측정하는 벤치마크 AscendGYM과 비용 대비 성능을 정량화하는 새 지표 STS(Speedup–Token Score)를 제안한 연구.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.17621" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.17621" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: AscendGYM: A Cost-Aware Kernel Optimization Benchmark for Real-World Workloads on Ascend NPUs</li>
+<li><strong>저자</strong>: AI Training Platform Team, Shenzhen Loop Area Institute</li>
+<li><strong>출처</strong>: arXiv:2611.17621v1 [cs.AI] (2026년 11월 13일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/SLAI-AITP/AscendGYM">GitHub - SLAI-AITP/AscendGYM</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.17621">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>화웨이 Ascend NPU 상의 실제 LLM 훈련·추론 워크로드에서 추출한 커널 48종을 대상으로, AI 모델·에이전트가 "기존 커널 구현을 얼마나 비용 효율적으로 개선할 수 있는가"를 측정하는 벤치마크 AscendGYM과 비용 대비 성능을 정량화하는 새 지표 STS(Speedup–Token Score)를 제안한 연구.</p>
+<h2>배경 및 문제의식</h2>
+<p>기존 Ascend 커널 벤치마크(NPUKernelBench, CANN Bench 등)는 주로 모델이 커널을 "새로 생성"하는 능력을 평가하는 데 집중했고, 실제 워크로드에서 추출된 입력 조건 하에서 기존 구현을 "개선"하는 능력은 충분히 다루지 않았다. 또한 최종 속도 향상(speedup)만으로는 두 시스템이 동일한 성능 개선을 달성하더라도 탐색에 투입한 비용(토큰 소비, 반복 횟수)이 크게 다를 수 있다는 점을 포착하지 못한다는 한계가 있었다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li><strong>AscendGYM</strong>: 실제 워크로드에서 추출한 커널과 입력 구성을 사용해, 기존 구현을 개선하는 에이전트의 능력을 평가하는 Ascend NPU 전용 벤치마크. 현재 48개 커널 최적화 과제(3단계 난이도)로 구성되며 이 중 1배치(17개 과제)를 본 보고서에서 평가.</li>
+<li><strong>STS(Speedup–Token Score)</strong>: 주어진 예산 내 달성한 성능 향상과, 그 향상을 얻는 데 소요된 토큰 비용을 함께 고려하는 핵심 지표로, 실용적 예산 제약 하의 커널 최적화 능력을 평가.</li>
+<li><strong>AscendForge</strong>: AscendGYM에 내장된 실행 환경으로, 후보 구현의 컴파일, 정확성 검증, 성능 측정을 위한 통합 인터페이스와 피드백을 제공해 에이전트의 반복적 최적화를 지원.</li>
+</ol>
+<h2>방법론</h2>
+<p>AscendGYM의 과제는 MindSpeed-LLM, vLLM-Ascend 등 실제 훈련·추론 프레임워크의 프로파일링 데이터에서 상위 병목 커널을 선정해 구성되며, 각 과제는 기준 소스 코드, 입출력 텐서 형태를 명시한 템플릿, CPU 참조 구현으로 생성한 테스트 케이스(golden I/O)를 포함한다. 평가는 "모델-하네스 평가"(Claude Code, Codex CLI, OpenCode 등 기존 코딩 에이전트와 모델의 조합을 하나의 시스템으로 평가)와 "모델 평가"(AscendGYM이 제공하는 기본 하네스 Default/AuraKernel로 모델만 비교)의 두 가지 모드를 지원한다. AscendForge는 자원 오케스트레이션, 커널 실행, 평가·피드백, 배포·운영의 4개 계층으로 구성되어 후보 코드의 빌드, 정확성 검사, 성능 측정을 자동화한다. 핵심 지표 STS는 최종 성능 향상에서 "지연된 개선에 대한 패널티"(토큰 예산 대비 각 단계의 누적 토큰 소비에 비례)를 차감하는 수식으로 정의되며, 보조 지표로 Cost-to-Gain(특정 속도 향상 폭 달성에 필요한 추가 토큰), GM Speedup(기하평균 속도향상), fast_p(임계값 p 이상 속도 향상을 달성한 과제 비율), Candidate/Task Pass Rate(정확성 통과율)를 함께 보고한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Claude Opus 5, GPT-5.6, GLM-5.3, Qwen3.5-122B-A10B, Qwen3.6-35B-A3B, DeepSeek-V4-Flash의 6개 모델을 Claude Code/Codex CLI/OpenCode의 3개 코딩 하네스와 조합해 Batch 1의 17개 커널 과제에서 평가했다(과제당 최대 80회 후보 평가, 소프트 목표 50회). 10M/20M/50M 토큰의 세 가지 예산 수준에서 STS를 측정한 결과, Claude Code/Opus 5 조합이 대부분의 예산에서 가장 높은 점수를 보였고, 평가된 모델-하네스 조합의 약 70%가 기하평균 속도 향상 1.2배 미만에 그쳐 폭넓은 과제에서 유의미한 개선을 달성하기 어려움을 보였다. 동일한 최종 속도 향상이라도 Cost-to-Gain 기준으로는 조합마다 요구 토큰이 수 배까지 차이가 났으며(예: 50M 토큰 예산, 10% 속도 향상 목표에서 Opus 5+OpenCode는 중앙값 380만 토큰이지만 전체 과제의 일부만 달성, Opus 5+Claude Code는 660만 토큰이지만 전체 과제 달성), 과제 통과율(Task Pass Rate)이 높아도 실제 속도 향상 폭은 하네스에 따라 크게 달랐다(GPT-5.6은 Codex에서 1.69배, Claude Code에서는 1.05배).</p>
+<h2>한계점</h2>
+<p>본 보고서는 3단계 난이도 중 1단계(Batch 1, 17개 과제)만을 평가했으며, 멀티스텝 연산 융합(Batch 2, 17개) 및 복잡한 어텐션·희소 연산(Batch 3, 14개) 과제에 대한 결과는 추후 업데이트로 미뤄졌다. 또한 토큰 소비, 상호작용 횟수, 실제 소요 시간(wall-clock)이라는 서로 다른 비용 지표가 조합별로 상이한 패턴을 보여, 단일 비용 지표만으로는 최적화 비용을 완전히 특징짓지 못한다고 저자들이 명시한다.</p>
+<h2>시사점</h2>
+<p>이 벤치마크는 LLM 추론 서빙에 필수적인 Ascend NPU 커널 최적화 자동화가 현재 모델·에이전트 조합으로는 여전히 어려운 과제임을 실증적으로 보여주며, 단순 속도 향상 수치가 아니라 비용 대비 성능이라는 실용적 관점에서 코드 최적화 에이전트를 평가하는 방법론을 제시해 향후 비(非)엔비디아 하드웨어 생태계의 커널 자동화 연구에 평가 기준을 제공한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.17621" target="_blank" rel="noopener">huggingface.co/papers/2611.17621</a> · 2026-11-19</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>웨이트-스페이스 프로그래밍은 트랜스포머를 필요로 하지 않는다</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#3 · Daily Papers 2026-11-19</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 47</span>
+    </div>
+    <h1 class="article-title">Weight-Space Programming Doesn't Need Transformers</h1>
+    <p class="article-title-ko">웨이트-스페이스 프로그래밍은 트랜스포머를 필요로 하지 않는다</p>
+    <p class="article-sub">그래디언트 학습 없이 LLM이 직접 다른 모델의 가중치를 "손으로 써서" 생성하는 웨이트-스페이스 프로그래밍(WSP)에서는, 세 개의 프론티어 LLM(Claude Opus 5.5, GPT-6.1 Sol, GPT-6 Astra) 모두 자유롭게 설계하도록 두면 트랜스포머가 아닌 희소 사실 테이블(fact table) 구조를 스스로 선택하며, 이를 분석해 제안한 연상기억(associative-memory) 기반 모델이 동일 LLM이 작성한 가장 정확한 트랜스포머보다 약 1,800배 적은 파라미터로 더 높은 정확도를 내고 GPU에서 최대 17배 더 빠르다는 사실을 보인 연구.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.22055" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.22055" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Weight-Space Programming Doesn't Need Transformers</li>
+<li><strong>저자</strong>: Hyunjong Ok, Jaeho Lee (포항공과대학교, POSTECH)</li>
+<li><strong>출처</strong>: arXiv:2611.22055v1 [cs.LG] (2026년 11월 17일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문 내 Code/Project page 링크 명시(구체 URL은 본문에 텍스트로 기재되지 않음)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.22055">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>그래디언트 학습 없이 LLM이 직접 다른 모델의 가중치를 "손으로 써서" 생성하는 웨이트-스페이스 프로그래밍(WSP)에서는, 세 개의 프론티어 LLM(Claude Opus 5.5, GPT-6.1 Sol, GPT-6 Astra) 모두 자유롭게 설계하도록 두면 트랜스포머가 아닌 희소 사실 테이블(fact table) 구조를 스스로 선택하며, 이를 분석해 제안한 연상기억(associative-memory) 기반 모델이 동일 LLM이 작성한 가장 정확한 트랜스포머보다 약 1,800배 적은 파라미터로 더 높은 정확도를 내고 GPU에서 최대 17배 더 빠르다는 사실을 보인 연구.</p>
+<h2>배경 및 문제의식</h2>
+<p>트랜스포머 같은 표준 신경망 구조는 그래디언트 기반 학습과 GPU 연산에 잘 맞도록 선택된 것이다. 그러나 "웨이트-스페이스 프로그래밍"에서는 LLM이 그래디언트 학습 없이 목표 모델의 가중치를 직접 작성하므로, 트랜스포머를 선호할 이유였던 "학습 용이성"이라는 전제가 더 이상 성립하지 않는다. 이에 저자들은 "WSP에서도 트랜스포머를 유지해야 하는가?"라는 근본적 질문을 던진다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>최소한의 안내(ARC 과학 문제 10개 예시와 실행 샌드박스)만 주고 세 프론티어 LLM에게 고정된 아키텍처에 가중치를 써넣게 하거나, 아키텍처 자체를 자유롭게 설계하도록 요청하는 실험 설계를 제시.</li>
+<li>자유롭게 설계하도록 했을 때 세 LLM 모두 평문 사실을 희소 테이블의 행으로 변환하고 고정된 절차로 질의하는 동일한 종류의 모델(사실 테이블)로 수렴한다는 것을 발견. 이 LLM 설계 모델은 같은 LLM이 작성한 가장 정확한 공개 트랜스포머보다 약 1,800배 적은 파라미터로 더 높은 ARC 테스트 정확도(최대 54.4%)를 달성.</li>
+<li>각 가중치 행이 하나의 사실을 추적 가능(traceable)하고 지역적으로 수정 가능(local edit)하다는 두 가지 속성이 그래디언트 없는 가중치 작성에 핵심적임을 실증적으로 분석.</li>
+<li>LLM 설계 모델이 모든 사실을 모든 질문에 대해 채점하기 때문에 GPU에서 느리다는 점을 지적하고, 질문당 고정된 수(120행)의 행만 읽는 연상기억 기반 모델을 제안해, 정확도를 약 3%p 이내로 유지하면서 동일 크기 트랜스포머 대비 최대 17배 빠른 추론 속도를 달성.</li>
+</ol>
+<h2>방법론</h2>
+<p>저자들은 식 f(x) = Σ v_i σ(k_i^T x) 형태의 연상기억 관점에서 모델을 분석한다. 트랜스포머는 조밀하고(dense) 중첩된 키(key)를 softmax로 선택하는 반면, LLM이 설계한 모델은 각 사실(문장)을 하나의 희소 개념 벡터로 인코딩한 행으로 저장하고, top-k 선택으로 질문·보기와 가장 잘 맞는 행을 골라 점수를 매긴다. 이 과정은 세 LLM 모두에서 동일한 패턴(단어→개념 매핑, 희소 사실 테이블, 상위-k 사실 선택, 부정/절대어 등을 위한 규칙)으로 수렴했다. 그러나 이 모델은 질문마다 저장된 모든 사실을 스캔하므로 GPU 커널 호출 수가 사실 개수에 비례해 늘어난다. 이를 해결하기 위해 저자들은 두 개의 고정 크기 테이블(개념 간 1차 연관을 담는 Concept Table A, 개념 쌍의 2차 연관을 담는 Pair Table)로 구성된 연상기억 기반 모델을 설계했다. 이 모델은 LLM이 여전히 평문 지식 파일과 빌드 스크립트를 한 줄씩 작성해 가중치를 채우되, 추론 시에는 질문의 개념 벡터로부터 상위 16개 개념이 형성하는 120개 쌍만 고정된 해시 주소로 읽고 Concept Table과의 단일 행렬곱으로 점수를 계산해, 사실 개수와 무관하게 일정한 추론 비용을 보장한다. 가중치가 그래디언트 없이도 디버깅 가능하려면 "각 답이 단일하고 식별 가능한 작성 줄로 추적되는 것"과 "한 줄을 수정/삭제했을 때 그 줄에 의존하는 예측만 바뀌는 것"이라는 두 속성이 필요함을 ablation으로 검증했다(예: 옵션별 최고 매칭 사실 하나만 남겨도 전체 모델과 거의 동일한 정확도, 한 줄 삭제 시 평균 0.5~1.8개의 답만 바뀜).</p>
+<h2>실험 설정 및 결과</h2>
+<p>ARC-Easy/Challenge 결합 테스트셋(4지선다 과학 문제, 3,530문항)을 기준으로, 무작위 초기화에서 그래디언트 학습한 최고 공개 아키텍처(29.8% 정확도, Mamba-2 130M 등)와 비교해, LLM이 직접 설계한 사실 테이블 모델은 Claude Opus 5.5 기준 1세대 50.8%, 5세대(계보 개선) 54.4%의 정확도를 달성했으며 파라미터 수는 0.94M~3.35M 수준으로 공개 아키텍처보다 훨씬 작았다. 제안된 연상기억 기반 모델은 1세대 49.6%, 5세대 52.4%로 LLM 설계 모델 대비 약 3%p 이내의 정확도를 유지하면서, RTX 3090에서 3,530개 질문 처리 시 GPU 추론 속도가 동일 크기 트랜스포머 대비 1세대 7배, 5세대 17배 빨랐다(질문당 고정 120행만 읽어 사실 수 증가에도 추론 비용이 늘지 않음). 다만 사전학습되고 미세조정된 모델(예: Qwen3.5-0.8B, ARC 정확도 82.1%)은 WSP로 작성된 모델보다 여전히 훨씬 정확했다. 추가로 SciQ, SQuAD 1.1, OpenBookQA, MMLU, CIFAR-10, AG News 등 다른 과제와 사전학습 가중치에 대한 WSP 적용, 텍스트 생성 과제로도 실험을 확장해 유사한 경향(LLM 설계 모델이 LLM이 쓴 같은 크기 트랜스포머를 능가)을 확인했다.</p>
+<h2>한계점</h2>
+<p>저자들은 이 결과가 "현재 LLM이 무작위 초기화로부터 가중치를 작성할 때"라는 특정 조건에 한정된 주장임을 명시한다. 작성된 모델(사실 테이블 기반)은 학습된 표현을 구축하지 않고 단순 회상(recall)만 수행하며, 여러 단계를 연결하는 추론이나 긴 글 생성을 하지 못한다(ARC-Challenge 정확도는 약 38%에 머무르고 MMLU에서는 우연 수준). 연상기억 기반 모델의 속도 우위는 개념 수가 약 15,000~32,000(조밀 테이블 기준) 혹은 약 100,000(행 리스트 변형 기준)을 넘어서면 사라진다. 또한 실험은 단일 GPU(RTX 3090) 환경에 한정되었으며, 룩업(lookup) 연산에 특화된 하드웨어(근접 메모리 처리, FPGA 등)에서의 성능은 다루지 않았다.</p>
+<h2>시사점</h2>
+<p>이 연구는 신경망 아키텍처 선택이 "그래디언트 학습에 최적화된 설계"라는 전제에 강하게 묶여 있었음을 보여주며, LLM이 가중치를 직접 작성하는 새로운 패러다임에서는 트랜스포머가 기본값이 아닐 수 있음을 실증한다. 이는 모델 압축, 해석 가능성(각 가중치를 사람이 읽을 수 있는 문장으로 추적), 저자원·소량 라벨 환경에서의 모델 초기화 등에 응용될 수 있는 설계 원리를 제시하며, 동시에 사전학습된 LLM이 여전히 압도적으로 정확하다는 점에서 WSP의 실용적 한계와 향후 과제(표현 학습을 포함한 WSP, 그래디언트 기반 추가 미세조정과의 결합 등)를 함께 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.22055" target="_blank" rel="noopener">huggingface.co/papers/2611.22055</a> · 2026-11-19</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

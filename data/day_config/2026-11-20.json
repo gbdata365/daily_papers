@@ -1,0 +1,110 @@
+{
+  "2611.24738": {
+    "base": "2611_제버레이션_시스템원모델-단일패스-이미지생성",
+    "rank": "#1",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "110",
+    "en_title": "Jeveration: System One Models Now Generate",
+    "ko_title": "제버레이션: 시스템 원 모델이 이제 생성한다"
+  },
+  "2611.23068": {
+    "base": "2611_해상도가설_에이전트진화-개선식별-핵심",
+    "rank": "#2",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "35",
+    "en_title": "The Resolution Hypothesis: Agent Evolution's Key Is Identifying Improvements",
+    "ko_title": "해상도 가설: 에이전트 진화의 핵심은 개선 사항을 식별하는 것이다"
+  },
+  "2611.21366": {
+    "base": "2611_얼라이브_스트리밍비디오모델-인터랙티브화",
+    "rank": "#3",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "32",
+    "en_title": "ALIVE: Making Streaming Video Models Interactive",
+    "ko_title": "ALIVE: 스트리밍 비디오 모델을 인터랙티브하게 만들기"
+  },
+  "2611.11318": {
+    "base": "2611_프롤라_저랭크-기상-다운스케일링-적응",
+    "rank": "#4",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "27",
+    "en_title": "PROLA: Principal-Orthogonal Low-rank Adaptation for Predictive Spatiotemporal Weather Downscaling",
+    "ko_title": "프롤라: 예측적 시공간 기상 다운스케일링을 위한 주성분-직교 저랭크 적응"
+  },
+  "2611.24154": {
+    "base": "2611_게임투플레이어_환경플레이어-공동개발-게임에이전트",
+    "rank": "#5",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "25",
+    "en_title": "Game2Player: Scaling Gameplay Experience for Visual Agents through Environment–Player Co-Development",
+    "ko_title": "게임투플레이어: 환경-플레이어 공동 개발을 통한 시각 에이전트의 게임플레이 경험 확장"
+  },
+  "2611.24654": {
+    "base": "2611_커브델타_저곡률-델타-모델링-학습과언러닝",
+    "rank": "#6",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "22",
+    "en_title": "CurvDelta: Low-Curvature Delta Modeling For Surgical Learning and Unlearning",
+    "ko_title": "커브델타: 정밀 학습과 언러닝을 위한 저곡률 델타 모델링"
+  },
+  "2611.24789": {
+    "base": "2611_힌트왐_사후정보-기반-월드액션모델-학습",
+    "rank": "#7",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "22",
+    "en_title": "HINT-WAM: Hindsight-Informed Training for World Action Models",
+    "ko_title": "힌트왐: 사후정보 기반 월드 액션 모델 학습법"
+  },
+  "2611.17600": {
+    "base": "2611_라이트타르_타겟인식-경량-멀티모달-테이블표현학습",
+    "rank": "#8",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "20",
+    "en_title": "LightTAR: Light and Fast Target-Aware Representations for Multimodal Tabular Learning",
+    "ko_title": "라이트타르: 멀티모달 테이블 학습을 위한 경량·고속 타깃인식 표현"
+  },
+  "2611.24869": {
+    "base": "2611_월드룰러_설정가능한-규칙-기반-상호작용형-월드모델링",
+    "rank": "#9",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "18",
+    "en_title": "WorldRuler: Interactive World Modeling under Configurable Rules",
+    "ko_title": "월드룰러: 설정 가능한 규칙 기반 상호작용형 월드 모델링"
+  },
+  "2611.22925": {
+    "base": "2611_인보커렌더_무한-제어가능-비디오-생성",
+    "rank": "#10",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "13",
+    "en_title": "Code World Model 2.0: Towards Infinite Controllable Video Generation",
+    "ko_title": "코드 월드 모델 2.0: 무한 제어 가능 비디오 생성을 향하여"
+  },
+  "2611.24408": {
+    "base": "2611_스트라이드월드_장면강성-행동일관성-벤치마크",
+    "rank": "#11",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "11",
+    "en_title": "StrideWorld: Benchmarking Scene Rigidity and Action Consistency in Interactive Video World Models",
+    "ko_title": "스트라이드월드: 인터랙티브 비디오 월드 모델의 장면 강성과 행동 일관성 벤치마킹"
+  },
+  "2611.24651": {
+    "base": "2611_피콜로_재귀적-자기개선-의사결정모델",
+    "rank": "#12",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "11",
+    "en_title": "Piccolo: Co-Evolving Decision Models and Data through Recursive Self-Improvement",
+    "ko_title": "피콜로: 재귀적 자기개선을 통한 의사결정 모델과 데이터의 공진화"
+  }
+}

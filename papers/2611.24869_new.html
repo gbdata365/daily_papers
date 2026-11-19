@@ -1,0 +1,107 @@
+<meta charset="UTF-8">
+<title>월드룰러</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#9 · Daily Papers 2026-11-20</span>
+      <span class="cat-tag">생성모델</span>
+      <span class="upvote-tag">▲ 18</span>
+    </div>
+    <h1 class="article-title">WorldRuler: Interactive World Modeling under Configurable Rules</h1>
+    <p class="article-title-ko">월드룰러: 설정 가능한 규칙 기반 상호작용형 월드 모델링</p>
+    <p class="article-sub">사용자가 정의한 규칙(rule)을 따르는 상호작용형 비디오 월드 모델을 만들기 위해, 규칙·객체 상태·바인딩을 함께 저장·복원하는 "실행 가능한 3D 규칙 그래프"와, 화면에 보이지 않던 객체에도 규칙 결과를 등장 순간부터 정확히 반영하는 "객체 속성 상태 치환" 메커니즘을 결합한 프레임워크.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.24869" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.24869" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: WorldRuler: Interactive World Modeling under Configurable Rules</li>
+<li><strong>저자</strong>: Mingliang Zhai, Chuanhao Li 외 (Alaya Lab, 베이징공업대학교, 상하이혁신연구소, 도쿄대학교, 선전 MSU-BIT 대학교 공동연구)</li>
+<li><strong>출처</strong>: arXiv:2611.24869v1 [cs.AI] (2026-11-18)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://alaya-lab.github.io/WorldRuler">프로젝트 페이지</a> · <a href="https://github.com/AlayaLab/WorldRuler">코드</a> · <a href="https://huggingface.co/datasets/AlayaLab/RuleVerse">데이터셋(RuleVerse)</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.24869">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>사용자가 정의한 규칙(rule)을 따르는 상호작용형 비디오 월드 모델을 만들기 위해, 규칙·객체 상태·바인딩을 함께 저장·복원하는 "실행 가능한 3D 규칙 그래프"와, 화면에 보이지 않던 객체에도 규칙 결과를 등장 순간부터 정확히 반영하는 "객체 속성 상태 치환" 메커니즘을 결합한 프레임워크.</p>
+<h2>배경 및 문제의식</h2>
+<p>비디오 생성 기반의 월드 모델은 플레이어의 행동에 따라 인터랙티브한 세계를 생성할 수 있지만, 현실 세계의 물리 법칙을 넘어서는 사용자 정의 규칙(예: 특정 게임에서 스위치를 당기면 멀리 있는 문이 열리는 식의 임의 규칙)을 일관되게 따르게 만드는 데에는 두 가지 난제가 따른다. 첫째는 규칙-상태 지속성(Rule-State Persistence)으로, 세계를 저장했다가 다시 불러왔을 때도 규칙 정의·의존관계·객체 상태가 그대로 유지되어야 한다는 것이다. 둘째는 규칙의 시각적 구현(Rule-to-Visual Realization)으로, 규칙에 의해 영향을 받는 객체나 속성이 아직 화면에 나타나지 않은 상태라도 그 객체가 처음 등장하는 순간부터 규칙에 맞는 모습으로 정확히 그려져야 한다는 것이다(예: 화면 밖에서 이미 열린 문은 플레이어가 그 문을 처음 볼 때부터 열려 있어야 함).</p>
+<h2>핵심 기여</h2>
+<p>저자들은 WorldRuler를 제안한다. 이는 (1) 규칙 정의·의존성·객체 상태·공간 정보를 하나의 실행 가능한 3D 규칙 그래프로 통합해 관리하고, 동적 객체 바인딩과 지각적 피드백(perceptual feedback)을 통해 규칙 실행-비디오 생성-관찰 검증을 닫힌 루프로 연결하는 프레임워크이다. (2) 규칙이 지정한 속성 변화를 디노이징 과정 중에 직접 읽어 교정하는 "객체 속성 상태 치환" 메커니즘과, 이를 학습시키는 "반사실적 재구성(counterfactual reconstruction)" 훈련 기법을 도입해, 의도한 속성 변화는 정확히 반영하면서도 관련 없는 콘텐츠에는 간섭하지 않도록 한다. (3) GTA-V와 Habitat 시뮬레이터를 이용한 자동 데이터 수집·주석 파이프라인을 구축해, 규칙이 적용된/적용되지 않은 쌍을 포함하는 RuleVerse 데이터셋(3,200쌍, 6,400개 비디오)을 만들었다.</p>
+<h2>방법론</h2>
+<p>WorldRuler는 초기 관찰, 사용자 정의 규칙, 행동 시퀀스를 입력받아 연속된 생성 윈도우 단위로 비디오를 생성한다. 각 윈도우에서 (1) 규칙 실행기가 현재 행동과 상태를 평가해 객체 상태 시퀀스와 생성 조건을 산출하고, (2) 동적 객체 바인딩이 규칙이 지정한 엔티티를 장면 내 실제 시각적 인스턴스와 매칭시키며, 아직 화면에 없는 객체라도 처음 등장할 비주얼 영역에 미리 결정된 상태를 결부시켜 둔다. (3) 비디오 생성 단계에서는 MiniMax-H3 Ref2VA 모델의 디노이징 과정 중 각 스텝마다, 동결된 어파인 리더(affine reader)로 현재 클린 추정치에서 객체의 로컬 속성을 읽어 목표 속성과의 차이(δ)를 계산하고, 학습 가능한 "쓰기(writer)" 모듈이 이 차이를 교정하는 동시에 호환 가능한 외형·움직임 변화를 함께 반영해 샘플링 속도장을 갱신한다. 이 쓰기 모듈은 동일 장면·행동에서 속성값만 다른 두 비디오 쌍을 이용한 반사실적 재구성 손실(두 상태 각각을 정확히 복원)과 양방향 속성 교환(attribute-swapping) 손실로 학습된다. 상태·규칙·그래프·바인딩은 체크포인트로 함께 저장·복원되어, 저장 시점 이후의 행동에 대해서도 일관된 규칙 판단이 가능하다. 지각적 피드백은 생성된 프레임에서 객체의 정체성·시인성·속성을 독립적으로 추정해 바인딩과 로컬 기하정보를 갱신하되, 규칙이 바라는 결과를 정답처럼 주입하지는 않는다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Habitat(실내 객체 상호작용)과 GTA-V(오픈월드 게임 환경) 두 영역에서 수집한 RuleVerse, 그리고 공개 벤치마크 WorldState-Bench에서 평가했다. RuleVerse의 Habitat 서브셋에서 WorldRuler는 평균 규칙성공률(RSR) 64.99%, 전체완료율(FCR) 48.04%를 기록해, 최강 베이스라인인 SWM(State World Model) 대비 RSR +20.93%p, FCR +30.06%p 향상되었으며, 특히 효과 정확도(20.74%→58.47%), 타이밍 정확도(15.67%→37.36%), 유지(hold) 정확도(17.05%→50.83%) 항목에서 큰 차이를 보였다. GTA-V 서브셋에서도 WorldRuler는 평균 RSR 67.42%로 SWM(44.19%)과 MiniMax-H3(43.43%)를 능가했다. 외부 벤치마크인 WorldState-Bench에서는 WorldRuler가 EndFollow·TwinContrast·Strict 지표에서 SWM과 동등한 성능을, PairFollow(94% vs 92%)·CntAbsent(99% vs 98%)·PairStrict(92% vs 90%) 지표에서는 SWM보다 소폭 높은 성능을 보였다. 절제 실험에서는 동적 객체 바인딩을 고정 바인딩으로 바꾸거나 속성 치환 모듈 또는 교환 손실을 제거할 경우 RSR·FCR·첫 등장 정확도·콘텐츠 보존 지표가 모두 크게 떨어져, 세 요소 모두가 성능에 기여함을 확인했다. 또한 체크포인트에 규칙·실행상태·바인딩을 모두 함께 저장·복원하는 방식이, 마지막 이미지와 규칙 텍스트만 저장하는 방식보다 일관성(98.17% vs 94.25%)과 복원 후 RSR(54.36% vs 49.23%)에서 더 우수함을 보였다.</p>
+<h2>한계점</h2>
+<p>논문에 별도로 서술된 한계점은 명시되지 않았으나, 평가에 사용된 지표(규칙성공률의 각 구성요소, 완료율)가 모두 동결된 시각-언어 모델을 심판으로 사용한 판정에 의존하고 있어 판정 자체의 오차가 평가 결과에 반영될 수 있으며, 매우 복잡한 다단계 규칙 체인이나 장시간 상호작용에 대한 확장성은 본문에서 구체적으로 검증되지 않았다.</p>
+<h2>시사점</h2>
+<p>규칙 정의·객체 상태·공간적 바인딩을 명시적인 그래프 구조로 관리하고 이를 비디오 생성의 디노이징 과정과 긴밀하게 결합하는 접근은, 순수 신경망 기반 월드 모델이 가진 "화면에 보이지 않는 변화에 대한 기억 상실" 문제를 구조적으로 완화할 수 있음을 보여준다. 이는 게임 콘텐츠 생성이나 맞춤형 시뮬레이션처럼, 사용자가 임의의 규칙을 정의하고 장시간에 걸쳐 그 규칙이 일관되게 지켜지는 상호작용형 가상 세계를 만드는 응용 분야에 직접적인 함의를 가진다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.24869" target="_blank" rel="noopener">huggingface.co/papers/2611.24869</a> · 2026-11-20</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

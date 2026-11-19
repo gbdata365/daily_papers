@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>ALIVE</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#3 · Daily Papers 2026-11-20</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 32</span>
+    </div>
+    <h1 class="article-title">ALIVE: Making Streaming Video Models Interactive</h1>
+    <p class="article-title-ko">ALIVE: 스트리밍 비디오 모델을 인터랙티브하게 만들기</p>
+    <p class="article-sub">ALIVE는 스트리밍 비디오를 계속 관찰하면서도 사용자의 요청을 능동적으로 관리하고, 상황에 따라 먼저 말을 걸거나 되묻는 등 "인터랙티브" 행동을 할 수 있도록 기존의 수동적인 스트리밍 비디오 LLM을 대조적 지도학습과 강화학습으로 후속 학습시킨 모델이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.21366" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.21366" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: ALIVE: Making Streaming Video Models Interactive</li>
+<li><strong>저자</strong>: Jinzhao Li, Yuan Xu 등 (Tsinghua University, Peking University, ByteDance, Beihang University, University of Wisconsin-Madison 공동 연구진, 교신저자 Jinzhao Li, Miao Liu)</li>
+<li><strong>출처</strong>: arXiv:2611.21366v1 [cs.CV] (2026년 11월 16일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://lijinzhao30.github.io/ALIVE/">https://lijinzhao30.github.io/ALIVE/</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.21366">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>ALIVE는 스트리밍 비디오를 계속 관찰하면서도 사용자의 요청을 능동적으로 관리하고, 상황에 따라 먼저 말을 걸거나 되묻는 등 "인터랙티브" 행동을 할 수 있도록 기존의 수동적인 스트리밍 비디오 LLM을 대조적 지도학습과 강화학습으로 후속 학습시킨 모델이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>최근 스트리밍 비디오 LLM들은 연속적으로 영상을 처리하며 질의에 답하거나 이벤트를 모니터링할 수 있지만, 각 요청을 독립적으로 수동 처리할 뿐 시간이 지나며 변화하는 사용자 요청을 유지·갱신하거나, 영상이 전개되는 동안 능동적으로 사용자에게 먼저 말을 거는 능력이 부족하다. 저자들은 이를 "아이언맨의 자비스(JARVIS)"처럼 지속적으로 세계를 인지하고 사람과 자연스럽게 상호작용하는 멀티모달 AI라는 비전을 실현하는 데 있어 중요한 공백으로 지목한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>인터랙티브 스트리밍 비디오 이해를 능동적 모니터링(proactive monitoring), 스트리밍 과제 조율(streaming task coordination), 피드백 탐색 상호작용(feedback-seeking interaction)이라는 세 가지 핵심 능력으로 체계화했다.</li>
+<li>이를 학습시키기 위한 ALIVE-SFT-288K, ALIVE-RL-3K 데이터셋과, 대조적 지도미세조정(Contrastive SFT) 및 행동 정렬 신용 할당(Behavior-Aligned Credit Assignment, BACA) 강화학습으로 구성된 2단계 학습 프레임워크를 제시했다.</li>
+<li>피드백 탐색 상호작용과 그 이후의 과제 완수 여부를 평가하는 FSI-Bench 벤치마크를 새로 구축했다.</li>
+</ul>
+<h2>방법론</h2>
+<p>ALIVE는 Qwen3-VL-8B-Instruct를 기반으로 2단계 학습을 거친다. 1단계인 대조적 SFT에서는, 동일한 시각 관찰이라도 활성 요청·과제 상태·피드백 여부에 따라 응답해야 할 때와 침묵해야 할 때가 달라지는 상황 쌍으로 구성한 "응답-게이트 대조(response-gate contrasts)"와, 증거가 충분한지 여부에 따라 바로 답할지 명확화를 요청할지를 가르는 "행동-전략 대조(action-strategy contrasts)"를 이용해 언제, 어떻게 반응할지를 학습시킨다. 2단계에서는 모델이 직접 생성한 궤적에 강화학습을 적용하는데, 이때 BACA라는 기법을 도입해 궤적 전체 단위의 보상(전략 정확성, 과제 완수도, 중복 응답에 대한 패널티로 구성)과 전략 선택·과제 응답·결정적 침묵이라는 개별 행동 단위에 대한 지역적 이득(local advantage)을 결합한 어드밴티지로 정책을 최적화한다. 학습 데이터는 공개 비디오에서 시간적 근거(timestamp)를 정교하게 지정하고, 사용자 요청·피드백·모델 응답(또는 침묵)이 정렬된 대화를 합성한 뒤 품질 검증을 거쳐 구축했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>OVO-Bench, StreamingBench, IPIBench, ProactiveVideoQA 등 4개 공개 벤치마크 전부에서 비교 대상 모델(VideoLLM-Online, Flash-VStream, Dispider, VideoChat3, JoyAI-VL-Interaction, AURA, Qwen3-VL-8B) 중 가장 높은 종합 성능을 달성했으며, 특히 과제 조율 능력을 보는 IPIBench에서 가장 강력한 베이스라인(AURA) 대비 18.7포인트 앞섰다. 저자들이 새로 만든 FSI-Bench에서도 명시적 결정 프로토콜(EDP) 기준 전체 정확도 52.8%, 자유형 결정 프로토콜(FDP) 기준 54.0%로, 비교한 독점 모델(GPT-6 Astra 등)과 다른 오픈소스 모델을 모두 앞섰다. 다만 인간 수준 점수(FDP 기준 88.5%)에는 크게 못 미쳤다. Ablation 결과, 대조적 SFT와 BACA 강화학습은 각각 적용했을 때도, 함께 적용했을 때도 네 벤치마크와 FSI-Bench 양쪽 프로토콜 전반의 점수를 끌어올리는 것으로 나타났다.</p>
+<h2>한계점</h2>
+<p>ALIVE는 여전히 비전-언어 모델이며, 음성 기반 상호작용을 구현하려면 별도의 음성 인식(ASR)과 음성 합성(TTS) 모듈이 필요하다. FSI-Bench 결과에서 보듯 사람 수준의 피드백 탐색 능력에는 아직 상당한 격차가 남아 있다.</p>
+<h2>시사점</h2>
+<p>저자들은 능동적 모니터링, 과제 조율, 피드백 탐색이라는 세 범주로 인터랙티브 스트리밍 비디오 이해를 정식화함으로써, 단순히 보고 답하는 수동적 비디오 LLM을 넘어 사용자와 지속적으로 상호작용하며 요청을 함께 관리하는 멀티모달 어시스턴트로 나아가는 경험적 토대를 제공했다고 본다. 향후에는 시각·언어뿐 아니라 오디오까지 아우르는 네이티브 omni-modal 모델로의 확장이 유망한 방향으로 제시된다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.21366" target="_blank" rel="noopener">huggingface.co/papers/2611.21366</a> · 2026-11-20</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

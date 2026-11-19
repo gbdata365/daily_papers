@@ -1,0 +1,114 @@
+<meta charset="UTF-8">
+<title>스트라이드월드</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#11 · Daily Papers 2026-11-20</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 11</span>
+    </div>
+    <h1 class="article-title">StrideWorld: Benchmarking Scene Rigidity and Action Consistency in Interactive Video World Models</h1>
+    <p class="article-title-ko">스트라이드월드: 인터랙티브 비디오 월드 모델의 장면 강성과 행동 일관성 벤치마킹</p>
+    <p class="article-sub">인터랙티브 비디오 월드 모델을 평가할 때 생성된 비디오 자체로부터 재구성한 기준이 아니라, 동작 전에 고정된 시작 뷰의 실제 3D 기하와 모델 자신의 초기 스텝으로부터 얻은 "보폭(stride)"을 기준으로 삼아, 장면의 강성(rigidity)과 행동 일관성(action consistency)을 측정하는 벤치마크 StrideWorld를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.24408" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.24408" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: StrideWorld: Benchmarking Scene Rigidity and Action Consistency in Interactive Video World Models</li>
+<li><strong>저자</strong>: Chuang Wang, Rui Nie, Jie Song, Junyuan Gao 등 Shanghai Jiao Tong University, Shanghai AI Laboratory, Tsinghua University, Beihang University, Tianjin University 소속 공동 연구진 (교신저자 Qian Yu, Weijia Li)</li>
+<li><strong>출처</strong>: arXiv:2611.24408v1 [cs.CV] (2026년 11월 18일)</li>
+<li><strong>프로젝트 페이지</strong>: 코드·데이터·리더보드가 https://github.com/chuangwang123/strideworld 에 공개되어 있음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.24408">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>인터랙티브 비디오 월드 모델을 평가할 때 생성된 비디오 자체로부터 재구성한 기준이 아니라, 동작 전에 고정된 시작 뷰의 실제 3D 기하와 모델 자신의 초기 스텝으로부터 얻은 "보폭(stride)"을 기준으로 삼아, 장면의 강성(rigidity)과 행동 일관성(action consistency)을 측정하는 벤치마크 StrideWorld를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>인터랙티브 월드 모델은 사용자의 명령을 받아 생성된 장면을 탐색하게 해주는데, 이를 위해서는 카메라가 움직여도 장면이 3차원 구조를 유지해야 하고, 각 행동이 매번 일관된 효과를 내야 한다. 그러나 기존 벤치마크들은 대부분 이러한 특성을 "검증 대상이 되는 비디오 자체"로부터 적합(fit)한 기준과 비교하는 방식을 쓴다. 예를 들어 생성된 프레임으로부터 SLAM이나 3D 파운데이션 모델(VGGT, Depth Anything 3 등)로 장면과 카메라를 재구성하고 그 재구성과의 일치도를 측정하거나, 복원한 카메라 경로를 명령 경로와 스케일을 맞춘 뒤 비교한다. 문제는 이러한 기준 자체가 생성된(어쩌면 일관되지 않은) 영상에 끼워 맞춰진 것이기 때문에, 점진적인 장면 변형이나 속도·경로 길이의 변화가 기준에 흡수되어 탐지되지 않을 수 있다는 점이다. 또한 서로 다른 모델은 "한 스텝"이 의미하는 모션의 크기가 제각각이어서 공통 단위가 없고, 루프 폐쇄(loop-closure) 기반 테스트는 반대 방향 명령이 서로 상쇄된다는 비현실적 가정에 의존한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>StrideWorld 벤치마크 제안</strong>: 동작이 일어나기 전에 고정된 참조(시작 뷰의 실제 기하, 모델 자신의 처음 네 스텝으로 계산한 보폭)를 기준으로 장면 강성과 행동 일관성을 측정하는 평가 체계를 제시했다.</li>
+<li><strong>15개 공개 모델에 대한 벤치마킹</strong>: 15개의 오픈 인터랙티브 월드 모델을 평가해, 한 모델을 제외하고 모두 카메라가 움직일수록 장면을 변형시키며, 단일 행동을 유지할 때는 대체로 일정한 속도를 유지하지만 여러 행동을 조합하면 자주 실패함을 보였다.</li>
+<li><strong>미세조정 효과 검증</strong>: 정확한 카메라 경로가 포함된 112개의 렌더링 클립으로 두 모델을 미세조정하면 경로 중간에 멈추는(stall) 문제 대부분이 해소되고 Composition 점수가 두 배 이상 향상됨을 보였다.</li>
+</ul>
+<h2>방법론</h2>
+<p>StrideWorld는 30개 장면(언리얼 엔진 5로 제작된 24개 장면과 실제 ETH3D 장면 6개)에서 얻은 140개의 시작 뷰를 사용하며, 모든 시작 뷰는 실측(ground-truth) 깊이와 카메라 파라미터를 가진다. 평가는 세 가지 테스트로 구성된다.</p>
+<p>첫째, <strong>강성(Rigidity) 테스트</strong>는 시작 뷰의 실측 깊이와 내부 파라미터를 이용해 특징점을 3D 앵커로 변환하고, 이를 포즈 추정용 앵커(P)와 held-out 앵커(Q)로 나눈다. 이후 생성된 각 프레임에서 CoTracker3로 앵커를 추적하고, 포즈 앵커만으로 카메라를 복원한 뒤, held-out 앵커가 복원된 카메라 기준으로 원래 위치에 머무르는지를 각도 오차(Rigidity offset)로 측정한다.</p>
+<p>둘째, <strong>보폭(Pace) 테스트</strong>는 각 모델 고유의 모션 단위 문제를 해결하기 위해, 하나의 행동을 16스텝 유지했을 때 그 모델의 "보폭"을 처음 네 스텝의 평균 모션(SE(2) 상의 Lie 대수 평균)으로 정의하고, 이후 스텝들이 이 보폭을 유지하는지(즉 선형으로 외삽한 예측 위치에 부합하는지)를 pace ratio와 pace score로 평가한다.</p>
+<p>셋째, <strong>구성(Composition) 테스트</strong>는 여러 행동이 연쇄된 8~14스텝 경로에서, 각 스텝이 해당 행동의 보폭만큼 카메라를 이동시킨다고 가정했을 때의 예측 종점과 실제 복원된 종점을 비교한다. 동일한 이동을 다른 순서로 배치한 짝 경로(cancel, swap 등)끼리도 서로 비교해, 정지(stall)나 종점 오차(End err.), 완료된 경로 중 예측에 가까운 비율(Near) 등을 산출한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>15개의 오픈 인터랙티브 월드 모델(이산 키/토큰 기반 5종, 카메라 포즈 기반 9종, 텍스트 프롬프트 기반 1종)을 대상으로 총 54,600개의 영상을 생성해 평가했다. 결과, 한 모델(3D 캐시를 명시적으로 쓰는 모델)을 제외한 거의 모든 모델이 카메라가 움직일수록 장면을 변형시켰으며, 변형 정도는 동일 카메라 경로를 따라 실제 장면을 렌더링한 "강체(rigid) 대응물" 대비 최대 7.3배에 달했다. 단일 행동을 유지할 때는 14개의 순위 매겨진 모델 중 12개가 보폭 비율 0.8~1.25의 안정 구간 안에 들어 비교적 일정한 속도를 유지했다. 그러나 행동들을 경로로 조합하면 대부분의 모델에서 경로 중간에 멈추는 현상(mid-route stall)과 완료된 경로조차 예측 종점에서 멀리 벗어나는 현상(endpoint drift)이 나타났다. 모델 자신의 보폭이 예측한 위치로부터 한 보폭 이내에 도달하는 경로의 비율(Near)이 전체 모델에서 3.1%~84.3%로 크게 갈렸으며, 명령 자체의 추정 장면 깊이에 따라 이동량을 조절하는 두 모델(HY-World 2.0, Lyra 2.0)만이 경로의 4분의 3 이상을 한 보폭 이내로 맞췄다. 강성 순위와 Composition 점수 순위 사이에는 유의미한 상관관계가 없었다(Spearman 상관계수 약 -0.01~-0.07). 벤치마크의 신뢰성은 렌더링 엔진에서의 실제 카메라 경로(평균 오차 1.5% 이동, 0.3% 회전)와 10명의 비전문 평가자 판단(Fleiss' κ=0.87, AUC 0.83~0.88)을 통해 검증되었다. 기존 지표(스케일을 맞춘 궤적 오차 등)는 보폭이 1.5배로 늘어난 경우의 43%만 탐지한 반면, StrideWorld의 Pace 테스트는 동일 오탐률에서 94%를 탐지했다.</p>
+<h2>한계점</h2>
+<p>StrideWorld는 시작 뷰의 표면이 전체 시퀀스 동안 계속 보이도록 짧은 시퀀스로 구성되어 있어, 장시간 탐험(long-horizon exploration)이나 재방문(revisit) 시나리오는 다루지 않는다. 또한 현재는 평면상의(2D, SE(2)) 카메라 모션과 피치(pitch)를 별도로만 평가하며, 완전한 6자유도(6-DoF) 궤적으로의 확장은 향후 과제로 명시되어 있다. AlayaWorld와 같은 일부 모델은 첫 스텝의 모션이 너무 작아 보폭 측정이 신뢰할 수 없어 순위에서 제외되었다.</p>
+<h2>시사점</h2>
+<p>이 연구는 생성된 비디오 자체에 적합시킨 기준으로는 점진적인 장면 변형이나 속도 변화를 탐지하지 못한다는 점을 실증적으로 보여주며, 동작 이전에 고정된 독립적 기준(실측 기하, 모델 고유의 보폭)을 사용하는 평가 방식이 왜 필요한지를 입증한다. 아울러 장면 보존 능력(강성)과 명령 추종 능력(구성)이 서로 독립적인 축이라는 점, 그리고 명시적 3D 캐시나 깊이 기반 스케일링과 같은 설계 선택이 두 축 모두에서 실질적인 이득을 준다는 점을 시사하여, 향후 인터랙티브 월드 모델 설계에 구체적인 개선 방향을 제공한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.24408" target="_blank" rel="noopener">huggingface.co/papers/2611.24408</a> · 2026-11-20</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

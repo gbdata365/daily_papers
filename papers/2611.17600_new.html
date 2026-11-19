@@ -1,0 +1,107 @@
+<meta charset="UTF-8">
+<title>라이트타르</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#8 · Daily Papers 2026-11-20</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 20</span>
+    </div>
+    <h1 class="article-title">LightTAR: Light and Fast Target-Aware Representations for Multimodal Tabular Learning</h1>
+    <p class="article-title-ko">라이트타르: 멀티모달 테이블 학습을 위한 경량·고속 타깃인식 표현</p>
+    <p class="article-sub">멀티모달 테이블 학습에서 텍스트·이미지 열을 사전학습 인코더로 표현한 뒤 PCA로 차원을 줄이는 기존 비지도 방식에, 훈련 레이블을 활용한 소수의 타깃인식(target-aware) 특징을 저비용으로 추가해, 21개 테이블 학습 모델 전반에서 예측 성능을 개선하는 경량 표현 기법.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.17600" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.17600" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: LightTAR: Light and Fast Target-Aware Representations for Multimodal Tabular Learning</li>
+<li><strong>저자</strong>: Eilam Shapira, Alan Arazi, Shoham Grunblat, Roi Reichart (테크니온 – 이스라엘 공과대학교)</li>
+<li><strong>출처</strong>: arXiv:2611.17600v1 [cs.LG] (2026-11-12)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/eilamshapira/LightTAR">코드 저장소</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.17600">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>멀티모달 테이블 학습에서 텍스트·이미지 열을 사전학습 인코더로 표현한 뒤 PCA로 차원을 줄이는 기존 비지도 방식에, 훈련 레이블을 활용한 소수의 타깃인식(target-aware) 특징을 저비용으로 추가해, 21개 테이블 학습 모델 전반에서 예측 성능을 개선하는 경량 표현 기법.</p>
+<h2>배경 및 문제의식</h2>
+<p>정형(수치·범주형) 데이터와 비정형(텍스트·이미지) 필드가 함께 있는 멀티모달 테이블 학습에서는, 텍스트나 이미지 값을 사전학습 인코더로 임베딩한 뒤 PCA로 차원을 축소해 테이블 학습기에 넣는 것이 일반적인 파이프라인이다. 그러나 이 PCA 축소는 완전히 비지도 방식으로, 입력 분산이 큰 방향을 우선 보존할 뿐 예측 타깃과의 관련성은 전혀 고려하지 않는다. 그 결과 레이블과 강하게 연관된 정보라도 분산이 작으면 버려질 수 있다. 또한 기존 파이프라인은 인코더의 마지막 레이어 표현만 사용하는데, 선행 연구에 따르면 중간 레이어가 최종 레이어에는 없는 예측에 유용한 정보를 담을 수 있다. 인코더를 과제별로 미세조정하면 이런 문제를 완화할 수 있지만, 비용이 크고 과적합 위험이 있으며 데이터셋마다 이득이 일관되지 않는다는 한계가 있다.</p>
+<h2>핵심 기여</h2>
+<p>저자들은 LightTAR를 제안한다. 이는 인코더나 다운스트림 학습기를 전혀 바꾸지 않고, 기존 PCA 표현에 소수(5개)의 타깃인식 특징을 추가하는 방식이다. 이 특징은 정규화된 부분최소제곱(PLS, Partial Least Squares)을 이용해, 인코더의 최종 레이어와 중간 레이어 표현을 결합한 공간에서 타깃과의 공분산이 큰 방향을 순차적으로 추출함으로써 얻는다. 추출 과정은 그래디언트 계산이나 GPU가 필요 없는 선형대수 연산만으로 수초 내에 끝난다. 트리 앙상블·신경망·테이블 파운데이션 모델을 포함한 21개 모델에 대해 평가한 결과, LightTAR는 거의 모든 모델과 거의 모든 데이터셋에서 평균 예측 성능을 끌어올렸다.</p>
+<h2>방법론</h2>
+<p>각 텍스트/이미지 열에 대해, 고정된(동결된) 인코더로 최종 레이어와 중간 레이어(실험에서는 레이어 12와 6)의 표현을 각각 얻은 뒤, 최종 레이어 표현에는 표준적인 PCA(상위 u=30개 성분, "앵커")를 적용하고, 두 레이어를 이어붙인 표현에는 정규화된 PLS를 적용해 타깃과의 공분산을 최대화하면서 입력분산 항으로 정규화된 s=5개의 추가 방향을 순차적으로(이전 방향이 설명한 변동을 제거해 가며) 추출한다. 최종적으로 각 열은 u개의 PCA 특징과 s개의 타깃인식 특징을 이어붙인 u+s차원 벡터로 표현되며, 이 벡터가 테이블의 다른 수치·범주형 특징과 함께 다운스트림 학습기에 입력된다. 새로운 데이터에 대해서는 학습 시 구한 투영 행렬을 그대로 적용하는 단일 행렬곱으로 변환이 끝난다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>텍스트는 e5-small-v2, 이미지는 DINOv3 ViT-S/16을 고정 인코더로 사용했고, MulTaBench의 핵심 40개 데이터셋(텍스트 20개, 이미지 20개)과, 문자열 열이 예측 기여도와 무관하게 선정된 STRABLE(108개 테이블) 두 벤치마크에서 21개 테이블 학습기로 평가했다. MulTaBench에서 LightTAR는 텍스트 분류 과제 10개 중 10개, 회귀 과제 10개 중 9개, 이미지 분류 12개 중 10개, 회귀 8개 중 7개에서 PCA만 사용한 기본값(Frozen) 대비 성능이 향상되었으며, 21개 학습기 전체의 Elo 레이팅이 모두 상승해 풀링 기준 48점의 Elo 향상을 보였다. 반면 문자열 열의 예측 기여도를 고려하지 않고 구성된 STRABLE에서는 결과가 더 제한적이고 혼재되어(회귀는 개선, 분류는 다소 저하), 학습 데이터로 두 표현 중 더 나은 쪽을 고르는 선택 메커니즘(게이트)을 적용하면 두 경우 모두에서 추가 개선을 얻을 수 있었다. 계산 비용 측면에서는 표현 구성 시간이 기본값 대비 텍스트에서 0.66% 증가에 그쳐, 인코더를 LoRA로 미세조정하는 방식(약 28,130% 증가)보다 압도적으로 저렴했다. 절제 실험에서는 중간 레이어 정보와 PCA 앵커를 함께 사용하는 것, 그리고 실제 레이블을 사용하는 것(레이블을 무작위로 섞은 대조군 대비 큰 차이)이 성능 향상의 핵심 요인임이 확인되었다.</p>
+<h2>한계점</h2>
+<p>LightTAR의 효과는 동결된 인코더의 선택된 레이어들로부터 선형 투영이 추출할 수 있는 예측 정보의 양에 의존하므로, 모든 데이터셋에서 성능을 개선하지는 못한다(STRABLE 분류 과제처럼 일부 경우 오히려 저하). 또한 현재 방법은 선형 투영에 국한되어 있어 비선형 관계를 포착하지 못하며, 하나의 텍스트/이미지 열과 테이블의 다른 열 사이의 상호작용은 고려하지 않는다.</p>
+<h2>시사점</h2>
+<p>인코더를 건드리지 않고 차원 축소 단계에만 레이블 정보를 주입하는 매우 가벼운 개입만으로도, 비용이 큰 미세조정에 준하는 성능 개선 효과를 여러 모델·데이터셋에 걸쳐 일관되게 얻을 수 있음을 보여준다. 이는 기존 멀티모달 테이블 학습 파이프라인에 손쉽게 끼워넣을 수 있는 실용적 개선책으로, 특히 대규모 테이블 파운데이션 모델처럼 미세조정이 어렵거나 불가능한 모델에도 바로 적용 가능하다는 점에서 실무적 가치가 크다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.17600" target="_blank" rel="noopener">huggingface.co/papers/2611.17600</a> · 2026-11-20</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

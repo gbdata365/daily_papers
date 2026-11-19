@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>피콜로</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#12 · Daily Papers 2026-11-20</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 11</span>
+    </div>
+    <h1 class="article-title">Piccolo: Co-Evolving Decision Models and Data through Recursive Self-Improvement</h1>
+    <p class="article-title-ko">피콜로: 재귀적 자기개선을 통한 의사결정 모델과 데이터의 공진화</p>
+    <p class="article-sub">0.8B~27B 규모의 멀티모달 "의사결정 모델(decision model)" 패밀리 Piccolo를, 에이전트가 모델 거동을 분석하고 학습 데이터를 직접 생성·개선하는 재귀적 자기개선(RSI) 루프를 통해 모델과 데이터를 함께 진화시키며 구축한 연구이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.24651" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.24651" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Piccolo: Co-Evolving Decision Models and Data through Recursive Self-Improvement</li>
+<li><strong>저자</strong>: Piccolo Team (AgentScope 프로젝트 소속, Model/Data/Infra/Project Steering 등 역할별로 구성된 공동 연구진)</li>
+<li><strong>출처</strong>: arXiv:2611.24651v1 [cs.CL] (2026년 11월 18일)</li>
+<li><strong>프로젝트 페이지</strong>: Models, Code, Blog 링크가 제공됨 (예: https://decisionplayground.agentscope.io/piccolo.html 등 AgentScope 생태계 페이지)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.24651">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>0.8B~27B 규모의 멀티모달 "의사결정 모델(decision model)" 패밀리 Piccolo를, 에이전트가 모델 거동을 분석하고 학습 데이터를 직접 생성·개선하는 재귀적 자기개선(RSI) 루프를 통해 모델과 데이터를 함께 진화시키며 구축한 연구이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>생성형 모델은 개방형 생성(open-ended synthesis)에는 뛰어나지만, 엄격한 지연 시간과 신뢰성 제약 속에서 행동을 선택하거나 가드레일을 적용하거나 워크플로를 라우팅하는 "의사결정"에는 병목이 발생한다. 저자들은 상태·질문·후보 집합을 받아 확률 분포를 출력하는 의사결정 모델이라는 개념을 통해 이 문제에 접근한다. 또한 기존의 모델 개발 관행에서는 실패한 학습 실행(run)을 단순히 버려지는 매몰 비용으로 취급하는데, 저자들은 이러한 실패 경험에도 재사용 가능한 정보(파라미터 갱신 방향, 진단 신호)가 담겨 있다고 보고, 이를 축적해 다음 실험을 설계하는 데 활용하는 방법론이 필요하다고 주장한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>멀티모달 의사결정 모델 패밀리</strong>: 0.8B부터 27B까지 다섯 가지 크기의 Piccolo 모델을 공개했으며, 크기 대비 경쟁력 있는 성능과 더불어 Vision Full 리더보드 1위, 크기별 Private 부문 1위, 엔터프라이즈 워크플로부터 인터랙티브 게임 제어까지 다양한 응용을 보여주었다.</li>
+<li><strong>데이터 기반 RSI 방법론</strong>: 세밀한 피드백, 명시적 실험 제안, 재사용 가능한 실험 기록을 결합해 모델 개발을 에이전트가 주도하는 지속적인 연구 루프로 전환하는 orchestrator 구조를 설계했다.</li>
+<li><strong>의사결정 모델 개발에 대한 경험적 통찰</strong>: 약 600회의 실험(약 2.8×10^21 FLOPs 추정)을 통해 (1) 백본-레시피(backbone-recipe) 공동 적응이 단순한 모델 최신성보다 중요하고, (2) 타겟팅된 데이터 큐레이션으로 4B~9B 모델이 27B급 베이스라인과 경쟁할 수 있으며, (3) 지속적인 손실 감소가 이산적인 의사결정 정확도와 분리되거나 심지어 악화시킬 수 있다는 세 가지 반직관적인 발견을 제시했다.</li>
+</ul>
+<h2>방법론</h2>
+<p>Piccolo의 의사결정 모델은 상태 s, 질문 u, 순서 있는 후보 집합 C=(c1,...,cK)를 받아 목표 분포 q를 예측하도록 학습된다. 비전 인코더, 커넥터, 언어 백본(프롬프트에 양방향 어텐션 적용)으로 구성되며, 각 후보에는 단일 토큰 레이블이 할당되고, 백본이 산출한 은닉 상태를 언어모델 헤드로 투영한 뒤 후보 토큰들에 대해서만 소프트맥스를 적용해 확률 분포를 얻는다(Choice/Noul/Score 세 가지 인터페이스로 표현). 학습은 하드·소프트 타깃에 대한 교차 엔트로피 지도학습을 기본으로 하고, 후보 단위 강화학습(정답 기반 그룹 상대적 업데이트)과 가중치 공간 최적화(체크포인트 보간, 파라미터 투영 재조정, 이전 학습 방향 추출 등)로 이를 보완한다.</p>
+<p>핵심은 Recursive Self-Improvement(RSI) 루프다. "제안(propose) → 실험(experiment) → 진단 및 갱신(diagnose &amp; update)"의 반복 루프를 통해, 연구 메모리 R_t가 그동안 수행된 실험, 데이터, 모델, 비교 결과를 누적 기록한다. 세밀한 의미론적 슬라이스(도메인×역량 태그)별로 학습 동역학(타깃-예측 KL 등)과 추론 정확도를 집계해, 어느 영역에서 학습이 정체되거나 역량 간 경쟁이 발생하는지 지도화한다. 연구 에이전트는 이 지도를 바탕으로 데이터 혼합 비율 조정, 중복 제거/다운샘플링, 라벨 재검토, 부족한 역량에 대한 합성 데이터 생성 등 데이터 액션을 제안하고, DataJuicer-Sandbox 등의 인프라를 통해 데이터·학습·평가 파이프라인을 실행한다. 사람 연구자는 목표 설정과 예산 배분, 주요 방향 결정에 관여하고, 세부적인 레시피 조정과 실험 실행은 에이전트가 담당하는 협업 구조다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>약 66만 3천 개 예시(텍스트 31만 1천 개, 이미지-텍스트 35만 2천 개)로 구성된 학습 풀을 사용했으며, Decision Index Vision 리더보드(2026-11-17 스냅샷, 86개 참가 모델 기준)와 HarnessJevBench·DataJevBench·JevBench 등 응용 평가에서 성능을 측정했다. Piccolo-27B는 Vision Full 75.59점, Private 70.97점으로 1위를 기록했으며, Piccolo-9B(68.35)와 Piccolo-4B(67.46)는 각 크기 부문 Private에서 1위를 차지했다. 응용 평가에서는 Piccolo-27B가 Harness 84.41, Data 82.60, JevBench 92.21을 기록해 비교 대상(HY-World 계열이 아닌 동급 모델들, 예: JDI-Decision V1, Valen 등) 대비 우위를 보였다. 또한 데이터 재조정(rebalancing)과 필터링을 통해 Text 점수가 67.36에서 최대 67.93으로, Harness가 82.88에서 84.58로 향상되는 등 데이터 큐레이션의 효과를 정량적으로 입증했다. 교차 모달 병합(cross-modal merging)이나 후보 분포 통합(candidate-distribution integration) 같은 모델 합성 기법, 그리고 컨텍스트 재구성·레이어 재사용 같은 추론 시 기법도 각각 소폭의 성능 향상을 가져왔다. 한편 고정된 데이터 풀에 대해 단순히 학습 노출(샘플 재사용)을 늘리는 것은 Data 점수를 소폭 올리는 대신 Text와 Harness 점수를 각각 1.29점, 1.69점 떨어뜨려, 정적 데이터에 대한 과도한 학습이 일반화를 해친다는 점도 확인되었다.</p>
+<h2>한계점</h2>
+<p>논문은 손실 감소가 이산적 의사결정 정확도와 괴리될 수 있다는 현상(연속적인 cross-entropy 개선이 실제 정답률 하락으로 이어지는 사례, 표 1 참고)을 경험적으로 보고하지만, 왜 이런 디커플링이 발생하는지에 대한 이론적 설명은 제한적이다. 또한 특정 벤치마크(예: 단일 Public Text 점수)를 최적화하면 다른 역량(DataJevBench 등)에서 최대 3점 규모의 회귀가 발생할 수 있음을 보여, 하나의 집계 점수만으로 모델 개선을 판단하는 것은 위험하다는 점을 지적한다. 백본 초기화(예: Qwen3.5/3.6/3.8)에 따라 최적 레시피와 강점 영역(Vision vs. Harness)이 크게 달라, 특정 배포 목적에 맞춰 백본과 데이터 레시피를 공동 선택해야 한다는 제약도 명시적으로 언급된다.</p>
+<h2>시사점</h2>
+<p>이 연구는 모델 개발을 "정적 데이터 위에서 모델을 최적화하는 과정"이 아니라, 모델의 역량 경계가 변함에 따라 데이터 분포와 레시피도 함께 바뀌어야 하는 "결합된 동역학계"로 재정의한다. 실패한 학습 실행조차 향후 실험 설계에 재사용 가능한 자산으로 취급하는 메모리 기반 orchestrator 구조는, 포스트트레이닝을 수작업 시행착오에서 축적 가능한 체계적 연구 루프로 전환할 수 있음을 시사한다. 또한 지연 시간과 신뢰성이 중요한 에이전트 하네스, 데이터 처리, 인터랙티브 게임 제어 등 실세계 응용에 "빠른 System-1형 의사결정 모델"이 생성형 모델을 보완하는 역할을 할 수 있음을 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.24651" target="_blank" rel="noopener">huggingface.co/papers/2611.24651</a> · 2026-11-20</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

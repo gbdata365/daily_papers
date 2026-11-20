@@ -1,0 +1,122 @@
+<meta charset="UTF-8">
+<title>마스크는 객체가 아니다</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#7 · Daily Papers 2026-11-21</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 30</span>
+    </div>
+    <h1 class="article-title">The Mask Is Not the Object: Volumetric Supervision for 3D Gaussian Segmentation</h1>
+    <p class="article-title-ko">마스크는 객체가 아니다: 3D 가우시안 분할을 위한 체적 감독</p>
+    <p class="article-sub">3D Gaussian Splatting(3DGS) 기반 객체 분할에서, 렌더링된 2D 마스크가 정확해 보여도 실제로는 기여도가 낮은 가우시안들이 누락될 수 있다는 문제를 지적하고, 깊이 기반 클러스터링으로 모든 관련 가우시안을 직접 지도학습하는 VODA(플러그 앤 플레이 목적함수)를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.21383" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.21383" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: The Mask Is Not the Object: Volumetric Supervision for 3D Gaussian Segmentation</li>
+<li><strong>저자</strong>: Jeonghwan Cho, Minsu Kim, Junyoung Hong, Seon Joo Kim (연세대학교)</li>
+<li><strong>출처</strong>: arXiv:2611.21383v1 [cs.CV] (2026년 11월, NeurIPS 2026 게재)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 "Project Page" 링크가 있으나 구체 URL은 PDF 본문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.21383">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>3D Gaussian Splatting(3DGS) 기반 객체 분할에서, 렌더링된 2D 마스크가 정확해 보여도 실제로는 기여도가 낮은 가우시안들이 누락될 수 있다는 문제를 지적하고, 깊이 기반 클러스터링으로 모든 관련 가우시안을 직접 지도학습하는 VODA(플러그 앤 플레이 목적함수)를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>기존 3DGS 분할 방법들은 렌더링된 2D 마스크의 정확도로만 평가·학습되는데, 이는 알파 블렌딩 시 기여도가 큰(dominant) 가우시안에 그래디언트가 집중되고, 가려지거나(occluded) 기여도가 낮은 가우시안은 약하게만 지도학습된다는 한계가 있다. 그 결과 렌더링된 마스크는 그럴듯해도 객체를 구성하는 3D 가우시안 전체(체적, volumetric) 선택은 불완전할 수 있다(예: 객체를 제거해도 일부 잔여물이 남음).</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>렌더링 기반 지도학습이 기여도 가중치(contribution-weighted) 그래디언트 경로를 공유하기 때문에 체적 완전성(volumetric completeness)을 보장하지 못함을 분석적으로 규명.</li>
+<li>VODA: 깊이 인식 래스터라이저로 픽셀별 기여 가우시안들을 깊이 클러스터로 그룹화한 뒤, 선택된 클러스터 내 모든 가우시안(기여도와 무관하게)에 직접 특징 손실을 적용하는 플러그 앤 플레이 지도 기법 제안.</li>
+<li>Removal-3D 벤치마크와 Removal Depth Error(RDE) 지표를 새로 제안하여, 객체 제거 후 깊이 변화 비교를 통해 체적 선택 완전성을 정량적으로 측정 가능하게 함.</li>
+</ol>
+<h2>방법론</h2>
+<ul>
+<li><strong>깊이 인식 래스터라이저(Depth-Aware Rasterizer)</strong>: 투과율 기반 조기 종료를 비활성화하여 가려진 기여자까지 모두 수집하고, 인접 가우시안 간 깊이 간격이 임계값(지역 깊이 간격의 중앙값 기반 적응형 임계값)을 넘으면 클러스터를 분리한다.</li>
+<li><strong>타겟 클러스터 선택</strong>: 각 픽셀에서 총 렌더링 기여도가 가장 큰 깊이 클러스터를 객체 연관 클러스터로 선택한다.</li>
+<li><strong>직접 가우시안 수준 지도(Direct Gaussian-Level Supervision)</strong>: 전체 렌더링 특징 맵에서 얻은 가우시안별 의사 타겟(pseudo-target)을 detach(stop-gradient)한 뒤, 선택된 클러스터 내 모든 가우시안의 특징에 직접 L2(또는 코사인) 손실을 적용해 기여도 가중 그래디언트 경로를 우회한다.</li>
+<li><strong>픽셀 수준 특징 밀어내기 손실(Pixel-level Push Loss)</strong>: 서로 다른 객체 마스크에 속한 픽셀 쌍의 렌더링 특징 코사인 유사도가 마진을 넘으면 패널티를 부과하여, 인접 객체 경계에서 특징이 섞이는 것을 억제한다.</li>
+<li>기존 베이스라인(장면 기하, 불투명도, 특징 표현, 추론 시 선택 절차)은 그대로 유지하며, VODA는 특징 학습 단계에만 추가 손실을 더하는 방식으로 적용된다.</li>
+</ul>
+<h2>실험 설정 및 결과</h2>
+<ul>
+<li>LERF(오픈 보캐뷸러리 3D 객체 선택)와 ScanNet(텍스트 쿼리 기반 의미 분할) 두 표준 벤치마크, 그리고 자체 제안한 Removal-3D 벤치마크에서 OpenGaussian, LaGa(자기지도), Gaussian Grouping, ILGS(지도학습) 등 4개 베이스라인에 VODA를 적용.</li>
+<li>LERF에서 평균 mIoU/mAcc가 모든 베이스라인에서 개선(예: LaGa 56.80→60.28 mIoU 평균), ScanNet에서도 19/15/10 클래스 분할 전반에서 일관된 향상을 보임.</li>
+<li>Removal-3D에서는 모든 베이스라인에서 mRDE(깊이 오차)가 일관되게 감소하고 mIoU도 함께 개선됨(예: OpenGaussian 39.31→27.34 mRDE).</li>
+<li>어블레이션 결과, 직접 지도(렌더링 경유 지도 대비)가 성능 향상의 핵심 요인이며, 픽셀 수준 밀어내기 손실은 Removal-3D에서 보완적 역할을 함. 단순한 그래디언트 재가중치(Normalize, Clamp)나 KNN 기반 특징 전파는 VODA에 미치지 못함을 확인.</li>
+</ul>
+<h2>한계점</h2>
+<p>깊이 클러스터링은 서로 맞닿은 객체를 하나로 합치거나, 내부가 희박한 객체를 여러 조각으로 나눌 수 있으며, 픽셀 수준 밀어내기 손실은 이를 부분적으로만 완화한다. 또한 가려진 가우시안에는 특징 수준의 정답(ground truth)이 없어 다운스트림 선택·제거 결과를 통해 간접적으로만 평가 가능하며, 엄밀한 체적 평가는 합성 데이터인 Removal-3D의 세 장면에서만 가능하다.</p>
+<h2>시사점</h2>
+<p>렌더링 마스크 정확도만으로는 3D 가우시안 객체 선택의 완전성을 보장할 수 없음을 보여주며, 기존 특징 학습 파이프라인에 손실 함수만 추가하는 방식으로 기존 분할/편집 기법들의 체적 완전성을 개선할 수 있는 실용적 경로를 제시한다. 객체 제거·재배치 등 3DGS 기반 장면 편집의 신뢰도를 높이는 데 기여할 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.21383" target="_blank" rel="noopener">huggingface.co/papers/2611.21383</a> · 2026-11-21</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

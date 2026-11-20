@@ -1,0 +1,110 @@
+{
+  "2611.21373": {
+    "base": "2611_위비즈포렌식_AI생성비디오-탐지-자기진화에이전트",
+    "rank": "#1",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "47",
+    "en_title": "WeVisForensics: Self-Evolving Agent for Omni AI-Generated Video Detection",
+    "ko_title": "위비즈포렌식: 옴니 AI 생성 비디오 탐지를 위한 자기진화 에이전트"
+  },
+  "2611.26444": {
+    "base": "2611_마인드투액트_체화마음-물리행동-진단벤치마크",
+    "rank": "#2",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "45",
+    "en_title": "Mind2Act World: A Diagnostic Benchmark for Embodied Mind, Physical Action, and Mind-Action Composition in Robotic Manipulation",
+    "ko_title": "마인드투액트 월드: 로봇 조작에서 체화된 마음·물리적 행동·마음-행동 결합을 진단하는 벤치마크"
+  },
+  "2611.26409": {
+    "base": "2611_위엠엠비디오_오픈소스-옴니모달-비디오이해",
+    "rank": "#3",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "39",
+    "en_title": "WeMM-Video: Pushing the Frontiers of Open-Source Omni-Modal Video Understanding",
+    "ko_title": "위엠엠비디오: 오픈소스 옴니모달 비디오 이해의 최전선"
+  },
+  "2611.26590": {
+    "base": "2611_의식탐구_비전언어모델-선택적접근-전역작업공간",
+    "rank": "#4",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "34",
+    "en_title": "Probing the \"Conscious\" Mind: Selective Access and Global Workspace in Vision-Language Models",
+    "ko_title": "의식 탐구: 비전-언어 모델의 선택적 접근과 전역 작업공간"
+  },
+  "2611.26595": {
+    "base": "2611_코다다빈치_코드투비디오-비디오생성-재구상",
+    "rank": "#5",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "32",
+    "en_title": "Coda-DaVinci: Reimagining Video Generation with Code2Video",
+    "ko_title": "코다다빈치: Code2Video로 비디오 생성을 재구상하다"
+  },
+  "2611.26629": {
+    "base": "2611_포스테리어매칭_사후분포매칭-증류기법",
+    "rank": "#6",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "31",
+    "en_title": "Posterior Matching Distillation",
+    "ko_title": "사후분포 매칭 증류"
+  },
+  "2611.21383": {
+    "base": "2611_볼류메트릭마스크_3D가우시안-분할-체적감독",
+    "rank": "#7",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "30",
+    "en_title": "The Mask Is Not the Object: Volumetric Supervision for 3D Gaussian Segmentation",
+    "ko_title": "마스크는 객체가 아니다: 3D 가우시안 분할을 위한 체적 감독"
+  },
+  "2611.26603": {
+    "base": "2611_뎁스프로2_선명한-시간일관-단안깊이추정",
+    "rank": "#8",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "27",
+    "en_title": "Depth Pro 2: Sharp and Temporally Consistent Metric Monocular Depth",
+    "ko_title": "뎁스프로2: 선명하고 시간적으로 일관된 메트릭 단안 깊이 추정"
+  },
+  "2611.26380": {
+    "base": "2611_에고캡셔너_1인칭비디오-세밀캡셔닝",
+    "rank": "#9",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "24",
+    "en_title": "EgoCaptioner: Towards Comprehensive and Fine-Grained Egocentric Video Captioning",
+    "ko_title": "에고캡셔너: 포괄적이고 세밀한 1인칭 비디오 캡셔닝을 향하여"
+  },
+  "2611.26107": {
+    "base": "2611_하이유니_이해생성통합-공유시각공간",
+    "rank": "#10",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "23",
+    "en_title": "HiUni: Harmonizing Understanding and Generation in Shared Visual Space",
+    "ko_title": "하이유니: 공유 시각 공간에서의 이해와 생성 조화"
+  },
+  "2611.25387": {
+    "base": "2611_튜링스페이스_인터랙티브캡차-공간지능평가",
+    "rank": "#11",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "22",
+    "en_title": "TuringSpace: Grounding Spatial Intelligence in Action with Interactive CAPTCHAs",
+    "ko_title": "튜링스페이스: 상호작용형 캡차로 공간지능을 행동에 접지하기"
+  },
+  "2611.26414": {
+    "base": "2611_제로VLN_미세조정없는-VLM기반-내비게이션",
+    "rank": "#12",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "21",
+    "en_title": "ZeroVLN: Learning to Navigate without Supervised Fine-Tuning of the VLM Brain",
+    "ko_title": "제로VLN: VLM 브레인의 지도 미세조정 없이 내비게이션 학습하기"
+  }
+}

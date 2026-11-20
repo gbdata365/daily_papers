@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>위비즈포렌식</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#1 · Daily Papers 2026-11-21</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 47</span>
+    </div>
+    <h1 class="article-title">WeVisForensics: Self-Evolving Agent for Omni AI-Generated Video Detection</h1>
+    <p class="article-title-ko">위비즈포렌식: 옴니 AI 생성 비디오 탐지를 위한 자기진화 에이전트</p>
+    <p class="article-sub">AI 생성 영상 탐지를 '한 번에 판단'하는 문제가 아니라, 메인 에이전트(investigator)가 시각·음성 전문 서브 에이전트(inspector)들을 선택적으로 호출해 근거를 수집하는 '수사' 과정으로 재정의하고, 두 계층을 함께 강화학습으로 공진화시키는 에이전트 프레임워크 WeVisForensics를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.21373" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.21373" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: WeVisForensics: Self-Evolving Agent for Omni AI-Generated Video Detection</li>
+<li><strong>저자</strong>: Yipeng Du 외 (Nanjing University, WeChat Vision/Tencent Inc. 소속 연구진; 교신저자 Chen Li, Ying Tai)</li>
+<li><strong>출처</strong>: arXiv:2611.21373v1 [cs.CV] (2026년 11월)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://tencent.github.io/WeVisForensics">https://tencent.github.io/WeVisForensics</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.21373">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>AI 생성 영상 탐지를 '한 번에 판단'하는 문제가 아니라, 메인 에이전트(investigator)가 시각·음성 전문 서브 에이전트(inspector)들을 선택적으로 호출해 근거를 수집하는 '수사' 과정으로 재정의하고, 두 계층을 함께 강화학습으로 공진화시키는 에이전트 프레임워크 WeVisForensics를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>영상 생성 모델의 품질이 빠르게 향상되면서 가짜 영상과 진짜 영상을 구분하기 어려워지고 있다. 기존 멀티모달 LLM(MLLM) 기반 탐지 방법은 ① 한 번의 Chain-of-Thought 추론으로 전체 영상을 판단해 짧거나 국소적인 위조 흔적을 놓치거나 근거 없는 환각적 추론을 내놓는 문제, ② 고정된 멀티 에이전트 워크플로우나 고정된 전문가(서브 에이전트)를 사용해 메인 에이전트만 학습되고 전문가 자체의 탐지 능력은 개선되지 않는 문제를 안고 있다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>DTPO(Dual-Timescale Policy Optimization)</strong>: 메인 에이전트(investigator)는 빠른 주기로, 서브 에이전트(inspector)는 느린 주기로 함께 학습되는 강화학습 알고리즘을 제안해, 둘 중 하나만 바뀌면 다른 쪽에 '움직이는 타겟'이 되는 문제를 해결한다.</li>
+<li><strong>WeVisForensics</strong>: Appearance(외형), Physical consistency(물리적 일관성), Common sense(상식), OCR consistency(글자 일관성)의 4개 학습 가능한 시각 inspector와 Voice profile·ASR analysis 2개 고정 오디오 도구로 구성된 Forensic Sub-agent Library(FSL)를 메인 에이전트가 동적으로 호출하는 프레임워크를 제시한다.</li>
+<li><strong>ForenCue-30K</strong>: 역할별(시각/물리/상식/OCR/오디오) 근거와 시간 구간이 라벨링된 3만 건 규모의 데이터셋과, 이를 기반으로 한 상호작용 궤적 및 RL pool을 구축했다.</li>
+<li><strong>AgenticCue</strong>: 최종 정답뿐 아니라 에이전트가 올바른 서브 에이전트를 호출했는지(invocation precision)까지 평가하는 최초의 에이전틱 포렌식 벤치마크를 제안했다.</li>
+</ul>
+<h2>방법론</h2>
+<p>투자관(investigator)은 1FPS로 샘플링된 최대 16프레임의 영상 개요를 입력받아, 매 턴마다 '어떤 inspector를 호출할지', '어느 시간 구간을 볼지'를 결정하고, 최대 4회의 도구 호출 후 real/fake 최종 판정을 내린다(수식 (1)-(4)). 각 inspector는 issue/no_issue/inconclusive 같은 구조화된 보고서를 반환하며(수식 (5)), OCR inspector는 PaddleOCR 기반의 3단계(문자 위치 탐지→텍스트 존재 여부 판단→글자 단위 위조 검사) 파이프라인을 사용한다. 학습은 2단계로 이뤄진다: (1) Qwen3.5-4B 백본 위에 investigator와 4개 시각 inspector 각각을 역할별 LoRA 어댑터로 지도학습(SFT)하고, (2) DTPO 단계에서 investigator는 GRPO와 CLUE(Call-Level Utility Estimation, 각 호출이 정답 쪽으로 판단을 얼마나 이동시켰는지 측정)로 매 배치마다 갱신하고, inspector들은 누적된 '근거가 확인된' 상호작용들을 모아 EMA 교사의 지식 증류와 스킬 카드(Report/Ignore 규칙) 개정을 통해 H=20 스텝마다 느리게 갱신된다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>GenBuster-Bench(ID), GenBuster-Bench++·MintVid(OOD), AgenticCue 등에서 평가했으며, WeVisForensics-DTPO는 ID 벤치마크에서 97.7%, OOD인 GenBuster++에서 97.5%, MintVid 6개 생성기 평균 88.0%, AgenticCue 평균 95.2%의 정확도를 기록해 기존 최강 탐지기(ARGUS 등)를 평균 9.0%p 앞섰다. 구성요소 분석(ablation)에서는 investigator만 학습(GRPO)할 때보다 inspector까지 함께 진화(evolving FSL)시킬 때 OOD 평균이 1.6%p 추가 향상되었고, 서브 에이전트 호출 정밀도(Table 5)에서도 SFT 대비 물리적 일관성 +0.6%p, OCR/상식 +22.6%p 개선되었다.</p>
+<h2>한계점</h2>
+<p>논문은 별도의 '한계점(Limitations)' 절을 명시적으로 두지 않았다. 다만 본문 내용으로 미루어볼 때, 시스템이 Qwen3.5-4B라는 특정 백본과 PaddleOCR 등 고정된 외부 도구에 의존하는 점, ForenCue-30K처럼 세밀하게 역할별로 라벨링된 데이터 구축 비용이 큰 점, 그리고 투자관과 4개 inspector 어댑터를 번갈아 학습·배포해야 하는 2단계(SFT+DTPO) 학습 파이프라인의 복잡도와 연산 비용이 실용적 제약으로 작용할 수 있다.</p>
+<h2>시사점</h2>
+<p>단일 모델의 한 번의 추론으로 전체를 판단하는 대신, 역할이 분리된 서브 에이전트에게 근거 수집을 위임하고 메인 에이전트와 서브 에이전트를 서로 다른 시간 축에서 공진화시키는 DTPO 방식은, 콘텐츠 포렌식뿐 아니라 '여러 전문가 도구를 선택적으로 호출하며 근거를 축적하는' 일반적인 에이전틱 추론 시스템 설계에도 적용 가능한 아이디어를 제공한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.21373" target="_blank" rel="noopener">huggingface.co/papers/2611.21373</a> · 2026-11-21</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>마인드투액트 월드</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#2 · Daily Papers 2026-11-21</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 45</span>
+    </div>
+    <h1 class="article-title">Mind2Act World: A Diagnostic Benchmark for Embodied Mind, Physical Action, and Mind-Action Composition in Robotic Manipulation</h1>
+    <p class="article-title-ko">마인드투액트 월드: 로봇 조작에서 체화된 마음·물리적 행동·마음-행동 결합을 진단하는 벤치마크</p>
+    <p class="article-sub">로봇 조작에서 '기억 기반 추론(Mind)'과 '정밀한 물리적 실행(Act)'을 각각 따로 평가하는 것을 넘어, 두 능력을 실제로 결합해 써야 하는 'Mind-Action Composition(Mind2Act)' 능력까지 분리해서 진단하는 30개 과제·180개 구성의 벤치마크를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.26444" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.26444" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Mind2Act World: A Diagnostic Benchmark for Embodied Mind, Physical Action, and Mind-Action Composition in Robotic Manipulation</li>
+<li><strong>저자</strong>: Yuzhi Huang 외 (Tsinghua University mmlab@SIGS 주도, Oxford, Stanford, CMU, HKU, HKUST, CUHK, PKU, SJTU, RUC, SZU, Velabot AI, Simple AI, Baidu AI Cloud 등 다수 기관 공동연구)</li>
+<li><strong>출처</strong>: arXiv:2611.26444v1 [cs.RO] (2026년 11월 19일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://mind2act-world.com">mind2act-world.com</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.26444">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>로봇 조작에서 '기억 기반 추론(Mind)'과 '정밀한 물리적 실행(Act)'을 각각 따로 평가하는 것을 넘어, 두 능력을 실제로 결합해 써야 하는 'Mind-Action Composition(Mind2Act)' 능력까지 분리해서 진단하는 30개 과제·180개 구성의 벤치마크를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>로봇이 복잡한 물리 작업을 사람처럼 수행하려면 과거 정보를 바탕으로 한 추론, 시간·공간 제약을 만족하는 정밀한 실행, 그리고 실행 결과(물리적 피드백)가 다음 판단에 반영되는 '폐루프 결합'이라는 세 가지 능력이 모두 필요하다. 그러나 기존 벤치마크들은 추론과 실행을 같은 과제 안에서 뭉뚱그려 평가해 실패 원인을 추론 탓인지 실행 탓인지 구분하지 못하거나, 설령 둘을 분리 평가하더라도 '실행 결과가 다음 결정을 바꾸는지'(Mind-Action Composition)는 거의 측정하지 않는다는 한계가 있었다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>5개 실제 응용 도메인(가정/식음료, 제조·물류, 계기·공구 조작, 조립·물리추론, 교육·오락)에서 도출한 <strong>30개 조작 과제</strong>를 Mind·Act·Mind2Act 3개 관점(각 10개 과제, 12개 역량 카테고리)으로 구성하고, 각 과제를 Easy/Medium/Hard 난이도 및 Clean/Random 장면 설정으로 나눠 총 <strong>180개 평가 구성</strong>을 제공한다.</li>
+<li>에이전트와 엔드투엔드 정책이 동일한 과제·정보 계약·평가기준(evaluator)을 공유하도록 설계해, 멀티모달 에이전트·VLA(vision-language-action)·WAM(world-action model) 등 서로 다른 아키텍처를 공정하게 비교할 수 있게 했다.</li>
+<li>실패 에피소드를 규칙 기반 분석과 LLM 판정을 결합해 Mind/Act/Composition 중 어디서 처음 무너졌는지 자동으로 귀속시키는 <strong>진단 하니스(diagnosis harness)</strong>와, 모델별 실패 패턴을 요약한 <strong>모델 프로필 카드</strong>를 개발했다.</li>
+<li>4,500개(75.8시간)의 스크립트 기반 전문가 시연 데이터를 공개해 엔드투엔드 정책의 파인튜닝을 지원한다.</li>
+</ul>
+<h2>방법론</h2>
+<p>Isaac Sim 환경에서 양팔 ARX X5 로봇과 평행 그리퍼를 사용해 머리 카메라 1개와 손목 카메라 2개로 640×480 RGB를 렌더링하며, 물리 시뮬레이션은 120Hz, 액션은 30Hz로 갱신된다. 에이전트는 move_eef(엔드이펙터 목표와 그리퍼 명령), wait_steps, memory_resolve(과거에 관찰한 이미지를 ID로 다시 불러오기), give_up 등 구조화된 툴 콜을 통해 상호작용하고, 엔드투엔드 정책은 관측으로부터 직접 관절/엔드이펙터 액션 청크를 예측한다. 각 과제는 시뮬레이터 상태와 이벤트에 기반해 물리적으로 완료 여부를 검증하며, 최종 성공률(final success rate)과 0~100점의 부분 진행도 점수(task score)를 함께 기록한다. 진단 하니스는 각 실패 에피소드에서 처음으로 무너진 단계를 규칙과 LLM 판정으로 특정해 Mind/Act/Composition 중 하나로 귀속시킨다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>대표적 멀티모달 에이전트, VLA(OpenVLA 계열), WAM 등을 공유된 180개 구성에서 평가한 결과, 가장 강력한 시스템도 Mind 과제에서는 52.7%, Act 과제에서는 39.0%의 에피소드 성공률을 보인 반면, 두 능력을 결합해야 하는 Mind2Act 과제에서는 단 12.0%에 그쳤고, 평가된 모든 엔드투엔드 정책은 Mind2Act에서 3.6%를 넘지 못했다. 가장 강한 에이전트는 과제 상태(task state)는 비교적 잘 유지하지만 지속적인 접촉(sustained contact) 제어에 취약했고, 엔드투엔드 정책들은 숙련된 모션은 잘 수행하지만 과제 상태를 거의 유지하지 못했으며, VLA의 기억 능력은 장면이 무작위화(Random)될 때 대부분 사라지는 경향을 보였다.</p>
+<h2>한계점</h2>
+<p>저자들이 스스로 밝힌 한계는 다음과 같다. ① 각 관점(view)은 서로 다른 과제 집합이라 한 시스템에 대한 개입 실험이 아니므로, Mind2Act의 낮은 성능이 긴 작업 지평(horizon) 때문인지 초반 실행 오류 때문인지 완전히 분리하기 어렵다(진단 규칙은 실패의 22~38%만 자동 귀속되고 나머지는 사람이 검토). ② 시뮬레이션은 추론 중 일시정지되므로 타이밍 과제가 실시간 성능이 아니라 시뮬레이션 시간 기준 판단력만 측정하며, 에이전트들은 역기구학·모션플래닝 서비스와 엔드투엔드 정책 대비 4배의 물리 예산을 공유 받아 각 모델 고유의 도구·컨트롤러 성능은 반영되지 않는다. ③ 평가된 시스템이 에이전트 3종, VLA 4종, WAM 2종으로 하이브리드·메모리 증강 시스템이 빠져 있고 과제당 평가 에피소드 수도 적어 세부 난이도별 결과가 거칠다. ④ 모든 과제가 평행 그리퍼를 장착한 하나의 양팔 플랫폼 기반 탁상 조작으로 한정되어 있어 손 조작, 이동형 로봇, 휴머노이드 등은 다루지 않으며, 시뮬레이션 결과가 실제 로봇 성능과 어떤 관계인지는 아직 측정되지 않았다.</p>
+<h2>시사점</h2>
+<p>개별 능력(기억 기반 추론, 정밀 실행)에서 높은 점수를 받은 시스템이라도 그 둘을 실제로 '엮어서' 사용해야 하는 과제에서는 성능이 급락한다는 사실은, 로봇 에이전트 평가가 각 능력의 산술적 합이 아니라 능력 간 결합(composition) 자체를 별도로 측정해야 함을 보여준다. 이는 향후 메모리-액션을 긴밀하게 연동하는 아키텍처 설계와, 실패를 자동으로 추론/실행/결합 단계로 귀속시켜 다음 학습 데이터 수집을 안내하는 진단 중심 개발 루프의 필요성을 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.26444" target="_blank" rel="noopener">huggingface.co/papers/2611.26444</a> · 2026-11-21</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

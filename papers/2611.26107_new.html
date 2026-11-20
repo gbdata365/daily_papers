@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>하이유니</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#10 · Daily Papers 2026-11-21</span>
+      <span class="cat-tag">생성모델</span>
+      <span class="upvote-tag">▲ 23</span>
+    </div>
+    <h1 class="article-title">HiUni: Harmonizing Understanding and Generation in Shared Visual Space</h1>
+    <p class="article-title-ko">하이유니: 공유 시각 공간에서의 이해와 생성 조화</p>
+    <p class="article-sub">이해와 생성을 위해 별도의 시각 인코더나 작업별 백본을 두지 않고, 사전학습된 비전-언어 모델(VLM)의 언어정렬 ViT와 밀집(dense) Transformer 백본을 그대로 공유하면서, 출력 단계에서만 픽셀 확산 헤드(Pixel Diffusion Head)와 경량 게이팅 모듈(HiGate)로 생성에 필요한 세밀한 공간 정보를 보완하는 통합 멀티모달 모델 HiUni를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.26107" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.26107" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: HiUni: Harmonizing Understanding and Generation in Shared Visual Space</li>
+<li><strong>저자</strong>: ERNIE Team, Baidu Inc. (프로젝트 리드: Zhenyu Zhang 등)</li>
+<li><strong>출처</strong>: arXiv:2611.26107v1 [cs.CV] (2026.11.19)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://ernie-research.github.io/HiUni">https://ernie-research.github.io/HiUni</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.26107">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>이해와 생성을 위해 별도의 시각 인코더나 작업별 백본을 두지 않고, 사전학습된 비전-언어 모델(VLM)의 언어정렬 ViT와 밀집(dense) Transformer 백본을 그대로 공유하면서, 출력 단계에서만 픽셀 확산 헤드(Pixel Diffusion Head)와 경량 게이팅 모듈(HiGate)로 생성에 필요한 세밀한 공간 정보를 보완하는 통합 멀티모달 모델 HiUni를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>통합 멀티모달 모델(UMM)은 이해와 생성을 하나의 프레임워크에서 지원하는 것을 목표로 하지만, 기존 방법 대부분은 이해에는 언어정렬 ViT, 생성에는 VAE 기반의 별도 시각 표현 공간을 유지하거나(Janus 계열), 백본 내부를 작업별로 분리하는 Mixture-of-Transformers 구조(Bagel 등)를 사용해 두 표현 공간을 나눈다. 이러한 분리는 각 작업의 개별 성능은 지켜주지만 이해와 생성 간의 직접적인 시각 표현 상호작용을 제한한다는 문제의식에서, 저자들은 "공유된 시각 공간이 작업별 백본 연산 없이도 이해와 생성을 내부적으로 조화시킬 수 있는가"라는 질문을 던진다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>사전학습 VLM으로부터 바로 확장해 이해·생성·편집이 동일한 언어정렬 ViT, 동일한 밀집 백본을 공유하고, 작업별 연산은 출력 모듈로만 한정하는 새로운 UMM 구축 관점 제시.</li>
+<li>픽셀 공간 생성에 특화된 Pixel Diffusion Head와, 패치 병합·깊은 의미 추상화로 약화된 세밀한 공간 정보를 보완하는 경량 게이팅 경로 HiGate를 설계.</li>
+<li>광범위한 실험으로 HiUni가 사전학습 VLM 수준의 이해 성능을 유지하면서 이미지 생성·편집에서도 경쟁력 있는 성능을 달성함을 입증하고, 공유 밀집 백본의 규모를 키우는 것이 작업별 백본보다 더 효과적일 수 있음을 통제 비교로 보여줌.</li>
+</ul>
+<h2>방법론</h2>
+<p>HiUni는 Qwen3-VL-4B-Instruct에서 초기화되어, 입력 이미지를 ViT와 패치 병합기(M)로 인코딩한 동일한 시각 토큰을 이해·생성 모두에 사용하고, 이 토큰들은 다시 하나의 밀집 Transformer 백본에서 처리된다. 텍스트 출력은 기존 언어모델링 헤드가 맡고, 이미지 생성은 새로 도입한 Pixel Diffusion Head가 담당한다. 표준 DiT의 반복적인 AdaLN 변조가 학습 불안정(loss spike)을 일으키는 것을 관찰하여, AdaLN을 제거하고 시간 토큰과 최종 단일 변조층만 사용하는 단순화된 확산 헤드를 설계했다. 또한 ViT·패치 병합이 약화시키는 세밀한 공간 정보를 보완하기 위해, 노이즈 이미지를 ViT 경로와 별도로 픽셀 단위 잔차 경로로도 인코딩하고, 토큰별 게이트를 학습하는 HiGate를 통해 이 픽셀 특징을 생성 타깃 특징에 융합한다. 텍스트-이미지 생성과 이미지 편집은 조건(텍스트 프롬프트, 혹은 프롬프트+참조 이미지)만 다를 뿐 동일한 생성 경로를 공유하며, 언어모델링 손실과 x-예측(velocity 기반) 확산 손실을 함께 최적화하는 3단계(생성 워밍업 → 전체 통합 사전학습 → 지도 미세조정) 학습을 거친다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>MathVista, MMBench, RealWorldQA, MMStar, HallusionBench, AI2D, OCRBench, OmniDocBench 등 8개 이해 벤치마크에서 HiUni는 평균 75.56점으로 사전학습 기반인 Qwen3-VL-4B-Instruct의 75.61점과 거의 동등한 성능을 유지했다. 이미지 생성에서는 Qwen-Image-Bench 중국어 항목에서 통합 멀티모달 모델 중 최고점을 기록했고 영어 항목에서도 최상위권 모델에 근접했으며, OneIG·LongText 벤치마크에서도 경쟁력 있는 성능을 보였다. 이미지 편집에서는 ImgEdit 종합 점수 3.66으로 비교 대상 통합 모델 중 2위(1위는 UniSpace의 3.82), GEdit에서는 중국어/영어 각각 6.70/6.81점을 기록했다. 밀집 백본과 작업별 라우팅(MoT) 구조를 통제 비교한 결과, 동일 규모에서는 MoT가 생성 성능에서 다소 유리했지만, 유사한 총 파라미터 수에서 더 큰 공유 밀집 백본(HiUni-Dense-4B)을 사용하면 이해 성능이 크게 향상되면서도 경쟁력 있는 생성 성능을 유지할 수 있음을 확인했다. HiGate 분석에서는 픽셀 레벨 특징을 직접 잔차로 주입하는 방식이 ViT 특징을 사용하는 것보다 생성 품질(OneIG)을 더 높였고(0.267→0.284→0.314), 게이트의 기여도는 노이즈가 많은 단계에서는 약하다가 깨끗한 이미지에 가까워질수록 강해져 세밀한 공간 단서가 디노이징 후반부에 주로 활용됨을 보여주었다.</p>
+<h2>한계점</h2>
+<p>이미지 편집 성능은 편집 전용으로 학습된 특화 모델(LongCat-Image-Edit, Qwen-Image-Edit-2511 등)에는 여전히 못 미치며, 이해-생성 간 교차 작업 전이를 실험한 결과(이미지 편집 지도 추가 시 이해 평균은 62.64→64.49로 향상되었으나 생성 OneIG 평균은 0.538→0.528로 소폭 하락) 공유 백본 내에서 작업 간 전이와 간섭이 공존하는 등 일관된 시너지(synergy)는 아직 미해결 과제로 남아있다. 저자들 스스로도 현재의 HiUni는 "공존(coexistence)" 수준의 통합이며, 상호 지식 공유를 통한 "시너지(synergy)" 수준의 통합은 향후 과제임을 명시했다.</p>
+<h2>시사점</h2>
+<p>별도의 생성 전용 인코더나 작업별 백본 없이도 사전학습된 VLM의 표현을 그대로 재사용해 이해와 생성을 통합할 수 있다는 점은, 더 간단하고 확장 가능한 통합 멀티모달 모델링 경로를 제시한다. 저자들은 이 설계가 향후 성숙한 VLM을 더 풍부한 생성 능력, 더 넓은 과제, 더 상호작용적인 멀티모달 시나리오로 확장하는 유망한 방향이 될 수 있다고 전망한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.26107" target="_blank" rel="noopener">huggingface.co/papers/2611.26107</a> · 2026-11-21</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

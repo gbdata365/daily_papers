@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>코다다빈치</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#5 · Daily Papers 2026-11-21</span>
+      <span class="cat-tag">생성모델</span>
+      <span class="upvote-tag">▲ 32</span>
+    </div>
+    <h1 class="article-title">Coda-DaVinci: Reimagining Video Generation with Code2Video</h1>
+    <p class="article-title-ko">코다다빈치: Code2Video로 비디오 생성을 재구상하다</p>
+    <p class="article-sub">코딩 에이전트가 생성한 3D 프록시(proxy)로 비디오 생성을 유도하는 "Code2Video" 패러다임에서 프록시의 세밀도·물리 시뮬레이션·프롬프트 작성 전략이 품질에 미치는 영향을 체계적으로 분석하고, 과제에 따라 모델링 전략을 적응적으로 선택하는 에이전트 프레임워크 Coda-DaVinci를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.26595" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.26595" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Coda-DaVinci: Reimagining Video Generation with Code2Video</li>
+<li><strong>저자</strong>: Yiyan Ji, Qixun Wang, Yang Shi 외 (Nanjing University, KlingAI Research, Peking University, HKUST, Tsinghua University 등 다수 기관 공동 연구)</li>
+<li><strong>출처</strong>: arXiv:2611.26595v1 [cs.CV] (2026년 11월)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 Homepage/Code 링크가 명시되어 있으나 구체 URL은 PDF 본문에서 확인되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.26595">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>코딩 에이전트가 생성한 3D 프록시(proxy)로 비디오 생성을 유도하는 "Code2Video" 패러다임에서 프록시의 세밀도·물리 시뮬레이션·프롬프트 작성 전략이 품질에 미치는 영향을 체계적으로 분석하고, 과제에 따라 모델링 전략을 적응적으로 선택하는 에이전트 프레임워크 Coda-DaVinci를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>최근 비디오 생성 모델은 시각적 품질은 뛰어나지만, 복잡한 지시 이행, 장면 상태 보존, 물리적으로 타당한 상호작용 재현에는 한계가 있다. Code2Video 계열 연구(VideoCoCo, Code Video Model 등)는 코딩 에이전트가 만든 3D 프록시(장면의 구조와 동작을 명시적으로 표현하는 프로그램)로 비디오 모델을 유도해 이러한 문제를 완화하려 하지만, 프록시를 얼마나 세밀하게 만들어야 하는지, 물리 시뮬레이션을 언제 적용해야 하는지, 프롬프트를 어떻게 작성해야 최적의 결과를 내는지는 충분히 연구되지 않았다. 특히 과도하게 정교한 프록시는 오히려 동작의 어색함(경직성)을 유발해 자연스러움을 해칠 수 있다는 trade-off가 핵심 문제의식이다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>프록시 세밀도(G0/G1/G2), 물리 시뮬레이션 필요 여부(P0/P1), 프롬프트 보강 전략(PE0/PE1/PE2)이라는 세 축을 통제된 비교 실험과 블라인드 인간 평가로 체계적으로 분석해 과제별 최적 조합에 대한 실증적 지침을 도출</li>
+<li>과제 특성에 따라 3D 모델링 경로와 직접 생성 경로를 선택하는 과제 적응적(task-adaptive) 에이전트 프레임워크 Coda-DaVinci를 제안: 환경·구조물은 중간 세밀도(G1)로, 인간 피사체는 거친 세밀도(G0)로 모델링하여 신체 동작의 경직성을 피함</li>
+<li>장면 자산을 revision 간 유지하는 멀티에이전트 실행 하시니스를 구축해, 시각적 검수와 독립적 수용(acceptance) 에이전트를 통한 수정 루프를 지원</li>
+<li>VTR, R2M, World Models' Last Exam in Physics, T2AV-Compass 등 다양한 벤치마크에서 지시 이행, 장면 일관성, 물리적 타당성, 긴 비디오 일관성을 종합 검증</li>
+</ul>
+<h2>방법론</h2>
+<p>Code2Video 파이프라인은 입력 프롬프트와 참조 매체를 받아 코딩 에이전트가 프록시 비디오를 생성하고, 이 프록시와 (원본 또는 보강된) 프롬프트를 조건으로 비디오 생성 모델이 최종 비디오를 합성하는 2단계 구조다(식 v~=A(x,r), v=G(v~,q,r)). 저자들은 프록시 세밀도(coarse/medium/fine geometry·motion), Blender 물리 시뮬레이션 적용 여부, 프롬프트 보강 방식(보강 없음/외부 텍스트 보강 모델/코딩 에이전트가 프록시 기반으로 피사체-색상 바인딩 및 외형 디테일을 직접 작성) 세 요인의 조합(G·P·PE 라벨)을 전문가의 블라인드 4지표(일관성, 지시 이행, 물리적 타당성, 자연스러움·시각적 사실성) 평가로 비교했다. 이 분석 결과를 바탕으로 Coda-DaVinci는 입력 지시와 참조에 따라 3D 모델링 경로 또는 직접 생성 경로를 라우팅하고, 환경/구조물에는 중간 세밀도, 사람에는 거친 세밀도로 모델링하며, 물리적으로 의미 있게 시뮬레이션 가능한 상호작용에는 Blender 시뮬레이션을 적용한다. 리드 에이전트가 생성된 프록시를 검수한 뒤 프록시 개체에 외형 참조를 연결하고 미세 동작을 지정하는 합성 프롬프트를 작성하며, 하시니스가 공유 Blender 작업공간을 유지해 수정·확장 과정에서 자산을 재사용할 수 있게 하고, 독립 수용 에이전트가 과제 요구사항 충족 여부를 검토해 미비점을 재작업하도록 한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>통제 실험에서는 Seedance 2.5를 직접 생성(direct generation) 기준선으로 두고 WorldMemBench(장면 재방문), VGIF-Bench(복잡한 동작·상호작용 지시 이행), Principia(물리 현상 시뮬레이션) 세 벤치마크에서 G/P/PE 조합을 비교했다. 그 결과 Code2Video는 일관성과 지시 이행에서 직접 생성보다 대체로 우수했으나, 사람·사물 동작이 많은 VGIF-Bench에서는 물리적 타당성·자연스러움·사실성이 떨어지는 약점을 보였다. 거친 프록시(G0)는 동작의 자연스러움과 물리적 타당성에서 우위를 보인 반면, 중간 세밀도 프록시(G1)는 전반적으로 가장 높거나 동률의 일관성을 유지했으며, 물리 시뮬레이션(P1)은 네 지표 평균을 전반적으로 향상시켰고, 에이전트가 직접 작성한 프롬프트 보강(PE2)은 외부 텍스트 보강(PE1)보다 전 지표에서 우수했다. 최적 조합인 G1/P1/PE2가 세 벤치마크 평균에서 가장 높은 점수를 기록했다. 본 벤치마크 평가에서 Coda-DaVinci는 VTR(체크리스트 충족도, 단어오류율 WER을 59.21%에서 11.08%로 대폭 감소)과 R2M(장면 일관성 지표)에서 비교 대상 중 최고 성능을, World Models' Last Exam in Physics에서는 직접 생성 대비 향상된 물리적 타당성을(단, Claude+Blender에는 근소하게 뒤짐), T2AV-Compass에서는 다른 Code2Video 기법보다 높은 시각적 사실성과 지시 이행 성능(직접 생성에 근접)을 보였다. 코딩 에이전트(Codex/Claude)와 렌더링 엔진(Blender/Three.js) 조합 전반에서도 견고한 성능을 유지했으며, Blender가 Three.js보다 품질은 높지만 토큰 비용이 약 2배 더 들었다. 25~90초 길이의 긴 비디오(LongAV-Compass, WBench)에서는 사건 완수도, 장기 구조, 상호작용 일관성에서 직접 생성 대비 개선을 보였으나, 전환 안정성과 장면 설정 준수에서는 직접 생성이 더 우수했다.</p>
+<h2>한계점</h2>
+<p>저자들은 장면 전환 안정성(transition stability)과 지정된 장면 설정에 대한 충실도(setting adherence)에서 Coda-DaVinci가 직접 생성에 뒤처진다고 명시했다. 또한 복잡한 사람·사물 동작이 요구되는 과제(VGIF-Bench)에서는 프록시 기반 접근이 물리적 타당성·자연스러움·사실성 면에서 여전히 약점을 보이며, 비디오 생성이 더 길고 복잡한 시나리오로 확장될수록 합성 과정에서의 명시적 제어를 더 정교하게 보존할 필요가 있다고 결론에서 지적한다.</p>
+<h2>시사점</h2>
+<p>이 연구는 Code2Video 패러다임에서 "코딩 에이전트는 핵심 구조와 동역학을, 비디오 생성 모델은 외형과 미세 동작을 각각 담당"하도록 역할을 분담하는 것이 최선임을 실증적으로 보여주며, 프록시 세밀도·물리 시뮬레이션·프롬프트 전략을 과제 특성에 맞춰 적응적으로 조합하는 설계 원칙을 제시한다. 이는 향후 비디오 생성 시스템이 장시간·고복잡도 시나리오에서 지시 이행과 장면 일관성을 유지하면서도 자연스러운 동작을 보존하는 방향으로 발전하는 데 실질적인 지침이 될 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.26595" target="_blank" rel="noopener">huggingface.co/papers/2611.26595</a> · 2026-11-21</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

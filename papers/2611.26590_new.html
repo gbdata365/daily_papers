@@ -1,0 +1,113 @@
+<meta charset="UTF-8">
+<title>의식 탐구</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#4 · Daily Papers 2026-11-21</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 34</span>
+    </div>
+    <h1 class="article-title">Probing the "Conscious" Mind: Selective Access and Global Workspace in Vision-Language Models</h1>
+    <p class="article-title-ko">의식 탐구: 비전-언어 모델의 선택적 접근과 전역 작업공간</p>
+    <p class="article-sub">비전-언어 모델(VLM)의 비전 인코더와 언어 디코더 내부 상태를 공통 어휘 공간으로 투영하는 "MC-Lens"를 제안하여, 멀티모달 개념이 어떻게 선택적으로 접근되고 실제 추론에 사용되는지를 뇌과학의 전역 작업공간 이론(Global Workspace Theory, GWT) 관점에서 실험적으로 규명한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.26590" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.26590" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Probing the "Conscious" Mind: Selective Access and Global Workspace in Vision-Language Models</li>
+<li><strong>저자</strong>: Jiahao Huang (Imperial College London), Jun Wang (University College London) 등</li>
+<li><strong>출처</strong>: arXiv:2611.26590v1 [cs.AI] (2026년 11월)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.26590">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>비전-언어 모델(VLM)의 비전 인코더와 언어 디코더 내부 상태를 공통 어휘 공간으로 투영하는 "MC-Lens"를 제안하여, 멀티모달 개념이 어떻게 선택적으로 접근되고 실제 추론에 사용되는지를 뇌과학의 전역 작업공간 이론(Global Workspace Theory, GWT) 관점에서 실험적으로 규명한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>VLM은 이미지를 올바르게 설명하면서도 내부적으로 어떤 개념 표상을 사용했는지는 드러나지 않는다. 기존 해석가능성 연구인 J-Lens(Gurnee et al., 2026)는 언어모델 내부 상태를 야코비안(Jacobian) 기반으로 최종 출력 어휘 공간에 매핑해 전역 작업공간과 유사한 구조를 LLM에서 찾아냈다. 저자들은 이를 확장하여, 사람의 의식 이론인 GWT가 제안하는 "여러 병렬 처리 과정에서 선택된 정보가 공유 작업공간에 통합되고 여러 전문화된 처리 과정에서 사용 가능해진다"는 가설을 VLM의 시각·언어 두 모달리티에 걸쳐 검증하고자 한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>V-Lens(비전 인코더)와 L-Lens(언어 디코더)를 결합한 멀티모달 야코비안 렌즈 MC-Lens를 제안하고, 두 렌즈를 디코더의 공유 출력 어휘 공간에 매핑하여 모달리티 간 개념 접근성을 직접 비교할 수 있게 함</li>
+<li>단일 토큰이 아닌 토큰 집합("word-form 선택", "greedy 선택")으로 개념을 표현하는 방법을 도입해 개념 표상 복원력과 개입 효과를 높임</li>
+<li>반사실적 개입(counterfactual intervention, PairSwap/SubRep/AbIn/FullRep)을 통해 접근 가능한 개념이 실제 다운스트림 계산(직접·원홉·다중홉 추론)에 인과적으로 관여함을 증명</li>
+<li>교차모달 정렬 추적을 위한 두 가지 새 지표(J-state cosine, ReconCov)를 제안해, 은닉 상태 코사인 유사도보다 학습 중 정렬 발전 양상을 더 잘 포착함을 보임</li>
+<li>Qwen3-VL, DeepSeek-VL2, Gemma 3 등 9개 모델·3개 모델군에 걸쳐 개념 접근성, 질의 의존적 선택성, 교차 과제 개입 효과의 공통 패턴을 확인</li>
+</ul>
+<h2>방법론</h2>
+<p>MC-Lens는 중간 상태 h에서 최종층 디코더 상태로 가는 평균 야코비안 행렬 J를 학습해, 이 J를 통해 중간 표상을 디코더의 언어모델 헤드(unembedding) 공간으로 투영한다. V-Lens는 비전 인코더 패치 상태를, L-Lens는 디코더의 이미지·텍스트·템플릿 토큰 상태를 각각 균형 있게 평균하여 추정한다. 하나의 개념은 이름 토큰뿐 아니라 대소문자·동의어·번역어 등 관련 토큰들의 집합(word-form 세트)이나, 탐욕적(greedy) 방식으로 선택된 어휘 방향 집합(J@k)으로 표현할 수 있다. 접근성이 확인된 개념 방향에 대해 PairSwap(토큰 좌표 교환), SubRep(부분공간 대체), AbIn(제거 후 주입), FullRep(전체 상태 교체) 네 가지 개입 연산자로 모델의 중간 상태를 수정하고 그 전후 출력을 비교해 개념의 인과적 역할을 검증한다. 또한 고정된 CLIP 비전 인코더와 Gemma 언어 디코더를 MLP 커넥터로 연결하는 통제된 학습 환경을 구성해, 체크포인트별로 교차모달 정렬과 선택적 접근의 발달 과정을 추적한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>A-OKVQA, COCO, THINGS, 국기 이모지(국가명) 등을 이용한 VQA 과제에서 실험을 수행했다. (1) 이미지·텍스트 증거가 모두 주어질 때 목표 개념의 어휘 순위가 크게 상승했으며 텍스트 증거가 이미지 증거보다 다소 더 강했다. (2) 토큰 집합을 확장할수록(F0→F≤3, J@15→J@35) 개념의 Coverage@10과 복원 점수가 모두 향상되었다. (3) 질의(질문)에 따라 동일 장면 내 서로 다른 객체·속성의 접근성이 "추정 작업공간" 구간(디코더 후반부 레이어)에서 뚜렷하게 선택적으로 변화했으며, 자기회귀 생성 중에도 이름이 생성되기 직전 해당 개념의 접근성이 급격히 상승했다. (4) SubRep 개입은 PairSwap보다 직접·원홉·다중홉 질의 응답을 더 안정적으로 재유도했으며, greedy 세트(J@25 등)가 word-form 세트보다 원홉 과제에서 훨씬 효과적이었다. (5) Qwen3-VL(2B/8B/32B), DeepSeek-VL2(Tiny/Small/Full), Gemma 3(4B/12B/27B) 총 9개 모델에서 작업공간 진입 지점 전후로 개념 접근성·질의 의존적 선택성·최종 예측 일치도(Agreement@8)가 공통적으로 상승하는 패턴을 확인했다. (6) 통제된 학습 환경에서는 J-state cosine과 ReconCov 지표가 은닉 상태 코사인보다 학습에 따른 개념 정렬 발전을 더 잘 구분했고, 개념 접근성은 선택적 접근 능력보다 먼저 발달했다.</p>
+<h2>한계점</h2>
+<p>개념 "이름"을 통한 어휘 기반 판독은 객체의 형태·질감 등 언어로 완전히 표현하기 어려운 시각적 세부정보를 제한적으로만 포착한다. 또한 이 연구는 선택된 멀티모달 정보가 실제로 어떤 경로를 통해 여러 다운스트림 처리 과정에 "방송(broadcast)"되는지의 구체적 메커니즘까지는 규명하지 못했다는 점을 저자들이 직접 밝히고 있다.</p>
+<h2>시사점</h2>
+<p>MC-Lens는 VLM 내부의 멀티모달 개념 표상을 모델 아키텍처에 무관하게 비교·개입할 수 있는 도구를 제공하며, 전역 작업공간 이론을 인공 멀티모달 시스템 연구에 적용할 실험적 토대를 마련한다. 제안된 J-state cosine, ReconCov 같은 지표는 교차모달 정렬 학습을 추적하거나 보조 손실로 활용해 정렬 품질을 개선하는 데 활용될 수 있으며, 이는 향후 머신 의식(machine consciousness) 연구와도 연결될 수 있는 방향으로 제시된다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.26590" target="_blank" rel="noopener">huggingface.co/papers/2611.26590</a> · 2026-11-21</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

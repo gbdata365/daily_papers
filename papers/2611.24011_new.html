@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>왐폴리시</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#4 · Daily Papers 2026-11-23</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 18</span>
+    </div>
+    <h1 class="article-title">WAM-Policy: World Action Models with On-Policy Distillation for Quadrupedal Loco-Manipulation</h1>
+    <p class="article-title-ko">왐폴리시: 사족보행 로코매니퓰레이션을 위한 온폴리시 증류 기반 월드 액션 모델</p>
+    <p class="article-sub">팔이 없는(arm-free) 4족 로봇이 앞다리로 조작(manipulation)까지 수행하는 언어 지시 기반 정책을 만들기 위해, 로봇팔용으로 사전학습된 월드 액션 모델(WAM)을 교차형태 적응(cross-morphology adaptation)과 온폴리시 자기증류(OPSD)로 14배 빠른 학생 모델로 압축한 뒤, 과제별 강화학습과 다중교사 온폴리시증류(M-OPD)로 성능을 더 끌어올리는 2단계 파이프라인 WAM-Policy를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.24011" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.24011" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: WAM-Policy: World Action Models with On-Policy Distillation for Quadrupedal Loco-Manipulation</li>
+<li><strong>저자</strong>: Junlin Long, Xu Deng, Yiran Wang, Yue Yang, Yang Zhao, Zeyu Zhang (Australian Centre for Robotics/USYD, UNSW Sydney, Maincode, La Trobe University 공동연구)</li>
+<li><strong>출처</strong>: arXiv:2611.24011v1 [cs.RO] (2026년 11월 18일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문 중 "Code &amp; Website" 링크 언급(구체적 URL은 논문에 명시되지 않음)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.24011">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>팔이 없는(arm-free) 4족 로봇이 앞다리로 조작(manipulation)까지 수행하는 언어 지시 기반 정책을 만들기 위해, 로봇팔용으로 사전학습된 월드 액션 모델(WAM)을 교차형태 적응(cross-morphology adaptation)과 온폴리시 자기증류(OPSD)로 14배 빠른 학생 모델로 압축한 뒤, 과제별 강화학습과 다중교사 온폴리시증류(M-OPD)로 성능을 더 끌어올리는 2단계 파이프라인 WAM-Policy를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>4족 로봇은 바퀴형·고정형 로봇이 접근 못하는 지형까지 갈 수 있고, 언어로 지시하는 것이 자연스러운 방법이지만, 대부분의 4족 조작 로봇은 팔이나 그리퍼를 추가로 장착한다. 팔이 없는 4족 로봇은 세 다리로 걸으면서 앞다리를 end-effector로 써서 조작할 수 있어 무게·기계적 복잡성을 줄일 수 있지만, 기존의 시각 기반 다리-조작 플래너는 포인트 클라우드만 학습해 언어 지시를 행동으로 직접 매핑하지 못하고, 언어 지시가 달린 시연(demonstration) 데이터 자체가 존재하지 않는다. 한편 미래 장면과 행동을 동시에 예측하는 월드 액션 모델(WAM)은 언어 조건 조작 정책으로 효과적임이 입증되었지만, 기존 WAM은 로봇팔 중심으로 사전학습되어 있고 다단계 샘플링 때문에 느리다는 두 가지 문제가 있다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>교차형태(cross-morphology) 적응 및 가속: 1단계에서 팔 중심 WAM의 시각·행동 인터페이스만 교체해 4족 시연 데이터로 미세조정한 뒤, 온폴리시 자기증류(OPSD)의 few-step 변형으로 학생 모델을 가속. 전이된 정책은 성공률 77.0%를 기록하고, OPSD 학생은 76.7%(증류 없이는 69.3%)를 유지하면서 14배 빠르게 샘플링.</li>
+<li>과제별 개선 및 병합: 2단계에서 과제별 강화학습으로 전문가 교사(specialist teacher)를 만들고, 이를 다중교사 온폴리시증류(M-OPD)로 하나의 few-step 학생으로 병합. 박스 밀기·문 열기 과제에서 전문가는 매 에피소드 성공(OPSD 교사는 47%/53%)하며, M-OPD 학생은 90%/87%를 달성해 10개 과제 전체 성공률을 76.7%에서 85.0%로 끌어올림(원래의 고NFE 전이 정책 77.0%보다 높음).</li>
+<li>QLM-Bench 구축: 텔레오퍼레이션 없이 합성된 1,000개의 언어 주석 시연으로 구성된 10개 4족 로코매니퓰레이션 과제 벤치마크를 제안하고, 시뮬레이션과 실제 Unitree Go2 Air 로봇에서 평가.</li>
+</ul>
+<h2>방법론</h2>
+<p>베이스 모델 LingBot-VA는 머리·손목 카메라를 보고 30차원 양팔(dual-arm) 명령을 내는 팔 중심 WAM으로, 비디오 스트림이 다음 플랜(latent) Zk를 예측하고 행동 스트림이 역동역학(inverse dynamics)으로 행동 청크 Ak를 추론하며 둘 다 flow matching으로 학습·샘플링된다. 1단계(Stage 1)는 ① 시각 인터페이스를 4족 로봇의 자기시점(ego-centric)·탑다운 카메라로, 행동 인터페이스를 9차원 전신 제어 명령(RAMBO 컨트롤러 기반)으로 교체해 QLM-Bench 시연 데이터로 미세조정(교차형태 전이)하고, ② 이 고NFE(25/50단계) 정책을 교사로 삼아 LoRA 업데이트만 학습하는 1/2-NFE 학생을 OPSD로 증류한다. OPSD는 교사와 학생이 같은 노이즈에서 샘플링한 비디오·행동 타깃에 학생을 회귀시키되(학생의 행동은 자신의 플랜에 stop-gradient로 조건화), 학습 컨텍스트를 교사의 폐루프 캐시와 학생 자신의 스트리밍 롤아웃을 η 비율로 섞어 노출 편향(exposure bias)을 줄인다. 2단계(Stage 2)는 ① 박스 밀기·문 열기 두 과제에 대해 윈도우 단위 DiffusionNFT로 과제별 보상을 이용한 강화학습을 수행해 전문가 교사를 만들고(원래 θ0에 과제별 LoRA ∆g만 추가), ② M-OPD로 각 컨텍스트를 해당 과제의 전문가 교사(없으면 기존 OPSD 교사)로 라우팅해 하나의 1/2-NFE 학생으로 병합한다. 학생은 OPSD 학생에서 이어서 학습을 시작한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>QLM-Bench Standard100 프로토콜(과제당 10개 보류 시나리오 × 정책 시드 3개, 총 300 에피소드)로 평가했다. Stage 1에서 전이된 교사 정책은 10개 과제 평균 77.0% 성공률(포인트클라우드 기반 Leg-Manip 재현 61.7% 대비 우수), 1/2-NFE로 단순 가속만 하면 69.3%로 떨어지지만 OPSD로 증류하면 76.7%까지 거의 유지하면서 청크당 샘플링 시간이 2.226초→0.159초로 14배 단축되었다. Stage 2에서 박스 밀기·문 열기 전문가 교사는 각 과제에서 100%/100% 성공(OPSD 교사는 47%/53%)을 보였고, 이를 병합한 M-OPD 학생은 85.0%의 전체 성공률로 전이된 고NFE 교사(77.0%)보다도 높은 성능을 1/2-NFE 비용으로 달성했다. 실제 Unitree Go2 Air 로봇에도 OPSD 학생을 배치해 버튼 누르기·골대에 공 차넣기·박스를 표시 영역으로 밀기 과제를 수행함을 시연했다(실제 로봇 데이터 없이 시뮬레이션에서만 학습). 추가로 자기수용감각(proprioception) 입력을 추가하면 오히려 성공률이 떨어짐(77→67)을 확인해 RGB 전용 입력이 더 낫다는 설계를 뒷받침했다.</p>
+<h2>한계점</h2>
+<p>저자들이 명시한 바로는, Stage 2.1의 과제별 강화학습은 박스 밀기·문 열기 두 과제에만 적용되었고 각 과제 전용으로 설계된 보상(reward)에 의존하므로, 다른 8개 과제로의 확장이 향후 과제로 남아있다(부록 "Limitations and Future Work" 첫 항목). 또한 실제 로봇 배치 시, 관측 인코딩을 포함한 폐루프 전체 주기가 0.66초로 한 청크가 담당하는 로봇 시간(0.32초)보다 길어, 로봇이 청크 사이에 마지막 명령을 유지해야 하는 지연(latency) 문제가 존재한다.</p>
+<h2>시사점</h2>
+<p>이 연구는 로봇팔 전용으로 학습된 대규모 월드 액션 모델을 재학습 없이 교차형태 적응만으로 전혀 다른 형태(morphology)인 4족 로봇의 언어 조건 조작에 재활용할 수 있음을 보여, WAM 사전학습 자산의 재사용 가능성을 시사한다. 또한 온폴리시 자기증류(OPSD)와 다중교사 온폴리시증류(M-OPD)를 결합해 "느리지만 강한 전문가들"을 "빠르고 범용적인 단일 정책"으로 병합하는 전략은, 과제별 강화학습으로 얻은 이득을 추론 비용 증가 없이 실제 배치 가능한 정책에 담아내는 일반적인 레시피로서 다른 로봇 형태나 과제 확장에도 적용될 수 있음을 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.24011" target="_blank" rel="noopener">huggingface.co/papers/2611.24011</a> · 2026-11-23</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>온폴리시 모핑을 통한 하이브리드 어텐션 모델 전환</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#10 · Daily Papers 2026-11-23</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 14</span>
+    </div>
+    <h1 class="article-title">On-Policy Morphing into Hybrid Attention Models</h1>
+    <p class="article-title-ko">온폴리시 모핑을 통한 하이브리드 어텐션 모델 전환</p>
+    <p class="article-sub">사전학습된 트랜스포머를 일부 레이어만 전체(full) 어텐션으로 남기고 나머지를 선형(linear) 어텐션으로 바꾸는 "하이브리드 어텐션 변환(Transformer-to-hybrid conversion)"에서, 기존 FlashMorph의 레이어 선택이 겪는 두 가지 "오프폴리시(off-policy)" 불일치(연속 혼합 계산과 고정된 teacher-forced 은닉상태, 그리고 고정된 모델 가중치)를 지적하고, 이산적인 하이브리드 구조를 실제로 샘플링해 자기 생성 은닉상태로 평가하고 가중치도 함께 최적화하는 온폴리시(on-policy) 레이어 선택 기법 FlashMorph2를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.24809" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.24809" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: On-Policy Morphing into Hybrid Attention Models</li>
+<li><strong>저자</strong>: Disen Lan, Xuanda Wang, Jianbin Zheng, Huafeng Kuang, Wei Tang, Yu Cheng (ByteDance Seed, Fudan University, Nanyang Technological University 등; 교신저자 Yu Cheng)</li>
+<li><strong>출처</strong>: arXiv:2611.24809v1 [cs.CL] (2026년 11월 18일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.24809">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>사전학습된 트랜스포머를 일부 레이어만 전체(full) 어텐션으로 남기고 나머지를 선형(linear) 어텐션으로 바꾸는 "하이브리드 어텐션 변환(Transformer-to-hybrid conversion)"에서, 기존 FlashMorph의 레이어 선택이 겪는 두 가지 "오프폴리시(off-policy)" 불일치(연속 혼합 계산과 고정된 teacher-forced 은닉상태, 그리고 고정된 모델 가중치)를 지적하고, 이산적인 하이브리드 구조를 실제로 샘플링해 자기 생성 은닉상태로 평가하고 가중치도 함께 최적화하는 온폴리시(on-policy) 레이어 선택 기법 FlashMorph2를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>하이브리드 어텐션 모델은 일부 레이어에서만 전체 어텐션을 유지하고 나머지는 선형 어텐션을 사용해, 긴 문맥 처리 능력을 상당 부분 보존하면서 계산량과 KV 캐시 메모리를 크게 줄인다. 이미 학습된 트랜스포머를 이런 구조로 변환할 때 핵심 과제는 "정해진 전체 어텐션 레이어 budget 안에서 어떤 레이어를 전체 어텐션으로 남길지" 결정하는 것이다. 가능한 모든 레이어 조합을 직접 복구(recovery) 학습까지 거쳐 평가하는 것은 비용이 지나치게 크기 때문에, 기존 방법인 FlashMorph는 레이어별로 연속적인 게이트 값(0~1 사이 혼합 비율)을 학습해 레이어 중요도의 대리 지표(proxy)로 사용한다. 그러나 저자들은 이 방식에 두 가지 "오프폴리시" 한계가 있다고 지적한다. (L1) 연속 혼합 계산: 선택 단계에서는 전체·선형 어텐션 출력을 연속적으로 섞고 교사(teacher)가 강제한 은닉상태를 입력으로 쓰지만, 실제 배포되는 모델은 레이어마다 하나의 분기만 남기고 자기 자신이 생성한 은닉상태를 전파하므로, 선택 단계와 배포 단계의 계산이 서로 다르다. (L2) 오프폴리시 가중치: 레이어 선택 시 모델 가중치는 동결된 채로 게이트만 최적화되는데, 복구 학습이 진행되면서 가중치가 하이브리드 구조에 맞게 적응(co-adaptation)하면 레이어 중요도 순위 자체가 바뀔 수 있다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li><strong>두 가지 오프폴리시 불일치의 식별</strong>: FlashMorph의 레이어 선택 과정에서 발생하는 연속-이산 계산 불일치(L1)와 가중치 고정 불일치(L2)를 명확히 정의했다.</li>
+<li><strong>FlashMorph2 (온폴리시 레이어 선택)</strong>: 정해진 전체 어텐션 budget을 만족하는 이산 하이브리드 구조를 직접 샘플링하고, 그 구조로 end-to-end forward pass를 수행해 레이어 선택 점수와 모델 가중치를 함께 최적화하는 방법을 제안했다.</li>
+<li><strong>효율성과 확장성 입증</strong>: 0.6B~8B 규모 모델에서 레이어 선택 자체에 GPU 0.72~3.57시간만 소요되며(HALO 대비 8.4~20.8배, KL-LS 대비 560~854배 빠름), 동시에 RULER·LongBench·recall-intensive 과제에서 FlashMorph보다 일관되게 더 나은 성능을 보였다.</li>
+</ol>
+<h2>방법론</h2>
+<p>FlashMorph2는 레이어마다 학습 가능한 선택 점수 φ_l을 두고, Gumbel-Top-K 샘플링(독립적인 Gumbel 노이즈를 더한 뒤 상위 K개를 뽑는 기법)으로 전체 어텐션으로 남길 K개 레이어 조합을 매번 다르게 샘플링한다. 샘플링된 이산 구조로 실제 forward pass를 수행해, 각 레이어가 선택된 분기(전체 또는 선형 어텐션)의 출력만을 사용하고 그 출력이 다음 레이어의 입력이 되도록 해, 오류 누적과 레이어 간 상호작용(cross-layer compensation)까지 반영한다. 목적함수는 이후 복구 단계와 동일한 로짓 증류(KL divergence) 손실을 사용하며, 레이어 선택 점수 φ와 모델 가중치 θ를 동시에 최소화한다. 이산적인 Top-K 선택은 미분 불가능하므로, 연속 완화(sigmoid 기반, 이진 탐색으로 임계값 결정)와 straight-through estimator(STE)를 이용해 선택 점수에 대한 그래디언트를 근사한다. 선택이 끝나면 선택된 K개 레이어로 원래의 (레이어별 정렬 단계에서 얻은) 가중치로부터 다시 초기화해, 로짓 증류(Stage 3)와 긴 문맥 파인튜닝(Stage 4)을 거쳐 최종 모델을 만든다. 즉 Stage 2(레이어 선택)에서 학습된 가중치는 어디까지나 "어떤 레이어가 좋은지" 판단하는 데만 쓰이고, 최종 복구 학습의 초기값으로는 사용되지 않는다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Qwen3-0.6B와 Qwen3-1.7B를 백본으로, Lightning Attention·GLA(Gated Linear Attention)·GDN(Gated DeltaNet) 세 가지 선형 어텐션 변형을 적용해 기본 선형:전체 비율 3:1로 실험했다. Uniform, PostNAS, KL-LS, HALO, FlashMorph 등 기존 레이어 선택 기법과 비교한 결과, FlashMorph2는 모든 백본-선형어텐션 조합에서 가장 높은 RULER·LongBench 평균 점수를 기록했으며, FlashMorph 대비 RULER 평균 +2.42점, LongBench 평균 +1.08점, recall-intensive 6개 과제 평균 +0.76점을 개선했다. 레이어 선택 비용은 0.6B~8B 규모에서 GPU 0.72~3.57시간에 불과해 HALO(1.3~2.2배 더 많은 FLOPs, 8.4~20.8배 더 많은 GPU 시간), KL-LS(575~897배 더 많은 FLOPs, 560~854배 더 많은 GPU 시간)보다 훨씬 효율적이었다. 하이브리드 비율을 6:1, 3:1, 1:1로 바꿔가며 평가한 결과에서도 FlashMorph2가 전 구간에서 우위를 보였으며, 특히 전체 어텐션 비중이 가장 작은 6:1에서 격차가 컸다(GLA에서 Uniform 대비 +10.65점, GDN에서 +7.86점). Qwen3-1.7B+GDN 설정의 ablation에서는 온폴리시 계산(이산 forward)을 제거하면 RULER가 29.55점, LongBench가 5.71점 하락했고, 온폴리시 가중치 적응을 제거하면 RULER가 4.88점, LongBench가 1.38점 하락해, 두 요소 모두 제거하면 FlashMorph와 동등한 수준으로 되돌아가는 것을 확인했다.</p>
+<h2>한계점</h2>
+<p>저자들은 FlashMorph2가 FlashMorph 대비 레이어 선택 단계에서 1.7~2.6배의 FLOPs와 1.9~2.4배의 GPU 시간을 추가로 요구한다고 명시했다(다만 이는 전체 변환 토큰 예산의 1% 미만으로, 배포 단계 효율에는 영향을 주지 않는다고 밝힘). 또한 본문에서는 0.6B~1.7B(일부 8B, 30B-A3B) 규모와 특정 선형 어텐션 변형들에 대해서만 상세 비교가 이뤄졌으며, 그보다 큰 모델이나 다른 선형 어텐션 계열로의 일반화에 대한 구체적 한계는 별도로 논의되지 않음.</p>
+<h2>시사점</h2>
+<p>레이어 선택과 같은 아키텍처 탐색 문제에서 "탐색 시점의 대리 평가"와 "실제 배포·복구 이후의 성능"이 어긋나는 오프폴리시 불일치가 존재할 수 있으며, 이를 교정하기 위해 실제 이산 구조와 자기 생성 상태로 평가하고 가중치 적응까지 함께 고려하는 것이 비교적 적은 추가 비용으로도 큰 성능 개선을 가져올 수 있음을 보여준다. 이는 레이어 선택뿐 아니라 다른 신경망 구조 탐색/압축 문제에서도 "탐색-배포 간 계산 그래프 일치"가 중요한 설계 원칙이 될 수 있음을 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.24809" target="_blank" rel="noopener">huggingface.co/papers/2611.24809</a> · 2026-11-23</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

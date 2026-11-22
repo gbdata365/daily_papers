@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>지시문-조건부 절차 비디오에서의 실시간 실수 탐지</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#11 · Daily Papers 2026-11-23</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 12</span>
+    </div>
+    <h1 class="article-title">Online Mistake Detection in Instruction-Conditioned Procedural Video</h1>
+    <p class="article-title-ko">지시문-조건부 절차 비디오에서의 실시간 실수 탐지</p>
+    <p class="article-sub">요리 등 다단계 절차를 1인칭(에고센트릭) 영상으로 지켜보면서, 영상이 진행되는 "그 순간에" 사용자가 지시문을 제대로 따르고 있는지 판단하는 온라인·지시문-조건부 실수 탐지 문제를 정의하고, 모듈형(단계식별→시간국소화→실행검증)과 통합형(한 번에 예측) 두 가지 접근을 제시·비교한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.25567" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.25567" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Online Mistake Detection in Instruction-Conditioned Procedural Video</li>
+<li><strong>저자</strong>: Amit Feldman, Ilan Shimshoni, Rotem Dror (University of Haifa, Faculty of Computer and Information Science)</li>
+<li><strong>출처</strong>: arXiv:2611.25567v1 [cs.CV] (2026년 11월 19일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.25567">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>요리 등 다단계 절차를 1인칭(에고센트릭) 영상으로 지켜보면서, 영상이 진행되는 "그 순간에" 사용자가 지시문을 제대로 따르고 있는지 판단하는 온라인·지시문-조건부 실수 탐지 문제를 정의하고, 모듈형(단계식별→시간국소화→실행검증)과 통합형(한 번에 예측) 두 가지 접근을 제시·비교한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>기존 연구는 크게 두 갈래로 나뉜다. (1) 오프라인 방식은 영상 전체를 다 본 뒤에야 각 단계를 지시문과 대조해 판단하므로, 실수가 발생한 시점에 바로 개입할 수 없다. (2) 온라인 방식(PREGO, ESTANet 등)은 영상이 진행되는 동안 실시간으로 판단하지만, 지시문 텍스트를 직접 비교 대상으로 쓰지 않아 어떤 지시를 어떻게 위반했는지 세밀하게 설명하지 못한다. 저자들은 "실시간 판단"과 "지시문 대조"라는 두 장점을 모두 갖춘 방법이 없다는 공백을 지적하며, 사람이 복구할 시간이 있을 때 실수를 알려주는 어시스턴트를 만들려면 두 특성이 동시에 필요하다고 주장한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>온라인·지시문-조건부 실수 탐지라는 새 과제를 정식화: 현재까지 관찰된 영상, 작업 지시문, 과거 예측 이력만으로 완료된 행동 시도를 식별·시간국소화하고, CORRECT(정확 수행)/MODIFICATION(변형 수행)/SLIP(목표 실패)/CORRECTION(이전 SLIP 복구)/ADDITION(지시에 없는 추가 행동)의 5가지로 분류한다.</li>
+<li>2가지 설계를 비교: ① 단계식별자(Step Identifier)·시간국소화기(Temporal Localizer)·실행검증기(Execution Verifier) 3개 모듈을 순차 연결하는 모듈형 접근, ② 하나의 비전-언어모델이 단계 정체성·시간경계·실행클래스를 한 번에 예측하는 통합형 접근.</li>
+<li>기존 EgoPER 데이터셋(실수가 없는 공식 테스트셋)을 재분할하여 훈련·검증·테스트 전반에 실수 포함 영상을 고르게 분배, 지도학습 기반 실수 탐지 학습이 가능하도록 구성.</li>
+<li>생략된 단계(OMISSION)는 영상 종료 후 별도로 탐지하는 보완 메커니즘도 설계.</li>
+</ul>
+<h2>방법론</h2>
+<p>입력 영상은 초당 1프레임으로 샘플링되며, 모델은 현재 시작점 τ에서 끝점 t=τ+5초짜리 윈도우부터 시작해 행동이 완료되지 않았다고 판단(NOT_COMPLETED)하면 윈도우를 5초씩 늘려가며 다시 평가한다. 모듈형 접근은 (1) 단계식별자가 현재 윈도우·지시문 목록·최근 12개 예측 이력을 보고 어떤 지시문이 시도되었는지(혹은 EXTRA) 고르고, (2) 시간국소화기가 해당 시도의 시작·끝 시점을 추정하며, (3) 실행검증기가 잘라낸 구간을 보고 실행 품질(5개 클래스 중 하나)을 분류한다. 통합형 접근은 이 세 출력을 Qwen3.8-27B 기반의 단일 어댑터(LoRA, rank 16)가 한 번의 응답으로 모두 생성한다. 두 접근 모두 이전 최대 12개의 예측 이력을 맥락으로 활용해, 예를 들어 이전 SLIP과 연관지어 CORRECTION을 인식할 수 있게 한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>EgoPER(요리 5개 작업, 원본 389개 영상 중 정상 216·실수 173개)를 재분할해 훈련/검증에도 실수 영상이 포함되도록 했다(최종 테스트셋 58개 영상, 그중 25개가 실수 포함). 평가지표는 오류탐지정확도(EDA), 이진 F1@0.5, 세부 실수유형별 F1, 단계분할 F1@0.5, 생략탐지 정확도(O-Acc)·IoU(O-IoU) 등이다. 전체 테스트셋 기준 통합형이 EDA 97.8%·이진 F1@0.5 84.1%로 모듈형(97.7%·80.7%)을 앞섰고, 실수 포함 25개 영상에서는 통합형 86.2% vs 모듈형 81.3%였다. 특히 SLIP(목표 실패) 탐지에서 통합형이 56.4%로 모듈형(37.5%)보다 크게 우수했다. 기존 오프라인/기준 모델인 AEM, ESTANet과 비교해도 두 제안 방법 모두 전반적으로 더 높은 성능을 보였다. 모듈 단위 분석에서는 상위 단계(단계식별)가 정확할 때 하위 단계(시간국소화·실행검증) 성능이 크게 향상되어, 오류가 파이프라인을 따라 전파됨을 확인했다.</p>
+<h2>한계점</h2>
+<p>EgoPER의 요리 5개 작업으로만 평가해 다른 절차·환경으로의 일반화는 검증되지 않았다. 공식 분할과 다른 재분할을 사용해 기존 기준모델들과의 비교가 완전히 통제된 것은 아니다. 또한 오프라인에 녹화된 영상을 재생하며 평가하는 방식이라 실시간 상호작용, 경고의 실제 유용성, 사용자의 오류 복구 행동까지는 평가하지 못했다.</p>
+<h2>시사점</h2>
+<p>실수를 "한 번에 전체를 보고 판단"하는 문제가 아니라 "지시문과 비교하며 실시간으로 누적 판단"하는 문제로 재정의함으로써, 요리·조립·실험실 프로토콜 등 다단계 작업을 돕는 실시간 보조 시스템(스마트 글래스, AR 어시스턴트 등)의 실현 가능성을 높인다. 특히 단계 정체성·경계·실행 판단을 통합해서 예측하는 것이 오류 누적을 줄이는 핵심 열쇠임을 보여, 향후 온라인 절차 모니터링 시스템 설계에 참고가 될 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.25567" target="_blank" rel="noopener">huggingface.co/papers/2611.25567</a> · 2026-11-23</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

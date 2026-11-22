@@ -1,0 +1,110 @@
+{
+  "2611.26073": {
+    "base": "2611_알트라테스트_공유주석자없는-LLM심사자-대안테스트",
+    "rank": "#1",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "23",
+    "en_title": "AltRA-Test: An Alternative Annotator Test for LLM Judges Without Shared Annotators",
+    "ko_title": "알트라테스트: 공유 주석자 없는 LLM 심사자를 위한 대안 주석자 테스트"
+  },
+  "2611.26627": {
+    "base": "2611_활성화스티어링_확산트랜스포머-강화학습-사후훈련",
+    "rank": "#2",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "20",
+    "en_title": "RL Post-Training in Diffusion Transformers Is Activation Steering",
+    "ko_title": "확산 트랜스포머의 강화학습 사후훈련은 활성화 스티어링이다"
+  },
+  "2611.21885": {
+    "base": "2611_자가가중치재작성_언어모델-스스로-가중치수정",
+    "rank": "#3",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "19",
+    "en_title": "Language Models Can Rewrite Their Own Weights",
+    "ko_title": "언어모델은 스스로 자신의 가중치를 다시 쓸 수 있다"
+  },
+  "2611.24011": {
+    "base": "2611_왐폴리시_사족보행-로코매니퓰레이션-온폴리시증류",
+    "rank": "#4",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "18",
+    "en_title": "WAM-Policy: World Action Models with On-Policy Distillation for Quadrupedal Loco-Manipulation",
+    "ko_title": "왐폴리시: 사족보행 로코매니퓰레이션을 위한 온폴리시 증류 기반 월드 액션 모델"
+  },
+  "2611.26408": {
+    "base": "2611_가중치공간프로그래밍_LLM기반-비전모델-가중치학습",
+    "rank": "#5",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "17",
+    "en_title": "Training Vision Models for LLM-Driven Weight-Space Programming",
+    "ko_title": "가중치공간 프로그래밍: LLM 기반 비전 모델 가중치 편집을 위한 훈련"
+  },
+  "2611.25980": {
+    "base": "2611_행동효과매칭_동역학충실-월드모델-학습",
+    "rank": "#6",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "17",
+    "en_title": "Learning What Actions Change: Action Effect Matching for Dynamics-Faithful World Models",
+    "ko_title": "행동 효과 매칭: 동역학에 충실한 월드모델을 위한 AFFECT"
+  },
+  "2611.24193": {
+    "base": "2611_월드모델엠엘엘엠_MLLM기반-월드모델전환",
+    "rank": "#7",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "16",
+    "en_title": "WM^MLLM: Turning MLLMs into World Models",
+    "ko_title": "WM^MLLM: MLLM을 월드모델로 전환하기"
+  },
+  "2611.26268": {
+    "base": "2611_모바가속_블록어텐션-동적라우팅-런타임파이프라이닝",
+    "rank": "#8",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "14",
+    "en_title": "Accelerating Mixture of Block Attention via Dynamic Routing, KV-Centric Execution and Runtime Pipelining",
+    "ko_title": "라이트닝모바: 동적 라우팅, KV 중심 실행과 런타임 파이프라이닝을 통한 블록 어텐션 가속"
+  },
+  "2611.26510": {
+    "base": "2611_오토마스터_자율사후훈련-셀프티칭",
+    "rank": "#9",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "14",
+    "en_title": "AutoMaster: Autonomous Post-Training by Making the Same Model a Better Teacher",
+    "ko_title": "오토마스터: 같은 모델을 더 나은 교사로 만드는 자율 사후훈련"
+  },
+  "2611.24809": {
+    "base": "2611_온폴리시모핑_하이브리드어텐션모델전환",
+    "rank": "#10",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "14",
+    "en_title": "On-Policy Morphing into Hybrid Attention Models",
+    "ko_title": "온폴리시 모핑을 통한 하이브리드 어텐션 모델 전환"
+  },
+  "2611.25567": {
+    "base": "2611_실시간오류탐지_지시기반-절차비디오-실수감지",
+    "rank": "#11",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "12",
+    "en_title": "Online Mistake Detection in Instruction-Conditioned Procedural Video",
+    "ko_title": "지시문-조건부 절차 비디오에서의 실시간 실수 탐지"
+  },
+  "2611.26286": {
+    "base": "2611_동어반복비평_LLM시대-동료평가-획일화",
+    "rank": "#12",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "10",
+    "en_title": "Twice-Told Critiques: Claim-Level Homogenization of Peer Review in the LLM Era",
+    "ko_title": "동어반복 비평: LLM 시대 동료평가의 주장 단위 획일화"
+  }
+}

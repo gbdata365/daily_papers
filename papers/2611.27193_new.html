@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>cmHC</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#1 · Daily Papers 2026-11-24</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 86</span>
+    </div>
+    <h1 class="article-title">cmHC: Balancing Stream Mixing in Hyper-Connections via Geometric Contraction</h1>
+    <p class="article-title-ko">cmHC: 기하학적 축소를 통한 하이퍼커넥션 스트림 혼합 균형 맞추기</p>
+    <p class="article-sub">Hyper-Connections(다중 스트림 잔차 연결)에서 "너무 안 섞임(under-mixing)"과 "너무 많이 섞임(over-mixing)" 사이의 트레이드오프를 이론적으로 규명하고, 추가 파라미터 없이 Birkhoff 폴리토프를 내부로 기하학적으로 축소(contraction)시켜 이 균형을 맞추는 cmHC 기법을 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.27193" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.27193" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: cmHC: Balancing Stream Mixing in Hyper-Connections via Geometric Contraction</li>
+<li><strong>저자</strong>: Haowei He, Ziwen Zhao 등 (Xingchen AGI Lab/China Telecom, HKUST-Guangzhou, Harbin Institute of Technology, Huawei Technologies 공동 연구)</li>
+<li><strong>출처</strong>: arXiv:2611.27193v1 [cs.LG] (2026년 11월 20일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음 (GitHub 코드: https://github.com/Newiz430/cmHC)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.27193">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>Hyper-Connections(다중 스트림 잔차 연결)에서 "너무 안 섞임(under-mixing)"과 "너무 많이 섞임(over-mixing)" 사이의 트레이드오프를 이론적으로 규명하고, 추가 파라미터 없이 Birkhoff 폴리토프를 내부로 기하학적으로 축소(contraction)시켜 이 균형을 맞추는 cmHC 기법을 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>Hyper-Connections(HC)는 표준 잔차 연결을 다중 피처 스트림으로 확장한 구조다. mHC와 mHC-lite는 잔차 혼합 행렬을 이중확률행렬(doubly stochastic matrix) 집합인 Birkhoff 폴리토프로 제약해 학습 안정성을 확보했지만, 실제로는 혼합 행렬이 폴리토프의 꼭짓점(순열 행렬)에 가깝게 머물러 스트림 간 정보 교환이 거의 일어나지 않는 "under-mixing" 현상이 보고되어 있었다. 저자들은 이 현상이 단순히 항등행렬 근처에만 국한되지 않고, 초기화 시 선호된 임의의 순열 행렬 주변에서도 발생함을 추가로 확인했다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>under-mixing(스트림이 거의 독립적으로 분리됨)과 over-mixing(스트림 간 구분이 사라짐) 사이의 "혼합 트레이드오프"를 이론·실험적으로 규명.</li>
+<li>새로운 학습 파라미터를 추가하지 않고 순열 행렬을 매끈한 행렬로 대체하여 Birkhoff 폴리토프를 내부로 축소시키는 cmHC 제안. 이중확률성을 그대로 유지하면서 혼합 하한을 이론적으로 보장.</li>
+<li>GPT-2급 모델부터 6B·300B 규모의 MoE 모델까지 광범위한 실험으로 효과성과 확장성을 검증, Ascend NPU용 융합 연산자(fused operator)를 개발해 하이퍼커넥션 실행 지연을 최대 44.8% 감소.</li>
+</ul>
+<h2>방법론</h2>
+<p>cmHC는 각 순열 행렬 P_m을 계수 λ로 조절되는 매끈한 행렬 P′_m = λP_m + (1-λ)/(n-1)(균등행렬-P_m)로 대체한다. λ→1이면 기존 mHC-lite와 같아지고, λ→1/n이면 완전 균등 혼합이 된다. 이 변환은 Banach 고정점 정리에 기반한 축소 사상(contraction mapping)으로, 이중확률성을 보존하면서 모든 항목이 양수가 되도록 혼합의 하한을 보장한다(정리 2.1, 2.2). 또한 Dobrushin의 에르고딕 계수를 이용해 레이어를 거칠수록 누적 혼합이 균등 상태로 지수적으로 수렴함을 보여(정리 3.1), 과도한 축소가 전체 네트워크에 걸쳐 "나비효과"처럼 스트림 차이와 혼합 계수의 기울기 차이에 영향을 준다는 것을 증명한다(정리 3.2, 3.3). 이에 따라 전체 레이어가 아닌 얕은 K개 레이어에만 모더레이트한 축소를 적용하는 전략을 제시한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>OpenWebText와 FineWeb-Edu 데이터셋에서 nanoGPT(12/24/48레이어, 약 45M~0.36B 파라미터)를 학습시켜 Residual, HC, mHC, mHC-lite, KromHC와 비교했다. λ=0.97, K=2로 설정한 cmHC가 두 데이터셋 모두에서 가장 낮은 평균 손실 순위를 기록했으며, mHC-lite 대비 검증 손실을 최대 0.0073까지 낮췄다. 6B 및 300B 규모 MoE 모델로 확장성을 검증한 결과, cmHC는 6B 규모에서 mHC 대비 0.002의 손실 우위를 보였고 300B 규모에서도 이점이 유지됨을 확인했다. Ascend 910C 서버에서 융합 연산자를 적용해 순전파+역전파 지연을 은닉 차원에 따라 24.1%~44.8% 감소시켰다.</p>
+<h2>한계점</h2>
+<p>논문에 명시되지 않음 (별도의 한계점 절은 없으나, 축소 강도 λ와 적용 레이어 수 K를 신중히 선택해야 하며, 그렇지 않으면 over-mixing 위험이 커질 수 있다고 본문에서 언급함).</p>
+<h2>시사점</h2>
+<p>단순히 제약을 강화하는 것이 아니라 "혼합의 양"을 정밀하게 조절하는 기하학적 관점을 제시함으로써, 대규모 언어모델 사전학습에서 다중 스트림 아키텍처의 설계 원칙(어느 레이어에서 얼마나 섞을 것인가)에 대한 실용적 가이드를 제공한다. 추가 파라미터가 필요 없고 하드웨어 수준 최적화까지 제시했다는 점에서 산업 현장에 적용하기 쉬운 접근으로 평가된다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.27193" target="_blank" rel="noopener">huggingface.co/papers/2611.27193</a> · 2026-11-24</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

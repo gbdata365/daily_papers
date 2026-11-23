@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>라벨 없는 비디오에서 온폴리시 자기증류로 비디오 예측추론 학습하기</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#5 · Daily Papers 2026-11-24</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 19</span>
+    </div>
+    <h1 class="article-title">Learning Video Foresight Reasoning from Unlabeled Videos via On-Policy Self-Distillation</h1>
+    <p class="article-title-ko">라벨 없는 비디오에서 온폴리시 자기증류로 비디오 예측추론 학습하기</p>
+    <p class="article-sub">비디오에서 미래를 예측하는 추론 능력을 라벨 없이 학습시키기 위해, 과거-미래 영상 쌍 자체를 자기지도 신호로 활용하는 온-폴리시 자기증류 프레임워크 Future-OPSD를 제안하고, 미래 클립 중 실제로 중요한 "콘텐츠 정보"만 선택적으로 학습하도록 설계했다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.26954" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.26954" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Learning Video Foresight Reasoning from Unlabeled Videos via On-Policy Self-Distillation</li>
+<li><strong>저자</strong>: Jingchen Sun, Jiaxing Zhang 등 (버팔로 대학교, 스토니브룩 대학교, 존스홉킨스 대학교, 듀크 대학교, 메릴랜드 대학교 소속 공동 연구)</li>
+<li><strong>출처</strong>: arXiv:2611.26954v1 [cs.CV] (2026년 11월 20일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://jingchensun.github.io/future-opsd/">future-opsd</a> (코드 공개 예정)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.26954">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>비디오에서 미래를 예측하는 추론 능력을 라벨 없이 학습시키기 위해, 과거-미래 영상 쌍 자체를 자기지도 신호로 활용하는 온-폴리시 자기증류 프레임워크 Future-OPSD를 제안하고, 미래 클립 중 실제로 중요한 "콘텐츠 정보"만 선택적으로 학습하도록 설계했다.</p>
+<h2>배경 및 문제의식</h2>
+<p>비디오 기반 미래예측 추론(video foresight reasoning)은 자율주행, 로보틱스, 능동형 에고센트릭 어시스턴트 등에 필수적인 능력이다. 기존 VLM 기반 방법들은 두 가지 한계를 가진다. 첫째, 정답 주석이나 외부 대형 모델(LLM 평가자 등)에 의존해 학습 확장성이 떨어진다. 둘째, 미래 클립 전체를 동등하게 중요한 학습 대상으로 취급하지만, 실제로는 미래 영상의 대부분이 질문과 무관한 "맥락 정보"이고 일부만이 실제로 중요한 "콘텐츠 정보"다. 예를 들어 "다음에 무엇을 할 것인가"를 예측할 때, 수도꼭지나 설거지대 같은 주변 정보보다 "칼을 헹군다"는 행동 자체가 핵심 정보다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>주석이나 외부 LLM 없이, 비디오 자체의 과거-미래 쌍만으로 자기지도 학습 신호를 만드는 최초의 온-폴리시 자기증류 프레임워크 Future-OPSD를 제안했다.</li>
+<li>학생 모델의 응답이 실제 미래와 얼마나 일치하는지를 측정하는 "foresight score"를 정의하고, 이를 직접 최적화하기 어려운 문제를 다루기 위해 다루기 쉬운 하한(lower-bound) 대체 목적함수를 유도했다.</li>
+<li>이 대체 목적함수는 대조적 특권 어드밴티지(contrastive privilege advantage)와 교사-학생 증류 어드밴티지를 보간하여, 공유된 맥락 정보는 억제하고 미래에 특화된 콘텐츠 정보는 증폭시킨다.</li>
+</ol>
+<h2>방법론</h2>
+<p>Future-OPSD는 각 비디오를 과거 클립과 미래 클립(짝지어진 미래)으로 나눈다. 학생 모델은 과거 클립만 보고 추론 및 답변을 생성하고, 초기 학생 모델의 복사본인 고정된 교사 모델은 과거와 짝지어진 미래를 모두 보고 학생의 응답을 토큰 단위로 채점한다. foresight score는 모든 가능한 미래에 대해 평균을 취해야 해서 직접 계산이 불가능하므로, 실제 짝지어진 미래와 무관한 참조 미래 각각에 대한 교사의 채점 차이(대조적 특권 어드밴티지)와 짝지어진 미래를 본 교사로의 증류 어드밴티지를 보간하는 다루기 쉬운 하한을 대신 최적화한다. 이 결합된 목적함수는 공유되는 맥락 정보를 억제하고 미래에 고유한 콘텐츠 정보를 증폭시키는 효과를 낸다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Qwen3-VL과 Qwen3.5를 기반 모델로 하여 개방형 예측(open-ended prediction)과 폐쇄형 계획(closed-ended planning)이라는 두 가지 비디오 미래예측 과업에서 평가했다. Future-OPSD는 기반 모델 대비 최대 14.2점(개방형 예측), 15.9점(폐쇄형 계획)의 성능 향상을 보였으며, foresight score를 최적화하지 않는 Naive OPSD 베이스라인을 일관되게 앞섰다. 이러한 향상은 과업 간에도 전이되었고, 일반적인 비디오 이해 능력을 손상시키지 않았다. 더 강한 교사 모델과 더 많은 데이터를 사용할수록 성능 향상이 더 커졌으며, 토큰 단위 분석을 통해 실제로 맥락 정보가 억제되고 콘텐츠 정보가 증폭됨을 확인했다.</p>
+<h2>한계점</h2>
+<p>연구에서 도출한 결론은 논문에서 다룬 데이터셋과 모델 범위 내로 한정된다고 저자들은 명시한다. 그 외의 세부적인 한계는 논문에 명시되지 않음.</p>
+<h2>시사점</h2>
+<p>정답 주석이나 외부 대형 모델 없이도 비디오 자체의 시간적 구조(과거-미래 쌍)를 자기지도 학습 신호로 활용할 수 있다는 점에서, 데이터 주석 비용 없이 확장 가능한 미래예측 추론 학습 패러다임을 제시한다. 또한 미래 정보 중 "중요한 것"과 "무관한 것"을 구분해 학습하는 설계는, 월드 모델이나 에이전트의 계획 수립 능력을 향상시키는 데도 응용될 수 있음을 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.26954" target="_blank" rel="noopener">huggingface.co/papers/2611.26954</a> · 2026-11-24</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

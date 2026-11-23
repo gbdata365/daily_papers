@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>클로버-35B-A3B-프리뷰 기술 보고서</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#3 · Daily Papers 2026-11-24</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 36</span>
+    </div>
+    <h1 class="article-title">Clover-35B-A3B-Preview Technical Report</h1>
+    <p class="article-title-ko">클로버-35B-A3B-프리뷰 기술 보고서</p>
+    <p class="article-sub">전체 350억·활성 30억 파라미터 규모의 MoE 블록 디퓨전 언어모델 Clover를 소개하며, Gated Delta Networks를 양방향으로 확장한 구조로 에이전트형 과제(코딩·도구 사용)에서 경쟁 모델을 능가하는 성능과 효율적인 추론 속도를 달성했다고 보고한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.24636" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.24636" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Clover-35B-A3B-Preview Technical Report</li>
+<li><strong>저자</strong>: DiffuSpace Technical Team (DiffuSpace)</li>
+<li><strong>출처</strong>: arXiv:2611.24636v1 [cs.CL] (2026년 11월 18일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/DiffuSpace/Clover-35B-A3B-Preview">GitHub</a>, <a href="https://huggingface.co/Diffuspace/Clover-35B-A3B-Preview">Hugging Face 가중치</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.24636">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>전체 350억·활성 30억 파라미터 규모의 MoE 블록 디퓨전 언어모델 Clover를 소개하며, Gated Delta Networks를 양방향으로 확장한 구조로 에이전트형 과제(코딩·도구 사용)에서 경쟁 모델을 능가하는 성능과 효율적인 추론 속도를 달성했다고 보고한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>디퓨전 언어모델(DLM)은 반복적인 디노이징으로 여러 토큰을 병렬 예측해 효율적인 추론 가능성을 제공하지만, 그간의 발전은 주로 일반적인 텍스트 생성이나 코드 생성과 같은 고립된 과제에 집중되어 있었다. 반면 에이전트형 응용(도구 사용과 반복적인 환경 상호작용이 필요한 과제)은 더 까다로운 시험대이며, 기존 공개 DLM(LLaDA2.2, DiffusionGemma 등)은 Terminal-Bench, SWE-bench와 같은 에이전트 벤치마크에서 Qwen 계열 기준모델에 못 미치는 성능을 보였다. Clover는 효율적인 병렬 생성 능력을 유지하면서 에이전트 성능을 끌어올리는 것을 목표로 한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>Qwen3.6-35B-A3B 백본을 블록 디퓨전 구조로 변환한 35B-총/3B-활성 MoE 디퓨전 언어모델 Clover 제안.</li>
+<li>Gated Delta Networks를 블록 디퓨전에 맞게 양방향으로 적응시켜(BD-GDN), 이미 완료된 컨텍스트에 대한 순환 메모리와 현재 블록 내부의 양방향 소프트맥스 어텐션을 하나의 공유 소프트맥스로 결합.</li>
+<li>SWE-bench Verified 73.6점, Terminal-Bench 2.1 51.7점 등 평가한 7개 에이전트 지표에서 선두를 기록, NVIDIA GB300 GPU 1개에서 BF16·배치 1 기준 초당 680토큰의 생성 속도 달성.</li>
+<li>관련된 여러 질문에 대한 답을 한 번의 디노이징 패스로 동시에 생성하는 '결정 모델(decision-model)' 변형을 제시, 내부 500개 그룹 테스트에서 질문 정확도를 90.37%→93.88%, 전체 정답 그룹 정확도를 65.4%→77.0%로 향상.</li>
+</ul>
+<h2>방법론</h2>
+<p>Clover는 40개의 디코더 레이어로 구성되며, BD-GDN 레이어 3개와 전체 어텐션 레이어 1개가 반복되는 하이브리드 백본(순환 혼합 30개 + 전체 어텐션 10개)을 사용한다. 각 혼합 레이어 뒤에는 dMoE(동적 전문가 혼합) 모듈이 이어진다. BD-GDN은 완료된 과거 컨텍스트에 대해서는 감쇠·델타 규칙 기반의 순환 메모리를 유지하면서, 현재 디노이징 중인 블록 내부 토큰들에는 양방향 상호작용을 허용하고, 과거 메모리 읽기값과 현재 블록 토큰이 하나의 공유 소프트맥스 안에서 경쟁하도록 설계했다. 학습 가능한 블록 크기 보정과 0으로 초기화된 별도의 우측 컨텍스트 합성곱 분기도 함께 사용된다. 추론 효율을 위해 셀프-스펙큘러티브 디코딩(diffusion 방식의 블록 예측을 드래프트로, 자기회귀적 검증으로 수용 여부 결정)도 활용한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>논문은 모델 품질, 드래프팅·검증 비용, 제한된 메모리 환경에서의 배포라는 세 축으로 평가를 구성했다. SWE-bench Verified, Terminal-Bench 2.1을 포함한 7개 에이전트 지표에서 Clover가 선두를 차지했으며, 일반 역량 평가에서도 경쟁력 있는 성능을 보였다. 내부 에이전트 워크로드에서 NVIDIA GB300 GPU 1개, BF16 정밀도, 배치 크기 1 조건으로 초당 680토큰의 생성 속도를 기록했다. 결정 모델 변형은 500개 그룹으로 구성된 내부 평가셋에서, 관련 질문들을 독립적으로 순차/병렬 처리하는 방식보다 하나의 디노이징 패스로 공동 예측할 때 더 높은 정확도와 더 낮은 지연시간(그룹 지연시간이 순차 처리 대비 대폭 감소)을 보였다.</p>
+<h2>한계점</h2>
+<p>저자들은 결론에서 지식(knowledge)과 수학(mathematics) 영역에서 추가적인 개선 여지가 있다고 명시했으며, 양자화(quantized) 배포 환경에서의 특성 분석과 품질-지연시간 트레이드오프의 체계적 규명이 추후 과제로 남아 있다고 밝혔다.</p>
+<h2>시사점</h2>
+<p>디퓨전 언어모델이 일반 텍스트 생성을 넘어 에이전트형 코딩·도구 사용 과제에서도 자기회귀 모델과 경쟁력 있는 성능을 낼 수 있음을 보여주는 사례로, 순환 메모리와 블록 단위 양방향 어텐션을 결합하는 하이브리드 아키텍처 설계가 효율성과 성능을 동시에 개선하는 유효한 방향이 될 수 있음을 시사한다. 또한 관련 질문을 한 번에 공동 생성하는 디코딩 전략은 디퓨전 모델 고유의 병렬성을 활용한 새로운 효율화 가능성을 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.24636" target="_blank" rel="noopener">huggingface.co/papers/2611.24636</a> · 2026-11-24</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

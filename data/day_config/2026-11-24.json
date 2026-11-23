@@ -1,0 +1,110 @@
+{
+  "2611.27193": {
+    "base": "2611_씨엠에이치씨_하이퍼커넥션-스트림혼합-기하축소",
+    "rank": "#1",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "86",
+    "en_title": "cmHC: Balancing Stream Mixing in Hyper-Connections via Geometric Contraction",
+    "ko_title": "cmHC: 기하학적 축소를 통한 하이퍼커넥션 스트림 혼합 균형 맞추기"
+  },
+  "2611.27963": {
+    "base": "2611_노페월드_벽을-통과하지-않는-비디오-월드모델",
+    "rank": "#2",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "54",
+    "en_title": "Non-penetrating World Models",
+    "ko_title": "통과하지 않는 월드 모델"
+  },
+  "2611.24636": {
+    "base": "2611_클로버_확산언어모델-에이전트성능",
+    "rank": "#3",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "36",
+    "en_title": "Clover-35B-A3B-Preview Technical Report",
+    "ko_title": "클로버-35B-A3B-프리뷰 기술 보고서"
+  },
+  "2611.15449": {
+    "base": "2611_알티씨_읽을수-없는-텍스트-초고해상도-복원에-추론-필요",
+    "rank": "#4",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "21",
+    "en_title": "Reading the Unreadable: Text-Aware Image Super-Resolution Needs Reasoning",
+    "ko_title": "읽을 수 없는 것을 읽다: 텍스트 인식 이미지 초해상도는 추론이 필요하다"
+  },
+  "2611.26954": {
+    "base": "2611_퓨처옵에스디_비디오-미래예측-추론-자기증류-학습",
+    "rank": "#5",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "19",
+    "en_title": "Learning Video Foresight Reasoning from Unlabeled Videos via On-Policy Self-Distillation",
+    "ko_title": "라벨 없는 비디오에서 온폴리시 자기증류로 비디오 예측추론 학습하기"
+  },
+  "2611.27973": {
+    "base": "2611_멤온스_LLM을-위한-확장가능한-메모리-아키텍처",
+    "rank": "#6",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "17",
+    "en_title": "MemOnce: A Scalable Memory Architecture for Large Language Models",
+    "ko_title": "멤온스: 대형 언어 모델을 위한 확장 가능한 메모리 아키텍처"
+  },
+  "2611.25773": {
+    "base": "2611_듀오프라_풀듀플렉스-대화에서-태스크-에이전시로",
+    "rank": "#7",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "11",
+    "en_title": "Duopra: From Full-Duplex Conversation to Full-Duplex Agency",
+    "ko_title": "듀오프라: 풀 듀플렉스 대화에서 풀 듀플렉스 에이전시로"
+  },
+  "2611.21485": {
+    "base": "2611_리스페이스벤치_복도에서-길을-잃다-재방문-공간기억-평가",
+    "rank": "#8",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "10",
+    "en_title": "Lost in the Hallway: Benchmarking Persistent Spatial Memory Across Revisits",
+    "ko_title": "복도에서 길을 잃다: 재방문 전반의 지속적 공간 기억 벤치마킹"
+  },
+  "2611.27915": {
+    "base": "2611_스테레오VLM_양안비전-언어모델-메트릭3D-공간추론",
+    "rank": "#9",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "7",
+    "en_title": "StereoVLM: Binocular Vision-Language Models for Metric 3D Spatial Reasoning",
+    "ko_title": "스테레오VLM: 메트릭 3D 공간 추론을 위한 양안 비전-언어 모델"
+  },
+  "2611.26613": {
+    "base": "2611_에이전트로보크리틱_프런티어에이전트-로봇제어-행동단위-분석",
+    "rank": "#10",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "7",
+    "en_title": "AgentRoboCritic: Understanding the Capability of Frontier Agents on Direct Robot Control",
+    "ko_title": "에이전트로보크리틱: 프런티어 에이전트의 직접 로봇 제어 능력 이해하기"
+  },
+  "2611.24077": {
+    "base": "2611_에어로알에스아이_항공비전언어내비게이션-재귀적자기개선",
+    "rank": "#11",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "7",
+    "en_title": "AeroRSI: Recursive Self-Improvement for Aerial Vision-Language Navigation",
+    "ko_title": "에어로알에스아이: 항공 비전-언어 내비게이션을 위한 재귀적 자기개선"
+  },
+  "2611.22343": {
+    "base": "2611_퓨어_다중단위-멀티모달-정체성매칭-진단벤치마크",
+    "rank": "#12",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "5",
+    "en_title": "PURE: A Diagnostic Benchmark for Multi-Granularity Multimodal Identity Matching",
+    "ko_title": "퓨어: 다중 세분성 멀티모달 정체성 매칭을 위한 진단 벤치마크"
+  }
+}

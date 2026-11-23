@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>복도에서 길을 잃다</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#8 · Daily Papers 2026-11-24</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 10</span>
+    </div>
+    <h1 class="article-title">Lost in the Hallway: Benchmarking Persistent Spatial Memory Across Revisits</h1>
+    <p class="article-title-ko">복도에서 길을 잃다: 재방문 전반의 지속적 공간 기억 벤치마킹</p>
+    <p class="article-sub">같은 집을 여러 번 재방문하는 상황에서 멀티모달 모델이 방을 다시 알아보고 상태 변화를 추적할 수 있는지 평가하는 벤치마크 ReSpaceBench를 제안했으며, 최고 모델도 인간(90.1%)에 크게 못 미치는 52.2%에 머물렀다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.21485" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.21485" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Lost in the Hallway: Benchmarking Persistent Spatial Memory Across Revisits</li>
+<li><strong>저자</strong>: Henry Zheng, Weibo Gong, Yang Yue, Rui Huang, Yang Zhang, Gao Huang (Tsinghua University, PICO/ByteDance)</li>
+<li><strong>출처</strong>: arXiv:2611.21485v1 [cs.CV] (2026년 11월 16일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.21485">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>같은 집을 여러 번 재방문하는 상황에서 멀티모달 모델이 방을 다시 알아보고 상태 변화를 추적할 수 있는지 평가하는 벤치마크 ReSpaceBench를 제안했으며, 최고 모델도 인간(90.1%)에 크게 못 미치는 52.2%에 머물렀다.</p>
+<h2>배경 및 문제의식</h2>
+<p>로봇이나 웨어러블 비서 같은 실체화된 에이전트(embodied agent)는 같은 공간을 반복적으로 방문하게 되는데, 시점이 달라지거나(viewpoint variation) 비슷하게 생긴 다른 방과 혼동되거나(identity ambiguity) 방 안의 물건이 바뀌는(state changes) 상황에서도 "같은 그 방"임을 정확히 인식해야 한다. 기존 공간 이해 벤치마크들은 비디오 기반 장기 기억이나 장면 일관성은 다루지만, 물리적으로 같은 방에 재진입했는지를 명시적으로 통제하고 평가하는 프로토콜은 부재했다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>물리적 방 진입을 기준으로 재방문을 정의하고, 같은 유형의 방을 교란 요소로 포함한 벤치마크 ReSpaceBench(590개 장면, 3,244개 질문, 9개 과제)를 제안했다.</li>
+<li>32개 모델과 3개의 에이전틱 비디오 이해 프레임워크를 평가해 방 연관(association) 오류, 증거 누락 등 주요 실패 양상을 분석했다.</li>
+<li>벤치마크와 템플릿·장면·경로가 전혀 겹치지 않는 3만 개 규모의 학습 데이터셋 RS-30K를 함께 공개했다.</li>
+</ol>
+<h2>방법론</h2>
+<p>ReSpaceBench는 연관(association), 지속적 상태 추적(persistent state), 하위 추론(reasoning) 세 범주, 9개 세부 과제로 구성된다. 예를 들어 질의-기억 매칭(쿼리 장면이 이전에 방문한 어느 방인지 찾기), 동일 유형 방 중 재방문한 곳 식별, 재방문 횟수 세기, 방 인벤토리, 물체-장소 결합, 세션 간 상태 변화 추적, 공간 위상 및 시간적 순서 추론 등이 포함된다. 3D-FRONT·ProcTHOR의 합성 가정집, FARO 레이저 스캐너로 스캔한 실제 가정집, PICO 헤드셋으로 촬영한 1인칭 비디오를 사용했으며, 내비게이션 메시 기반으로 경로를 계획하고 BlenderProc으로 1인칭 영상을 렌더링했다. 각 방 진입 시 270도 둘러보기(6~9초)를 포함시켜 충분한 관찰을 확보했고, 질문-정답은 장면 메타데이터로부터 생성한 뒤 규칙 기반 검증과 사람 검토를 거쳤다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>32개 모델과 3개의 에이전틱 비디오 이해 프레임워크(AVP, DVD, VideoAgent류)를 평가했다. 전체 정확도 기준 최고 제로샷 모델(GPT-5.6 Sol)이 50.5%, 450문항 서브셋에서는 52.2%를 기록했는데, 이는 인간 평가자의 90.1%에 크게 못 미친다. 에이전틱 프레임워크들은 동일 기반 모델의 직접 추론 대비 전반적인 개선을 보이지 못했다. 상위 6개 프로프라이어터리 모델의 오류 중 66.5~88.3%가 "틀린 방 선택"에서 발생해, 모델이 방을 "친숙하다"고 인식하는 것과 "정확히 어느 방인지" 식별하는 것 사이에 간극이 있음을 보였다. RS-30K로 Qwen3-VL-8B를 파인튜닝하면 전체 정확도가 35.5%에서 60.4%로 상승했으며, 특히 연관 과제에서 가장 큰 개선을 보였고 실제 가정집 장면으로도 일부 전이되었다.</p>
+<h2>한계점</h2>
+<p>RS-30K만으로 파인튜닝하면 ReSpaceBench 성능은 크게 오르지만 일부 외부 벤치마크(예: Video-MME) 성능은 오히려 낮아지는 과적합 경향이 나타나, 과제 특화 데이터만으로 학습하는 것의 한계가 드러났다. 논문은 이를 완화하기 위한 혼합 데이터 파인튜닝 연구가 필요함을 언급한다.</p>
+<h2>시사점</h2>
+<p>이 연구는 실체화 에이전트가 장기적으로 신뢰할 수 있으려면 단순히 "증거를 더 많이 찾는" 에이전틱 검색 능력만으로는 부족하며, 물리적 장소 정체성을 일관되게 유지하는 능력이 별도로 필요함을 보여준다. 가정용 로봇이나 AR/VR 비서처럼 동일 공간을 반복적으로 오가는 응용에서 공간 기억 설계 시 중요한 진단 도구와 학습 자원을 제공한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.21485" target="_blank" rel="noopener">huggingface.co/papers/2611.21485</a> · 2026-11-24</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>멤온스</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#6 · Daily Papers 2026-11-24</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 17</span>
+    </div>
+    <h1 class="article-title">MemOnce: A Scalable Memory Architecture for Large Language Models</h1>
+    <p class="article-title-ko">멤온스: 대형 언어 모델을 위한 확장 가능한 메모리 아키텍처</p>
+    <p class="article-sub">MemOnce는 마지막 레이어의 은닉 상태 일부만을 압축된 메모리로 캐싱하고, 모든 레이어에 걸쳐 단 한 번만 관련 메모리를 검색해 KV 캐시로 복원하는 구조를 통해, 선형 시간 복잡도와 일정한 메모리 사용량을 유지하면서도 트랜스포머를 능가하는 성능을 달성한 최초의 네이티브 메모리 아키텍처다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.27973" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.27973" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: MemOnce: A Scalable Memory Architecture for Large Language Models</li>
+<li><strong>저자</strong>: Chang Nie, Chaoyou Fu, Songlin Liu, Yiqing Hu, Caifeng Shan (난징대학교, 중국과학기술대학교)</li>
+<li><strong>출처</strong>: arXiv:2611.27973v1 [cs.CL] (2026년 11월 20일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://clare-nie.github.io/MemOnce">MemOnce</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.27973">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>MemOnce는 마지막 레이어의 은닉 상태 일부만을 압축된 메모리로 캐싱하고, 모든 레이어에 걸쳐 단 한 번만 관련 메모리를 검색해 KV 캐시로 복원하는 구조를 통해, 선형 시간 복잡도와 일정한 메모리 사용량을 유지하면서도 트랜스포머를 능가하는 성능을 달성한 최초의 네이티브 메모리 아키텍처다.</p>
+<h2>배경 및 문제의식</h2>
+<p>LLM이 장시간·연속적인 상호작용에서 재사용 가능한 메모리 상태를 유지하려면 두 가지 극단 사이에서 트레이드오프가 발생한다. 표준 트랜스포머는 레이어마다 토큰 단위 KV 캐시를 누적해 컨텍스트가 길어질수록 GPU 메모리가 선형으로 증가하고 연산량은 제곱으로 증가한다. 반면 Mamba, RWKV, GDN 같은 선형 시간 아키텍처는 과거 정보를 고정 크기 상태로 압축하지만, 세밀한 정보가 손실되기 쉽다. 하이브리드 어텐션, 네이티브 메모리 모델(Titans, M+, Metis 등), 외부 메모리 시스템(Mem0 등) 등 기존 시도들도 각각 전역 캐시 유지 부담, 성능 저하·계층별 검색 오버헤드·치명적 망각, 비용이 큰 외부 저장소 구축 문제를 안고 있었다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>정확한 회상, 선형 시간 추론, 일정한 GPU 메모리 사용량을 동시에 달성하는 기초 아키텍처 MemOnce를 제안했다.</li>
+<li><strong>메모리 인코더-디코더</strong>: 마지막 레이어 은닉 상태의 작은 부분집합(예: 1/8)만 압축된 메모리 표현으로 캐싱하고, 경량 MLP로 이를 다시 각 어텐션 레이어의 KV 캐시로 동적 복원한다.</li>
+<li><strong>메모리 희소 어텐션</strong>: 입력마다 관련성이 높은 상위-K개 메모리 표현을 적응적으로 검색하며, 이 희소 인덱스는 모든 레이어와 디코딩 단계에서 단 한 번만 계산되어 공유된다.</li>
+<li>풀 컨텍스트 베이스라인을 능가한 최초의 네이티브 메모리 모델임을 입증했다.</li>
+</ol>
+<h2>방법론</h2>
+<p>MemOnce는 "메모리 상태 학습"이라는 통합 관점에서, 트랜스포머의 전체 토큰 KV 캐시, 선형 모델의 고정 크기 상태를 포함한 기존 방법들을 하나의 수식(현재 입력과 과거 맥락으로부터 활성 메모리 상태를 생성하는 함수)으로 재정의한다. MemOnce는 깊이·시간 두 차원에 걸쳐 압축을 수행해, 단일한 전역 캐시를 유지하면서 연속 추론 시 메모리를 온디맨드로 로드하고 디코딩한다. 두 설계(메모리 인코더-디코더, 메모리 희소 어텐션)를 결합함으로써 표현력, 선형 시간 복잡도, 일정한 활성 메모리 상태를 동시에 확보한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>150M~1B 파라미터 규모에서 트랜스포머, GDN, YOCO 등과 처음부터 함께 사전학습을 진행한 결과 MemOnce가 더 낮거나 비슷한 퍼플렉시티와 좋은 다운스트림 성능을 보였다. Qwen3.5-4B를 포스트트레이닝으로 적응시켜 4K~1M 토큰 범위의 5개 메모리 벤치마크에서 평가한 결과, MemOnce는 풀 컨텍스트 베이스라인을 능가한 최초의 네이티브 메모리 모델이 되었으며(4B 규모에서 +5.77%), M+보다 +18.68%, Metis보다 +32.27% 높은 성능을 기록했다. 1M 컨텍스트에서는 메모리 상태 캐시를 1313배, 프리필 지연시간을 6.9배 줄였고, 처리량은 3.5배 향상시켰다. 또한 추론 중 파라미터를 고정하고 무관한 디코딩 캐시를 자연스럽게 무시함으로써 치명적 망각을 방지했다. 마지막으로, 별도의 미세조정 없이도 학습된 메모리 표현이 검색·재순위화 등 다운스트림 표현 작업에서 특화 모델과 경쟁력 있는 성능을 보였다.</p>
+<h2>한계점</h2>
+<p>컴퓨팅 자원의 제약으로 처음부터 수행한 사전학습은 1B 파라미터 규모까지만 검증되었으며, 7B 이상의 더 큰 규모에서 파운데이션 스케일링 거동을 검증하는 것은 향후 과제로 남아있다. 또한 긴 호흡의 대화형 코딩이나 다단계 도구 사용과 같은 복잡한 다운스트림 에이전트 작업에서의 성능은 아직 충분히 검증되지 않았다.</p>
+<h2>시사점</h2>
+<p>MemOnce는 메모리 상태 학습을 하나의 통합 프레임워크로 재정의함으로써, 긴 컨텍스트·연속적 상호작용을 다루는 차세대 범용 LLM 아키텍처의 방향을 제시한다. 특히 네이티브 메모리 모델이 처음으로 풀 컨텍스트 성능을 넘어섰다는 결과는, 에이전트 및 장기 기억이 필요한 응용에서 메모리 효율성과 성능을 동시에 확보할 수 있는 길을 열어준다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.27973" target="_blank" rel="noopener">huggingface.co/papers/2611.27973</a> · 2026-11-24</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

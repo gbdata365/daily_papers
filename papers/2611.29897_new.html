@@ -1,0 +1,113 @@
+<meta charset="UTF-8">
+<title>Motion Mamba 2.0</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#1 · Daily Papers 2026-11-25</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 171</span>
+    </div>
+    <h1 class="article-title">Motion Mamba 2.0: Autoregressive Diffusion Mamba for Long-Horizon Humanoid Control</h1>
+    <p class="article-title-ko">Motion Mamba 2.0: 장기 휴머노이드 제어를 위한 자기회귀 확산 Mamba</p>
+    <p class="article-sub">Mamba-3 기반 순환 상태와 지속형 콘텐츠 메모리(PCM)를 로컬 어텐션에 결합한 자기회귀 확산 모델로, 휴머노이드 로봇이 바뀌는 텍스트 지시와 공간 목표를 따라가며 최대 39.52초에 이르는 장기 모션을 실시간으로 생성하도록 한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.29897" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.29897" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Motion Mamba 2.0: Autoregressive Diffusion Mamba for Long-Horizon Humanoid Control</li>
+<li><strong>저자</strong>: Yue Huang, Tianshan Zhang, Zeyu Zhang, Hao Tang 등 (Peking University), Jayeon Kang, Sungjoon Choi (Korea University), Akide Liu (Monash University), Dacheng Tao (Nanyang Technological University) — 다기관 공동연구</li>
+<li><strong>출처</strong>: arXiv:2611.29897v1 [cs.RO] (23 Nov 2026)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://aigeeksgroup.github.io/MotionMamba2.0">https://aigeeksgroup.github.io/MotionMamba2.0</a> (코드: https://github.com/AIGeeksGroup/MotionMamba2.0)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.29897">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>Mamba-3 기반 순환 상태와 지속형 콘텐츠 메모리(PCM)를 로컬 어텐션에 결합한 자기회귀 확산 모델로, 휴머노이드 로봇이 바뀌는 텍스트 지시와 공간 목표를 따라가며 최대 39.52초에 이르는 장기 모션을 실시간으로 생성하도록 한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>기존 자기회귀 확산 기반 모션 생성 기법은 어텐션 캐시의 크기가 제한되면 먼 과거 정보를 잃고, 캐시를 무제한으로 늘리면 저장·계산 비용이 커지는 딜레마가 있다. 또한 매 윈도우마다 반복되는 디노이징 과정 자체가 상당한 추론 지연을 유발해, 사용자의 지시가 실시간으로 바뀌는 상호작용 환경(걷다가 방향을 바꾸거나 상체 동작을 요청하는 등)에 대응하기 어렵다. 상태공간모델(SSM)은 압축된 순환 상태로 과거를 요약할 수 있지만, 이 상태를 어텐션이 직접 참조할 수 있는 형태로 연결하는 인터페이스가 없었다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>Mamba-3 기반의 root–body 분리형 자기회귀 확산 아키텍처를 제안하고, 압축된 순환 상태·상태 변화량·텍스트 조건을 동적으로 갱신되는 콘텐츠 슬롯으로 변환하는 지속형 콘텐츠 메모리(Persistent Content Memory, PCM)를 도입.</li>
+<li>디노이징 중 생성된 중간(노이즈) 후보와 "확정된(accepted)" 모션 기록을 분리하는 accepted-only 히스토리 업데이트 메커니즘을 설계하여 샘플링 반복과 실제 시간 흐름을 명확히 구분.</li>
+<li>CUDA Graph 재생, 퓨즈 커널, 실행 흐름 단순화를 결합한 하드웨어 인지형 추론 파이프라인을 개발, RTX 4090에서 median 6.138배 속도 향상 달성(1685.35ms → 276.14ms).</li>
+<li>BONES Seed, HumanML3D, HiPHI를 통합 리타기팅한 G1 휴머노이드 평가 프로토콜을 구축(최대 39.52초 롤아웃).</li>
+<li>실제 Unitree G1 로봇에 적용하여 다단계 텍스트 지시 수행, 표현적 모션, 키보드/마우스 기반 인터랙티브 로코모션을 실증(100회 시도 중 94% 성공, 낙상 없음).</li>
+</ul>
+<h2>방법론</h2>
+<p>모델은 root(전역 궤적)와 body(관절 자세)를 분리해 두 단계로 예측하는 root–body 디퓨전 트랜스포머(ARDY 방식 확장)를 사용한다. 각 시퀀스 믹서 레이어는 로컬 어텐션과 재개 가능한(resumable) Mamba-3 SISO 스캔을 결합한 하이브리드 구조로, Mamba는 이전 확정 윈도우에서 재개되는 고정 크기 순환 상태를 유지한다. PCM은 레이어마다 S개의 메모리 슬롯을 두고, Mamba 상태 요약과 그 변화량(delta), 텍스트 임베딩을 결합해 게이트(write-rate cap) 기반으로 슬롯을 갱신하며, 이 슬롯은 고정 "싱크(sink)" 토큰과 함께 어텐션의 key/value에 추가되어 잔차(residual) 형태로 base attention 출력에 더해진다(스칼라 게이트 ρ, ζ로 기여도 조절, 초기값 0이면 원래 모델과 동일). 모든 상태(캐시, Mamba 상태, PCM 슬롯)는 디노이징 중에는 불변 스냅샷으로 취급되고, 깨끗한(clean) 모션 윈도우가 "확정"된 후에만 한 번에 갱신된다. 추론 가속을 위해 Mamba 전처리 연산(디케이 활성화, 스텝 크기 변환 등)을 하나의 커널로 퓨즈하고, 텍스트/제약/무조건(CFG) 3개 분기를 각각 CUDA Graph로 캡처해 재생함으로써 호스트 디스패치 오버헤드를 줄인다. 학습은 4가지 손실(Smooth L1 기반 hybrid, 디코딩된 body L1, 목표 좌표 L1, forward-kinematics 일관성 손실)의 가중합으로 진행되며, 역사/미래 구간 길이를 다양하게 샘플링해 학습한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>BONES Seed(G1 네이티브 궤적), 리타기팅된 HumanML3D, 리타기팅된 HiPHI(고정밀 인간 모션 부분집합)를 29-DoF G1 표현(414차원, 25Hz)으로 통합한 데이터셋(총 156,819개 레코드, 588.92시간)을 구성했다. 모든 베이스라인과 변형은 동일한 100,000-업데이트 예산으로 독립 학습했다. HiPHI에서 Motion Mamba 2.0은 모든 구간(2.08~39.52초)에서 최저 Root CE를 기록했으며, 39.52초 구간에서 Root/End CE 7.55/13.64cm로 MotionStreamer(7.78cm) 및 ARDY(14.84cm)를 능가했다. BONES Seed와 HumanML3D의 단기 구간에서도 최저 CE와 높은 R@3(텍스트-모션 일치도)를 보였다. 아키텍처 제거 실험에서는 Mamba 순환 모델링이 장기 구간일수록 효과가 커지고(39.52초에서 Root CE 60.00→9.36cm), PCM 추가가 세 benchmark 모두에서 CE를 추가로 개선함을 확인했다(HiPHI 39.52초: 9.36→7.55cm). 추론 최적화 실험에서는 실행 흐름 단순화, 퓨전 커널, CUDA Graph 재생을 단계적으로 적용해 p50 지연시간을 1685.35ms에서 276.14ms로, p95를 2471.65ms에서 345.82ms로 줄였으며(median paired speedup 6.138×), 출력과 확정 상태는 비트 단위로 동일하게 유지됨을 검증했다. 실제 Unitree G1 로봇 실험(순차적 행동 조합, 표현 모션, 키보드/마우스 제어)에서 전체 100회 시도 중 94회 완전 성공, 97회 안정성 기준 충족, 낙상 0회를 기록했다.</p>
+<h2>한계점</h2>
+<p>현재 프레임워크는 제어 가능한 휴머노이드 모션 생성에 초점을 맞추고 있으며 물체 조작(object manipulation)은 다루지 않는다. 저자들은 향후 연구로 로코모션과 물체 조작을 결합한 전신 로코-매니퓰레이션(whole-body loco-manipulation)을 계획하고 있다고 명시했다.</p>
+<h2>시사점</h2>
+<p>이 연구는 상태공간모델의 압축된 순환 상태와 어텐션 기반 디노이징 네트워크 사이에 "쓰기 가능한" 인터페이스(PCM)를 두는 설계가 장기 상호작용형 모션 생성에서 정확도와 효율성을 동시에 향상시킬 수 있음을 보인다. 또한 디노이징 샘플링과 히스토리 커밋을 분리하는 설계 원칙, CUDA Graph 기반의 실행 최적화 기법은 다른 자기회귀 디퓨전 기반 로봇 제어 시스템에도 일반적으로 적용 가능한 시사점을 제공한다. 향후 물체 조작까지 포괄하는 전신 제어로의 확장이 자연스러운 다음 단계로 제시된다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.29897" target="_blank" rel="noopener">huggingface.co/papers/2611.29897</a> · 2026-11-25</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

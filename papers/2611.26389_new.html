@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>ViDecide</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#8 · Daily Papers 2026-11-25</span>
+      <span class="cat-tag">생성모델</span>
+      <span class="upvote-tag">▲ 36</span>
+    </div>
+    <h1 class="article-title">ViDecide: Teaching Video Diffusion Models to Reason and Plan Step by Step</h1>
+    <p class="article-title-ko">ViDecide: 비디오 확산 모델에게 단계적으로 추론하고 계획하도록 가르치기</p>
+    <p class="article-sub">비디오 확산 모델이 긴 추론·계획 과제를 "고정 길이 클립 생성"이 아니라 "상태 전이의 연쇄적 의사결정"으로 다루도록, 인과적(causal) 생성과 적응적 종료, 디코딩-집중 학습 스케줄, 실패 교정 미세조정(CFT)을 결합한 ViDecide 프레임워크를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.26389" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.26389" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: ViDecide: Teaching Video Diffusion Models to Reason and Plan Step by Step</li>
+<li><strong>저자</strong>: Kaiwen Zhang, Yiming Gao, Zeqi Xiao, Xintao Wang, Pengfei Wan, Kun Gai, Xingang Pan (Nanyang Technological University S-Lab, KlingAI Research, 홍콩중문대학(CUHK))</li>
+<li><strong>출처</strong>: arXiv:2611.26389v1 [cs.CV] (2026년 11월 19일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://kevin-thu.github.io/ViDecide">https://kevin-thu.github.io/ViDecide</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.26389">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>비디오 확산 모델이 긴 추론·계획 과제를 "고정 길이 클립 생성"이 아니라 "상태 전이의 연쇄적 의사결정"으로 다루도록, 인과적(causal) 생성과 적응적 종료, 디코딩-집중 학습 스케줄, 실패 교정 미세조정(CFT)을 결합한 ViDecide 프레임워크를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>Seedance 2.5 같은 최신 상업 비디오 생성 모델이나 대규모 추론 데이터로 강화학습(RL)까지 적용한 VBVR-Pro-RLVR조차도 다단계 논리/계획 과제에서 물리·규칙을 위반하는 환각적 상태 전이를 자주 만든다. 저자들은 그 원인을 비디오 확산 모델의 학습 방식 자체에서 찾는다: (1) 고정 길이 클립을 한 번에 동시에(jointly) 디노이즈해 상태 간 인과 순서와 가변적인 추론 길이를 무시하고, (2) 학습 스케줄이 시각적 디테일 복원(저노이즈 구간)에 치우쳐 있어 실제 "다음에 무슨 일이 일어나는지"를 추론해야 하는 고노이즈 구간 학습이 부족하며, (3) 기존 디퓨전 RL 방법은 비디오 전체에 단일 스칼라 보상을 부여해 몇 개의 잘못된 결정에 대한 신호가 희소하고 잡음이 많다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>의사결정 중심 프레임워크</strong>: 인과적 생성, 적응적 종료(시각적 EOS 프레임), 디코딩-집중(decision-focused) 학습 스케줄을 결합해 가변 길이의 장기 비디오 추론·계획을 가능케 하는 ViDecide 제안.</li>
+<li><strong>교정 미세조정(Corrective Fine-tuning, CFT)</strong>: 정책그래디언트(policy-gradient) 최적화 없이, 실패한 결정의 노이즈를 모델 자신의 성공적인 후속 생성에 매핑하여 교정하는 새로운 사후학습 기법 제안.</li>
+<li><strong>새 벤치마크 RoboTwin-Plan</strong>: RoboTwin 2.0 시뮬레이터 기반 이중 팔 로봇의 다단계 블록 배치 계획 과제 벤치마크 구축.</li>
+<li><strong>성능</strong>: 추상 게임, 계획 과제, 로봇 조작을 포함한 평가에서 평균 엄격 성공률(SSR) 83.8%를 달성, 표준 미세조정(23.3%)과 최강 선행 기법(67.8%) 대비 큰 격차로 능가하며 더 큰 퍼즐·미학습 레이아웃에도 일반화.</li>
+</ul>
+<h2>방법론</h2>
+<p>ViDecide는 시각적 추론/계획을 "초기 관측 o0와 과제 설명 c가 주어지면 비디오(시각적 상태열 τ=(o0,...,oT))를 생성하는 조건부 비디오 생성"으로 formalize한다. (1) <strong>인과적 생성과 적응적 종료</strong>: 고정 길이 비디오를 한 번에 생성하는 대신, 최대 K개의 프레임(세그먼트) 단위로 이전 상태들에 조건화해 순차적으로(teacher forcing) 생성하고, 언어모델의 EOS 토큰에 대응하는 시각적 EOS 프레임을 학습해 모델이 과제 완료 시점을 스스로 판단해 생성을 멈추게 한다. (2) <strong>디코딩-집중 학습 스케줄</strong>: 표준 flow-matching의 타임스텝 분포 p(t)를 고노이즈(t→1) 쪽으로 이동시킨 분포 p_DF(t)(시프트 계수 s)로 대체해, 의사결정이 실제로 일어나는 고노이즈 구간 학습을 강화한다. (3) <strong>교정 미세조정(CFT)</strong>: 현재 모델에서 실패한 롤아웃(τ⁻)을 수집하고, 실패 지점 직전부터 재샘플링해 성공한 대안(τ⁺)을 구한 뒤, 두 경로가 갈라지는 "발산 지점(d)"에서 실패를 만들었던 원래 노이즈 ε⁻_d를 성공 세그먼트 X⁺_d에 매핑하는 교정 손실(L_corr)로 학습한다. 이는 실패를 만든 "그 노이즈"를 성공 쪽으로 재조준하는 것으로, 스칼라 보상에 기반한 샘플 전체 단위의 강화학습보다 결정 단위의 명시적·분포 내(in-distribution) 교정 신호를 제공한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>VideoRLVR(Maze/FlowFree/Sokoban 등 규칙기반 퍼즐), VBVR-MultiStep(6개 계획 과제로 구성된 범용 모델 평가), 그리고 자체 구축한 RoboTwin-Plan(이중 팔 로봇 블록 계획) 세 벤치마크에서, 매 상태 전이가 규칙을 지키고 목표 상태에 도달한 경우만 성공으로 치는 엄격 성공률(SSR)로 평가했다. 백본은 Wan2.2-5B(전체 미세조정) 및 소형 DiT-B(1.32억 파라미터, 처음부터 학습)를 사용. 결과: 양방향(bidirectional) SFT나 S2PD/HDR 같은 고정 길이 생성 기법보다 인과적 생성이 모든 벤치마크·백본에서 우수했고(예: FlowFree에서 77.9% vs 양방향 1.1%, S2PD 68.1%), 디코딩-집중 스케줄(s=10)은 모든 벤치마크에서 SSR을 크게 높였다(RoboTwin-Plan에서 s=5의 33.3%→s=10의 73.9%). Flow-GRPO, DiffusionNFT, rejection-sampling(RFT) 등 기존/대안 사후학습 기법과 비교해 CFT가 원본 테스트셋에서 4.1~7.8점 추가 개선을 보였고, 특히 더 어려운(hard) 테스트셋에서 격차가 컸다. 전체적으로 ViDecide는 네 개 테스트셋 평균 SSR을 23.3%(표준 SFT)에서 83.8%로 끌어올렸고, 더 큰 퍼즐과 미학습 레이아웃에도 일반화되었다(예: Sokoban 5박스 테스트에서 CFT 적용 시 74.0% 성공).</p>
+<h2>한계점</h2>
+<p>논문은 ViDecide가 현재 한 번에 하나의 벤치마크(과제)에 대해서만 학습되며, 사후학습(CFT)이 규칙 기반 검증기(rule verifier)에 의존한다는 점을 한계로 명시한다. 향후 더 넓은 추론 데이터, 학습된 검증기(learned verifiers), 실제 세계 로봇 계획으로 확장할 계획이라고 밝힌다.</p>
+<h2>시사점</h2>
+<p>이 연구는 비디오 생성 모델을 "장면을 한 번에 그리는 생성기"가 아니라 "상태 전이를 하나씩 결정하는 추론기"로 재구성함으로써, 추가 데이터나 기존 디퓨전 RL만으로는 풀리지 않던 다단계 추론·계획 실패를 상당 부분 해소할 수 있음을 보여준다. 특히 CFT는 고차원 비디오 생성에서 정책그래디언트 없이도 실패-성공 쌍을 노이즈 수준에서 직접 매핑해 안정적으로 학습할 수 있다는 점에서, 비디오 기반 월드모델·임바디드 플래닝·시각적 에이전트 연구에 일반적으로 적용 가능한 사후학습 설계 원칙을 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.26389" target="_blank" rel="noopener">huggingface.co/papers/2611.26389</a> · 2026-11-25</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

@@ -1,0 +1,113 @@
+<meta charset="UTF-8">
+<title>Embo-Harness</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#2 · Daily Papers 2026-11-25</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 90</span>
+    </div>
+    <h1 class="article-title">Embo-Harness: Towards Understanding Frontier-Model-as-Policy Harness</h1>
+    <p class="article-title-ko">Embo-Harness: 프런티어 모델을 정책으로 쓰는 하네스 이해를 향하여</p>
+    <p class="article-sub">프런티어 멀티모달 모델(GPT-6-Astra 등)을 로봇 정책으로 직접 사용하는 "frontier-model-as-policy" 하네스의 설계 요소를 체계적으로 실험 분석하여, 저수준 행동 생성보다 공간 인식(spatial perception) 능력이 조작 성능의 핵심 요인임을 밝혀낸 연구.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.31201" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.31201" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Embo-Harness: Towards Understanding Frontier-Model-as-Policy Harness</li>
+<li><strong>저자</strong>: Xiao-Ming Wu, Kang Liao 등 (Nanyang Technological University S-Lab), ACE Robotics, SenseTime Research, Xiamen University, Lenovo Robotics Lab, University of Connecticut 공동연구; 교신저자 Chen Change Loy (NTU)</li>
+<li><strong>출처</strong>: arXiv:2611.31201v1 [cs.RO] (23 Nov 2026)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://dravenalg.github.io/projects/Embo-Harness/">https://dravenalg.github.io/projects/Embo-Harness/</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.31201">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>프런티어 멀티모달 모델(GPT-6-Astra 등)을 로봇 정책으로 직접 사용하는 "frontier-model-as-policy" 하네스의 설계 요소를 체계적으로 실험 분석하여, 저수준 행동 생성보다 공간 인식(spatial perception) 능력이 조작 성능의 핵심 요인임을 밝혀낸 연구.</p>
+<h2>배경 및 문제의식</h2>
+<p>GPT-6-Astra와 같은 프런티어 모델은 별도 학습 없이도 VLA(Vision-Language-Action)·WAM(World-Action-Model) 등 로봇 전용 파운데이션 모델을 능가하는 조작 성능을 보이기 시작했지만, 기존 연구들은 특정 시스템의 성능을 보여주거나 개선하는 데 집중했을 뿐, 어떤 하네스 구성 요소가 성능 향상에 실제로 기여하는지, 그리고 범용 모델이 왜 전문화된 정책을 능가할 수 있는지에 대한 체계적 분석이 부재했다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>로봇 에이전트 루프를 프롬프팅, 플래닝, 행동 실행, 도구 사용 네 가지 차원으로 나누어 체계적으로 탐구하고, 6가지 실증적 발견을 실용적 레시피로 정리.</li>
+<li>RoboLab-120 벤치마크에서 83.3% 성공률을 달성, 기존 최강 베이스라인(SenseNova-RoboRSI, 57.1%)을 26.2%p 능가.</li>
+<li>실제 로봇(Franka Research 3) 4개 조작 과제에서 20회 중 15회 제로샷 성공.</li>
+<li>조작 성능이 명시적 저수준(관절/궤적) 행동 생성이 아니라 정확한 3D 공간 목표 추정(spatial perception)에 더 크게 의존한다는 가설을 제시하고, 통제된 개입 실험으로 입증.</li>
+<li>공간 위치 추정 오차를 추론 노력(reasoning effort)·시각 해상도별로 측정하여, 조작 성능 추세와의 상관성을 확인.</li>
+</ul>
+<h2>방법론</h2>
+<p>저자들은 π0.5의 기본 설정(절대 관절 위치, 청크 15, 224×126 해상도, GPT-6-Astra medium reasoning)을 베이스라인으로 삼고, 한 번에 하나의 설계 요소만 바꾸면서 최적 선택을 다음 단계로 누적 반영하는 점진적(progressive) 평가 프로토콜을 사용했다(RoboLab 20개 과제, 과제당 3회 시행). 탐구한 네 차원은: (1) 행동 실행 — 행동 형식(절대/델타, EEF/관절), 행동 청크 크기, 동기/비동기 실행; (2) 플래닝 — 모델 종류와 reasoning effort, 명시적/암묵적 플래닝, 컨텍스트 관리(과거 시각 이력 제거 시 KV-cache 적중률이 95%→25%로 급감); (3) 프롬프팅과 시각 입력 — 실패 기반 안내 문구(notice reminder), 멀티뷰, 해상도; (4) 도구·정책 통합 — 짧은 다중행동 시퀀스를 하나의 도구로 제공, VLA를 보조 정책으로 통합하는 두 전략(VLA 선택 vs. VLA 결과를 프런티어 모델이 수정/정제). 최종 Embo-Harness는 GPT-6-Astra(xhigh reasoning)에 절대 EEF 좌표·청크 8·고해상도(640×360) 양안 뷰를 입력하고, 짧은 다중행동 시퀀스 생성과 VLA 정제(refinement)를 도구로 결합한 구조다. 저수준 행동 편향을 검증하기 위해 역기구학(IK) 보조 없이 직접 관절각을 생성하는 경우와, 목표 자세 예측 대신 프레임별 궤적을 직접 생성하는 경우를 비교했고, 공간 인식 가설은 단거리 행동 청크 생성과 최종 EEF 목적지 직접 예측을 비교하는 실험 및 3D 위치 추정 오차 직접 측정으로 검증했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>RoboLab-120(NVIDIA Isaac Lab 기반, 120개 탁상 조작 과제, 시각·관계·절차 추론 3개 범주)에서 Embo-Harness는 SR(성공률) 83.3%, Score 89.2로 VLA(π0, π0.5, GR00T N1.6 등), WAM(Cosmos3, DreamZero, FLUX 3 Action 등), 에이전틱 방법(SenseNova-RoboRSI, VoLo) 모두를 능가했다. 실제 환경에서는 블록 쌓기(5/5), 과일 포장(5/5), 설거지(2/5), 꽃꽂이(3/5) 과제를 베이스라인보다 높은 성공률로 수행했다(설거지·꽃꽂이 실패는 미세한 공간 정렬 한계 때문). 저수준 행동 편향 검증에서는 직접 관절각 생성(20.0%)이 IK 보조 방식(43.3%)보다 23.3%p 낮았고, 직접 청크 생성(40.0%)도 목표 자세 예측(58.3%)보다 18.3%p 낮았다. 반대로 EEF 목적지 직접 예측은 단거리 행동 생성보다 SR이 5.0%p 높았다(50.0% vs. 45.0%). 공간 위치 추정 실험에서는 reasoning effort와 해상도가 높아질수록 추정 오차가 줄었고(medium 14.10cm → xhigh 9.07cm; 224×126 14.14cm → 640×360 9.07cm), 이 추세는 Table 1의 조작 성능 추세와 일치했다. 또한 실패한 그랩에서의 그리퍼-목표 간 오차(11.04cm)가 공간 추정 오차와 유사한 크기임을 확인했다.</p>
+<h2>한계점</h2>
+<p>연구 결과는 현재 프런티어 모델의 능력 수준에 의존하며 향후 모델 발전에 따라 바뀔 수 있다. 공간 인식이 그리퍼 기반 조작을 가능하게 하지만, 손끝 섬세 조작(dexterous manipulation), 로코모션, 촉각(tactile) 인식 등은 추가적인 저수준·동역학적 능력을 요구하며 이는 향후 연구 과제로 남겨둔다고 논문에 명시되어 있다.</p>
+<h2>시사점</h2>
+<p>이 연구는 프런티어 범용 모델을 로봇 정책으로 쓸 때, 모델 전용 미세조정이나 정교한 저수준 행동 사전지식 주입보다는 모델이 이미 가진 시각적 추론·도구 사용 능력을 최대한 끌어내는 하네스 설계(행동 표현, 청크 크기, 해상도, 도구 통합)가 더 중요하다는 실용적 지침을 제공한다. 또한 로봇 조작 능력의 원천이 저수준 행동 모방이 아니라 공간 인식일 수 있다는 시사점은, 향후 로봇 파운데이션 모델 학습에서 공간적으로 접지된(spatially grounded) 데이터와 벤치마크에 더 큰 비중을 둘 필요성을 제기한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.31201" target="_blank" rel="noopener">huggingface.co/papers/2611.31201</a> · 2026-11-25</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

@@ -1,0 +1,113 @@
+<meta charset="UTF-8">
+<title>Plan4D</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#10 · Daily Papers 2026-11-25</span>
+      <span class="cat-tag">생성모델</span>
+      <span class="upvote-tag">▲ 28</span>
+    </div>
+    <h1 class="article-title">Plan4D: Generative Plannable 4D Worlds</h1>
+    <p class="article-title-ko">Plan4D: 생성 가능한 계획형 4D 월드</p>
+    <p class="article-sub">사전학습된 비디오 생성 모델(LongCat-Video)과 3D reconstruction 모델(Depth Anything 3)을 "모델 스티칭"으로 결합해, 관찰된 장면과 텍스트 행동 지시로부터 RGB 비디오와 깊이·카메라·scene flow 등 4D geometry를 하나의 feed-forward 과정에서 동시에 생성하는 Plan4D를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.26516" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.26516" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Plan4D: Generative Plannable 4D Worlds</li>
+<li><strong>저자</strong>: Hangwei Zhang, Rujing Dang, Ruimin Lin, Jiahong Wu, Xiangxiang Chu, Chuanxia Zheng — Nanyang Technological University(PVG)와 Alibaba Group(AMAP) 공동 연구. 교신저자는 Jiahong Wu, Chuanxia Zheng</li>
+<li><strong>출처</strong>: arXiv:2611.26516v1 [cs.CV] (2026년 11월 19일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://fogradio.github.io/plan4d-project">https://fogradio.github.io/plan4d-project</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.26516">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>사전학습된 비디오 생성 모델(LongCat-Video)과 3D reconstruction 모델(Depth Anything 3)을 "모델 스티칭"으로 결합해, 관찰된 장면과 텍스트 행동 지시로부터 RGB 비디오와 깊이·카메라·scene flow 등 4D geometry를 하나의 feed-forward 과정에서 동시에 생성하는 Plan4D를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>기존 미래 예측 world model들(UniSim, Genie 시리즈, NWM, V-JEPA 2 등)은 주로 RGB 픽셀 합성의 미적 품질에 집중하여 시간에 따른 기하학적(geometry) 일관성이 부족하다. 반대로 3D reconstruction 모델은 정적 장면 복원에는 강하지만 미래를 생성하지 못한다. 가장 큰 걸림돌은 "행동-텍스트-3D 주석"이 모두 짝지어진 대규모 학습 데이터가 거의 없다는 점으로, 이로 인해 비디오 생성기, action-conditioned world model, 3D reconstructor가 서로 분리된 시스템으로 발전해 왔다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>"생성 가능한 계획형(generative plannable) 4D world" 라는 새로운 문제 설정을 제안: 관찰 맥락과 행동 텍스트로부터 RGB와 깊이·카메라레이·포인트클라우드·scene flow를 함께 생성</li>
+<li>Depth Anything 3(DA3)에 경량 scene-flow 헤드를 추가해 동적 3D 모션 예측 능력을 부여하면서도 기존 깊이·카메라 예측 성능은 그대로 보존</li>
+<li>비디오 VAE latent를 DA3 인코더 블록에 매핑하는 학습 가능한 "latent-to-geometry stitching" 모듈을 제안하고, 선형 적합(linear fitting)으로 가장 적합한 주입 지점을 자동 선택</li>
+<li>Teacher-student distillation과 GT 기하 감독을 결합한 하이브리드 학습으로 stitched decoder를 미세조정한 뒤, 이를 고정된 "geometry critic"으로 사용해 비디오 생성기를 공동 학습</li>
+<li>scene flow, 3D 복원, action-conditioned 비디오 예측 전반에서 state-of-the-art 성능을 달성함을 다양한 실험으로 입증</li>
+</ul>
+<h2>방법론</h2>
+<p>Plan4D는 비디오 생성기(LongCat-Video, Wan 2.1 VAE 기반)와 3D foundation model(DA3)을 처음부터 학습하는 대신 두 사전학습 모델의 프라이어를 재사용한다. 먼저 DA3의 중간 토큰에 DPT 스타일의 scene-flow 헤드를 추가해 각 픽셀의 forward 3D 변위를 예측하고, 이를 회전만 적용해 공통 기준 프레임으로 정렬한다. 다음으로 Wan VAE latent를 업샘플링한 뒤 3D convolution 기반 stitching 모듈로 DA3의 특정 인코더 블록 채널 차원에 매핑하는데, 어느 블록이 가장 "선형적으로 도달 가능"한지는 정규화된 선형 회귀 문제로 사전에 선택한다. 이 지점부터는 원래 DA3의 RGB 패치 임베딩을 생략하고 나머지 인코더와 깊이/카메라/scene-flow 헤드를 그대로 사용한다. Stitched decoder는 (1) 원본 DA3를 teacher로 한 distillation과 (2) 데이터셋의 실제 3D 주석을 이용한 GT 감독을 결합해 미세조정된다. 마지막으로 이 고정된 stitched decoder를 미분 가능한 기하학적 critic으로 사용해, 표준 flow-matching 손실에 기하 손실(depth, ray, camera, motion, temporal)을 더한 joint objective로 비디오 diffusion transformer를 학습시킨다. 추론 시에는 하나의 latent 궤적이 Wan VAE로는 RGB를, stitched DA3 decoder로는 4D geometry를 동시에 복원한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>학습은 3단계로 진행됐다(16~64개의 H100/H20 GPU 사용): (1) PointOdyssey, Dynamic Replica, Virtual KITTI 2 등으로 scene-flow 헤드 학습, (2) ScanNet++·MVS-Synth 등을 추가해 stitched decoder 미세조정, (3) Action100M 서브셋으로 DiT 공동 학습. 평가는 세 축으로 이뤄졌다. Scene flow 추정(MOVi-F, Dynamic Replica, PointOdyssey)에서 가장 적은 학습 데이터로도 TraceAnything, Any4D, MotionCrafter 등과 경쟁력 있는 EPE/APD 수치를 보였다. Stitched decoder 성능 보존 평가(ETH3D, ScanNet++, Dynamic-RE10K, RobbySimVal 등)에서는 VIST3A-Stitched, Gen3R-VAE 같은 기존 latent-to-geometry 방법보다 RGB 기반 DA3/VGGT에 더 근접한 결과를 보였다. 최종 joint 4D 생성 평가(RLBench, HOIGen-1M, Dynamic Replica, PointOdyssey, Epic-Kitchens-100)에서 Plan4D는 비교 방법인 TesserAct, Gen3R, VIST3A보다 영상 품질(subject consistency 등), 깊이·복원 정확도(AbsRel), 카메라 정확도(RRA@5)에서 대부분 우위를 보였다(예: Epic-Kitchens-100에서 13개 지표 중 10개 선두). Ablation 결과 RGB-only 손실만 쓰면 기하 정확도가, geometry-only 손실만 쓰면 영상 품질이 저하되어 두 손실을 결합한 전체 목표가 가장 균형 잡힌 성능을 보였다.</p>
+<h2>한계점</h2>
+<p>논문에 별도의 "한계점" 섹션은 없으나 본문에서 다음이 언급된다: 짝지어진 행동-4D 주석 데이터가 극히 부족해 3단계의 복잡한 파이프라인이 필요하다는 점, stitched decoder가 일부 지표(예: RobbySimVal 깊이, ETH3D/ScanNet++ 복원)에서는 원본 RGB 기반 DA3나 VGGT보다 다소 낮은 성능을 보인다는 점, 그리고 scene flow는 forward(t→t+1) 방향만 정의되어 있다는 점이다.</p>
+<h2>시사점</h2>
+<p>Plan4D는 서로 다른 데이터 소스(영상 생성용 대규모 캡션 데이터, 3D 주석 데이터)로 학습된 기존 foundation model들을 "모델 스티칭"으로 결합함으로써, 4D 구조를 처음부터 학습하는 접근보다 데이터 효율적으로 action-conditioned 4D 미래 예측이 가능함을 보여준다. 이는 로봇 조작, 내비게이션 등 구체화된(embodied) 에이전트의 계획·시뮬레이션에 바로 활용될 수 있는 기하학적으로 일관된 미래 예측을 제공하며, 향후 비디오 전용 예측을 넘어 "측정 가능하고 계획 가능한" 통합 4D world model 연구로 이어질 수 있는 방향을 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.26516" target="_blank" rel="noopener">huggingface.co/papers/2611.26516</a> · 2026-11-25</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

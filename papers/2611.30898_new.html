@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>월드 모델을 네이티브 잠재 행동 모델로</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#12 · Daily Papers 2026-11-25</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 23</span>
+    </div>
+    <h1 class="article-title">World Models as Native Latent Action Models</h1>
+    <p class="article-title-ko">월드 모델을 네이티브 잠재 행동 모델로</p>
+    <p class="article-sub">사전학습된 비디오 world model(Kairos 3.1) 하나를 학습 가능한 dynamics register를 매개로 "역동역학(IDM)"과 "순동역학(FDM)" 두 모드로 그대로 운용하여, 별도의 인코더·디코더 없이 비디오로부터 압축된 native latent action을 추출하는 Native LAM과, 이를 교사로 삼아 영상 생성 없이 VLA 정책을 사전학습하는 PAWlicy를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.30898" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.30898" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: World Models as Native Latent Action Models</li>
+<li><strong>저자</strong>: Qinyue Li, Weijie Qiao, Qingyi Tao(공동 1저자), Zerui Gong, Zhe Yang, Quanzhou Li, Taolin Zhang, Jinglin He, Zhonghua Wu, Chen Change Loy. SenseTime Research(Singapore), S-Lab(Nanyang Technological University), ACE Robotics 공동 연구. 프로젝트 리드는 Qingyi Tao</li>
+<li><strong>출처</strong>: arXiv:2611.30898v1 [cs.CV] (2026년 11월 23일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://pawteam-eai.github.io/native-lam/">https://pawteam-eai.github.io/native-lam/</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.30898">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>사전학습된 비디오 world model(Kairos 3.1) 하나를 학습 가능한 dynamics register를 매개로 "역동역학(IDM)"과 "순동역학(FDM)" 두 모드로 그대로 운용하여, 별도의 인코더·디코더 없이 비디오로부터 압축된 native latent action을 추출하는 Native LAM과, 이를 교사로 삼아 영상 생성 없이 VLA 정책을 사전학습하는 PAWlicy를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>로봇 행동 라벨이 없는 1인칭 인간 영상이나 로봇마다 다른 행동 공간을 가진 데이터는 그대로 행동 지도학습에 쓸 수 없다. 기존 latent action model(LAM)은 IDM/FDM을 처음부터 학습하는데, 이 경우 픽셀 재구성 목표와 latent의 용량·정확도 사이에 트레이드오프가 생기고 학습이 불안정하다(병목이 느슈하면 미래 프레임이 그대로 새고, 너무 좁으면 모션을 표현 못 하며, 그 사이에서는 latent가 카메라 움직임이나 배경 요소로 표류함). 반면 사전학습된 비디오 world model은 이미 강력한 순동역학(forward-dynamics) prior를 갖고 있지만, 그 역학 정보가 모든 레이어의 고차원 hidden state에 뒤섞여 있어 명시적인 압축 행동 표현을 꺼낼 인터페이스가 없다는 문제의식에서 출발한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>별도의 인코더·디코더 없이, 사전학습된 비디오 diffusion transformer 하나를 dynamics register로 연결된 IDM/FDM 양쪽 모드로 운용하는 Native LAM 제안</li>
+<li>비디오의 시작 프레임은 같지만 모션만 다른 "counterfactual temporal pair"와 텍스트 없는 FDM 모드로 학습해, 46개의 로봇·인간·시뮬레이션 데이터 소스에서 posterior collapse 없이 world model이 latent에 의존하도록 만드는 학습법 제안</li>
+<li>Native latent action을 teacher로 삼아 영상 생성을 학습·추론 양쪽에서 전혀 하지 않는 VLA 사전학습 패러다임 PAWlicy 제안</li>
+<li>학습에 전이(transfer) 목표를 전혀 넣지 않았음에도 latent action이 다른 임베디먼트, 다른 장면, 인간 손→로봇 간에 동일한 동작을 재현함을 입증</li>
+</ul>
+<h2>방법론</h2>
+<p>Native LAM은 공개된 Kairos 3.1(4B) 로봇 world model Gθ를 그대로 사용한다. IDM 모드에서는 깨끗한 클립 토큰에 학습 가능한 dynamics register r을 덧붙이고, register가 모든 비디오 토큰을 읽을 수 있지만 비디오 토큰은 register를 보지 못하는 "read-only" attention mask 하에서 Gθ를 τ=0으로 한 번 통과시켜, register의 최종 상태를 작은 출력 MLP로 사상해 latent action â를 얻는다. FDM 모드에서는 동일한 네트워크가 첫 프레임 v0와 adapter MLPin(â)만으로(텍스트 없이) 원래의 flow-matching 목표를 통해 미래를 생성하며, MLPin(â)이 기존에 텍스트/행동 조건이 들어가던 자리를 대신한다. 이렇게만 학습하면 사전학습 도메인 영상에서는 world model이 첫 프레임만으로도 그럴듯한 미래를 상상할 수 있어 register를 무시하는 posterior collapse가 발생한다. 이를 막기 위해 같은 원본 영상에서 타이밍 맵 φ(정지, 일시정지, 속도 변화, 역재생 등)로 재생성한 "counterfactual" 클립 x'=x∘φ를 만들어, 두 클립이 첫 프레임·컨텍스트·노이즈·diffusion 시간 τ는 모두 공유하지만 모션만 다르게 함으로써 오직 â만이 두 미래 생성 문제의 차이를 설명할 수 있게 강제한다. AgiBot World와 DROID 두 소스에서만 추가로 얕은 kinematic head를 통해 â로부터 end-effector의 이동/회전/그리퍼 변화를 예측하는 보조 손실(λkin=0.1)을 둔다. 이렇게 학습된 Native LAM을 고정 teacher로 사용하는 PAWlicy는 vision-language model(VLM, π0.5 기반 PaliGemma), latent action DiT, action DiT 세 전문가가 attention을 공유하는 구조로, latent action DiT는 과거 1개 구간을 재구성하고 미래 3개 구간을 예측하며(과거 프레임을 무작위로 드롭), action DiT는 latent action DiT의 키·값에 attention해 행동 청크를 flow matching으로 생성한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Native LAM은 65% 실제 로봇, 30% 인간 1인칭, 5% 시뮬레이션으로 구성된 46개 데이터 소스(32 GPU, 13k iteration)로 학습됐고, 이 중 AgiBot World 2026과 DROID만 kinematic 라벨을 제공한다. LARY 벤치마크에서 행동 분류(top-1)와 control regression(MSE) 모두 기존 LAM(LAPA, UniVLA, villa-X, DiLA, MVP-LAM, CLAP, DreamDojo, WLA3)을 능가해 평균 분류 71.77%·회귀오차 0.25를 기록했으며(종전 최고 WLA3는 70.75%/0.37), 특히 실제 로봇 세트인 RoboCOIN(0.36)과 AgiBot-Beta(0.41)에서 격차가 가장 컸다. 전이 목표 없이도 latent를 다른 임베디먼트·장면·사람→로봇 간에 재생할 수 있음을 정성적으로 보였고, 두 latent를 보간하면(β 변화) 중간 정도 진행된 하나의 일관된 모션이 생성됨을 확인했다(픽셀 보간은 단순 중첩). PAWlicy(3.8B, 32 GPU로 16개 데이터셋 50k iteration 사전학습)는 RoboTwin 2.0에서 clean demo만으로 π0.5+past+aug 대비 평균 5.5점 높은 74.02%, clean+randomized demo를 더하면 93.6%의 평균 성공률로 비교 대상(WAM, VLA) 중 최고를 기록했다(RotVLA 대비 +4.5점). RoboDojo에서는 평가한 4개 지표(Generalization, Precision, Long-Horizon, Open) 모두에서 선두였고, Precision은 공개 리더보드 상위 항목과 동등했다. 실제 AgileX NERO 로봇에서는 블록 3개 쌓기에서 23.3%→76.7%, 신발을 상자에 넣기에서 33.3%→90.0%로 π0.5 대비 크게 향상됐다. 학습·추론 비용 측면에서는 32개의 latent action 토큰만 처리해 Wan 2.2/Kairos 3.1 같은 수십억 파라미터 영상 전문가 대비 학습 연산량을 약 387~1,270배 줄였고, 추론 지연도 영상을 생성하는 WAM(Motus, Fast-WAM)보다 최대 8.5배 빨랐다.</p>
+<h2>한계점</h2>
+<p>논문은 본 연구가 Kairos 3.1이라는 하나의 backbone 위에서 패러다임을 검증한 것이며, 46개 학습 소스 중 2개(AgiBot World 2026, DROID)만 kinematic 라벨을 제공하고 나머지는 영상 전용 데이터라는 점을 명시한다. 전이 실험은 초기 기하 구조를 유지한 채 임베디먼트·장면·도메인만 바꾼 통제된 정성적 테스트이며, 다른 video DiT에 대한 검증, kinematic grounding의 기여도 분리, 더 넓은 기하학적 변화와 추가 로봇에 대한 평가는 향후 과제로 남겨둔다고 밝힌다.</p>
+<h2>시사점</h2>
+<p>이 연구는 사전학습된 비디오 world model이 그 자체로 강력한 latent action model이 될 수 있음을 보여주며, 영상 생성을 학습·추론 어느 쪽에도 요구하지 않는 가볍고 효율적인 VLA 사전학습(PAWlicy)의 실마리를 제공한다. 특히 행동 라벨이 없는 대규모 인간/로봇/시뮬레이션 영상을 모두 동역학 학습에 활용할 수 있다는 점에서, world action model 계열이 안고 있던 무거운 영상 생성 비용 문제를 해결하면서도 성능과 전이력을 동시에 확보하는 방향을 제시한다. 저자들은 비디오 world model이 더 발전할수록 그 내부 동역학이 행동 학습의 점점 더 확장 가능한 기반이 될 수 있다고 전망한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.30898" target="_blank" rel="noopener">huggingface.co/papers/2611.30898</a> · 2026-11-25</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

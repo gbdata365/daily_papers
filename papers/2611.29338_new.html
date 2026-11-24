@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>로봇 조작을 위한 파운데이션 모델로서의 VLM 훈련 엿보기</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#5 · Daily Papers 2026-11-25</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 53</span>
+    </div>
+    <h1 class="article-title">A Glimpse of Training VLMs as Foundation Models for Robotic Manipulation</h1>
+    <p class="article-title-ko">로봇 조작을 위한 파운데이션 모델로서의 VLM 훈련 엿보기</p>
+    <p class="article-sub">밀집 제어 스텝 대신 재사용 가능한 파라미터화된 행동 프리미티브와 진행도(progress) 설명으로 구성된 "의미론적 스텝(semantic step)"으로 로봇 행동을 표현하고, 능력 보존형 미세조정(CP-SFT)으로 VLM의 일반 능력을 유지하면서 조작 능력을 학습시키는 nanoAstra를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.29338" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.29338" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: A Glimpse of Training VLMs as Foundation Models for Robotic Manipulation</li>
+<li><strong>저자</strong>: Meng-Hao Guo 등 (Tsinghua University 주도, Tencent Hunyuan 공동 참여)</li>
+<li><strong>출처</strong>: arXiv:2611.29338v1 [cs.RO] (2026년 11월 22일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://nanoastra.github.io/">https://nanoastra.github.io/</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.29338">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>밀집 제어 스텝 대신 재사용 가능한 파라미터화된 행동 프리미티브와 진행도(progress) 설명으로 구성된 "의미론적 스텝(semantic step)"으로 로봇 행동을 표현하고, 능력 보존형 미세조정(CP-SFT)으로 VLM의 일반 능력을 유지하면서 조작 능력을 학습시키는 nanoAstra를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>GPT-6 Astra 등 범용 VLM이 태스크별 미세조정 없이도 상당한 로봇 조작 능력을 보인다는 평가가 있었으나, 훈련 방법이 공개되지 않아 재현이 어려웠다. 기존 VLA(vision-language-action) 정책들은 밀집하게 샘플링된 제어 스텝(action chunk)을 예측하도록 학습되는데, 이는 물리적으로는 잘 정의되어 있지만 일관된 동작 단위나 과제 내 역할을 명시하지 않아 재사용 가능한 구조를 학습하기 어렵고, 제어 주파수·실행 속도에 따라 동일 행동도 다른 시퀀스로 나타나는 문제가 있다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>5,000시간 이상의 이질적인 로봇 시연 데이터를 필터링·정합·세그먼트화하여 VLM 호환 지도학습 데이터(의미론적 스텝 + 밀집 진행도 설명)로 변환하는 데이터 파이프라인 개발</li>
+<li>로봇 전용 시스템 프롬프트로 출력 공간을 제약하면서 일반 VQA 데이터와 공동 학습하는 CP-SFT(Capability-Preserving Supervised Fine-Tuning) 기법 도입, 숫자 토큰 손실(Wasserstein Number Token Loss 변형)로 수치 정밀도 개선</li>
+<li>RoboTwin 2.0의 무작위화(zero-shot randomized) 벤치마크에서 기존 VLA·WAM 베이스라인 및 유사 크기 VLM 대비 우수한 성능 입증</li>
+<li>추론이 모션 실행보다 빨라지는 조건에서 스트리밍(action-chunk-like) 실행을 지원하여 로봇 유휴 시간을 35.0%에서 6.9%로 감소</li>
+</ul>
+<h2>방법론</h2>
+<p>데이터 파이프라인은 ABC-130K, AgiBot, HiFi-UMI, HY-UMI 등 이질적 데이터셋을 (1) 에피소드/프레임 단위 필터링, (2) 좌표계·카메라 외부 파라미터 정합(필요시 재보정), (3) Qwen3.5 기반 비디오 캡션으로 서브태스크를 분절, (4) 그리퍼 전환·급격한 방향 전환 등 "행동 결정 지점"에서 move x, rotate z, gripper open/close, wait 같은 재사용 가능한 프리미티브로 구성된 의미론적 스텝 생성, (5) 일반 VQA 데이터와의 혼합(최종 3.65B 학습 토큰, 로봇 데이터 62.7% + 일반 VQA 37.3%)의 5단계로 처리한다. CP-SFT는 로봇 전용 시스템 프롬프트 cr로 구조화된 응답 공간 Yr(cr)을 정의하여 매니퓰레이션 지도를 이 공간에 소프트하게 제약하고, 일반 입력에서는 자유 형식 응답을 유지함으로써 사전학습 능력의 변화를 최소화하려 한다. 학습 목표는 표준 cross-entropy에 소수점 가중치·부호 항을 포함한 수치 토큰 손실을 λ=0.3으로 더한 형태이며, Qwen3.5-9B를 초기화 지점으로 56개 H20 GPU에서 1 epoch 전체 파라미터 미세조정으로 학습했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>RoboTwin 2.0의 50개 과제에 대한 zero-shot randomized 평가에서 nanoAstra-9B는 17.8% 성공률을 기록, 최강 VLA(LingBot-VLA-2.0, 10.8%), 최강 VLM 베이스라인(Qwen3.8-27B with thinking, 8.2~10.8%), WAM 계열(최대 0.2%)을 모두 능가했다. 추론 효율성 측면에서 단일 RTX 4090에서 3.89초에 3.5개 명령을 생성(모션 2.87초, 추론/모션 비율 1.36)하며, H20 GPU에서는 비율이 0.64로 모션보다 추론이 더 빨라져 스트리밍 실행이 가능해졌다. RoboDojo Open(8개 과제, 400 에피소드)에서도 4.75% 성공률로 비교 모델 중 최고를 기록했다. 훈련 과정 모니터링에서는 MMMU, ERQA, CV-Bench 등 일반 VQA 지표가 훈련 초반 하락 후 회복되어 최종적으로 초기 대비 0.6~6.3점 범위 내 격차를 유지했다.</p>
+<h2>한계점</h2>
+<p>실패 사례 분석에서 (1) 정교한 관절 구조(미세한 문 열기 동작 등)에 대한 조작 정밀도 부족으로 목표를 완전히 달성하지 못하거나, (2) 부분 완료 후 진행도 추정이 되돌아가거나 다른 물체로 드리프트되는 현상이 관찰되었다. 저자들은 이를 폐루프 실행 중 모션 파라미터화 오차와 과제 상태 추정 오차가 누적되는 문제로 해석하며, 물체 중심(object-centric) 프리미티브와 완료된 서브태스크의 명시적 추적이 필요하다고 제안한다. 또한 VQA 성능이 훈련 후 완전히 복원되지는 않아 사전학습 능력의 부분적 손상(catastrophic forgetting)이 남아있음을 인정한다.</p>
+<h2>시사점</h2>
+<p>이 연구는 별도의 액션 예측 헤드 없이 VLM의 네이티브 텍스트 생성 인터페이스만으로도 의미론적 스텝 표현과 능력 보존형 미세조정을 결합하면 범용 VLM을 로봇 조작 파운데이션 모델로 재현 가능한 경로를 제시할 수 있음을 보여준다. 이는 GPT-6 Astra와 같은 비공개 시스템의 능력을 재현하는 초기 증거로 제시되며, 더 다양한 VQA 데이터와 객체 중심 프리미티브 설계를 통한 후속 연구 방향을 제안한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.29338" target="_blank" rel="noopener">huggingface.co/papers/2611.29338</a> · 2026-11-25</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

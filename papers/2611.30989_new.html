@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>WorldLeague</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#3 · Daily Papers 2026-11-25</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 74</span>
+    </div>
+    <h1 class="article-title">WorldLeague: Benchmarking Physical Agency</h1>
+    <p class="article-title-ko">WorldLeague: 물리적 에이전시(Physical Agency) 벤치마킹</p>
+    <p class="article-sub">VLM, VLA, WAM이라는 서로 다른 인터페이스를 가진 AI 시스템들을 동일한 60개 시뮬레이션 로봇 과제·공유 평가 규칙 아래 비교해, "물리적 목표를 자율적으로 어디까지 달성할 수 있는가"를 측정하는 벤치마크 WorldLeague를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.30989" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.30989" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: WorldLeague: Benchmarking Physical Agency</li>
+<li><strong>저자</strong>: Xinyang Zhou, Qi Li, Xinchao Wang (xML Lab, National University of Singapore)</li>
+<li><strong>출처</strong>: arXiv:2611.30989v1 [cs.RO] (23 Nov 2026)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://xyangzhou.github.io/WorldLeague">https://xyangzhou.github.io/WorldLeague</a> (Hugging Face: huggingface.co/datasets/xyangzhou/WorldLeague, GitHub: github.com/xyangzhou/WorldLeague)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.30989">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>VLM, VLA, WAM이라는 서로 다른 인터페이스를 가진 AI 시스템들을 동일한 60개 시뮬레이션 로봇 과제·공유 평가 규칙 아래 비교해, "물리적 목표를 자율적으로 어디까지 달성할 수 있는가"를 측정하는 벤치마크 WorldLeague를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>기존 로봇 벤치마크는 가정 활동(household activity) 단위로 과제를 구성하는 경우가 많아, 하나의 활동(예: 컵 배달) 안에 요구되는 능력이 사례에 따라 크게 달라짐에도 성공/실패만으로 뭉뚱그려 평가한다는 한계가 있다. 또한 VLM은 자체 로봇 제어 능력이 없고 VLA/WAM은 고유한 네이티브 제어 방식을 쓰기 때문에, 서로 다른 패러다임의 시스템을 공정하게 비교할 공통 기준이 부재했다. 저자들은 과제가 에이전트에게 실제로 "무엇을 스스로 판단하게 하는지"를 기준으로 과제를 재구성해야 한다고 주장한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>물리적 목표 달성이라는 기준으로 서로 다른 능력 조합을 요구하는 과제들에 대해 물리적 에이전시(physical agency)를 테스트.</li>
+<li>탐색(WorldSeek), 형상 변형(WorldShape), 변화 적응(WorldShift) 3개 트랙, 6개 능력 차원(내비게이션, 목표 접지, 기하학적 재구성, 물리적 추론, 시간적 기억, 제약 관리)에 걸친 60개 과제로 구성된 WorldLeague 벤치마크를 구축·검증.</li>
+<li>VLM에는 Show-Harness를 확장한 WorldHarness라는 "의사결정-보존형(decision-preserving)" 행동 추상화를 적용하고, VLA/WAM은 고유 인터페이스를 그대로 사용하여 13개 대표 AI 시스템(VLM 8종, VLA 3종, WAM 2종)의 Physical Agency Profile을 비교.</li>
+<li>정답을 맞춰도(terminal QA) 물리적 목표를 달성하지 못하는 경우가 매우 흔함을 정량적으로 보여줌 — 완전한 QA 정답을 받은 347개 에피소드 중 249개(71.8%)가 Interactive Score 0점.</li>
+</ul>
+<h2>방법론</h2>
+<p>각 과제는 튜플 T_i = (E_i, ρ_i, g_i, C_i, G_i, B_i)로 정의되며, E_i는 물리적 장면, ρ_i는 초기 조건, g_i는 공개 목표, C_i는 제약, G_i는 목표를 구성하는 술어(predicate) 집합, B_i는 상호작용 예산이다. 평가는 두 가지 지표로 이루어진다: (1) Interactive Score — 각 목표 술어에 대해 궤적 τ_i로부터 [0,1] 사이 진행도 p_ij를 계산해 100점 만점으로 평균한 값(수식 2), (2) 물리적 성공(Physical Success) — 모든 목표 술어와 제약이 동시에 만족되는지를 나타내는 이진 지표(수식 3). 6개 능력 차원별로 이 두 값을 평균해 "Physical Agency Profile"을 구성한다(수식 4). VLM은 WorldHarness를 통해 로봇 R1을 제어하는데, 이는 Show-Harness를 변형한 것으로 VLM이 베이스/팔/트렁크/그리퍼 명령(목표, 이동 거리, 해제 시점, 실패 시 재시도 전략 등)을 직접 선택하고 컨트롤러가 그 모션을 실행 후 피드백을 반환하는 구조이며, 모션 실행 자체의 세밀한 제어는 컨트롤러에 위임해 "결정의 책임"을 VLM에 유지시킨다. VLA(GR00T-N1.5, π0.5, Xiaomi XR-1)와 WAM(Awomo-0.5, OpenWAM-Alpha)은 PandaOmron/R1Pro 상에서 자체 네이티브 컨트롤러를 사용한다. 60개 과제는 BEHAVIOR-1K의 레이아웃·에셋을 활용해 구성했으며, 이 중 47개는 ESI-Bench의 장면 기록을 변형, 13개는 신규 구축했고, 모든 과제-장면 조합을 수동으로 검증했다. VLM에는 물리적 상호작용이 끝난 뒤 같은 에피소드에 대한 73개의 종료 시점 질의응답(terminal QA, 초기 장면/최종 상태/상호작용 이력에 관한 질문)을 추가로 수행해 장면 이해·기억 능력을 별도로 측정한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>13개 시스템(VLM: Claude Fable 5.2, GPT-6.1-Sol, GPT-6-Astra, DeepSeek-V4.1-Flash, Kimi-K3.1-Pro, Qwen3.8-27B, Gemini-Decision-1, Jev-1.14.0; VLA: GR00T-N1.5, π0.5, Xiaomi XR-1; WAM: Awomo-0.5, OpenWAM-Alpha)를 동일 물리적 목표·제약·채점 규칙 아래 평가했다(시드 0에서 775개 에피소드, GPT-6.1-Sol은 시드 1로 재평가). 전체 평균 Interactive Score에서 Claude Fable 5.2가 28.58/100으로 1위였고 60개 과제 중 13개를 물리적으로 완수했다(13개 시스템 공동으로는 총 16개 과제만 달성). Fable은 내비게이션·목표 접지·기하학적 재구성·시간적 기억 네 차원에서 선두였고, GPT-6.1-Sol과 GPT-6-Astra는 제약 관리(constraint management)에서 공동 1위를 차지했다. 59개 공통 과제 중 27개는 모든 시스템이 0점, 16개는 일부 시스템만 부분 진행, 16개는 적어도 한 시스템이 완전 달성했다. VLA/WAM 계열(GR00T, π0.5, Awomo)은 각각 2~3개 과제만 완수했고 내비게이션·기하 재구성 과제는 전혀 완수하지 못했다. 가장 중요한 발견은, 완전한 terminal QA 정답을 받은 347개 VLM 에피소드 중 249개(71.8%)가 Interactive Score 0이었다는 점으로, 장면을 올바르게 이해해도 물리적으로 목표를 달성하지 못하는 경우가 매우 빈번함을 보여준다. 계산 비용 측면에서는 Fable이 과제당 약 51분, 307만 토큰을 사용해 최고 점수를 얻었고, Gemini-Decision은 가장 적은 자원으로 파레토 프런티어의 저비용 끝단에 위치했다.</p>
+<h2>한계점</h2>
+<p>논문은 향후 연구로 V-JEPA 2-AC와 같은 JEPA 기반 플래너를 WorldLeague에 적용해 행동 조건부 잠재 예측이 기하학적 재구성이나 교란 복구에 도움이 되는지 검증하거나, 벤치마크의 생성기를 활용해 온라인 강화학습용 과제 풀을 만드는 방향을 제시한다. 다만 본문에서 벤치마크 자체의 명시적 한계(예: 시뮬레이션 전용이라는 점, 60개 과제의 대표성, 평가 비용)에 대한 별도의 논의는 상세히 제시되지 않았다.</p>
+<h2>시사점</h2>
+<p>WorldLeague는 Embodied AI, Physical AI, Agentic AI 연구가 "데모 성능" 중심에서 "공유된 목표에 대한 실제 물리적 달성도" 중심으로 전환할 공통 측정 기준을 제공한다. 특히 정답을 맞히는 능력(이해)과 물리적으로 목표를 완수하는 능력(행동) 사이의 큰 간극을 정량적으로 드러낸 점은, 향후 로봇 파운데이션 모델 평가에서 QA 성능만으로 능력을 과대평가하지 않도록 경계할 필요성을 제기하며, 분해된 능력 차원별 프로파일링이 모델 개선 방향을 더 구체적으로 짚어줄 수 있음을 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.30989" target="_blank" rel="noopener">huggingface.co/papers/2611.30989</a> · 2026-11-25</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

@@ -1,0 +1,110 @@
+{
+  "2611.29897": {
+    "base": "2611_모션맘바_장기휴머노이드제어-자기회귀-확산맘바",
+    "rank": "#1",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "171",
+    "en_title": "Motion Mamba 2.0: Autoregressive Diffusion Mamba for Long-Horizon Humanoid Control",
+    "ko_title": "Motion Mamba 2.0: 장기 휴머노이드 제어를 위한 자기회귀 확산 Mamba"
+  },
+  "2611.31201": {
+    "base": "2611_엠보하네스_프런티어모델을-정책으로-쓰는-하네스-이해",
+    "rank": "#2",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "90",
+    "en_title": "Embo-Harness: Towards Understanding Frontier-Model-as-Policy Harness",
+    "ko_title": "Embo-Harness: 프런티어 모델을 정책으로 쓰는 하네스 이해를 향하여"
+  },
+  "2611.30989": {
+    "base": "2611_월드리그_물리적-에이전시-벤치마크",
+    "rank": "#3",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "74",
+    "en_title": "WorldLeague: Benchmarking Physical Agency",
+    "ko_title": "WorldLeague: 물리적 에이전시(Physical Agency) 벤치마킹"
+  },
+  "2611.30013": {
+    "base": "2611_쓰리에이게임팩토리_3D에셋-에이전트-리깅-복합동작생성",
+    "rank": "#4",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "57",
+    "en_title": "3AGameFactory-Motion: Agentic Rigging and Reliable Complex Motion Generation for Diverse 3D Assets",
+    "ko_title": "3A게임팩토리-모션: 다양한 3D 에셋을 위한 에이전트 리깅과 신뢰 가능한 복합 모션 생성"
+  },
+  "2611.29338": {
+    "base": "2611_로봇VLM_로봇조작-파운데이션모델-VLM-훈련-엿보기",
+    "rank": "#5",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "53",
+    "en_title": "A Glimpse of Training VLMs as Foundation Models for Robotic Manipulation",
+    "ko_title": "로봇 조작을 위한 파운데이션 모델로서의 VLM 훈련 엿보기"
+  },
+  "2611.30662": {
+    "base": "2611_위엠엠이커머스_위챗-이커머스-멀티모달-콘텐츠이해",
+    "rank": "#6",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "52",
+    "en_title": "WeMM-Ecom: Advancing Multimodal Content Understanding for WeChat E-Commerce",
+    "ko_title": "WeMM-이커머스: 위챗 이커머스를 위한 멀티모달 콘텐츠 이해 향상"
+  },
+  "2611.12164": {
+    "base": "2611_픽서디사이드_수정자-가능도-기반-코드위치탐지-학습",
+    "rank": "#7",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "51",
+    "en_title": "Let the Fixer Decide: Training a Code Localizer from the Fixer's Likelihood",
+    "ko_title": "픽서가 결정하게 하라: 수정자의 가능도로부터 코드 위치탐지기 학습하기"
+  },
+  "2611.26389": {
+    "base": "2611_비디사이드_비디오확산모델-단계적추론과-계획학습",
+    "rank": "#8",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "36",
+    "en_title": "ViDecide: Teaching Video Diffusion Models to Reason and Plan Step by Step",
+    "ko_title": "ViDecide: 비디오 확산 모델에게 단계적으로 추론하고 계획하도록 가르치기"
+  },
+  "2611.28202": {
+    "base": "2611_오토파일럿_실시간게임플레이-비주얼에이전트-하네스",
+    "rank": "#9",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "32",
+    "en_title": "AutoPILOT: A Visual Agent Harness for Real-Time Gameplay",
+    "ko_title": "AutoPILOT: 실시간 게임플레이를 위한 비주얼 에이전트 하네스"
+  },
+  "2611.26516": {
+    "base": "2611_플랜4D_생성가능한-계획형-4D월드",
+    "rank": "#10",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "28",
+    "en_title": "Plan4D: Generative Plannable 4D Worlds",
+    "ko_title": "Plan4D: 생성 가능한 계획형 4D 월드"
+  },
+  "2611.27376": {
+    "base": "2611_컴포저블소프트프롬프트_RL전문가-증류로-연속적-사후학습",
+    "rank": "#11",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "26",
+    "en_title": "Composable Soft-Prompt Distillation of RL Experts: Toward Continual Post-Training",
+    "ko_title": "RL 전문가의 합성 가능한 소프트 프롬프트 증류: 연속적 사후학습을 향하여"
+  },
+  "2611.30898": {
+    "base": "2611_네이티브잠재액션_월드모델을-네이티브-잠재행동모델로",
+    "rank": "#12",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "23",
+    "en_title": "World Models as Native Latent Action Models",
+    "ko_title": "월드 모델을 네이티브 잠재 행동 모델로"
+  }
+}

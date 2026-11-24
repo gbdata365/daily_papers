@@ -1,0 +1,113 @@
+<meta charset="UTF-8">
+<title>WeMM-이커머스</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#6 · Daily Papers 2026-11-25</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 52</span>
+    </div>
+    <h1 class="article-title">WeMM-Ecom: Advancing Multimodal Content Understanding for WeChat E-Commerce</h1>
+    <p class="article-title-ko">WeMM-이커머스: 위챗 이커머스를 위한 멀티모달 콘텐츠 이해 향상</p>
+    <p class="article-sub">0.8B부터 35B(3B 활성) MoE까지 5개 크기로 구성된 멀티모달 LLM 패밀리 WeMM-Ecom을 Qwen3.5 기반으로 continued pre-training과 hybrid-thinking 후처리 학습으로 구축해, 거대 오픈소스 모델들을 능가하는 이커머스 특화 성능과 동급 최고 수준의 범용 성능을 동시에 달성했다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.30662" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.30662" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: WeMM-Ecom: Advancing Multimodal Content Understanding for WeChat E-Commerce</li>
+<li><strong>저자</strong>: Binhui Xie 등, WeChat Vision, Tencent Inc.</li>
+<li><strong>출처</strong>: arXiv:2611.30662v1 [cs.AI] (2026년 11월 23일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://huggingface.co/collections/tencent/wemm-ecom">Hugging Face 모델 컬렉션</a> / <a href="https://github.com/Tencent/WeMM-Ecom">GitHub</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.30662">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>0.8B부터 35B(3B 활성) MoE까지 5개 크기로 구성된 멀티모달 LLM 패밀리 WeMM-Ecom을 Qwen3.5 기반으로 continued pre-training과 hybrid-thinking 후처리 학습으로 구축해, 거대 오픈소스 모델들을 능가하는 이커머스 특화 성능과 동급 최고 수준의 범용 성능을 동시에 달성했다.</p>
+<h2>배경 및 문제의식</h2>
+<p>이커머스 도메인은 수십 개의 제품 뷰, 상세 이미지, 라이브스트림 프레임과 제목·속성표가 혼재되어 있고, 판매 포인트·영양정보·인증마크 같은 핵심 근거가 이미지 안에만 존재하는 등 멀티모달 모델에 특히 까다로운 분야다. 기존 범용 MLLM은 (1) 밀집하게 교차된 시각적 증거를 정확히 인지하고 엄격한 엔티티 수준·비즈니스 규칙 제약을 만족하는 출력을 내야 하는 과제와 (2) 특화 과정에서 경량 모델의 일반 시각 인지·추론 능력이 손상되지 않아야 하는 과제를 동시에 해결하지 못했다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>0.8B/2B/4B/9B 밀집 모델과 35B-A3B MoE 모델로 구성된 5종 오픈소스 멀티모달 모델 패밀리 공개, 모두 thinking/non-thinking 모드 동시 지원</li>
+<li>제품 이미지·라이브스트림 프레임·비즈니스 레코드에서 40개 이상의 이커머스 과제를 구성하고, 2단계 continued pre-training(CPT)으로 이커머스 데이터 비중을 점진적으로 높이는 데이터·학습 레시피 제시</li>
+<li>on-policy distillation(OPD), 파라미터 공간 1회 병합(merge), GRPO 강화학습을 결합한 hybrid-thinking 후처리 파이프라인 설계</li>
+<li>8개 비즈니스 시나리오, 23개 자체 구축 + 5개 공개 벤치마크(총 207,117건)로 구성된 이커머스 평가 프레임워크 구축 및 64개 범용 벤치마크와의 종합 평가</li>
+<li>수백 건의 WeChat 프로덕션(카탈로그 관리, 멀티모달 상품 검색, 라이브 커머스 등)에 실제 투입되어 하루 수십억 건 규모 요청을 처리 중</li>
+</ul>
+<h2>방법론</h2>
+<p>학습은 Qwen3.5 Base 체크포인트에서 시작해 WeChat-YATT 프레임워크로 전체 파라미터를 최적화한다. CPT는 2단계로 구성되며, Stage 1(370.3B 토큰, 16K 시퀀스)에서 이커머스 비중 45.8%, Stage 2(76.7B 토큰, 32K 시퀀스)에서 61.1%로 높이면서 제품 인지에서 규정 준수 심사·지식 집약적 QA로 강조점을 이동시킨다. 손실 함수는 긴 응답이 그라디언트를 과도하게 지배하지 않도록 토큰별로 N_i^(-1/2) 가중치를 적용하는 제곱 평균화를 사용한다. 후처리는 (1) 학생 정책이 생성한 궤적에 대해 교사 모델(9B/35B-A3B/Qwen3.5-122B-A10B 등 크기별로 상이)이 토큰 단위 점수를 부여하는 OPD(클리핑된 actor objective 사용), (2) OPD 체크포인트와 post-trained Qwen3.5 가중치를 동일 비중으로 보간하는 1회 파라미터 병합(일반 instruction-following 능력 회복 목적), (3) 제품 매칭 정합성·시각적 그라운딩 IoU·지시사항 제약 만족도를 검증 가능한 보상으로 사용하는 GRPO 강화학습 순서로 진행된다. thinking/non-thinking 모드는 4:1 비율로 프롬프트를 배정해 한 체크포인트로 두 모드를 모두 학습시킨다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>28개 이커머스 벤치마크(평균 74.4점, non-thinking)에서 WeMM-Ecom-35B-A3B는 5~22배 더 큰 Qwen3.8-Flash-Next(73.2), HY4, DeepSeek-V4.1-Flash-1017 등을 능가했으며, Product Retrieval·Product Grounding에서 특히 큰 격차를 보였다(예: Product Grounding thinking 모드 기준 Qwen3.5-9B 대비 +15.7점). 밀집 모델 중 WeMM-Ecom-9B는 72.5/72.1점(thinking/non-thinking)으로 3배 더 큰 Qwen3.8-27B(71.8)를 상회했고, 경량 모델(0.8B, 2B)에서도 동급 Qwen3.5 대비 non-thinking 기준 최대 +15.5점의 향상을 보였다. 64개 범용 벤치마크에서는 WeMM-Ecom-35B-A3B가 thinking 모드 76.4점으로 Qwen3.5-35B-A3B(76.2)와 Qwen3.6-35B-A3B(76.3)를 근소하게 앞섰고, 경량 모델 WeMM-Ecom-2B는 MiniCPM-V-4.7-1B, LFM3-VL-2B 등 경쟁 경량 모델을 여러 도메인에서 능가했다. Product Grounding 벤치마크를 제외해도 전 size-mode 조합에서 양의 성능 격차가 유지되어, 성능 향상이 단순 그라운딩 과제에 국한되지 않음을 보였다.</p>
+<h2>한계점</h2>
+<p>논문에 "Limitations" 절은 명시적으로 존재하지 않으나, 본문에서 시나리오별 트레이드오프를 인정한다. 예를 들어 thinking 모드의 Product Moderation에서는 Qwen3.5-35B-A3B가 근소하게 우세하고, non-thinking 모드의 E-commerce Reasoning에서는 Qwen3.5-9B가 WeMM-Ecom-9B를 소폭 앞서는 등 모든 세부 과제에서 일관된 우위를 보이지는 않는다. 평가 체계가 자체 구축 벤치마크(23개)에 크게 의존하며 데이터 상세는 부록에 위임되어 있어, 외부 재현성 측면에서 완전한 투명성에는 제약이 있다.</p>
+<h2>시사점</h2>
+<p>이 연구는 범용 능력과 도메인 특화 능력이 상충되지 않도록 설계된 데이터 구성(변동성 수준의 세밀도, 추적 가능한 근거, 규칙 조건화 출력)과 능력 보존형 후처리(OPD+병합+GRPO)를 결합하면, 소형 모델도 훨씬 큰 범용 모델을 특정 산업 도메인에서 능가할 수 있음을 실증한다. 이미 WeChat 생태계에서 대규모 프로덕션에 적용되고 있다는 점에서, 산업 도메인 특화 멀티모달 파운데이션 모델 구축의 실용적 청사진을 제공하며, 모델 가중치와 학습 레시피를 공개함으로써 다른 도메인 특화 MLLM 연구에 참고 기준을 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.30662" target="_blank" rel="noopener">huggingface.co/papers/2611.30662</a> · 2026-11-25</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

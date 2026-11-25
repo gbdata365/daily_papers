@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>잠들지 말고 지켜보라</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#3 · Daily Papers 2026-11-26</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 84</span>
+    </div>
+    <h1 class="article-title">Don't Sleep, Keep Watch: Proactive Perception for Computer-Use Agents</h1>
+    <p class="article-title-ko">잠들지 말고 지켜보라: 컴퓨터 사용 에이전트를 위한 선제적 인식</p>
+    <p class="article-sub">화면을 실시간으로 지켜보는 0.8B짜리 소형 감시 모델(watcher)을 끼워 넣어, 컴퓨터 사용 에이전트(CUA)가 더 이상 "스크린샷 찍고 고정된 시간만큼 자다가 깨는" 방식이 아니라 화면이 바뀌는 시점에 맞춰 관찰하고 행동하도록 만든 플러그인형 프레임워크 NightWatch를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.28947" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.28947" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Don't Sleep, Keep Watch: Proactive Perception for Computer-Use Agents</li>
+<li><strong>저자</strong>: Jiaqi Su, Jie-Jing Shao, Yichen Liu, Long-Kai Huang, Haiyan Yin (National University of Singapore, A*STAR CFAR, SenseTime, Hong Kong Baptist University)</li>
+<li><strong>출처</strong>: arXiv:2611.28947v1 [cs.CL] (2026-11-21)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://sujq0722.github.io/NightWatch">NightWatch</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.28947">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>화면을 실시간으로 지켜보는 0.8B짜리 소형 감시 모델(watcher)을 끼워 넣어, 컴퓨터 사용 에이전트(CUA)가 더 이상 "스크린샷 찍고 고정된 시간만큼 자다가 깨는" 방식이 아니라 화면이 바뀌는 시점에 맞춰 관찰하고 행동하도록 만든 플러그인형 프레임워크 NightWatch를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>비전-언어모델(VLM) 기반 CUA는 데스크톱·웹·모바일 화면을 다루지만, 화면은 에이전트의 통제와 무관하게 스스로 바뀐다(팝업, 로딩, 애니메이션 등). 그런데 기존 CUA는 "스크린샷 찍기 → 추론 → 행동 → 일정 시간 대기 → 반복"이라는 시간 트리거(time-triggered) 방식으로 동작한다. 이 때문에 관찰 시점과 행동 실행 시점 사이에 화면이 바뀌어 행동이 이미 쓸모없어지는 "지연 행동(stale action)" 문제와, 대기 시간을 사람이 수동으로 정해야 해서 너무 짧으면 화면이 덜 바뀐 상태를 보고 너무 길면 그냥 놀고 있는 "조급한/지연된 관찰" 문제가 함께 발생한다. 저자들은 OSWorld 기준 관찰-행동 간 평균 지연이 6.51초에 달하고, 이 틈에 팝업이 뜨면 과제 성공률이 47%까지 떨어진다는 선행 연구를 근거로 이 문제의 심각성을 지적한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>반응형(reactive) 지각을 CUA의 숨겨진 병목으로 규정하고, 유휴 대기·조급한 관찰·지연 행동으로 이어지는 시간 트리거 루프의 비용을 정식화함</li>
+<li>에이전트의 모델·프롬프트·행동 공간을 전혀 바꾸지 않고 끼워 넣을 수 있는 플러그인형 프레임워크 NightWatch를 제안하고, 벤치마크 데이터 없이 학습한 0.8B 감시 모델(NightWatch-0.8B)의 코드·데이터·가중치를 공개함</li>
+<li>화면을 능동적으로 해석해 에이전트의 추론을 중단(interrupt)하거나 대기 중인 행동을 무효화(void)하거나 깨어날 시점을 알려주는(wake) 선제적 지각(proactive perception) 개념을 CUA에 처음 도입함</li>
+</ul>
+<h2>방법론</h2>
+<p>NightWatch는 에이전트와 환경 사이, 하네스(harness) 수준에 배치되는 가벼운 "감시자(watcher)"다. 이 감시자는 System-1 방식의 소형 결정 모델로, 텍스트 추론을 생성하지 않고 고정된 질문 목록(예: "다이얼로그가 떴는가?", "화면이 아직 로딩 중인가?", "목표 요소가 여전히 보이는가?")에 대해 매 순간 확률값으로 답한다. 입력은 에이전트의 마지막 관찰, 최근/현재 프레임, 변화가 일어난 영역의 크롭, 대기 중인 행동 텍스트로 구성된다. 감시자가 내놓은 확률은 고정된 임계값 규칙을 통해 세 가지 개입으로 변환된다: 새로운 이벤트가 생기면 추론을 중단하고, 목표가 사라지거나 가려지면 대기 중인 행동을 무효화하며, 화면이 안정되는 순간 에이전트를 깨운다. 감시자는 "조용함"과 "안정됨"을 구분하기 위해 단순 정지 여부가 아니라, 기록된 궤적에서 실제로 다음에 무슨 일이 일어났는지를 사후적으로(hindsight) 학습한 레이블로 훈련된다. NightWatch-0.8B는 d3-lite라는 0.8B System-1 모델을 기반으로, 벤치마크 과제 없이 독립적으로 생성한 데스크톱 상호작용 궤적과 절차적으로 생성한 합성 인터페이스만으로 LoRA 미세조정되었다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>정적 성격이 강한 데스크톱 벤치마크 OSWorld-Verified(100개 과제)와, 화면이 에이전트의 행동을 기다려주지 않는 동적 웹 벤치마크 DynaCU-Bench(49개 동적 과제)에서 평가했다. 비교 대상은 벤치마크 기본 루프(Vanilla), 그리고 패시브 감시 방식인 AOI, PUSV다. 대형 VLM(MiMo-V2.6-Flash) 기준으로 OSWorld에서 추론 외 소요 시간(non-reasoning time)을 197.4초에서 132.7초로 33% 줄이고, 낭비된 시간 비율을 16.3%에서 7.7%로 53% 줄이면서도 과제 성공률은 기존(66.3%)보다 오히려 높은 68.0%를 유지했다. DynaCU-Bench에서는 같은 감시자를 그대로 사용했음에도 성공률이 39.5%에서 44.2%로 상승했다. 소형 VLM(Qwen3.8-27B)에서도 비슷한 경향이 확인되었으며, 30배 이상 큰 System-1 결정 모델보다도 빠르고 성공률이 높았다.</p>
+<h2>한계점</h2>
+<p>NightWatch는 에이전트가 "언제" 관찰하는지를 바꿀 뿐, 에이전트가 "무엇을" 할 수 있는지는 바꾸지 않는다. 두 방법 모두에서 항상 실패하는 11개 OSWorld 과제의 경우 에이전트가 스스로 틀린 결과로 과제를 종료해버리는 경우가 많아 개선되지 않는다. 또한 중단·무효화는 현재 화면 기준으로 추론을 다시 시작하게 할 뿐 추론 자체를 더 빠르게 만들지는 못하므로, DynaCU-Bench의 가장 빠른 토스트 알림이나 게임처럼 한 번의 생성 주기보다 화면이 더 빠르게 바뀌는 인터페이스에서는 어떤 관찰도 행동 시점에 유효하지 않을 수 있다. 즉 NightWatch는 에이전트의 추론 속도보다 느리게 바뀌는 인터페이스에 적합하며, 더 빠른 인터페이스에는 더 빠른 에이전트가 필요하다고 저자들은 명시한다.</p>
+<h2>시사점</h2>
+<p>이 연구는 CUA의 효율과 신뢰성을 높이는 데 있어 "무엇을 보는가"뿐 아니라 "언제 보는가"가 똑같이 중요하다는 점을 보여준다. 대형 VLM의 추론 능력이나 프롬프트를 손대지 않고도, 작고 저렴한 감시 모델 하나를 하네스 수준에 추가하는 것만으로 지연 행동과 유휴 대기를 크게 줄일 수 있다는 결과는, 향후 에이전트 설계에서 지각(perception)과 행동(action) 타이밍을 분리해 다루는 접근이 비용 효율적인 대안이 될 수 있음을 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.28947" target="_blank" rel="noopener">huggingface.co/papers/2611.28947</a> · 2026-11-26</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

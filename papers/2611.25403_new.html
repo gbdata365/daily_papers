@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>Antom 3-in-1 트랜스포머</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#1 · Daily Papers 2026-11-26</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 99</span>
+    </div>
+    <h1 class="article-title">Antom 3-in-1 Transformer: A Payment Foundation Model</h1>
+    <p class="article-title-ko">Antom 3-in-1 트랜스포머: 결제 파운데이션 모델</p>
+    <p class="article-sub">시퀀스·테이블·그래프 표현을 하나로 통합한 약 70억 파라미터 규모의 결제 리스크 탐지용 파운데이션 모델로, 실제 수십억 건 규모의 결제 플랫폼에 배포되어 기존 모델 대비 손실률을 37.88% 줄였다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.25403" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.25403" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Antom 3-in-1 Transformer: A Payment Foundation Model</li>
+<li><strong>저자</strong>: Weiyu Han, Haoyu Jiang 등 Ant International(앤트 인터내셔널) 소속 연구진 다수(일부는 East China Normal University, Shanghai Jiao Tong University, Tongji University 소속 인턴 포함)</li>
+<li><strong>출처</strong>: arXiv:2611.25403v1 [cs.LG] (2026-11-19)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.25403">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>시퀀스·테이블·그래프 표현을 하나로 통합한 약 70억 파라미터 규모의 결제 리스크 탐지용 파운데이션 모델로, 실제 수십억 건 규모의 결제 플랫폼에 배포되어 기존 모델 대비 손실률을 37.88% 줄였다.</p>
+<h2>배경 및 문제의식</h2>
+<p>대형 결제 플랫폼은 시장과 비즈니스 시나리오마다 다른 사용자 행동·거래 분포에 대응하면서 끊임없이 변화하는 사기 수법을 탐지해야 한다. 기존 거래 파운데이션 모델(TransactionGPT, PRAGMA, PANTHER 등)은 개별 사용자의 거래 이력을 표현하는 데는 성과를 냈지만, 결제 리스크는 계정·거래 대상 간의 관계성에도 크게 좌우되며 동일 거래라도 사용자 이력뿐 아니라 네트워크 위치·기기 등 다른 관점에서 보면 위험 신호가 달라질 수 있다는 한계가 있었다. 저자들은 이 문제를 해결하기 위해 여러 시나리오와 사기 수법 변화에 범용적으로 대응할 수 있는 거래 파운데이션 모델이 필요하다고 보았다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>거래 시퀀스, 시나리오별 테이블 특성, 사용자 간 관계(그래프)를 하나의 모델에서 통합하는 약 70억 파라미터(태스크 경로당 약 17억 파라미터 활성화) 규모의 카드결제 리스크 파운데이션 모델 Antom 3-in-1 Transformer를 제안했다.</li>
+<li>레이블이 부족한 상황에서도 전체 레이블로 학습한 scratch 모델보다 뛰어난 성능을 보이는 레이블 효율성을 입증했다(25%의 레이블만으로 100% 레이블 scratch 모델을 능가).</li>
+<li>Ant International의 수십억 건 규모 결제 플랫폼에 4개월간 온라인 A/B 테스트로 배포하여 실제 비즈니스 임팩트(손실률 37.88% 감소)를 검증했다.</li>
+</ul>
+<h2>방법론</h2>
+<p>모델은 네 가지 요소로 구성된다. (1) 시퀀스 인코더는 사용자·카드·기기별 거래 이력을 이벤트 토큰화 후 독립적인 트랜스포머로 요약하며, 과거 이력(prefix)과 이후 행동 요약을 대조 학습하는 "prefix-future contrast(PFC)" 방식으로 비지도 사전학습된다. (2) 테이블 인코더는 현재 거래의 속성과 비즈니스 통계치를 필드 토큰화 후 셀프어텐션으로 필드 간 상호작용을 포착한다. (3) 그래프 인코더는 계정 프로필과 사용자 간 연결로 구성된 "롤링 사용자 그래프"를 GAT(그래프 어텐션 네트워크)로 인코딩하며, 엣지를 교란한 두 뷰 간의 대조 학습과 관계 수 재구성을 통해 비지도로 사전학습된다. (4) 태스크 조건부 퓨전 모듈은 각 태스크를 학습 가능한 "태스크 쿼리" 벡터로 표현하고, 이를 이용한 어텐션으로 전문가(top-k router 기반 MoE 구조)를 라우팅하여 시퀀스·테이블 표현을 융합하고 그래프 임베딩으로 리스크 헤드를 보강한다. 다운스트림 미세조정 시 그래프 인코더는 고정(freeze)되고 나머지 모듈은 업데이트된다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Ant International의 산업 데이터셋, IBM 공개 신용카드 합성 데이터셋, Antom-Merchant A/B 및 AlipayHK(HK)의 저레이블·크로스 시나리오 데이터셋, Amazon/YelpChi/T-Finance/Elliptic 등 그래프 벤치마크, 그리고 퓨전 평가용 데이터셋을 사용했다. 2026년 6월 8일~10월 14일 진행된 온라인 A/B 테스트(플랫폼 거래의 30% 대상)에서 Antom 3-in-1 Transformer는 기존 운영 모델인 XGB-Online 대비 챠지백(CB)률을 37.74%, 전체 손실률을 37.88% 감소시켰으며, SAINT 스타일 모델 대비로도 각각 28.26%, 24.07% 개선을 보였다. IBM 공개 데이터셋에서는 AP 0.3829, AUROC 0.9966으로 PRAGMA 등 5개 비교 모델을 상회했다. 레이블 효율성 실험에서는 25%의 레이블만으로 Antom-Merchant A/B 양쪽 다 100% 레이블로 학습한 scratch 모델을 능가했으며, 가장 레이블이 부족한 HK 비즈니스에서는 10% 레이블로도 100% 레이블 scratch 대비 AP와 R@0.5% 모두 크게 앞섰다. 온라인 추론은 NVIDIA A10 GPU에서 평균 지연 46.66ms, P99 80.16ms로 250ms의 종단 간 예산 내에서 처리되었다.</p>
+<h2>한계점</h2>
+<p>저자들은 이 기술 보고서가 적응 능력·레이블 효율성·산업 배포 성과에 초점을 맞추고 있으며, 모델 아키텍처의 세부 사항, 학습 설정, 데이터셋 구축 절차의 상세 내용은 경쟁·보안상의 이유로 이번 공개 범위에서 제외했다고 명시했다. 추가적인 투명성 공개는 제3자와의 협의를 거쳐 추후 검토할 계획이라고 밝혔다. 그 외 명시적인 한계점(예: 특정 사기 유형에 대한 취약성, 일반화 한계 등)은 논문에 명시되지 않음.</p>
+<h2>시사점</h2>
+<p>서로 다른 모달리티(시퀀스·테이블·그래프)를 하나의 파운데이션 모델로 통합하고 각 모달리티를 비지도 방식으로 사전학습하는 접근이, 실제 수십억 건 규모의 산업 결제 시스템에서 레이블 효율성과 비즈니스 임팩트 양쪽에서 유의미한 개선을 가져올 수 있음을 실증했다. 이는 금융 리스크 탐지뿐 아니라 이질적 데이터 소스(행동 이력, 정형 특성, 관계형 네트워크)를 함께 다뤄야 하는 다른 산업 도메인에도 참고가 될 수 있는 사례다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.25403" target="_blank" rel="noopener">huggingface.co/papers/2611.25403</a> · 2026-11-26</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

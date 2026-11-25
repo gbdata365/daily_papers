@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>ThinkMorph-SSL</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#11 · Daily Papers 2026-11-26</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 21</span>
+    </div>
+    <h1 class="article-title">ThinkMorph-SSL: Scaling Interleaved Multimodal Reasoning with Pretext Tasks</h1>
+    <p class="article-title-ko">ThinkMorph-SSL: 프리텍스트 태스크로 인터리브드 멀티모달 추론 스케일링</p>
+    <p class="article-sub">이미지 자체를 감독 신호로 활용하는 자기지도 프리텍스트(pretext) 학습을 통해, 별도의 과제별 인터리브드(interleaved) 멀티모달 추론 데이터 없이도 모델이 텍스트와 이미지를 번갈아 생성하며 추론하는 능력을 효과적으로 확장할 수 있음을 보인 연구.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.32183" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.32183" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: ThinkMorph-SSL: Scaling Interleaved Multimodal Reasoning with Pretext Tasks</li>
+<li><strong>저자</strong>: Jiawei Gu, Linjie Li 등 다수 (University of Washington, Tsinghua University, National University of Singapore, Fudan University 등 다기관 공동 연구)</li>
+<li><strong>출처</strong>: arXiv:2611.32183v1 [cs.CV] (2026-11-24)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://thinkmorph.github.io/ssl/">thinkmorph.github.io/ssl</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.32183">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>이미지 자체를 감독 신호로 활용하는 자기지도 프리텍스트(pretext) 학습을 통해, 별도의 과제별 인터리브드(interleaved) 멀티모달 추론 데이터 없이도 모델이 텍스트와 이미지를 번갈아 생성하며 추론하는 능력을 효과적으로 확장할 수 있음을 보인 연구.</p>
+<h2>배경 및 문제의식</h2>
+<p>사람은 말뿐 아니라 그림으로도 사고하며, 보조선이나 스케치처럼 중간 시각 표현을 활용해 문제를 더 쉽게 푼다. 통합 멀티모달 모델에 이런 인터리브드 추론(중간 이미지를 생성하고 이를 바탕으로 다음 추론을 진행하는 방식)을 가르치려면 질문과 중간 이미지가 연결된 학습 트레이스가 필요한데, 기존 방법(예: ThinkMorph)은 과제별로 맞춤 설계된 파이프라인에 의존해 새로운 과제로 확장하기 어렵다는 한계가 있었다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>이미지 자체의 구조·내용을 감독 신호로 쓰는 2단계 학습법인 ThinkMorph-SSL을 제안</li>
+<li>색상화(colorization), 초해상도, 인페인팅, 회전/반전, 디노이징 등 7가지 시각 프리텍스트 과제를 "질문 없는(instruction-free)" 인터리브드 트레이스로 변환하는 방법을 고안 (Pretext-270K 데이터셋)</li>
+<li>질문-답변 중심의 자동 생성 instruction tuning 데이터(Instruct-180K)와 결합해, 동일한 instruction tuning 예산 내에서도 프리텍스트 학습을 거친 모델이 더 높은 성능을 보임을 실증</li>
+</ul>
+<h2>방법론</h2>
+<p>모델은 텍스트 세그먼트와 <code>&lt;gen_image&gt;</code> 구분자로 감싼 이미지 세그먼트를 번갈아 자기회귀적으로 생성한다. 1단계(프리텍스트 추론)에서는 손상·변형된 이미지를 입력으로 받아, 보이는 단서를 설명하는 텍스트 → 복원/정규화된 이미지 생성 → 결과 해석 텍스트로 이어지는 트레이스를 학습하며, 이 단계에는 질문이 전혀 주어지지 않는다. 2단계에서는 1단계 체크포인트에서 이어서, 9가지 자동화 파이프라인으로 만든 질문-중심 인터리브드 데이터(Instruct-180K)로 instruction tuning을 수행한다. 두 단계 모두 BAGEL-7B-MoT, InternVL-U-4B 같은 통합 멀티모달 백본에 적용되었다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>기본 시각 지각(V⋆, HR-4K/8K, MME-RW-L, RealWorldQA), 정적 공간 이해(BLINK, CV-Bench, SAT), 정신적 세계 모델링(MMSI, MindCube, OmniSpatial, SpatialViz) 등 3단계 12개 벤치마크로 평가했으며, GPT-5를 LLM 판정자로 사용했다. 추론 시점에 텍스트 추론 분량을 늘리거나 강제로 이미지를 생성시키는 것만으로는 성능이 개선되지 않았고, 정답 이미지를 주입해도 효과가 제한적이어서 단순히 포맷을 따르는 것만으로는 부족함을 확인했다. 동일한 instruction tuning 예산에서 프리텍스트 학습을 거친 모델은 대표 3개 벤치마크에서 평균 6.49점 향상되었고, 전체 2단계 레시피는 기준 모델(base model) 대비 12개 벤치마크 평균 11.33점의 정확도 향상을 보였으며, instruction tuning 과제군과 겹치지 않는 9개 벤치마크에서도 개선이 나타나 일반화 가능성을 시사했다.</p>
+<h2>한계점</h2>
+<p>프리텍스트 데이터량, 학습 연산량, 모델 크기 증가에 따른 성능 변화는 체계적으로 측정하지 않았다. 7가지 시각 프리텍스트 과제와 주로 지각·공간 추론 과제에 한정해 평가했으며, 다른 과제·도메인으로의 확장 가능성은 열린 문제로 남겼다. 인터리브드 추론은 추론 비용이 커서 연산·지연 제약이 있는 환경에서는 사용이 제한될 수 있고, 기반 모델의 사전학습 데이터가 공개되어 있지 않아 평가 데이터와의 중복 가능성을 배제할 수 없다.</p>
+<h2>시사점</h2>
+<p>인터리브드 멀티모달 추론을 위한 학습 데이터가 반드시 다운스트림 질문에 맞춰 설계될 필요는 없으며, 이미지 자체의 구조에서 비롯된 자기지도 신호만으로도 확장 가능한 학습 타깃을 제공할 수 있음을 보여준다. 이는 고전적 자기지도학습의 프리텍스트 과제 개념을 멀티모달 추론 영역으로 확장한 사례로, 과제별 데이터 설계 부담을 줄이면서 통합 멀티모달 모델의 추론 능력을 키우는 방향을 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.32183" target="_blank" rel="noopener">huggingface.co/papers/2611.32183</a> · 2026-11-26</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

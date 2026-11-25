@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>S-Mind</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#7 · Daily Papers 2026-11-26</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 41</span>
+    </div>
+    <h1 class="article-title">S-Mind: Internalizing Multi-View Geometry for Spatial Intelligence</h1>
+    <p class="article-title-ko">S-Mind: 공간 지능을 위한 다중 시점 기하학 내재화</p>
+    <p class="article-sub">멀티모달 대형언어모델(MLLM)에 "공간 토큰(spatial token)"을 두어 여러 시점(view)을 하나의 3D 장면으로 내재화하고, 추론 중 시점이 바뀔 때마다 이를 재표현하게 함으로써 외부 3D 도구 없이도 진짜 공간 지능을 갖게 하는 프레임워크.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.28649" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.28649" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: S-Mind: Internalizing Multi-View Geometry for Spatial Intelligence</li>
+<li><strong>저자</strong>: Muxin Fu, Peike Yu 등 (홍콩과학기술대학교, 난양공대, 싱가포르국립대, 퉁지대 소속 공동 연구팀)</li>
+<li><strong>출처</strong>: arXiv:2611.28649v1 [cs.CV] (2026-11-21)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://kanaboon1.github.io/S-Mind/">S-Mind 프로젝트 페이지</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.28649">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>멀티모달 대형언어모델(MLLM)에 "공간 토큰(spatial token)"을 두어 여러 시점(view)을 하나의 3D 장면으로 내재화하고, 추론 중 시점이 바뀔 때마다 이를 재표현하게 함으로써 외부 3D 도구 없이도 진짜 공간 지능을 갖게 하는 프레임워크.</p>
+<h2>배경 및 문제의식</h2>
+<p>공간 지능(여러 시각 정보로부터 3D 공간을 추론하는 능력)은 로봇, 자율주행, XR 등에서 MLLM에 필수적이지만 여전히 큰 약점이다. 기존 접근은 (1) 3D 재구성이나 별도 기하 인코더로 장면을 모델 바깥에서 만드는 "외부 기하" 방식과 (2) 공간 데이터로 모델을 파인튜닝해 내부적으로 장면을 구성하게 하려는 "공간 파인튜닝" 방식으로 나뉜다. 저자들은 "공간 프로브(spatial probe)"라는 진단 기법으로 파인튜닝된 모델의 내부 표현을 직접 들여다본 결과, 정답률은 올라가도 모델이 실제로는 여러 시점을 하나의 장면으로 융합하지 못하고(멀티뷰 퓨전 부족), 추론이 새 시점으로 이동해도 내부 장면이 그 시점을 따라 변환되지 않는다는(관점 변환 불완전) 두 가지 근본적 결함이 남아있음을 보였다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>표현 수준 진단</strong>: 공간 프로브를 통해 기존 공간 파인튜닝 모델들이 정확도는 높아져도 멀티뷰 퓨전과 관점 변환이라는 두 결함을 그대로 지니고 있음을 입증.</li>
+<li><strong>S-MIND 제안</strong>: 여러 시점을 통합된 3D 장면으로 응축하는 "장면 토큰"과 카메라 포즈를 담는 "카메라 토큰"으로 구성된 공간 토큰 집합을 도입하고, 시점이 바뀔 때마다 이 토큰들을 재방출(re-emit)하여 해당 시점 기준으로 장면을 다시 표현하도록 학습.</li>
+<li><strong>실험적 검증</strong>: 4개의 공간 추론 벤치마크와 2개 모델 규모(Qwen3.5-4B/9B)에서 공간 추론 전용 모델 중 최고 성능을 내고, GPT-6-Astra·Kimi-K3.1-Pro 같은 프런티어 범용 모델과도 대등하거나 능가하는 성능을 보이면서, 추론 시 도구 호출 없이도 외부 기하 기반 에이전트보다 약 100배 빠름을 보임.</li>
+</ul>
+<h2>방법론</h2>
+<p>S-MIND는 N개의 입력 시점(이미지) 뒤에 학습 가능한 공간 토큰(시점별 "장면 토큰" Ks개 + 공유 "카메라 토큰" Kc개)을 추가한다. 이 토큰들의 은닉 상태 z0가 장면 표현 역할을 하며, 크로스어텐션 기반 "기하 리드아웃(readout)"이 z0로부터 각 비주얼 토큰이 관측한 3D 점(전역/지역 좌표)과 각 카메라의 포즈를 디코딩한다. 사전학습 단계에서는 이 디코딩된 점·포즈를 실제 값에 맞춰 회귀시키는 기하 손실(L_geo)로 장면 융합을 학습시킨다(멀티뷰 퓨전). 이후 추론 체인이 새로운 시점을 선언할 때마다 모델이 공간 토큰을 다시 방출해 새 은닉 상태 z_k를 만들고, 이 z_k가 z0의 장면을 해당 시점 기준으로 변환한 결과와 일치하도록 관점 손실(L_view)로 학습한다(관점 변환). 전체 학습은 (1) 기하 사전학습 → (2) 추론 체인에 대한 SFT(교차엔트로피 + L_geo + L_view) → (3) 최종 정답 정확도를 보상으로 하는 GRPO 강화학습의 3단계로 진행되며, 추론 시에는 리드아웃과 손실 없이 공간 토큰만 사용한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>MindCube-Tiny, SPAR-Bench, BLINK, ViewSpatial 등 4개 공간 추론 벤치마크에서 Qwen3.5-4B/9B 백본에 S-MIND를 적용해 평가했다. S-MIND(RL)는 평균 정확도 최대 74.03%를 기록해 기존 최강 공간 파인튜닝 베이스라인을 6.76점, 기존 공개된 공간 추론 모델을 19.11점 앞섰고 GPT-6-Astra(+0.45점), Kimi-K3.1-Pro(+1.97점) 등 프런티어 범용 모델과도 맞먹었다. 표현 수준에서는 멀티뷰 퓨전 정확도가 베이스라인 최대 16.02%에서 65.11%로, 관점 변환 정확도가 최대 37.28%에서 82.17%로 크게 향상되었다. 추론 시 공간 토큰을 모두 제거해도 정확도가 2.37점만 떨어져 공간 능력이 백본에 내재화되었음을 보였고, 외부 기하 에이전트 대비 약 100배 빠른 추론 속도를 보였다. 소거 실험에서는 기하 감독(L_geo)이 가장 큰 성능 향상을 가져오고, 관점 감독(L_view)이 멀티뷰 질문에서 추가 향상을 주며, 두 손실의 가중치 λ=0.1이 장면 보존과 정확도 사이 최적점임을 확인했다.</p>
+<h2>한계점</h2>
+<p>논문은 별도의 "한계점" 절 대신 "향후 연구(Future Work)"에서 한계를 암시한다: 현재 모델은 입력 시점들이 실제로 관측한 영역의 기하만 감독하며, 보이지 않는 영역을 채우거나 상호작용이 계속되는 동안 장면을 유지·갱신하는 능력, 동적으로 변화하는 환경에 대한 대응은 다루지 않는다. 저자들은 이를 장기적으로 임바디드 에이전트에 적용하기 위한 다음 과제로 제시한다.</p>
+<h2>시사점</h2>
+<p>이 연구는 공간 지능을 "정답률"이 아니라 모델이 실제로 내부에 어떤 장면 표현을 쌓는지로 직접 들여다보는 진단 방법을 제시했다는 점에서, 향후 MLLM의 추론 능력을 평가·개선하는 방식 전반에 영향을 줄 수 있다. 또한 외부 3D 도구 없이 토큰만으로 장면을 내재화하는 접근은 추론 효율과 범용성을 동시에 추구하는 임바디드 AI·로봇·XR 분야 연구에 실용적인 방향을 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.28649" target="_blank" rel="noopener">huggingface.co/papers/2611.28649</a> · 2026-11-26</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

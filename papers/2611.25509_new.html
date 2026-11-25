@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>LingSante MedGuard 기술 보고서</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#9 · Daily Papers 2026-11-26</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 30</span>
+    </div>
+    <h1 class="article-title">LingSante MedGuard Technical Report</h1>
+    <p class="article-title-ko">LingSante MedGuard 기술 보고서</p>
+    <p class="article-sub">의료 AI 응답의 안전성·준법성·윤리성을 동시에 심사하는 통합 가드레일 모델 LingSante MedGuard와, 이를 평가하기 위한 벤치마크 LingSante MedGuardBench를 제안한 기술 보고서.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.25509" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.25509" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: LingSante MedGuard Technical Report</li>
+<li><strong>저자</strong>: LingSante MedGuard Team (Guoyi Li, Bowen Tian, Zifan Zhang 등 다수 공동 연구자, Ant Group 계열 연구팀으로 추정)</li>
+<li><strong>출처</strong>: arXiv:2611.25509v3 [cs.CR] (2026-11-24)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/inclusionAI/LingSante-MedGuard">GitHub - inclusionAI/LingSante-MedGuard</a>, <a href="https://huggingface.co/datasets/inclusionAI/LingSante-MedGuard">HuggingFace Datasets</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.25509">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>의료 AI 응답의 안전성·준법성·윤리성을 동시에 심사하는 통합 가드레일 모델 LingSante MedGuard와, 이를 평가하기 위한 벤치마크 LingSante MedGuardBench를 제안한 기술 보고서.</p>
+<h2>배경 및 문제의식</h2>
+<p>의료 상담·임상 의사결정 지원에 LLM 활용이 늘면서, 응답이 부적절한 처방, 전문직 규정 위반, 환자 권리 침해 등의 위험을 포함할 수 있다는 우려가 커지고 있다. 기존 범용 콘텐츠 안전 가드레일은 일반적인 유해성 분류에는 효과적이지만, 전문 의료 지식·환자 맥락·구체적 의료 규정이 필요한 의료 특화 위험은 포착하기 어렵다. 또한 기존 의료 특화 가드레일 연구는 특정 설정(진단, 원격의료 등)에 한정되어 있어, 의료 안전·준법·윤리라는 서로 다른 평가 기준을 포괄하는 통합적 접근이 부족했다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>의료 안전(Safety), 준법(Compliance), 윤리(Ethics) 세 영역을 하나의 평가 체계로 통합한 벤치마크 LingSante MedGuardBench를 공개(위험 탐지용 11개 서브셋 + 세부 역량 평가용 8개 과제).</li>
+<li>의료 가드레일 교사 모델과 6개의 특화 역량 전문가 모델(의료 규정 이해, 수치 추론, 멀티모달 환각 탐지, 에이전틱 안전 검증, 위험 지점 로컬라이제이션, 멀티모달 엔티티 이해)의 지식을 하나의 모델로 통합한 LingSante MedGuard 제안.</li>
+<li>오프라인 지도학습(SFT) 후 다중 교사 기반 온폴리시 증류(on-policy distillation, MOPD 기법 확장)를 적용하는 2단계 학습 전략을 통해 추론 시 교사 앙상블 없이도 통합된 판단과 설명을 생성.</li>
+</ol>
+<h2>방법론</h2>
+<p>모델은 응답 r, 맥락 c(환자 정보, 대화 이력, 의료 영상/보고서, 근거 자료 등), 평가 범위 s를 입력받아 이진 위험 판정(Safe/Unsafe)과 그 판단 근거를 함께 생성하는 구조(논문 수식 1, 2 참고)로 정의된다. 판단은 단순 임상적 정확성뿐 아니라 환자의 개별 금기 사항, 전문직 권한 범위, 동의·기밀 보호 등 맥락에 따라 달라질 수 있다고 전제한다.
+학습은 두 단계로 이루어진다. 1단계에서는 의료 가드레일 교사 모델이 생성한 궤적(응답·도구 상호작용 시퀀스)에 대해 오프라인 SFT를 수행해 출력 형식과 상호작용 패턴을 확립한다. 2단계에서는 과제별로 지정된 전문가 교사가 학생 모델이 직접 생성한 궤적에 피드백을 주는 멀티티처 온폴리시 증류(MOPD 확장)를 적용해, 규정 적용 가능성 확인, 근거-주장 일치 검증, 위험 구간 로컬라이제이션 등의 세부 역량을 단일 학생 모델에 통합한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>LingSante MedGuard는 4B, 9B, 27B 세 가지 규모로 학습 및 평가되었다. LingSante MedGuardBench의 전체 위험 탐지 트랙에서 평균 F1 점수는 각각 82.3%, 82.4%, 87.4%였으며, 27B 모델이 비교 대상 모델들 중 가장 높은 평균 F1을 기록했다. 4B 모델은 검색 증강(retrieval-enabled) 설정에서 MedHallu와 MedHALT-NOTA 평균 정확도 73.9%를 달성했다. 27B 모델 기준, 제안된 2단계 학습 전략은 혼합 소스 단순 SFT 대비 전체 위험 탐지 F1을 5.1%p 향상시켰고, 역량 전문가 데이터를 제거하면 F1이 3.4점 하락해 전문가 지도의 기여도가 확인되었다. 또한 검증 구성요소(근거 일치성, 출처 추적성, 규정 기반 근거 품질) 평가에서도 모델 규모 전반에 걸쳐 향상이 관찰되었다.</p>
+<h2>한계점</h2>
+<p>저자들은 이 가드레일이 진단·처방 시스템이 아니며 전문적 임상 판단을 대체하지 않는다고 명시한다. 제시된 위험 분류체계와 6개 역량은 본 연구에서 다룬 범위를 조직화한 것으로, 모든 의료 AI 위험을 포괄하지는 않는다. 평가 결과는 벤치마크가 다룬 범위와 추론 설정에 한정되며, 다른 임상 모집단·의료 모달리티·적용 맥락에까지 동일한 신뢰도가 보장되지는 않는다. 또한 실제 배포 시 판단 품질은 환자 정보의 완전성, 근거 자료의 최신성, 적용 규정 맥락에 의존하므로, 지속적인 모니터링과 사람의 개입(escalation)이 필요하다고 언급한다.</p>
+<h2>시사점</h2>
+<p>의료 분야처럼 안전·준법·윤리 기준이 복잡하게 얽혀 있는 고위험 도메인에서는 범용 콘텐츠 안전 필터만으로는 부족하며, 전문 역량을 세분화해 지도학습한 뒤 이를 단일 모델로 증류·통합하는 접근이 실용적 대안이 될 수 있음을 보여준다. 다중 교사 온폴리시 증류 전략과 역량별 평가 설계는 의료 외에 법률, 금융 등 규정 준수가 중요한 다른 고위험 도메인의 가드레일 설계에도 참고할 수 있는 방법론적 시사점을 제공한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.25509" target="_blank" rel="noopener">huggingface.co/papers/2611.25509</a> · 2026-11-26</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

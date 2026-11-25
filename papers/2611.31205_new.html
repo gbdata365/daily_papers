@@ -1,0 +1,113 @@
+<meta charset="UTF-8">
+<title>ACAP</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#5 · Daily Papers 2026-11-26</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 61</span>
+    </div>
+    <h1 class="article-title">ACAP: Asynchronous Coding Agents for Efficient Robot Control</h1>
+    <p class="article-title-ko">ACAP: 효율적인 로봇 제어를 위한 비동기 코딩 에이전트</p>
+    <p class="article-sub">로봇의 각 구동부(팔, 몸체 등)마다 코딩 에이전트를 독립적으로 배치하고, 상위 "하이퍼 에이전트"가 작업 의존성에 따라 제어권을 유연하게 조율하게 함으로써, 하나의 에이전트가 로봇 전체를 통제하던 기존 방식보다 작업 수행 시간을 크게 줄이는 비동기 코딩 에이전트 정책 프레임워크 ACAP를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.31205" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.31205" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: ACAP: Asynchronous Coding Agents for Efficient Robot Control</li>
+<li><strong>저자</strong>: Zexin He, Rui Li, Yushi Lan, Chengkai Jin, Zhi Hou, Xingang Pan (난양기술대학교 S-Lab, 옥스퍼드대학교, ACE Robotics)</li>
+<li><strong>출처</strong>: arXiv:2611.31205v1 [cs.RO] (2026-11-23)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://projects.zxhezexin.com/acap">projects.zxhezexin.com/acap</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.31205">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>로봇의 각 구동부(팔, 몸체 등)마다 코딩 에이전트를 독립적으로 배치하고, 상위 "하이퍼 에이전트"가 작업 의존성에 따라 제어권을 유연하게 조율하게 함으로써, 하나의 에이전트가 로봇 전체를 통제하던 기존 방식보다 작업 수행 시간을 크게 줄이는 비동기 코딩 에이전트 정책 프레임워크 ACAP를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>최근의 코딩 에이전트 기반 로봇 정책은 장면을 관찰해 수치 모델을 세우고 실행 중에 로봇 제어 프로그램을 작성·수정할 수 있지만, 보통 하나의 에이전트가 로봇 전체의 추론과 제어를 담당한다. 이 경우 한쪽 팔의 동작 실패를 진단하는 추론 과정이 다른 쪽 팔의 독립적인 동작까지 지연시키는 문제가 발생한다. 저자들은 "로봇의 여러 구동부에 추론을 분산시키면 작업 효율을 높일 수 있는가"라는 질문에서 출발한다. 다만 로봇의 각 구동부는 물리적으로 서로 영향을 주고받기 때문에(예: 한쪽 팔의 동작이 다른 쪽 팔의 접근 가능 공간을 제한), 독립적인 추론이 곧바로 독립적인 물리적 동작을 의미하지는 않는다는 점이 핵심 난제다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li><strong>비동기 에이전트 정책 프레임워크</strong>: 하나의 로봇을 팔+그리퍼, 몸체(토르소+섀시) 등 설정 가능한 "제어 그룹" 단위로 나누고, 각 그룹을 지속적으로 담당하는 멤버(Member) 에이전트를 배치해 구동부 간 비동기적 추론·실행이 가능하게 함.</li>
+<li><strong>하이퍼 에이전트를 통한 에이전틱 조율</strong>: 고정된 위임 규칙 대신, 더 강력한 코딩 에이전트인 하이퍼 에이전트(Hyper-agent)가 작업 진행 상황과 실행 피드백을 바탕으로 작업을 할당하거나 수정하고, 리드(Lead) 에이전트와 멤버 에이전트 간 제어권을 동적으로 전환함.</li>
+<li><strong>실세계 평가 및 롤아웃 데이터셋 공개</strong>: 다양한 실물 로봇 조작 과제에서 효율성과 조율 능력을 평가하고, 관찰·생성된 프로그램·에이전트 간 상호작용·물리적 피드백을 포함한 롤아웃 데이터셋을 공개.</li>
+</ol>
+<h2>방법론</h2>
+<p>ACAP는 로봇의 제어 그룹 집합 C(예: 좌우 팔, 몸체)마다 지속적인 멤버 에이전트 M_c를 두고, 여러 그룹을 동시에 제어할 수 있는 리드 에이전트 L을 둔다. 각 활성 에이전트는 자신의 속도에 맞춰 관찰-추론-행동을 반복하며, 저수준 제어기가 명령된 동작을 추적해 추론과 물리적 실행이 겹칠 수 있게 한다. 멤버는 하위 작업에는 더 가벼운 추론을, 하이퍼 에이전트는 전체 작업에 대해 더 높은 수준의 추론을 사용해 추론 비용을 관리한다.</p>
+<p>하이퍼 에이전트 π_H는 상호작용 기록 h_k와 각 그룹의 현재 명령 소유자 ω_k(c)∈{L, M_c}를 바탕으로 행동 u_k를 선택한다(u_k ~ π_H(·|h_k, ω_k)). 이 행동은 작업 할당·수정, 증거 요청, 의존성 지정, 공유 작업공간 접근 승인, 혹은 리드의 직접 실행 전환 등을 포함한다. 이를 지원하기 위해 네 가지 프레임워크 메커니즘을 둔다: (1) 멤버가 담당이 바뀌어도 대화 기록과 생성 프로그램을 유지하는 지속적 컨텍스트, (2) 수신자가 바쁠 때도 지시·보고를 보관하는 메시지 버퍼, (3) 임의/전체 이벤트를 기다리며 다른 작업은 계속 진행하는 이벤트 기반 대기, (4) 제어 그룹에 대해 현재 소유자만 명령을 내릴 수 있는 배타적 소유권(제어기 호출 중에는 소유권이 바뀌지 않음).</p>
+<h2>실험 설정 및 결과</h2>
+<p>Galaxea R1 Pro 로봇과 4종의 AgileX PiPER 계열 플랫폼을 사용해 Fully Parallel(완전 병렬), Parallel-Sequential(순서가 필요한 병렬), Collaborative(협업) 세 범주의 과제를 설계했다. 비교 대상은 로봇 전체를 하나의 에이전트가 담당하는 Direct Policy, 멤버만 제어권을 갖는 Fixed Delegation, 그리고 ACAP 세 가지다. Direct와 리드 에이전트에는 Astra(xhigh 추론), 멤버 에이전트에는 Astra(medium 추론)를 사용했다.</p>
+<p>25개 과제/플랫폼 조합, 72회의 실세계 롤아웃으로 구성된 과제 커버리지 실험에서 ACAP는 Direct 대비 과제-균형 평균 소요 시간을 28.2% 줄였다(전체 평균 19.04분 → 13.67분, 물리적 진행도 AUC 62.3 → 72.9). 세 과제 범주 모두에서 개선이 나타났으며, Collaborative 과제 8종 전체에서 ACAP가 Fixed Delegation보다 낮은 평균 소요 시간을 보여 유연한 조율의 효과를 뒷받침했다. 6개 과제, 90회 롤아웃으로 구성된 반복 시행 실험에서도 ACAP는 30분 상한 기준으로 Direct보다 모든 과제에서 더 낮은 평균 소요 시간을 기록했다. 몸체(토르소+섀시) 멤버를 추가한 모바일 조작 실험으로 프레임워크의 적용 범위도 확장해 보였다.</p>
+<h2>한계점</h2>
+<p>현재 프레임워크는 정책 수준의 충돌 인지(공유 작업공간 접근 순서 조정, 여유 공간 확인 등)만 다루며, 로봇의 전체 기하 구조(장착된 카메라 등 부속물 포함)와 환경 기하를 반영해 동작을 사전에 점검하는 전용 모션 레벨 충돌 검사 레이어는 포함하지 않는다. 저자들은 이를 향후 과제로 남긴다고 명시했다.</p>
+<h2>시사점</h2>
+<p>ACAP는 "하나의 거대한 에이전트가 모든 것을 추론한다"는 기존 코딩 에이전트 정책의 틀에서 벗어나, 로봇 구동부별로 에이전트를 나누고 상위 에이전트가 조율만 담당하게 함으로써 멀티 에이전트 협업의 비효율(통신·동기화 오버헤드)을 줄이는 실용적인 설계를 제시한다. 이는 멀티 에이전트 LLM 시스템의 실패 요인에 대한 최근 연구들과 맞물려, 물리적 제약이 있는 실세계 로봇 환경에서 에이전트 조직화 전략을 설계할 때 참고할 수 있는 구체적인 사례를 제공한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.31205" target="_blank" rel="noopener">huggingface.co/papers/2611.31205</a> · 2026-11-26</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

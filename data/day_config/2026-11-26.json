@@ -1,0 +1,110 @@
+{
+  "2611.25403": {
+    "base": "2611_안텀_3in1-결제-파운데이션-모델",
+    "rank": "#1",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "99",
+    "en_title": "Antom 3-in-1 Transformer: A Payment Foundation Model",
+    "ko_title": "Antom 3-in-1 트랜스포머: 결제 파운데이션 모델"
+  },
+  "2611.32884": {
+    "base": "2611_레이지에이전트_신념대로-행동하는-RL",
+    "rank": "#2",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "87",
+    "en_title": "Lazy Agents Answer Against Their Own Beliefs: Reinforcement Learning with Verifiable Beliefs Teaches Them to Act on What They Believe",
+    "ko_title": "게으른 에이전트는 자기 신념에 반하여 답한다: 검증 가능한 신념 기반 강화학습으로 믿는 대로 행동하게 하기"
+  },
+  "2611.28947": {
+    "base": "2611_돈트슬립_컴퓨터-에이전트-선제적-인식",
+    "rank": "#3",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "84",
+    "en_title": "Don't Sleep, Keep Watch: Proactive Perception for Computer-Use Agents",
+    "ko_title": "잠들지 말고 지켜보라: 컴퓨터 사용 에이전트를 위한 선제적 인식"
+  },
+  "2611.30634": {
+    "base": "2611_룸어텐션_트랜스포머-재배선-회로",
+    "rank": "#4",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "84",
+    "en_title": "Rewirable Circuits in Transformers with Loom Attention",
+    "ko_title": "트랜스포머 속 재배선 가능한 회로: Loom Attention"
+  },
+  "2611.31205": {
+    "base": "2611_에이캡_비동기-코딩-에이전트-로봇제어",
+    "rank": "#5",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "61",
+    "en_title": "ACAP: Asynchronous Coding Agents for Efficient Robot Control",
+    "ko_title": "ACAP: 효율적인 로봇 제어를 위한 비동기 코딩 에이전트"
+  },
+  "2611.30962": {
+    "base": "2611_셀프이볼빙벤치_에이전트-평가환경-자가진화",
+    "rank": "#6",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "45",
+    "en_title": "Self-Evolving Evaluation Environments for Computer-Use Agents",
+    "ko_title": "컴퓨터 사용 에이전트를 위한 자가진화형 평가 환경"
+  },
+  "2611.28649": {
+    "base": "2611_에스마인드_다중뷰-기하-공간지능",
+    "rank": "#7",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "41",
+    "en_title": "S-Mind: Internalizing Multi-View Geometry for Spatial Intelligence",
+    "ko_title": "S-Mind: 공간 지능을 위한 다중 시점 기하학 내재화"
+  },
+  "2611.32554": {
+    "base": "2611_파트에이전트_3D-부품분할-전문가통합",
+    "rank": "#8",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "33",
+    "en_title": "PartAgent: Agentic 3D Part Segmentation via Expert Integration and Closed-Loop Refinement",
+    "ko_title": "PartAgent: 전문가 통합과 폐루프 정제를 통한 에이전틱 3D 부품 분할"
+  },
+  "2611.25509": {
+    "base": "2611_링상테메드가드_의료LLM-가드레일-보고서",
+    "rank": "#9",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "30",
+    "en_title": "LingSante MedGuard Technical Report",
+    "ko_title": "LingSante MedGuard 기술 보고서"
+  },
+  "2611.33010": {
+    "base": "2611_미러테스트_거울이-깨는-로봇정책",
+    "rank": "#10",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "27",
+    "en_title": "Embodied AI Fails the Mirror Test: How a Simple Mirror Breaks Robot Policies",
+    "ko_title": "임바디드 AI, 거울 테스트에 실패하다: 간단한 거울이 로봇 정책을 무너뜨리는 방법"
+  },
+  "2611.32183": {
+    "base": "2611_씽크모프SSL_멀티모달추론-프리텍스트태스크",
+    "rank": "#11",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "21",
+    "en_title": "ThinkMorph-SSL: Scaling Interleaved Multimodal Reasoning with Pretext Tasks",
+    "ko_title": "ThinkMorph-SSL: 프리텍스트 태스크로 인터리브드 멀티모달 추론 스케일링"
+  },
+  "2611.32736": {
+    "base": "2611_큐원이미지HD_고해상도-자기회귀-확산-생성",
+    "rank": "#12",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "19",
+    "en_title": "Qwen-Image-HD: Autoregressive Diffusion for High Definition Image Generation",
+    "ko_title": "Qwen-Image-HD: 고해상도 이미지 생성을 위한 자기회귀 확산"
+  }
+}

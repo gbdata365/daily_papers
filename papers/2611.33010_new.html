@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>임바디드 AI</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#10 · Daily Papers 2026-11-26</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 27</span>
+    </div>
+    <h1 class="article-title">Embodied AI Fails the Mirror Test: How a Simple Mirror Breaks Robot Policies</h1>
+    <p class="article-title-ko">임바디드 AI, 거울 테스트에 실패하다: 간단한 거울이 로봇 정책을 무너뜨리는 방법</p>
+    <p class="article-sub">동물의 거울 자기인식 테스트에서 아이디어를 얻어, 로봇 조작 정책들이 거울에 비친 반사 이미지가 있는 장면에서도 물리적 대상을 제대로 다룰 수 있는지 검증한 결과, 거울이 있으면 다섯 가지 최신 정책 모두 성공률이 크게 떨어짐을 보인 벤치마크 연구.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.33010" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.33010" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Embodied AI Fails the Mirror Test: How a Simple Mirror Breaks Robot Policies</li>
+<li><strong>저자</strong>: Xuanchen Liu, Hejun Zhang(공동 1저자) 등 Peking University 연구진 (교신저자 Weihao Yu)</li>
+<li><strong>출처</strong>: arXiv:2611.33010v1 [cs.CV] (2026-11-24)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/iPPLab/robodojo-mirror">GitHub (RoboDojo-Mirror)</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.33010">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>동물의 거울 자기인식 테스트에서 아이디어를 얻어, 로봇 조작 정책들이 거울에 비친 반사 이미지가 있는 장면에서도 물리적 대상을 제대로 다룰 수 있는지 검증한 결과, 거울이 있으면 다섯 가지 최신 정책 모두 성공률이 크게 떨어짐을 보인 벤치마크 연구.</p>
+<h2>배경 및 문제의식</h2>
+<p>Vision-Language-Action(VLA) 모델, World Action Model, 에이전트형 정책 등 최근 범용 로봇 정책들은 다양한 조작 과제에서 성능을 높여왔지만, 시점·조명·배경 변화에 대한 기존 강건성(robustness) 벤치마크들은 "거울 반사"라는 상황을 다루지 않았다. 거울 반사는 외형을 바꾸는 것이 아니라, 실제 물체와 기하학적으로 연결된 가짜 조작 대상을 장면에 추가하는 특수한 교란이기 때문에 기존 평가로는 포착되지 않는 취약점일 수 있다는 것이 저자들의 문제의식이다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>기존 RoboDojo 벤치마크를 확장하여, 과제 목표와 성공 기준은 그대로 유지한 채 '무(無) 거울 / 단일 거울 / 이중 거울 / 거울 테이블' 네 가지 조건을 비교할 수 있는 <strong>RoboDojo-Mirror</strong> 벤치마크를 제안했다.</li>
+<li>거울이 단순한 물리적 장애물로서의 효과만 내는 것은 아닌지 통제하기 위해, 반사하지 않는 동일 크기 패널(panel)과 비교하는 대조 실험을 설계했다.</li>
+<li>실패를 '충돌', '유령 타겟팅(반사된 물체를 향한 행동)', '공간 오판(실제 물체 위치 오인식)' 세 범주로 분류하는 진단 체계를 제시했다.</li>
+</ul>
+<h2>방법론</h2>
+<p>Vision-Language-Action 모델(WALL-OSS-1.0-Lite), World Action Model(VPP2, Rex-M1 Preview), 에이전트형 정책(Awomo-0.5, GPT-6-Astra 기반 Astra) 등 서로 다른 접근을 대표하는 5개 정책을 동일한 체크포인트·관측/행동 인터페이스 하에서 평가했다. 8개 공유 과제에 대해 레이아웃과 정책 시드를 조건 간에 고정하여, 각 정책의 '무 거울' 기준선 대비 성능 변화를 측정했다. 이와 함께 (1) 거울 테이블 위에서 물체 집기, (2) 반사와 연결된 물체 밀기, (3) 메인 카메라가 가려진 상태에서 반사만으로 물체와 상호작용하기라는 세 가지 세부 진단 시나리오를 추가로 설계해, 과제 성공률뿐 아니라 궤적·접촉 데이터까지 함께 분석했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>시뮬레이션 실험에서 5개 정책 모두 거울이 있는 세 조건에서 성공률이 평균 10.8~56.7퍼센트포인트(pp) 하락했고, 거울 테이블 조건에서는 최대 62.5pp까지 떨어졌다. 반사 없는 대조 패널과 비교했을 때도 거울 특이적 실패의 50~88%는 로봇과 패널의 직접 접촉 없이 발생해, 단순 충돌만으로는 성능 저하를 설명할 수 없음을 보였다. 세부 진단에서는 반사된 물체를 향해 움직이는 '유령 타겟팅'과 실제 물체 위치를 잘못 추정하는 '공간 오판' 패턴이 반복적으로 관찰되었다. π0.5와 FastWAM을 이용한 실제 로봇(Franka) 실험에서도 같은 경향이 재현되어, π0.5는 거울 없음 77.5%에서 거울 테이블 조건 27.5%로, FastWAM은 60.0%에서 10.0%로 성공률이 크게 하락했다.</p>
+<h2>한계점</h2>
+<p>실제 로봇 실험은 과제당 시행 수가 적은 소규모(정책·조건별 10회 내외) 설정으로 수행되어 통계적 안정성에 제약이 있다. 또한 평가가 RoboDojo 기반의 특정 과제 집합과 5개 정책에 한정되어 있어, 더 다양한 로봇 플랫폼이나 정책 아키텍처로 일반화되는지는 논문에 명시되지 않음. 거울 안내 문구(prompt)를 제공해도 일관된 성능 개선이 나타나지 않은 원인에 대한 구체적 분석도 제한적으로만 다루어졌다.</p>
+<h2>시사점</h2>
+<p>이 연구는 거울 반사가 기존 강건성 벤치마크들이 다루지 않았던 독자적인 실패 유형을 드러낸다는 것을 보여주며, 시각 관측을 물리적 행동으로 연결하는 과정에서 로봇 정책들이 공통적으로 가진 취약점을 드러낸다. 저자들은 반사를 인식하고 대응하는 능력(reflection-aware evaluation)을 임바디드 AI 평가의 새로운 기준으로 제안하며, 이는 실내 환경에 거울·유리 등 반사 표면이 흔하다는 점에서 실용적 중요성을 가진다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.33010" target="_blank" rel="noopener">huggingface.co/papers/2611.33010</a> · 2026-11-26</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

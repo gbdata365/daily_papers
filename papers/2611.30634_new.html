@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>트랜스포머 속 재배선 가능한 회로</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#4 · Daily Papers 2026-11-26</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 84</span>
+    </div>
+    <h1 class="article-title">Rewirable Circuits in Transformers with Loom Attention</h1>
+    <p class="article-title-ko">트랜스포머 속 재배선 가능한 회로: Loom Attention</p>
+    <p class="article-sub">트랜스포머가 토큰마다 "어떤 헤드의 출력을 읽고 쓸지"를 동적으로 선택하도록 하는 Loom Attention을 제안해, 3배 이상의 연산량으로 학습한 기존 트랜스포머 및 최근 잔차 스트림(residual-stream) 기법들과 맞먹는 성능을 2~4%의 추가 연산만으로 달성한 LoomFormer 아키텍처.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.30634" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.30634" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Rewirable Circuits in Transformers with Loom Attention</li>
+<li><strong>저자</strong>: Da Xiao, Qingye Meng, Shengping Li, Xingyuan Yuan (Beijing University of Posts and Telecommunications, ColorfulClouds Technology)</li>
+<li><strong>출처</strong>: arXiv:2611.30634v2 [cs.LG] (2026-11-23)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/Caiyun-AI/LoomFormer">GitHub: LoomFormer</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.30634">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>트랜스포머가 토큰마다 "어떤 헤드의 출력을 읽고 쓸지"를 동적으로 선택하도록 하는 Loom Attention을 제안해, 3배 이상의 연산량으로 학습한 기존 트랜스포머 및 최근 잔차 스트림(residual-stream) 기법들과 맞먹는 성능을 2~4%의 추가 연산만으로 달성한 LoomFormer 아키텍처.</p>
+<h2>배경 및 문제의식</h2>
+<p>트랜스포머의 어텐션 헤드들은 잔차 스트림(residual stream)을 통해 서로 연결되어 회로(circuit)를 이루는데, 한 헤드(writer)가 쓴 정보를 다른 헤드(reader)가 읽는 이 연결 방식(virtual weight)은 학습이 끝나면 고정되어 토큰마다 바뀌지 않는다. 즉 가로 방향(토큰 간) 어텐션은 입력에 따라 동적으로 바뀌지만, 세로 방향(레이어 간, 헤드 간) 연결은 정적이라서, 입력마다 다른 회로가 필요한 작업에서는 모든 연결을 항상 켜 둔 채 경쟁시키는 비효율이 발생한다. HC/mHC, MUDDFormer, Attention Residuals 같은 최근 기법들이 레이어 단위로 세로 흐름을 입력에 따라 바꾸려 했지만, 여전히 레이어의 은닉 상태(여러 헤드 출력이 이미 합쳐진 상태)를 거쳐야 해서 특정 헤드를 선별적으로 골라 읽거나 쓸 수는 없었다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>헤드가 토큰 간 어텐션(가로, horizontal)을 선택하듯 이전 헤드들 중 어디를 읽을지(세로, vertical)도 토큰마다 선택할 수 있게 하는 Loom Attention을 제안.</li>
+<li>세로 어텐션을 토큰별 행렬 메모리(matrix memory) M에 대한 정규화·게이팅된 선형 어텐션으로 효율적으로 구현해, 벡터 스트림(제어)과 행렬 스트림(내용)을 분리하는 듀얼 스트림 아키텍처 LoomFormer를 설계.</li>
+<li>트랜스포머의 와이어링(wiring)이 본질적으로 "노드-게이팅(node-gated)"되어 랭크(rank)가 낮게 제한된다는 것을 이론적으로 정식화하고, Loom Attention이 이 한계를 어떻게 완화하는지 분석.</li>
+<li>여러 모델 규모와 학습 토큰 예산에서 언어 모델링·다운스트림 과제 전반에 걸쳐 체계적으로 검증.</li>
+</ul>
+<h2>방법론</h2>
+<p>각 헤드는 작성자(writer, 출력을 잔차 스트림에 더하는 주체)와 읽기자(reader, query/key/value로 읽는 주체) 역할을 한다. 기존 트랜스포머는 이 writer-reader 연결(virtual weight)이 정적이지만, 논문은 토큰별 스칼라 가중치로 구성된 와이어링 행렬 C를 도입해 연결 강도를 동적으로 바꾼다. 모든 이전 헤드 출력에 대한 완전한 세로 어텐션은 비용이 크므로, 이를 토큰마다 유지되는 행렬 메모리 M에 대한 정규화·게이팅된 선형 어텐션(linear attention)으로 근사한다. 각 헤드는 M의 특정 슬롯을 읽고 써서 query/key/value를 얻으며, 이 결과로 가로 방향 표준 어텐션을 수행하고 그 출력이 다시 M에 쓰여 이후 헤드들이 세로로 읽을 수 있게 한다. 벡터 스트림(기존 잔차 스트림)은 "어떤 슬롯을 읽고 쓸지"와 "어떤 토큰에 주목할지"를 결정하는 제어 역할을, 행렬 스트림 M은 토큰 간 이동되는 내용을 담는 역할을 맡아 두 스트림이 직교적으로 결합된다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Pile 데이터셋으로 Medium(432M)·Large(778M)·XL(1.4B) 세 규모에서 학습하며, Transformer++ 백본 위에서 DHC, mHC, AttnRes, MUDDFormer 등 최근 잔차 스트림 기법들과 비교했다. LoomFormer는 모든 규모에서 가장 낮은 검증 손실을 기록했고, Transformer++ 기준 3.1~3.25배, 다른 베이스라인 기준 1.73~2.76배의 연산량에 해당하는 성능을 단 2.0~3.7%의 추가 FLOPs로 달성했다. 300B 토큰으로 학습한 Pythia 스케일 실험에서는 LoomPythia-2.8B가 Pythia-2.8B 대비 평균 정확도를 0-shot +3.6, 5-shot +4.3 끌어올려 mHC-Pythia-2.8B(+2.5/+2.6)의 약 1.6배 이득을 보였고, 5-shot 평균(61.6)은 Pythia-12B(60.8)를 넘어섰다. 메커니즘 분석에서는 LoomPythia의 동적 와이어링 랭크가 깊은 레이어로 갈수록 상승(최대 41.0)해 다른 기법들(최대 랭크 1~3)보다 훨씬 풍부한 회로 재배선을 보였고, 비-싱크(non-sink) 헤드 활성 비율도 74.4%로 Pythia(27.4%)·mHC-Pythia(30.6%)보다 크게 높았다. 어블레이션에서는 동적 읽기 쿼리(q_m)를 정적으로 고정하는 것이 동적 쓰기 키(k_m)를 고정하는 것보다 성능 손실이 더 컸고, 행렬 메모리의 슬롯 수(d_k)가 작아도(d_k=16) DHC·MUDDFormer보다 우수한 성능을 유지했다.</p>
+<h2>한계점</h2>
+<p>논문에 별도의 "한계점" 절은 없으나, 결론에서 저자들은 행렬 메모리가 깊이(depth) 방향으로만 작동하므로 Loom Attention을 시퀀스 방향의 선형/희소 어텐션과 결합하는 것이 향후 과제임을 밝히고 있어, 현재 구현은 토큰 길이 방향의 효율화는 다루지 않는다. 또한 실험은 최대 수십억 파라미터·300B 토큰 규모에 한정되어 있어 초대형 모델로의 확장성은 추가 검증이 필요하다.</p>
+<h2>시사점</h2>
+<p>세로(레이어 간) 연결과 가로(토큰 간) 어텐션을 분리된 것으로 다루던 기존 관점을 벗어나 둘을 하나의 어텐션 메커니즘으로 통합함으로써, 적은 추가 연산으로 모델의 표현력과 학습 효율을 크게 높일 수 있음을 보여준다. 헤드 단위의 세밀한 동적 라우팅이 레이어 단위의 동적 기법보다 메모리 사용 효율이 높다는 결과는, 차세대 파운데이션 모델 아키텍처 설계에서 "회로 재배선 가능성"이 중요한 설계축이 될 수 있음을 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.30634" target="_blank" rel="noopener">huggingface.co/papers/2611.30634</a> · 2026-11-26</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

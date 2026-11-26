@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>HOG-WAM</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#9 · Daily Papers 2026-11-27</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 22</span>
+    </div>
+    <h1 class="article-title">HOG-WAM: Improving Visual Robustness through Future Gradient Prediction</h1>
+    <p class="article-title-ko">HOG-WAM: 미래 그래디언트 예측을 통한 시각적 강인성 개선</p>
+    <p class="article-sub">미래 프레임의 방향성 그래디언트(HOG)를 보조 학습 신호로 사용해, 월드-액션 모델(World-Action Model, WAM) 기반 로봇 조작 정책의 시각적 노이즈 강인성을 끌어올린 연구.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.34811" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.34811" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: HOG-WAM: Improving Visual Robustness through Future Gradient Prediction</li>
+<li><strong>저자</strong>: Boxuan Dong, Yupeng Qian 등 (Peking University, National University of Singapore)</li>
+<li><strong>출처</strong>: arXiv:2611.34811v1 [cs.CV] (2026-11-25)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/iPPLab/HOG-WAM">GitHub</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.34811">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>미래 프레임의 방향성 그래디언트(HOG)를 보조 학습 신호로 사용해, 월드-액션 모델(World-Action Model, WAM) 기반 로봇 조작 정책의 시각적 노이즈 강인성을 끌어올린 연구.</p>
+<h2>배경 및 문제의식</h2>
+<p>비전-언어-액션 정책과 월드-액션 모델(WAM)은 미래 관측을 예측하도록 학습되어 로봇 조작에 사용되지만, 이때 RGB 예측 목표는 색상·조명·질감 같은 외형 정보에 과도하게 묶여 있어 배포 환경에서 시각적 노이즈(조명 변화, 센서 노이즈 등)가 발생하면 정책 성능이 쉽게 흔들린다는 문제가 있다. 저자들은 외형 변화에 덜 민감하면서도 공간 구조를 명시적으로 드러내는 보조 학습 목표가 필요하다고 보았다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>색상 정보를 제거하고 지역적 경계의 방향 통계만 남기는 결정론적(deterministic) 미래 그래디언트 타깃(HOG)을 월드-액션 모델 학습에 도입.</li>
+<li>RGB, HOG, 액션을 다루는 세 개의 diffusion transformer(DiT) 모듈을 비대칭(asymmetric) 어텐션으로 결합해, 학습 시에만 HOG 모듈을 사용하고 추론 시에는 제거함으로써 기존 FastWAM의 RGB-to-액션 추론 구조를 그대로 유지.</li>
+<li>시뮬레이션 기반 시각 손상 벤치마크와 실제 로봇 실험을 통해, HOG를 RGB와 함께 보조 신호로 사용하는 것이 RGB를 HOG로 완전히 대체하는 것보다 우수함을 보이는 표현 비교(ablation) 결과 제시.</li>
+</ul>
+<h2>방법론</h2>
+<p>입력 프레임을 그레이스케일로 변환한 뒤 수평·수직 유한차분으로 그래디언트를 계산하고, 9개의 방향 빈(bin)과 8×8 셀, 2×2 블록 단위의 L2-Hys 정규화를 거쳐 HOG 래스터를 생성한다. 이 HOG 타깃을 예측하는 보조 HOG DiT 모듈이 RGB 특징을 비대칭 어텐션으로 읽어들이고, 그 손실이 RGB 백본을 함께 업데이트한다. 액션 예측은 HOG 토큰과 독립적으로 이루어지므로, 추론 시 HOG 모듈을 제거해도 학습된 RGB 표현에는 영향이 남는다. 언어 지시와 자기수용감각(proprioception) 정보는 세 모듈 모두에 크로스 어텐션으로 조건화된다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>RoboTwin 2.0을 확장한 시각 손상 벤치마크 'RoboTwin-Plus', LIBERO Plus, 그리고 4개의 Franka 실제 로봇 과제에서 평가했다. RoboTwin-Plus의 혼합 노이즈 환경에서 성공률이 FastWAM 대비 78.86%에서 82.86%로 상승했고, 깨끗한 환경에서는 비슷한 성능을 유지했다. LIBERO Plus에서는 전체 성공률이 74.49%에서 75.26%로, 특히 센서 노이즈 조건에서 74.14%에서 78.89%로 크게 개선되었다. 4개의 Franka 과제에서는 깨끗한 관측 조건의 평균 성공률이 40%에서 59%로, 노이즈가 있는 조건에서는 17%에서 24%로 상승했다. HOG로 RGB를 완전히 대체한 모델(RGB-to-HOG)과 비교한 표현 비교 실험에서는, RGB를 유지하면서 HOG를 보조 신호로 쓰는 방식이 배경·조명 변화에 대해 더 안정적이었다.</p>
+<h2>한계점</h2>
+<p>논문은 별도의 '한계점' 절을 두지 않았으나, 본문에서 다음을 언급한다: 센서 노이즈가 심한 입력에서 계산된 HOG 자체는 약한 신호가 되며, 깨끗한 프레임에서 계산한 HOG를 타깃으로 쓸 때 효과적이라는 점에서 그래디언트 타깃의 품질이 입력 노이즈 수준에 의존한다. 또한 실제 로봇 실험에서의 절대적 개선폭이 시뮬레이션 평균보다 크게 나타나, 두 환경 간 격차에 대한 추가 분석이 필요해 보인다.</p>
+<h2>시사점</h2>
+<p>미래 관측 예측을 활용하는 월드-액션 모델에서, 외형 정보를 압축하고 구조 정보만 남기는 보조 타깃(HOG)을 학습 전용으로 사용하는 전략이 추론 비용 증가 없이 시각적 강인성을 높일 수 있음을 보여준다. 이는 깊이·마스크·광학 흐름 등 다른 구조적 보조 신호를 탐구해 온 기존 연구들과 함께, '추론 시 제거 가능한 보조 예측 목표'라는 설계 원칙이 로봇 정책의 센서 노이즈 대응력을 높이는 범용적인 접근으로 확장될 수 있음을 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.34811" target="_blank" rel="noopener">huggingface.co/papers/2611.34811</a> · 2026-11-27</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>닥심</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#8 · Daily Papers 2026-11-27</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 26</span>
+    </div>
+    <h1 class="article-title">DocSEAM: Bidirectional Cross-Page Encoding for Multi-Page Document Understanding</h1>
+    <p class="article-title-ko">닥심: 멀티페이지 문서 이해를 위한 양방향 교차-페이지 인코딩</p>
+    <p class="article-sub">멀티페이지 문서 비전-언어 모델(VLM)이 각 페이지를 독립적으로 인코딩하면서 생기는 "페이지 경계 단절" 문제를, 인접 페이지 정보를 미리 섞어주는 경량 모듈 DocSEAM으로 해결해 10B급 이하 오픈웨이트 모델 중 최고 성능을 달성했다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.34420" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.34420" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: DocSEAM: Bidirectional Cross-Page Encoding for Multi-Page Document Understanding</li>
+<li><strong>저자</strong>: Hoang-Nhat Nguyen, Chen Change Loy (Nanyang Technological University S-Lab, Synvo AI)</li>
+<li><strong>출처</strong>: arXiv:2611.34420v1 [cs.CV] (2026-11-25)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://mossbee.github.io/projects/DocSEAM">DocSEAM</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.34420">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>멀티페이지 문서 비전-언어 모델(VLM)이 각 페이지를 독립적으로 인코딩하면서 생기는 "페이지 경계 단절" 문제를, 인접 페이지 정보를 미리 섞어주는 경량 모듈 DocSEAM으로 해결해 10B급 이하 오픈웨이트 모델 중 최고 성능을 달성했다.</p>
+<h2>배경 및 문제의식</h2>
+<p>기존 멀티페이지 문서 VLM은 각 페이지를 비전 인코더로 독립적으로 인코딩한 뒤 시각 토큰을 이어 붙여 언어모델(LLM)에 넣는다. 그러나 표나 문단이 페이지 경계를 넘어 이어지는 경우가 흔해, 비전 인코더가 다음 페이지 내용을 보지 못한 채 표현을 확정해버리면 LLM이 이미 형성된(손실된) 토큰으로부터 불연속성을 뒤늦게 보완해야 한다. 저자들은 동일한 문서를 다시 페이지 분할(re-pagination)해 경계가 표·문단 중간을 자르도록 바꾸는 진단 실험을 설계했고, 이 경우 기존 페이지 단위 VLM의 성능이 의미 내용은 그대로임에도 뚜렷하게 하락함을 보였다(이를 "페이지 분할 민감성"이라 명명).</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>페이지 분할 민감성을 기존 문서 VLM의 약점으로 규명하고, 이를 정량적으로 측정하는 통제된 재분할(re-pagination) 진단법을 설계했다.</li>
+<li>DocSEAM(Document Selective Enrichment via Anchored Masking)을 제안: 사전학습된 비전 인코더와 LLM 사이에 삽입되는 경량 모듈로, 중심-anchored 마스킹 셀프어텐션과 방향성 salience 게이트를 통해 인접 페이지 간 지역적 문맥을 시각 표현에 주입한다.</li>
+<li>DocSEAM을 먼저 지도학습 기반 cross-page warm-up으로 학습시킨 뒤 고정(freeze)하고 downstream 멀티페이지 파인튜닝을 진행하는 2단계 학습 전략을 설계했다.</li>
+</ol>
+<h2>방법론</h2>
+<p>각 페이지 p에 대해 이전 페이지(p-1), 자신(p), 다음 페이지(p+1)로 구성된 로컬 triplet을 구성하고, 이를 이어붙인 뒤 소수의 셀프어텐션 레이어를 적용한다. 이때 중심 페이지만 양쪽 이웃에 접근할 수 있고 이전·다음 페이지끼리는 직접 상호작용하지 못하도록 막는 "중심-anchored 어텐션 마스크"를 사용해, 모든 교차-페이지 정보가 중심 페이지를 거쳐 흐르게 하고 인접하지 않은 페이지 간 정보 누출을 방지한다. 또한 토큰별로 4개의 학습 가능한 "방향성 salience 게이트"를 두어 교차-페이지 어텐션이 유용한 지점을 모델이 스스로 학습하게 한다. 이 모듈은 약 2억3500만 개 파라미터(9B 백본의 약 2.6%)를 추가하며, 비전 인코더 자체나 시각 토큰 수는 바꾸지 않고, no-op으로 초기화되어 학습이 기존 사전학습 모델의 "안전한" 상태에서 시작되도록 한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>Qwen2.5-VL-7B, Qwen3.5-9B, Gemma3-4B 등 4B~9B 규모의 백본에 DocSEAM을 적용해 MMLongBench-Doc, DUDE, LongDocURL, SlideVQA, MP-DocVQA 등 5개 멀티페이지 문서 VQA 벤치마크에서 평가했다. 9B 파라미터 모델 기준 DocSEAM은 10B 이하 오픈웨이트 모델 중 최고 성능(SOTA)을 기록했으며, 교차-페이지 범위(span) 위치 추정 정확도를 SFT 베이스라인보다 20.8점 개선했다. 통제된 재분할 실험에서는 구조를 보존하는 분할과 구조를 깨는 분할 간 성능 차이를 MMLongBench-Doc과 LongDocURL에서 각각 0.8점, 0.7점까지 줄여 페이지 분할 민감성을 크게 완화했다. 다만 효과는 백본과 과제에 따라 차이가 있었는데, 예를 들어 Gemma3-4B 백본에서는 SlideVQA 성능이 SFT 대비 소폭 하락했고 MMLongBench-Doc에서는 제로샷 대비 개선이 미미했다.</p>
+<h2>한계점</h2>
+<p>백본 실험은 4B, 7B, 9B 규모로만 수행되었으며 더 큰 백본에는 적용·검증되지 않았다. 또한 DocSEAM의 효과는 백본과 과제 조합에 따라 편차가 있어, 일부 조합(예: 작은 백본 + 특정 벤치마크)에서는 개선이 제한적이거나 기존 SFT 대비 이점이 작았다.</p>
+<h2>시사점</h2>
+<p>비전 인코더 단계에서 인접 페이지 간 지역적 문맥을 미리 섞어주는 것이, 언어모델에만 교차-페이지 추론을 전적으로 의존하는 기존 방식보다 더 견고한 멀티페이지 문서 이해를 가능하게 한다는 점을 보여준다. 시각 토큰 수를 늘리지 않고도 적용 가능한 경량 모듈 설계는 실제 문서 이해 파이프라인에 비교적 쉽게 통합될 수 있는 실용적 방향을 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.34420" target="_blank" rel="noopener">huggingface.co/papers/2611.34420</a> · 2026-11-27</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

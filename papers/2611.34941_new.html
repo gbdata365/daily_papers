@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>비디오 없이 비디오 편집 능력 개선 및 확장하기</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#6 · Daily Papers 2026-11-27</span>
+      <span class="cat-tag">생성모델</span>
+      <span class="upvote-tag">▲ 43</span>
+    </div>
+    <h1 class="article-title">Improving and Expanding Video Editing Capabilities Without Videos</h1>
+    <p class="article-title-ko">비디오 없이 비디오 편집 능력 개선 및 확장하기</p>
+    <p class="article-sub">영상 편집용 학습 데이터(쌍을 이룬 원본-편집 비디오) 없이, 고정된 이미지 편집 모델의 안내만으로 사전학습된 비디오 편집기를 더 잘 편집하게 만들고 새로운 편집 능력(동작·표정·몸짓·조명 변경)까지 갖추게 하는 방법 I2VT를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.34941" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.34941" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Improving and Expanding Video Editing Capabilities Without Videos</li>
+<li><strong>저자</strong>: Ji Xie, Yanhao Jia, Xiangpeng Yang, Martin Q. Ma, Sihan Xu, Erik Cambria, Louis-Philippe Morency (Carnegie Mellon University, Nanyang Technological University, University of Technology Sydney, University of Michigan)</li>
+<li><strong>출처</strong>: arXiv:2611.34941v1 [cs.CV] (2026년 11월 25일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://i2v-transfer.github.io">i2v-transfer.github.io</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.34941">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>영상 편집용 학습 데이터(쌍을 이룬 원본-편집 비디오) 없이, 고정된 이미지 편집 모델의 안내만으로 사전학습된 비디오 편집기를 더 잘 편집하게 만들고 새로운 편집 능력(동작·표정·몸짓·조명 변경)까지 갖추게 하는 방법 I2VT를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>이미지 편집 모델은 다양한 지시를 정교하게 따를 수 있을 만큼 발전했지만, 비디오 편집 모델은 여전히 객체 제거 같은 기본적인 편집조차 중간 수준에 머물러 있고, 인물의 동작·표정·몸짓이나 장면 조명을 바꾸는 것처럼 비디오 제작에서 자주 필요한 편집은 특히 어려워한다. 이미지 편집기와 비디오 편집기가 동일한 플로우 매칭(flow matching) 목적함수와 유사한 디퓨전 트랜스포머(DiT) 구조, 심지어 동일한 VAE 잠재 공간을 공유하는 경우가 많음에도 이런 격차가 존재하는 주된 이유는 학습 데이터다. 지시를 영상 전체에 걸쳐 정확히 따르면서 무관한 영역은 그대로 둔 '원본-편집 비디오' 쌍을 대량으로 만들기가 어렵기 때문이다. 저자들은 "새로운 쌍 비디오 데이터 없이도 비디오 편집기의 기존 능력을 개선하고 새로운 작업으로 확장할 수 있는가?"라는 질문을 던진다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>I2VT(Image-to-Video Transfer) 제안</strong>: 아키텍처 변경이나 새 비디오 데이터 없이, 이미지 하나만으로 사전학습된 비디오 편집기를 효율적으로 개선·확장하는 후속 학습(post-training) 기법.</li>
+<li><strong>OpenVE++ 벤치마크 도입</strong>: 기존 OpenVE-Bench를 확장해 동작 변경, 표정 변경, 몸짓(전신 움직임) 변경, 장면 재조명이라는 네 가지 새로운 비디오 제작용 편집 과제를 추가.</li>
+<li><strong>세 가지 비디오 편집 모델에서 검증</strong>: I2VT로 학습한 모델들이 OpenVE-Bench와 OpenVE++ 모두에서 공개된 비디오 편집기 중 최고 수준(SOTA) 성능을 달성함을 실험적으로 확인.</li>
+</ul>
+<h2>방법론</h2>
+<p>핵심 아이디어는 이미지가 결국 '한 프레임짜리 비디오'라는 점에 착안해, 비디오 편집기(학생, student)가 이미지 편집기(교사, teacher) 역할을 흉내 내도록(role-play) 학습시키는 것이다. 학생은 소스 이미지 하나를 한 프레임 비디오로 취급해 편집을 시도하고, 고정된(frozen) 이미지 편집 교사가 학생 자신의 디노이징(denoising) 궤적 위에서 각 단계마다 예측해야 할 속도(velocity)를 알려준다. 이는 교사가 미리 만들어둔 편집 결과로 학생을 미세조정하는 '오프라인 증류(offline distillation)' 방식과 달리, 학생이 자기 자신의 롤아웃(rollout) 상태를 따라가며 온라인으로 지도받는 방식이다. 학습에는 OpenVE-3M에서 추출한 개별 이미지로 구성한 I2VT-17K 데이터셋을 사용했고, 교사로는 이미지 편집 모델 JoyAI-Image-Edit을, 학생으로는 Bernini-R-1.3B, Bernini-R-14B, VideoCoF 세 가지 비디오 편집기를 사용했다(모두 Wan 2.1 VAE 잠재공간 공유). LoRA로 200스텝만 미세조정하며, 1.3B 모델은 A100 GPU 20시간, 14B급 모델은 B300 GPU 20~25시간이 소요되는 경량 학습이다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>평가는 기존 기본 편집에 대한 OpenVE-Bench와 신규 과제에 대한 OpenVE++ 두 벤치마크에서 수행했으며, Gemini 2.5 Pro/Gemini 3.8 Flash를 이용한 의미·시각적 정합성 평가와 VBench 기반 시간적 일관성·모션 평가를 병행했다. 기본 편집에서 I2VT는 세 모델의 전체 점수를 각각 3.10→3.48, 2.29→3.19, 3.33→3.68로 끌어올렸다. 신규 과제(동작·표정·몸짓 변경)에서는 거의 수행하지 못했던 기본 모델들의 점수를 크게 향상시켰으며(예: VideoCoF 1.17→3.33), 오프라인 증류와 비교했을 때도 I2VT가 기본 편집과 신규 과제 모두에서 더 높은 종합 점수를 기록했다. 공개된 다른 비디오 편집기들과 비교한 결과 I2VT로 미세조정한 모델(I2VT-14B, I2VT-CoF 등)이 OpenVE-Bench와 OpenVE++ 모두에서 최고 수준의 성능을 보였다. VBench와 IVEBench로 측정한 시간적 일관성·모션 품질은 기본 모델과 대체로 비슷한 수준을 유지했으나, 일부 모델(Bernini-R-1.3B)은 지시 준수도가 오르는 대신 충실도(fidelity) 점수가 소폭 하락하는 트레이드오프도 관찰되었다.</p>
+<h2>한계점</h2>
+<p>논문에 별도의 "한계점" 절은 명시되어 있지 않다. 다만 본문에서 드러난 한계로, 일부 모델(Bernini-R-1.3B)은 새로운 편집 능력을 얻는 대신 영상 충실도(fidelity) 점수가 소폭 하락하는 트레이드오프가 나타났고, Local Add(특정 요소 추가) 같은 일부 세부 편집 유형에서는 개선 폭이 거의 없었다(VideoCoF 기준 2.50→2.51). 또한 전체 방법이 이미지 편집 교사 모델의 품질과 범위에 의존하므로, 교사 모델이 다루지 못하는 편집 유형으로의 확장성은 논문에 명시되지 않음.</p>
+<h2>시사점</h2>
+<p>짝지어진 비디오 학습 데이터 없이도 이미지 편집 모델의 지식을 비디오 편집기로 효율적으로 전이할 수 있음을 보여줌으로써, 비디오 편집 데이터 수집의 병목을 우회하는 실용적인 경로를 제시한다. 이미지와 비디오 생성 모델이 공유하는 아키텍처·잠재공간을 적극 활용하는 이런 접근은 향후 다른 모달리티 간 능력 전이(예: 이미지→3D, 이미지→오디오 등)에도 적용 가능한 일반적인 패턴으로 확장될 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.34941" target="_blank" rel="noopener">huggingface.co/papers/2611.34941</a> · 2026-11-27</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

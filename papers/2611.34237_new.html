@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>바이브비디오에이전트</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#5 · Daily Papers 2026-11-27</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 54</span>
+    </div>
+    <h1 class="article-title">VibeVideoAgent: Closing the Perceptual Loop for Code-Driven Video Generation</h1>
+    <p class="article-title-ko">바이브비디오에이전트: 코드 기반 영상 생성을 위한 지각 루프 완성</p>
+    <p class="article-sub">코딩 에이전트가 영상을 코드로 생성하는 과정(Vibe Video) 중간중간 자신의 초안을 직접 "보고" 검증할 수 있게 해주는 훈련이 필요 없는 지각(perception) 프레임워크를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.34237" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.34237" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: VibeVideoAgent: Closing the Perceptual Loop for Code-Driven Video Generation</li>
+<li><strong>저자</strong>: Xuanyu Zheng, Luoyuan Zhang, Yancheng Long, Haoyang Xu 등 (KlingAI Research)</li>
+<li><strong>출처</strong>: arXiv:2611.34237v1 [cs.CV] (2026년 11월 25일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.34237">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>코딩 에이전트가 영상을 코드로 생성하는 과정(Vibe Video) 중간중간 자신의 초안을 직접 "보고" 검증할 수 있게 해주는 훈련이 필요 없는 지각(perception) 프레임워크를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>코딩 에이전트에게 자연어 브리핑과 소재를 주고 HTML/Canvas, Remotion, Manim, FFmpeg 등으로 렌더링 프로그램을 작성하게 하는 "코드 기반 영상 생성(Vibe Video)"은 타이포그래피·데이터 시각화·멀티샷 구성·오디오-비디오 동기화를 정밀하게 제어할 수 있다는 장점이 있다. 그러나 프로그램이 오류 없이 종료되어도 인물이 가방을 손에 들고 있어야 하는데 들지 않거나, 카메라가 주인공을 벗어나거나, 내레이션이 음악과 어긋나는 등 "조용한 지각적 결함"은 런타임 오류로 드러나지 않는다. 또한 렌더링된 프레임과 오디오를 그대로 코딩 에이전트의 맥락(context)에 넣으면 맥락이 급격히 비대해지고, 완성된 최종 영상만 검토하면 초기 설계 실수가 전체 재작업으로 이어지는 문제가 있다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>코딩 맥락과 분리된(decoupled) 단명(short-lived) 지각 호출을 통해 원본 미디어를 코딩 맥락에 넣지 않고도 압축된 근거 기반 "발견(Findings)"만 반환하는 훈련 불필요 아키텍처.</li>
+<li>소스 클록·발췌 클록·필름 타임라인의 세 가지 시간축을 통합한 멀티클록 미디어 표현과, 거친-정밀 탐색(describe_media, locate_event, inspect_segment, transcribe_speech), 요구사항 검증(check_requirement), 참조/이전 수정본과의 비교(compare_media), 모델 호출 없는 신호 프로빙(probe_media) 등 7개의 원시 기능(primitive).</li>
+<li>브리핑에서 인용된 제약을 순서가 있는 제작 단계로 연결하고, 가장 위험한 결정을 최소 프리뷰로 먼저 테스트하는 경량 단계별 프로토콜(plan_production).</li>
+<li>Claude Opus 5.5, Claude Sonnet 5.5, GPT-6 Astra 세 개의 코딩 모델에 대해 VibeVideoBench 239개 전체 과제로 평가.</li>
+</ol>
+<h2>방법론</h2>
+<p>VibeVideoAgent는 Model Context Protocol(MCP)을 통해 Claude Code, Codex CLI 같은 네이티브 에이전틱 코딩 CLI에 연결된다. 지각 모델은 Gemini 3.8 Flash로 고정되며, 코딩 에이전트는 원본 프레임/오디오에 직접 접근하지 못하도록 PreToolUse 훅으로 차단되고, 모든 지각은 7개의 감사 가능한 원시 기능을 통해서만 이루어진다. 각 발견은 판정(verdict), 시간 구간, 바운딩 박스, 소스 코드의 SHA-256 해시와 함께 감사 가능한 "발견 원장(Finding ledger)"에 기록된다. 제작은 계획 단계 → 최소 프리뷰 → 러프컷 조립 → 표적 수정 → 최종 검증의 단계별 프로토콜을 따른다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>12개 카테고리, 239개 과제로 구성된 VibeVideoBench에서 Gemini 3.8 Flash와 Gemini 4 Argon 두 심판 모델의 평균으로 L1(기술 규격 준수), L2(수천 개 이진 루브릭 통과율), L3(시각 품질·미학·내용 논리·타이밍·오디오 동기화 등 5개 지각 차원 평균)를 측정했다. VibeVideoAgent를 적용하면 L3 평균이 Claude Opus 5.5는 4.03에서 4.43으로(+0.40), GPT-6 Astra는 4.03에서 4.27로(+0.24), Claude Sonnet 5.5는 3.97에서 4.10으로(+0.13) 상승했으며, Opus 5.5의 L2는 98.87%에서 99.35%로 올랐다. 특히 오디오-비주얼 동기화(AQ)에서 최대 +0.56의 개선이 나타났다. 36개 과제로 구성된 진단 서브셋에서의 구성요소별 제거 실험(ablation) 결과, check_requirement 제거 시 루브릭 정확도가, compare_media 제거 시 수정 검증률이, probe_media 제거 시 재생 가능성(L1)이, 단계별 프로토콜 제거 시 프리뷰 게이트 준수율이 각각 크게 저하되어 모든 구성요소가 서로 다른 측면에서 기여함을 보였다. 또한 원본 미디어를 코딩 맥락에 넣지 않음으로써 저장되는 발견은 평균 0.3k~1.4k 토큰에 불과해 맥락 비대화 문제를 크게 줄였다.</p>
+<h2>한계점</h2>
+<p>지각은 최대 16fps의 제한된 프레임율과 선택된 구간만을 샘플링하므로, 검사되지 않은 구간의 미세한 결함은 놓칠 수 있다. 전후 비교는 증상이 변화했음을 보여줄 뿐 특정 코드 수정이 원인임을 인과적으로 증명하지는 못하며, 공유된 애니메이션 헬퍼에 대한 수정이 검사되지 않은 다른 장면에 영향을 줄 수 있다. 또한 외부 지각 모델(Gemini 3.8 Flash)이 밀집된 중첩 텍스트나 정밀한 3D 깊이 순서를 잘못 읽을 수 있으며, 중간 렌더링 호출이 추가 연산과 지연시간을 유발하고, 상용 API의 동작이 공급자 업데이트에 따라 변할 수 있다는 한계도 있다.</p>
+<h2>시사점</h2>
+<p>이 연구는 코딩 에이전트의 긴 맥락을 소모하지 않으면서도 생성 중간 산물에 대한 세밀한 지각 피드백을 제공하는 설계가, 특정 렌더링 엔진에 종속되지 않고도 다양한 코드 기반 생성 작업(3D 장면, 웹 인터페이스, 오디오 파이프라인 등)에 일반화될 수 있음을 보여준다. 에이전트가 국소적으로(지엽적으로) 수정할수록 루브릭 준수와 지각적 품질이 함께 향상된다는 관찰은, 향후 에이전트의 수정 범위를 제어하는 전략이 코드 기반 생성 품질 개선의 핵심 변수가 될 수 있음을 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.34237" target="_blank" rel="noopener">huggingface.co/papers/2611.34237</a> · 2026-11-27</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

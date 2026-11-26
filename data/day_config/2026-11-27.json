@@ -1,0 +1,110 @@
+{
+  "2611.34849": {
+    "base": "2611_리얼투심랩_실제-시뮬레이션-전환-통합-플랫폼",
+    "rank": "#1",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "101",
+    "en_title": "Real2SimLab: A Unified Platform for Real-to-Simulation Transfer",
+    "ko_title": "Real2SimLab: 실제-시뮬레이션 전환을 위한 통합 플랫폼"
+  },
+  "2611.34575": {
+    "base": "2611_세이지메드_의료-멀티모달-스케일링",
+    "rank": "#2",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "84",
+    "en_title": "Sage-Med: Scaling Medical Multimodal Intelligence",
+    "ko_title": "세이지메드: 의료 멀티모달 지능 스케일링"
+  },
+  "2611.34923": {
+    "base": "2611_몰트_루프혼합-어텐션-트랜스포머",
+    "rank": "#3",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "57",
+    "en_title": "Mixture-of-Loops Transformer",
+    "ko_title": "믹스처-오브-루프스 트랜스포머(MoLT)"
+  },
+  "2611.30844": {
+    "base": "2611_다이로모_동적-루프-MoE-디퓨전-트랜스포머",
+    "rank": "#4",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "55",
+    "en_title": "DyLoMo-DiT: Dynamic Looped Mixture-of-Experts Diffusion Transformers",
+    "ko_title": "DyLoMo-DiT: 동적 루프형 전문가 혼합(MoE) 디퓨전 트랜스포머"
+  },
+  "2611.34237": {
+    "base": "2611_바이브비디오에이전트_코드기반-영상생성-인지루프",
+    "rank": "#5",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "54",
+    "en_title": "VibeVideoAgent: Closing the Perceptual Loop for Code-Driven Video Generation",
+    "ko_title": "바이브비디오에이전트: 코드 기반 영상 생성을 위한 지각 루프 완성"
+  },
+  "2611.34941": {
+    "base": "2611_아이투브이티_이미지로-배우는-비디오-편집",
+    "rank": "#6",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "43",
+    "en_title": "Improving and Expanding Video Editing Capabilities Without Videos",
+    "ko_title": "비디오 없이 비디오 편집 능력 개선 및 확장하기"
+  },
+  "2611.33144": {
+    "base": "2611_파이루아덱스_코딩에이전트-양손-손재주-조작-정책",
+    "rank": "#7",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "43",
+    "en_title": "PyRUA-Dex: Learning Programmatic Policies for Dexterous Bimanual Manipulation with Coding Agents",
+    "ko_title": "파이루아덱스: 코딩 에이전트를 통한 양손 손재주 조작을 위한 프로그래매틱 정책 학습"
+  },
+  "2611.34420": {
+    "base": "2611_닥심_페이지경계-양방향-인코딩-문서이해",
+    "rank": "#8",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "26",
+    "en_title": "DocSEAM: Bidirectional Cross-Page Encoding for Multi-Page Document Understanding",
+    "ko_title": "닥심: 멀티페이지 문서 이해를 위한 양방향 교차-페이지 인코딩"
+  },
+  "2611.34811": {
+    "base": "2611_호그왐_미래그래디언트-예측-시각강인성",
+    "rank": "#9",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "22",
+    "en_title": "HOG-WAM: Improving Visual Robustness through Future Gradient Prediction",
+    "ko_title": "HOG-WAM: 미래 그래디언트 예측을 통한 시각적 강인성 개선"
+  },
+  "2611.34466": {
+    "base": "2611_에고유즈벤치_1인칭-맥락-변화-컴퓨터-에이전트-벤치마크",
+    "rank": "#10",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "19",
+    "en_title": "EgoUseBench: Benchmarking Computer-Use Agents under Evolving First-Person Contexts",
+    "ko_title": "에고유즈벤치: 1인칭 맥락 변화에 따른 컴퓨터 사용 에이전트 평가"
+  },
+  "2611.33457": {
+    "base": "2611_플레이투이볼브_놀이성-피드백-기반-게임-자동개발",
+    "rank": "#11",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "18",
+    "en_title": "Playfulness as Feedback for Agentic Game Development",
+    "ko_title": "놀이성을 피드백으로 활용한 에이전틱 게임 개발"
+  },
+  "2611.34929": {
+    "base": "2611_픽셀매트_픽셀공간-디퓨전-이미지-매팅",
+    "rank": "#12",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "17",
+    "en_title": "High-Fidelity Image Matting with Pixel-Space Diffusion Transformers",
+    "ko_title": "픽셀공간 디퓨전 트랜스포머를 이용한 고정밀 이미지 매팅"
+  }
+}

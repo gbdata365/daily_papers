@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>세이지메드</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#2 · Daily Papers 2026-11-27</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 84</span>
+    </div>
+    <h1 class="article-title">Sage-Med: Scaling Medical Multimodal Intelligence</h1>
+    <p class="article-title-ko">세이지메드: 의료 멀티모달 지능 스케일링</p>
+    <p class="article-sub">의료용 멀티모달 대형언어모델(MLLM)이 범용 모델에 비해 시각 이해 능력에서 뒤처지는 문제를 데이터 큐레이션과 단계적 학습 커리큘럼으로 해결한 350억 파라미터(활성 30억) 모델 Sage-Med-Preview를 제시한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.34575" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.34575" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Sage-Med: Scaling Medical Multimodal Intelligence</li>
+<li><strong>저자</strong>: Sage-Med Team (Shanghai Artificial Intelligence Laboratory 등, Ming Hu·Cheng Tang·Wei Li 등 다수 공동 저자)</li>
+<li><strong>출처</strong>: arXiv:2611.34575v1 [cs.CV] (2026년 11월 25일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://sage-med-preview.github.io/">Sage-Med 프로젝트 웹사이트</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.34575">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>의료용 멀티모달 대형언어모델(MLLM)이 범용 모델에 비해 시각 이해 능력에서 뒤처지는 문제를 데이터 큐레이션과 단계적 학습 커리큘럼으로 해결한 350억 파라미터(활성 30억) 모델 Sage-Med-Preview를 제시한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>의료 영상 판독은 진단 의료의 핵심 병목이며, 전문의 부족은 특히 저소득·중간소득 국가에서 더 심각하다. 텍스트 기반 의료 LLM은 전문가 수준의 지식을 보여주지만, 이미지와 언어를 함께 다루는 멀티모달 모델은 특정 전문 분야별로 따로 개발되어 왔다. 저자들은 기존 의료 MLLM들이 범용 최신 MLLM보다 여러 의료 과제에서 성능이 떨어지며, 모델 크기를 키워도 주로 텍스트 능력만 개선되고 시각 인지 격차는 좁혀지지 않는다는 점을 실증적으로 보였다. 이는 (1) 고품질 의료 이미지-텍스트 데이터의 부족, (2) 범용 모델을 의료 전문 역량으로 전환하는 효과적 적응 방법의 부재, (3) 임상 워크플로우를 충분히 반영하지 못하는 평가 체계라는 세 가지 근본적 난제에서 비롯된다고 분석한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>대규모 의료 데이터 큐레이션</strong>: 200개 이상의 공개 데이터셋, 2,500만 건의 생물의학 문헌(PDF·책·웹페이지), 100개 이상의 비공개 자원으로부터 약 3억 2,270만 건의 단계별 후보 레코드를 수집하고, 사전학습(약 9,380만 건)·지도미세조정(약 6,960만 건)·강화학습(약 30만 건) 용도로 6단계 필터링 파이프라인을 통해 정제했다.</li>
+<li><strong>점진적 멀티모달 학습 커리큘럼</strong>: 의료 지식·시각-의미 정렬을 위한 지속 사전학습과 과제지향 중간학습, 3단계 지도미세조정(명령어 정렬→과제 다양화→선택적 정교화), 그리고 정책 조건부 난이도 샘플링과 독립 참조 재생(replay)을 결합한 적응적 강화학습(GRPO 기반)으로 구성된 학습 체계를 설계했다.</li>
+<li><strong>대규모 종합 평가</strong>: 공개 모델 68개와 독점 모델 9개를 포함한 77개 모델을 대상으로, 61개 공개 벤치마크와 14개 기관이 제공한 13개 비공개 다기관 벤치마크(총 238개 임상 과제, 40개 이상 모달리티)에서 비교 평가를 수행했다.</li>
+</ul>
+<h2>방법론</h2>
+<p>Sage-Med-Preview는 과학 멀티모달 기반모델인 Intern-S2-Preview(350억 파라미터, 활성 30억)에서 초기화되었다. 학습은 세 단계로 구성된다: ① 의료 적응(지속 사전학습 8,380만 건 + 과제지향 중간학습 2,810만 건), ② 3단계 점진적 지도미세조정(각각 610만/960만/620만 건, 난이도 높은 예제와 사고과정(chain-of-thought) 비중을 단계적으로 확대), ③ 적응적 강화학습(GRPO)으로, 정책이 학습됨에 따라 변하는 과제 난이도를 추정해 성공률이 중간 수준(정답 2~6개/8개 응답)인 과제에 샘플링을 집중시키고, 폐쇄형 과제는 검증기로, 개방형 과제(보고서 생성 등)는 심판 모델의 루브릭으로 보상을 산정했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>45개 핵심 공개 벤치마크를 포함한 61개 공개 벤치마크(31개는 멀티모달)와 13개 비공개 다기관 벤치마크에서 평가한 결과, 기존 의료 MLLM들은 31개 멀티모달 벤치마크 중 29개에서 범용 MLLM보다 낮은 성능을 보였다. Sage-Med-Preview는 해당 31개 벤치마크에서 평균 58.26%를 기록하여 오픈소스 의료 모델 Hulu-Med-235B-A22B(50.99%)와 범용 과학 모델 Intern-S2-Preview(52.24%, 베이스 모델)를 능가했으며, 독점 모델 GPT-6.2-Sol과 비교해 종합적 멀티모달 이해 및 보고서 생성에서는 더 우수하고 시각적 위치추정(grounding)에서는 비슷한 수준을 보였다. 비공개 다기관 벤치마크에서도 평균 57.72%로 모든 평가 모델 중 최고 성능(GPT-6.2-Sol 51.24%)을 기록했다. 다만 복잡한 의료 추론과 다단계 임상 워크플로우에서는 여전히 큰 과제가 남아있다고 밝혔다.</p>
+<h2>한계점</h2>
+<p>저자들이 직접 명시한 한계는 다음과 같다: (1) 더 넓은 파라미터·데이터·연산 규모에서의 정량적 스케일링 법칙을 체계적으로 규명하지 못했다. (2) 학습 단계마다 멀티모달 비율이 달라져(SFT 2·3단계 60%·53%, RL 80%) 모달리티 균형의 독립적 효과를 분리하기 어렵다. (3) 고정된 시각 토큰 예산 하에서 해상도 대 볼륨/시간적 프레임 커버리지의 상대적 기여도를 체계적으로 비교하지 못했다. (4) API 및 연산 비용 제약으로 모든 최신 프런티어 범용 모델을 전체 벤치마크에서 평가하지 못했으며, 일부 독점 모델은 벤치마크 일부에만 적용되었다.</p>
+<h2>시사점</h2>
+<p>이 연구는 의료 멀티모달 지능의 발전이 단순히 모델 크기나 데이터량 확대가 아니라 지도학습 품질, 모달리티 균형, 학습 커리큘럼의 정합성에 좌우된다는 점을 보여준다. 저자들은 향후 임상 도구, 반복적 검증, 구조화된 하네스를 갖춘 에이전트 프레임워크에 멀티모달 기반모델을 통합하는 방향이 범용 의료 멀티모달 지능으로 가는 유망한 경로라고 제안한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.34575" target="_blank" rel="noopener">huggingface.co/papers/2611.34575</a> · 2026-11-27</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

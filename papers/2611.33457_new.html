@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>놀이성을 피드백으로 활용한 에이전틱 게임 개발</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#11 · Daily Papers 2026-11-27</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 18</span>
+    </div>
+    <h1 class="article-title">Playfulness as Feedback for Agentic Game Development</h1>
+    <p class="article-title-ko">놀이성을 피드백으로 활용한 에이전틱 게임 개발</p>
+    <p class="article-sub">코딩 에이전트가 만든 게임이 '실행은 되지만 재미는 없는' 문제를 해결하기 위해, 에이전트가 직접 플레이테스트를 하고 그 '놀이성(playfulness)' 피드백을 근거로 기능 수정과 비주얼·게임플레이 개선을 반복하는 재귀적 게임 개발 프레임워크 Play2Evolve를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.33457" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.33457" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Playfulness as Feedback for Agentic Game Development</li>
+<li><strong>저자</strong>: Weijia Mao 등 (싱가포르국립대학교 Show Lab, 중국과학기술대학교)</li>
+<li><strong>출처</strong>: arXiv:2611.33457v1 [cs.CV] (2026년 11월 24일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://showlab.github.io/Play2Evolve/">Play2Evolve</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.33457">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>코딩 에이전트가 만든 게임이 '실행은 되지만 재미는 없는' 문제를 해결하기 위해, 에이전트가 직접 플레이테스트를 하고 그 '놀이성(playfulness)' 피드백을 근거로 기능 수정과 비주얼·게임플레이 개선을 반복하는 재귀적 게임 개발 프레임워크 Play2Evolve를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>자연어 설명만으로 실행 가능한 게임을 생성하는 코딩 에이전트(GameGPT, AutoUE, OpenGame 등)가 빠르게 발전했지만, 실행 가능하다는 것과 플레이어가 즐길 만한 게임이라는 것은 다른 문제다. 기존 연구는 주로 핵심 기능의 정상 동작에만 초점을 맞추었고, 매력적인 비주얼 에셋이나 탐험·진행을 지원하는 풍부한 게임플레이는 충분히 다루지 않았다. 저자들은 좋은 게임이 1) 신뢰할 수 있는 핵심 기능, 2) 매력적인 시각 디자인·에셋, 3) 탐험과 진행을 지원하는 풍부한 게임플레이를 갖춰야 한다고 정의하고, 이를 에이전트가 스스로 개선하도록 만드는 방법이 부족하다는 점을 문제로 제기한다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>놀이성(신뢰성·비주얼·게임플레이 풍부함)을 축으로 게임 개발을 재귀적으로 구조화한 Play2Evolve 프레임워크를 제안.</li>
+<li>플레이 증거를 기반으로 결함을 수정하고 새로운 게임플레이·미적 목표를 제안하는 플레이 기반 방법과, 버전 간 개선을 검증하는 A/B Judge(심판 에이전트)를 개발.</li>
+<li>비디오 생성 모델과 코드를 결합해 정적·동적 비주얼 에셋을 적응적으로 관리, 생성하고 실제 게임플레이에 통합.</li>
+<li>GameCraft-Bench에서 기존 대비 최고 성능(Overall 60.05, 비교 대상 Play2Code 52.46) 및 인간 평가에서 종합 품질 3.67점(Play2Code 2.43점, 초기화 단계 2.38점) 달성.</li>
+</ol>
+<h2>방법론</h2>
+<p>Play2Evolve는 세 단계로 구성된다. ① <strong>게임 초기화(Initialization)</strong>: Builder 에이전트가 공개 명세를 읽고 코드 편집과 비디오 생성 요청을 번갈아 수행해 실행 가능한 게임(V0), 자산 계획, 재현 가능한 수용 트레이스를 생성한다. 비주얼 자산은 정적 소재, 단일 동적 소재, 상호작용 소재(커플드 오브젝트), 전체 장면(풀씬) 소재의 4단계 생성 수준 중 하나로 할당되며, 비디오는 외형·동작을 담당하고 코드는 입력·충돌·진행 상태 등 상호작용 제어를 담당한다. ② <strong>게임 정제(Refinement)</strong>: Player 에이전트가 목표 지향적 플레이테스트 그룹을 계획해 플레이하고, Judge가 품질을 평가해 문제를 진단하며, Planner가 수정 대상(에셋·코드 또는 둘 다)과 생성 범위를 결정해 후보를 재생성·검증한다. ③ <strong>게임 진화(Evolution)</strong>: 이전 버전의 플레이 기록을 바탕으로 에이전트가 새로운 게임플레이·미적 개선 목표를 제안하고, 후보 버전을 다시 플레이·평가한 뒤 A/B 비교로 더 나은 버전을 채택한다. 또한 이전 플레이 결과를 요약한 'Behavior Skill'을 다음 플레이 스크립트에 반영하여 탐험 효율을 높인다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>구현은 Codex 기반 GPT-6 Sol(중간 추론 노력)을 빌드·플래닝·코드 편집·Player·Judge에 사용하고, 비디오 자산 생성에는 MiniMax H3(H200 GPU 8장)를 사용했다. Godot 및 브라우저 기반 HTML 게임을 지원한다. 평가는 GameCraft-Bench(15개 범주 140개 과제, 역학·깊이·시각적 기능·아트·종합 점수)와 GameASG-Bench(12개 범주 47개 과제, 정적 준수·런타임 동작·엄격한 과제 성공률)에서 수행되었으며, 비교 기준은 적응된 Play2Code(동일한 개발 토큰 예산 사용)이다. 결과적으로 GameCraft-Bench Overall은 초기화 50.81 → 정제 54.45 → 진화 60.05로 상승하며 Play2Code(52.46)를 능가했다. GameASG-Bench 엄격 성공률도 35.7%(V0)에서 57.4%(V1, V2)로 상승했다. 12명이 참여한 인간 평가(5점 척도)에서도 Play2Evolve의 최종 버전(V2)이 시각적 매력, 동작 품질, 아티팩트 부재, 플레이 의향, 종합 품질 등 5개 항목 모두에서 가장 높은 점수를 받았다(종합 품질 3.67 대 Play2Code 2.43). 10개 게임에 대한 3회 연속 진화 실험에서도 반복할수록 점수가 지속적으로 상승함을 확인했다.</p>
+<h2>한계점</h2>
+<p>플레이어 에이전트가 특정 이벤트에는 도달하지만 이후 게임플레이를 놓치는 등 탐험이 불완전할 수 있어, 탐험되지 않은 콘텐츠는 신뢰성 있게 진단되지 않는다. 레코딩·플레이 오류(텍스처 미반영, 잘못된 키 입력 등)로 평가 증거 자체가 부정확할 수 있다. 진화가 항상 더 나은 결과를 보장하지는 않으며(일부 사례에서 이전 버전이 유지됨), 서로 다른 플레이 정책 때문에 개선 효과를 명확히 귀속하기 어렵다. 인간 평가는 직접 플레이가 아닌 클립 시청을 기반으로 하여 지속적 몰입 경험을 측정하지는 못했고, 비디오 재생성에는 추가 연산 비용이 들며, 테스트된 엔진·생성기를 벗어난 환경으로의 일반화는 추가 검증이 필요하다.</p>
+<h2>시사점</h2>
+<p>이 연구는 '실행 가능함'과 '재미있음' 사이의 간극을 플레이 증거 기반의 재귀적 자기개선 루프로 좁히려는 시도로, 코딩 에이전트와 비디오 생성 모델을 결합해 콘텐츠(에셋)와 로직(코드)을 분리된 책임으로 관리하는 설계가 향후 자율적 콘텐츠 제작 에이전트 일반에 적용될 수 있는 패턴을 제시한다. 다만 에이전트 플레이의 탐험 커버리지와 평가 신뢰성이 전체 품질 개선의 상한을 좌우한다는 점은, 유사한 '에이전트 자가 플레이테스트' 접근이 다른 상호작용 콘텐츠(예: 교육 시뮬레이션, UI 프로토타입)로 확장될 때도 핵심 과제로 남을 것이다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.33457" target="_blank" rel="noopener">huggingface.co/papers/2611.33457</a> · 2026-11-27</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

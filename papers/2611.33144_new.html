@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>파이루아덱스</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#7 · Daily Papers 2026-11-27</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 43</span>
+    </div>
+    <h1 class="article-title">PyRUA-Dex: Learning Programmatic Policies for Dexterous Bimanual Manipulation with Coding Agents</h1>
+    <p class="article-title-ko">파이루아덱스: 코딩 에이전트를 통한 양손 손재주 조작을 위한 프로그래매틱 정책 학습</p>
+    <p class="article-sub">코딩 에이전트들이 시뮬레이션에서 탐색과 정제 두 단계를 거쳐 사람 시연 데이터 없이도 양손 다지(多指) 손 조작을 위한 '프로그램 형태의 정책(programmatic policy)'을 작성하게 하여, 피아노 연주·서예 등 실제 로봇 작업에서 기존 학습 기반 정책을 능가하는 프레임워크 PyRUA-Dex를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.33144" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.33144" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: PyRUA-Dex: Learning Programmatic Policies for Dexterous Bimanual Manipulation with Coding Agents</li>
+<li><strong>저자</strong>: Feixiang Ruan 등 (Peking University, National University of Singapore, NVIDIA, Tongji University, University of Chicago 공동 연구)</li>
+<li><strong>출처</strong>: arXiv:2611.33144v1 [cs.RO] (2026년 11월 24일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://vme0522.github.io/PyRUA-Dex/">PyRUA-Dex</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.33144">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>코딩 에이전트들이 시뮬레이션에서 탐색과 정제 두 단계를 거쳐 사람 시연 데이터 없이도 양손 다지(多指) 손 조작을 위한 '프로그램 형태의 정책(programmatic policy)'을 작성하게 하여, 피아노 연주·서예 등 실제 로봇 작업에서 기존 학습 기반 정책을 능가하는 프레임워크 PyRUA-Dex를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>다지 로봇 손의 정교한 조작(dexterous manipulation) 학습은 고품질 시연 데이터 부족이라는 근본적 제약에 부딫힌다. 사람 영상에서의 리타게팅은 부정확하고, 원격조작(teleoperation)은 손끝 접촉에 대한 힘 피드백을 조작자에게 주지 못하며, 외골격 기반 수집은 확장성이 낮다. 또한 수집된 데이터는 특정 손 모델에 종속되어 새로운 손에는 재학습이 필요하다. 신경망 가중치 대신 프로그램으로 정책을 표현하는 '프로그래매틱 정책'은 검증과 해석이 쉽지만, 기존 연구들은 로봇 팔이나 평행 그리퍼 중심이었고, 다지 손의 경우 에이전트가 매 시행마다 직접 관찰·행동하며 막대한 토큰을 소비하면서도 성공률이 낮았다. 저자들은 '코딩 에이전트가 개발 단계에서 한 번만 학습하여, 이후에는 추가 비용 없이 안정적으로 동작하는 프로그램을 만들 수 있는가'라는 질문을 제기한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>시연 없이 코딩 에이전트가 다지 양손 조작의 프로그래매틱 정책을 개발하도록 하는 에이전트 기반 프레임워크 제안. 결과물은 테스트 시 언어모델 호출 없이 동작하는 고정된(frozen) 코드임.</li>
+<li>손끝 촉각 피드백을 활용한 2단계(탐색→정제) 개발 절차: 여러 에이전트가 병렬로 작업 기술을 탐색·공유하고, 이후 무작위화된 배치(layout)들에 대해 견고성과 효율성을 높이는 정제를 수행.</li>
+<li>Bench2Dex와 DexJoCo 두 시뮬레이션 벤치마크 및 22자유도(DoF) 양손 로봇 실제 실험을 통한 광범위한 검증. Bench2Dex에서 SOTA(72.9점) 달성.</li>
+</ul>
+<h2>방법론</h2>
+<p>전체 학습은 시뮬레이션에서 이뤄진다. 1단계(탐색)에서는 8개의 에이전트가 각자의 학습용 배치에서 상태 리셋(state reset)을 활용해 동일 과제를 병렬로 탐색하며 공유 메모리를 통해 진행 상황을 주고받는다. 이후 '증류(distilling) 에이전트'가 성공한 시도들을 작업 라이브러리와 하나의 프로그램으로 압축한다. 2단계(정제)에서는 한 에이전트가 단계별 실패 분석(stage-wise failure analysis)을 통해 프로그램에서 가장 신뢰도가 낮은 단계(병목)를 찾아 무작위화된 배치들에서 반복 개선하고, 보지 못한 배치에서 성능이 떨어지지 않을 때만 수정안을 채택한다. 모든 로봇 손은 '코드박스(codebox)'라는 동일한 손·팔·센싱 호출 계층을 통해 제어되므로 하나의 절차가 다양한 손 모델에 적용 가능하다. 최종 정책은 일반 Python 코드로, 보정된 카메라·관절 위치·손끝 촉각을 입력으로 받아 로봇의 제어 주기에 맞춰 동작하며, 매 에피소드마다 장면을 다시 측정하기 때문에 배치가 변해도 견고하다. 실제 로봇 적용 시에는 실제 장면으로부터 시뮬레이션을 구성(real-to-sim)하고, 고정된 프로그램을 로봇에 적용(sim-to-real)한 뒤, 로봇에서 얻은 피드백으로 다음 라운드의 정제를 위해 시뮬레이션을 갱신하는 과정을 반복한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>12종의 팔-손 조합을 평가하는 Bench2Dex 벤치마크에서 PyRUA-Dex는 72.9점으로 기존 모든 학습 기반 정책을 능가하는 SOTA를 기록했으며, 동일 모델(GPT-6 Astra)이 온라인으로 직접 행동하는 방식보다 동일한 스텝 예산 내에서 2.4배 높은 성공률을 보였다. Allegro 손 기반의 DexJoCo 벤치마크에서는 완전 무작위화 조건에서 81.0%의 성공률을 달성해 가장 강력한 학습 기반 정책(40.3%)을 크게 앞섰고, 모든 세부 과제에서 각 학습 기반 정책보다 우수했다. 22자유도 양손을 갖춘 실제 로봇 플랫폼에서는 피아노 연주, 서예, 물건 정리 등의 작업을 수행했으며, 악보로부터 새로운 피아노 곡을 익히는 데 약 30분이 걸렸다.</p>
+<h2>한계점</h2>
+<p>코딩 에이전트는 기하학적 순서나 타이밍이 중요한 동작은 잘 작성하지만, 힘과 미끌림을 지속적으로 제어해야 하는 작업(프라이팬 다루기, 손에서 손으로 따르기, 직소 퍼즐 등)에는 약하며, 이런 작업에서는 학습 기반 정책이 더 우수했다. 시뮬레이션의 촉각 센서가 접촉을 거칠게 렌더링하기 때문에 프로그램은 주로 관절 지연(joint lag)으로 접촉을 추론하는데, 이는 정밀한 접촉 제어의 한계로 이어진다. 또한 정제는 이미 일부 배치에서 성공하는 단계를 강화하는 데 효과적일 뿐, 전혀 성공하지 못하는 단계는 탐색 단계의 문제로 남는다. 각 작업은 개별적으로 학습되며, 실제 로봇에서의 신뢰도는 반복적인 하드웨어 시행이 아닌 보정된 시뮬레이션에서 측정되었다는 한계도 있다.</p>
+<h2>시사점</h2>
+<p>이 연구는 신경망 가중치 학습 없이도 코딩 에이전트가 검증 가능하고 해석 가능한 프로그램 형태로 복잡한 다지 손 조작 정책을 만들어낼 수 있음을 보여준다. 테스트 시 언어모델 호출이 필요 없어 토큰 비용과 지연을 없애면서도 기존 학습 기반 정책보다 높은 성공률과 견고성을 달성한 점은, 데이터가 부족한 로보틱스 분야에서 에이전트 기반 개발이 실용적 대안이 될 수 있음을 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.33144" target="_blank" rel="noopener">huggingface.co/papers/2611.33144</a> · 2026-11-27</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

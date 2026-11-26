@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>픽셀공간 디퓨전 트랜스포머를 이용한 고정밀 이미지 매팅</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#12 · Daily Papers 2026-11-27</span>
+      <span class="cat-tag">생성모델</span>
+      <span class="upvote-tag">▲ 17</span>
+    </div>
+    <h1 class="article-title">High-Fidelity Image Matting with Pixel-Space Diffusion Transformers</h1>
+    <p class="article-title-ko">픽셀공간 디퓨전 트랜스포머를 이용한 고정밀 이미지 매팅</p>
+    <p class="article-sub">사전학습된 픽셀공간(pixel-space) 디퓨전 트랜스포머를 재활용해, VAE 없이 단 한 번의 순전파로 고정밀 알파 매트(alpha matte)를 예측하는 PixelMatte를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.34929" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.34929" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: High-Fidelity Image Matting with Pixel-Space Diffusion Transformers</li>
+<li><strong>저자</strong>: Baihan Yang, Xin Lin, Yufan Wei, Baiang Li, Yuheng Liu, Juanxi Tian, Xiaohui Xie, Truong Nguyen (UC San Diego, Princeton University, UC Irvine, Nanyang Technological University)</li>
+<li><strong>출처</strong>: arXiv:2611.34929v1 [cs.CV] (2026년 11월 25일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://white-yc.github.io/pixelmatte/">PixelMatte</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.34929">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>사전학습된 픽셀공간(pixel-space) 디퓨전 트랜스포머를 재활용해, VAE 없이 단 한 번의 순전파로 고정밀 알파 매트(alpha matte)를 예측하는 PixelMatte를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>이미지 매팅(image matting)은 입력 이미지에서 전경 객체의 픽셀별 투명도(알파값)를 추정하는 문제로, 머리카락이나 털, 투명한 경계처럼 매우 세밀한 구조를 정확히 복원해야 한다. 최근 디퓨전 모델의 생성적 사전지식(generative prior)을 활용하는 방법들이 등장했지만, 대부분 잠재 디퓨전 모델(latent diffusion model)에 기반한다. 잠재 디퓨전 모델은 이미지를 압축된 잠재 표현으로 인코딩한 뒤 VAE 디코더로 복원하는 구조라서, 고주파 디테일이 요구되는 매팅 작업과 근본적으로 맞지 않는다는 한계가 있다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>사전학습된 픽셀공간 디퓨전 트랜스포머(VAE를 쓰지 않고 원본 픽셀에서 직접 동작하는 모델)를 매팅에 적용한 PixelMatte를 제안. 백본의 기존 패치 임베딩을 그대로 재사용해 입력 이미지와 트라이맵(trimap)을 공간적으로 정렬된 조건으로 활용하므로, 별도의 조건 인코더나 어댑터가 필요 없다.</li>
+<li>이미지-투-이미지 사전학습 없이 순수 텍스트-투-이미지 모델(PRXPixel)만으로도 강력한 이미지 조건부 매팅 능력을 얻을 수 있음을 보임.</li>
+<li>영역별 투명도 보정을 위한 LayerShift와 경계 선명도를 높이는 High-Pass Refiner라는 두 개의 경량 보정 모듈을 제안.</li>
+<li>두 개의 서로 다른 픽셀 디퓨전 백본에서 기존 최고 성능 방법(RenderMatte) 대비 SAD/그래디언트 오차를 24~44% 감소시켜 P3M-500-NP와 AM-2K에서 최고 성능을 달성.</li>
+</ul>
+<h2>방법론</h2>
+<p>PixelMatte는 노이즈가 섞인 알파 매트, 입력 이미지, 트라이맵을 백본의 네이티브 패치 임베딩을 통해 같은 공간 격자 위의 토큰으로 변환한 뒤 하나의 시퀀스로 이어붙여 트랜스포머에 입력한다. 이렇게 하면 동일한 위치의 이미지·트라이맵·매트 토큰이 동일한 회전위치임베딩(RoPE) 좌표를 공유하게 되어, 셀프어텐션이 자연스럽게 대응되는 위치를 연결할 수 있다. 모델은 RenderMatte의 픽셀 단위로 정확한 합성 데이터로 1차 학습한 뒤, 합성 데이터 75%와 실제 이미지(P3M-10k, AM-2K) 25%를 섞어 2차 미세조정한다. 추론 시에는 노이즈 수준을 최대로 고정하고 단 한 번의 순전파로 알파 매트를 바로 예측한다(1-step inference). 이 1-step 출력에서 나타나는 두 가지 전형적 오차—경계가 과도하게 넓어지는 현상과 영역 전체의 알파값이 일정하게 치우치는 현상—를 보정하기 위해, 백본 내부에서 학습되는 미세한 레이어별 이동값인 LayerShift와, 경계 주변의 고주파 성분만을 다듬는 소형 잔차 네트워크인 High-Pass Refiner를 추가로 적용한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>PRXPixel(PRX)과 HiDream-O1-Image라는 두 개의 사전학습된 픽셀공간 정류흐름(rectified-flow) 트랜스포머를 백본으로 사용해 P3M-500-NP, AM-2K, AIM-500, RenderMatte-2K(RM-2K) 네 개 벤치마크에서 평가했다. HiDream 백본 기준, LayerShift와 High-Pass Refiner를 모두 적용하면 RM-2K에서 SAD가 3.74에서 3.31로 감소했다. PixelMatte는 RenderMatte의 SAD를 P3M-500-NP에서 6.2→4.3, AM-2K에서 6.5→4.4로 낮추며 해당 벤치마크에서 최고 성능을 보였고, AIM-500과 RM-2K에서도 경쟁력 있는 성능을 유지했다. High-Pass Refiner는 잠재 디퓨전 기반 모델인 RenderMatte에도 적용 가능함을 보여, 보정 모듈의 범용성을 확인했다.</p>
+<h2>한계점</h2>
+<p>픽셀공간 예측 방식이 압축된 잠재 표현과 디코더의 한계를 제거하지만, 생성적 사전학습 자체의 한계나 매팅 데이터의 감독 한계는 여전히 남는다. 이미지 합성을 위해 학습된 시각적 사전지식을 상속받기 때문에 일부 까다로운 재질의 투명도 특성을 완전히 포착하지 못하며, RM-2K의 포화 영역에서 미세한 알파 잔차 오차나 AIM-500의 투명 객체에서 노이즈 시드에 따른 민감성이 관찰된다. 두 보정 모듈은 백본별로 개별 학습되어 성능을 개선하지만 모든 오차를 해결하지는 못한다.</p>
+<h2>시사점</h2>
+<p>생성 모델을 위해 학습된 범용 픽셀공간 디퓨전 트랜스포머가, 별도의 매팅 전용 아키텍처 없이도 패치 임베딩 재사용과 간단한 미세조정만으로 고정밀 매팅에 효과적으로 전이될 수 있음을 보여준다. 이는 압축 표현 기반 생성 모델이 아닌 픽셀 단위 생성 사전지식이 정밀도가 중요한 조밀 예측(dense prediction) 과제 전반에 유용할 수 있다는 가능성을 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.34929" target="_blank" rel="noopener">huggingface.co/papers/2611.34929</a> · 2026-11-27</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

@@ -1,0 +1,107 @@
+<meta charset="UTF-8">
+<title>프록시젠벤치(ProxyGenBench)</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#4 · Daily Papers 2026-11-28</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 36</span>
+    </div>
+    <h1 class="article-title">ProxyGenBench: Benchmarking Proxy-Guided Video Generation</h1>
+    <p class="article-title-ko">프록시젠벤치(ProxyGenBench): 프록시 기반 비디오 생성 벤치마킹</p>
+    <p class="article-sub">3D 블록아웃 같은 "구조적 프록시(structural proxy)"로 장면 레이아웃·모션·카메라를 안내하는 비디오 생성 모델들이, 의도한 구조를 유지(Preserve)하면서 미완성 정보를 보완(Complete)하고 텍스트·이미지·오디오 조건을 올바른 대상에 결합(Bind)하는지를 동시에 평가하는 벤치마크 ProxyGenBench를 제안한 논문이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.34457" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.34457" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: ProxyGenBench: Benchmarking Proxy-Guided Video Generation</li>
+<li><strong>저자</strong>: Zhenchen Tang, Haolin Lu, Songlin Yang 등 다수 (중국과학원 자동화연구소 신패턴인식연구실, UC San Diego, 홍콩과기대(HKUST), Tencent, 중국과학원대학 AI스쿨 소속 공동 저자진; 교신저자 Jing Dong)</li>
+<li><strong>출처</strong>: arXiv:2611.34457v1 [cs.CV] (2026년 11월 25일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://2kxx.github.io/ProxyGenBench/">https://2kxx.github.io/ProxyGenBench/</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.34457">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>3D 블록아웃 같은 "구조적 프록시(structural proxy)"로 장면 레이아웃·모션·카메라를 안내하는 비디오 생성 모델들이, 의도한 구조를 유지(Preserve)하면서 미완성 정보를 보완(Complete)하고 텍스트·이미지·오디오 조건을 올바른 대상에 결합(Bind)하는지를 동시에 평가하는 벤치마크 ProxyGenBench를 제안한 논문이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>최근 비디오 생성 모델은 사실적인 영상을 만들어내지만, 장면이 전개되는 방식을 정밀하게 제어하기는 여전히 어렵다. 텍스트나 참조 이미지만으로는 객체의 궤적, 카메라 동작, 이벤트 순서 같은 정보가 암묵적으로 남아 다중 샷 전환에서 공간이 갑자기 바뀌거나 디테일이 어긋나는 문제가 발생한다. 이를 보완하기 위해 애니메이션 3D 블록아웃 같은 구조적 프록시를 입력으로 주는 방식이 등장했지만, 이 프록시 자체가 저품질 지오메트리·모션(예: 저해상도 도넛 모델)을 포함할 수 있어 오히려 생성 결과를 오염시킬 위험이 있다. 즉 "프록시에서 무엇을 보존하고 무엇을 수정해야 하는가"라는 질문에 기존 벤치마크들은 충분한 답을 주지 못한다는 것이 이 연구의 출발점이다.</p>
+<h2>핵심 기여</h2>
+<p>논문은 세 가지 상호작용하는 능력—<strong>Preserve</strong>(의도한 구조 유지), <strong>Complete</strong>(누락된 내용 보완 및 프록시 아티팩트 수정), <strong>Bind</strong>(텍스트/이미지/오디오 조건을 올바른 개체·사건에 결합)—을 정의하고, 이를 측정하는 ProxyGenBench를 구축했다. 60개 장면, 세 가지 과제(다이나믹 액션, 멀티샷 스토리텔링, 멀티뷰 일관성)에서 프록시 충실도·텍스트 상세도·멀티모달 입력을 체계적으로 변화시켜 총 312개의 평가 케이스를 만들었고, 32개의 세부 기준으로 구성된 검증된 체크리스트 기반 평가 방식을 제시했다. 다섯 개의 비디오 생성 모델(Seedance-2.5/2.0, Kling-4.0, Wan-3.0, MiniMax-H3)을 평가해 프록시가 시공간 제어를 개선하지만, 프록시 디테일이 높아질수록 Complete 점수가 낮아지는 "보존-완성 트레이드오프"와, 구조 보존이 잘 되어도 조건 결합(Bind)이 틀릴 수 있다는 점을 실증했다.</p>
+<h2>방법론</h2>
+<p>각 평가 케이스는 (장면 명세 s, 구조적 프록시 p, 텍스트/이미지/오디오 조건 U)로 정의되며, 모델은 (p, U)만 입력받아 비디오를 생성한다. 프록시는 Enhanced R2V(참조 이미지+텍스트), Native Code-to-Proxy(LLM 에이전트가 스크립트로 3D 장면 애니메이션 생성), Game Proxy(게임 영상·3D 게임 에셋), Studio 3D Proxy(미완성 프로덕션 에셋) 네 가지 소스에서 수집했다. 프록시 충실도는 Pr0(블록아웃)·Pr1(피규어)·Pr2(디테일) 3단계, 텍스트 상세도는 T0~T2로 조절했다. 평가는 Gemini-3.1-Pro가 케이스별 입력에 맞춰 체크리스트 질문을 생성하고 Qwen3.5-397B-A17B가 명확성·입력 근거를 검증한 뒤, VLM 판정자가 시각·오디오 증거로 32개 기준(캡러빌리티별 4개)에 점수를 매기는 방식이다. 세 차원(P/C/B) 점수와, 12개 핵심 Preserve 기준의 통과율(ρ)을 제곱해 가중치를 준 구조 민감형 Strict 점수(S = Q·ρ²)를 함께 산출한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>다섯 모델을 294개의 프록시 조건 케이스(및 18개 프록시 없는 비교 케이스)에 대해 평가했다. 주요 결과는 다음과 같다. (1) 프록시 유무 비교(50쌍)에서 액션 전환 정확도는 0.894→1.000, 교차샷 공간 일관성은 0.833→0.952로 개선되고 VLM 선호도 조사에서도 70%가 프록시 안내 결과를 선호했다. (2) 프록시 충실도를 Pr0→Pr2로 높이면 Preserve 점수는 1.1~6.7%p 상승하지만 Complete 점수는 모든 모델에서 4.8~7.9%p 하락하는 트레이드오프가 나타났다. (3) Studio 3D 프록시 하위집합에서는 구조 보존(Preserve, 최대 0.962)이 뛰어나도 Bind 점수는 0.182~0.500에 그쳐, 구조적 적합성과 조건 결합 정확성이 독립적임을 보였다. (4) 이미지 참조 결합에서 정체성 일치는 평균 0.897~0.909로 높지만 행동-객체 결합은 0.636에 그쳤고, 오디오-소스 매칭은 0.768인 반면 시간적 정렬은 0.513에 불과해 "올바른 순간에 올바른 목소리를 배치"하는 시간적 결합이 특히 취약함을 확인했다. (5) 3,199건의 기준별 VLM 판정을 인간 주석과 대조한 결과 전체 정확도 92.9%(체크리스트 유효성 99.9%)로 평가 방법론의 신뢰성을 검증했다.</p>
+<h2>한계점</h2>
+<p>논문은 프록시 디테일이 높을수록 생성 모델이 불필요한 결함(어색한 포즈, 경직된 접촉 등)까지 그대로 베끼는 경향이 있어 완성도가 떨어진다는 근본적 긴장관계를 한계이자 향후 과제로 지적한다. 또한 구조 보존 평균 점수가 높아도 모든 핵심 제약을 동시에 만족하는 "Joint Success" 비율은 7.2~17.4%에 불과해, 평균 지표만으로는 모델의 실제 신뢰성을 과대평가할 수 있음을 보였다. Bind 차원, 특히 오디오-이벤트 시간 정렬은 구조적 안내만으로 해결되지 않는 별도의 과제로 남아 있다고 서술한다.</p>
+<h2>시사점</h2>
+<p>구조적 프록시 기반 비디오 생성에서는 단순히 프록시를 더 상세하게 만드는 것이 능사가 아니며, 생성 모델이 "의도한 핵심 구조는 선택적으로 유지하되 프록시의 결함은 능동적으로 수정하고, 추가로 주어지는 텍스트·이미지·오디오 조건은 올바른 개체와 시점에 정확히 결합"하는 능력을 갖추도록 설계·학습되어야 함을 시사한다. 이는 멀티샷 스토리텔링, 게임형 월드 모델링, 3D 애니메이션 보완 등 프록시 기반 제어가 필요한 실제 응용에서 모델 평가 및 개선 방향을 제시하는 기초 자료로 활용될 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.34457" target="_blank" rel="noopener">huggingface.co/papers/2611.34457</a> · 2026-11-28</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

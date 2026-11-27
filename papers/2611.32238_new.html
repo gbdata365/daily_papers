@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>경계 인식 정책 학습을 통한 에이전트 조율 기반 로봇 조작</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#8 · Daily Papers 2026-11-28</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 7</span>
+    </div>
+    <h1 class="article-title">Boundary-Aware Policy Learning for Agent-Orchestrated Robot Manipulation</h1>
+    <p class="article-title-ko">경계 인식 정책 학습을 통한 에이전트 조율 기반 로봇 조작</p>
+    <p class="article-sub">범용 에이전트(LLM)가 로봇의 과제 수준 계획을 맡고 학습된 비주오모터(visuomotor) 정책이 물체 접촉 구간을 처리하는 "에이전트-오케스트레이션" 로봇 조작 시스템에서, 정책이 신뢰성 있게 작동하는 상태 범위("핸드오프 경계")를 학습을 통해 명시적으로 넓혀줌으로써 에이전트와 정책 간 제어권 이양(handoff)의 신뢰성과 효율을 동시에 높이는 방법을 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.32238" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.32238" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Boundary-Aware Policy Learning for Agent-Orchestrated Robot Manipulation</li>
+<li><strong>저자</strong>: Kaipeng Fang, Yuhao Wang (공동 1저자), Ji Zhang, Yunsong Zhou, Jingkuan Song, Lianli Gao (교신저자 포함) — University of Electronic Science and Technology of China, Shanghai Artificial Intelligence Laboratory, Tongji University, Shanghai Innovation Institute 소속</li>
+<li><strong>출처</strong>: arXiv:2611.32238v1 [cs.RO] (2026년 11월 24일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://kaipengfang.github.io/bapl-agentic-manip">kaipengfang.github.io/bapl-agentic-manip</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.32238">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>범용 에이전트(LLM)가 로봇의 과제 수준 계획을 맡고 학습된 비주오모터(visuomotor) 정책이 물체 접촉 구간을 처리하는 "에이전트-오케스트레이션" 로봇 조작 시스템에서, 정책이 신뢰성 있게 작동하는 상태 범위("핸드오프 경계")를 학습을 통해 명시적으로 넓혀줌으로써 에이전트와 정책 간 제어권 이양(handoff)의 신뢰성과 효율을 동시에 높이는 방법을 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>최근 로봇 조작 시스템은 범용 멀티모달 에이전트가 과제 계획·도구 호출을 담당하고, 별도로 학습된 비주오모터 정책(VLA 등)이 실제 물리적 접촉을 수행하는 방식으로 구성되는 경우가 많다. 그러나 기존 정책은 보통 "전체 과제(whole-task)" 데모로 학습되어, 정책이 안정적으로 명령을 수행할 수 있는 초기 상태의 범위(이 논문에서 "핸드오프 경계"라 부름)가 좁고 과제 중간 지점에서 애매하게 형성된다. 그 결과 에이전트가 이 범위를 벗어난 상태에서 제어권을 넘기면 정책이 실패하고, 실패를 복구하려는 재시도도 다시 범위를 벗어나 반복적으로 실패하는 문제가 관찰된다. 저자들은 "정책이 에이전트에게 명시적이고 넓은 핸드오프 경계를 갖도록 학습시킬 수 있는가"라는 질문을 제기한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>핸드오프 경계를 정의하고 학습을 통해 이를 명시적으로 형성·확장하는 <strong>Boundary-Aware Policy Learning</strong> 프레임워크 제안</li>
+<li>1단계 <strong>Boundary-Explicit Training</strong>: 정책을 물체와의 접촉 구간(contact segment)에서만, 다양한 시작 자세로 파인튜닝하여 넓고 명시적인 핸드오프 경계를 만들고, 이를 간단한 핸드오프 프로토콜(규칙 기반 설명)로 에이전트에게 전달</li>
+<li>2단계 <strong>Boundary-Expanding Self-Improvement</strong>: 시스템이 실제로 수행한 성공적인 전체 과제 롤아웃을 수집하고, 큐레이션 에이전트로 비최적 구간을 걸러낸 뒤 그 데이터로 정책을 재학습하여 경계를 과제의 더 이른 단계까지 확장, 더 적은 언어모델 호출로도 더 이른 시점에 핸드오프가 가능하도록 함</li>
+<li>RoboTwin 2.0과 RoboDojo 두 벤치마크에서 기존 최강 베이스라인(Harness VLA) 대비 26%p 이상의 성공률 향상, 자가개선 단계에서 API 비용과 실행 시간을 각각 41.3%, 37.5% 절감(성공률 저하 없이) 달성</li>
+</ul>
+<h2>방법론</h2>
+<p>시스템은 시각-언어 에이전트(Claude Opus 5.5 등)가 메모리·지각·모션 도구를 갖추고 정책을 반복적으로 호출하는 루프로 구성된다. 핸드오프 경계는 정책이 명령을 확률 1-ε 이상으로 완수할 수 있는 관측치 집합으로 수식화된다(식 (1)). Boundary-Explicit Training 단계에서는 각 과제의 "접촉 구간"(물체를 실제로 쥐거나 조작하는 부분)만을 대상으로, 목표 물체 주변의 다양한 시작 자세에서 데모를 수집해 사전학습된 정책 π0.5를 파인튜닝한다. 이렇게 하면 정책의 신뢰 구간이 넓어지고, "접근 방식"(그립 지점 8~12cm 위)과 "확인 절차"(실패 시 재접근)를 규칙으로 기술하는 핸드오프 프로토콜을 통해 에이전트가 예시 없이도 모든 과제에 동일하게 적용할 수 있다. Boundary-Expanding Self-Improvement 단계에서는 시스템이 생성한 성공적인 전체 과제 롤아웃을 수집하고, 큐레이션 에이전트가 각 구간을 유용/비최적으로 라벨링한 뒤, 비최적 구간을 삭제하는 대신 동일 장면에서 에이전트가 해당 참조를 따라 재실행하여 매끄러운 데이터셋(D1)을 구성한다. 이 D1과 기존 접촉 구간 데이터(D0)를 함께 사용해 정책을 재학습하며(식 (2)), 핸드오프 프로토콜도 확장된 경계에 맞춰 갱신하고 에이전트는 과제를 재탐색해 메모리를 갱신한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>RoboTwin 2.0(양팔 로봇, 50개 과제, 클린/랜덤화 설정)과 RoboDojo(일반화/기억/개방어휘 26개 과제)에서 평가했다. 비교 대상은 전체 과제 학습 정책(π0.5), 그리고 에이전트 기반 시스템인 AGP, ORA, Harness VLA(+LingBot-VLA 또는 VPP2)이다. 주요 결과로, RoboTwin 2.0의 랜덤화 설정(C2R)에서 제안 시스템은 98.4%의 성공률로 Harness VLA(72.0%)보다 26.4%p 높았고, RoboDojo 평균에서도 71.3%로 Harness VLA(42.5%) 대비 28.4%p 높았다. 접촉 구간만 처리하도록 설계했기 때문에 장면 랜덤화에 대한 민감도가 낮아, 전체 과제 정책이나 Harness VLA가 랜덤화 시 성능이 크게 떨어지는 것과 대조적으로 제안 시스템은 성능 저하가 거의 없었다. 자가개선 단계 적용 후에는 50개 과제 전체에서 언어모델 호출이 약 40% 줄고 API 비용과 실행 시간이 각각 41.3%, 37.5% 감소했으며, 2차 자가개선 라운드에서도 추가로 18~27% 비용이 절감되어 반복 적용 가능성을 시사했다. 경계 분석 결과, 학습 시작 자세로부터 거리가 가까울수록(0~10mm 구간 92% 이상) 정책 성공률이 높고, 실제 에이전트 핸드오프의 91.1%가 40mm 이내에서 이루어져 정책의 신뢰 구간과 잘 일치함을 확인했다. 반면 명시적 경계가 없는 Harness VLA는 거의 항상 초기 자세에서 호출해 실패율이 높았다. 2×2 소거 실험에서는 정책과 핸드오프 프로토콜 각각이 독립적으로 성능을 높였고(72.0%→93.0%, 72.0%→86.0%), 둘을 결합했을 때 98.4%로 최고 성능을 보였다. 또한 언어모델 종류와 추론 노력(reasoning effort)에 따라 성능과 비용이 달라지는 것도 분석했다(Claude Opus 5.5가 가장 우수).</p>
+<h2>한계점</h2>
+<p>데이터 큐레이션 과정에서 비최적 구간을 단순히 제거하기 때문에, 정책이 실수로부터 회복하는 방법에 대한 학습 신호가 사라진다는 한계가 있으며, 저자들은 DAgger나 오프라인 강화학습을 통한 보완 가능성을 향후 과제로 언급한다. 또한 핸드오프 프로토콜은 규칙 기반으로 경계를 기술할 뿐이어서, SayCan과 같이 정책이 직접 현재 상태에 대한 신뢰도를 출력하는 방식이 에이전트의 핸드오프 판단을 매 순간 더 정교하게 만들 수 있다고 지적한다.</p>
+<h2>시사점</h2>
+<p>이 연구는 에이전트-정책 협업형 로봇 시스템에서 성능 병목이 에이전트나 정책 개별 성능보다 "둘 사이의 경계를 얼마나 명확하고 넓게 만드는가"에 있음을 실증적으로 보여준다. 이는 향후 LLM 에이전트와 로봇 저수준 제어기를 결합하는 다양한 시스템 설계에서, 제어권 이양 지점을 모호하게 두기보다 학습 단계에서부터 명시적으로 설계하고 시스템 자체의 성공 경험을 활용해 반복적으로 확장하는 자가개선 루프가 비용과 신뢰성 모두에서 실질적 이득을 줄 수 있음을 시사한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.32238" target="_blank" rel="noopener">huggingface.co/papers/2611.32238</a> · 2026-11-28</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

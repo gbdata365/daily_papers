@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>DR벤치 프로</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#7 · Daily Papers 2026-11-28</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 17</span>
+    </div>
+    <h1 class="article-title">DRBench Pro: A Knowledge-Centric Benchmark for Professional Deep Research Agents</h1>
+    <p class="article-title-ko">DR벤치 프로: 전문가급 딥리서치 에이전트를 위한 지식 중심 벤치마크</p>
+    <p class="article-sub">딥리서치(Deep Research) 에이전트가 작성한 보고서가 참고 지식 구조를 얼마나 "넓고 깊게" 다루는지를 측정하기 위해, 위키피디아 기반 지식 트리와 토폴로지 인식 지표(breadth·depth·overall coverage)를 사용하는 새로운 벤치마크 DRBench Pro를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.34852" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.34852" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: DRBench Pro: A Knowledge-Centric Benchmark for Professional Deep Research Agents</li>
+<li><strong>저자</strong>: Han Huang, Yuchen Yan, Xingyu Wu, Yijun Li, Chao Deng, Jie Liu, Jin Ma, Yongliang Shen (Zhejiang University, Tencent)</li>
+<li><strong>출처</strong>: arXiv:2611.34852v1 [cs.CL] (2026년 11월 25일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://zjureal.com/DRBenchPro/">https://zjureal.com/DRBenchPro/</a> (코드: <a href="https://github.com/ZJU-REAL/DRBenchPro">https://github.com/ZJU-REAL/DRBenchPro</a>)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.34852">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>딥리서치(Deep Research) 에이전트가 작성한 보고서가 참고 지식 구조를 얼마나 "넓고 깊게" 다루는지를 측정하기 위해, 위키피디아 기반 지식 트리와 토폴로지 인식 지표(breadth·depth·overall coverage)를 사용하는 새로운 벤치마크 DRBench Pro를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>딥리서치 에이전트는 여러 출처에서 정보를 모아 복잡하고 개방형(open-ended)인 질문에 대한 장문 보고서를 작성한다. 기존 벤치마크들은 사실성(factuality), 인용 품질, 포괄성(comprehensiveness) 등 보고서 품질의 여러 측면을 평가하지만, "어떤 연구 방향을 다루었는가"와 "그 방향을 얼마나 깊이 파고들었는가"를 구조적으로 평가하는 전용 지식 커버리지 지표는 부족했다. 특히 기존의 자동 생성 평가 기준들은 항목 간 관계(트리/그래프 구조)를 무시한 채 평면적으로(flat) 합산되어, 보고서가 여러 방향을 넓게 다뤘는지 혹은 특정 방향만 깊게 파고들었는지를 구분하지 못하는 한계가 있었다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li>위키피디아에서 자동 구축한 엔티티-관계 트리를 기반으로, 144개 사례·24개 도메인·44,102개의 증거 기반(rubric) 평가 항목으로 구성된 지식 중심 벤치마크 DRBench Pro를 제안.</li>
+<li>연구 방향 전반에 걸친 포괄성을 나타내는 breadth(폭)와, 관련 지식 체인을 따라 얼마나 깊이 들어갔는지를 나타내는 depth(깊이)를 트리 구조 기반으로 집계하는 토폴로지 인식(topology-aware) 지표를 설계하고, 두 값의 기하평균으로 overall coverage를 산출.</li>
+<li>16개의 딥리서치 에이전트(상용 딥리서치 시스템, 네이티브 검색 LLM, 로컬 리서치 프레임워크 하의 백본 LLM)를 평가하여 에이전트별 breadth/depth 강점이 서로 다르게 나타남을 확인하고, 사람 평가와의 높은 일치도 및 지표 설정에 대한 안정성을 검증.</li>
+</ul>
+<h2>방법론</h2>
+<p>먼저 WebOrganizer의 24개 주제 카테고리별로 2개씩, 총 48개의 루트 엔티티를 선정하고 위키피디아 링크를 너비 우선으로 최대 3홉까지 확장하여 엔티티-관계 트리(노드당 평균 약 1,500개)를 구축한다. 이후 Claude Opus 4.8을 이용해 각 트리에서 서로 겹치지 않는 가지(branch) 10개씩을 묶은 서브그래프 3개(=3개 사례)를 샘플링한다(루트당 3사례 × 48루트 = 144사례). 각 서브그래프로부터 연구 질의(query)와, 샘플링된 모든 간선(엣지)에 대응하는 증거 기반 루브릭을 함께 생성한다. 평가 시 에이전트는 질의만 전달받아 보고서를 작성하고, 판정 LLM(Gemini 2.5 Pro)이 각 루브릭을 Satisfied/Partially Satisfied/Not Satisfied로 채점한 뒤 이를 이진값으로 변환하여 트리 구조를 따라 하위에서 상위로(bottom-up) 재귀적으로 집계해 breadth와 depth, 그리고 둘의 기하평균인 overall coverage(S=√(B·D))를 계산한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>(1) o3 Deep Research, Perplexity Sonar Deep Research, Qwen Deep Research 등 딥리서치 전용 시스템, (2) Claude Opus 5, Grok 4.5, GPT-5.6 Sol, Gemini 3.1 Pro Preview 등 네이티브 검색 LLM, (3) 고정된 위키피디아 스냅샷과 동일한 검색 도구·예산을 사용하는 로컬 리서치 프레임워크 하의 백본 LLM(Qwen3.8 Max, DeepSeek V4 계열, GLM 5.2, MiniMax M3, Gemma 4 31B 등) 등 총 16개 에이전트를 비교했다. 최고 성능은 Claude Opus 5(overall coverage 57.04%, breadth 53.09%, depth 61.91%)였고, Grok 4.5(50.98%)가 뒤를 이었다. 도메인별로는 소프트웨어 개발·과학기술·보건 분야의 커버리지가 높고, 산업·식음료 분야는 낮았다. 루브릭 수준에서 판정 LLM과 사람 평가 간 Macro-F1은 0.893으로 높은 일치를 보였으며, 집계 파라미터를 바꿔도 에이전트 순위는 대체로 안정적(Spearman 0.976~1.0)이었다. 또한 벤치마크 구축에 사용한 모델(Claude Opus 4.8)을 Kimi K2.6으로 교체해 재구성한 경우에도 Claude 계열 에이전트가 여전히 상위를 차지했으나 그 우위 폭은 다소 줄어들었다.</p>
+<h2>한계점</h2>
+<p>벤치마크의 참조 지식 구조가 위키피디아 문서 그래프에 기반하므로, 위키피디아에 충분히 반영되지 않은 최신 정보나 전문적 지식 영역에는 적용이 제한적일 수 있다. 또한 질의·루브릭 생성과 평가 판정 모두 LLM에 의존하므로, 구축에 사용한 모델(Claude 계열)이 동일 계열 에이전트에 다소 유리하게 작용할 가능성이 민감도 분석에서 일부 관찰되었다. 지식 확장 깊이도 3홉으로 제한되어 있어 더 깊은 연쇄적 지식 체인은 반영되지 못한다.</p>
+<h2>시사점</h2>
+<p>단일 종합 점수만으로는 가려지는 "넓지만 얕은" 보고서와 "좁지만 깊은" 보고서의 차이를 구조화된 breadth/depth 지표로 드러낼 수 있음을 보여주며, 위키피디아 그래프를 활용한 자동화 파이프라인이 사람이 직접 작성한 루브릭 없이도 대규모·다도메인 벤치마크를 확장 가능하게 구축할 수 있는 방법론적 모범 사례가 될 수 있다. 향후 딥리서치 에이전트 개발 시 특정 방향에 대한 정보 수집의 폭과 깊이를 동시에 고려한 보상 설계나 평가 체계에 참고할 수 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.34852" target="_blank" rel="noopener">huggingface.co/papers/2611.34852</a> · 2026-11-28</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

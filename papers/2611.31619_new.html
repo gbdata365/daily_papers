@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>포캐스팅 리더보드가 말해줄 수 있는 것</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#3 · Daily Papers 2026-11-28</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 57</span>
+    </div>
+    <h1 class="article-title">What a Forecasting Leaderboard Can Establish: Resolution Reporting for Zero-Shot Time-Series Models</h1>
+    <p class="article-title-ko">포캐스팅 리더보드가 말해줄 수 있는 것: 제로샷 시계열 모델의 해상도 보고</p>
+    <p class="article-sub">시계열 파운데이션 모델 리더보드들이 실제로 구분해낼 수 있는 성능 차이의 최소 단위, 즉 "해상도(resolution)"를 정량화하는 도구 Vernier를 제안하고, 이를 GIFT-Eval 등 주요 공개 리더보드에 적용해 상위권 순위 대부분이 통계적으로 유의하지 않음을 보인 벤치마킹 방법론 논문이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.31619" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.31619" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: What a Forecasting Leaderboard Can Establish: Resolution Reporting for Zero-Shot Time-Series Models</li>
+<li><strong>저자</strong>: Arya Sikder, Sriram Pillutla (개인 연구자 이메일 기재, 소속 기관명은 논문에 명시되지 않음)</li>
+<li><strong>출처</strong>: arXiv:2611.31619v1 [cs.LG] (2026년 11월 23일)</li>
+<li><strong>프로젝트 페이지</strong>: 논문에 명시되지 않음 (코드 저장소는 https://github.com/therealram18/vernier 로 공개)</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.31619">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>시계열 파운데이션 모델 리더보드들이 실제로 구분해낼 수 있는 성능 차이의 최소 단위, 즉 "해상도(resolution)"를 정량화하는 도구 Vernier를 제안하고, 이를 GIFT-Eval 등 주요 공개 리더보드에 적용해 상위권 순위 대부분이 통계적으로 유의하지 않음을 보인 벤치마킹 방법론 논문이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>제로샷 시계열 파운데이션 모델은 한 번 사전학습한 뒤 학습 때 보지 못한 데이터셋에 대해 평가받는데, 이런 평가를 수행하는 공개 리더보드(GIFT-Eval 등)는 수가 적고 각 리더보드가 사용하는 독립적인 데이터셋(소스) 수도 수십 개에 불과하다. 저자들은 모든 측정 도구에는 구분 가능한 최소 차이(해상도)가 존재하는데, 현재 어떤 포캐스팅 리더보드도 자신의 해상도를 명시하지 않는다는 점을 문제로 지적한다. 즉, 표에 표시된 순위 차이가 실제로 통계적으로 유의한 차이인지, 아니면 표본 오차 범위 안의 잡음인지 알 수 없다는 것이다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>리더보드가 공개한 점수 파일만으로 해상도를 계산하는 Vernier라는 사후 분석 도구를 제안했다.</li>
+<li>리더보드 순위 산출 방식을 전체 참가자 집합과 비교하는 "pool-dependent" 방식(예: 평균 순위)과 그렇지 않은 "pool-independent" 방식(예: 기하평균 스케일 오차)으로 구분하고, 전자는 무관한 참가자의 추가/제거만으로 기존 순위가 뒤집힐 수 있음을 실증했다.</li>
+<li>클러스터-로버스트 표준오차(CR2)와 Holm 보정, 와일드 클러스터 부트스트랩, 부호순위 검정 등 여러 통계 기법을 교차 검증하여 신뢰할 수 있는 해상도 추정 절차를 제시했다.</li>
+<li>모델에 주어지는 과거 이력(history) 길이가 리더보드에 기록되지 않는다는 점을 지적하고, 이것이 성능에 미치는 영향을 실험으로 보였다.</li>
+</ol>
+<h2>방법론</h2>
+<p>Vernier는 리더보드가 공개한 "평가 단위(구성)별 점수" 파일 하나만을 입력으로 받아 세 가지 질문에 답한다: (1) 보드가 탐지할 수 있는 최소 차이는 얼마인가, (2) 선두 모델과 통계적으로 구분되지 않는 모델은 어느 것인가, (3) 순위가 다른 참가자의 존재 여부에 따라 달라지는가. 해상도는 이웃한 순위 쌍의 참 차이를 유의수준 5%, 검정력 80%로 탐지하는 데 필요한 최소 효과크기로 정의하며, 데이터셋(소스)을 독립적인 클러스터 단위로 보고 CR2 클러스터-로버스트 표준오차와 Satterthwaite 자유도를 사용한다. 비교를 위해 와일드 클러스터 부트스트랩과, 소스 내에서 부호를 뒤집어도 분포가 불변하는 성질을 이용한 정확검정(exact test)도 함께 적용해 상호 검증했다. 순위의 안정성은 리더보드의 과거 버전 이력을 다시 재생(replay)하여, 변경되지 않은 상위권 참가자 쌍의 순서가 무관한 신규 참가자 등록만으로 뒤집히는지 확인하는 "bystander test"로 측정했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>GIFT-Eval(28개 데이터셋, 97개 구성, 128개 참가자), fev-bench, fev-bench-mini, Chronos Benchmark II, TIME, BOOM 등 총 6개 리더보드에 Vernier를 적용했다. GIFT-Eval은 순위 해상도가 6.8칸인데 상위 10위 내 이웃 모델 간 실제 중앙값 격차는 0.91칸에 불과해, 10위권 안에서 통계적으로 구분 가능한 단계는 두 개도 되지 않았다. fev-bench, Chronos Benchmark II, TIME 등 다른 리더보드도 해상도가 이웃 간 격차보다 3.6~19배 커서 동일한 문제를 보였다. 반면 2,554개의 개별 시계열 자체를 독립 소스로 사용하는 BOOM은 유일하게 상위 10위를 모두 통계적으로 구분해낼 수 있었다. 과거 버전을 재생한 4개 리더보드에서는 pool-dependent 순위 규칙을 쓰는 경우 226회의 업데이트 중 31회에서 상위 10위 내 쌍 43개가 무관한 참가자 등록만으로 순서가 뒤바뀐 반면, pool-independent 규칙에서는 뒤바뀜이 전혀 없었다. 또한 공개된 4개 오픈 모델에 입력 이력 길이를 바꿔 실험한 결과, 70개 구성 중 3개 모델에서 이력을 줄였을 때 오차가 최대 15.3%까지 유의하게 증가했다.</p>
+<h2>한계점</h2>
+<p>해상도 추정치는 현재 평가에 쓰인 데이터셋 구성에 의존하며, 데이터셋 수가 적을수록(예: GIFT-Eval의 28개) 추정이 거칠어진다. 저자들 스스로도 해상도를 좁히려면 현재보다 약 48배 많은 독립 데이터셋이 필요하다고 추정해, 기존 리더보드 구조로는 근본적 해결이 어렵다는 점을 인정한다. 또한 기하평균 기반 pool-independent 규칙조차 특정 데이터셋(예: solar)이 분산의 대부분을 차지하는 쏠림 현상이 있어 완전히 균질한 비교는 아니다. 이 논문은 워크숍 트랙에 게재된 짧은 분량의 연구로, 제안한 Vernier 도구가 실제로 리더보드 운영 방식을 바꾸도록 채택될지는 논문에 명시되지 않았다.</p>
+<h2>시사점</h2>
+<p>리더보드 제작자들은 단순히 순위표만 공개할 것이 아니라 그 리더보드가 탐지할 수 있는 최소 성능 차이(해상도), 선두와 통계적으로 구분되지 않는 "동일 등급(tier)" 모델 집합, 그리고 모델에 부여된 입력 이력 길이 등 평가 설정을 함께 기록해야 한다는 실천적 제언을 준다. 이는 시계열 분야뿐 아니라 LLM 아레나 등 유사한 "공유 리더보드" 구조를 가진 다른 머신러닝 하위분야에도 적용 가능한 일반적 통계적 점검 틀을 제공한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.31619" target="_blank" rel="noopener">huggingface.co/papers/2611.31619</a> · 2026-11-28</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

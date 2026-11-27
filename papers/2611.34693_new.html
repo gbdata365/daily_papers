@@ -1,0 +1,116 @@
+<meta charset="UTF-8">
+<title>쇼나우(ShowNow)</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#6 · Daily Papers 2026-11-28</span>
+      <span class="cat-tag">모델·기법</span>
+      <span class="upvote-tag">▲ 19</span>
+    </div>
+    <h1 class="article-title">ShowNow: Fine-Grained Speculative Streaming for Responsive World Models</h1>
+    <p class="article-title-ko">쇼나우(ShowNow): 반응형 월드 모델을 위한 세밀한 추측 스트리밍</p>
+    <p class="article-sub">사용자 입력이 들어오기 전에 재생(playback) 중 남는 연산 자원을 활용해 행동별로 분기된 "미래 영상 후보"들을 미리 준비해두고, 실제 입력이 들어오면 그중 하나만 선택·확정함으로써 인터랙티브 월드 모델의 입력-표시 지연(input-to-display latency)을 크게 줄이는 스트리밍 프레임워크 ShowNow를 제안한다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.34693" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.34693" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: ShowNow: Fine-Grained Speculative Streaming for Responsive World Models</li>
+<li><strong>저자</strong>: Yiren Song, Guian Fang, Mike Zheng Shou (싱가포르국립대학교 Show Lab)</li>
+<li><strong>출처</strong>: arXiv:2611.34693v1 [cs.CV] (2026년 11월 25일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/showlab/ShowNow">GitHub - showlab/ShowNow</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.34693">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>사용자 입력이 들어오기 전에 재생(playback) 중 남는 연산 자원을 활용해 행동별로 분기된 "미래 영상 후보"들을 미리 준비해두고, 실제 입력이 들어오면 그중 하나만 선택·확정함으로써 인터랙티브 월드 모델의 입력-표시 지연(input-to-display latency)을 크게 줄이는 스트리밍 프레임워크 ShowNow를 제안한다.</p>
+<h2>배경 및 문제의식</h2>
+<p>인터랙티브 월드 모델(게임·시뮬레이션 영상을 실시간 생성하며 사용자 조작에 반응하는 모델)은 목표 프레임레이트로 영상을 계속 생성하면서 동시에 사용자의 입력(이동, 회전, 발사, 점프 등)에 즉각 반응해야 한다. 그러나 기존의 "반응형(reactive)" 생성 방식은 입력이 들어온 뒤에야 다음 영상을 생성하기 시작하므로, 생성에 걸리는 시간만큼 입력-표시 지연이 발생한다. 저자들은 재생이 진행되는 동안 GPU에 유휴 연산 여력(compute slack)이 상당히 남아있다는 점에 주목하고, 이 여유 자원으로 입력 전에 "가능한 다음 행동들에 대한 결과 영상(미래, future)"을 미리 생성해 두는 보완적 설계 축을 제안한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>입력 선행 생성 프레임워크</strong>: 준비(prepare)-선택(select)-확정(commit)이라는 3단계 주기를 통해 재생 중 연산을 활용, 행동 조건부 미래를 입력 전에 미리 만들어두는 ShowNow 프레임워크를 제시.</li>
+<li><strong>다중 미래 데이터셋과 학습 파이프라인</strong>: 동일한 과거 상태(shared history)에서 분기되는 8개의 행동 조건부 연속 영상을 포함하는 매칭된 멀티퓨처 데이터셋을 구축하고, 이를 학습하기 위한 교사-증류 파이프라인을 설계.</li>
+<li><strong>단일 GPU 실시간 멀티퓨처 생성</strong>: 공유 히스토리 트리 실행과 결합된(fused) 확정 로직을 통해 5B 모델이 H100 1장에서 8개의 미래를 준비하면서도 480p·16fps 생성을 유지하도록 구현.</li>
+</ul>
+<h2>방법론</h2>
+<p>ShowNow는 공유된 과거 히스토리 h_n으로부터 지원되는 8개 행동(W/A/S/D 이동, L/R 회전, F 발사, J 점프) 각각에 대응하는 후보 미래들을 동시에 생성한다. 입력이 들어오면 해당 행동에 대응하는 후보를 즉시 선택해 디코딩·표시하고, 선택된 타임라인이 다음 라운드의 공통 히스토리가 된다(이 과정이 반복되는 prepare-select-commit 주기). 핵심 구성 요소는 다음과 같다.
+- <strong>단일 레이턴트 커밋(single-latent commitment)</strong>: 한 번에 한 타임스텝(레이턴트)만 생성·확정하여 결정 주기를 짧게 가져가, 행동이 바뀔 때 빠르게 반응.
+- <strong>구성 가능한 커버리지</strong>: 준비하는 후보 수 K를 1개(지속되는 행동만 가정)부터 8개(모든 행동 전부 커버)까지 조절 가능.
+- <strong>브랜치-트리 어텐션(branch-tree attention)</strong>: 공유 히스토리는 한 번만 계산하고, 각 행동 분기는 서로 격리된 상태로 자신의 미래만 보도록 마스킹하여 중복 계산을 제거(공유 프리픽스 키-값 캐싱, FlashAttention류 효율화 기법 응용).
+- <strong>학습</strong>: SolarWM/Wan2.2 5B 백본 교사 모델에 양방향 브랜치-트리 어텐션과 분기별 플로우 매칭(flow matching)을 적용해 학습한 뒤, AnyFlow 증류와 Self-Forcing 정제를 거쳐 적은 샘플링 스텝(3스텝)으로 동작하는 학생 모델을 얻음.
+- <strong>추론 최적화</strong>: 정적 형태 고정을 통한 CUDA 그래프 활용, 윈도우 슬라이딩 방식의 키-값 캐시, 선택된 분기의 클린 상태를 다음 생성 패스에 바로 결합하는 fused commitment로 선택 이후 추가 작업을 최소화.</p>
+<h2>실험 설정 및 결과</h2>
+<p>ViZDoom 환경에서 단일 H100 GPU 기준으로 평가했다. 매칭된 정책(동일 체크포인트·런타임·입력 트레이스) 비교에서, 완전한 ShowNow 배포(8개 미래 준비, 최적화 실행)는 중앙값 입력-표시 지연을 기존 SolarWM-FT 자동 리드 배포의 620ms에서 208ms로 줄였으며(P90: 983→345ms, P99: 1385→374ms), 재시작 시 빈 프레임(empty tick) 비율도 1.56%에서 0.09%로 약 94% 감소시켰다. 또한 동일 선택 마감시간을 사용하는 "균일 위상 전환(uniform-phase switch)" 실험에서, 8개 미래를 준비하는 방식이 1개만 준비하는 방식보다 목표 시점 내 응답 달성률을 83.8%에서 96.8%로 13%p 향상시켰다. 공유 히스토리 실행은 8개 후보를 독립적으로 배치 생성하는 것보다 생성 시간을 약 10%, 최대 메모리를 약 48% 줄였다. 아울러 33B 규모 백본으로 확장한 ShowNow-33B도 다양한 실내외·게임 장면에서 입력-표시 지연을 862ms에서 232ms로(73% 감소) 단축함을 보였다.</p>
+<h2>한계점</h2>
+<p>준비 가능한 후보 수(K)와 모델 크기, 재생 프레임레이트 사이에는 연산 예산 트레이드오프가 존재하며, 더 넓은 행동 커버리지(K=8)는 GPU 활용률을 크게 높인다(논문에서는 약 80% GPU 사용률로 보고). 또한 단일 레이턴트 단위의 잦은 커밋은 긴 시간축에 걸친 생성 품질·일관성(fidelity, long-horizon consistency) 측면에서 다중 레이턴트 블록 방식보다 다소 낮은 지표(LPIPS, PSNR, SSIM 등)를 보이는 트레이드오프가 관찰되었다. 이 밖에 지원 행동 집합이 ViZDoom 기반의 8가지 이동/조작 행동으로 제한되어 있으며, 더 복잡하거나 연속적인 제어 공간으로의 일반화는 논문에 명시되지 않음.</p>
+<h2>시사점</h2>
+<p>ShowNow는 "재생 중 남는 연산을 입력 전에 선제적으로 활용한다"는 아이디어를 월드 모델 스트리밍에 체계적으로 적용하여, 생성 속도 자체를 높이지 않고도(즉 처리량을 유지한 채) 체감 반응 지연을 크게 줄일 수 있음을 보여준다. 이는 언어 모델의 스펙큘레이티브 디코딩 개념을 영상 기반 인터랙티브 월드 모델로 확장한 사례로 볼 수 있으며, 임베디드/원격조작 시스템이나 실시간 게임 엔진형 생성 모델 등 저지연이 중요한 인터랙티브 영상 생성 응용 전반에 적용 가능한 설계 원칙(세밀한 커밋 단위 + 구성 가능한 사전 준비 폭)을 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.34693" target="_blank" rel="noopener">huggingface.co/papers/2611.34693</a> · 2026-11-28</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

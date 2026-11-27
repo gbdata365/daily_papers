@@ -1,0 +1,111 @@
+<meta charset="UTF-8">
+<title>스테이트위버(StateWeaver)</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#5 · Daily Papers 2026-11-28</span>
+      <span class="cat-tag">에이전트</span>
+      <span class="upvote-tag">▲ 27</span>
+    </div>
+    <h1 class="article-title">StateWeaver: Multi-Agent Coordination of Story-State Transitions for Long-Horizon Video Generation</h1>
+    <p class="article-title-ko">스테이트위버(StateWeaver): 장편 영상 생성을 위한 스토리-상태 전환의 다중 에이전트 조율</p>
+    <p class="article-sub">StateWeaver는 "Active States"와 "Hierarchical Collaboration"이라는 두 메커니즘을 결합해, 리뷰 과정에서 발견된 오류를 구체적인 시각 자산 요구사항으로 변환하고 이를 여러 에이전트와 샷에 걸쳐 일관되게 상속시킴으로써 장편 영상 생성에서의 스토리 상태 연속성을 유지하는 멀티 에이전트 프레임워크다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.34290" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.34290" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: StateWeaver: Multi-Agent Coordination of Story-State Transitions for Long-Horizon Video Generation</li>
+<li><strong>저자</strong>: Modi Jin, Xuying Zhang, Yijing Guo, Haoran Li, Yanwen Ma, Jing Wang, Chenyu Ge, Ming-Ming Cheng, Haoyang Huang (난카이대학교, Joy Future Academy/JD, 상하이테크대학교, 베이항대학교 공동 연구)</li>
+<li><strong>출처</strong>: arXiv:2611.34290v1 [cs.CV] (2026년 11월 25일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://ghost233lism.github.io/StateWeaver-page/">https://ghost233lism.github.io/StateWeaver-page/</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.34290">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>StateWeaver는 "Active States"와 "Hierarchical Collaboration"이라는 두 메커니즘을 결합해, 리뷰 과정에서 발견된 오류를 구체적인 시각 자산 요구사항으로 변환하고 이를 여러 에이전트와 샷에 걸쳐 일관되게 상속시킴으로써 장편 영상 생성에서의 스토리 상태 연속성을 유지하는 멀티 에이전트 프레임워크다.</p>
+<h2>배경 및 문제의식</h2>
+<p>최근 비디오 파운데이션 모델들은 고품질의 짧은 클립을 생성하는 데는 성공했지만, 여러 샷에 걸친 장편 영상에서는 캐릭터·소품·장면의 정체성을 유지하거나 사건에 따른 상태 변화(예: 상처에 붕대를 감는 등)를 정확히 반영하는 데 어려움을 겪는다. 기존 에이전트 기반 제작 워크플로우는 고정된 계획을 미리 세우거나 명시적 상태를 기록하더라도, 리뷰에서 발견된 불일치를 실제로 참조 이미지 재구성이나 재생성에 연결하는 고리가 약해 오류가 후속 샷으로 누적된다는 한계가 있다. 저자들은 연속 제작을 위해서는 (1) 리뷰 결과를 구체적 시각 조건 요구로 변환, (2) 재생성 후 상태가 실제로 실현되었는지 확인, (3) 여러 세트·서브스토리에 걸친 실행 맥락 격리라는 세 단계가 유기적으로 연결되어야 한다고 지적한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>Active States</strong>: 스토리에서 요구되는 상태와 실제 리뷰 과정에서 발견된 불일치를 연결해, 상태 정제(state-refinement) 및 시각 참조 보강(visual-reference supplementation) 요구사항으로 변환하고, 이를 자산 상태 및 스토리 타임라인에 연결해 타겟 리페어(repair)를 수행하는 구조.</li>
+<li><strong>Hierarchical Collaboration</strong>: 작업(task), 클립(clip), 리페어 라운드 단위로 실행 맥락을 격리하고, 계층적 메모리(글로벌 메모리/세트 메모리)를 통해 검증된 근거를 세트 간에 전달함으로써 지속적 계획 수립, 로컬 리페어, 병렬 제작을 지원.</li>
+<li>4개의 장편 영상 벤치마크(ST-Bench, ViMax-Bench, EntityBench, DirectorBench)에서 사전 정의된 스토리보드와 자율 계획 스토리보드 양쪽 모두에서 기존 프레임워크 대비 교차 샷 일관성 향상을 입증.</li>
+</ul>
+<h2>방법론</h2>
+<p>StateWeaver는 시나리오 작가(Screenwriter), 총괄 감독(Chief Director), 실행 감독(Executive Directors), 세트 감독(Set Directors)의 역할 분담 구조를 가진다. 시나리오 작가가 브리프를 캐릭터·사건·인과관계가 담긴 각본으로 확장하면, 총괄 감독이 시공간적으로 연속된 서브스토리를 "세트(set)" 단위로 분할하고 각 세트에 이벤트 범위와 제작 목표를 부여한다. 세트 감독은 상태 트리(state tree, 식별자 a·스토리 구간 τ·속성 x·부모 상태 p·근거 E로 구성)를 바탕으로 클립을 계획(Plan)·참조 결합(Bind)·생성(Render)·리뷰(Review)·확정(Commit)하는 루프를 반복한다. 리뷰에서 결함(defect)이 발견되면 참조 확장(Reference Expansion)과 결함 조건부 참조 합성(Defect-Conditioned reference Synthesis, DCS)을 통해 정체성과 기존에 올바른 속성은 보존하면서 문제 속성만 재합성한 뒤 재검증한다. 작업 간에는 작업-맥락 격리(TCI)와 클립/리페어 라운드 맥락 격리(CCI)를 적용하고, 메모리 범위 필터링(Memory Scope Filtering)과 관측-상태 핸드오프 검증(Observed-state Handoff Verification)을 통해 검증된 근거만 후속 작업에 전달되도록 의존성 그래프 기반 병렬 생성을 수행한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>MovieAgent, ViMax, StoryEngine, ATAS를 베이스라인으로 삼아 GPT-6.1-sol(추론), GPT-Image-2.5-Sunburst(이미지 생성/편집), MiniMax-H3-Sol(Ref2VA 비디오 생성)을 공통으로 사용해 비교했다. ST-Bench·ViMax-Bench·EntityBench(사전 정의 스토리보드)와 DirectorBench(자율 계획)로 구성된 총 75개 제작 과제에서 평가한 결과, StateWeaver는 ViMax-Bench와 EntityBench에서 전체 점수 1위를 기록했고 ST-Bench에서도 경쟁력 있는 교차 샷 일관성을 보였다. 특히 자율 계획이 필요한 DirectorBench에서는 스토리 계획, 영상 충실도, 장기 품질 전 항목에서 베이스라인 대비 뚜렷한 우위를 보였다. 컴포넌트 제거 실험에서는 참조 확장·DCS·TCI·CCI·메모리 필터링·핸드오프 검증을 각각 제거할 때 성능이 하락해 각 요소의 기여가 확인되었고, 20명이 참여한 인간 평가(GSB 방식)에서도 StateWeaver가 연속성과 상태 전환 측면에서 모든 베이스라인 대비 우세한 선호를 받았다(시각 품질 차이는 상대적으로 작음).</p>
+<h2>한계점</h2>
+<p>논문 본문에 구체적 실패 사례(부록에서 언급)가 있으나, 본문에서 명시적으로 정리된 한계는 제한적으로 기술되어 있다. 시각 품질 측면에서는 이미지 기반 키프레임을 사용하는 MovieAgent, ViMax 등과 비슷한 수준에 머무르는 경우가 있어 영상 생성 모델 자체의 품질 한계를 완전히 극복하지는 못한다. 또한 리페어 횟수에 상한(라운드당 제한)이 있어 과도한 반복 수정에는 한계가 존재하며, 세부 실패 사례 분석은 부록에서 다뤄지나 본 요약에서는 상세 본문을 모두 확인하지 못했다(논문에 명시되지 않음: 정량적 한계 수치의 전체 목록).</p>
+<h2>시사점</h2>
+<p>StateWeaver는 리뷰에서 발견된 오류를 구체적인 시각 자산 요구사항으로 명시적으로 번역하고, 이를 상태 트리와 계층적 메모리로 추적함으로써, 단순한 프롬프트 재시도가 아니라 "검증된 근거 기반의 국소 수정과 전파"라는 영화 제작 현장의 협업 패턴을 에이전트 시스템에 이식할 수 있음을 보여준다. 이는 장편 영상 생성뿐 아니라 영화 교육, 임베디드 AI를 위한 상호작용 비디오 데이터셋 구축 등 장기간 상태 일관성이 중요한 다양한 생성 응용 분야에도 적용될 수 있는 범용적 멀티 에이전트 협업 설계 원칙을 제시한다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.34290" target="_blank" rel="noopener">huggingface.co/papers/2611.34290</a> · 2026-11-28</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>LLM 문맥 공학(Context Engineering) 재조명</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#9 · Daily Papers 2026-11-28</span>
+      <span class="cat-tag">벤치마크</span>
+      <span class="upvote-tag">▲ 4</span>
+    </div>
+    <h1 class="article-title">Revisiting LLMs as Context Engineers</h1>
+    <p class="article-title-ko">LLM 문맥 공학(Context Engineering) 재조명</p>
+    <p class="article-sub">파라미터 학습 없이 LLM 스스로가 프롬프트·경험을 축적해 문맥(context)을 설계하는 "LLM Context Engineer(LCE)" 기법들을 통합 벤치마크로 비교한 결과, 어떤 방법도 모든 과제에서 일관되게 우수하지 않으며 그 성패는 실패 양상(failure mode)의 다양성에 크게 좌우됨을 밝힌 분석 논문이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.30494" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.30494" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Revisiting LLMs as Context Engineers</li>
+<li><strong>저자</strong>: Junrui Zhang, Zeyu Xu, Runchuan Zhu, Jie Peng, Long Zhang, Zixin Ding, Jiaxin Lin, Kai Wang, Jianmin Ji, Junyuan Hong (싱가포르국립대학교(NUS), 중국과학기술대학교(USTC), 시카고대학교, 독립 연구자 소속)</li>
+<li><strong>출처</strong>: arXiv:2611.30494v1 [cs.AI] (2026년 11월 23일)</li>
+<li><strong>프로젝트 페이지</strong>: <a href="https://github.com/costa-nus/LCEBench">GitHub - LCEBench</a></li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.30494">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>파라미터 학습 없이 LLM 스스로가 프롬프트·경험을 축적해 문맥(context)을 설계하는 "LLM Context Engineer(LCE)" 기법들을 통합 벤치마크로 비교한 결과, 어떤 방법도 모든 과제에서 일관되게 우수하지 않으며 그 성패는 실패 양상(failure mode)의 다양성에 크게 좌우됨을 밝힌 분석 논문이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>RLHF, DPO, GRPO 같은 학습 기반 정렬 방법은 대량의 선호 데이터나 수많은 롤아웃을 요구해 비효율적이다. 이에 대한 대안으로, 모델 파라미터를 바꾸지 않고 프롬프트나 문맥(지시문, 경험, 메타데이터 등)을 데이터로부터 자동으로 개선하는 LCE(LLM Context Engineering) 기법들(GEPA, TF-GRPO, ACE, TextGrad 등)이 제안되어 왔다. 그러나 기존 연구들은 각기 다른 LLM과 벤치마크로 평가되어 서로 비교가 어려웠고, 이 방법들이 실제로 언제, 어떻게 효과적인 문맥을 만들어내는지는 불분명했다. 저자들은 이 공백을 메우기 위해 통일된 벤치마크에서 LCE들을 재검증한다.</p>
+<h2>핵심 기여</h2>
+<ol>
+<li>다양한 LLM 계열(Qwen3, Gemma4, Ministral-3)과 과제 유형(수학 추론, 멀티홉 질의응답, 지시 따르기, 검색, 에이전트 과제)에 걸쳐 대표적 LCE 기법(TextGrad, GEPA, TF-GRPO, ACE)과 단순 베이스라인(CoT, ICL)을 공정하게 비교하는 통합 벤치마크를 구축했다.</li>
+<li>모델 파라미터 수(0.6B~235B-A22A)와 모델 세대(Qwen1.5→Qwen3.5)를 늘려도 LCE의 효과가 일관되게 개선되지 않음을 스케일링 실험으로 보였다.</li>
+<li>실패 양상의 임베딩 기반 다양성 지표(Vendi Score)를 도입해, LCE의 성능 향상 폭이 실패 양상 다양성과 유의한 음의 상관관계(r≈-0.5, p≤0.05)를 가짐을 정량적으로 입증했다.</li>
+<li>사례 연구를 통해 LCE의 성공 요인 중 상당 부분이 추론 능력 향상이 아니라 출력 형식·지시 순응도(instruction adherence) 개선에 있음을 보였다.</li>
+</ol>
+<h2>방법론</h2>
+<p>논문은 문맥 공학을 "롤아웃(Rollout) → 추출(Extraction) → 통합(Consolidation)"의 3단계로 일반화해 정식화한다(π = φ_V({E(x,t,y)|t~LLM(x,π⁻),(x,y)~D}|π⁻~Π)). 이 틀 안에서 TextGrad(텍스트 기울기 전파로 시스템 프롬프트 갱신), GEPA(궤적 반성 기반 프롬프트 변이·탐색), TF-GRPO(실패/성공 롤아웃 비교로 외부 경험 풀 구축), ACE(메타데이터가 달린 플레이북을 점진적으로 갱신)를 공통 프레임워크로 비교했다. 실패 양상 다양성은 실패한 롤아웃마다 LLM으로 실패 원인을 요약·일반화한 뒤 임베딩(all-mpnet-base-v2)하여 Vendi Score로 측정했으며, 데이터셋·모델·LCE 요인별 분산 분해 분석도 수행했다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>MATH500(수학), HotpotQA(멀티홉 QA), IFBench(지시 따르기), MiddleMatch(검색), AppWorld(에이전트) 5개 과제에서 8B급 LLM(Qwen3, Gemma4, Ministral-3) 기준 각 실험을 5개 시드로 5회 반복했다. 검증 성능 기준으로는 TF-GRPO·GEPA·ACE가 대체로 성능을 끌어올렸으나, 테스트셋에서는 15개 설정 중 7개만 베이스라인 대비 유의미한 개선(Δ&gt;1)을 보였고 그중 통계적으로 유의한 경우는 5건에 불과했다. 또한 리플렉터(reflector)나 생성기(generator) 모델 크기를 8B→32B로, 혹은 Qwen1.5-7B에서 Qwen3.5-9B로 세대를 올려도 개선이 일관되지 않았으며, 일부 데이터셋(MATH500, HotpotQA)에서는 오히려 성능이 하락했다. 사례 연구에서는 LCE가 HotpotQA의 장황한 응답으로 인한 "거짓 실패(False Failure)"를 줄이거나 MATH500에서 \boxed{} 형식 준수율을 높이는 등, 실질적으로는 형식·간결성 지시 순응도를 개선한 것이 성능 향상의 주된 원인으로 드러났다.</p>
+<h2>한계점</h2>
+<p>논문 스스로도 LCE의 효과성을 설명했을 뿐 개선 방법은 제시하지 못했다고 명시한다. 경험 추출(Extraction) 단계가 다양한 실패로부터 공통 원리를 뽑아내지 못하는 것이 핵심 병목으로 지적되며, 추출된 경험들의 Vendi Score가 학습 반복(epoch)이 진행되어도 거의 변하지 않아 LCE가 이질적인 실패들을 일반화된 원칙으로 압축하는 데 구조적 한계가 있음을 보여준다. 또한 평가는 8B~235B급, 특정 LCE 4종에 한정되어 있어 더 큰 모델이나 다른 신규 LCE 기법에 대한 일반화는 추가 검증이 필요하다.</p>
+<h2>시사점</h2>
+<p>문맥 공학 기법을 개발할 때는 다양한 모델·데이터셋에서 일반화 가능성을 검증해야 하며, 특히 이질적인 실패 양상으로부터 유용한 경험을 추출하는 능력을 개선하는 데 집중해야 함을 시사한다. 아울러 데이터가 늘어날수록 커지는 문맥 길이 문제를 제어하면서 필요한 지식만 선별적으로 반영하는 방향이 향후 LCE 연구의 중요한 과제로 제시된다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.30494" target="_blank" rel="noopener">huggingface.co/papers/2611.30494</a> · 2026-11-28</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

@@ -1,0 +1,112 @@
+<meta charset="UTF-8">
+<title>역(逆)인코딩으로서의 생성모델</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f5f7; --text:#1d1d1f; --text-secondary:#6e6e73;
+    --accent:#0071e3; --accent-hover:#0077ed; --line: rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  #nav{ position:sticky; top:0; z-index:10; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.85); backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; max-width:900px; }
+  #nav .back{ font-size:0.86rem; color:var(--text-secondary); font-weight:500; }
+  #nav .back:hover{ color:var(--text); }
+  #nav .brand{ font-weight:600; font-size:0.92rem; }
+
+  header.article-head{ padding: 3.4rem 0 2.2rem; border-bottom:1px solid var(--line); }
+  .kicker-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .rank{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); }
+  .cat-tag{ font-size:0.72rem; font-weight:600; color:var(--accent); background:rgba(0,113,227,0.1); border-radius:980px; padding:0.25rem 0.7rem; }
+  .upvote-tag{ font-family:var(--font-mono); font-size:0.78rem; font-weight:600; color:var(--accent); }
+  h1.article-title{ font-size:clamp(1.5rem,2vw + 1rem,2.1rem); font-weight:700; letter-spacing:-0.01em; line-height:1.35; margin:0; }
+  .article-title-ko{ margin-top:0.6rem; font-size:clamp(1.15rem,1.4vw + 0.8rem,1.5rem); font-weight:600; color:var(--text-secondary); letter-spacing:-0.01em; line-height:1.4; }
+  .article-sub{ margin-top:1.1rem; font-size:1.02rem; color:var(--text-secondary); }
+  .meta-links{ margin-top:1.4rem; display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+
+  article.body{ padding: 2.6rem 0 5rem; font-size:1rem; }
+  article.body h2{ font-size:1.32rem; font-weight:700; margin:2.4rem 0 1rem; letter-spacing:-0.01em; }
+  article.body h2:first-child{ margin-top:0; }
+  article.body p{ margin:0.9rem 0; color:var(--text); }
+  article.body ul{ margin:0.9rem 0; padding-left:1.3rem; }
+  article.body li{ margin:0.5rem 0; color:var(--text); }
+  article.body li p { margin: 0; display:inline; }
+  article.body strong{ font-weight:600; }
+  article.body code{ font-family:var(--font-mono); background:var(--bg-alt); padding:0.1rem 0.35rem; border-radius:5px; font-size:0.88em; }
+
+  .back-bottom{ margin-top:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer{ padding:2rem 0; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; color:var(--text-secondary); font-size:0.78rem; }
+</style>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="back" href="../index.html">← 목록으로</a>
+    <span class="brand">Daily Papers</span>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <div class="kicker-row">
+      <span class="rank">#12 · Daily Papers 2026-11-28</span>
+      <span class="cat-tag">생성모델</span>
+      <span class="upvote-tag">▲ 2</span>
+    </div>
+    <h1 class="article-title">Generation as Reverse Encoding</h1>
+    <p class="article-title-ko">역(逆)인코딩으로서의 생성모델</p>
+    <p class="article-sub">사전학습된 시각 인코더가 이미지를 픽셀에서 점점 더 추상적인 표현(semantic representation)으로 변환하는 과정(semantic encoding path)을 그대로 뒤집어, 깊은 표현 → 얕은 표현 → 픽셀 순으로 생성하면 학습이 빨라지고 적은 샘플링 스텝으로도 고품질 이미지를 생성할 수 있다는 것을 보이는 논문이다.</p>
+    <div class="meta-links">
+      <a href="https://huggingface.co/papers/2611.34782" target="_blank" rel="noopener">Hugging Face 페이지 →</a>
+      <a href="https://arxiv.org/abs/2611.34782" target="_blank" rel="noopener">arXiv 원문 →</a>
+    </div>
+  </div>
+</header>
+
+<article class="body">
+  <div class="wrap">
+<ul>
+<li><strong>제목</strong>: Generation as Reverse Encoding</li>
+<li><strong>저자</strong>: Cheng Shi(홍콩대), Sibei Yang(중산대, 교신저자), Hanzhong Guo(홍콩대), Yipeng Qin(카디프대), Pietro Lio(케임브리지대), Yizhou Yu(홍콩대, 교신저자)</li>
+<li><strong>출처</strong>: arXiv:2611.34782v1 [cs.CV] (2026년 11월 25일)</li>
+<li><strong>프로젝트 페이지</strong>: 별도 프로젝트 페이지는 없으며, 코드 저장소는 github.com/ChengShiest/RevFlow 로 공개됨</li>
+<li><strong>원문 PDF</strong>: <a href="https://arxiv.org/pdf/2611.34782">arXiv PDF 보기</a></li>
+</ul>
+<h2>한 줄 요약</h2>
+<p>사전학습된 시각 인코더가 이미지를 픽셀에서 점점 더 추상적인 표현(semantic representation)으로 변환하는 과정(semantic encoding path)을 그대로 뒤집어, 깊은 표현 → 얕은 표현 → 픽셀 순으로 생성하면 학습이 빨라지고 적은 샘플링 스텝으로도 고품질 이미지를 생성할 수 있다는 것을 보이는 논문이다.</p>
+<h2>배경 및 문제의식</h2>
+<p>기존 확산/흐름 기반 생성모델은 VAE 잠재 공간이나 사전학습 인코더의 표현을 생성 타깃으로 활용해 학습 속도를 높여왔지만(REPA, RAE 등), 정작 "표현에서 픽셀로" 되돌리는 디코더는 별도로 학습해야 했고 이 디코더가 점점 커지는 문제가 있었다(RAE 계열은 VAE 대비 약 10배 큰 디코더 필요). 저자들은 이미지→표현으로 가는 인코딩 경로(semantic encoding path)가 이미 "의미는 남기고 외형·공간 디테일은 버리는" 방향으로 구조화되어 있으므로, 생성(표현→픽셀)은 이 인코딩 경로를 거꾸로 되짚는 과정으로 볼 수 있으며 별도의 디코딩 경로를 새로 배울 필요가 없다고 주장한다.</p>
+<h2>핵심 기여</h2>
+<ul>
+<li><strong>역인코딩으로서의 생성(generation as reverse encoding)</strong> 개념 제시: 프리즈된 인코더의 깊은 층→얕은 층 표현 변화를 그대로 역방향 생성 과정으로 사용.</li>
+<li><strong>HyC-DiT</strong>: 하나의 공유 Transformer(DiT) 백본으로 여러 생성 단계를 함께 학습하는 통합 모델. 1단계는 클래스 레이블을 전역 조건으로, 2단계는 1단계가 생성한 깊은 표현을 토큰별(spatial) 조건으로 주입하며, 두 단계 모두 "클린 타깃 예측(clean-target prediction)" 방식을 사용해 파라미터를 절반 가까이 절약.</li>
+<li><strong>네이티브 표현 매칭(native representation matching)</strong>: 생성된 인코더 표현을 픽셀로 복원하거나 다시 인코딩하지 않고도, 표현 공간에서 직접 실제 데이터 분포와 매칭시켜 소수 스텝(few-step) 생성을 가능하게 함.</li>
+<li>빠른 수렴과 가벼운 디코더: 단 5 에폭 학습만으로 높은 생성 품질을 달성하고, 기존 RAE류보다 훨씬 작은 디코더로도 더 좋은 재구성 성능을 보임.</li>
+</ul>
+<h2>방법론</h2>
+<p>RevFlow는 프리즈된 DINOv3 인코더의 레이어별 CLS 표현 간 유사도를 분석해, 유사도가 급격히 변하는 지점을 기준으로 인코딩 경로를 "초기(깊은 의미 중심)"와 "후기(얕은, 외형 중심)" 두 개의 대표 구간(stage)으로 요약한다. 생성은 클래스 레이블 y → 깊은 표현 z^L(1단계) → 얕은 표현 z^M(2단계, z^L을 조건으로 사용) → 픽셀(프리즈된 디코더로 복원) 순으로 진행된다. 두 단계는 하나의 DiT 백본을 공유하되, 1단계는 전역 클래스 임베딩을, 2단계는 깊은 표현을 공간 정렬된 토큰 조건으로 AdaLN에 주입해 단계별 역할을 분리한다. 노이즈가 섞인 깊은 표현을 2단계 조건으로 쓰는 조건 노이즈(condition noise) 기법으로 학습-추론 간 분포 차이를 완화한다. 추가로, 생성된 표현을 실제 인코더 표현 분포와 직접 맞추는 분포 매칭 손실(native matching, 드리프팅 손실 및 IMQ-MMD 기반)을 적용해 각 단계당 단일 스텝(1 NFE) 생성을 지원한다.</p>
+<h2>실험 설정 및 결과</h2>
+<p>클래스 조건부 ImageNet 256×256과 512×512 해상도의 텍스트-이미지 생성(Flan-T5 조건)에서 평가했다. ImageNet에서 RevFlow-XL(690M)과 RevFlow-H(1.55B)는 단 5 에폭 학습만으로 각각 FID 1.96, 1.74를 달성했으며, 이는 800 에폭까지 학습한 RAE(FID 1.51, 10배 이상 많은 학습 연산량) 대비 우수한 결과다. 재구성 성능도 89M 크기의 경량 디코더로 PSNR 30.25dB를 달성해, 415M 디코더를 쓴 RAE(18.09dB)를 크게 앞섰다. 네이티브 매칭 적용 후 RevFlow-XL은 단계당 1스텝(총 2 NFE)으로 FID 2.85를 기록했으며, 이 기법은 단일 단계 모델인 RAE에도 적용되어 FID를 284.19에서 3.46으로 크게 개선했다. 여러 표현 공간(Inception, ConvNeXt, DINOv2, MAE, SigLIP, CLIP)에서 측정한 FD 지표에서도 RevFlow-H가 가장 낮은 평균값을 기록했다. 텍스트-이미지 실험(512×512)에서는 동일 학습 반복 수 기준으로 RAE 재현 모델 대비 GenEval, DPG-Bench 점수가 더 높고 수렴 속도도 각각 약 1.6배, 3.1배 빠른 것으로 나타났다.</p>
+<h2>한계점</h2>
+<p>논문에 별도의 "한계점" 절은 없다. 다만 본문에서 드러나는 제약으로는, 인코더의 레이어를 몇 개의 대표 단계로 요약하는 과정이 다소 수작업적인 설계(유사도 분석 기반 레이어 선택)에 의존한다는 점, 그리고 얕은 표현을 어느 레이어에서 선택하느냐에 따라 생성 품질(FID)과 재구성 충실도(PSNR) 사이에 트레이드오프가 존재한다는 점(Ablation에서 확인)이 있다. 또한 공유 백본에서 속도(velocity) 예측 방식은 성능이 저하되어 클린 타깃 예측 방식에 의존해야 한다는 아키텍처적 제약도 보고된다.</p>
+<h2>시사점</h2>
+<p>이 연구는 사전학습 인코더가 가진 "의미→외형" 위계 구조를 생성모델 설계에 적극 활용하면, 별도의 무거운 디코더 없이도 빠른 학습 수렴과 적은 샘플링 스텝을 동시에 얻을 수 있음을 보여준다. 특히 생성된 표현을 픽셀로 복원하지 않고 표현 공간에서 직접 분포 매칭을 수행하는 네이티브 매칭 기법은, 기존의 다른 단일 단계 생성모델(RAE 등)에도 바로 적용 가능한 범용적인 few-step 적응 전략으로서 의의가 있다.</p>
+    <div class="back-bottom">
+      <a href="../index.html">← Daily Papers 목록으로 돌아가기</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>출처: <a href="https://huggingface.co/papers/2611.34782" target="_blank" rel="noopener">huggingface.co/papers/2611.34782</a> · 2026-11-28</span>
+    <span>my-design 시스템 적용</span>
+  </div>
+</footer>

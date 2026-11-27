@@ -1,0 +1,110 @@
+{
+  "2611.34051": {
+    "base": "2611_스테이블GDN2_순환상태-불안정성-완화",
+    "rank": "#1",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "126",
+    "en_title": "Stable Gated DeltaNet-2: Understanding and Mitigating Recurrent State Instability",
+    "ko_title": "스테이블 GDN-2: 순환 상태 불안정성의 이해와 완화"
+  },
+  "2611.34813": {
+    "base": "2611_솔브비전_코드기반-시각추론-에이전트",
+    "rank": "#2",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "59",
+    "en_title": "Solve Vision with Code: Coding Agents Are Stronger Visual Reasoners Than Video Models",
+    "ko_title": "코드로 푸는 비전: 코딩 에이전트는 비디오 모델보다 강력한 시각 추론자다"
+  },
+  "2611.31619": {
+    "base": "2611_포캐스팅리더보드_제로샷-시계열-해상도보고",
+    "rank": "#3",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "57",
+    "en_title": "What a Forecasting Leaderboard Can Establish: Resolution Reporting for Zero-Shot Time-Series Models",
+    "ko_title": "포캐스팅 리더보드가 말해줄 수 있는 것: 제로샷 시계열 모델의 해상도 보고"
+  },
+  "2611.34457": {
+    "base": "2611_프록시젠벤치_프록시기반-비디오생성-벤치마크",
+    "rank": "#4",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "36",
+    "en_title": "ProxyGenBench: Benchmarking Proxy-Guided Video Generation",
+    "ko_title": "프록시젠벤치(ProxyGenBench): 프록시 기반 비디오 생성 벤치마킹"
+  },
+  "2611.34290": {
+    "base": "2611_스테이트위버_장편영상-스토리상태-전환-다중에이전트",
+    "rank": "#5",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "27",
+    "en_title": "StateWeaver: Multi-Agent Coordination of Story-State Transitions for Long-Horizon Video Generation",
+    "ko_title": "스테이트위버(StateWeaver): 장편 영상 생성을 위한 스토리-상태 전환의 다중 에이전트 조율"
+  },
+  "2611.34693": {
+    "base": "2611_쇼나우_월드모델-추론가속-스펙큘레이티브스트리밍",
+    "rank": "#6",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "19",
+    "en_title": "ShowNow: Fine-Grained Speculative Streaming for Responsive World Models",
+    "ko_title": "쇼나우(ShowNow): 반응형 월드 모델을 위한 세밀한 추측 스트리밍"
+  },
+  "2611.34852": {
+    "base": "2611_DR벤치프로_전문가급-딥리서치-에이전트-벤치마크",
+    "rank": "#7",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "17",
+    "en_title": "DRBench Pro: A Knowledge-Centric Benchmark for Professional Deep Research Agents",
+    "ko_title": "DR벤치 프로: 전문가급 딥리서치 에이전트를 위한 지식 중심 벤치마크"
+  },
+  "2611.32238": {
+    "base": "2611_바운더리정책_로봇조작-에이전트-경계인식학습",
+    "rank": "#8",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "7",
+    "en_title": "Boundary-Aware Policy Learning for Agent-Orchestrated Robot Manipulation",
+    "ko_title": "경계 인식 정책 학습을 통한 에이전트 조율 기반 로봇 조작"
+  },
+  "2611.30494": {
+    "base": "2611_컨텍스트엔지니어_LLM-문맥공학-재조명",
+    "rank": "#9",
+    "category": "bench",
+    "category_label": "벤치마크",
+    "upvote": "4",
+    "en_title": "Revisiting LLMs as Context Engineers",
+    "ko_title": "LLM 문맥 공학(Context Engineering) 재조명"
+  },
+  "2611.30483": {
+    "base": "2611_DB에이전트오류_AI에이전트-실수-피해결정요인",
+    "rank": "#10",
+    "category": "agent",
+    "category_label": "에이전트",
+    "upvote": "4",
+    "en_title": "When an AI agent makes a mistake in a database, what decides the damage?",
+    "ko_title": "AI 에이전트가 데이터베이스에서 실수할 때, 무엇이 피해 규모를 결정하는가?"
+  },
+  "2611.28849": {
+    "base": "2611_가드저지먼트_멀티모달-안전-개입학습",
+    "rank": "#11",
+    "category": "method",
+    "category_label": "모델·기법",
+    "upvote": "2",
+    "en_title": "Guarding with Judgment: Learning to Intervene for Multimodal Safety",
+    "ko_title": "판단으로 지키기: 멀티모달 안전을 위한 개입 학습"
+  },
+  "2611.34782": {
+    "base": "2611_역인코딩생성_생성을-역인코딩으로-재해석",
+    "rank": "#12",
+    "category": "gen",
+    "category_label": "생성모델",
+    "upvote": "2",
+    "en_title": "Generation as Reverse Encoding",
+    "ko_title": "역(逆)인코딩으로서의 생성모델"
+  }
+}
